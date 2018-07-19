@@ -178,25 +178,26 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Identifies a stream as an event source for a Lambda function. It can be either an
-        /// Amazon Kinesis stream or an Amazon DynamoDB stream. AWS Lambda invokes the specified
-        /// function when records are posted to the stream.
+        /// Identifies a poll-based event source for a Lambda function. It can be either an Amazon
+        /// Kinesis or DynamoDB stream, or an Amazon SQS queue. AWS Lambda invokes the specified
+        /// function when records are posted to the event source.
         /// 
         ///  
         /// <para>
-        /// This association between a stream source and a Lambda function is called the event
+        /// This association between a poll-based source and a Lambda function is called the event
         /// source mapping.
         /// </para>
         ///  
         /// <para>
-        /// You provide mapping information (for example, which stream to read from and which
-        /// Lambda function to invoke) in the request body.
+        /// You provide mapping information (for example, which stream or SQS queue to read from
+        /// and which Lambda function to invoke) in the request body.
         /// </para>
         ///  
         /// <para>
-        /// Each event source, such as an Amazon Kinesis or a DynamoDB stream, can be associated
-        /// with multiple AWS Lambda functions. A given Lambda function can be associated with
-        /// multiple AWS event sources.
+        /// Amazon Kinesis or DynamoDB stream event sources can be associated with multiple AWS
+        /// Lambda functions and a given Lambda function can be associated with multiple AWS event
+        /// sources. For Amazon SQS, you can configure multiple queues as event sources for a
+        /// single Lambda function, but an SQS queue can be mapped only to a single Lambda function.
         /// </para>
         ///  
         /// <para>
@@ -376,6 +377,11 @@ namespace Amazon.Lambda
         /// One of the parameters in the request is invalid. For example, if you provided an IAM
         /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
         /// API, that AWS Lambda is unable to assume you will get this exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceInUseException">
+        /// The operation conflicts with the resource's availability. For example, you attempted
+        /// to update an EventSoure Mapping in CREATING, or tried to delete a EventSoure mapping
+        /// currently in the UPDATING state.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified
@@ -1934,6 +1940,11 @@ namespace Amazon.Lambda
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceInUseException">
+        /// The operation conflicts with the resource's availability. For example, you attempted
+        /// to update an EventSoure Mapping in CREATING, or tried to delete a EventSoure mapping
+        /// currently in the UPDATING state.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource (for example, a Lambda function or access policy statement) specified

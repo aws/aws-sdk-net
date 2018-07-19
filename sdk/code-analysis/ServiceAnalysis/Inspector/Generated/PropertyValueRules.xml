@@ -36,6 +36,15 @@
     <max>300</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Inspector.Model.CreateExclusionsPreviewRequest.AssessmentTemplateArn</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector.Model.CreateExclusionsPreviewResponse.PreviewToken</property>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Inspector.Model.CreateResourceGroupResponse.ResourceGroupArn</property>
     <min>1</min>
     <max>300</max>
@@ -68,6 +77,25 @@
   <property-value-rule>
     <property>Amazon.Inspector.Model.GetAssessmentReportResponse.Url</property>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector.Model.GetExclusionsPreviewRequest.AssessmentTemplateArn</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector.Model.GetExclusionsPreviewRequest.NextToken</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector.Model.GetExclusionsPreviewRequest.PreviewToken</property>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector.Model.GetExclusionsPreviewResponse.NextToken</property>
+    <min>1</min>
+    <max>300</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector.Model.GetTelemetryMetadataRequest.AssessmentRunArn</property>
@@ -131,6 +159,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector.Model.ListEventSubscriptionsResponse.NextToken</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector.Model.ListExclusionsRequest.AssessmentRunArn</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector.Model.ListExclusionsRequest.NextToken</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector.Model.ListExclusionsResponse.NextToken</property>
     <min>1</min>
     <max>300</max>
   </property-value-rule>
@@ -449,6 +492,41 @@
     <max>86400</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Inspector.Model.Exclusion.Arn</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector.Model.Exclusion.Description</property>
+    <min>0</min>
+    <max>20000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector.Model.Exclusion.Recommendation</property>
+    <min>0</min>
+    <max>20000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector.Model.Exclusion.Title</property>
+    <min>0</min>
+    <max>20000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector.Model.ExclusionPreview.Description</property>
+    <min>0</min>
+    <max>20000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector.Model.ExclusionPreview.Recommendation</property>
+    <min>0</min>
+    <max>20000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector.Model.ExclusionPreview.Title</property>
+    <min>0</min>
+    <max>20000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Inspector.Model.Finding.Arn</property>
     <min>1</min>
     <max>300</max>
@@ -528,6 +606,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector.Model.NoSuchEntityException.Message</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector.Model.PreviewGenerationInProgressException.Message</property>
     <min>0</min>
     <max>1000</max>
   </property-value-rule>

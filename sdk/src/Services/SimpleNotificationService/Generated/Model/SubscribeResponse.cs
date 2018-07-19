@@ -37,8 +37,10 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the property SubscriptionArn. 
         /// <para>
-        /// The ARN of the subscription, if the service was able to create a subscription immediately
-        /// (without requiring endpoint owner confirmation).
+        /// The ARN of the subscription if it is confirmed, or the string "pending confirmation"
+        /// if the subscription requires confirmation. However, if the API request parameter <code>ReturnSubscriptionArn</code>
+        /// is true, then the value is always the subscription ARN, even if the subscription requires
+        /// confirmation.
         /// </para>
         /// </summary>
         public string SubscriptionArn

@@ -101,6 +101,10 @@ namespace Amazon.AppSync
         /// </summary>
         public static readonly DataSourceType AWS_LAMBDA = new DataSourceType("AWS_LAMBDA");
         /// <summary>
+        /// Constant HTTP for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType HTTP = new DataSourceType("HTTP");
+        /// <summary>
         /// Constant NONE for DataSourceType
         /// </summary>
         public static readonly DataSourceType NONE = new DataSourceType("NONE");

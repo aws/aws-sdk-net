@@ -37,8 +37,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property HostIds. 
         /// <para>
-        /// The ID of the allocated Dedicated Host. This is used when you want to launch an instance
-        /// onto a specific host.
+        /// The ID of the allocated Dedicated Host. This is used to launch an instance onto a
+        /// specific host.
         /// </para>
         /// </summary>
         public List<string> HostIds

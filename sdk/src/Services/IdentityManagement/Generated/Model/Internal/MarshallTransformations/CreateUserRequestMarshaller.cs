@@ -62,6 +62,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Path", StringUtils.FromString(publicRequest.Path));
                 }
+                if(publicRequest.IsSetPermissionsBoundary())
+                {
+                    request.Parameters.Add("PermissionsBoundary", StringUtils.FromString(publicRequest.PermissionsBoundary));
+                }
                 if(publicRequest.IsSetUserName())
                 {
                     request.Parameters.Add("UserName", StringUtils.FromString(publicRequest.UserName));

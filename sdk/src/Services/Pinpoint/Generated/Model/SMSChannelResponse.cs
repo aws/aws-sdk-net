@@ -41,8 +41,10 @@ namespace Amazon.Pinpoint.Model
         private string _lastModifiedBy;
         private string _lastModifiedDate;
         private string _platform;
+        private int? _promotionalMessagesPerSecond;
         private string _senderId;
         private string _shortCode;
+        private int? _transactionalMessagesPerSecond;
         private int? _version;
 
         /// <summary>
@@ -93,8 +95,7 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HasCredential. If the channel is registered with a credential
-        /// for authentication.
+        /// Gets and sets the property HasCredential. Not used. Retained for backwards compatibility.
         /// </summary>
         public bool HasCredential
         {
@@ -184,6 +185,22 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PromotionalMessagesPerSecond. Promotional messages per
+        /// second that can be sent
+        /// </summary>
+        public int PromotionalMessagesPerSecond
+        {
+            get { return this._promotionalMessagesPerSecond.GetValueOrDefault(); }
+            set { this._promotionalMessagesPerSecond = value; }
+        }
+
+        // Check to see if PromotionalMessagesPerSecond property is set
+        internal bool IsSetPromotionalMessagesPerSecond()
+        {
+            return this._promotionalMessagesPerSecond.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property SenderId. Sender identifier of your messages.
         /// </summary>
         public string SenderId
@@ -211,6 +228,22 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetShortCode()
         {
             return this._shortCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransactionalMessagesPerSecond. Transactional messages
+        /// per second that can be sent
+        /// </summary>
+        public int TransactionalMessagesPerSecond
+        {
+            get { return this._transactionalMessagesPerSecond.GetValueOrDefault(); }
+            set { this._transactionalMessagesPerSecond = value; }
+        }
+
+        // Check to see if TransactionalMessagesPerSecond property is set
+        internal bool IsSetTransactionalMessagesPerSecond()
+        {
+            return this._transactionalMessagesPerSecond.HasValue; 
         }
 
         /// <summary>

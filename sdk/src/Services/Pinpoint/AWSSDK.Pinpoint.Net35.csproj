@@ -6,7 +6,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>AWSSDK.Pinpoint</AssemblyName>
     <PackageId>AWSSDK.Pinpoint</PackageId>
-    <BaseIntermediateOutputPath>./obj/net35</BaseIntermediateOutputPath>
+
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>

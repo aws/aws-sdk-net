@@ -82,6 +82,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     unmarshalledObject.FileShareStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FileShareType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FileShareType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("GatewayARN", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

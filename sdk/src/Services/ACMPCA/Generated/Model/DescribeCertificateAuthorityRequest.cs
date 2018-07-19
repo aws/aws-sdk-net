@@ -35,30 +35,37 @@ namespace Amazon.ACMPCA.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  <b>CREATING:</b> ACM PCA is creating your private certificate authority.
+    ///  <code>CREATING</code> - ACM PCA is creating your private certificate authority.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>PENDING_CERTIFICATE:</b> The certificate is pending. You must use your on-premises
-    /// root or subordinate CA to sign your private CA CSR and then import it into PCA. 
+    ///  <code>PENDING_CERTIFICATE</code> - The certificate is pending. You must use your
+    /// on-premises root or subordinate CA to sign your private CA CSR and then import it
+    /// into PCA. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>ACTIVE:</b> Your private CA is active.
+    ///  <code>ACTIVE</code> - Your private CA is active.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>DISABLED:</b> Your private CA has been disabled.
+    ///  <code>DISABLED</code> - Your private CA has been disabled.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>EXPIRED:</b> Your private CA certificate has expired.
+    ///  <code>EXPIRED</code> - Your private CA certificate has expired.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>FAILED:</b> Your private CA has failed. Your CA can fail for problems such a network
-    /// outage or backend AWS failure or other errors. A failed CA can never return to the
-    /// pending state. You must create a new CA. 
+    ///  <code>FAILED</code> - Your private CA has failed. Your CA can fail because of problems
+    /// such a network outage or backend AWS failure or other errors. A failed CA can never
+    /// return to the pending state. You must create a new CA. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>DELETED</code> - Your private CA is within the restoration period, after which
+    /// it will be permanently deleted. The length of time remaining in the CA's restoration
+    /// period will also be included in this operation's output.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -74,7 +81,7 @@ namespace Amazon.ACMPCA.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
+        ///  <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
         /// </code>. 
         /// </para>
         /// </summary>

@@ -29,7 +29,21 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the SendUsersMessages operation.
-    /// Send a batch of messages to users
+    /// Use this resource to message a list of users. Amazon Pinpoint sends the message to
+    /// all of the endpoints that are associated with each user.A user represents an individual
+    /// who is assigned a unique user ID, and this ID is assigned to one or more endpoints.
+    /// For example, if an individual uses your app on multiple devices, your app could assign
+    /// that person's user ID to the endpoint for each device.With the users-messages resource,
+    /// you specify the message recipients as user IDs. For each user ID, Amazon Pinpoint
+    /// delivers the message to all of the user's endpoints. Within the body of your request,
+    /// you can specify a default message, and you can tailor your message for different channels,
+    /// including those for mobile push and SMS.With this resource, you send a direct message,
+    /// which is a one time message that you send to a limited audience without creating a
+    /// campaign. You can send the message to up to 100 users per request. You cannot use
+    /// the message to engage a segment. When you send the message, Amazon Pinpoint delivers
+    /// it immediately, and you cannot schedule the delivery. To engage a user segment, and
+    /// to schedule the message delivery, create a campaign instead of using the users-messages
+    /// resource.
     /// </summary>
     public partial class SendUsersMessagesRequest : AmazonPinpointRequest
     {
@@ -37,7 +51,7 @@ namespace Amazon.Pinpoint.Model
         private SendUsersMessageRequest _sendUsersMessageRequest;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId.
+        /// Gets and sets the property ApplicationId. The unique ID of your Amazon Pinpoint application.
         /// </summary>
         public string ApplicationId
         {

@@ -78,11 +78,13 @@ namespace Amazon.RDS.Model
         private bool? _multiAZ;
         private string _optionGroupName;
         private int? _port;
+        private List<ProcessorFeature> _processorFeatures = new List<ProcessorFeature>();
         private bool? _publiclyAccessible;
         private string _storageType;
         private List<Tag> _tags = new List<Tag>();
         private string _tdeCredentialArn;
         private string _tdeCredentialPassword;
+        private bool? _useDefaultProcessorFeatures;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -176,7 +178,7 @@ namespace Amazon.RDS.Model
         /// Not all DB instance classes are available in all AWS Regions, or for all database
         /// engines. For the full list of DB instance classes, and availability for your engine,
         /// see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-        /// Instance Class</a> in the Amazon RDS User Guide. 
+        /// Instance Class</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         ///  
         /// <para>
@@ -613,6 +615,25 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ProcessorFeatures. 
+        /// <para>
+        /// The number of CPU cores and the number of threads per core for the DB instance class
+        /// of the DB instance.
+        /// </para>
+        /// </summary>
+        public List<ProcessorFeature> ProcessorFeatures
+        {
+            get { return this._processorFeatures; }
+            set { this._processorFeatures = value; }
+        }
+
+        // Check to see if ProcessorFeatures property is set
+        internal bool IsSetProcessorFeatures()
+        {
+            return this._processorFeatures != null && this._processorFeatures.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property PubliclyAccessible. 
         /// <para>
         /// Specifies the accessibility options for the DB instance. A value of true specifies
@@ -734,6 +755,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetTdeCredentialPassword()
         {
             return this._tdeCredentialPassword != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseDefaultProcessorFeatures. 
+        /// <para>
+        /// A value that specifies that the DB instance class of the DB instance uses its default
+        /// processor features.
+        /// </para>
+        /// </summary>
+        public bool UseDefaultProcessorFeatures
+        {
+            get { return this._useDefaultProcessorFeatures.GetValueOrDefault(); }
+            set { this._useDefaultProcessorFeatures = value; }
+        }
+
+        // Check to see if UseDefaultProcessorFeatures property is set
+        internal bool IsSetUseDefaultProcessorFeatures()
+        {
+            return this._useDefaultProcessorFeatures.HasValue; 
         }
 
     }

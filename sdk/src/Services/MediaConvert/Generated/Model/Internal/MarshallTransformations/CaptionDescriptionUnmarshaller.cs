@@ -70,6 +70,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.CaptionSelectorName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("customLanguageCode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CustomLanguageCode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("destinationSettings", targetDepth))
                 {
                     var unmarshaller = CaptionDestinationSettingsUnmarshaller.Instance;

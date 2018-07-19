@@ -34,6 +34,7 @@ namespace Amazon.Glue.Model
     {
         private Dictionary<string, string> _arguments = new Dictionary<string, string>();
         private string _jobName;
+        private NotificationProperty _notificationProperty;
         private int? _timeout;
 
         /// <summary>
@@ -87,6 +88,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetJobName()
         {
             return this._jobName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NotificationProperty. 
+        /// <para>
+        /// Specifies configuration properties of a job run notification.
+        /// </para>
+        /// </summary>
+        public NotificationProperty NotificationProperty
+        {
+            get { return this._notificationProperty; }
+            set { this._notificationProperty = value; }
+        }
+
+        // Check to see if NotificationProperty property is set
+        internal bool IsSetNotificationProperty()
+        {
+            return this._notificationProperty != null;
         }
 
         /// <summary>

@@ -48,7 +48,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property CompletionTime. 
         /// <para>
-        /// Timestamp of the date and time that the job completed.
+        /// A timestamp that shows when the job was completed.
         /// </para>
         /// </summary>
         public DateTime CompletionTime
@@ -66,7 +66,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// Timestamp of the date and time that the job was created.
+        /// A timestamp that shows when the job was created.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -121,7 +121,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Media. 
         /// <para>
-        /// An object that describes the input media for a transcription job.
+        /// An object that describes the input media for the transcription job.
         /// </para>
         /// </summary>
         public Media Media
@@ -175,7 +175,9 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Settings. 
         /// <para>
-        /// Optional settings for the transcription job.
+        /// Optional settings for the transcription job. Use these settings to turn on speaker
+        /// recognition, to set the maximum number of speakers that should be identified and to
+        /// specify a custom vocabulary to use when processing the transcription job.
         /// </para>
         /// </summary>
         public Settings Settings
@@ -211,7 +213,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property TranscriptionJobName. 
         /// <para>
-        /// A name to identify the transcription job.
+        /// The name of the transcription job.
         /// </para>
         /// </summary>
         public string TranscriptionJobName

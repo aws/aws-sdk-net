@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the clouddirectory-2016-05-10.normal.json service model.
+ * Do not modify this file. This file is generated from the clouddirectory-2017-01-11.normal.json service model.
  */
 
 
@@ -93,7 +93,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AddFacetToObject">REST API Reference for AddFacetToObject Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/AddFacetToObject">REST API Reference for AddFacetToObject Operation</seealso>
         AddFacetToObjectResponse AddFacetToObject(AddFacetToObjectRequest request);
 
 
@@ -106,7 +106,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AddFacetToObject">REST API Reference for AddFacetToObject Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/AddFacetToObject">REST API Reference for AddFacetToObject Operation</seealso>
         Task<AddFacetToObjectResponse> AddFacetToObjectAsync(AddFacetToObjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -153,10 +153,14 @@ namespace Amazon.CloudDirectory
         /// request. A retry (with appropriate backoff logic) is the recommended response to this
         /// exception.
         /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.SchemaAlreadyExistsException">
+        /// Indicates that a schema could not be created due to a naming conflict. Please select
+        /// a different name and then try again.
+        /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ApplySchema">REST API Reference for ApplySchema Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ApplySchema">REST API Reference for ApplySchema Operation</seealso>
         ApplySchemaResponse ApplySchema(ApplySchemaRequest request);
 
 
@@ -169,7 +173,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ApplySchema">REST API Reference for ApplySchema Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ApplySchema">REST API Reference for ApplySchema Operation</seealso>
         Task<ApplySchemaResponse> ApplySchemaAsync(ApplySchemaRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -242,7 +246,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachObject">REST API Reference for AttachObject Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/AttachObject">REST API Reference for AttachObject Operation</seealso>
         AttachObjectResponse AttachObject(AttachObjectRequest request);
 
 
@@ -255,7 +259,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachObject">REST API Reference for AttachObject Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/AttachObject">REST API Reference for AttachObject Operation</seealso>
         Task<AttachObjectResponse> AttachObjectAsync(AttachObjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -306,7 +310,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachPolicy">REST API Reference for AttachPolicy Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/AttachPolicy">REST API Reference for AttachPolicy Operation</seealso>
         AttachPolicyResponse AttachPolicy(AttachPolicyRequest request);
 
 
@@ -319,7 +323,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachPolicy">REST API Reference for AttachPolicy Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/AttachPolicy">REST API Reference for AttachPolicy Operation</seealso>
         Task<AttachPolicyResponse> AttachPolicyAsync(AttachPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -382,7 +386,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachToIndex">REST API Reference for AttachToIndex Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/AttachToIndex">REST API Reference for AttachToIndex Operation</seealso>
         AttachToIndexResponse AttachToIndex(AttachToIndexRequest request);
 
 
@@ -395,7 +399,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachToIndex">REST API Reference for AttachToIndex Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/AttachToIndex">REST API Reference for AttachToIndex Operation</seealso>
         Task<AttachToIndexResponse> AttachToIndexAsync(AttachToIndexRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -456,7 +460,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachTypedLink">REST API Reference for AttachTypedLink Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/AttachTypedLink">REST API Reference for AttachTypedLink Operation</seealso>
         AttachTypedLinkResponse AttachTypedLink(AttachTypedLinkRequest request);
 
 
@@ -469,7 +473,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachTypedLink">REST API Reference for AttachTypedLink Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/AttachTypedLink">REST API Reference for AttachTypedLink Operation</seealso>
         Task<AttachTypedLinkResponse> AttachTypedLinkAsync(AttachTypedLinkRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -513,7 +517,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchRead">REST API Reference for BatchRead Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchRead">REST API Reference for BatchRead Operation</seealso>
         BatchReadResponse BatchRead(BatchReadRequest request);
 
 
@@ -526,7 +530,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchRead">REST API Reference for BatchRead Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchRead">REST API Reference for BatchRead Operation</seealso>
         Task<BatchReadResponse> BatchReadAsync(BatchReadRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -574,7 +578,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchWrite">REST API Reference for BatchWrite Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchWrite">REST API Reference for BatchWrite Operation</seealso>
         BatchWriteResponse BatchWrite(BatchWriteRequest request);
 
 
@@ -587,7 +591,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchWrite">REST API Reference for BatchWrite Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchWrite">REST API Reference for BatchWrite Operation</seealso>
         Task<BatchWriteResponse> BatchWriteAsync(BatchWriteRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -636,7 +640,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateDirectory">REST API Reference for CreateDirectory Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateDirectory">REST API Reference for CreateDirectory Operation</seealso>
         CreateDirectoryResponse CreateDirectory(CreateDirectoryRequest request);
 
 
@@ -649,7 +653,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateDirectory">REST API Reference for CreateDirectory Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateDirectory">REST API Reference for CreateDirectory Operation</seealso>
         Task<CreateDirectoryResponse> CreateDirectoryAsync(CreateDirectoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -704,7 +708,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateFacet">REST API Reference for CreateFacet Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateFacet">REST API Reference for CreateFacet Operation</seealso>
         CreateFacetResponse CreateFacet(CreateFacetRequest request);
 
 
@@ -717,7 +721,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateFacet">REST API Reference for CreateFacet Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateFacet">REST API Reference for CreateFacet Operation</seealso>
         Task<CreateFacetResponse> CreateFacetAsync(CreateFacetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -776,7 +780,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateIndex">REST API Reference for CreateIndex Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateIndex">REST API Reference for CreateIndex Operation</seealso>
         CreateIndexResponse CreateIndex(CreateIndexRequest request);
 
 
@@ -789,7 +793,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateIndex">REST API Reference for CreateIndex Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateIndex">REST API Reference for CreateIndex Operation</seealso>
         Task<CreateIndexResponse> CreateIndexAsync(CreateIndexRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -850,7 +854,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateObject">REST API Reference for CreateObject Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateObject">REST API Reference for CreateObject Operation</seealso>
         CreateObjectResponse CreateObject(CreateObjectRequest request);
 
 
@@ -863,7 +867,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateObject">REST API Reference for CreateObject Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateObject">REST API Reference for CreateObject Operation</seealso>
         Task<CreateObjectResponse> CreateObjectAsync(CreateObjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -929,7 +933,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateSchema">REST API Reference for CreateSchema Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateSchema">REST API Reference for CreateSchema Operation</seealso>
         CreateSchemaResponse CreateSchema(CreateSchemaRequest request);
 
 
@@ -942,7 +946,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateSchema">REST API Reference for CreateSchema Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateSchema">REST API Reference for CreateSchema Operation</seealso>
         Task<CreateSchemaResponse> CreateSchemaAsync(CreateSchemaRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -997,7 +1001,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateTypedLinkFacet">REST API Reference for CreateTypedLinkFacet Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateTypedLinkFacet">REST API Reference for CreateTypedLinkFacet Operation</seealso>
         CreateTypedLinkFacetResponse CreateTypedLinkFacet(CreateTypedLinkFacetRequest request);
 
 
@@ -1010,7 +1014,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateTypedLinkFacet">REST API Reference for CreateTypedLinkFacet Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateTypedLinkFacet">REST API Reference for CreateTypedLinkFacet Operation</seealso>
         Task<CreateTypedLinkFacetResponse> CreateTypedLinkFacetAsync(CreateTypedLinkFacetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1062,7 +1066,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteDirectory">REST API Reference for DeleteDirectory Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DeleteDirectory">REST API Reference for DeleteDirectory Operation</seealso>
         DeleteDirectoryResponse DeleteDirectory(DeleteDirectoryRequest request);
 
 
@@ -1075,7 +1079,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteDirectory">REST API Reference for DeleteDirectory Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DeleteDirectory">REST API Reference for DeleteDirectory Operation</seealso>
         Task<DeleteDirectoryResponse> DeleteDirectoryAsync(DeleteDirectoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1127,7 +1131,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteFacet">REST API Reference for DeleteFacet Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DeleteFacet">REST API Reference for DeleteFacet Operation</seealso>
         DeleteFacetResponse DeleteFacet(DeleteFacetRequest request);
 
 
@@ -1140,7 +1144,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteFacet">REST API Reference for DeleteFacet Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DeleteFacet">REST API Reference for DeleteFacet Operation</seealso>
         Task<DeleteFacetResponse> DeleteFacetAsync(DeleteFacetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1192,7 +1196,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteObject">REST API Reference for DeleteObject Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DeleteObject">REST API Reference for DeleteObject Operation</seealso>
         DeleteObjectResponse DeleteObject(DeleteObjectRequest request);
 
 
@@ -1205,7 +1209,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteObject">REST API Reference for DeleteObject Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DeleteObject">REST API Reference for DeleteObject Operation</seealso>
         Task<DeleteObjectResponse> DeleteObjectAsync(DeleteObjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1253,7 +1257,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteSchema">REST API Reference for DeleteSchema Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DeleteSchema">REST API Reference for DeleteSchema Operation</seealso>
         DeleteSchemaResponse DeleteSchema(DeleteSchemaRequest request);
 
 
@@ -1266,7 +1270,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteSchema">REST API Reference for DeleteSchema Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DeleteSchema">REST API Reference for DeleteSchema Operation</seealso>
         Task<DeleteSchemaResponse> DeleteSchemaAsync(DeleteSchemaRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1314,7 +1318,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteTypedLinkFacet">REST API Reference for DeleteTypedLinkFacet Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DeleteTypedLinkFacet">REST API Reference for DeleteTypedLinkFacet Operation</seealso>
         DeleteTypedLinkFacetResponse DeleteTypedLinkFacet(DeleteTypedLinkFacetRequest request);
 
 
@@ -1327,7 +1331,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteTypedLinkFacet">REST API Reference for DeleteTypedLinkFacet Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DeleteTypedLinkFacet">REST API Reference for DeleteTypedLinkFacet Operation</seealso>
         Task<DeleteTypedLinkFacetResponse> DeleteTypedLinkFacetAsync(DeleteTypedLinkFacetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1380,7 +1384,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachFromIndex">REST API Reference for DetachFromIndex Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DetachFromIndex">REST API Reference for DetachFromIndex Operation</seealso>
         DetachFromIndexResponse DetachFromIndex(DetachFromIndexRequest request);
 
 
@@ -1393,7 +1397,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachFromIndex">REST API Reference for DetachFromIndex Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DetachFromIndex">REST API Reference for DetachFromIndex Operation</seealso>
         Task<DetachFromIndexResponse> DetachFromIndexAsync(DetachFromIndexRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1445,7 +1449,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachObject">REST API Reference for DetachObject Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DetachObject">REST API Reference for DetachObject Operation</seealso>
         DetachObjectResponse DetachObject(DetachObjectRequest request);
 
 
@@ -1458,7 +1462,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachObject">REST API Reference for DetachObject Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DetachObject">REST API Reference for DetachObject Operation</seealso>
         Task<DetachObjectResponse> DetachObjectAsync(DetachObjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1508,7 +1512,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachPolicy">REST API Reference for DetachPolicy Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DetachPolicy">REST API Reference for DetachPolicy Operation</seealso>
         DetachPolicyResponse DetachPolicy(DetachPolicyRequest request);
 
 
@@ -1521,7 +1525,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachPolicy">REST API Reference for DetachPolicy Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DetachPolicy">REST API Reference for DetachPolicy Operation</seealso>
         Task<DetachPolicyResponse> DetachPolicyAsync(DetachPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1574,7 +1578,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachTypedLink">REST API Reference for DetachTypedLink Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DetachTypedLink">REST API Reference for DetachTypedLink Operation</seealso>
         DetachTypedLinkResponse DetachTypedLink(DetachTypedLinkRequest request);
 
 
@@ -1587,7 +1591,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachTypedLink">REST API Reference for DetachTypedLink Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DetachTypedLink">REST API Reference for DetachTypedLink Operation</seealso>
         Task<DetachTypedLinkResponse> DetachTypedLinkAsync(DetachTypedLinkRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1636,7 +1640,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DisableDirectory">REST API Reference for DisableDirectory Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DisableDirectory">REST API Reference for DisableDirectory Operation</seealso>
         DisableDirectoryResponse DisableDirectory(DisableDirectoryRequest request);
 
 
@@ -1649,7 +1653,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DisableDirectory">REST API Reference for DisableDirectory Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DisableDirectory">REST API Reference for DisableDirectory Operation</seealso>
         Task<DisableDirectoryResponse> DisableDirectoryAsync(DisableDirectoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1698,7 +1702,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/EnableDirectory">REST API Reference for EnableDirectory Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/EnableDirectory">REST API Reference for EnableDirectory Operation</seealso>
         EnableDirectoryResponse EnableDirectory(EnableDirectoryRequest request);
 
 
@@ -1711,7 +1715,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/EnableDirectory">REST API Reference for EnableDirectory Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/EnableDirectory">REST API Reference for EnableDirectory Operation</seealso>
         Task<EnableDirectoryResponse> EnableDirectoryAsync(EnableDirectoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1755,7 +1759,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetAppliedSchemaVersion">REST API Reference for GetAppliedSchemaVersion Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetAppliedSchemaVersion">REST API Reference for GetAppliedSchemaVersion Operation</seealso>
         GetAppliedSchemaVersionResponse GetAppliedSchemaVersion(GetAppliedSchemaVersionRequest request);
 
 
@@ -1768,7 +1772,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetAppliedSchemaVersion">REST API Reference for GetAppliedSchemaVersion Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetAppliedSchemaVersion">REST API Reference for GetAppliedSchemaVersion Operation</seealso>
         Task<GetAppliedSchemaVersionResponse> GetAppliedSchemaVersionAsync(GetAppliedSchemaVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1809,7 +1813,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetDirectory">REST API Reference for GetDirectory Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetDirectory">REST API Reference for GetDirectory Operation</seealso>
         GetDirectoryResponse GetDirectory(GetDirectoryRequest request);
 
 
@@ -1822,7 +1826,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetDirectory">REST API Reference for GetDirectory Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetDirectory">REST API Reference for GetDirectory Operation</seealso>
         Task<GetDirectoryResponse> GetDirectoryAsync(GetDirectoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1871,7 +1875,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetFacet">REST API Reference for GetFacet Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetFacet">REST API Reference for GetFacet Operation</seealso>
         GetFacetResponse GetFacet(GetFacetRequest request);
 
 
@@ -1884,8 +1888,72 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetFacet">REST API Reference for GetFacet Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetFacet">REST API Reference for GetFacet Operation</seealso>
         Task<GetFacetResponse> GetFacetAsync(GetFacetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetLinkAttributes
+
+
+        /// <summary>
+        /// Retrieves attributes that are associated with a typed link.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLinkAttributes service method.</param>
+        /// 
+        /// <returns>The response from the GetLinkAttributes service method, as returned by CloudDirectory.</returns>
+        /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
+        /// Access denied. Check your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
+        /// Operations are only permitted on enabled directories.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
+        /// The <a>Facet</a> that you provided was not well formed or could not be validated with
+        /// the schema.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
+        /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
+        /// transient error in which case you can retry your request until it succeeds. Otherwise,
+        /// go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a>
+        /// site to see if there are any operational issues with the service.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
+        /// Indicates that the provided ARN value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// for more information.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.RetryableConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. For example,
+        /// if a write operation occurs on an object and then an attempt is made to read the object
+        /// using “SERIALIZABLE” consistency, this exception may result. This generally occurs
+        /// when the previous write did not have time to propagate to the host serving the current
+        /// request. A retry (with appropriate backoff logic) is the recommended response to this
+        /// exception.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
+        /// Indicates that your request is malformed in some manner. See the exception message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetLinkAttributes">REST API Reference for GetLinkAttributes Operation</seealso>
+        GetLinkAttributesResponse GetLinkAttributes(GetLinkAttributesRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLinkAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetLinkAttributes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetLinkAttributes">REST API Reference for GetLinkAttributes Operation</seealso>
+        Task<GetLinkAttributesResponse> GetLinkAttributesAsync(GetLinkAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1935,7 +2003,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetObjectAttributes">REST API Reference for GetObjectAttributes Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetObjectAttributes">REST API Reference for GetObjectAttributes Operation</seealso>
         GetObjectAttributesResponse GetObjectAttributes(GetObjectAttributesRequest request);
 
 
@@ -1948,7 +2016,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetObjectAttributes">REST API Reference for GetObjectAttributes Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetObjectAttributes">REST API Reference for GetObjectAttributes Operation</seealso>
         Task<GetObjectAttributesResponse> GetObjectAttributesAsync(GetObjectAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1995,7 +2063,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetObjectInformation">REST API Reference for GetObjectInformation Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetObjectInformation">REST API Reference for GetObjectInformation Operation</seealso>
         GetObjectInformationResponse GetObjectInformation(GetObjectInformationRequest request);
 
 
@@ -2008,7 +2076,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetObjectInformation">REST API Reference for GetObjectInformation Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetObjectInformation">REST API Reference for GetObjectInformation Operation</seealso>
         Task<GetObjectInformationResponse> GetObjectInformationAsync(GetObjectInformationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2056,7 +2124,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetSchemaAsJson">REST API Reference for GetSchemaAsJson Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetSchemaAsJson">REST API Reference for GetSchemaAsJson Operation</seealso>
         GetSchemaAsJsonResponse GetSchemaAsJson(GetSchemaAsJsonRequest request);
 
 
@@ -2069,7 +2137,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetSchemaAsJson">REST API Reference for GetSchemaAsJson Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetSchemaAsJson">REST API Reference for GetSchemaAsJson Operation</seealso>
         Task<GetSchemaAsJsonResponse> GetSchemaAsJsonAsync(GetSchemaAsJsonRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2121,7 +2189,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetTypedLinkFacetInformation">REST API Reference for GetTypedLinkFacetInformation Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetTypedLinkFacetInformation">REST API Reference for GetTypedLinkFacetInformation Operation</seealso>
         GetTypedLinkFacetInformationResponse GetTypedLinkFacetInformation(GetTypedLinkFacetInformationRequest request);
 
 
@@ -2134,7 +2202,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetTypedLinkFacetInformation">REST API Reference for GetTypedLinkFacetInformation Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetTypedLinkFacetInformation">REST API Reference for GetTypedLinkFacetInformation Operation</seealso>
         Task<GetTypedLinkFacetInformationResponse> GetTypedLinkFacetInformationAsync(GetTypedLinkFacetInformationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2182,7 +2250,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAppliedSchemaArns">REST API Reference for ListAppliedSchemaArns Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListAppliedSchemaArns">REST API Reference for ListAppliedSchemaArns Operation</seealso>
         ListAppliedSchemaArnsResponse ListAppliedSchemaArns(ListAppliedSchemaArnsRequest request);
 
 
@@ -2195,7 +2263,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAppliedSchemaArns">REST API Reference for ListAppliedSchemaArns Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListAppliedSchemaArns">REST API Reference for ListAppliedSchemaArns Operation</seealso>
         Task<ListAppliedSchemaArnsResponse> ListAppliedSchemaArnsAsync(ListAppliedSchemaArnsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2242,7 +2310,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAttachedIndices">REST API Reference for ListAttachedIndices Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListAttachedIndices">REST API Reference for ListAttachedIndices Operation</seealso>
         ListAttachedIndicesResponse ListAttachedIndices(ListAttachedIndicesRequest request);
 
 
@@ -2255,7 +2323,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAttachedIndices">REST API Reference for ListAttachedIndices Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListAttachedIndices">REST API Reference for ListAttachedIndices Operation</seealso>
         Task<ListAttachedIndicesResponse> ListAttachedIndicesAsync(ListAttachedIndicesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2302,7 +2370,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListDevelopmentSchemaArns">REST API Reference for ListDevelopmentSchemaArns Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListDevelopmentSchemaArns">REST API Reference for ListDevelopmentSchemaArns Operation</seealso>
         ListDevelopmentSchemaArnsResponse ListDevelopmentSchemaArns(ListDevelopmentSchemaArnsRequest request);
 
 
@@ -2315,7 +2383,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListDevelopmentSchemaArns">REST API Reference for ListDevelopmentSchemaArns Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListDevelopmentSchemaArns">REST API Reference for ListDevelopmentSchemaArns Operation</seealso>
         Task<ListDevelopmentSchemaArnsResponse> ListDevelopmentSchemaArnsAsync(ListDevelopmentSchemaArnsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2359,7 +2427,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListDirectories">REST API Reference for ListDirectories Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListDirectories">REST API Reference for ListDirectories Operation</seealso>
         ListDirectoriesResponse ListDirectories(ListDirectoriesRequest request);
 
 
@@ -2372,7 +2440,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListDirectories">REST API Reference for ListDirectories Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListDirectories">REST API Reference for ListDirectories Operation</seealso>
         Task<ListDirectoriesResponse> ListDirectoriesAsync(ListDirectoriesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2422,7 +2490,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListFacetAttributes">REST API Reference for ListFacetAttributes Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListFacetAttributes">REST API Reference for ListFacetAttributes Operation</seealso>
         ListFacetAttributesResponse ListFacetAttributes(ListFacetAttributesRequest request);
 
 
@@ -2435,7 +2503,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListFacetAttributes">REST API Reference for ListFacetAttributes Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListFacetAttributes">REST API Reference for ListFacetAttributes Operation</seealso>
         Task<ListFacetAttributesResponse> ListFacetAttributesAsync(ListFacetAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2482,7 +2550,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListFacetNames">REST API Reference for ListFacetNames Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListFacetNames">REST API Reference for ListFacetNames Operation</seealso>
         ListFacetNamesResponse ListFacetNames(ListFacetNamesRequest request);
 
 
@@ -2495,7 +2563,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListFacetNames">REST API Reference for ListFacetNames Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListFacetNames">REST API Reference for ListFacetNames Operation</seealso>
         Task<ListFacetNamesResponse> ListFacetNamesAsync(ListFacetNamesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2552,7 +2620,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIncomingTypedLinks">REST API Reference for ListIncomingTypedLinks Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListIncomingTypedLinks">REST API Reference for ListIncomingTypedLinks Operation</seealso>
         ListIncomingTypedLinksResponse ListIncomingTypedLinks(ListIncomingTypedLinksRequest request);
 
 
@@ -2565,7 +2633,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIncomingTypedLinks">REST API Reference for ListIncomingTypedLinks Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListIncomingTypedLinks">REST API Reference for ListIncomingTypedLinks Operation</seealso>
         Task<ListIncomingTypedLinksResponse> ListIncomingTypedLinksAsync(ListIncomingTypedLinksRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2622,7 +2690,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIndex">REST API Reference for ListIndex Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListIndex">REST API Reference for ListIndex Operation</seealso>
         ListIndexResponse ListIndex(ListIndexRequest request);
 
 
@@ -2635,8 +2703,57 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIndex">REST API Reference for ListIndex Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListIndex">REST API Reference for ListIndex Operation</seealso>
         Task<ListIndexResponse> ListIndexAsync(ListIndexRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListManagedSchemaArns
+
+
+        /// <summary>
+        /// Lists the major version families of each managed schema. If a major version ARN is
+        /// provided as SchemaArn, the minor version revisions in that family are listed instead.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListManagedSchemaArns service method.</param>
+        /// 
+        /// <returns>The response from the ListManagedSchemaArns service method, as returned by CloudDirectory.</returns>
+        /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
+        /// Access denied. Check your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
+        /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
+        /// transient error in which case you can retry your request until it succeeds. Otherwise,
+        /// go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a>
+        /// site to see if there are any operational issues with the service.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
+        /// Indicates that the provided ARN value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
+        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
+        /// Indicates that your request is malformed in some manner. See the exception message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListManagedSchemaArns">REST API Reference for ListManagedSchemaArns Operation</seealso>
+        ListManagedSchemaArnsResponse ListManagedSchemaArns(ListManagedSchemaArnsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListManagedSchemaArns operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListManagedSchemaArns operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListManagedSchemaArns">REST API Reference for ListManagedSchemaArns Operation</seealso>
+        Task<ListManagedSchemaArnsResponse> ListManagedSchemaArnsAsync(ListManagedSchemaArnsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2689,7 +2806,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectAttributes">REST API Reference for ListObjectAttributes Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListObjectAttributes">REST API Reference for ListObjectAttributes Operation</seealso>
         ListObjectAttributesResponse ListObjectAttributes(ListObjectAttributesRequest request);
 
 
@@ -2702,7 +2819,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectAttributes">REST API Reference for ListObjectAttributes Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListObjectAttributes">REST API Reference for ListObjectAttributes Operation</seealso>
         Task<ListObjectAttributesResponse> ListObjectAttributesAsync(ListObjectAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2756,7 +2873,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectChildren">REST API Reference for ListObjectChildren Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListObjectChildren">REST API Reference for ListObjectChildren Operation</seealso>
         ListObjectChildrenResponse ListObjectChildren(ListObjectChildrenRequest request);
 
 
@@ -2769,7 +2886,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectChildren">REST API Reference for ListObjectChildren Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListObjectChildren">REST API Reference for ListObjectChildren Operation</seealso>
         Task<ListObjectChildrenResponse> ListObjectChildrenAsync(ListObjectChildrenRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2831,7 +2948,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParentPaths">REST API Reference for ListObjectParentPaths Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListObjectParentPaths">REST API Reference for ListObjectParentPaths Operation</seealso>
         ListObjectParentPathsResponse ListObjectParentPaths(ListObjectParentPathsRequest request);
 
 
@@ -2844,7 +2961,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParentPaths">REST API Reference for ListObjectParentPaths Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListObjectParentPaths">REST API Reference for ListObjectParentPaths Operation</seealso>
         Task<ListObjectParentPathsResponse> ListObjectParentPathsAsync(ListObjectParentPathsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2897,7 +3014,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParents">REST API Reference for ListObjectParents Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListObjectParents">REST API Reference for ListObjectParents Operation</seealso>
         ListObjectParentsResponse ListObjectParents(ListObjectParentsRequest request);
 
 
@@ -2910,7 +3027,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParents">REST API Reference for ListObjectParents Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListObjectParents">REST API Reference for ListObjectParents Operation</seealso>
         Task<ListObjectParentsResponse> ListObjectParentsAsync(ListObjectParentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2960,7 +3077,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectPolicies">REST API Reference for ListObjectPolicies Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListObjectPolicies">REST API Reference for ListObjectPolicies Operation</seealso>
         ListObjectPoliciesResponse ListObjectPolicies(ListObjectPoliciesRequest request);
 
 
@@ -2973,7 +3090,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectPolicies">REST API Reference for ListObjectPolicies Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListObjectPolicies">REST API Reference for ListObjectPolicies Operation</seealso>
         Task<ListObjectPoliciesResponse> ListObjectPoliciesAsync(ListObjectPoliciesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3030,7 +3147,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListOutgoingTypedLinks">REST API Reference for ListOutgoingTypedLinks Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListOutgoingTypedLinks">REST API Reference for ListOutgoingTypedLinks Operation</seealso>
         ListOutgoingTypedLinksResponse ListOutgoingTypedLinks(ListOutgoingTypedLinksRequest request);
 
 
@@ -3043,7 +3160,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListOutgoingTypedLinks">REST API Reference for ListOutgoingTypedLinks Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListOutgoingTypedLinks">REST API Reference for ListOutgoingTypedLinks Operation</seealso>
         Task<ListOutgoingTypedLinksResponse> ListOutgoingTypedLinksAsync(ListOutgoingTypedLinksRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3096,7 +3213,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPolicyAttachments">REST API Reference for ListPolicyAttachments Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListPolicyAttachments">REST API Reference for ListPolicyAttachments Operation</seealso>
         ListPolicyAttachmentsResponse ListPolicyAttachments(ListPolicyAttachmentsRequest request);
 
 
@@ -3109,7 +3226,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPolicyAttachments">REST API Reference for ListPolicyAttachments Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListPolicyAttachments">REST API Reference for ListPolicyAttachments Operation</seealso>
         Task<ListPolicyAttachmentsResponse> ListPolicyAttachmentsAsync(ListPolicyAttachmentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3158,7 +3275,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPublishedSchemaArns">REST API Reference for ListPublishedSchemaArns Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListPublishedSchemaArns">REST API Reference for ListPublishedSchemaArns Operation</seealso>
         ListPublishedSchemaArnsResponse ListPublishedSchemaArns(ListPublishedSchemaArnsRequest request);
 
 
@@ -3171,7 +3288,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPublishedSchemaArns">REST API Reference for ListPublishedSchemaArns Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListPublishedSchemaArns">REST API Reference for ListPublishedSchemaArns Operation</seealso>
         Task<ListPublishedSchemaArnsResponse> ListPublishedSchemaArnsAsync(ListPublishedSchemaArnsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3222,7 +3339,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
 
 
@@ -3235,7 +3352,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3287,7 +3404,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetAttributes">REST API Reference for ListTypedLinkFacetAttributes Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListTypedLinkFacetAttributes">REST API Reference for ListTypedLinkFacetAttributes Operation</seealso>
         ListTypedLinkFacetAttributesResponse ListTypedLinkFacetAttributes(ListTypedLinkFacetAttributesRequest request);
 
 
@@ -3300,7 +3417,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetAttributes">REST API Reference for ListTypedLinkFacetAttributes Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListTypedLinkFacetAttributes">REST API Reference for ListTypedLinkFacetAttributes Operation</seealso>
         Task<ListTypedLinkFacetAttributesResponse> ListTypedLinkFacetAttributesAsync(ListTypedLinkFacetAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3349,7 +3466,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetNames">REST API Reference for ListTypedLinkFacetNames Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListTypedLinkFacetNames">REST API Reference for ListTypedLinkFacetNames Operation</seealso>
         ListTypedLinkFacetNamesResponse ListTypedLinkFacetNames(ListTypedLinkFacetNamesRequest request);
 
 
@@ -3362,7 +3479,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetNames">REST API Reference for ListTypedLinkFacetNames Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListTypedLinkFacetNames">REST API Reference for ListTypedLinkFacetNames Operation</seealso>
         Task<ListTypedLinkFacetNamesResponse> ListTypedLinkFacetNamesAsync(ListTypedLinkFacetNamesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3417,7 +3534,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/LookupPolicy">REST API Reference for LookupPolicy Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/LookupPolicy">REST API Reference for LookupPolicy Operation</seealso>
         LookupPolicyResponse LookupPolicy(LookupPolicyRequest request);
 
 
@@ -3430,7 +3547,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/LookupPolicy">REST API Reference for LookupPolicy Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/LookupPolicy">REST API Reference for LookupPolicy Operation</seealso>
         Task<LookupPolicyResponse> LookupPolicyAsync(LookupPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3477,7 +3594,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PublishSchema">REST API Reference for PublishSchema Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/PublishSchema">REST API Reference for PublishSchema Operation</seealso>
         PublishSchemaResponse PublishSchema(PublishSchemaRequest request);
 
 
@@ -3490,7 +3607,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PublishSchema">REST API Reference for PublishSchema Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/PublishSchema">REST API Reference for PublishSchema Operation</seealso>
         Task<PublishSchemaResponse> PublishSchemaAsync(PublishSchemaRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3539,7 +3656,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PutSchemaFromJson">REST API Reference for PutSchemaFromJson Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/PutSchemaFromJson">REST API Reference for PutSchemaFromJson Operation</seealso>
         PutSchemaFromJsonResponse PutSchemaFromJson(PutSchemaFromJsonRequest request);
 
 
@@ -3552,7 +3669,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PutSchemaFromJson">REST API Reference for PutSchemaFromJson Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/PutSchemaFromJson">REST API Reference for PutSchemaFromJson Operation</seealso>
         Task<PutSchemaFromJsonResponse> PutSchemaFromJsonAsync(PutSchemaFromJsonRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3603,7 +3720,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/RemoveFacetFromObject">REST API Reference for RemoveFacetFromObject Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/RemoveFacetFromObject">REST API Reference for RemoveFacetFromObject Operation</seealso>
         RemoveFacetFromObjectResponse RemoveFacetFromObject(RemoveFacetFromObjectRequest request);
 
 
@@ -3616,7 +3733,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/RemoveFacetFromObject">REST API Reference for RemoveFacetFromObject Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/RemoveFacetFromObject">REST API Reference for RemoveFacetFromObject Operation</seealso>
         Task<RemoveFacetFromObjectResponse> RemoveFacetFromObjectAsync(RemoveFacetFromObjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3665,7 +3782,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/TagResource">REST API Reference for TagResource Operation</seealso>
         TagResourceResponse TagResource(TagResourceRequest request);
 
 
@@ -3678,7 +3795,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/TagResource">REST API Reference for TagResource Operation</seealso>
         Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3727,7 +3844,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse UntagResource(UntagResourceRequest request);
 
 
@@ -3740,7 +3857,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3773,6 +3890,10 @@ namespace Amazon.CloudDirectory
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.FacetNotFoundException">
         /// The specified <a>Facet</a> could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
+        /// The <a>Facet</a> that you provided was not well formed or could not be validated with
+        /// the schema.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
         /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
@@ -3807,7 +3928,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateFacet">REST API Reference for UpdateFacet Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpdateFacet">REST API Reference for UpdateFacet Operation</seealso>
         UpdateFacetResponse UpdateFacet(UpdateFacetRequest request);
 
 
@@ -3820,20 +3941,21 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateFacet">REST API Reference for UpdateFacet Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpdateFacet">REST API Reference for UpdateFacet Operation</seealso>
         Task<UpdateFacetResponse> UpdateFacetAsync(UpdateFacetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
-        #region  UpdateObjectAttributes
+        #region  UpdateLinkAttributes
 
 
         /// <summary>
-        /// Updates a given object's attributes.
+        /// Updates a given typed link’s attributes. Attributes to be updated must not contribute
+        /// to the typed link’s identity, as defined by its <code>IdentityAttributeOrder</code>.
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the UpdateObjectAttributes service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLinkAttributes service method.</param>
         /// 
-        /// <returns>The response from the UpdateObjectAttributes service method, as returned by CloudDirectory.</returns>
+        /// <returns>The response from the UpdateLinkAttributes service method, as returned by CloudDirectory.</returns>
         /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
         /// Access denied. Check your permissions.
         /// </exception>
@@ -3871,7 +3993,75 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateObjectAttributes">REST API Reference for UpdateObjectAttributes Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpdateLinkAttributes">REST API Reference for UpdateLinkAttributes Operation</seealso>
+        UpdateLinkAttributesResponse UpdateLinkAttributes(UpdateLinkAttributesRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateLinkAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLinkAttributes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpdateLinkAttributes">REST API Reference for UpdateLinkAttributes Operation</seealso>
+        Task<UpdateLinkAttributesResponse> UpdateLinkAttributesAsync(UpdateLinkAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateObjectAttributes
+
+
+        /// <summary>
+        /// Updates a given object's attributes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateObjectAttributes service method.</param>
+        /// 
+        /// <returns>The response from the UpdateObjectAttributes service method, as returned by CloudDirectory.</returns>
+        /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
+        /// Access denied. Check your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
+        /// Operations are only permitted on enabled directories.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.FacetValidationException">
+        /// The <a>Facet</a> that you provided was not well formed or could not be validated with
+        /// the schema.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
+        /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
+        /// transient error in which case you can retry your request until it succeeds. Otherwise,
+        /// go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a>
+        /// site to see if there are any operational issues with the service.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
+        /// Indicates that the provided ARN value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
+        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// for more information.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.LinkNameAlreadyInUseException">
+        /// Indicates that a link could not be created due to a naming conflict. Choose a different
+        /// name and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.RetryableConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. For example,
+        /// if a write operation occurs on an object and then an attempt is made to read the object
+        /// using “SERIALIZABLE” consistency, this exception may result. This generally occurs
+        /// when the previous write did not have time to propagate to the host serving the current
+        /// request. A retry (with appropriate backoff logic) is the recommended response to this
+        /// exception.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
+        /// Indicates that your request is malformed in some manner. See the exception message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpdateObjectAttributes">REST API Reference for UpdateObjectAttributes Operation</seealso>
         UpdateObjectAttributesResponse UpdateObjectAttributes(UpdateObjectAttributesRequest request);
 
 
@@ -3884,7 +4074,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateObjectAttributes">REST API Reference for UpdateObjectAttributes Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpdateObjectAttributes">REST API Reference for UpdateObjectAttributes Operation</seealso>
         Task<UpdateObjectAttributesResponse> UpdateObjectAttributesAsync(UpdateObjectAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3928,7 +4118,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateSchema">REST API Reference for UpdateSchema Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpdateSchema">REST API Reference for UpdateSchema Operation</seealso>
         UpdateSchemaResponse UpdateSchema(UpdateSchemaRequest request);
 
 
@@ -3941,7 +4131,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateSchema">REST API Reference for UpdateSchema Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpdateSchema">REST API Reference for UpdateSchema Operation</seealso>
         Task<UpdateSchemaResponse> UpdateSchemaAsync(UpdateSchemaRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3999,7 +4189,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateTypedLinkFacet">REST API Reference for UpdateTypedLinkFacet Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpdateTypedLinkFacet">REST API Reference for UpdateTypedLinkFacet Operation</seealso>
         UpdateTypedLinkFacetResponse UpdateTypedLinkFacet(UpdateTypedLinkFacetRequest request);
 
 
@@ -4012,7 +4202,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateTypedLinkFacet">REST API Reference for UpdateTypedLinkFacet Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpdateTypedLinkFacet">REST API Reference for UpdateTypedLinkFacet Operation</seealso>
         Task<UpdateTypedLinkFacetResponse> UpdateTypedLinkFacetAsync(UpdateTypedLinkFacetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4063,10 +4253,14 @@ namespace Amazon.CloudDirectory
         /// request. A retry (with appropriate backoff logic) is the recommended response to this
         /// exception.
         /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.SchemaAlreadyExistsException">
+        /// Indicates that a schema could not be created due to a naming conflict. Please select
+        /// a different name and then try again.
+        /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpgradeAppliedSchema">REST API Reference for UpgradeAppliedSchema Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpgradeAppliedSchema">REST API Reference for UpgradeAppliedSchema Operation</seealso>
         UpgradeAppliedSchemaResponse UpgradeAppliedSchema(UpgradeAppliedSchemaRequest request);
 
 
@@ -4079,7 +4273,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpgradeAppliedSchema">REST API Reference for UpgradeAppliedSchema Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpgradeAppliedSchema">REST API Reference for UpgradeAppliedSchema Operation</seealso>
         Task<UpgradeAppliedSchemaResponse> UpgradeAppliedSchemaAsync(UpgradeAppliedSchemaRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4133,7 +4327,7 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates that your request is malformed in some manner. See the exception message.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpgradePublishedSchema">REST API Reference for UpgradePublishedSchema Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpgradePublishedSchema">REST API Reference for UpgradePublishedSchema Operation</seealso>
         UpgradePublishedSchemaResponse UpgradePublishedSchema(UpgradePublishedSchemaRequest request);
 
 
@@ -4146,7 +4340,7 @@ namespace Amazon.CloudDirectory
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpgradePublishedSchema">REST API Reference for UpgradePublishedSchema Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpgradePublishedSchema">REST API Reference for UpgradePublishedSchema Operation</seealso>
         Task<UpgradePublishedSchemaResponse> UpgradePublishedSchemaAsync(UpgradePublishedSchemaRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

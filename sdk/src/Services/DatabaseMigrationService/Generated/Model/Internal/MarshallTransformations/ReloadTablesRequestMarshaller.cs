@@ -67,6 +67,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetReloadOption())
+                {
+                    context.Writer.WritePropertyName("ReloadOption");
+                    context.Writer.Write(publicRequest.ReloadOption);
+                }
+
                 if(publicRequest.IsSetReplicationTaskArn())
                 {
                     context.Writer.WritePropertyName("ReplicationTaskArn");

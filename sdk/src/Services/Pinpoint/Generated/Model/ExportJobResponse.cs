@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// 
+    /// Export job response.
     /// </summary>
     public partial class ExportJobResponse
     {

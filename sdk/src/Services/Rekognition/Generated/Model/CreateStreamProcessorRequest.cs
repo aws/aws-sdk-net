@@ -34,8 +34,8 @@ namespace Amazon.Rekognition.Model
     /// 
     ///  
     /// <para>
-    /// Rekognition Video is a consumer of live video from Amazon Kinesis Video Streams. Rekognition
-    /// Video sends analysis results to Amazon Kinesis Data Streams.
+    /// Amazon Rekognition Video is a consumer of live video from Amazon Kinesis Video Streams.
+    /// Amazon Rekognition Video sends analysis results to Amazon Kinesis Data Streams.
     /// </para>
     ///  
     /// <para>
@@ -102,8 +102,8 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property Output. 
         /// <para>
-        /// Kinesis data stream stream to which Rekognition Video puts the analysis results. If
-        /// you are using the AWS CLI, the parameter name is <code>StreamProcessorOutput</code>.
+        /// Kinesis data stream stream to which Amazon Rekognition Video puts the analysis results.
+        /// If you are using the AWS CLI, the parameter name is <code>StreamProcessorOutput</code>.
         /// </para>
         /// </summary>
         public StreamProcessorOutput Output

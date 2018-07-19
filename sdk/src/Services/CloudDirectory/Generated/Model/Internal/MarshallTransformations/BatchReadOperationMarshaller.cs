@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the clouddirectory-2016-05-10.normal.json service model.
+ * Do not modify this file. This file is generated from the clouddirectory-2017-01-11.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -45,6 +45,17 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BatchReadOperation requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetGetLinkAttributes())
+            {
+                context.Writer.WritePropertyName("GetLinkAttributes");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = BatchGetLinkAttributesMarshaller.Instance;
+                marshaller.Marshall(requestObject.GetLinkAttributes, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetGetObjectAttributes())
             {
                 context.Writer.WritePropertyName("GetObjectAttributes");

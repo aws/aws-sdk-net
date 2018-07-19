@@ -513,8 +513,8 @@ namespace Amazon.EC2
         #region  AllocateHosts
 
         /// <summary>
-        /// Allocates a Dedicated Host to your account. At minimum you need to specify the instance
-        /// size type, Availability Zone, and quantity of hosts you want to allocate.
+        /// Allocates a Dedicated Host to your account. At a minimum, specify the instance size
+        /// type, Availability Zone, and quantity of hosts to allocate.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AllocateHosts service method.</param>
         /// 
@@ -1292,11 +1292,6 @@ namespace Amazon.EC2
         /// instance.
         /// </para>
         ///  </li> </ul> 
-        /// <para>
-        /// For an overview of the AWS Marketplace, see <a href="https://aws.amazon.com/marketplace/help/200900000">Introducing
-        /// AWS Marketplace</a>.
-        /// </para>
-        ///  
         /// <para>
         /// For more information about EBS volumes, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching
         /// Amazon EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -2223,17 +2218,17 @@ namespace Amazon.EC2
         /// Key Management Service (AWS KMS) customer master key (CMK); however, you can specify
         /// a non-default CMK with the <code>KmsKeyId</code> parameter. 
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
         /// To copy an encrypted snapshot that has been shared from another account, you must
         /// have permissions for the CMK used to encrypt the snapshot.
         /// </para>
-        ///  </note> <note> 
+        ///  
         /// <para>
-        /// Snapshots created by the CopySnapshot action have an arbitrary volume ID that should
+        /// Snapshots created by copying another snapshot have an arbitrary volume ID that should
         /// not be used for any purpose.
         /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copying
         /// an Amazon EBS Snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -3984,7 +3979,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// You can tag your snapshots during creation. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
-        /// Your Amazon EC2 Resources</a>.
+        /// Your Amazon EC2 Resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -4277,7 +4272,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// You can tag your volumes during creation. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
-        /// Your Amazon EC2 Resources</a>.
+        /// Your Amazon EC2 Resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -5054,8 +5049,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// After you delete an EC2 Fleet, the EC2 Fleet launches no new instances. You must specify
-        /// whether the EC2 Fleet should also terminate its instances. If you terminate the instances,
+        /// After you delete an EC2 Fleet, it launches no new instances. You must specify whether
+        /// an EC2 Fleet should also terminate its instances. If you terminate the instances,
         /// the EC2 Fleet enters the <code>deleted_terminating</code> state. Otherwise, the EC2
         /// Fleet enters the <code>deleted_running</code> state, and the instances continue to
         /// run until they are interrupted or you terminate them manually. 
@@ -6180,11 +6175,11 @@ namespace Amazon.EC2
         /// Deletes the specified EBS volume. The volume must be in the <code>available</code>
         /// state (not attached to an instance).
         /// 
-        ///  <note> 
+        ///  
         /// <para>
-        /// The volume may remain in the <code>deleting</code> state for several minutes.
+        /// The volume can remain in the <code>deleting</code> state for several minutes.
         /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html">Deleting
         /// an Amazon EBS Volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -7765,7 +7760,7 @@ namespace Amazon.EC2
         #region  DescribeFleets
 
         /// <summary>
-        /// Describes the specified EC2 Fleet.
+        /// Describes one or more of your EC2 Fleet.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFleets service method.</param>
         /// 
@@ -9645,7 +9640,8 @@ namespace Amazon.EC2
         /// Describes available AWS services in a prefix list format, which includes the prefix
         /// list name and prefix list ID of the service and the IP address range for the service.
         /// A prefix list ID is required for creating an outbound security group rule that allows
-        /// traffic from a VPC to access an AWS service through a gateway VPC endpoint.
+        /// traffic from a VPC to access an AWS service through a gateway VPC endpoint. Currently,
+        /// the services that support this action are Amazon S3 and Amazon DynamoDB.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePrefixLists service method.</param>
         /// 
@@ -11605,7 +11601,7 @@ namespace Amazon.EC2
         ///  You can also use CloudWatch Events to check the status of a modification to an EBS
         /// volume. For information about CloudWatch Events, see the <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
         /// CloudWatch Events User Guide</a>. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
-        /// Volume Modifications"</a>. 
+        /// Volume Modifications"</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVolumesModifications service method.</param>
@@ -11679,8 +11675,8 @@ namespace Amazon.EC2
         /// If all checks pass, the overall status of the volume is <code>ok</code>. If the check
         /// fails, the overall status is <code>impaired</code>. If the status is <code>insufficient-data</code>,
         /// then the checks may still be taking place on your volume at the time. We recommend
-        /// that you retry the request. For more information on volume status, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitoring
-        /// the Status of Your Volumes</a>.
+        /// that you retry the request. For more information about volume status, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitoring
+        /// the Status of Your Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -11698,13 +11694,12 @@ namespace Amazon.EC2
         /// This means that you may want to enable the I/O operations for the volume by calling
         /// the <a>EnableVolumeIO</a> action and then check the volume for data consistency.
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
         /// Volume status is based on the volume status checks, and does not reflect the volume
         /// state. Therefore, volume status does not indicate volumes in the <code>error</code>
         /// state (for example, when a volume is incapable of accepting I/O.)
         /// </para>
-        ///  </note>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeVolumeStatus service method, as returned by EC2.</returns>
@@ -11735,8 +11730,8 @@ namespace Amazon.EC2
         /// If all checks pass, the overall status of the volume is <code>ok</code>. If the check
         /// fails, the overall status is <code>impaired</code>. If the status is <code>insufficient-data</code>,
         /// then the checks may still be taking place on your volume at the time. We recommend
-        /// that you retry the request. For more information on volume status, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitoring
-        /// the Status of Your Volumes</a>.
+        /// that you retry the request. For more information about volume status, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitoring
+        /// the Status of Your Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -11754,13 +11749,12 @@ namespace Amazon.EC2
         /// This means that you may want to enable the I/O operations for the volume by calling
         /// the <a>EnableVolumeIO</a> action and then check the volume for data consistency.
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
         /// Volume status is based on the volume status checks, and does not reflect the volume
         /// state. Therefore, volume status does not indicate volumes in the <code>error</code>
         /// state (for example, when a volume is incapable of accepting I/O.)
         /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVolumeStatus service method.</param>
         /// 
@@ -15038,14 +15032,14 @@ namespace Amazon.EC2
         /// you cannot do both in a single API call. If you need to both add and remove account
         /// IDs for a snapshot, you must use multiple API calls.
         /// 
-        ///  <note> 
+        ///  
         /// <para>
         /// Encrypted snapshots and snapshots with AWS Marketplace product codes cannot be made
         /// public. Snapshots encrypted with your default CMK cannot be shared with other accounts.
         /// </para>
-        ///  </note> 
+        ///  
         /// <para>
-        /// For more information on modifying snapshot permissions, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
+        /// For more information about modifying snapshot permissions, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
         /// Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -15265,22 +15259,20 @@ namespace Amazon.EC2
         /// status changes using either method, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
         /// Volume Modifications</a>. 
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
         /// With previous-generation instance types, resizing an EBS volume may require detaching
-        /// and reattaching the volume or stopping and restarting the instance. For more information
-        /// about modifying an EBS volume running Linux, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying
-        /// the Size, IOPS, or Type of an EBS Volume on Linux</a>. For more information about
-        /// modifying an EBS volume running Windows, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying
+        /// and reattaching the volume or stopping and restarting the instance. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying
+        /// the Size, IOPS, or Type of an EBS Volume on Linux</a> and <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying
         /// the Size, IOPS, or Type of an EBS Volume on Windows</a>.
         /// </para>
-        ///  </note> <note> 
+        ///  
         /// <para>
         /// If you reach the maximum volume modification rate per volume limit, you will need
         /// to wait at least six hours before applying further modifications to the affected EBS
         /// volume.
         /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyVolume service method.</param>
         /// 
@@ -17284,7 +17276,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information on modifying snapshot permissions, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
+        /// For more information about modifying snapshot permissions, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
         /// Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>

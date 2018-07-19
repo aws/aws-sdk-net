@@ -63,6 +63,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.SegmentId);
             }
 
+            if(requestObject.IsSetSegmentVersion())
+            {
+                context.Writer.WritePropertyName("SegmentVersion");
+                context.Writer.Write(requestObject.SegmentVersion);
+            }
+
         }
 
         /// <summary>

@@ -171,6 +171,14 @@ namespace Amazon.Comprehend
         /// </summary>
         public static readonly JobStatus IN_PROGRESS = new JobStatus("IN_PROGRESS");
         /// <summary>
+        /// Constant STOP_REQUESTED for JobStatus
+        /// </summary>
+        public static readonly JobStatus STOP_REQUESTED = new JobStatus("STOP_REQUESTED");
+        /// <summary>
+        /// Constant STOPPED for JobStatus
+        /// </summary>
+        public static readonly JobStatus STOPPED = new JobStatus("STOPPED");
+        /// <summary>
         /// Constant SUBMITTED for JobStatus
         /// </summary>
         public static readonly JobStatus SUBMITTED = new JobStatus("SUBMITTED");
@@ -261,6 +269,116 @@ namespace Amazon.Comprehend
 
 
     /// <summary>
+    /// Constants used for properties of type PartOfSpeechTagType.
+    /// </summary>
+    public class PartOfSpeechTagType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADJ for PartOfSpeechTagType
+        /// </summary>
+        public static readonly PartOfSpeechTagType ADJ = new PartOfSpeechTagType("ADJ");
+        /// <summary>
+        /// Constant ADP for PartOfSpeechTagType
+        /// </summary>
+        public static readonly PartOfSpeechTagType ADP = new PartOfSpeechTagType("ADP");
+        /// <summary>
+        /// Constant ADV for PartOfSpeechTagType
+        /// </summary>
+        public static readonly PartOfSpeechTagType ADV = new PartOfSpeechTagType("ADV");
+        /// <summary>
+        /// Constant AUX for PartOfSpeechTagType
+        /// </summary>
+        public static readonly PartOfSpeechTagType AUX = new PartOfSpeechTagType("AUX");
+        /// <summary>
+        /// Constant CONJ for PartOfSpeechTagType
+        /// </summary>
+        public static readonly PartOfSpeechTagType CONJ = new PartOfSpeechTagType("CONJ");
+        /// <summary>
+        /// Constant DET for PartOfSpeechTagType
+        /// </summary>
+        public static readonly PartOfSpeechTagType DET = new PartOfSpeechTagType("DET");
+        /// <summary>
+        /// Constant INTJ for PartOfSpeechTagType
+        /// </summary>
+        public static readonly PartOfSpeechTagType INTJ = new PartOfSpeechTagType("INTJ");
+        /// <summary>
+        /// Constant NOUN for PartOfSpeechTagType
+        /// </summary>
+        public static readonly PartOfSpeechTagType NOUN = new PartOfSpeechTagType("NOUN");
+        /// <summary>
+        /// Constant NUM for PartOfSpeechTagType
+        /// </summary>
+        public static readonly PartOfSpeechTagType NUM = new PartOfSpeechTagType("NUM");
+        /// <summary>
+        /// Constant O for PartOfSpeechTagType
+        /// </summary>
+        public static readonly PartOfSpeechTagType O = new PartOfSpeechTagType("O");
+        /// <summary>
+        /// Constant PART for PartOfSpeechTagType
+        /// </summary>
+        public static readonly PartOfSpeechTagType PART = new PartOfSpeechTagType("PART");
+        /// <summary>
+        /// Constant PRON for PartOfSpeechTagType
+        /// </summary>
+        public static readonly PartOfSpeechTagType PRON = new PartOfSpeechTagType("PRON");
+        /// <summary>
+        /// Constant PROPN for PartOfSpeechTagType
+        /// </summary>
+        public static readonly PartOfSpeechTagType PROPN = new PartOfSpeechTagType("PROPN");
+        /// <summary>
+        /// Constant PUNCT for PartOfSpeechTagType
+        /// </summary>
+        public static readonly PartOfSpeechTagType PUNCT = new PartOfSpeechTagType("PUNCT");
+        /// <summary>
+        /// Constant SCONJ for PartOfSpeechTagType
+        /// </summary>
+        public static readonly PartOfSpeechTagType SCONJ = new PartOfSpeechTagType("SCONJ");
+        /// <summary>
+        /// Constant SYM for PartOfSpeechTagType
+        /// </summary>
+        public static readonly PartOfSpeechTagType SYM = new PartOfSpeechTagType("SYM");
+        /// <summary>
+        /// Constant VERB for PartOfSpeechTagType
+        /// </summary>
+        public static readonly PartOfSpeechTagType VERB = new PartOfSpeechTagType("VERB");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PartOfSpeechTagType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PartOfSpeechTagType FindValue(string value)
+        {
+            return FindValue<PartOfSpeechTagType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PartOfSpeechTagType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SentimentType.
     /// </summary>
     public class SentimentType : ConstantClass
@@ -312,6 +430,52 @@ namespace Amazon.Comprehend
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SentimentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SyntaxLanguageCode.
+    /// </summary>
+    public class SyntaxLanguageCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant En for SyntaxLanguageCode
+        /// </summary>
+        public static readonly SyntaxLanguageCode En = new SyntaxLanguageCode("en");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SyntaxLanguageCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SyntaxLanguageCode FindValue(string value)
+        {
+            return FindValue<SyntaxLanguageCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SyntaxLanguageCode(string value)
         {
             return FindValue(value);
         }

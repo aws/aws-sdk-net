@@ -73,6 +73,12 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.CertificateAuthorityArn);
                 }
 
+                if(publicRequest.IsSetPermanentDeletionTimeInDays())
+                {
+                    context.Writer.WritePropertyName("PermanentDeletionTimeInDays");
+                    context.Writer.Write(publicRequest.PermanentDeletionTimeInDays);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

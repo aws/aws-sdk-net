@@ -46,6 +46,7 @@
     <ProjectReference Include="..\..\src\Services\Cloud9\AWSSDK.Cloud9.Net35.csproj" />
     <ProjectReference Include="..\..\src\Services\SecretsManager\AWSSDK.SecretsManager.Net35.csproj" />
     <ProjectReference Include="..\..\src\Services\TranscribeService\AWSSDK.TranscribeService.Net35.csproj" />
+	<ProjectReference Include="..\..\src\Services\Neptune\AWSSDK.Neptune.Net35.csproj" />
   </ItemGroup>
   
   <ItemGroup>

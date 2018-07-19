@@ -22,23 +22,23 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IdentityManagement.N
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{12EC4E4B-7E2C-4B63-8EF9-7B959F82A89B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IntegrationTests.IdentityManagement.Net35", "..\..\..\..\sdk\test\Services\IdentityManagement\IntegrationTests\AWSSDK.IntegrationTests.IdentityManagement.Net35.csproj", "{2FD9D335-26BF-44D4-B44B-AB122B8FDF26}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IntegrationTests.IdentityManagement.Net35", "..\..\..\test\Services\IdentityManagement\IntegrationTests\AWSSDK.IntegrationTests.IdentityManagement.Net35.csproj", "{2FD9D335-26BF-44D4-B44B-AB122B8FDF26}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IntegrationTests.IdentityManagement.Net45", "..\..\..\..\sdk\test\Services\IdentityManagement\IntegrationTests\AWSSDK.IntegrationTests.IdentityManagement.Net45.csproj", "{914DB840-A2FE-40D1-A17A-AB76D0391DED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IntegrationTests.IdentityManagement.Net45", "..\..\..\test\Services\IdentityManagement\IntegrationTests\AWSSDK.IntegrationTests.IdentityManagement.Net45.csproj", "{914DB840-A2FE-40D1-A17A-AB76D0391DED}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.UnitTests.IdentityManagement.Net35", "..\..\..\..\sdk\test\Services\IdentityManagement\UnitTests\AWSSDK.UnitTests.IdentityManagement.Net35.csproj", "{7ED9D4F4-0908-49E7-A4D9-08391DBC1160}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.UnitTests.IdentityManagement.Net35", "..\..\..\test\Services\IdentityManagement\UnitTests\AWSSDK.UnitTests.IdentityManagement.Net35.csproj", "{7ED9D4F4-0908-49E7-A4D9-08391DBC1160}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.UnitTests.IdentityManagement.Net45", "..\..\..\..\sdk\test\Services\IdentityManagement\UnitTests\AWSSDK.UnitTests.IdentityManagement.Net45.csproj", "{230038C2-864E-4ECB-B148-A2F33F067D49}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.UnitTests.IdentityManagement.Net45", "..\..\..\test\Services\IdentityManagement\UnitTests\AWSSDK.UnitTests.IdentityManagement.Net45.csproj", "{230038C2-864E-4ECB-B148-A2F33F067D49}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceClientGeneratorLib", "..\..\..\..\generator\ServiceClientGeneratorLib\ServiceClientGeneratorLib.csproj", "{7BEE7C44-BE12-43CC-AFB9-B5852A1F43C8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.UnitTestUtilities", "..\..\..\..\sdk\test\UnitTests\Custom\AWSSDK.UnitTestUtilities.csproj", "{F9D5F226-CE00-4E1A-8C70-4250F5FA954F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.UnitTestUtilities", "..\..\..\test\UnitTests\Custom\AWSSDK.UnitTestUtilities.csproj", "{F9D5F226-CE00-4E1A-8C70-4250F5FA954F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IntegrationTestUtilities.Net35", "..\..\..\..\sdk\test\IntegrationTests\AWSSDK.IntegrationTestUtilities.Net35.csproj", "{924D2906-70D6-4D77-8603-816648B2CCA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IntegrationTestUtilities.Net35", "..\..\..\test\IntegrationTests\AWSSDK.IntegrationTestUtilities.Net35.csproj", "{924D2906-70D6-4D77-8603-816648B2CCA6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IntegrationTestUtilities.Net45", "..\..\..\..\sdk\test\IntegrationTests\AWSSDK.IntegrationTestUtilities.Net45.csproj", "{7AB0DA1C-CA0E-4579-BA82-2B41A9DA15C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IntegrationTestUtilities.Net45", "..\..\..\test\IntegrationTests\AWSSDK.IntegrationTestUtilities.Net45.csproj", "{7AB0DA1C-CA0E-4579-BA82-2B41A9DA15C7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CommonTest", "..\..\..\..\sdk\test\Common\AWSSDK.CommonTest.csproj", "{66F78F86-68D7-4538-8EA5-A669A08E1C19}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CommonTest", "..\..\..\test\Common\AWSSDK.CommonTest.csproj", "{66F78F86-68D7-4538-8EA5-A669A08E1C19}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IntegrationTestDependencies", "IntegrationTestDependencies", "{939EC5C2-8345-43E2-8F97-72EEEBEEA0AC}"
 EndProject

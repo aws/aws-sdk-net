@@ -142,8 +142,20 @@
                     "version" : "15.6.2"
                 },
                 {
-                    "include" : "MSTest.TestFramework",
-                    "version" : "1.2.0"
+                    "include": "MSTest.TestFramework",
+                    "version": "1.2.0"
+                },
+                {
+                    "include": "Moq",
+                    "version": "4.8.2"
+                },
+                {
+                    "include": "AutoFixture",
+                    "version": "3.51.0"
+                },
+                {
+                    "include": "AutoFixture.AutoMoq",
+                    "version": "3.51.0"
                 }
             ],
             "frameworkReferences" : [
@@ -161,18 +173,30 @@
 			"excludeFolders": ["obj"],
             "visualStudioServices" : ["{82a7f48d-3b50-4b1e-b82e-3ada8210c358}"],
             "embeddedResources" : ["Custom\\Runtime\\TestResponses\\*.txt", "Custom\\TestTools\\ComparerTest.json", "..\\Services\\CloudFront\\UnitTests\\Custom\\EmbeddedResource\\sample.rsa.private.key.txt"],
-            "packageReferences" : [
+            "packageReferences": [
                 {
-                    "include" : "MSTest.TestAdapter",
-                    "version" : "1.2.0"
+                    "include": "MSTest.TestAdapter",
+                    "version": "1.2.0"
                 },
                 {
-                    "include" : "Microsoft.NET.Test.Sdk",
-                    "version" : "15.6.2"
+                    "include": "Microsoft.NET.Test.Sdk",
+                    "version": "15.6.2"
                 },
                 {
-                    "include" : "MSTest.TestFramework",
-                    "version" : "1.2.0"
+                    "include": "MSTest.TestFramework",
+                    "version": "1.2.0"
+                },
+                {
+                    "include": "Moq",
+                    "version": "4.8.2"
+                },
+                {
+                    "include": "AutoFixture",
+                    "version": "3.51.0"
+                },
+                {
+                    "include": "AutoFixture.AutoMoq",
+                    "version": "3.51.0"
                 }
             ],
             "frameworkReferences" : [

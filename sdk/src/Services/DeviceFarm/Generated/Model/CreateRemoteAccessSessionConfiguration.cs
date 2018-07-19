@@ -33,6 +33,7 @@ namespace Amazon.DeviceFarm.Model
     public partial class CreateRemoteAccessSessionConfiguration
     {
         private BillingMethod _billingMethod;
+        private List<string> _vpceConfigurationArns = new List<string>();
 
         /// <summary>
         /// Gets and sets the property BillingMethod. 
@@ -50,6 +51,24 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetBillingMethod()
         {
             return this._billingMethod != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpceConfigurationArns. 
+        /// <para>
+        /// An array of Amazon Resource Names (ARNs) included in the VPC endpoint configuration.
+        /// </para>
+        /// </summary>
+        public List<string> VpceConfigurationArns
+        {
+            get { return this._vpceConfigurationArns; }
+            set { this._vpceConfigurationArns = value; }
+        }
+
+        // Check to see if VpceConfigurationArns property is set
+        internal bool IsSetVpceConfigurationArns()
+        {
+            return this._vpceConfigurationArns != null && this._vpceConfigurationArns.Count > 0; 
         }
 
     }

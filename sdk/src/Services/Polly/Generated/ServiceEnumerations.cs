@@ -333,6 +333,64 @@ namespace Amazon.Polly
 
 
     /// <summary>
+    /// Constants used for properties of type TaskStatus.
+    /// </summary>
+    public class TaskStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Completed for TaskStatus
+        /// </summary>
+        public static readonly TaskStatus Completed = new TaskStatus("completed");
+        /// <summary>
+        /// Constant Failed for TaskStatus
+        /// </summary>
+        public static readonly TaskStatus Failed = new TaskStatus("failed");
+        /// <summary>
+        /// Constant InProgress for TaskStatus
+        /// </summary>
+        public static readonly TaskStatus InProgress = new TaskStatus("inProgress");
+        /// <summary>
+        /// Constant Scheduled for TaskStatus
+        /// </summary>
+        public static readonly TaskStatus Scheduled = new TaskStatus("scheduled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TaskStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TaskStatus FindValue(string value)
+        {
+            return FindValue<TaskStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TaskStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TextType.
     /// </summary>
     public class TextType : ConstantClass
@@ -504,6 +562,10 @@ namespace Amazon.Polly
         /// Constant Kimberly for VoiceId
         /// </summary>
         public static readonly VoiceId Kimberly = new VoiceId("Kimberly");
+        /// <summary>
+        /// Constant Lea for VoiceId
+        /// </summary>
+        public static readonly VoiceId Lea = new VoiceId("Lea");
         /// <summary>
         /// Constant Liv for VoiceId
         /// </summary>

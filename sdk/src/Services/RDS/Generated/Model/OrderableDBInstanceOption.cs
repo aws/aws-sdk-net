@@ -39,6 +39,7 @@ namespace Amazon.RDS.Model
     public partial class OrderableDBInstanceOption
     {
         private List<AvailabilityZone> _availabilityZones = new List<AvailabilityZone>();
+        private List<AvailableProcessorFeature> _availableProcessorFeatures = new List<AvailableProcessorFeature>();
         private string _dbInstanceClass;
         private string _engine;
         private string _engineVersion;
@@ -75,6 +76,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetAvailabilityZones()
         {
             return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailableProcessorFeatures. 
+        /// <para>
+        /// A list of the available processor features for the DB instance class of a DB instance.
+        /// </para>
+        /// </summary>
+        public List<AvailableProcessorFeature> AvailableProcessorFeatures
+        {
+            get { return this._availableProcessorFeatures; }
+            set { this._availableProcessorFeatures = value; }
+        }
+
+        // Check to see if AvailableProcessorFeatures property is set
+        internal bool IsSetAvailableProcessorFeatures()
+        {
+            return this._availableProcessorFeatures != null && this._availableProcessorFeatures.Count > 0; 
         }
 
         /// <summary>

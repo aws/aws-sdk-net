@@ -108,11 +108,7 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HasCredential. Indicates whether the channel is configured
-        /// with APNs credentials. Amazon Pinpoint uses your credentials to authenticate push
-        /// notifications with APNs. To use APNs token authentication, set the BundleId, TeamId,
-        /// TokenKey, and TokenKeyId attributes. To use certificate authentication, set the Certificate
-        /// and PrivateKey attributes.
+        /// Gets and sets the property HasCredential. Not used. Retained for backwards compatibility.
         /// </summary>
         public bool HasCredential
         {

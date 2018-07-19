@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes an event in the history of the EC2 Fleet.
+    /// Describes an event in the history of an EC2 Fleet.
     /// </summary>
     public partial class HistoryRecordEntry
     {

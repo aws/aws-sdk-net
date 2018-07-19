@@ -29,7 +29,7 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the ExpireSession operation.
-    /// Stops the specified streaming session.
+    /// Immediately stops the specified streaming session.
     /// </summary>
     public partial class ExpireSessionRequest : AmazonAppStreamRequest
     {

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the clouddirectory-2016-05-10.normal.json service model.
+ * Do not modify this file. This file is generated from the clouddirectory-2017-01-11.normal.json service model.
  */
 
 using System;
@@ -362,6 +362,10 @@ namespace Amazon.CloudDirectory
         /// Constant STRING for FacetAttributeType
         /// </summary>
         public static readonly FacetAttributeType STRING = new FacetAttributeType("STRING");
+        /// <summary>
+        /// Constant VARIANT for FacetAttributeType
+        /// </summary>
+        public static readonly FacetAttributeType VARIANT = new FacetAttributeType("VARIANT");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -392,6 +396,56 @@ namespace Amazon.CloudDirectory
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FacetAttributeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FacetStyle.
+    /// </summary>
+    public class FacetStyle : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DYNAMIC for FacetStyle
+        /// </summary>
+        public static readonly FacetStyle DYNAMIC = new FacetStyle("DYNAMIC");
+        /// <summary>
+        /// Constant STATIC for FacetStyle
+        /// </summary>
+        public static readonly FacetStyle STATIC = new FacetStyle("STATIC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FacetStyle(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FacetStyle FindValue(string value)
+        {
+            return FindValue<FacetStyle>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FacetStyle(string value)
         {
             return FindValue(value);
         }

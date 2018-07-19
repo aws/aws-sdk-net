@@ -33,6 +33,7 @@ namespace Amazon.EC2.Model
     public partial class RequestLaunchTemplateData
     {
         private List<LaunchTemplateBlockDeviceMappingRequest> _blockDeviceMappings = new List<LaunchTemplateBlockDeviceMappingRequest>();
+        private LaunchTemplateCpuOptionsRequest _cpuOptions;
         private CreditSpecificationRequest _creditSpecification;
         private bool? _disableApiTermination;
         private bool? _ebsOptimized;
@@ -78,6 +79,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetBlockDeviceMappings()
         {
             return this._blockDeviceMappings != null && this._blockDeviceMappings.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CpuOptions. 
+        /// <para>
+        /// The CPU options for the instance. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing
+        /// CPU Options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        public LaunchTemplateCpuOptionsRequest CpuOptions
+        {
+            get { return this._cpuOptions; }
+            set { this._cpuOptions = value; }
+        }
+
+        // Check to see if CpuOptions property is set
+        internal bool IsSetCpuOptions()
+        {
+            return this._cpuOptions != null;
         }
 
         /// <summary>
@@ -424,9 +444,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TagSpecifications. 
         /// <para>
-        /// The tags to apply to the resources during launch. You can tag instances and volumes.
-        /// The specified tags are applied to all instances or volumes that are created during
-        /// launch.
+        /// The tags to apply to the resources during launch. You can only tag instances and volumes
+        /// on launch. The specified tags are applied to all instances or volumes that are created
+        /// during launch. To tag a resource after it has been created, see <a>CreateTags</a>.
         /// </para>
         /// </summary>
         public List<LaunchTemplateTagSpecificationRequest> TagSpecifications

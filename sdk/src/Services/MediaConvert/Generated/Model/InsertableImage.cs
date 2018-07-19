@@ -198,8 +198,8 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property StartTime. Use Start time (StartTime) to specify the video
-        /// timecode when the image is inserted in the output. This must be in timecode format
-        /// (HH:MM:SS:FF)
+        /// timecode when the image is inserted in the output. This must be in timecode (HH:MM:SS:FF
+        /// or HH:MM:SS;FF) format.
         /// </summary>
         public string StartTime
         {

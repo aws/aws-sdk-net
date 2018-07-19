@@ -23,6 +23,8 @@ namespace ServiceClientGenerator
         public const string EndpointPrefixKey = "endpointPrefix";
         public const string JsonVersionKey = "jsonVersion";
         public const string ProtocolKey = "protocol";
+        public const string ProtocolSettingsKey = "protocolSettings";
+        public const string ProtocolSettingsH2Key = "h2";
         public const string ServiceFullNameKey = "serviceFullName";
         public const string SignatureVersionKey = "signatureVersion";
         public const string TargetPrefixKey = "targetPrefix";
@@ -196,6 +198,12 @@ namespace ServiceClientGenerator
             get { return this._metadata[ProtocolKey] == null ? "" : this._metadata[ProtocolKey].ToString(); }
         }
 
+        public JsonData ProtocolSettings => _metadata[ProtocolSettingsKey];
+
+        public H2SupportDegree H2Support => Enum.TryParse<H2SupportDegree>(ProtocolSettings?[ProtocolSettingsH2Key]?.ToString(), true, out var specifiedH2Degree)
+            ? specifiedH2Degree 
+            : H2SupportDegree.None;
+
         public bool IsEC2Protocol
         {
             get { return Protocol.Equals("ec2", StringComparison.OrdinalIgnoreCase); }    
@@ -270,10 +278,19 @@ namespace ServiceClientGenerator
                 foreach (KeyValuePair<string, JsonData> kvp in DocumentRoot[OperationsKey])
                 {
                     var operation = new Operation(this, kvp.Key, kvp.Value);
-                    if(!operation.IsExcluded)
-                        list.Add(operation);
-                    else
+                    if (operation.IsExcluded)
+                    {
                         ExcludedOperations.Add(operation.Name);
+                    }
+                    // Event Streams are not supported (yet)
+                    else if (H2Support == H2SupportDegree.EventStream && operation.IsEventStreamOutput)
+                    {
+                        ExcludedOperations.Add(operation.Name);
+                    }
+                    else
+                    {
+                        list.Add(operation);
+                    }
                 }
                 return list.OrderBy(x => x.Name).ToList();
             }

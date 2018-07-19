@@ -36,7 +36,7 @@ namespace Amazon.Pinpoint
     /// <summary>
     /// Implementation for accessing Pinpoint
     ///
-    /// 
+    /// Amazon Pinpoint
     /// </summary>
     public partial class AmazonPinpointClient : AmazonServiceClient, IAmazonPinpoint
     {
@@ -504,7 +504,7 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Delete an ADM channel
+        /// Delete an ADM channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAdmChannel service method.</param>
         /// 
@@ -614,7 +614,7 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Delete an APNS sandbox channel
+        /// Delete an APNS sandbox channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteApnsSandboxChannel service method.</param>
         /// 
@@ -944,7 +944,7 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Delete an email channel
+        /// Delete an email channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEmailChannel service method.</param>
         /// 
@@ -1219,7 +1219,7 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Delete an SMS channel
+        /// Delete an SMS channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSmsChannel service method.</param>
         /// 
@@ -1270,11 +1270,66 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  DeleteUserEndpoints
+
+
+        /// <summary>
+        /// Deletes endpoints associated with an user id.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUserEndpoints service method.</param>
+        /// 
+        /// <returns>The response from the DeleteUserEndpoints service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public virtual DeleteUserEndpointsResponse DeleteUserEndpoints(DeleteUserEndpointsRequest request)
+        {
+            var marshaller = DeleteUserEndpointsRequestMarshaller.Instance;
+            var unmarshaller = DeleteUserEndpointsResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteUserEndpointsRequest,DeleteUserEndpointsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteUserEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUserEndpoints operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<DeleteUserEndpointsResponse> DeleteUserEndpointsAsync(DeleteUserEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteUserEndpointsRequestMarshaller.Instance;
+            var unmarshaller = DeleteUserEndpointsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteUserEndpointsRequest,DeleteUserEndpointsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetAdmChannel
 
 
         /// <summary>
-        /// Get an ADM channel
+        /// Get an ADM channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAdmChannel service method.</param>
         /// 
@@ -1384,7 +1439,7 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Get an APNS sandbox channel
+        /// Get an APNS sandbox channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetApnsSandboxChannel service method.</param>
         /// 
@@ -2040,11 +2095,66 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  GetChannels
+
+
+        /// <summary>
+        /// Get all channels.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetChannels service method.</param>
+        /// 
+        /// <returns>The response from the GetChannels service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public virtual GetChannelsResponse GetChannels(GetChannelsRequest request)
+        {
+            var marshaller = GetChannelsRequestMarshaller.Instance;
+            var unmarshaller = GetChannelsResponseUnmarshaller.Instance;
+
+            return Invoke<GetChannelsRequest,GetChannelsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetChannels operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetChannels operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<GetChannelsResponse> GetChannelsAsync(GetChannelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetChannelsRequestMarshaller.Instance;
+            var unmarshaller = GetChannelsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetChannelsRequest,GetChannelsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetEmailChannel
 
 
         /// <summary>
-        /// Get an email channel
+        /// Get an email channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEmailChannel service method.</param>
         /// 
@@ -2814,7 +2924,7 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Get an SMS channel
+        /// Get an SMS channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSmsChannel service method.</param>
         /// 
@@ -2860,6 +2970,116 @@ namespace Amazon.Pinpoint
             var unmarshaller = GetSmsChannelResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetSmsChannelRequest,GetSmsChannelResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetUserEndpoints
+
+
+        /// <summary>
+        /// Returns information about the endpoints associated with an user id.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUserEndpoints service method.</param>
+        /// 
+        /// <returns>The response from the GetUserEndpoints service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public virtual GetUserEndpointsResponse GetUserEndpoints(GetUserEndpointsRequest request)
+        {
+            var marshaller = GetUserEndpointsRequestMarshaller.Instance;
+            var unmarshaller = GetUserEndpointsResponseUnmarshaller.Instance;
+
+            return Invoke<GetUserEndpointsRequest,GetUserEndpointsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetUserEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetUserEndpoints operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<GetUserEndpointsResponse> GetUserEndpointsAsync(GetUserEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetUserEndpointsRequestMarshaller.Instance;
+            var unmarshaller = GetUserEndpointsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetUserEndpointsRequest,GetUserEndpointsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PhoneNumberValidate
+
+
+        /// <summary>
+        /// Returns information about the specified phone number.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PhoneNumberValidate service method.</param>
+        /// 
+        /// <returns>The response from the PhoneNumberValidate service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public virtual PhoneNumberValidateResponse PhoneNumberValidate(PhoneNumberValidateRequest request)
+        {
+            var marshaller = PhoneNumberValidateRequestMarshaller.Instance;
+            var unmarshaller = PhoneNumberValidateResponseUnmarshaller.Instance;
+
+            return Invoke<PhoneNumberValidateRequest,PhoneNumberValidateResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PhoneNumberValidate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PhoneNumberValidate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<PhoneNumberValidateResponse> PhoneNumberValidateAsync(PhoneNumberValidateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = PhoneNumberValidateRequestMarshaller.Instance;
+            var unmarshaller = PhoneNumberValidateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PhoneNumberValidateRequest,PhoneNumberValidateResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2920,11 +3140,72 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  RemoveAttributes
+
+
+        /// <summary>
+        /// Used to remove the attributes for an app
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveAttributes service method.</param>
+        /// 
+        /// <returns>The response from the RemoveAttributes service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public virtual RemoveAttributesResponse RemoveAttributes(RemoveAttributesRequest request)
+        {
+            var marshaller = RemoveAttributesRequestMarshaller.Instance;
+            var unmarshaller = RemoveAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveAttributesRequest,RemoveAttributesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveAttributes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<RemoveAttributesResponse> RemoveAttributesAsync(RemoveAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = RemoveAttributesRequestMarshaller.Instance;
+            var unmarshaller = RemoveAttributesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RemoveAttributesRequest,RemoveAttributesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  SendMessages
 
 
         /// <summary>
-        /// Send a batch of messages
+        /// Use this resource to send a direct message, which is a one time message that you send
+        /// to a limited audience without creating a campaign. You can send the message to up
+        /// to 100 recipients. You cannot use the message to engage a segment. When you send the
+        /// message, Amazon Pinpoint delivers it immediately, and you cannot schedule the delivery.
+        /// To engage a user segment, and to schedule the message delivery, create a campaign
+        /// instead of sending a direct message.You can send a direct message as a push notification
+        /// to your mobile app or as an SMS message to SMS-enabled devices.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendMessages service method.</param>
         /// 
@@ -2979,7 +3260,21 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Send a batch of messages to users
+        /// Use this resource to message a list of users. Amazon Pinpoint sends the message to
+        /// all of the endpoints that are associated with each user.A user represents an individual
+        /// who is assigned a unique user ID, and this ID is assigned to one or more endpoints.
+        /// For example, if an individual uses your app on multiple devices, your app could assign
+        /// that person's user ID to the endpoint for each device.With the users-messages resource,
+        /// you specify the message recipients as user IDs. For each user ID, Amazon Pinpoint
+        /// delivers the message to all of the user's endpoints. Within the body of your request,
+        /// you can specify a default message, and you can tailor your message for different channels,
+        /// including those for mobile push and SMS.With this resource, you send a direct message,
+        /// which is a one time message that you send to a limited audience without creating a
+        /// campaign. You can send the message to up to 100 users per request. You cannot use
+        /// the message to engage a segment. When you send the message, Amazon Pinpoint delivers
+        /// it immediately, and you cannot schedule the delivery. To engage a user segment, and
+        /// to schedule the message delivery, create a campaign instead of using the users-messages
+        /// resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendUsersMessages service method.</param>
         /// 
@@ -3034,7 +3329,7 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Update an ADM channel
+        /// Update an ADM channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAdmChannel service method.</param>
         /// 
@@ -3144,7 +3439,7 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Update an APNS sandbox channel
+        /// Update an APNS sandbox channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateApnsSandboxChannel service method.</param>
         /// 
@@ -3474,7 +3769,7 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Update an email channel
+        /// Update an email channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEmailChannel service method.</param>
         /// 
@@ -3529,7 +3824,7 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Use to update an endpoint.
+        /// Creates or updates an endpoint.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEndpoint service method.</param>
         /// 
@@ -3749,7 +4044,7 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Update an SMS channel
+        /// Update an SMS channel.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSmsChannel service method.</param>
         /// 

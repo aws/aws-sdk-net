@@ -557,6 +557,11 @@ namespace Amazon.SimpleNotificationService
         /// of subscriptions, up to 100. If there are more subscriptions, a <code>NextToken</code>
         /// is also returned. Use the <code>NextToken</code> parameter in a new <code>ListSubscriptions</code>
         /// call to get further results.
+        /// 
+        ///  
+        /// <para>
+        /// This action is throttled at 30 transactions per second (TPS).
+        /// </para>
         /// </summary>
         /// <param name="nextToken">Token returned by the previous <code>ListSubscriptions</code> request.</param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
@@ -600,6 +605,11 @@ namespace Amazon.SimpleNotificationService
         /// list of subscriptions, up to 100. If there are more subscriptions, a <code>NextToken</code>
         /// is also returned. Use the <code>NextToken</code> parameter in a new <code>ListSubscriptionsByTopic</code>
         /// call to get further results.
+        /// 
+        ///  
+        /// <para>
+        /// This action is throttled at 30 transactions per second (TPS).
+        /// </para>
         /// </summary>
         /// <param name="topicArn">The ARN of the topic for which you wish to find subscriptions.</param>
         /// <param name="nextToken">Token returned by the previous <code>ListSubscriptionsByTopic</code> request.</param>
@@ -630,6 +640,11 @@ namespace Amazon.SimpleNotificationService
         /// list of subscriptions, up to 100. If there are more subscriptions, a <code>NextToken</code>
         /// is also returned. Use the <code>NextToken</code> parameter in a new <code>ListSubscriptionsByTopic</code>
         /// call to get further results.
+        /// 
+        ///  
+        /// <para>
+        /// This action is throttled at 30 transactions per second (TPS).
+        /// </para>
         /// </summary>
         /// <param name="topicArn">The ARN of the topic for which you wish to find subscriptions.</param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
@@ -676,6 +691,11 @@ namespace Amazon.SimpleNotificationService
         /// up to 100. If there are more topics, a <code>NextToken</code> is also returned. Use
         /// the <code>NextToken</code> parameter in a new <code>ListTopics</code> call to get
         /// further results.
+        /// 
+        ///  
+        /// <para>
+        /// This action is throttled at 30 transactions per second (TPS).
+        /// </para>
         /// </summary>
         /// <param name="nextToken">Token returned by the previous <code>ListTopics</code> request.</param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
@@ -732,11 +752,20 @@ namespace Amazon.SimpleNotificationService
 
 
         /// <summary>
-        /// Sends a message to all of a topic's subscribed endpoints. When a <code>messageId</code>
-        /// is returned, the message has been saved and Amazon SNS will attempt to deliver it
-        /// to the topic's subscribers shortly. The format of the outgoing message to each subscribed
-        /// endpoint depends on the notification protocol.
+        /// Sends a message to an Amazon SNS topic or sends a text message (SMS message) directly
+        /// to a phone number. 
         /// 
+        ///  
+        /// <para>
+        /// If you send a message to a topic, Amazon SNS delivers the message to each endpoint
+        /// that is subscribed to the topic. The format of the message depends on the notification
+        /// protocol for each subscribed endpoint.
+        /// </para>
+        ///  
+        /// <para>
+        /// When a <code>messageId</code> is returned, the message has been saved and Amazon SNS
+        /// will attempt to deliver it shortly.
+        /// </para>
         ///  
         /// <para>
         /// To use the <code>Publish</code> action for sending a message to a mobile endpoint,
@@ -751,7 +780,7 @@ namespace Amazon.SimpleNotificationService
         /// </para>
         /// </summary>
         /// <param name="topicArn">The topic you want to publish to. If you don't specify a value for the <code>TopicArn</code> parameter, you must specify a value for the <code>PhoneNumber</code> or <code>TargetArn</code> parameters.</param>
-        /// <param name="message">The message you want to send to the topic. If you want to send the same message to all transport protocols, include the text of the message as a String value. If you want to send different messages for each transport protocol, set the value of the <code>MessageStructure</code> parameter to <code>json</code> and use a JSON object for the <code>Message</code> parameter.  Constraints: Messages must be UTF-8 encoded strings at most 256 KB in size (262144 bytes, not 262144 characters). JSON-specific constraints: <ul> <li> Keys in the JSON object that correspond to supported transport protocols must have simple JSON string values. </li> <li> The values will be parsed (unescaped) before they are used in outgoing messages. </li> <li> Outbound notifications are JSON encoded (meaning that the characters will be reescaped for sending). </li> <li> Values have a minimum length of 0 (the empty string, "", is allowed). </li> <li> Values have a maximum length bounded by the overall message size (so, including multiple protocols may limit message sizes). </li> <li> Non-string values will cause the key to be ignored. </li> <li> Keys that do not correspond to supported transport protocols are ignored. </li> <li> Duplicate keys are not allowed. </li> <li> Failure to parse or validate any key or value in the message will cause the <code>Publish</code> call to return an error (no partial delivery). </li> </ul></param>
+        /// <param name="message">The message you want to send. If you are publishing to a topic and you want to send the same message to all transport protocols, include the text of the message as a String value. If you want to send different messages for each transport protocol, set the value of the <code>MessageStructure</code> parameter to <code>json</code> and use a JSON object for the <code>Message</code> parameter.  <p/> Constraints: <ul> <li> With the exception of SMS, messages must be UTF-8 encoded strings and at most 256 KB in size (262144 bytes, not 262144 characters). </li> <li> For SMS, each message can contain up to 140 bytes, and the character limit depends on the encoding scheme. For example, an SMS message can contain 160 GSM characters, 140 ASCII characters, or 70 UCS-2 characters. If you publish a message that exceeds the size limit, Amazon SNS sends it as multiple messages, each fitting within the size limit. Messages are not cut off in the middle of a word but on whole-word boundaries. The total size limit for a single SMS publish action is 1600 bytes. </li> </ul> JSON-specific constraints: <ul> <li> Keys in the JSON object that correspond to supported transport protocols must have simple JSON string values. </li> <li> The values will be parsed (unescaped) before they are used in outgoing messages. </li> <li> Outbound notifications are JSON encoded (meaning that the characters will be reescaped for sending). </li> <li> Values have a minimum length of 0 (the empty string, "", is allowed). </li> <li> Values have a maximum length bounded by the overall message size (so, including multiple protocols may limit message sizes). </li> <li> Non-string values will cause the key to be ignored. </li> <li> Keys that do not correspond to supported transport protocols are ignored. </li> <li> Duplicate keys are not allowed. </li> <li> Failure to parse or validate any key or value in the message will cause the <code>Publish</code> call to return an error (no partial delivery). </li> </ul></param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">
         ///     A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
@@ -784,11 +813,20 @@ namespace Amazon.SimpleNotificationService
         void PublishAsync(string topicArn, string message,  AmazonServiceCallback<PublishRequest, PublishResponse> callback, AsyncOptions options = null);
 
         /// <summary>
-        /// Sends a message to all of a topic's subscribed endpoints. When a <code>messageId</code>
-        /// is returned, the message has been saved and Amazon SNS will attempt to deliver it
-        /// to the topic's subscribers shortly. The format of the outgoing message to each subscribed
-        /// endpoint depends on the notification protocol.
+        /// Sends a message to an Amazon SNS topic or sends a text message (SMS message) directly
+        /// to a phone number. 
         /// 
+        ///  
+        /// <para>
+        /// If you send a message to a topic, Amazon SNS delivers the message to each endpoint
+        /// that is subscribed to the topic. The format of the message depends on the notification
+        /// protocol for each subscribed endpoint.
+        /// </para>
+        ///  
+        /// <para>
+        /// When a <code>messageId</code> is returned, the message has been saved and Amazon SNS
+        /// will attempt to deliver it shortly.
+        /// </para>
         ///  
         /// <para>
         /// To use the <code>Publish</code> action for sending a message to a mobile endpoint,
@@ -803,7 +841,7 @@ namespace Amazon.SimpleNotificationService
         /// </para>
         /// </summary>
         /// <param name="topicArn">The topic you want to publish to. If you don't specify a value for the <code>TopicArn</code> parameter, you must specify a value for the <code>PhoneNumber</code> or <code>TargetArn</code> parameters.</param>
-        /// <param name="message">The message you want to send to the topic. If you want to send the same message to all transport protocols, include the text of the message as a String value. If you want to send different messages for each transport protocol, set the value of the <code>MessageStructure</code> parameter to <code>json</code> and use a JSON object for the <code>Message</code> parameter.  Constraints: Messages must be UTF-8 encoded strings at most 256 KB in size (262144 bytes, not 262144 characters). JSON-specific constraints: <ul> <li> Keys in the JSON object that correspond to supported transport protocols must have simple JSON string values. </li> <li> The values will be parsed (unescaped) before they are used in outgoing messages. </li> <li> Outbound notifications are JSON encoded (meaning that the characters will be reescaped for sending). </li> <li> Values have a minimum length of 0 (the empty string, "", is allowed). </li> <li> Values have a maximum length bounded by the overall message size (so, including multiple protocols may limit message sizes). </li> <li> Non-string values will cause the key to be ignored. </li> <li> Keys that do not correspond to supported transport protocols are ignored. </li> <li> Duplicate keys are not allowed. </li> <li> Failure to parse or validate any key or value in the message will cause the <code>Publish</code> call to return an error (no partial delivery). </li> </ul></param>
+        /// <param name="message">The message you want to send. If you are publishing to a topic and you want to send the same message to all transport protocols, include the text of the message as a String value. If you want to send different messages for each transport protocol, set the value of the <code>MessageStructure</code> parameter to <code>json</code> and use a JSON object for the <code>Message</code> parameter.  <p/> Constraints: <ul> <li> With the exception of SMS, messages must be UTF-8 encoded strings and at most 256 KB in size (262144 bytes, not 262144 characters). </li> <li> For SMS, each message can contain up to 140 bytes, and the character limit depends on the encoding scheme. For example, an SMS message can contain 160 GSM characters, 140 ASCII characters, or 70 UCS-2 characters. If you publish a message that exceeds the size limit, Amazon SNS sends it as multiple messages, each fitting within the size limit. Messages are not cut off in the middle of a word but on whole-word boundaries. The total size limit for a single SMS publish action is 1600 bytes. </li> </ul> JSON-specific constraints: <ul> <li> Keys in the JSON object that correspond to supported transport protocols must have simple JSON string values. </li> <li> The values will be parsed (unescaped) before they are used in outgoing messages. </li> <li> Outbound notifications are JSON encoded (meaning that the characters will be reescaped for sending). </li> <li> Values have a minimum length of 0 (the empty string, "", is allowed). </li> <li> Values have a maximum length bounded by the overall message size (so, including multiple protocols may limit message sizes). </li> <li> Non-string values will cause the key to be ignored. </li> <li> Keys that do not correspond to supported transport protocols are ignored. </li> <li> Duplicate keys are not allowed. </li> <li> Failure to parse or validate any key or value in the message will cause the <code>Publish</code> call to return an error (no partial delivery). </li> </ul></param>
         /// <param name="subject">Optional parameter to be used as the "Subject" line when the message is delivered to email endpoints. This field will also be included, if present, in the standard JSON messages delivered to other endpoints. Constraints: Subjects must be ASCII text that begins with a letter, number, or punctuation mark; must not include line breaks or control characters; and must be less than 100 characters long.</param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">
@@ -949,10 +987,10 @@ namespace Amazon.SimpleNotificationService
 
 
         /// <summary>
-        /// Allows a subscription owner to set an attribute of the topic to a new value.
+        /// Allows a subscription owner to set an attribute of the subscription to a new value.
         /// </summary>
         /// <param name="subscriptionArn">The ARN of the subscription to modify.</param>
-        /// <param name="attributeName">The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable. Valid values: <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code> </param>
+        /// <param name="attributeName">The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable. Valid values: <code>DeliveryPolicy</code> | <code>FilterPolicy</code> | <code>RawMessageDelivery</code> </param>
         /// <param name="attributeValue">The new value for the attribute in JSON format.</param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">
@@ -963,6 +1001,10 @@ namespace Amazon.SimpleNotificationService
         /// <returns>The response from the SetSubscriptionAttributes service method, as returned by SimpleNotificationService.</returns>
         /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
+        /// Indicates that the number of filter polices in your AWS account exceeds the limit.
+        /// To add more filter polices, submit an SNS Limit Increase case in the AWS Support Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -1043,6 +1085,11 @@ namespace Amazon.SimpleNotificationService
         /// To actually create a subscription, the endpoint owner must call the <code>ConfirmSubscription</code>
         /// action with the token from the confirmation message. Confirmation tokens are valid
         /// for three days.
+        /// 
+        ///  
+        /// <para>
+        /// This action is throttled at 100 transactions per second (TPS).
+        /// </para>
         /// </summary>
         /// <param name="topicArn">The ARN of the topic you want to subscribe to.</param>
         /// <param name="protocol">The protocol you want to use. Supported protocols include: <ul> <li>  <code>http</code> -- delivery of JSON-encoded message via HTTP POST </li> <li>  <code>https</code> -- delivery of JSON-encoded message via HTTPS POST </li> <li>  <code>email</code> -- delivery of message via SMTP </li> <li>  <code>email-json</code> -- delivery of JSON-encoded message via SMTP </li> <li>  <code>sms</code> -- delivery of message via SMS </li> <li>  <code>sqs</code> -- delivery of JSON-encoded message to an Amazon SQS queue </li> <li>  <code>application</code> -- delivery of JSON-encoded message to an EndpointArn for a mobile app and device. </li> <li>  <code>lambda</code> -- delivery of JSON-encoded message to an AWS Lambda function. </li> </ul></param>
@@ -1056,6 +1103,10 @@ namespace Amazon.SimpleNotificationService
         /// <returns>The response from the Subscribe service method, as returned by SimpleNotificationService.</returns>
         /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
         /// Indicates that the user has been denied access to the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.FilterPolicyLimitExceededException">
+        /// Indicates that the number of filter polices in your AWS account exceeds the limit.
+        /// To add more filter polices, submit an SNS Limit Increase case in the AWS Support Center.
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
         /// Indicates an internal service error.
@@ -1096,6 +1147,11 @@ namespace Amazon.SimpleNotificationService
         /// and the requester is not the subscription owner, a final cancellation message is delivered
         /// to the endpoint, so that the endpoint owner can easily resubscribe to the topic if
         /// the <code>Unsubscribe</code> request was unintended.
+        /// 
+        ///  
+        /// <para>
+        /// This action is throttled at 100 transactions per second (TPS).
+        /// </para>
         /// </summary>
         /// <param name="subscriptionArn">The ARN of the subscription to be deleted.</param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>

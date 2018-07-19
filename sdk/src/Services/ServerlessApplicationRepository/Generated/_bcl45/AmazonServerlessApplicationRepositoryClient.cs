@@ -289,7 +289,7 @@ namespace Amazon.ServerlessApplicationRepository
         /// The AWS Serverless Application Repository service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.ServerlessApplicationRepository.Model.TooManyRequestsException">
-        /// The client is sending more than the allowed number of requests per unit time.
+        /// The client is sending more than the allowed number of requests per unit of time.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public virtual CreateApplicationResponse CreateApplication(CreateApplicationRequest request)
@@ -343,7 +343,7 @@ namespace Amazon.ServerlessApplicationRepository
         /// The AWS Serverless Application Repository service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.ServerlessApplicationRepository.Model.TooManyRequestsException">
-        /// The client is sending more than the allowed number of requests per unit time.
+        /// The client is sending more than the allowed number of requests per unit of time.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/CreateApplicationVersion">REST API Reference for CreateApplicationVersion Operation</seealso>
         public virtual CreateApplicationVersionResponse CreateApplicationVersion(CreateApplicationVersionRequest request)
@@ -379,7 +379,7 @@ namespace Amazon.ServerlessApplicationRepository
 
 
         /// <summary>
-        /// Creates an AWS CloudFormation ChangeSet for the given application.
+        /// Creates an AWS CloudFormation change set for the given application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCloudFormationChangeSet service method.</param>
         /// 
@@ -394,7 +394,7 @@ namespace Amazon.ServerlessApplicationRepository
         /// The AWS Serverless Application Repository service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.ServerlessApplicationRepository.Model.TooManyRequestsException">
-        /// The client is sending more than the allowed number of requests per unit time.
+        /// The client is sending more than the allowed number of requests per unit of time.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet">REST API Reference for CreateCloudFormationChangeSet Operation</seealso>
         public virtual CreateCloudFormationChangeSetResponse CreateCloudFormationChangeSet(CreateCloudFormationChangeSetRequest request)
@@ -448,11 +448,11 @@ namespace Amazon.ServerlessApplicationRepository
         /// The AWS Serverless Application Repository service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.ServerlessApplicationRepository.Model.NotFoundException">
-        /// The resource (for example, an access policy statement) specified in the request does
-        /// not exist.
+        /// The resource (for example, an access policy statement) specified in the request doesn't
+        /// exist.
         /// </exception>
         /// <exception cref="Amazon.ServerlessApplicationRepository.Model.TooManyRequestsException">
-        /// The client is sending more than the allowed number of requests per unit time.
+        /// The client is sending more than the allowed number of requests per unit of time.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
         public virtual DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest request)
@@ -503,11 +503,11 @@ namespace Amazon.ServerlessApplicationRepository
         /// The AWS Serverless Application Repository service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.ServerlessApplicationRepository.Model.NotFoundException">
-        /// The resource (for example, an access policy statement) specified in the request does
-        /// not exist.
+        /// The resource (for example, an access policy statement) specified in the request doesn't
+        /// exist.
         /// </exception>
         /// <exception cref="Amazon.ServerlessApplicationRepository.Model.TooManyRequestsException">
-        /// The client is sending more than the allowed number of requests per unit time.
+        /// The client is sending more than the allowed number of requests per unit of time.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/GetApplication">REST API Reference for GetApplication Operation</seealso>
         public virtual GetApplicationResponse GetApplication(GetApplicationRequest request)
@@ -543,7 +543,7 @@ namespace Amazon.ServerlessApplicationRepository
 
 
         /// <summary>
-        /// Gets the policy for the specified application.
+        /// Retrieves the policy for the application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetApplicationPolicy service method.</param>
         /// 
@@ -558,11 +558,11 @@ namespace Amazon.ServerlessApplicationRepository
         /// The AWS Serverless Application Repository service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.ServerlessApplicationRepository.Model.NotFoundException">
-        /// The resource (for example, an access policy statement) specified in the request does
-        /// not exist.
+        /// The resource (for example, an access policy statement) specified in the request doesn't
+        /// exist.
         /// </exception>
         /// <exception cref="Amazon.ServerlessApplicationRepository.Model.TooManyRequestsException">
-        /// The client is sending more than the allowed number of requests per unit time.
+        /// The client is sending more than the allowed number of requests per unit of time.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/GetApplicationPolicy">REST API Reference for GetApplicationPolicy Operation</seealso>
         public virtual GetApplicationPolicyResponse GetApplicationPolicy(GetApplicationPolicyRequest request)
@@ -613,8 +613,8 @@ namespace Amazon.ServerlessApplicationRepository
         /// The AWS Serverless Application Repository service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.ServerlessApplicationRepository.Model.NotFoundException">
-        /// The resource (for example, an access policy statement) specified in the request does
-        /// not exist.
+        /// The resource (for example, an access policy statement) specified in the request doesn't
+        /// exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/ListApplications">REST API Reference for ListApplications Operation</seealso>
         public virtual ListApplicationsResponse ListApplications(ListApplicationsRequest request)
@@ -665,11 +665,11 @@ namespace Amazon.ServerlessApplicationRepository
         /// The AWS Serverless Application Repository service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.ServerlessApplicationRepository.Model.NotFoundException">
-        /// The resource (for example, an access policy statement) specified in the request does
-        /// not exist.
+        /// The resource (for example, an access policy statement) specified in the request doesn't
+        /// exist.
         /// </exception>
         /// <exception cref="Amazon.ServerlessApplicationRepository.Model.TooManyRequestsException">
-        /// The client is sending more than the allowed number of requests per unit time.
+        /// The client is sending more than the allowed number of requests per unit of time.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/ListApplicationVersions">REST API Reference for ListApplicationVersions Operation</seealso>
         public virtual ListApplicationVersionsResponse ListApplicationVersions(ListApplicationVersionsRequest request)
@@ -705,7 +705,8 @@ namespace Amazon.ServerlessApplicationRepository
 
 
         /// <summary>
-        /// Puts the policy for the specified application.
+        /// Sets the permission policy for an application. See <a href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application
+        /// Permissions</a> for the list of supported actions that can be used with this operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutApplicationPolicy service method.</param>
         /// 
@@ -720,11 +721,11 @@ namespace Amazon.ServerlessApplicationRepository
         /// The AWS Serverless Application Repository service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.ServerlessApplicationRepository.Model.NotFoundException">
-        /// The resource (for example, an access policy statement) specified in the request does
-        /// not exist.
+        /// The resource (for example, an access policy statement) specified in the request doesn't
+        /// exist.
         /// </exception>
         /// <exception cref="Amazon.ServerlessApplicationRepository.Model.TooManyRequestsException">
-        /// The client is sending more than the allowed number of requests per unit time.
+        /// The client is sending more than the allowed number of requests per unit of time.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/PutApplicationPolicy">REST API Reference for PutApplicationPolicy Operation</seealso>
         public virtual PutApplicationPolicyResponse PutApplicationPolicy(PutApplicationPolicyRequest request)
@@ -778,11 +779,11 @@ namespace Amazon.ServerlessApplicationRepository
         /// The AWS Serverless Application Repository service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.ServerlessApplicationRepository.Model.NotFoundException">
-        /// The resource (for example, an access policy statement) specified in the request does
-        /// not exist.
+        /// The resource (for example, an access policy statement) specified in the request doesn't
+        /// exist.
         /// </exception>
         /// <exception cref="Amazon.ServerlessApplicationRepository.Model.TooManyRequestsException">
-        /// The client is sending more than the allowed number of requests per unit time.
+        /// The client is sending more than the allowed number of requests per unit of time.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         public virtual UpdateApplicationResponse UpdateApplication(UpdateApplicationRequest request)

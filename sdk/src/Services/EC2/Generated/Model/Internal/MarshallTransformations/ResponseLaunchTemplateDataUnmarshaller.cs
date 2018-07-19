@@ -61,6 +61,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.BlockDeviceMappings.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("cpuOptions", targetDepth))
+                    {
+                        var unmarshaller = LaunchTemplateCpuOptionsUnmarshaller.Instance;
+                        unmarshalledObject.CpuOptions = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("creditSpecification", targetDepth))
                     {
                         var unmarshaller = CreditSpecificationUnmarshaller.Instance;

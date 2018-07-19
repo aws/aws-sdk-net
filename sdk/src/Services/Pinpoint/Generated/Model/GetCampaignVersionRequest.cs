@@ -38,7 +38,7 @@ namespace Amazon.Pinpoint.Model
         private string _version;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId.
+        /// Gets and sets the property ApplicationId. The unique ID of your Amazon Pinpoint application.
         /// </summary>
         public string ApplicationId
         {
@@ -53,7 +53,7 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CampaignId.
+        /// Gets and sets the property CampaignId. The unique ID of the campaign.
         /// </summary>
         public string CampaignId
         {
@@ -68,7 +68,7 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Version.
+        /// Gets and sets the property Version. The version of the campaign.
         /// </summary>
         public string Version
         {

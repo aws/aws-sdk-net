@@ -36,6 +36,7 @@ namespace Amazon.AppSync.Model
         private string _description;
         private DynamodbDataSourceConfig _dynamodbConfig;
         private ElasticsearchDataSourceConfig _elasticsearchConfig;
+        private HttpDataSourceConfig _httpConfig;
         private LambdaDataSourceConfig _lambdaConfig;
         private string _name;
         private string _serviceRoleArn;
@@ -111,6 +112,24 @@ namespace Amazon.AppSync.Model
         internal bool IsSetElasticsearchConfig()
         {
             return this._elasticsearchConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HttpConfig. 
+        /// <para>
+        /// Http endpoint settings.
+        /// </para>
+        /// </summary>
+        public HttpDataSourceConfig HttpConfig
+        {
+            get { return this._httpConfig; }
+            set { this._httpConfig = value; }
+        }
+
+        // Check to see if HttpConfig property is set
+        internal bool IsSetHttpConfig()
+        {
+            return this._httpConfig != null;
         }
 
         /// <summary>
@@ -190,6 +209,10 @@ namespace Amazon.AppSync.Model
         ///  <b>NONE</b>: There is no data source. This type is used when when you wish to invoke
         /// a GraphQL operation without connecting to a data source, such as performing data transformation
         /// with resolvers or triggering a subscription to be invoked from a mutation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>HTTP</b>: The data source is an HTTP endpoint.
         /// </para>
         ///  </li> </ul>
         /// </summary>

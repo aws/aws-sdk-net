@@ -31,7 +31,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// Container for the parameters to the DeregisterManagedInstance operation.
     /// Removes the server or virtual machine from the list of registered servers. You can
     /// reregister the instance again at any time. If you don't plan to use Run Command on
-    /// the server, we suggest uninstalling the SSM Agent first.
+    /// the server, we suggest uninstalling SSM Agent first.
     /// </summary>
     public partial class DeregisterManagedInstanceRequest : AmazonSimpleSystemsManagementRequest
     {

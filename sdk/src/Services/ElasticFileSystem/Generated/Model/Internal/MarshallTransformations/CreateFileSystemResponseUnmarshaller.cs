@@ -111,10 +111,22 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
                     response.PerformanceMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ProvisionedThroughputInMibps", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    response.ProvisionedThroughputInMibps = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SizeInBytes", targetDepth))
                 {
                     var unmarshaller = FileSystemSizeUnmarshaller.Instance;
                     response.SizeInBytes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ThroughputMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ThroughputMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -144,9 +156,17 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
             {
                 return new FileSystemLimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InsufficientThroughputCapacity"))
+            {
+                return new InsufficientThroughputCapacityException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerError"))
             {
                 return new InternalServerErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ThroughputLimitExceeded"))
+            {
+                return new ThroughputLimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             return new AmazonElasticFileSystemException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }

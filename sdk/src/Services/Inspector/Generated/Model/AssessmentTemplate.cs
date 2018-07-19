@@ -119,8 +119,8 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property DurationInSeconds. 
         /// <para>
-        /// The duration in seconds specified for this assessment tempate. The default value is
-        /// 3600 seconds (one hour). The maximum value is 86400 seconds (one day).
+        /// The duration in seconds specified for this assessment template. The default value
+        /// is 3600 seconds (one hour). The maximum value is 86400 seconds (one day).
         /// </para>
         /// </summary>
         public int DurationInSeconds
@@ -140,7 +140,7 @@ namespace Amazon.Inspector.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the most recent assessment run associated with this
         /// assessment template. This value exists only when the value of assessmentRunCount is
-        /// greater than zero.
+        /// greaterpa than zero.
         /// </para>
         /// </summary>
         public string LastAssessmentRunArn

@@ -51,6 +51,7 @@ namespace Amazon.ECS.Model
     public partial class DeleteServiceRequest : AmazonECSRequest
     {
         private string _cluster;
+        private bool? _force;
         private string _service;
 
         /// <summary>
@@ -70,6 +71,26 @@ namespace Amazon.ECS.Model
         internal bool IsSetCluster()
         {
             return this._cluster != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Force. 
+        /// <para>
+        /// If <code>true</code>, allows you to delete a service even if it has not been scaled
+        /// down to zero tasks. It is only necessary to use this if the service is using the <code>REPLICA</code>
+        /// scheduling strategy.
+        /// </para>
+        /// </summary>
+        public bool Force
+        {
+            get { return this._force.GetValueOrDefault(); }
+            set { this._force = value; }
+        }
+
+        // Check to see if Force property is set
+        internal bool IsSetForce()
+        {
+            return this._force.HasValue; 
         }
 
         /// <summary>

@@ -64,6 +64,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CloudWatchOutputConfig", targetDepth))
+                {
+                    var unmarshaller = CloudWatchOutputConfigUnmarshaller.Instance;
+                    unmarshalledObject.CloudWatchOutputConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CommandId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

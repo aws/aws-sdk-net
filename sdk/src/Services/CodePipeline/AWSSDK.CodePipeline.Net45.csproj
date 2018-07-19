@@ -6,7 +6,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>AWSSDK.CodePipeline</AssemblyName>
     <PackageId>AWSSDK.CodePipeline</PackageId>
-    <BaseIntermediateOutputPath>./obj/net45</BaseIntermediateOutputPath>
+
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>

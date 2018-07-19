@@ -378,6 +378,38 @@ namespace Amazon.SecretsManager
 
         #endregion
         
+        #region  DeleteResourcePolicy
+
+        internal virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
+        {
+            var marshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            var unmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteResourcePolicyRequest,DeleteResourcePolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public virtual Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            var unmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteResourcePolicyRequest,DeleteResourcePolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteSecret
 
         internal virtual DeleteSecretResponse DeleteSecret(DeleteSecretRequest request)
@@ -474,6 +506,38 @@ namespace Amazon.SecretsManager
 
         #endregion
         
+        #region  GetResourcePolicy
+
+        internal virtual GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request)
+        {
+            var marshaller = GetResourcePolicyRequestMarshaller.Instance;
+            var unmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetResourcePolicyRequest,GetResourcePolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        public virtual Task<GetResourcePolicyResponse> GetResourcePolicyAsync(GetResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetResourcePolicyRequestMarshaller.Instance;
+            var unmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetResourcePolicyRequest,GetResourcePolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetSecretValue
 
         internal virtual GetSecretValueResponse GetSecretValue(GetSecretValueRequest request)
@@ -565,6 +629,38 @@ namespace Amazon.SecretsManager
             var unmarshaller = ListSecretVersionIdsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListSecretVersionIdsRequest,ListSecretVersionIdsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutResourcePolicy
+
+        internal virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
+        {
+            var marshaller = PutResourcePolicyRequestMarshaller.Instance;
+            var unmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutResourcePolicyRequest,PutResourcePolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public virtual Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = PutResourcePolicyRequestMarshaller.Instance;
+            var unmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutResourcePolicyRequest,PutResourcePolicyResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

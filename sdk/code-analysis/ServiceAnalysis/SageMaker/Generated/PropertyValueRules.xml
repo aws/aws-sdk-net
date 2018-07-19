@@ -34,6 +34,17 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateHyperParameterTuningJobRequest.HyperParameterTuningJobName</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateHyperParameterTuningJobResponse.HyperParameterTuningJobArn</property>
+    <max>256</max>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:hyper-parameter-tuning-job/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateModelRequest.ExecutionRoleArn</property>
     <min>20</min>
     <max>2048</max>
@@ -111,6 +122,31 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateTrainingJobResponse.TrainingJobArn</property>
     <max>256</max>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:training-job/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateTransformJobRequest.MaxConcurrentTransforms</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateTransformJobRequest.MaxPayloadInMB</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateTransformJobRequest.ModelName</property>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateTransformJobRequest.TransformJobName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateTransformJobResponse.TransformJobArn</property>
+    <max>256</max>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:transform-job/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DeleteEndpointRequest.EndpointName</property>
@@ -183,6 +219,27 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeEndpointConfigResponse.KmsKeyId</property>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeHyperParameterTuningJobRequest.HyperParameterTuningJobName</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeHyperParameterTuningJobResponse.FailureReason</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeHyperParameterTuningJobResponse.HyperParameterTuningJobArn</property>
+    <max>256</max>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:hyper-parameter-tuning-job/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeHyperParameterTuningJobResponse.HyperParameterTuningJobName</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeModelRequest.ModelName</property>
@@ -275,9 +332,49 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeTrainingJobResponse.TrainingJobArn</property>
     <max>256</max>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:training-job/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeTrainingJobResponse.TrainingJobName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeTrainingJobResponse.TuningJobArn</property>
+    <max>256</max>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:hyper-parameter-tuning-job/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeTransformJobRequest.TransformJobName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeTransformJobResponse.FailureReason</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeTransformJobResponse.MaxConcurrentTransforms</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeTransformJobResponse.MaxPayloadInMB</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeTransformJobResponse.ModelName</property>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeTransformJobResponse.TransformJobArn</property>
+    <max>256</max>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:transform-job/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeTransformJobResponse.TransformJobName</property>
     <min>1</min>
     <max>63</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
@@ -314,6 +411,24 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListEndpointsResponse.NextToken</property>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListHyperParameterTuningJobsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListHyperParameterTuningJobsRequest.NameContains</property>
+    <max>63</max>
+    <pattern>[a-zA-Z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListHyperParameterTuningJobsRequest.NextToken</property>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListHyperParameterTuningJobsResponse.NextToken</property>
     <max>8192</max>
   </property-value-rule>
   <property-value-rule>
@@ -407,8 +522,51 @@
     <max>8192</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListTrainingJobsForHyperParameterTuningJobRequest.HyperParameterTuningJobName</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListTrainingJobsForHyperParameterTuningJobRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListTrainingJobsForHyperParameterTuningJobRequest.NextToken</property>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListTrainingJobsForHyperParameterTuningJobResponse.NextToken</property>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListTransformJobsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListTransformJobsRequest.NameContains</property>
+    <max>63</max>
+    <pattern>[a-zA-Z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListTransformJobsRequest.NextToken</property>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ListTransformJobsResponse.NextToken</property>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.StartNotebookInstanceRequest.NotebookInstanceName</property>
     <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.StopHyperParameterTuningJobRequest.HyperParameterTuningJobName</property>
+    <min>1</min>
+    <max>32</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -418,6 +576,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.StopTrainingJobRequest.TrainingJobName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.StopTransformJobRequest.TransformJobName</property>
     <min>1</min>
     <max>63</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
@@ -468,6 +632,10 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.CategoricalParameterRange.Name</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.Channel.ChannelName</property>
     <min>1</min>
     <max>64</max>
@@ -491,6 +659,28 @@
     <property>Amazon.SageMaker.Model.ContainerDefinition.ModelDataUrl</property>
     <max>1024</max>
     <pattern>^(https|s3)://([^/]+)/?(.*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ContinuousParameterRange.MaxValue</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ContinuousParameterRange.MinValue</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ContinuousParameterRange.Name</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DeployedImage.ResolvedImage</property>
+    <max>255</max>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DeployedImage.SpecifiedImage</property>
+    <max>255</max>
+    <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DesiredWeightAndCapacity.DesiredInstanceCount</property>
@@ -524,6 +714,74 @@
     <property>Amazon.SageMaker.Model.EndpointSummary.EndpointName</property>
     <max>63</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.FinalHyperParameterTuningJobObjectiveMetric.MetricName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.HyperParameterAlgorithmSpecification.TrainingImage</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.HyperParameterTrainingJobDefinition.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.HyperParameterTrainingJobSummary.FailureReason</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.HyperParameterTrainingJobSummary.TrainingJobArn</property>
+    <max>256</max>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:training-job/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.HyperParameterTrainingJobSummary.TrainingJobName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.HyperParameterTuningJobObjective.MetricName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.HyperParameterTuningJobSummary.HyperParameterTuningJobArn</property>
+    <max>256</max>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:hyper-parameter-tuning-job/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.HyperParameterTuningJobSummary.HyperParameterTuningJobName</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.IntegerParameterRange.MaxValue</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.IntegerParameterRange.MinValue</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.IntegerParameterRange.Name</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.MetricDefinition.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.MetricDefinition.Regex</property>
+    <min>1</min>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ModelArtifacts.S3ModelArtifacts</property>
@@ -567,6 +825,18 @@
     <property>Amazon.SageMaker.Model.NotebookInstanceSummary.NotebookInstanceName</property>
     <max>63</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ObjectiveStatusCounters.Failed</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ObjectiveStatusCounters.Pending</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ObjectiveStatusCounters.Succeeded</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.OutputDataConfig.KmsKeyId</property>
@@ -637,6 +907,14 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.ResourceLimits.MaxNumberOfTrainingJobs</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ResourceLimits.MaxParallelTrainingJobs</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.ResourceNotFound.Message</property>
     <max>1024</max>
   </property-value-rule>
@@ -662,13 +940,75 @@
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.TrainingJobStatusCounters.Completed</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.TrainingJobStatusCounters.InProgress</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.TrainingJobStatusCounters.NonRetryableError</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.TrainingJobStatusCounters.RetryableError</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.TrainingJobStatusCounters.Stopped</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.TrainingJobSummary.TrainingJobArn</property>
     <max>256</max>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:training-job/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.TrainingJobSummary.TrainingJobName</property>
     <min>1</min>
     <max>63</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.TransformInput.ContentType</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.TransformJobSummary.FailureReason</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.TransformJobSummary.TransformJobArn</property>
+    <max>256</max>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:transform-job/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.TransformJobSummary.TransformJobName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.TransformOutput.Accept</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.TransformOutput.KmsKeyId</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.TransformOutput.S3OutputPath</property>
+    <max>1024</max>
+    <pattern>^(https|s3)://([^/]+)/?(.*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.TransformResources.InstanceCount</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.TransformS3DataSource.S3Uri</property>
+    <max>1024</max>
+    <pattern>^(https|s3)://([^/]+)/?(.*)$</pattern>
   </property-value-rule>
 </property-value-rules>

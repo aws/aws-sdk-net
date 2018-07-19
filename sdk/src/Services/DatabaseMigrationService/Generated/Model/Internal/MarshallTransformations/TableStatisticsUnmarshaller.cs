@@ -148,6 +148,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.ValidationState = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ValidationStateDetails", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ValidationStateDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ValidationSuspendedRecords", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;

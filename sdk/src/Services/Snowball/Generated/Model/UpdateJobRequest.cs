@@ -140,8 +140,8 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property Resources. 
         /// <para>
-        /// The updated <a>S3Resource</a> object (for a single Amazon S3 bucket or key range),
-        /// or the updated <a>JobResource</a> object (for multiple buckets or key ranges). 
+        /// The updated <code>JobResource</code> object, or the updated <a>JobResource</a> object.
+        /// 
         /// </para>
         /// </summary>
         public JobResource Resources

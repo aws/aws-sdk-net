@@ -1,0 +1,160 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{9863FCB3-BFA4-4B9C-B8F6-302BA5F660B8}"
+EndProject
+<#
+    foreach(var project in (IList<SolutionFileCreator.Project>)this.Session["CoreProjects"])
+    {
+#>
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "<#=project.Name#>", "<#=project.ProjectPath#>", "<#=project.ProjectGuid#>"
+EndProject
+<#
+    }
+#>
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{939EC5C2-8345-43E2-8F97-72EEEBEEA0AB}"
+EndProject
+<#
+    foreach(var folder in (List<SolutionFileCreator.ServiceSolutionFolder>)this.Session["ServiceSolutionFolders"])
+    {
+#>
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "<#=folder.Name#>", "<#=folder.Name#>", "<#=folder.ProjectGuid#>"
+EndProject
+<#
+
+        foreach(var project in folder.Projects)
+        { 
+#>
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "<#=project.Name#>", "<#=project.ProjectPath#>", "<#=project.ProjectGuid#>"
+EndProject
+<#
+        }
+    }
+#>
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{12EC4E4B-7E2C-4B63-8EF9-7B959F82A89B}"
+EndProject
+<#
+    foreach(var project in (IList<SolutionFileCreator.Project>)this.Session["TestProjects"])
+    {
+// This check will not be needed once we migrate to using service specific slns for releases
+        if(string.IsNullOrEmpty(project.RelativePath))
+        {
+#>
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "<#=project.Name#>", "<#=project.ProjectPath#>", "<#=project.ProjectGuid#>"
+EndProject
+<#
+        }
+        else
+        {
+#>
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "<#=project.Name#>", "<#=project.RelativePath#>", "<#=project.ProjectGuid#>"
+EndProject
+<#
+        }
+    }
+if(this.Session.ContainsKey("IntegrationTestDependencies"))
+{
+#>
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IntegrationTestDependencies", "IntegrationTestDependencies", "{939EC5C2-8345-43E2-8F97-72EEEBEEA0AC}"
+EndProject
+<#
+    foreach(var project in (List<SolutionFileCreator.Project>)this.Session["IntegrationTestDependencies"])
+    {
+#>
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "<#=project.Name#>", "<#=project.ProjectPath#>", "<#=project.ProjectGuid#>"
+EndProject
+<#
+    }
+}
+#>
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+<#
+    foreach(var project in (IList<SolutionFileCreator.Project>)this.Session["CoreProjects"])
+    {
+#>
+		<#=project.ProjectGuid#>.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		<#=project.ProjectGuid#>.Debug|Any CPU.Build.0 = Debug|Any CPU
+		<#=project.ProjectGuid#>.Release|Any CPU.ActiveCfg = Release|Any CPU
+		<#=project.ProjectGuid#>.Release|Any CPU.Build.0 = Release|Any CPU
+<#
+    }
+    foreach(var folder in (List<SolutionFileCreator.ServiceSolutionFolder>)this.Session["ServiceSolutionFolders"])
+    {
+        foreach(var project in folder.Projects)
+        {
+#>
+		<#=project.ProjectGuid#>.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		<#=project.ProjectGuid#>.Debug|Any CPU.Build.0 = Debug|Any CPU
+		<#=project.ProjectGuid#>.Release|Any CPU.ActiveCfg = Release|Any CPU
+		<#=project.ProjectGuid#>.Release|Any CPU.Build.0 = Release|Any CPU
+<#
+        }
+    }
+    foreach(var project in (IList<SolutionFileCreator.Project>)this.Session["TestProjects"])
+    {
+#>
+		<#=project.ProjectGuid#>.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		<#=project.ProjectGuid#>.Debug|Any CPU.Build.0 = Debug|Any CPU
+		<#=project.ProjectGuid#>.Release|Any CPU.ActiveCfg = Release|Any CPU
+		<#=project.ProjectGuid#>.Release|Any CPU.Build.0 = Release|Any CPU
+<#
+    }
+#>
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+<#
+    foreach(var project in (IList<SolutionFileCreator.Project>)this.Session["CoreProjects"])
+    {
+#>
+		<#=project.ProjectGuid#> = {9863FCB3-BFA4-4B9C-B8F6-302BA5F660B8}
+<#
+    }
+
+    foreach(var folder in (List<SolutionFileCreator.ServiceSolutionFolder>)this.Session["ServiceSolutionFolders"])
+    {
+#>
+		<#=folder.ProjectGuid#> = {939EC5C2-8345-43E2-8F97-72EEEBEEA0AB}
+<#
+        foreach(var project in folder.Projects)
+        { 
+#>
+		<#=project.ProjectGuid#> = <#=folder.ProjectGuid#>
+<#
+        }
+    }
+    foreach(var project in (IList<SolutionFileCreator.Project>)this.Session["TestProjects"])
+    {
+#>
+		<#=project.ProjectGuid#> = {12EC4E4B-7E2C-4B63-8EF9-7B959F82A89B}
+<#
+    }
+	if(this.Session.ContainsKey("IntegrationTestDependencies"))
+	{
+	    foreach(var project in (IList<SolutionFileCreator.Project>)this.Session["IntegrationTestDependencies"])
+		{
+#>
+		<#=project.ProjectGuid#> = {939EC5C2-8345-43E2-8F97-72EEEBEEA0AC}
+<#
+		}
+	}
+
+#>
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {<#=this.Session["SolutionGuid"]#>}
+	EndGlobalSection
+EndGlobal

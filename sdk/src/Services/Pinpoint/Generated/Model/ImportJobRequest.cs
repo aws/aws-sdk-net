@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// 
+    /// Import job request.
     /// </summary>
     public partial class ImportJobRequest
     {

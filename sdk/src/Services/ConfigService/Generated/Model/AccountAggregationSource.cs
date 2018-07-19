@@ -57,7 +57,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property AllAwsRegions. 
         /// <para>
-        /// If true, aggreagate existing AWS Config regions and future regions.
+        /// If true, aggregate existing AWS Config regions and future regions.
         /// </para>
         /// </summary>
         public bool AllAwsRegions

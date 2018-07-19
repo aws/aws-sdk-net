@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the clouddirectory-2016-05-10.normal.json service model.
+ * Do not modify this file. This file is generated from the clouddirectory-2017-01-11.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -184,6 +184,17 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 
                 var marshaller = BatchRemoveFacetFromObjectMarshaller.Instance;
                 marshaller.Marshall(requestObject.RemoveFacetFromObject, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetUpdateLinkAttributes())
+            {
+                context.Writer.WritePropertyName("UpdateLinkAttributes");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = BatchUpdateLinkAttributesMarshaller.Instance;
+                marshaller.Marshall(requestObject.UpdateLinkAttributes, context);
 
                 context.Writer.WriteObjectEnd();
             }

@@ -392,8 +392,21 @@ namespace Amazon.SecretsManager
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// You provided a parameter value that is not valid for the current state of the resource.
-        /// For example, if you try to enable rotation on a secret, you must already have a Lambda
-        /// function ARN configured or included as a parameter in this call.
+        /// 
+        ///  
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to enable rotation on a secret that doesn't already have a Lambda function
+        /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
         /// We can't find the resource that you asked for.
@@ -471,8 +484,8 @@ namespace Amazon.SecretsManager
         /// <para>
         /// If you call an operation that needs to encrypt or decrypt the <code>SecretString</code>
         /// or <code>SecretBinary</code> for a secret in the same account as the calling user
-        /// and that secret doesn't specify a KMS encryption key, Secrets Manager uses the account's
-        /// default AWS managed customer master key (CMK) with the alias <code>aws/secretsmanager</code>.
+        /// and that secret doesn't specify a AWS KMS encryption key, Secrets Manager uses the
+        /// account's default AWS managed customer master key (CMK) with the alias <code>aws/secretsmanager</code>.
         /// If this key doesn't already exist in your account then Secrets Manager creates it
         /// for you automatically. All users in the same AWS account automatically have access
         /// to use the default CMK. Note that if an Secrets Manager API call results in AWS having
@@ -483,13 +496,13 @@ namespace Amazon.SecretsManager
         /// <para>
         /// If the secret is in a different AWS account from the credentials calling an API that
         /// requires encryption or decryption of the secret value then you must create and use
-        /// a custom KMS CMK because you can't access the default CMK for the account using credentials
-        /// from a different AWS account. Store the ARN of the CMK in the secret when you create
-        /// the secret or when you update it by including it in the <code>KMSKeyId</code>. If
-        /// you call an API that must encrypt or decrypt <code>SecretString</code> or <code>SecretBinary</code>
-        /// using credentials from a different account then the KMS key policy must grant cross-account
-        /// access to that other account's user or role for both the kms:GenerateDataKey and kms:Decrypt
-        /// operations.
+        /// a custom AWS KMS CMK because you can't access the default CMK for the account using
+        /// credentials from a different AWS account. Store the ARN of the CMK in the secret when
+        /// you create the secret or when you update it by including it in the <code>KMSKeyId</code>.
+        /// If you call an API that must encrypt or decrypt <code>SecretString</code> or <code>SecretBinary</code>
+        /// using credentials from a different account then the AWS KMS key policy must grant
+        /// cross-account access to that other account's user or role for both the kms:GenerateDataKey
+        /// and kms:Decrypt operations.
         /// </para>
         ///  </li> </ul> </note> 
         /// <para>
@@ -509,15 +522,15 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// kms:GenerateDataKey - needed only if you use a customer-created KMS key to encrypt
+        /// kms:GenerateDataKey - needed only if you use a customer-managed AWS KMS key to encrypt
         /// the secret. You do not need this permission to use the account's default AWS managed
         /// CMK for Secrets Manager.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// kms:Decrypt - needed only if you use a customer-created KMS key to encrypt the secret.
-        /// You do not need this permission to use the account's default AWS managed CMK for Secrets
-        /// Manager.
+        /// kms:Decrypt - needed only if you use a customer-managed AWS KMS key to encrypt the
+        /// secret. You do not need this permission to use the account's default AWS managed CMK
+        /// for Secrets Manager.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -568,14 +581,30 @@ namespace Amazon.SecretsManager
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// You provided a parameter value that is not valid for the current state of the resource.
-        /// For example, if you try to enable rotation on a secret, you must already have a Lambda
-        /// function ARN configured or included as a parameter in this call.
+        /// 
+        ///  
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to enable rotation on a secret that doesn't already have a Lambda function
+        /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.LimitExceededException">
         /// The request failed because it would exceed one of the Secrets Manager internal limits.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.MalformedPolicyDocumentException">
         /// The policy document that you provided isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.PreconditionNotMetException">
+        /// The request failed because you did not complete all the prerequisite steps.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceExistsException">
         /// A resource with the ID you requested already exists.
@@ -624,6 +653,113 @@ namespace Amazon.SecretsManager
         public virtual CreateSecretResponse EndCreateSecret(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateSecretResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteResourcePolicy
+
+        /// <summary>
+        /// Deletes the resource-based permission policy that's attached to the secret.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Minimum permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To run this command, you must have the following permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// secretsmanager:DeleteResourcePolicy
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// To attach a resource policy to a secret, use <a>PutResourcePolicy</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To retrieve the current resource-based policy that's attached to a secret, use <a>GetResourcePolicy</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To list all of the currently available secrets, use <a>ListSecrets</a>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteResourcePolicy service method, as returned by SecretsManager.</returns>
+        /// <exception cref="Amazon.SecretsManager.Model.InternalServiceErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
+        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to enable rotation on a secret that doesn't already have a Lambda function
+        /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
+        /// We can't find the resource that you asked for.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
+        {
+            var marshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            var unmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteResourcePolicyRequest,DeleteResourcePolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy operation on AmazonSecretsManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteResourcePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public virtual IAsyncResult BeginDeleteResourcePolicy(DeleteResourcePolicyRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            var unmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteResourcePolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteResourcePolicy.</param>
+        /// 
+        /// <returns>Returns a  DeleteResourcePolicyResult from SecretsManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public virtual DeleteResourcePolicyResponse EndDeleteResourcePolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteResourcePolicyResponse>(asyncResult);
         }
 
         #endregion
@@ -700,8 +836,21 @@ namespace Amazon.SecretsManager
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// You provided a parameter value that is not valid for the current state of the resource.
-        /// For example, if you try to enable rotation on a secret, you must already have a Lambda
-        /// function ARN configured or included as a parameter in this call.
+        /// 
+        ///  
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to enable rotation on a secret that doesn't already have a Lambda function
+        /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
         /// We can't find the resource that you asked for.
@@ -878,8 +1027,21 @@ namespace Amazon.SecretsManager
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// You provided a parameter value that is not valid for the current state of the resource.
-        /// For example, if you try to enable rotation on a secret, you must already have a Lambda
-        /// function ARN configured or included as a parameter in this call.
+        /// 
+        ///  
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to enable rotation on a secret that doesn't already have a Lambda function
+        /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/GetRandomPassword">REST API Reference for GetRandomPassword Operation</seealso>
         public virtual GetRandomPasswordResponse GetRandomPassword(GetRandomPasswordRequest request)
@@ -926,6 +1088,116 @@ namespace Amazon.SecretsManager
 
         #endregion
         
+        #region  GetResourcePolicy
+
+        /// <summary>
+        /// Retrieves the JSON text of the resource-based policy document that's attached to the
+        /// specified secret. The JSON request string input and response output are shown formatted
+        /// with white space and line breaks for better readability. Submit your input as a single
+        /// line JSON string.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Minimum permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To run this command, you must have the following permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// secretsmanager:GetResourcePolicy
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// To attach a resource policy to a secret, use <a>PutResourcePolicy</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To delete the resource-based policy that's attached to a secret, use <a>DeleteResourcePolicy</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To list all of the currently available secrets, use <a>ListSecrets</a>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetResourcePolicy service method, as returned by SecretsManager.</returns>
+        /// <exception cref="Amazon.SecretsManager.Model.InternalServiceErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
+        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to enable rotation on a secret that doesn't already have a Lambda function
+        /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
+        /// We can't find the resource that you asked for.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        public virtual GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request)
+        {
+            var marshaller = GetResourcePolicyRequestMarshaller.Instance;
+            var unmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetResourcePolicyRequest,GetResourcePolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy operation on AmazonSecretsManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetResourcePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        public virtual IAsyncResult BeginGetResourcePolicy(GetResourcePolicyRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = GetResourcePolicyRequestMarshaller.Instance;
+            var unmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetResourcePolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetResourcePolicy.</param>
+        /// 
+        /// <returns>Returns a  GetResourcePolicyResult from SecretsManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        public virtual GetResourcePolicyResponse EndGetResourcePolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetResourcePolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetSecretValue
 
         /// <summary>
@@ -946,9 +1218,9 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// kms:Decrypt - required only if you use a customer-created KMS key to encrypt the secret.
-        /// You do not need this permission to use the account's default AWS managed CMK for Secrets
-        /// Manager.
+        /// kms:Decrypt - required only if you use a customer-managed AWS KMS key to encrypt the
+        /// secret. You do not need this permission to use the account's default AWS managed CMK
+        /// for Secrets Manager.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -978,8 +1250,21 @@ namespace Amazon.SecretsManager
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// You provided a parameter value that is not valid for the current state of the resource.
-        /// For example, if you try to enable rotation on a secret, you must already have a Lambda
-        /// function ARN configured or included as a parameter in this call.
+        /// 
+        ///  
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to enable rotation on a secret that doesn't already have a Lambda function
+        /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
         /// We can't find the resource that you asked for.
@@ -1219,6 +1504,127 @@ namespace Amazon.SecretsManager
 
         #endregion
         
+        #region  PutResourcePolicy
+
+        /// <summary>
+        /// Attaches the contents of the specified resource-based permission policy to a secret.
+        /// A resource-based policy is optional. Alternatively, you can use IAM identity-based
+        /// policies that specify the secret's Amazon Resource Name (ARN) in the policy statement's
+        /// <code>Resources</code> element. You can also use a combination of both identity-based
+        /// and resource-based policies. The affected users and roles receive the permissions
+        /// that are permitted by all of the relevant policies. For more information, see <a href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-based-policies.html">Using
+        /// Resource-Based Policies for AWS Secrets Manager</a>. For the complete description
+        /// of the AWS policy syntax and grammar, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
+        /// JSON Policy Reference</a> in the <i>IAM User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Minimum permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To run this command, you must have the following permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// secretsmanager:PutResourcePolicy
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// To retrieve the resource policy that's attached to a secret, use <a>GetResourcePolicy</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To delete the resource-based policy that's attached to a secret, use <a>DeleteResourcePolicy</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To list all of the currently available secrets, use <a>ListSecrets</a>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutResourcePolicy service method, as returned by SecretsManager.</returns>
+        /// <exception cref="Amazon.SecretsManager.Model.InternalServiceErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
+        /// You provided an invalid value for a parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
+        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to enable rotation on a secret that doesn't already have a Lambda function
+        /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.MalformedPolicyDocumentException">
+        /// The policy document that you provided isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
+        /// We can't find the resource that you asked for.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
+        {
+            var marshaller = PutResourcePolicyRequestMarshaller.Instance;
+            var unmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutResourcePolicyRequest,PutResourcePolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy operation on AmazonSecretsManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutResourcePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public virtual IAsyncResult BeginPutResourcePolicy(PutResourcePolicyRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = PutResourcePolicyRequestMarshaller.Instance;
+            var unmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<PutResourcePolicyRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutResourcePolicy.</param>
+        /// 
+        /// <returns>Returns a  PutResourcePolicyResult from SecretsManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public virtual PutResourcePolicyResponse EndPutResourcePolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutResourcePolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  PutSecretValue
 
         /// <summary>
@@ -1263,8 +1669,8 @@ namespace Amazon.SecretsManager
         /// <para>
         /// If you call an operation that needs to encrypt or decrypt the <code>SecretString</code>
         /// or <code>SecretBinary</code> for a secret in the same account as the calling user
-        /// and that secret doesn't specify a KMS encryption key, Secrets Manager uses the account's
-        /// default AWS managed customer master key (CMK) with the alias <code>aws/secretsmanager</code>.
+        /// and that secret doesn't specify a AWS KMS encryption key, Secrets Manager uses the
+        /// account's default AWS managed customer master key (CMK) with the alias <code>aws/secretsmanager</code>.
         /// If this key doesn't already exist in your account then Secrets Manager creates it
         /// for you automatically. All users in the same AWS account automatically have access
         /// to use the default CMK. Note that if an Secrets Manager API call results in AWS having
@@ -1275,13 +1681,13 @@ namespace Amazon.SecretsManager
         /// <para>
         /// If the secret is in a different AWS account from the credentials calling an API that
         /// requires encryption or decryption of the secret value then you must create and use
-        /// a custom KMS CMK because you can't access the default CMK for the account using credentials
-        /// from a different AWS account. Store the ARN of the CMK in the secret when you create
-        /// the secret or when you update it by including it in the <code>KMSKeyId</code>. If
-        /// you call an API that must encrypt or decrypt <code>SecretString</code> or <code>SecretBinary</code>
-        /// using credentials from a different account then the KMS key policy must grant cross-account
-        /// access to that other account's user or role for both the kms:GenerateDataKey and kms:Decrypt
-        /// operations.
+        /// a custom AWS KMS CMK because you can't access the default CMK for the account using
+        /// credentials from a different AWS account. Store the ARN of the CMK in the secret when
+        /// you create the secret or when you update it by including it in the <code>KMSKeyId</code>.
+        /// If you call an API that must encrypt or decrypt <code>SecretString</code> or <code>SecretBinary</code>
+        /// using credentials from a different account then the AWS KMS key policy must grant
+        /// cross-account access to that other account's user or role for both the kms:GenerateDataKey
+        /// and kms:Decrypt operations.
         /// </para>
         ///  </li> </ul> </note> 
         /// <para>
@@ -1297,14 +1703,9 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// kms:GenerateDataKey - needed only if you use a customer-created KMS key to encrypt
-        /// the secret. You do not need this permission to use the account's AWS managed CMK for
-        /// Secrets Manager.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// kms:Encrypt - needed only if you use a customer-created KMS key to encrypt the secret.
-        /// You do not need this permission to use the account's AWS managed CMK for Secrets Manager.
+        /// kms:GenerateDataKey - needed only if you use a customer-managed AWS KMS key to encrypt
+        /// the secret. You do not need this permission to use the account's default AWS managed
+        /// CMK for Secrets Manager.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1345,8 +1746,21 @@ namespace Amazon.SecretsManager
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// You provided a parameter value that is not valid for the current state of the resource.
-        /// For example, if you try to enable rotation on a secret, you must already have a Lambda
-        /// function ARN configured or included as a parameter in this call.
+        /// 
+        ///  
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to enable rotation on a secret that doesn't already have a Lambda function
+        /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.LimitExceededException">
         /// The request failed because it would exceed one of the Secrets Manager internal limits.
@@ -1441,8 +1855,21 @@ namespace Amazon.SecretsManager
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// You provided a parameter value that is not valid for the current state of the resource.
-        /// For example, if you try to enable rotation on a secret, you must already have a Lambda
-        /// function ARN configured or included as a parameter in this call.
+        /// 
+        ///  
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to enable rotation on a secret that doesn't already have a Lambda function
+        /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
         /// We can't find the resource that you asked for.
@@ -1582,8 +2009,21 @@ namespace Amazon.SecretsManager
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// You provided a parameter value that is not valid for the current state of the resource.
-        /// For example, if you try to enable rotation on a secret, you must already have a Lambda
-        /// function ARN configured or included as a parameter in this call.
+        /// 
+        ///  
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to enable rotation on a secret that doesn't already have a Lambda function
+        /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
         /// We can't find the resource that you asked for.
@@ -1716,6 +2156,24 @@ namespace Amazon.SecretsManager
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
         /// You provided an invalid value for a parameter.
         /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
+        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to enable rotation on a secret that doesn't already have a Lambda function
+        /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
         /// We can't find the resource that you asked for.
         /// </exception>
@@ -1816,6 +2274,24 @@ namespace Amazon.SecretsManager
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
         /// You provided an invalid value for a parameter.
         /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
+        /// You provided a parameter value that is not valid for the current state of the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to enable rotation on a secret that doesn't already have a Lambda function
+        /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
         /// We can't find the resource that you asked for.
         /// </exception>
@@ -1898,8 +2374,8 @@ namespace Amazon.SecretsManager
         /// <para>
         /// If you call an operation that needs to encrypt or decrypt the <code>SecretString</code>
         /// or <code>SecretBinary</code> for a secret in the same account as the calling user
-        /// and that secret doesn't specify a KMS encryption key, Secrets Manager uses the account's
-        /// default AWS managed customer master key (CMK) with the alias <code>aws/secretsmanager</code>.
+        /// and that secret doesn't specify a AWS KMS encryption key, Secrets Manager uses the
+        /// account's default AWS managed customer master key (CMK) with the alias <code>aws/secretsmanager</code>.
         /// If this key doesn't already exist in your account then Secrets Manager creates it
         /// for you automatically. All users in the same AWS account automatically have access
         /// to use the default CMK. Note that if an Secrets Manager API call results in AWS having
@@ -1910,13 +2386,13 @@ namespace Amazon.SecretsManager
         /// <para>
         /// If the secret is in a different AWS account from the credentials calling an API that
         /// requires encryption or decryption of the secret value then you must create and use
-        /// a custom KMS CMK because you can't access the default CMK for the account using credentials
-        /// from a different AWS account. Store the ARN of the CMK in the secret when you create
-        /// the secret or when you update it by including it in the <code>KMSKeyId</code>. If
-        /// you call an API that must encrypt or decrypt <code>SecretString</code> or <code>SecretBinary</code>
-        /// using credentials from a different account then the KMS key policy must grant cross-account
-        /// access to that other account's user or role for both the kms:GenerateDataKey and kms:Decrypt
-        /// operations.
+        /// a custom AWS KMS CMK because you can't access the default CMK for the account using
+        /// credentials from a different AWS account. Store the ARN of the CMK in the secret when
+        /// you create the secret or when you update it by including it in the <code>KMSKeyId</code>.
+        /// If you call an API that must encrypt or decrypt <code>SecretString</code> or <code>SecretBinary</code>
+        /// using credentials from a different account then the AWS KMS key policy must grant
+        /// cross-account access to that other account's user or role for both the kms:GenerateDataKey
+        /// and kms:Decrypt operations.
         /// </para>
         ///  </li> </ul> </note> 
         /// <para>
@@ -1932,13 +2408,13 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// kms:GenerateDataKey - needed only if you use a custom KMS key to encrypt the secret.
+        /// kms:GenerateDataKey - needed only if you use a custom AWS KMS key to encrypt the secret.
         /// You do not need this permission to use the account's AWS managed CMK for Secrets Manager.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// kms:Decrypt - needed only if you use a custom KMS key to encrypt the secret. You do
-        /// not need this permission to use the account's AWS managed CMK for Secrets Manager.
+        /// kms:Decrypt - needed only if you use a custom AWS KMS key to encrypt the secret. You
+        /// do not need this permission to use the account's AWS managed CMK for Secrets Manager.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1979,14 +2455,30 @@ namespace Amazon.SecretsManager
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// You provided a parameter value that is not valid for the current state of the resource.
-        /// For example, if you try to enable rotation on a secret, you must already have a Lambda
-        /// function ARN configured or included as a parameter in this call.
+        /// 
+        ///  
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to enable rotation on a secret that doesn't already have a Lambda function
+        /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.LimitExceededException">
         /// The request failed because it would exceed one of the Secrets Manager internal limits.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.MalformedPolicyDocumentException">
         /// The policy document that you provided isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.SecretsManager.Model.PreconditionNotMetException">
+        /// The request failed because you did not complete all the prerequisite steps.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceExistsException">
         /// A resource with the ID you requested already exists.
@@ -2091,7 +2583,7 @@ namespace Amazon.SecretsManager
         /// <para>
         /// To get the list of staging labels that are currently associated with a version of
         /// a secret, use <code> <a>DescribeSecret</a> </code> and examine the <code>SecretVersionsToStages</code>
-        /// response value.
+        /// response value. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -2106,8 +2598,21 @@ namespace Amazon.SecretsManager
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidRequestException">
         /// You provided a parameter value that is not valid for the current state of the resource.
-        /// For example, if you try to enable rotation on a secret, you must already have a Lambda
-        /// function ARN configured or included as a parameter in this call.
+        /// 
+        ///  
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to perform the operation on a secret that's currently marked deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to enable rotation on a secret that doesn't already have a Lambda function
+        /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.LimitExceededException">
         /// The request failed because it would exceed one of the Secrets Manager internal limits.

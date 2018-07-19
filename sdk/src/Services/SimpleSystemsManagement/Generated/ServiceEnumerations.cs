@@ -25,6 +25,114 @@ namespace Amazon.SimpleSystemsManagement
 {
 
     /// <summary>
+    /// Constants used for properties of type AssociationExecutionFilterKey.
+    /// </summary>
+    public class AssociationExecutionFilterKey : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CreatedTime for AssociationExecutionFilterKey
+        /// </summary>
+        public static readonly AssociationExecutionFilterKey CreatedTime = new AssociationExecutionFilterKey("CreatedTime");
+        /// <summary>
+        /// Constant ExecutionId for AssociationExecutionFilterKey
+        /// </summary>
+        public static readonly AssociationExecutionFilterKey ExecutionId = new AssociationExecutionFilterKey("ExecutionId");
+        /// <summary>
+        /// Constant Status for AssociationExecutionFilterKey
+        /// </summary>
+        public static readonly AssociationExecutionFilterKey Status = new AssociationExecutionFilterKey("Status");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssociationExecutionFilterKey(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssociationExecutionFilterKey FindValue(string value)
+        {
+            return FindValue<AssociationExecutionFilterKey>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssociationExecutionFilterKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AssociationExecutionTargetsFilterKey.
+    /// </summary>
+    public class AssociationExecutionTargetsFilterKey : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ResourceId for AssociationExecutionTargetsFilterKey
+        /// </summary>
+        public static readonly AssociationExecutionTargetsFilterKey ResourceId = new AssociationExecutionTargetsFilterKey("ResourceId");
+        /// <summary>
+        /// Constant ResourceType for AssociationExecutionTargetsFilterKey
+        /// </summary>
+        public static readonly AssociationExecutionTargetsFilterKey ResourceType = new AssociationExecutionTargetsFilterKey("ResourceType");
+        /// <summary>
+        /// Constant Status for AssociationExecutionTargetsFilterKey
+        /// </summary>
+        public static readonly AssociationExecutionTargetsFilterKey Status = new AssociationExecutionTargetsFilterKey("Status");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssociationExecutionTargetsFilterKey(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssociationExecutionTargetsFilterKey FindValue(string value)
+        {
+            return FindValue<AssociationExecutionTargetsFilterKey>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssociationExecutionTargetsFilterKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AssociationFilterKey.
     /// </summary>
     public class AssociationFilterKey : ConstantClass
@@ -88,6 +196,60 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AssociationFilterKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AssociationFilterOperatorType.
+    /// </summary>
+    public class AssociationFilterOperatorType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EQUAL for AssociationFilterOperatorType
+        /// </summary>
+        public static readonly AssociationFilterOperatorType EQUAL = new AssociationFilterOperatorType("EQUAL");
+        /// <summary>
+        /// Constant GREATER_THAN for AssociationFilterOperatorType
+        /// </summary>
+        public static readonly AssociationFilterOperatorType GREATER_THAN = new AssociationFilterOperatorType("GREATER_THAN");
+        /// <summary>
+        /// Constant LESS_THAN for AssociationFilterOperatorType
+        /// </summary>
+        public static readonly AssociationFilterOperatorType LESS_THAN = new AssociationFilterOperatorType("LESS_THAN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssociationFilterOperatorType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssociationFilterOperatorType FindValue(string value)
+        {
+            return FindValue<AssociationFilterOperatorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssociationFilterOperatorType(string value)
         {
             return FindValue(value);
         }
@@ -1960,6 +2122,10 @@ namespace Amazon.SimpleSystemsManagement
         /// Constant AMAZON_LINUX for OperatingSystem
         /// </summary>
         public static readonly OperatingSystem AMAZON_LINUX = new OperatingSystem("AMAZON_LINUX");
+        /// <summary>
+        /// Constant AMAZON_LINUX_2 for OperatingSystem
+        /// </summary>
+        public static readonly OperatingSystem AMAZON_LINUX_2 = new OperatingSystem("AMAZON_LINUX_2");
         /// <summary>
         /// Constant CENTOS for OperatingSystem
         /// </summary>

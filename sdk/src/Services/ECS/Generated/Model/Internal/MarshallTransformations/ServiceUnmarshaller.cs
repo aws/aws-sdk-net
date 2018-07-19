@@ -160,6 +160,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.RunningCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("schedulingStrategy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SchedulingStrategy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("serviceArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

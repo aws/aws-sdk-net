@@ -90,9 +90,7 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HasCredential. Indicates whether the channel is configured
-        /// with ADM credentials. Amazon Pinpoint uses your credentials to authenticate push notifications
-        /// with ADM. Provide your credentials by setting the ClientId and ClientSecret attributes.
+        /// Gets and sets the property HasCredential. Not used. Retained for backwards compatibility.
         /// </summary>
         public bool HasCredential
         {

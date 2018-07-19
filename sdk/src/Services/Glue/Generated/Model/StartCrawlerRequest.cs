@@ -30,7 +30,7 @@ namespace Amazon.Glue.Model
     /// <summary>
     /// Container for the parameters to the StartCrawler operation.
     /// Starts a crawl using the specified crawler, regardless of what is scheduled. If the
-    /// crawler is already running, does nothing.
+    /// crawler is already running, returns a <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-exceptions.html#aws-glue-api-exceptions-CrawlerRunningException">CrawlerRunningException</a>.
     /// </summary>
     public partial class StartCrawlerRequest : AmazonGlueRequest
     {

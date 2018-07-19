@@ -144,6 +144,21 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             #endregion
         }
 
+        public void EC2AssociateIamInstanceProfile()
+        {
+            #region to-associate-an-iam-instance-profile-with-an-instance-1528928429850
+
+            var response = client.AssociateIamInstanceProfile(new AssociateIamInstanceProfileRequest 
+            {
+                IamInstanceProfile = new IamInstanceProfileSpecification { Name = "admin-role" },
+                InstanceId = "i-123456789abcde123"
+            });
+
+            IamInstanceProfileAssociation iamInstanceProfileAssociation = response.IamInstanceProfileAssociation;
+
+            #endregion
+        }
+
         public void EC2AssociateRouteTable()
         {
             #region ec2-associate-route-table-1
@@ -205,6 +220,121 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             string instanceId = response.InstanceId;
             string state = response.State;
             string volumeId = response.VolumeId;
+
+            #endregion
+        }
+
+        public void EC2AuthorizeSecurityGroupEgress()
+        {
+            #region to-add-a-rule-that-allows-outbound-traffic-to-a-specific-address-range-1528929309636
+
+            var response = client.AuthorizeSecurityGroupEgress(new AuthorizeSecurityGroupEgressRequest 
+            {
+                GroupId = "sg-1a2b3c4d",
+                IpPermissions = new List<IpPermission> {
+                    new IpPermission {
+                        FromPort = 80,
+                        IpProtocol = "tcp",
+                        ToPort = 80
+                    }
+                }
+            });
+
+
+            #endregion
+        }
+
+        public void EC2AuthorizeSecurityGroupEgress()
+        {
+            #region to-add-a-rule-that-allows-outbound-traffic-to-a-specific-security-group-1528929760260
+
+            var response = client.AuthorizeSecurityGroupEgress(new AuthorizeSecurityGroupEgressRequest 
+            {
+                GroupId = "sg-1a2b3c4d",
+                IpPermissions = new List<IpPermission> {
+                    new IpPermission {
+                        FromPort = 80,
+                        IpProtocol = "tcp",
+                        ToPort = 80,
+                        UserIdGroupPairs = new List<UserIdGroupPair> {
+                            new UserIdGroupPair { GroupId = "sg-4b51a32f" }
+                        }
+                    }
+                }
+            });
+
+
+            #endregion
+        }
+
+        public void EC2AuthorizeSecurityGroupIngress()
+        {
+            #region to-add-a-rule-that-allows-inbound-ssh-traffic-1529011610328
+
+            var response = client.AuthorizeSecurityGroupIngress(new AuthorizeSecurityGroupIngressRequest 
+            {
+                GroupId = "sg-903004f8",
+                IpPermissions = new List<IpPermission> {
+                    new IpPermission {
+                        FromPort = 22,
+                        IpProtocol = "tcp",
+                        ToPort = 22
+                    }
+                }
+            });
+
+
+            #endregion
+        }
+
+        public void EC2AuthorizeSecurityGroupIngress()
+        {
+            #region to-add-a-rule-that-allows-inbound-http-traffic-from-another-security-group-1529012163168
+
+            var response = client.AuthorizeSecurityGroupIngress(new AuthorizeSecurityGroupIngressRequest 
+            {
+                GroupId = "sg-111aaa22",
+                IpPermissions = new List<IpPermission> {
+                    new IpPermission {
+                        FromPort = 80,
+                        IpProtocol = "tcp",
+                        ToPort = 80,
+                        UserIdGroupPairs = new List<UserIdGroupPair> {
+                            new UserIdGroupPair {
+                                Description = "HTTP access from other instances",
+                                GroupId = "sg-1a2b3c4d"
+                            }
+                        }
+                    }
+                }
+            });
+
+
+            #endregion
+        }
+
+        public void EC2AuthorizeSecurityGroupIngress()
+        {
+            #region to-add-a-rule-with-a-description-1529012418116
+
+            var response = client.AuthorizeSecurityGroupIngress(new AuthorizeSecurityGroupIngressRequest 
+            {
+                GroupId = "sg-123abc12 ",
+                IpPermissions = new List<IpPermission> {
+                    new IpPermission {
+                        FromPort = 3389,
+                        IpProtocol = "tcp",
+                        Ipv6Ranges = new List<Ipv6Range> {
+                            new Ipv6Range {
+                                CidrIpv6 = "2001:db8:1234:1a00::/64",
+                                Description = "RDP access from the NY office"
+                            }
+                        },
+                        ToPort = 3389
+                    }
+                }
+            });
+
 
             #endregion
         }
@@ -274,6 +404,23 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             #endregion
         }
 
+        public void EC2CopyImage()
+        {
+            #region to-copy-an-ami-to-another-region-1529022820832
+
+            var response = client.CopyImage(new CopyImageRequest 
+            {
+                Description = "",
+                Name = "My server",
+                SourceImageId = "ami-5731123e",
+                SourceRegion = "us-east-1"
+            });
+
+            string imageId = response.ImageId;
+
+            #endregion
+        }
+
         public void EC2CopySnapshot()
         {
             #region to-copy-a-snapshot-1472502259774
@@ -329,6 +476,33 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             #endregion
         }
 
+        public void EC2CreateImage()
+        {
+            #region to-create-an-ami-from-an-amazon-ebs-backed-instance-1529023150636
+
+            var response = client.CreateImage(new CreateImageRequest 
+            {
+                BlockDeviceMappings = new List<BlockDeviceMapping> {
+                    new BlockDeviceMapping {
+                        DeviceName = "/dev/sdh",
+                        Ebs = new EbsBlockDevice { VolumeSize = 100 }
+                    },
+                    new BlockDeviceMapping {
+                        DeviceName = "/dev/sdc",
+                        VirtualName = "ephemeral1"
+                    }
+                },
+                Description = "An AMI for my server",
+                InstanceId = "i-1234567890abcdef0",
+                Name = "My server",
+                NoReboot = true
+            });
+
+            string imageId = response.ImageId;
+
+            #endregion
+        }
+
         public void EC2CreateInternetGateway()
         {
             #region ec2-create-internet-gateway-1
@@ -351,6 +525,61 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
                 KeyName = "my-key-pair"
             });
 
+
+            #endregion
+        }
+
+        public void EC2CreateLaunchTemplate()
+        {
+            #region to-create-a-launch-template-1529023655488
+
+            var response = client.CreateLaunchTemplate(new CreateLaunchTemplateRequest 
+            {
+                LaunchTemplateData = new RequestLaunchTemplateData {
+                    ImageId = "ami-8c1be5f6",
+                    InstanceType = "t2.small",
+                    NetworkInterfaces = new List<LaunchTemplateInstanceNetworkInterfaceSpecificationRequest> {
+                        new LaunchTemplateInstanceNetworkInterfaceSpecificationRequest {
+                            AssociatePublicIpAddress = true,
+                            DeviceIndex = 0,
+                            Ipv6AddressCount = 1,
+                            SubnetId = "subnet-7b16de0c"
+                        }
+                    },
+                    TagSpecifications = new List<LaunchTemplateTagSpecificationRequest> {
+                        new LaunchTemplateTagSpecificationRequest {
+                            ResourceType = "instance",
+                            Tags = new List<Tag> {
+                                new Tag {
+                                    Key = "Name",
+                                    Value = "webserver"
+                                }
+                            }
+                        }
+                    }
+                },
+                LaunchTemplateName = "my-template",
+                VersionDescription = "WebVersion1"
+            });
+
+            LaunchTemplate launchTemplate = response.LaunchTemplate;
+
+            #endregion
+        }
+
+        public void EC2CreateLaunchTemplateVersion()
+        {
+            #region to-create-a-launch-template-version-1529024195702
+
+            var response = client.CreateLaunchTemplateVersion(new CreateLaunchTemplateVersionRequest 
+            {
+                LaunchTemplateData = new RequestLaunchTemplateData { ImageId = "ami-c998b6b2" },
+                LaunchTemplateId = "lt-0abcd290751193123",
+                SourceVersion = "1",
+                VersionDescription = "WebVersion2"
+            });
+
+            LaunchTemplateVersion launchTemplateVersion = response.LaunchTemplateVersion;
 
             #endregion
         }
@@ -464,6 +693,22 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             });
 
             RouteTable routeTable = response.RouteTable;
+
+            #endregion
+        }
+
+        public void EC2CreateSecurityGroup()
+        {
+            #region to-create-a-security-group-for-a-vpc-1529024532716
+
+            var response = client.CreateSecurityGroup(new CreateSecurityGroupRequest 
+            {
+                Description = "My security group",
+                GroupName = "my-security-group",
+                VpcId = "vpc-1a2b3c4d"
+            });
+
+            string groupId = response.GroupId;
 
             #endregion
         }
@@ -657,6 +902,38 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             #endregion
         }
 
+        public void EC2DeleteLaunchTemplate()
+        {
+            #region to-delete-a-launch-template-1529024658216
+
+            var response = client.DeleteLaunchTemplate(new DeleteLaunchTemplateRequest 
+            {
+                LaunchTemplateId = "lt-0abcd290751193123"
+            });
+
+            LaunchTemplate launchTemplate = response.LaunchTemplate;
+
+            #endregion
+        }
+
+        public void EC2DeleteLaunchTemplateVersions()
+        {
+            #region to-delete-a-launch-template-version-1529024790864
+
+            var response = client.DeleteLaunchTemplateVersions(new DeleteLaunchTemplateVersionsRequest 
+            {
+                LaunchTemplateId = "lt-0abcd290751193123",
+                Versions = new List<string> {
+                    "1"
+                }
+            });
+
+            List<DeleteLaunchTemplateVersionsResponseSuccessItem> successfullyDeletedLaunchTemplateVersions = response.SuccessfullyDeletedLaunchTemplateVersions;
+            List<DeleteLaunchTemplateVersionsResponseErrorItem> unsuccessfullyDeletedLaunchTemplateVersions = response.UnsuccessfullyDeletedLaunchTemplateVersions;
+
+            #endregion
+        }
+
         public void EC2DeleteNatGateway()
         {
             #region ec2-delete-nat-gateway-1
@@ -746,6 +1023,19 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             var response = client.DeleteRouteTable(new DeleteRouteTableRequest 
             {
                 RouteTableId = "rtb-22574640"
+            });
+
+
+            #endregion
+        }
+
+        public void EC2DeleteSecurityGroup()
+        {
+            #region to-delete-a-security-group-1529024952972
+
+            var response = client.DeleteSecurityGroup(new DeleteSecurityGroupRequest 
+            {
+                GroupId = "sg-903004f8"
             });
 
 
@@ -966,6 +1256,54 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             #endregion
         }
 
+        public void EC2DescribeIamInstanceProfileAssociations()
+        {
+            #region to-describe-an-iam-instance-profile-association-1529025123918
+
+            var response = client.DescribeIamInstanceProfileAssociations(new DescribeIamInstanceProfileAssociationsRequest 
+            {
+                AssociationIds = new List<string> {
+                    "iip-assoc-0db249b1f25fa24b8"
+                }
+            });
+
+            List<IamInstanceProfileAssociation> iamInstanceProfileAssociations = response.IamInstanceProfileAssociations;
+
+            #endregion
+        }
+
+        public void EC2DescribeImageAttribute()
+        {
+            #region to-describe-the-launch-permissions-for-an-ami-1529025296264
+
+            var response = client.DescribeImageAttribute(new DescribeImageAttributeRequest 
+            {
+                Attribute = "launchPermission",
+                ImageId = "ami-5731123e"
+            });
+
+            string imageId = response.ImageId;
+            List<LaunchPermission> launchPermissions = response.LaunchPermissions;
+
+            #endregion
+        }
+
+        public void EC2DescribeImages()
+        {
+            #region to-describe-an-ami-1529025482866
+
+            var response = client.DescribeImages(new DescribeImagesRequest 
+            {
+                ImageIds = new List<string> {
+                    "ami-5731123e"
+                }
+            });
+
+            List<Image> images = response.Images;
+
+            #endregion
+        }
+
         public void EC2DescribeInstanceAttribute()
         {
             #region to-describe-the-instance-type-1472712432132
@@ -1014,6 +1352,77 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             #endregion
         }
 
+        public void EC2DescribeInstances()
+        {
+            #region to-describe-an-amazon-ec2-instance-1529025982172
+
+            var response = client.DescribeInstances(new DescribeInstancesRequest 
+            {
+                InstanceIds = new List<string> {
+                    "i-1234567890abcdef0"
+                }
+            });
+
+
+            #endregion
+        }
+
+        public void EC2DescribeInstances()
+        {
+            #region to-describe-the-instances-with-the-instance-type-t2micro-1529026147602
+
+            var response = client.DescribeInstances(new DescribeInstancesRequest 
+            {
+                Filters = new List<Filter> {
+                    new Filter {
+                        Name = "instance-type",
+                        Values = new List<string> {
+                            "t2.micro"
+                        }
+                    }
+                }
+            });
+
+
+            #endregion
+        }
+
+        public void EC2DescribeInstances()
+        {
+            #region to-describe-the-instances-with-a-specific-tag-1529026251928
+
+            var response = client.DescribeInstances(new DescribeInstancesRequest 
+            {
+                Filters = new List<Filter> {
+                    new Filter {
+                        Name = "tag:Purpose",
+                        Values = new List<string> {
+                            "test"
+                        }
+                    }
+                }
+            });
+
+
+            #endregion
+        }
+
+        public void EC2DescribeInstanceStatus()
+        {
+            #region to-describe-the-status-of-an-instance-1529025696830
+
+            var response = client.DescribeInstanceStatus(new DescribeInstanceStatusRequest 
+            {
+                InstanceIds = new List<string> {
+                    "i-1234567890abcdef0"
+                }
+            });
+
+            List<InstanceStatus> instanceStatuses = response.InstanceStatuses;
+
+            #endregion
+        }
+
         public void EC2DescribeInternetGateways()
         {
             #region ec2-describe-internet-gateways-1
@@ -1047,6 +1456,36 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             });
 
             List<KeyPairInfo> keyPairs = response.KeyPairs;
+
+            #endregion
+        }
+
+        public void EC2DescribeLaunchTemplates()
+        {
+            #region to-describe-a-launch-template-1529344182862
+
+            var response = client.DescribeLaunchTemplates(new DescribeLaunchTemplatesRequest 
+            {
+                LaunchTemplateIds = new List<string> {
+                    "lt-01238c059e3466abc"
+                }
+            });
+
+            List<LaunchTemplate> launchTemplates = response.LaunchTemplates;
+
+            #endregion
+        }
+
+        public void EC2DescribeLaunchTemplateVersions()
+        {
+            #region to-describe-the-versions-for-a-launch-template-1529344425048
+
+            var response = client.DescribeLaunchTemplateVersions(new DescribeLaunchTemplateVersionsRequest 
+            {
+                LaunchTemplateId = "068f72b72934aff71"
+            });
+
+            List<LaunchTemplateVersion> launchTemplateVersions = response.LaunchTemplateVersions;
 
             #endregion
         }
@@ -1246,6 +1685,57 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             });
 
             List<ScheduledInstance> scheduledInstanceSet = response.ScheduledInstanceSet;
+
+            #endregion
+        }
+
+        public void EC2DescribeSecurityGroupReferences()
+        {
+            #region to-describe-security-group-references-1529354312088
+
+            var response = client.DescribeSecurityGroupReferences(new DescribeSecurityGroupReferencesRequest 
+            {
+                GroupId = new List<string> {
+                    "sg-903004f8"
+                }
+            });
+
+            List<SecurityGroupReference> securityGroupReferenceSet = response.SecurityGroupReferenceSet;
+
+            #endregion
+        }
+
+        public void EC2DescribeSecurityGroups()
+        {
+            #region to-describe-a-security-group-1529354426314
+
+            var response = client.DescribeSecurityGroups(new DescribeSecurityGroupsRequest 
+            {
+                GroupIds = new List<string> {
+                    "sg-903004f8"
+                }
+            });
+
+
+            #endregion
+        }
+
+        public void EC2DescribeSecurityGroups()
+        {
+            #region to-describe-a-tagged-security-group-1529354553880
+
+            var response = client.DescribeSecurityGroups(new DescribeSecurityGroupsRequest 
+            {
+                Filters = new List<Filter> {
+                    new Filter {
+                        Name = "tag:Purpose",
+                        Values = new List<string> {
+                            "test"
+                        }
+                    }
+                }
+            });
+
 
             #endregion
         }
@@ -1676,6 +2166,20 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             #endregion
         }
 
+        public void EC2DisassociateIamInstanceProfile()
+        {
+            #region to-disassociate-an-iam-instance-profile-1529355364478
+
+            var response = client.DisassociateIamInstanceProfile(new DisassociateIamInstanceProfileRequest 
+            {
+                AssociationId = "iip-assoc-05020b59952902f5f"
+            });
+
+            IamInstanceProfileAssociation iamInstanceProfileAssociation = response.IamInstanceProfileAssociation;
+
+            #endregion
+        }
+
         public void EC2DisassociateRouteTable()
         {
             #region ec2-disassociate-route-table-1
@@ -1712,6 +2216,111 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
                 VolumeId = "vol-1234567890abcdef0"
             });
 
+
+            #endregion
+        }
+
+        public void EC2GetConsoleOutput()
+        {
+            #region to-get-the-console-output-1529355683194
+
+            var response = client.GetConsoleOutput(new GetConsoleOutputRequest 
+            {
+                InstanceId = "i-1234567890abcdef0"
+            });
+
+            string instanceId = response.InstanceId;
+            string output = response.Output;
+            DateTime timestamp = response.Timestamp;
+
+            #endregion
+        }
+
+        public void EC2GetLaunchTemplateData()
+        {
+            #region to-get-the-launch-template-data-for-an-instance--1529356515702
+
+            var response = client.GetLaunchTemplateData(new GetLaunchTemplateDataRequest 
+            {
+                InstanceId = "0123d646e8048babc"
+            });
+
+            ResponseLaunchTemplateData launchTemplateData = response.LaunchTemplateData;
+
+            #endregion
+        }
+
+        public void EC2ModifyImageAttribute()
+        {
+            #region to-make-an-ami-public-1529357395278
+
+            var response = client.ModifyImageAttribute(new ModifyImageAttributeRequest 
+            {
+                ImageId = "ami-5731123e",
+                LaunchPermission = new LaunchPermissionModifications { Add = new List<LaunchPermission> {
+                    new LaunchPermission { Group = "all" }
+                } }
+            });
+
+
+            #endregion
+        }
+
+        public void EC2ModifyImageAttribute()
+        {
+            #region to-grant-launch-permissions-1529357727906
+
+            var response = client.ModifyImageAttribute(new ModifyImageAttributeRequest 
+            {
+                ImageId = "ami-5731123e",
+                LaunchPermission = new LaunchPermissionModifications { Add = new List<LaunchPermission> {
+                    new LaunchPermission { UserId = "123456789012" }
+                } }
+            });
+
+
+            #endregion
+        }
+
+        public void EC2ModifyInstanceAttribute()
+        {
+            #region to-modify-the-instance-type-1529357844378
+
+            var response = client.ModifyInstanceAttribute(new ModifyInstanceAttributeRequest 
+            {
+                InstanceId = "i-1234567890abcdef0",
+                InstanceType = <data>
+            });
+
+
+            #endregion
+        }
+
+        public void EC2ModifyInstanceAttribute()
+        {
+            #region to-enable-enhanced-networking-1529358279870
+
+            var response = client.ModifyInstanceAttribute(new ModifyInstanceAttributeRequest 
+            {
+                EnaSupport = jsondata object,
+                InstanceId = "i-1234567890abcdef0"
+            });
+
+
+            #endregion
+        }
+
+        public void EC2ModifyLaunchTemplate()
+        {
+            #region to-change-the-default-version-of-a-launch-template-1529358440364
+
+            var response = client.ModifyLaunchTemplate(new ModifyLaunchTemplateRequest 
+            {
+                DefaultVersion = "2",
+                LaunchTemplateId = "lt-0abcd290751193123"
+            });
+
+            LaunchTemplate launchTemplate = response.LaunchTemplate;
 
             #endregion
         }
@@ -1930,6 +2539,21 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             });
 
             List<ScheduledInstance> scheduledInstanceSet = response.ScheduledInstanceSet;
+
+            #endregion
+        }
+
+        public void EC2RebootInstances()
+        {
+            #region to-reboot-an-ec2-instance-1529358566382
+
+            var response = client.RebootInstances(new RebootInstancesRequest 
+            {
+                InstanceIds = new List<string> {
+                    "i-1234567890abcdef5"
+                }
+            });
+
 
             #endregion
         }
@@ -2203,6 +2827,34 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             #endregion
         }
 
+        public void EC2ResetImageAttribute()
+        {
+            #region to-reset-the-launchpermission-attribute-1529359519534
+
+            var response = client.ResetImageAttribute(new ResetImageAttributeRequest 
+            {
+                Attribute = "launchPermission",
+                ImageId = "ami-5731123e"
+            });
+
+
+            #endregion
+        }
+
+        public void EC2ResetInstanceAttribute()
+        {
+            #region to-reset-the-sourcedestcheck-attribute-1529359630708
+
+            var response = client.ResetInstanceAttribute(new ResetInstanceAttributeRequest 
+            {
+                Attribute = "sourceDestCheck",
+                InstanceId = "i-1234567890abcdef0"
+            });
+
+
+            #endregion
+        }
+
         public void EC2ResetSnapshotAttribute()
         {
             #region to-reset-a-snapshot-attribute-1472508825735
@@ -2228,6 +2880,44 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
 
             string publicIp = response.PublicIp;
             string status = response.Status;
+
+            #endregion
+        }
+
+        public void EC2RunInstances()
+        {
+            #region to-launch-an-instance-1529360150806
+
+            var response = client.RunInstances(new RunInstancesRequest 
+            {
+                BlockDeviceMappings = new List<BlockDeviceMapping> {
+                    new BlockDeviceMapping {
+                        DeviceName = "/dev/sdh",
+                        Ebs = new EbsBlockDevice { VolumeSize = 100 }
+                    }
+                },
+                ImageId = "ami-abc12345",
+                InstanceType = "t2.micro",
+                KeyName = "my-key-pair",
+                MaxCount = 1,
+                MinCount = 1,
+                SecurityGroupIds = new List<string> {
+                    "sg-1a2b3c4d"
+                },
+                SubnetId = "subnet-6e7f829e",
+                TagSpecifications = new List<TagSpecification> {
+                    new TagSpecification {
+                        ResourceType = "instance",
+                        Tags = new List<Tag> {
+                            new Tag {
+                                Key = "Purpose",
+                                Value = "test"
+                            }
+                        }
+                    }
+                }
+            });
+
 
             #endregion
         }
@@ -2288,6 +2978,54 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             #endregion
         }
 
+        public void EC2StartInstances()
+        {
+            #region to-start-a-stopped-ec2-instance-1529358792730
+
+            var response = client.StartInstances(new StartInstancesRequest 
+            {
+                InstanceIds = new List<string> {
+                    "i-1234567890abcdef0"
+                }
+            });
+
+            List<InstanceStateChange> startingInstances = response.StartingInstances;
+
+            #endregion
+        }
+
+        public void EC2StopInstances()
+        {
+            #region to-stop-a-running-ec2-instance-1529358905540
+
+            var response = client.StopInstances(new StopInstancesRequest 
+            {
+                InstanceIds = new List<string> {
+                    "i-1234567890abcdef0"
+                }
+            });
+
+            List<InstanceStateChange> stoppingInstances = response.StoppingInstances;
+
+            #endregion
+        }
+
+        public void EC2TerminateInstances()
+        {
+            #region to-terminate-an-ec2-instance-1529359350660
+
+            var response = client.TerminateInstances(new TerminateInstancesRequest 
+            {
+                InstanceIds = new List<string> {
+                    "i-1234567890abcdef0"
+                }
+            });
+
+            List<InstanceStateChange> terminatingInstances = response.TerminatingInstances;
+
+            #endregion
+        }
+
         public void EC2UnassignPrivateIpAddresses()
         {
             #region ec2-unassign-private-ip-addresses-1
@@ -2297,6 +3035,46 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
                 NetworkInterfaceId = "eni-e5aa89a3",
                 PrivateIpAddresses = new List<string> {
                     "10.0.0.82"
+                }
+            });
+
+
+            #endregion
+        }
+
+        public void EC2UpdateSecurityGroupRuleDescriptionsEgress()
+        {
+            #region to-update-an-outbound-security-group-rule-description-1529360481544
+
+            var response = client.UpdateSecurityGroupRuleDescriptionsEgress(new UpdateSecurityGroupRuleDescriptionsEgressRequest 
+            {
+                GroupId = "sg-123abc12",
+                IpPermissions = new List<IpPermission> {
+                    new IpPermission {
+                        FromPort = 80,
+                        IpProtocol = "tcp",
+                        ToPort = 80
+                    }
+                }
+            });
+
+
+            #endregion
+        }
+
+        public void EC2UpdateSecurityGroupRuleDescriptionsIngress()
+        {
+            #region to-update-an-inbound-security-group-rule-description-1529360820372
+
+            var response = client.UpdateSecurityGroupRuleDescriptionsIngress(new UpdateSecurityGroupRuleDescriptionsIngressRequest 
+            {
+                GroupId = "sg-123abc12",
+                IpPermissions = new List<IpPermission> {
+                    new IpPermission {
+                        FromPort = 22,
+                        IpProtocol = "tcp",
+                        ToPort = 22
+                    }
                 }
             });
 

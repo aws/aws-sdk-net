@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "Amazon Neptune is a fast, reliable graph database service that makes it easy to build and run applications that work with highly connected datasets. Neptune supports popular graph models Property Graph and W3C's Resource Description Frame (RDF), and their respective query languages Apache TinkerPop Gremlin 3.3.2 and SPARQL 1.1. ",
+  "generate-client-constructors": true
+}

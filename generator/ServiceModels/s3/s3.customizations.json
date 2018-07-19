@@ -229,7 +229,7 @@
             "name": "ListVersions"
         },
         "PutBucketAcl": {
-            "name": "PutACL",
+            "name": "PutACL"
         },
         "PutBucketCors": {
             "name": "PutCORSConfiguration"

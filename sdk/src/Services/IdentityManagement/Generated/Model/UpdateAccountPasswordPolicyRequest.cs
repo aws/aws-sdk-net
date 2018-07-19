@@ -237,7 +237,7 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// ! @ # $ % ^ &amp;amp; * ( ) _ + - = [ ] { } | '
+        /// ! @ # $ % ^ &amp; * ( ) _ + - = [ ] { } | '
         /// </para>
         ///  
         /// <para>

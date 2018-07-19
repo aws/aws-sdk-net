@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the clouddirectory-2016-05-10.normal.json service model.
+ * Do not modify this file. This file is generated from the clouddirectory-2017-01-11.normal.json service model.
  */
 
 
@@ -32,7 +32,7 @@ namespace Amazon.CloudDirectory
     public partial class AmazonCloudDirectoryConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.3.7.2");
+            InternalSDKUtils.BuildUserAgentString("3.3.9.2");
 
         private string _userAgent = UserAgentString;
 
@@ -62,7 +62,7 @@ namespace Amazon.CloudDirectory
         {
             get
             {
-                return "2016-05-10";
+                return "2017-01-11";
             }
         }
 

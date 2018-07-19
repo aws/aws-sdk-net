@@ -126,11 +126,22 @@ namespace Amazon.ElasticFileSystem
         /// token you provided.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemLimitExceededException">
-        /// Returned if the AWS account has already created maximum number of file systems allowed
-        /// per account.
+        /// Returned if the AWS account has already created the maximum number of file systems
+        /// allowed per account.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.InsufficientThroughputCapacityException">
+        /// Returned if there's not enough capacity to provision additional throughput. This value
+        /// might be returned when you try to create a file system in provisioned throughput mode,
+        /// when you attempt to increase the provisioned throughput of an existing file system,
+        /// or when you attempt to change an existing file system from bursting to provisioned
+        /// throughput mode.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.ThroughputLimitExceededException">
+        /// Returned if the throughput mode or amount of provisioned throughput can't be changed
+        /// because the throughput limit of 1024 MiB/s has been reached.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateFileSystem">REST API Reference for CreateFileSystem Operation</seealso>
         CreateFileSystemResponse CreateFileSystem(string creationToken);
@@ -215,11 +226,22 @@ namespace Amazon.ElasticFileSystem
         /// token you provided.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemLimitExceededException">
-        /// Returned if the AWS account has already created maximum number of file systems allowed
-        /// per account.
+        /// Returned if the AWS account has already created the maximum number of file systems
+        /// allowed per account.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.InsufficientThroughputCapacityException">
+        /// Returned if there's not enough capacity to provision additional throughput. This value
+        /// might be returned when you try to create a file system in provisioned throughput mode,
+        /// when you attempt to increase the provisioned throughput of an existing file system,
+        /// or when you attempt to change an existing file system from bursting to provisioned
+        /// throughput mode.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.ThroughputLimitExceededException">
+        /// Returned if the throughput mode or amount of provisioned throughput can't be changed
+        /// because the throughput limit of 1024 MiB/s has been reached.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateFileSystem">REST API Reference for CreateFileSystem Operation</seealso>
         CreateFileSystemResponse CreateFileSystem(CreateFileSystemRequest request);
@@ -413,11 +435,11 @@ namespace Amazon.ElasticFileSystem
         /// value or a missing required parameter.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
-        /// Returned if the specified <code>FileSystemId</code> does not exist in the requester's
+        /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
         /// AWS account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.IncorrectFileSystemLifeCycleStateException">
-        /// Returned if the file system's life cycle state is not "created".
+        /// Returned if the file system's lifecycle state is not "available".
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
@@ -431,11 +453,11 @@ namespace Amazon.ElasticFileSystem
         /// on the file system's existing mount targets.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.NetworkInterfaceLimitExceededException">
-        /// The calling account has reached the ENI limit for the specific AWS region. Client
-        /// should try to delete some ENIs or get its account limit raised. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
-        /// VPC Limits</a> in the Amazon Virtual Private Cloud User Guide (see the Network interfaces
-        /// per VPC entry in the table).
+        /// The calling account has reached the limit for elastic network interfaces for the specific
+        /// AWS Region. The client should try to delete some elastic network interfaces or get
+        /// the account limit raised. For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
+        /// VPC Limits</a> in the <i>Amazon VPC User Guide </i> (see the Network interfaces per
+        /// VPC entry in the table).
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.NoFreeAddressesInSubnetException">
         /// Returned if <code>IpAddress</code> was not specified in the request and there are
@@ -446,7 +468,7 @@ namespace Amazon.ElasticFileSystem
         /// than five.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.SecurityGroupNotFoundException">
-        /// Returned if one of the specified security groups does not exist in the subnet's VPC.
+        /// Returned if one of the specified security groups doesn't exist in the subnet's VPC.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.SubnetNotFoundException">
         /// Returned if there is no subnet with ID <code>SubnetId</code> provided in the request.
@@ -509,7 +531,7 @@ namespace Amazon.ElasticFileSystem
         /// value or a missing required parameter.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
-        /// Returned if the specified <code>FileSystemId</code> does not exist in the requester's
+        /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
         /// AWS account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
@@ -585,7 +607,7 @@ namespace Amazon.ElasticFileSystem
         /// Returned if a file system has mount targets.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
-        /// Returned if the specified <code>FileSystemId</code> does not exist in the requester's
+        /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
         /// AWS account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
@@ -630,7 +652,7 @@ namespace Amazon.ElasticFileSystem
         /// Returned if a file system has mount targets.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
-        /// Returned if the specified <code>FileSystemId</code> does not exist in the requester's
+        /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
         /// AWS account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
@@ -839,7 +861,7 @@ namespace Amazon.ElasticFileSystem
         /// value or a missing required parameter.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
-        /// Returned if the specified <code>FileSystemId</code> does not exist in the requester's
+        /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
         /// AWS account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
@@ -926,7 +948,7 @@ namespace Amazon.ElasticFileSystem
         /// value or a missing required parameter.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
-        /// Returned if the specified <code>FileSystemId</code> does not exist in the requester's
+        /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
         /// AWS account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
@@ -986,7 +1008,7 @@ namespace Amazon.ElasticFileSystem
         /// value or a missing required parameter.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
-        /// Returned if the specified <code>FileSystemId</code> does not exist in the requester's
+        /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
         /// AWS account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
@@ -1018,7 +1040,7 @@ namespace Amazon.ElasticFileSystem
         /// value or a missing required parameter.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
-        /// Returned if the specified <code>FileSystemId</code> does not exist in the requester's
+        /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
         /// AWS account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
@@ -1191,7 +1213,7 @@ namespace Amazon.ElasticFileSystem
         /// value or a missing required parameter.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
-        /// Returned if the specified <code>FileSystemId</code> does not exist in the requester's
+        /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
         /// AWS account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
@@ -1219,7 +1241,7 @@ namespace Amazon.ElasticFileSystem
         /// value or a missing required parameter.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
-        /// Returned if the specified <code>FileSystemId</code> does not exist in the requester's
+        /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
         /// AWS account.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
@@ -1308,7 +1330,7 @@ namespace Amazon.ElasticFileSystem
         /// than five.
         /// </exception>
         /// <exception cref="Amazon.ElasticFileSystem.Model.SecurityGroupNotFoundException">
-        /// Returned if one of the specified security groups does not exist in the subnet's VPC.
+        /// Returned if one of the specified security groups doesn't exist in the subnet's VPC.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/ModifyMountTargetSecurityGroups">REST API Reference for ModifyMountTargetSecurityGroups Operation</seealso>
         ModifyMountTargetSecurityGroupsResponse ModifyMountTargetSecurityGroups(ModifyMountTargetSecurityGroupsRequest request);
@@ -1338,6 +1360,76 @@ namespace Amazon.ElasticFileSystem
         /// <returns>Returns a  ModifyMountTargetSecurityGroupsResult from ElasticFileSystem.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/ModifyMountTargetSecurityGroups">REST API Reference for ModifyMountTargetSecurityGroups Operation</seealso>
         ModifyMountTargetSecurityGroupsResponse EndModifyMountTargetSecurityGroups(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateFileSystem
+
+
+        /// <summary>
+        /// Updates the throughput mode or the amount of provisioned throughput of an existing
+        /// file system.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFileSystem service method.</param>
+        /// 
+        /// <returns>The response from the UpdateFileSystem service method, as returned by ElasticFileSystem.</returns>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.BadRequestException">
+        /// Returned if the request is malformed or contains an error such as an invalid parameter
+        /// value or a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.FileSystemNotFoundException">
+        /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
+        /// AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.IncorrectFileSystemLifeCycleStateException">
+        /// Returned if the file system's lifecycle state is not "available".
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.InsufficientThroughputCapacityException">
+        /// Returned if there's not enough capacity to provision additional throughput. This value
+        /// might be returned when you try to create a file system in provisioned throughput mode,
+        /// when you attempt to increase the provisioned throughput of an existing file system,
+        /// or when you attempt to change an existing file system from bursting to provisioned
+        /// throughput mode.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
+        /// Returned if an error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.ThroughputLimitExceededException">
+        /// Returned if the throughput mode or amount of provisioned throughput can't be changed
+        /// because the throughput limit of 1024 MiB/s has been reached.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticFileSystem.Model.TooManyRequestsException">
+        /// Returned if you don’t wait at least 24 hours before changing the throughput mode,
+        /// or decreasing the Provisioned Throughput value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/UpdateFileSystem">REST API Reference for UpdateFileSystem Operation</seealso>
+        UpdateFileSystemResponse UpdateFileSystem(UpdateFileSystemRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateFileSystem operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFileSystem operation on AmazonElasticFileSystemClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateFileSystem
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/UpdateFileSystem">REST API Reference for UpdateFileSystem Operation</seealso>
+        IAsyncResult BeginUpdateFileSystem(UpdateFileSystemRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateFileSystem operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateFileSystem.</param>
+        /// 
+        /// <returns>Returns a  UpdateFileSystemResult from ElasticFileSystem.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/UpdateFileSystem">REST API Reference for UpdateFileSystem Operation</seealso>
+        UpdateFileSystemResponse EndUpdateFileSystem(IAsyncResult asyncResult);
 
         #endregion
         

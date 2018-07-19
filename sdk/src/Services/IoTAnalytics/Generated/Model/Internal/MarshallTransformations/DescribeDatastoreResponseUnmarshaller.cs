@@ -57,6 +57,12 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
                     response.Datastore = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("statistics", targetDepth))
+                {
+                    var unmarshaller = DatastoreStatisticsUnmarshaller.Instance;
+                    response.Statistics = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

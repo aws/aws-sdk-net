@@ -22,23 +22,23 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Lightsail.Net45", "A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{12EC4E4B-7E2C-4B63-8EF9-7B959F82A89B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IntegrationTests.Lightsail.Net35", "..\..\..\..\sdk\test\Services\Lightsail\IntegrationTests\AWSSDK.IntegrationTests.Lightsail.Net35.csproj", "{594E6546-5E1E-4FE1-A4C5-75562FEF31E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IntegrationTests.Lightsail.Net35", "..\..\..\test\Services\Lightsail\IntegrationTests\AWSSDK.IntegrationTests.Lightsail.Net35.csproj", "{594E6546-5E1E-4FE1-A4C5-75562FEF31E0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IntegrationTests.Lightsail.Net45", "..\..\..\..\sdk\test\Services\Lightsail\IntegrationTests\AWSSDK.IntegrationTests.Lightsail.Net45.csproj", "{B5BDD097-15BE-4A87-9C5C-F18E7E458931}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IntegrationTests.Lightsail.Net45", "..\..\..\test\Services\Lightsail\IntegrationTests\AWSSDK.IntegrationTests.Lightsail.Net45.csproj", "{B5BDD097-15BE-4A87-9C5C-F18E7E458931}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.UnitTests.Lightsail.Net35", "..\..\..\..\sdk\test\Services\Lightsail\UnitTests\AWSSDK.UnitTests.Lightsail.Net35.csproj", "{CCF8156E-55CE-4FC7-AE88-663D6917205A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.UnitTests.Lightsail.Net35", "..\..\..\test\Services\Lightsail\UnitTests\AWSSDK.UnitTests.Lightsail.Net35.csproj", "{CCF8156E-55CE-4FC7-AE88-663D6917205A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.UnitTests.Lightsail.Net45", "..\..\..\..\sdk\test\Services\Lightsail\UnitTests\AWSSDK.UnitTests.Lightsail.Net45.csproj", "{42B291B9-74C4-40F7-BE70-D5B3A3F6220E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.UnitTests.Lightsail.Net45", "..\..\..\test\Services\Lightsail\UnitTests\AWSSDK.UnitTests.Lightsail.Net45.csproj", "{42B291B9-74C4-40F7-BE70-D5B3A3F6220E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceClientGeneratorLib", "..\..\..\..\generator\ServiceClientGeneratorLib\ServiceClientGeneratorLib.csproj", "{7BEE7C44-BE12-43CC-AFB9-B5852A1F43C8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.UnitTestUtilities", "..\..\..\..\sdk\test\UnitTests\Custom\AWSSDK.UnitTestUtilities.csproj", "{F9D5F226-CE00-4E1A-8C70-4250F5FA954F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.UnitTestUtilities", "..\..\..\test\UnitTests\Custom\AWSSDK.UnitTestUtilities.csproj", "{F9D5F226-CE00-4E1A-8C70-4250F5FA954F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IntegrationTestUtilities.Net35", "..\..\..\..\sdk\test\IntegrationTests\AWSSDK.IntegrationTestUtilities.Net35.csproj", "{924D2906-70D6-4D77-8603-816648B2CCA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IntegrationTestUtilities.Net35", "..\..\..\test\IntegrationTests\AWSSDK.IntegrationTestUtilities.Net35.csproj", "{924D2906-70D6-4D77-8603-816648B2CCA6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IntegrationTestUtilities.Net45", "..\..\..\..\sdk\test\IntegrationTests\AWSSDK.IntegrationTestUtilities.Net45.csproj", "{7AB0DA1C-CA0E-4579-BA82-2B41A9DA15C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IntegrationTestUtilities.Net45", "..\..\..\test\IntegrationTests\AWSSDK.IntegrationTestUtilities.Net45.csproj", "{7AB0DA1C-CA0E-4579-BA82-2B41A9DA15C7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CommonTest", "..\..\..\..\sdk\test\Common\AWSSDK.CommonTest.csproj", "{66F78F86-68D7-4538-8EA5-A669A08E1C19}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CommonTest", "..\..\..\test\Common\AWSSDK.CommonTest.csproj", "{66F78F86-68D7-4538-8EA5-A669A08E1C19}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IntegrationTestDependencies", "IntegrationTestDependencies", "{939EC5C2-8345-43E2-8F97-72EEEBEEA0AC}"
 EndProject

@@ -29,8 +29,8 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Lists the tags for the specified AppStream 2.0 resource. You can tag AppStream 2.0
-    /// image builders, images, fleets, and stacks.
+    /// Retrieves a list of all tags for the specified AppStream 2.0 resource. You can tag
+    /// AppStream 2.0 image builders, images, fleets, and stacks.
     /// 
     ///  
     /// <para>

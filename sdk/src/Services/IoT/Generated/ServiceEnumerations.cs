@@ -689,6 +689,10 @@ namespace Amazon.IoT
         /// </summary>
         public static readonly JobStatus COMPLETED = new JobStatus("COMPLETED");
         /// <summary>
+        /// Constant DELETION_IN_PROGRESS for JobStatus
+        /// </summary>
+        public static readonly JobStatus DELETION_IN_PROGRESS = new JobStatus("DELETION_IN_PROGRESS");
+        /// <summary>
         /// Constant IN_PROGRESS for JobStatus
         /// </summary>
         public static readonly JobStatus IN_PROGRESS = new JobStatus("IN_PROGRESS");

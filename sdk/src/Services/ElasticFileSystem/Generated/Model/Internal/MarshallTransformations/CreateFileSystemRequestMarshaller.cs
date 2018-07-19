@@ -89,6 +89,18 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PerformanceMode);
                 }
 
+                if(publicRequest.IsSetProvisionedThroughputInMibps())
+                {
+                    context.Writer.WritePropertyName("ProvisionedThroughputInMibps");
+                    context.Writer.Write(publicRequest.ProvisionedThroughputInMibps);
+                }
+
+                if(publicRequest.IsSetThroughputMode())
+                {
+                    context.Writer.WritePropertyName("ThroughputMode");
+                    context.Writer.Write(publicRequest.ThroughputMode);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

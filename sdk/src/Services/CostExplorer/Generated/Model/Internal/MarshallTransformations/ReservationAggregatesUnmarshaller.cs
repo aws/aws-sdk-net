@@ -64,6 +64,30 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AmortizedRecurringFee", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AmortizedRecurringFee = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AmortizedUpfrontFee", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AmortizedUpfrontFee = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NetRISavings", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NetRISavings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("OnDemandCostOfRIHoursUsed", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OnDemandCostOfRIHoursUsed = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PurchasedHours", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -74,6 +98,18 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TotalActualHours = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TotalAmortizedFee", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TotalAmortizedFee = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TotalPotentialRISavings", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TotalPotentialRISavings = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("UnusedHours", targetDepth))

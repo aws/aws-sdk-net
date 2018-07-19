@@ -36,7 +36,7 @@ namespace Amazon.ACMPCA.Model
     /// to sign, and X.500 subject information. The CRL (certificate revocation list) configuration
     /// specifies the CRL expiration period in days (the validity period of the CRL), the
     /// Amazon S3 bucket that will contain the CRL, and a CNAME alias for the S3 bucket that
-    /// is included in certificates issued by the CA. If successful, this function returns
+    /// is included in certificates issued by the CA. If successful, this operation returns
     /// the Amazon Resource Name (ARN) of the CA.
     /// </summary>
     public partial class CreateCertificateAuthorityRequest : AmazonACMPCARequest
@@ -89,9 +89,9 @@ namespace Amazon.ACMPCA.Model
         /// Alphanumeric string that can be used to distinguish between calls to <b>CreateCertificateAuthority</b>.
         /// Idempotency tokens time out after five minutes. Therefore, if you call <b>CreateCertificateAuthority</b>
         /// multiple times with the same idempotency token within a five minute period, ACM PCA
-        /// recognizes that you are requesting only one certificate and will issue only one. If
-        /// you change the idempotency token for each call, however, ACM PCA recognizes that you
-        /// are requesting multiple certificates.
+        /// recognizes that you are requesting only one certificate. As a result, ACM PCA issues
+        /// only one. If you change the idempotency token for each call, however, ACM PCA recognizes
+        /// that you are requesting multiple certificates.
         /// </para>
         /// </summary>
         public string IdempotencyToken

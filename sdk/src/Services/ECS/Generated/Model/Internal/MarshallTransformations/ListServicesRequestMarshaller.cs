@@ -91,6 +91,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
+                if(publicRequest.IsSetSchedulingStrategy())
+                {
+                    context.Writer.WritePropertyName("schedulingStrategy");
+                    context.Writer.Write(publicRequest.SchedulingStrategy);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

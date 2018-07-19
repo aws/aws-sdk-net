@@ -29,7 +29,8 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDirectoryConfig operation.
-    /// Updates the specified directory configuration.
+    /// Updates the specified Directory Config object in AppStream 2.0. This object includes
+    /// the information required to join streaming instances to an Active Directory domain.
     /// </summary>
     public partial class UpdateDirectoryConfigRequest : AmazonAppStreamRequest
     {
@@ -40,7 +41,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DirectoryName. 
         /// <para>
-        /// The name of the directory configuration.
+        /// The name of the Directory Config object.
         /// </para>
         /// </summary>
         public string DirectoryName

@@ -34,6 +34,7 @@ namespace Amazon.IoTAnalytics.Model
     public partial class DescribeChannelRequest : AmazonIoTAnalyticsRequest
     {
         private string _channelName;
+        private bool? _includeStatistics;
 
         /// <summary>
         /// Gets and sets the property ChannelName. 
@@ -51,6 +52,24 @@ namespace Amazon.IoTAnalytics.Model
         internal bool IsSetChannelName()
         {
             return this._channelName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeStatistics. 
+        /// <para>
+        /// If true, include statistics about the channel in the response.
+        /// </para>
+        /// </summary>
+        public bool IncludeStatistics
+        {
+            get { return this._includeStatistics.GetValueOrDefault(); }
+            set { this._includeStatistics = value; }
+        }
+
+        // Check to see if IncludeStatistics property is set
+        internal bool IsSetIncludeStatistics()
+        {
+            return this._includeStatistics.HasValue; 
         }
 
     }

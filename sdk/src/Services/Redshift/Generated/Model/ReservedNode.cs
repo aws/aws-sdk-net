@@ -266,6 +266,14 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// payment-failed-Payment failed for the purchase attempt.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// retired-The reserved node is no longer available. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// exchanging-The owner is exchanging the reserved node for another reserved node.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public string State

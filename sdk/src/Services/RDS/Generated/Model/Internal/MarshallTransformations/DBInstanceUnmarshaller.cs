@@ -287,6 +287,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.PerformanceInsightsKMSKeyId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("PerformanceInsightsRetentionPeriod", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.PerformanceInsightsRetentionPeriod = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("PreferredBackupWindow", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -297,6 +303,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.PreferredMaintenanceWindow = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ProcessorFeatures/ProcessorFeature", targetDepth))
+                    {
+                        var unmarshaller = ProcessorFeatureUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ProcessorFeatures.Add(item);
                         continue;
                     }
                     if (context.TestExpression("PromotionTier", targetDepth))

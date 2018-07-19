@@ -76,8 +76,10 @@ namespace Amazon.RDS.Model
         private PendingModifiedValues _pendingModifiedValues;
         private bool? _performanceInsightsEnabled;
         private string _performanceInsightsKMSKeyId;
+        private int? _performanceInsightsRetentionPeriod;
         private string _preferredBackupWindow;
         private string _preferredMaintenanceWindow;
+        private List<ProcessorFeature> _processorFeatures = new List<ProcessorFeature>();
         private int? _promotionTier;
         private bool? _publiclyAccessible;
         private List<string> _readReplicaDBClusterIdentifiers = new List<string>();
@@ -836,6 +838,25 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PerformanceInsightsRetentionPeriod. 
+        /// <para>
+        /// The amount of time, in days, to retain Performance Insights data. Valid values are
+        /// 7 or 731 (2 years). 
+        /// </para>
+        /// </summary>
+        public int PerformanceInsightsRetentionPeriod
+        {
+            get { return this._performanceInsightsRetentionPeriod.GetValueOrDefault(); }
+            set { this._performanceInsightsRetentionPeriod = value; }
+        }
+
+        // Check to see if PerformanceInsightsRetentionPeriod property is set
+        internal bool IsSetPerformanceInsightsRetentionPeriod()
+        {
+            return this._performanceInsightsRetentionPeriod.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property PreferredBackupWindow. 
         /// <para>
         ///  Specifies the daily time range during which automated backups are created if automated
@@ -871,6 +892,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetPreferredMaintenanceWindow()
         {
             return this._preferredMaintenanceWindow != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProcessorFeatures. 
+        /// <para>
+        /// The number of CPU cores and the number of threads per core for the DB instance class
+        /// of the DB instance.
+        /// </para>
+        /// </summary>
+        public List<ProcessorFeature> ProcessorFeatures
+        {
+            get { return this._processorFeatures; }
+            set { this._processorFeatures = value; }
+        }
+
+        // Check to see if ProcessorFeatures property is set
+        internal bool IsSetProcessorFeatures()
+        {
+            return this._processorFeatures != null && this._processorFeatures.Count > 0; 
         }
 
         /// <summary>

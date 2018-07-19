@@ -44,6 +44,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("Redshift")]
+        public void AcceptReservedNodeExchangeMarshallTest()
+        {
+            var operation = service_model.FindOperation("AcceptReservedNodeExchange");
+
+            var request = InstantiateClassGenerator.Execute<AcceptReservedNodeExchangeRequest>();
+            var marshaller = new AcceptReservedNodeExchangeRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = AcceptReservedNodeExchangeResponseUnmarshaller.Instance.Unmarshall(context)
+                as AcceptReservedNodeExchangeResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
         public void AuthorizeClusterSecurityGroupIngressMarshallTest()
         {
             var operation = service_model.FindOperation("AuthorizeClusterSecurityGroupIngress");
@@ -543,6 +567,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
 
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void DescribeClusterDbRevisionsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeClusterDbRevisions");
+
+            var request = InstantiateClassGenerator.Execute<DescribeClusterDbRevisionsRequest>();
+            var marshaller = new DescribeClusterDbRevisionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeClusterDbRevisionsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeClusterDbRevisionsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
         
@@ -1175,6 +1223,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("Redshift")]
+        public void GetReservedNodeExchangeOfferingsMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetReservedNodeExchangeOfferings");
+
+            var request = InstantiateClassGenerator.Execute<GetReservedNodeExchangeOfferingsRequest>();
+            var marshaller = new GetReservedNodeExchangeOfferingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = GetReservedNodeExchangeOfferingsResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetReservedNodeExchangeOfferingsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
         public void ModifyClusterMarshallTest()
         {
             var operation = service_model.FindOperation("ModifyCluster");
@@ -1190,6 +1262,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = ModifyClusterResponseUnmarshaller.Instance.Unmarshall(context)
                 as ModifyClusterResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void ModifyClusterDbRevisionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyClusterDbRevision");
+
+            var request = InstantiateClassGenerator.Execute<ModifyClusterDbRevisionRequest>();
+            var marshaller = new ModifyClusterDbRevisionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ModifyClusterDbRevisionResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyClusterDbRevisionResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

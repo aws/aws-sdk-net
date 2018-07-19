@@ -69,8 +69,8 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the property DataType. 
         /// <para>
-        /// Amazon SNS supports the following logical data types: String, Number, and Binary.
-        /// For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message
+        /// Amazon SNS supports the following logical data types: String, String.Array, Number,
+        /// and Binary. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message
         /// Attribute Data Types</a>.
         /// </para>
         /// </summary>

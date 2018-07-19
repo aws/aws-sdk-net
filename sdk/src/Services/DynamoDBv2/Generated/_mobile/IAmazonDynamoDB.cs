@@ -492,7 +492,6 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
-        /// Up to 50 <code>CreateBackup</code> operations are allowed per second, per account.
         /// There is no limit to the number of daily on-demand backups that can be taken. 
         /// 
         ///  
@@ -717,7 +716,6 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
-        /// Up to 50 <code>CreateBackup</code> operations are allowed per second, per account.
         /// There is no limit to the number of daily on-demand backups that can be taken. 
         /// 
         ///  
@@ -1904,7 +1902,6 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
-        /// Up to 50 <code>CreateBackup</code> operations are allowed per second, per account.
         /// There is no limit to the number of daily on-demand backups that can be taken. 
         /// 
         ///  

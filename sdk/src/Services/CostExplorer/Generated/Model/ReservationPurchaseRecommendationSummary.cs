@@ -29,7 +29,7 @@ namespace Amazon.CostExplorer.Model
 {
     /// <summary>
     /// A summary about this recommendation, such as the currency code, the amount that AWS
-    /// estimates you could save, and the total amount of reservation to purchase.
+    /// estimates that you could save, and the total amount of reservation to purchase.
     /// </summary>
     public partial class ReservationPurchaseRecommendationSummary
     {

@@ -76,6 +76,10 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
             {
                 return new ClusterLimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("Ec2RequestFailedException"))
+            {
+                return new Ec2RequestFailedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidInputCombinationException"))
             {
                 return new InvalidInputCombinationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

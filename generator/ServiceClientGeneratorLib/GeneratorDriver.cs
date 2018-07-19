@@ -1,5 +1,4 @@
 ﻿using System;
-using System.CodeDom;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -8,7 +7,6 @@ using ServiceClientGenerator.Generators.Examples;
 using ServiceClientGenerator.Generators.Marshallers;
 using ServiceClientGenerator.Generators.NuGet;
 using ServiceClientGenerator.Generators.SourceFiles;
-using ServiceClientGenerator.Generators.CodeAnalysis;
 using ServiceClientGenerator.Generators.TestFiles;
 using StructureGenerator = ServiceClientGenerator.Generators.SourceFiles.StructureGenerator;
 using ServiceClientGenerator.Generators.Component;
@@ -146,6 +144,12 @@ namespace ServiceClientGenerator
 
         public void Execute()
         {
+            if (Configuration.ServiceModel.H2Support == H2SupportDegree.Required)
+            {
+                Console.WriteLine("This service requires HTTP2 for all operations. The AWS SDK for .NET does not yet support this functionality. Not generating service.");
+                return;
+            }
+
             this.FilesWrittenToGeneratorFolder.Clear();
             if (Options.Clean && !Configuration.IsChildConfig)
             {

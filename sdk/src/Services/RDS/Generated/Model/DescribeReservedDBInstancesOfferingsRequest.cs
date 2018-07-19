@@ -202,8 +202,13 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property ProductDescription. 
         /// <para>
         /// Product description filter value. Specify this parameter to show only the available
-        /// offerings matching the specified product description.
+        /// offerings that contain the specified product description.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The results show offerings that partially match the filter value.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string ProductDescription
         {

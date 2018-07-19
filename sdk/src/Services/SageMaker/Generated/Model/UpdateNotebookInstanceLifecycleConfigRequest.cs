@@ -29,7 +29,8 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateNotebookInstanceLifecycleConfig operation.
-    /// Updates a notebook instance lifecycle configuration created with the API.
+    /// Updates a notebook instance lifecycle configuration created with the <a>CreateNotebookInstanceLifecycleConfig</a>
+    /// API.
     /// </summary>
     public partial class UpdateNotebookInstanceLifecycleConfigRequest : AmazonSageMakerRequest
     {

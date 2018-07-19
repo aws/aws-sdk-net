@@ -281,7 +281,8 @@ namespace Amazon.Rekognition
         /// </para>
         ///  </note> 
         /// <para>
-        /// For an example, see <a>faces-compare-images</a>.
+        /// For an example, see Comparing Faces in Images in the Amazon Rekognition Developer
+        /// Guide.
         /// </para>
         ///  
         /// <para>
@@ -296,7 +297,8 @@ namespace Amazon.Rekognition
         /// You are not authorized to perform the action.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ImageTooLargeException">
-        /// The input image size exceeds the allowed limit. For more information, see <a>limits</a>.
+        /// The input image size exceeds the allowed limit. For more information, see Limits in
+        /// Amazon Rekognition in the Amazon Rekognition Developer Guide.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.InternalServerErrorException">
         /// Amazon Rekognition experienced a service issue. Try your call again.
@@ -462,8 +464,8 @@ namespace Amazon.Rekognition
         /// 
         ///  
         /// <para>
-        /// Rekognition Video is a consumer of live video from Amazon Kinesis Video Streams. Rekognition
-        /// Video sends analysis results to Amazon Kinesis Data Streams.
+        /// Amazon Rekognition Video is a consumer of live video from Amazon Kinesis Video Streams.
+        /// Amazon Rekognition Video sends analysis results to Amazon Kinesis Data Streams.
         /// </para>
         ///  
         /// <para>
@@ -495,7 +497,7 @@ namespace Amazon.Rekognition
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
         /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
-        /// Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
+        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
         /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
         /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
         /// service limit.
@@ -900,10 +902,6 @@ namespace Amazon.Rekognition
         /// </para>
         ///  </note> 
         /// <para>
-        /// For an example, see <a>procedure-detecting-faces-in-images</a>.
-        /// </para>
-        ///  
-        /// <para>
         /// This operation requires permissions to perform the <code>rekognition:DetectFaces</code>
         /// action. 
         /// </para>
@@ -915,7 +913,8 @@ namespace Amazon.Rekognition
         /// You are not authorized to perform the action.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ImageTooLargeException">
-        /// The input image size exceeds the allowed limit. For more information, see <a>limits</a>.
+        /// The input image size exceeds the allowed limit. For more information, see Limits in
+        /// Amazon Rekognition in the Amazon Rekognition Developer Guide.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.InternalServerErrorException">
         /// Amazon Rekognition experienced a service issue. Try your call again.
@@ -987,14 +986,18 @@ namespace Amazon.Rekognition
         /// <summary>
         /// Detects instances of real-world entities within an image (JPEG or PNG) provided as
         /// input. This includes objects like flower, tree, and table; events like wedding, graduation,
-        /// and birthday party; and concepts like landscape, evening, and nature. For an example,
-        /// see <a>images-s3</a>.
+        /// and birthday party; and concepts like landscape, evening, and nature. 
         /// 
+        ///  
+        /// <para>
+        /// For an example, see Analyzing Images Stored in an Amazon S3 Bucket in the Amazon Rekognition
+        /// Developer Guide.
+        /// </para>
         ///  <note> 
         /// <para>
         ///  <code>DetectLabels</code> does not support the detection of activities. However,
         /// activity detection is supported for label detection in videos. For more information,
-        /// see .
+        /// see StartLabelDetection in the Amazon Rekognition Developer Guide.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1024,7 +1027,7 @@ namespace Amazon.Rekognition
         /// </para>
         ///  
         /// <para>
-        ///  In the preceding example, the operation returns one label for each of the three objects.
+        /// In the preceding example, the operation returns one label for each of the three objects.
         /// The operation can also return multiple labels for the same object in the image. For
         /// example, if the input image shows a flower (for example, a tulip), the operation might
         /// return the following three labels. 
@@ -1076,7 +1079,8 @@ namespace Amazon.Rekognition
         /// You are not authorized to perform the action.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ImageTooLargeException">
-        /// The input image size exceeds the allowed limit. For more information, see <a>limits</a>.
+        /// The input image size exceeds the allowed limit. For more information, see Limits in
+        /// Amazon Rekognition in the Amazon Rekognition Developer Guide.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.InternalServerErrorException">
         /// Amazon Rekognition experienced a service issue. Try your call again.
@@ -1154,8 +1158,12 @@ namespace Amazon.Rekognition
         ///  
         /// <para>
         /// To filter images, use the labels returned by <code>DetectModerationLabels</code> to
-        /// determine which types of content are appropriate. For information about moderation
-        /// labels, see <a>moderation</a>.
+        /// determine which types of content are appropriate.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about moderation labels, see Detecting Unsafe Content in the Amazon
+        /// Rekognition Developer Guide.
         /// </para>
         ///  
         /// <para>
@@ -1172,7 +1180,8 @@ namespace Amazon.Rekognition
         /// You are not authorized to perform the action.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ImageTooLargeException">
-        /// The input image size exceeds the allowed limit. For more information, see <a>limits</a>.
+        /// The input image size exceeds the allowed limit. For more information, see Limits in
+        /// Amazon Rekognition in the Amazon Rekognition Developer Guide.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.InternalServerErrorException">
         /// Amazon Rekognition experienced a service issue. Try your call again.
@@ -1284,7 +1293,7 @@ namespace Amazon.Rekognition
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a>text-detection</a>.
+        /// For more information, see DetectText in the Amazon Rekognition Developer Guide.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetectText service method.</param>
@@ -1294,7 +1303,8 @@ namespace Amazon.Rekognition
         /// You are not authorized to perform the action.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ImageTooLargeException">
-        /// The input image size exceeds the allowed limit. For more information, see <a>limits</a>.
+        /// The input image size exceeds the allowed limit. For more information, see Limits in
+        /// Amazon Rekognition in the Amazon Rekognition Developer Guide.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.InternalServerErrorException">
         /// Amazon Rekognition experienced a service issue. Try your call again.
@@ -1366,8 +1376,13 @@ namespace Amazon.Rekognition
         /// <summary>
         /// Gets the name and additional information about a celebrity based on his or her Rekognition
         /// ID. The additional information is returned as an array of URLs. If there is no additional
-        /// information about the celebrity, this list is empty. For more information, see <a>get-celebrity-info-procedure</a>.
+        /// information about the celebrity, this list is empty.
         /// 
+        ///  
+        /// <para>
+        /// For more information, see Recognizing Celebrities in an Image in the Amazon Rekognition
+        /// Developer Guide.
+        /// </para>
         ///  
         /// <para>
         /// This operation requires permissions to perform the <code>rekognition:GetCelebrityInfo</code>
@@ -1445,19 +1460,24 @@ namespace Amazon.Rekognition
         #region  GetCelebrityRecognition
 
         /// <summary>
-        /// Gets the celebrity recognition results for a Rekognition Video analysis started by
-        /// .
+        /// Gets the celebrity recognition results for a Amazon Rekognition Video analysis started
+        /// by .
         /// 
         ///  
         /// <para>
         /// Celebrity recognition in a video is an asynchronous operation. Analysis is started
         /// by a call to which returns a job identifier (<code>JobId</code>). When the celebrity
-        /// recognition operation finishes, Rekognition Video publishes a completion status to
-        /// the Amazon Simple Notification Service topic registered in the initial call to <code>StartCelebrityRecognition</code>.
-        /// To get the results of the celebrity recognition analysis, first check that the status
-        /// value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <code>GetCelebrityDetection</code>
-        /// and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartCelebrityDetection</code>.
-        /// For more information, see <a>video</a>.
+        /// recognition operation finishes, Amazon Rekognition Video publishes a completion status
+        /// to the Amazon Simple Notification Service topic registered in the initial call to
+        /// <code>StartCelebrityRecognition</code>. To get the results of the celebrity recognition
+        /// analysis, first check that the status value published to the Amazon SNS topic is <code>SUCCEEDED</code>.
+        /// If so, call <code>GetCelebrityDetection</code> and pass the job identifier (<code>JobId</code>)
+        /// from the initial call to <code>StartCelebrityDetection</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see Working With Stored Videos in the Amazon Rekognition Developer
+        /// Guide.
         /// </para>
         ///  
         /// <para>
@@ -1471,7 +1491,8 @@ namespace Amazon.Rekognition
         ///  <code>GetCelebrityRecognition</code> only returns the default facial attributes (<code>BoundingBox</code>,
         /// <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>).
         /// The other facial attributes listed in the <code>Face</code> object of the following
-        /// response syntax are not returned. For more information, see . 
+        /// response syntax are not returned. For more information, see FaceDetail in the Amazon
+        /// Rekognition Developer Guide. 
         /// </para>
         ///  </note> 
         /// <para>
@@ -1573,19 +1594,24 @@ namespace Amazon.Rekognition
         #region  GetContentModeration
 
         /// <summary>
-        /// Gets the content moderation analysis results for a Rekognition Video analysis started
-        /// by .
+        /// Gets the content moderation analysis results for a Amazon Rekognition Video analysis
+        /// started by .
         /// 
         ///  
         /// <para>
         /// Content moderation analysis of a video is an asynchronous operation. You start analysis
         /// by calling . which returns a job identifier (<code>JobId</code>). When analysis finishes,
-        /// Rekognition Video publishes a completion status to the Amazon Simple Notification
+        /// Amazon Rekognition Video publishes a completion status to the Amazon Simple Notification
         /// Service topic registered in the initial call to <code>StartContentModeration</code>.
         /// To get the results of the content moderation analysis, first check that the status
         /// value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <code>GetCelebrityDetection</code>
         /// and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartCelebrityDetection</code>.
-        /// For more information, see <a>video</a>. 
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see Working with Stored Videos in the Amazon Rekognition Devlopers
+        /// Guide.
         /// </para>
         ///  
         /// <para>
@@ -1611,7 +1637,8 @@ namespace Amazon.Rekognition
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a>moderation</a>.
+        /// For more information, see Detecting Unsafe Content in the Amazon Rekognition Developer
+        /// Guide.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetContentModeration service method.</param>
@@ -1688,15 +1715,15 @@ namespace Amazon.Rekognition
         #region  GetFaceDetection
 
         /// <summary>
-        /// Gets face detection results for a Rekognition Video analysis started by .
+        /// Gets face detection results for a Amazon Rekognition Video analysis started by .
         /// 
         ///  
         /// <para>
-        /// Face detection with Rekognition Video is an asynchronous operation. You start face
-        /// detection by calling which returns a job identifier (<code>JobId</code>). When the
-        /// face detection operation finishes, Rekognition Video publishes a completion status
-        /// to the Amazon Simple Notification Service topic registered in the initial call to
-        /// <code>StartFaceDetection</code>. To get the results of the face detection operation,
+        /// Face detection with Amazon Rekognition Video is an asynchronous operation. You start
+        /// face detection by calling which returns a job identifier (<code>JobId</code>). When
+        /// the face detection operation finishes, Amazon Rekognition Video publishes a completion
+        /// status to the Amazon Simple Notification Service topic registered in the initial call
+        /// to <code>StartFaceDetection</code>. To get the results of the face detection operation,
         /// first check that the status value published to the Amazon SNS topic is <code>SUCCEEDED</code>.
         /// If so, call and pass the job identifier (<code>JobId</code>) from the initial call
         /// to <code>StartFaceDetection</code>.
@@ -1790,20 +1817,24 @@ namespace Amazon.Rekognition
         #region  GetFaceSearch
 
         /// <summary>
-        /// Gets the face search results for Rekognition Video face search started by . The search
-        /// returns faces in a collection that match the faces of persons detected in a video.
-        /// It also includes the time(s) that faces are matched in the video.
+        /// Gets the face search results for Amazon Rekognition Video face search started by .
+        /// The search returns faces in a collection that match the faces of persons detected
+        /// in a video. It also includes the time(s) that faces are matched in the video.
         /// 
         ///  
         /// <para>
         /// Face search in a video is an asynchronous operation. You start face search by calling
         /// to which returns a job identifier (<code>JobId</code>). When the search operation
-        /// finishes, Rekognition Video publishes a completion status to the Amazon Simple Notification
-        /// Service topic registered in the initial call to <code>StartFaceSearch</code>. To get
-        /// the search results, first check that the status value published to the Amazon SNS
-        /// topic is <code>SUCCEEDED</code>. If so, call <code>GetFaceSearch</code> and pass the
-        /// job identifier (<code>JobId</code>) from the initial call to <code>StartFaceSearch</code>.
-        /// For more information, see <a>collections</a>.
+        /// finishes, Amazon Rekognition Video publishes a completion status to the Amazon Simple
+        /// Notification Service topic registered in the initial call to <code>StartFaceSearch</code>.
+        /// To get the search results, first check that the status value published to the Amazon
+        /// SNS topic is <code>SUCCEEDED</code>. If so, call <code>GetFaceSearch</code> and pass
+        /// the job identifier (<code>JobId</code>) from the initial call to <code>StartFaceSearch</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see Searching Faces in a Collection in the Amazon Rekognition
+        /// Developer Guide.
         /// </para>
         ///  
         /// <para>
@@ -1817,7 +1848,8 @@ namespace Amazon.Rekognition
         ///  <code>GetFaceSearch</code> only returns the default facial attributes (<code>BoundingBox</code>,
         /// <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>).
         /// The other facial attributes listed in the <code>Face</code> object of the following
-        /// response syntax are not returned. For more information, see . 
+        /// response syntax are not returned. For more information, see FaceDetail in the Amazon
+        /// Rekognition Developer Guide. 
         /// </para>
         ///  </note> 
         /// <para>
@@ -1900,7 +1932,8 @@ namespace Amazon.Rekognition
         #region  GetLabelDetection
 
         /// <summary>
-        /// Gets the label detection results of a Rekognition Video analysis started by . 
+        /// Gets the label detection results of a Amazon Rekognition Video analysis started by
+        /// . 
         /// 
         ///  
         /// <para>
@@ -2007,14 +2040,15 @@ namespace Amazon.Rekognition
         #region  GetPersonTracking
 
         /// <summary>
-        /// Gets the person tracking results of a Rekognition Video analysis started by .
+        /// Gets the person tracking results of a Amazon Rekognition Video analysis started by
+        /// .
         /// 
         ///  
         /// <para>
         /// The person detection operation is started by a call to <code>StartPersonTracking</code>
         /// which returns a job identifier (<code>JobId</code>). When the person detection operation
-        /// finishes, Rekognition Video publishes a completion status to the Amazon Simple Notification
-        /// Service topic registered in the initial call to <code>StartPersonTracking</code>.
+        /// finishes, Amazon Rekognition Video publishes a completion status to the Amazon Simple
+        /// Notification Service topic registered in the initial call to <code>StartPersonTracking</code>.
         /// </para>
         ///  
         /// <para>
@@ -2032,7 +2066,11 @@ namespace Amazon.Rekognition
         ///  <code>GetPersonTracking</code> only returns the default facial attributes (<code>BoundingBox</code>,
         /// <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>).
         /// The other facial attributes listed in the <code>Face</code> object of the following
-        /// response syntax are not returned. For more information, see . 
+        /// response syntax are not returned. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see FaceDetail in the Amazon Rekognition Developer Guide.
         /// </para>
         ///  </note> 
         /// <para>
@@ -2140,7 +2178,11 @@ namespace Amazon.Rekognition
         /// indexes the 15 largest faces in the input image. Later versions of the face detection
         /// model index the 100 largest faces in the input image. To determine which version of
         /// the model you are using, check the the value of <code>FaceModelVersion</code> in the
-        /// response from <code>IndexFaces</code>. For more information, see <a>face-detection-model</a>.
+        /// response from <code>IndexFaces</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see Model Versioning in the Amazon Rekognition Developer Guide.
         /// </para>
         ///  
         /// <para>
@@ -2161,7 +2203,12 @@ namespace Amazon.Rekognition
         /// example, location of eye and mount) and other facial attributes such gender. If you
         /// provide the same image, specify the same collection, and use the same external ID
         /// in the <code>IndexFaces</code> operation, Amazon Rekognition doesn't save duplicate
-        /// face metadata. 
+        /// face metadata.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see Adding Faces to a Collection in the Amazon Rekognition Developer
+        /// Guide.
         /// </para>
         ///  
         /// <para>
@@ -2183,7 +2230,8 @@ namespace Amazon.Rekognition
         /// You are not authorized to perform the action.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ImageTooLargeException">
-        /// The input image size exceeds the allowed limit. For more information, see <a>limits</a>.
+        /// The input image size exceeds the allowed limit. For more information, see Limits in
+        /// Amazon Rekognition in the Amazon Rekognition Developer Guide.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.InternalServerErrorException">
         /// Amazon Rekognition experienced a service issue. Try your call again.
@@ -2262,7 +2310,7 @@ namespace Amazon.Rekognition
         /// 
         ///  
         /// <para>
-        /// For an example, see <a>list-collection-procedure</a>.
+        /// For an example, see Listing Collections in the Amazon Rekognition Developer Guide.
         /// </para>
         ///  
         /// <para>
@@ -2346,8 +2394,8 @@ namespace Amazon.Rekognition
         /// <summary>
         /// Returns metadata for faces in the specified collection. This metadata includes information
         /// such as the bounding box coordinates, the confidence (that the bounding box contains
-        /// a face), and face ID. For an example, see <a>list-faces-in-collection-procedure</a>.
-        /// 
+        /// a face), and face ID. For an example, see Listing Faces in a Collection in the Amazon
+        /// Rekognition Developer Guide.
         /// 
         ///  
         /// <para>
@@ -2503,7 +2551,7 @@ namespace Amazon.Rekognition
 
         /// <summary>
         /// Returns an array of celebrities recognized in the input image. For more information,
-        /// see <a>celebrities</a>. 
+        /// see Recognizing Celebrities in the Amazon Rekognition Developer Guide. 
         /// 
         ///  
         /// <para>
@@ -2537,7 +2585,8 @@ namespace Amazon.Rekognition
         /// </para>
         ///  
         /// <para>
-        /// For an example, see <a>celebrities-procedure-image</a>.
+        /// For an example, see Recognizing Celebrities in an Image in the Amazon Rekognition
+        /// Developer Guide.
         /// </para>
         ///  
         /// <para>
@@ -2552,7 +2601,8 @@ namespace Amazon.Rekognition
         /// You are not authorized to perform the action.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ImageTooLargeException">
-        /// The input image size exceeds the allowed limit. For more information, see <a>limits</a>.
+        /// The input image size exceeds the allowed limit. For more information, see Limits in
+        /// Amazon Rekognition in the Amazon Rekognition Developer Guide.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.InternalServerErrorException">
         /// Amazon Rekognition experienced a service issue. Try your call again.
@@ -2645,7 +2695,8 @@ namespace Amazon.Rekognition
         /// </para>
         ///  
         /// <para>
-        /// For an example, see <a>search-face-with-id-procedure</a>.
+        /// For an example, see Searching for a Face Using Its Face ID in the Amazon Rekognition
+        /// Developer Guide.
         /// </para>
         ///  
         /// <para>
@@ -2730,7 +2781,7 @@ namespace Amazon.Rekognition
         /// 
         ///  <note> 
         /// <para>
-        ///  To search for all faces in an input image, you might first call the operation, and
+        /// To search for all faces in an input image, you might first call the operation, and
         /// then use the face IDs returned in subsequent calls to the operation. 
         /// </para>
         ///  
@@ -2757,7 +2808,8 @@ namespace Amazon.Rekognition
         /// </para>
         ///  
         /// <para>
-        /// For an example, see <a>search-face-with-image-procedure</a>.
+        /// For an example, Searching for a Face Using an Image in the Amazon Rekognition Developer
+        /// Guide.
         /// </para>
         ///  
         /// <para>
@@ -2772,7 +2824,8 @@ namespace Amazon.Rekognition
         /// You are not authorized to perform the action.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ImageTooLargeException">
-        /// The input image size exceeds the allowed limit. For more information, see <a>limits</a>.
+        /// The input image size exceeds the allowed limit. For more information, see Limits in
+        /// Amazon Rekognition in the Amazon Rekognition Developer Guide.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.InternalServerErrorException">
         /// Amazon Rekognition experienced a service issue. Try your call again.
@@ -2849,16 +2902,21 @@ namespace Amazon.Rekognition
         /// 
         ///  
         /// <para>
-        /// Rekognition Video can detect celebrities in a video must be stored in an Amazon S3
-        /// bucket. Use <a>Video</a> to specify the bucket name and the filename of the video.
+        /// Amazon Rekognition Video can detect celebrities in a video must be stored in an Amazon
+        /// S3 bucket. Use <a>Video</a> to specify the bucket name and the filename of the video.
         /// <code>StartCelebrityRecognition</code> returns a job identifier (<code>JobId</code>)
         /// which you use to get the results of the analysis. When celebrity recognition analysis
-        /// is finished, Rekognition Video publishes a completion status to the Amazon Simple
-        /// Notification Service topic that you specify in <code>NotificationChannel</code>. To
-        /// get the results of the celebrity recognition analysis, first check that the status
+        /// is finished, Amazon Rekognition Video publishes a completion status to the Amazon
+        /// Simple Notification Service topic that you specify in <code>NotificationChannel</code>.
+        /// To get the results of the celebrity recognition analysis, first check that the status
         /// value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call and
         /// pass the job identifier (<code>JobId</code>) from the initial call to <code>StartCelebrityRecognition</code>.
-        /// For more information, see <a>celebrities</a>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see Recognizing Celebrities in the Amazon Rekognition Developer
+        /// Guide.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartCelebrityRecognition service method.</param>
@@ -2884,7 +2942,7 @@ namespace Amazon.Rekognition
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
         /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
-        /// Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
+        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
         /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
         /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
         /// service limit.
@@ -2953,19 +3011,24 @@ namespace Amazon.Rekognition
         /// 
         ///  
         /// <para>
-        /// Rekognition Video can moderate content in a video stored in an Amazon S3 bucket. Use
-        /// <a>Video</a> to specify the bucket name and the filename of the video. <code>StartContentModeration</code>
+        /// Amazon Rekognition Video can moderate content in a video stored in an Amazon S3 bucket.
+        /// Use <a>Video</a> to specify the bucket name and the filename of the video. <code>StartContentModeration</code>
         /// returns a job identifier (<code>JobId</code>) which you use to get the results of
-        /// the analysis. When content moderation analysis is finished, Rekognition Video publishes
-        /// a completion status to the Amazon Simple Notification Service topic that you specify
-        /// in <code>NotificationChannel</code>.
+        /// the analysis. When content moderation analysis is finished, Amazon Rekognition Video
+        /// publishes a completion status to the Amazon Simple Notification Service topic that
+        /// you specify in <code>NotificationChannel</code>.
         /// </para>
         ///  
         /// <para>
         /// To get the results of the content moderation analysis, first check that the status
         /// value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call and
         /// pass the job identifier (<code>JobId</code>) from the initial call to <code>StartContentModeration</code>.
-        /// For more information, see <a>moderation</a>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see Detecting Unsafe Content in the Amazon Rekognition Developer
+        /// Guide.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartContentModeration service method.</param>
@@ -2991,7 +3054,7 @@ namespace Amazon.Rekognition
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
         /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
-        /// Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
+        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
         /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
         /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
         /// service limit.
@@ -3059,15 +3122,19 @@ namespace Amazon.Rekognition
         /// 
         ///  
         /// <para>
-        /// Rekognition Video can detect faces in a video stored in an Amazon S3 bucket. Use <a>Video</a>
-        /// to specify the bucket name and the filename of the video. <code>StartFaceDetection</code>
+        /// Amazon Rekognition Video can detect faces in a video stored in an Amazon S3 bucket.
+        /// Use <a>Video</a> to specify the bucket name and the filename of the video. <code>StartFaceDetection</code>
         /// returns a job identifier (<code>JobId</code>) that you use to get the results of the
-        /// operation. When face detection is finished, Rekognition Video publishes a completion
+        /// operation. When face detection is finished, Amazon Rekognition Video publishes a completion
         /// status to the Amazon Simple Notification Service topic that you specify in <code>NotificationChannel</code>.
         /// To get the results of the label detection operation, first check that the status value
         /// published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call and pass
         /// the job identifier (<code>JobId</code>) from the initial call to <code>StartFaceDetection</code>.
-        /// For more information, see <a>faces-video</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see Detecting Faces in a Stored Video in the Amazon Rekognition
+        /// Developer Guide.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartFaceDetection service method.</param>
@@ -3093,7 +3160,7 @@ namespace Amazon.Rekognition
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
         /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
-        /// Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
+        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
         /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
         /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
         /// service limit.
@@ -3165,8 +3232,8 @@ namespace Amazon.Rekognition
         /// The video must be stored in an Amazon S3 bucket. Use <a>Video</a> to specify the bucket
         /// name and the filename of the video. <code>StartFaceSearch</code> returns a job identifier
         /// (<code>JobId</code>) which you use to get the search results once the search has completed.
-        /// When searching is finished, Rekognition Video publishes a completion status to the
-        /// Amazon Simple Notification Service topic that you specify in <code>NotificationChannel</code>.
+        /// When searching is finished, Amazon Rekognition Video publishes a completion status
+        /// to the Amazon Simple Notification Service topic that you specify in <code>NotificationChannel</code>.
         /// To get the search results, first check that the status value published to the Amazon
         /// SNS topic is <code>SUCCEEDED</code>. If so, call and pass the job identifier (<code>JobId</code>)
         /// from the initial call to <code>StartFaceSearch</code>. For more information, see <a>collections-search-person</a>.
@@ -3195,7 +3262,7 @@ namespace Amazon.Rekognition
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
         /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
-        /// Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
+        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
         /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
         /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
         /// service limit.
@@ -3266,7 +3333,7 @@ namespace Amazon.Rekognition
         /// 
         ///  
         /// <para>
-        /// Rekognition Video can detect labels in a video. Labels are instances of real-world
+        /// Amazon Rekognition Video can detect labels in a video. Labels are instances of real-world
         /// entities. This includes objects like flower, tree, and table; events like wedding,
         /// graduation, and birthday party; concepts like landscape, evening, and nature; and
         /// activities like a person getting out of a car or a person skiing.
@@ -3276,8 +3343,8 @@ namespace Amazon.Rekognition
         /// The video must be stored in an Amazon S3 bucket. Use <a>Video</a> to specify the bucket
         /// name and the filename of the video. <code>StartLabelDetection</code> returns a job
         /// identifier (<code>JobId</code>) which you use to get the results of the operation.
-        /// When label detection is finished, Rekognition Video publishes a completion status
-        /// to the Amazon Simple Notification Service topic that you specify in <code>NotificationChannel</code>.
+        /// When label detection is finished, Amazon Rekognition Video publishes a completion
+        /// status to the Amazon Simple Notification Service topic that you specify in <code>NotificationChannel</code>.
         /// </para>
         ///  
         /// <para>
@@ -3309,7 +3376,7 @@ namespace Amazon.Rekognition
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
         /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
-        /// Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
+        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
         /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
         /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
         /// service limit.
@@ -3377,8 +3444,8 @@ namespace Amazon.Rekognition
         /// 
         ///  
         /// <para>
-        /// Rekognition Video can track persons in a video stored in an Amazon S3 bucket. Use
-        /// <a>Video</a> to specify the bucket name and the filename of the video. <code>StartPersonTracking</code>
+        /// Amazon Rekognition Video can track persons in a video stored in an Amazon S3 bucket.
+        /// Use <a>Video</a> to specify the bucket name and the filename of the video. <code>StartPersonTracking</code>
         /// returns a job identifier (<code>JobId</code>) which you use to get the results of
         /// the operation. When label detection is finished, Amazon Rekognition publishes a completion
         /// status to the Amazon Simple Notification Service topic that you specify in <code>NotificationChannel</code>.
@@ -3414,7 +3481,7 @@ namespace Amazon.Rekognition
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
         /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
-        /// Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
+        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
         /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
         /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
         /// service limit.

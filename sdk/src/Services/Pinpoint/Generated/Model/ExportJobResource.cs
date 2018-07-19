@@ -28,13 +28,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// 
+    /// Export job resource.
     /// </summary>
     public partial class ExportJobResource
     {
         private string _roleArn;
         private string _s3UrlPrefix;
         private string _segmentId;
+        private int? _segmentVersion;
 
         /// <summary>
         /// Gets and sets the property RoleArn. The Amazon Resource Name (ARN) of an IAM role
@@ -73,7 +74,7 @@ namespace Amazon.Pinpoint.Model
 
         /// <summary>
         /// Gets and sets the property SegmentId. The ID of the segment to export endpoints from.
-        /// If not present, all endpoints are exported.
+        /// If not present, Amazon Pinpoint exports all of the endpoints that belong to the application.
         /// </summary>
         public string SegmentId
         {
@@ -85,6 +86,22 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetSegmentId()
         {
             return this._segmentId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SegmentVersion. The version of the segment to export if
+        /// specified.
+        /// </summary>
+        public int SegmentVersion
+        {
+            get { return this._segmentVersion.GetValueOrDefault(); }
+            set { this._segmentVersion = value; }
+        }
+
+        // Check to see if SegmentVersion property is set
+        internal bool IsSetSegmentVersion()
+        {
+            return this._segmentVersion.HasValue; 
         }
 
     }

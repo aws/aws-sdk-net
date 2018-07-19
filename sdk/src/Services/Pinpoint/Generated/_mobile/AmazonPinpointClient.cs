@@ -36,7 +36,7 @@ namespace Amazon.Pinpoint
     /// <summary>
     /// Implementation for accessing Pinpoint
     ///
-    /// 
+    /// Amazon Pinpoint
     /// </summary>
     public partial class AmazonPinpointClient : AmazonServiceClient, IAmazonPinpoint
     {
@@ -819,6 +819,37 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  DeleteUserEndpoints
+
+        internal virtual DeleteUserEndpointsResponse DeleteUserEndpoints(DeleteUserEndpointsRequest request)
+        {
+            var marshaller = DeleteUserEndpointsRequestMarshaller.Instance;
+            var unmarshaller = DeleteUserEndpointsResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteUserEndpointsRequest,DeleteUserEndpointsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteUserEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUserEndpoints operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<DeleteUserEndpointsResponse> DeleteUserEndpointsAsync(DeleteUserEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteUserEndpointsRequestMarshaller.Instance;
+            var unmarshaller = DeleteUserEndpointsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteUserEndpointsRequest,DeleteUserEndpointsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetAdmChannel
 
         internal virtual GetAdmChannelResponse GetAdmChannel(GetAdmChannelRequest request)
@@ -1248,6 +1279,37 @@ namespace Amazon.Pinpoint
             var unmarshaller = GetCampaignVersionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetCampaignVersionsRequest,GetCampaignVersionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetChannels
+
+        internal virtual GetChannelsResponse GetChannels(GetChannelsRequest request)
+        {
+            var marshaller = GetChannelsRequestMarshaller.Instance;
+            var unmarshaller = GetChannelsResponseUnmarshaller.Instance;
+
+            return Invoke<GetChannelsRequest,GetChannelsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetChannels operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetChannels operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<GetChannelsResponse> GetChannelsAsync(GetChannelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetChannelsRequestMarshaller.Instance;
+            var unmarshaller = GetChannelsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetChannelsRequest,GetChannelsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1718,6 +1780,68 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  GetUserEndpoints
+
+        internal virtual GetUserEndpointsResponse GetUserEndpoints(GetUserEndpointsRequest request)
+        {
+            var marshaller = GetUserEndpointsRequestMarshaller.Instance;
+            var unmarshaller = GetUserEndpointsResponseUnmarshaller.Instance;
+
+            return Invoke<GetUserEndpointsRequest,GetUserEndpointsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetUserEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetUserEndpoints operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<GetUserEndpointsResponse> GetUserEndpointsAsync(GetUserEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetUserEndpointsRequestMarshaller.Instance;
+            var unmarshaller = GetUserEndpointsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetUserEndpointsRequest,GetUserEndpointsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PhoneNumberValidate
+
+        internal virtual PhoneNumberValidateResponse PhoneNumberValidate(PhoneNumberValidateRequest request)
+        {
+            var marshaller = PhoneNumberValidateRequestMarshaller.Instance;
+            var unmarshaller = PhoneNumberValidateResponseUnmarshaller.Instance;
+
+            return Invoke<PhoneNumberValidateRequest,PhoneNumberValidateResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PhoneNumberValidate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PhoneNumberValidate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<PhoneNumberValidateResponse> PhoneNumberValidateAsync(PhoneNumberValidateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = PhoneNumberValidateRequestMarshaller.Instance;
+            var unmarshaller = PhoneNumberValidateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PhoneNumberValidateRequest,PhoneNumberValidateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutEventStream
 
         internal virtual PutEventStreamResponse PutEventStream(PutEventStreamRequest request)
@@ -1744,6 +1868,37 @@ namespace Amazon.Pinpoint
             var unmarshaller = PutEventStreamResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutEventStreamRequest,PutEventStreamResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RemoveAttributes
+
+        internal virtual RemoveAttributesResponse RemoveAttributes(RemoveAttributesRequest request)
+        {
+            var marshaller = RemoveAttributesRequestMarshaller.Instance;
+            var unmarshaller = RemoveAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveAttributesRequest,RemoveAttributesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveAttributes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<RemoveAttributesResponse> RemoveAttributesAsync(RemoveAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = RemoveAttributesRequestMarshaller.Instance;
+            var unmarshaller = RemoveAttributesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RemoveAttributesRequest,RemoveAttributesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

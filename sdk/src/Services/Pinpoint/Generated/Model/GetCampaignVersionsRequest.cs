@@ -39,7 +39,7 @@ namespace Amazon.Pinpoint.Model
         private string _token;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId.
+        /// Gets and sets the property ApplicationId. The unique ID of your Amazon Pinpoint application.
         /// </summary>
         public string ApplicationId
         {
@@ -54,7 +54,7 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CampaignId.
+        /// Gets and sets the property CampaignId. The unique ID of the campaign.
         /// </summary>
         public string CampaignId
         {

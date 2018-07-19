@@ -57,6 +57,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     response.Images = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NextToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextToken = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;
@@ -72,6 +78,10 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterCombinationException"))
+            {
+                return new InvalidParameterCombinationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
             {
                 return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

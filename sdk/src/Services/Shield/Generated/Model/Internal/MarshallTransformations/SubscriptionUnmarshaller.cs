@@ -64,6 +64,24 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AutoRenew", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AutoRenew = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EndTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.EndTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Limits", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Limit, LimitUnmarshaller>(LimitUnmarshaller.Instance);
+                    unmarshalledObject.Limits = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("StartTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

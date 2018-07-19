@@ -74,6 +74,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("PathPrefix", StringUtils.FromString(publicRequest.PathPrefix));
                 }
+                if(publicRequest.IsSetPolicyUsageFilter())
+                {
+                    request.Parameters.Add("PolicyUsageFilter", StringUtils.FromString(publicRequest.PolicyUsageFilter));
+                }
                 if(publicRequest.IsSetScope())
                 {
                     request.Parameters.Add("Scope", StringUtils.FromString(publicRequest.Scope));

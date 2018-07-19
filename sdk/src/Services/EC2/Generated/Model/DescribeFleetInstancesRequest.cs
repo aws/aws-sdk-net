@@ -43,6 +43,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// One or more filters.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>instance-type</code> - The instance type.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<Filter> Filters
         {

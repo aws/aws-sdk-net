@@ -32,11 +32,27 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class OutputGroupSettings
     {
+        private CmafGroupSettings _cmafGroupSettings;
         private DashIsoGroupSettings _dashIsoGroupSettings;
         private FileGroupSettings _fileGroupSettings;
         private HlsGroupSettings _hlsGroupSettings;
         private MsSmoothGroupSettings _msSmoothGroupSettings;
         private OutputGroupType _type;
+
+        /// <summary>
+        /// Gets and sets the property CmafGroupSettings.
+        /// </summary>
+        public CmafGroupSettings CmafGroupSettings
+        {
+            get { return this._cmafGroupSettings; }
+            set { this._cmafGroupSettings = value; }
+        }
+
+        // Check to see if CmafGroupSettings property is set
+        internal bool IsSetCmafGroupSettings()
+        {
+            return this._cmafGroupSettings != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DashIsoGroupSettings.

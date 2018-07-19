@@ -1244,6 +1244,34 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  DeleteRolePermissionsBoundary
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRolePermissionsBoundary operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRolePermissionsBoundary operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteRolePermissionsBoundary">REST API Reference for DeleteRolePermissionsBoundary Operation</seealso>
+        public virtual void DeleteRolePermissionsBoundaryAsync(DeleteRolePermissionsBoundaryRequest request, AmazonServiceCallback<DeleteRolePermissionsBoundaryRequest, DeleteRolePermissionsBoundaryResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = DeleteRolePermissionsBoundaryRequestMarshaller.Instance;
+            var unmarshaller = DeleteRolePermissionsBoundaryResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<DeleteRolePermissionsBoundaryRequest,DeleteRolePermissionsBoundaryResponse> responseObject 
+                            = new AmazonServiceResult<DeleteRolePermissionsBoundaryRequest,DeleteRolePermissionsBoundaryResponse>((DeleteRolePermissionsBoundaryRequest)req, (DeleteRolePermissionsBoundaryResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<DeleteRolePermissionsBoundaryRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
         #region  DeleteRolePolicy
 
         /// <summary>
@@ -1464,6 +1492,34 @@ namespace Amazon.IdentityManagement
                         callback(responseObject); 
                 };
             BeginInvoke<DeleteUserRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  DeleteUserPermissionsBoundary
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteUserPermissionsBoundary operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUserPermissionsBoundary operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteUserPermissionsBoundary">REST API Reference for DeleteUserPermissionsBoundary Operation</seealso>
+        public virtual void DeleteUserPermissionsBoundaryAsync(DeleteUserPermissionsBoundaryRequest request, AmazonServiceCallback<DeleteUserPermissionsBoundaryRequest, DeleteUserPermissionsBoundaryResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = DeleteUserPermissionsBoundaryRequestMarshaller.Instance;
+            var unmarshaller = DeleteUserPermissionsBoundaryResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<DeleteUserPermissionsBoundaryRequest,DeleteUserPermissionsBoundaryResponse> responseObject 
+                            = new AmazonServiceResult<DeleteUserPermissionsBoundaryRequest,DeleteUserPermissionsBoundaryResponse>((DeleteUserPermissionsBoundaryRequest)req, (DeleteUserPermissionsBoundaryResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<DeleteUserPermissionsBoundaryRequest>(request, marshaller, unmarshaller, options, callbackHelper);
         }
 
         #endregion
@@ -3683,6 +3739,34 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  PutRolePermissionsBoundary
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutRolePermissionsBoundary operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutRolePermissionsBoundary operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutRolePermissionsBoundary">REST API Reference for PutRolePermissionsBoundary Operation</seealso>
+        public virtual void PutRolePermissionsBoundaryAsync(PutRolePermissionsBoundaryRequest request, AmazonServiceCallback<PutRolePermissionsBoundaryRequest, PutRolePermissionsBoundaryResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = PutRolePermissionsBoundaryRequestMarshaller.Instance;
+            var unmarshaller = PutRolePermissionsBoundaryResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<PutRolePermissionsBoundaryRequest,PutRolePermissionsBoundaryResponse> responseObject 
+                            = new AmazonServiceResult<PutRolePermissionsBoundaryRequest,PutRolePermissionsBoundaryResponse>((PutRolePermissionsBoundaryRequest)req, (PutRolePermissionsBoundaryResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<PutRolePermissionsBoundaryRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
         #region  PutRolePolicy
 
         /// <summary>
@@ -3707,6 +3791,34 @@ namespace Amazon.IdentityManagement
                         callback(responseObject); 
                 };
             BeginInvoke<PutRolePolicyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  PutUserPermissionsBoundary
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutUserPermissionsBoundary operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutUserPermissionsBoundary operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutUserPermissionsBoundary">REST API Reference for PutUserPermissionsBoundary Operation</seealso>
+        public virtual void PutUserPermissionsBoundaryAsync(PutUserPermissionsBoundaryRequest request, AmazonServiceCallback<PutUserPermissionsBoundaryRequest, PutUserPermissionsBoundaryResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = PutUserPermissionsBoundaryRequestMarshaller.Instance;
+            var unmarshaller = PutUserPermissionsBoundaryResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<PutUserPermissionsBoundaryRequest,PutUserPermissionsBoundaryResponse> responseObject 
+                            = new AmazonServiceResult<PutUserPermissionsBoundaryRequest,PutUserPermissionsBoundaryResponse>((PutUserPermissionsBoundaryRequest)req, (PutUserPermissionsBoundaryResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<PutUserPermissionsBoundaryRequest>(request, marshaller, unmarshaller, options, callbackHelper);
         }
 
         #endregion

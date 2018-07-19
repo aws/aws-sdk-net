@@ -67,6 +67,23 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetArns())
+                {
+                    context.Writer.WritePropertyName("Arns");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestArnsListValue in publicRequest.Arns)
+                    {
+                            context.Writer.Write(publicRequestArnsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetMaxResults())
+                {
+                    context.Writer.WritePropertyName("MaxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
+                }
+
                 if(publicRequest.IsSetNames())
                 {
                     context.Writer.WritePropertyName("Names");
@@ -76,6 +93,18 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                             context.Writer.Write(publicRequestNamesListValue);
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetNextToken())
+                {
+                    context.Writer.WritePropertyName("NextToken");
+                    context.Writer.Write(publicRequest.NextToken);
+                }
+
+                if(publicRequest.IsSetType())
+                {
+                    context.Writer.WritePropertyName("Type");
+                    context.Writer.Write(publicRequest.Type);
                 }
 
         

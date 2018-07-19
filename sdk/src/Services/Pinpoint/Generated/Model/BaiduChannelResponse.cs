@@ -105,10 +105,7 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HasCredential. Indicates whether the channel is configured
-        /// with Baidu Cloud Push credentials. Amazon Pinpoint uses your credentials to authenticate
-        /// push notifications with Baidu Cloud Push. Provide your credentials by setting the
-        /// ApiKey and SecretKey attributes.
+        /// Gets and sets the property HasCredential. Not used. Retained for backwards compatibility.
         /// </summary>
         public bool HasCredential
         {

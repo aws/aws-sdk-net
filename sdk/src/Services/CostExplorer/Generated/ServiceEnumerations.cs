@@ -31,6 +31,10 @@ namespace Amazon.CostExplorer
     {
 
         /// <summary>
+        /// Constant LINKED for AccountScope
+        /// </summary>
+        public static readonly AccountScope LINKED = new AccountScope("LINKED");
+        /// <summary>
         /// Constant PAYER for AccountScope
         /// </summary>
         public static readonly AccountScope PAYER = new AccountScope("PAYER");
@@ -456,6 +460,18 @@ namespace Amazon.CostExplorer
         /// Constant ALL_UPFRONT for PaymentOption
         /// </summary>
         public static readonly PaymentOption ALL_UPFRONT = new PaymentOption("ALL_UPFRONT");
+        /// <summary>
+        /// Constant HEAVY_UTILIZATION for PaymentOption
+        /// </summary>
+        public static readonly PaymentOption HEAVY_UTILIZATION = new PaymentOption("HEAVY_UTILIZATION");
+        /// <summary>
+        /// Constant LIGHT_UTILIZATION for PaymentOption
+        /// </summary>
+        public static readonly PaymentOption LIGHT_UTILIZATION = new PaymentOption("LIGHT_UTILIZATION");
+        /// <summary>
+        /// Constant MEDIUM_UTILIZATION for PaymentOption
+        /// </summary>
+        public static readonly PaymentOption MEDIUM_UTILIZATION = new PaymentOption("MEDIUM_UTILIZATION");
         /// <summary>
         /// Constant NO_UPFRONT for PaymentOption
         /// </summary>

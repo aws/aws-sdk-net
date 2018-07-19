@@ -29,7 +29,8 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// Information about a detected celebrity and the time the celebrity was detected in
-    /// a stored video. For more information, see .
+    /// a stored video. For more information, see GetCelebrityRecognition in the Amazon Rekognition
+    /// Developer Guide.
     /// </summary>
     public partial class CelebrityRecognition
     {

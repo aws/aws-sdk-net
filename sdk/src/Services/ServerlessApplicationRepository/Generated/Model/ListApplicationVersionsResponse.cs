@@ -56,7 +56,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// <summary>
         /// Gets and sets the property Versions. 
         /// <para>
-        /// Array of version summaries for the application.
+        /// An array of version summaries for the application.
         /// </para>
         /// </summary>
         public List<VersionSummary> Versions

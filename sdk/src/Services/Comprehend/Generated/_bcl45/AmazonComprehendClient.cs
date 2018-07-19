@@ -286,8 +286,8 @@ namespace Amazon.Comprehend
 
 
         /// <summary>
-        /// Inspects the text of a batch of documents and returns information about them. For
-        /// more information about entities, see <a>how-entities</a>
+        /// Inspects the text of a batch of documents for named entities and returns information
+        /// about them. For more information about named entities, see <a>how-entities</a>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDetectEntities service method.</param>
         /// 
@@ -459,6 +459,274 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  BatchDetectSyntax
+
+
+        /// <summary>
+        /// Inspects the text of a batch of documents for the syntax and part of speech of the
+        /// words in the document and returns information about them. For more information, see
+        /// <a>how-syntax</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDetectSyntax service method.</param>
+        /// 
+        /// <returns>The response from the BatchDetectSyntax service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.BatchSizeLimitExceededException">
+        /// The number of documents in the request exceeds the limit of 25. Try your request again
+        /// with fewer documents.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TextSizeLimitExceededException">
+        /// The size of the input text exceeds the limit. Use a smaller document.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
+        /// Amazon Comprehend can't process the language of the input text. For all APIs except
+        /// <code>DetectDominantLanguage</code>, Amazon Comprehend accepts only English or Spanish
+        /// text. For the <code>DetectDominantLanguage</code> API, Amazon Comprehend detects 100
+        /// languages. For a list of languages, see <a>how-languages</a>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectSyntax">REST API Reference for BatchDetectSyntax Operation</seealso>
+        public virtual BatchDetectSyntaxResponse BatchDetectSyntax(BatchDetectSyntaxRequest request)
+        {
+            var marshaller = BatchDetectSyntaxRequestMarshaller.Instance;
+            var unmarshaller = BatchDetectSyntaxResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDetectSyntaxRequest,BatchDetectSyntaxResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchDetectSyntax operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchDetectSyntax operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectSyntax">REST API Reference for BatchDetectSyntax Operation</seealso>
+        public virtual Task<BatchDetectSyntaxResponse> BatchDetectSyntaxAsync(BatchDetectSyntaxRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = BatchDetectSyntaxRequestMarshaller.Instance;
+            var unmarshaller = BatchDetectSyntaxResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchDetectSyntaxRequest,BatchDetectSyntaxResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeDominantLanguageDetectionJob
+
+
+        /// <summary>
+        /// Gets the properties associated with a dominant language detection job. Use this operation
+        /// to get the status of a detection job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDominantLanguageDetectionJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDominantLanguageDetectionJob service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.JobNotFoundException">
+        /// The specified job was not found. Check the job ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeDominantLanguageDetectionJob">REST API Reference for DescribeDominantLanguageDetectionJob Operation</seealso>
+        public virtual DescribeDominantLanguageDetectionJobResponse DescribeDominantLanguageDetectionJob(DescribeDominantLanguageDetectionJobRequest request)
+        {
+            var marshaller = DescribeDominantLanguageDetectionJobRequestMarshaller.Instance;
+            var unmarshaller = DescribeDominantLanguageDetectionJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDominantLanguageDetectionJobRequest,DescribeDominantLanguageDetectionJobResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDominantLanguageDetectionJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDominantLanguageDetectionJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeDominantLanguageDetectionJob">REST API Reference for DescribeDominantLanguageDetectionJob Operation</seealso>
+        public virtual Task<DescribeDominantLanguageDetectionJobResponse> DescribeDominantLanguageDetectionJobAsync(DescribeDominantLanguageDetectionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeDominantLanguageDetectionJobRequestMarshaller.Instance;
+            var unmarshaller = DescribeDominantLanguageDetectionJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeDominantLanguageDetectionJobRequest,DescribeDominantLanguageDetectionJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeEntitiesDetectionJob
+
+
+        /// <summary>
+        /// Gets the properties associated with an entities detection job. Use this operation
+        /// to get the status of a detection job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEntitiesDetectionJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEntitiesDetectionJob service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.JobNotFoundException">
+        /// The specified job was not found. Check the job ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeEntitiesDetectionJob">REST API Reference for DescribeEntitiesDetectionJob Operation</seealso>
+        public virtual DescribeEntitiesDetectionJobResponse DescribeEntitiesDetectionJob(DescribeEntitiesDetectionJobRequest request)
+        {
+            var marshaller = DescribeEntitiesDetectionJobRequestMarshaller.Instance;
+            var unmarshaller = DescribeEntitiesDetectionJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEntitiesDetectionJobRequest,DescribeEntitiesDetectionJobResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEntitiesDetectionJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEntitiesDetectionJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeEntitiesDetectionJob">REST API Reference for DescribeEntitiesDetectionJob Operation</seealso>
+        public virtual Task<DescribeEntitiesDetectionJobResponse> DescribeEntitiesDetectionJobAsync(DescribeEntitiesDetectionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeEntitiesDetectionJobRequestMarshaller.Instance;
+            var unmarshaller = DescribeEntitiesDetectionJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeEntitiesDetectionJobRequest,DescribeEntitiesDetectionJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeKeyPhrasesDetectionJob
+
+
+        /// <summary>
+        /// Gets the properties associated with a key phrases detection job. Use this operation
+        /// to get the status of a detection job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeKeyPhrasesDetectionJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeKeyPhrasesDetectionJob service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.JobNotFoundException">
+        /// The specified job was not found. Check the job ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeKeyPhrasesDetectionJob">REST API Reference for DescribeKeyPhrasesDetectionJob Operation</seealso>
+        public virtual DescribeKeyPhrasesDetectionJobResponse DescribeKeyPhrasesDetectionJob(DescribeKeyPhrasesDetectionJobRequest request)
+        {
+            var marshaller = DescribeKeyPhrasesDetectionJobRequestMarshaller.Instance;
+            var unmarshaller = DescribeKeyPhrasesDetectionJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeKeyPhrasesDetectionJobRequest,DescribeKeyPhrasesDetectionJobResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeKeyPhrasesDetectionJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeKeyPhrasesDetectionJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeKeyPhrasesDetectionJob">REST API Reference for DescribeKeyPhrasesDetectionJob Operation</seealso>
+        public virtual Task<DescribeKeyPhrasesDetectionJobResponse> DescribeKeyPhrasesDetectionJobAsync(DescribeKeyPhrasesDetectionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeKeyPhrasesDetectionJobRequestMarshaller.Instance;
+            var unmarshaller = DescribeKeyPhrasesDetectionJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeKeyPhrasesDetectionJobRequest,DescribeKeyPhrasesDetectionJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeSentimentDetectionJob
+
+
+        /// <summary>
+        /// Gets the properties associated with a sentiment detection job. Use this operation
+        /// to get the status of a detection job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSentimentDetectionJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSentimentDetectionJob service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.JobNotFoundException">
+        /// The specified job was not found. Check the job ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeSentimentDetectionJob">REST API Reference for DescribeSentimentDetectionJob Operation</seealso>
+        public virtual DescribeSentimentDetectionJobResponse DescribeSentimentDetectionJob(DescribeSentimentDetectionJobRequest request)
+        {
+            var marshaller = DescribeSentimentDetectionJobRequestMarshaller.Instance;
+            var unmarshaller = DescribeSentimentDetectionJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeSentimentDetectionJobRequest,DescribeSentimentDetectionJobResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSentimentDetectionJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSentimentDetectionJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeSentimentDetectionJob">REST API Reference for DescribeSentimentDetectionJob Operation</seealso>
+        public virtual Task<DescribeSentimentDetectionJobResponse> DescribeSentimentDetectionJobAsync(DescribeSentimentDetectionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeSentimentDetectionJobRequestMarshaller.Instance;
+            var unmarshaller = DescribeSentimentDetectionJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeSentimentDetectionJobRequest,DescribeSentimentDetectionJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeTopicsDetectionJob
 
 
@@ -565,8 +833,8 @@ namespace Amazon.Comprehend
 
 
         /// <summary>
-        /// Inspects text for entities, and returns information about them. For more information,
-        /// about entities, see <a>how-entities</a>.
+        /// Inspects text for named entities, and returns information about them. For more information,
+        /// about named entities, see <a>how-entities</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetectEntities service method.</param>
         /// 
@@ -725,6 +993,269 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  DetectSyntax
+
+
+        /// <summary>
+        /// Inspects text for syntax and the part of speech of words in the document. For more
+        /// information, <a>how-syntax</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetectSyntax service method.</param>
+        /// 
+        /// <returns>The response from the DetectSyntax service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TextSizeLimitExceededException">
+        /// The size of the input text exceeds the limit. Use a smaller document.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
+        /// Amazon Comprehend can't process the language of the input text. For all APIs except
+        /// <code>DetectDominantLanguage</code>, Amazon Comprehend accepts only English or Spanish
+        /// text. For the <code>DetectDominantLanguage</code> API, Amazon Comprehend detects 100
+        /// languages. For a list of languages, see <a>how-languages</a>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectSyntax">REST API Reference for DetectSyntax Operation</seealso>
+        public virtual DetectSyntaxResponse DetectSyntax(DetectSyntaxRequest request)
+        {
+            var marshaller = DetectSyntaxRequestMarshaller.Instance;
+            var unmarshaller = DetectSyntaxResponseUnmarshaller.Instance;
+
+            return Invoke<DetectSyntaxRequest,DetectSyntaxResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DetectSyntax operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DetectSyntax operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectSyntax">REST API Reference for DetectSyntax Operation</seealso>
+        public virtual Task<DetectSyntaxResponse> DetectSyntaxAsync(DetectSyntaxRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DetectSyntaxRequestMarshaller.Instance;
+            var unmarshaller = DetectSyntaxResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DetectSyntaxRequest,DetectSyntaxResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDominantLanguageDetectionJobs
+
+
+        /// <summary>
+        /// Gets a list of the dominant language detection jobs that you have submitted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDominantLanguageDetectionJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListDominantLanguageDetectionJobs service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidFilterException">
+        /// The filter specified for the <code>ListTopicDetectionJobs</code> operation is invalid.
+        /// Specify a different filter.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDominantLanguageDetectionJobs">REST API Reference for ListDominantLanguageDetectionJobs Operation</seealso>
+        public virtual ListDominantLanguageDetectionJobsResponse ListDominantLanguageDetectionJobs(ListDominantLanguageDetectionJobsRequest request)
+        {
+            var marshaller = ListDominantLanguageDetectionJobsRequestMarshaller.Instance;
+            var unmarshaller = ListDominantLanguageDetectionJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDominantLanguageDetectionJobsRequest,ListDominantLanguageDetectionJobsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDominantLanguageDetectionJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDominantLanguageDetectionJobs operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDominantLanguageDetectionJobs">REST API Reference for ListDominantLanguageDetectionJobs Operation</seealso>
+        public virtual Task<ListDominantLanguageDetectionJobsResponse> ListDominantLanguageDetectionJobsAsync(ListDominantLanguageDetectionJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListDominantLanguageDetectionJobsRequestMarshaller.Instance;
+            var unmarshaller = ListDominantLanguageDetectionJobsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDominantLanguageDetectionJobsRequest,ListDominantLanguageDetectionJobsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListEntitiesDetectionJobs
+
+
+        /// <summary>
+        /// Gets a list of the entity detection jobs that you have submitted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEntitiesDetectionJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListEntitiesDetectionJobs service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidFilterException">
+        /// The filter specified for the <code>ListTopicDetectionJobs</code> operation is invalid.
+        /// Specify a different filter.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEntitiesDetectionJobs">REST API Reference for ListEntitiesDetectionJobs Operation</seealso>
+        public virtual ListEntitiesDetectionJobsResponse ListEntitiesDetectionJobs(ListEntitiesDetectionJobsRequest request)
+        {
+            var marshaller = ListEntitiesDetectionJobsRequestMarshaller.Instance;
+            var unmarshaller = ListEntitiesDetectionJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListEntitiesDetectionJobsRequest,ListEntitiesDetectionJobsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListEntitiesDetectionJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListEntitiesDetectionJobs operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEntitiesDetectionJobs">REST API Reference for ListEntitiesDetectionJobs Operation</seealso>
+        public virtual Task<ListEntitiesDetectionJobsResponse> ListEntitiesDetectionJobsAsync(ListEntitiesDetectionJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListEntitiesDetectionJobsRequestMarshaller.Instance;
+            var unmarshaller = ListEntitiesDetectionJobsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListEntitiesDetectionJobsRequest,ListEntitiesDetectionJobsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListKeyPhrasesDetectionJobs
+
+
+        /// <summary>
+        /// Get a list of key phrase detection jobs that you have submitted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListKeyPhrasesDetectionJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListKeyPhrasesDetectionJobs service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidFilterException">
+        /// The filter specified for the <code>ListTopicDetectionJobs</code> operation is invalid.
+        /// Specify a different filter.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListKeyPhrasesDetectionJobs">REST API Reference for ListKeyPhrasesDetectionJobs Operation</seealso>
+        public virtual ListKeyPhrasesDetectionJobsResponse ListKeyPhrasesDetectionJobs(ListKeyPhrasesDetectionJobsRequest request)
+        {
+            var marshaller = ListKeyPhrasesDetectionJobsRequestMarshaller.Instance;
+            var unmarshaller = ListKeyPhrasesDetectionJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListKeyPhrasesDetectionJobsRequest,ListKeyPhrasesDetectionJobsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListKeyPhrasesDetectionJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListKeyPhrasesDetectionJobs operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListKeyPhrasesDetectionJobs">REST API Reference for ListKeyPhrasesDetectionJobs Operation</seealso>
+        public virtual Task<ListKeyPhrasesDetectionJobsResponse> ListKeyPhrasesDetectionJobsAsync(ListKeyPhrasesDetectionJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListKeyPhrasesDetectionJobsRequestMarshaller.Instance;
+            var unmarshaller = ListKeyPhrasesDetectionJobsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListKeyPhrasesDetectionJobsRequest,ListKeyPhrasesDetectionJobsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListSentimentDetectionJobs
+
+
+        /// <summary>
+        /// Gets a list of sentiment detection jobs that you have submitted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSentimentDetectionJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListSentimentDetectionJobs service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidFilterException">
+        /// The filter specified for the <code>ListTopicDetectionJobs</code> operation is invalid.
+        /// Specify a different filter.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListSentimentDetectionJobs">REST API Reference for ListSentimentDetectionJobs Operation</seealso>
+        public virtual ListSentimentDetectionJobsResponse ListSentimentDetectionJobs(ListSentimentDetectionJobsRequest request)
+        {
+            var marshaller = ListSentimentDetectionJobsRequestMarshaller.Instance;
+            var unmarshaller = ListSentimentDetectionJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSentimentDetectionJobsRequest,ListSentimentDetectionJobsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSentimentDetectionJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSentimentDetectionJobs operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListSentimentDetectionJobs">REST API Reference for ListSentimentDetectionJobs Operation</seealso>
+        public virtual Task<ListSentimentDetectionJobsResponse> ListSentimentDetectionJobsAsync(ListSentimentDetectionJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListSentimentDetectionJobsRequestMarshaller.Instance;
+            var unmarshaller = ListSentimentDetectionJobsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListSentimentDetectionJobsRequest,ListSentimentDetectionJobsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTopicsDetectionJobs
 
 
@@ -777,6 +1308,202 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  StartDominantLanguageDetectionJob
+
+
+        /// <summary>
+        /// Starts an asynchronous dominant language detection job for a collection of documents.
+        /// Use the operation to track the status of a job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartDominantLanguageDetectionJob service method.</param>
+        /// 
+        /// <returns>The response from the StartDominantLanguageDetectionJob service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartDominantLanguageDetectionJob">REST API Reference for StartDominantLanguageDetectionJob Operation</seealso>
+        public virtual StartDominantLanguageDetectionJobResponse StartDominantLanguageDetectionJob(StartDominantLanguageDetectionJobRequest request)
+        {
+            var marshaller = StartDominantLanguageDetectionJobRequestMarshaller.Instance;
+            var unmarshaller = StartDominantLanguageDetectionJobResponseUnmarshaller.Instance;
+
+            return Invoke<StartDominantLanguageDetectionJobRequest,StartDominantLanguageDetectionJobResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartDominantLanguageDetectionJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartDominantLanguageDetectionJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartDominantLanguageDetectionJob">REST API Reference for StartDominantLanguageDetectionJob Operation</seealso>
+        public virtual Task<StartDominantLanguageDetectionJobResponse> StartDominantLanguageDetectionJobAsync(StartDominantLanguageDetectionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = StartDominantLanguageDetectionJobRequestMarshaller.Instance;
+            var unmarshaller = StartDominantLanguageDetectionJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartDominantLanguageDetectionJobRequest,StartDominantLanguageDetectionJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartEntitiesDetectionJob
+
+
+        /// <summary>
+        /// Starts an asynchronous entity detection job for a collection of documents. Use the
+        /// operation to track the status of a job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartEntitiesDetectionJob service method.</param>
+        /// 
+        /// <returns>The response from the StartEntitiesDetectionJob service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartEntitiesDetectionJob">REST API Reference for StartEntitiesDetectionJob Operation</seealso>
+        public virtual StartEntitiesDetectionJobResponse StartEntitiesDetectionJob(StartEntitiesDetectionJobRequest request)
+        {
+            var marshaller = StartEntitiesDetectionJobRequestMarshaller.Instance;
+            var unmarshaller = StartEntitiesDetectionJobResponseUnmarshaller.Instance;
+
+            return Invoke<StartEntitiesDetectionJobRequest,StartEntitiesDetectionJobResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartEntitiesDetectionJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartEntitiesDetectionJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartEntitiesDetectionJob">REST API Reference for StartEntitiesDetectionJob Operation</seealso>
+        public virtual Task<StartEntitiesDetectionJobResponse> StartEntitiesDetectionJobAsync(StartEntitiesDetectionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = StartEntitiesDetectionJobRequestMarshaller.Instance;
+            var unmarshaller = StartEntitiesDetectionJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartEntitiesDetectionJobRequest,StartEntitiesDetectionJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartKeyPhrasesDetectionJob
+
+
+        /// <summary>
+        /// Starts an asynchronous key phrase detection job for a collection of documents. Use
+        /// the operation to track the status of a job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartKeyPhrasesDetectionJob service method.</param>
+        /// 
+        /// <returns>The response from the StartKeyPhrasesDetectionJob service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartKeyPhrasesDetectionJob">REST API Reference for StartKeyPhrasesDetectionJob Operation</seealso>
+        public virtual StartKeyPhrasesDetectionJobResponse StartKeyPhrasesDetectionJob(StartKeyPhrasesDetectionJobRequest request)
+        {
+            var marshaller = StartKeyPhrasesDetectionJobRequestMarshaller.Instance;
+            var unmarshaller = StartKeyPhrasesDetectionJobResponseUnmarshaller.Instance;
+
+            return Invoke<StartKeyPhrasesDetectionJobRequest,StartKeyPhrasesDetectionJobResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartKeyPhrasesDetectionJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartKeyPhrasesDetectionJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartKeyPhrasesDetectionJob">REST API Reference for StartKeyPhrasesDetectionJob Operation</seealso>
+        public virtual Task<StartKeyPhrasesDetectionJobResponse> StartKeyPhrasesDetectionJobAsync(StartKeyPhrasesDetectionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = StartKeyPhrasesDetectionJobRequestMarshaller.Instance;
+            var unmarshaller = StartKeyPhrasesDetectionJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartKeyPhrasesDetectionJobRequest,StartKeyPhrasesDetectionJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartSentimentDetectionJob
+
+
+        /// <summary>
+        /// Starts an asynchronous sentiment detection job for a collection of documents. use
+        /// the operation to track the status of a job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSentimentDetectionJob service method.</param>
+        /// 
+        /// <returns>The response from the StartSentimentDetectionJob service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartSentimentDetectionJob">REST API Reference for StartSentimentDetectionJob Operation</seealso>
+        public virtual StartSentimentDetectionJobResponse StartSentimentDetectionJob(StartSentimentDetectionJobRequest request)
+        {
+            var marshaller = StartSentimentDetectionJobRequestMarshaller.Instance;
+            var unmarshaller = StartSentimentDetectionJobResponseUnmarshaller.Instance;
+
+            return Invoke<StartSentimentDetectionJobRequest,StartSentimentDetectionJobResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartSentimentDetectionJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartSentimentDetectionJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartSentimentDetectionJob">REST API Reference for StartSentimentDetectionJob Operation</seealso>
+        public virtual Task<StartSentimentDetectionJobResponse> StartSentimentDetectionJobAsync(StartSentimentDetectionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = StartSentimentDetectionJobRequestMarshaller.Instance;
+            var unmarshaller = StartSentimentDetectionJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartSentimentDetectionJobRequest,StartSentimentDetectionJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartTopicsDetectionJob
 
 
@@ -821,6 +1548,270 @@ namespace Amazon.Comprehend
             var unmarshaller = StartTopicsDetectionJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartTopicsDetectionJobRequest,StartTopicsDetectionJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopDominantLanguageDetectionJob
+
+
+        /// <summary>
+        /// Stops a dominant language detection job in progress.
+        /// 
+        ///  
+        /// <para>
+        /// If the job state is <code>IN_PROGRESS</code> the job is marked for termination and
+        /// put into the <code>STOP_REQUESTED</code> state. If the job completes before it can
+        /// be stopped, it is put into the <code>COMPLETED</code> state; otherwise the job is
+        /// stopped and put into the <code>STOPPED</code> state.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you
+        /// call the <code>StopDominantLanguageDetectionJob</code> operation, the operation returns
+        /// a 400 Internal Request Exception. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When a job is stopped, any documents already processed are written to the output location.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopDominantLanguageDetectionJob service method.</param>
+        /// 
+        /// <returns>The response from the StopDominantLanguageDetectionJob service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.JobNotFoundException">
+        /// The specified job was not found. Check the job ID and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopDominantLanguageDetectionJob">REST API Reference for StopDominantLanguageDetectionJob Operation</seealso>
+        public virtual StopDominantLanguageDetectionJobResponse StopDominantLanguageDetectionJob(StopDominantLanguageDetectionJobRequest request)
+        {
+            var marshaller = StopDominantLanguageDetectionJobRequestMarshaller.Instance;
+            var unmarshaller = StopDominantLanguageDetectionJobResponseUnmarshaller.Instance;
+
+            return Invoke<StopDominantLanguageDetectionJobRequest,StopDominantLanguageDetectionJobResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopDominantLanguageDetectionJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopDominantLanguageDetectionJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopDominantLanguageDetectionJob">REST API Reference for StopDominantLanguageDetectionJob Operation</seealso>
+        public virtual Task<StopDominantLanguageDetectionJobResponse> StopDominantLanguageDetectionJobAsync(StopDominantLanguageDetectionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = StopDominantLanguageDetectionJobRequestMarshaller.Instance;
+            var unmarshaller = StopDominantLanguageDetectionJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopDominantLanguageDetectionJobRequest,StopDominantLanguageDetectionJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopEntitiesDetectionJob
+
+
+        /// <summary>
+        /// Stops an entities detection job in progress.
+        /// 
+        ///  
+        /// <para>
+        /// If the job state is <code>IN_PROGRESS</code> the job is marked for termination and
+        /// put into the <code>STOP_REQUESTED</code> state. If the job completes before it can
+        /// be stopped, it is put into the <code>COMPLETED</code> state; otherwise the job is
+        /// stopped and put into the <code>STOPPED</code> state.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you
+        /// call the <code>StopDominantLanguageDetectionJob</code> operation, the operation returns
+        /// a 400 Internal Request Exception. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When a job is stopped, any documents already processed are written to the output location.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopEntitiesDetectionJob service method.</param>
+        /// 
+        /// <returns>The response from the StopEntitiesDetectionJob service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.JobNotFoundException">
+        /// The specified job was not found. Check the job ID and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopEntitiesDetectionJob">REST API Reference for StopEntitiesDetectionJob Operation</seealso>
+        public virtual StopEntitiesDetectionJobResponse StopEntitiesDetectionJob(StopEntitiesDetectionJobRequest request)
+        {
+            var marshaller = StopEntitiesDetectionJobRequestMarshaller.Instance;
+            var unmarshaller = StopEntitiesDetectionJobResponseUnmarshaller.Instance;
+
+            return Invoke<StopEntitiesDetectionJobRequest,StopEntitiesDetectionJobResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopEntitiesDetectionJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopEntitiesDetectionJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopEntitiesDetectionJob">REST API Reference for StopEntitiesDetectionJob Operation</seealso>
+        public virtual Task<StopEntitiesDetectionJobResponse> StopEntitiesDetectionJobAsync(StopEntitiesDetectionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = StopEntitiesDetectionJobRequestMarshaller.Instance;
+            var unmarshaller = StopEntitiesDetectionJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopEntitiesDetectionJobRequest,StopEntitiesDetectionJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopKeyPhrasesDetectionJob
+
+
+        /// <summary>
+        /// Stops a key phrases detection job in progress.
+        /// 
+        ///  
+        /// <para>
+        /// If the job state is <code>IN_PROGRESS</code> the job is marked for termination and
+        /// put into the <code>STOP_REQUESTED</code> state. If the job completes before it can
+        /// be stopped, it is put into the <code>COMPLETED</code> state; otherwise the job is
+        /// stopped and put into the <code>STOPPED</code> state.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you
+        /// call the <code>StopDominantLanguageDetectionJob</code> operation, the operation returns
+        /// a 400 Internal Request Exception. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When a job is stopped, any documents already processed are written to the output location.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopKeyPhrasesDetectionJob service method.</param>
+        /// 
+        /// <returns>The response from the StopKeyPhrasesDetectionJob service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.JobNotFoundException">
+        /// The specified job was not found. Check the job ID and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopKeyPhrasesDetectionJob">REST API Reference for StopKeyPhrasesDetectionJob Operation</seealso>
+        public virtual StopKeyPhrasesDetectionJobResponse StopKeyPhrasesDetectionJob(StopKeyPhrasesDetectionJobRequest request)
+        {
+            var marshaller = StopKeyPhrasesDetectionJobRequestMarshaller.Instance;
+            var unmarshaller = StopKeyPhrasesDetectionJobResponseUnmarshaller.Instance;
+
+            return Invoke<StopKeyPhrasesDetectionJobRequest,StopKeyPhrasesDetectionJobResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopKeyPhrasesDetectionJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopKeyPhrasesDetectionJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopKeyPhrasesDetectionJob">REST API Reference for StopKeyPhrasesDetectionJob Operation</seealso>
+        public virtual Task<StopKeyPhrasesDetectionJobResponse> StopKeyPhrasesDetectionJobAsync(StopKeyPhrasesDetectionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = StopKeyPhrasesDetectionJobRequestMarshaller.Instance;
+            var unmarshaller = StopKeyPhrasesDetectionJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopKeyPhrasesDetectionJobRequest,StopKeyPhrasesDetectionJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopSentimentDetectionJob
+
+
+        /// <summary>
+        /// Stops a sentiment detection job in progress.
+        /// 
+        ///  
+        /// <para>
+        /// If the job state is <code>IN_PROGRESS</code> the job is marked for termination and
+        /// put into the <code>STOP_REQUESTED</code> state. If the job completes before it can
+        /// be stopped, it is put into the <code>COMPLETED</code> state; otherwise the job is
+        /// be stopped and put into the <code>STOPPED</code> state.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you
+        /// call the <code>StopDominantLanguageDetectionJob</code> operation, the operation returns
+        /// a 400 Internal Request Exception. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When a job is stopped, any documents already processed are written to the output location.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopSentimentDetectionJob service method.</param>
+        /// 
+        /// <returns>The response from the StopSentimentDetectionJob service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.JobNotFoundException">
+        /// The specified job was not found. Check the job ID and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopSentimentDetectionJob">REST API Reference for StopSentimentDetectionJob Operation</seealso>
+        public virtual StopSentimentDetectionJobResponse StopSentimentDetectionJob(StopSentimentDetectionJobRequest request)
+        {
+            var marshaller = StopSentimentDetectionJobRequestMarshaller.Instance;
+            var unmarshaller = StopSentimentDetectionJobResponseUnmarshaller.Instance;
+
+            return Invoke<StopSentimentDetectionJobRequest,StopSentimentDetectionJobResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopSentimentDetectionJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopSentimentDetectionJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopSentimentDetectionJob">REST API Reference for StopSentimentDetectionJob Operation</seealso>
+        public virtual Task<StopSentimentDetectionJobResponse> StopSentimentDetectionJobAsync(StopSentimentDetectionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = StopSentimentDetectionJobRequestMarshaller.Instance;
+            var unmarshaller = StopSentimentDetectionJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopSentimentDetectionJobRequest,StopSentimentDetectionJobResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

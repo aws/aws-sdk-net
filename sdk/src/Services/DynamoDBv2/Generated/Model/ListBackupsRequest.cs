@@ -55,7 +55,10 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ExclusiveStartBackupArn. 
         /// <para>
-        ///  <code>LastEvaluatedBackupARN</code> returned by the previous ListBackups call. 
+        ///  <code>LastEvaluatedBackupArn</code> is the ARN of the backup last evaluated when
+        /// the current page of results was returned, inclusive of the current page of results.
+        /// This value may be specified as the <code>ExclusiveStartBackupArn</code> of a new <code>ListBackups</code>
+        /// operation in order to fetch the next page of results. 
         /// </para>
         /// </summary>
         public string ExclusiveStartBackupArn

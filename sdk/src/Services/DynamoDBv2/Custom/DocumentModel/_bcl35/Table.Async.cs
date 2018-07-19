@@ -41,7 +41,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         ///         operation.</returns>
         public IAsyncResult BeginPutItem(Document doc, AsyncCallback callback, object state)
         {
-            return DynamoDBAsyncExecutor.BeginOperation(() => PutItemHelper(doc, null, true), callback, state);
+            return DynamoDBAsyncExecutor.BeginOperation(() => PutItemHelper(doc, null), callback, state);
         }
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         ///         operation.</returns>
         public IAsyncResult BeginPutItem(Document doc, PutItemOperationConfig config, AsyncCallback callback, object state)
         {
-            return DynamoDBAsyncExecutor.BeginOperation(() => PutItemHelper(doc, config, true), callback, state);
+            return DynamoDBAsyncExecutor.BeginOperation(() => PutItemHelper(doc, config), callback, state);
         }
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         ///         operation.</returns>
         public IAsyncResult BeginGetItem(Primitive hashKey, AsyncCallback callback, object state)
         {
-            return DynamoDBAsyncExecutor.BeginOperation(() => GetItemHelper(MakeKey(hashKey, null), null, true), callback, state);
+            return DynamoDBAsyncExecutor.BeginOperation(() => GetItemHelper(MakeKey(hashKey, null), null), callback, state);
         }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         ///         operation.</returns>
         public IAsyncResult BeginGetItem(Primitive hashKey, Primitive rangeKey, AsyncCallback callback, object state)
         {
-            return DynamoDBAsyncExecutor.BeginOperation(() => GetItemHelper(MakeKey(hashKey, rangeKey), null, true), callback, state);
+            return DynamoDBAsyncExecutor.BeginOperation(() => GetItemHelper(MakeKey(hashKey, rangeKey), null), callback, state);
         }
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         ///         operation.</returns>
         public IAsyncResult BeginGetItem(Primitive hashKey, GetItemOperationConfig config, AsyncCallback callback, object state)
         {
-            return DynamoDBAsyncExecutor.BeginOperation(() => GetItemHelper(MakeKey(hashKey, null), config, true), callback, state);
+            return DynamoDBAsyncExecutor.BeginOperation(() => GetItemHelper(MakeKey(hashKey, null), config), callback, state);
         }
 
         /// <summary>
@@ -136,7 +136,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         ///         operation.</returns>
         public IAsyncResult BeginGetItem(Primitive hashKey, Primitive rangeKey, GetItemOperationConfig config, AsyncCallback callback, object state)
         {
-            return DynamoDBAsyncExecutor.BeginOperation(() => GetItemHelper(MakeKey(hashKey, rangeKey), config, true), callback, state);
+            return DynamoDBAsyncExecutor.BeginOperation(() => GetItemHelper(MakeKey(hashKey, rangeKey), config), callback, state);
         }
 
         /// <summary>
@@ -151,7 +151,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         ///         operation.</returns>
         public IAsyncResult BeginGetItem(IDictionary<string, DynamoDBEntry> key, AsyncCallback callback, object state)
         {
-            return DynamoDBAsyncExecutor.BeginOperation(() => GetItemHelper(MakeKey(key), null, true), callback, state);
+            return DynamoDBAsyncExecutor.BeginOperation(() => GetItemHelper(MakeKey(key), null), callback, state);
         }
 
         /// <summary>
@@ -167,7 +167,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         ///         operation.</returns>
         public IAsyncResult BeginGetItem(IDictionary<string, DynamoDBEntry> key, GetItemOperationConfig config, AsyncCallback callback, object state)
         {
-            return DynamoDBAsyncExecutor.BeginOperation(() => GetItemHelper(MakeKey(key), config, true), callback, state);
+            return DynamoDBAsyncExecutor.BeginOperation(() => GetItemHelper(MakeKey(key), config), callback, state);
         }
 
         /// <summary>
@@ -197,7 +197,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         ///         operation.</returns>
         public IAsyncResult BeginUpdateItem(Document doc, AsyncCallback callback, object state)
         {
-            return DynamoDBAsyncExecutor.BeginOperation(() => UpdateHelper(doc, MakeKey(doc), null, true), callback, state);
+            return DynamoDBAsyncExecutor.BeginOperation(() => UpdateHelper(doc, MakeKey(doc), null), callback, state);
         }
 
         /// <summary>
@@ -213,7 +213,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         ///         operation.</returns>
         public IAsyncResult BeginUpdateItem(Document doc, Primitive hashKey, AsyncCallback callback, object state)
         {
-            return DynamoDBAsyncExecutor.BeginOperation(() => UpdateHelper(doc, MakeKey(hashKey, null), null, true), callback, state);
+            return DynamoDBAsyncExecutor.BeginOperation(() => UpdateHelper(doc, MakeKey(hashKey, null), null), callback, state);
         }
 
         /// <summary>
@@ -230,7 +230,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         ///         operation.</returns>
         public IAsyncResult BeginUpdateItem(Document doc, Primitive hashKey, Primitive rangeKey, AsyncCallback callback, object state)
         {
-            return DynamoDBAsyncExecutor.BeginOperation(() => UpdateHelper(doc, MakeKey(hashKey, rangeKey), null, true), callback, state);
+            return DynamoDBAsyncExecutor.BeginOperation(() => UpdateHelper(doc, MakeKey(hashKey, rangeKey), null), callback, state);
         }
 
         /// <summary>
@@ -246,7 +246,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         ///         operation.</returns>
         public IAsyncResult BeginUpdateItem(Document doc, IDictionary<string, DynamoDBEntry> key, AsyncCallback callback, object state)
         {
-            return DynamoDBAsyncExecutor.BeginOperation(() => UpdateHelper(doc, MakeKey(key), null, true), callback, state);
+            return DynamoDBAsyncExecutor.BeginOperation(() => UpdateHelper(doc, MakeKey(key), null), callback, state);
         }
 
         /// <summary>
@@ -262,7 +262,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         ///         operation.</returns>
         public IAsyncResult BeginUpdateItem(Document doc, UpdateItemOperationConfig config, AsyncCallback callback, object state)
         {
-            return DynamoDBAsyncExecutor.BeginOperation(() => UpdateHelper(doc, MakeKey(doc), config, true), callback, state);
+            return DynamoDBAsyncExecutor.BeginOperation(() => UpdateHelper(doc, MakeKey(doc), config), callback, state);
         }
 
         /// <summary>
@@ -279,7 +279,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         ///         operation.</returns>
         public IAsyncResult BeginUpdateItem(Document doc, Primitive hashKey, UpdateItemOperationConfig config, AsyncCallback callback, object state)
         {
-            return DynamoDBAsyncExecutor.BeginOperation(() => UpdateHelper(doc, MakeKey(hashKey, null), config, true), callback, state);
+            return DynamoDBAsyncExecutor.BeginOperation(() => UpdateHelper(doc, MakeKey(hashKey, null), config), callback, state);
         }
 
         /// <summary>
@@ -297,7 +297,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         ///         operation.</returns>
         public IAsyncResult BeginUpdateItem(Document doc, Primitive hashKey, Primitive rangeKey, UpdateItemOperationConfig config, AsyncCallback callback, object state)
         {
-            return DynamoDBAsyncExecutor.BeginOperation(() => UpdateHelper(doc, MakeKey(hashKey, rangeKey), config, true), callback, state);
+            return DynamoDBAsyncExecutor.BeginOperation(() => UpdateHelper(doc, MakeKey(hashKey, rangeKey), config), callback, state);
         }
 
         /// <summary>
@@ -314,7 +314,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         ///         operation.</returns>
         public IAsyncResult BeginUpdateItem(Document doc, IDictionary<string, DynamoDBEntry> key, UpdateItemOperationConfig config, AsyncCallback callback, object state)
         {
-            return DynamoDBAsyncExecutor.BeginOperation(() => UpdateHelper(doc, MakeKey(key), config, true), callback, state);
+            return DynamoDBAsyncExecutor.BeginOperation(() => UpdateHelper(doc, MakeKey(key), config), callback, state);
         }
 
         /// <summary>
@@ -344,7 +344,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         ///         operation.</returns>
         public IAsyncResult BeginDeleteItem(Document document, AsyncCallback callback, object state)
         {
-            return DynamoDBAsyncExecutor.BeginOperation(() => { DeleteHelper(MakeKey(document), null, true); return null; }, callback, state);
+            return DynamoDBAsyncExecutor.BeginOperation(() => { DeleteHelper(MakeKey(document), null); return null; }, callback, state);
         }
 
         /// <summary>
@@ -359,7 +359,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         ///         operation.</returns>
         public IAsyncResult BeginDeleteItem(Primitive hashKey, AsyncCallback callback, object state)
         {
-            return DynamoDBAsyncExecutor.BeginOperation(() => { DeleteHelper(MakeKey(hashKey, null), null, true); return null; }, callback, state);
+            return DynamoDBAsyncExecutor.BeginOperation(() => { DeleteHelper(MakeKey(hashKey, null), null); return null; }, callback, state);
         }
 
         /// <summary>
@@ -375,7 +375,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         ///         operation.</returns>
         public IAsyncResult BeginDeleteItem(Primitive hashKey, Primitive rangeKey, AsyncCallback callback, object state)
         {
-            return DynamoDBAsyncExecutor.BeginOperation(() => { DeleteHelper(MakeKey(hashKey, rangeKey), null, true); return null; }, callback, state);
+            return DynamoDBAsyncExecutor.BeginOperation(() => { DeleteHelper(MakeKey(hashKey, rangeKey), null); return null; }, callback, state);
         }
 
         /// <summary>
@@ -390,7 +390,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         ///         operation.</returns>
         public IAsyncResult BeginDeleteItem(IDictionary<string, DynamoDBEntry> key, AsyncCallback callback, object state)
         {
-            return DynamoDBAsyncExecutor.BeginOperation(() => { DeleteHelper(MakeKey(key), null, true); return null; }, callback, state);
+            return DynamoDBAsyncExecutor.BeginOperation(() => { DeleteHelper(MakeKey(key), null); return null; }, callback, state);
         }
 
         /// <summary>
@@ -406,7 +406,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         ///         operation.</returns>
         public IAsyncResult BeginDeleteItem(Document document, DeleteItemOperationConfig config, AsyncCallback callback, object state)
         {
-            return DynamoDBAsyncExecutor.BeginOperation(() => DeleteHelper(MakeKey(document), config, true), callback, state);
+            return DynamoDBAsyncExecutor.BeginOperation(() => DeleteHelper(MakeKey(document), config), callback, state);
         }
 
         /// <summary>
@@ -422,7 +422,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         ///         operation.</returns>
         public IAsyncResult BeginDeleteItem(Primitive hashKey, DeleteItemOperationConfig config, AsyncCallback callback, object state)
         {
-            return DynamoDBAsyncExecutor.BeginOperation(() => DeleteHelper(MakeKey(hashKey, null), config, true), callback, state);
+            return DynamoDBAsyncExecutor.BeginOperation(() => DeleteHelper(MakeKey(hashKey, null), config), callback, state);
         }
 
         /// <summary>
@@ -439,7 +439,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         ///         operation.</returns>
         public IAsyncResult BeginDeleteItem(Primitive hashKey, Primitive rangeKey, DeleteItemOperationConfig config, AsyncCallback callback, object state)
         {
-            return DynamoDBAsyncExecutor.BeginOperation(() => DeleteHelper(MakeKey(hashKey, rangeKey), config, true), callback, state);
+            return DynamoDBAsyncExecutor.BeginOperation(() => DeleteHelper(MakeKey(hashKey, rangeKey), config), callback, state);
         }
 
         /// <summary>
@@ -455,7 +455,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         ///         operation.</returns>
         public IAsyncResult BeginDeleteItem(IDictionary<string, DynamoDBEntry> key, DeleteItemOperationConfig config, AsyncCallback callback, object state)
         {
-            return DynamoDBAsyncExecutor.BeginOperation(() => DeleteHelper(MakeKey(key), config, true), callback, state);
+            return DynamoDBAsyncExecutor.BeginOperation(() => DeleteHelper(MakeKey(key), config), callback, state);
         }
         
         /// <summary>

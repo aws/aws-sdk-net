@@ -60,7 +60,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The date/time this resource was created.
+        /// The date and time this resource was created.
         /// </para>
         /// </summary>
         public string CreationTime
@@ -78,7 +78,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// <summary>
         /// Gets and sets the property ParameterDefinitions. 
         /// <para>
-        /// Array of parameter types supported by the application.
+        /// An array of parameter types supported by the application.
         /// </para>
         /// </summary>
         public List<ParameterDefinition> ParameterDefinitions

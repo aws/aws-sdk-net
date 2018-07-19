@@ -165,6 +165,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ProjectName);
                 }
 
+                if(publicRequest.IsSetReportBuildStatusOverride())
+                {
+                    context.Writer.WritePropertyName("reportBuildStatusOverride");
+                    context.Writer.Write(publicRequest.ReportBuildStatusOverride);
+                }
+
                 if(publicRequest.IsSetServiceRoleOverride())
                 {
                     context.Writer.WritePropertyName("serviceRoleOverride");

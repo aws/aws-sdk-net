@@ -157,6 +157,10 @@ namespace Amazon.CostExplorer.Model
         /// each dimension. You can nest only one level deep. If there are multiple values for
         /// a dimension, they are OR'd together.
         /// </para>
+        ///  
+        /// <para>
+        /// If you don't provide a <code>SERVICE</code> filter, Cost Explorer defaults to EC2.
+        /// </para>
         /// </summary>
         public Expression Filter
         {

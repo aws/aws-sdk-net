@@ -70,6 +70,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExecutionNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("forceCanceled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.ForceCanceled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("jobId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -110,6 +116,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ThingArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("versionNumber", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.VersionNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

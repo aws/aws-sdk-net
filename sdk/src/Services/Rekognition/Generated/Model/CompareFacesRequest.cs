@@ -84,7 +84,8 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// For an example, see <a>faces-compare-images</a>.
+    /// For an example, see Comparing Faces in Images in the Amazon Rekognition Developer
+    /// Guide.
     /// </para>
     ///  
     /// <para>

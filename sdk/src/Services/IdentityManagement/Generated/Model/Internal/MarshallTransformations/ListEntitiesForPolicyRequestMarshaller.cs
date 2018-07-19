@@ -78,6 +78,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("PolicyArn", StringUtils.FromString(publicRequest.PolicyArn));
                 }
+                if(publicRequest.IsSetPolicyUsageFilter())
+                {
+                    request.Parameters.Add("PolicyUsageFilter", StringUtils.FromString(publicRequest.PolicyUsageFilter));
+                }
             }
             return request;
         }

@@ -45,7 +45,11 @@ namespace Amazon.Rekognition.Model
     /// indexes the 15 largest faces in the input image. Later versions of the face detection
     /// model index the 100 largest faces in the input image. To determine which version of
     /// the model you are using, check the the value of <code>FaceModelVersion</code> in the
-    /// response from <code>IndexFaces</code>. For more information, see <a>face-detection-model</a>.
+    /// response from <code>IndexFaces</code>. 
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see Model Versioning in the Amazon Rekognition Developer Guide.
     /// </para>
     ///  
     /// <para>
@@ -66,7 +70,12 @@ namespace Amazon.Rekognition.Model
     /// example, location of eye and mount) and other facial attributes such gender. If you
     /// provide the same image, specify the same collection, and use the same external ID
     /// in the <code>IndexFaces</code> operation, Amazon Rekognition doesn't save duplicate
-    /// face metadata. 
+    /// face metadata.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see Adding Faces to a Collection in the Amazon Rekognition Developer
+    /// Guide.
     /// </para>
     ///  
     /// <para>

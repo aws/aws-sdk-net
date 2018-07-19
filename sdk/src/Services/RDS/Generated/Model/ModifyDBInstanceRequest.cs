@@ -64,13 +64,16 @@ namespace Amazon.RDS.Model
         private string _newDBInstanceIdentifier;
         private string _optionGroupName;
         private string _performanceInsightsKMSKeyId;
+        private int? _performanceInsightsRetentionPeriod;
         private string _preferredBackupWindow;
         private string _preferredMaintenanceWindow;
+        private List<ProcessorFeature> _processorFeatures = new List<ProcessorFeature>();
         private int? _promotionTier;
         private bool? _publiclyAccessible;
         private string _storageType;
         private string _tdeCredentialArn;
         private string _tdeCredentialPassword;
+        private bool? _useDefaultProcessorFeatures;
         private List<string> _vpcSecurityGroupIds = new List<string>();
 
         /// <summary>
@@ -282,7 +285,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property CloudwatchLogsExportConfiguration. 
         /// <para>
         /// The configuration setting for the log types to be enabled for export to CloudWatch
-        /// Logs for a specific DB instance or DB cluster.
+        /// Logs for a specific DB instance.
         /// </para>
         /// </summary>
         public CloudwatchLogsExportConfiguration CloudwatchLogsExportConfiguration
@@ -323,7 +326,7 @@ namespace Amazon.RDS.Model
         /// Not all DB instance classes are available in all AWS Regions, or for all database
         /// engines. For the full list of DB instance classes, and availability for your engine,
         /// see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-        /// Instance Class</a> in the Amazon RDS User Guide. 
+        /// Instance Class</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         ///  
         /// <para>
@@ -668,6 +671,12 @@ namespace Amazon.RDS.Model
         /// <para>
         /// True to enable Performance Insights for the DB instance, and otherwise false.
         /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
+        /// Amazon Performance Insights</a> in the <i>Amazon Relational Database Service User
+        /// Guide</i>. 
+        /// </para>
         /// </summary>
         public bool EnablePerformanceInsights
         {
@@ -698,7 +707,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// For a list of valid engine versions, see <a>CreateDBInstance</a>.
+        /// For information about valid engine versions, see <a>CreateDBInstance</a>, or call
+        /// <a>DescribeDBEngineVersions</a>.
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -1042,6 +1052,25 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PerformanceInsightsRetentionPeriod. 
+        /// <para>
+        /// The amount of time, in days, to retain Performance Insights data. Valid values are
+        /// 7 or 731 (2 years). 
+        /// </para>
+        /// </summary>
+        public int PerformanceInsightsRetentionPeriod
+        {
+            get { return this._performanceInsightsRetentionPeriod.GetValueOrDefault(); }
+            set { this._performanceInsightsRetentionPeriod = value; }
+        }
+
+        // Check to see if PerformanceInsightsRetentionPeriod property is set
+        internal bool IsSetPerformanceInsightsRetentionPeriod()
+        {
+            return this._performanceInsightsRetentionPeriod.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property PreferredBackupWindow. 
         /// <para>
         ///  The daily time range during which automated backups are created if automated backups
@@ -1131,6 +1160,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetPreferredMaintenanceWindow()
         {
             return this._preferredMaintenanceWindow != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProcessorFeatures. 
+        /// <para>
+        /// The number of CPU cores and the number of threads per core for the DB instance class
+        /// of the DB instance.
+        /// </para>
+        /// </summary>
+        public List<ProcessorFeature> ProcessorFeatures
+        {
+            get { return this._processorFeatures; }
+            set { this._processorFeatures = value; }
+        }
+
+        // Check to see if ProcessorFeatures property is set
+        internal bool IsSetProcessorFeatures()
+        {
+            return this._processorFeatures != null && this._processorFeatures.Count > 0; 
         }
 
         /// <summary>
@@ -1278,6 +1326,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetTdeCredentialPassword()
         {
             return this._tdeCredentialPassword != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseDefaultProcessorFeatures. 
+        /// <para>
+        /// A value that specifies that the DB instance class of the DB instance uses its default
+        /// processor features.
+        /// </para>
+        /// </summary>
+        public bool UseDefaultProcessorFeatures
+        {
+            get { return this._useDefaultProcessorFeatures.GetValueOrDefault(); }
+            set { this._useDefaultProcessorFeatures = value; }
+        }
+
+        // Check to see if UseDefaultProcessorFeatures property is set
+        internal bool IsSetUseDefaultProcessorFeatures()
+        {
+            return this._useDefaultProcessorFeatures.HasValue; 
         }
 
         /// <summary>

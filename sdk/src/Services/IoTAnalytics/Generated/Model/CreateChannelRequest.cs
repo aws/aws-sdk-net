@@ -36,6 +36,7 @@ namespace Amazon.IoTAnalytics.Model
     {
         private string _channelName;
         private RetentionPeriod _retentionPeriod;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property ChannelName. 
@@ -71,6 +72,24 @@ namespace Amazon.IoTAnalytics.Model
         internal bool IsSetRetentionPeriod()
         {
             return this._retentionPeriod != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Metadata which can be used to manage the channel.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

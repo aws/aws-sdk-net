@@ -374,6 +374,10 @@ namespace Amazon.CodeBuild
         /// Constant LINUX_CONTAINER for EnvironmentType
         /// </summary>
         public static readonly EnvironmentType LINUX_CONTAINER = new EnvironmentType("LINUX_CONTAINER");
+        /// <summary>
+        /// Constant WINDOWS_CONTAINER for EnvironmentType
+        /// </summary>
+        public static readonly EnvironmentType WINDOWS_CONTAINER = new EnvironmentType("WINDOWS_CONTAINER");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -556,6 +560,10 @@ namespace Amazon.CodeBuild
         /// Constant UBUNTU for PlatformType
         /// </summary>
         public static readonly PlatformType UBUNTU = new PlatformType("UBUNTU");
+        /// <summary>
+        /// Constant WINDOWS_SERVER for PlatformType
+        /// </summary>
+        public static readonly PlatformType WINDOWS_SERVER = new PlatformType("WINDOWS_SERVER");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -107,8 +107,7 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HasCredential. If the channel is registered with a credential
-        /// for authentication.
+        /// Gets and sets the property HasCredential. Not used. Retained for backwards compatibility.
         /// </summary>
         public bool HasCredential
         {

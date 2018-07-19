@@ -33,6 +33,7 @@ namespace Amazon.Pinpoint.Model
     public partial class WriteApplicationSettingsRequest
     {
         private CampaignHook _campaignHook;
+        private bool? _cloudWatchMetricsEnabled;
         private CampaignLimits _limits;
         private QuietTime _quietTime;
 
@@ -49,6 +50,22 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetCampaignHook()
         {
             return this._campaignHook != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudWatchMetricsEnabled. The CloudWatchMetrics settings
+        /// for the app.
+        /// </summary>
+        public bool CloudWatchMetricsEnabled
+        {
+            get { return this._cloudWatchMetricsEnabled.GetValueOrDefault(); }
+            set { this._cloudWatchMetricsEnabled = value; }
+        }
+
+        // Check to see if CloudWatchMetricsEnabled property is set
+        internal bool IsSetCloudWatchMetricsEnabled()
+        {
+            return this._cloudWatchMetricsEnabled.HasValue; 
         }
 
         /// <summary>

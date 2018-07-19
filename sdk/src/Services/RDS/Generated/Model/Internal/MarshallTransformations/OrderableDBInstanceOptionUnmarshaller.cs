@@ -61,6 +61,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.AvailabilityZones.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("AvailableProcessorFeatures/AvailableProcessorFeature", targetDepth))
+                    {
+                        var unmarshaller = AvailableProcessorFeatureUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.AvailableProcessorFeatures.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("DBInstanceClass", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

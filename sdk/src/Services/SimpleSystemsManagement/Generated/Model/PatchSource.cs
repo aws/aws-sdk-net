@@ -56,7 +56,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>debualevel=2</code> 
+        ///  <code>debuglevel=2</code> 
         /// </para>
         /// </summary>
         public string Configuration

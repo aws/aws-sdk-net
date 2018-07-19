@@ -106,10 +106,7 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HasCredential. Indicates whether the channel is configured
-        /// with FCM or GCM credentials. Amazon Pinpoint uses your credentials to authenticate
-        /// push notifications with FCM or GCM. Provide your credentials by setting the ApiKey
-        /// attribute.
+        /// Gets and sets the property HasCredential. Not used. Retained for backwards compatibility.
         /// </summary>
         public bool HasCredential
         {

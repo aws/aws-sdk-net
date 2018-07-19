@@ -33,8 +33,8 @@ namespace Amazon.Rekognition.Model
     /// 
     ///  
     /// <para>
-    /// Rekognition Video can track persons in a video stored in an Amazon S3 bucket. Use
-    /// <a>Video</a> to specify the bucket name and the filename of the video. <code>StartPersonTracking</code>
+    /// Amazon Rekognition Video can track persons in a video stored in an Amazon S3 bucket.
+    /// Use <a>Video</a> to specify the bucket name and the filename of the video. <code>StartPersonTracking</code>
     /// returns a job identifier (<code>JobId</code>) which you use to get the results of
     /// the operation. When label detection is finished, Amazon Rekognition publishes a completion
     /// status to the Amazon Simple Notification Service topic that you specify in <code>NotificationChannel</code>.
@@ -97,8 +97,8 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property NotificationChannel. 
         /// <para>
-        /// The Amazon SNS topic ARN you want Rekognition Video to publish the completion status
-        /// of the people detection operation to.
+        /// The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the completion
+        /// status of the people detection operation to.
         /// </para>
         /// </summary>
         public NotificationChannel NotificationChannel

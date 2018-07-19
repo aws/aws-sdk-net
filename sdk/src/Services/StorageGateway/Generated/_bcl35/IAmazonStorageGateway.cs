@@ -88,7 +88,7 @@ namespace Amazon.StorageGateway
     /// will be created with a 17-character string. Starting in April 2016, you will be able
     /// to use these longer IDs so you can test your systems with the new format. For more
     /// information, see <a href="https://aws.amazon.com/ec2/faqs/#longer-ids">Longer EC2
-    /// and EBS Resource IDs</a>.
+    /// and EBS Resource IDs</a>. 
     /// </para>
     ///  
     /// <para>
@@ -589,10 +589,10 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Creates a file share on an existing file gateway. In Storage Gateway, a file share
-        /// is a file system mount point backed by Amazon S3 cloud storage. Storage Gateway exposes
-        /// file shares using a Network File System (NFS) interface. This operation is only supported
-        /// in the file gateway type.
+        /// Creates a Network File System (NFS) file share on an existing file gateway. In Storage
+        /// Gateway, a file share is a file system mount point backed by Amazon S3 cloud storage.
+        /// Storage Gateway exposes file shares using a NFS interface. This operation is only
+        /// supported in the file gateway type.
         /// 
         ///  <important> 
         /// <para>
@@ -647,6 +647,71 @@ namespace Amazon.StorageGateway
         /// <returns>Returns a  CreateNFSFileShareResult from StorageGateway.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateNFSFileShare">REST API Reference for CreateNFSFileShare Operation</seealso>
         CreateNFSFileShareResponse EndCreateNFSFileShare(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateSMBFileShare
+
+
+        /// <summary>
+        /// Creates a Server Message Block (SMB) file share on an existing file gateway. In Storage
+        /// Gateway, a file share is a file system mount point backed by Amazon S3 cloud storage.
+        /// Storage Gateway expose file shares using a SMB interface. This operation is only supported
+        /// in the file gateway type.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// File gateway requires AWS Security Token Service (AWS STS) to be activated to enable
+        /// you create a file share. Make sure AWS STS is activated in the region you are creating
+        /// your file gateway in. If AWS STS is not activated in the region, activate it. For
+        /// information about how to activate AWS STS, see Activating and Deactivating AWS STS
+        /// in an AWS Region in the AWS Identity and Access Management User Guide. 
+        /// </para>
+        ///  
+        /// <para>
+        /// File gateway does not support creating hard or symbolic links on a file share.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSMBFileShare service method.</param>
+        /// 
+        /// <returns>The response from the CreateSMBFileShare service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSMBFileShare">REST API Reference for CreateSMBFileShare Operation</seealso>
+        CreateSMBFileShareResponse CreateSMBFileShare(CreateSMBFileShareRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateSMBFileShare operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateSMBFileShare operation on AmazonStorageGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSMBFileShare
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSMBFileShare">REST API Reference for CreateSMBFileShare Operation</seealso>
+        IAsyncResult BeginCreateSMBFileShare(CreateSMBFileShareRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateSMBFileShare operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSMBFileShare.</param>
+        /// 
+        /// <returns>Returns a  CreateSMBFileShareResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSMBFileShare">REST API Reference for CreateSMBFileShare Operation</seealso>
+        CreateSMBFileShareResponse EndCreateSMBFileShare(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1754,8 +1819,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Gets a description for one or more file shares from a file gateway. This operation
-        /// is only supported in the file gateway type.
+        /// Gets a description for one or more Network File System (NFS) file shares from a file
+        /// gateway. This operation is only supported in the file gateway type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeNFSFileShares service method.</param>
         /// 
@@ -1796,6 +1861,104 @@ namespace Amazon.StorageGateway
         /// <returns>Returns a  DescribeNFSFileSharesResult from StorageGateway.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeNFSFileShares">REST API Reference for DescribeNFSFileShares Operation</seealso>
         DescribeNFSFileSharesResponse EndDescribeNFSFileShares(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeSMBFileShares
+
+
+        /// <summary>
+        /// Gets a description for one or more Server Message Block (SMB) file shares from a file
+        /// gateway. This operation is only supported in the file gateway type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSMBFileShares service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSMBFileShares service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeSMBFileShares">REST API Reference for DescribeSMBFileShares Operation</seealso>
+        DescribeSMBFileSharesResponse DescribeSMBFileShares(DescribeSMBFileSharesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSMBFileShares operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSMBFileShares operation on AmazonStorageGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSMBFileShares
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeSMBFileShares">REST API Reference for DescribeSMBFileShares Operation</seealso>
+        IAsyncResult BeginDescribeSMBFileShares(DescribeSMBFileSharesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeSMBFileShares operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSMBFileShares.</param>
+        /// 
+        /// <returns>Returns a  DescribeSMBFileSharesResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeSMBFileShares">REST API Reference for DescribeSMBFileShares Operation</seealso>
+        DescribeSMBFileSharesResponse EndDescribeSMBFileShares(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeSMBSettings
+
+
+        /// <summary>
+        /// Gets a description of a Server Message Block (SMB) file share settings from a file
+        /// gateway. This operation is only supported in the file gateway type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSMBSettings service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSMBSettings service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeSMBSettings">REST API Reference for DescribeSMBSettings Operation</seealso>
+        DescribeSMBSettingsResponse DescribeSMBSettings(DescribeSMBSettingsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSMBSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSMBSettings operation on AmazonStorageGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSMBSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeSMBSettings">REST API Reference for DescribeSMBSettings Operation</seealso>
+        IAsyncResult BeginDescribeSMBSettings(DescribeSMBSettingsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeSMBSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSMBSettings.</param>
+        /// 
+        /// <returns>Returns a  DescribeSMBSettingsResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeSMBSettings">REST API Reference for DescribeSMBSettings Operation</seealso>
+        DescribeSMBSettingsResponse EndDescribeSMBSettings(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2314,6 +2477,55 @@ namespace Amazon.StorageGateway
         /// <returns>Returns a  DisableGatewayResult from StorageGateway.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DisableGateway">REST API Reference for DisableGateway Operation</seealso>
         DisableGatewayResponse EndDisableGateway(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  JoinDomain
+
+
+        /// <summary>
+        /// Adds a file gateway to an Active Directory domain. This operation is only supported
+        /// in the file gateway type that supports the SMB file protocol.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the JoinDomain service method.</param>
+        /// 
+        /// <returns>The response from the JoinDomain service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/JoinDomain">REST API Reference for JoinDomain Operation</seealso>
+        JoinDomainResponse JoinDomain(JoinDomainRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the JoinDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the JoinDomain operation on AmazonStorageGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndJoinDomain
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/JoinDomain">REST API Reference for JoinDomain Operation</seealso>
+        IAsyncResult BeginJoinDomain(JoinDomainRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  JoinDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginJoinDomain.</param>
+        /// 
+        /// <returns>Returns a  JoinDomainResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/JoinDomain">REST API Reference for JoinDomain Operation</seealso>
+        JoinDomainResponse EndJoinDomain(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3230,6 +3442,55 @@ namespace Amazon.StorageGateway
 
         #endregion
         
+        #region  SetSMBGuestPassword
+
+
+        /// <summary>
+        /// Sets the password for the guest user “smbguest”. "smbguest" is the user when the Authentication
+        /// method for the file share is “GuestAccess”.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetSMBGuestPassword service method.</param>
+        /// 
+        /// <returns>The response from the SetSMBGuestPassword service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/SetSMBGuestPassword">REST API Reference for SetSMBGuestPassword Operation</seealso>
+        SetSMBGuestPasswordResponse SetSMBGuestPassword(SetSMBGuestPasswordRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetSMBGuestPassword operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetSMBGuestPassword operation on AmazonStorageGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetSMBGuestPassword
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/SetSMBGuestPassword">REST API Reference for SetSMBGuestPassword Operation</seealso>
+        IAsyncResult BeginSetSMBGuestPassword(SetSMBGuestPasswordRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SetSMBGuestPassword operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetSMBGuestPassword.</param>
+        /// 
+        /// <returns>Returns a  SetSMBGuestPasswordResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/SetSMBGuestPassword">REST API Reference for SetSMBGuestPassword Operation</seealso>
+        SetSMBGuestPasswordResponse EndSetSMBGuestPassword(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ShutdownGateway
 
 
@@ -3669,7 +3930,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Updates a file share. This operation is only supported in the file gateway type.
+        /// Updates a Network File System (NFS) file share. This operation is only supported in
+        /// the file gateway type.
         /// 
         ///  <note> 
         /// <para>
@@ -3745,6 +4007,74 @@ namespace Amazon.StorageGateway
         /// <returns>Returns a  UpdateNFSFileShareResult from StorageGateway.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateNFSFileShare">REST API Reference for UpdateNFSFileShare Operation</seealso>
         UpdateNFSFileShareResponse EndUpdateNFSFileShare(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateSMBFileShare
+
+
+        /// <summary>
+        /// Updates a Server Message Block (SMB) file share. This operation is only supported
+        /// in the file gateway type.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// To leave a file share field unchanged, set the corresponding input field to null.
+        /// This operation is only supported in the file gateway type.
+        /// </para>
+        ///  </note> <important> 
+        /// <para>
+        /// File gateway requires AWS Security Token Service (AWS STS) to be activated to enable
+        /// you create a file share. Make sure AWS STS is activated in the region you are creating
+        /// your file gateway in. If AWS STS is not activated in the region, activate it. For
+        /// information about how to activate AWS STS, see Activating and Deactivating AWS STS
+        /// in an AWS Region in the AWS Identity and Access Management User Guide. 
+        /// </para>
+        ///  
+        /// <para>
+        /// File gateway does not support creating hard or symbolic links on a file share.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSMBFileShare service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSMBFileShare service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBFileShare">REST API Reference for UpdateSMBFileShare Operation</seealso>
+        UpdateSMBFileShareResponse UpdateSMBFileShare(UpdateSMBFileShareRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateSMBFileShare operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSMBFileShare operation on AmazonStorageGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSMBFileShare
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBFileShare">REST API Reference for UpdateSMBFileShare Operation</seealso>
+        IAsyncResult BeginUpdateSMBFileShare(UpdateSMBFileShareRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateSMBFileShare operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSMBFileShare.</param>
+        /// 
+        /// <returns>Returns a  UpdateSMBFileShareResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBFileShare">REST API Reference for UpdateSMBFileShare Operation</seealso>
+        UpdateSMBFileShareResponse EndUpdateSMBFileShare(IAsyncResult asyncResult);
 
         #endregion
         

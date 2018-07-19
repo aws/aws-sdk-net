@@ -147,6 +147,11 @@
     <max>250</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.ListTagsForResourceRequest.ResourceArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTAnalytics.Model.SampleChannelDataRequest.ChannelName</property>
     <min>1</min>
     <max>128</max>
@@ -162,6 +167,16 @@
     <min>1</min>
     <max>128</max>
     <pattern>^[a-zA-Z0-9_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.TagResourceRequest.ResourceArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.UntagResourceRequest.ResourceArn</property>
+    <min>20</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTAnalytics.Model.UpdateChannelRequest.ChannelName</property>
@@ -422,5 +437,15 @@
     <property>Amazon.IoTAnalytics.Model.SelectAttributesActivity.Next</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.Tag.Key</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.Tag.Value</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
 </property-value-rules>

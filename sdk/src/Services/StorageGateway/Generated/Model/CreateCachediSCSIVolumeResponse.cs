@@ -36,7 +36,11 @@ namespace Amazon.StorageGateway.Model
         private string _volumeARN;
 
         /// <summary>
-        /// Gets and sets the property TargetARN.
+        /// Gets and sets the property TargetARN. 
+        /// <para>
+        /// he Amazon Resource Name (ARN) of the volume target that includes the iSCSI name that
+        /// initiators can use to connect to the target.
+        /// </para>
         /// </summary>
         public string TargetARN
         {
@@ -51,7 +55,10 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VolumeARN.
+        /// Gets and sets the property VolumeARN. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the configured volume.
+        /// </para>
         /// </summary>
         public string VolumeARN
         {

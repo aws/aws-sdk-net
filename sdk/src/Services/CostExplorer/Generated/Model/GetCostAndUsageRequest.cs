@@ -126,7 +126,8 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values are <code>BlendedCost</code>, <code>UnblendedCost</code>, and <code>UsageQuantity</code>.
+        /// Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>UnblendedCost</code>,
+        /// and <code>UsageQuantity</code>.
         /// </para>
         ///  <note> 
         /// <para>

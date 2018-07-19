@@ -226,7 +226,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ReplicationTaskIdentifier. 
         /// <para>
-        /// The replication task identifier.
+        /// The user-assigned replication task identifier or name.
         /// </para>
         ///  
         /// <para>

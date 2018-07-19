@@ -34,6 +34,7 @@ namespace Amazon.Pinpoint.Model
     {
         private string _address;
         private DeliveryStatus _deliveryStatus;
+        private string _messageId;
         private int? _statusCode;
         private string _statusMessage;
         private string _updatedToken;
@@ -66,6 +67,22 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetDeliveryStatus()
         {
             return this._deliveryStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MessageId. Unique message identifier associated with the
+        /// message that was sent.
+        /// </summary>
+        public string MessageId
+        {
+            get { return this._messageId; }
+            set { this._messageId = value; }
+        }
+
+        // Check to see if MessageId property is set
+        internal bool IsSetMessageId()
+        {
+            return this._messageId != null;
         }
 
         /// <summary>

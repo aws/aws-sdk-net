@@ -57,6 +57,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Channels);
             }
 
+            if(requestObject.IsSetFormat())
+            {
+                context.Writer.WritePropertyName("format");
+                context.Writer.Write(requestObject.Format);
+            }
+
             if(requestObject.IsSetSampleRate())
             {
                 context.Writer.WritePropertyName("sampleRate");

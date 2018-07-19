@@ -56,22 +56,20 @@ namespace Amazon.EC2.Model
     /// status changes using either method, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
     /// Volume Modifications</a>. 
     /// </para>
-    ///  <note> 
+    ///  
     /// <para>
     /// With previous-generation instance types, resizing an EBS volume may require detaching
-    /// and reattaching the volume or stopping and restarting the instance. For more information
-    /// about modifying an EBS volume running Linux, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying
-    /// the Size, IOPS, or Type of an EBS Volume on Linux</a>. For more information about
-    /// modifying an EBS volume running Windows, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying
+    /// and reattaching the volume or stopping and restarting the instance. For more information,
+    /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying
+    /// the Size, IOPS, or Type of an EBS Volume on Linux</a> and <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying
     /// the Size, IOPS, or Type of an EBS Volume on Windows</a>.
     /// </para>
-    ///  </note> <note> 
+    ///  
     /// <para>
     /// If you reach the maximum volume modification rate per volume limit, you will need
     /// to wait at least six hours before applying further modifications to the affected EBS
     /// volume.
     /// </para>
-    ///  </note>
     /// </summary>
     public partial class ModifyVolumeRequest : AmazonEC2Request
     {
@@ -83,16 +81,17 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Iops. 
         /// <para>
-        /// Target IOPS rate of the volume to be modified.
+        /// The target IOPS rate of the volume.
         /// </para>
         ///  
         /// <para>
-        /// Only valid for Provisioned IOPS SSD (<code>io1</code>) volumes. For more information
-        /// about <code>io1</code> IOPS configuration, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops</a>.
+        /// This is only valid for Provisioned IOPS SSD (<code>io1</code>) volumes. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">Provisioned
+        /// IOPS SSD (io1) Volumes</a>.
         /// </para>
         ///  
         /// <para>
-        /// Default: If no IOPS value is specified, the existing value is retained. 
+        /// Default: If no IOPS value is specified, the existing value is retained.
         /// </para>
         /// </summary>
         public int Iops
@@ -110,13 +109,14 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Size. 
         /// <para>
-        /// Target size in GiB of the volume to be modified. Target volume size must be greater
-        /// than or equal to than the existing size of the volume. For information about available
-        /// EBS volume sizes, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html</a>.
+        /// The target size of the volume, in GiB. The target volume size must be greater than
+        /// or equal to than the existing size of the volume. For information about available
+        /// EBS volume sizes, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+        /// EBS Volume Types</a>.
         /// </para>
         ///  
         /// <para>
-        /// Default: If no size is specified, the existing size is retained. 
+        /// Default: If no size is specified, the existing size is retained.
         /// </para>
         /// </summary>
         public int Size
@@ -152,16 +152,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VolumeType. 
         /// <para>
-        /// Target EBS volume type of the volume to be modified
+        /// The target EBS volume type of the volume.
         /// </para>
         ///  
         /// <para>
-        ///  The API does not support modifications for volume type <code>standard</code>. You
-        /// also cannot change the type of a volume to <code>standard</code>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: If no type is specified, the existing type is retained. 
+        /// Default: If no type is specified, the existing type is retained.
         /// </para>
         /// </summary>
         public VolumeType VolumeType

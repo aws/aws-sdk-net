@@ -339,6 +339,10 @@ namespace ServiceClientGenerator
             }
         }
 
+        public bool IsEventStreamOutput => ResponseStructure?.Members?.Any(
+                                               member => member.Shape?.IsEventStream ?? false)
+                                           ?? false;
+        
         /// <summary>
         /// Determines if the request structure will have members in the body
         /// </summary>

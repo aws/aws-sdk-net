@@ -443,17 +443,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>tag-key</code> - The key of a tag assigned to the resource. This filter is
-        /// independent of the <code>tag-value</code> filter. For example, if you use both the
-        /// filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
-        /// both the tag key Purpose (regardless of what the tag's value is), and the tag value
-        /// X (regardless of the tag's key). If you want to list only resources where Purpose
-        /// is X, see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>tag-value</code> - The value of a tag assigned to the resource. This filter
-        /// is independent of the <code>tag-key</code> filter.
+        ///  <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter
+        /// to find all resources assigned a tag with a specific key, regardless of the tag value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -511,7 +502,7 @@ namespace Amazon.EC2.Model
         /// The maximum number of results to return in a single call. To retrieve the remaining
         /// results, make another call with the returned <code>NextToken</code> value. This value
         /// can be between 5 and 1000. You cannot specify this parameter and the instance IDs
-        /// parameter or tag filters in the same call.
+        /// parameter in the same call.
         /// </para>
         /// </summary>
         public int MaxResults

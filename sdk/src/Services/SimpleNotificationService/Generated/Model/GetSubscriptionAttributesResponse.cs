@@ -41,30 +41,46 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SubscriptionArn</code> -- the subscription's ARN
+        ///  <code>ConfirmationWasAuthenticated</code> -- <code>true</code> if the subscription
+        /// confirmation request was authenticated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TopicArn</code> -- the topic ARN that the subscription is associated with
+        ///  <code>DeliveryPolicy</code> -- The JSON serialization of the subscription's delivery
+        /// policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Owner</code> -- the AWS account ID of the subscription's owner
+        ///  <code>EffectiveDeliveryPolicy</code> -- The JSON serialization of the effective delivery
+        /// policy that takes into account the topic delivery policy and account system defaults.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ConfirmationWasAuthenticated</code> -- true if the subscription confirmation
-        /// request was authenticated
+        ///  <code>FilterPolicy</code> -- The filter policy JSON that is assigned to the subscription.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DeliveryPolicy</code> -- the JSON serialization of the subscription's delivery
-        /// policy
+        ///  <code>Owner</code> -- The AWS account ID of the subscription's owner.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EffectiveDeliveryPolicy</code> -- the JSON serialization of the effective delivery
-        /// policy that takes into account the topic delivery policy and account system defaults
+        ///  <code>PendingConfirmation</code> -- <code>true</code> if the subscription hasn't
+        /// been confirmed. To confirm a pending subscription, call the <code>ConfirmSubscription</code>
+        /// action with a confirmation token.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>RawMessageDelivery</code> -- <code>true</code> if raw message delivery is enabled
+        /// for the subscription. Raw messages are free of JSON formatting and can be sent to
+        /// HTTP/S and Amazon SQS endpoints.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SubscriptionArn</code> -- The subscription's ARN.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TopicArn</code> -- The topic ARN that the subscription is associated with.
         /// </para>
         ///  </li> </ul>
         /// </summary>

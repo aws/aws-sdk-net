@@ -37,6 +37,7 @@ namespace Amazon.MediaConvert.Model
         private int? _audioType;
         private AudioTypeControl _audioTypeControl;
         private AudioCodecSettings _codecSettings;
+        private string _customLanguageCode;
         private LanguageCode _languageCode;
         private AudioLanguageCodeControl _languageCodeControl;
         private RemixSettings _remixSettings;
@@ -126,6 +127,25 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetCodecSettings()
         {
             return this._codecSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomLanguageCode. Specify the language for this audio
+        /// output track, using the ISO 639-2 or ISO 639-3 three-letter language code. The language
+        /// specified will be used when 'Follow Input Language Code' is not selected or when 'Follow
+        /// Input Language Code' is selected but there is no ISO 639 language code specified by
+        /// the input.
+        /// </summary>
+        public string CustomLanguageCode
+        {
+            get { return this._customLanguageCode; }
+            set { this._customLanguageCode = value; }
+        }
+
+        // Check to see if CustomLanguageCode property is set
+        internal bool IsSetCustomLanguageCode()
+        {
+            return this._customLanguageCode != null;
         }
 
         /// <summary>

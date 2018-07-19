@@ -113,6 +113,22 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetUserSettings())
+                {
+                    context.Writer.WritePropertyName("UserSettings");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestUserSettingsListValue in publicRequest.UserSettings)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = UserSettingMarshaller.Instance;
+                        marshaller.Marshall(publicRequestUserSettingsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

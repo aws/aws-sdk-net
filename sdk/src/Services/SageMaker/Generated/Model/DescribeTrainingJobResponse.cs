@@ -49,6 +49,7 @@ namespace Amazon.SageMaker.Model
         private string _trainingJobName;
         private TrainingJobStatus _trainingJobStatus;
         private DateTime? _trainingStartTime;
+        private string _tuningJobArn;
         private VpcConfig _vpcConfig;
 
         /// <summary>
@@ -275,7 +276,11 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property TrainingEndTime. 
         /// <para>
-        /// A timestamp that indicates when model training ended.
+        /// Indicates the time when the training job ends on training instances. You are billed
+        /// for the time interval between the value of <code>TrainingStartTime</code> and this
+        /// time. For successful jobs and stopped jobs, this is the time after model artifacts
+        /// are uploaded. For failed jobs, this is the time when Amazon SageMaker detects a job
+        /// failure.
         /// </para>
         /// </summary>
         public DateTime TrainingEndTime
@@ -379,7 +384,11 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property TrainingStartTime. 
         /// <para>
-        /// A timestamp that indicates when training started.
+        /// Indicates the time when the training job starts on training instances. You are billed
+        /// for the time interval between this time and the value of <code>TrainingEndTime</code>.
+        /// The start time in CloudWatch Logs might be later than this time. The difference is
+        /// due to the time it takes to download the training data and to the size of the training
+        /// container.
         /// </para>
         /// </summary>
         public DateTime TrainingStartTime
@@ -395,10 +404,29 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property TuningJobArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the associated hyperparameter tuning job if the
+        /// training job was launched by a hyperparameter tuning job.
+        /// </para>
+        /// </summary>
+        public string TuningJobArn
+        {
+            get { return this._tuningJobArn; }
+            set { this._tuningJobArn = value; }
+        }
+
+        // Check to see if TuningJobArn property is set
+        internal bool IsSetTuningJobArn()
+        {
+            return this._tuningJobArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property VpcConfig. 
         /// <para>
-        /// A object that specifies the VPC that this training job has access to. For more information,
-        /// see <a>train-vpc</a>.
+        /// A <a>VpcConfig</a> object that specifies the VPC that this training job has access
+        /// to. For more information, see <a>train-vpc</a>.
         /// </para>
         /// </summary>
         public VpcConfig VpcConfig

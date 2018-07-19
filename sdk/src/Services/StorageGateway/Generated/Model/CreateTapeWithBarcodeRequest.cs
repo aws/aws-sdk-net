@@ -44,6 +44,8 @@ namespace Amazon.StorageGateway.Model
     public partial class CreateTapeWithBarcodeRequest : AmazonStorageGatewayRequest
     {
         private string _gatewayARN;
+        private bool? _kmsEncrypted;
+        private string _kmsKey;
         private string _tapeBarcode;
         private long? _tapeSizeInBytes;
 
@@ -65,6 +67,44 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetGatewayARN()
         {
             return this._gatewayARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KMSEncrypted. 
+        /// <para>
+        /// True to use Amazon S3 server side encryption with your own AWS KMS key, or false to
+        /// use a key managed by Amazon S3. Optional.
+        /// </para>
+        /// </summary>
+        public bool KMSEncrypted
+        {
+            get { return this._kmsEncrypted.GetValueOrDefault(); }
+            set { this._kmsEncrypted = value; }
+        }
+
+        // Check to see if KMSEncrypted property is set
+        internal bool IsSetKMSEncrypted()
+        {
+            return this._kmsEncrypted.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property KMSKey. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the KMS Key used for Amazon S3 server side encryption.
+        /// This value can only be set when KMSEncrypted is true. Optional.
+        /// </para>
+        /// </summary>
+        public string KMSKey
+        {
+            get { return this._kmsKey; }
+            set { this._kmsKey = value; }
+        }
+
+        // Check to see if KMSKey property is set
+        internal bool IsSetKMSKey()
+        {
+            return this._kmsKey != null;
         }
 
         /// <summary>

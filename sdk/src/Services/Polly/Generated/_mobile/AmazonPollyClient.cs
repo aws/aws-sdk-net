@@ -333,6 +333,38 @@ namespace Amazon.Polly
 
         #endregion
         
+        #region  GetSpeechSynthesisTask
+
+        internal virtual GetSpeechSynthesisTaskResponse GetSpeechSynthesisTask(GetSpeechSynthesisTaskRequest request)
+        {
+            var marshaller = GetSpeechSynthesisTaskRequestMarshaller.Instance;
+            var unmarshaller = GetSpeechSynthesisTaskResponseUnmarshaller.Instance;
+
+            return Invoke<GetSpeechSynthesisTaskRequest,GetSpeechSynthesisTaskResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSpeechSynthesisTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSpeechSynthesisTask operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/GetSpeechSynthesisTask">REST API Reference for GetSpeechSynthesisTask Operation</seealso>
+        public virtual Task<GetSpeechSynthesisTaskResponse> GetSpeechSynthesisTaskAsync(GetSpeechSynthesisTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetSpeechSynthesisTaskRequestMarshaller.Instance;
+            var unmarshaller = GetSpeechSynthesisTaskResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetSpeechSynthesisTaskRequest,GetSpeechSynthesisTaskResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListLexicons
 
         internal virtual ListLexiconsResponse ListLexicons(ListLexiconsRequest request)
@@ -365,6 +397,38 @@ namespace Amazon.Polly
 
         #endregion
         
+        #region  ListSpeechSynthesisTasks
+
+        internal virtual ListSpeechSynthesisTasksResponse ListSpeechSynthesisTasks(ListSpeechSynthesisTasksRequest request)
+        {
+            var marshaller = ListSpeechSynthesisTasksRequestMarshaller.Instance;
+            var unmarshaller = ListSpeechSynthesisTasksResponseUnmarshaller.Instance;
+
+            return Invoke<ListSpeechSynthesisTasksRequest,ListSpeechSynthesisTasksResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSpeechSynthesisTasks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSpeechSynthesisTasks operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ListSpeechSynthesisTasks">REST API Reference for ListSpeechSynthesisTasks Operation</seealso>
+        public virtual Task<ListSpeechSynthesisTasksResponse> ListSpeechSynthesisTasksAsync(ListSpeechSynthesisTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListSpeechSynthesisTasksRequestMarshaller.Instance;
+            var unmarshaller = ListSpeechSynthesisTasksResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListSpeechSynthesisTasksRequest,ListSpeechSynthesisTasksResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutLexicon
 
         internal virtual PutLexiconResponse PutLexicon(PutLexiconRequest request)
@@ -392,6 +456,38 @@ namespace Amazon.Polly
             var unmarshaller = PutLexiconResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutLexiconRequest,PutLexiconResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartSpeechSynthesisTask
+
+        internal virtual StartSpeechSynthesisTaskResponse StartSpeechSynthesisTask(StartSpeechSynthesisTaskRequest request)
+        {
+            var marshaller = StartSpeechSynthesisTaskRequestMarshaller.Instance;
+            var unmarshaller = StartSpeechSynthesisTaskResponseUnmarshaller.Instance;
+
+            return Invoke<StartSpeechSynthesisTaskRequest,StartSpeechSynthesisTaskResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartSpeechSynthesisTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartSpeechSynthesisTask operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/StartSpeechSynthesisTask">REST API Reference for StartSpeechSynthesisTask Operation</seealso>
+        public virtual Task<StartSpeechSynthesisTaskResponse> StartSpeechSynthesisTaskAsync(StartSpeechSynthesisTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = StartSpeechSynthesisTaskRequestMarshaller.Instance;
+            var unmarshaller = StartSpeechSynthesisTaskResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartSpeechSynthesisTaskRequest,StartSpeechSynthesisTaskResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

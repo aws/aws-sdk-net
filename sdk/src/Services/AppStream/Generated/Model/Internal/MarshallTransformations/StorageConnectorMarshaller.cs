@@ -51,6 +51,17 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ConnectorType);
             }
 
+            if(requestObject.IsSetDomains())
+            {
+                context.Writer.WritePropertyName("Domains");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectDomainsListValue in requestObject.Domains)
+                {
+                        context.Writer.Write(requestObjectDomainsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetResourceIdentifier())
             {
                 context.Writer.WritePropertyName("ResourceIdentifier");

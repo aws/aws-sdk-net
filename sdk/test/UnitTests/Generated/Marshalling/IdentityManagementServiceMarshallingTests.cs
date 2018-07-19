@@ -736,6 +736,25 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("IdentityManagement")]
+        public void DeleteRolePermissionsBoundaryMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteRolePermissionsBoundary");
+
+            var request = InstantiateClassGenerator.Execute<DeleteRolePermissionsBoundaryRequest>();
+            var marshaller = new DeleteRolePermissionsBoundaryRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagement")]
         public void DeleteRolePolicyMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteRolePolicy");
@@ -880,6 +899,25 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             var request = InstantiateClassGenerator.Execute<DeleteUserRequest>();
             var marshaller = new DeleteUserRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagement")]
+        public void DeleteUserPermissionsBoundaryMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteUserPermissionsBoundary");
+
+            var request = InstantiateClassGenerator.Execute<DeleteUserPermissionsBoundaryRequest>();
+            var marshaller = new DeleteUserPermissionsBoundaryRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
             validator.Validate();
@@ -2178,12 +2216,50 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("IdentityManagement")]
+        public void PutRolePermissionsBoundaryMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutRolePermissionsBoundary");
+
+            var request = InstantiateClassGenerator.Execute<PutRolePermissionsBoundaryRequest>();
+            var marshaller = new PutRolePermissionsBoundaryRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagement")]
         public void PutRolePolicyMarshallTest()
         {
             var operation = service_model.FindOperation("PutRolePolicy");
 
             var request = InstantiateClassGenerator.Execute<PutRolePolicyRequest>();
             var marshaller = new PutRolePolicyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagement")]
+        public void PutUserPermissionsBoundaryMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutUserPermissionsBoundary");
+
+            var request = InstantiateClassGenerator.Execute<PutUserPermissionsBoundaryRequest>();
+            var marshaller = new PutUserPermissionsBoundaryRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
             validator.Validate();

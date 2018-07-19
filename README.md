@@ -171,6 +171,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS Direct Connect makes it easy to establish a dedicated network connection from your premises to AWS. Using AWS Direct Connect, you can establish private connectivity between AWS and your datacenter, office, or colocation environment, which in many cases can reduce your network costs, increase bandwidth throughput, and provide a more consistent network experience than Internet-based connections.
 * [AWSSDK.DirectoryService](https://www.nuget.org/packages/AWSSDK.DirectoryService/)
 	* AWS Directory Service is a managed service that allows you to connect your AWS resources with an existing on-premises Microsoft Active Directory or to set up a new, stand-alone directory in the AWS Cloud.
+* [AWSSDK.DLM](https://www.nuget.org/packages/AWSSDK.DLM/)
+	* New Service temporary synopsis, please replace it.
 * [AWSSDK.DynamoDBv2](https://www.nuget.org/packages/AWSSDK.DynamoDBv2/)
 	* Amazon DynamoDB is a fast and flexible NoSQL database service for all applications that need consistent, single-digit millisecond latency at any scale.
 * [AWSSDK.EC2](https://www.nuget.org/packages/AWSSDK.EC2/)
@@ -179,6 +181,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon EC2 Container Registry (Amazon ECR) is a managed AWS Docker registry service. Customers can use the familiar Docker CLI to push, pull, and manage images.
 * [AWSSDK.ECS](https://www.nuget.org/packages/AWSSDK.ECS/)
 	* Amazon EC2 Container Service is a highly scalable, high performance container management service that supports Docker containers and allows you to easily run distributed applications on a managed cluster of Amazon EC2 instances.
+* [AWSSDK.EKS](https://www.nuget.org/packages/AWSSDK.EKS/)
+	* Amazon Elastic Container Service for Kubernetes (Amazon EKS) is a fully managed service that makes it easy to deploy, manage, and scale containerized applications using Kubernetes on AWS.Amazon EKS runs Kubernetes management infrastructure for you across multiple AWS availability zones to eliminate a single point of failure. Amazon EKS is certified Kubernetes conformant so you can use existing tooling and plugins from partners and the Kubernetes community. Applications running on any standard Kubernetes environment are fully compatible and can be easily migrated to Amazon EKS.
 * [AWSSDK.ElastiCache](https://www.nuget.org/packages/AWSSDK.ElastiCache/)
 	* ElastiCache is a web service that makes it easy to deploy, operate, and scale an in-memory cache in the cloud. The service improves the performance of web applications by allowing you to retrieve information from fast, managed, in-memory caches, instead of relying entirely on slower disk-based databases.
 * [AWSSDK.ElasticBeanstalk](https://www.nuget.org/packages/AWSSDK.ElasticBeanstalk/)
@@ -249,6 +253,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* An extremely simplified VM creation and management service.
 * [AWSSDK.MachineLearning](https://www.nuget.org/packages/AWSSDK.MachineLearning/)
 	* Amazon Machine Learning is a service that makes it easy for developers of all skill levels to use machine learning technology.
+* [AWSSDK.Macie](https://www.nuget.org/packages/AWSSDK.Macie/)
+	* Amazon Macie is a security service that uses machine learning to automatically discover, classify, and protect sensitive data in AWS. With this release, we are launching the following Macie HTTPS API operations: AssociateMemberAccount, AssociateS3Resources, DisassociateMemberAccount, DisassociateS3Resources, ListMemberAccounts, ListS3Resources, and UpdateS3Resources. With these API operations you can issue HTTPS requests directly to the service.
 * [AWSSDK.MarketplaceEntitlementService](https://www.nuget.org/packages/AWSSDK.MarketplaceEntitlementService/)
 	* AWS Marketplace Entitlement Service enables AWS Marketplace sellers to determine the capacity purchased by their customers.
 * [AWSSDK.MediaConvert](https://www.nuget.org/packages/AWSSDK.MediaConvert/)
@@ -261,6 +267,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS Elemental MediaStore is an AWS storage service optimized for media. It gives you the performance, consistency, and low latency required to deliver live and on-demand video content. AWS Elemental MediaStore acts as the origin store in your video workflow.
 * [AWSSDK.MediaStoreData](https://www.nuget.org/packages/AWSSDK.MediaStoreData/)
 	* AWS Elemental MediaStore Data is an AWS storage service optimized for media. It gives you the performance, consistency, and low latency required to deliver live and on-demand video content. AWS Elemental MediaStore Data acts as the origin store in your video workflow.
+* [AWSSDK.MediaTailor](https://www.nuget.org/packages/AWSSDK.MediaTailor/)
+	* AWS Elemental MediaTailor is a personalization and monetization service that allows scalable server-side ad insertion. The service enables you to serve targeted ads to viewers while maintaining broadcast quality in over-the-top (OTT) video applications. This SDK allows user access to the AWS Elemental MediaTailor configuration interface.
 * [AWSSDK.MigrationHub](https://www.nuget.org/packages/AWSSDK.MigrationHub/)
 	* AWS Migration Hub provides a single location to track migrations across multiple AWS and partner solutions. Using Migration Hub allows you to choose the AWS and partner migration tools that best fit your needs, while providing visibility into the status of your entire migration portfolio. Migration Hub also provides key metrics and progress for individual applications, regardless of which tools are being used to migrate them. For example, you might use AWS Database Migration Service, AWS Server Migration Service, and partner migration tools to migrate an application comprised of a database, virtualized web servers, and a bare metal server. Using Migration Hub will provide you with a single screen that shows the migration progress of all the resources in the application. This allows you to quickly get progress updates across all of your migrations, easily identify and troubleshoot any issues, and reduce the overall time and effort spent on your migration projects. Migration Hub is available to all AWS customers at no additional charge. You only pay for the cost of the migration tools you use, and any resources being consumed on AWS. 
 * [AWSSDK.Mobile](https://www.nuget.org/packages/AWSSDK.Mobile/)
@@ -271,12 +279,16 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* This is the initial SDK release for Amazon MQ. Amazon MQ is a managed message broker service for Apache ActiveMQ that makes it easy to set up and operate message brokers in the cloud.
 * [AWSSDK.MTurk](https://www.nuget.org/packages/AWSSDK.MTurk/)
 	* Amazon MTurk is a web service that provides an on-demand, scalable, human workforce to complete jobs that humans can do better than computers, for example, recognizing objects in photos.
+* [AWSSDK.Neptune](https://www.nuget.org/packages/AWSSDK.Neptune/)
+	* Amazon Neptune is a fast, reliable graph database service that makes it easy to build and run applications that work with highly connected datasets. Neptune supports popular graph models Property Graph and W3C's Resource Description Frame (RDF), and their respective query languages Apache TinkerPop Gremlin 3.3.2 and SPARQL 1.1. 
 * [AWSSDK.OpsWorks](https://www.nuget.org/packages/AWSSDK.OpsWorks/)
 	* AWS OpsWorks is an application management service that makes it easy to deploy and operate applications of all shapes and sizes. You can define the application's architecture and the specification of each component including package installation, software configuration and resources such as storage.
 * [AWSSDK.OpsWorksCM](https://www.nuget.org/packages/AWSSDK.OpsWorksCM/)
 	* AWS OpsWorks for Chef Automate gives customers a single tenant Chef Automate server. The Chef Automate server is fully managed by AWS and supports automatic backup, restore and upgrade operations.
 * [AWSSDK.Organizations](https://www.nuget.org/packages/AWSSDK.Organizations/)
 	* AWS Organizations is a web service that enables you to consolidate your multiple AWS accounts into an organization and centrally manage your accounts and their resources.
+* [AWSSDK.PI](https://www.nuget.org/packages/AWSSDK.PI/)
+	* Performance Insights is a feature of Amazon Relational Database Service (RDS) that helps you quickly assess the load on your database, and determine when and where to take action. You can use the SDK to retrieve Performance Insights data and integrate your monitoring solutions.
 * [AWSSDK.Pinpoint](https://www.nuget.org/packages/AWSSDK.Pinpoint/)
 	* Amazon Pinpoint makes it easy to run targeted campaigns to improve user engagement. Pinpoint helps you understand your users behavior, define who to target, what messages to send, when to deliver them, and tracks the results of the campaign.
 * [AWSSDK.Polly](https://www.nuget.org/packages/AWSSDK.Polly/)

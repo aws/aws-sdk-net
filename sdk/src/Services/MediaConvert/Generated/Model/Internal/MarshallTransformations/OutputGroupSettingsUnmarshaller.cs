@@ -64,6 +64,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("cmafGroupSettings", targetDepth))
+                {
+                    var unmarshaller = CmafGroupSettingsUnmarshaller.Instance;
+                    unmarshalledObject.CmafGroupSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("dashIsoGroupSettings", targetDepth))
                 {
                     var unmarshaller = DashIsoGroupSettingsUnmarshaller.Instance;

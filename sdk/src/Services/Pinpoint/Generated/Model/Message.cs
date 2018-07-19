@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// 
+    /// Message to send
     /// </summary>
     public partial class Message
     {
@@ -41,6 +41,7 @@ namespace Amazon.Pinpoint.Model
         private string _mediaUrl;
         private string _rawContent;
         private bool? _silentPush;
+        private int? _timeToLive;
         private string _title;
         private string _url;
 
@@ -189,6 +190,25 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetSilentPush()
         {
             return this._silentPush.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimeToLive. This parameter specifies how long (in seconds)
+        /// the message should be kept if the service is unable to deliver the notification the
+        /// first time. If the value is 0, it treats the notification as if it expires immediately
+        /// and does not store the notification or attempt to redeliver it. This value is converted
+        /// to the expiration field when sent to the service. It only applies to APNs and GCM
+        /// </summary>
+        public int TimeToLive
+        {
+            get { return this._timeToLive.GetValueOrDefault(); }
+            set { this._timeToLive = value; }
+        }
+
+        // Check to see if TimeToLive property is set
+        internal bool IsSetTimeToLive()
+        {
+            return this._timeToLive.HasValue; 
         }
 
         /// <summary>

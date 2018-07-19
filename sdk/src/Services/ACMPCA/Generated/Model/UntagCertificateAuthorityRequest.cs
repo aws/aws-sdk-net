@@ -30,10 +30,10 @@ namespace Amazon.ACMPCA.Model
     /// <summary>
     /// Container for the parameters to the UntagCertificateAuthority operation.
     /// Remove one or more tags from your private CA. A tag consists of a key-value pair.
-    /// If you do not specify the value portion of the tag when calling this function, the
+    /// If you do not specify the value portion of the tag when calling this operation, the
     /// tag will be removed regardless of value. If you specify a value, the tag is removed
     /// only if it is associated with the specified value. To add tags to a private CA, use
-    /// the <a>TagCertificateAuthority</a>. Call the <a>ListTags</a> function to see what
+    /// the <a>TagCertificateAuthority</a>. Call the <a>ListTags</a> operation to see what
     /// tags are associated with your CA.
     /// </summary>
     public partial class UntagCertificateAuthorityRequest : AmazonACMPCARequest
@@ -49,7 +49,7 @@ namespace Amazon.ACMPCA.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
+        ///  <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
         /// </code> 
         /// </para>
         /// </summary>

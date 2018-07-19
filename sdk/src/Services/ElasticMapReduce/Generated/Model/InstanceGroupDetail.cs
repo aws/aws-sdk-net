@@ -74,7 +74,14 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property BidPrice. 
         /// <para>
-        /// Bid price for EC2 Instances when launching nodes as Spot Instances, expressed in USD.
+        /// The maximum Spot price your are willing to pay for EC2 instances.
+        /// </para>
+        ///  
+        /// <para>
+        /// An optional, nullable field that applies if the <code>MarketType</code> for the instance
+        /// group is specified as <code>SPOT</code>. Specified in USD. If the value is NULL and
+        /// <code>SPOT</code> is specified, the maximum Spot price is set equal to the On-Demand
+        /// price.
         /// </para>
         /// </summary>
         public string BidPrice

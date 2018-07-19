@@ -52,7 +52,7 @@ namespace Amazon.SimpleSystemsManagement
     /// <para>
     /// To get started, verify prerequisites and configure managed instances. For more information,
     /// see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Systems
-    /// Manager Prerequisites</a>.
+    /// Manager Prerequisites</a> in the <i>AWS Systems Manager User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -372,14 +372,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// SSM Agent is not running. On managed instances and Linux instances, verify that the
+        /// SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM Agent or EC2Config service.
+        /// SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -422,14 +422,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// SSM Agent is not running. On managed instances and Linux instances, verify that the
+        /// SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM Agent or EC2Config service.
+        /// SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -472,14 +472,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// SSM Agent is not running. On managed instances and Linux instances, verify that the
+        /// SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM Agent or EC2Config service.
+        /// SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -638,14 +638,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// SSM Agent is not running. On managed instances and Linux instances, verify that the
+        /// SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM Agent or EC2Config service.
+        /// SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -724,14 +724,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// SSM Agent is not running. On managed instances and Linux instances, verify that the
+        /// SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM Agent or EC2Config service.
+        /// SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -847,14 +847,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// SSM Agent is not running. On managed instances and Linux instances, verify that the
+        /// SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM Agent or EC2Config service.
+        /// SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -1204,8 +1204,8 @@ namespace Amazon.SimpleSystemsManagement
         /// encryption in Amazon S3 to ensure secure data storage. We also recommend that you
         /// secure access to the Amazon S3 bucket by creating a restrictive bucket policy. To
         /// view an example of a restrictive Amazon S3 bucket policy for Resource Data Sync, see
-        /// <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-configuring.html#sysman-inventory-datasync">Configuring
-        /// Resource Data Sync for Inventory</a>.
+        /// <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync-create.html">Create
+        /// a Resource Data Sync for Inventory</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateResourceDataSync service method.</param>
@@ -1373,14 +1373,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// SSM Agent is not running. On managed instances and Linux instances, verify that the
+        /// SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM Agent or EC2Config service.
+        /// SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -1433,14 +1433,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// SSM Agent is not running. On managed instances and Linux instances, verify that the
+        /// SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM Agent or EC2Config service.
+        /// SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -1972,7 +1972,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Removes the server or virtual machine from the list of registered servers. You can
         /// reregister the instance again at any time. If you don't plan to use Run Command on
-        /// the server, we suggest uninstalling the SSM Agent first.
+        /// the server, we suggest uninstalling SSM Agent first.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterManagedInstance service method.</param>
         /// 
@@ -1989,14 +1989,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// SSM Agent is not running. On managed instances and Linux instances, verify that the
+        /// SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM Agent or EC2Config service.
+        /// SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -2344,14 +2344,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// SSM Agent is not running. On managed instances and Linux instances, verify that the
+        /// SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM Agent or EC2Config service.
+        /// SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -2402,14 +2402,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// SSM Agent is not running. On managed instances and Linux instances, verify that the
+        /// SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM Agent or EC2Config service.
+        /// SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -2458,6 +2458,133 @@ namespace Amazon.SimpleSystemsManagement
         public virtual DescribeAssociationResponse EndDescribeAssociation(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAssociationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeAssociationExecutions
+
+        /// <summary>
+        /// Use this API action to view all executions for a specific association ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAssociationExecutions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAssociationExecutions service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationDoesNotExistException">
+        /// The specified association does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociationExecutions">REST API Reference for DescribeAssociationExecutions Operation</seealso>
+        public virtual DescribeAssociationExecutionsResponse DescribeAssociationExecutions(DescribeAssociationExecutionsRequest request)
+        {
+            var marshaller = DescribeAssociationExecutionsRequestMarshaller.Instance;
+            var unmarshaller = DescribeAssociationExecutionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAssociationExecutionsRequest,DescribeAssociationExecutionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAssociationExecutions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAssociationExecutions operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAssociationExecutions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociationExecutions">REST API Reference for DescribeAssociationExecutions Operation</seealso>
+        public virtual IAsyncResult BeginDescribeAssociationExecutions(DescribeAssociationExecutionsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DescribeAssociationExecutionsRequestMarshaller.Instance;
+            var unmarshaller = DescribeAssociationExecutionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeAssociationExecutionsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAssociationExecutions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAssociationExecutions.</param>
+        /// 
+        /// <returns>Returns a  DescribeAssociationExecutionsResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociationExecutions">REST API Reference for DescribeAssociationExecutions Operation</seealso>
+        public virtual DescribeAssociationExecutionsResponse EndDescribeAssociationExecutions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeAssociationExecutionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeAssociationExecutionTargets
+
+        /// <summary>
+        /// Use this API action to view information about a specific execution of a specific association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAssociationExecutionTargets service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAssociationExecutionTargets service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationDoesNotExistException">
+        /// The specified association does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationExecutionDoesNotExistException">
+        /// The specified execution ID does not exist. Verify the ID number and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociationExecutionTargets">REST API Reference for DescribeAssociationExecutionTargets Operation</seealso>
+        public virtual DescribeAssociationExecutionTargetsResponse DescribeAssociationExecutionTargets(DescribeAssociationExecutionTargetsRequest request)
+        {
+            var marshaller = DescribeAssociationExecutionTargetsRequestMarshaller.Instance;
+            var unmarshaller = DescribeAssociationExecutionTargetsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAssociationExecutionTargetsRequest,DescribeAssociationExecutionTargetsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAssociationExecutionTargets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAssociationExecutionTargets operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAssociationExecutionTargets
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociationExecutionTargets">REST API Reference for DescribeAssociationExecutionTargets Operation</seealso>
+        public virtual IAsyncResult BeginDescribeAssociationExecutionTargets(DescribeAssociationExecutionTargetsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DescribeAssociationExecutionTargetsRequestMarshaller.Instance;
+            var unmarshaller = DescribeAssociationExecutionTargetsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeAssociationExecutionTargetsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAssociationExecutionTargets operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAssociationExecutionTargets.</param>
+        /// 
+        /// <returns>Returns a  DescribeAssociationExecutionTargetsResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociationExecutionTargets">REST API Reference for DescribeAssociationExecutionTargets Operation</seealso>
+        public virtual DescribeAssociationExecutionTargetsResponse EndDescribeAssociationExecutionTargets(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeAssociationExecutionTargetsResponse>(asyncResult);
         }
 
         #endregion
@@ -2823,14 +2950,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// SSM Agent is not running. On managed instances and Linux instances, verify that the
+        /// SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM Agent or EC2Config service.
+        /// SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -2981,14 +3108,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// SSM Agent is not running. On managed instances and Linux instances, verify that the
+        /// SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM Agent or EC2Config service.
+        /// SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -3052,7 +3179,15 @@ namespace Amazon.SimpleSystemsManagement
         /// etc. If you specify one or more instance IDs, it returns information for those instances.
         /// If you do not specify instance IDs, it returns information for all your instances.
         /// If you specify an instance ID that is not valid or an instance that you do not own,
-        /// you receive an error.
+        /// you receive an error. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The IamRole field for this API action is the Amazon Identity and Access Management
+        /// (IAM) role assigned to on-premises instances. This call does not return the IAM role
+        /// for Amazon EC2 instances.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeInstanceInformation service method, as returned by SimpleSystemsManagement.</returns>
@@ -3071,14 +3206,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// SSM Agent is not running. On managed instances and Linux instances, verify that the
+        /// SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM Agent or EC2Config service.
+        /// SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -3104,7 +3239,15 @@ namespace Amazon.SimpleSystemsManagement
         /// etc. If you specify one or more instance IDs, it returns information for those instances.
         /// If you do not specify instance IDs, it returns information for all your instances.
         /// If you specify an instance ID that is not valid or an instance that you do not own,
-        /// you receive an error.
+        /// you receive an error. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The IamRole field for this API action is the Amazon Identity and Access Management
+        /// (IAM) role assigned to on-premises instances. This call does not return the IAM role
+        /// for Amazon EC2 instances.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceInformation service method.</param>
         /// 
@@ -3124,14 +3267,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// SSM Agent is not running. On managed instances and Linux instances, verify that the
+        /// SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM Agent or EC2Config service.
+        /// SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -3214,14 +3357,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// SSM Agent is not running. On managed instances and Linux instances, verify that the
+        /// SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM Agent or EC2Config service.
+        /// SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -4174,14 +4317,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// SSM Agent is not running. On managed instances and Linux instances, verify that the
+        /// SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM Agent or EC2Config service.
+        /// SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -4919,7 +5062,8 @@ namespace Amazon.SimpleSystemsManagement
         #region  GetParameter
 
         /// <summary>
-        /// Get information about a parameter by using the parameter name.
+        /// Get information about a parameter by using the parameter name. Don't confuse this
+        /// API action with the <a>GetParameters</a> API action.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetParameter service method.</param>
         /// 
@@ -5050,7 +5194,8 @@ namespace Amazon.SimpleSystemsManagement
         #region  GetParameters
 
         /// <summary>
-        /// Get details of a parameter.
+        /// Get details of a parameter. Don't confuse this API action with the <a>GetParameter</a>
+        /// API action.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetParameters service method.</param>
         /// 
@@ -5110,7 +5255,8 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Retrieve parameters in a specific hierarchy. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html">Working
-        /// with Systems Manager Parameters</a>. 
+        /// with Systems Manager Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// 
         /// 
         ///  
         /// <para>
@@ -5470,14 +5616,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// SSM Agent is not running. On managed instances and Linux instances, verify that the
+        /// SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM Agent or EC2Config service.
+        /// SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -5522,14 +5668,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// SSM Agent is not running. On managed instances and Linux instances, verify that the
+        /// SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM Agent or EC2Config service.
+        /// SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -5577,14 +5723,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// SSM Agent is not running. On managed instances and Linux instances, verify that the
+        /// SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM Agent or EC2Config service.
+        /// SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -5665,14 +5811,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// SSM Agent is not running. On managed instances and Linux instances, verify that the
+        /// SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM Agent or EC2Config service.
+        /// SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -5713,14 +5859,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// SSM Agent is not running. On managed instances and Linux instances, verify that the
+        /// SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM Agent or EC2Config service.
+        /// SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -5764,14 +5910,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// SSM Agent is not running. On managed instances and Linux instances, verify that the
+        /// SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM Agent or EC2Config service.
+        /// SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -6129,14 +6275,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// SSM Agent is not running. On managed instances and Linux instances, verify that the
+        /// SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM Agent or EC2Config service.
+        /// SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -6641,14 +6787,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// SSM Agent is not running. On managed instances and Linux instances, verify that the
+        /// SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM Agent or EC2Config service.
+        /// SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -6741,8 +6887,8 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>The response from the PutParameter service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.HierarchyLevelLimitExceededException">
-        /// A hierarchy can have a maximum of 15 levels. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html">Working
-        /// with Systems Manager Parameters</a>.
+        /// A hierarchy can have a maximum of 15 levels. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements
+        /// and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.HierarchyTypeMismatchException">
         /// Parameter Store does not support changing a parameter type in a hierarchy. For example,
@@ -7278,7 +7424,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Executes commands on one or more managed instances.
         /// </summary>
         /// <param name="documentName">Required. The name of the Systems Manager document to execute. This can be a public document or a custom document.</param>
-        /// <param name="instanceIds">The instance IDs where the command should execute. You can specify a maximum of 50 IDs. If you prefer not to list individual instance IDs, you can instead send commands to a fleet of instances using the Targets parameter, which accepts EC2 tags. For more information about how to use Targets, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending Commands to a Fleet</a>.</param>
+        /// <param name="instanceIds">The instance IDs where the command should execute. You can specify a maximum of 50 IDs. If you prefer not to list individual instance IDs, you can instead send commands to a fleet of instances using the Targets parameter, which accepts EC2 tags. For more information about how to use Targets, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</param>
         /// 
         /// <returns>The response from the SendCommand service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DuplicateInstanceIdException">
@@ -7302,14 +7448,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// SSM Agent is not running. On managed instances and Linux instances, verify that the
+        /// SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM Agent or EC2Config service.
+        /// SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -7378,14 +7524,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// SSM Agent is not running. On managed instances and Linux instances, verify that the
+        /// SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM Agent or EC2Config service.
+        /// SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -7458,6 +7604,66 @@ namespace Amazon.SimpleSystemsManagement
         public virtual SendCommandResponse EndSendCommand(IAsyncResult asyncResult)
         {
             return EndInvoke<SendCommandResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartAssociationsOnce
+
+        /// <summary>
+        /// Use this API action to execute an association immediately and only one time. This
+        /// action can be helpful when troubleshooting associations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAssociationsOnce service method.</param>
+        /// 
+        /// <returns>The response from the StartAssociationsOnce service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationDoesNotExistException">
+        /// The specified association does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidAssociationException">
+        /// The association is not valid or does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAssociationsOnce">REST API Reference for StartAssociationsOnce Operation</seealso>
+        public virtual StartAssociationsOnceResponse StartAssociationsOnce(StartAssociationsOnceRequest request)
+        {
+            var marshaller = StartAssociationsOnceRequestMarshaller.Instance;
+            var unmarshaller = StartAssociationsOnceResponseUnmarshaller.Instance;
+
+            return Invoke<StartAssociationsOnceRequest,StartAssociationsOnceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartAssociationsOnce operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartAssociationsOnce operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartAssociationsOnce
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAssociationsOnce">REST API Reference for StartAssociationsOnce Operation</seealso>
+        public virtual IAsyncResult BeginStartAssociationsOnce(StartAssociationsOnceRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = StartAssociationsOnceRequestMarshaller.Instance;
+            var unmarshaller = StartAssociationsOnceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<StartAssociationsOnceRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartAssociationsOnce operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartAssociationsOnce.</param>
+        /// 
+        /// <returns>Returns a  StartAssociationsOnceResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAssociationsOnce">REST API Reference for StartAssociationsOnce Operation</seealso>
+        public virtual StartAssociationsOnceResponse EndStartAssociationsOnce(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartAssociationsOnceResponse>(asyncResult);
         }
 
         #endregion
@@ -7725,14 +7931,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// SSM Agent is not running. On managed instances and Linux instances, verify that the
+        /// SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM Agent or EC2Config service.
+        /// SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -8217,14 +8423,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// SSM Agent is not running. On managed instances and Linux instances, verify that the
+        /// SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM Agent or EC2Config service.
+        /// SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>

@@ -88,6 +88,12 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                     unmarshalledObject.LanguageCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OutputLocationType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OutputLocationType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TranscriptionJobName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

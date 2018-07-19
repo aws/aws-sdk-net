@@ -670,6 +670,23 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  DeleteRolePermissionsBoundary
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRolePermissionsBoundary operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRolePermissionsBoundary operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteRolePermissionsBoundary">REST API Reference for DeleteRolePermissionsBoundary Operation</seealso>
+        void DeleteRolePermissionsBoundaryAsync(DeleteRolePermissionsBoundaryRequest request, AmazonServiceCallback<DeleteRolePermissionsBoundaryRequest, DeleteRolePermissionsBoundaryResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
         #region  DeleteRolePolicy
 
 
@@ -802,6 +819,23 @@ namespace Amazon.IdentityManagement
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         void DeleteUserAsync(DeleteUserRequest request, AmazonServiceCallback<DeleteUserRequest, DeleteUserResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  DeleteUserPermissionsBoundary
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteUserPermissionsBoundary operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUserPermissionsBoundary operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteUserPermissionsBoundary">REST API Reference for DeleteUserPermissionsBoundary Operation</seealso>
+        void DeleteUserPermissionsBoundaryAsync(DeleteUserPermissionsBoundaryRequest request, AmazonServiceCallback<DeleteUserPermissionsBoundaryRequest, DeleteUserPermissionsBoundaryResponse> callback, AsyncOptions options = null);
 
 
         #endregion
@@ -1862,6 +1896,23 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  PutRolePermissionsBoundary
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutRolePermissionsBoundary operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutRolePermissionsBoundary operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutRolePermissionsBoundary">REST API Reference for PutRolePermissionsBoundary Operation</seealso>
+        void PutRolePermissionsBoundaryAsync(PutRolePermissionsBoundaryRequest request, AmazonServiceCallback<PutRolePermissionsBoundaryRequest, PutRolePermissionsBoundaryResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
         #region  PutRolePolicy
 
 
@@ -1875,6 +1926,23 @@ namespace Amazon.IdentityManagement
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutRolePolicy">REST API Reference for PutRolePolicy Operation</seealso>
         void PutRolePolicyAsync(PutRolePolicyRequest request, AmazonServiceCallback<PutRolePolicyRequest, PutRolePolicyResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  PutUserPermissionsBoundary
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutUserPermissionsBoundary operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutUserPermissionsBoundary operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutUserPermissionsBoundary">REST API Reference for PutUserPermissionsBoundary Operation</seealso>
+        void PutUserPermissionsBoundaryAsync(PutUserPermissionsBoundaryRequest request, AmazonServiceCallback<PutUserPermissionsBoundaryRequest, PutUserPermissionsBoundaryResponse> callback, AsyncOptions options = null);
 
 
         #endregion

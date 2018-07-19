@@ -34,8 +34,8 @@ namespace Amazon.ACMPCA.Model
     /// the public key in the certificate. The entity can be a user, computer, device, or
     /// service. The <b>Subject</b> must contain an X.500 distinguished name (DN). A DN is
     /// a sequence of relative distinguished names (RDNs). The RDNs are separated by commas
-    /// in the certificate. The DN must be unique for each for each entity, but your private
-    /// CA can issue more than one certificate with the same DN to the same entity.
+    /// in the certificate. The DN must be unique for each entity, but your private CA can
+    /// issue more than one certificate with the same DN to the same entity.
     /// </summary>
     public partial class ASN1Subject
     {
@@ -75,7 +75,7 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property Country. 
         /// <para>
-        /// Two digit code that specifies the country in which the certificate subject located.
+        /// Two-digit code that specifies the country in which the certificate subject located.
         /// </para>
         /// </summary>
         public string Country
@@ -277,7 +277,7 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property Surname. 
         /// <para>
-        /// Family name. In the US and the UK for example, the surname of an individual is ordered
+        /// Family name. In the US and the UK, for example, the surname of an individual is ordered
         /// last. In Asian cultures the surname is typically ordered first.
         /// </para>
         /// </summary>
@@ -296,7 +296,7 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property Title. 
         /// <para>
-        /// A title such as Mr. or Ms. which is pre-pended to the name to refer formally to the
+        /// A title such as Mr. or Ms., which is pre-pended to the name to refer formally to the
         /// certificate subject.
         /// </para>
         /// </summary>

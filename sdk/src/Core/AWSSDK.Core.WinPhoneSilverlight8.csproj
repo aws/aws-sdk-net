@@ -124,9 +124,6 @@
     <Compile Include="Amazon.Runtime\Internal\Util\_pcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.Runtime\Internal\_async\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Amazon.Runtime\Pipeline\*.cs">
       <SubType>Code</SubType>
     </Compile>

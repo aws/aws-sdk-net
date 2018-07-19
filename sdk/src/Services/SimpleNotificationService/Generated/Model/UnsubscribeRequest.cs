@@ -35,6 +35,11 @@ namespace Amazon.SimpleNotificationService.Model
     /// and the requester is not the subscription owner, a final cancellation message is delivered
     /// to the endpoint, so that the endpoint owner can easily resubscribe to the topic if
     /// the <code>Unsubscribe</code> request was unintended.
+    /// 
+    ///  
+    /// <para>
+    /// This action is throttled at 100 transactions per second (TPS).
+    /// </para>
     /// </summary>
     public partial class UnsubscribeRequest : AmazonSimpleNotificationServiceRequest
     {

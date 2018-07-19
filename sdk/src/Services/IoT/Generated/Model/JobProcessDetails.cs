@@ -171,7 +171,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property ProcessingTargets. 
         /// <para>
-        /// The devices on which the job is executing.
+        /// The target devices to which the job execution is being rolled out. This value will
+        /// be null after the job execution has finished rolling out to all the target devices.
         /// </para>
         /// </summary>
         public List<string> ProcessingTargets

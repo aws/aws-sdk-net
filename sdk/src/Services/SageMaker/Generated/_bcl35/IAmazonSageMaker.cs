@@ -120,6 +120,16 @@ namespace Amazon.SageMaker
         /// For an example, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/ex1.html">Exercise
         /// 1: Using the K-Means Algorithm Provided by Amazon SageMaker</a>. 
         /// </para>
+        ///  
+        /// <para>
+        /// If any of the models hosted at this endpoint get model data from an Amazon S3 location,
+        /// Amazon SageMaker uses AWS Security Token Service to download model artifacts from
+        /// the S3 path you provided. AWS STS is activated in your IAM user account by default.
+        /// If you previously deactivated AWS STS for a region, you need to reactivate AWS STS
+        /// for that region. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+        /// and Deactivating AWS STS i an AWS Region</a> in the <i>AWS Identity and Access Management
+        /// User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEndpoint service method.</param>
         /// 
@@ -225,6 +235,53 @@ namespace Amazon.SageMaker
         /// <returns>Returns a  CreateEndpointConfigResult from SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEndpointConfig">REST API Reference for CreateEndpointConfig Operation</seealso>
         CreateEndpointConfigResponse EndCreateEndpointConfig(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateHyperParameterTuningJob
+
+
+        /// <summary>
+        /// Starts a hyperparameter tuning job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateHyperParameterTuningJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateHyperParameterTuningJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHyperParameterTuningJob">REST API Reference for CreateHyperParameterTuningJob Operation</seealso>
+        CreateHyperParameterTuningJobResponse CreateHyperParameterTuningJob(CreateHyperParameterTuningJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateHyperParameterTuningJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateHyperParameterTuningJob operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateHyperParameterTuningJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHyperParameterTuningJob">REST API Reference for CreateHyperParameterTuningJob Operation</seealso>
+        IAsyncResult BeginCreateHyperParameterTuningJob(CreateHyperParameterTuningJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateHyperParameterTuningJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateHyperParameterTuningJob.</param>
+        /// 
+        /// <returns>Returns a  CreateHyperParameterTuningJobResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHyperParameterTuningJob">REST API Reference for CreateHyperParameterTuningJob Operation</seealso>
+        CreateHyperParameterTuningJobResponse EndCreateHyperParameterTuningJob(IAsyncResult asyncResult);
 
         #endregion
         
@@ -475,7 +532,7 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Returns a URL that you can use to connect to the Juypter server from a notebook instance.
+        /// Returns a URL that you can use to connect to the Jupyter server from a notebook instance.
         /// In the Amazon SageMaker console, when you choose <code>Open</code> next to a notebook
         /// instance, Amazon SageMaker opens a new tab showing the Jupyter server home page from
         /// the notebook instance. The console uses this API to get the URL and show the page.
@@ -618,6 +675,94 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  CreateTransformJob
+
+
+        /// <summary>
+        /// Starts a transform job. After the results are obtained, Amazon SageMaker saves them
+        /// to an Amazon S3 location that you specify.
+        /// 
+        ///  
+        /// <para>
+        /// To perform batch transformations, you create a transform job and use the data that
+        /// you have readily available.
+        /// </para>
+        ///  
+        /// <para>
+        /// In the request body, you provide the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>TransformJobName</code> - Identifies the transform job. The name must be unique
+        /// within an AWS Region in an AWS account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ModelName</code> - Identifies the model to use.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TransformInput</code> - Describes the dataset to be transformed and the Amazon
+        /// S3 location where it is stored.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TransformOutput</code> - Identifies the Amazon S3 location where you want Amazon
+        /// SageMaker to save the results from the transform job.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TransformResources</code> - Identifies the ML compute instances for the transform
+        /// job.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  For more information about how batch transformation works Amazon SageMaker, see <a
+        /// href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html">How It
+        /// Works</a>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransformJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateTransformJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTransformJob">REST API Reference for CreateTransformJob Operation</seealso>
+        CreateTransformJobResponse CreateTransformJob(CreateTransformJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTransformJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransformJob operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTransformJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTransformJob">REST API Reference for CreateTransformJob Operation</seealso>
+        IAsyncResult BeginCreateTransformJob(CreateTransformJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTransformJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTransformJob.</param>
+        /// 
+        /// <returns>Returns a  CreateTransformJobResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTransformJob">REST API Reference for CreateTransformJob Operation</seealso>
+        CreateTransformJobResponse EndCreateTransformJob(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteEndpoint
 
 
@@ -663,7 +808,7 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Deletes an endpoint configuration. The <code>DeleteEndpoingConfig</code> API deletes
+        /// Deletes an endpoint configuration. The <code>DeleteEndpointConfig</code> API deletes
         /// only the specified configuration. It does not delete endpoints created using the configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEndpointConfig service method.</param>
@@ -958,6 +1103,49 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DescribeHyperParameterTuningJob
+
+
+        /// <summary>
+        /// Gets a description of a hyperparameter tuning job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeHyperParameterTuningJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeHyperParameterTuningJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHyperParameterTuningJob">REST API Reference for DescribeHyperParameterTuningJob Operation</seealso>
+        DescribeHyperParameterTuningJobResponse DescribeHyperParameterTuningJob(DescribeHyperParameterTuningJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeHyperParameterTuningJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeHyperParameterTuningJob operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeHyperParameterTuningJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHyperParameterTuningJob">REST API Reference for DescribeHyperParameterTuningJob Operation</seealso>
+        IAsyncResult BeginDescribeHyperParameterTuningJob(DescribeHyperParameterTuningJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeHyperParameterTuningJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeHyperParameterTuningJob.</param>
+        /// 
+        /// <returns>Returns a  DescribeHyperParameterTuningJobResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHyperParameterTuningJob">REST API Reference for DescribeHyperParameterTuningJob Operation</seealso>
+        DescribeHyperParameterTuningJobResponse EndDescribeHyperParameterTuningJob(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeModel
 
 
@@ -1126,6 +1314,49 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DescribeTransformJob
+
+
+        /// <summary>
+        /// Returns information about a transform job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransformJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTransformJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTransformJob">REST API Reference for DescribeTransformJob Operation</seealso>
+        DescribeTransformJobResponse DescribeTransformJob(DescribeTransformJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTransformJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransformJob operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTransformJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTransformJob">REST API Reference for DescribeTransformJob Operation</seealso>
+        IAsyncResult BeginDescribeTransformJob(DescribeTransformJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeTransformJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTransformJob.</param>
+        /// 
+        /// <returns>Returns a  DescribeTransformJobResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTransformJob">REST API Reference for DescribeTransformJob Operation</seealso>
+        DescribeTransformJobResponse EndDescribeTransformJob(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListEndpointConfigs
 
 
@@ -1206,6 +1437,47 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListHyperParameterTuningJobs
+
+
+        /// <summary>
+        /// Gets a list of <a>HyperParameterTuningJobSummary</a> objects that describe the hyperparameter
+        /// tuning jobs launched in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListHyperParameterTuningJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListHyperParameterTuningJobs service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHyperParameterTuningJobs">REST API Reference for ListHyperParameterTuningJobs Operation</seealso>
+        ListHyperParameterTuningJobsResponse ListHyperParameterTuningJobs(ListHyperParameterTuningJobsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListHyperParameterTuningJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListHyperParameterTuningJobs operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListHyperParameterTuningJobs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHyperParameterTuningJobs">REST API Reference for ListHyperParameterTuningJobs Operation</seealso>
+        IAsyncResult BeginListHyperParameterTuningJobs(ListHyperParameterTuningJobsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListHyperParameterTuningJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListHyperParameterTuningJobs.</param>
+        /// 
+        /// <returns>Returns a  ListHyperParameterTuningJobsResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHyperParameterTuningJobs">REST API Reference for ListHyperParameterTuningJobs Operation</seealso>
+        ListHyperParameterTuningJobsResponse EndListHyperParameterTuningJobs(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListModels
 
 
@@ -1251,7 +1523,8 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Lists notebook instance lifestyle configurations created with the API.
+        /// Lists notebook instance lifestyle configurations created with the <a>CreateNotebookInstanceLifecycleConfig</a>
+        /// API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListNotebookInstanceLifecycleConfigs service method.</param>
         /// 
@@ -1408,6 +1681,90 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListTrainingJobsForHyperParameterTuningJob
+
+
+        /// <summary>
+        /// Gets a list of <a>TrainingJobSummary</a> objects that describe the training jobs that
+        /// a hyperparameter tuning job launched.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTrainingJobsForHyperParameterTuningJob service method.</param>
+        /// 
+        /// <returns>The response from the ListTrainingJobsForHyperParameterTuningJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrainingJobsForHyperParameterTuningJob">REST API Reference for ListTrainingJobsForHyperParameterTuningJob Operation</seealso>
+        ListTrainingJobsForHyperParameterTuningJobResponse ListTrainingJobsForHyperParameterTuningJob(ListTrainingJobsForHyperParameterTuningJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTrainingJobsForHyperParameterTuningJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTrainingJobsForHyperParameterTuningJob operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTrainingJobsForHyperParameterTuningJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrainingJobsForHyperParameterTuningJob">REST API Reference for ListTrainingJobsForHyperParameterTuningJob Operation</seealso>
+        IAsyncResult BeginListTrainingJobsForHyperParameterTuningJob(ListTrainingJobsForHyperParameterTuningJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTrainingJobsForHyperParameterTuningJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTrainingJobsForHyperParameterTuningJob.</param>
+        /// 
+        /// <returns>Returns a  ListTrainingJobsForHyperParameterTuningJobResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrainingJobsForHyperParameterTuningJob">REST API Reference for ListTrainingJobsForHyperParameterTuningJob Operation</seealso>
+        ListTrainingJobsForHyperParameterTuningJobResponse EndListTrainingJobsForHyperParameterTuningJob(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListTransformJobs
+
+
+        /// <summary>
+        /// Lists transform jobs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTransformJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListTransformJobs service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTransformJobs">REST API Reference for ListTransformJobs Operation</seealso>
+        ListTransformJobsResponse ListTransformJobs(ListTransformJobsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTransformJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTransformJobs operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTransformJobs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTransformJobs">REST API Reference for ListTransformJobs Operation</seealso>
+        IAsyncResult BeginListTransformJobs(ListTransformJobsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTransformJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTransformJobs.</param>
+        /// 
+        /// <returns>Returns a  ListTransformJobsResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTransformJobs">REST API Reference for ListTransformJobs Operation</seealso>
+        ListTransformJobsResponse EndListTransformJobs(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  StartNotebookInstance
 
 
@@ -1452,6 +1809,58 @@ namespace Amazon.SageMaker
         /// <returns>Returns a  StartNotebookInstanceResult from SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartNotebookInstance">REST API Reference for StartNotebookInstance Operation</seealso>
         StartNotebookInstanceResponse EndStartNotebookInstance(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StopHyperParameterTuningJob
+
+
+        /// <summary>
+        /// Stops a running hyperparameter tuning job and all running training jobs that the tuning
+        /// job launched.
+        /// 
+        ///  
+        /// <para>
+        /// All model artifacts output from the training jobs are stored in Amazon Simple Storage
+        /// Service (Amazon S3). All data that the training jobs write to Amazon CloudWatch Logs
+        /// are still available in CloudWatch. After the tuning job moves to the <code>Stopped</code>
+        /// state, it releases all reserved resources for the tuning job.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopHyperParameterTuningJob service method.</param>
+        /// 
+        /// <returns>The response from the StopHyperParameterTuningJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopHyperParameterTuningJob">REST API Reference for StopHyperParameterTuningJob Operation</seealso>
+        StopHyperParameterTuningJobResponse StopHyperParameterTuningJob(StopHyperParameterTuningJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopHyperParameterTuningJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopHyperParameterTuningJob operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopHyperParameterTuningJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopHyperParameterTuningJob">REST API Reference for StopHyperParameterTuningJob Operation</seealso>
+        IAsyncResult BeginStopHyperParameterTuningJob(StopHyperParameterTuningJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopHyperParameterTuningJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopHyperParameterTuningJob.</param>
+        /// 
+        /// <returns>Returns a  StopHyperParameterTuningJobResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopHyperParameterTuningJob">REST API Reference for StopHyperParameterTuningJob Operation</seealso>
+        StopHyperParameterTuningJobResponse EndStopHyperParameterTuningJob(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1564,6 +1973,57 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  StopTransformJob
+
+
+        /// <summary>
+        /// Stops a transform job.
+        /// 
+        ///  
+        /// <para>
+        /// When Amazon SageMaker receives a <code>StopTransformJob</code> request, the status
+        /// of the job changes to <code>Stopping</code>. After Amazon SageMaker stops the job,
+        /// the status is set to <code>Stopped</code>. When you stop a transform job before it
+        /// is completed, Amazon SageMaker doesn't store the job's output in Amazon S3.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopTransformJob service method.</param>
+        /// 
+        /// <returns>The response from the StopTransformJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopTransformJob">REST API Reference for StopTransformJob Operation</seealso>
+        StopTransformJobResponse StopTransformJob(StopTransformJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopTransformJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopTransformJob operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopTransformJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopTransformJob">REST API Reference for StopTransformJob Operation</seealso>
+        IAsyncResult BeginStopTransformJob(StopTransformJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopTransformJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopTransformJob.</param>
+        /// 
+        /// <returns>Returns a  StopTransformJobResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopTransformJob">REST API Reference for StopTransformJob Operation</seealso>
+        StopTransformJobResponse EndStopTransformJob(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateEndpoint
 
 
@@ -1579,6 +2039,12 @@ namespace Amazon.SageMaker
         /// the status of an endpoint, use the <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
         /// API. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You cannot update an endpoint with the current <code>EndpointConfig</code>. To update
+        /// an endpoint, you must create a new <code>EndpointConfig</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEndpoint service method.</param>
         /// 
@@ -1717,7 +2183,8 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Updates a notebook instance lifecycle configuration created with the API.
+        /// Updates a notebook instance lifecycle configuration created with the <a>CreateNotebookInstanceLifecycleConfig</a>
+        /// API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateNotebookInstanceLifecycleConfig service method.</param>
         /// 

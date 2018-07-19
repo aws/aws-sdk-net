@@ -29,7 +29,13 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the SendMessages operation.
-    /// Send a batch of messages
+    /// Use this resource to send a direct message, which is a one time message that you send
+    /// to a limited audience without creating a campaign. You can send the message to up
+    /// to 100 recipients. You cannot use the message to engage a segment. When you send the
+    /// message, Amazon Pinpoint delivers it immediately, and you cannot schedule the delivery.
+    /// To engage a user segment, and to schedule the message delivery, create a campaign
+    /// instead of sending a direct message.You can send a direct message as a push notification
+    /// to your mobile app or as an SMS message to SMS-enabled devices.
     /// </summary>
     public partial class SendMessagesRequest : AmazonPinpointRequest
     {
@@ -37,7 +43,7 @@ namespace Amazon.Pinpoint.Model
         private MessageRequest _messageRequest;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId.
+        /// Gets and sets the property ApplicationId. The unique ID of your Amazon Pinpoint application.
         /// </summary>
         public string ApplicationId
         {

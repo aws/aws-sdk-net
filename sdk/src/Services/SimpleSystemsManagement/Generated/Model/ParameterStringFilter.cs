@@ -29,6 +29,13 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// One or more filters. Use a filter to return a more specific list of results.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// The <code>Name</code> field can't be used with the <a>GetParametersByPath</a> API
+    /// action.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ParameterStringFilter
     {

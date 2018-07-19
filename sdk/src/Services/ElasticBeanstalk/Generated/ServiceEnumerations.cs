@@ -573,6 +573,10 @@ namespace Amazon.ElasticBeanstalk
         /// </summary>
         public static readonly EnvironmentHealthStatus Severe = new EnvironmentHealthStatus("Severe");
         /// <summary>
+        /// Constant Suspended for EnvironmentHealthStatus
+        /// </summary>
+        public static readonly EnvironmentHealthStatus Suspended = new EnvironmentHealthStatus("Suspended");
+        /// <summary>
         /// Constant Unknown for EnvironmentHealthStatus
         /// </summary>
         public static readonly EnvironmentHealthStatus Unknown = new EnvironmentHealthStatus("Unknown");

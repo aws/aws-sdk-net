@@ -16,7 +16,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using System.Threading;
+#if AWS_ASYNC_API
+using System.Threading.Tasks;
+#endif
 using Amazon.DynamoDBv2.Model;
 using Amazon.Runtime;
 
@@ -120,14 +123,14 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Internal methods
 
-        internal void ExecuteHelper(bool isAsync)
+        internal void ExecuteHelper()
         {
             MultiBatchGet resultsObject = new MultiBatchGet
             {
                 Batches = new List<DocumentBatchGet> { this }
             };
 
-            var results = resultsObject.GetItemsHelper(isAsync);
+            var results = resultsObject.GetItemsHelper();
 
             List<Document> batchResults;
             if (results.TryGetValue(TargetTable.TableName, out batchResults))
@@ -139,10 +142,34 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 Results = new List<Document>();
             }
         }
+
+#if AWS_ASYNC_API
+        internal async Task ExecuteHelperAsync(CancellationToken cancellationToken)
+        {
+            MultiBatchGet resultsObject = new MultiBatchGet
+            {
+                Batches = new List<DocumentBatchGet> { this }
+            };
+
+            var results = await resultsObject.GetItemsHelperAsync(cancellationToken).ConfigureAwait(false);
+
+            List<Document> batchResults;
+            if (results.TryGetValue(TargetTable.TableName, out batchResults))
+            {
+                Results = batchResults;
+            }
+            else
+            {
+                Results = new List<Document>();
+            }
+        }
+#endif
+
         internal void AddKey(Document document)
         {
             Keys.Add(TargetTable.MakeKey(document));
         }
+
         internal void AddKey(Key key)
         {
             Keys.Add(key);
@@ -202,7 +229,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
 
         #region Public methods
-        
+
         /// <summary>
         /// Add a DocumentBatchGet object to the multi-table batch request.
         /// </summary>
@@ -216,14 +243,14 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Internal methods
 
-        internal void ExecuteHelper(bool isAsync)
+        internal void ExecuteHelper()
         {
             MultiBatchGet resultsObject = new MultiBatchGet
             {
                 Batches = Batches
             };
 
-            var results = resultsObject.GetItemsHelper(isAsync);
+            var results = resultsObject.GetItemsHelper();
 
             foreach (var batch in Batches)
             {
@@ -238,6 +265,31 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 }
             }
         }
+
+#if AWS_ASYNC_API
+        internal async Task ExecuteHelperAsync(CancellationToken cancellationToken)
+        {
+            MultiBatchGet resultsObject = new MultiBatchGet
+            {
+                Batches = Batches
+            };
+
+            var results = await resultsObject.GetItemsHelperAsync(cancellationToken).ConfigureAwait(false);
+
+            foreach (var batch in Batches)
+            {
+                List<Document> batchResults;
+                if (results.TryGetValue(batch.TargetTable.TableName, out batchResults))
+                {
+                    batch.Results = batchResults;
+                }
+                else
+                {
+                    batch.Results = new List<Document>();
+                }
+            }
+        }
+#endif
 
         #endregion
     }
@@ -258,17 +310,49 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public const int MaxItemsPerCall = 100;
 
         /// <summary>
-        /// Gets items ocnfigured in Batches from the server
+        /// Gets items configured in Batches from the server
         /// </summary>
         /// <returns></returns>
         public Dictionary<string, List<Document>> GetItems()
         {
-            return GetItemsHelper(false);
+            return GetItemsHelper();
         }
 
-        internal Dictionary<string, List<Document>> GetItemsHelper(bool isAsync)
+#if AWS_ASYNC_API 
+        /// <summary>
+        /// Gets items configured in Batches from the server asynchronously
+        /// </summary>
+        /// <returns></returns>
+        public Task<Dictionary<string, List<Document>>> GetItemsAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            var results = GetAttributeItems(isAsync);
+            return GetItemsHelperAsync(cancellationToken);
+        }
+
+        internal async Task<Dictionary<string, List<Document>>> GetItemsHelperAsync(CancellationToken cancellationToken)
+        {
+            var results = await GetAttributeItemsAsync(cancellationToken).ConfigureAwait(false);
+
+            var itemsAsDocuments = new Dictionary<string, List<Document>>(StringComparer.Ordinal);
+            foreach (var kvp in results.RetrievedItems)
+            {
+                var tableName = kvp.Key;
+                var table = results.TargetTables[tableName];
+
+                List<Document> documents = new List<Document>();
+                foreach (var dictionary in kvp.Value)
+                {
+                    documents.Add(table.FromAttributeMap(dictionary));
+                }
+                itemsAsDocuments[kvp.Key] = documents;
+            }
+
+            return itemsAsDocuments;
+        }
+#endif
+
+        internal Dictionary<string, List<Document>> GetItemsHelper()
+        {
+            var results = GetAttributeItems();
 
             var itemsAsDocuments = new Dictionary<string, List<Document>>(StringComparer.Ordinal);
             foreach (var kvp in results.RetrievedItems)
@@ -287,7 +371,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return itemsAsDocuments;
         }
 
-        private Results GetAttributeItems(bool isAsync)
+#if AWS_ASYNC_API 
+        private async Task<Results> GetAttributeItemsAsync(CancellationToken cancellationToken)
         {
             var results = new Results(Batches);
             if (Batches == null || Batches.Count == 0)
@@ -306,7 +391,35 @@ namespace Amazon.DynamoDBv2.DocumentModel
                     break;
 
                 BatchGetItemRequest request = CreateRequest(nextSet);
-                targetTable.AddRequestHandler(request, isAsync);
+                targetTable.AddRequestHandler(request, isAsync: true);
+
+                await CallUntilCompletionAsync(clientToUse, request, results, cancellationToken).ConfigureAwait(false);
+            }
+
+            return results;
+        }
+#endif
+
+        private Results GetAttributeItems()
+        {
+            var results = new Results(Batches);
+            if (Batches == null || Batches.Count == 0)
+                return results;
+
+            // use client from the table from the first batch
+            var firstBatch = this.Batches[0];
+            var targetTable = firstBatch.TargetTable;
+            var clientToUse = targetTable.DDBClient;
+
+            var convertedBatches = ConvertBatches();
+            while (true)
+            {
+                var nextSet = GetNextRequestItems(ref convertedBatches, MaxItemsPerCall);
+                if (nextSet.Count == 0)
+                    break;
+
+                BatchGetItemRequest request = CreateRequest(nextSet);
+                targetTable.AddRequestHandler(request, isAsync: false);
 
                 CallUntilCompletion(clientToUse, request, results);
             }
@@ -314,7 +427,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return results;
         }
 
-#if PCL|| UNITY || CORECLR
+#if PCL || UNITY || CORECLR
         private static void CallUntilCompletion(AmazonDynamoDBClient client, BatchGetItemRequest request, Results allResults)
 #else
         private static void CallUntilCompletion(IAmazonDynamoDB client, BatchGetItemRequest request, Results allResults)
@@ -334,6 +447,29 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 request.RequestItems = serviceResponse.UnprocessedKeys;
             } while (request.RequestItems.Count > 0);
         }
+
+#if AWS_ASYNC_API 
+#if PCL || UNITY || CORECLR
+        private static async Task CallUntilCompletionAsync(AmazonDynamoDBClient client, BatchGetItemRequest request, Results allResults, CancellationToken cancellationToken)
+#else
+        private static async Task CallUntilCompletionAsync(IAmazonDynamoDB client, BatchGetItemRequest request, Results allResults, CancellationToken cancellationToken)
+#endif
+        {
+            do
+            {
+                var serviceResponse = await client.BatchGetItemAsync(request, cancellationToken).ConfigureAwait(false);
+
+                foreach (var kvp in serviceResponse.Responses)
+                {
+                    var tableName = kvp.Key;
+                    var items = kvp.Value;
+
+                    allResults.Add(tableName, items);
+                }
+                request.RequestItems = serviceResponse.UnprocessedKeys;
+            } while (request.RequestItems.Count > 0);
+        }
+#endif
 
         private static BatchGetItemRequest CreateRequest(Dictionary<string, RequestSet> set)
         {

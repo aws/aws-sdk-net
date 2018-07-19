@@ -109,6 +109,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
             {
                 return new IncompatibleProtocolsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidLoadBalancerAction"))
+            {
+                return new InvalidLoadBalancerActionException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("OperationNotPermitted"))
             {
                 return new OperationNotPermittedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -125,6 +129,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
             {
                 return new TargetGroupNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyActions"))
+            {
+                return new TooManyActionsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyRegistrationsForTargetId"))
             {
                 return new TooManyRegistrationsForTargetIdException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -132,6 +140,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
             if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyTargets"))
             {
                 return new TooManyTargetsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedProtocol"))
+            {
+                return new UnsupportedProtocolException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             return new AmazonElasticLoadBalancingV2Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }

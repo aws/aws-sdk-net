@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Contains settings used to acquire and adjust timecode information from inputs.
+    /// These settings control how the service handles timecodes throughout the job. These
+    /// settings don't affect input clipping.
     /// </summary>
     public partial class TimecodeConfig
     {
@@ -42,13 +43,13 @@ namespace Amazon.MediaConvert.Model
         /// anchor timecode, use Anchor Timecode (Anchor) to specify a timecode that will match
         /// the input video frame to the output video frame. Use 24-hour format with frame number,
         /// (HH:MM:SS:FF) or (HH:MM:SS;FF). This setting ignores framerate conversion. System
-        /// behavior for Anchor Timecode varies depending on your setting for Timecode source
-        /// (TimecodeSource). * If Timecode source (TimecodeSource) is set to Specified Start
-        /// (specifiedstart), the first input frame is the specified value in Start Timecode (Start).
-        /// Anchor Timecode (Anchor) and Start Timecode (Start) are used calculate output timecode.
-        /// * If Timecode source (TimecodeSource) is set to Start at 0 (zerobased)  the  first
-        /// frame is 00:00:00:00. * If Timecode source (TimecodeSource) is set to Embedded (embedded),
-        /// the  first frame is the timecode value on the first input frame of the input.
+        /// behavior for Anchor Timecode varies depending on your setting for Source (TimecodeSource).
+        /// * If Source (TimecodeSource) is set to Specified Start (SPECIFIEDSTART), the first
+        /// input frame is the specified value in Start Timecode (Start). Anchor Timecode (Anchor)
+        /// and Start Timecode (Start) are used calculate output timecode. * If Source (TimecodeSource)
+        /// is set to Start at 0 (ZEROBASED)  the  first frame is 00:00:00:00. * If Source (TimecodeSource)
+        /// is set to Embedded (EMBEDDED), the  first frame is the timecode value on the first
+        /// input frame of the input.
         /// </summary>
         public string Anchor
         {
@@ -78,8 +79,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Start. Only use when you set Timecode Source (TimecodeSource)
-        /// to Specified Start (SPECIFIEDSTART). Use Start timecode (Start) to specify the timecode
+        /// Gets and sets the property Start. Only use when you set Source (TimecodeSource) to
+        /// Specified start (SPECIFIEDSTART). Use Start timecode (Start) to specify the timecode
         /// for the initial frame. Use 24-hour format with frame number, (HH:MM:SS:FF) or (HH:MM:SS;FF).
         /// </summary>
         public string Start
@@ -96,10 +97,12 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property TimestampOffset. Only applies to outputs that support program-date-time
-        /// stamp. Use Time stamp offset (TimestampOffset) to overwrite the timecode date without
+        /// stamp. Use Timestamp offset (TimestampOffset) to overwrite the timecode date without
         /// affecting the time and frame number. Provide the new date as a string in the format
         /// "yyyy-mm-dd".  To use Time stamp offset, you must also enable Insert program-date-time
-        /// (InsertProgramDateTime) in the output settings.
+        /// (InsertProgramDateTime) in the output settings. For example, if the date part of your
+        /// timecodes is 2002-1-25 and you want to change it to one year later, set Timestamp
+        /// offset (TimestampOffset) to 2003-1-25.
         /// </summary>
         public string TimestampOffset
         {

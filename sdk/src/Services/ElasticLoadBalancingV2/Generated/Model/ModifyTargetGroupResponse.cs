@@ -37,7 +37,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property TargetGroups. 
         /// <para>
-        /// Information about the target group.
+        /// Information about the modified target group.
         /// </para>
         /// </summary>
         public List<TargetGroup> TargetGroups

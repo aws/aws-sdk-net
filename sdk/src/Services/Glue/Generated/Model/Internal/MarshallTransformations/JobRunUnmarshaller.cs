@@ -124,6 +124,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.LastModifiedOn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NotificationProperty", targetDepth))
+                {
+                    var unmarshaller = NotificationPropertyUnmarshaller.Instance;
+                    unmarshalledObject.NotificationProperty = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PredecessorRuns", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Predecessor, PredecessorUnmarshaller>(PredecessorUnmarshaller.Instance);

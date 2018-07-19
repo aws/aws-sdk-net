@@ -33,6 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class SendCommandRequest : AmazonSimpleSystemsManagementRequest
     {
+        private CloudWatchOutputConfig _cloudWatchOutputConfig;
         private string _comment;
         private string _documentHash;
         private DocumentHashType _documentHashType;
@@ -59,11 +60,29 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Instantiates SendCommandRequest with the parameterized properties
         /// </summary>
         /// <param name="documentName">Required. The name of the Systems Manager document to execute. This can be a public document or a custom document.</param>
-        /// <param name="instanceIds">The instance IDs where the command should execute. You can specify a maximum of 50 IDs. If you prefer not to list individual instance IDs, you can instead send commands to a fleet of instances using the Targets parameter, which accepts EC2 tags. For more information about how to use Targets, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending Commands to a Fleet</a>.</param>
+        /// <param name="instanceIds">The instance IDs where the command should execute. You can specify a maximum of 50 IDs. If you prefer not to list individual instance IDs, you can instead send commands to a fleet of instances using the Targets parameter, which accepts EC2 tags. For more information about how to use Targets, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</param>
         public SendCommandRequest(string documentName, List<string> instanceIds)
         {
             _documentName = documentName;
             _instanceIds = instanceIds;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudWatchOutputConfig. 
+        /// <para>
+        /// Enables Systems Manager to send Run Command output to Amazon CloudWatch Logs. 
+        /// </para>
+        /// </summary>
+        public CloudWatchOutputConfig CloudWatchOutputConfig
+        {
+            get { return this._cloudWatchOutputConfig; }
+            set { this._cloudWatchOutputConfig = value; }
+        }
+
+        // Check to see if CloudWatchOutputConfig property is set
+        internal bool IsSetCloudWatchOutputConfig()
+        {
+            return this._cloudWatchOutputConfig != null;
         }
 
         /// <summary>
@@ -153,8 +172,22 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DocumentVersion. 
         /// <para>
-        /// The SSM document version to use in the request. You can specify Default, Latest, or
-        /// a specific version number. 
+        /// The SSM document version to use in the request. You can specify $DEFAULT, $LATEST,
+        /// or a specific version number. If you execute commands by using the AWS CLI, then you
+        /// must escape the first two options by using a backslash. If you specify a version number,
+        /// then you don't need to use the backslash. For example:
+        /// </para>
+        ///  
+        /// <para>
+        /// --document-version "\$DEFAULT"
+        /// </para>
+        ///  
+        /// <para>
+        /// --document-version "\$LATEST"
+        /// </para>
+        ///  
+        /// <para>
+        /// --document-version "3"
         /// </para>
         /// </summary>
         public string DocumentVersion
@@ -176,7 +209,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// IDs. If you prefer not to list individual instance IDs, you can instead send commands
         /// to a fleet of instances using the Targets parameter, which accepts EC2 tags. For more
         /// information about how to use Targets, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-        /// Commands to a Fleet</a>.
+        /// Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
         public List<string> InstanceIds
@@ -197,8 +230,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// (Optional) The maximum number of instances that are allowed to execute the command
         /// at the same time. You can specify a number such as 10 or a percentage such as 10%.
         /// The default value is 50. For more information about how to use MaxConcurrency, see
-        /// <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-velocity.html">Using
-        /// Concurrency Controls</a>.
+        /// <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using
+        /// Concurrency Controls</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
         public string MaxConcurrency
@@ -219,8 +252,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The maximum number of errors allowed without the command failing. When the command
         /// fails one more time beyond the value of MaxErrors, the systems stops sending the command
         /// to additional targets. You can specify a number like 10 or a percentage like 10%.
-        /// The default value is 0. For more information about how to use MaxErrors, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-maxerrors.html">Using
-        /// Error Controls</a>.
+        /// The default value is 0. For more information about how to use MaxErrors, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using
+        /// Error Controls</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
         public string MaxErrors
@@ -350,7 +383,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// (Optional) An array of search criteria that targets instances using a Key,Value combination
         /// that you specify. Targets is required if you don't provide one or more instance IDs
         /// in the call. For more information about how to use Targets, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-        /// Commands to a Fleet</a>.
+        /// Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
         public List<Target> Targets

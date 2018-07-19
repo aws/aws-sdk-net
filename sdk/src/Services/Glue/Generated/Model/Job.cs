@@ -43,6 +43,7 @@ namespace Amazon.Glue.Model
         private string _logUri;
         private int? _maxRetries;
         private string _name;
+        private NotificationProperty _notificationProperty;
         private string _role;
         private int? _timeout;
 
@@ -264,6 +265,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NotificationProperty. 
+        /// <para>
+        /// Specifies configuration properties of a job notification.
+        /// </para>
+        /// </summary>
+        public NotificationProperty NotificationProperty
+        {
+            get { return this._notificationProperty; }
+            set { this._notificationProperty = value; }
+        }
+
+        // Check to see if NotificationProperty property is set
+        internal bool IsSetNotificationProperty()
+        {
+            return this._notificationProperty != null;
         }
 
         /// <summary>

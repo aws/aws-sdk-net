@@ -143,6 +143,10 @@ namespace Amazon.ACMPCA
         /// </summary>
         public static readonly CertificateAuthorityStatus CREATING = new CertificateAuthorityStatus("CREATING");
         /// <summary>
+        /// Constant DELETED for CertificateAuthorityStatus
+        /// </summary>
+        public static readonly CertificateAuthorityStatus DELETED = new CertificateAuthorityStatus("DELETED");
+        /// <summary>
         /// Constant DISABLED for CertificateAuthorityStatus
         /// </summary>
         public static readonly CertificateAuthorityStatus DISABLED = new CertificateAuthorityStatus("DISABLED");

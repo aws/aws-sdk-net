@@ -56,7 +56,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// </para>
         /// 
         /// <para>
-        /// Min Length=1. Max Length=127.
+        /// Minimum length=1. Maximum length=127.
         /// </para>
         /// 
         /// <para>
@@ -82,7 +82,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// </para>
         /// 
         /// <para>
-        /// Min Length=1. Max Length=256
+        /// Minimum length=1. Maximum length=256
         /// </para>
         /// </summary>
         public string Description
@@ -123,7 +123,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// </para>
         /// 
         /// <para>
-        /// Min Length=1. Max Length=127. Maximum number of labels: 10
+        /// Minimum length=1. Maximum length=127. Maximum number of labels: 10
         /// </para>
         /// 
         /// <para>
@@ -145,12 +145,17 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// <summary>
         /// Gets and sets the property LicenseBody. 
         /// <para>
-        /// A raw text file that contains the license of the app that matches the spdxLicenseID
-        /// of your application.
+        /// A local text file that contains the license of the app that matches the spdxLicenseID
+        /// value of your application. The file is of the format file://&lt;path>/&lt;filename>.
         /// </para>
         /// 
         /// <para>
-        /// Max size 5 MB
+        /// Maximum size 5 MB
+        /// </para>
+        /// 
+        /// <para>
+        /// Note: Only one of licenseBody and licenseUrl can be specified, otherwise an error
+        /// will result.
         /// </para>
         /// </summary>
         public string LicenseBody
@@ -168,11 +173,17 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// <summary>
         /// Gets and sets the property LicenseUrl. 
         /// <para>
-        /// A link to a license file of the app that matches the spdxLicenseID of your application.
+        /// A link to the S3 object that contains the license of the app that matches the spdxLicenseID
+        /// value of your application.
         /// </para>
         /// 
         /// <para>
-        /// Max size 5 MB
+        /// Maximum size 5 MB
+        /// </para>
+        /// 
+        /// <para>
+        /// Note: Only one of licenseBody and licenseUrl can be specified, otherwise an error
+        /// will result.
         /// </para>
         /// </summary>
         public string LicenseUrl
@@ -190,11 +201,11 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the application you want to publish.
+        /// The name of the application that you want to publish.
         /// </para>
         /// 
         /// <para>
-        /// Min Length=1. Max Length=140
+        /// Minimum length=1. Maximum length=140
         /// </para>
         /// 
         /// <para>
@@ -216,12 +227,17 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// <summary>
         /// Gets and sets the property ReadmeBody. 
         /// <para>
-        /// A raw text Readme file that contains a more detailed description of the application
-        /// and how it works in markdown language.
+        /// A local text readme file in Markdown language that contains a more detailed description
+        /// of the application and how it works. The file is of the format file://&lt;path>/&lt;filename>.
         /// </para>
         /// 
         /// <para>
-        /// Max size 5 MB
+        /// Maximum size 5 MB
+        /// </para>
+        /// 
+        /// <para>
+        /// Note: Only one of readmeBody and readmeUrl can be specified, otherwise an error will
+        /// result.
         /// </para>
         /// </summary>
         public string ReadmeBody
@@ -239,12 +255,17 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// <summary>
         /// Gets and sets the property ReadmeUrl. 
         /// <para>
-        /// A link to the Readme file that contains a more detailed description of the application
-        /// and how it works in markdown language.
+        /// A link to the S3 object in Markdown language that contains a more detailed description
+        /// of the application and how it works.
         /// </para>
         /// 
         /// <para>
-        /// Max size 5 MB
+        /// Maximum size 5 MB
+        /// </para>
+        /// 
+        /// <para>
+        /// Note: Only one of readmeBody and readmeUrl can be specified, otherwise an error will
+        /// result.
         /// </para>
         /// </summary>
         public string ReadmeUrl
@@ -320,7 +341,13 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// <summary>
         /// Gets and sets the property TemplateBody. 
         /// <para>
-        /// The raw packaged AWS SAM template of your application.
+        /// The local raw packaged AWS SAM template file of your application. The file is of the
+        /// format file://&lt;path>/&lt;filename>.
+        /// </para>
+        /// 
+        /// <para>
+        /// Note: Only one of templateBody and templateUrl can be specified, otherwise an error
+        /// will result.
         /// </para>
         /// </summary>
         public string TemplateBody
@@ -338,7 +365,12 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// <summary>
         /// Gets and sets the property TemplateUrl. 
         /// <para>
-        /// A link to the packaged AWS SAM template of your application.
+        /// A link to the S3 object cotaining the packaged AWS SAM template of your application.
+        /// </para>
+        /// 
+        /// <para>
+        /// Note: Only one of templateBody and templateUrl can be specified, otherwise an error
+        /// will result.
         /// </para>
         /// </summary>
         public string TemplateUrl

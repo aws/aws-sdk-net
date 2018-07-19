@@ -853,7 +853,7 @@ namespace Amazon.RDS
         /// For more information on copying encrypted DB cluster snapshots from one AWS Region
         /// to another, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopyDBClusterSnapshot.CrossRegion">
         /// Copying a DB Cluster Snapshot in the Same Account, Either in the Same Region or Across
-        /// Regions</a> in the Amazon RDS User Guide.
+        /// Regions</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         ///  
         /// <para>
@@ -1005,7 +1005,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information about copying snapshots, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopyDBSnapshot.html">Copying
-        /// a DB Snapshot</a> in the Amazon RDS User Guide. 
+        /// a DB Snapshot</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyDBSnapshot service method.</param>
@@ -1754,6 +1754,13 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Creates a new DB security group. DB security groups control access to a DB instance.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// A DB security group controls access to EC2-Classic DB instances that are not in a
+        /// VPC.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBSecurityGroup service method.</param>
         /// 
@@ -6537,6 +6544,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBClusterAlreadyExistsException">
         /// The user already has a DB cluster with the given identifier.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterParameterGroupNotFoundException">
+        /// <i>DBClusterParameterGroupName</i> doesn't refer to an existing DB cluster parameter
+        /// group.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterQuotaExceededException">
         /// The user attempted to create a new DB cluster and the user has already reached the
         /// maximum allowed DB cluster quota.
@@ -6668,6 +6679,10 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
         /// <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterParameterGroupNotFoundException">
+        /// <i>DBClusterParameterGroupName</i> doesn't refer to an existing DB cluster parameter
+        /// group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterQuotaExceededException">
         /// The user attempted to create a new DB cluster and the user has already reached the
@@ -6808,6 +6823,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceAlreadyExistsException">
         /// The user already has a DB instance with the given identifier.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
+        /// <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSecurityGroupNotFoundException">
         /// <i>DBSecurityGroupName</i> doesn't refer to an existing DB security group.
@@ -7033,7 +7051,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// The target database is created with most of the original configuration, but in a system-selected
-        /// availability zone, with the default security group, the default subnet group, and
+        /// Availability Zone, with the default security group, the default subnet group, and
         /// the default DB parameter group. By default, the new DB instance is created as a single-AZ
         /// deployment except when the instance is a SQL Server instance that has an option group
         /// that is associated with mirroring; in this case, the instance becomes a mirrored deployment
@@ -7063,6 +7081,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
+        /// <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSecurityGroupNotFoundException">
         /// <i>DBSecurityGroupName</i> doesn't refer to an existing DB security group.

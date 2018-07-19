@@ -55,7 +55,7 @@ namespace Amazon.SecretsManager.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about ARNs in Secrets Manager, see <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy
+        /// For more information about ARNs in Secrets Manager, see <a href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy
         /// Resources</a> in the <i>AWS Secrets Manager User Guide</i>.
         /// </para>
         /// </summary>

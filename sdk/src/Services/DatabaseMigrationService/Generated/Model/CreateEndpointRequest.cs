@@ -35,6 +35,7 @@ namespace Amazon.DatabaseMigrationService.Model
     {
         private string _certificateArn;
         private string _databaseName;
+        private DmsTransferSettings _dmsTransferSettings;
         private DynamoDbSettings _dynamoDbSettings;
         private string _endpointIdentifier;
         private ReplicationEndpointTypeValue _endpointType;
@@ -86,6 +87,54 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetDatabaseName()
         {
             return this._databaseName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DmsTransferSettings. 
+        /// <para>
+        ///  The settings in JSON format for the DMS Transfer type source endpoint. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Attributes include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// serviceAccessRoleArn - The IAM role that has permission to access the Amazon S3 bucket.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// bucketName - The name of the S3 bucket to use.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// compressionType - An optional parameter to use GZIP to compress the target files.
+        /// Set to NONE (the default) or do not use to leave the files uncompressed.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Shorthand syntax: ServiceAccessRoleArn=string ,BucketName=string,CompressionType=string
+        /// </para>
+        ///  
+        /// <para>
+        /// JSON syntax:
+        /// </para>
+        ///  
+        /// <para>
+        ///  { "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip"
+        /// } 
+        /// </para>
+        /// </summary>
+        public DmsTransferSettings DmsTransferSettings
+        {
+            get { return this._dmsTransferSettings; }
+            set { this._dmsTransferSettings = value; }
+        }
+
+        // Check to see if DmsTransferSettings property is set
+        internal bool IsSetDmsTransferSettings()
+        {
+            return this._dmsTransferSettings != null;
         }
 
         /// <summary>
@@ -231,7 +280,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Settings in JSON format for the source MongoDB endpoint. For more information about
         /// the available settings, see the <b>Configuration Properties When Using MongoDB as
         /// a Source for AWS Database Migration Service</b> section at <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">
-        /// Using Amazon S3 as a Target for AWS Database Migration Service</a>. 
+        /// Using MongoDB as a Target for AWS Database Migration Service</a>. 
         /// </para>
         /// </summary>
         public MongoDbSettings MongoDbSettings

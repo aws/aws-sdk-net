@@ -25,7 +25,11 @@
     <Compile Remove="**/45/**"/>
     <None Remove="**/45/**" />
   </ItemGroup>
-
+  <ItemGroup>
+    <Compile Remove="**/obj/**"/>
+    <None Remove="**/obj/**" />
+  </ItemGroup>
+  
   <ItemGroup>
     <Compile Include="../Services/*/IntegrationTests/*.cs"/>
   </ItemGroup>

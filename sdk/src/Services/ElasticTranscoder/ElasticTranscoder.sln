@@ -22,23 +22,23 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.ElasticTranscoder.Ne
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{12EC4E4B-7E2C-4B63-8EF9-7B959F82A89B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IntegrationTests.ElasticTranscoder.Net35", "..\..\..\..\sdk\test\Services\ElasticTranscoder\IntegrationTests\AWSSDK.IntegrationTests.ElasticTranscoder.Net35.csproj", "{A1B68941-7722-42BB-91DC-0D558278A69E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IntegrationTests.ElasticTranscoder.Net35", "..\..\..\test\Services\ElasticTranscoder\IntegrationTests\AWSSDK.IntegrationTests.ElasticTranscoder.Net35.csproj", "{A1B68941-7722-42BB-91DC-0D558278A69E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IntegrationTests.ElasticTranscoder.Net45", "..\..\..\..\sdk\test\Services\ElasticTranscoder\IntegrationTests\AWSSDK.IntegrationTests.ElasticTranscoder.Net45.csproj", "{9AF08228-52E7-4767-812C-981BD3210994}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IntegrationTests.ElasticTranscoder.Net45", "..\..\..\test\Services\ElasticTranscoder\IntegrationTests\AWSSDK.IntegrationTests.ElasticTranscoder.Net45.csproj", "{9AF08228-52E7-4767-812C-981BD3210994}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.UnitTests.ElasticTranscoder.Net35", "..\..\..\..\sdk\test\Services\ElasticTranscoder\UnitTests\AWSSDK.UnitTests.ElasticTranscoder.Net35.csproj", "{25BA0C39-A22D-4E41-B92A-E589F4CE8E2E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.UnitTests.ElasticTranscoder.Net35", "..\..\..\test\Services\ElasticTranscoder\UnitTests\AWSSDK.UnitTests.ElasticTranscoder.Net35.csproj", "{25BA0C39-A22D-4E41-B92A-E589F4CE8E2E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.UnitTests.ElasticTranscoder.Net45", "..\..\..\..\sdk\test\Services\ElasticTranscoder\UnitTests\AWSSDK.UnitTests.ElasticTranscoder.Net45.csproj", "{C43D9ED1-7FB1-4ADD-A329-0BC935A1441D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.UnitTests.ElasticTranscoder.Net45", "..\..\..\test\Services\ElasticTranscoder\UnitTests\AWSSDK.UnitTests.ElasticTranscoder.Net45.csproj", "{C43D9ED1-7FB1-4ADD-A329-0BC935A1441D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceClientGeneratorLib", "..\..\..\..\generator\ServiceClientGeneratorLib\ServiceClientGeneratorLib.csproj", "{7BEE7C44-BE12-43CC-AFB9-B5852A1F43C8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.UnitTestUtilities", "..\..\..\..\sdk\test\UnitTests\Custom\AWSSDK.UnitTestUtilities.csproj", "{F9D5F226-CE00-4E1A-8C70-4250F5FA954F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.UnitTestUtilities", "..\..\..\test\UnitTests\Custom\AWSSDK.UnitTestUtilities.csproj", "{F9D5F226-CE00-4E1A-8C70-4250F5FA954F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IntegrationTestUtilities.Net35", "..\..\..\..\sdk\test\IntegrationTests\AWSSDK.IntegrationTestUtilities.Net35.csproj", "{924D2906-70D6-4D77-8603-816648B2CCA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IntegrationTestUtilities.Net35", "..\..\..\test\IntegrationTests\AWSSDK.IntegrationTestUtilities.Net35.csproj", "{924D2906-70D6-4D77-8603-816648B2CCA6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IntegrationTestUtilities.Net45", "..\..\..\..\sdk\test\IntegrationTests\AWSSDK.IntegrationTestUtilities.Net45.csproj", "{7AB0DA1C-CA0E-4579-BA82-2B41A9DA15C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IntegrationTestUtilities.Net45", "..\..\..\test\IntegrationTests\AWSSDK.IntegrationTestUtilities.Net45.csproj", "{7AB0DA1C-CA0E-4579-BA82-2B41A9DA15C7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CommonTest", "..\..\..\..\sdk\test\Common\AWSSDK.CommonTest.csproj", "{66F78F86-68D7-4538-8EA5-A669A08E1C19}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.CommonTest", "..\..\..\test\Common\AWSSDK.CommonTest.csproj", "{66F78F86-68D7-4538-8EA5-A669A08E1C19}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IntegrationTestDependencies", "IntegrationTestDependencies", "{939EC5C2-8345-43E2-8F97-72EEEBEEA0AC}"
 EndProject

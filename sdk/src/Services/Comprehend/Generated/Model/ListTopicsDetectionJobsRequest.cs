@@ -59,7 +59,7 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return in each page.
+        /// The maximum number of results to return in each page. The default is 100.
         /// </para>
         /// </summary>
         public int MaxResults

@@ -19,7 +19,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+    #line 1 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class VS2017ProjectFile : VS2017ProjectFileBase
     {
@@ -31,14 +31,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
         {
             this.Write("<Project Sdk=\"Microsoft.NET.Sdk\">\r\n  <PropertyGroup>\r\n    <TargetFramework>");
             
-            #line 9 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 9 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["TargetFramework"]));
             
             #line default
             #line hidden
             this.Write("</TargetFramework>\r\n    <DefineConstants>$(DefineConstants);");
             
-            #line 10 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 10 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["DefineConstants"]));
             
             #line default
@@ -46,45 +46,21 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("</DefineConstants>\r\n    <DebugType>portable</DebugType>\r\n    <GenerateDocumentati" +
                     "onFile>true</GenerateDocumentationFile>\r\n    <AssemblyName>");
             
-            #line 13 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 13 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
             this.Write("</AssemblyName>\r\n    <PackageId>");
             
-            #line 14 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 14 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["AssemblyName"]));
             
             #line default
             #line hidden
-            this.Write("</PackageId>\r\n");
-            
-            #line 15 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            this.Write(@"</PackageId>
 
-    if ((bool)Session["SetBaseIntermediateOutputPath"])
-    {
-
-            
-            #line default
-            #line hidden
-            this.Write("\t<BaseIntermediateOutputPath>./obj/");
-            
-            #line 19 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["ConfigurationName"]));
-            
-            #line default
-            #line hidden
-            this.Write("</BaseIntermediateOutputPath>\r\n");
-            
-            #line 20 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
-
-    }
-
-            
-            #line default
-            #line hidden
-            this.Write(@"    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
@@ -95,7 +71,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
 
 ");
             
-            #line 32 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 25 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     if(this.Session.ContainsKey("FrameworkPathOverride") && !string.IsNullOrEmpty((string)Session["FrameworkPathOverride"]))
     {
@@ -106,14 +82,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("    <!-- workaround per https://github.com/Microsoft/msbuild/issues/1333 -->\r\n   " +
                     " <FrameworkPathOverride>");
             
-            #line 37 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 30 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["FrameworkPathOverride"].ToString()));
             
             #line default
             #line hidden
             this.Write("</FrameworkPathOverride>\r\n");
             
-            #line 38 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 31 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
     
@@ -125,14 +101,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <ReferencePath>");
             
-            #line 44 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 37 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["ReferencePath"].ToString()));
             
             #line default
             #line hidden
             this.Write("</ReferencePath>\r\n");
             
-            #line 45 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 38 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
 
@@ -144,14 +120,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <NoWarn>");
             
-            #line 51 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 44 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NoWarn"].ToString()));
             
             #line default
             #line hidden
             this.Write("</NoWarn>\r\n");
             
-            #line 52 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 45 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
 
@@ -164,14 +140,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>\r" +
                     "\n    <OutputPath>");
             
-            #line 59 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 52 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["OutputPathOverride"].ToString()));
             
             #line default
             #line hidden
             this.Write("</OutputPath>\r\n");
             
-            #line 60 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 53 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
 
@@ -179,7 +155,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line default
             #line hidden
             
-            #line 63 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 56 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     if (string.Compare(this.Session["TargetFramework"].ToString(), "netstandard1.3") == 0)
     {
@@ -190,7 +166,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             this.Write("    <NetStandardImplicitPackageVersion>1.6.0</NetStandardImplicitPackageVersion>\r" +
                     "\n");
             
-            #line 68 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 61 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
 
@@ -199,7 +175,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  </PropertyGroup>\r\n\r\n");
             
-            #line 73 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 66 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     if (this.Session.ContainsKey("SignBinaries") && (bool)Session["SignBinaries"])
     {
@@ -222,7 +198,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
 
 ");
             
-            #line 90 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 83 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
 
@@ -234,14 +210,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  <ItemGroup>\r\n    <Compile Include=\"");
             
-            #line 97 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 90 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["ExternalFilesInclude"]));
             
             #line default
             #line hidden
             this.Write("\"/>\r\n  </ItemGroup>\r\n");
             
-            #line 99 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 92 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
 
@@ -253,7 +229,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  <ItemGroup>\r\n");
             
-            #line 106 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 99 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
         IList<string> compileRemoveList = this.Session["CompileRemoveList"] as IList<string>;
         foreach(var compileRemoveEntry in compileRemoveList)
@@ -266,21 +242,21 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <Compile Remove=\"**/");
             
-            #line 113 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 106 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(compileRemoveEntry.ToString()));
             
             #line default
             #line hidden
             this.Write("/**\"/>\r\n\t<None Remove=\"**/");
             
-            #line 114 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 107 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(compileRemoveEntry.ToString()));
             
             #line default
             #line hidden
             this.Write("/**\" />\r\n");
             
-            #line 115 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 108 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
 			continue;
 		  }
@@ -290,14 +266,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <Compile Remove=\"**/");
             
-            #line 119 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 112 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(compileRemoveEntry.ToString()));
             
             #line default
             #line hidden
             this.Write("/**\"/>\r\n");
             
-            #line 120 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 113 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
         }
 
@@ -306,7 +282,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  </ItemGroup>\r\n\r\n");
             
-            #line 125 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 118 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
 
@@ -314,7 +290,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line default
             #line hidden
             
-            #line 128 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 121 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     if(this.Session.ContainsKey("ProjectReferenceList") && this.Session["ProjectReferenceList"] != null)
     {
@@ -324,7 +300,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  <ItemGroup>\r\n");
             
-            #line 133 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 126 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
         var projectReferenceList = this.Session["ProjectReferenceList"] as IList<ProjectFileCreator.ProjectReference>;
         foreach(var projectReference in projectReferenceList)
@@ -335,14 +311,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <ProjectReference Include=\"");
             
-            #line 138 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 131 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(projectReference.IncludePath));
             
             #line default
             #line hidden
             this.Write("\"/>\r\n");
             
-            #line 139 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 132 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
         }
 
@@ -351,7 +327,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  </ItemGroup>\r\n\r\n");
             
-            #line 144 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 137 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
 
@@ -359,7 +335,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line default
             #line hidden
             
-            #line 147 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 140 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     if(this.Session.ContainsKey("PackageReferenceList") && this.Session["PackageReferenceList"] != null)
     {
@@ -369,7 +345,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  <ItemGroup>\r\n");
             
-            #line 152 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 145 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
         var packageReferenceList = this.Session["PackageReferenceList"] as IList<ProjectFileCreator.PackageReference>;
         foreach(var package in packageReferenceList)
@@ -380,21 +356,21 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <PackageReference Include=\"");
             
-            #line 157 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 150 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(package.Include));
             
             #line default
             #line hidden
             this.Write("\" Version=\"");
             
-            #line 157 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 150 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(package.Version));
             
             #line default
             #line hidden
             this.Write("\"/>\r\n");
             
-            #line 158 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 151 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
         }
 
@@ -403,7 +379,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  </ItemGroup>\r\n\r\n");
             
-            #line 163 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 156 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
 
@@ -411,7 +387,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line default
             #line hidden
             
-            #line 166 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 159 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     if(this.Session.ContainsKey("ServiceDllReferences") && this.Session["ServiceDllReferences"] != null)
     {
@@ -421,7 +397,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  <ItemGroup>\r\n");
             
-            #line 171 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 164 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
         var dllReferenceList = this.Session["ServiceDllReferences"] as IList<ProjectFileCreator.Reference>;
         foreach(var reference in dllReferenceList)
@@ -432,21 +408,21 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <Reference Include=\"");
             
-            #line 176 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 169 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(reference.Name));
             
             #line default
             #line hidden
             this.Write("\">\r\n      <HintPath>");
             
-            #line 177 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 170 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(reference.HintPath));
             
             #line default
             #line hidden
             this.Write("</HintPath>\r\n    </Reference>\r\n");
             
-            #line 179 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 172 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
         }
 
@@ -455,7 +431,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  </ItemGroup>\r\n\r\n");
             
-            #line 184 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 177 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
 
@@ -463,7 +439,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line default
             #line hidden
             
-            #line 187 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 180 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     if(this.Session.ContainsKey("FrameworkReferences") && this.Session["FrameworkReferences"] != null)
     {
@@ -473,7 +449,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  <ItemGroup>\r\n");
             
-            #line 192 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 185 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
         var references = this.Session["FrameworkReferences"] as IEnumerable<ProjectFileCreator.FrameworkReference>;
         foreach(var reference in references)
@@ -486,14 +462,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <Reference Include=\"");
             
-            #line 199 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 192 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(reference.Name));
             
             #line default
             #line hidden
             this.Write("\"/>\r\n");
             
-            #line 200 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 193 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
             }
             else
@@ -504,21 +480,21 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <Reference Include=\"");
             
-            #line 205 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 198 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(reference.Name));
             
             #line default
             #line hidden
             this.Write("\">\r\n        <HintPath>");
             
-            #line 206 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 199 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(reference.HintPath));
             
             #line default
             #line hidden
             this.Write("</HintPath>\r\n    </Reference>\r\n");
             
-            #line 208 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 201 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
             }
         }
@@ -528,7 +504,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  </ItemGroup>\r\n\r\n");
             
-            #line 214 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 207 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
     if(this.Session.ContainsKey("EmbeddedResources") && this.Session["EmbeddedResources"] != null)
@@ -539,7 +515,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  <ItemGroup>\r\n");
             
-            #line 220 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 213 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
         var resourceList = this.Session["EmbeddedResources"] as IEnumerable<string>;
         foreach(var resource in resourceList)
@@ -550,14 +526,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <EmbeddedResource Include=\"");
             
-            #line 225 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 218 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resource));
             
             #line default
             #line hidden
             this.Write("\"/>\r\n");
             
-            #line 226 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 219 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
         }
 
@@ -566,7 +542,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  </ItemGroup>\r\n");
             
-            #line 230 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 223 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
 
@@ -578,7 +554,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  <ItemGroup>\r\n");
             
-            #line 237 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 230 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
         var serviceList = this.Session["EmbeddedResources"] as IEnumerable<string>;
         foreach(var service in serviceList)
@@ -589,14 +565,14 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("    <Service Include=\"");
             
-            #line 242 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 235 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(service));
             
             #line default
             #line hidden
             this.Write("\"/>\r\n");
             
-            #line 243 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 236 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
         }
 
@@ -605,7 +581,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             #line hidden
             this.Write("  </ItemGroup>\r\n");
             
-            #line 247 "C:\dev\V3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
+            #line 240 "C:\dev\CodeBase\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
     }
 

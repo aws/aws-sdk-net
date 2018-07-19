@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-16"?>
+<property-value-rules>
+  <property-value-rule>
+    <property>Amazon.DLM.Model.CreateLifecyclePolicyRequest.Description</property>
+    <min>0</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DLM.Model.UpdateLifecyclePolicyRequest.Description</property>
+    <min>0</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DLM.Model.CreateRule.Interval</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DLM.Model.LifecyclePolicy.Description</property>
+    <min>0</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DLM.Model.LifecyclePolicySummary.Description</property>
+    <min>0</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DLM.Model.RetainRule.Count</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DLM.Model.Schedule.Name</property>
+    <min>0</min>
+    <max>500</max>
+  </property-value-rule>
+</property-value-rules>

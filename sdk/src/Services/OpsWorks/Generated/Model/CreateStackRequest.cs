@@ -35,7 +35,7 @@ namespace Amazon.OpsWorks.Model
     ///  
     /// <para>
     ///  <b>Required Permissions</b>: To use this action, an IAM user must have an attached
-    /// policy that explicitly grants permissions. For more information on user permissions,
+    /// policy that explicitly grants permissions. For more information about user permissions,
     /// see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
     /// User Permissions</a>.
     /// </para>
@@ -147,7 +147,7 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// The configuration manager. When you create a stack we recommend that you use the configuration
         /// manager to specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2
-        /// for Windows stacks. The default value for Linux stacks is currently 11.4.
+        /// for Windows stacks. The default value for Linux stacks is currently 12.
         /// </para>
         /// </summary>
         public StackConfigurationManager ConfigurationManager
@@ -190,7 +190,7 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
+        /// For more information about custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
         /// Custom JSON to Modify the Stack Configuration Attributes</a>.
         /// </para>
         /// </summary>
@@ -290,7 +290,7 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The default option is the current Amazon Linux version. For more information on the
+        /// The default option is the current Amazon Linux version. For more information about
         /// supported operating systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
         /// OpsWorks Stacks Operating Systems</a>.
         /// </para>
@@ -467,10 +467,29 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The stack's AWS region, such as "ap-south-1". For more information about Amazon regions,
-        /// see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
-        /// Endpoints</a>.
+        /// The stack's AWS region, such as <code>ap-south-1</code>. For more information about
+        /// Amazon regions, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
+        /// and Endpoints</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// In the AWS CLI, this API maps to the <code>--stack-region</code> parameter. If the
+        /// <code>--stack-region</code> parameter and the AWS CLI common parameter <code>--region</code>
+        /// are set to the same value, the stack uses a <i>regional</i> endpoint. If the <code>--stack-region</code>
+        /// parameter is not set, but the AWS CLI <code>--region</code> parameter is, this also
+        /// results in a stack with a <i>regional</i> endpoint. However, if the <code>--region</code>
+        /// parameter is set to <code>us-east-1</code>, and the <code>--stack-region</code> parameter
+        /// is set to one of the following, then the stack uses a legacy or <i>classic</i> region:
+        /// <code>us-west-1, us-west-2, sa-east-1, eu-central-1, eu-west-1, ap-northeast-1, ap-southeast-1,
+        /// ap-southeast-2</code>. In this case, the actual API endpoint of the stack is in <code>us-east-1</code>.
+        /// Only the preceding regions are supported as classic regions in the <code>us-east-1</code>
+        /// API endpoint. Because it is a best practice to choose the regional endpoint that is
+        /// closest to where you manage AWS, we recommend that you use regional endpoints for
+        /// new stacks. The AWS CLI common <code>--region</code> parameter always specifies a
+        /// regional API endpoint; it cannot be used to specify a classic AWS OpsWorks Stacks
+        /// region.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string Region
         {
@@ -606,9 +625,9 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information on how to use AWS OpsWorks Stacks with a VPC, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running
-        /// a Stack in a VPC</a>. For more information on default VPC and EC2-Classic, see <a
-        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+        /// For more information about how to use AWS OpsWorks Stacks with a VPC, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running
+        /// a Stack in a VPC</a>. For more information about default VPC and EC2-Classic, see
+        /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
         /// Platforms</a>. 
         /// </para>
         /// </summary>

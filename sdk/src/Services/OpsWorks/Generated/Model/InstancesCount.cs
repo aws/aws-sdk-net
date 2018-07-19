@@ -306,7 +306,10 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StopFailed.
+        /// Gets and sets the property StopFailed. 
+        /// <para>
+        /// The number of instances with <code>stop_failed</code> status.
+        /// </para>
         /// </summary>
         public int StopFailed
         {

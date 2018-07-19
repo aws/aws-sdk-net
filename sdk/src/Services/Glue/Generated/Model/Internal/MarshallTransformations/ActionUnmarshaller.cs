@@ -76,6 +76,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.JobName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NotificationProperty", targetDepth))
+                {
+                    var unmarshaller = NotificationPropertyUnmarshaller.Instance;
+                    unmarshalledObject.NotificationProperty = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Timeout", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

@@ -144,6 +144,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetNotificationProperty())
+                {
+                    context.Writer.WritePropertyName("NotificationProperty");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = NotificationPropertyMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.NotificationProperty, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetRole())
                 {
                     context.Writer.WritePropertyName("Role");

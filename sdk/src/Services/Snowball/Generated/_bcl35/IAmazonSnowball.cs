@@ -29,13 +29,13 @@ namespace Amazon.Snowball
     /// <summary>
     /// Interface for accessing Snowball
     ///
-    /// AWS Snowball is a petabyte-scale data transport solution that uses secure appliances
+    /// AWS Snowball is a petabyte-scale data transport solution that uses secure devices
     /// to transfer large amounts of data between your on-premises data centers and Amazon
     /// Simple Storage Service (Amazon S3). The Snowball commands described here provide access
     /// to the same functionality that is available in the AWS Snowball Management Console,
     /// which enables you to create and manage jobs for Snowball. To transfer data locally
-    /// with a Snowball appliance, you'll need to use the Snowball client or the Amazon S3
-    /// API adapter for Snowball. For more information, see the <a href="http://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html">User
+    /// with a Snowball device, you'll need to use the Snowball client or the Amazon S3 API
+    /// adapter for Snowball. For more information, see the <a href="http://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html">User
     /// Guide</a>.
     /// </summary>
     public partial interface IAmazonSnowball : IAmazonService, IDisposable
@@ -101,8 +101,8 @@ namespace Amazon.Snowball
         /// <summary>
         /// Cancels the specified job. You can only cancel a job before its <code>JobState</code>
         /// value changes to <code>PreparingAppliance</code>. Requesting the <code>ListJobs</code>
-        /// or <code>DescribeJob</code> action will return a job's <code>JobState</code> as part
-        /// of the response element data returned.
+        /// or <code>DescribeJob</code> action returns a job's <code>JobState</code> as part of
+        /// the response element data returned.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelJob service method.</param>
         /// 
@@ -213,6 +213,10 @@ namespace Amazon.Snowball
         /// <param name="request">Container for the necessary parameters to execute the CreateCluster service method.</param>
         /// 
         /// <returns>The response from the CreateCluster service method, as returned by Snowball.</returns>
+        /// <exception cref="Amazon.Snowball.Model.Ec2RequestFailedException">
+        /// Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted
+        /// action.
+        /// </exception>
         /// <exception cref="Amazon.Snowball.Model.InvalidInputCombinationException">
         /// Job or cluster creation failed. One ore more inputs were invalid. Confirm that the
         /// <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>,
@@ -274,6 +278,10 @@ namespace Amazon.Snowball
         /// Job creation failed. Currently, clusters support five nodes. If you have less than
         /// five nodes for your cluster and you have more nodes to create for this cluster, try
         /// again and create jobs until your cluster has exactly five notes.
+        /// </exception>
+        /// <exception cref="Amazon.Snowball.Model.Ec2RequestFailedException">
+        /// Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.Snowball.Model.InvalidInputCombinationException">
         /// Job or cluster creation failed. One ore more inputs were invalid. Confirm that the
@@ -787,6 +795,59 @@ namespace Amazon.Snowball
 
         #endregion
         
+        #region  ListCompatibleImages
+
+
+        /// <summary>
+        /// This action returns a list of the different Amazon EC2 Amazon Machine Images (AMIs)
+        /// that are owned by your AWS account that would be supported for use on a Snowball Edge
+        /// device. Currently, supported AMIs are based on the CentOS 7 (x86_64) - with Updates
+        /// HVM, Ubuntu Server 14.04 LTS (HVM), and Ubuntu 16.04 LTS - Xenial (HVM) images, available
+        /// on the AWS Marketplace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCompatibleImages service method.</param>
+        /// 
+        /// <returns>The response from the ListCompatibleImages service method, as returned by Snowball.</returns>
+        /// <exception cref="Amazon.Snowball.Model.Ec2RequestFailedException">
+        /// Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted
+        /// action.
+        /// </exception>
+        /// <exception cref="Amazon.Snowball.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> string was altered unexpectedly, and the operation has
+        /// stopped. Run the operation without changing the <code>NextToken</code> string, and
+        /// try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListCompatibleImages">REST API Reference for ListCompatibleImages Operation</seealso>
+        ListCompatibleImagesResponse ListCompatibleImages(ListCompatibleImagesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCompatibleImages operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCompatibleImages operation on AmazonSnowballClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCompatibleImages
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListCompatibleImages">REST API Reference for ListCompatibleImages Operation</seealso>
+        IAsyncResult BeginListCompatibleImages(ListCompatibleImagesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCompatibleImages operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCompatibleImages.</param>
+        /// 
+        /// <returns>Returns a  ListCompatibleImagesResult from Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListCompatibleImages">REST API Reference for ListCompatibleImages Operation</seealso>
+        ListCompatibleImagesResponse EndListCompatibleImages(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListJobs
 
 
@@ -848,6 +909,10 @@ namespace Amazon.Snowball
         /// <param name="request">Container for the necessary parameters to execute the UpdateCluster service method.</param>
         /// 
         /// <returns>The response from the UpdateCluster service method, as returned by Snowball.</returns>
+        /// <exception cref="Amazon.Snowball.Model.Ec2RequestFailedException">
+        /// Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted
+        /// action.
+        /// </exception>
         /// <exception cref="Amazon.Snowball.Model.InvalidInputCombinationException">
         /// Job or cluster creation failed. One ore more inputs were invalid. Confirm that the
         /// <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>,
@@ -912,6 +977,10 @@ namespace Amazon.Snowball
         /// Job creation failed. Currently, clusters support five nodes. If you have less than
         /// five nodes for your cluster and you have more nodes to create for this cluster, try
         /// again and create jobs until your cluster has exactly five notes.
+        /// </exception>
+        /// <exception cref="Amazon.Snowball.Model.Ec2RequestFailedException">
+        /// Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.Snowball.Model.InvalidInputCombinationException">
         /// Job or cluster creation failed. One ore more inputs were invalid. Confirm that the

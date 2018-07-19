@@ -133,6 +133,56 @@ namespace Amazon.TranscribeService
 
 
     /// <summary>
+    /// Constants used for properties of type OutputLocationType.
+    /// </summary>
+    public class OutputLocationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CUSTOMER_BUCKET for OutputLocationType
+        /// </summary>
+        public static readonly OutputLocationType CUSTOMER_BUCKET = new OutputLocationType("CUSTOMER_BUCKET");
+        /// <summary>
+        /// Constant SERVICE_BUCKET for OutputLocationType
+        /// </summary>
+        public static readonly OutputLocationType SERVICE_BUCKET = new OutputLocationType("SERVICE_BUCKET");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OutputLocationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OutputLocationType FindValue(string value)
+        {
+            return FindValue<OutputLocationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OutputLocationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TranscriptionJobStatus.
     /// </summary>
     public class TranscriptionJobStatus : ConstantClass

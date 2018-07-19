@@ -35,7 +35,7 @@ namespace Amazon.OpsWorks.Model
     ///  
     /// <para>
     ///  <b>Required Permissions</b>: To use this action, an IAM user must have an attached
-    /// policy that explicitly grants permissions. For more information on user permissions,
+    /// policy that explicitly grants permissions. For more information about user permissions,
     /// see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
     /// User Permissions</a>.
     /// </para>
@@ -229,7 +229,7 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
+        /// For more information about custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
         /// Custom JSON to Modify the Stack Configuration Attributes</a> 
         /// </para>
         /// </summary>
@@ -322,14 +322,14 @@ namespace Amazon.OpsWorks.Model
         ///  </li> <li> 
         /// <para>
         /// A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when
-        /// you create instances. For more information on how to use custom AMIs with OpsWorks,
+        /// you create instances. For more information about how to use custom AMIs with OpsWorks,
         /// see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
         /// Custom AMIs</a>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The default option is the parent stack's operating system. For more information on
-        /// the supported operating systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
+        /// The default option is the parent stack's operating system. For more information about
+        /// supported operating systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
         /// OpsWorks Stacks Operating Systems</a>.
         /// </para>
         ///  <note> 
@@ -678,9 +678,9 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information on how to use AWS OpsWorks Stacks with a VPC, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running
-        /// a Stack in a VPC</a>. For more information on default VPC and EC2 Classic, see <a
-        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+        /// For more information about how to use AWS OpsWorks Stacks with a VPC, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running
+        /// a Stack in a VPC</a>. For more information about default VPC and EC2 Classic, see
+        /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
         /// Platforms</a>. 
         /// </para>
         /// </summary>

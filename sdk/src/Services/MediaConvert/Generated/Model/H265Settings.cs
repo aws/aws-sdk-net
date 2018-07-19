@@ -68,6 +68,7 @@ namespace Amazon.MediaConvert.Model
         private H265TemporalIds _temporalIds;
         private H265Tiles _tiles;
         private H265UnregisteredSeiTimecode _unregisteredSeiTimecode;
+        private H265WriteMp4PackagingType _writeMp4PackagingType;
 
         /// <summary>
         /// Gets and sets the property AdaptiveQuantization.
@@ -100,10 +101,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Bitrate. Average bitrate in bits/second. Required for VBR,
-        /// CBR, and ABR. Five megabits can be entered as 5000000 or 5m. Five hundred kilobits
-        /// can be entered as 500000 or 0.5m. For MS Smooth outputs, bitrates must be unique when
-        /// rounded down to the nearest multiple of 1000.
+        /// Gets and sets the property Bitrate. Average bitrate in bits/second. Required for VBR
+        /// and CBR. For MS Smooth outputs, bitrates must be unique when rounded down to the nearest
+        /// multiple of 1000.
         /// </summary>
         public int Bitrate
         {
@@ -304,9 +304,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HrdBufferSize. Size of buffer (HRD buffer model). Five
-        /// megabits can be entered as 5000000 or 5m. Five hundred kilobits can be entered as
-        /// 500000 or 0.5m.
+        /// Gets and sets the property HrdBufferSize. Size of buffer (HRD buffer model) in bits.
+        /// For example, enter five megabits as 5000000.
         /// </summary>
         public int HrdBufferSize
         {
@@ -336,9 +335,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxBitrate. Maximum bitrate in bits/second (for VBR mode
-        /// only). Five megabits can be entered as 5000000 or 5m. Five hundred kilobits can be
-        /// entered as 500000 or 0.5m.
+        /// Gets and sets the property MaxBitrate. Maximum bitrate in bits/second.
         /// </summary>
         public int MaxBitrate
         {
@@ -630,6 +627,21 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetUnregisteredSeiTimecode()
         {
             return this._unregisteredSeiTimecode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WriteMp4PackagingType.
+        /// </summary>
+        public H265WriteMp4PackagingType WriteMp4PackagingType
+        {
+            get { return this._writeMp4PackagingType; }
+            set { this._writeMp4PackagingType = value; }
+        }
+
+        // Check to see if WriteMp4PackagingType property is set
+        internal bool IsSetWriteMp4PackagingType()
+        {
+            return this._writeMp4PackagingType != null;
         }
 
     }

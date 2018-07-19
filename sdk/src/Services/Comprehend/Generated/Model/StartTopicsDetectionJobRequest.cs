@@ -64,7 +64,8 @@ namespace Amazon.Comprehend.Model
         /// Gets and sets the property DataAccessRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
-        /// that grants Amazon Comprehend read access to your input data. 
+        /// that grants Amazon Comprehend read access to your input data. For more information,
+        /// see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.
         /// </para>
         /// </summary>
         public string DataAccessRoleArn
@@ -136,7 +137,10 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property OutputDataConfig. 
         /// <para>
-        /// Specifies where to send the output files.
+        /// Specifies where to send the output files. The output is a compressed archive with
+        /// two files, <code>topic-terms.csv</code> that lists the terms associated with each
+        /// topic, and <code>doc-topics.csv</code> that lists the documents associated with each
+        /// topic
         /// </para>
         /// </summary>
         public OutputDataConfig OutputDataConfig

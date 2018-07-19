@@ -931,7 +931,7 @@ namespace Amazon.DynamoDBv2.DataModel
             ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(cs.FlatConfig);
             while (!cs.Search.IsDone)
             {
-                List<Document> set = cs.Search.GetNextSetHelper(false);
+                List<Document> set = cs.Search.GetNextSetHelper();
                 foreach (var document in set)
                 {
                     ItemStorage storage = new ItemStorage(storageConfig);

@@ -76,6 +76,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.Channels = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("format", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Format = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sampleRate", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

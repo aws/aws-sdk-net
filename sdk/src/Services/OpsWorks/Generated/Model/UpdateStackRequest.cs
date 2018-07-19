@@ -145,7 +145,7 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// The configuration manager. When you update a stack, we recommend that you use the
         /// configuration manager to specify the Chef version: 12, 11.10, or 11.4 for Linux stacks,
-        /// or 12.2 for Windows stacks. The default value for Linux stacks is currently 11.4.
+        /// or 12.2 for Windows stacks. The default value for Linux stacks is currently 12.
         /// </para>
         /// </summary>
         public StackConfigurationManager ConfigurationManager
@@ -188,7 +188,7 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
+        /// For more information about custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
         /// Custom JSON to Modify the Stack Configuration Attributes</a>.
         /// </para>
         /// </summary>
@@ -280,14 +280,14 @@ namespace Amazon.OpsWorks.Model
         ///  </li> <li> 
         /// <para>
         /// A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when
-        /// you create instances. For more information on how to use custom AMIs with OpsWorks,
+        /// you create instances. For more information about how to use custom AMIs with OpsWorks,
         /// see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
         /// Custom AMIs</a>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The default option is the stack's current operating system. For more information on
-        /// the supported operating systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
+        /// The default option is the stack's current operating system. For more information about
+        /// supported operating systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
         /// OpsWorks Stacks Operating Systems</a>.
         /// </para>
         /// </summary>

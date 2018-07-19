@@ -34,6 +34,7 @@ namespace Amazon.IoT.Model
     public partial class CancelJobRequest : AmazonIoTRequest
     {
         private string _comment;
+        private bool? _force;
         private string _jobId;
 
         /// <summary>
@@ -52,6 +53,32 @@ namespace Amazon.IoT.Model
         internal bool IsSetComment()
         {
             return this._comment != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Force. 
+        /// <para>
+        /// (Optional) If <code>true</code> job executions with status "IN_PROGRESS" and "QUEUED"
+        /// are canceled, otherwise only job executions with status "QUEUED" are canceled. The
+        /// default is <code>false</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Canceling a job which is "IN_PROGRESS", will cause a device which is executing the
+        /// job to be unable to update the job execution status. Use caution and ensure that each
+        /// device executing a job which is canceled is able to recover to a valid state.
+        /// </para>
+        /// </summary>
+        public bool Force
+        {
+            get { return this._force.GetValueOrDefault(); }
+            set { this._force = value; }
+        }
+
+        // Check to see if Force property is set
+        internal bool IsSetForce()
+        {
+            return this._force.HasValue; 
         }
 
         /// <summary>

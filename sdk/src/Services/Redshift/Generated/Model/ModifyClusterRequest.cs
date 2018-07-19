@@ -598,6 +598,7 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property VpcSecurityGroupIds. 
         /// <para>
         /// A list of virtual private cloud (VPC) security groups to be associated with the cluster.
+        /// This change is asynchronously applied as soon as possible.
         /// </para>
         /// </summary>
         public List<string> VpcSecurityGroupIds

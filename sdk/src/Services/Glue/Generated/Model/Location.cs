@@ -32,8 +32,27 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class Location
     {
+        private List<CodeGenNodeArg> _dynamoDB = new List<CodeGenNodeArg>();
         private List<CodeGenNodeArg> _jdbc = new List<CodeGenNodeArg>();
         private List<CodeGenNodeArg> _s3 = new List<CodeGenNodeArg>();
+
+        /// <summary>
+        /// Gets and sets the property DynamoDB. 
+        /// <para>
+        /// A DynamoDB Table location.
+        /// </para>
+        /// </summary>
+        public List<CodeGenNodeArg> DynamoDB
+        {
+            get { return this._dynamoDB; }
+            set { this._dynamoDB = value; }
+        }
+
+        // Check to see if DynamoDB property is set
+        internal bool IsSetDynamoDB()
+        {
+            return this._dynamoDB != null && this._dynamoDB.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Jdbc. 

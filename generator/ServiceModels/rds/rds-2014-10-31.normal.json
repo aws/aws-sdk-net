@@ -147,7 +147,7 @@
         {"shape":"SnapshotQuotaExceededFault"},
         {"shape":"KMSKeyNotAccessibleFault"}
       ],
-      "documentation":"<p>Copies a snapshot of a DB cluster.</p> <p>To copy a DB cluster snapshot from a shared manual DB cluster snapshot, <code>SourceDBClusterSnapshotIdentifier</code> must be the Amazon Resource Name (ARN) of the shared DB cluster snapshot.</p> <p>You can copy an encrypted DB cluster snapshot from another AWS Region. In that case, the AWS Region where you call the <code>CopyDBClusterSnapshot</code> action is the destination AWS Region for the encrypted DB cluster snapshot to be copied to. To copy an encrypted DB cluster snapshot from another AWS Region, you must provide the following values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The AWS Key Management System (AWS KMS) key identifier for the key to use to encrypt the copy of the DB cluster snapshot in the destination AWS Region.</p> </li> <li> <p> <code>PreSignedUrl</code> - A URL that contains a Signature Version 4 signed request for the <code>CopyDBClusterSnapshot</code> action to be called in the source AWS Region where the DB cluster snapshot is copied from. The pre-signed URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API action that can be executed in the source AWS Region that contains the encrypted DB cluster snapshot to be copied.</p> <p>The pre-signed URL request must contain the following parameter values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the copy of the DB cluster snapshot in the destination AWS Region. This is the same identifier for both the <code>CopyDBClusterSnapshot</code> action that is called in the destination AWS Region, and the action contained in the pre-signed URL.</p> </li> <li> <p> <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster snapshot will be created in.</p> </li> <li> <p> <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier for the encrypted DB cluster snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source AWS Region. For example, if you are copying an encrypted DB cluster snapshot from the us-west-2 AWS Region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.</p> </li> </ul> <p>To learn how to generate a Signature Version 4 signed request, see <a href=\"http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html\"> Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a href=\"http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html\"> Signature Version 4 Signing Process</a>.</p> </li> <li> <p> <code>TargetDBClusterSnapshotIdentifier</code> - The identifier for the new copy of the DB cluster snapshot in the destination AWS Region.</p> </li> <li> <p> <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier for the encrypted DB cluster snapshot to be copied. This identifier must be in the ARN format for the source AWS Region and is the same value as the <code>SourceDBClusterSnapshotIdentifier</code> in the pre-signed URL. </p> </li> </ul> <p>To cancel the copy operation once it is in progress, delete the target DB cluster snapshot identified by <code>TargetDBClusterSnapshotIdentifier</code> while that DB cluster snapshot is in \"copying\" status.</p> <p>For more information on copying encrypted DB cluster snapshots from one AWS Region to another, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopyDBClusterSnapshot.CrossRegion\"> Copying a DB Cluster Snapshot in the Same Account, Either in the Same Region or Across Regions</a> in the Amazon RDS User Guide.</p> <p>For more information on Amazon Aurora, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html\">Aurora on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>"
+      "documentation":"<p>Copies a snapshot of a DB cluster.</p> <p>To copy a DB cluster snapshot from a shared manual DB cluster snapshot, <code>SourceDBClusterSnapshotIdentifier</code> must be the Amazon Resource Name (ARN) of the shared DB cluster snapshot.</p> <p>You can copy an encrypted DB cluster snapshot from another AWS Region. In that case, the AWS Region where you call the <code>CopyDBClusterSnapshot</code> action is the destination AWS Region for the encrypted DB cluster snapshot to be copied to. To copy an encrypted DB cluster snapshot from another AWS Region, you must provide the following values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The AWS Key Management System (AWS KMS) key identifier for the key to use to encrypt the copy of the DB cluster snapshot in the destination AWS Region.</p> </li> <li> <p> <code>PreSignedUrl</code> - A URL that contains a Signature Version 4 signed request for the <code>CopyDBClusterSnapshot</code> action to be called in the source AWS Region where the DB cluster snapshot is copied from. The pre-signed URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API action that can be executed in the source AWS Region that contains the encrypted DB cluster snapshot to be copied.</p> <p>The pre-signed URL request must contain the following parameter values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the copy of the DB cluster snapshot in the destination AWS Region. This is the same identifier for both the <code>CopyDBClusterSnapshot</code> action that is called in the destination AWS Region, and the action contained in the pre-signed URL.</p> </li> <li> <p> <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster snapshot will be created in.</p> </li> <li> <p> <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier for the encrypted DB cluster snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source AWS Region. For example, if you are copying an encrypted DB cluster snapshot from the us-west-2 AWS Region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.</p> </li> </ul> <p>To learn how to generate a Signature Version 4 signed request, see <a href=\"http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html\"> Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a href=\"http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html\"> Signature Version 4 Signing Process</a>.</p> </li> <li> <p> <code>TargetDBClusterSnapshotIdentifier</code> - The identifier for the new copy of the DB cluster snapshot in the destination AWS Region.</p> </li> <li> <p> <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier for the encrypted DB cluster snapshot to be copied. This identifier must be in the ARN format for the source AWS Region and is the same value as the <code>SourceDBClusterSnapshotIdentifier</code> in the pre-signed URL. </p> </li> </ul> <p>To cancel the copy operation once it is in progress, delete the target DB cluster snapshot identified by <code>TargetDBClusterSnapshotIdentifier</code> while that DB cluster snapshot is in \"copying\" status.</p> <p>For more information on copying encrypted DB cluster snapshots from one AWS Region to another, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopyDBClusterSnapshot.CrossRegion\"> Copying a DB Cluster Snapshot in the Same Account, Either in the Same Region or Across Regions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>For more information on Amazon Aurora, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html\">Aurora on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>"
     },
     "CopyDBParameterGroup":{
       "name":"CopyDBParameterGroup",
@@ -185,7 +185,7 @@
         {"shape":"SnapshotQuotaExceededFault"},
         {"shape":"KMSKeyNotAccessibleFault"}
       ],
-      "documentation":"<p>Copies the specified DB snapshot. The source DB snapshot must be in the \"available\" state.</p> <p>You can copy a snapshot from one AWS Region to another. In that case, the AWS Region where you call the <code>CopyDBSnapshot</code> action is the destination AWS Region for the DB snapshot copy. </p> <p>For more information about copying snapshots, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopyDBSnapshot.html\">Copying a DB Snapshot</a> in the Amazon RDS User Guide. </p>"
+      "documentation":"<p>Copies the specified DB snapshot. The source DB snapshot must be in the \"available\" state.</p> <p>You can copy a snapshot from one AWS Region to another. In that case, the AWS Region where you call the <code>CopyDBSnapshot</code> action is the destination AWS Region for the DB snapshot copy. </p> <p>For more information about copying snapshots, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopyDBSnapshot.html\">Copying a DB Snapshot</a> in the <i>Amazon RDS User Guide.</i> </p>"
     },
     "CopyOptionGroup":{
       "name":"CopyOptionGroup",
@@ -371,7 +371,7 @@
         {"shape":"DBSecurityGroupQuotaExceededFault"},
         {"shape":"DBSecurityGroupNotSupportedFault"}
       ],
-      "documentation":"<p>Creates a new DB security group. DB security groups control access to a DB instance.</p>"
+      "documentation":"<p>Creates a new DB security group. DB security groups control access to a DB instance.</p> <note> <p>A DB security group controls access to EC2-Classic DB instances that are not in a VPC.</p> </note>"
     },
     "CreateDBSnapshot":{
       "name":"CreateDBSnapshot",
@@ -1521,7 +1521,8 @@
         {"shape":"DBSubnetGroupNotFoundFault"},
         {"shape":"InvalidSubnet"},
         {"shape":"OptionGroupNotFoundFault"},
-        {"shape":"KMSKeyNotAccessibleFault"}
+        {"shape":"KMSKeyNotAccessibleFault"},
+        {"shape":"DBClusterParameterGroupNotFoundFault"}
       ],
       "documentation":"<p>Creates a new DB cluster from a DB snapshot or DB cluster snapshot.</p> <p>If a DB snapshot is specified, the target DB cluster is created from the source DB snapshot with a default configuration and default security group.</p> <p>If a DB cluster snapshot is specified, the target DB cluster is created from the source DB cluster restore point with the same configuration as the original source DB cluster, except that the new DB cluster is created with the default security group.</p> <p>For more information on Amazon Aurora, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html\">Aurora on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>"
     },
@@ -1552,7 +1553,8 @@
         {"shape":"InvalidVPCNetworkStateFault"},
         {"shape":"KMSKeyNotAccessibleFault"},
         {"shape":"OptionGroupNotFoundFault"},
-        {"shape":"StorageQuotaExceededFault"}
+        {"shape":"StorageQuotaExceededFault"},
+        {"shape":"DBClusterParameterGroupNotFoundFault"}
       ],
       "documentation":"<p>Restores a DB cluster to an arbitrary point in time. Users can restore to any point in time before <code>LatestRestorableTime</code> for up to <code>BackupRetentionPeriod</code> days. The target DB cluster is created from the source DB cluster with the same configuration as the original DB cluster, except that the new DB cluster is created with the default DB security group. </p> <note> <p>This action only restores the DB cluster, not the DB instances for that DB cluster. You must invoke the <a>CreateDBInstance</a> action to create DB instances for the restored DB cluster, specifying the identifier of the restored DB cluster in <code>DBClusterIdentifier</code>. You can create DB instances only after the <code>RestoreDBClusterToPointInTime</code> action has completed and the DB cluster is available.</p> </note> <p>For more information on Amazon Aurora, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html\">Aurora on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>"
     },
@@ -1585,7 +1587,8 @@
         {"shape":"AuthorizationNotFoundFault"},
         {"shape":"KMSKeyNotAccessibleFault"},
         {"shape":"DBSecurityGroupNotFoundFault"},
-        {"shape":"DomainNotFoundFault"}
+        {"shape":"DomainNotFoundFault"},
+        {"shape":"DBParameterGroupNotFoundFault"}
       ],
       "documentation":"<p>Creates a new DB instance from a DB snapshot. The target database is created from the source database restore point with the most of original configuration with the default security group and the default DB parameter group. By default, the new DB instance is created as a single-AZ deployment except when the instance is a SQL Server instance that has an option group that is associated with mirroring; in this case, the instance becomes a mirrored AZ deployment and not a single-AZ deployment.</p> <p>If your intent is to replace your original DB instance with the new, restored DB instance, then rename your original DB instance before you call the RestoreDBInstanceFromDBSnapshot action. RDS doesn't allow two DB instances with the same name. Once you have renamed your original DB instance with a different identifier, then you can pass the original name of the DB instance as the DBInstanceIdentifier in the call to the RestoreDBInstanceFromDBSnapshot action. The result is that you will replace the original DB instance with the DB instance created from the snapshot.</p> <p>If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot.</p> <note> <p>This command doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora, use <a>RestoreDBClusterFromSnapshot</a>.</p> </note>"
     },
@@ -1650,9 +1653,10 @@
         {"shape":"AuthorizationNotFoundFault"},
         {"shape":"KMSKeyNotAccessibleFault"},
         {"shape":"DBSecurityGroupNotFoundFault"},
-        {"shape":"DomainNotFoundFault"}
+        {"shape":"DomainNotFoundFault"},
+        {"shape":"DBParameterGroupNotFoundFault"}
       ],
-      "documentation":"<p>Restores a DB instance to an arbitrary point in time. You can restore to any point in time before the time identified by the LatestRestorableTime property. You can restore to a point up to the number of days specified by the BackupRetentionPeriod property.</p> <p>The target database is created with most of the original configuration, but in a system-selected availability zone, with the default security group, the default subnet group, and the default DB parameter group. By default, the new DB instance is created as a single-AZ deployment except when the instance is a SQL Server instance that has an option group that is associated with mirroring; in this case, the instance becomes a mirrored deployment and not a single-AZ deployment.</p> <note> <p>This command doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora, use <a>RestoreDBClusterToPointInTime</a>.</p> </note>"
+      "documentation":"<p>Restores a DB instance to an arbitrary point in time. You can restore to any point in time before the time identified by the LatestRestorableTime property. You can restore to a point up to the number of days specified by the BackupRetentionPeriod property.</p> <p>The target database is created with most of the original configuration, but in a system-selected Availability Zone, with the default security group, the default subnet group, and the default DB parameter group. By default, the new DB instance is created as a single-AZ deployment except when the instance is a SQL Server instance that has an option group that is associated with mirroring; in this case, the instance becomes a mirrored deployment and not a single-AZ deployment.</p> <note> <p>This command doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora, use <a>RestoreDBClusterToPointInTime</a>.</p> </note>"
     },
     "RevokeDBSecurityGroupIngress":{
       "name":"RevokeDBSecurityGroupIngress",
@@ -1932,7 +1936,7 @@
       "members":{
         "Name":{
           "shape":"String",
-          "documentation":"<p>The name of the availability zone.</p>"
+          "documentation":"<p>The name of the Availability Zone.</p>"
         }
       },
       "documentation":"<p>Contains Availability Zone information.</p> <p> This data type is used as an element in the following data type:</p> <ul> <li> <p> <a>OrderableDBInstanceOption</a> </p> </li> </ul>",
@@ -1950,6 +1954,31 @@
       "member":{
         "shape":"String",
         "locationName":"AvailabilityZone"
+      }
+    },
+    "AvailableProcessorFeature":{
+      "type":"structure",
+      "members":{
+        "Name":{
+          "shape":"String",
+          "documentation":"<p>The name of the processor feature. Valid names are <code>coreCount</code> and <code>threadsPerCore</code>.</p>"
+        },
+        "DefaultValue":{
+          "shape":"String",
+          "documentation":"<p>The default value for the processor feature of the DB instance class.</p>"
+        },
+        "AllowedValues":{
+          "shape":"String",
+          "documentation":"<p>The allowed values for the processor feature of the DB instance class.</p>"
+        }
+      },
+      "documentation":"<p>Contains the available processor feature information for the DB instance class of a DB instance.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html#USER_ConfigureProcessor\">Configuring the Processor of the DB Instance Class</a> in the <i>Amazon RDS User Guide. </i> </p>"
+    },
+    "AvailableProcessorFeatureList":{
+      "type":"list",
+      "member":{
+        "shape":"AvailableProcessorFeature",
+        "locationName":"AvailableProcessorFeature"
       }
     },
     "BacktrackDBClusterMessage":{
@@ -2334,6 +2363,10 @@
         "BacktrackWindow":{
           "shape":"LongOptional",
           "documentation":"<p>The target backtrack window, in seconds. To disable backtracking, set this value to 0. </p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p> </li> </ul>"
+        },
+        "EnableCloudwatchLogsExports":{
+          "shape":"LogTypeList",
+          "documentation":"<p>The list of log types that need to be enabled for exporting to CloudWatch Logs.</p>"
         }
       },
       "documentation":"<p/>"
@@ -2424,7 +2457,7 @@
         },
         "DBInstanceClass":{
           "shape":"String",
-          "documentation":"<p>The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB instance classes are available in all AWS Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html\">DB Instance Class</a> in the Amazon RDS User Guide. </p>"
+          "documentation":"<p>The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB instance classes are available in all AWS Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html\">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>"
         },
         "Engine":{
           "shape":"String",
@@ -2480,7 +2513,7 @@
         },
         "EngineVersion":{
           "shape":"String",
-          "documentation":"<p>The version number of the database engine to use.</p> <p>The following are the database engines and major and minor versions that are available with Amazon RDS. Not every database engine is available for every AWS Region.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The version number of the database engine to be used by the DB instance is managed by the DB cluster. For more information, see <a>CreateDBCluster</a>.</p> <p> <b>MariaDB</b> </p> <ul> <li> <p> <code>10.2.12</code> (supported in all AWS Regions)</p> </li> <li> <p> <code>10.2.11</code> (supported in all AWS Regions)</p> </li> </ul> <p/> <ul> <li> <p> <code>10.1.31</code> (supported in all AWS Regions)</p> </li> <li> <p> <code>10.1.26</code> (supported in all AWS Regions)</p> </li> <li> <p> <code>10.1.23</code> (supported in all AWS Regions)</p> </li> <li> <p> <code>10.1.19</code> (supported in all AWS Regions)</p> </li> <li> <p> <code>10.1.14</code> (supported in all AWS Regions except us-east-2)</p> </li> </ul> <p/> <ul> <li> <p> <code>10.0.34</code> (supported in all AWS Regions)</p> </li> <li> <p> <code>10.0.32</code> (supported in all AWS Regions)</p> </li> <li> <p> <code>10.0.31</code> (supported in all AWS Regions)</p> </li> <li> <p> <code>10.0.28</code> (supported in all AWS Regions)</p> </li> <li> <p> <code>10.0.24</code> (supported in all AWS Regions)</p> </li> <li> <p> <code>10.0.17</code> (supported in all AWS Regions except us-east-2, ca-central-1, eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2017</b> </p> <ul> <li> <p> <code>14.00.1000.169.v1</code> (supported for all editions, and all AWS Regions)</p> </li> </ul> <p> <b>Microsoft SQL Server 2016</b> </p> <ul> <li> <p> <code>13.00.4451.0.v1</code> (supported for all editions, and all AWS Regions)</p> </li> <li> <p> <code>13.00.4422.0.v1</code> (supported for all editions, and all AWS Regions)</p> </li> <li> <p> <code>13.00.2164.0.v1</code> (supported for all editions, and all AWS Regions)</p> </li> </ul> <p> <b>Microsoft SQL Server 2014</b> </p> <ul> <li> <p> <code>12.00.5546.0.v1</code> (supported for all editions, and all AWS Regions)</p> </li> <li> <p> <code>12.00.5000.0.v1</code> (supported for all editions, and all AWS Regions)</p> </li> <li> <p> <code>12.00.4422.0.v1</code> (supported for all editions except Enterprise Edition, and all AWS Regions except ca-central-1 and eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2012</b> </p> <ul> <li> <p> <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS Regions)</p> </li> <li> <p> <code>11.00.6020.0.v1</code> (supported for all editions, and all AWS Regions)</p> </li> <li> <p> <code>11.00.5058.0.v1</code> (supported for all editions, and all AWS Regions except us-east-2, ca-central-1, and eu-west-2)</p> </li> <li> <p> <code>11.00.2100.60.v1</code> (supported for all editions, and all AWS Regions except us-east-2, ca-central-1, and eu-west-2)</p> </li> </ul> <p> <b>Microsoft SQL Server 2008 R2</b> </p> <ul> <li> <p> <code>10.50.6529.0.v1</code> (supported for all editions, and all AWS Regions except us-east-2, ca-central-1, and eu-west-2)</p> </li> <li> <p> <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS Regions except us-east-2, ca-central-1, and eu-west-2)</p> </li> <li> <p> <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS Regions except us-east-2, ca-central-1, and eu-west-2)</p> </li> </ul> <p> <b>MySQL</b> </p> <ul> <li> <p> <code>5.7.21</code> (supported in all AWS regions)</p> </li> <li> <p> <code>5.7.19</code> (supported in all AWS regions)</p> </li> <li> <p> <code>5.7.17</code> (supported in all AWS regions)</p> </li> <li> <p> <code>5.7.16</code> (supported in all AWS regions)</p> </li> </ul> <p/> <ul> <li> <p> <code>5.6.39</code> (supported in all AWS Regions)</p> </li> <li> <p> <code>5.6.37</code> (supported in all AWS Regions)</p> </li> <li> <p> <code>5.6.35</code> (supported in all AWS Regions)</p> </li> <li> <p> <code>5.6.34</code> (supported in all AWS Regions)</p> </li> <li> <p> <code>5.6.29</code> (supported in all AWS Regions)</p> </li> <li> <p> <code>5.6.27</code> (supported in all AWS Regions except us-east-2, ca-central-1, eu-west-2)</p> </li> </ul> <p/> <ul> <li> <p> <code>5.5.59</code> (supported in all AWS Regions)</p> </li> <li> <p> <code>5.5.57</code> (supported in all AWS Regions)</p> </li> <li> <p> <code>5.5.54</code> (supported in all AWS Regions)</p> </li> <li> <p> <code>5.5.53</code> (supported in all AWS Regions)</p> </li> <li> <p> <code>5.5.46</code> (supported in all AWS Regions)</p> </li> </ul> <p> <b>Oracle 12c</b> </p> <ul> <li> <p> <code>12.1.0.2.v9</code> (supported for EE in all AWS regions, and SE2 in all AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v8</code> (supported for EE in all AWS regions, and SE2 in all AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v7</code> (supported for EE in all AWS regions, and SE2 in all AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v6</code> (supported for EE in all AWS regions, and SE2 in all AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v5</code> (supported for EE in all AWS regions, and SE2 in all AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v4</code> (supported for EE in all AWS regions, and SE2 in all AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v3</code> (supported for EE in all AWS regions, and SE2 in all AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v2</code> (supported for EE in all AWS regions, and SE2 in all AWS regions except us-gov-west-1)</p> </li> <li> <p> <code>12.1.0.2.v1</code> (supported for EE in all AWS regions, and SE2 in all AWS regions except us-gov-west-1)</p> </li> </ul> <p> <b>Oracle 11g</b> </p> <ul> <li> <p> <code>11.2.0.4.v13</code> (supported for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v12</code> (supported for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v11</code> (supported for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v10</code> (supported for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v9</code> (supported for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v8</code> (supported for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v7</code> (supported for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v6</code> (supported for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v5</code> (supported for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v4</code> (supported for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v3</code> (supported for EE, SE1, and SE, in all AWS regions)</p> </li> <li> <p> <code>11.2.0.4.v1</code> (supported for EE, SE1, and SE, in all AWS regions)</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <ul> <li> <p> <b>Version 10.1</b> </p> </li> <li> <p> <b>Version 9.6.x:</b> <code> 9.6.6 | 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code> </p> </li> <li> <p> <b>Version 9.5.x:</b> <code> 9.5.9 | 9.5.7 | 9.5.6 | 9.5.4 | 9.5.2</code> </p> </li> <li> <p> <b>Version 9.4.x:</b> <code> 9.4.14 | 9.4.12 | 9.4.11 | 9.4.9 | 9.4.7</code> </p> </li> <li> <p> <b>Version 9.3.x:</b> <code> 9.3.19 | 9.3.17 | 9.3.16 | 9.3.14 | 9.3.12</code> </p> </li> </ul>"
+          "documentation":"<p>The version number of the database engine to use.</p> <p>For a list of valid engine versions, call <a>DescribeDBEngineVersions</a>.</p> <p>The following are the database engines and links to information about the major and minor versions that are available with Amazon RDS. Not every database engine is available for every AWS Region.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The version number of the database engine to be used by the DB instance is managed by the DB cluster. For more information, see <a>CreateDBCluster</a>.</p> <p> <b>MariaDB</b> </p> <p>See <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt\">MariaDB on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p> <b>Microsoft SQL Server</b> </p> <p>See <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport\">Version and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p> <p> <b>MySQL</b> </p> <p>See <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt\">MySQL on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p> <b>Oracle</b> </p> <p>See <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html\">Oracle Database Engine Release Notes</a> in the <i>Amazon RDS User Guide.</i> </p> <p> <b>PostgreSQL</b> </p> <p>See <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions\">Supported PostgreSQL Database Versions</a> in the <i>Amazon RDS User Guide.</i> </p>"
         },
         "AutoMinorVersionUpgrade":{
           "shape":"BooleanOptional",
@@ -2565,15 +2598,23 @@
         },
         "EnablePerformanceInsights":{
           "shape":"BooleanOptional",
-          "documentation":"<p>True to enable Performance Insights for the DB instance, and otherwise false. </p>"
+          "documentation":"<p>True to enable Performance Insights for the DB instance, and otherwise false. </p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html\">Using Amazon Performance Insights</a> in the <i>Amazon Relational Database Service User Guide</i>. </p>"
         },
         "PerformanceInsightsKMSKeyId":{
           "shape":"String",
           "documentation":"<p>The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p>"
         },
+        "PerformanceInsightsRetentionPeriod":{
+          "shape":"IntegerOptional",
+          "documentation":"<p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years). </p>"
+        },
         "EnableCloudwatchLogsExports":{
           "shape":"LogTypeList",
           "documentation":"<p>The list of log types that need to be enabled for exporting to CloudWatch Logs.</p>"
+        },
+        "ProcessorFeatures":{
+          "shape":"ProcessorFeatureList",
+          "documentation":"<p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>"
         }
       },
       "documentation":"<p/>"
@@ -2595,7 +2636,7 @@
         },
         "DBInstanceClass":{
           "shape":"String",
-          "documentation":"<p>The compute and memory capacity of the Read Replica, for example, <code>db.m4.large</code>. Not all DB instance classes are available in all AWS Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html\">DB Instance Class</a> in the Amazon RDS User Guide. </p> <p>Default: Inherits from the source DB instance.</p>"
+          "documentation":"<p>The compute and memory capacity of the Read Replica, for example, <code>db.m4.large</code>. Not all DB instance classes are available in all AWS Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html\">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default: Inherits from the source DB instance.</p>"
         },
         "AvailabilityZone":{
           "shape":"String",
@@ -2660,15 +2701,27 @@
         },
         "EnablePerformanceInsights":{
           "shape":"BooleanOptional",
-          "documentation":"<p>True to enable Performance Insights for the read replica, and otherwise false. </p>"
+          "documentation":"<p>True to enable Performance Insights for the read replica, and otherwise false. </p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html\">Using Amazon Performance Insights</a> in the <i>Amazon Relational Database Service User Guide</i>. </p>"
         },
         "PerformanceInsightsKMSKeyId":{
           "shape":"String",
           "documentation":"<p>The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p>"
         },
+        "PerformanceInsightsRetentionPeriod":{
+          "shape":"IntegerOptional",
+          "documentation":"<p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years). </p>"
+        },
         "EnableCloudwatchLogsExports":{
           "shape":"LogTypeList",
           "documentation":"<p>The list of logs that the new DB instance is to export to CloudWatch Logs.</p>"
+        },
+        "ProcessorFeatures":{
+          "shape":"ProcessorFeatureList",
+          "documentation":"<p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>"
+        },
+        "UseDefaultProcessorFeatures":{
+          "shape":"BooleanOptional",
+          "documentation":"<p>A value that specifies that the DB instance class of the DB instance uses its default processor features.</p>"
         }
       }
     },
@@ -2698,7 +2751,7 @@
         },
         "DBParameterGroupFamily":{
           "shape":"String",
-          "documentation":"<p>The DB parameter group family name. A DB parameter group can be associated with one and only one DB parameter group family, and can be applied only to a DB instance running a database engine and engine version compatible with that DB parameter group family.</p>"
+          "documentation":"<p>The DB parameter group family name. A DB parameter group can be associated with one and only one DB parameter group family, and can be applied only to a DB instance running a database engine and engine version compatible with that DB parameter group family.</p> <p>To list all of the available parameter group families, use the following command:</p> <p> <code>aws rds describe-db-engine-versions --query \"DBEngineVersions[].DBParameterGroupFamily\"</code> </p> <note> <p>The output contains duplicates.</p> </note>"
         },
         "Description":{
           "shape":"String",
@@ -3024,6 +3077,10 @@
         "BacktrackConsumedChangeRecords":{
           "shape":"LongOptional",
           "documentation":"<p>The number of change records stored for Backtrack.</p>"
+        },
+        "EnabledCloudwatchLogsExports":{
+          "shape":"LogTypeList",
+          "documentation":"<p>A list of log types that this DB cluster is configured to export to CloudWatch Logs.</p>"
         }
       },
       "documentation":"<p>Contains the details of an Amazon RDS DB cluster. </p> <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action. </p>",
@@ -3787,9 +3844,17 @@
           "shape":"String",
           "documentation":"<p>The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p>"
         },
+        "PerformanceInsightsRetentionPeriod":{
+          "shape":"IntegerOptional",
+          "documentation":"<p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years). </p>"
+        },
         "EnabledCloudwatchLogsExports":{
           "shape":"LogTypeList",
           "documentation":"<p>A list of log types that this DB instance is configured to export to CloudWatch Logs.</p>"
+        },
+        "ProcessorFeatures":{
+          "shape":"ProcessorFeatureList",
+          "documentation":"<p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>"
         }
       },
       "documentation":"<p>Contains the details of an Amazon RDS DB instance. </p> <p>This data type is used as a response element in the <a>DescribeDBInstances</a> action. </p>",
@@ -4244,6 +4309,10 @@
         "IAMDatabaseAuthenticationEnabled":{
           "shape":"Boolean",
           "documentation":"<p>True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>"
+        },
+        "ProcessorFeatures":{
+          "shape":"ProcessorFeatureList",
+          "documentation":"<p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance when the DB snapshot was created.</p>"
         }
       },
       "documentation":"<p>Contains the details of an Amazon RDS DB snapshot. </p> <p>This data type is used as a response element in the <a>DescribeDBSnapshots</a> action. </p>",
@@ -5405,7 +5474,7 @@
         },
         "ProductDescription":{
           "shape":"String",
-          "documentation":"<p>Product description filter value. Specify this parameter to show only the available offerings matching the specified product description.</p>"
+          "documentation":"<p>Product description filter value. Specify this parameter to show only the available offerings that contain the specified product description.</p> <note> <p>The results show offerings that partially match the filter value.</p> </note>"
         },
         "OfferingType":{
           "shape":"String",
@@ -6210,9 +6279,13 @@
           "shape":"LongOptional",
           "documentation":"<p>The target backtrack window, in seconds. To disable backtracking, set this value to 0.</p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p> </li> </ul>"
         },
+        "CloudwatchLogsExportConfiguration":{
+          "shape":"CloudwatchLogsExportConfiguration",
+          "documentation":"<p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB cluster.</p>"
+        },
         "EngineVersion":{
           "shape":"String",
-          "documentation":"<p>The version number of the database engine to which you want to upgrade. Changing this parameter results in an outage. The change is applied during the next maintenance window unless the ApplyImmediately parameter is set to true.</p> <p>For a list of valid engine versions, see <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>.</p>"
+          "documentation":"<p>The version number of the database engine to which you want to upgrade. Changing this parameter results in an outage. The change is applied during the next maintenance window unless the ApplyImmediately parameter is set to true.</p> <p>For a list of valid engine versions, see <a>CreateDBCluster</a>, or call <a>DescribeDBEngineVersions</a>.</p>"
         }
       },
       "documentation":"<p/>"
@@ -6287,7 +6360,7 @@
         },
         "DBInstanceClass":{
           "shape":"String",
-          "documentation":"<p>The new compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB instance classes are available in all AWS Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html\">DB Instance Class</a> in the Amazon RDS User Guide. </p> <p>If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless <code>ApplyImmediately</code> is specified as <code>true</code> for this request. </p> <p>Default: Uses existing setting</p>"
+          "documentation":"<p>The new compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB instance classes are available in all AWS Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html\">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless <code>ApplyImmediately</code> is specified as <code>true</code> for this request. </p> <p>Default: Uses existing setting</p>"
         },
         "DBSubnetGroupName":{
           "shape":"String",
@@ -6331,7 +6404,7 @@
         },
         "EngineVersion":{
           "shape":"String",
-          "documentation":"<p> The version number of the database engine to upgrade to. Changing this parameter results in an outage and the change is applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code> for this request. </p> <p>For major version upgrades, if a nondefault DB parameter group is currently in use, a new DB parameter group in the DB parameter group family for the new engine version must be specified. The new DB parameter group can be the default for that DB parameter group family.</p> <p>For a list of valid engine versions, see <a>CreateDBInstance</a>.</p>"
+          "documentation":"<p> The version number of the database engine to upgrade to. Changing this parameter results in an outage and the change is applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code> for this request. </p> <p>For major version upgrades, if a nondefault DB parameter group is currently in use, a new DB parameter group in the DB parameter group family for the new engine version must be specified. The new DB parameter group can be the default for that DB parameter group family.</p> <p>For information about valid engine versions, see <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>.</p>"
         },
         "AllowMajorVersionUpgrade":{
           "shape":"Boolean",
@@ -6411,15 +6484,27 @@
         },
         "EnablePerformanceInsights":{
           "shape":"BooleanOptional",
-          "documentation":"<p>True to enable Performance Insights for the DB instance, and otherwise false.</p>"
+          "documentation":"<p>True to enable Performance Insights for the DB instance, and otherwise false.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html\">Using Amazon Performance Insights</a> in the <i>Amazon Relational Database Service User Guide</i>. </p>"
         },
         "PerformanceInsightsKMSKeyId":{
           "shape":"String",
           "documentation":"<p>The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p>"
         },
+        "PerformanceInsightsRetentionPeriod":{
+          "shape":"IntegerOptional",
+          "documentation":"<p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years). </p>"
+        },
         "CloudwatchLogsExportConfiguration":{
           "shape":"CloudwatchLogsExportConfiguration",
-          "documentation":"<p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB instance or DB cluster.</p>"
+          "documentation":"<p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB instance.</p>"
+        },
+        "ProcessorFeatures":{
+          "shape":"ProcessorFeatureList",
+          "documentation":"<p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>"
+        },
+        "UseDefaultProcessorFeatures":{
+          "shape":"BooleanOptional",
+          "documentation":"<p>A value that specifies that the DB instance class of the DB instance uses its default processor features.</p>"
         }
       },
       "documentation":"<p/>"
@@ -7101,6 +7186,10 @@
         "MaxIopsPerGib":{
           "shape":"DoubleOptional",
           "documentation":"<p>Maximum provisioned IOPS per GiB for a DB instance.</p>"
+        },
+        "AvailableProcessorFeatures":{
+          "shape":"AvailableProcessorFeatureList",
+          "documentation":"<p>A list of the available processor features for the DB instance class of a DB instance.</p>"
         }
       },
       "documentation":"<p>Contains a list of available options for a DB instance.</p> <p> This data type is used as a response element in the <a>DescribeOrderableDBInstanceOptions</a> action. </p>",
@@ -7307,7 +7396,11 @@
           "shape":"String",
           "documentation":"<p>The new DB subnet group for the DB instance. </p>"
         },
-        "PendingCloudwatchLogsExports":{"shape":"PendingCloudwatchLogsExports"}
+        "PendingCloudwatchLogsExports":{"shape":"PendingCloudwatchLogsExports"},
+        "ProcessorFeatures":{
+          "shape":"ProcessorFeatureList",
+          "documentation":"<p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>"
+        }
       },
       "documentation":"<p> This data type is used as a response element in the <a>ModifyDBInstance</a> action. </p>"
     },
@@ -7322,6 +7415,27 @@
         "senderFault":true
       },
       "exception":true
+    },
+    "ProcessorFeature":{
+      "type":"structure",
+      "members":{
+        "Name":{
+          "shape":"String",
+          "documentation":"<p>The name of the processor feature. Valid names are <code>coreCount</code> and <code>threadsPerCore</code>.</p>"
+        },
+        "Value":{
+          "shape":"String",
+          "documentation":"<p>The value of a processor feature name.</p>"
+        }
+      },
+      "documentation":"<p>Contains the processor features of a DB instance class.</p> <p>To specify the number of CPU cores, use the <code>coreCount</code> feature name for the <code>Name</code> parameter. To specify the number of threads per core, use the <code>threadsPerCore</code> feature name for the <code>Name</code> parameter.</p> <p>You can set the processor features of the DB instance class for a DB instance when you call one of the following actions:</p> <ul> <li> <p> <a>CreateDBInstance</a> </p> </li> <li> <p> <a>ModifyDBInstance</a> </p> </li> <li> <p> <a>RestoreDBInstanceFromDBSnapshot</a> </p> </li> <li> <p> <a>RestoreDBInstanceFromS3</a> </p> </li> <li> <p> <a>RestoreDBInstanceToPointInTime</a> </p> </li> </ul> <p>You can view the valid processor values for a particular instance class by calling the <a>DescribeOrderableDBInstanceOptions</a> action and specifying the instance class for the <code>DBInstanceClass</code> parameter.</p> <p>In addition, you can use the following actions for DB instance class processor information:</p> <ul> <li> <p> <a>DescribeDBInstances</a> </p> </li> <li> <p> <a>DescribeDBSnapshots</a> </p> </li> <li> <p> <a>DescribeValidDBInstanceModifications</a> </p> </li> </ul> <p>For more information, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html#USER_ConfigureProcessor\">Configuring the Processor of the DB Instance Class</a> in the <i>Amazon RDS User Guide. </i> </p>"
+    },
+    "ProcessorFeatureList":{
+      "type":"list",
+      "member":{
+        "shape":"ProcessorFeature",
+        "locationName":"ProcessorFeature"
+      }
     },
     "PromoteReadReplicaDBClusterMessage":{
       "type":"structure",
@@ -7933,6 +8047,10 @@
         "BacktrackWindow":{
           "shape":"LongOptional",
           "documentation":"<p>The target backtrack window, in seconds. To disable backtracking, set this value to 0.</p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p> </li> </ul>"
+        },
+        "EnableCloudwatchLogsExports":{
+          "shape":"LogTypeList",
+          "documentation":"<p>The list of logs that the restored DB cluster is to export to CloudWatch Logs.</p>"
         }
       }
     },
@@ -8005,6 +8123,10 @@
         "BacktrackWindow":{
           "shape":"LongOptional",
           "documentation":"<p>The target backtrack window, in seconds. To disable backtracking, set this value to 0.</p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p> </li> </ul>"
+        },
+        "EnableCloudwatchLogsExports":{
+          "shape":"LogTypeList",
+          "documentation":"<p>The list of logs that the restored DB cluster is to export to CloudWatch Logs.</p>"
         }
       },
       "documentation":"<p/>"
@@ -8044,7 +8166,7 @@
         },
         "Port":{
           "shape":"IntegerOptional",
-          "documentation":"<p>The port number on which the new DB cluster accepts connections.</p> <p>Constraints: Value must be <code>1150-65535</code> </p> <p>Default: The same port as the original DB cluster.</p>"
+          "documentation":"<p>The port number on which the new DB cluster accepts connections.</p> <p>Constraints: A value from <code>1150-65535</code>. </p> <p>Default: The default port for the engine.</p>"
         },
         "DBSubnetGroupName":{
           "shape":"String",
@@ -8070,6 +8192,10 @@
         "BacktrackWindow":{
           "shape":"LongOptional",
           "documentation":"<p>The target backtrack window, in seconds. To disable backtracking, set this value to 0.</p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p> </li> </ul>"
+        },
+        "EnableCloudwatchLogsExports":{
+          "shape":"LogTypeList",
+          "documentation":"<p>The list of logs that the restored DB cluster is to export to CloudWatch Logs.</p>"
         }
       },
       "documentation":"<p/>"
@@ -8097,7 +8223,7 @@
         },
         "DBInstanceClass":{
           "shape":"String",
-          "documentation":"<p>The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>. Not all DB instance classes are available in all AWS Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html\">DB Instance Class</a> in the Amazon RDS User Guide. </p> <p>Default: The same DBInstanceClass as the original DB instance.</p>"
+          "documentation":"<p>The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>. Not all DB instance classes are available in all AWS Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html\">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default: The same DBInstanceClass as the original DB instance.</p>"
         },
         "Port":{
           "shape":"IntegerOptional",
@@ -8175,6 +8301,14 @@
         "EnableCloudwatchLogsExports":{
           "shape":"LogTypeList",
           "documentation":"<p>The list of logs that the restored DB instance is to export to CloudWatch Logs.</p>"
+        },
+        "ProcessorFeatures":{
+          "shape":"ProcessorFeatureList",
+          "documentation":"<p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>"
+        },
+        "UseDefaultProcessorFeatures":{
+          "shape":"BooleanOptional",
+          "documentation":"<p>A value that specifies that the DB instance class of the DB instance uses its default processor features.</p>"
         }
       },
       "documentation":"<p/>"
@@ -8211,7 +8345,7 @@
         },
         "DBInstanceClass":{
           "shape":"String",
-          "documentation":"<p>The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB instance classes are available in all AWS Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html\">DB Instance Class</a> in the Amazon RDS User Guide. </p> <p>Importing from Amazon S3 is not supported on the db.t2.micro DB instance class. </p>"
+          "documentation":"<p>The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB instance classes are available in all AWS Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html\">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Importing from Amazon S3 is not supported on the db.t2.micro DB instance class. </p>"
         },
         "Engine":{
           "shape":"String",
@@ -8267,7 +8401,7 @@
         },
         "EngineVersion":{
           "shape":"String",
-          "documentation":"<p>The version number of the database engine to use. Choose the latest minor version of your database engine as specified in <a>CreateDBInstance</a>. </p>"
+          "documentation":"<p>The version number of the database engine to use. Choose the latest minor version of your database engine. For information about engine versions, see <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>. </p>"
         },
         "AutoMinorVersionUpgrade":{
           "shape":"BooleanOptional",
@@ -8343,15 +8477,27 @@
         },
         "EnablePerformanceInsights":{
           "shape":"BooleanOptional",
-          "documentation":"<p>True to enable Performance Insights for the DB instance, and otherwise false. </p>"
+          "documentation":"<p>True to enable Performance Insights for the DB instance, and otherwise false. </p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html\">Using Amazon Performance Insights</a> in the <i>Amazon Relational Database Service User Guide</i>. </p>"
         },
         "PerformanceInsightsKMSKeyId":{
           "shape":"String",
           "documentation":"<p>The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource Name (ARN), the KMS key identifier, or the KMS key alias for the KMS encryption key. </p>"
         },
+        "PerformanceInsightsRetentionPeriod":{
+          "shape":"IntegerOptional",
+          "documentation":"<p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years). </p>"
+        },
         "EnableCloudwatchLogsExports":{
           "shape":"LogTypeList",
           "documentation":"<p>The list of logs that the restored DB instance is to export to CloudWatch Logs.</p>"
+        },
+        "ProcessorFeatures":{
+          "shape":"ProcessorFeatureList",
+          "documentation":"<p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>"
+        },
+        "UseDefaultProcessorFeatures":{
+          "shape":"BooleanOptional",
+          "documentation":"<p>A value that specifies that the DB instance class of the DB instance uses its default processor features.</p>"
         }
       }
     },
@@ -8386,7 +8532,7 @@
         },
         "DBInstanceClass":{
           "shape":"String",
-          "documentation":"<p>The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>. Not all DB instance classes are available in all AWS Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html\">DB Instance Class</a> in the Amazon RDS User Guide. </p> <p>Default: The same DBInstanceClass as the original DB instance.</p>"
+          "documentation":"<p>The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>. Not all DB instance classes are available in all AWS Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html\">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default: The same DBInstanceClass as the original DB instance.</p>"
         },
         "Port":{
           "shape":"IntegerOptional",
@@ -8464,6 +8610,14 @@
         "EnableCloudwatchLogsExports":{
           "shape":"LogTypeList",
           "documentation":"<p>The list of logs that the restored DB instance is to export to CloudWatch Logs.</p>"
+        },
+        "ProcessorFeatures":{
+          "shape":"ProcessorFeatureList",
+          "documentation":"<p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>"
+        },
+        "UseDefaultProcessorFeatures":{
+          "shape":"BooleanOptional",
+          "documentation":"<p>A value that specifies that the DB instance class of the DB instance uses its default processor features.</p>"
         }
       },
       "documentation":"<p/>"
@@ -8863,6 +9017,10 @@
         "Storage":{
           "shape":"ValidStorageOptionsList",
           "documentation":"<p>Valid storage options for your DB instance. </p>"
+        },
+        "ValidProcessorFeatures":{
+          "shape":"AvailableProcessorFeatureList",
+          "documentation":"<p>Valid processor features for your DB instance. </p>"
         }
       },
       "documentation":"<p>Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <a>DescribeValidDBInstanceModifications</a> action. You can use this information when you call <a>ModifyDBInstance</a>. </p>",

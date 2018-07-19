@@ -32,9 +32,26 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class CaptionDescriptionPreset
     {
+        private string _customLanguageCode;
         private CaptionDestinationSettings _destinationSettings;
         private LanguageCode _languageCode;
         private string _languageDescription;
+
+        /// <summary>
+        /// Gets and sets the property CustomLanguageCode. Indicates the language of the caption
+        /// output track, using the ISO 639-2 or ISO 639-3 three-letter language code
+        /// </summary>
+        public string CustomLanguageCode
+        {
+            get { return this._customLanguageCode; }
+            set { this._customLanguageCode = value; }
+        }
+
+        // Check to see if CustomLanguageCode property is set
+        internal bool IsSetCustomLanguageCode()
+        {
+            return this._customLanguageCode != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DestinationSettings.

@@ -33,13 +33,42 @@ namespace Amazon.DatabaseMigrationService.Model
     /// </summary>
     public partial class ReloadTablesRequest : AmazonDatabaseMigrationServiceRequest
     {
+        private ReloadOptionValue _reloadOption;
         private string _replicationTaskArn;
         private List<TableToReload> _tablesToReload = new List<TableToReload>();
 
         /// <summary>
+        /// Gets and sets the property ReloadOption. 
+        /// <para>
+        /// Options for reload. Specify <code>data-reload</code> to reload the data and re-validate
+        /// it if validation is enabled. Specify <code>validate-only</code> to re-validate the
+        /// table. This option applies only when validation is enabled for the task. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: data-reload, validate-only
+        /// </para>
+        ///  
+        /// <para>
+        /// Default value is data-reload.
+        /// </para>
+        /// </summary>
+        public ReloadOptionValue ReloadOption
+        {
+            get { return this._reloadOption; }
+            set { this._reloadOption = value; }
+        }
+
+        // Check to see if ReloadOption property is set
+        internal bool IsSetReloadOption()
+        {
+            return this._reloadOption != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ReplicationTaskArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the replication instance. 
+        /// The Amazon Resource Name (ARN) of the replication task. 
         /// </para>
         /// </summary>
         public string ReplicationTaskArn

@@ -48,7 +48,10 @@ namespace Amazon.OpsWorks.Model
         private string _instanceId;
 
         /// <summary>
-        /// Gets and sets the property Force.
+        /// Gets and sets the property Force. 
+        /// <para>
+        /// Specifies whether to force an instance to stop.
+        /// </para>
         /// </summary>
         public bool Force
         {

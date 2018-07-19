@@ -47,7 +47,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CreationTimeAfter. 
         /// <para>
-        /// A filter that only training jobs created after the specified time (timestamp).
+        /// A filter that returns only training jobs created after the specified time (timestamp).
         /// </para>
         /// </summary>
         public DateTime CreationTimeAfter
@@ -137,8 +137,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NameContains. 
         /// <para>
-        /// A string in the training job name. This filter returns only models whose name contains
-        /// the specified string.
+        /// A string in the training job name. This filter returns only training jobs whose name
+        /// contains the specified string.
         /// </para>
         /// </summary>
         public string NameContains

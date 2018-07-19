@@ -39,6 +39,7 @@ namespace Amazon.MediaConvert.Model
         private string _name;
         private string _queue;
         private JobTemplateSettings _settings;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property Category. Optional. A category for the job template you
@@ -116,6 +117,22 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetSettings()
         {
             return this._settings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. The tags that you want to add to the resource. You
+        /// can tag resources with a key-value pair or with only a key.
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

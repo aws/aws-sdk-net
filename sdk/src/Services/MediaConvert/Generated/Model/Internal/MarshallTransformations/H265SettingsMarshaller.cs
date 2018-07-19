@@ -261,6 +261,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.UnregisteredSeiTimecode);
             }
 
+            if(requestObject.IsSetWriteMp4PackagingType())
+            {
+                context.Writer.WritePropertyName("writeMp4PackagingType");
+                context.Writer.Write(requestObject.WriteMp4PackagingType);
+            }
+
         }
 
         /// <summary>

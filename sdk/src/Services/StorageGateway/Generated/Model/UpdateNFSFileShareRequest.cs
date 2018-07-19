@@ -29,7 +29,8 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateNFSFileShare operation.
-    /// Updates a file share. This operation is only supported in the file gateway type.
+    /// Updates a Network File System (NFS) file share. This operation is only supported in
+    /// the file gateway type.
     /// 
     ///  <note> 
     /// <para>
@@ -103,8 +104,8 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property DefaultStorageClass. 
         /// <para>
         /// The default storage class for objects put into an Amazon S3 bucket by a file gateway.
-        /// Possible values are S3_STANDARD or S3_STANDARD_IA. If this field is not populated,
-        /// the default value S3_STANDARD is used. Optional.
+        /// Possible values are S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If this field is
+        /// not populated, the default value S3_STANDARD is used. Optional.
         /// </para>
         /// </summary>
         public string DefaultStorageClass
@@ -179,8 +180,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property KMSKey. 
         /// <para>
-        /// The KMS key used for Amazon S3 server side encryption. This value can only be set
-        /// when KmsEncrypted is true. Optional. 
+        /// The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server side encryption.
+        /// This value can only be set when KMSEncrypted is true. Optional. 
         /// </para>
         /// </summary>
         public string KMSKey

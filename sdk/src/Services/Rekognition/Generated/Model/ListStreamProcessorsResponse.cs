@@ -38,8 +38,8 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the response is truncated, Rekognition Video returns this token that you can use
-        /// in the subsequent request to retrieve the next set of stream processors. 
+        /// If the response is truncated, Amazon Rekognition Video returns this token that you
+        /// can use in the subsequent request to retrieve the next set of stream processors. 
         /// </para>
         /// </summary>
         public string NextToken

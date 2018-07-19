@@ -34,6 +34,7 @@ namespace Amazon.APIGateway.Model
     {
         private string _apiId;
         private string _stage;
+        private Dictionary<string, ThrottleSettings> _throttle = new Dictionary<string, ThrottleSettings>();
 
         /// <summary>
         /// Gets and sets the property ApiId. 
@@ -69,6 +70,24 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetStage()
         {
             return this._stage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Throttle. 
+        /// <para>
+        /// Map containing method level throttling information for API stage in a usage plan.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, ThrottleSettings> Throttle
+        {
+            get { return this._throttle; }
+            set { this._throttle = value; }
+        }
+
+        // Check to see if Throttle property is set
+        internal bool IsSetThrottle()
+        {
+            return this._throttle != null && this._throttle.Count > 0; 
         }
 
     }

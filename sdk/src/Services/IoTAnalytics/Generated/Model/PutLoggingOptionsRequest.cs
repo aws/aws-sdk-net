@@ -30,6 +30,14 @@ namespace Amazon.IoTAnalytics.Model
     /// <summary>
     /// Container for the parameters to the PutLoggingOptions operation.
     /// Sets or updates the AWS IoT Analytics logging options.
+    /// 
+    ///  
+    /// <para>
+    /// Note that if you update the value of any <code>loggingOptions</code> field, it takes
+    /// up to one minute for the change to take effect. Also, if you change the policy attached
+    /// to the role you specified in the roleArn field (for example, to correct an invalid
+    /// policy) it takes up to 5 minutes for that change to take effect. 
+    /// </para>
     /// </summary>
     public partial class PutLoggingOptionsRequest : AmazonIoTAnalyticsRequest
     {

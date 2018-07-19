@@ -90,6 +90,12 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                         unmarshalledObject.Path = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("PermissionsBoundary", targetDepth))
+                    {
+                        var unmarshaller = AttachedPermissionsBoundaryUnmarshaller.Instance;
+                        unmarshalledObject.PermissionsBoundary = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("RoleId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

@@ -29,7 +29,7 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateFleet operation.
-    /// Creates a fleet.
+    /// Creates a fleet. A fleet consists of streaming instances that run a specified image.
     /// </summary>
     public partial class CreateFleetRequest : AmazonAppStreamRequest
     {
@@ -40,6 +40,7 @@ namespace Amazon.AppStream.Model
         private DomainJoinInfo _domainJoinInfo;
         private bool? _enableDefaultInternetAccess;
         private FleetType _fleetType;
+        private string _imageArn;
         private string _imageName;
         private string _instanceType;
         private int? _maxUserDurationInSeconds;
@@ -184,6 +185,24 @@ namespace Amazon.AppStream.Model
         internal bool IsSetFleetType()
         {
             return this._fleetType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageArn. 
+        /// <para>
+        /// The ARN of the public, private, or shared image to use.
+        /// </para>
+        /// </summary>
+        public string ImageArn
+        {
+            get { return this._imageArn; }
+            set { this._imageArn = value; }
+        }
+
+        // Check to see if ImageArn property is set
+        internal bool IsSetImageArn()
+        {
+            return this._imageArn != null;
         }
 
         /// <summary>

@@ -278,7 +278,6 @@ namespace ServiceClientGenerator
             templateSession["NoWarn"]               = projectFileConfiguration.NoWarn;
             templateSession["SignBinaries"]         = true;
             templateSession["ConfigurationName"]    = projectFileConfiguration.TargetFrameworkVersion;
-            templateSession["SetBaseIntermediateOutputPath"] = true;
 
             List<Dependency> dependencies;
             List<PackageReference> references = new List<PackageReference>();

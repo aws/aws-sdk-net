@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the clouddirectory-2016-05-10.normal.json service model.
+ * Do not modify this file. This file is generated from the clouddirectory-2017-01-11.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -45,6 +45,7 @@ namespace Amazon.CloudDirectory.Model
         private BatchDetachPolicyResponse _detachPolicy;
         private BatchDetachTypedLinkResponse _detachTypedLink;
         private BatchRemoveFacetFromObjectResponse _removeFacetFromObject;
+        private BatchUpdateLinkAttributesResponse _updateLinkAttributes;
         private BatchUpdateObjectAttributesResponse _updateObjectAttributes;
 
         /// <summary>
@@ -285,6 +286,24 @@ namespace Amazon.CloudDirectory.Model
         internal bool IsSetRemoveFacetFromObject()
         {
             return this._removeFacetFromObject != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdateLinkAttributes. 
+        /// <para>
+        /// Represents the output of a <code>BatchWrite</code> response operation.
+        /// </para>
+        /// </summary>
+        public BatchUpdateLinkAttributesResponse UpdateLinkAttributes
+        {
+            get { return this._updateLinkAttributes; }
+            set { this._updateLinkAttributes = value; }
+        }
+
+        // Check to see if UpdateLinkAttributes property is set
+        internal bool IsSetUpdateLinkAttributes()
+        {
+            return this._updateLinkAttributes != null;
         }
 
         /// <summary>

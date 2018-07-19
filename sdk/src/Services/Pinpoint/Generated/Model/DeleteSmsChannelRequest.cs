@@ -29,14 +29,14 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteSmsChannel operation.
-    /// Delete an SMS channel
+    /// Delete an SMS channel.
     /// </summary>
     public partial class DeleteSmsChannelRequest : AmazonPinpointRequest
     {
         private string _applicationId;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId.
+        /// Gets and sets the property ApplicationId. The unique ID of your Amazon Pinpoint application.
         /// </summary>
         public string ApplicationId
         {

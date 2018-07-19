@@ -6,7 +6,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>AWSSDK.MediaConvert</AssemblyName>
     <PackageId>AWSSDK.MediaConvert</PackageId>
-    <BaseIntermediateOutputPath>./obj/net35</BaseIntermediateOutputPath>
+
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>

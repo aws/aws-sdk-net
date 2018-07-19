@@ -105,6 +105,15 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <para>
     ///  <code>WindowsServer2016</code> 
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>*</code> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <i>Use a wildcard character (*) to target all supported operating system versions.</i>
+    /// 
+    /// </para>
     ///  </li> </ul> 
     /// <para>
     ///  <i>Supported key:</i> <code>CLASSIFICATION</code> 
@@ -206,6 +215,15 @@ namespace Amazon.SimpleSystemsManagement.Model
     ///  </li> <li> 
     /// <para>
     ///  <code>Ubuntu16.04</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>*</code> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <i>Use a wildcard character (*) to target all supported operating system versions.</i>
+    /// 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -309,6 +327,102 @@ namespace Amazon.SimpleSystemsManagement.Model
     ///  </li> <li> 
     /// <para>
     ///  <code>AmazonLinux2017.09</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>*</code> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <i>Use a wildcard character (*) to target all supported operating system versions.</i>
+    /// 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <i>Supported key:</i> <code>CLASSIFICATION</code> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <i>Supported values:</i> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>Security</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>Bugfix</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>Enhancement</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>Recommended</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>Newpackage</code> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <i>Supported key:</i> <code>SEVERITY</code> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <i>Supported values:</i> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>Critical</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>Important</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>Medium</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>Low</code> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Amazon Linux 2 Operating Systems</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// The supported keys for Amazon Linux 2 operating systems are <code>PRODUCT</code>,
+    /// <code>CLASSIFICATION</code>, and <code>SEVERITY</code>. See the following lists for
+    /// valid values for each of these keys.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <i>Supported key:</i> <code>PRODUCT</code> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <i>Supported values:</i> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>AmazonLinux2</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>AmazonLinux2.0</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>*</code> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <i>Use a wildcard character (*) to target all supported operating system versions.</i>
+    /// 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -420,6 +534,15 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <para>
     ///  <code>RedhatEnterpriseLinux7.4</code> 
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>*</code> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <i>Use a wildcard character (*) to target all supported operating system versions.</i>
+    /// 
+    /// </para>
     ///  </li> </ul> 
     /// <para>
     ///  <i>Supported key:</i> <code>CLASSIFICATION</code> 
@@ -529,6 +652,15 @@ namespace Amazon.SimpleSystemsManagement.Model
     ///  </li> <li> 
     /// <para>
     ///  <code>Suse12.9</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>*</code> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <i>Use a wildcard character (*) to target all supported operating system versions.</i>
+    /// 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -643,6 +775,15 @@ namespace Amazon.SimpleSystemsManagement.Model
     ///  </li> <li> 
     /// <para>
     ///  <code>CentOS7.4</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>*</code> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <i>Use a wildcard character (*) to target all supported operating system versions.</i>
+    /// 
     /// </para>
     ///  </li> </ul> 
     /// <para>

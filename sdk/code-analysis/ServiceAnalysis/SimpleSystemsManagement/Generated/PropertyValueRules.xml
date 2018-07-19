@@ -301,6 +301,28 @@
     <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeAssociationExecutionsRequest.AssociationId</property>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeAssociationExecutionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeAssociationExecutionTargetsRequest.AssociationId</property>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeAssociationExecutionTargetsRequest.ExecutionId</property>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeAssociationExecutionTargetsRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DescribeAutomationExecutionsRequest.MaxResults</property>
     <min>1</min>
     <max>50</max>
@@ -1659,6 +1681,48 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.AssociationExecution.AssociationId</property>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.AssociationExecution.AssociationVersion</property>
+    <pattern>([$]LATEST)|([1-9][0-9]*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.AssociationExecution.ExecutionId</property>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.AssociationExecutionFilter.Value</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.AssociationExecutionTarget.AssociationId</property>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.AssociationExecutionTarget.AssociationVersion</property>
+    <pattern>([$]LATEST)|([1-9][0-9]*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.AssociationExecutionTarget.ExecutionId</property>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.AssociationExecutionTarget.ResourceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.AssociationExecutionTarget.ResourceType</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.AssociationExecutionTargetsFilter.Value</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.AssociationFilter.Value</property>
     <min>1</min>
   </property-value-rule>
@@ -1765,6 +1829,12 @@
     <property>Amazon.SimpleSystemsManagement.Model.AutomationExecutionMetadata.TargetParameterName</property>
     <min>1</min>
     <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CloudWatchOutputConfig.CloudWatchLogGroupName</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\.\-_/#A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.Command.CommandId</property>
@@ -2456,6 +2526,11 @@
     <min>36</min>
     <max>36</max>
     <pattern>^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.OutputSource.OutputSourceId</property>
+    <min>36</min>
+    <max>36</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.Parameter.Name</property>

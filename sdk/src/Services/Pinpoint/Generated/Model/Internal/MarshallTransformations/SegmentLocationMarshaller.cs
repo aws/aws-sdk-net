@@ -56,6 +56,17 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetGPSPoint())
+            {
+                context.Writer.WritePropertyName("GPSPoint");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = GPSPointDimensionMarshaller.Instance;
+                marshaller.Marshall(requestObject.GPSPoint, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

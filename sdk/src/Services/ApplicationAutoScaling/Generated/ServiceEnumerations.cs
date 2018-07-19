@@ -341,6 +341,10 @@ namespace Amazon.ApplicationAutoScaling
         /// </summary>
         public static readonly ScalableDimension AppstreamFleetDesiredCapacity = new ScalableDimension("appstream:fleet:DesiredCapacity");
         /// <summary>
+        /// Constant CustomResourceResourceTypeProperty for ScalableDimension
+        /// </summary>
+        public static readonly ScalableDimension CustomResourceResourceTypeProperty = new ScalableDimension("custom-resource:ResourceType:Property");
+        /// <summary>
         /// Constant DynamodbIndexReadCapacityUnits for ScalableDimension
         /// </summary>
         public static readonly ScalableDimension DynamodbIndexReadCapacityUnits = new ScalableDimension("dynamodb:index:ReadCapacityUnits");
@@ -488,6 +492,10 @@ namespace Amazon.ApplicationAutoScaling
         /// Constant Appstream for ServiceNamespace
         /// </summary>
         public static readonly ServiceNamespace Appstream = new ServiceNamespace("appstream");
+        /// <summary>
+        /// Constant CustomResource for ServiceNamespace
+        /// </summary>
+        public static readonly ServiceNamespace CustomResource = new ServiceNamespace("custom-resource");
         /// <summary>
         /// Constant Dynamodb for ServiceNamespace
         /// </summary>

@@ -418,6 +418,56 @@ namespace Amazon.Polly
 
         #endregion
         
+        #region  GetSpeechSynthesisTask
+
+
+        /// <summary>
+        /// Retrieves a specific SpeechSynthesisTask object based on its TaskID. This object contains
+        /// information about the given speech synthesis task, including the status of the task,
+        /// and a link to the S3 bucket containing the output of the task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSpeechSynthesisTask service method.</param>
+        /// 
+        /// <returns>The response from the GetSpeechSynthesisTask service method, as returned by Polly.</returns>
+        /// <exception cref="Amazon.Polly.Model.InvalidTaskIdException">
+        /// The provided Task ID is not valid. Please provide a valid Task ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ServiceFailureException">
+        /// An unknown condition has caused a service failure.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.SynthesisTaskNotFoundException">
+        /// The Speech Synthesis task with requested Task ID cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/GetSpeechSynthesisTask">REST API Reference for GetSpeechSynthesisTask Operation</seealso>
+        public virtual GetSpeechSynthesisTaskResponse GetSpeechSynthesisTask(GetSpeechSynthesisTaskRequest request)
+        {
+            var marshaller = GetSpeechSynthesisTaskRequestMarshaller.Instance;
+            var unmarshaller = GetSpeechSynthesisTaskResponseUnmarshaller.Instance;
+
+            return Invoke<GetSpeechSynthesisTaskRequest,GetSpeechSynthesisTaskResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSpeechSynthesisTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSpeechSynthesisTask operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/GetSpeechSynthesisTask">REST API Reference for GetSpeechSynthesisTask Operation</seealso>
+        public virtual Task<GetSpeechSynthesisTaskResponse> GetSpeechSynthesisTaskAsync(GetSpeechSynthesisTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetSpeechSynthesisTaskRequestMarshaller.Instance;
+            var unmarshaller = GetSpeechSynthesisTaskResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetSpeechSynthesisTaskRequest,GetSpeechSynthesisTaskResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListLexicons
 
 
@@ -460,6 +510,53 @@ namespace Amazon.Polly
             var unmarshaller = ListLexiconsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListLexiconsRequest,ListLexiconsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListSpeechSynthesisTasks
+
+
+        /// <summary>
+        /// Returns a list of SpeechSynthesisTask objects ordered by their creation date. This
+        /// operation can filter the tasks by their status, for example, allowing users to list
+        /// only tasks that are completed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSpeechSynthesisTasks service method.</param>
+        /// 
+        /// <returns>The response from the ListSpeechSynthesisTasks service method, as returned by Polly.</returns>
+        /// <exception cref="Amazon.Polly.Model.InvalidNextTokenException">
+        /// The NextToken is invalid. Verify that it's spelled correctly, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ServiceFailureException">
+        /// An unknown condition has caused a service failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ListSpeechSynthesisTasks">REST API Reference for ListSpeechSynthesisTasks Operation</seealso>
+        public virtual ListSpeechSynthesisTasksResponse ListSpeechSynthesisTasks(ListSpeechSynthesisTasksRequest request)
+        {
+            var marshaller = ListSpeechSynthesisTasksRequestMarshaller.Instance;
+            var unmarshaller = ListSpeechSynthesisTasksResponseUnmarshaller.Instance;
+
+            return Invoke<ListSpeechSynthesisTasksRequest,ListSpeechSynthesisTasksResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSpeechSynthesisTasks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSpeechSynthesisTasks operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ListSpeechSynthesisTasks">REST API Reference for ListSpeechSynthesisTasks Operation</seealso>
+        public virtual Task<ListSpeechSynthesisTasksResponse> ListSpeechSynthesisTasksAsync(ListSpeechSynthesisTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListSpeechSynthesisTasksRequestMarshaller.Instance;
+            var unmarshaller = ListSpeechSynthesisTasksResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListSpeechSynthesisTasksRequest,ListSpeechSynthesisTasksResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -538,6 +635,97 @@ namespace Amazon.Polly
 
         #endregion
         
+        #region  StartSpeechSynthesisTask
+
+
+        /// <summary>
+        /// Allows the creation of an asynchronous synthesis task, by starting a new <code>SpeechSynthesisTask</code>.
+        /// This operation requires all the standard information needed for speech synthesis,
+        /// plus the name of an Amazon S3 bucket for the service to store the output of the synthesis
+        /// task and two optional parameters (OutputS3KeyPrefix and SnsTopicArn). Once the synthesis
+        /// task is created, this operation will return a SpeechSynthesisTask object, which will
+        /// include an identifier of this task as well as the current status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSpeechSynthesisTask service method.</param>
+        /// 
+        /// <returns>The response from the StartSpeechSynthesisTask service method, as returned by Polly.</returns>
+        /// <exception cref="Amazon.Polly.Model.InvalidS3BucketException">
+        /// The provided Amazon S3 bucket name is invalid. Please check your input with S3 bucket
+        /// naming requirements and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.InvalidS3KeyException">
+        /// The provided Amazon S3 key prefix is invalid. Please provide a valid S3 object key
+        /// name.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.InvalidSampleRateException">
+        /// The specified sample rate is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.InvalidSnsTopicArnException">
+        /// The provided SNS topic ARN is invalid. Please provide a valid SNS topic ARN and try
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.InvalidSsmlException">
+        /// The SSML you provided is invalid. Verify the SSML syntax, spelling of tags and values,
+        /// and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.LexiconNotFoundException">
+        /// Amazon Polly can't find the specified lexicon. This could be caused by a lexicon that
+        /// is missing, its name is misspelled or specifying a lexicon that is in a different
+        /// region.
+        /// 
+        ///  
+        /// <para>
+        /// Verify that the lexicon exists, is in the region (see <a>ListLexicons</a>) and that
+        /// you spelled its name is spelled correctly. Then try again.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.MarksNotSupportedForFormatException">
+        /// Speech marks are not supported for the <code>OutputFormat</code> selected. Speech
+        /// marks are only available for content in <code>json</code> format.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ServiceFailureException">
+        /// An unknown condition has caused a service failure.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.SsmlMarksNotSupportedForTextTypeException">
+        /// SSML speech marks are not supported for plain text-type input.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.TextLengthExceededException">
+        /// The value of the "Text" parameter is longer than the accepted limits. For the <code>SynthesizeSpeech</code>
+        /// API, the limit for input text is a maximum of 6000 characters total, of which no more
+        /// than 3000 can be billed characters. For the <code>SetSpeechSynthesisTask</code> API,
+        /// the maximum is 200,000 characters, of which no more than 100,000 can be billed characters.
+        /// SSML tags are not counted as billed characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/StartSpeechSynthesisTask">REST API Reference for StartSpeechSynthesisTask Operation</seealso>
+        public virtual StartSpeechSynthesisTaskResponse StartSpeechSynthesisTask(StartSpeechSynthesisTaskRequest request)
+        {
+            var marshaller = StartSpeechSynthesisTaskRequestMarshaller.Instance;
+            var unmarshaller = StartSpeechSynthesisTaskResponseUnmarshaller.Instance;
+
+            return Invoke<StartSpeechSynthesisTaskRequest,StartSpeechSynthesisTaskResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartSpeechSynthesisTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartSpeechSynthesisTask operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/StartSpeechSynthesisTask">REST API Reference for StartSpeechSynthesisTask Operation</seealso>
+        public virtual Task<StartSpeechSynthesisTaskResponse> StartSpeechSynthesisTaskAsync(StartSpeechSynthesisTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = StartSpeechSynthesisTaskRequestMarshaller.Instance;
+            var unmarshaller = StartSpeechSynthesisTaskResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartSpeechSynthesisTaskRequest,StartSpeechSynthesisTaskResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  SynthesizeSpeech
 
 
@@ -580,9 +768,11 @@ namespace Amazon.Polly
         /// SSML speech marks are not supported for plain text-type input.
         /// </exception>
         /// <exception cref="Amazon.Polly.Model.TextLengthExceededException">
-        /// The value of the "Text" parameter is longer than the accepted limits. The limit for
-        /// input text is a maximum of 3000 characters total, of which no more than 1500 can be
-        /// billed characters. SSML tags are not counted as billed characters.
+        /// The value of the "Text" parameter is longer than the accepted limits. For the <code>SynthesizeSpeech</code>
+        /// API, the limit for input text is a maximum of 6000 characters total, of which no more
+        /// than 3000 can be billed characters. For the <code>SetSpeechSynthesisTask</code> API,
+        /// the maximum is 200,000 characters, of which no more than 100,000 can be billed characters.
+        /// SSML tags are not counted as billed characters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/SynthesizeSpeech">REST API Reference for SynthesizeSpeech Operation</seealso>
         public virtual SynthesizeSpeechResponse SynthesizeSpeech(SynthesizeSpeechRequest request)

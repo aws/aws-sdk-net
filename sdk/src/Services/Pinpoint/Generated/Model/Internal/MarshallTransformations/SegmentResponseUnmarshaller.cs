@@ -106,6 +106,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SegmentGroups", targetDepth))
+                {
+                    var unmarshaller = SegmentGroupListUnmarshaller.Instance;
+                    unmarshalledObject.SegmentGroups = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SegmentType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

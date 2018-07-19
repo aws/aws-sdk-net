@@ -339,6 +339,52 @@ namespace Amazon.IdentityManagement
 
 
     /// <summary>
+    /// Constants used for properties of type PermissionsBoundaryAttachmentType.
+    /// </summary>
+    public class PermissionsBoundaryAttachmentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PermissionsBoundaryPolicy for PermissionsBoundaryAttachmentType
+        /// </summary>
+        public static readonly PermissionsBoundaryAttachmentType PermissionsBoundaryPolicy = new PermissionsBoundaryAttachmentType("PermissionsBoundaryPolicy");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PermissionsBoundaryAttachmentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PermissionsBoundaryAttachmentType FindValue(string value)
+        {
+            return FindValue<PermissionsBoundaryAttachmentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PermissionsBoundaryAttachmentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PolicyEvaluationDecisionType.
     /// </summary>
     public class PolicyEvaluationDecisionType : ConstantClass
@@ -510,6 +556,56 @@ namespace Amazon.IdentityManagement
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PolicySourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PolicyUsageType.
+    /// </summary>
+    public class PolicyUsageType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PermissionsBoundary for PolicyUsageType
+        /// </summary>
+        public static readonly PolicyUsageType PermissionsBoundary = new PolicyUsageType("PermissionsBoundary");
+        /// <summary>
+        /// Constant PermissionsPolicy for PolicyUsageType
+        /// </summary>
+        public static readonly PolicyUsageType PermissionsPolicy = new PolicyUsageType("PermissionsPolicy");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PolicyUsageType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PolicyUsageType FindValue(string value)
+        {
+            return FindValue<PolicyUsageType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PolicyUsageType(string value)
         {
             return FindValue(value);
         }

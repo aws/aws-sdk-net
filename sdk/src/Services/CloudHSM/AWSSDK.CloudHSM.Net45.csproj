@@ -6,7 +6,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>AWSSDK.CloudHSM</AssemblyName>
     <PackageId>AWSSDK.CloudHSM</PackageId>
-    <BaseIntermediateOutputPath>./obj/net45</BaseIntermediateOutputPath>
+
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>

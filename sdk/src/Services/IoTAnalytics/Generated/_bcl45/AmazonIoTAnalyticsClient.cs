@@ -36,32 +36,30 @@ namespace Amazon.IoTAnalytics
     /// <summary>
     /// Implementation for accessing IoTAnalytics
     ///
-    /// AWS IoT Analytics provides advanced data analysis for AWS IoT. It allows you to collect
-    /// large amounts of device data, process messages, store them, and then query the data
-    /// and run sophisticated analytics to make accurate decisions in your IoT applications
-    /// and machine learning use cases. AWS IoT Analytics enables advanced data exploration
-    /// through integration with Jupyter Notebooks and data visualization through integration
-    /// with Amazon QuickSight.
+    /// AWS IoT Analytics allows you to collect large amounts of device data, process messages,
+    /// and store them. You can then query the data and run sophisticated analytics on it.
+    /// AWS IoT Analytics enables advanced data exploration through integration with Jupyter
+    /// Notebooks and data visualization through integration with Amazon QuickSight.
     /// 
     ///  
     /// <para>
     /// Traditional analytics and business intelligence tools are designed to process structured
     /// data. IoT data often comes from devices that record noisy processes (such as temperature,
-    /// motion, or sound). As a result, the data from these devices can have significant gaps,
+    /// motion, or sound). As a result the data from these devices can have significant gaps,
     /// corrupted messages, and false readings that must be cleaned up before analysis can
     /// occur. Also, IoT data is often only meaningful in the context of other data from external
     /// sources. 
     /// </para>
     ///  
     /// <para>
-    /// AWS IoT Analytics automates each of the steps required to analyze data from IoT devices.
-    /// AWS IoT Analytics filters, transforms, and enriches IoT data before storing it in
-    /// a time-series data store for analysis. You can set up the service to collect only
-    /// the data you need from your devices, apply mathematical transforms to process the
-    /// data, and enrich the data with device-specific metadata such as device type and location
-    /// before storing it. Then, you can analyze your data by running queries using the built-in
-    /// SQL query engine, or perform more complex analytics and machine learning inference.
-    /// AWS IoT Analytics includes models for common IoT use cases so you can answer questions
+    /// AWS IoT Analytics automates the steps required to analyze data from IoT devices. AWS
+    /// IoT Analytics filters, transforms, and enriches IoT data before storing it in a time-series
+    /// data store for analysis. You can set up the service to collect only the data you need
+    /// from your devices, apply mathematical transforms to process the data, and enrich the
+    /// data with device-specific metadata such as device type and location before storing
+    /// it. Then, you can analyze your data by running queries using the built-in SQL query
+    /// engine, or perform more complex analytics and machine learning inference. AWS IoT
+    /// Analytics includes pre-built models for common IoT use cases so you can answer questions
     /// like which devices are about to fail or which customers are at risk of abandoning
     /// their wearable devices.
     /// </para>
@@ -1456,11 +1454,76 @@ namespace Amazon.IoTAnalytics
 
         #endregion
         
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Lists the tags (metadata) which you have assigned to the resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by IoTAnalytics.</returns>
+        /// <exception cref="Amazon.IoTAnalytics.Model.InternalFailureException">
+        /// There was an internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.IoTAnalytics.Model.InvalidRequestException">
+        /// The request was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTAnalytics.Model.LimitExceededException">
+        /// The command caused an internal limit to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoTAnalytics.Model.ResourceNotFoundException">
+        /// A resource with the specified name could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTAnalytics.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTAnalytics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
+            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
+            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutLoggingOptions
 
 
         /// <summary>
         /// Sets or updates the AWS IoT Analytics logging options.
+        /// 
+        ///  
+        /// <para>
+        /// Note that if you update the value of any <code>loggingOptions</code> field, it takes
+        /// up to one minute for the change to take effect. Also, if you change the policy attached
+        /// to the role you specified in the roleArn field (for example, to correct an invalid
+        /// policy) it takes up to 5 minutes for that change to take effect. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutLoggingOptions service method.</param>
         /// 
@@ -1665,6 +1728,121 @@ namespace Amazon.IoTAnalytics
             var unmarshaller = StartPipelineReprocessingResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartPipelineReprocessingRequest,StartPipelineReprocessingResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// Adds to or modifies the tags of the given resource. Tags are metadata which can be
+        /// used to manage a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by IoTAnalytics.</returns>
+        /// <exception cref="Amazon.IoTAnalytics.Model.InternalFailureException">
+        /// There was an internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.IoTAnalytics.Model.InvalidRequestException">
+        /// The request was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTAnalytics.Model.LimitExceededException">
+        /// The command caused an internal limit to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoTAnalytics.Model.ResourceNotFoundException">
+        /// A resource with the specified name could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTAnalytics.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTAnalytics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var marshaller = TagResourceRequestMarshaller.Instance;
+            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceRequest,TagResourceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = TagResourceRequestMarshaller.Instance;
+            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TagResourceRequest,TagResourceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Removes the given tags (metadata) from the resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by IoTAnalytics.</returns>
+        /// <exception cref="Amazon.IoTAnalytics.Model.InternalFailureException">
+        /// There was an internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.IoTAnalytics.Model.InvalidRequestException">
+        /// The request was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTAnalytics.Model.LimitExceededException">
+        /// The command caused an internal limit to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoTAnalytics.Model.ResourceNotFoundException">
+        /// A resource with the specified name could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTAnalytics.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTAnalytics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var marshaller = UntagResourceRequestMarshaller.Instance;
+            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceRequest,UntagResourceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UntagResourceRequestMarshaller.Instance;
+            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UntagResourceRequest,UntagResourceResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

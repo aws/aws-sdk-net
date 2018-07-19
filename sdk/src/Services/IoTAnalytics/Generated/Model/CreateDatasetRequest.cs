@@ -43,6 +43,7 @@ namespace Amazon.IoTAnalytics.Model
     {
         private List<DatasetAction> _actions = new List<DatasetAction>();
         private string _datasetName;
+        private List<Tag> _tags = new List<Tag>();
         private List<DatasetTrigger> _triggers = new List<DatasetTrigger>();
 
         /// <summary>
@@ -79,6 +80,24 @@ namespace Amazon.IoTAnalytics.Model
         internal bool IsSetDatasetName()
         {
             return this._datasetName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Metadata which can be used to manage the data set.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

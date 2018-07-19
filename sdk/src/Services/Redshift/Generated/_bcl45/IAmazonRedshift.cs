@@ -71,6 +71,56 @@ namespace Amazon.Redshift
     {
 
         
+        #region  AcceptReservedNodeExchange
+
+
+        /// <summary>
+        /// Exchanges a DC1 Reserved Node for a DC2 Reserved Node with no changes to the configuration
+        /// (term, payment type, or number of nodes) and no additional costs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptReservedNodeExchange service method.</param>
+        /// 
+        /// <returns>The response from the AcceptReservedNodeExchange service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceUnavailableException">
+        /// Your request cannot be completed because a dependent internal service is temporarily
+        /// unavailable. Wait 30 to 60 seconds and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidReservedNodeStateException">
+        /// Indicates that the Reserved Node being exchanged is not in an active state.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.ReservedNodeAlreadyExistsException">
+        /// User already has a reservation with the given identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.ReservedNodeAlreadyMigratedException">
+        /// Indicates that the reserved node has already been exchanged.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.ReservedNodeNotFoundException">
+        /// The specified reserved compute node not found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.ReservedNodeOfferingNotFoundException">
+        /// Specified offering does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AcceptReservedNodeExchange">REST API Reference for AcceptReservedNodeExchange Operation</seealso>
+        AcceptReservedNodeExchangeResponse AcceptReservedNodeExchange(AcceptReservedNodeExchangeRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AcceptReservedNodeExchange operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AcceptReservedNodeExchange operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AcceptReservedNodeExchange">REST API Reference for AcceptReservedNodeExchange Operation</seealso>
+        Task<AcceptReservedNodeExchangeResponse> AcceptReservedNodeExchangeAsync(AcceptReservedNodeExchangeRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  AuthorizeClusterSecurityGroupIngress
 
 
@@ -252,7 +302,7 @@ namespace Amazon.Redshift
         /// 
         ///  
         /// <para>
-        /// To create the cluster in Virtual Private Cloud (VPC), you must provide a cluster subnet
+        /// To create a cluster in Virtual Private Cloud (VPC), you must provide a cluster subnet
         /// group name. The cluster subnet group identifies the subnets of your VPC that Amazon
         /// Redshift uses when creating the cluster. For more information about managing clusters,
         /// go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
@@ -319,7 +369,8 @@ namespace Amazon.Redshift
         /// in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.TagLimitExceededException">
-        /// The request exceeds the limit of 10 tags for the resource.
+        /// The number of tables in your source cluster exceeds the limit for the target cluster.
+        /// Resize to a larger cluster node type.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
         /// Your account is not authorized to perform the requested operation.
@@ -378,7 +429,8 @@ namespace Amazon.Redshift
         /// The tag is invalid.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.TagLimitExceededException">
-        /// The request exceeds the limit of 10 tags for the resource.
+        /// The number of tables in your source cluster exceeds the limit for the target cluster.
+        /// Resize to a larger cluster node type.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterParameterGroup">REST API Reference for CreateClusterParameterGroup Operation</seealso>
         CreateClusterParameterGroupResponse CreateClusterParameterGroup(CreateClusterParameterGroupRequest request);
@@ -427,7 +479,8 @@ namespace Amazon.Redshift
         /// The tag is invalid.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.TagLimitExceededException">
-        /// The request exceeds the limit of 10 tags for the resource.
+        /// The number of tables in your source cluster exceeds the limit for the target cluster.
+        /// Resize to a larger cluster node type.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSecurityGroup">REST API Reference for CreateClusterSecurityGroup Operation</seealso>
         CreateClusterSecurityGroupResponse CreateClusterSecurityGroup(CreateClusterSecurityGroupRequest request);
@@ -479,7 +532,8 @@ namespace Amazon.Redshift
         /// The tag is invalid.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.TagLimitExceededException">
-        /// The request exceeds the limit of 10 tags for the resource.
+        /// The number of tables in your source cluster exceeds the limit for the target cluster.
+        /// Resize to a larger cluster node type.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSnapshot">REST API Reference for CreateClusterSnapshot Operation</seealso>
         CreateClusterSnapshotResponse CreateClusterSnapshot(CreateClusterSnapshotRequest request);
@@ -540,7 +594,8 @@ namespace Amazon.Redshift
         /// The tag is invalid.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.TagLimitExceededException">
-        /// The request exceeds the limit of 10 tags for the resource.
+        /// The number of tables in your source cluster exceeds the limit for the target cluster.
+        /// Resize to a larger cluster node type.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
         /// Your account is not authorized to perform the requested operation.
@@ -633,7 +688,8 @@ namespace Amazon.Redshift
         /// values are ERROR and INFO.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.TagLimitExceededException">
-        /// The request exceeds the limit of 10 tags for the resource.
+        /// The number of tables in your source cluster exceeds the limit for the target cluster.
+        /// Resize to a larger cluster node type.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateEventSubscription">REST API Reference for CreateEventSubscription Operation</seealso>
         CreateEventSubscriptionResponse CreateEventSubscription(CreateEventSubscriptionRequest request);
@@ -686,7 +742,8 @@ namespace Amazon.Redshift
         /// The tag is invalid.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.TagLimitExceededException">
-        /// The request exceeds the limit of 10 tags for the resource.
+        /// The number of tables in your source cluster exceeds the limit for the target cluster.
+        /// Resize to a larger cluster node type.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateHsmClientCertificate">REST API Reference for CreateHsmClientCertificate Operation</seealso>
         CreateHsmClientCertificateResponse CreateHsmClientCertificate(CreateHsmClientCertificateRequest request);
@@ -738,7 +795,8 @@ namespace Amazon.Redshift
         /// The tag is invalid.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.TagLimitExceededException">
-        /// The request exceeds the limit of 10 tags for the resource.
+        /// The number of tables in your source cluster exceeds the limit for the target cluster.
+        /// Resize to a larger cluster node type.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateHsmConfiguration">REST API Reference for CreateHsmConfiguration Operation</seealso>
         CreateHsmConfigurationResponse CreateHsmConfiguration(CreateHsmConfigurationRequest request);
@@ -794,7 +852,8 @@ namespace Amazon.Redshift
         /// The AWS account has exceeded the maximum number of snapshot copy grants in this region.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.TagLimitExceededException">
-        /// The request exceeds the limit of 10 tags for the resource.
+        /// The number of tables in your source cluster exceeds the limit for the target cluster.
+        /// Resize to a larger cluster node type.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateSnapshotCopyGrant">REST API Reference for CreateSnapshotCopyGrant Operation</seealso>
         CreateSnapshotCopyGrantResponse CreateSnapshotCopyGrant(CreateSnapshotCopyGrantRequest request);
@@ -822,7 +881,7 @@ namespace Amazon.Redshift
         /// 
         ///  
         /// <para>
-        /// A resource can have up to 10 tags. If you try to create more than 10 tags for a resource,
+        /// A resource can have up to 50 tags. If you try to create more than 50 tags for a resource,
         /// you will receive an error and the attempt will fail.
         /// </para>
         ///  
@@ -841,7 +900,8 @@ namespace Amazon.Redshift
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.TagLimitExceededException">
-        /// The request exceeds the limit of 10 tags for the resource.
+        /// The number of tables in your source cluster exceeds the limit for the target cluster.
+        /// Resize to a larger cluster node type.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateTags">REST API Reference for CreateTags Operation</seealso>
         CreateTagsResponse CreateTags(CreateTagsRequest request);
@@ -1253,6 +1313,36 @@ namespace Amazon.Redshift
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         Task<DeleteTagsResponse> DeleteTagsAsync(DeleteTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeClusterDbRevisions
+
+
+        /// <summary>
+        /// Returns an array of <code>ClusterDbRevision</code> objects.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClusterDbRevisions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeClusterDbRevisions service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterDbRevisions">REST API Reference for DescribeClusterDbRevisions Operation</seealso>
+        DescribeClusterDbRevisionsResponse DescribeClusterDbRevisions(DescribeClusterDbRevisionsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeClusterDbRevisions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClusterDbRevisions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterDbRevisions">REST API Reference for DescribeClusterDbRevisions Operation</seealso>
+        Task<DescribeClusterDbRevisionsResponse> DescribeClusterDbRevisionsAsync(DescribeClusterDbRevisionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3193,6 +3283,53 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  GetReservedNodeExchangeOfferings
+
+
+        /// <summary>
+        /// Returns an array of ReservedNodeOfferings which is filtered by payment type, term,
+        /// and instance type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetReservedNodeExchangeOfferings service method.</param>
+        /// 
+        /// <returns>The response from the GetReservedNodeExchangeOfferings service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceUnavailableException">
+        /// Your request cannot be completed because a dependent internal service is temporarily
+        /// unavailable. Wait 30 to 60 seconds and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidReservedNodeStateException">
+        /// Indicates that the Reserved Node being exchanged is not in an active state.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.ReservedNodeAlreadyMigratedException">
+        /// Indicates that the reserved node has already been exchanged.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.ReservedNodeNotFoundException">
+        /// The specified reserved compute node not found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.ReservedNodeOfferingNotFoundException">
+        /// Specified offering does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/GetReservedNodeExchangeOfferings">REST API Reference for GetReservedNodeExchangeOfferings Operation</seealso>
+        GetReservedNodeExchangeOfferingsResponse GetReservedNodeExchangeOfferings(GetReservedNodeExchangeOfferingsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetReservedNodeExchangeOfferings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetReservedNodeExchangeOfferings operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/GetReservedNodeExchangeOfferings">REST API Reference for GetReservedNodeExchangeOfferings Operation</seealso>
+        Task<GetReservedNodeExchangeOfferingsResponse> GetReservedNodeExchangeOfferingsAsync(GetReservedNodeExchangeOfferingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ModifyCluster
 
 
@@ -3260,6 +3397,10 @@ namespace Amazon.Redshift
         /// about increasing your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits
         /// in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.TableLimitExceededException">
+        /// The number of tables in the cluster exceeds the limit for the requested new cluster
+        /// node type.
+        /// </exception>
         /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
         /// Your account is not authorized to perform the requested operation.
         /// </exception>
@@ -3281,6 +3422,43 @@ namespace Amazon.Redshift
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyCluster">REST API Reference for ModifyCluster Operation</seealso>
         Task<ModifyClusterResponse> ModifyClusterAsync(ModifyClusterRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ModifyClusterDbRevision
+
+
+        /// <summary>
+        /// Modifies the database revision of a cluster. The database revision is a unique revision
+        /// of the database running in a cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyClusterDbRevision service method.</param>
+        /// 
+        /// <returns>The response from the ModifyClusterDbRevision service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.ClusterOnLatestRevisionException">
+        /// Cluster is already on the latest database revision.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <code>available</code> state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterDbRevision">REST API Reference for ModifyClusterDbRevision Operation</seealso>
+        ModifyClusterDbRevisionResponse ModifyClusterDbRevision(ModifyClusterDbRevisionRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyClusterDbRevision operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyClusterDbRevision operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterDbRevision">REST API Reference for ModifyClusterDbRevision Operation</seealso>
+        Task<ModifyClusterDbRevisionResponse> ModifyClusterDbRevisionAsync(ModifyClusterDbRevisionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

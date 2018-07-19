@@ -331,6 +331,38 @@ namespace Amazon.Inspector
 
         #endregion
         
+        #region  CreateExclusionsPreview
+
+        internal virtual CreateExclusionsPreviewResponse CreateExclusionsPreview(CreateExclusionsPreviewRequest request)
+        {
+            var marshaller = CreateExclusionsPreviewRequestMarshaller.Instance;
+            var unmarshaller = CreateExclusionsPreviewResponseUnmarshaller.Instance;
+
+            return Invoke<CreateExclusionsPreviewRequest,CreateExclusionsPreviewResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateExclusionsPreview operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateExclusionsPreview operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateExclusionsPreview">REST API Reference for CreateExclusionsPreview Operation</seealso>
+        public virtual Task<CreateExclusionsPreviewResponse> CreateExclusionsPreviewAsync(CreateExclusionsPreviewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateExclusionsPreviewRequestMarshaller.Instance;
+            var unmarshaller = CreateExclusionsPreviewResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateExclusionsPreviewRequest,CreateExclusionsPreviewResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateResourceGroup
 
         internal virtual CreateResourceGroupResponse CreateResourceGroup(CreateResourceGroupRequest request)
@@ -587,6 +619,38 @@ namespace Amazon.Inspector
 
         #endregion
         
+        #region  DescribeExclusions
+
+        internal virtual DescribeExclusionsResponse DescribeExclusions(DescribeExclusionsRequest request)
+        {
+            var marshaller = DescribeExclusionsRequestMarshaller.Instance;
+            var unmarshaller = DescribeExclusionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeExclusionsRequest,DescribeExclusionsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeExclusions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExclusions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeExclusions">REST API Reference for DescribeExclusions Operation</seealso>
+        public virtual Task<DescribeExclusionsResponse> DescribeExclusionsAsync(DescribeExclusionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeExclusionsRequestMarshaller.Instance;
+            var unmarshaller = DescribeExclusionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeExclusionsRequest,DescribeExclusionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeFindings
 
         internal virtual DescribeFindingsResponse DescribeFindings(DescribeFindingsRequest request)
@@ -710,6 +774,38 @@ namespace Amazon.Inspector
             var unmarshaller = GetAssessmentReportResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetAssessmentReportRequest,GetAssessmentReportResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetExclusionsPreview
+
+        internal virtual GetExclusionsPreviewResponse GetExclusionsPreview(GetExclusionsPreviewRequest request)
+        {
+            var marshaller = GetExclusionsPreviewRequestMarshaller.Instance;
+            var unmarshaller = GetExclusionsPreviewResponseUnmarshaller.Instance;
+
+            return Invoke<GetExclusionsPreviewRequest,GetExclusionsPreviewResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetExclusionsPreview operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetExclusionsPreview operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/GetExclusionsPreview">REST API Reference for GetExclusionsPreview Operation</seealso>
+        public virtual Task<GetExclusionsPreviewResponse> GetExclusionsPreviewAsync(GetExclusionsPreviewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetExclusionsPreviewRequestMarshaller.Instance;
+            var unmarshaller = GetExclusionsPreviewResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetExclusionsPreviewRequest,GetExclusionsPreviewResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -902,6 +998,38 @@ namespace Amazon.Inspector
             var unmarshaller = ListEventSubscriptionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListEventSubscriptionsRequest,ListEventSubscriptionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListExclusions
+
+        internal virtual ListExclusionsResponse ListExclusions(ListExclusionsRequest request)
+        {
+            var marshaller = ListExclusionsRequestMarshaller.Instance;
+            var unmarshaller = ListExclusionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListExclusionsRequest,ListExclusionsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListExclusions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListExclusions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListExclusions">REST API Reference for ListExclusions Operation</seealso>
+        public virtual Task<ListExclusionsResponse> ListExclusionsAsync(ListExclusionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListExclusionsRequestMarshaller.Instance;
+            var unmarshaller = ListExclusionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListExclusionsRequest,ListExclusionsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

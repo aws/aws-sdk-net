@@ -6,7 +6,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>AWSSDK.UnitTests.MarketplaceEntitlementService.Net35</AssemblyName>
     <PackageId>AWSSDK.UnitTests.MarketplaceEntitlementService.Net35</PackageId>
-    <BaseIntermediateOutputPath>./obj/Net35</BaseIntermediateOutputPath>
+
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
@@ -38,6 +38,9 @@
     <PackageReference Include="MSTest.TestAdapter" Version="1.2.0"/>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.6.2"/>
     <PackageReference Include="MSTest.TestFramework" Version="1.2.0"/>
+    <PackageReference Include="Moq" Version="4.8.2"/>
+    <PackageReference Include="AutoFixture" Version="3.51.0"/>
+    <PackageReference Include="AutoFixture.AutoMoq" Version="3.51.0"/>
   </ItemGroup>
 
   <ItemGroup>

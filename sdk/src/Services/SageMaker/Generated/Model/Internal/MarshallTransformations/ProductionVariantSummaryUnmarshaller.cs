@@ -76,6 +76,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.CurrentWeight = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DeployedImages", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DeployedImage, DeployedImageUnmarshaller>(DeployedImageUnmarshaller.Instance);
+                    unmarshalledObject.DeployedImages = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DesiredInstanceCount", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

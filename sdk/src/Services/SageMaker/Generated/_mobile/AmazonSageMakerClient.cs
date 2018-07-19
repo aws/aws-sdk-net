@@ -326,6 +326,38 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  CreateHyperParameterTuningJob
+
+        internal virtual CreateHyperParameterTuningJobResponse CreateHyperParameterTuningJob(CreateHyperParameterTuningJobRequest request)
+        {
+            var marshaller = CreateHyperParameterTuningJobRequestMarshaller.Instance;
+            var unmarshaller = CreateHyperParameterTuningJobResponseUnmarshaller.Instance;
+
+            return Invoke<CreateHyperParameterTuningJobRequest,CreateHyperParameterTuningJobResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateHyperParameterTuningJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateHyperParameterTuningJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHyperParameterTuningJob">REST API Reference for CreateHyperParameterTuningJob Operation</seealso>
+        public virtual Task<CreateHyperParameterTuningJobResponse> CreateHyperParameterTuningJobAsync(CreateHyperParameterTuningJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateHyperParameterTuningJobRequestMarshaller.Instance;
+            var unmarshaller = CreateHyperParameterTuningJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateHyperParameterTuningJobRequest,CreateHyperParameterTuningJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateModel
 
         internal virtual CreateModelResponse CreateModel(CreateModelRequest request)
@@ -481,6 +513,38 @@ namespace Amazon.SageMaker
             var unmarshaller = CreateTrainingJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateTrainingJobRequest,CreateTrainingJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateTransformJob
+
+        internal virtual CreateTransformJobResponse CreateTransformJob(CreateTransformJobRequest request)
+        {
+            var marshaller = CreateTransformJobRequestMarshaller.Instance;
+            var unmarshaller = CreateTransformJobResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTransformJobRequest,CreateTransformJobResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTransformJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransformJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTransformJob">REST API Reference for CreateTransformJob Operation</seealso>
+        public virtual Task<CreateTransformJobResponse> CreateTransformJobAsync(CreateTransformJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateTransformJobRequestMarshaller.Instance;
+            var unmarshaller = CreateTransformJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateTransformJobRequest,CreateTransformJobResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -742,6 +806,38 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DescribeHyperParameterTuningJob
+
+        internal virtual DescribeHyperParameterTuningJobResponse DescribeHyperParameterTuningJob(DescribeHyperParameterTuningJobRequest request)
+        {
+            var marshaller = DescribeHyperParameterTuningJobRequestMarshaller.Instance;
+            var unmarshaller = DescribeHyperParameterTuningJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeHyperParameterTuningJobRequest,DescribeHyperParameterTuningJobResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeHyperParameterTuningJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeHyperParameterTuningJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHyperParameterTuningJob">REST API Reference for DescribeHyperParameterTuningJob Operation</seealso>
+        public virtual Task<DescribeHyperParameterTuningJobResponse> DescribeHyperParameterTuningJobAsync(DescribeHyperParameterTuningJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeHyperParameterTuningJobRequestMarshaller.Instance;
+            var unmarshaller = DescribeHyperParameterTuningJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeHyperParameterTuningJobRequest,DescribeHyperParameterTuningJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeModel
 
         internal virtual DescribeModelResponse DescribeModel(DescribeModelRequest request)
@@ -870,6 +966,38 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DescribeTransformJob
+
+        internal virtual DescribeTransformJobResponse DescribeTransformJob(DescribeTransformJobRequest request)
+        {
+            var marshaller = DescribeTransformJobRequestMarshaller.Instance;
+            var unmarshaller = DescribeTransformJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTransformJobRequest,DescribeTransformJobResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTransformJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransformJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTransformJob">REST API Reference for DescribeTransformJob Operation</seealso>
+        public virtual Task<DescribeTransformJobResponse> DescribeTransformJobAsync(DescribeTransformJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeTransformJobRequestMarshaller.Instance;
+            var unmarshaller = DescribeTransformJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeTransformJobRequest,DescribeTransformJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListEndpointConfigs
 
         internal virtual ListEndpointConfigsResponse ListEndpointConfigs(ListEndpointConfigsRequest request)
@@ -929,6 +1057,38 @@ namespace Amazon.SageMaker
             var unmarshaller = ListEndpointsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListEndpointsRequest,ListEndpointsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListHyperParameterTuningJobs
+
+        internal virtual ListHyperParameterTuningJobsResponse ListHyperParameterTuningJobs(ListHyperParameterTuningJobsRequest request)
+        {
+            var marshaller = ListHyperParameterTuningJobsRequestMarshaller.Instance;
+            var unmarshaller = ListHyperParameterTuningJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListHyperParameterTuningJobsRequest,ListHyperParameterTuningJobsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListHyperParameterTuningJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListHyperParameterTuningJobs operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHyperParameterTuningJobs">REST API Reference for ListHyperParameterTuningJobs Operation</seealso>
+        public virtual Task<ListHyperParameterTuningJobsResponse> ListHyperParameterTuningJobsAsync(ListHyperParameterTuningJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListHyperParameterTuningJobsRequestMarshaller.Instance;
+            var unmarshaller = ListHyperParameterTuningJobsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListHyperParameterTuningJobsRequest,ListHyperParameterTuningJobsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1094,6 +1254,70 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListTrainingJobsForHyperParameterTuningJob
+
+        internal virtual ListTrainingJobsForHyperParameterTuningJobResponse ListTrainingJobsForHyperParameterTuningJob(ListTrainingJobsForHyperParameterTuningJobRequest request)
+        {
+            var marshaller = ListTrainingJobsForHyperParameterTuningJobRequestMarshaller.Instance;
+            var unmarshaller = ListTrainingJobsForHyperParameterTuningJobResponseUnmarshaller.Instance;
+
+            return Invoke<ListTrainingJobsForHyperParameterTuningJobRequest,ListTrainingJobsForHyperParameterTuningJobResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTrainingJobsForHyperParameterTuningJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTrainingJobsForHyperParameterTuningJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrainingJobsForHyperParameterTuningJob">REST API Reference for ListTrainingJobsForHyperParameterTuningJob Operation</seealso>
+        public virtual Task<ListTrainingJobsForHyperParameterTuningJobResponse> ListTrainingJobsForHyperParameterTuningJobAsync(ListTrainingJobsForHyperParameterTuningJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListTrainingJobsForHyperParameterTuningJobRequestMarshaller.Instance;
+            var unmarshaller = ListTrainingJobsForHyperParameterTuningJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTrainingJobsForHyperParameterTuningJobRequest,ListTrainingJobsForHyperParameterTuningJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTransformJobs
+
+        internal virtual ListTransformJobsResponse ListTransformJobs(ListTransformJobsRequest request)
+        {
+            var marshaller = ListTransformJobsRequestMarshaller.Instance;
+            var unmarshaller = ListTransformJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListTransformJobsRequest,ListTransformJobsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTransformJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTransformJobs operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTransformJobs">REST API Reference for ListTransformJobs Operation</seealso>
+        public virtual Task<ListTransformJobsResponse> ListTransformJobsAsync(ListTransformJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListTransformJobsRequestMarshaller.Instance;
+            var unmarshaller = ListTransformJobsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTransformJobsRequest,ListTransformJobsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartNotebookInstance
 
         internal virtual StartNotebookInstanceResponse StartNotebookInstance(StartNotebookInstanceRequest request)
@@ -1121,6 +1345,38 @@ namespace Amazon.SageMaker
             var unmarshaller = StartNotebookInstanceResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartNotebookInstanceRequest,StartNotebookInstanceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopHyperParameterTuningJob
+
+        internal virtual StopHyperParameterTuningJobResponse StopHyperParameterTuningJob(StopHyperParameterTuningJobRequest request)
+        {
+            var marshaller = StopHyperParameterTuningJobRequestMarshaller.Instance;
+            var unmarshaller = StopHyperParameterTuningJobResponseUnmarshaller.Instance;
+
+            return Invoke<StopHyperParameterTuningJobRequest,StopHyperParameterTuningJobResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopHyperParameterTuningJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopHyperParameterTuningJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopHyperParameterTuningJob">REST API Reference for StopHyperParameterTuningJob Operation</seealso>
+        public virtual Task<StopHyperParameterTuningJobResponse> StopHyperParameterTuningJobAsync(StopHyperParameterTuningJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = StopHyperParameterTuningJobRequestMarshaller.Instance;
+            var unmarshaller = StopHyperParameterTuningJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopHyperParameterTuningJobRequest,StopHyperParameterTuningJobResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1185,6 +1441,38 @@ namespace Amazon.SageMaker
             var unmarshaller = StopTrainingJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopTrainingJobRequest,StopTrainingJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopTransformJob
+
+        internal virtual StopTransformJobResponse StopTransformJob(StopTransformJobRequest request)
+        {
+            var marshaller = StopTransformJobRequestMarshaller.Instance;
+            var unmarshaller = StopTransformJobResponseUnmarshaller.Instance;
+
+            return Invoke<StopTransformJobRequest,StopTransformJobResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopTransformJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopTransformJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopTransformJob">REST API Reference for StopTransformJob Operation</seealso>
+        public virtual Task<StopTransformJobResponse> StopTransformJobAsync(StopTransformJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = StopTransformJobRequestMarshaller.Instance;
+            var unmarshaller = StopTransformJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopTransformJobRequest,StopTransformJobResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

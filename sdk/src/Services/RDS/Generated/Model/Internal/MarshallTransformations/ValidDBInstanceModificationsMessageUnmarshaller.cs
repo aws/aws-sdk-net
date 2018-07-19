@@ -61,6 +61,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.Storage.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("ValidProcessorFeatures/AvailableProcessorFeature", targetDepth))
+                    {
+                        var unmarshaller = AvailableProcessorFeatureUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ValidProcessorFeatures.Add(item);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

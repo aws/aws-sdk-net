@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeFleets operation.
-    /// Describes the specified EC2 Fleet.
+    /// Describes one or more of your EC2 Fleet.
     /// </summary>
     public partial class DescribeFleetsRequest : AmazonEC2Request
     {
@@ -43,6 +43,33 @@ namespace Amazon.EC2.Model
         /// <para>
         /// One or more filters.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>activity-status</code> - The progress of the EC2 Fleet ( <code>error</code>
+        /// | <code>pending-fulfillment</code> | <code>pending-termination</code> | <code>fulfilled</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>excess-capacity-termination-policy</code> - Indicates whether to terminate
+        /// running instances if the target capacity is decreased below the current EC2 Fleet
+        /// size (<code>true</code> | <code>false</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>fleet-state</code> - The state of the EC2 Fleet (<code>submitted</code> | <code>active</code>
+        /// | <code>deleted</code> | <code>failed</code> | <code>deleted-running</code> | <code>deleted-terminating</code>
+        /// | <code>modifying</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>replace-unhealthy-instances</code> - Indicates whether EC2 Fleet should replace
+        /// unhealthy instances (<code>true</code> | <code>false</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>type</code> - The type of request (<code>request</code> | <code>maintain</code>).
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<Filter> Filters
         {

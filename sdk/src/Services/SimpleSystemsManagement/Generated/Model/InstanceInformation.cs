@@ -73,7 +73,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property AgentVersion. 
         /// <para>
-        /// The version of the SSM Agent running on your Linux instance. 
+        /// The version of SSM Agent running on your Linux instance. 
         /// </para>
         /// </summary>
         public string AgentVersion
@@ -145,8 +145,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property IamRole. 
         /// <para>
-        /// The Amazon Identity and Access Management (IAM) role assigned to EC2 instances or
-        /// managed instances. 
+        /// The Amazon Identity and Access Management (IAM) role assigned to the on-premises Systems
+        /// Manager managed instances. This call does not return the IAM role for Amazon EC2 instances.
+        /// 
         /// </para>
         /// </summary>
         public string IamRole
@@ -200,10 +201,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property IsLatestVersion. 
         /// <para>
-        /// Indicates whether latest version of the SSM Agent is running on your instance. Some
-        /// older versions of Windows Server use the EC2Config service to process SSM requests.
-        /// For this reason, this field does not indicate whether or not the latest version is
-        /// installed on Windows managed instances.
+        /// Indicates whether latest version of SSM Agent is running on your instance. Some older
+        /// versions of Windows Server use the EC2Config service to process SSM requests. For
+        /// this reason, this field does not indicate whether or not the latest version is installed
+        /// on Windows managed instances.
         /// </para>
         /// </summary>
         public bool IsLatestVersion
@@ -293,7 +294,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property PingStatus. 
         /// <para>
-        /// Connection status of the SSM Agent. 
+        /// Connection status of SSM Agent. 
         /// </para>
         /// </summary>
         public PingStatus PingStatus

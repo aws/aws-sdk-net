@@ -172,6 +172,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.EarliestRestorableTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("EnabledCloudwatchLogsExports/member", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.EnabledCloudwatchLogsExports.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("Endpoint", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

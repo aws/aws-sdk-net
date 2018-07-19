@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the clouddirectory-2016-05-10.normal.json service model.
+ * Do not modify this file. This file is generated from the clouddirectory-2017-01-11.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -32,6 +32,7 @@ namespace Amazon.CloudDirectory.Model
     /// </summary>
     public partial class BatchReadOperation
     {
+        private BatchGetLinkAttributes _getLinkAttributes;
         private BatchGetObjectAttributes _getObjectAttributes;
         private BatchGetObjectInformation _getObjectInformation;
         private BatchListAttachedIndices _listAttachedIndices;
@@ -44,6 +45,24 @@ namespace Amazon.CloudDirectory.Model
         private BatchListOutgoingTypedLinks _listOutgoingTypedLinks;
         private BatchListPolicyAttachments _listPolicyAttachments;
         private BatchLookupPolicy _lookupPolicy;
+
+        /// <summary>
+        /// Gets and sets the property GetLinkAttributes. 
+        /// <para>
+        /// Retrieves attributes that are associated with a typed link.
+        /// </para>
+        /// </summary>
+        public BatchGetLinkAttributes GetLinkAttributes
+        {
+            get { return this._getLinkAttributes; }
+            set { this._getLinkAttributes = value; }
+        }
+
+        // Check to see if GetLinkAttributes property is set
+        internal bool IsSetGetLinkAttributes()
+        {
+            return this._getLinkAttributes != null;
+        }
 
         /// <summary>
         /// Gets and sets the property GetObjectAttributes. 

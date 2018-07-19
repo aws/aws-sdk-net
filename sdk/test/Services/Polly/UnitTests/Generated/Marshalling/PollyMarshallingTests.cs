@@ -140,6 +140,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Polly")]
+        public void GetSpeechSynthesisTaskMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetSpeechSynthesisTask");
+
+            var request = InstantiateClassGenerator.Execute<GetSpeechSynthesisTaskRequest>();
+            var marshaller = new GetSpeechSynthesisTaskRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetSpeechSynthesisTask", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetSpeechSynthesisTaskResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetSpeechSynthesisTaskResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Polly")]
         public void ListLexiconsMarshallTest()
         {
             var operation = service_model.FindOperation("ListLexicons");
@@ -172,6 +204,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Polly")]
+        public void ListSpeechSynthesisTasksMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListSpeechSynthesisTasks");
+
+            var request = InstantiateClassGenerator.Execute<ListSpeechSynthesisTasksRequest>();
+            var marshaller = new ListSpeechSynthesisTasksRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListSpeechSynthesisTasks", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListSpeechSynthesisTasksResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListSpeechSynthesisTasksResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Polly")]
         public void PutLexiconMarshallTest()
         {
             var operation = service_model.FindOperation("PutLexicon");
@@ -196,6 +260,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = PutLexiconResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as PutLexiconResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Polly")]
+        public void StartSpeechSynthesisTaskMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartSpeechSynthesisTask");
+
+            var request = InstantiateClassGenerator.Execute<StartSpeechSynthesisTaskRequest>();
+            var marshaller = new StartSpeechSynthesisTaskRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("StartSpeechSynthesisTask", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = StartSpeechSynthesisTaskResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as StartSpeechSynthesisTaskResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 

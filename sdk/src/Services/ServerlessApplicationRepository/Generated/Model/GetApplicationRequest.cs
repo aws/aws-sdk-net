@@ -39,7 +39,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The ID of the application to get.
+        /// The Amazon Resource Name (ARN) of the application.
         /// </para>
         /// </summary>
         public string ApplicationId

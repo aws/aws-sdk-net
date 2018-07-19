@@ -122,6 +122,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetLogLevel())
+                {
+                    context.Writer.WritePropertyName("logLevel");
+                    context.Writer.Write(publicRequest.LogLevel);
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");

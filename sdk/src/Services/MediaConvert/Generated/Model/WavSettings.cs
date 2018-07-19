@@ -35,6 +35,7 @@ namespace Amazon.MediaConvert.Model
     {
         private int? _bitDepth;
         private int? _channels;
+        private WavFormat _format;
         private int? _sampleRate;
 
         /// <summary>
@@ -68,6 +69,21 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetChannels()
         {
             return this._channels.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Format.
+        /// </summary>
+        public WavFormat Format
+        {
+            get { return this._format; }
+            set { this._format = value; }
+        }
+
+        // Check to see if Format property is set
+        internal bool IsSetFormat()
+        {
+            return this._format != null;
         }
 
         /// <summary>

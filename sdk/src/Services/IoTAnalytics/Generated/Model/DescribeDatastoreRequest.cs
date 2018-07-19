@@ -34,6 +34,7 @@ namespace Amazon.IoTAnalytics.Model
     public partial class DescribeDatastoreRequest : AmazonIoTAnalyticsRequest
     {
         private string _datastoreName;
+        private bool? _includeStatistics;
 
         /// <summary>
         /// Gets and sets the property DatastoreName. 
@@ -51,6 +52,24 @@ namespace Amazon.IoTAnalytics.Model
         internal bool IsSetDatastoreName()
         {
             return this._datastoreName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeStatistics. 
+        /// <para>
+        /// If true, include statistics about the data store in the response.
+        /// </para>
+        /// </summary>
+        public bool IncludeStatistics
+        {
+            get { return this._includeStatistics.GetValueOrDefault(); }
+            set { this._includeStatistics = value; }
+        }
+
+        // Check to see if IncludeStatistics property is set
+        internal bool IsSetIncludeStatistics()
+        {
+            return this._includeStatistics.HasValue; 
         }
 
     }

@@ -33,6 +33,7 @@ namespace Amazon.IoT.Model
     public partial class JobExecution
     {
         private long? _executionNumber;
+        private bool? _forceCanceled;
         private string _jobId;
         private DateTime? _lastUpdatedAt;
         private DateTime? _queuedAt;
@@ -40,6 +41,7 @@ namespace Amazon.IoT.Model
         private JobExecutionStatus _status;
         private JobExecutionStatusDetails _statusDetails;
         private string _thingArn;
+        private long? _versionNumber;
 
         /// <summary>
         /// Gets and sets the property ExecutionNumber. 
@@ -59,6 +61,25 @@ namespace Amazon.IoT.Model
         internal bool IsSetExecutionNumber()
         {
             return this._executionNumber.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ForceCanceled. 
+        /// <para>
+        /// Will be <code>true</code> if the job execution was canceled with the optional <code>force</code>
+        /// parameter set to <code>true</code>.
+        /// </para>
+        /// </summary>
+        public bool ForceCanceled
+        {
+            get { return this._forceCanceled.GetValueOrDefault(); }
+            set { this._forceCanceled = value; }
+        }
+
+        // Check to see if ForceCanceled property is set
+        internal bool IsSetForceCanceled()
+        {
+            return this._forceCanceled.HasValue; 
         }
 
         /// <summary>
@@ -186,6 +207,25 @@ namespace Amazon.IoT.Model
         internal bool IsSetThingArn()
         {
             return this._thingArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionNumber. 
+        /// <para>
+        /// The version of the job execution. Job execution versions are incremented each time
+        /// they are updated by a device.
+        /// </para>
+        /// </summary>
+        public long VersionNumber
+        {
+            get { return this._versionNumber.GetValueOrDefault(); }
+            set { this._versionNumber = value; }
+        }
+
+        // Check to see if VersionNumber property is set
+        internal bool IsSetVersionNumber()
+        {
+            return this._versionNumber.HasValue; 
         }
 
     }

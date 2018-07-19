@@ -29,8 +29,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the AllocateHosts operation.
-    /// Allocates a Dedicated Host to your account. At minimum you need to specify the instance
-    /// size type, Availability Zone, and quantity of hosts you want to allocate.
+    /// Allocates a Dedicated Host to your account. At a minimum, specify the instance size
+    /// type, Availability Zone, and quantity of hosts to allocate.
     /// </summary>
     public partial class AllocateHostsRequest : AmazonEC2Request
     {
@@ -85,8 +85,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Unique, case-sensitive identifier you provide to ensure idempotency of the request.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+        /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
         /// to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. 
         /// </para>
         /// </summary>
@@ -105,9 +105,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// Specify the instance type that you want your Dedicated Hosts to be configured for.
-        /// When you specify the instance type, that is the only instance type that you can launch
-        /// onto that host.
+        /// Specify the instance type for which to configure your Dedicated Hosts. When you specify
+        /// the instance type, that is the only instance type that you can launch onto that host.
         /// </para>
         /// </summary>
         public string InstanceType
@@ -125,7 +124,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Quantity. 
         /// <para>
-        /// The number of Dedicated Hosts you want to allocate to your account with these parameters.
+        /// The number of Dedicated Hosts to allocate to your account with these parameters.
         /// </para>
         /// </summary>
         public int Quantity

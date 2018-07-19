@@ -42,6 +42,7 @@ namespace Amazon.Pinpoint.Model
         private bool? _isArchived;
         private string _lastModifiedBy;
         private string _lastModifiedDate;
+        private int? _messagesPerSecond;
         private string _platform;
         private string _roleArn;
         private int? _version;
@@ -109,8 +110,7 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HasCredential. If the channel is registered with a credential
-        /// for authentication.
+        /// Gets and sets the property HasCredential. Not used. Retained for backwards compatibility.
         /// </summary>
         public bool HasCredential
         {
@@ -197,6 +197,21 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetLastModifiedDate()
         {
             return this._lastModifiedDate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MessagesPerSecond. Messages per second that can be sent
+        /// </summary>
+        public int MessagesPerSecond
+        {
+            get { return this._messagesPerSecond.GetValueOrDefault(); }
+            set { this._messagesPerSecond = value; }
+        }
+
+        // Check to see if MessagesPerSecond property is set
+        internal bool IsSetMessagesPerSecond()
+        {
+            return this._messagesPerSecond.HasValue; 
         }
 
         /// <summary>

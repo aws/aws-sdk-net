@@ -1,3 +1,296 @@
+### 3.3.320.0 (2018-07-18 21:37 UTC)
+* IoTAnalytics (3.3.2.0)
+	* This change allows publishing of channel/datastore size as part of the describe-channel/describe-datastore APIs. We introduce an optional boolean parameter 'includeStatistics' in the Describe request. If the user sets this parameter to true, the describe response will return the resource size and timestamp at which the size was recorded. If the parameter is set to false, the size won't be computed or returned.
+
+### 3.3.319.0 (2018-07-17 15:32 UTC)
+* Comprehend (3.3.2.0)
+	* This release gives customers the ability to tokenize (find word boundaries) text and for each word provide a label for the part of speech, using the DetectSyntax operation. This API is useful to analyze text for specific conditions like for example finding nouns and the correlating adjectives to understand customer feedback. 
+* Polly (3.3.6.0)
+	* Amazon Polly adds new API for asynchronous synthesis to S3
+* SageMaker (3.3.8.0)
+	* Amazon SageMaker has added the capability for customers to run fully-managed, high-throughput batch transform machine learning models with a simple API call. Batch Transform is ideal for high-throughput workloads and predictions in non-real-time scenarios where data is accumulated over a period of time for offline processing.
+* Snowball (3.3.3.0)
+	* AWS Snowball Edge announces the availability of Amazon EC2 compute instances that run on the device. AWS Snowball Edge is a 100-TB ruggedized device built to transfer data into and out of AWS with optional support for local Lambda-based compute functions. With this feature, developers and administrators can run their EC2-based applications on the device providing them with an end to end vertically integrated AWS experience. Designed for data pre-processing, compression, machine learning, and data collection applications, these new instances, called SBE1 instances, feature 1.8 GHz Intel Xeon D processors up to 16 vCPUs, and 32 GB of memory. The SBE1 instance type is available in four sizes and multiple instances can be run on the device at the same time. Customers can now run compute instances using the same Amazon Machine Images (AMIs) that are used in Amazon EC2.
+
+### 3.3.318.0 (2018-07-13 21:47 UTC)
+* AppStream (3.3.16.0)
+	* This API update adds support for sharing AppStream images across AWS accounts within the same region.
+* KinesisVideo (3.3.1.0)
+	* Adds support for HLS video playback of Kinesis Video streams using the KinesisVideo client by including "GET_HLS_STREAMING_SESSION_URL" as an additional APIName parameter in the GetDataEndpoint input.
+* KinesisVideoArchivedMedia (3.3.1.0)
+	* Adds support for HLS video playback of Kinesis Video streams by providing the GetHLSStreamingSessionURL function in the KinesisVideoArchivedMedia client.
+
+### 3.3.317.0 (2018-07-12 20:44 UTC)
+* AppSync (3.3.3.0)
+	* This release adds support for configuring HTTP  endpoints as data sources for your AWS AppSync GraphQL API.
+* DLM (3.3.0.0)
+	* Amazon Data Lifecycle Manager (DLM) for EBS Snapshots provides a simple, automated way to back up data stored on Amazon EBS volumes. You can define backup and retention schedules for EBS snapshots by creating lifecycle policies based on tags. With this feature, you no longer have to rely on custom scripts to create and manage your backups. This feature is now available in the US East (N. Virginia), US West (Oregon), and Europe (Ireland) AWS regions at no additional cost.
+* ElasticFileSystem (3.3.2.0)
+	* Amazon EFS now allows you to instantly provision the throughput required for your applications independent of the amount of data stored in your file system, allowing you to optimize throughput for your applications performance needs. Starting today, you can provision the throughput your applications require quickly with a few simple steps using AWS Console, AWS CLI or AWS API to achieve consistent performance.
+* ElasticMapReduce (3.3.5.10)
+	* Documentation updates for EMR.
+* IdentityManagement (3.3.7.0)
+	* SDK release to support IAM delegated administrator feature. The feature lets customers attach permissions boundary to IAM principals. The IAM principals cannot operate exceeding the permission specified in permissions boundary.
+
+### 3.3.316.0 (2018-07-11 21:44 UTC)
+* APIGateway (3.3.19.0)
+	* Support for fine grain throttling for API gateway. 
+* CostExplorer (3.3.6.0)
+	* Starting today, you can access custom Reserved Instance (RI) purchase recommendations for your Amazon Redshift, Amazon ElastiCache, and Amazon Elasticsearch reservations via AWS Cost Explorer API, in addition to accessing RI purchase recommendations for your Amazon EC2 and Amazon RDS reservations.
+* S3 (3.3.19.0)
+	* S3 Select support for BZIP2 compressed input files
+* SimpleSystemsManagement (3.3.25.0)
+	* Support Conditional Branching OnFailure for SSM Automation
+
+### 3.3.315.0 (2018-07-10 21:11 UTC)
+* AppStream (3.3.15.0)
+	* This API update adds pagination to the DescribeImages API to support future features and enhancements.
+* CodeBuild (3.3.12.0)
+	* API changes to CodeBuild service, support report build status for Github sources
+* EC2 (3.3.55.0)
+	* Support CpuOptions field in Launch Template data and allow Launch Template name to contain hyphen.
+* Glue (3.3.9.0)
+	* AWS Glue adds the ability to crawl DynamoDB tables.
+* OpsWorks (3.3.3.10)
+	* Documentation updates for AWS OpsWorks Stacks.
+
+### 3.3.314.1 (2018-07-10 01:40 UTC)
+* ApplicationAutoScaling (3.3.10.1)
+	* Documentation updates for application-autoscaling
+
+### 3.3.314.0 (2018-07-09 20:26 UTC)
+* ApplicationAutoScaling (3.3.10.0)
+	* The release adds support for custom resource auto scaling.
+* CostExplorer (3.3.5.0)
+	* AWS Cost Explorer provides you with Reserved Instance (RI) purchase recommendations based on your total cross-account Amazon EC2 and Amazon RDS usage. Starting today, linked accounts can also access custom RI purchase recommendations for specific linked accounts directly via AWS Cost Explorer API.
+* DatabaseMigrationService (3.3.8.0)
+	* Added support for DmsTransfer endpoint type and support for re-validate option in table reload API.
+* Lambda (3.3.15.0)
+	* Add support for .NET Core 2.1 to Lambda.
+* TranscribeService (3.3.2.0)
+	* You can now specify an Amazon S3 output bucket to store the transcription of your audio file when you call the StartTranscriptionJob operation. 
+
+### 3.3.313.0 (2018-07-06 17:41 UTC)
+* MediaConvert (3.3.4.0)
+	* This release adds support for the following 1) users can specify tags to be attached to queues, presets, and templates during creation of those resources on MediaConvert. 2) users can now view the count of jobs in submitted state and in progressing state on a per queue basis.
+* ServerlessApplicationRepository (3.3.2.0)
+	* Added required fields and documentation updates for AWS Serverless Application Repository.
+
+### 3.3.312.0 (2018-07-05 21:15 UTC)
+* Pinpoint (3.3.8.0)
+	* This release of the Amazon Pinpoint SDK adds the ability to create complex segments and validate phone numbers for SMS messages. It also adds the ability to get or delete endpoints based on user IDs, remove attributes from endpoints, and list the defined channels for an app.
+* SageMaker (3.3.7.0)
+	* Amazon SageMaker NotebookInstances supports 'Updating' as a NotebookInstanceStatus.  In addition, DescribeEndpointOutput now includes Docker repository digest of deployed Model images.
+
+### 3.3.311.0 (2018-07-03 20:11 UTC)
+* EC2 (3.3.54.0)
+	* Added support for customers to tag EC2 Dedicated Hosts
+* Redshift (3.3.5.0)
+	* Feature 1 - On-demand cluster release version - When Amazon Redshift releases a new cluster version, you can choose to upgrade to that version immediately instead of waiting until your next maintenance window. You can also choose to roll back to a previous version. The two new APIs added for managing cluster release version are - ModifyClusterDbRevision, DescribeClusterDbRevisions. Feature 2 - Upgradeable reserved instance - You can now exchange one Reserved Instance for a new Reserved Instance with no changes to the terms of your existing Reserved Instance (term, payment type, or number of nodes). The two new APIs added for managing these upgrades are - AcceptReservedNodeExchange, GetReservedNodeExchangeOfferings. 
+* Core 3.3.24.3
+	* General availability of AWS Lambda in the China Northwest (cn-northwest-1) region. For more information, see the AWS Lambda developer guide.
+
+
+	* All services packages updated to require new Core
+
+### 3.3.310.0 (2018-07-02 20:51 UTC)
+* SimpleSystemsManagement (3.3.24.0)
+	* Execution History and StartAssociationOnce release for State Manager. Users now have the ability to view association execution history with DescribeAssociationExecutions and DescribeAssociationExecutionTargets. Users can also execute an association by calling StartAssociationOnce.
+
+### 3.3.309.0 (2018-06-28 21:13 UTC)
+* ElasticBeanstalk (3.3.9.0)
+	* Elastic Beanstalk adds "Suspended" health status to the EnvironmentHealthStatus enum type and updates document.
+* Lambda (3.3.14.0)
+	* Support for SQS as an event source.
+* StorageGateway (3.3.9.0)
+	* AWS Storage Gateway now enables you to use Server Message Block (SMB) protocol  to store and access objects in Amazon Simple Storage Service (S3). 
+
+### 3.3.308.0 (2018-06-27 22:08 UTC)
+* CloudFront (3.3.8.0)
+	* Unpublish delete-service-linked-role API.
+* CodePipeline (3.3.5.0)
+	* UpdatePipeline may now throw a LimitExceededException when adding or updating Source Actions that use periodic checks for change detection
+* Comprehend (3.3.1.0)
+	* This release gives customers the option to batch process a set of documents stored within an S3 bucket in addition to the existing synchronous nature of the current Comprehend API.
+* SecretsManager (3.3.1.1)
+	* Documentation updates for secretsmanager
+
+### 3.3.307.0 (2018-06-26 22:24 UTC)
+* Inspector (3.3.6.0)
+	* Introduce four new APIs to view and preview Exclusions.  Exclusions show which intended security checks are excluded from an assessment, along with reasons and recommendations to fix.  The APIs are CreateExclusionsPreview, GetExclusionsPreview, ListExclusions, and DescribeExclusions.
+* SecretsManager (3.3.1.0)
+	* This release adds support for resource-based policies that attach directly to your secrets. These policies provide an additional way to control who can access your secrets and what they can do with them. For more information, see https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-based-policies.html in the Secrets Manager User Guide.
+
+### 3.3.306.0 (2018-06-22 22:01 UTC)
+* AlexaForBusiness (3.3.5.0)
+	*  Introduce DeviceNotRegisteredException for AWSMoneypenny
+* AppStream (3.3.14.0)
+	* This API update enables customers to find their VPC private IP address and ENI ID associated with AppStream streaming sessions.
+* Core 3.3.24.2
+	* General availability release of Amazon Translate in the GovCloud West (us-gov-west-1) region. For more information, see the Amazon Translate developer guide.
+
+
+	* All services packages updated to require new Core
+
+### 3.3.305.0 (2018-06-21 23:29 UTC)
+* CloudDirectory (3.3.9.0)
+	* SDK release to support Flexible Schema initiative being carried out by Amazon Cloud Directory. This feature lets customers using new capabilities like: variant typed attributes, dynamic facets and AWS managed Cloud Directory schemas.
+
+### 3.3.304.0 (2018-06-21 20:16 UTC)
+* Macie (3.3.0.0)
+	* Amazon Macie is a security service that uses machine learning to automatically discover, classify, and protect sensitive data in AWS. With this release, we are launching the following Macie HTTPS API operations: AssociateMemberAccount, AssociateS3Resources, DisassociateMemberAccount, DisassociateS3Resources, ListMemberAccounts, ListS3Resources, and UpdateS3Resources. With these API operations you can issue HTTPS requests directly to the service.
+* Neptune (3.3.2.0)
+	* Deprecates the PubliclyAccessible parameter that is not supported by Amazon Neptune.
+* SimpleSystemsManagement (3.3.23.0)
+	* Adds Amazon Linux 2 support to Patch Manager
+
+### 3.3.303.0 (2018-06-20 20:09 UTC)
+* ACMPCA (3.3.1.0)
+	* CA Restore is a new feature within AWS Certificate Manager Private Certificate Authority (ACM PCA) that allows you to restore a private certificate authority that has been deleted. When you issue the DeleteCertificateAuthority call, you can now specify the number of days (7-30, with 30 being the default) in which the private certificate authority will remain in the DELETED state. During this time, the private certificate authority can be restored with the RestoreCertificateAuthority API call and then be returned to the PENDING_CERTIFICATE or DISABLED state, depending upon the state prior to deletion.  Summary of API Changes: 1). Added RestoreCertificateAuthority API call; 2). Added optional PermanentDeletionTimeInDays parameter to DeleteCertificateAuthority API call. If this parameter is not specified, the DeleteCertificateAuthority API call will use a 30 day restore period as default.
+* MediaLive (3.3.7.0)
+	* AWS Elemental MediaLive now makes Reserved Outputs and Inputs available through the AWS Management Console and API. You can reserve outputs and inputs with a 12 month commitment in exchange for discounted hourly rates. Pricing is available at https://aws.amazon.com/medialive/pricing/
+* RDS (3.3.26.0)
+	* This release adds a new parameter to specify the retention period for Performance Insights data for RDS instances. You can either choose 7 days (default) or 731 days. For more information, see Amazon RDS Documentation.
+
+### 3.3.302.1 (2018-06-19 20:24 UTC)
+* Rekognition (3.3.8.8)
+	* Documentation updates for rekognition
+* Core 3.3.24.1
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
+### 3.3.302.0 (2018-06-19 02:26 UTC)
+* Neptune (3.3.1.0)
+	* Fixed Neptune with correct service model.
+
+### 3.3.301.0 (2018-06-15 23:50 UTC)
+* MediaConvert (3.3.3.0)
+	* This release adds language code support according to the ISO-639-3 standard. Custom 3-character language codes are now supported on input and output for both audio and captions.
+
+### 3.3.300.0 (2018-06-14 22:16 UTC)
+* APIGateway (3.3.18.0)
+	* Support for PRIVATE endpoint configuration type
+* DynamoDBv2 (3.3.10.0)
+	* Added two new fields SSEType and KMSMasterKeyArn to SSEDescription block in describe-table output.
+* IoTAnalytics (3.3.1.0)
+	* With this release, AWS IoT Analytics allows you to tag resources. Tags are metadata that you can create and use to manage your IoT Analytics resources. For more information about tagging, see AWS Tagging Strategies. For technical documentation, look for the tagging operations in the AWS IoT Analytics API reference or User Guide.
+
+### 3.3.299.0 (2018-06-13 22:32 UTC)
+* ServiceCatalog (3.3.10.0)
+	* Introduced new length limitations for few of the product fields.
+* SimpleSystemsManagement (3.3.22.0)
+	* Added support for new parameter, CloudWatchOutputConfig, for SendCommand API. Users can now have RunCommand output sent to CloudWatchLogs.
+
+### 3.3.298.0 (2018-06-12 21:29 UTC)
+* DeviceFarm (3.3.7.0)
+	* Adding VPCEndpoint support for Remote access. Allows customers to be able to access their private endpoints/services running in their VPC during remote access.
+* ECS (3.3.15.0)
+	* Introduces daemon scheduling capability to deploy one task per instance on selected instances in a cluster.  Adds a "force" flag to the DeleteService API to delete a service without requiring to scale down the number of tasks to zero.
+
+### 3.3.297.0 (2018-06-11 21:08 UTC)
+* CloudDirectory (3.3.8.0)
+	* Amazon Cloud Directory now supports optional attributes on Typed Links, giving users the ability to associate and manage data on Typed Links. 
+* RDS (3.3.25.1)
+	* Changed lists of valid EngineVersion values to links to the RDS User Guide.
+* StorageGateway (3.3.8.0)
+	*  AWS Storage Gateway now enables you to create cached volumes and tapes with AWS KMS support.
+
+### 3.3.296.0 (2018-06-09 01:01 UTC)
+* DynamoDBv2 (3.3.9.0)
+	* Updated to use new Core, version 3.3.24.0
+	* Removed AsyncRunner usage for async paths in DynamoDB DataModel and DocumentModel APIs - PR https://github.com/aws/aws-sdk-net/pull/896
+* Core 3.3.24.0
+	* DotnetCLI fix for BaseIntermediateOutputPath.
+	* Replace EC2 instance profile credentials resolver in the credentials fallback chain with a new singleton implementation.
+* AWSSDK.Extensions.NETCore.Setup (3.3.6)
+	* Support for TryAddAWSService - PR https://github.com/aws/aws-sdk-net/pull/935
+
+
+### 3.3.295.0 (2018-06-08 17:41 UTC)
+* MediaTailor (3.3.1.0)
+	* Fixes a bug in the request URIs for MediaTailor PlaybackConfiguration operations.
+
+### 3.3.294.0 (2018-06-07 22:10 UTC)
+* MediaLive (3.3.6.0)
+	* AWS Elemental MediaLive now makes channel log information available through Amazon CloudWatch Logs. You can set up each MediaLive channel with a logging level; when the channel is run, logs will automatically be published to your account on Amazon CloudWatch Logs
+
+### 3.3.293.0 (2018-06-05 22:44 UTC)
+* CostExplorer (3.3.4.0)
+	* Cost Explorer API is providing programmatic access to RI saving metrics to enable customers to optimize their reservations.
+* Polly (3.3.5.0)
+	* Amazon Polly adds new French voice - "Lea"
+* RDS (3.3.25.0)
+	* This release adds customizable processor features for RDS instances.
+* SecretsManager (3.3.0.10)
+	* Documentation updates for secretsmanager
+* Shield (3.3.2.0)
+	* DDoS Response Team access management for AWS Shield
+
+### 3.3.292.0 (2018-06-04 21:50 UTC)
+* AppStream (3.3.13.0)
+	* Amazon AppStream 2.0 adds support for Google Drive for G Suite. With this feature, customers will be able to connect their G Suite accounts with AppStream 2.0 and enable Google Drive access for an AppStream 2.0 stack. Users of the stack can then link their Google Drive using their G Suite login credentials and use their existing files stored in Drive with their AppStream 2.0 applications. File changes will be synced automatically to Google cloud. 
+* EC2 (3.3.53.0)
+	* You are now able to use instance storage (up to 3600 GB of NVMe based SSD) on M5 instances, the next generation of EC2's General Purpose instances in us-east-1, us-west-2, us-east-2, eu-west-1 and ca-central-1. M5 instances offer up to 96 vCPUs, 384 GiB of DDR4 instance memory, 25 Gbps in Network bandwidth and improved EBS and Networking bandwidth on smaller instance sizes and provide a balance of compute, memory and network resources for many applications.
+* EKS (3.3.0.0)
+	* Amazon Elastic Container Service for Kubernetes (Amazon EKS) is a fully managed service that makes it easy to deploy, manage, and scale containerized applications using Kubernetes on AWS. Amazon EKS runs the Kubernetes control plane for you across multiple AWS availability zones to eliminate a single point of failure. Amazon EKS is certified Kubernetes conformant so you can use existing tooling and plugins from partners and the Kubernetes community. Applications running on any standard Kubernetes environment are fully compatible and can be easily migrated to Amazon EKS. 
+* MediaConvert (3.3.2.0)
+	* This release adds the support for Common Media Application Format (CMAF) fragmented outputs, RF64 WAV audio output format, and HEV1 or HEVC1 MP4 packaging types when using HEVC in DASH or CMAF outputs.
+* MigrationHub (3.3.1.6)
+	* Documentation updates for AWS Migration Hub
+* SageMaker (3.3.6.0)
+	* Amazon SageMaker has added the ability to run hyperparameter tuning jobs. A hyperparameter tuning job will create and evaluate multiple training jobs while tuning algorithm hyperparameters, to optimize a customer specified objective metric.
+
+### 3.3.291.0 (2018-06-01 20:07 UTC)
+* DirectoryService (3.3.5.0)
+	* Added ResetUserPassword API. Customers can now reset their users' passwords without providing the old passwords in Simple AD and Microsoft AD.
+* IoT (3.3.13.0)
+	* We are releasing force CancelJob and CancelJobExecution functionalities to customers.
+* MediaTailor (3.3.0.0)
+	* AWS Elemental MediaTailor is a personalization and monetization service that allows scalable server-side ad insertion. The service enables you to serve targeted ads to viewers while maintaining broadcast quality in over-the-top (OTT) video applications. This SDK allows user access to the AWS Elemental MediaTailor configuration interface.
+* Redshift (3.3.4.5)
+	* Documentation updates for redshift
+* SimpleNotificationService (3.3.1.0)
+	* The SNS Subscribe API has been updated with two new optional parameters: Attributes and ReturnSubscriptionArn. Attributes is a map of subscription attributes which can be one or more of: FilterPolicy, DeliveryPolicy, and RawMessageDelivery. ReturnSubscriptionArn is a boolean parameter that overrides the default behavior of returning "pending confirmation" for subscriptions that require confirmation instead of returning the subscription ARN.
+* Core 3.3.23.1
+	* SageMaker has added support for the Asia Pacific (Tokyo) region.
+
+
+	* All services packages updated to require new Core
+
+### 3.3.290.0 (2018-05-31 01:19 UTC)
+* ElasticLoadBalancingV2 (3.3.9.0)
+	* This release of Elastic Load Balancing introduces user authentication on Application Load Balancer.
+* Neptune (3.3.0.0)
+	* Amazon Neptune is a fast, reliable graph database service that makes it easy to build and run applications that work with highly connected datasets. Neptune supports popular graph models Property Graph and W3C's Resource Description Frame (RDF), and their respective query languages Apache TinkerPop Gremlin 3.3.2 and SPARQL 1.1. 
+* Core 3.3.23.0
+	* Updated service.json with the canonical.
+
+### 3.3.289.0 (2018-05-29 20:00 UTC)
+* PI (3.3.0.0)
+	* Performance Insights is a feature of Amazon Relational Database Service (RDS) that helps you quickly assess the load on your database, and determine when and where to take action. You can use the SDK to retrieve Performance Insights data and integrate your monitoring solutions.
+
+### 3.3.288.0 (2018-05-25 21:36 UTC)
+* AppStream (3.3.12.0)
+	* This API update enables customers to control whether users can transfer data between their local devices and their streaming applications through file uploads and downloads, clipboard operations, or printing to local devices
+* ConfigService (3.3.18.0)
+	* AWS Config adds support for retention period, allowing you to specify a retention period for your AWS Config configuration items.
+* Glue (3.3.8.0)
+	* AWS Glue now sends a delay notification to Amazon CloudWatch Events when an ETL job runs longer than the specified delay notification threshold.
+* IoT (3.3.12.0)
+	* We are exposing DELETION_IN_PROGRESS as a new job status in regards to the release of DeleteJob API.
+
+### 3.3.287.0 (2018-05-24 21:56 UTC)
+* CodeBuild (3.3.11.0)
+	* AWS CodeBuild Adds Support for Windows Builds.
+* ElasticLoadBalancingV2 (3.3.8.7)
+	* Updated elasticloadbalancingV2 documentation with slow start mode details.  The slow start mode can be used to gradually increase the number of requests forwarded by a load balancer to a newly added target in a target group. It provides a new target an opportunity to warm up before it can handle its fair share of requests received from the load balancer. Slow start mode is disabled by default and can be enabled on a per target group basis.
+* RDS (3.3.24.0)
+	* This release adds CloudWatch Logs integration capabilities to RDS Aurora MySQL clusters
+* SecretsManager (3.3.0.8)
+	* Documentation updates for secretsmanager
+
 ### 3.3.286.0 (2018-05-22 22:09 UTC)
 * ECS (3.3.14.0)
 	* Amazon Elastic Container Service (ECS) adds service discovery for services that use host or bridged network mode. ECS can now also register instance IPs for active tasks using bridged and host networking with Route 53, making them available via DNS.

@@ -38,7 +38,8 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property MessageId. 
         /// <para>
-        /// The ID you wish to assign to the message.
+        /// The ID you wish to assign to the message. Each "messageId" must be unique within each
+        /// batch sent.
         /// </para>
         /// </summary>
         public string MessageId
@@ -56,7 +57,8 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Payload. 
         /// <para>
-        /// The payload of the message.
+        /// The payload of the message. This may be a JSON string or a Base64-encoded string representing
+        /// binary data (in which case you must decode it by means of a pipeline activity).
         /// </para>
         /// </summary>
         public MemoryStream Payload

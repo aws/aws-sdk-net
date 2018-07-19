@@ -540,6 +540,38 @@ namespace Amazon.ConfigService
 
         #endregion
         
+        #region  DeleteRetentionConfiguration
+
+        internal virtual DeleteRetentionConfigurationResponse DeleteRetentionConfiguration(DeleteRetentionConfigurationRequest request)
+        {
+            var marshaller = DeleteRetentionConfigurationRequestMarshaller.Instance;
+            var unmarshaller = DeleteRetentionConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRetentionConfigurationRequest,DeleteRetentionConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRetentionConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRetentionConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteRetentionConfiguration">REST API Reference for DeleteRetentionConfiguration Operation</seealso>
+        public virtual Task<DeleteRetentionConfigurationResponse> DeleteRetentionConfigurationAsync(DeleteRetentionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteRetentionConfigurationRequestMarshaller.Instance;
+            var unmarshaller = DeleteRetentionConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteRetentionConfigurationRequest,DeleteRetentionConfigurationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeliverConfigSnapshot
 
         internal virtual DeliverConfigSnapshotResponse DeliverConfigSnapshot(DeliverConfigSnapshotRequest request)
@@ -1152,6 +1184,38 @@ namespace Amazon.ConfigService
 
         #endregion
         
+        #region  DescribeRetentionConfigurations
+
+        internal virtual DescribeRetentionConfigurationsResponse DescribeRetentionConfigurations(DescribeRetentionConfigurationsRequest request)
+        {
+            var marshaller = DescribeRetentionConfigurationsRequestMarshaller.Instance;
+            var unmarshaller = DescribeRetentionConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeRetentionConfigurationsRequest,DescribeRetentionConfigurationsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeRetentionConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRetentionConfigurations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRetentionConfigurations">REST API Reference for DescribeRetentionConfigurations Operation</seealso>
+        public virtual Task<DescribeRetentionConfigurationsResponse> DescribeRetentionConfigurationsAsync(DescribeRetentionConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeRetentionConfigurationsRequestMarshaller.Instance;
+            var unmarshaller = DescribeRetentionConfigurationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeRetentionConfigurationsRequest,DescribeRetentionConfigurationsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetAggregateComplianceDetailsByConfigRule
 
         internal virtual GetAggregateComplianceDetailsByConfigRuleResponse GetAggregateComplianceDetailsByConfigRule(GetAggregateComplianceDetailsByConfigRuleRequest request)
@@ -1627,6 +1691,38 @@ namespace Amazon.ConfigService
             var unmarshaller = PutEvaluationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutEvaluationsRequest,PutEvaluationsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutRetentionConfiguration
+
+        internal virtual PutRetentionConfigurationResponse PutRetentionConfiguration(PutRetentionConfigurationRequest request)
+        {
+            var marshaller = PutRetentionConfigurationRequestMarshaller.Instance;
+            var unmarshaller = PutRetentionConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutRetentionConfigurationRequest,PutRetentionConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutRetentionConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutRetentionConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRetentionConfiguration">REST API Reference for PutRetentionConfiguration Operation</seealso>
+        public virtual Task<PutRetentionConfigurationResponse> PutRetentionConfigurationAsync(PutRetentionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = PutRetentionConfigurationRequestMarshaller.Instance;
+            var unmarshaller = PutRetentionConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutRetentionConfigurationRequest,PutRetentionConfigurationResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

@@ -29,7 +29,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteEndpointConfig operation.
-    /// Deletes an endpoint configuration. The <code>DeleteEndpoingConfig</code> API deletes
+    /// Deletes an endpoint configuration. The <code>DeleteEndpointConfig</code> API deletes
     /// only the specified configuration. It does not delete endpoints created using the configuration.
     /// </summary>
     public partial class DeleteEndpointConfigRequest : AmazonSageMakerRequest

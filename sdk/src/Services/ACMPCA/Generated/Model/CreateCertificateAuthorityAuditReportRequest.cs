@@ -31,7 +31,7 @@ namespace Amazon.ACMPCA.Model
     /// Container for the parameters to the CreateCertificateAuthorityAuditReport operation.
     /// Creates an audit report that lists every time that the your CA private key is used.
     /// The report is saved in the Amazon S3 bucket that you specify on input. The <a>IssueCertificate</a>
-    /// and <a>RevokeCertificate</a> functions use the private key. You can generate a new
+    /// and <a>RevokeCertificate</a> operations use the private key. You can generate a new
     /// report every 30 minutes.
     /// </summary>
     public partial class CreateCertificateAuthorityAuditReportRequest : AmazonACMPCARequest
@@ -65,7 +65,7 @@ namespace Amazon.ACMPCA.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
+        ///  <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
         /// </code>.
         /// </para>
         /// </summary>

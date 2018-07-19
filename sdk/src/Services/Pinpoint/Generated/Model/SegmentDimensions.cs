@@ -36,6 +36,7 @@ namespace Amazon.Pinpoint.Model
         private SegmentBehaviors _behavior;
         private SegmentDemographics _demographic;
         private SegmentLocation _location;
+        private Dictionary<string, MetricDimension> _metrics = new Dictionary<string, MetricDimension>();
         private Dictionary<string, AttributeDimension> _userAttributes = new Dictionary<string, AttributeDimension>();
 
         /// <summary>
@@ -96,6 +97,21 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetLocation()
         {
             return this._location != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Metrics. Custom segment metrics.
+        /// </summary>
+        public Dictionary<string, MetricDimension> Metrics
+        {
+            get { return this._metrics; }
+            set { this._metrics = value; }
+        }
+
+        // Check to see if Metrics property is set
+        internal bool IsSetMetrics()
+        {
+            return this._metrics != null && this._metrics.Count > 0; 
         }
 
         /// <summary>

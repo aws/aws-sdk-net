@@ -37,6 +37,7 @@ namespace Amazon.SageMaker.Model
     {
         private int? _currentInstanceCount;
         private float? _currentWeight;
+        private List<DeployedImage> _deployedImages = new List<DeployedImage>();
         private int? _desiredInstanceCount;
         private float? _desiredWeight;
         private string _variantName;
@@ -75,6 +76,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCurrentWeight()
         {
             return this._currentWeight.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeployedImages. 
+        /// <para>
+        /// An array of <code>DeployedImage</code> objects that specify the Amazon EC2 Container
+        /// Registry paths of the inference images deployed on instances of this <code>ProductionVariant</code>.
+        /// </para>
+        /// </summary>
+        public List<DeployedImage> DeployedImages
+        {
+            get { return this._deployedImages; }
+            set { this._deployedImages = value; }
+        }
+
+        // Check to see if DeployedImages property is set
+        internal bool IsSetDeployedImages()
+        {
+            return this._deployedImages != null && this._deployedImages.Count > 0; 
         }
 
         /// <summary>

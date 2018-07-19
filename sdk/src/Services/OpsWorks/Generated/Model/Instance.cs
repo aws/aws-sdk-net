@@ -131,7 +131,10 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Arn.
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The instance's Amazon Resource Number (ARN).
+        /// </para>
         /// </summary>
         public string Arn
         {

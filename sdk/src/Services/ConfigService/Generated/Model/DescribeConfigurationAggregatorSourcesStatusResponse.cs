@@ -38,7 +38,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property AggregatedSourceStatusList. 
         /// <para>
-        /// Retuns an AggregatedSourceStatus object. 
+        /// Returns an AggregatedSourceStatus object. 
         /// </para>
         /// </summary>
         public List<AggregatedSourceStatus> AggregatedSourceStatusList

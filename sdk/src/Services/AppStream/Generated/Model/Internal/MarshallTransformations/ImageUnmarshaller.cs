@@ -112,6 +112,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     unmarshalledObject.ImageBuilderSupported = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ImagePermissions", targetDepth))
+                {
+                    var unmarshaller = ImagePermissionsUnmarshaller.Instance;
+                    unmarshalledObject.ImagePermissions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

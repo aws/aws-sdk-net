@@ -511,6 +511,10 @@ namespace Amazon.APIGateway
         /// </summary>
         public static readonly EndpointType EDGE = new EndpointType("EDGE");
         /// <summary>
+        /// Constant PRIVATE for EndpointType
+        /// </summary>
+        public static readonly EndpointType PRIVATE = new EndpointType("PRIVATE");
+        /// <summary>
         /// Constant REGIONAL for EndpointType
         /// </summary>
         public static readonly EndpointType REGIONAL = new EndpointType("REGIONAL");

@@ -30,7 +30,8 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Container for the parameters to the GetParametersByPath operation.
     /// Retrieve parameters in a specific hierarchy. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html">Working
-    /// with Systems Manager Parameters</a>. 
+    /// with Systems Manager Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+    /// 
     /// 
     ///  
     /// <para>
@@ -121,8 +122,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property Path. 
         /// <para>
         /// The hierarchy for the parameter. Hierarchies start with a forward slash (/) and end
-        /// with the parameter name. A hierarchy can have a maximum of 15 levels. Here is an example
-        /// of a hierarchy: <code>/Finance/Prod/IAD/WinServ2016/license33</code> 
+        /// with the parameter name. A parameter name hierarchy can have a maximum of 15 levels.
+        /// Here is an example of a hierarchy: <code>/Finance/Prod/IAD/WinServ2016/license33</code>
+        /// 
         /// </para>
         /// </summary>
         public string Path

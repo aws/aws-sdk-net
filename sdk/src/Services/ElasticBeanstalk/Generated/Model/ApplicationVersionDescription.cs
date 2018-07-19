@@ -196,8 +196,37 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The processing status of the application version.
+        /// The processing status of the application version. Reflects the state of the application
+        /// version during its creation. Many of the values are only applicable if you specified
+        /// <code>True</code> for the <code>Process</code> parameter of the <code>CreateApplicationVersion</code>
+        /// action. The following list describes the possible values.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Unprocessed</code> – Application version wasn't pre-processed or validated.
+        /// Elastic Beanstalk will validate configuration files during deployment of the application
+        /// version to an environment.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Processing</code> – Elastic Beanstalk is currently processing the application
+        /// version.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Building</code> – Application version is currently undergoing an AWS CodeBuild
+        /// build.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Processed</code> – Elastic Beanstalk was successfully pre-processed and validated.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Failed</code> – Either the AWS CodeBuild build failed or configuration files
+        /// didn't pass validation. This application version isn't usable.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ApplicationVersionStatus Status
         {

@@ -739,6 +739,64 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("SimpleSystemsManagement")]
+        public void DescribeAssociationExecutionsMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeAssociationExecutionsRequest>();
+            var marshaller = new DescribeAssociationExecutionsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DescribeAssociationExecutionsRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeAssociationExecutions").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = DescribeAssociationExecutionsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeAssociationExecutionsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SimpleSystemsManagement")]
+        public void DescribeAssociationExecutionTargetsMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeAssociationExecutionTargetsRequest>();
+            var marshaller = new DescribeAssociationExecutionTargetsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DescribeAssociationExecutionTargetsRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeAssociationExecutionTargets").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = DescribeAssociationExecutionTargetsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeAssociationExecutionTargetsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SimpleSystemsManagement")]
         public void DescribeAutomationExecutionsMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<DescribeAutomationExecutionsRequest>();
@@ -2587,6 +2645,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = SendCommandResponseUnmarshaller.Instance.Unmarshall(context)
                 as SendCommandResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SimpleSystemsManagement")]
+        public void StartAssociationsOnceMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<StartAssociationsOnceRequest>();
+            var marshaller = new StartAssociationsOnceRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<StartAssociationsOnceRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("StartAssociationsOnce").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = StartAssociationsOnceResponseUnmarshaller.Instance.Unmarshall(context)
+                as StartAssociationsOnceResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 

@@ -82,6 +82,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NetworkAccessConfiguration", targetDepth))
+                {
+                    var unmarshaller = NetworkAccessConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.NetworkAccessConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("StackName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

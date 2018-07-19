@@ -19,6 +19,10 @@ using System.Collections.Generic;
 using System.Reflection;
 using Amazon.DynamoDBv2.Model;
 using Amazon.DynamoDBv2.DocumentModel;
+#if AWS_ASYNC_API
+using System.Threading.Tasks;
+#endif
+using System.Threading;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -51,7 +55,7 @@ namespace Amazon.DynamoDBv2.DataModel
             Config = config;
             Keys = new List<Key>();
         }
-        
+
         #endregion
 
 
@@ -77,10 +81,15 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Executes a server call to batch-get the items requested.
         /// Populates Results with the retrieved items.
         /// </summary>
-        protected virtual void ExecuteHelper(bool isAsync)
-        {
-        }
+        internal protected abstract void ExecuteHelper();
 
+#if AWS_ASYNC_API
+        /// <summary>
+        /// Executes an asynchronous server call to batch-get the items requested.
+        /// Populates Results with the retrieved items.
+        /// </summary>
+        internal protected abstract Task ExecuteHelperAsync(CancellationToken cancellationToken);
+#endif
         #endregion
 
 
@@ -174,13 +183,24 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <summary>
         /// Executes the batch get
         /// </summary>
-        /// <param name="isAsync"></param>
-        protected override void ExecuteHelper(bool isAsync)
+        internal protected override void ExecuteHelper()
         {
             CreateDocumentBatch();
-            DocumentBatch.ExecuteHelper(isAsync);
+            DocumentBatch.ExecuteHelper();
             PopulateResults(DocumentBatch.Results);
         }
+
+#if AWS_ASYNC_API
+        /// <summary>
+        /// Executes the batch get asynchronously
+        /// </summary>
+        internal protected override async Task ExecuteHelperAsync(CancellationToken cancellationToken)
+        {
+            CreateDocumentBatch();
+            await DocumentBatch.ExecuteHelperAsync(cancellationToken).ConfigureAwait(false);
+            PopulateResults(DocumentBatch.Results);
+        }
+#endif
 
         /// <summary>
         /// Gets and sets the TypedResults property.
@@ -283,7 +303,7 @@ namespace Amazon.DynamoDBv2.DataModel
             allBatches.Add(batch);
         }
 
-        internal void ExecuteHelper(bool isAsync)
+        internal void ExecuteHelper()
         {
             MultiTableDocumentBatchGet superBatch = new MultiTableDocumentBatchGet();
             foreach (var batch in allBatches)
@@ -291,13 +311,33 @@ namespace Amazon.DynamoDBv2.DataModel
                 batch.CreateDocumentBatch();
                 superBatch.AddBatch(batch.DocumentBatch);
             }
-            superBatch.ExecuteHelper(isAsync);
+
+            superBatch.ExecuteHelper();
 
             foreach (var batch in allBatches)
             {
                 batch.PopulateResults(batch.DocumentBatch.Results);
             }
         }
+
+#if AWS_ASYNC_API
+        internal async Task ExecuteHelperAsync(CancellationToken cancellationToken)
+        {
+            MultiTableDocumentBatchGet superBatch = new MultiTableDocumentBatchGet();
+            foreach (var batch in allBatches)
+            {
+                batch.CreateDocumentBatch();
+                superBatch.AddBatch(batch.DocumentBatch);
+            }
+
+            await superBatch.ExecuteHelperAsync(cancellationToken).ConfigureAwait(false);
+
+            foreach (var batch in allBatches)
+            {
+                batch.PopulateResults(batch.DocumentBatch.Results);
+            }
+        }
+#endif
 
         #endregion
     }

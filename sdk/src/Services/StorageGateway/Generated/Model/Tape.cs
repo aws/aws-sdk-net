@@ -32,6 +32,7 @@ namespace Amazon.StorageGateway.Model
     /// </summary>
     public partial class Tape
     {
+        private string _kmsKey;
         private double? _progress;
         private string _tapeARN;
         private string _tapeBarcode;
@@ -40,6 +41,21 @@ namespace Amazon.StorageGateway.Model
         private string _tapeStatus;
         private long? _tapeUsedInBytes;
         private string _vtlDevice;
+
+        /// <summary>
+        /// Gets and sets the property KMSKey.
+        /// </summary>
+        public string KMSKey
+        {
+            get { return this._kmsKey; }
+            set { this._kmsKey = value; }
+        }
+
+        // Check to see if KMSKey property is set
+        internal bool IsSetKMSKey()
+        {
+            return this._kmsKey != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Progress. 

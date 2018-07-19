@@ -48,7 +48,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property ElasticIp. 
         /// <para>
-        /// The address.
+        /// The IP address for which you want to update the name.
         /// </para>
         /// </summary>
         public string ElasticIp

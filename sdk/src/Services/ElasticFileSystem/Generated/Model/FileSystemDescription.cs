@@ -42,7 +42,9 @@ namespace Amazon.ElasticFileSystem.Model
         private int? _numberOfMountTargets;
         private string _ownerId;
         private PerformanceMode _performanceMode;
+        private double? _provisionedThroughputInMibps;
         private FileSystemSize _sizeInBytes;
+        private ThroughputMode _throughputMode;
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
@@ -83,7 +85,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property Encrypted. 
         /// <para>
-        /// A boolean value that, if true, indicates that the file system is encrypted.
+        /// A Boolean value that, if true, indicates that the file system is encrypted.
         /// </para>
         /// </summary>
         public bool Encrypted
@@ -119,7 +121,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The id of an AWS Key Management Service (AWS KMS) customer master key (CMK) that was
+        /// The ID of an AWS Key Management Service (AWS KMS) customer master key (CMK) that was
         /// used to protect the encrypted file system.
         /// </para>
         /// </summary>
@@ -230,17 +232,37 @@ namespace Amazon.ElasticFileSystem.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ProvisionedThroughputInMibps. 
+        /// <para>
+        /// The throughput, measured in MiB/s, that you want to provision for a file system. The
+        /// limit on throughput is 1024 MiB/s. You can get these limits increased by contacting
+        /// AWS Support. For more information, see <a href="http://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
+        /// EFS Limits That You Can Increase</a> in the <i>Amazon EFS User Guide.</i> 
+        /// </para>
+        /// </summary>
+        public double ProvisionedThroughputInMibps
+        {
+            get { return this._provisionedThroughputInMibps.GetValueOrDefault(); }
+            set { this._provisionedThroughputInMibps = value; }
+        }
+
+        // Check to see if ProvisionedThroughputInMibps property is set
+        internal bool IsSetProvisionedThroughputInMibps()
+        {
+            return this._provisionedThroughputInMibps.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property SizeInBytes. 
         /// <para>
-        /// Latest known metered size (in bytes) of data stored in the file system, in bytes,
-        /// in its <code>Value</code> field, and the time at which that size was determined in
-        /// its <code>Timestamp</code> field. The <code>Timestamp</code> value is the integer
-        /// number of seconds since 1970-01-01T00:00:00Z. Note that the value does not represent
-        /// the size of a consistent snapshot of the file system, but it is eventually consistent
-        /// when there are no writes to the file system. That is, the value will represent actual
-        /// size only if the file system is not modified for a period longer than a couple of
-        /// hours. Otherwise, the value is not the exact size the file system was at any instant
-        /// in time. 
+        /// Latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code>
+        /// field, and the time at which that size was determined in its <code>Timestamp</code>
+        /// field. The <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z.
+        /// The <code>SizeInBytes</code> value doesn't represent the size of a consistent snapshot
+        /// of the file system, but it is eventually consistent when there are no writes to the
+        /// file system. That is, <code>SizeInBytes</code> represents actual size only if the
+        /// file system is not modified for a period longer than a couple of hours. Otherwise,
+        /// the value is not the exact size that the file system was at any point in time. 
         /// </para>
         /// </summary>
         public FileSystemSize SizeInBytes
@@ -253,6 +275,27 @@ namespace Amazon.ElasticFileSystem.Model
         internal bool IsSetSizeInBytes()
         {
             return this._sizeInBytes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ThroughputMode. 
+        /// <para>
+        /// The throughput mode for a file system. There are two throughput modes to choose from
+        /// for your file system: bursting and provisioned. You can decrease your file system's
+        /// throughput in Provisioned Throughput mode or change between the throughput modes as
+        /// long as it’s been more than 24 hours since the last decrease or throughput mode change.
+        /// </para>
+        /// </summary>
+        public ThroughputMode ThroughputMode
+        {
+            get { return this._throughputMode; }
+            set { this._throughputMode = value; }
+        }
+
+        // Check to see if ThroughputMode property is set
+        internal bool IsSetThroughputMode()
+        {
+            return this._throughputMode != null;
         }
 
     }

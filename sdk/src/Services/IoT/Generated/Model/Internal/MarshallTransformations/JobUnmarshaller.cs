@@ -94,6 +94,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.DocumentParameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("forceCanceled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.ForceCanceled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("jobArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

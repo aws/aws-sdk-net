@@ -16,6 +16,20 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.ListOfferingsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.ListReservationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.PurchaseOfferingRequest.Count</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.Ac3Settings.Dialnorm</property>
     <min>1</min>
     <max>31</max>
@@ -503,6 +517,10 @@
   <property-value-rule>
     <property>Amazon.MediaLive.Model.OutputGroup.Name</property>
     <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.PurchaseOffering.Count</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaLive.Model.RemixSettings.ChannelsIn</property>

@@ -63,7 +63,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// You can tag your snapshots during creation. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
-    /// Your Amazon EC2 Resources</a>.
+    /// Your Amazon EC2 Resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     ///  
     /// <para>

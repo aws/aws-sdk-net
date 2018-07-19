@@ -652,6 +652,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Pinpoint")]
+        public void DeleteUserEndpointsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteUserEndpoints");
+
+            var request = InstantiateClassGenerator.Execute<DeleteUserEndpointsRequest>();
+            var marshaller = new DeleteUserEndpointsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteUserEndpoints", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DeleteUserEndpointsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as DeleteUserEndpointsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Pinpoint")]
         public void GetAdmChannelMarshallTest()
         {
             var operation = service_model.FindOperation("GetAdmChannel");
@@ -1092,6 +1124,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = GetCampaignVersionsResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as GetCampaignVersionsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Pinpoint")]
+        public void GetChannelsMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetChannels");
+
+            var request = InstantiateClassGenerator.Execute<GetChannelsRequest>();
+            var marshaller = new GetChannelsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetChannels", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetChannelsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetChannelsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
@@ -1580,6 +1644,70 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Pinpoint")]
+        public void GetUserEndpointsMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetUserEndpoints");
+
+            var request = InstantiateClassGenerator.Execute<GetUserEndpointsRequest>();
+            var marshaller = new GetUserEndpointsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetUserEndpoints", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetUserEndpointsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetUserEndpointsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Pinpoint")]
+        public void PhoneNumberValidateMarshallTest()
+        {
+            var operation = service_model.FindOperation("PhoneNumberValidate");
+
+            var request = InstantiateClassGenerator.Execute<PhoneNumberValidateRequest>();
+            var marshaller = new PhoneNumberValidateRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("PhoneNumberValidate", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = PhoneNumberValidateResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as PhoneNumberValidateResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Pinpoint")]
         public void PutEventStreamMarshallTest()
         {
             var operation = service_model.FindOperation("PutEventStream");
@@ -1604,6 +1732,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = PutEventStreamResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as PutEventStreamResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Pinpoint")]
+        public void RemoveAttributesMarshallTest()
+        {
+            var operation = service_model.FindOperation("RemoveAttributes");
+
+            var request = InstantiateClassGenerator.Execute<RemoveAttributesRequest>();
+            var marshaller = new RemoveAttributesRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("RemoveAttributes", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = RemoveAttributesResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as RemoveAttributesResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 

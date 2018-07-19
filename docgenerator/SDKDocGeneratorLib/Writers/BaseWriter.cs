@@ -53,6 +53,8 @@ namespace SDKDocGenerator.Writers
                     = "AWS services or capabilities described in AWS Documentation may vary by region/location. "
                     + "Click <a href=\"https://{0}/en_us/aws/latest/userguide/services.html\">Getting Started with Amazon AWS</a> to see specific differences applicable to the China (Beijing) Region.";
 
+        public const string GdprScriptBlock = "<script src=\"/SdkStatic/sdk-priv.js\" async=\"true\"></script>";
+
         public GenerationManifest Artifacts { get; private set; }
         public AbstractTypeProvider TypeProvider { get; private set; }
 
@@ -164,6 +166,8 @@ namespace SDKDocGenerator.Writers
                     writer.WriteLine("</div>");
 
                     this.WriteFooter(writer);
+
+                    writer.WriteLine(GdprScriptBlock);
 
                 writer.WriteLine("</body>");
                 writer.WriteLine("</html>");

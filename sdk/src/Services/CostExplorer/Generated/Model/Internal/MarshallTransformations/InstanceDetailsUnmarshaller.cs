@@ -70,10 +70,28 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                     unmarshalledObject.EC2InstanceDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ElastiCacheInstanceDetails", targetDepth))
+                {
+                    var unmarshaller = ElastiCacheInstanceDetailsUnmarshaller.Instance;
+                    unmarshalledObject.ElastiCacheInstanceDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ESInstanceDetails", targetDepth))
+                {
+                    var unmarshaller = ESInstanceDetailsUnmarshaller.Instance;
+                    unmarshalledObject.ESInstanceDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RDSInstanceDetails", targetDepth))
                 {
                     var unmarshaller = RDSInstanceDetailsUnmarshaller.Instance;
                     unmarshalledObject.RDSInstanceDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RedshiftInstanceDetails", targetDepth))
+                {
+                    var unmarshaller = RedshiftInstanceDetailsUnmarshaller.Instance;
+                    unmarshalledObject.RedshiftInstanceDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

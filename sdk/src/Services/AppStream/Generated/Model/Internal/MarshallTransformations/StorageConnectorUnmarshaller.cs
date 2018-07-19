@@ -70,6 +70,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     unmarshalledObject.ConnectorType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Domains", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Domains = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ResourceIdentifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

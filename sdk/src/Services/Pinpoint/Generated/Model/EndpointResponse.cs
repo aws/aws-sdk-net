@@ -183,9 +183,7 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EndpointStatus. The endpoint status. Can be either ACTIVE
-        /// or INACTIVE. Will be set to INACTIVE if a delivery fails. Will be set to ACTIVE if
-        /// the address is updated.
+        /// Gets and sets the property EndpointStatus. Unused.
         /// </summary>
         public string EndpointStatus
         {

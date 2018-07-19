@@ -67,6 +67,17 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCloudWatchOutputConfig())
+                {
+                    context.Writer.WritePropertyName("CloudWatchOutputConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CloudWatchOutputConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CloudWatchOutputConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetComment())
                 {
                     context.Writer.WritePropertyName("Comment");

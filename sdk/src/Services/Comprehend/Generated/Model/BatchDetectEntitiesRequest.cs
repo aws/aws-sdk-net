@@ -29,21 +29,22 @@ namespace Amazon.Comprehend.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchDetectEntities operation.
-    /// Inspects the text of a batch of documents and returns information about them. For
-    /// more information about entities, see <a>how-entities</a>
+    /// Inspects the text of a batch of documents for named entities and returns information
+    /// about them. For more information about named entities, see <a>how-entities</a>
     /// </summary>
     public partial class BatchDetectEntitiesRequest : AmazonComprehendRequest
     {
-        private string _languageCode;
+        private LanguageCode _languageCode;
         private List<string> _textList = new List<string>();
 
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language of the input documents. All documents must be in the same language.
+        /// The language of the input documents. You can specify English ("en") or Spanish ("es").
+        /// All documents must be in the same language.
         /// </para>
         /// </summary>
-        public string LanguageCode
+        public LanguageCode LanguageCode
         {
             get { return this._languageCode; }
             set { this._languageCode = value; }

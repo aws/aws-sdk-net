@@ -48,6 +48,8 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property SSHPublicKeyBody. 
         /// <para>
         /// The SSH public key. The public key must be encoded in ssh-rsa format or PEM format.
+        /// The miminum bit-length of the public key is 2048 bits. For example, you can generate
+        /// a 2048-bit key, and the resulting PEM file is 1679 bytes long.
         /// </para>
         ///  
         /// <para>

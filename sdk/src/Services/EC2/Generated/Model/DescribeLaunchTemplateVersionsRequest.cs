@@ -139,7 +139,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The maximum number of results to return in a single call. To retrieve the remaining
         /// results, make another call with the returned <code>NextToken</code> value. This value
-        /// can be between 5 and 1000.
+        /// can be between 1 and 200.
         /// </para>
         /// </summary>
         public int MaxResults

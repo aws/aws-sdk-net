@@ -139,6 +139,10 @@ namespace Amazon.Pinpoint
         /// </summary>
         public static readonly CampaignStatus COMPLETED = new CampaignStatus("COMPLETED");
         /// <summary>
+        /// Constant DELETED for CampaignStatus
+        /// </summary>
+        public static readonly CampaignStatus DELETED = new CampaignStatus("DELETED");
+        /// <summary>
         /// Constant EXECUTING for CampaignStatus
         /// </summary>
         public static readonly CampaignStatus EXECUTING = new CampaignStatus("EXECUTING");
@@ -563,6 +567,60 @@ namespace Amazon.Pinpoint
 
 
     /// <summary>
+    /// Constants used for properties of type Include.
+    /// </summary>
+    public class Include : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for Include
+        /// </summary>
+        public static readonly Include ALL = new Include("ALL");
+        /// <summary>
+        /// Constant ANY for Include
+        /// </summary>
+        public static readonly Include ANY = new Include("ANY");
+        /// <summary>
+        /// Constant NONE for Include
+        /// </summary>
+        public static readonly Include NONE = new Include("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Include(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Include FindValue(string value)
+        {
+            return FindValue<Include>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Include(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type JobStatus.
     /// </summary>
     public class JobStatus : ConstantClass
@@ -826,6 +884,110 @@ namespace Amazon.Pinpoint
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SegmentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SourceType.
+    /// </summary>
+    public class SourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for SourceType
+        /// </summary>
+        public static readonly SourceType ALL = new SourceType("ALL");
+        /// <summary>
+        /// Constant ANY for SourceType
+        /// </summary>
+        public static readonly SourceType ANY = new SourceType("ANY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SourceType FindValue(string value)
+        {
+            return FindValue<SourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Type.
+    /// </summary>
+    public class Type : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for Type
+        /// </summary>
+        public static readonly Type ALL = new Type("ALL");
+        /// <summary>
+        /// Constant ANY for Type
+        /// </summary>
+        public static readonly Type ANY = new Type("ANY");
+        /// <summary>
+        /// Constant NONE for Type
+        /// </summary>
+        public static readonly Type NONE = new Type("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Type(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Type FindValue(string value)
+        {
+            return FindValue<Type>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Type(string value)
         {
             return FindValue(value);
         }

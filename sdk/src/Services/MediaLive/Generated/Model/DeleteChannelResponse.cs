@@ -39,6 +39,7 @@ namespace Amazon.MediaLive.Model
         private string _id;
         private List<InputAttachment> _inputAttachments = new List<InputAttachment>();
         private InputSpecification _inputSpecification;
+        private LogLevel _logLevel;
         private string _name;
         private int? _pipelinesRunningCount;
         private string _roleArn;
@@ -150,6 +151,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetInputSpecification()
         {
             return this._inputSpecification != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogLevel. The log level being written to CloudWatch Logs.
+        /// </summary>
+        public LogLevel LogLevel
+        {
+            get { return this._logLevel; }
+            set { this._logLevel = value; }
+        }
+
+        // Check to see if LogLevel property is set
+        internal bool IsSetLogLevel()
+        {
+            return this._logLevel != null;
         }
 
         /// <summary>

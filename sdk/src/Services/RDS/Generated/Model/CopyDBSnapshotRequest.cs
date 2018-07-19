@@ -41,7 +41,7 @@ namespace Amazon.RDS.Model
     ///  
     /// <para>
     /// For more information about copying snapshots, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopyDBSnapshot.html">Copying
-    /// a DB Snapshot</a> in the Amazon RDS User Guide. 
+    /// a DB Snapshot</a> in the <i>Amazon RDS User Guide.</i> 
     /// </para>
     /// </summary>
     public partial class CopyDBSnapshotRequest : AmazonRDSRequest

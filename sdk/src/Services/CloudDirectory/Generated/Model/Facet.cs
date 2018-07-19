@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the clouddirectory-2016-05-10.normal.json service model.
+ * Do not modify this file. This file is generated from the clouddirectory-2017-01-11.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -34,8 +34,29 @@ namespace Amazon.CloudDirectory.Model
     /// </summary>
     public partial class Facet
     {
+        private FacetStyle _facetStyle;
         private string _name;
         private ObjectType _objectType;
+
+        /// <summary>
+        /// Gets and sets the property FacetStyle. 
+        /// <para>
+        /// There are two different styles that you can define on any given facet, <code>Static</code>
+        /// and <code>Dynamic</code>. For static facets, all attributes must be defined in the
+        /// schema. For dynamic facets, attributes can be defined during data plane operations.
+        /// </para>
+        /// </summary>
+        public FacetStyle FacetStyle
+        {
+            get { return this._facetStyle; }
+            set { this._facetStyle = value; }
+        }
+
+        // Check to see if FacetStyle property is set
+        internal bool IsSetFacetStyle()
+        {
+            return this._facetStyle != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 

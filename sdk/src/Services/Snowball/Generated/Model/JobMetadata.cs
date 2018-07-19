@@ -110,7 +110,7 @@ namespace Amazon.Snowball.Model
         /// Gets and sets the property DataTransferProgress. 
         /// <para>
         /// A value that defines the real-time status of a Snowball's data transfer while the
-        /// appliance is at AWS. This data is only available while a job has a <code>JobState</code>
+        /// device is at AWS. This data is only available while a job has a <code>JobState</code>
         /// value of <code>InProgress</code>, for both import and export jobs.
         /// </para>
         /// </summary>
@@ -359,7 +359,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property SnowballType. 
         /// <para>
-        /// The type of appliance used with this job.
+        /// The type of device used with this job.
         /// </para>
         /// </summary>
         public SnowballType SnowballType

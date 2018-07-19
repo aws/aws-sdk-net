@@ -2385,6 +2385,67 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  DeleteRolePermissionsBoundary
+
+
+        /// <summary>
+        /// Deletes the permissions boundary for the specified IAM role. 
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Deleting the permissions boundary for a role might increase its permissions by allowing
+        /// anyone who assumes the role to perform all the actions granted in its permissions
+        /// policies. 
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRolePermissionsBoundary service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRolePermissionsBoundary service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.UnmodifiableEntityException">
+        /// The request was rejected because only the service that depends on the service-linked
+        /// role can modify or delete the role on your behalf. The error message includes the
+        /// name of the service that depends on this service-linked role. You must request the
+        /// change through that service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteRolePermissionsBoundary">REST API Reference for DeleteRolePermissionsBoundary Operation</seealso>
+        DeleteRolePermissionsBoundaryResponse DeleteRolePermissionsBoundary(DeleteRolePermissionsBoundaryRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRolePermissionsBoundary operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRolePermissionsBoundary operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRolePermissionsBoundary
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteRolePermissionsBoundary">REST API Reference for DeleteRolePermissionsBoundary Operation</seealso>
+        IAsyncResult BeginDeleteRolePermissionsBoundary(DeleteRolePermissionsBoundaryRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteRolePermissionsBoundary operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRolePermissionsBoundary.</param>
+        /// 
+        /// <returns>Returns a  DeleteRolePermissionsBoundaryResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteRolePermissionsBoundary">REST API Reference for DeleteRolePermissionsBoundary Operation</seealso>
+        DeleteRolePermissionsBoundaryResponse EndDeleteRolePermissionsBoundary(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteRolePolicy
 
 
@@ -2872,6 +2933,60 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  DeleteUserResult from IdentityManagementService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         DeleteUserResponse EndDeleteUser(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteUserPermissionsBoundary
+
+
+        /// <summary>
+        /// Deletes the permissions boundary for the specified IAM user.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Deleting the permissions boundary for a user might increase its permissions by allowing
+        /// the user to perform all the actions granted in its permissions policies. 
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUserPermissionsBoundary service method.</param>
+        /// 
+        /// <returns>The response from the DeleteUserPermissionsBoundary service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteUserPermissionsBoundary">REST API Reference for DeleteUserPermissionsBoundary Operation</seealso>
+        DeleteUserPermissionsBoundaryResponse DeleteUserPermissionsBoundary(DeleteUserPermissionsBoundaryRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteUserPermissionsBoundary operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUserPermissionsBoundary operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteUserPermissionsBoundary
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteUserPermissionsBoundary">REST API Reference for DeleteUserPermissionsBoundary Operation</seealso>
+        IAsyncResult BeginDeleteUserPermissionsBoundary(DeleteUserPermissionsBoundaryRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteUserPermissionsBoundary operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteUserPermissionsBoundary.</param>
+        /// 
+        /// <returns>Returns a  DeleteUserPermissionsBoundaryResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteUserPermissionsBoundary">REST API Reference for DeleteUserPermissionsBoundary Operation</seealso>
+        DeleteUserPermissionsBoundaryResponse EndDeleteUserPermissionsBoundary(IAsyncResult asyncResult);
 
         #endregion
         
@@ -6556,6 +6671,84 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  PutRolePermissionsBoundary
+
+
+        /// <summary>
+        /// Adds or updates the policy that is specified as the IAM role's permissions boundary.
+        /// You can use an AWS managed policy or a customer managed policy to set the boundary
+        /// for a role. Use the boundary to control the maximum permissions that the role can
+        /// have. Setting a permissions boundary is an advanced feature that can affect the permissions
+        /// for the role.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot set the boundary for a service-linked role. 
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Policies used as permissions boundaries do not provide permissions. You must also
+        /// attach a permissions policy to the role. To learn how the effective permissions for
+        /// a role are evaluated, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html">IAM
+        /// JSON Policy Evaluation Logic</a> in the IAM User Guide. 
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutRolePermissionsBoundary service method.</param>
+        /// 
+        /// <returns>The response from the PutRolePermissionsBoundary service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.PolicyNotAttachableException">
+        /// The request failed because AWS service role policies can only be attached to the service-linked
+        /// role for that service.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.UnmodifiableEntityException">
+        /// The request was rejected because only the service that depends on the service-linked
+        /// role can modify or delete the role on your behalf. The error message includes the
+        /// name of the service that depends on this service-linked role. You must request the
+        /// change through that service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutRolePermissionsBoundary">REST API Reference for PutRolePermissionsBoundary Operation</seealso>
+        PutRolePermissionsBoundaryResponse PutRolePermissionsBoundary(PutRolePermissionsBoundaryRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutRolePermissionsBoundary operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutRolePermissionsBoundary operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutRolePermissionsBoundary
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutRolePermissionsBoundary">REST API Reference for PutRolePermissionsBoundary Operation</seealso>
+        IAsyncResult BeginPutRolePermissionsBoundary(PutRolePermissionsBoundaryRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutRolePermissionsBoundary operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutRolePermissionsBoundary.</param>
+        /// 
+        /// <returns>Returns a  PutRolePermissionsBoundaryResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutRolePermissionsBoundary">REST API Reference for PutRolePermissionsBoundary Operation</seealso>
+        PutRolePermissionsBoundaryResponse EndPutRolePermissionsBoundary(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  PutRolePolicy
 
 
@@ -6644,6 +6837,74 @@ namespace Amazon.IdentityManagement
         /// <returns>Returns a  PutRolePolicyResult from IdentityManagementService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutRolePolicy">REST API Reference for PutRolePolicy Operation</seealso>
         PutRolePolicyResponse EndPutRolePolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutUserPermissionsBoundary
+
+
+        /// <summary>
+        /// Adds or updates the policy that is specified as the IAM user's permissions boundary.
+        /// You can use an AWS managed policy or a customer managed policy to set the boundary
+        /// for a user. Use the boundary to control the maximum permissions that the user can
+        /// have. Setting a permissions boundary is an advanced feature that can affect the permissions
+        /// for the user.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Policies that are used as permissions boundaries do not provide permissions. You must
+        /// also attach a permissions policy to the user. To learn how the effective permissions
+        /// for a user are evaluated, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html">IAM
+        /// JSON Policy Evaluation Logic</a> in the IAM User Guide. 
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutUserPermissionsBoundary service method.</param>
+        /// 
+        /// <returns>The response from the PutUserPermissionsBoundary service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.PolicyNotAttachableException">
+        /// The request failed because AWS service role policies can only be attached to the service-linked
+        /// role for that service.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutUserPermissionsBoundary">REST API Reference for PutUserPermissionsBoundary Operation</seealso>
+        PutUserPermissionsBoundaryResponse PutUserPermissionsBoundary(PutUserPermissionsBoundaryRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutUserPermissionsBoundary operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutUserPermissionsBoundary operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutUserPermissionsBoundary
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutUserPermissionsBoundary">REST API Reference for PutUserPermissionsBoundary Operation</seealso>
+        IAsyncResult BeginPutUserPermissionsBoundary(PutUserPermissionsBoundaryRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutUserPermissionsBoundary operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutUserPermissionsBoundary.</param>
+        /// 
+        /// <returns>Returns a  PutUserPermissionsBoundaryResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutUserPermissionsBoundary">REST API Reference for PutUserPermissionsBoundary Operation</seealso>
+        PutUserPermissionsBoundaryResponse EndPutUserPermissionsBoundary(IAsyncResult asyncResult);
 
         #endregion
         
@@ -7952,7 +8213,7 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Sets the status of a service-specific credential to <code>Active</code> or <code>Inactive</code>.
         /// Service-specific credentials that are inactive cannot be used for authentication to
-        /// the service. This operation can be used to disable a user’s service-specific credential
+        /// the service. This operation can be used to disable a user's service-specific credential
         /// as part of a credential rotation work flow.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateServiceSpecificCredential service method.</param>

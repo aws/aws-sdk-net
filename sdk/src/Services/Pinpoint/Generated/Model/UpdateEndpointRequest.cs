@@ -29,7 +29,7 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateEndpoint operation.
-    /// Use to update an endpoint.
+    /// Creates or updates an endpoint.
     /// </summary>
     public partial class UpdateEndpointRequest : AmazonPinpointRequest
     {
@@ -38,7 +38,7 @@ namespace Amazon.Pinpoint.Model
         private EndpointRequest _endpointRequest;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId.
+        /// Gets and sets the property ApplicationId. The unique ID of your Amazon Pinpoint application.
         /// </summary>
         public string ApplicationId
         {
@@ -53,7 +53,7 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EndpointId.
+        /// Gets and sets the property EndpointId. The unique ID of the endpoint.
         /// </summary>
         public string EndpointId
         {

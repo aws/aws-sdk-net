@@ -210,6 +210,12 @@ namespace Amazon.SageMaker.Model
         /// this role. For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
         /// SageMaker Roles</a>. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// To be able to pass this role to Amazon SageMaker, the caller of this API must have
+        /// the <code>iam:PassRole</code> permission.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string RoleArn
         {

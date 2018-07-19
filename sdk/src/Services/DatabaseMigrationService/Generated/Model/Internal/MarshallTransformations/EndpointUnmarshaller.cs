@@ -76,6 +76,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.DatabaseName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DmsTransferSettings", targetDepth))
+                {
+                    var unmarshaller = DmsTransferSettingsUnmarshaller.Instance;
+                    unmarshalledObject.DmsTransferSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DynamoDbSettings", targetDepth))
                 {
                     var unmarshaller = DynamoDbSettingsUnmarshaller.Instance;

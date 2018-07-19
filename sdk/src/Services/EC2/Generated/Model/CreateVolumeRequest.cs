@@ -50,7 +50,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// You can tag your volumes during creation. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
-    /// Your Amazon EC2 Resources</a>.
+    /// Your Amazon EC2 Resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -145,7 +145,7 @@ namespace Amazon.EC2.Model
         /// The number of I/O operations per second (IOPS) to provision for the volume, with a
         /// maximum ratio of 50 IOPS/GiB. Range is 100 to 32000 IOPS for volumes in most regions.
         /// For exceptions, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-        /// EBS Volume Types</a>.
+        /// EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>

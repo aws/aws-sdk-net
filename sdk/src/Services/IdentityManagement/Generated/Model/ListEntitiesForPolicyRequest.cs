@@ -52,6 +52,7 @@ namespace Amazon.IdentityManagement.Model
         private int? _maxItems;
         private string _pathPrefix;
         private string _policyArn;
+        private PolicyUsageType _policyUsageFilter;
 
         /// <summary>
         /// Gets and sets the property EntityFilter. 
@@ -173,6 +174,33 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetPolicyArn()
         {
             return this._policyArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PolicyUsageFilter. 
+        /// <para>
+        /// The policy usage method to use for filtering the results.
+        /// </para>
+        ///  
+        /// <para>
+        /// To list only permissions policies, set <code>PolicyUsageFilter</code> to <code>PermissionsPolicy</code>.
+        /// To list only the policies used to set permissions boundaries, set the value to <code>PermissionsBoundary</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is optional. If it is not included, all policies are returned. 
+        /// </para>
+        /// </summary>
+        public PolicyUsageType PolicyUsageFilter
+        {
+            get { return this._policyUsageFilter; }
+            set { this._policyUsageFilter = value; }
+        }
+
+        // Check to see if PolicyUsageFilter property is set
+        internal bool IsSetPolicyUsageFilter()
+        {
+            return this._policyUsageFilter != null;
         }
 
     }

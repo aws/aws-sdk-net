@@ -62,6 +62,17 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Name);
             }
 
+            if(requestObject.IsSetSegmentGroups())
+            {
+                context.Writer.WritePropertyName("SegmentGroups");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SegmentGroupListMarshaller.Instance;
+                marshaller.Marshall(requestObject.SegmentGroups, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

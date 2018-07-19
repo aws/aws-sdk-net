@@ -35,6 +35,7 @@ namespace Amazon.StorageGateway.Model
         private string _fileShareARN;
         private string _fileShareId;
         private string _fileShareStatus;
+        private FileShareType _fileShareType;
         private string _gatewayARN;
 
         /// <summary>
@@ -80,6 +81,21 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetFileShareStatus()
         {
             return this._fileShareStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FileShareType.
+        /// </summary>
+        public FileShareType FileShareType
+        {
+            get { return this._fileShareType; }
+            set { this._fileShareType = value; }
+        }
+
+        // Check to see if FileShareType property is set
+        internal bool IsSetFileShareType()
+        {
+            return this._fileShareType != null;
         }
 
         /// <summary>

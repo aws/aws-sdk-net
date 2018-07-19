@@ -34,6 +34,7 @@ namespace Amazon.Pinpoint.Model
     {
         private SegmentDimensions _dimensions;
         private string _name;
+        private SegmentGroupList _segmentGroups;
 
         /// <summary>
         /// Gets and sets the property Dimensions. The segment dimensions attributes.
@@ -63,6 +64,22 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SegmentGroups. Segment definition groups. We currently
+        /// only support one. If specified Dimensions must be empty.
+        /// </summary>
+        public SegmentGroupList SegmentGroups
+        {
+            get { return this._segmentGroups; }
+            set { this._segmentGroups = value; }
+        }
+
+        // Check to see if SegmentGroups property is set
+        internal bool IsSetSegmentGroups()
+        {
+            return this._segmentGroups != null;
         }
 
     }

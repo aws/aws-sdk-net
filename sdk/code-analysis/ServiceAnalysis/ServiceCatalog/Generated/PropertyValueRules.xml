@@ -53,6 +53,10 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.CopyProductRequest.TargetProductName</property>
+    <max>8191</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.CopyProductResponse.CopyProductToken</property>
     <min>1</min>
     <max>100</max>
@@ -112,10 +116,42 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.CreateProductRequest.Description</property>
+    <max>8191</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.CreateProductRequest.Distributor</property>
+    <max>8191</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.CreateProductRequest.IdempotencyToken</property>
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.CreateProductRequest.Name</property>
+    <max>8191</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.CreateProductRequest.Owner</property>
+    <max>8191</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.CreateProductRequest.ProductType</property>
+    <max>8191</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.CreateProductRequest.SupportDescription</property>
+    <max>8191</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.CreateProductRequest.SupportEmail</property>
+    <max>254</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.CreateProductRequest.SupportUrl</property>
+    <max>2083</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.CreateProvisionedProductPlanRequest.IdempotencyToken</property>
@@ -692,9 +728,37 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.UpdateProductRequest.Description</property>
+    <max>8191</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.UpdateProductRequest.Distributor</property>
+    <max>8191</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.UpdateProductRequest.Id</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.UpdateProductRequest.Name</property>
+    <max>8191</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.UpdateProductRequest.Owner</property>
+    <max>8191</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.UpdateProductRequest.SupportDescription</property>
+    <max>8191</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.UpdateProductRequest.SupportEmail</property>
+    <max>254</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.UpdateProductRequest.SupportUrl</property>
+    <max>2083</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.UpdateProvisionedProductRequest.PathId</property>
@@ -833,9 +897,37 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.ProductViewSummary.Name</property>
+    <max>8191</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.ProductViewSummary.Owner</property>
+    <max>8191</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.ProductViewSummary.ProductId</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.ProductViewSummary.ShortDescription</property>
+    <max>8191</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.ProductViewSummary.SupportDescription</property>
+    <max>8191</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.ProductViewSummary.SupportEmail</property>
+    <max>254</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.ProductViewSummary.SupportUrl</property>
+    <max>2083</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.ProductViewSummary.Type</property>
+    <max>8191</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.ProvisionedProductAttribute.Arn</property>

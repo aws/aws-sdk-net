@@ -82,7 +82,7 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             asyncOptions = asyncOptions ?? new AsyncOptions();
             DynamoDBAsyncExecutor.ExecuteAsync(
-                () => { SaveHelper<T>(value, null, true); },
+                () => { SaveHelper<T>(value, null); },
                 asyncOptions,
                 callback);
         }
@@ -99,7 +99,7 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             asyncOptions = asyncOptions ?? new AsyncOptions();
             DynamoDBAsyncExecutor.ExecuteAsync(
-                () => { SaveHelper<T>(value, operationConfig, true); },
+                () => { SaveHelper<T>(value, operationConfig); },
                 asyncOptions,
                 callback);
         }
@@ -121,7 +121,7 @@ namespace Amazon.DynamoDBv2.DataModel
             DynamoDBAsyncExecutor.ExecuteAsync<T>(
                     () =>
                     {
-                        return LoadHelper<T>(hashKey, null, null, true);
+                        return LoadHelper<T>(hashKey, null, null);
                     },
                     asyncOptions,
                     callback);
@@ -141,7 +141,7 @@ namespace Amazon.DynamoDBv2.DataModel
             DynamoDBAsyncExecutor.ExecuteAsync<T>(
                     () =>
                     {
-                        return LoadHelper<T>(hashKey, rangeKey, null, true);
+                        return LoadHelper<T>(hashKey, rangeKey, null);
                     },
                     asyncOptions,
                     callback);
@@ -162,7 +162,7 @@ namespace Amazon.DynamoDBv2.DataModel
             DynamoDBAsyncExecutor.ExecuteAsync<T>(
                     () =>
                     {
-                        return LoadHelper<T>(hashKey, null, operationConfig, true);
+                        return LoadHelper<T>(hashKey, null, operationConfig);
                     },
                     asyncOptions,
                     callback);
@@ -184,7 +184,7 @@ namespace Amazon.DynamoDBv2.DataModel
             DynamoDBAsyncExecutor.ExecuteAsync<T>(
                     () =>
                     {
-                        return LoadHelper<T>(hashKey, rangeKey, operationConfig, true);
+                        return LoadHelper<T>(hashKey, rangeKey, operationConfig);
                     },
                     asyncOptions,
                     callback);
@@ -203,7 +203,7 @@ namespace Amazon.DynamoDBv2.DataModel
             DynamoDBAsyncExecutor.ExecuteAsync<T>(
                         () =>
                         {
-                            return LoadHelper<T>(keyObject, null, true);
+                            return LoadHelper<T>(keyObject, null);
                         },
                         asyncOptions,
                         callback);
@@ -224,7 +224,7 @@ namespace Amazon.DynamoDBv2.DataModel
             DynamoDBAsyncExecutor.ExecuteAsync<T>(
                        () =>
                        {
-                           return LoadHelper<T>(keyObject, operationConfig, true);
+                           return LoadHelper<T>(keyObject, operationConfig);
                        },
                        asyncOptions,
                        callback);
@@ -245,7 +245,7 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             asyncOptions = asyncOptions ?? new AsyncOptions();
             DynamoDBAsyncExecutor.ExecuteAsync(
-                       () => { DeleteHelper<T>(value, null, true); },
+                       () => { DeleteHelper<T>(value, null); },
                        asyncOptions,
                        callback);
         }
@@ -263,7 +263,7 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             asyncOptions = asyncOptions ?? new AsyncOptions();
             DynamoDBAsyncExecutor.ExecuteAsync(
-                       () => { DeleteHelper<T>(value, operationConfig, true); },
+                       () => { DeleteHelper<T>(value, operationConfig); },
                        asyncOptions,
                        callback);
         }
@@ -279,7 +279,7 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             asyncOptions = asyncOptions ?? new AsyncOptions();
             DynamoDBAsyncExecutor.ExecuteAsync(
-                           () => { DeleteHelper<T>(hashKey, null, null, true); },
+                           () => { DeleteHelper<T>(hashKey, null, null); },
                            asyncOptions,
                            callback);
         }
@@ -297,7 +297,7 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             asyncOptions = asyncOptions ?? new AsyncOptions();
             DynamoDBAsyncExecutor.ExecuteAsync(
-                           () => { DeleteHelper<T>(hashKey, null, operationConfig, true); },
+                           () => { DeleteHelper<T>(hashKey, null, operationConfig); },
                            asyncOptions,
                            callback);
         }
@@ -315,7 +315,7 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             asyncOptions = asyncOptions ?? new AsyncOptions();
             DynamoDBAsyncExecutor.ExecuteAsync(
-                           () => { DeleteHelper<T>(hashKey, rangeKey, null, true); },
+                           () => { DeleteHelper<T>(hashKey, rangeKey, null); },
                            asyncOptions,
                            callback);
         }
@@ -334,7 +334,7 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             asyncOptions = asyncOptions ?? new AsyncOptions();
             DynamoDBAsyncExecutor.ExecuteAsync(
-                           () => { DeleteHelper<T>(hashKey, rangeKey, operationConfig, true); },
+                           () => { DeleteHelper<T>(hashKey, rangeKey, operationConfig); },
                            asyncOptions,
                            callback);
         }
@@ -354,7 +354,7 @@ namespace Amazon.DynamoDBv2.DataModel
             asyncOptions = asyncOptions ?? new AsyncOptions();
             MultiTableBatchGet superBatch = new MultiTableBatchGet(batches);
             DynamoDBAsyncExecutor.ExecuteAsync(
-                          () => { superBatch.ExecuteHelper(true); },
+                          () => { superBatch.ExecuteHelper(); },
                           asyncOptions,
                           callback);
         }
@@ -374,7 +374,7 @@ namespace Amazon.DynamoDBv2.DataModel
             asyncOptions = asyncOptions ?? new AsyncOptions();
             MultiTableBatchWrite superBatch = new MultiTableBatchWrite(batches);
             DynamoDBAsyncExecutor.ExecuteAsync(
-                          () => { superBatch.ExecuteHelper(true); },
+                          () => { superBatch.ExecuteHelper(); },
                           asyncOptions,
                           callback);
         }
