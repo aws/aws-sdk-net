@@ -4605,6 +4605,61 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  SelectObjectContent
+
+        /// <summary>
+        /// This operation filters the contents of an Amazon S3 object based on a simple Structured
+        /// Query Language (SQL) statement. In the request, along with the SQL expression, you
+        /// must also specify a data serialization format (JSON or CSV) of the object. Amazon
+        /// S3 uses this to parse object data into records, and returns only records that match
+        /// the specified SQL expression. You must also specify the data serialization format
+        /// for the response.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SelectObjectContent service method.</param>
+        /// 
+        /// <returns>The response from the SelectObjectContent service method, as returned by S3.</returns>
+        public virtual SelectObjectContentResponse SelectObjectContent(SelectObjectContentRequest request)
+        {
+            var marshaller = SelectObjectContentRequestMarshaller.Instance;
+            var unmarshaller = SelectObjectContentResponseUnmarshaller.Instance;
+
+            return Invoke<SelectObjectContentRequest,SelectObjectContentResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SelectObjectContent operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SelectObjectContent operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSelectObjectContent
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginSelectObjectContent(SelectObjectContentRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = SelectObjectContentRequestMarshaller.Instance;
+            var unmarshaller = SelectObjectContentResponseUnmarshaller.Instance;
+
+            return BeginInvoke<SelectObjectContentRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SelectObjectContent operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSelectObjectContent.</param>
+        /// 
+        /// <returns>Returns a  SelectObjectContentResult from S3.</returns>
+        public virtual SelectObjectContentResponse EndSelectObjectContent(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SelectObjectContentResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UploadPart
 
         /// <summary>

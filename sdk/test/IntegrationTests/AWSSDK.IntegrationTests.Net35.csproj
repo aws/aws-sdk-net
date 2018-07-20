@@ -129,4 +129,9 @@
     <EmbeddedResource Include="Tests\CloudTrailBucketPolicy.json"/>
     <EmbeddedResource Include="Tests\ListObjectsResponse.xml"/>
   </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="..\Services\S3\IntegrationTests\EmbeddedResource\*" />
+  </ItemGroup>
+
 </Project>

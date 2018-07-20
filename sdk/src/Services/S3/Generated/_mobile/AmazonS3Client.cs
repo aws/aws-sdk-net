@@ -3397,6 +3397,37 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  SelectObjectContent
+
+        internal virtual SelectObjectContentResponse SelectObjectContent(SelectObjectContentRequest request)
+        {
+            var marshaller = SelectObjectContentRequestMarshaller.Instance;
+            var unmarshaller = SelectObjectContentResponseUnmarshaller.Instance;
+
+            return Invoke<SelectObjectContentRequest,SelectObjectContentResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SelectObjectContent operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SelectObjectContent operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<SelectObjectContentResponse> SelectObjectContentAsync(SelectObjectContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = SelectObjectContentRequestMarshaller.Instance;
+            var unmarshaller = SelectObjectContentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SelectObjectContentRequest,SelectObjectContentResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UploadPart
 
         internal virtual UploadPartResponse UploadPart(UploadPartRequest request)

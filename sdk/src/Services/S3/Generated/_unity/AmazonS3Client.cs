@@ -3387,6 +3387,33 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  SelectObjectContent
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SelectObjectContent operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SelectObjectContent operation on AmazonS3Client.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public virtual void SelectObjectContentAsync(SelectObjectContentRequest request, AmazonServiceCallback<SelectObjectContentRequest, SelectObjectContentResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = SelectObjectContentRequestMarshaller.Instance;
+            var unmarshaller = SelectObjectContentResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<SelectObjectContentRequest,SelectObjectContentResponse> responseObject 
+                            = new AmazonServiceResult<SelectObjectContentRequest,SelectObjectContentResponse>((SelectObjectContentRequest)req, (SelectObjectContentResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<SelectObjectContentRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
         #region  UploadPart
 
         /// <summary>

@@ -131,8 +131,17 @@
             "defineConstants": "TRACE;;BCL;BCL35;AWS_APM_API;LOCAL_FILE",
             "excludeFolders": ["_bcl45", "obj"],
             "visualStudioServices" : ["{82a7f48d-3b50-4b1e-b82e-3ada8210c358}"],
-            "embeddedResources" : ["Custom\\Runtime\\TestResponses\\*.txt", "Custom\\TestTools\\ComparerTest.json", "..\\Services\\CloudFront\\UnitTests\\Custom\\EmbeddedResource\\sample.rsa.private.key.txt"],
+            "embeddedResources" : [
+                "Custom\\Runtime\\TestResponses\\*.txt",
+                "Custom\\Runtime\\EventStreams\\test_vectors\\*",
+                "Custom\\TestTools\\ComparerTest.json",
+                "..\\Services\\CloudFront\\UnitTests\\Custom\\EmbeddedResource\\sample.rsa.private.key.txt"
+            ],
             "packageReferences" : [
+                {
+                    "include": "Moq",
+                    "version": "4.8.3"
+                },
                 {
                     "include" : "MSTest.TestAdapter",
                     "version" : "1.2.0"
@@ -144,10 +153,6 @@
                 {
                     "include": "MSTest.TestFramework",
                     "version": "1.2.0"
-                },
-                {
-                    "include": "Moq",
-                    "version": "4.8.2"
                 },
                 {
                     "include": "AutoFixture",
@@ -172,8 +177,17 @@
             "defineConstants" : "TRACE;;BCL;BCL45;ASYNC_AWAIT;LOCAL_FILE",
 			"excludeFolders": ["obj"],
             "visualStudioServices" : ["{82a7f48d-3b50-4b1e-b82e-3ada8210c358}"],
-            "embeddedResources" : ["Custom\\Runtime\\TestResponses\\*.txt", "Custom\\TestTools\\ComparerTest.json", "..\\Services\\CloudFront\\UnitTests\\Custom\\EmbeddedResource\\sample.rsa.private.key.txt"],
+            "embeddedResources" : [
+                "Custom\\Runtime\\TestResponses\\*.txt",
+                "Custom\\Runtime\\EventStreams\\test_vectors\\*",
+                "Custom\\TestTools\\ComparerTest.json",
+                "..\\Services\\CloudFront\\UnitTests\\Custom\\EmbeddedResource\\sample.rsa.private.key.txt"
+            ],
             "packageReferences": [
+                {
+                    "include": "Moq",
+                    "version": "4.8.3"
+                },
                 {
                     "include": "MSTest.TestAdapter",
                     "version": "1.2.0"
@@ -185,10 +199,6 @@
                 {
                     "include": "MSTest.TestFramework",
                     "version": "1.2.0"
-                },
-                {
-                    "include": "Moq",
-                    "version": "4.8.2"
                 },
                 {
                     "include": "AutoFixture",
