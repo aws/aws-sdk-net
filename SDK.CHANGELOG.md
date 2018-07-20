@@ -1,3 +1,9 @@
+### 3.3.322.0 (2018-07-20 20:23 UTC)
+* ConfigService (3.3.19.0)
+	* Setting internal length limits on resourceId for APIs.  
+* DLM (3.3.0.1)
+	* Update documentation for Amazon Data Lifecycle Manager.
+
 ### 3.3.321.0 (2018-07-19 20:20 UTC)
 * MediaPackage (3.3.2.0)
 	* Adds support for DASH OriginEnpoints with multiple media presentation description periods triggered by presence of SCTE-35 ad markers in Channel input streams.
