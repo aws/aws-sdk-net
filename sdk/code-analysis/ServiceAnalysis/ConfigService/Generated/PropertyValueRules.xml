@@ -184,6 +184,11 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConfigService.Model.GetResourceConfigHistoryRequest.ResourceId</property>
+    <min>1</min>
+    <max>768</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConfigService.Model.ListDiscoveredResourcesRequest.Limit</property>
     <min>0</min>
     <max>100</max>
@@ -275,6 +280,11 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConfigService.Model.BaseConfigurationItem.ResourceId</property>
+    <min>1</min>
+    <max>768</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConfigService.Model.ComplianceByConfigRule.ConfigRuleName</property>
     <min>1</min>
     <max>64</max>
@@ -357,6 +367,11 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConfigService.Model.ConfigurationItem.ResourceId</property>
+    <min>1</min>
+    <max>768</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConfigService.Model.ConfigurationRecorder.Name</property>
     <min>1</min>
     <max>256</max>
@@ -409,6 +424,21 @@
     <property>Amazon.ConfigService.Model.PendingAggregationRequest.RequesterAwsRegion</property>
     <min>1</min>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.Relationship.ResourceId</property>
+    <min>1</min>
+    <max>768</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.ResourceIdentifier.ResourceId</property>
+    <min>1</min>
+    <max>768</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.ResourceKey.ResourceId</property>
+    <min>1</min>
+    <max>768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.RetentionConfiguration.Name</property>
