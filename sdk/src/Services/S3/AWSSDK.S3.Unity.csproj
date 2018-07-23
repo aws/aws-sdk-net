@@ -81,6 +81,9 @@
     <Compile Include="Custom\Model\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Custom\Model\Events\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Custom\Model\Internal\*.cs">
       <SubType>Code</SubType>
     </Compile>

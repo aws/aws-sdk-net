@@ -1,3 +1,39 @@
+### 3.3.323.0 (2018-07-23 21:04 UTC)
+* CognitoSync (3.3.1.36)
+	* Dependency on com.google.android.gms.gcm.GoogleCloudMessaging has been removed.
+
+* DynamoDBv2 (3.3.10.4)
+	* Dependency on com.google.android.gms.gcm.GoogleCloudMessaging has been removed.
+
+* IdentityManagement (3.3.7.1)
+	* Dependency on com.google.android.gms.gcm.GoogleCloudMessaging has been removed.
+
+* Kinesis (3.3.5.10)
+	* Dependency on com.google.android.gms.gcm.GoogleCloudMessaging has been removed.
+
+* KinesisFirehose (3.3.5.5)
+	* Dependency on com.google.android.gms.gcm.GoogleCloudMessaging has been removed.
+
+* Lambda (3.3.15.1)
+	* Dependency on com.google.android.gms.gcm.GoogleCloudMessaging has been removed.
+
+* MobileAnalytics (3.3.1.33)
+	* Dependency on com.google.android.gms.gcm.GoogleCloudMessaging has been removed.
+
+* S3 (3.3.20.0)
+	* Updated to use new Core, version 3.3.24.4
+	* Amazon S3 Select is an Amazon S3 feature that makes it easy to retrieve specific data from the contents of an object using simple SQL expressions without having to retrieve the entire object. With this release of the Amazon S3 SDK, S3 Select API (SelectObjectContent) is now generally available in all public regions. This release supports retrieval of a subset of data using SQL clauses, like SELECT and WHERE, from delimited text files and JSON objects in Amazon S3 through the SelectObjectContent API available in AWS S3 SDK.
+Dependency on com.google.android.gms.gcm.GoogleCloudMessaging has been removed.
+* SimpleEmail (3.3.6.12)
+	* Dependency on com.google.android.gms.gcm.GoogleCloudMessaging has been removed.
+
+* SQS (3.3.3.12)
+	* Dependency on com.google.android.gms.gcm.GoogleCloudMessaging has been removed.
+
+* Core 3.3.24.4
+	* Add AsyncRunner.cs back for users that upgraded AWSSDK.Core but haven't updated the corresponding service packages like AWSSDK.DynamoDBv2 which used AsyncRunner from Core in older versions of the package.
+	* All services packages updated to require new Core
+
 ### 3.3.322.0 (2018-07-20 20:23 UTC)
 * ConfigService (3.3.19.0)
 	* Setting internal length limits on resourceId for APIs.  
