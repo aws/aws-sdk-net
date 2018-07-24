@@ -49,14 +49,17 @@ namespace Amazon.Runtime
             {
                 CheckIsIMDSEnabled();
 
-                lock (instanceLock)
+                if (_instance == null)
                 {
-                    if (_instance == null)
+                    lock (instanceLock)
                     {
-                        _instance = new DefaultInstanceProfileAWSCredentials();
+                        if (_instance == null)
+                        {
+                            _instance = new DefaultInstanceProfileAWSCredentials();
 
-                        // force a fetch of credentials the very first time & schedule a timer task.
-                        _instance.RenewCredentials(null);
+                            // force a fetch of credentials the very first time & schedule a timer task.
+                            _instance.RenewCredentials(null);
+                        }
                     }
                 }
 
