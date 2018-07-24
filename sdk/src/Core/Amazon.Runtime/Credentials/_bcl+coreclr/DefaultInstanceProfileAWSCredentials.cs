@@ -129,9 +129,6 @@ namespace Amazon.Runtime
                 
                 newCredentials = new ImmutableCredentials(metadata.AccessKeyId, metadata.SecretAccessKey, metadata.Token);
 
-                // if another thread is holding onto a readlock, we don't want to cancel the refresh.
-                // wait at least a few seconds until lock becomes free. with 2 min refresh rate,
-                // we only get 2 tries to refresh credentials before it expires.
                 Instance.lastRetrievedCredentials = newCredentials;
             }
             catch (Exception e)
