@@ -43,7 +43,7 @@ namespace Configuration.AWSSystemsManagerTests
                 Path = "/start/path"
             };
             var processor = new Mock<IAWSSystemsManagerProcessor>();
-            processor.Setup(p => p.GetParametersByPath(source.AwsOptions, source.Path, false)).ReturnsAsync(parameters);
+            processor.Setup(p => p.GetParametersByPath(source.AwsOptions, source.Path)).ReturnsAsync(parameters);
             var provider = new AWSSystemsManagerConfigurationProvider(source, processor.Object);
             
             provider.Load();

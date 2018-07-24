@@ -23,40 +23,26 @@ namespace Amazon.Extensions.Configuration.AWSSystemsManager.Internal
 {
     public interface IAWSSystemsManagerProcessor
     {
-        Task<List<Parameter>> GetParametersByPath(AWSOptions awsOptions, string path, bool optional);
+        Task<List<Parameter>> GetParametersByPath(AWSOptions awsOptions, string path);
     }
 
     public class AWSSystemsManagerProcessor : IAWSSystemsManagerProcessor
     {
-        public AWSSystemsManagerProcessor()
+        public async Task<List<Parameter>> GetParametersByPath(AWSOptions awsOptions, string path)
         {
-            
-        }
-        public async Task<List<Parameter>> GetParametersByPath(AWSOptions awsOptions, string path, bool optional)
-        {
-            try
+            using (var client = awsOptions.CreateServiceClient<IAmazonSimpleSystemsManagement>())
             {
-                using (var client = awsOptions.CreateServiceClient<IAmazonSimpleSystemsManagement>())
+                var parameters = new List<Parameter>();
+                string nextToken = null;
+                do
                 {
-                    var parameters = new List<Parameter>();
-                    string nextToken = null;
-                    do
-                    {
-                        var response = await client.GetParametersByPathAsync(new GetParametersByPathRequest {Path = path, Recursive = true, WithDecryption = true, NextToken = nextToken});
-                        nextToken = response.NextToken;
-                        parameters.AddRange(response.Parameters);
-                    } while (nextToken != null);
+                    var response = await client.GetParametersByPathAsync(new GetParametersByPathRequest { Path = path, Recursive = true, WithDecryption = true, NextToken = nextToken });
+                    nextToken = response.NextToken;
+                    parameters.AddRange(response.Parameters);
+                } while (nextToken != null);
 
-                    return parameters;
-                }
+                return parameters;
             }
-            catch
-            {
-                if (optional) return new List<Parameter>();
-                
-                throw;
-            }
-                        
         }
     }
 }

@@ -58,7 +58,7 @@ namespace Amazon.Extensions.Configuration.AWSSystemsManager
                     var cancellationTokenSource = new CancellationTokenSource(configurationSource.ReloadAfter.Value);
                     var cancellationChangeToken = new CancellationChangeToken(cancellationTokenSource.Token);
                     return cancellationChangeToken;
-                }, async () => await LoadAsync());
+                }, async () => await LoadAsync(true));
             }
         }
 
@@ -66,34 +66,40 @@ namespace Amazon.Extensions.Configuration.AWSSystemsManager
         /// <summary>
         /// Loads the AWS Systems Manager Parameters.
         /// </summary>
-        public override void Load() => LoadAsync().ConfigureAwait(false).GetAwaiter().GetResult();
+        public override void Load() => LoadAsync(false).ConfigureAwait(false).GetAwaiter().GetResult();
 
-        private async Task LoadAsync()
+        private async Task LoadAsync(bool reload)
         {
             try
             {
                 var path = _configurationSource.Path;
                 var awsOptions = _configurationSource.AwsOptions;
-                var optional = this._configurationSource.Optional;
-                var parameters = await _awsSystemsManagerProcessor.GetParametersByPath(awsOptions, path, optional);
+                var parameters = await _awsSystemsManagerProcessor.GetParametersByPath(awsOptions, path);
 
                 Data = ProcessParameters(parameters, path);
+
+                OnReload();
             }
             catch (Exception ex)
             {
-                var ignoreException = false;
-                if (_configurationSource.OnLoadException != null)
+                var optional = this._configurationSource.Optional;
+                if (!(optional | reload))
                 {
-                    var exceptionContext = new AWSSystemsManagerExceptionContext
+                    var ignoreException = false;
+                    if (_configurationSource.OnLoadException != null)
                     {
-                        Provider = this,
-                        Exception = ex
-                    };
-                    _configurationSource.OnLoadException(exceptionContext);
-                    ignoreException = exceptionContext.Ignore;
+                        var exceptionContext = new AWSSystemsManagerExceptionContext
+                        {
+                            Provider = this,
+                            Exception = ex
+                        };
+                        _configurationSource.OnLoadException(exceptionContext);
+                        ignoreException = exceptionContext.Ignore;
+                    }
+
+                    if (!ignoreException)
+                        throw;
                 }
-                if (!ignoreException)
-                    throw;
             }
         }
 
