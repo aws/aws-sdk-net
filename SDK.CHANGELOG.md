@@ -1,3 +1,7 @@
+### 3.3.324.0 (2018-07-24 21:54 UTC)
+* DynamoDBv2 (3.3.11.0)
+	* With this SDK update, APIs UpdateGlobalTableSettings and DescribeGlobalTableSettings now allow consistently configuring AutoScaling settings for a DynamoDB global table. Previously, they would only allow consistently setting IOPS. Now new APIs are being released, existing APIs are being extended.
+
 ### 3.3.323.0 (2018-07-23 21:04 UTC)
 * CognitoSync (3.3.1.36)
 	* Dependency on com.google.android.gms.gcm.GoogleCloudMessaging has been removed.
