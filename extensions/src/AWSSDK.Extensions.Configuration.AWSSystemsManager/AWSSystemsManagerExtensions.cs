@@ -14,8 +14,7 @@
  */
 
 using System;
-using System.Runtime.InteropServices;
-using Amazon.Extensions.Configuration;
+using Amazon.Extensions.Configuration.AWSSystemsManager;
 using Amazon.Extensions.NETCore.Setup;
 
 // ReSharper disable once CheckNamespace

@@ -16,7 +16,7 @@
 using System;
 
 // ReSharper disable once CheckNamespace
-namespace Amazon.Extensions.Configuration
+namespace Amazon.Extensions.Configuration.AWSSystemsManager
 {
     /// <summary>Contains information about an AWSSystemsManager load exception.</summary>
     public class AWSSystemsManagerExceptionContext

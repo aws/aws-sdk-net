@@ -18,7 +18,7 @@ using Amazon.Extensions.NETCore.Setup;
 using Microsoft.Extensions.Configuration;
 
 // ReSharper disable once CheckNamespace
-namespace Amazon.Extensions.Configuration
+namespace Amazon.Extensions.Configuration.AWSSystemsManager
 {
     /// <inheritdoc />
     /// <summary>

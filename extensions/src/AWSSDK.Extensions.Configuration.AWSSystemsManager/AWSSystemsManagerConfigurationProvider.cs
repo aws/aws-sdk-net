@@ -19,13 +19,12 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Extensions.Configuration.AWSSystemsManager.Internal;
-using Amazon.Extensions.NETCore.Setup;
 using Amazon.SimpleSystemsManagement.Model;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Primitives;
 
 // ReSharper disable once CheckNamespace
-namespace Amazon.Extensions.Configuration
+namespace Amazon.Extensions.Configuration.AWSSystemsManager
 {
     /// <inheritdoc />
     /// <summary>

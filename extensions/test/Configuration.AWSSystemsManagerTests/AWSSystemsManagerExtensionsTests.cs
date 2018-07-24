@@ -1,5 +1,5 @@
 ﻿using System;
-using Amazon.Extensions.Configuration;
+using Amazon.Extensions.Configuration.AWSSystemsManager;
 using Amazon.Extensions.NETCore.Setup;
 using Microsoft.Extensions.Configuration;
 using Xunit;

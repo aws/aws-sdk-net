@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Amazon.Extensions.Configuration;
+using Amazon.Extensions.Configuration.AWSSystemsManager;
 using Amazon.Extensions.Configuration.AWSSystemsManager.Internal;
 using Amazon.Extensions.NETCore.Setup;
 using Amazon.SimpleSystemsManagement.Model;
