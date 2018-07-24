@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ReplicaGlobalSecondaryIndexSettingsDescription Object
+    /// Response Unmarshaller for AutoScalingSettingsDescription Object
     /// </summary>  
-    public class ReplicaGlobalSecondaryIndexSettingsDescriptionUnmarshaller : IUnmarshaller<ReplicaGlobalSecondaryIndexSettingsDescription, XmlUnmarshallerContext>, IUnmarshaller<ReplicaGlobalSecondaryIndexSettingsDescription, JsonUnmarshallerContext>
+    public class AutoScalingSettingsDescriptionUnmarshaller : IUnmarshaller<AutoScalingSettingsDescription, XmlUnmarshallerContext>, IUnmarshaller<AutoScalingSettingsDescription, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ReplicaGlobalSecondaryIndexSettingsDescription IUnmarshaller<ReplicaGlobalSecondaryIndexSettingsDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AutoScalingSettingsDescription IUnmarshaller<AutoScalingSettingsDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,45 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ReplicaGlobalSecondaryIndexSettingsDescription Unmarshall(JsonUnmarshallerContext context)
+        public AutoScalingSettingsDescription Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ReplicaGlobalSecondaryIndexSettingsDescription unmarshalledObject = new ReplicaGlobalSecondaryIndexSettingsDescription();
+            AutoScalingSettingsDescription unmarshalledObject = new AutoScalingSettingsDescription();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("IndexName", targetDepth))
+                if (context.TestExpression("AutoScalingDisabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.AutoScalingDisabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AutoScalingRoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IndexName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AutoScalingRoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("IndexStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IndexStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ProvisionedReadCapacityAutoScalingSettings", targetDepth))
-                {
-                    var unmarshaller = AutoScalingSettingsDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.ProvisionedReadCapacityAutoScalingSettings = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ProvisionedReadCapacityUnits", targetDepth))
+                if (context.TestExpression("MaximumUnits", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.ProvisionedReadCapacityUnits = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaximumUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ProvisionedWriteCapacityAutoScalingSettings", targetDepth))
-                {
-                    var unmarshaller = AutoScalingSettingsDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.ProvisionedWriteCapacityAutoScalingSettings = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ProvisionedWriteCapacityUnits", targetDepth))
+                if (context.TestExpression("MinimumUnits", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.ProvisionedWriteCapacityUnits = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MinimumUnits = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ScalingPolicies", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AutoScalingPolicyDescription, AutoScalingPolicyDescriptionUnmarshaller>(AutoScalingPolicyDescriptionUnmarshaller.Instance);
+                    unmarshalledObject.ScalingPolicies = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +100,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         }
 
 
-        private static ReplicaGlobalSecondaryIndexSettingsDescriptionUnmarshaller _instance = new ReplicaGlobalSecondaryIndexSettingsDescriptionUnmarshaller();        
+        private static AutoScalingSettingsDescriptionUnmarshaller _instance = new AutoScalingSettingsDescriptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ReplicaGlobalSecondaryIndexSettingsDescriptionUnmarshaller Instance
+        public static AutoScalingSettingsDescriptionUnmarshaller Instance
         {
             get
             {

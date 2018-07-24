@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ReplicaGlobalSecondaryIndexSettingsUpdate Marshaller
+    /// AutoScalingSettingsUpdate Marshaller
     /// </summary>       
-    public class ReplicaGlobalSecondaryIndexSettingsUpdateMarshaller : IRequestMarshaller<ReplicaGlobalSecondaryIndexSettingsUpdate, JsonMarshallerContext> 
+    public class AutoScalingSettingsUpdateMarshaller : IRequestMarshaller<AutoScalingSettingsUpdate, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,29 +43,41 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ReplicaGlobalSecondaryIndexSettingsUpdate requestObject, JsonMarshallerContext context)
+        public void Marshall(AutoScalingSettingsUpdate requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetIndexName())
+            if(requestObject.IsSetAutoScalingDisabled())
             {
-                context.Writer.WritePropertyName("IndexName");
-                context.Writer.Write(requestObject.IndexName);
+                context.Writer.WritePropertyName("AutoScalingDisabled");
+                context.Writer.Write(requestObject.AutoScalingDisabled);
             }
 
-            if(requestObject.IsSetProvisionedReadCapacityAutoScalingSettingsUpdate())
+            if(requestObject.IsSetAutoScalingRoleArn())
             {
-                context.Writer.WritePropertyName("ProvisionedReadCapacityAutoScalingSettingsUpdate");
+                context.Writer.WritePropertyName("AutoScalingRoleArn");
+                context.Writer.Write(requestObject.AutoScalingRoleArn);
+            }
+
+            if(requestObject.IsSetMaximumUnits())
+            {
+                context.Writer.WritePropertyName("MaximumUnits");
+                context.Writer.Write(requestObject.MaximumUnits);
+            }
+
+            if(requestObject.IsSetMinimumUnits())
+            {
+                context.Writer.WritePropertyName("MinimumUnits");
+                context.Writer.Write(requestObject.MinimumUnits);
+            }
+
+            if(requestObject.IsSetScalingPolicyUpdate())
+            {
+                context.Writer.WritePropertyName("ScalingPolicyUpdate");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = AutoScalingSettingsUpdateMarshaller.Instance;
-                marshaller.Marshall(requestObject.ProvisionedReadCapacityAutoScalingSettingsUpdate, context);
+                var marshaller = AutoScalingPolicyUpdateMarshaller.Instance;
+                marshaller.Marshall(requestObject.ScalingPolicyUpdate, context);
 
                 context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetProvisionedReadCapacityUnits())
-            {
-                context.Writer.WritePropertyName("ProvisionedReadCapacityUnits");
-                context.Writer.Write(requestObject.ProvisionedReadCapacityUnits);
             }
 
         }
@@ -73,7 +85,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static ReplicaGlobalSecondaryIndexSettingsUpdateMarshaller Instance = new ReplicaGlobalSecondaryIndexSettingsUpdateMarshaller();
+        public readonly static AutoScalingSettingsUpdateMarshaller Instance = new AutoScalingSettingsUpdateMarshaller();
 
     }
 }

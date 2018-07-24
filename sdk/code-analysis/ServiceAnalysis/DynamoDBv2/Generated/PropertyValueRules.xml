@@ -296,6 +296,37 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.AutoScalingPolicyDescription.PolicyName</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.AutoScalingPolicyUpdate.PolicyName</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.AutoScalingSettingsDescription.MaximumUnits</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.AutoScalingSettingsDescription.MinimumUnits</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.AutoScalingSettingsUpdate.AutoScalingRoleArn</property>
+    <min>1</min>
+    <max>1600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.AutoScalingSettingsUpdate.MaximumUnits</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.AutoScalingSettingsUpdate.MinimumUnits</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.BackupDetails.BackupArn</property>
     <min>37</min>
     <max>1024</max>

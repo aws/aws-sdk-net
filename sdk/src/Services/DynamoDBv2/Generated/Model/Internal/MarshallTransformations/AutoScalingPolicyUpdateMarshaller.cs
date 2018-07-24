@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ReplicaGlobalSecondaryIndexSettingsUpdate Marshaller
+    /// AutoScalingPolicyUpdate Marshaller
     /// </summary>       
-    public class ReplicaGlobalSecondaryIndexSettingsUpdateMarshaller : IRequestMarshaller<ReplicaGlobalSecondaryIndexSettingsUpdate, JsonMarshallerContext> 
+    public class AutoScalingPolicyUpdateMarshaller : IRequestMarshaller<AutoScalingPolicyUpdate, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,29 +43,23 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ReplicaGlobalSecondaryIndexSettingsUpdate requestObject, JsonMarshallerContext context)
+        public void Marshall(AutoScalingPolicyUpdate requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetIndexName())
+            if(requestObject.IsSetPolicyName())
             {
-                context.Writer.WritePropertyName("IndexName");
-                context.Writer.Write(requestObject.IndexName);
+                context.Writer.WritePropertyName("PolicyName");
+                context.Writer.Write(requestObject.PolicyName);
             }
 
-            if(requestObject.IsSetProvisionedReadCapacityAutoScalingSettingsUpdate())
+            if(requestObject.IsSetTargetTrackingScalingPolicyConfiguration())
             {
-                context.Writer.WritePropertyName("ProvisionedReadCapacityAutoScalingSettingsUpdate");
+                context.Writer.WritePropertyName("TargetTrackingScalingPolicyConfiguration");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = AutoScalingSettingsUpdateMarshaller.Instance;
-                marshaller.Marshall(requestObject.ProvisionedReadCapacityAutoScalingSettingsUpdate, context);
+                var marshaller = AutoScalingTargetTrackingScalingPolicyConfigurationUpdateMarshaller.Instance;
+                marshaller.Marshall(requestObject.TargetTrackingScalingPolicyConfiguration, context);
 
                 context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetProvisionedReadCapacityUnits())
-            {
-                context.Writer.WritePropertyName("ProvisionedReadCapacityUnits");
-                context.Writer.Write(requestObject.ProvisionedReadCapacityUnits);
             }
 
         }
@@ -73,7 +67,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static ReplicaGlobalSecondaryIndexSettingsUpdateMarshaller Instance = new ReplicaGlobalSecondaryIndexSettingsUpdateMarshaller();
+        public readonly static AutoScalingPolicyUpdateMarshaller Instance = new AutoScalingPolicyUpdateMarshaller();
 
     }
 }
