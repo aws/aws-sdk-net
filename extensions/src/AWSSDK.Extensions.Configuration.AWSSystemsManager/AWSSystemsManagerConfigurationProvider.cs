@@ -83,23 +83,22 @@ namespace Amazon.Extensions.Configuration.AWSSystemsManager
             catch (Exception ex)
             {
                 var optional = this._configurationSource.Optional;
-                if (!(optional | reload))
-                {
-                    var ignoreException = false;
-                    if (_configurationSource.OnLoadException != null)
-                    {
-                        var exceptionContext = new AWSSystemsManagerExceptionContext
-                        {
-                            Provider = this,
-                            Exception = ex
-                        };
-                        _configurationSource.OnLoadException(exceptionContext);
-                        ignoreException = exceptionContext.Ignore;
-                    }
+                if (optional | reload) return;
 
-                    if (!ignoreException)
-                        throw;
+                var ignoreException = false;
+                if (_configurationSource.OnLoadException != null)
+                {
+                    var exceptionContext = new AWSSystemsManagerExceptionContext
+                    {
+                        Provider = this,
+                        Exception = ex
+                    };
+                    _configurationSource.OnLoadException(exceptionContext);
+                    ignoreException = exceptionContext.Ignore;
                 }
+
+                if (!ignoreException)
+                    throw;
             }
         }
 
