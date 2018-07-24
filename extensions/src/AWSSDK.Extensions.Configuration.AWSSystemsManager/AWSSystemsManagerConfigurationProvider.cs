@@ -74,7 +74,7 @@ namespace Amazon.Extensions.Configuration.AWSSystemsManager
             {
                 var path = _configurationSource.Path;
                 var awsOptions = _configurationSource.AwsOptions;
-                var parameters = await _awsSystemsManagerProcessor.GetParametersByPath(awsOptions, path);
+                var parameters = await _awsSystemsManagerProcessor.GetParametersByPathAsync(awsOptions, path);
 
                 Data = ProcessParameters(parameters, path);
 

@@ -23,12 +23,12 @@ namespace Amazon.Extensions.Configuration.AWSSystemsManager.Internal
 {
     public interface IAWSSystemsManagerProcessor
     {
-        Task<List<Parameter>> GetParametersByPath(AWSOptions awsOptions, string path);
+        Task<List<Parameter>> GetParametersByPathAsync(AWSOptions awsOptions, string path);
     }
 
     public class AWSSystemsManagerProcessor : IAWSSystemsManagerProcessor
     {
-        public async Task<List<Parameter>> GetParametersByPath(AWSOptions awsOptions, string path)
+        public async Task<List<Parameter>> GetParametersByPathAsync(AWSOptions awsOptions, string path)
         {
             using (var client = awsOptions.CreateServiceClient<IAmazonSimpleSystemsManagement>())
             {
