@@ -34,12 +34,10 @@ namespace Amazon.Runtime
         
         private Timer credentialsRetrieverTimer;
         private ImmutableCredentials lastRetrievedCredentials;
-        private ReaderWriterLockSlim refreshLock;
         private Logger logger;
 
         private static readonly TimeSpan neverTimespan = TimeSpan.FromMilliseconds(-1);
         private static readonly TimeSpan refreshRate = TimeSpan.FromMinutes(2); // EC2 refreshes credentials 5 min before expiration
-        private static readonly TimeSpan lockWaitTimeOut = TimeSpan.FromSeconds(5);
         private const string FailedToGetCredentialsMessage = "Failed to retrieve credentials from EC2 Instance Metadata Service.";
         
         private static DefaultInstanceProfileAWSCredentials _instance;
@@ -73,7 +71,6 @@ namespace Amazon.Runtime
             if (!EC2InstanceMetadata.IsIMDSEnabled) return;
 
             logger = Logger.GetLogger(typeof(DefaultInstanceProfileAWSCredentials));
-            refreshLock = new ReaderWriterLockSlim();
 
             // don't start the timer right away or periodic signalling.
             credentialsRetrieverTimer = new Timer(RenewCredentials, null, neverTimespan, neverTimespan);
@@ -87,25 +84,14 @@ namespace Amazon.Runtime
         {
             CheckIsIMDSEnabled();
 
-            ImmutableCredentials credentials;
-            try
-            {
-                refreshLock.EnterReadLock();
-                credentials = lastRetrievedCredentials?.Copy();
-            }
-            finally
-            {
-                refreshLock.ExitReadLock();
-            }
+            var credentials = lastRetrievedCredentials?.Copy();
 
             if (credentials == null)
             {
                 throw new AmazonServiceException(FailedToGetCredentialsMessage);
             }
-            else
-            {
-                return credentials;
-            }
+
+            return credentials;
         }
 
 #if AWS_ASYNC_API   
@@ -146,19 +132,11 @@ namespace Amazon.Runtime
                 // if another thread is holding onto a readlock, we don't want to cancel the refresh.
                 // wait at least a few seconds until lock becomes free. with 2 min refresh rate,
                 // we only get 2 tries to refresh credentials before it expires.
-                Instance.refreshLock.TryEnterWriteLock(lockWaitTimeOut);
-                {
-                    Instance.lastRetrievedCredentials = newCredentials;
-                }
-                Instance.refreshLock.ExitWriteLock();
+                Instance.lastRetrievedCredentials = newCredentials;
             }
             catch (Exception e)
             {
-                Instance.refreshLock.TryEnterWriteLock(lockWaitTimeOut);
-                {
-                    Instance.lastRetrievedCredentials = null;
-                }
-                Instance.refreshLock.ExitWriteLock();
+                Instance.lastRetrievedCredentials = null;
 
                 // we want to suppress any exceptions from this timer task.
                 Instance.logger.Error(e, FailedToGetCredentialsMessage);
@@ -190,7 +168,6 @@ namespace Amazon.Runtime
                     lock (instanceLock)
                     {
                         credentialsRetrieverTimer.Dispose();
-                        refreshLock.Dispose();
                         logger = null;
                         _instance = null;
                     }
