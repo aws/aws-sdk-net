@@ -154,14 +154,15 @@ namespace Amazon.Runtime
             }
             catch (Exception e)
             {
-                // we want to suppress any exceptions from this timer task.
-                Instance?.logger.Error(e, FailedToGetCredentialsMessage);
-
                 Instance.refreshLock.TryEnterWriteLock(lockWaitTimeOut);
                 {
                     Instance.lastRetrievedCredentials = null;
                 }
                 Instance.refreshLock.ExitWriteLock();
+
+                // we want to suppress any exceptions from this timer task.
+                Instance.logger.Error(e, FailedToGetCredentialsMessage);
+
             }
             finally
             {
