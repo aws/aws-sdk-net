@@ -124,7 +124,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The nodes of an Internet-facing load balancer have public IP addresses. The DNS name
         /// of an Internet-facing load balancer is publicly resolvable to the public IP addresses
         /// of the nodes. Therefore, Internet-facing load balancers can route requests from clients
-        /// over the Internet.
+        /// over the internet.
         /// </para>
         ///  
         /// <para>

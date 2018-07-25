@@ -183,9 +183,51 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                                 request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateOidcConfig" + "." + "UserInfoEndpoint", StringUtils.FromString(publicRequestlistValue.AuthenticateOidcConfig.UserInfoEndpoint));
                             }
                         }
+                        if(publicRequestlistValue.IsSetFixedResponseConfig())
+                        {
+                            if(publicRequestlistValue.FixedResponseConfig.IsSetContentType())
+                            {
+                                request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "FixedResponseConfig" + "." + "ContentType", StringUtils.FromString(publicRequestlistValue.FixedResponseConfig.ContentType));
+                            }
+                            if(publicRequestlistValue.FixedResponseConfig.IsSetMessageBody())
+                            {
+                                request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "FixedResponseConfig" + "." + "MessageBody", StringUtils.FromString(publicRequestlistValue.FixedResponseConfig.MessageBody));
+                            }
+                            if(publicRequestlistValue.FixedResponseConfig.IsSetStatusCode())
+                            {
+                                request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "FixedResponseConfig" + "." + "StatusCode", StringUtils.FromString(publicRequestlistValue.FixedResponseConfig.StatusCode));
+                            }
+                        }
                         if(publicRequestlistValue.IsSetOrder())
                         {
                             request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Order", StringUtils.FromInt(publicRequestlistValue.Order));
+                        }
+                        if(publicRequestlistValue.IsSetRedirectConfig())
+                        {
+                            if(publicRequestlistValue.RedirectConfig.IsSetHost())
+                            {
+                                request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RedirectConfig" + "." + "Host", StringUtils.FromString(publicRequestlistValue.RedirectConfig.Host));
+                            }
+                            if(publicRequestlistValue.RedirectConfig.IsSetPath())
+                            {
+                                request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RedirectConfig" + "." + "Path", StringUtils.FromString(publicRequestlistValue.RedirectConfig.Path));
+                            }
+                            if(publicRequestlistValue.RedirectConfig.IsSetPort())
+                            {
+                                request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RedirectConfig" + "." + "Port", StringUtils.FromString(publicRequestlistValue.RedirectConfig.Port));
+                            }
+                            if(publicRequestlistValue.RedirectConfig.IsSetProtocol())
+                            {
+                                request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RedirectConfig" + "." + "Protocol", StringUtils.FromString(publicRequestlistValue.RedirectConfig.Protocol));
+                            }
+                            if(publicRequestlistValue.RedirectConfig.IsSetQuery())
+                            {
+                                request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RedirectConfig" + "." + "Query", StringUtils.FromString(publicRequestlistValue.RedirectConfig.Query));
+                            }
+                            if(publicRequestlistValue.RedirectConfig.IsSetStatusCode())
+                            {
+                                request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RedirectConfig" + "." + "StatusCode", StringUtils.FromString(publicRequestlistValue.RedirectConfig.StatusCode));
+                            }
                         }
                         if(publicRequestlistValue.IsSetTargetGroupArn())
                         {

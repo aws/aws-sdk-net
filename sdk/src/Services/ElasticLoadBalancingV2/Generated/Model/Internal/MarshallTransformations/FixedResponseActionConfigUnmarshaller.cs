@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Action Object
+    /// Response Unmarshaller for FixedResponseActionConfig Object
     /// </summary>  
-    public class ActionUnmarshaller : IUnmarshaller<Action, XmlUnmarshallerContext>, IUnmarshaller<Action, JsonUnmarshallerContext>
+    public class FixedResponseActionConfigUnmarshaller : IUnmarshaller<FixedResponseActionConfig, XmlUnmarshallerContext>, IUnmarshaller<FixedResponseActionConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Action Unmarshall(XmlUnmarshallerContext context)
+        public FixedResponseActionConfig Unmarshall(XmlUnmarshallerContext context)
         {
-            Action unmarshalledObject = new Action();
+            FixedResponseActionConfig unmarshalledObject = new FixedResponseActionConfig();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,46 +54,22 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("AuthenticateCognitoConfig", targetDepth))
-                    {
-                        var unmarshaller = AuthenticateCognitoActionConfigUnmarshaller.Instance;
-                        unmarshalledObject.AuthenticateCognitoConfig = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("AuthenticateOidcConfig", targetDepth))
-                    {
-                        var unmarshaller = AuthenticateOidcActionConfigUnmarshaller.Instance;
-                        unmarshalledObject.AuthenticateOidcConfig = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("FixedResponseConfig", targetDepth))
-                    {
-                        var unmarshaller = FixedResponseActionConfigUnmarshaller.Instance;
-                        unmarshalledObject.FixedResponseConfig = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Order", targetDepth))
-                    {
-                        var unmarshaller = IntUnmarshaller.Instance;
-                        unmarshalledObject.Order = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("RedirectConfig", targetDepth))
-                    {
-                        var unmarshaller = RedirectActionConfigUnmarshaller.Instance;
-                        unmarshalledObject.RedirectConfig = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("TargetGroupArn", targetDepth))
+                    if (context.TestExpression("ContentType", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.TargetGroupArn = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ContentType = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("Type", targetDepth))
+                    if (context.TestExpression("MessageBody", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.MessageBody = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("StatusCode", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.StatusCode = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -111,18 +87,18 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Action Unmarshall(JsonUnmarshallerContext context)
+        public FixedResponseActionConfig Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static ActionUnmarshaller _instance = new ActionUnmarshaller();        
+        private static FixedResponseActionConfigUnmarshaller _instance = new FixedResponseActionConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ActionUnmarshaller Instance
+        public static FixedResponseActionConfigUnmarshaller Instance
         {
             get
             {

@@ -88,8 +88,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <para>
         /// If the field name is <code>host-header</code>, you can specify a single host name
         /// (for example, my.example.com). A host name is case insensitive, can be up to 128 characters
-        /// in length, and can contain any of the following characters. Note that you can include
-        /// up to three wildcard characters.
+        /// in length, and can contain any of the following characters. You can include up to
+        /// three wildcard characters.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -110,8 +110,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         ///  </li> </ul> 
         /// <para>
         /// If the field name is <code>path-pattern</code>, you can specify a single path pattern.
-        /// A path pattern is case sensitive, can be up to 128 characters in length, and can contain
-        /// any of the following characters. Note that you can include up to three wildcard characters.
+        /// A path pattern is case-sensitive, can be up to 128 characters in length, and can contain
+        /// any of the following characters. You can include up to three wildcard characters.
         /// </para>
         ///  <ul> <li> 
         /// <para>

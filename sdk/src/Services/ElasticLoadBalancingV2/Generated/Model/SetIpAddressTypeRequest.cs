@@ -34,7 +34,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// 
     ///  
     /// <para>
-    /// Note that Network Load Balancers must use <code>ipv4</code>.
+    /// Network Load Balancers must use <code>ipv4</code>.
     /// </para>
     /// </summary>
     public partial class SetIpAddressTypeRequest : AmazonElasticLoadBalancingV2Request

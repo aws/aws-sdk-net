@@ -34,7 +34,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// 
     ///  
     /// <para>
-    /// Note that you can't change the subnets for a Network Load Balancer.
+    /// You can't change the subnets for a Network Load Balancer.
     /// </para>
     /// </summary>
     public partial class SetSubnetsRequest : AmazonElasticLoadBalancingV2Request

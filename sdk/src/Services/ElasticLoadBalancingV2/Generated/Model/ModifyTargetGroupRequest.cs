@@ -53,8 +53,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property HealthCheckIntervalSeconds. 
         /// <para>
         /// The approximate amount of time, in seconds, between health checks of an individual
-        /// target. For Application Load Balancers, the range is 5 to 300 seconds. For Network
-        /// Load Balancers, the supported values are 10 or 30 seconds.
+        /// target. For Application Load Balancers, the range is 5–300 seconds. For Network Load
+        /// Balancers, the supported values are 10 or 30 seconds.
         /// </para>
         /// </summary>
         public int HealthCheckIntervalSeconds

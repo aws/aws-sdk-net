@@ -34,7 +34,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     {
         private AuthenticateCognitoActionConfig _authenticateCognitoConfig;
         private AuthenticateOidcActionConfig _authenticateOidcConfig;
+        private FixedResponseActionConfig _fixedResponseConfig;
         private int? _order;
+        private RedirectActionConfig _redirectConfig;
         private string _targetGroupArn;
         private ActionTypeEnum _type;
 
@@ -77,11 +79,30 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FixedResponseConfig. 
+        /// <para>
+        /// [Application Load Balancer] Information for creating an action that returns a custom
+        /// HTTP response. Specify only when <code>Type</code> is <code>fixed-response</code>.
+        /// </para>
+        /// </summary>
+        public FixedResponseActionConfig FixedResponseConfig
+        {
+            get { return this._fixedResponseConfig; }
+            set { this._fixedResponseConfig = value; }
+        }
+
+        // Check to see if FixedResponseConfig property is set
+        internal bool IsSetFixedResponseConfig()
+        {
+            return this._fixedResponseConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Order. 
         /// <para>
         /// The order for the action. This value is required for rules with multiple actions.
-        /// The action with the lowest value for order is performed first. The forward action
-        /// must be performed last.
+        /// The action with the lowest value for order is performed first. The final action to
+        /// be performed must be a <code>forward</code> or a <code>fixed-response</code> action.
         /// </para>
         /// </summary>
         public int Order
@@ -97,15 +118,29 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RedirectConfig. 
+        /// <para>
+        /// [Application Load Balancer] Information for creating a redirect action. Specify only
+        /// when <code>Type</code> is <code>redirect</code>.
+        /// </para>
+        /// </summary>
+        public RedirectActionConfig RedirectConfig
+        {
+            get { return this._redirectConfig; }
+            set { this._redirectConfig = value; }
+        }
+
+        // Check to see if RedirectConfig property is set
+        internal bool IsSetRedirectConfig()
+        {
+            return this._redirectConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property TargetGroupArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the target group. Specify only when <code>Type</code>
         /// is <code>forward</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// For a default rule, the protocol of the target group must be HTTP or HTTPS for an
-        /// Application Load Balancer or TCP for a Network Load Balancer.
         /// </para>
         /// </summary>
         public string TargetGroupArn
@@ -123,7 +158,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of action. Each rule must include one forward action.
+        /// The type of action. Each rule must include exactly one of the following types of actions:
+        /// <code>forward</code>, <code>fixed-response</code>, or <code>redirect</code>.
         /// </para>
         /// </summary>
         public ActionTypeEnum Type
