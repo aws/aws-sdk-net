@@ -60,7 +60,7 @@ namespace Amazon.ECS.Model
     /// Confirm the state of the resource before you run a command to modify it. Run the DescribeTasks
     /// command using an exponential backoff algorithm to ensure that you allow enough time
     /// for the previous command to propagate through the system. To do this, run the DescribeTasks
-    /// command repeatedly, starting with a couple of seconds of wait time, and increasing
+    /// command repeatedly, starting with a couple of seconds of wait time and increasing
     /// gradually up to five minutes of wait time.
     /// </para>
     ///  </li> <li> 

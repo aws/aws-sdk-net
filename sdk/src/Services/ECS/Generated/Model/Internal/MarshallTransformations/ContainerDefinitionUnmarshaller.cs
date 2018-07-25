@@ -208,6 +208,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.ReadonlyRootFilesystem = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("repositoryCredentials", targetDepth))
+                {
+                    var unmarshaller = RepositoryCredentialsUnmarshaller.Instance;
+                    unmarshalledObject.RepositoryCredentials = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ulimits", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Ulimit, UlimitUnmarshaller>(UlimitUnmarshaller.Instance);

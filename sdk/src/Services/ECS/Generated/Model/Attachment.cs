@@ -40,7 +40,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Details. 
         /// <para>
-        /// Details of the attachment. For Elastic Network Interfaces, this includes the network
+        /// Details of the attachment. For elastic network interfaces, this includes the network
         /// interface ID, the MAC address, the subnet ID, and the private IPv4 address.
         /// </para>
         /// </summary>

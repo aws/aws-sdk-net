@@ -28,33 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// An object representing the network configuration for a task or service.
+    /// The repository credentials for private registry authentication.
     /// </summary>
-    public partial class NetworkConfiguration
+    public partial class RepositoryCredentials
     {
-        private AwsVpcConfiguration _awsvpcConfiguration;
+        private string _credentialsParameter;
 
         /// <summary>
-        /// Gets and sets the property AwsvpcConfiguration. 
+        /// Gets and sets the property CredentialsParameter. 
         /// <para>
-        /// The VPC subnets and security groups associated with a task.
+        /// The Amazon Resource Name (ARN) or name of the secret containing the private repository
+        /// credentials.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// All specified subnets and security groups must be from the same VPC.
-        /// </para>
-        ///  </note>
         /// </summary>
-        public AwsVpcConfiguration AwsvpcConfiguration
+        public string CredentialsParameter
         {
-            get { return this._awsvpcConfiguration; }
-            set { this._awsvpcConfiguration = value; }
+            get { return this._credentialsParameter; }
+            set { this._credentialsParameter = value; }
         }
 
-        // Check to see if AwsvpcConfiguration property is set
-        internal bool IsSetAwsvpcConfiguration()
+        // Check to see if CredentialsParameter property is set
+        internal bool IsSetCredentialsParameter()
         {
-            return this._awsvpcConfiguration != null;
+            return this._credentialsParameter != null;
         }
 
     }

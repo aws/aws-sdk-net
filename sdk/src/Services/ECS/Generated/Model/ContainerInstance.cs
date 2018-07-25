@@ -53,7 +53,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// This parameter returns <code>true</code> if the agent is connected to Amazon ECS.
         /// Registered instances with an agent that may be unhealthy or stopped return <code>false</code>.
-        /// Instances without a connected agent can't accept placement requests.
+        /// Only instances connected to an agent can accept placement requests.
         /// </para>
         /// </summary>
         public bool AgentConnected
@@ -90,7 +90,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Attachments. 
         /// <para>
-        /// The Elastic Network Interfaces associated with the container instance.
+        /// The elastic network interfaces associated with the container instance.
         /// </para>
         /// </summary>
         public List<Attachment> Attachments
@@ -128,7 +128,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property ContainerInstanceArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the container instance. The ARN contains the <code>arn:aws:ecs</code>
-        /// namespace, followed by the region of the container instance, the AWS account ID of
+        /// namespace, followed by the Region of the container instance, the AWS account ID of
         /// the container instance owner, the <code>container-instance</code> namespace, and then
         /// the container instance ID. For example, <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>
         /// </code>.
