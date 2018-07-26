@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model
     /// <para>
     /// The results describe only the Dedicated Hosts in the region you're currently using.
     /// All listed instances consume capacity on your Dedicated Host. Dedicated Hosts that
-    /// have recently been released will be listed with the state <code>released</code>.
+    /// have recently been released are listed with the state <code>released</code>.
     /// </para>
     /// </summary>
     public partial class DescribeHostsRequest : AmazonEC2Request
@@ -61,7 +61,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>client-token</code> - The idempotency token you provided when you allocated
+        ///  <code>client-token</code> - The idempotency token that you provided when you allocated
         /// the host.
         /// </para>
         ///  </li> <li> 
@@ -121,9 +121,9 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The maximum number of results to return for the request in a single page. The remaining
         /// results can be seen by sending another request with the returned <code>nextToken</code>
-        /// value. This value can be between 5 and 500; if <code>maxResults</code> is given a
-        /// larger value than 500, you will receive an error. You cannot specify this parameter
-        /// and the host IDs parameter in the same request.
+        /// value. This value can be between 5 and 500. If <code>maxResults</code> is given a
+        /// larger value than 500, you receive an error. You cannot specify this parameter and
+        /// the host IDs parameter in the same request.
         /// </para>
         /// </summary>
         public int MaxResults

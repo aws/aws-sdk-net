@@ -56,9 +56,15 @@ namespace Amazon.EC2.Model
     /// Some Linux distributions, such as Red Hat Enterprise Linux (RHEL) and SUSE Linux Enterprise
     /// Server (SLES), use the EC2 billing product code associated with an AMI to verify the
     /// subscription status for package updates. Creating an AMI from an EBS snapshot does
-    /// not maintain this billing code, and subsequent instances launched from such an AMI
-    /// will not be able to connect to package update infrastructure. To create an AMI that
-    /// must retain billing codes, see <a>CreateImage</a>.
+    /// not maintain this billing code, and instances launched from such an AMI are not able
+    /// to connect to package update infrastructure. If you purchase a Reserved Instance offering
+    /// for one of these Linux distributions and launch instances using an AMI that does not
+    /// contain the required billing code, your Reserved Instance is not applied to these
+    /// instances.
+    /// </para>
+    ///  
+    /// <para>
+    /// To create an AMI for operating systems that require a billing code, see <a>CreateImage</a>.
     /// </para>
     ///  
     /// <para>

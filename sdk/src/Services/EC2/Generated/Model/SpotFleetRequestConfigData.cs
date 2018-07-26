@@ -38,9 +38,11 @@ namespace Amazon.EC2.Model
         private double? _fulfilledCapacity;
         private string _iamFleetRole;
         private InstanceInterruptionBehavior _instanceInterruptionBehavior;
+        private int? _instancePoolsToUseCount;
         private List<SpotFleetLaunchSpecification> _launchSpecifications = new List<SpotFleetLaunchSpecification>();
         private List<LaunchTemplateConfig> _launchTemplateConfigs = new List<LaunchTemplateConfig>();
         private LoadBalancersConfig _loadBalancersConfig;
+        private OnDemandAllocationStrategy _onDemandAllocationStrategy;
         private double? _onDemandFulfilledCapacity;
         private int? _onDemandTargetCapacity;
         private bool? _replaceUnhealthyInstances;
@@ -167,6 +169,27 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InstancePoolsToUseCount. 
+        /// <para>
+        /// The number of Spot pools across which to allocate your target Spot capacity. Valid
+        /// only when Spot <b>AllocationStrategy</b> is set to <code>lowest-price</code>. Spot
+        /// Fleet selects the cheapest Spot pools and evenly allocates your target Spot capacity
+        /// across the number of Spot pools that you specify.
+        /// </para>
+        /// </summary>
+        public int InstancePoolsToUseCount
+        {
+            get { return this._instancePoolsToUseCount.GetValueOrDefault(); }
+            set { this._instancePoolsToUseCount = value; }
+        }
+
+        // Check to see if InstancePoolsToUseCount property is set
+        internal bool IsSetInstancePoolsToUseCount()
+        {
+            return this._instancePoolsToUseCount.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property LaunchSpecifications. 
         /// <para>
         /// The launch specifications for the Spot Fleet request.
@@ -226,6 +249,29 @@ namespace Amazon.EC2.Model
         internal bool IsSetLoadBalancersConfig()
         {
             return this._loadBalancersConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OnDemandAllocationStrategy. 
+        /// <para>
+        /// The order of the launch template overrides to use in fulfilling On-Demand capacity.
+        /// If you specify <code>lowestPrice</code>, Spot Fleet uses price to determine the order,
+        /// launching the lowest price first. If you specify <code>prioritized</code>, Spot Fleet
+        /// uses the priority that you assign to each Spot Fleet launch template override, launching
+        /// the highest priority first. If you do not specify a value, Spot Fleet defaults to
+        /// <code>lowestPrice</code>.
+        /// </para>
+        /// </summary>
+        public OnDemandAllocationStrategy OnDemandAllocationStrategy
+        {
+            get { return this._onDemandAllocationStrategy; }
+            set { this._onDemandAllocationStrategy = value; }
+        }
+
+        // Check to see if OnDemandAllocationStrategy property is set
+        internal bool IsSetOnDemandAllocationStrategy()
+        {
+            return this._onDemandAllocationStrategy != null;
         }
 
         /// <summary>

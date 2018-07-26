@@ -31,10 +31,35 @@ namespace Amazon.EC2
     ///
     /// Amazon Elastic Compute Cloud 
     /// <para>
-    /// Amazon Elastic Compute Cloud (Amazon EC2) provides resizable computing capacity in
-    /// the AWS Cloud. Using Amazon EC2 eliminates the need to invest in hardware up front,
-    /// so you can develop and deploy applications faster.
+    /// Amazon Elastic Compute Cloud (Amazon EC2) provides secure and resizable computing
+    /// capacity in the AWS cloud. Using Amazon EC2 eliminates the need to invest in hardware
+    /// up front, so you can develop and deploy applications faster.
     /// </para>
+    ///  
+    /// <para>
+    /// To learn more about Amazon EC2, Amazon EBS, and Amazon VPC, see the following resources:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="http://aws.amazon.com/ec2">Amazon EC2 product page</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://aws.amazon.com/documentation/ec2">Amazon EC2 documentation</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://aws.amazon.com/ebs">Amazon EBS product page</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://aws.amazon.com/vpc">Amazon VPC product page</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://aws.amazon.com/documentation/vpc">Amazon VPC documentation</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial interface IAmazonEC2 : IAmazonService, IDisposable
     {
@@ -1114,11 +1139,7 @@ namespace Amazon.EC2
         /// This action is not applicable for Linux/Unix instances or Windows instances that are
         /// backed by Amazon EBS.
         /// </para>
-        ///  </note> 
-        /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/Creating_InstanceStoreBacked_WinAMI.html">Creating
-        /// an Instance Store-Backed Windows AMI</a>.
-        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BundleInstance service method.</param>
         /// 
@@ -6186,15 +6207,15 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the Dedicated Host Reservations that are available to purchase.
+        /// Describes the Dedicated Host reservations that are available to purchase.
         /// 
         ///  
         /// <para>
-        /// The results describe all the Dedicated Host Reservation offerings, including offerings
+        /// The results describe all the Dedicated Host reservation offerings, including offerings
         /// that may not match the instance family and region of your Dedicated Hosts. When purchasing
-        /// an offering, ensure that the the instance family and region of the offering matches
-        /// that of the Dedicated Host/s it will be associated with. For an overview of supported
-        /// instance types, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated
+        /// an offering, ensure that the instance family and Region of the offering matches that
+        /// of the Dedicated Hosts with which it is to be associated . For more information about
+        /// supported instance types, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated
         /// Hosts Overview</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. 
         /// </para>
         /// </summary>
@@ -6236,8 +6257,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes Dedicated Host Reservations which are associated with Dedicated Hosts in
-        /// your account.
+        /// Describes reservations that are associated with Dedicated Hosts in your account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeHostReservations service method.</param>
         /// 
@@ -6283,7 +6303,7 @@ namespace Amazon.EC2
         /// <para>
         /// The results describe only the Dedicated Hosts in the region you're currently using.
         /// All listed instances consume capacity on your Dedicated Host. Dedicated Hosts that
-        /// have recently been released will be listed with the state <code>released</code>.
+        /// have recently been released are listed with the state <code>released</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeHosts service method.</param>
@@ -11239,12 +11259,11 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Modify the auto-placement setting of a Dedicated Host. When auto-placement is enabled,
-        /// AWS will place instances that you launch with a tenancy of <code>host</code>, but
-        /// without targeting a specific host ID, onto any available Dedicated Host in your account
-        /// which has auto-placement enabled. When auto-placement is disabled, you need to provide
-        /// a host ID if you want the instance to launch onto a specific host. If no host ID is
-        /// provided, the instance will be launched onto a suitable host which has auto-placement
-        /// enabled.
+        /// any instances that you launch with a tenancy of <code>host</code> but without a specific
+        /// host ID are placed onto any available Dedicated Host in your account that has auto-placement
+        /// enabled. When auto-placement is disabled, you need to provide a host ID ito have the
+        /// instance launch onto a specific host. If no host ID is provided, the instance is launched
+        /// onto a suitable host with auto-placement enabled.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyHosts service method.</param>
         /// 
@@ -12745,9 +12764,15 @@ namespace Amazon.EC2
         /// Some Linux distributions, such as Red Hat Enterprise Linux (RHEL) and SUSE Linux Enterprise
         /// Server (SLES), use the EC2 billing product code associated with an AMI to verify the
         /// subscription status for package updates. Creating an AMI from an EBS snapshot does
-        /// not maintain this billing code, and subsequent instances launched from such an AMI
-        /// will not be able to connect to package update infrastructure. To create an AMI that
-        /// must retain billing codes, see <a>CreateImage</a>.
+        /// not maintain this billing code, and instances launched from such an AMI are not able
+        /// to connect to package update infrastructure. If you purchase a Reserved Instance offering
+        /// for one of these Linux distributions and launch instances using an AMI that does not
+        /// contain the required billing code, your Reserved Instance is not applied to these
+        /// instances.
+        /// </para>
+        ///  
+        /// <para>
+        /// To create an AMI for operating systems that require a billing code, see <a>CreateImage</a>.
         /// </para>
         ///  
         /// <para>
@@ -12946,18 +12971,18 @@ namespace Amazon.EC2
         /// When you no longer want to use an On-Demand Dedicated Host it can be released. On-Demand
         /// billing is stopped and the host goes into <code>released</code> state. The host ID
         /// of Dedicated Hosts that have been released can no longer be specified in another request,
-        /// e.g., ModifyHosts. You must stop or terminate all instances on a host before it can
-        /// be released.
+        /// for example, ModifyHosts. You must stop or terminate all instances on a host before
+        /// it can be released.
         /// 
         ///  
         /// <para>
-        /// When Dedicated Hosts are released, it make take some time for them to stop counting
+        /// When Dedicated Hosts are released, it may take some time for them to stop counting
         /// toward your limit and you may receive capacity errors when trying to allocate new
-        /// Dedicated hosts. Try waiting a few minutes, and then try again.
+        /// Dedicated Hosts. Wait a few minutes and then try again.
         /// </para>
         ///  
         /// <para>
-        /// Released hosts will still appear in a <a>DescribeHosts</a> response.
+        /// Released hosts still appear in a <a>DescribeHosts</a> response.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ReleaseHosts service method.</param>

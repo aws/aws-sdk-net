@@ -72,6 +72,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.MaxPrice = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("priority", targetDepth))
+                    {
+                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        unmarshalledObject.Priority = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("subnetId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

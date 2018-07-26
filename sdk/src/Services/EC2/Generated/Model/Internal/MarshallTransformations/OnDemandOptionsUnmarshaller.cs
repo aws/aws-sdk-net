@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LaunchTemplateOverrides Object
+    /// Response Unmarshaller for OnDemandOptions Object
     /// </summary>  
-    public class LaunchTemplateOverridesUnmarshaller : IUnmarshaller<LaunchTemplateOverrides, XmlUnmarshallerContext>, IUnmarshaller<LaunchTemplateOverrides, JsonUnmarshallerContext>
+    public class OnDemandOptionsUnmarshaller : IUnmarshaller<OnDemandOptions, XmlUnmarshallerContext>, IUnmarshaller<OnDemandOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public LaunchTemplateOverrides Unmarshall(XmlUnmarshallerContext context)
+        public OnDemandOptions Unmarshall(XmlUnmarshallerContext context)
         {
-            LaunchTemplateOverrides unmarshalledObject = new LaunchTemplateOverrides();
+            OnDemandOptions unmarshalledObject = new OnDemandOptions();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,40 +54,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("availabilityZone", targetDepth))
+                    if (context.TestExpression("allocationStrategy", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("instanceType", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("priority", targetDepth))
-                    {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
-                        unmarshalledObject.Priority = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("spotPrice", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.SpotPrice = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("subnetId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.SubnetId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("weightedCapacity", targetDepth))
-                    {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
-                        unmarshalledObject.WeightedCapacity = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.AllocationStrategy = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -105,18 +75,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public LaunchTemplateOverrides Unmarshall(JsonUnmarshallerContext context)
+        public OnDemandOptions Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static LaunchTemplateOverridesUnmarshaller _instance = new LaunchTemplateOverridesUnmarshaller();        
+        private static OnDemandOptionsUnmarshaller _instance = new OnDemandOptionsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LaunchTemplateOverridesUnmarshaller Instance
+        public static OnDemandOptionsUnmarshaller Instance
         {
             get
             {

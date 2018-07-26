@@ -41,6 +41,7 @@ namespace Amazon.EC2.Model
         private double? _fulfilledCapacity;
         private double? _fulfilledOnDemandCapacity;
         private List<FleetLaunchTemplateConfig> _launchTemplateConfigs = new List<FleetLaunchTemplateConfig>();
+        private OnDemandOptions _onDemandOptions;
         private bool? _replaceUnhealthyInstances;
         private SpotOptions _spotOptions;
         private List<Tag> _tags = new List<Tag>();
@@ -222,6 +223,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetLaunchTemplateConfigs()
         {
             return this._launchTemplateConfigs != null && this._launchTemplateConfigs.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OnDemandOptions. 
+        /// <para>
+        /// The allocation strategy of On-Demand Instances in an EC2 Fleet.
+        /// </para>
+        /// </summary>
+        public OnDemandOptions OnDemandOptions
+        {
+            get { return this._onDemandOptions; }
+            set { this._onDemandOptions = value; }
+        }
+
+        // Check to see if OnDemandOptions property is set
+        internal bool IsSetOnDemandOptions()
+        {
+            return this._onDemandOptions != null;
         }
 
         /// <summary>

@@ -1865,6 +1865,56 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type FleetOnDemandAllocationStrategy.
+    /// </summary>
+    public class FleetOnDemandAllocationStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LowestPrice for FleetOnDemandAllocationStrategy
+        /// </summary>
+        public static readonly FleetOnDemandAllocationStrategy LowestPrice = new FleetOnDemandAllocationStrategy("lowest-price");
+        /// <summary>
+        /// Constant Prioritized for FleetOnDemandAllocationStrategy
+        /// </summary>
+        public static readonly FleetOnDemandAllocationStrategy Prioritized = new FleetOnDemandAllocationStrategy("prioritized");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FleetOnDemandAllocationStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FleetOnDemandAllocationStrategy FindValue(string value)
+        {
+            return FindValue<FleetOnDemandAllocationStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FleetOnDemandAllocationStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FleetStateCode.
     /// </summary>
     public class FleetStateCode : ConstantClass
@@ -4266,6 +4316,56 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OfferingTypeValues(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OnDemandAllocationStrategy.
+    /// </summary>
+    public class OnDemandAllocationStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LowestPrice for OnDemandAllocationStrategy
+        /// </summary>
+        public static readonly OnDemandAllocationStrategy LowestPrice = new OnDemandAllocationStrategy("lowestPrice");
+        /// <summary>
+        /// Constant Prioritized for OnDemandAllocationStrategy
+        /// </summary>
+        public static readonly OnDemandAllocationStrategy Prioritized = new OnDemandAllocationStrategy("prioritized");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OnDemandAllocationStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OnDemandAllocationStrategy FindValue(string value)
+        {
+            return FindValue<OnDemandAllocationStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OnDemandAllocationStrategy(string value)
         {
             return FindValue(value);
         }

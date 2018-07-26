@@ -47,6 +47,7 @@ namespace Amazon.EC2.Model
         private string _clientToken;
         private FleetExcessCapacityTerminationPolicy _excessCapacityTerminationPolicy;
         private List<FleetLaunchTemplateConfigRequest> _launchTemplateConfigs = new List<FleetLaunchTemplateConfigRequest>();
+        private OnDemandOptionsRequest _onDemandOptions;
         private bool? _replaceUnhealthyInstances;
         private SpotOptionsRequest _spotOptions;
         private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
@@ -114,6 +115,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OnDemandOptions. 
+        /// <para>
+        /// The allocation strategy of On-Demand Instances in an EC2 Fleet.
+        /// </para>
+        /// </summary>
+        public OnDemandOptionsRequest OnDemandOptions
+        {
+            get { return this._onDemandOptions; }
+            set { this._onDemandOptions = value; }
+        }
+
+        // Check to see if OnDemandOptions property is set
+        internal bool IsSetOnDemandOptions()
+        {
+            return this._onDemandOptions != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ReplaceUnhealthyInstances. 
         /// <para>
         /// Indicates whether EC2 Fleet should replace unhealthy instances.
@@ -134,8 +153,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SpotOptions. 
         /// <para>
-        /// Includes <code>SpotAllocationStrategy</code> and <code>SpotInstanceInterruptionBehavior</code>
-        /// inside this structure.
+        /// Describes the configuration of Spot Instances in an EC2 Fleet.
         /// </para>
         /// </summary>
         public SpotOptionsRequest SpotOptions

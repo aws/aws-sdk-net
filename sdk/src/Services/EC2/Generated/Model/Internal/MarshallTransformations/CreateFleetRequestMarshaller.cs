@@ -103,6 +103,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 {
                                     request.Parameters.Add("LaunchTemplateConfigs" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "MaxPrice", StringUtils.FromString(publicRequestlistValuelistValue.MaxPrice));
                                 }
+                                if(publicRequestlistValuelistValue.IsSetPriority())
+                                {
+                                    request.Parameters.Add("LaunchTemplateConfigs" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "Priority", StringUtils.FromDouble(publicRequestlistValuelistValue.Priority));
+                                }
                                 if(publicRequestlistValuelistValue.IsSetSubnetId())
                                 {
                                     request.Parameters.Add("LaunchTemplateConfigs" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "SubnetId", StringUtils.FromString(publicRequestlistValuelistValue.SubnetId));
@@ -115,6 +119,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             }
                         }
                         publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetOnDemandOptions())
+                {
+                    if(publicRequest.OnDemandOptions.IsSetAllocationStrategy())
+                    {
+                        request.Parameters.Add("OnDemandOptions" + "." + "AllocationStrategy", StringUtils.FromString(publicRequest.OnDemandOptions.AllocationStrategy));
                     }
                 }
                 if(publicRequest.IsSetReplaceUnhealthyInstances())
@@ -130,6 +141,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if(publicRequest.SpotOptions.IsSetInstanceInterruptionBehavior())
                     {
                         request.Parameters.Add("SpotOptions" + "." + "InstanceInterruptionBehavior", StringUtils.FromString(publicRequest.SpotOptions.InstanceInterruptionBehavior));
+                    }
+                    if(publicRequest.SpotOptions.IsSetInstancePoolsToUseCount())
+                    {
+                        request.Parameters.Add("SpotOptions" + "." + "InstancePoolsToUseCount", StringUtils.FromInt(publicRequest.SpotOptions.InstancePoolsToUseCount));
                     }
                 }
                 if(publicRequest.IsSetTagSpecifications())

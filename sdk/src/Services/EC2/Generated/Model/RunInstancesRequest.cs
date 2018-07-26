@@ -402,6 +402,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The market (purchasing) option for the instances.
         /// </para>
+        ///  
+        /// <para>
+        /// For <a>RunInstances</a>, persistent Spot Instance requests are only supported when
+        /// <b>InstanceInterruptionBehavior</b> is set to either <code>hibernate</code> or <code>stop</code>.
+        /// </para>
         /// </summary>
         public InstanceMarketOptionsRequest InstanceMarketOptions
         {

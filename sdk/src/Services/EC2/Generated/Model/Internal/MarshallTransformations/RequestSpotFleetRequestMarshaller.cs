@@ -84,6 +84,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("SpotFleetRequestConfig" + "." + "InstanceInterruptionBehavior", StringUtils.FromString(publicRequest.SpotFleetRequestConfig.InstanceInterruptionBehavior));
                     }
+                    if(publicRequest.SpotFleetRequestConfig.IsSetInstancePoolsToUseCount())
+                    {
+                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "InstancePoolsToUseCount", StringUtils.FromInt(publicRequest.SpotFleetRequestConfig.InstancePoolsToUseCount));
+                    }
                     if(publicRequest.SpotFleetRequestConfig.IsSetLaunchSpecifications())
                     {
                         int publicRequestSpotFleetRequestConfiglistValueIndex = 1;
@@ -378,6 +382,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                     {
                                         request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "InstanceType", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceType));
                                     }
+                                    if(publicRequestSpotFleetRequestConfiglistValuelistValue.IsSetPriority())
+                                    {
+                                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "Priority", StringUtils.FromDouble(publicRequestSpotFleetRequestConfiglistValuelistValue.Priority));
+                                    }
                                     if(publicRequestSpotFleetRequestConfiglistValuelistValue.IsSetSpotPrice())
                                     {
                                         request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "SpotPrice", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValue.SpotPrice));
@@ -428,6 +436,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 }
                             }
                         }
+                    }
+                    if(publicRequest.SpotFleetRequestConfig.IsSetOnDemandAllocationStrategy())
+                    {
+                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "OnDemandAllocationStrategy", StringUtils.FromString(publicRequest.SpotFleetRequestConfig.OnDemandAllocationStrategy));
                     }
                     if(publicRequest.SpotFleetRequestConfig.IsSetOnDemandFulfilledCapacity())
                     {
