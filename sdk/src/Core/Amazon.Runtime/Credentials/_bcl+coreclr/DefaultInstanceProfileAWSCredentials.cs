@@ -129,20 +129,20 @@ namespace Amazon.Runtime
                 
                 newCredentials = new ImmutableCredentials(metadata.AccessKeyId, metadata.SecretAccessKey, metadata.Token);
 
-                Instance.lastRetrievedCredentials = newCredentials;
+                lastRetrievedCredentials = newCredentials;
             }
             catch (Exception e)
             {
-                Instance.lastRetrievedCredentials = null;
+                lastRetrievedCredentials = null;
 
                 // we want to suppress any exceptions from this timer task.
-                Instance.logger.Error(e, FailedToGetCredentialsMessage);
+                logger.Error(e, FailedToGetCredentialsMessage);
 
             }
             finally
             {
                 // re-invoke this task once after time specified by refreshRate
-                Instance.credentialsRetrieverTimer.Change(refreshRate, neverTimespan);
+                credentialsRetrieverTimer.Change(refreshRate, neverTimespan);
             }
         }
 
