@@ -28,20 +28,42 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetReservedNodeExchangeOfferings operation.
-    /// Returns an array of DC2 ReservedNodeOfferings that matches the payment type, term,
-    /// and usage price of the given DC1 reserved node.
+    /// Container for the parameters to the DescribeClusterTracks operation.
+    /// Returns a list of all the available maintenance tracks.
     /// </summary>
-    public partial class GetReservedNodeExchangeOfferingsRequest : AmazonRedshiftRequest
+    public partial class DescribeClusterTracksRequest : AmazonRedshiftRequest
     {
+        private string _maintenanceTrackName;
         private string _marker;
         private int? _maxRecords;
-        private string _reservedNodeId;
+
+        /// <summary>
+        /// Gets and sets the property MaintenanceTrackName. 
+        /// <para>
+        /// The name of the maintenance track. 
+        /// </para>
+        /// </summary>
+        public string MaintenanceTrackName
+        {
+            get { return this._maintenanceTrackName; }
+            set { this._maintenanceTrackName = value; }
+        }
+
+        // Check to see if MaintenanceTrackName property is set
+        internal bool IsSetMaintenanceTrackName()
+        {
+            return this._maintenanceTrackName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// A value that indicates the starting point for the next set of ReservedNodeOfferings.
+        /// An optional parameter that specifies the starting point to return a set of response
+        /// records. When the results of a <code>DescribeClusterTracks</code> request exceed the
+        /// value specified in <code>MaxRecords</code>, Amazon Redshift returns a value in the
+        /// <code>Marker</code> field of the response. You can retrieve the next set of response
+        /// records by providing the returned marker value in the <code>Marker</code> parameter
+        /// and retrying the request. 
         /// </para>
         /// </summary>
         public string Marker
@@ -59,7 +81,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
-        /// An integer setting the maximum number of ReservedNodeOfferings to retrieve.
+        /// An integer value for the maximum number of maintenance tracks to return.
         /// </para>
         /// </summary>
         public int MaxRecords
@@ -72,24 +94,6 @@ namespace Amazon.Redshift.Model
         internal bool IsSetMaxRecords()
         {
             return this._maxRecords.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property ReservedNodeId. 
-        /// <para>
-        /// A string representing the node identifier for the DC1 Reserved Node to be exchanged.
-        /// </para>
-        /// </summary>
-        public string ReservedNodeId
-        {
-            get { return this._reservedNodeId; }
-            set { this._reservedNodeId = value; }
-        }
-
-        // Check to see if ReservedNodeId property is set
-        internal bool IsSetReservedNodeId()
-        {
-            return this._reservedNodeId != null;
         }
 
     }

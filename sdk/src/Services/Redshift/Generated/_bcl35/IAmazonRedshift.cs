@@ -395,6 +395,9 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.InvalidClusterSubnetGroupStateException">
         /// The cluster subnet group cannot be deleted because it is in use.
         /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterTrackException">
+        /// The provided cluster track name is not valid.
+        /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidElasticIpException">
         /// The Elastic IP (EIP) is invalid or cannot be found.
         /// </exception>
@@ -2225,6 +2228,52 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  DescribeClusterTracks
+
+
+        /// <summary>
+        /// Returns a list of all the available maintenance tracks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClusterTracks service method.</param>
+        /// 
+        /// <returns>The response from the DescribeClusterTracks service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterTrackException">
+        /// The provided cluster track name is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
+        /// Your account is not authorized to perform the requested operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterTracks">REST API Reference for DescribeClusterTracks Operation</seealso>
+        DescribeClusterTracksResponse DescribeClusterTracks(DescribeClusterTracksRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeClusterTracks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClusterTracks operation on AmazonRedshiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeClusterTracks
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterTracks">REST API Reference for DescribeClusterTracks Operation</seealso>
+        IAsyncResult BeginDescribeClusterTracks(DescribeClusterTracksRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeClusterTracks operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeClusterTracks.</param>
+        /// 
+        /// <returns>Returns a  DescribeClusterTracksResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterTracks">REST API Reference for DescribeClusterTracks Operation</seealso>
+        DescribeClusterTracksResponse EndDescribeClusterTracks(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeClusterVersions
 
 
@@ -3527,8 +3576,8 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Returns an array of ReservedNodeOfferings which is filtered by payment type, term,
-        /// and instance type.
+        /// Returns an array of DC2 ReservedNodeOfferings that matches the payment type, term,
+        /// and usage price of the given DC1 reserved node.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetReservedNodeExchangeOfferings service method.</param>
         /// 
@@ -3635,6 +3684,9 @@ namespace Amazon.Redshift
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
         /// The specified cluster is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterTrackException">
+        /// The provided cluster track name is not valid.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidElasticIpException">
         /// The Elastic IP (EIP) is invalid or cannot be found.
@@ -4270,6 +4322,9 @@ namespace Amazon.Redshift
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidClusterSubnetGroupStateException">
         /// The cluster subnet group cannot be deleted because it is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterTrackException">
+        /// The provided cluster track name is not valid.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidElasticIpException">
         /// The Elastic IP (EIP) is invalid or cannot be found.

@@ -60,6 +60,7 @@ namespace Amazon.Redshift.Model
         private string _hsmConfigurationIdentifier;
         private List<string> _iamRoles = new List<string>();
         private string _kmsKeyId;
+        private string _maintenanceTrackName;
         private string _masterUsername;
         private string _masterUserPassword;
         private string _nodeType;
@@ -582,6 +583,26 @@ namespace Amazon.Redshift.Model
         internal bool IsSetKmsKeyId()
         {
             return this._kmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaintenanceTrackName. 
+        /// <para>
+        /// An optional parameter for the name of the maintenance track for the cluster. If you
+        /// don't provide a maintenance track name, the cluster is assigned to the <code>current</code>
+        /// track.
+        /// </para>
+        /// </summary>
+        public string MaintenanceTrackName
+        {
+            get { return this._maintenanceTrackName; }
+            set { this._maintenanceTrackName = value; }
+        }
+
+        // Check to see if MaintenanceTrackName property is set
+        internal bool IsSetMaintenanceTrackName()
+        {
+            return this._maintenanceTrackName != null;
         }
 
         /// <summary>

@@ -47,6 +47,7 @@ namespace Amazon.Redshift.Model
         private bool? _enhancedVpcRouting;
         private long? _estimatedSecondsToCompletion;
         private string _kmsKeyId;
+        private string _maintenanceTrackName;
         private string _masterUsername;
         private string _nodeType;
         private int? _numberOfNodes;
@@ -348,6 +349,24 @@ namespace Amazon.Redshift.Model
         internal bool IsSetKmsKeyId()
         {
             return this._kmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaintenanceTrackName. 
+        /// <para>
+        /// The name of the maintenance track for the snapshot.
+        /// </para>
+        /// </summary>
+        public string MaintenanceTrackName
+        {
+            get { return this._maintenanceTrackName; }
+            set { this._maintenanceTrackName = value; }
+        }
+
+        // Check to see if MaintenanceTrackName property is set
+        internal bool IsSetMaintenanceTrackName()
+        {
+            return this._maintenanceTrackName != null;
         }
 
         /// <summary>
