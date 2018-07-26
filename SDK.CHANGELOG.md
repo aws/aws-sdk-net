@@ -1,3 +1,17 @@
+### 3.3.326.0 (2018-07-26 21:59 UTC)
+* CodeBuild (3.3.13.0)
+	* Add artifacts encryptionDisabled and build encryptionKey.
+* EC2 (3.3.57.0)
+	* This change provides the EC2/Spot customers with two new allocation strategies -- LowestN for Spot instances, and OD priority for on-demand instances.
+* Greengrass (3.3.3.8)
+	* Documentation updates for Greengrass Local Resource Access feature
+* Inspector (3.3.7.0)
+	* inspector will return ServiceTemporarilyUnavailableException when service is under stress
+* Redshift (3.3.6.0)
+	* When we make a new version of Amazon Redshift available, we update your cluster during its maintenance window. By selecting a maintenance track, you control whether we update your cluster with the most recent approved release, or with the previous release. The two values for maintenance track are current and trailing. If you choose the current track, your cluster is updated with the latest approved release. If you choose the trailing track, your cluster is updated with the release that was approved previously.The new API operation for managing maintenance tracks for a cluster is DescribeClusterTracks. In addition, the following API operations have new MaintenanceTrackName parameters:  Cluster,  PendingModifiedValues,  ModifyCluster,  RestoreFromClusterSnapshot,  CreateCluster,  Snapshot
+* SimpleSystemsManagement (3.3.26.0)
+	* This release updates AWS Systems Manager APIs to allow customers to attach labels to history parameter records and reference history parameter records via labels.  It also adds Parameter Store integration with AWS Secrets Manager to allow referencing and retrieving AWS Secrets Manager's secrets from Parameter Store.
+
 ### 3.3.325.0 (2018-07-25 21:26 UTC)
 * EC2 (3.3.56.0)
 	* R5 is the successor to R4 in EC2's memory-optimized instance family. R5d is a variant of R5 that has local NVMe SSD. Z1d instances deliver both high compute and high memory. Z1d instances use custom Intel Xeon Scalable Processors running at up to 4.0 GHz, powered by sustained all-core Turbo Boost. They are available in 6 sizes, with up to 48 vCPUs, 384 GiB of memory, and 1.8 TB of local NVMe storage.
