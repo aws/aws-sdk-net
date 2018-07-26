@@ -110,6 +110,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeBuild.Model.Build.EncryptionKey</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeBuild.Model.Build.Id</property>
     <min>1</min>
   </property-value-rule>

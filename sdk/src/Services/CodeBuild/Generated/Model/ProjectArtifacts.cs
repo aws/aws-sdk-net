@@ -32,12 +32,33 @@ namespace Amazon.CodeBuild.Model
     /// </summary>
     public partial class ProjectArtifacts
     {
+        private bool? _encryptionDisabled;
         private string _location;
         private string _name;
         private ArtifactNamespace _namespaceType;
         private ArtifactPackaging _packaging;
         private string _path;
         private ArtifactsType _type;
+
+        /// <summary>
+        /// Gets and sets the property EncryptionDisabled. 
+        /// <para>
+        ///  Set to true if you do not want your output artifacts encrypted. This option is only
+        /// valid if your artifacts type is Amazon S3. If this is set with another artifacts type,
+        /// an invalidInputException will be thrown. 
+        /// </para>
+        /// </summary>
+        public bool EncryptionDisabled
+        {
+            get { return this._encryptionDisabled.GetValueOrDefault(); }
+            set { this._encryptionDisabled = value; }
+        }
+
+        // Check to see if EncryptionDisabled property is set
+        internal bool IsSetEncryptionDisabled()
+        {
+            return this._encryptionDisabled.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Location. 
