@@ -131,7 +131,7 @@ namespace Amazon.Runtime
 
                 lastRetrievedCredentials = newCredentials;
             }
-            catch (TaskCanceledException e)
+            catch (OperationCanceledException e)
             {
                 // in this case, keep the lastRetrievedCredentials
                 logger.Error(e, "RenewCredentials task canceled");
