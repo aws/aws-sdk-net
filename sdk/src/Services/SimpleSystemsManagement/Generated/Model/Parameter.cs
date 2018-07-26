@@ -32,10 +32,50 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class Parameter
     {
+        private string _arn;
+        private DateTime? _lastModifiedDate;
         private string _name;
+        private string _selector;
+        private string _sourceResult;
         private ParameterType _type;
         private string _value;
         private long? _version;
+
+        /// <summary>
+        /// Gets and sets the property ARN. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the parameter.
+        /// </para>
+        /// </summary>
+        public string ARN
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if ARN property is set
+        internal bool IsSetARN()
+        {
+            return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastModifiedDate. 
+        /// <para>
+        /// Date the parameter was last changed or updated and the parameter version was created.
+        /// </para>
+        /// </summary>
+        public DateTime LastModifiedDate
+        {
+            get { return this._lastModifiedDate.GetValueOrDefault(); }
+            set { this._lastModifiedDate = value; }
+        }
+
+        // Check to see if LastModifiedDate property is set
+        internal bool IsSetLastModifiedDate()
+        {
+            return this._lastModifiedDate.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -53,6 +93,52 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Selector. 
+        /// <para>
+        /// Either the version number or the label used to retrieve the parameter value. Specify
+        /// selectors by using one of the following formats:
+        /// </para>
+        ///  
+        /// <para>
+        /// parameter_name:version
+        /// </para>
+        ///  
+        /// <para>
+        /// parameter_name:label
+        /// </para>
+        /// </summary>
+        public string Selector
+        {
+            get { return this._selector; }
+            set { this._selector = value; }
+        }
+
+        // Check to see if Selector property is set
+        internal bool IsSetSelector()
+        {
+            return this._selector != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceResult. 
+        /// <para>
+        /// Applies to parameters that reference information in other AWS services. SourceResult
+        /// is the raw result or response from the source.
+        /// </para>
+        /// </summary>
+        public string SourceResult
+        {
+            get { return this._sourceResult; }
+            set { this._sourceResult = value; }
+        }
+
+        // Check to see if SourceResult property is set
+        internal bool IsSetSourceResult()
+        {
+            return this._sourceResult != null;
         }
 
         /// <summary>

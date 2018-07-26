@@ -35,6 +35,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _allowedPattern;
         private string _description;
         private string _keyId;
+        private List<string> _labels = new List<string>();
         private DateTime? _lastModifiedDate;
         private string _lastModifiedUser;
         private string _name;
@@ -98,6 +99,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetKeyId()
         {
             return this._keyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Labels. 
+        /// <para>
+        /// Labels assigned to the parameter version.
+        /// </para>
+        /// </summary>
+        public List<string> Labels
+        {
+            get { return this._labels; }
+            set { this._labels = value; }
+        }
+
+        // Check to see if Labels property is set
+        internal bool IsSetLabels()
+        {
+            return this._labels != null && this._labels.Count > 0; 
         }
 
         /// <summary>

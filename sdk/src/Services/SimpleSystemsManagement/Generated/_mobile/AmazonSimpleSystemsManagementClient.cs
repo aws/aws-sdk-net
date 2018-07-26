@@ -2926,6 +2926,38 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  LabelParameterVersion
+
+        internal virtual LabelParameterVersionResponse LabelParameterVersion(LabelParameterVersionRequest request)
+        {
+            var marshaller = LabelParameterVersionRequestMarshaller.Instance;
+            var unmarshaller = LabelParameterVersionResponseUnmarshaller.Instance;
+
+            return Invoke<LabelParameterVersionRequest,LabelParameterVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the LabelParameterVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the LabelParameterVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/LabelParameterVersion">REST API Reference for LabelParameterVersion Operation</seealso>
+        public virtual Task<LabelParameterVersionResponse> LabelParameterVersionAsync(LabelParameterVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = LabelParameterVersionRequestMarshaller.Instance;
+            var unmarshaller = LabelParameterVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<LabelParameterVersionRequest,LabelParameterVersionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListAssociations
 
         internal virtual ListAssociationsResponse ListAssociations(ListAssociationsRequest request)

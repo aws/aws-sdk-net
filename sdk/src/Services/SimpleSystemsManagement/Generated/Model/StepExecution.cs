@@ -166,9 +166,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property IsCritical. 
         /// <para>
-        /// Enable this option to designate a step as critical for the successful completion of
-        /// the Automation. If a step with this designation fails, then Automation reports the
-        /// final status of the Automation as Failed. 
+        /// The flag which can be used to help decide whether the failure of current step leads
+        /// to the Automation failure.
         /// </para>
         /// </summary>
         public bool IsCritical
@@ -186,8 +185,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property IsEnd. 
         /// <para>
-        /// Enable this option to stop an Automation execution at the end of a specific step.
-        /// The Automation execution stops if the step execution failed or succeeded.
+        /// The flag which can be used to end automation no matter whether the step succeeds or
+        /// fails.
         /// </para>
         /// </summary>
         public bool IsEnd
@@ -223,8 +222,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property NextStep. 
         /// <para>
-        /// Specifies which step in an Automation to process next after successfully completing
-        /// a step. 
+        /// The next step after the step succeeds.
         /// </para>
         /// </summary>
         public string NextStep
@@ -405,14 +403,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ValidNextSteps. 
         /// <para>
-        /// ValidNextSteps offer different strategies for managing an Automation workflow when
-        /// a step finishes. Automation dynamically processes ValidNextSteps when a step is completed.
-        /// For example, you can specify <code>Abort</code> to stop the Automation when a step
-        /// fails or <code>Continue</code> to ignore the failure of the current step and allow
-        /// Automation to continue processing the next step. You can also specify <code>step:<i>step_name</i>
-        /// </code> to jump to a designated step after a step succeeds. The result of the current
-        /// step dynamically determines the ValidNextSteps. If a step finishes and no ValidNextStep
-        /// is designated, then the Automation stops.
+        /// Strategies used when step fails, we support Continue and Abort. Abort will fail the
+        /// automation when the step fails. Continue will ignore the failure of current step and
+        /// allow automation to execute the next step. With conditional branching, we add step:stepName
+        /// to support the automation to go to another specific step.
         /// </para>
         /// </summary>
         public List<string> ValidNextSteps

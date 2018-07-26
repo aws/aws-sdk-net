@@ -3936,6 +3936,49 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  LabelParameterVersion
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the LabelParameterVersion service method.</param>
+        /// 
+        /// <returns>The response from the LabelParameterVersion service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterNotFoundException">
+        /// The parameter could not be found. Verify the name and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterVersionLabelLimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterVersionNotFoundException">
+        /// The specified parameter version was not found. Verify the parameter name and version,
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
+        /// There are concurrent updates for a resource that supports one update at a time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/LabelParameterVersion">REST API Reference for LabelParameterVersion Operation</seealso>
+        LabelParameterVersionResponse LabelParameterVersion(LabelParameterVersionRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the LabelParameterVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the LabelParameterVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/LabelParameterVersion">REST API Reference for LabelParameterVersion Operation</seealso>
+        Task<LabelParameterVersionResponse> LabelParameterVersionAsync(LabelParameterVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListAssociations
 
 
