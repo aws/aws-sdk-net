@@ -98,6 +98,10 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
             {
                 return new NoSuchEntityException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceTemporarilyUnavailableException"))
+            {
+                return new ServiceTemporarilyUnavailableException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedFeatureException"))
             {
                 return new UnsupportedFeatureException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

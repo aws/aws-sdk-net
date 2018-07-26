@@ -655,6 +655,11 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Inspector.Model.ServiceTemporarilyUnavailableException.Message</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Inspector.Model.Subscription.ResourceArn</property>
     <min>1</min>
     <max>300</max>

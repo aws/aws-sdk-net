@@ -30,6 +30,12 @@ namespace Amazon.Inspector.Model
     /// <summary>
     /// Container for the parameters to the UpdateAssessmentTarget operation.
     /// Updates the assessment target that is specified by the ARN of the assessment target.
+    /// 
+    ///  
+    /// <para>
+    /// If resourceGroupArn is not specified, all EC2 instances in the current AWS account
+    /// and region are included in the assessment target.
+    /// </para>
     /// </summary>
     public partial class UpdateAssessmentTargetRequest : AmazonInspectorRequest
     {
