@@ -24,9 +24,9 @@ namespace CommonTests.Framework
         {
             credentials = credentials ?? TestRunner.Credentials;
             endpoint = endpoint ?? TestRunner.RegionEndpoint;
-
+            //use credentials, the parameter passed to the function, instead of the default credential to create the service.
             return (TClient)Activator.CreateInstance(typeof(TClient),
-                    new object[] { TestRunner.Credentials,  endpoint});
+                    new object[] { credentials,  endpoint});
         }
     }
 

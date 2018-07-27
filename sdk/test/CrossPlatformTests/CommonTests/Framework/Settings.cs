@@ -16,7 +16,7 @@ namespace CommonTests.Framework
         public static RegionEndpoint RegionEndpoint { get; private set; }
         public static string ResultsBucket { get; private set; }
         public static string ResultsTopic { get; private set; }
-
+        public static StoredSettings storedSettings { get;  private set;}
         private const string DefaultRegion = "us-west-2";
 
         static Settings()
@@ -33,7 +33,7 @@ namespace CommonTests.Framework
         {
             SetDefaults();
 
-            var storedSettings = GetStoredSettings(settingsResourcePartialName);
+            storedSettings = GetStoredSettings(settingsResourcePartialName);
             if (storedSettings == null)
                 return;
 
@@ -97,7 +97,7 @@ namespace CommonTests.Framework
             }
         }
 
-        private class StoredSettings
+        public class StoredSettings
         {
             public string AccessKeyId { get; set; }
             public string SecretAccessKey { get; set; }
@@ -107,6 +107,17 @@ namespace CommonTests.Framework
 
             public string ResultsBucket { get; set; }
             public string ResultsTopic { get; set; }
-        }
+            public string CognitoPoolId { get; set; }
+            public string UnAuthCognitoPoolId { get; set; }
+            public string AuthCognitoPoolId { get; set; }
+            public string UnAuthUnAuthRole { get; set; }
+            public string UnAuthAuthRole { get; set; }
+            public string AuthUnAuthRole { get; set; }
+            public string AuthAuthRole { get; set; }
+            public string AccountId { get; set; }
+            public string AuthProvider { get; set; }
+            public string AuthToken { get; set; }
+
+       }
     }
 }
