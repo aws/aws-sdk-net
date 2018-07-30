@@ -45,6 +45,7 @@ namespace Amazon.CloudHSMV2.Model
         private Dictionary<string, List<string>> _filters = new Dictionary<string, List<string>>();
         private int? _maxResults;
         private string _nextToken;
+        private bool? _sortAscending;
 
         /// <summary>
         /// Gets and sets the property Filters. 
@@ -115,6 +116,21 @@ namespace Amazon.CloudHSMV2.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SortAscending.
+        /// </summary>
+        public bool SortAscending
+        {
+            get { return this._sortAscending.GetValueOrDefault(); }
+            set { this._sortAscending = value; }
+        }
+
+        // Check to see if SortAscending property is set
+        internal bool IsSetSortAscending()
+        {
+            return this._sortAscending.HasValue; 
         }
 
     }

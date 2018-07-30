@@ -28,93 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudHSMV2.Model
 {
     /// <summary>
-    /// Contains information about a backup of an AWS CloudHSM cluster.
+    /// 
     /// </summary>
-    public partial class Backup
+    public partial class DestinationBackup
     {
-        private string _backupId;
-        private BackupState _backupState;
-        private string _clusterId;
-        private DateTime? _copyTimestamp;
         private DateTime? _createTimestamp;
         private string _sourceBackup;
         private string _sourceCluster;
         private string _sourceRegion;
 
         /// <summary>
-        /// Gets and sets the property BackupId. 
-        /// <para>
-        /// The identifier (ID) of the backup.
-        /// </para>
-        /// </summary>
-        public string BackupId
-        {
-            get { return this._backupId; }
-            set { this._backupId = value; }
-        }
-
-        // Check to see if BackupId property is set
-        internal bool IsSetBackupId()
-        {
-            return this._backupId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property BackupState. 
-        /// <para>
-        /// The state of the backup.
-        /// </para>
-        /// </summary>
-        public BackupState BackupState
-        {
-            get { return this._backupState; }
-            set { this._backupState = value; }
-        }
-
-        // Check to see if BackupState property is set
-        internal bool IsSetBackupState()
-        {
-            return this._backupState != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ClusterId. 
-        /// <para>
-        /// The identifier (ID) of the cluster that was backed up.
-        /// </para>
-        /// </summary>
-        public string ClusterId
-        {
-            get { return this._clusterId; }
-            set { this._clusterId = value; }
-        }
-
-        // Check to see if ClusterId property is set
-        internal bool IsSetClusterId()
-        {
-            return this._clusterId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property CopyTimestamp.
-        /// </summary>
-        public DateTime CopyTimestamp
-        {
-            get { return this._copyTimestamp.GetValueOrDefault(); }
-            set { this._copyTimestamp = value; }
-        }
-
-        // Check to see if CopyTimestamp property is set
-        internal bool IsSetCopyTimestamp()
-        {
-            return this._copyTimestamp.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property CreateTimestamp. 
-        /// <para>
-        /// The date and time when the backup was created.
-        /// </para>
+        /// Gets and sets the property CreateTimestamp.
         /// </summary>
         public DateTime CreateTimestamp
         {

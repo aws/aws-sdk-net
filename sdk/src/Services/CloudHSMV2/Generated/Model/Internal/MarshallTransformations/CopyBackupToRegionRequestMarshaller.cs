@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DescribeBackups Request Marshaller
+    /// CopyBackupToRegion Request Marshaller
     /// </summary>       
-    public class DescribeBackupsRequestMarshaller : IMarshaller<IRequest, DescribeBackupsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class CopyBackupToRegionRequestMarshaller : IMarshaller<IRequest, CopyBackupToRegionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DescribeBackupsRequest)input);
+            return this.Marshall((CopyBackupToRegionRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DescribeBackupsRequest publicRequest)
+        public IRequest Marshall(CopyBackupToRegionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudHSMV2");
-            string target = "BaldrApiService.DescribeBackups";
+            string target = "BaldrApiService.CopyBackupToRegion";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -67,41 +67,16 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFilters())
+                if(publicRequest.IsSetBackupId())
                 {
-                    context.Writer.WritePropertyName("Filters");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestFiltersKvp in publicRequest.Filters)
-                    {
-                        context.Writer.WritePropertyName(publicRequestFiltersKvp.Key);
-                        var publicRequestFiltersValue = publicRequestFiltersKvp.Value;
-
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestFiltersValueListValue in publicRequestFiltersValue)
-                        {
-                                context.Writer.Write(publicRequestFiltersValueListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("BackupId");
+                    context.Writer.Write(publicRequest.BackupId);
                 }
 
-                if(publicRequest.IsSetMaxResults())
+                if(publicRequest.IsSetDestinationRegion())
                 {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetSortAscending())
-                {
-                    context.Writer.WritePropertyName("SortAscending");
-                    context.Writer.Write(publicRequest.SortAscending);
+                    context.Writer.WritePropertyName("DestinationRegion");
+                    context.Writer.Write(publicRequest.DestinationRegion);
                 }
 
         
@@ -113,9 +88,9 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static DescribeBackupsRequestMarshaller _instance = new DescribeBackupsRequestMarshaller();        
+        private static CopyBackupToRegionRequestMarshaller _instance = new CopyBackupToRegionRequestMarshaller();        
 
-        internal static DescribeBackupsRequestMarshaller GetInstance()
+        internal static CopyBackupToRegionRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -123,7 +98,7 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeBackupsRequestMarshaller Instance
+        public static CopyBackupToRegionRequestMarshaller Instance
         {
             get
             {

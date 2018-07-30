@@ -38,6 +38,23 @@ namespace Amazon.CloudHSMV2
     public partial interface IAmazonCloudHSMV2 : IAmazonService, IDisposable
     {
                 
+        #region  CopyBackupToRegion
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CopyBackupToRegion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CopyBackupToRegion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/CopyBackupToRegion">REST API Reference for CopyBackupToRegion Operation</seealso>
+        Task<CopyBackupToRegionResponse> CopyBackupToRegionAsync(CopyBackupToRegionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateCluster
 
 

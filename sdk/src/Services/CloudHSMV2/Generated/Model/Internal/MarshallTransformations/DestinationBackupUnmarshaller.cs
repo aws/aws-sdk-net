@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Backup Object
+    /// Response Unmarshaller for DestinationBackup Object
     /// </summary>  
-    public class BackupUnmarshaller : IUnmarshaller<Backup, XmlUnmarshallerContext>, IUnmarshaller<Backup, JsonUnmarshallerContext>
+    public class DestinationBackupUnmarshaller : IUnmarshaller<DestinationBackup, XmlUnmarshallerContext>, IUnmarshaller<DestinationBackup, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Backup IUnmarshaller<Backup, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DestinationBackup IUnmarshaller<DestinationBackup, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,41 +53,17 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Backup Unmarshall(JsonUnmarshallerContext context)
+        public DestinationBackup Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Backup unmarshalledObject = new Backup();
+            DestinationBackup unmarshalledObject = new DestinationBackup();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("BackupId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BackupId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("BackupState", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BackupState = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ClusterId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ClusterId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("CopyTimestamp", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CopyTimestamp = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("CreateTimestamp", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -118,12 +94,12 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static BackupUnmarshaller _instance = new BackupUnmarshaller();        
+        private static DestinationBackupUnmarshaller _instance = new DestinationBackupUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static BackupUnmarshaller Instance
+        public static DestinationBackupUnmarshaller Instance
         {
             get
             {

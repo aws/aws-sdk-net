@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.CloudHSMV2.Model.CopyBackupToRegionRequest.BackupId</property>
+    <pattern>backup-[2-7a-zA-Z]{11,16}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudHSMV2.Model.CopyBackupToRegionRequest.DestinationRegion</property>
+    <pattern>[a-z]{2}(-(gov))?-(east|west|north|south|central){1,2}-\d</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudHSMV2.Model.CreateClusterRequest.HsmType</property>
     <pattern>(hsm1\.medium)</pattern>
   </property-value-rule>
@@ -10,7 +18,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudHSMV2.Model.CreateHsmRequest.AvailabilityZone</property>
-    <pattern>[a-z]{2}(-(gov|isob|iso))?-(east|west|north|south|central){1,2}-\d[a-z]</pattern>
+    <pattern>[a-z]{2}(-(gov))?-(east|west|north|south|central){1,2}-\d[a-z]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudHSMV2.Model.CreateHsmRequest.ClusterId</property>
@@ -129,6 +137,18 @@
     <pattern>cluster-[2-7a-zA-Z]{11,16}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudHSMV2.Model.Backup.SourceBackup</property>
+    <pattern>backup-[2-7a-zA-Z]{11,16}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudHSMV2.Model.Backup.SourceCluster</property>
+    <pattern>cluster-[2-7a-zA-Z]{11,16}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudHSMV2.Model.Backup.SourceRegion</property>
+    <pattern>[a-z]{2}(-(gov))?-(east|west|north|south|central){1,2}-\d</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudHSMV2.Model.Certificates.AwsHardwareCertificate</property>
     <max>5000</max>
     <pattern>[a-zA-Z0-9+-/=\s]*</pattern>
@@ -184,8 +204,20 @@
     <pattern>vpc-[0-9a-fA-F]</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudHSMV2.Model.DestinationBackup.SourceBackup</property>
+    <pattern>backup-[2-7a-zA-Z]{11,16}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudHSMV2.Model.DestinationBackup.SourceCluster</property>
+    <pattern>cluster-[2-7a-zA-Z]{11,16}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudHSMV2.Model.DestinationBackup.SourceRegion</property>
+    <pattern>[a-z]{2}(-(gov))?-(east|west|north|south|central){1,2}-\d</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudHSMV2.Model.Hsm.AvailabilityZone</property>
-    <pattern>[a-z]{2}(-(gov|isob|iso))?-(east|west|north|south|central){1,2}-\d[a-z]</pattern>
+    <pattern>[a-z]{2}(-(gov))?-(east|west|north|south|central){1,2}-\d[a-z]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudHSMV2.Model.Hsm.ClusterId</property>

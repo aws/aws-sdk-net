@@ -232,6 +232,38 @@ namespace Amazon.CloudHSMV2
         #endregion
 
         
+        #region  CopyBackupToRegion
+
+        internal virtual CopyBackupToRegionResponse CopyBackupToRegion(CopyBackupToRegionRequest request)
+        {
+            var marshaller = CopyBackupToRegionRequestMarshaller.Instance;
+            var unmarshaller = CopyBackupToRegionResponseUnmarshaller.Instance;
+
+            return Invoke<CopyBackupToRegionRequest,CopyBackupToRegionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CopyBackupToRegion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CopyBackupToRegion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/CopyBackupToRegion">REST API Reference for CopyBackupToRegion Operation</seealso>
+        public virtual Task<CopyBackupToRegionResponse> CopyBackupToRegionAsync(CopyBackupToRegionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CopyBackupToRegionRequestMarshaller.Instance;
+            var unmarshaller = CopyBackupToRegionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CopyBackupToRegionRequest,CopyBackupToRegionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateCluster
 
         internal virtual CreateClusterResponse CreateCluster(CreateClusterRequest request)
