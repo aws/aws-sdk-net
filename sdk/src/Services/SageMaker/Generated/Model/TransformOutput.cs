@@ -60,7 +60,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property AssembleWith. 
         /// <para>
         /// Defines how to assemble the results of the transform job as a single S3 object. You
-        /// should select a format that is most convienant to you. To concatenate the results
+        /// should select a format that is most convenient to you. To concatenate the results
         /// in binary format, specify <code>None</code>. To add a newline character at the end
         /// of every transformed record, specify <code>Line</code>. To assemble the output in
         /// RecordIO format, specify <code>RecordIO</code>. The default value is <code>None</code>.
@@ -123,7 +123,7 @@ namespace Amazon.SageMaker.Model
         ///  
         /// <para>
         /// For every S3 object used as input for the transform job, the transformed data is stored
-        /// in a corresponding subfolder in the location under the output prefix.For example,
+        /// in a corresponding subfolder in the location under the output prefix. For example,
         /// the input data <code>s3://bucket-name/input-name-prefix/dataset01/data.csv</code>
         /// will have the transformed data stored at <code>s3://bucket-name/key-name-prefix/dataset01/</code>,
         /// based on the original name, as a series of .part files (.part0001, part0002, etc).

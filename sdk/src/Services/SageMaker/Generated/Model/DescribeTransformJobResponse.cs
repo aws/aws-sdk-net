@@ -51,7 +51,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property BatchStrategy. 
         /// <para>
-        /// SingleRecord means only one record was used per a batch. &lt;code&gt;MultiRecord&lt;/code&gt;
+        /// SingleRecord means only one record was used per a batch. <code>MultiRecord</code>
         /// means batches contained as many records that could possibly fit within the <code>MaxPayloadInMB</code>
         /// limit.
         /// </para>

@@ -43,6 +43,7 @@ namespace Amazon.SageMaker.Model
         private ResourceConfig _resourceConfig;
         private string _roleArn;
         private SecondaryStatus _secondaryStatus;
+        private List<SecondaryStatusTransition> _secondaryStatusTransitions = new List<SecondaryStatusTransition>();
         private StoppingCondition _stoppingCondition;
         private DateTime? _trainingEndTime;
         private string _trainingJobArn;
@@ -242,6 +243,63 @@ namespace Amazon.SageMaker.Model
         ///  Provides granular information about the system state. For more information, see <code>TrainingJobStatus</code>.
         /// 
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Starting</code> - starting the training job.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LaunchingMLInstances</code> - launching ML instances for the training job.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PreparingTrainingStack</code> - preparing the ML instances for the training
+        /// job.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Downloading</code> - downloading the input data.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DownloadingTrainingImage</code> - downloading the training algorithm image.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Training</code> - model training is in progress.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Uploading</code> - uploading the trained model.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Stopping</code> - stopping the training job.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Stopped</code> - the training job has stopped.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>MaxRuntimeExceeded</code> - the training job exceeded the specified max run
+        /// time and has been stopped.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Completed</code> - the training job has completed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Failed</code> - the training job has failed. The failure reason is provided
+        /// in the <code>StatusMessage</code>.
+        /// </para>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// The valid values for <code>SecondaryStatus</code> are subject to change. They primarily
+        /// provide information on the progress of the training job.
+        /// </para>
+        ///  </important>
         /// </summary>
         public SecondaryStatus SecondaryStatus
         {
@@ -253,6 +311,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetSecondaryStatus()
         {
             return this._secondaryStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecondaryStatusTransitions. 
+        /// <para>
+        /// To give an overview of the training job lifecycle, <code>SecondaryStatusTransitions</code>
+        /// is a log of time-ordered secondary statuses that a training job has transitioned.
+        /// </para>
+        /// </summary>
+        public List<SecondaryStatusTransition> SecondaryStatusTransitions
+        {
+            get { return this._secondaryStatusTransitions; }
+            set { this._secondaryStatusTransitions = value; }
+        }
+
+        // Check to see if SecondaryStatusTransitions property is set
+        internal bool IsSetSecondaryStatusTransitions()
+        {
+            return this._secondaryStatusTransitions != null && this._secondaryStatusTransitions.Count > 0; 
         }
 
         /// <summary>

@@ -29,8 +29,8 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateTransformJob operation.
-    /// Starts a transform job. After the results are obtained, Amazon SageMaker saves them
-    /// to an Amazon S3 location that you specify.
+    /// Starts a transform job. A transform job uses a trained model to get inferences on
+    /// a dataset and saves these results to an Amazon S3 location that you specify.
     /// 
     ///  
     /// <para>
@@ -48,7 +48,8 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ModelName</code> - Identifies the model to use.
+    ///  <code>ModelName</code> - Identifies the model to use. <code>ModelName</code> must
+    /// be the name of an existing Amazon SageMaker model within an AWS Region in an AWS account.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -88,10 +89,17 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property BatchStrategy. 
         /// <para>
-        /// Determins the number of records included in a single batch. <code>SingleRecord</code>
-        /// means only one record is used per batch. <code>MultiRecord</code> means a batch is
-        /// set to contain as many records that could possibly fit within the <code>MaxPayloadInMB</code>
+        /// Determines the number of records included in a single mini-batch. <code>SingleRecord</code>
+        /// means only one record is used per mini-batch. <code>MultiRecord</code> means a mini-batch
+        /// is set to contain as many records that can fit within the <code>MaxPayloadInMB</code>
         /// limit.
+        /// </para>
+        ///  
+        /// <para>
+        /// Batch transform will automatically split your input data into whatever payload size
+        /// is specified if you set <code>SplitType</code> to <code>Line</code> and <code>BatchStrategy</code>
+        /// to <code>MultiRecord</code>. There's no need to split the dataset into smaller files
+        /// or to use larger payload sizes unless the records in your dataset are very large.
         /// </para>
         /// </summary>
         public BatchStrategy BatchStrategy
@@ -128,10 +136,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property MaxConcurrentTransforms. 
         /// <para>
-        /// The maximum number of parallel requests on each instance node that can be launched
-        /// in a transform job. The default value is <code>1</code>. To allow Amazon SageMaker
-        /// to determine the appropriate number for <code>MaxConcurrentTransforms</code>, set
-        /// the value to <code>0</code>.
+        /// The maximum number of parallel requests that can be sent to each instance in a transform
+        /// job. This is good for algorithms that implement multiple workers on larger instances
+        /// . The default value is <code>1</code>. To allow Amazon SageMaker to determine the
+        /// appropriate number for <code>MaxConcurrentTransforms</code>, set the value to <code>0</code>.
         /// </para>
         /// </summary>
         public int MaxConcurrentTransforms
@@ -150,11 +158,11 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property MaxPayloadInMB. 
         /// <para>
         /// The maximum payload size allowed, in MB. A payload is the data portion of a record
-        /// (without metadata). The value in <code>MaxPayloadInMB</code> must be greater than
-        /// the size of a single record.You can approximate the size of a record by dividing the
-        /// size of your dataset by the number of records. The value you enter should be proportional
-        /// to the number of records you want per batch. It is recommended to enter a slightly
-        /// higher value to ensure the records will fit within the maximum payload size. The default
+        /// (without metadata). The value in <code>MaxPayloadInMB</code> must be greater or equal
+        /// to the size of a single record. You can approximate the size of a record by dividing
+        /// the size of your dataset by the number of records. Then multiply this value by the
+        /// number of records you want in a mini-batch. It is recommended to enter a value slightly
+        /// larger than this to ensure the records fit within the maximum payload size. The default
         /// value is <code>6</code> MB. For an unlimited payload size, set the value to <code>0</code>.
         /// </para>
         /// </summary>
@@ -173,7 +181,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ModelName. 
         /// <para>
-        /// The name of the model that you want to use for the transform job.
+        /// The name of the model that you want to use for the transform job. <code>ModelName</code>
+        /// must be the name of an existing Amazon SageMaker model within an AWS Region in an
+        /// AWS account.
         /// </para>
         /// </summary>
         public string ModelName

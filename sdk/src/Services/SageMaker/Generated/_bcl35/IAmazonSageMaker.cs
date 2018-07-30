@@ -679,8 +679,8 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Starts a transform job. After the results are obtained, Amazon SageMaker saves them
-        /// to an Amazon S3 location that you specify.
+        /// Starts a transform job. A transform job uses a trained model to get inferences on
+        /// a dataset and saves these results to an Amazon S3 location that you specify.
         /// 
         ///  
         /// <para>
@@ -698,7 +698,8 @@ namespace Amazon.SageMaker
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ModelName</code> - Identifies the model to use.
+        ///  <code>ModelName</code> - Identifies the model to use. <code>ModelName</code> must
+        /// be the name of an existing Amazon SageMaker model within an AWS Region in an AWS account.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -768,7 +769,14 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Deletes an endpoint. Amazon SageMaker frees up all of the resources that were deployed
-        /// when the endpoint was created.
+        /// when the endpoint was created. 
+        /// 
+        ///  
+        /// <para>
+        /// Amazon SageMaker retires any custom KMS key grants associated with the endpoint, meaning
+        /// you don't need to use the <a href="http://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a>
+        /// API call.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEndpoint service method.</param>
         /// 

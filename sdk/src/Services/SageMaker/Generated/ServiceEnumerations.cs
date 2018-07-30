@@ -1479,13 +1479,25 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly SecondaryStatus Downloading = new SecondaryStatus("Downloading");
         /// <summary>
+        /// Constant DownloadingTrainingImage for SecondaryStatus
+        /// </summary>
+        public static readonly SecondaryStatus DownloadingTrainingImage = new SecondaryStatus("DownloadingTrainingImage");
+        /// <summary>
         /// Constant Failed for SecondaryStatus
         /// </summary>
         public static readonly SecondaryStatus Failed = new SecondaryStatus("Failed");
         /// <summary>
+        /// Constant LaunchingMLInstances for SecondaryStatus
+        /// </summary>
+        public static readonly SecondaryStatus LaunchingMLInstances = new SecondaryStatus("LaunchingMLInstances");
+        /// <summary>
         /// Constant MaxRuntimeExceeded for SecondaryStatus
         /// </summary>
         public static readonly SecondaryStatus MaxRuntimeExceeded = new SecondaryStatus("MaxRuntimeExceeded");
+        /// <summary>
+        /// Constant PreparingTrainingStack for SecondaryStatus
+        /// </summary>
+        public static readonly SecondaryStatus PreparingTrainingStack = new SecondaryStatus("PreparingTrainingStack");
         /// <summary>
         /// Constant Starting for SecondaryStatus
         /// </summary>

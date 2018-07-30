@@ -117,6 +117,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.SecondaryStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SecondaryStatusTransitions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<SecondaryStatusTransition, SecondaryStatusTransitionUnmarshaller>(SecondaryStatusTransitionUnmarshaller.Instance);
+                    response.SecondaryStatusTransitions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("StoppingCondition", targetDepth))
                 {
                     var unmarshaller = StoppingConditionUnmarshaller.Instance;
