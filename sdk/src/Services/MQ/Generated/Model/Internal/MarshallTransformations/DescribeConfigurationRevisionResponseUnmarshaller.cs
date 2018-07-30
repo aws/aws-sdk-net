@@ -57,6 +57,12 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                     response.ConfigurationId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("created", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.Created = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("data", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

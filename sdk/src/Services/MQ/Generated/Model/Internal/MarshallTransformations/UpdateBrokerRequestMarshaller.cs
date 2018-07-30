@@ -79,6 +79,17 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetLogs())
+                {
+                    context.Writer.WritePropertyName("logs");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = LogsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Logs, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

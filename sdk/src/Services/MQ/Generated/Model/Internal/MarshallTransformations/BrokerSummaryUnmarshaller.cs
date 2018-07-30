@@ -88,6 +88,12 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                     unmarshalledObject.BrokerState = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("created", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.Created = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("deploymentMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

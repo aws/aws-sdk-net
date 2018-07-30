@@ -38,8 +38,7 @@ namespace Amazon.MQ.Model
         private string _timeZone;
 
         /// <summary>
-        /// Gets and sets the property DayOfWeek. Required. The day of the week. Possible values:
-        /// MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
+        /// Gets and sets the property DayOfWeek. Required. The day of the week.
         /// </summary>
         public DayOfWeek DayOfWeek
         {

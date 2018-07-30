@@ -93,6 +93,12 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                     response.Configurations = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("created", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.Created = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("deploymentMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -115,6 +121,12 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.HostInstanceType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("logs", targetDepth))
+                {
+                    var unmarshaller = LogsSummaryUnmarshaller.Instance;
+                    response.Logs = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("maintenanceWindowStartTime", targetDepth))

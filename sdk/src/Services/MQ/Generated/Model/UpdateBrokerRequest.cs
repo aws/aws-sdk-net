@@ -35,6 +35,7 @@ namespace Amazon.MQ.Model
     {
         private string _brokerId;
         private ConfigurationId _configuration;
+        private Logs _logs;
 
         /// <summary>
         /// Gets and sets the property BrokerId. The name of the broker. This value must be unique
@@ -67,6 +68,21 @@ namespace Amazon.MQ.Model
         internal bool IsSetConfiguration()
         {
             return this._configuration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Logs. Enables Amazon CloudWatch logging for brokers.
+        /// </summary>
+        public Logs Logs
+        {
+            get { return this._logs; }
+            set { this._logs = value; }
+        }
+
+        // Check to see if Logs property is set
+        internal bool IsSetLogs()
+        {
+            return this._logs != null;
         }
 
     }

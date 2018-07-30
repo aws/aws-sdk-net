@@ -33,6 +33,7 @@ namespace Amazon.MQ.Model
     public partial class DescribeConfigurationResponse : AmazonWebServiceResponse
     {
         private string _arn;
+        private DateTime? _created;
         private string _description;
         private EngineType _engineType;
         private string _engineVersion;
@@ -53,6 +54,22 @@ namespace Amazon.MQ.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Created. Required. The date and time of the configuration
+        /// revision.
+        /// </summary>
+        public DateTime Created
+        {
+            get { return this._created.GetValueOrDefault(); }
+            set { this._created = value; }
+        }
+
+        // Check to see if Created property is set
+        internal bool IsSetCreated()
+        {
+            return this._created.HasValue; 
         }
 
         /// <summary>

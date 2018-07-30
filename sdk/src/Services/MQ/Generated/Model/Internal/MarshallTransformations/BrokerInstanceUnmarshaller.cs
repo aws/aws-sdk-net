@@ -76,6 +76,12 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                     unmarshalledObject.Endpoints = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ipAddress", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IpAddress = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

@@ -34,6 +34,7 @@ namespace Amazon.MQ.Model
     {
         private string _consoleURL;
         private List<string> _endpoints = new List<string>();
+        private string _ipAddress;
 
         /// <summary>
         /// Gets and sets the property ConsoleURL. The URL of the broker's ActiveMQ Web Console.
@@ -63,6 +64,21 @@ namespace Amazon.MQ.Model
         internal bool IsSetEndpoints()
         {
             return this._endpoints != null && this._endpoints.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpAddress. The IP address of the ENI attached to the broker.
+        /// </summary>
+        public string IpAddress
+        {
+            get { return this._ipAddress; }
+            set { this._ipAddress = value; }
+        }
+
+        // Check to see if IpAddress property is set
+        internal bool IsSetIpAddress()
+        {
+            return this._ipAddress != null;
         }
 
     }

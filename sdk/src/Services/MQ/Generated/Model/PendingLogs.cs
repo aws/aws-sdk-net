@@ -28,42 +28,42 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MQ.Model
 {
     /// <summary>
-    /// A list of information about the configuration.
+    /// The list of information about logs to be enabled for the specified broker.
     /// </summary>
-    public partial class ConfigurationId
+    public partial class PendingLogs
     {
-        private string _id;
-        private int? _revision;
+        private bool? _audit;
+        private bool? _general;
 
         /// <summary>
-        /// Gets and sets the property Id. Required. The unique ID that Amazon MQ generates for
-        /// the configuration.
+        /// Gets and sets the property Audit. Enables audit logging. Every user management action
+        /// made using JMX or the ActiveMQ Web Console is logged.
         /// </summary>
-        public string Id
+        public bool Audit
         {
-            get { return this._id; }
-            set { this._id = value; }
+            get { return this._audit.GetValueOrDefault(); }
+            set { this._audit = value; }
         }
 
-        // Check to see if Id property is set
-        internal bool IsSetId()
+        // Check to see if Audit property is set
+        internal bool IsSetAudit()
         {
-            return this._id != null;
+            return this._audit.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property Revision. The revision number of the configuration.
+        /// Gets and sets the property General. Enables general logging.
         /// </summary>
-        public int Revision
+        public bool General
         {
-            get { return this._revision.GetValueOrDefault(); }
-            set { this._revision = value; }
+            get { return this._general.GetValueOrDefault(); }
+            set { this._general = value; }
         }
 
-        // Check to see if Revision property is set
-        internal bool IsSetRevision()
+        // Check to see if General property is set
+        internal bool IsSetGeneral()
         {
-            return this._revision.HasValue; 
+            return this._general.HasValue; 
         }
 
     }

@@ -32,8 +32,25 @@ namespace Amazon.MQ.Model
     /// </summary>
     public partial class ConfigurationRevision
     {
+        private DateTime? _created;
         private string _description;
         private int? _revision;
+
+        /// <summary>
+        /// Gets and sets the property Created. Required. The date and time of the configuration
+        /// revision.
+        /// </summary>
+        public DateTime Created
+        {
+            get { return this._created.GetValueOrDefault(); }
+            set { this._created = value; }
+        }
+
+        // Check to see if Created property is set
+        internal bool IsSetCreated()
+        {
+            return this._created.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Description. The description of the configuration revision.
@@ -51,7 +68,7 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Revision. Required. The revision of the configuration.
+        /// Gets and sets the property Revision. Required. The revision number of the configuration.
         /// </summary>
         public int Revision
         {

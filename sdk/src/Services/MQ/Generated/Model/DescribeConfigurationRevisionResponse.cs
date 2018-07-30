@@ -33,6 +33,7 @@ namespace Amazon.MQ.Model
     public partial class DescribeConfigurationRevisionResponse : AmazonWebServiceResponse
     {
         private string _configurationId;
+        private DateTime? _created;
         private string _data;
         private string _description;
 
@@ -50,6 +51,21 @@ namespace Amazon.MQ.Model
         internal bool IsSetConfigurationId()
         {
             return this._configurationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Created. Required. The date and time of the configuration.
+        /// </summary>
+        public DateTime Created
+        {
+            get { return this._created.GetValueOrDefault(); }
+            set { this._created = value; }
+        }
+
+        // Check to see if Created property is set
+        internal bool IsSetCreated()
+        {
+            return this._created.HasValue; 
         }
 
         /// <summary>

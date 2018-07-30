@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MQ.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ConfigurationRevision Object
+    /// Response Unmarshaller for PendingLogs Object
     /// </summary>  
-    public class ConfigurationRevisionUnmarshaller : IUnmarshaller<ConfigurationRevision, XmlUnmarshallerContext>, IUnmarshaller<ConfigurationRevision, JsonUnmarshallerContext>
+    public class PendingLogsUnmarshaller : IUnmarshaller<PendingLogs, XmlUnmarshallerContext>, IUnmarshaller<PendingLogs, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ConfigurationRevision IUnmarshaller<ConfigurationRevision, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PendingLogs IUnmarshaller<PendingLogs, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ConfigurationRevision Unmarshall(JsonUnmarshallerContext context)
+        public PendingLogs Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ConfigurationRevision unmarshalledObject = new ConfigurationRevision();
+            PendingLogs unmarshalledObject = new PendingLogs();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("created", targetDepth))
+                if (context.TestExpression("audit", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.Created = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Audit = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("general", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("revision", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Revision = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.General = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +82,12 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
         }
 
 
-        private static ConfigurationRevisionUnmarshaller _instance = new ConfigurationRevisionUnmarshaller();        
+        private static PendingLogsUnmarshaller _instance = new PendingLogsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ConfigurationRevisionUnmarshaller Instance
+        public static PendingLogsUnmarshaller Instance
         {
             get
             {

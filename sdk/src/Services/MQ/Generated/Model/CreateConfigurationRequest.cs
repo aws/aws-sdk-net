@@ -30,8 +30,7 @@ namespace Amazon.MQ.Model
     /// <summary>
     /// Container for the parameters to the CreateConfiguration operation.
     /// Creates a new configuration for the specified configuration name. Amazon MQ uses the
-    /// default configuration (the engine type and version). Note: If the configuration name
-    /// already exists, Amazon MQ doesn't create a configuration.
+    /// default configuration (the engine type and version).
     /// </summary>
     public partial class CreateConfigurationRequest : AmazonMQRequest
     {

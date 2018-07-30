@@ -37,7 +37,7 @@ namespace Amazon.MQ.Model
 
         /// <summary>
         /// Gets and sets the property PendingChange. The type of change pending for the ActiveMQ
-        /// user. Possible values: CREATE, UPDATE, DELETE
+        /// user.
         /// </summary>
         public ChangeType PendingChange
         {

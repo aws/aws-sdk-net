@@ -123,6 +123,17 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.HostInstanceType);
                 }
 
+                if(publicRequest.IsSetLogs())
+                {
+                    context.Writer.WritePropertyName("logs");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = LogsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Logs, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetMaintenanceWindowStartTime())
                 {
                     context.Writer.WritePropertyName("maintenanceWindowStartTime");

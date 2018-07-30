@@ -20,4 +20,14 @@
     <min>1</min>
     <max>100</max>
   </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MQ.Model.ListUsersResponse.MaxResults</property>
+    <min>5</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MQ.Model.ListUsersOutput.MaxResults</property>
+    <min>5</min>
+    <max>100</max>
+  </property-value-rule>
 </property-value-rules>

@@ -98,8 +98,7 @@ namespace Amazon.MQ
 
         /// <summary>
         /// Creates a new configuration for the specified configuration name. Amazon MQ uses the
-        /// default configuration (the engine type and version). Note: If the configuration name
-        /// already exists, Amazon MQ doesn't create a configuration.
+        /// default configuration (the engine type and version).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateConfiguration service method.</param>
         /// 

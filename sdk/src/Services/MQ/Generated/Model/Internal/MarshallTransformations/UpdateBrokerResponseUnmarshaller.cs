@@ -63,6 +63,12 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                     response.Configuration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("logs", targetDepth))
+                {
+                    var unmarshaller = LogsUnmarshaller.Instance;
+                    response.Logs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

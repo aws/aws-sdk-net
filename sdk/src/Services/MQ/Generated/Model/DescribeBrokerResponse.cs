@@ -39,10 +39,12 @@ namespace Amazon.MQ.Model
         private string _brokerName;
         private BrokerState _brokerState;
         private Configurations _configurations;
+        private DateTime? _created;
         private DeploymentMode _deploymentMode;
         private EngineType _engineType;
         private string _engineVersion;
         private string _hostInstanceType;
+        private LogsSummary _logs;
         private WeeklyStartTime _maintenanceWindowStartTime;
         private bool? _publiclyAccessible;
         private List<string> _securityGroups = new List<string>();
@@ -133,8 +135,7 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BrokerState. The status of the broker. Possible values:
-        /// CREATION_IN_PROGRESS, CREATION_FAILED, DELETION_IN_PROGRESS, RUNNING, REBOOT_IN_PROGRESS
+        /// Gets and sets the property BrokerState. The status of the broker.
         /// </summary>
         public BrokerState BrokerState
         {
@@ -165,10 +166,22 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Created. The time when the broker was created.
+        /// </summary>
+        public DateTime Created
+        {
+            get { return this._created.GetValueOrDefault(); }
+            set { this._created = value; }
+        }
+
+        // Check to see if Created property is set
+        internal bool IsSetCreated()
+        {
+            return this._created.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property DeploymentMode. Required. The deployment mode of the broker.
-        /// Possible values: SINGLE_INSTANCE, ACTIVE_STANDBY_MULTI_AZ SINGLE_INSTANCE creates
-        /// a single-instance broker in a single Availability Zone. ACTIVE_STANDBY_MULTI_AZ creates
-        /// an active/standby broker for high availability.
         /// </summary>
         public DeploymentMode DeploymentMode
         {
@@ -215,8 +228,7 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HostInstanceType. The broker's instance type. Possible
-        /// values: mq.t2.micro, mq.m4.large
+        /// Gets and sets the property HostInstanceType. The broker's instance type.
         /// </summary>
         public string HostInstanceType
         {
@@ -228,6 +240,22 @@ namespace Amazon.MQ.Model
         internal bool IsSetHostInstanceType()
         {
             return this._hostInstanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Logs. The list of information about logs currently enabled
+        /// and pending to be deployed for the specified broker.
+        /// </summary>
+        public LogsSummary Logs
+        {
+            get { return this._logs; }
+            set { this._logs = value; }
+        }
+
+        // Check to see if Logs property is set
+        internal bool IsSetLogs()
+        {
+            return this._logs != null;
         }
 
         /// <summary>
