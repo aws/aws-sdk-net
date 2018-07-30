@@ -33,10 +33,30 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class UpdateDevEndpointRequest : AmazonGlueRequest
     {
+        private List<string> _addPublicKeys = new List<string>();
         private DevEndpointCustomLibraries _customLibraries;
+        private List<string> _deletePublicKeys = new List<string>();
         private string _endpointName;
         private string _publicKey;
         private bool? _updateEtlLibraries;
+
+        /// <summary>
+        /// Gets and sets the property AddPublicKeys. 
+        /// <para>
+        /// The list of public keys for the DevEndpoint to use.
+        /// </para>
+        /// </summary>
+        public List<string> AddPublicKeys
+        {
+            get { return this._addPublicKeys; }
+            set { this._addPublicKeys = value; }
+        }
+
+        // Check to see if AddPublicKeys property is set
+        internal bool IsSetAddPublicKeys()
+        {
+            return this._addPublicKeys != null && this._addPublicKeys.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property CustomLibraries. 
@@ -54,6 +74,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetCustomLibraries()
         {
             return this._customLibraries != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeletePublicKeys. 
+        /// <para>
+        /// The list of public keys to be deleted from the DevEndpoint. 
+        /// </para>
+        /// </summary>
+        public List<string> DeletePublicKeys
+        {
+            get { return this._deletePublicKeys; }
+            set { this._deletePublicKeys = value; }
+        }
+
+        // Check to see if DeletePublicKeys property is set
+        internal bool IsSetDeletePublicKeys()
+        {
+            return this._deletePublicKeys != null && this._deletePublicKeys.Count > 0; 
         }
 
         /// <summary>

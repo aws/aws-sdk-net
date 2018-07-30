@@ -97,6 +97,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PublicKey);
                 }
 
+                if(publicRequest.IsSetPublicKeys())
+                {
+                    context.Writer.WritePropertyName("PublicKeys");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestPublicKeysListValue in publicRequest.PublicKeys)
+                    {
+                            context.Writer.Write(publicRequestPublicKeysListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetRoleArn())
                 {
                     context.Writer.WritePropertyName("RoleArn");

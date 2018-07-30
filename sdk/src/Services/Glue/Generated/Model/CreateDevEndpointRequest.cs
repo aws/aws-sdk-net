@@ -38,6 +38,7 @@ namespace Amazon.Glue.Model
         private string _extraPythonLibsS3Path;
         private int? _numberOfNodes;
         private string _publicKey;
+        private List<string> _publicKeys = new List<string>();
         private string _roleArn;
         private List<string> _securityGroupIds = new List<string>();
         private string _subnetId;
@@ -124,7 +125,9 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property PublicKey. 
         /// <para>
-        /// The public key to use for authentication.
+        /// The public key to be used by this DevEndpoint for authentication. This attribute is
+        /// provided for backward compatibility, as the recommended attribute to use is public
+        /// keys.
         /// </para>
         /// </summary>
         public string PublicKey
@@ -137,6 +140,34 @@ namespace Amazon.Glue.Model
         internal bool IsSetPublicKey()
         {
             return this._publicKey != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PublicKeys. 
+        /// <para>
+        /// A list of public keys to be used by the DevEndpoints for authentication. The use of
+        /// this attribute is preferred over a single public key because the public keys allow
+        /// you to have a different private key per client.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you previously created an endpoint with a public key, you must remove that key
+        /// to be able to set a list of public keys: call the <code>UpdateDevEndpoint</code> API
+        /// with the public key content in the <code>deletePublicKeys</code> attribute, and the
+        /// list of new keys in the <code>addPublicKeys</code> attribute.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public List<string> PublicKeys
+        {
+            get { return this._publicKeys; }
+            set { this._publicKeys = value; }
+        }
+
+        // Check to see if PublicKeys property is set
+        internal bool IsSetPublicKeys()
+        {
+            return this._publicKeys != null && this._publicKeys.Count > 0; 
         }
 
         /// <summary>
