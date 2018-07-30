@@ -34,14 +34,13 @@ namespace Amazon.Glacier.Model
     /// 
     ///  
     /// <para>
-    /// By default, this operation returns up to 1,000 items. If there are more vaults to
-    /// list, the response <code>marker</code> field contains the vault Amazon Resource Name
-    /// (ARN) at which to continue the list with a new List Vaults request; otherwise, the
-    /// <code>marker</code> field is <code>null</code>. To return a list of vaults that begins
-    /// at a specific vault, set the <code>marker</code> request parameter to the vault ARN
-    /// you obtained from a previous List Vaults request. You can also limit the number of
-    /// vaults returned in the response by specifying the <code>limit</code> parameter in
-    /// the request. 
+    /// By default, this operation returns up to 10 items. If there are more vaults to list,
+    /// the response <code>marker</code> field contains the vault Amazon Resource Name (ARN)
+    /// at which to continue the list with a new List Vaults request; otherwise, the <code>marker</code>
+    /// field is <code>null</code>. To return a list of vaults that begins at a specific vault,
+    /// set the <code>marker</code> request parameter to the vault ARN you obtained from a
+    /// previous List Vaults request. You can also limit the number of vaults returned in
+    /// the response by specifying the <code>limit</code> parameter in the request. 
     /// </para>
     ///  
     /// <para>
@@ -83,7 +82,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="accountId">The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</param>
         /// <param name="marker">A string used for pagination. The marker specifies the vault ARN after which the listing of vaults should begin.</param>
-        /// <param name="limit">The maximum number of vaults to be returned. The default limit is 1000. The number of vaults returned might be fewer than the specified limit, but the number of returned vaults never exceeds the limit.</param>
+        /// <param name="limit">The maximum number of vaults to be returned. The default limit is 10. The number of vaults returned might be fewer than the specified limit, but the number of returned vaults never exceeds the limit.</param>
         public ListVaultsRequest(string accountId, string marker, int limit)
         {
             _accountId = accountId;
@@ -117,8 +116,8 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The maximum number of vaults to be returned. The default limit is 1000. The number
-        /// of vaults returned might be fewer than the specified limit, but the number of returned
+        /// The maximum number of vaults to be returned. The default limit is 10. The number of
+        /// vaults returned might be fewer than the specified limit, but the number of returned
         /// vaults never exceeds the limit.
         /// </para>
         /// </summary>

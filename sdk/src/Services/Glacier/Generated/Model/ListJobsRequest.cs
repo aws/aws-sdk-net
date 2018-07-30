@@ -57,7 +57,7 @@ namespace Amazon.Glacier.Model
     ///  
     /// <para>
     /// You can set a maximum limit for the number of jobs returned in the response by specifying
-    /// the <code>limit</code> parameter in the request. The default limit is 1000. The number
+    /// the <code>limit</code> parameter in the request. The default limit is 50. The number
     /// of jobs returned might be fewer than the limit, but the number of returned jobs never
     /// exceeds the limit.
     /// </para>
@@ -154,7 +154,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The maximum number of jobs to be returned. The default limit is 1000. The number of
+        /// The maximum number of jobs to be returned. The default limit is 50. The number of
         /// jobs returned might be fewer than the specified limit, but the number of returned
         /// jobs never exceeds the limit.
         /// </para>

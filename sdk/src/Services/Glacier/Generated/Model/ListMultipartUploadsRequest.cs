@@ -37,11 +37,11 @@ namespace Amazon.Glacier.Model
     ///  
     /// <para>
     /// The List Multipart Uploads operation supports pagination. By default, this operation
-    /// returns up to 1,000 multipart uploads in the response. You should always check the
-    /// response for a <code>marker</code> at which to continue the list; if there are no
-    /// more items the <code>marker</code> is <code>null</code>. To return a list of multipart
-    /// uploads that begins at a specific upload, set the <code>marker</code> request parameter
-    /// to the value you obtained from a previous List Multipart Upload request. You can also
+    /// returns up to 50 multipart uploads in the response. You should always check the response
+    /// for a <code>marker</code> at which to continue the list; if there are no more items
+    /// the <code>marker</code> is <code>null</code>. To return a list of multipart uploads
+    /// that begins at a specific upload, set the <code>marker</code> request parameter to
+    /// the value you obtained from a previous List Multipart Upload request. You can also
     /// limit the number of uploads returned in the response by specifying the <code>limit</code>
     /// parameter in the request.
     /// </para>
@@ -125,7 +125,7 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property Limit. 
         /// <para>
         /// Specifies the maximum number of uploads returned in the response body. If this value
-        /// is not specified, the List Uploads operation returns up to 1,000 uploads.
+        /// is not specified, the List Uploads operation returns up to 50 uploads.
         /// </para>
         /// </summary>
         public int Limit
