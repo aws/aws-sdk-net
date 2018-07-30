@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.326.0",
+    "ProductVersion" : "3.3.327.0",
     "CoreVersion"    : "3.3.24.4",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -135,7 +135,7 @@
             "InPreview"               : false
         },
         "DirectConnect"     : {
-            "Version" : "3.3.5.11",
+            "Version" : "3.3.6.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.24.4"
@@ -207,7 +207,7 @@
             "InPreview"               : false
         },
         "Glacier"              : {
-            "Version" : "3.3.2.12",
+            "Version" : "3.3.2.13",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.24.4",
@@ -465,7 +465,7 @@
             "InPreview"               : false
         },
         "IoT"                             : {
-            "Version" : "3.3.13.4",
+            "Version" : "3.3.14.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.24.4"
@@ -825,7 +825,7 @@
             "InPreview"               : false
         },
         "Glue"                            : {
-            "Version" : "3.3.9.1",
+            "Version" : "3.3.10.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.24.4"
@@ -833,7 +833,7 @@
             "InPreview"               : false
         },
         "CloudHSMV2"                      : {
-            "Version" : "3.3.1.9",
+            "Version" : "3.3.2.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.24.4"
@@ -905,7 +905,7 @@
             "InPreview"               : false
         },
         "MQ"                              : {
-            "Version" : "3.3.0.10",
+            "Version" : "3.3.1.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.24.4"
@@ -945,7 +945,7 @@
             "InPreview"               : false
         },
         "SageMaker"                       : {
-            "Version" : "3.3.8.1",
+            "Version" : "3.3.9.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.24.4"
