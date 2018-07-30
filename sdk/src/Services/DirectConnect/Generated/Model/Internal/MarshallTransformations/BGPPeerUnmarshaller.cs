@@ -88,6 +88,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.AuthKey = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("awsDeviceV2", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AwsDeviceV2 = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("bgpPeerState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -57,6 +57,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                     response.AwsDevice = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("awsDeviceV2", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AwsDeviceV2 = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("bandwidth", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

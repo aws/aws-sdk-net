@@ -37,6 +37,7 @@ namespace Amazon.DirectConnect.Model
     {
         private bool? _allowsHostedConnections;
         private string _awsDevice;
+        private string _awsDeviceV2;
         private List<Connection> _connections = new List<Connection>();
         private string _connectionsBandwidth;
         private string _lagId;
@@ -74,6 +75,10 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property AwsDevice. 
         /// <para>
+        /// Deprecated in favor of awsDeviceV2.
+        /// </para>
+        ///  
+        /// <para>
         /// The AWS Direct Connection endpoint that hosts the LAG.
         /// </para>
         /// </summary>
@@ -87,6 +92,24 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetAwsDevice()
         {
             return this._awsDevice != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsDeviceV2. 
+        /// <para>
+        /// The AWS Direct Connection endpoint that hosts the LAG.
+        /// </para>
+        /// </summary>
+        public string AwsDeviceV2
+        {
+            get { return this._awsDeviceV2; }
+            set { this._awsDeviceV2 = value; }
+        }
+
+        // Check to see if AwsDeviceV2 property is set
+        internal bool IsSetAwsDeviceV2()
+        {
+            return this._awsDeviceV2 != null;
         }
 
         /// <summary>

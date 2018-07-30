@@ -38,6 +38,7 @@ namespace Amazon.DirectConnect.Model
         private long? _amazonSideAsn;
         private int? _asn;
         private string _authKey;
+        private string _awsDeviceV2;
         private List<BGPPeer> _bgpPeers = new List<BGPPeer>();
         private string _connectionId;
         private string _customerAddress;
@@ -45,6 +46,7 @@ namespace Amazon.DirectConnect.Model
         private string _directConnectGatewayId;
         private string _location;
         private string _ownerAccount;
+        private string _region;
         private List<RouteFilterPrefix> _routeFilterPrefixes = new List<RouteFilterPrefix>();
         private string _virtualGatewayId;
         private string _virtualInterfaceId;
@@ -129,6 +131,24 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetAuthKey()
         {
             return this._authKey != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsDeviceV2. 
+        /// <para>
+        /// The Direct Connection endpoint which the virtual interface terminates on.
+        /// </para>
+        /// </summary>
+        public string AwsDeviceV2
+        {
+            get { return this._awsDeviceV2; }
+            set { this._awsDeviceV2 = value; }
+        }
+
+        // Check to see if AwsDeviceV2 property is set
+        internal bool IsSetAwsDeviceV2()
+        {
+            return this._awsDeviceV2 != null;
         }
 
         /// <summary>
@@ -240,6 +260,32 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetOwnerAccount()
         {
             return this._ownerAccount != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Region. 
+        /// <para>
+        /// The AWS region where the virtual interface is located.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: us-east-1
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: None
+        /// </para>
+        /// </summary>
+        public string Region
+        {
+            get { return this._region; }
+            set { this._region = value; }
+        }
+
+        // Check to see if Region property is set
+        internal bool IsSetRegion()
+        {
+            return this._region != null;
         }
 
         /// <summary>

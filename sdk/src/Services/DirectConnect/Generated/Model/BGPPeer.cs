@@ -36,6 +36,7 @@ namespace Amazon.DirectConnect.Model
         private string _amazonAddress;
         private int? _asn;
         private string _authKey;
+        private string _awsDeviceV2;
         private BGPPeerState _bgpPeerState;
         private BGPStatus _bgpStatus;
         private string _customerAddress;
@@ -98,6 +99,24 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetAuthKey()
         {
             return this._authKey != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsDeviceV2. 
+        /// <para>
+        /// The Direct Connection endpoint which the BGP peer terminates on.
+        /// </para>
+        /// </summary>
+        public string AwsDeviceV2
+        {
+            get { return this._awsDeviceV2; }
+            set { this._awsDeviceV2 = value; }
+        }
+
+        // Check to see if AwsDeviceV2 property is set
+        internal bool IsSetAwsDeviceV2()
+        {
+            return this._awsDeviceV2 != null;
         }
 
         /// <summary>

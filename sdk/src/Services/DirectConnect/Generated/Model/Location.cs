@@ -34,6 +34,7 @@ namespace Amazon.DirectConnect.Model
     {
         private string _locationCode;
         private string _locationName;
+        private string _region;
 
         /// <summary>
         /// Gets and sets the property LocationCode. 
@@ -70,6 +71,32 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetLocationName()
         {
             return this._locationName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Region. 
+        /// <para>
+        /// The AWS region where the AWS Direct connect location is located.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: us-east-1
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: None
+        /// </para>
+        /// </summary>
+        public string Region
+        {
+            get { return this._region; }
+            set { this._region = value; }
+        }
+
+        // Check to see if Region property is set
+        internal bool IsSetRegion()
+        {
+            return this._region != null;
         }
 
     }

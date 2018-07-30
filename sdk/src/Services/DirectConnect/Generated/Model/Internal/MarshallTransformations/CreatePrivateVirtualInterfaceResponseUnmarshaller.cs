@@ -81,6 +81,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                     response.AuthKey = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("awsDeviceV2", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AwsDeviceV2 = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("bgpPeers", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<BGPPeer, BGPPeerUnmarshaller>(BGPPeerUnmarshaller.Instance);
@@ -121,6 +127,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.OwnerAccount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("region", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Region = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("routeFilterPrefixes", targetDepth))
