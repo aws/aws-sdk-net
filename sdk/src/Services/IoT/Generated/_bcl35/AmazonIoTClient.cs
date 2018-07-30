@@ -47,6 +47,11 @@ namespace Amazon.IoT
     /// For more information about how AWS IoT works, see the <a href="http://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html">Developer
     /// Guide</a>.
     /// </para>
+    ///  
+    /// <para>
+    /// For information about how to use the credentials provider for AWS IoT, see <a href="http://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html">Authorizing
+    /// Direct Calls to AWS Services</a>.
+    /// </para>
     /// </summary>
     public partial class AmazonIoTClient : AmazonServiceClient, IAmazonIoT
     {
@@ -2287,6 +2292,13 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Creates a thing record in the registry.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This is a control plane operation. See <a href="http://docs.aws.amazon.com/iot/latest/developerguide/authorization.html">Authorization</a>
+        /// for information about authorizing control plane actions.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateThing service method.</param>
         /// 
@@ -2361,6 +2373,13 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Create a thing group.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This is a control plane operation. See <a href="http://docs.aws.amazon.com/iot/latest/developerguide/authorization.html">Authorization</a>
+        /// for information about authorizing control plane actions.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateThingGroup service method.</param>
         /// 
@@ -5777,6 +5796,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets the logging options.
+        /// 
+        ///  
+        /// <para>
+        /// NOTE: use of this command is not recommended. Use <code>GetV2LoggingOptions</code>
+        /// instead.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLoggingOptions service method.</param>
         /// 
@@ -9366,6 +9391,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Sets the logging options.
+        /// 
+        ///  
+        /// <para>
+        /// NOTE: use of this command is not recommended. Use <code>SetV2LoggingOptions</code>
+        /// instead.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetLoggingOptions service method.</param>
         /// 

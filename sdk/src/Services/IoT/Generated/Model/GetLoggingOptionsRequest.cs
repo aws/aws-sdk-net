@@ -30,6 +30,12 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the GetLoggingOptions operation.
     /// Gets the logging options.
+    /// 
+    ///  
+    /// <para>
+    /// NOTE: use of this command is not recommended. Use <code>GetV2LoggingOptions</code>
+    /// instead.
+    /// </para>
     /// </summary>
     public partial class GetLoggingOptionsRequest : AmazonIoTRequest
     {

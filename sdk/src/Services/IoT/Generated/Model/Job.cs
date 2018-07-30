@@ -36,7 +36,6 @@ namespace Amazon.IoT.Model
         private DateTime? _completedAt;
         private DateTime? _createdAt;
         private string _description;
-        private Dictionary<string, string> _documentParameters = new Dictionary<string, string>();
         private bool? _forceCanceled;
         private string _jobArn;
         private JobExecutionsRolloutConfig _jobExecutionsRolloutConfig;
@@ -118,24 +117,6 @@ namespace Amazon.IoT.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property DocumentParameters. 
-        /// <para>
-        /// The parameters specified for the job document.
-        /// </para>
-        /// </summary>
-        public Dictionary<string, string> DocumentParameters
-        {
-            get { return this._documentParameters; }
-            set { this._documentParameters = value; }
-        }
-
-        // Check to see if DocumentParameters property is set
-        internal bool IsSetDocumentParameters()
-        {
-            return this._documentParameters != null && this._documentParameters.Count > 0; 
         }
 
         /// <summary>

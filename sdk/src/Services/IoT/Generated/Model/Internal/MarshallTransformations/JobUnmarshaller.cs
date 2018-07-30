@@ -88,12 +88,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("documentParameters", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.DocumentParameters = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("forceCanceled", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

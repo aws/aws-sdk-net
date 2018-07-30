@@ -80,20 +80,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Document);
                 }
 
-                if(publicRequest.IsSetDocumentParameters())
-                {
-                    context.Writer.WritePropertyName("documentParameters");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestDocumentParametersKvp in publicRequest.DocumentParameters)
-                    {
-                        context.Writer.WritePropertyName(publicRequestDocumentParametersKvp.Key);
-                        var publicRequestDocumentParametersValue = publicRequestDocumentParametersKvp.Value;
-
-                            context.Writer.Write(publicRequestDocumentParametersValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
                 if(publicRequest.IsSetDocumentSource())
                 {
                     context.Writer.WritePropertyName("documentSource");

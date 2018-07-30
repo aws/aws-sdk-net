@@ -54,10 +54,7 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Stream. 
-        /// <para>
-        /// A stream of the code signing signature.
-        /// </para>
+        /// Gets and sets the property Stream.
         /// </summary>
         public Stream Stream
         {

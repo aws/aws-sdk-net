@@ -58,7 +58,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property DisableAllLogs. 
         /// <para>
-        /// Set to true to disable all logs, otherwise set to false.
+        /// If true all logs are disabled. The default is false.
         /// </para>
         /// </summary>
         public bool DisableAllLogs
@@ -76,7 +76,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The role ARN that allows IoT to write to Cloudwatch logs.
+        /// The ARN of the role that allows IoT to write to Cloudwatch logs.
         /// </para>
         /// </summary>
         public string RoleArn
