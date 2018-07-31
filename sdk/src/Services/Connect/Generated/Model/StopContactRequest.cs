@@ -33,8 +33,8 @@ namespace Amazon.Connect.Model
     /// 
     ///  
     /// <para>
-    /// If you are using an IAM account, it must have permissions to the <code>connect:StopContact</code>
-    /// operation.
+    /// If you are using an IAM account, it must have permission to the <code>connect:StopContact</code>
+    /// action.
     /// </para>
     /// </summary>
     public partial class StopContactRequest : AmazonConnectRequest
@@ -45,8 +45,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ContactId. 
         /// <para>
-        /// The unique identifier of the contact to end. This is the <code>ContactId</code> value
-        /// returned from the <code>StartOutboundVoiceContact</code> operation.
+        /// The unique identifier of the contact to end.
         /// </para>
         /// </summary>
         public string ContactId
@@ -64,7 +63,11 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance in which the contact is active.
+        /// The identifier for your Amazon Connect instance. To find the ID of your instance,
+        /// open the AWS console and select Amazon Connect. Select the alias of the instance in
+        /// the Instance alias column. The instance ID is displayed in the Overview section of
+        /// your instance settings. For example, the instance ID is the set of characters at the
+        /// end of the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
         /// </para>
         /// </summary>
         public string InstanceId

@@ -233,6 +233,326 @@ namespace Amazon.Connect
         #endregion
 
         
+        #region  CreateUser
+
+        internal virtual CreateUserResponse CreateUser(CreateUserRequest request)
+        {
+            var marshaller = CreateUserRequestMarshaller.Instance;
+            var unmarshaller = CreateUserResponseUnmarshaller.Instance;
+
+            return Invoke<CreateUserRequest,CreateUserResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateUser operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateUser operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateUser">REST API Reference for CreateUser Operation</seealso>
+        public virtual Task<CreateUserResponse> CreateUserAsync(CreateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateUserRequestMarshaller.Instance;
+            var unmarshaller = CreateUserResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateUserRequest,CreateUserResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteUser
+
+        internal virtual DeleteUserResponse DeleteUser(DeleteUserRequest request)
+        {
+            var marshaller = DeleteUserRequestMarshaller.Instance;
+            var unmarshaller = DeleteUserResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteUserRequest,DeleteUserResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteUser operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUser operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
+        public virtual Task<DeleteUserResponse> DeleteUserAsync(DeleteUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteUserRequestMarshaller.Instance;
+            var unmarshaller = DeleteUserResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteUserRequest,DeleteUserResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeUser
+
+        internal virtual DescribeUserResponse DescribeUser(DescribeUserRequest request)
+        {
+            var marshaller = DescribeUserRequestMarshaller.Instance;
+            var unmarshaller = DescribeUserResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeUserRequest,DescribeUserResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeUser operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeUser operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeUser">REST API Reference for DescribeUser Operation</seealso>
+        public virtual Task<DescribeUserResponse> DescribeUserAsync(DescribeUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeUserRequestMarshaller.Instance;
+            var unmarshaller = DescribeUserResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeUserRequest,DescribeUserResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeUserHierarchyGroup
+
+        internal virtual DescribeUserHierarchyGroupResponse DescribeUserHierarchyGroup(DescribeUserHierarchyGroupRequest request)
+        {
+            var marshaller = DescribeUserHierarchyGroupRequestMarshaller.Instance;
+            var unmarshaller = DescribeUserHierarchyGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeUserHierarchyGroupRequest,DescribeUserHierarchyGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeUserHierarchyGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeUserHierarchyGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeUserHierarchyGroup">REST API Reference for DescribeUserHierarchyGroup Operation</seealso>
+        public virtual Task<DescribeUserHierarchyGroupResponse> DescribeUserHierarchyGroupAsync(DescribeUserHierarchyGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeUserHierarchyGroupRequestMarshaller.Instance;
+            var unmarshaller = DescribeUserHierarchyGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeUserHierarchyGroupRequest,DescribeUserHierarchyGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeUserHierarchyStructure
+
+        internal virtual DescribeUserHierarchyStructureResponse DescribeUserHierarchyStructure(DescribeUserHierarchyStructureRequest request)
+        {
+            var marshaller = DescribeUserHierarchyStructureRequestMarshaller.Instance;
+            var unmarshaller = DescribeUserHierarchyStructureResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeUserHierarchyStructureRequest,DescribeUserHierarchyStructureResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeUserHierarchyStructure operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeUserHierarchyStructure operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeUserHierarchyStructure">REST API Reference for DescribeUserHierarchyStructure Operation</seealso>
+        public virtual Task<DescribeUserHierarchyStructureResponse> DescribeUserHierarchyStructureAsync(DescribeUserHierarchyStructureRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeUserHierarchyStructureRequestMarshaller.Instance;
+            var unmarshaller = DescribeUserHierarchyStructureResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeUserHierarchyStructureRequest,DescribeUserHierarchyStructureResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetFederationToken
+
+        internal virtual GetFederationTokenResponse GetFederationToken(GetFederationTokenRequest request)
+        {
+            var marshaller = GetFederationTokenRequestMarshaller.Instance;
+            var unmarshaller = GetFederationTokenResponseUnmarshaller.Instance;
+
+            return Invoke<GetFederationTokenRequest,GetFederationTokenResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFederationToken operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFederationToken operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetFederationToken">REST API Reference for GetFederationToken Operation</seealso>
+        public virtual Task<GetFederationTokenResponse> GetFederationTokenAsync(GetFederationTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetFederationTokenRequestMarshaller.Instance;
+            var unmarshaller = GetFederationTokenResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetFederationTokenRequest,GetFederationTokenResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListRoutingProfiles
+
+        internal virtual ListRoutingProfilesResponse ListRoutingProfiles(ListRoutingProfilesRequest request)
+        {
+            var marshaller = ListRoutingProfilesRequestMarshaller.Instance;
+            var unmarshaller = ListRoutingProfilesResponseUnmarshaller.Instance;
+
+            return Invoke<ListRoutingProfilesRequest,ListRoutingProfilesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRoutingProfiles operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListRoutingProfiles operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListRoutingProfiles">REST API Reference for ListRoutingProfiles Operation</seealso>
+        public virtual Task<ListRoutingProfilesResponse> ListRoutingProfilesAsync(ListRoutingProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListRoutingProfilesRequestMarshaller.Instance;
+            var unmarshaller = ListRoutingProfilesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListRoutingProfilesRequest,ListRoutingProfilesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListSecurityProfiles
+
+        internal virtual ListSecurityProfilesResponse ListSecurityProfiles(ListSecurityProfilesRequest request)
+        {
+            var marshaller = ListSecurityProfilesRequestMarshaller.Instance;
+            var unmarshaller = ListSecurityProfilesResponseUnmarshaller.Instance;
+
+            return Invoke<ListSecurityProfilesRequest,ListSecurityProfilesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSecurityProfiles operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSecurityProfiles operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityProfiles">REST API Reference for ListSecurityProfiles Operation</seealso>
+        public virtual Task<ListSecurityProfilesResponse> ListSecurityProfilesAsync(ListSecurityProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListSecurityProfilesRequestMarshaller.Instance;
+            var unmarshaller = ListSecurityProfilesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListSecurityProfilesRequest,ListSecurityProfilesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListUserHierarchyGroups
+
+        internal virtual ListUserHierarchyGroupsResponse ListUserHierarchyGroups(ListUserHierarchyGroupsRequest request)
+        {
+            var marshaller = ListUserHierarchyGroupsRequestMarshaller.Instance;
+            var unmarshaller = ListUserHierarchyGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<ListUserHierarchyGroupsRequest,ListUserHierarchyGroupsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListUserHierarchyGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListUserHierarchyGroups operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUserHierarchyGroups">REST API Reference for ListUserHierarchyGroups Operation</seealso>
+        public virtual Task<ListUserHierarchyGroupsResponse> ListUserHierarchyGroupsAsync(ListUserHierarchyGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListUserHierarchyGroupsRequestMarshaller.Instance;
+            var unmarshaller = ListUserHierarchyGroupsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListUserHierarchyGroupsRequest,ListUserHierarchyGroupsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListUsers
+
+        internal virtual ListUsersResponse ListUsers(ListUsersRequest request)
+        {
+            var marshaller = ListUsersRequestMarshaller.Instance;
+            var unmarshaller = ListUsersResponseUnmarshaller.Instance;
+
+            return Invoke<ListUsersRequest,ListUsersResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListUsers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListUsers operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUsers">REST API Reference for ListUsers Operation</seealso>
+        public virtual Task<ListUsersResponse> ListUsersAsync(ListUsersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListUsersRequestMarshaller.Instance;
+            var unmarshaller = ListUsersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListUsersRequest,ListUsersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartOutboundVoiceContact
 
         internal virtual StartOutboundVoiceContactResponse StartOutboundVoiceContact(StartOutboundVoiceContactRequest request)
@@ -292,6 +612,166 @@ namespace Amazon.Connect
             var unmarshaller = StopContactResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopContactRequest,StopContactResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateUserHierarchy
+
+        internal virtual UpdateUserHierarchyResponse UpdateUserHierarchy(UpdateUserHierarchyRequest request)
+        {
+            var marshaller = UpdateUserHierarchyRequestMarshaller.Instance;
+            var unmarshaller = UpdateUserHierarchyResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateUserHierarchyRequest,UpdateUserHierarchyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateUserHierarchy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUserHierarchy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserHierarchy">REST API Reference for UpdateUserHierarchy Operation</seealso>
+        public virtual Task<UpdateUserHierarchyResponse> UpdateUserHierarchyAsync(UpdateUserHierarchyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateUserHierarchyRequestMarshaller.Instance;
+            var unmarshaller = UpdateUserHierarchyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateUserHierarchyRequest,UpdateUserHierarchyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateUserIdentityInfo
+
+        internal virtual UpdateUserIdentityInfoResponse UpdateUserIdentityInfo(UpdateUserIdentityInfoRequest request)
+        {
+            var marshaller = UpdateUserIdentityInfoRequestMarshaller.Instance;
+            var unmarshaller = UpdateUserIdentityInfoResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateUserIdentityInfoRequest,UpdateUserIdentityInfoResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateUserIdentityInfo operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUserIdentityInfo operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserIdentityInfo">REST API Reference for UpdateUserIdentityInfo Operation</seealso>
+        public virtual Task<UpdateUserIdentityInfoResponse> UpdateUserIdentityInfoAsync(UpdateUserIdentityInfoRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateUserIdentityInfoRequestMarshaller.Instance;
+            var unmarshaller = UpdateUserIdentityInfoResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateUserIdentityInfoRequest,UpdateUserIdentityInfoResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateUserPhoneConfig
+
+        internal virtual UpdateUserPhoneConfigResponse UpdateUserPhoneConfig(UpdateUserPhoneConfigRequest request)
+        {
+            var marshaller = UpdateUserPhoneConfigRequestMarshaller.Instance;
+            var unmarshaller = UpdateUserPhoneConfigResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateUserPhoneConfigRequest,UpdateUserPhoneConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateUserPhoneConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUserPhoneConfig operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserPhoneConfig">REST API Reference for UpdateUserPhoneConfig Operation</seealso>
+        public virtual Task<UpdateUserPhoneConfigResponse> UpdateUserPhoneConfigAsync(UpdateUserPhoneConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateUserPhoneConfigRequestMarshaller.Instance;
+            var unmarshaller = UpdateUserPhoneConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateUserPhoneConfigRequest,UpdateUserPhoneConfigResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateUserRoutingProfile
+
+        internal virtual UpdateUserRoutingProfileResponse UpdateUserRoutingProfile(UpdateUserRoutingProfileRequest request)
+        {
+            var marshaller = UpdateUserRoutingProfileRequestMarshaller.Instance;
+            var unmarshaller = UpdateUserRoutingProfileResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateUserRoutingProfileRequest,UpdateUserRoutingProfileResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateUserRoutingProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUserRoutingProfile operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserRoutingProfile">REST API Reference for UpdateUserRoutingProfile Operation</seealso>
+        public virtual Task<UpdateUserRoutingProfileResponse> UpdateUserRoutingProfileAsync(UpdateUserRoutingProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateUserRoutingProfileRequestMarshaller.Instance;
+            var unmarshaller = UpdateUserRoutingProfileResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateUserRoutingProfileRequest,UpdateUserRoutingProfileResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateUserSecurityProfiles
+
+        internal virtual UpdateUserSecurityProfilesResponse UpdateUserSecurityProfiles(UpdateUserSecurityProfilesRequest request)
+        {
+            var marshaller = UpdateUserSecurityProfilesRequestMarshaller.Instance;
+            var unmarshaller = UpdateUserSecurityProfilesResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateUserSecurityProfilesRequest,UpdateUserSecurityProfilesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateUserSecurityProfiles operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUserSecurityProfiles operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserSecurityProfiles">REST API Reference for UpdateUserSecurityProfiles Operation</seealso>
+        public virtual Task<UpdateUserSecurityProfilesResponse> UpdateUserSecurityProfilesAsync(UpdateUserSecurityProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateUserSecurityProfilesRequestMarshaller.Instance;
+            var unmarshaller = UpdateUserSecurityProfilesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateUserSecurityProfilesRequest,UpdateUserSecurityProfilesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
