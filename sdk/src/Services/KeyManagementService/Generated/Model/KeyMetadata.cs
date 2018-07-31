@@ -205,7 +205,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyManager. 
         /// <para>
-        /// The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information
+        /// The CMK's manager. CMKs are either customer managed or AWS managed. For more information
         /// about the difference, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
         /// Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>

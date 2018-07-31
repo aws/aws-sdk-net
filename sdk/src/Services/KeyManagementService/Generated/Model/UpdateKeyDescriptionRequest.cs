@@ -29,12 +29,19 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateKeyDescription operation.
-    /// Updates the description of a customer master key (CMK). To see the decription of a
-    /// CMK, use <a>DescribeKey</a>. 
+    /// Updates the description of a customer master key (CMK). To see the description of
+    /// a CMK, use <a>DescribeKey</a>. 
     /// 
     ///  
     /// <para>
     /// You cannot perform this operation on a CMK in a different AWS account.
+    /// </para>
+    ///  
+    /// <para>
+    /// The result of this operation varies with the key state of the CMK. For details, see
+    /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+    /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+    /// Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class UpdateKeyDescriptionRequest : AmazonKeyManagementServiceRequest

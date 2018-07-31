@@ -36,8 +36,16 @@ namespace Amazon.KeyManagementService.Model
     ///  
     /// <para>
     /// To perform this operation on a CMK in a different AWS account, specify the key ARN
-    /// in the value of the KeyId parameter. For more information about grants, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants</a>
+    /// in the value of the <code>KeyId</code> parameter. For more information about grants,
+    /// see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants</a>
     /// in the <i>AWS Key Management Service Developer Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// The result of this operation varies with the key state of the CMK. For details, see
+    /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+    /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+    /// Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateGrantRequest : AmazonKeyManagementServiceRequest
@@ -164,8 +172,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A friendly name for identifying the grant. Use this value to prevent unintended creation
-        /// of duplicate grants when retrying this request.
+        /// A friendly name for identifying the grant. Use this value to prevent the unintended
+        /// creation of duplicate grants when retrying this request.
         /// </para>
         ///  
         /// <para>

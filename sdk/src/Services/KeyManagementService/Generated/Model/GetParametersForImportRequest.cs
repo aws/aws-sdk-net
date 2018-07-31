@@ -51,6 +51,13 @@ namespace Amazon.KeyManagementService.Model
     /// <a>ImportKeyMaterial</a> request. To get new ones, send another <code>GetParametersForImport</code>
     /// request.
     /// </para>
+    ///  
+    /// <para>
+    /// The result of this operation varies with the key state of the CMK. For details, see
+    /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+    /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+    /// Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class GetParametersForImportRequest : AmazonKeyManagementServiceRequest
     {
@@ -101,7 +108,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property WrappingAlgorithm. 
         /// <para>
-        /// The algorithm you will use to encrypt the key material before importing it with <a>ImportKeyMaterial</a>.
+        /// The algorithm you use to encrypt the key material before importing it with <a>ImportKeyMaterial</a>.
         /// For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt
         /// the Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>

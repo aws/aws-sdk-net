@@ -94,6 +94,13 @@ namespace Amazon.KeyManagementService.Model
     /// the ciphertext. For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
     /// Context</a> in the <i>AWS Key Management Service Developer Guide</i>.
     /// </para>
+    ///  
+    /// <para>
+    /// The result of this operation varies with the key state of the CMK. For details, see
+    /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+    /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+    /// Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class GenerateDataKeyRequest : AmazonKeyManagementServiceRequest
     {
@@ -158,8 +165,8 @@ namespace Amazon.KeyManagementService.Model
         ///  
         /// <para>
         /// To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias
-        /// ARN. When using an alias name, prefix it with "alias/". To specify a CMK in a different
-        /// AWS account, you must use the key ARN or alias ARN.
+        /// ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a
+        /// CMK in a different AWS account, you must use the key ARN or alias ARN.
         /// </para>
         ///  
         /// <para>

@@ -46,9 +46,9 @@ namespace Amazon.KeyManagementService
     ///  <note> 
     /// <para>
     /// AWS provides SDKs that consist of libraries and sample code for various programming
-    /// languages and platforms (Java, Ruby, .Net, iOS, Android, etc.). The SDKs provide a
-    /// convenient way to create programmatic access to AWS KMS and other AWS services. For
-    /// example, the SDKs take care of tasks such as signing requests (see below), managing
+    /// languages and platforms (Java, Ruby, .Net, macOS, Android, etc.). The SDKs provide
+    /// a convenient way to create programmatic access to AWS KMS and other AWS services.
+    /// For example, the SDKs take care of tasks such as signing requests (see below), managing
     /// errors, and retrying requests automatically. For more information about the AWS SDKs,
     /// including how to download and install them, see <a href="http://aws.amazon.com/tools/">Tools
     /// for Amazon Web Services</a>.
@@ -73,7 +73,7 @@ namespace Amazon.KeyManagementService
     /// Requests must be signed by using an access key ID and a secret access key. We strongly
     /// recommend that you <i>do not</i> use your AWS account (root) access key ID and secret
     /// key for everyday work with AWS KMS. Instead, use the access key ID and secret access
-    /// key for an IAM user, or you can use the AWS Security Token Service to generate temporary
+    /// key for an IAM user. You can also use the AWS Security Token Service to generate temporary
     /// security credentials that you can use to sign requests.
     /// </para>
     ///  
@@ -123,13 +123,13 @@ namespace Amazon.KeyManagementService
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  <b>Commonly Used APIs</b> 
+    ///  <b>Commonly Used API Operations</b> 
     /// </para>
     ///  
     /// <para>
-    /// Of the APIs discussed in this guide, the following will prove the most useful for
-    /// most applications. You will likely perform actions other than these, such as creating
-    /// keys and assigning policies, by using the console.
+    /// Of the API operations discussed in this guide, the following will prove the most useful
+    /// for most applications. You will likely perform operations other than these, such as
+    /// creating keys and assigning policies, by using the console.
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -349,6 +349,13 @@ namespace Amazon.KeyManagementService
         /// For more information about scheduling and canceling deletion of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
         /// Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// The result of this operation varies with the key state of the CMK. For details, see
+        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="keyId">The unique identifier for the customer master key (CMK) for which to cancel deletion. Specify the key ID or the Amazon Resource Name (ARN) of the CMK. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
         /// 
@@ -395,6 +402,13 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// For more information about scheduling and canceling deletion of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
         /// Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The result of this operation varies with the key state of the CMK. For details, see
+        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelKeyDeletion service method.</param>
@@ -443,6 +457,13 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// For more information about scheduling and canceling deletion of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
         /// Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The result of this operation varies with the key state of the CMK. For details, see
+        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="keyId">The unique identifier for the customer master key (CMK) for which to cancel deletion. Specify the key ID or the Amazon Resource Name (ARN) of the CMK. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
@@ -508,8 +529,9 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Creates a display name for a customer master key (CMK). You can use an alias to identify
-        /// a CMK in selected operations, such as <a>Encrypt</a> and <a>GenerateDataKey</a>. 
+        /// Creates a display name for a customer-managed customer master key (CMK). You can use
+        /// an alias to identify a CMK in selected operations, such as <a>Encrypt</a> and <a>GenerateDataKey</a>.
+        /// 
         /// 
         ///  
         /// <para>
@@ -527,10 +549,9 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// An alias must start with the word <code>alias</code> followed by a forward slash (<code>alias/</code>).
         /// The alias name can contain only alphanumeric characters, forward slashes (/), underscores
-        /// (_), and dashes (-). Alias names cannot begin with <code>aws</code>; that alias name
-        /// prefix is reserved by Amazon Web Services (AWS).
+        /// (_), and dashes (-). Alias names cannot begin with <b>aws/</b>. That alias name prefix
+        /// is reserved for AWS managed CMKs.
         /// </para>
         ///  
         /// <para>
@@ -541,8 +562,15 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// To map an existing alias to a different CMK, call <a>UpdateAlias</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// The result of this operation varies with the key state of the CMK. For details, see
+        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
+        /// </para>
         /// </summary>
-        /// <param name="aliasName">String that contains the display name. The name must start with the word "alias" followed by a forward slash (alias/). Aliases that begin with "alias/AWS" are reserved.</param>
+        /// <param name="aliasName">Specifies the alias name. This value must begin with <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>. The alias name cannot begin with <code>aws/</code>. The <code>alias/aws/</code> prefix is reserved for AWS managed CMKs.</param>
         /// <param name="targetKeyId">Identifies the CMK for which you are creating the alias. This value cannot be an alias. Specify the key ID or the Amazon Resource Name (ARN) of the CMK. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
         /// 
         /// <returns>The response from the CreateAlias service method, as returned by KeyManagementService.</returns>
@@ -589,8 +617,9 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Creates a display name for a customer master key (CMK). You can use an alias to identify
-        /// a CMK in selected operations, such as <a>Encrypt</a> and <a>GenerateDataKey</a>. 
+        /// Creates a display name for a customer-managed customer master key (CMK). You can use
+        /// an alias to identify a CMK in selected operations, such as <a>Encrypt</a> and <a>GenerateDataKey</a>.
+        /// 
         /// 
         ///  
         /// <para>
@@ -608,10 +637,9 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// An alias must start with the word <code>alias</code> followed by a forward slash (<code>alias/</code>).
         /// The alias name can contain only alphanumeric characters, forward slashes (/), underscores
-        /// (_), and dashes (-). Alias names cannot begin with <code>aws</code>; that alias name
-        /// prefix is reserved by Amazon Web Services (AWS).
+        /// (_), and dashes (-). Alias names cannot begin with <b>aws/</b>. That alias name prefix
+        /// is reserved for AWS managed CMKs.
         /// </para>
         ///  
         /// <para>
@@ -621,6 +649,13 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// To map an existing alias to a different CMK, call <a>UpdateAlias</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The result of this operation varies with the key state of the CMK. For details, see
+        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAlias service method.</param>
@@ -669,8 +704,9 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Creates a display name for a customer master key (CMK). You can use an alias to identify
-        /// a CMK in selected operations, such as <a>Encrypt</a> and <a>GenerateDataKey</a>. 
+        /// Creates a display name for a customer-managed customer master key (CMK). You can use
+        /// an alias to identify a CMK in selected operations, such as <a>Encrypt</a> and <a>GenerateDataKey</a>.
+        /// 
         /// 
         ///  
         /// <para>
@@ -688,10 +724,9 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// An alias must start with the word <code>alias</code> followed by a forward slash (<code>alias/</code>).
         /// The alias name can contain only alphanumeric characters, forward slashes (/), underscores
-        /// (_), and dashes (-). Alias names cannot begin with <code>aws</code>; that alias name
-        /// prefix is reserved by Amazon Web Services (AWS).
+        /// (_), and dashes (-). Alias names cannot begin with <b>aws/</b>. That alias name prefix
+        /// is reserved for AWS managed CMKs.
         /// </para>
         ///  
         /// <para>
@@ -702,8 +737,15 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// To map an existing alias to a different CMK, call <a>UpdateAlias</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// The result of this operation varies with the key state of the CMK. For details, see
+        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
+        /// </para>
         /// </summary>
-        /// <param name="aliasName">String that contains the display name. The name must start with the word "alias" followed by a forward slash (alias/). Aliases that begin with "alias/AWS" are reserved.</param>
+        /// <param name="aliasName">Specifies the alias name. This value must begin with <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>. The alias name cannot begin with <code>aws/</code>. The <code>alias/aws/</code> prefix is reserved for AWS managed CMKs.</param>
         /// <param name="targetKeyId">Identifies the CMK for which you are creating the alias. This value cannot be an alias. Specify the key ID or the Amazon Resource Name (ARN) of the CMK. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -783,8 +825,16 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// To perform this operation on a CMK in a different AWS account, specify the key ARN
-        /// in the value of the KeyId parameter. For more information about grants, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants</a>
+        /// in the value of the <code>KeyId</code> parameter. For more information about grants,
+        /// see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants</a>
         /// in the <i>AWS Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The result of this operation varies with the key state of the CMK. For details, see
+        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGrant service method.</param>
@@ -863,7 +913,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// You can use a CMK to encrypt small amounts of data (4 KiB or less) directly, but CMKs
+        /// You can use a CMK to encrypt small amounts of data (4 KiB or less) directly. But CMKs
         /// are more commonly used to encrypt data encryption keys (DEKs), which are used to encrypt
         /// raw data. For more information about DEKs and the difference between CMKs and DEKs,
         /// see the following:
@@ -963,14 +1013,19 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Note that if a caller has been granted access permissions to all keys (through, for
-        /// example, IAM user policies that grant <code>Decrypt</code> permission on all resources),
-        /// then ciphertext encrypted by using keys in other accounts where the key grants access
-        /// to the caller can be decrypted. To remedy this, we recommend that you do not grant
-        /// <code>Decrypt</code> access in an IAM user policy. Instead grant <code>Decrypt</code>
-        /// access only in key policies. If you must grant <code>Decrypt</code> access in an IAM
-        /// user policy, you should scope the resource to specific keys or to specific trusted
-        /// accounts.
+        /// Whenever possible, use key policies to give users permission to call the Decrypt operation
+        /// on the CMK, instead of IAM policies. Otherwise, you might create an IAM user policy
+        /// that gives the user Decrypt permission on all CMKs. This user could decrypt ciphertext
+        /// that was encrypted by CMKs in other accounts if the key policy for the cross-account
+        /// CMK permits it. If you must use an IAM policy for <code>Decrypt</code> permissions,
+        /// limit the user to particular CMKs or particular trusted accounts.
+        /// </para>
+        ///  
+        /// <para>
+        /// The result of this operation varies with the key state of the CMK. For details, see
+        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Decrypt service method.</param>
@@ -1242,6 +1297,13 @@ namespace Amazon.KeyManagementService
         /// After you delete key material, you can use <a>ImportKeyMaterial</a> to reimport the
         /// same key material into the CMK.
         /// </para>
+        ///  
+        /// <para>
+        /// The result of this operation varies with the key state of the CMK. For details, see
+        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteImportedKeyMaterial service method.</param>
         /// 
@@ -1312,11 +1374,17 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
+        /// You can use <code>DescribeKey</code> on a predefined AWS alias, that is, an AWS alias
+        /// with no key ID. When you do, AWS KMS associates the alias with an <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">AWS
+        /// managed CMK</a> and returns its <code>KeyId</code> and <code>Arn</code> in the response.
+        /// </para>
+        ///  
+        /// <para>
         /// To perform this operation on a CMK in a different AWS account, specify the key ARN
         /// or alias ARN in the value of the KeyId parameter.
         /// </para>
         /// </summary>
-        /// <param name="keyId">A unique identifier for the customer master key (CMK). To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name, prefix it with "alias/". To specify a CMK in a different AWS account, you must use the key ARN or alias ARN. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Alias name: <code>alias/ExampleAlias</code>  </li> <li> Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>  </li> </ul> To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</param>
+        /// <param name="keyId">Describes the specified customer master key (CMK).  If you specify a predefined AWS alias (an AWS alias with no key ID), KMS associates the alias with an <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">AWS managed CMK</a> and returns its <code>KeyId</code> and <code>Arn</code> in the response. To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or alias ARN. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Alias name: <code>alias/ExampleAlias</code>  </li> <li> Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>  </li> </ul> To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</param>
         /// 
         /// <returns>The response from the DescribeKey service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
@@ -1344,6 +1412,12 @@ namespace Amazon.KeyManagementService
         /// <summary>
         /// Provides detailed information about the specified customer master key (CMK).
         /// 
+        ///  
+        /// <para>
+        /// You can use <code>DescribeKey</code> on a predefined AWS alias, that is, an AWS alias
+        /// with no key ID. When you do, AWS KMS associates the alias with an <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">AWS
+        /// managed CMK</a> and returns its <code>KeyId</code> and <code>Arn</code> in the response.
+        /// </para>
         ///  
         /// <para>
         /// To perform this operation on a CMK in a different AWS account, specify the key ARN
@@ -1381,11 +1455,17 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
+        /// You can use <code>DescribeKey</code> on a predefined AWS alias, that is, an AWS alias
+        /// with no key ID. When you do, AWS KMS associates the alias with an <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">AWS
+        /// managed CMK</a> and returns its <code>KeyId</code> and <code>Arn</code> in the response.
+        /// </para>
+        ///  
+        /// <para>
         /// To perform this operation on a CMK in a different AWS account, specify the key ARN
         /// or alias ARN in the value of the KeyId parameter.
         /// </para>
         /// </summary>
-        /// <param name="keyId">A unique identifier for the customer master key (CMK). To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name, prefix it with "alias/". To specify a CMK in a different AWS account, you must use the key ARN or alias ARN. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Alias name: <code>alias/ExampleAlias</code>  </li> <li> Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>  </li> </ul> To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</param>
+        /// <param name="keyId">Describes the specified customer master key (CMK).  If you specify a predefined AWS alias (an AWS alias with no key ID), KMS associates the alias with an <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">AWS managed CMK</a> and returns its <code>KeyId</code> and <code>Arn</code> in the response. To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or alias ARN. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Alias name: <code>alias/ExampleAlias</code>  </li> <li> Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>  </li> </ul> To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1447,6 +1527,13 @@ namespace Amazon.KeyManagementService
         /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
         /// Service Developer Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// The result of this operation varies with the key state of the CMK. For details, see
+        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="keyId">A unique identifier for the customer master key (CMK). Specify the key ID or the Amazon Resource Name (ARN) of the CMK. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
         /// 
@@ -1494,6 +1581,13 @@ namespace Amazon.KeyManagementService
         /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
         /// Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The result of this operation varies with the key state of the CMK. For details, see
+        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableKey service method.</param>
@@ -1543,6 +1637,13 @@ namespace Amazon.KeyManagementService
         /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
         /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
         /// Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The result of this operation varies with the key state of the CMK. For details, see
+        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="keyId">A unique identifier for the customer master key (CMK). Specify the key ID or the Amazon Resource Name (ARN) of the CMK. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
@@ -1608,8 +1709,17 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Disables automatic rotation of the key material for the specified customer master
-        /// key (CMK). You cannot perform this operation on a CMK in a different AWS account.
+        /// Disables <a href="http://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
+        /// rotation of the key material</a> for the specified customer master key (CMK). You
+        /// cannot perform this operation on a CMK in a different AWS account.
+        /// 
+        ///  
+        /// <para>
+        /// The result of this operation varies with the key state of the CMK. For details, see
+        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="keyId">A unique identifier for the customer master key (CMK). Specify the key ID or the Amazon Resource Name (ARN) of the CMK. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
         /// 
@@ -1655,8 +1765,17 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Disables automatic rotation of the key material for the specified customer master
-        /// key (CMK). You cannot perform this operation on a CMK in a different AWS account.
+        /// Disables <a href="http://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
+        /// rotation of the key material</a> for the specified customer master key (CMK). You
+        /// cannot perform this operation on a CMK in a different AWS account.
+        /// 
+        ///  
+        /// <para>
+        /// The result of this operation varies with the key state of the CMK. For details, see
+        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableKeyRotation service method.</param>
         /// 
@@ -1703,8 +1822,17 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Disables automatic rotation of the key material for the specified customer master
-        /// key (CMK). You cannot perform this operation on a CMK in a different AWS account.
+        /// Disables <a href="http://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
+        /// rotation of the key material</a> for the specified customer master key (CMK). You
+        /// cannot perform this operation on a CMK in a different AWS account.
+        /// 
+        ///  
+        /// <para>
+        /// The result of this operation varies with the key state of the CMK. For details, see
+        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="keyId">A unique identifier for the customer master key (CMK). Specify the key ID or the Amazon Resource Name (ARN) of the CMK. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
         /// <param name="cancellationToken">
@@ -1779,6 +1907,14 @@ namespace Amazon.KeyManagementService
         /// Sets the state of a customer master key (CMK) to enabled, thereby permitting its use
         /// for cryptographic operations. You cannot perform this operation on a CMK in a different
         /// AWS account.
+        /// 
+        ///  
+        /// <para>
+        /// The result of this operation varies with the key state of the CMK. For details, see
+        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="keyId">A unique identifier for the customer master key (CMK). Specify the key ID or the Amazon Resource Name (ARN) of the CMK. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
         /// 
@@ -1825,6 +1961,14 @@ namespace Amazon.KeyManagementService
         /// Sets the state of a customer master key (CMK) to enabled, thereby permitting its use
         /// for cryptographic operations. You cannot perform this operation on a CMK in a different
         /// AWS account.
+        /// 
+        ///  
+        /// <para>
+        /// The result of this operation varies with the key state of the CMK. For details, see
+        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableKey service method.</param>
         /// 
@@ -1872,6 +2016,14 @@ namespace Amazon.KeyManagementService
         /// Sets the state of a customer master key (CMK) to enabled, thereby permitting its use
         /// for cryptographic operations. You cannot perform this operation on a CMK in a different
         /// AWS account.
+        /// 
+        ///  
+        /// <para>
+        /// The result of this operation varies with the key state of the CMK. For details, see
+        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="keyId">A unique identifier for the customer master key (CMK). Specify the key ID or the Amazon Resource Name (ARN) of the CMK. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
         /// <param name="cancellationToken">
@@ -1941,8 +2093,17 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Enables automatic rotation of the key material for the specified customer master key
-        /// (CMK). You cannot perform this operation on a CMK in a different AWS account.
+        /// Enables <a href="http://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
+        /// rotation of the key material</a> for the specified customer master key (CMK). You
+        /// cannot perform this operation on a CMK in a different AWS account.
+        /// 
+        ///  
+        /// <para>
+        /// The result of this operation varies with the key state of the CMK. For details, see
+        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="keyId">A unique identifier for the customer master key (CMK). Specify the key ID or the Amazon Resource Name (ARN) of the CMK. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
         /// 
@@ -1988,8 +2149,17 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Enables automatic rotation of the key material for the specified customer master key
-        /// (CMK). You cannot perform this operation on a CMK in a different AWS account.
+        /// Enables <a href="http://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
+        /// rotation of the key material</a> for the specified customer master key (CMK). You
+        /// cannot perform this operation on a CMK in a different AWS account.
+        /// 
+        ///  
+        /// <para>
+        /// The result of this operation varies with the key state of the CMK. For details, see
+        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableKeyRotation service method.</param>
         /// 
@@ -2036,8 +2206,17 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Enables automatic rotation of the key material for the specified customer master key
-        /// (CMK). You cannot perform this operation on a CMK in a different AWS account.
+        /// Enables <a href="http://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
+        /// rotation of the key material</a> for the specified customer master key (CMK). You
+        /// cannot perform this operation on a CMK in a different AWS account.
+        /// 
+        ///  
+        /// <para>
+        /// The result of this operation varies with the key state of the CMK. For details, see
+        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="keyId">A unique identifier for the customer master key (CMK). Specify the key ID or the Amazon Resource Name (ARN) of the CMK. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
         /// <param name="cancellationToken">
@@ -2119,28 +2298,34 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To move encrypted data from one AWS region to another, you can use this operation
-        /// to encrypt in the new region the plaintext data key that was used to encrypt the data
-        /// in the original region. This provides you with an encrypted copy of the data key that
-        /// can be decrypted in the new region and used there to decrypt the encrypted data.
+        /// You can use the <code>Encrypt</code> operation to move encrypted data from one AWS
+        /// region to another. In the first region, generate a data key and use the plaintext
+        /// key to encrypt the data. Then, in the new region, call the <code>Encrypt</code> method
+        /// on same plaintext data key. Now, you can safely move the encrypted data and encrypted
+        /// data key to the new region, and decrypt in the new region when necessary.
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        /// You don't need use this operation to encrypt a data key within a region. The <a>GenerateDataKey</a>
+        /// and <a>GenerateDataKeyWithoutPlaintext</a> operations return an encrypted data key.
+        /// </para>
+        ///  
+        /// <para>
+        /// Also, you don't need to use this operation to encrypt data in your application. You
+        /// can use the plaintext and encrypted data keys that the <code>GenerateDataKey</code>
+        /// operation returns.
+        /// </para>
+        ///  
+        /// <para>
+        /// The result of this operation varies with the key state of the CMK. For details, see
+        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
         /// To perform this operation on a CMK in a different AWS account, specify the key ARN
         /// or alias ARN in the value of the KeyId parameter.
-        /// </para>
-        ///  
-        /// <para>
-        /// Unless you are moving encrypted data from one region to another, you don't use this
-        /// operation to encrypt a generated data key within a region. To get data keys that are
-        /// already encrypted, call the <a>GenerateDataKey</a> or <a>GenerateDataKeyWithoutPlaintext</a>
-        /// operation. Data keys don't need to be encrypted again by calling <code>Encrypt</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// To encrypt data locally in your application, use the <a>GenerateDataKey</a> operation
-        /// to return a plaintext data encryption key and a copy of the key encrypted under the
-        /// CMK of your choosing.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Encrypt service method.</param>
@@ -2279,6 +2464,13 @@ namespace Amazon.KeyManagementService
         /// the ciphertext. For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
         /// Context</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// The result of this operation varies with the key state of the CMK. For details, see
+        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GenerateDataKey service method.</param>
         /// 
@@ -2369,10 +2561,17 @@ namespace Amazon.KeyManagementService
         /// When it creates a new container, it uses this operation (<code>GenerateDataKeyWithoutPlaintext</code>)
         /// to get an encrypted data key and then stores it in the container. Later, a different
         /// component of the system, called the <i>data plane</i>, puts encrypted data into the
-        /// containers. To do this, it passes the encrypted data key to the <a>Decrypt</a> operation,
-        /// then uses the returned plaintext data key to encrypt data, and finally stores the
+        /// containers. To do this, it passes the encrypted data key to the <a>Decrypt</a> operation.
+        /// It then uses the returned plaintext data key to encrypt data and finally stores the
         /// encrypted data in the container. In this system, the control plane never sees the
         /// plaintext data key.
+        /// </para>
+        ///  
+        /// <para>
+        /// The result of this operation varies with the key state of the CMK. For details, see
+        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GenerateDataKeyWithoutPlaintext service method.</param>
@@ -2708,13 +2907,32 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Gets a Boolean value that indicates whether automatic rotation of the key material
-        /// is enabled for the specified customer master key (CMK).
+        /// Gets a Boolean value that indicates whether <a href="http://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
+        /// rotation of the key material</a> is enabled for the specified customer master key
+        /// (CMK).
         /// 
         ///  
         /// <para>
+        /// The result of this operation varies with the key state of the CMK. For details, see
+        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Disabled: The key rotation status does not change when you disable a CMK. However,
+        /// while the CMK is disabled, AWS KMS does not rotate the backing key.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Pending deletion: While a CMK is pending deletion, its key rotation status is <code>false</code>
+        /// and AWS KMS does not rotate the backing key. If you cancel the deletion, the original
+        /// key rotation status is restored.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         /// To perform this operation on a CMK in a different AWS account, specify the key ARN
-        /// in the value of the KeyId parameter.
+        /// in the value of the <code>KeyId</code> parameter.
         /// </para>
         /// </summary>
         /// <param name="keyId">A unique identifier for the customer master key (CMK). Specify the key ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK in a different AWS account, you must use the key ARN. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
@@ -2758,13 +2976,32 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Gets a Boolean value that indicates whether automatic rotation of the key material
-        /// is enabled for the specified customer master key (CMK).
+        /// Gets a Boolean value that indicates whether <a href="http://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
+        /// rotation of the key material</a> is enabled for the specified customer master key
+        /// (CMK).
         /// 
         ///  
         /// <para>
+        /// The result of this operation varies with the key state of the CMK. For details, see
+        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Disabled: The key rotation status does not change when you disable a CMK. However,
+        /// while the CMK is disabled, AWS KMS does not rotate the backing key.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Pending deletion: While a CMK is pending deletion, its key rotation status is <code>false</code>
+        /// and AWS KMS does not rotate the backing key. If you cancel the deletion, the original
+        /// key rotation status is restored.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         /// To perform this operation on a CMK in a different AWS account, specify the key ARN
-        /// in the value of the KeyId parameter.
+        /// in the value of the <code>KeyId</code> parameter.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetKeyRotationStatus service method.</param>
@@ -2809,13 +3046,32 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Gets a Boolean value that indicates whether automatic rotation of the key material
-        /// is enabled for the specified customer master key (CMK).
+        /// Gets a Boolean value that indicates whether <a href="http://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
+        /// rotation of the key material</a> is enabled for the specified customer master key
+        /// (CMK).
         /// 
         ///  
         /// <para>
+        /// The result of this operation varies with the key state of the CMK. For details, see
+        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Disabled: The key rotation status does not change when you disable a CMK. However,
+        /// while the CMK is disabled, AWS KMS does not rotate the backing key.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Pending deletion: While a CMK is pending deletion, its key rotation status is <code>false</code>
+        /// and AWS KMS does not rotate the backing key. If you cancel the deletion, the original
+        /// key rotation status is restored.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         /// To perform this operation on a CMK in a different AWS account, specify the key ARN
-        /// in the value of the KeyId parameter.
+        /// in the value of the <code>KeyId</code> parameter.
         /// </para>
         /// </summary>
         /// <param name="keyId">A unique identifier for the customer master key (CMK). Specify the key ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK in a different AWS account, you must use the key ARN. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
@@ -2906,6 +3162,13 @@ namespace Amazon.KeyManagementService
         /// These items are valid for 24 hours. When they expire, they cannot be used for a subsequent
         /// <a>ImportKeyMaterial</a> request. To get new ones, send another <code>GetParametersForImport</code>
         /// request.
+        /// </para>
+        ///  
+        /// <para>
+        /// The result of this operation varies with the key state of the CMK. For details, see
+        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetParametersForImport service method.</param>
@@ -3024,6 +3287,13 @@ namespace Amazon.KeyManagementService
         /// material into a CMK, you can reimport the same key material into that CMK, but you
         /// cannot import different key material.
         /// </para>
+        ///  
+        /// <para>
+        /// The result of this operation varies with the key state of the CMK. For details, see
+        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportKeyMaterial service method.</param>
         /// 
@@ -3108,16 +3378,29 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Gets a list of all aliases in the caller's AWS account and region. You cannot list
-        /// aliases in other accounts. For more information about aliases, see <a>CreateAlias</a>.
+        /// Gets a list of aliases in the caller's AWS account and region. You cannot list aliases
+        /// in other accounts. For more information about aliases, see <a>CreateAlias</a>.
         /// 
         ///  
         /// <para>
-        /// The response might include several aliases that do not have a <code>TargetKeyId</code>
-        /// field because they are not associated with a CMK. These are predefined aliases that
-        /// are reserved for CMKs managed by AWS services. If an alias is not associated with
-        /// a CMK, the alias does not count against the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html#aliases-limit">alias
-        /// limit</a> for your account.
+        /// By default, the ListAliases command returns all aliases in the account and region.
+        /// To get only the aliases that point to a particular customer master key (CMK), use
+        /// the <code>KeyId</code> parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>ListAliases</code> response can include aliases that you created and associated
+        /// with your customer managed CMKs, and aliases that AWS created and associated with
+        /// AWS managed CMKs in your account. You can recognize AWS aliases because their names
+        /// have the format <code>aws/&lt;service-name&gt;</code>, such as <code>aws/dynamodb</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The response might also include aliases that have no <code>TargetKeyId</code> field.
+        /// These are predefined aliases that AWS has created but has not yet associated with
+        /// a CMK. Aliases that AWS creates in your account, including predefined aliases, do
+        /// not count against your <a href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html#aliases-limit">AWS
+        /// KMS aliases limit</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAliases service method.</param>
@@ -3173,7 +3456,7 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// To perform this operation on a CMK in a different AWS account, specify the key ARN
-        /// in the value of the KeyId parameter.
+        /// in the value of the <code>KeyId</code> parameter.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGrants service method.</param>
@@ -3646,7 +3929,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         /// </summary>
         /// <param name="keyId">A unique identifier for the customer master key (CMK). Specify the key ID or the Amazon Resource Name (ARN) of the CMK. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
-        /// <param name="policy">The key policy to attach to the CMK. The key policy must meet the following criteria: <ul> <li> If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must allow the principal that is making the <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code> request on the CMK. This reduces the risk that the CMK becomes unmanageable. For more information, refer to the scenario in the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>AWS Key Management Service Developer Guide</i>. </li> <li> Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to AWS KMS. When you create a new AWS principal (for example, an IAM user or role), you might need to enforce a delay before including the new principal in a key policy because the new principal might not be immediately visible to AWS KMS. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>AWS Identity and Access Management User Guide</i>. </li> </ul> The key policy size limit is 32 kilobytes (32768 bytes).</param>
+        /// <param name="policy">The key policy to attach to the CMK. The key policy must meet the following criteria: <ul> <li> If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must allow the principal that is making the <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code> request on the CMK. This reduces the risk that the CMK becomes unmanageable. For more information, refer to the scenario in the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>AWS Key Management Service Developer Guide</i>. </li> <li> Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to AWS KMS. When you create a new AWS principal (for example, an IAM user or role), you might need to enforce a delay before including the new principal in a key policy. The reason for this is that the new principal might not be immediately visible to AWS KMS. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>AWS Identity and Access Management User Guide</i>. </li> </ul> The key policy size limit is 32 kilobytes (32768 bytes).</param>
         /// <param name="policyName">The name of the key policy. The only valid value is <code>default</code>.</param>
         /// 
         /// <returns>The response from the PutKeyPolicy service method, as returned by KeyManagementService.</returns>
@@ -3769,7 +4052,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         /// </summary>
         /// <param name="keyId">A unique identifier for the customer master key (CMK). Specify the key ID or the Amazon Resource Name (ARN) of the CMK. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
-        /// <param name="policy">The key policy to attach to the CMK. The key policy must meet the following criteria: <ul> <li> If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must allow the principal that is making the <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code> request on the CMK. This reduces the risk that the CMK becomes unmanageable. For more information, refer to the scenario in the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>AWS Key Management Service Developer Guide</i>. </li> <li> Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to AWS KMS. When you create a new AWS principal (for example, an IAM user or role), you might need to enforce a delay before including the new principal in a key policy because the new principal might not be immediately visible to AWS KMS. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>AWS Identity and Access Management User Guide</i>. </li> </ul> The key policy size limit is 32 kilobytes (32768 bytes).</param>
+        /// <param name="policy">The key policy to attach to the CMK. The key policy must meet the following criteria: <ul> <li> If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must allow the principal that is making the <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code> request on the CMK. This reduces the risk that the CMK becomes unmanageable. For more information, refer to the scenario in the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>AWS Key Management Service Developer Guide</i>. </li> <li> Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to AWS KMS. When you create a new AWS principal (for example, an IAM user or role), you might need to enforce a delay before including the new principal in a key policy. The reason for this is that the new principal might not be immediately visible to AWS KMS. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>AWS Identity and Access Management User Guide</i>. </li> </ul> The key policy size limit is 32 kilobytes (32768 bytes).</param>
         /// <param name="policyName">The name of the key policy. The only valid value is <code>default</code>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -3864,9 +4147,16 @@ namespace Amazon.KeyManagementService
         /// recommend that you include the <code>"kms:ReEncrypt*"</code> permission in your <a
         /// href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">key
         /// policies</a> to permit reencryption from or to the CMK. This permission is automatically
-        /// included in the key policy when you create a CMK through the console, but you must
+        /// included in the key policy when you create a CMK through the console. But you must
         /// include it manually when you create a CMK programmatically or when you set a key policy
         /// with the <a>PutKeyPolicy</a> operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// The result of this operation varies with the key state of the CMK. For details, see
+        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ReEncrypt service method.</param>
@@ -4182,7 +4472,7 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// To perform this operation on a CMK in a different AWS account, specify the key ARN
-        /// in the value of the KeyId parameter.
+        /// in the value of the <code>KeyId</code> parameter.
         /// </para>
         /// </summary>
         /// <param name="grantId">Identifier of the grant to be revoked.</param>
@@ -4233,7 +4523,7 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// To perform this operation on a CMK in a different AWS account, specify the key ARN
-        /// in the value of the KeyId parameter.
+        /// in the value of the <code>KeyId</code> parameter.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RevokeGrant service method.</param>
@@ -4283,7 +4573,7 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// To perform this operation on a CMK in a different AWS account, specify the key ARN
-        /// in the value of the KeyId parameter.
+        /// in the value of the <code>KeyId</code> parameter.
         /// </para>
         /// </summary>
         /// <param name="grantId">Identifier of the grant to be revoked.</param>
@@ -4377,6 +4667,13 @@ namespace Amazon.KeyManagementService
         /// For more information about scheduling a CMK for deletion, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
         /// Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// The result of this operation varies with the key state of the CMK. For details, see
+        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="keyId">The unique identifier of the customer master key (CMK) to delete. Specify the key ID or the Amazon Resource Name (ARN) of the CMK. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
         /// 
@@ -4437,6 +4734,13 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// For more information about scheduling a CMK for deletion, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
         /// Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The result of this operation varies with the key state of the CMK. For details, see
+        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="keyId">The unique identifier of the customer master key (CMK) to delete. Specify the key ID or the Amazon Resource Name (ARN) of the CMK. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
@@ -4501,6 +4805,13 @@ namespace Amazon.KeyManagementService
         /// For more information about scheduling a CMK for deletion, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
         /// Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// The result of this operation varies with the key state of the CMK. For details, see
+        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ScheduleKeyDeletion service method.</param>
         /// 
@@ -4562,6 +4873,13 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// For more information about scheduling a CMK for deletion, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
         /// Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The result of this operation varies with the key state of the CMK. For details, see
+        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="keyId">The unique identifier of the customer master key (CMK) to delete. Specify the key ID or the Amazon Resource Name (ARN) of the CMK. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
@@ -4626,6 +4944,13 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// For more information about scheduling a CMK for deletion, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
         /// Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The result of this operation varies with the key state of the CMK. For details, see
+        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="keyId">The unique identifier of the customer master key (CMK) to delete. Specify the key ID or the Amazon Resource Name (ARN) of the CMK. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
@@ -4693,8 +5018,8 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Adds or overwrites one or more tags for the specified customer master key (CMK). You
-        /// cannot perform this operation on a CMK in a different AWS account.
+        /// Adds or edits tags for a customer master key (CMK). You cannot perform this operation
+        /// on a CMK in a different AWS account.
         /// 
         ///  
         /// <para>
@@ -4703,16 +5028,20 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// You cannot use the same tag key more than once per CMK. For example, consider a CMK
-        /// with one tag whose tag key is <code>Purpose</code> and tag value is <code>Test</code>.
-        /// If you send a <code>TagResource</code> request for this CMK with a tag key of <code>Purpose</code>
-        /// and a tag value of <code>Prod</code>, it does not create a second tag. Instead, the
-        /// original tag is overwritten with the new tag value.
+        /// You can only use a tag key once for each CMK. If you use the tag key again, AWS KMS
+        /// replaces the current tag value with the specified value.
         /// </para>
         ///  
         /// <para>
         /// For information about the rules that apply to tag keys and tag values, see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
         /// Tag Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The result of this operation varies with the key state of the CMK. For details, see
+        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
@@ -4781,13 +5110,20 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Removes the specified tag or tags from the specified customer master key (CMK). You
-        /// cannot perform this operation on a CMK in a different AWS account.
+        /// Removes the specified tags from the specified customer master key (CMK). You cannot
+        /// perform this operation on a CMK in a different AWS account.
         /// 
         ///  
         /// <para>
-        /// To remove a tag, you specify the tag key for each tag to remove. You do not specify
-        /// the tag value. To overwrite the tag value for an existing tag, use <a>TagResource</a>.
+        /// To remove a tag, specify the tag key. To change the tag value of an existing tag key,
+        /// use <a>TagResource</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The result of this operation varies with the key state of the CMK. For details, see
+        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
@@ -4877,6 +5213,13 @@ namespace Amazon.KeyManagementService
         /// begin with <code>aws</code>; that alias name prefix is reserved by Amazon Web Services
         /// (AWS).
         /// </para>
+        ///  
+        /// <para>
+        /// The result of this operation varies with the key state of the CMK. For details, see
+        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="aliasName">String that contains the name of the alias to be modified. The name must start with the word "alias" followed by a forward slash (alias/). Aliases that begin with "alias/aws" are reserved.</param>
         /// <param name="targetKeyId">Unique identifier of the customer master key to be mapped to the alias. Specify the key ID or the Amazon Resource Name (ARN) of the CMK. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To verify that the alias is mapped to the correct CMK, use <a>ListAliases</a>.</param>
@@ -4940,6 +5283,13 @@ namespace Amazon.KeyManagementService
         /// begin with <code>aws</code>; that alias name prefix is reserved by Amazon Web Services
         /// (AWS).
         /// </para>
+        ///  
+        /// <para>
+        /// The result of this operation varies with the key state of the CMK. For details, see
+        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAlias service method.</param>
         /// 
@@ -5001,6 +5351,13 @@ namespace Amazon.KeyManagementService
         /// characters, forward slashes (/), underscores (_), and dashes (-). Alias names cannot
         /// begin with <code>aws</code>; that alias name prefix is reserved by Amazon Web Services
         /// (AWS).
+        /// </para>
+        ///  
+        /// <para>
+        /// The result of this operation varies with the key state of the CMK. For details, see
+        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="aliasName">String that contains the name of the alias to be modified. The name must start with the word "alias" followed by a forward slash (alias/). Aliases that begin with "alias/aws" are reserved.</param>
@@ -5065,12 +5422,19 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Updates the description of a customer master key (CMK). To see the decription of a
-        /// CMK, use <a>DescribeKey</a>. 
+        /// Updates the description of a customer master key (CMK). To see the description of
+        /// a CMK, use <a>DescribeKey</a>. 
         /// 
         ///  
         /// <para>
         /// You cannot perform this operation on a CMK in a different AWS account.
+        /// </para>
+        ///  
+        /// <para>
+        /// The result of this operation varies with the key state of the CMK. For details, see
+        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="keyId">A unique identifier for the customer master key (CMK). Specify the key ID or the Amazon Resource Name (ARN) of the CMK. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
@@ -5112,12 +5476,19 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Updates the description of a customer master key (CMK). To see the decription of a
-        /// CMK, use <a>DescribeKey</a>. 
+        /// Updates the description of a customer master key (CMK). To see the description of
+        /// a CMK, use <a>DescribeKey</a>. 
         /// 
         ///  
         /// <para>
         /// You cannot perform this operation on a CMK in a different AWS account.
+        /// </para>
+        ///  
+        /// <para>
+        /// The result of this operation varies with the key state of the CMK. For details, see
+        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateKeyDescription service method.</param>
@@ -5158,12 +5529,19 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Updates the description of a customer master key (CMK). To see the decription of a
-        /// CMK, use <a>DescribeKey</a>. 
+        /// Updates the description of a customer master key (CMK). To see the description of
+        /// a CMK, use <a>DescribeKey</a>. 
         /// 
         ///  
         /// <para>
         /// You cannot perform this operation on a CMK in a different AWS account.
+        /// </para>
+        ///  
+        /// <para>
+        /// The result of this operation varies with the key state of the CMK. For details, see
+        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="keyId">A unique identifier for the customer master key (CMK). Specify the key ID or the Amazon Resource Name (ARN) of the CMK. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>

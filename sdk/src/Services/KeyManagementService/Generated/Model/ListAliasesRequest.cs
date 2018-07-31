@@ -29,22 +29,61 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAliases operation.
-    /// Gets a list of all aliases in the caller's AWS account and region. You cannot list
-    /// aliases in other accounts. For more information about aliases, see <a>CreateAlias</a>.
+    /// Gets a list of aliases in the caller's AWS account and region. You cannot list aliases
+    /// in other accounts. For more information about aliases, see <a>CreateAlias</a>.
     /// 
     ///  
     /// <para>
-    /// The response might include several aliases that do not have a <code>TargetKeyId</code>
-    /// field because they are not associated with a CMK. These are predefined aliases that
-    /// are reserved for CMKs managed by AWS services. If an alias is not associated with
-    /// a CMK, the alias does not count against the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html#aliases-limit">alias
-    /// limit</a> for your account.
+    /// By default, the ListAliases command returns all aliases in the account and region.
+    /// To get only the aliases that point to a particular customer master key (CMK), use
+    /// the <code>KeyId</code> parameter.
+    /// </para>
+    ///  
+    /// <para>
+    /// The <code>ListAliases</code> response can include aliases that you created and associated
+    /// with your customer managed CMKs, and aliases that AWS created and associated with
+    /// AWS managed CMKs in your account. You can recognize AWS aliases because their names
+    /// have the format <code>aws/&lt;service-name&gt;</code>, such as <code>aws/dynamodb</code>.
+    /// </para>
+    ///  
+    /// <para>
+    /// The response might also include aliases that have no <code>TargetKeyId</code> field.
+    /// These are predefined aliases that AWS has created but has not yet associated with
+    /// a CMK. Aliases that AWS creates in your account, including predefined aliases, do
+    /// not count against your <a href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html#aliases-limit">AWS
+    /// KMS aliases limit</a>.
     /// </para>
     /// </summary>
     public partial class ListAliasesRequest : AmazonKeyManagementServiceRequest
     {
+        private string _keyId;
         private int? _limit;
         private string _marker;
+
+        /// <summary>
+        /// Gets and sets the property KeyId. 
+        /// <para>
+        /// Lists only aliases that refer to the specified CMK. The value of this parameter can
+        /// be the ID or Amazon Resource Name (ARN) of a CMK in the caller's account and region.
+        /// You cannot use an alias name or alias ARN in this value.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is optional. If you omit it, <code>ListAliases</code> returns all aliases
+        /// in the account and region.
+        /// </para>
+        /// </summary>
+        public string KeyId
+        {
+            get { return this._keyId; }
+            set { this._keyId = value; }
+        }
+
+        // Check to see if KeyId property is set
+        internal bool IsSetKeyId()
+        {
+            return this._keyId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Limit. 

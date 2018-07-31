@@ -34,7 +34,7 @@ namespace Amazon.KeyManagementService.Model
     ///  
     /// <para>
     /// To perform this operation on a CMK in a different AWS account, specify the key ARN
-    /// in the value of the KeyId parameter.
+    /// in the value of the <code>KeyId</code> parameter.
     /// </para>
     /// </summary>
     public partial class ListGrantsRequest : AmazonKeyManagementServiceRequest
