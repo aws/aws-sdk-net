@@ -136,6 +136,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.TransferData = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("validity", targetDepth))
+                {
+                    var unmarshaller = CertificateValidityUnmarshaller.Instance;
+                    unmarshalledObject.Validity = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

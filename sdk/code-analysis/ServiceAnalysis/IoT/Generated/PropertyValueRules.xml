@@ -53,10 +53,22 @@
     <pattern>[\w+=,.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.AttachSecurityProfileRequest.SecurityProfileName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.AttachThingPrincipalRequest.ThingName</property>
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CancelAuditTaskRequest.TaskId</property>
+    <min>1</min>
+    <max>40</max>
+    <pattern>[a-zA-Z0-9\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.CancelCertificateTransferRequest.CertificateId</property>
@@ -244,6 +256,32 @@
     <pattern>[\w=,@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.CreateScheduledAuditRequest.DayOfMonth</property>
+    <pattern>^([1-9]|[12][0-9]|3[01])$|^LAST$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateScheduledAuditRequest.ScheduledAuditName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateSecurityProfileRequest.SecurityProfileDescription</property>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateSecurityProfileRequest.SecurityProfileName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateSecurityProfileResponse.SecurityProfileName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.CreateStreamRequest.Description</property>
     <max>2028</max>
     <pattern>[^\p{C}]+</pattern>
@@ -400,6 +438,18 @@
     <pattern>[\w=,@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.DeleteScheduledAuditRequest.ScheduledAuditName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DeleteSecurityProfileRequest.SecurityProfileName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.DeleteStreamRequest.StreamId</property>
     <min>1</min>
     <max>128</max>
@@ -434,6 +484,23 @@
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeAccountAuditConfigurationResponse.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeAuditTaskRequest.TaskId</property>
+    <min>1</min>
+    <max>40</max>
+    <pattern>[a-zA-Z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeAuditTaskResponse.ScheduledAuditName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.DescribeAuthorizerRequest.AuthorizerName</property>
@@ -493,6 +560,38 @@
     <min>1</min>
     <max>128</max>
     <pattern>[\w=,@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeScheduledAuditRequest.ScheduledAuditName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeScheduledAuditResponse.DayOfMonth</property>
+    <pattern>^([1-9]|[12][0-9]|3[01])$|^LAST$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeScheduledAuditResponse.ScheduledAuditName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeSecurityProfileRequest.SecurityProfileName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeSecurityProfileResponse.SecurityProfileDescription</property>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeSecurityProfileResponse.SecurityProfileName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.DescribeStreamRequest.StreamId</property>
@@ -595,6 +694,12 @@
     <pattern>[\w+=,.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.DetachSecurityProfileRequest.SecurityProfileName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.DetachThingPrincipalRequest.ThingName</property>
     <min>1</min>
     <max>128</max>
@@ -683,6 +788,23 @@
     <pattern>^[a-zA-Z0-9_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.ListActiveViolationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ListActiveViolationsRequest.SecurityProfileName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ListActiveViolationsRequest.ThingName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.ListAttachedPoliciesRequest.Marker</property>
     <pattern>[A-Za-z0-9+/]+={0,2}</pattern>
   </property-value-rule>
@@ -694,6 +816,22 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.ListAttachedPoliciesResponse.NextMarker</property>
     <pattern>[A-Za-z0-9+/]+={0,2}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ListAuditFindingsRequest.MaxResults</property>
+    <min>1</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ListAuditFindingsRequest.TaskId</property>
+    <min>1</min>
+    <max>40</max>
+    <pattern>[a-zA-Z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ListAuditTasksRequest.MaxResults</property>
+    <min>1</min>
+    <max>250</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ListAuthorizersRequest.Marker</property>
@@ -885,6 +1023,21 @@
     <pattern>[A-Za-z0-9+/]+={0,2}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.ListScheduledAuditsRequest.MaxResults</property>
+    <min>1</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ListSecurityProfilesRequest.MaxResults</property>
+    <min>1</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ListSecurityProfilesForTargetRequest.MaxResults</property>
+    <min>1</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.ListStreamsRequest.MaxResults</property>
     <min>1</min>
     <max>250</max>
@@ -907,6 +1060,17 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.ListTargetsForPolicyResponse.NextMarker</property>
     <pattern>[A-Za-z0-9+/]+={0,2}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ListTargetsForSecurityProfileRequest.MaxResults</property>
+    <min>1</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ListTargetsForSecurityProfileRequest.SecurityProfileName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ListThingGroupsRequest.MaxResults</property>
@@ -1008,6 +1172,23 @@
     <property>Amazon.IoT.Model.ListV2LoggingLevelsRequest.MaxResults</property>
     <min>1</min>
     <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ListViolationEventsRequest.MaxResults</property>
+    <min>1</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ListViolationEventsRequest.SecurityProfileName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ListViolationEventsRequest.ThingName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.RegisterCACertificateRequest.CaCertificate</property>
@@ -1113,6 +1294,12 @@
     <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.StartOnDemandAuditTaskResponse.TaskId</property>
+    <min>1</min>
+    <max>40</max>
+    <pattern>[a-zA-Z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.StartThingRegistrationTaskRequest.InputFileBucket</property>
     <min>3</min>
     <max>256</max>
@@ -1146,7 +1333,7 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.TestInvokeAuthorizerRequest.Token</property>
     <min>1</min>
-    <max>1024</max>
+    <max>6144</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.TestInvokeAuthorizerRequest.TokenSignature</property>
@@ -1168,11 +1355,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.TransferCertificateRequest.TargetAwsAccount</property>
-    <pattern>[0-9]{12}</pattern>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.TransferCertificateRequest.TransferMessage</property>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.UpdateAccountAuditConfigurationRequest.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.UpdateAuthorizerRequest.AuthorizerName</property>
@@ -1225,6 +1419,36 @@
     <min>1</min>
     <max>128</max>
     <pattern>[\w=,@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.UpdateScheduledAuditRequest.DayOfMonth</property>
+    <pattern>^([1-9]|[12][0-9]|3[01])$|^LAST$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.UpdateScheduledAuditRequest.ScheduledAuditName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.UpdateSecurityProfileRequest.SecurityProfileDescription</property>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.UpdateSecurityProfileRequest.SecurityProfileName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.UpdateSecurityProfileResponse.SecurityProfileDescription</property>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.UpdateSecurityProfileResponse.SecurityProfileName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.UpdateStreamRequest.Description</property>
@@ -1283,6 +1507,50 @@
     <pattern>[a-zA-Z0-9:_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.ActiveViolation.SecurityProfileName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ActiveViolation.ThingName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ActiveViolation.ViolationId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.AlertTarget.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.AuditCheckDetails.Message</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.AuditFinding.TaskId</property>
+    <min>1</min>
+    <max>40</max>
+    <pattern>[a-zA-Z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.AuditNotificationTarget.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.AuditTaskMetadata.TaskId</property>
+    <min>1</min>
+    <max>40</max>
+    <pattern>[a-zA-Z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.AuthorizerDescription.AuthorizerName</property>
     <min>1</min>
     <max>128</max>
@@ -1299,6 +1567,12 @@
     <min>1</min>
     <max>128</max>
     <pattern>[\w=,@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.Behavior.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.CACertificate.CertificateId</property>
@@ -1323,7 +1597,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.CACertificateDescription.OwnedBy</property>
-    <pattern>[0-9]{12}</pattern>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.Certificate.CertificateId</property>
@@ -1354,11 +1630,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.CertificateDescription.OwnedBy</property>
-    <pattern>[0-9]{12}</pattern>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.CertificateDescription.PreviousOwnedBy</property>
-    <pattern>[0-9]{12}</pattern>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.EffectivePolicy.PolicyName</property>
@@ -1434,6 +1714,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.MetricValue.Count</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.OTAUpdateInfo.Description</property>
     <max>2028</max>
     <pattern>[^\p{C}]+</pattern>
@@ -1462,7 +1746,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.OutgoingCertificate.TransferredTo</property>
-    <pattern>[0-9]{12}</pattern>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.Policy.PolicyName</property>
@@ -1472,6 +1758,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.PolicyVersion.VersionId</property>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.PolicyVersionIdentifier.PolicyName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.PolicyVersionIdentifier.PolicyVersionId</property>
     <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1490,13 +1786,33 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.ResourceIdentifier.Account</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ResourceIdentifier.CaCertificateId</property>
+    <min>64</min>
+    <max>64</max>
+    <pattern>(0x)?[a-fA-F0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ResourceIdentifier.DeviceCertificateId</property>
+    <min>64</min>
+    <max>64</max>
+    <pattern>(0x)?[a-fA-F0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.RoleAliasDescription.CredentialDurationSeconds</property>
     <min>900</min>
     <max>3600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.RoleAliasDescription.Owner</property>
-    <pattern>[0-9]{12}</pattern>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.RoleAliasDescription.RoleAlias</property>
@@ -1525,6 +1841,22 @@
     <property>Amazon.IoT.Model.SalesforceAction.Url</property>
     <max>2000</max>
     <pattern>https://ingestion-[a-zA-Z0-9]{1,12}\.[a-zA-Z0-9]+\.((sfdc-matrix\.net)|(sfdcnow\.com))/streams/\w{1,20}/\w{1,20}/event</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ScheduledAuditMetadata.DayOfMonth</property>
+    <pattern>^([1-9]|[12][0-9]|3[01])$|^LAST$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ScheduledAuditMetadata.ScheduledAuditName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.SecurityProfileIdentifier.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.Stream.FileId</property>
@@ -1642,5 +1974,27 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.TransferData.TransferMessage</property>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ValidationError.ErrorMessage</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ViolationEvent.SecurityProfileName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ViolationEvent.ThingName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ViolationEvent.ViolationId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9\-]+</pattern>
   </property-value-rule>
 </property-value-rules>

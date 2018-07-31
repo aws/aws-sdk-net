@@ -42,6 +42,7 @@ namespace Amazon.IoT.Model
         private DateTime? _lastModifiedDate;
         private string _ownedBy;
         private CACertificateStatus _status;
+        private CertificateValidity _validity;
 
         /// <summary>
         /// Gets and sets the property AutoRegistrationStatus. 
@@ -222,6 +223,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Validity. 
+        /// <para>
+        /// When the CA certificate is valid.
+        /// </para>
+        /// </summary>
+        public CertificateValidity Validity
+        {
+            get { return this._validity; }
+            set { this._validity = value; }
+        }
+
+        // Check to see if Validity property is set
+        internal bool IsSetValidity()
+        {
+            return this._validity != null;
         }
 
     }

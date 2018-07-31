@@ -457,6 +457,38 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  AttachSecurityProfile
+
+        internal virtual AttachSecurityProfileResponse AttachSecurityProfile(AttachSecurityProfileRequest request)
+        {
+            var marshaller = AttachSecurityProfileRequestMarshaller.Instance;
+            var unmarshaller = AttachSecurityProfileResponseUnmarshaller.Instance;
+
+            return Invoke<AttachSecurityProfileRequest,AttachSecurityProfileResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AttachSecurityProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AttachSecurityProfile operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachSecurityProfile">REST API Reference for AttachSecurityProfile Operation</seealso>
+        public virtual Task<AttachSecurityProfileResponse> AttachSecurityProfileAsync(AttachSecurityProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = AttachSecurityProfileRequestMarshaller.Instance;
+            var unmarshaller = AttachSecurityProfileResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AttachSecurityProfileRequest,AttachSecurityProfileResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AttachThingPrincipal
 
         internal virtual AttachThingPrincipalResponse AttachThingPrincipal(AttachThingPrincipalRequest request)
@@ -522,6 +554,38 @@ namespace Amazon.IoT
             var unmarshaller = AttachThingPrincipalResponseUnmarshaller.Instance;
 
             return InvokeAsync<AttachThingPrincipalRequest,AttachThingPrincipalResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CancelAuditTask
+
+        internal virtual CancelAuditTaskResponse CancelAuditTask(CancelAuditTaskRequest request)
+        {
+            var marshaller = CancelAuditTaskRequestMarshaller.Instance;
+            var unmarshaller = CancelAuditTaskResponseUnmarshaller.Instance;
+
+            return Invoke<CancelAuditTaskRequest,CancelAuditTaskResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelAuditTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelAuditTask operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelAuditTask">REST API Reference for CancelAuditTask Operation</seealso>
+        public virtual Task<CancelAuditTaskResponse> CancelAuditTaskAsync(CancelAuditTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CancelAuditTaskRequestMarshaller.Instance;
+            var unmarshaller = CancelAuditTaskResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CancelAuditTaskRequest,CancelAuditTaskResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1401,6 +1465,70 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  CreateScheduledAudit
+
+        internal virtual CreateScheduledAuditResponse CreateScheduledAudit(CreateScheduledAuditRequest request)
+        {
+            var marshaller = CreateScheduledAuditRequestMarshaller.Instance;
+            var unmarshaller = CreateScheduledAuditResponseUnmarshaller.Instance;
+
+            return Invoke<CreateScheduledAuditRequest,CreateScheduledAuditResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateScheduledAudit operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateScheduledAudit operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateScheduledAudit">REST API Reference for CreateScheduledAudit Operation</seealso>
+        public virtual Task<CreateScheduledAuditResponse> CreateScheduledAuditAsync(CreateScheduledAuditRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateScheduledAuditRequestMarshaller.Instance;
+            var unmarshaller = CreateScheduledAuditResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateScheduledAuditRequest,CreateScheduledAuditResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateSecurityProfile
+
+        internal virtual CreateSecurityProfileResponse CreateSecurityProfile(CreateSecurityProfileRequest request)
+        {
+            var marshaller = CreateSecurityProfileRequestMarshaller.Instance;
+            var unmarshaller = CreateSecurityProfileResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSecurityProfileRequest,CreateSecurityProfileResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateSecurityProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateSecurityProfile operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateSecurityProfile">REST API Reference for CreateSecurityProfile Operation</seealso>
+        public virtual Task<CreateSecurityProfileResponse> CreateSecurityProfileAsync(CreateSecurityProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateSecurityProfileRequestMarshaller.Instance;
+            var unmarshaller = CreateSecurityProfileResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateSecurityProfileRequest,CreateSecurityProfileResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateStream
 
         internal virtual CreateStreamResponse CreateStream(CreateStreamRequest request)
@@ -1556,6 +1684,38 @@ namespace Amazon.IoT
             var unmarshaller = CreateTopicRuleResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateTopicRuleRequest,CreateTopicRuleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteAccountAuditConfiguration
+
+        internal virtual DeleteAccountAuditConfigurationResponse DeleteAccountAuditConfiguration(DeleteAccountAuditConfigurationRequest request)
+        {
+            var marshaller = DeleteAccountAuditConfigurationRequestMarshaller.Instance;
+            var unmarshaller = DeleteAccountAuditConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAccountAuditConfigurationRequest,DeleteAccountAuditConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAccountAuditConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccountAuditConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteAccountAuditConfiguration">REST API Reference for DeleteAccountAuditConfiguration Operation</seealso>
+        public virtual Task<DeleteAccountAuditConfigurationResponse> DeleteAccountAuditConfigurationAsync(DeleteAccountAuditConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteAccountAuditConfigurationRequestMarshaller.Instance;
+            var unmarshaller = DeleteAccountAuditConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteAccountAuditConfigurationRequest,DeleteAccountAuditConfigurationResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2030,6 +2190,70 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  DeleteScheduledAudit
+
+        internal virtual DeleteScheduledAuditResponse DeleteScheduledAudit(DeleteScheduledAuditRequest request)
+        {
+            var marshaller = DeleteScheduledAuditRequestMarshaller.Instance;
+            var unmarshaller = DeleteScheduledAuditResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteScheduledAuditRequest,DeleteScheduledAuditResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteScheduledAudit operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteScheduledAudit operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteScheduledAudit">REST API Reference for DeleteScheduledAudit Operation</seealso>
+        public virtual Task<DeleteScheduledAuditResponse> DeleteScheduledAuditAsync(DeleteScheduledAuditRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteScheduledAuditRequestMarshaller.Instance;
+            var unmarshaller = DeleteScheduledAuditResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteScheduledAuditRequest,DeleteScheduledAuditResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteSecurityProfile
+
+        internal virtual DeleteSecurityProfileResponse DeleteSecurityProfile(DeleteSecurityProfileRequest request)
+        {
+            var marshaller = DeleteSecurityProfileRequestMarshaller.Instance;
+            var unmarshaller = DeleteSecurityProfileResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSecurityProfileRequest,DeleteSecurityProfileResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSecurityProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSecurityProfile operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteSecurityProfile">REST API Reference for DeleteSecurityProfile Operation</seealso>
+        public virtual Task<DeleteSecurityProfileResponse> DeleteSecurityProfileAsync(DeleteSecurityProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteSecurityProfileRequestMarshaller.Instance;
+            var unmarshaller = DeleteSecurityProfileResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteSecurityProfileRequest,DeleteSecurityProfileResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteStream
 
         internal virtual DeleteStreamResponse DeleteStream(DeleteStreamRequest request)
@@ -2319,6 +2543,70 @@ namespace Amazon.IoT
             var unmarshaller = DeprecateThingTypeResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeprecateThingTypeRequest,DeprecateThingTypeResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeAccountAuditConfiguration
+
+        internal virtual DescribeAccountAuditConfigurationResponse DescribeAccountAuditConfiguration(DescribeAccountAuditConfigurationRequest request)
+        {
+            var marshaller = DescribeAccountAuditConfigurationRequestMarshaller.Instance;
+            var unmarshaller = DescribeAccountAuditConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAccountAuditConfigurationRequest,DescribeAccountAuditConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAccountAuditConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountAuditConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeAccountAuditConfiguration">REST API Reference for DescribeAccountAuditConfiguration Operation</seealso>
+        public virtual Task<DescribeAccountAuditConfigurationResponse> DescribeAccountAuditConfigurationAsync(DescribeAccountAuditConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeAccountAuditConfigurationRequestMarshaller.Instance;
+            var unmarshaller = DescribeAccountAuditConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeAccountAuditConfigurationRequest,DescribeAccountAuditConfigurationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeAuditTask
+
+        internal virtual DescribeAuditTaskResponse DescribeAuditTask(DescribeAuditTaskRequest request)
+        {
+            var marshaller = DescribeAuditTaskRequestMarshaller.Instance;
+            var unmarshaller = DescribeAuditTaskResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAuditTaskRequest,DescribeAuditTaskResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAuditTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAuditTask operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeAuditTask">REST API Reference for DescribeAuditTask Operation</seealso>
+        public virtual Task<DescribeAuditTaskResponse> DescribeAuditTaskAsync(DescribeAuditTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeAuditTaskRequestMarshaller.Instance;
+            var unmarshaller = DescribeAuditTaskResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeAuditTaskRequest,DescribeAuditTaskResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2708,6 +2996,70 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  DescribeScheduledAudit
+
+        internal virtual DescribeScheduledAuditResponse DescribeScheduledAudit(DescribeScheduledAuditRequest request)
+        {
+            var marshaller = DescribeScheduledAuditRequestMarshaller.Instance;
+            var unmarshaller = DescribeScheduledAuditResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeScheduledAuditRequest,DescribeScheduledAuditResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeScheduledAudit operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeScheduledAudit operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeScheduledAudit">REST API Reference for DescribeScheduledAudit Operation</seealso>
+        public virtual Task<DescribeScheduledAuditResponse> DescribeScheduledAuditAsync(DescribeScheduledAuditRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeScheduledAuditRequestMarshaller.Instance;
+            var unmarshaller = DescribeScheduledAuditResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeScheduledAuditRequest,DescribeScheduledAuditResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeSecurityProfile
+
+        internal virtual DescribeSecurityProfileResponse DescribeSecurityProfile(DescribeSecurityProfileRequest request)
+        {
+            var marshaller = DescribeSecurityProfileRequestMarshaller.Instance;
+            var unmarshaller = DescribeSecurityProfileResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeSecurityProfileRequest,DescribeSecurityProfileResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSecurityProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityProfile operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeSecurityProfile">REST API Reference for DescribeSecurityProfile Operation</seealso>
+        public virtual Task<DescribeSecurityProfileResponse> DescribeSecurityProfileAsync(DescribeSecurityProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeSecurityProfileRequestMarshaller.Instance;
+            var unmarshaller = DescribeSecurityProfileResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeSecurityProfileRequest,DescribeSecurityProfileResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeStream
 
         internal virtual DescribeStreamResponse DescribeStream(DescribeStreamRequest request)
@@ -3009,6 +3361,38 @@ namespace Amazon.IoT
             var unmarshaller = DetachPrincipalPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<DetachPrincipalPolicyRequest,DetachPrincipalPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DetachSecurityProfile
+
+        internal virtual DetachSecurityProfileResponse DetachSecurityProfile(DetachSecurityProfileRequest request)
+        {
+            var marshaller = DetachSecurityProfileRequestMarshaller.Instance;
+            var unmarshaller = DetachSecurityProfileResponseUnmarshaller.Instance;
+
+            return Invoke<DetachSecurityProfileRequest,DetachSecurityProfileResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DetachSecurityProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DetachSecurityProfile operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetachSecurityProfile">REST API Reference for DetachSecurityProfile Operation</seealso>
+        public virtual Task<DetachSecurityProfileResponse> DetachSecurityProfileAsync(DetachSecurityProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DetachSecurityProfileRequestMarshaller.Instance;
+            var unmarshaller = DetachSecurityProfileResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DetachSecurityProfileRequest,DetachSecurityProfileResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -3573,6 +3957,38 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  ListActiveViolations
+
+        internal virtual ListActiveViolationsResponse ListActiveViolations(ListActiveViolationsRequest request)
+        {
+            var marshaller = ListActiveViolationsRequestMarshaller.Instance;
+            var unmarshaller = ListActiveViolationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListActiveViolationsRequest,ListActiveViolationsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListActiveViolations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListActiveViolations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListActiveViolations">REST API Reference for ListActiveViolations Operation</seealso>
+        public virtual Task<ListActiveViolationsResponse> ListActiveViolationsAsync(ListActiveViolationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListActiveViolationsRequestMarshaller.Instance;
+            var unmarshaller = ListActiveViolationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListActiveViolationsRequest,ListActiveViolationsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListAttachedPolicies
 
         internal virtual ListAttachedPoliciesResponse ListAttachedPolicies(ListAttachedPoliciesRequest request)
@@ -3600,6 +4016,70 @@ namespace Amazon.IoT
             var unmarshaller = ListAttachedPoliciesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListAttachedPoliciesRequest,ListAttachedPoliciesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAuditFindings
+
+        internal virtual ListAuditFindingsResponse ListAuditFindings(ListAuditFindingsRequest request)
+        {
+            var marshaller = ListAuditFindingsRequestMarshaller.Instance;
+            var unmarshaller = ListAuditFindingsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAuditFindingsRequest,ListAuditFindingsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAuditFindings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAuditFindings operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuditFindings">REST API Reference for ListAuditFindings Operation</seealso>
+        public virtual Task<ListAuditFindingsResponse> ListAuditFindingsAsync(ListAuditFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListAuditFindingsRequestMarshaller.Instance;
+            var unmarshaller = ListAuditFindingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListAuditFindingsRequest,ListAuditFindingsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAuditTasks
+
+        internal virtual ListAuditTasksResponse ListAuditTasks(ListAuditTasksRequest request)
+        {
+            var marshaller = ListAuditTasksRequestMarshaller.Instance;
+            var unmarshaller = ListAuditTasksResponseUnmarshaller.Instance;
+
+            return Invoke<ListAuditTasksRequest,ListAuditTasksResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAuditTasks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAuditTasks operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuditTasks">REST API Reference for ListAuditTasks Operation</seealso>
+        public virtual Task<ListAuditTasksResponse> ListAuditTasksAsync(ListAuditTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListAuditTasksRequestMarshaller.Instance;
+            var unmarshaller = ListAuditTasksResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListAuditTasksRequest,ListAuditTasksResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -4305,6 +4785,102 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  ListScheduledAudits
+
+        internal virtual ListScheduledAuditsResponse ListScheduledAudits(ListScheduledAuditsRequest request)
+        {
+            var marshaller = ListScheduledAuditsRequestMarshaller.Instance;
+            var unmarshaller = ListScheduledAuditsResponseUnmarshaller.Instance;
+
+            return Invoke<ListScheduledAuditsRequest,ListScheduledAuditsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListScheduledAudits operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListScheduledAudits operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListScheduledAudits">REST API Reference for ListScheduledAudits Operation</seealso>
+        public virtual Task<ListScheduledAuditsResponse> ListScheduledAuditsAsync(ListScheduledAuditsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListScheduledAuditsRequestMarshaller.Instance;
+            var unmarshaller = ListScheduledAuditsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListScheduledAuditsRequest,ListScheduledAuditsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListSecurityProfiles
+
+        internal virtual ListSecurityProfilesResponse ListSecurityProfiles(ListSecurityProfilesRequest request)
+        {
+            var marshaller = ListSecurityProfilesRequestMarshaller.Instance;
+            var unmarshaller = ListSecurityProfilesResponseUnmarshaller.Instance;
+
+            return Invoke<ListSecurityProfilesRequest,ListSecurityProfilesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSecurityProfiles operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSecurityProfiles operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListSecurityProfiles">REST API Reference for ListSecurityProfiles Operation</seealso>
+        public virtual Task<ListSecurityProfilesResponse> ListSecurityProfilesAsync(ListSecurityProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListSecurityProfilesRequestMarshaller.Instance;
+            var unmarshaller = ListSecurityProfilesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListSecurityProfilesRequest,ListSecurityProfilesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListSecurityProfilesForTarget
+
+        internal virtual ListSecurityProfilesForTargetResponse ListSecurityProfilesForTarget(ListSecurityProfilesForTargetRequest request)
+        {
+            var marshaller = ListSecurityProfilesForTargetRequestMarshaller.Instance;
+            var unmarshaller = ListSecurityProfilesForTargetResponseUnmarshaller.Instance;
+
+            return Invoke<ListSecurityProfilesForTargetRequest,ListSecurityProfilesForTargetResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSecurityProfilesForTarget operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSecurityProfilesForTarget operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListSecurityProfilesForTarget">REST API Reference for ListSecurityProfilesForTarget Operation</seealso>
+        public virtual Task<ListSecurityProfilesForTargetResponse> ListSecurityProfilesForTargetAsync(ListSecurityProfilesForTargetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListSecurityProfilesForTargetRequestMarshaller.Instance;
+            var unmarshaller = ListSecurityProfilesForTargetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListSecurityProfilesForTargetRequest,ListSecurityProfilesForTargetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListStreams
 
         internal virtual ListStreamsResponse ListStreams(ListStreamsRequest request)
@@ -4364,6 +4940,38 @@ namespace Amazon.IoT
             var unmarshaller = ListTargetsForPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTargetsForPolicyRequest,ListTargetsForPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTargetsForSecurityProfile
+
+        internal virtual ListTargetsForSecurityProfileResponse ListTargetsForSecurityProfile(ListTargetsForSecurityProfileRequest request)
+        {
+            var marshaller = ListTargetsForSecurityProfileRequestMarshaller.Instance;
+            var unmarshaller = ListTargetsForSecurityProfileResponseUnmarshaller.Instance;
+
+            return Invoke<ListTargetsForSecurityProfileRequest,ListTargetsForSecurityProfileResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTargetsForSecurityProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTargetsForSecurityProfile operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListTargetsForSecurityProfile">REST API Reference for ListTargetsForSecurityProfile Operation</seealso>
+        public virtual Task<ListTargetsForSecurityProfileResponse> ListTargetsForSecurityProfileAsync(ListTargetsForSecurityProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListTargetsForSecurityProfileRequestMarshaller.Instance;
+            var unmarshaller = ListTargetsForSecurityProfileResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTargetsForSecurityProfileRequest,ListTargetsForSecurityProfileResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -4781,6 +5389,38 @@ namespace Amazon.IoT
             var unmarshaller = ListV2LoggingLevelsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListV2LoggingLevelsRequest,ListV2LoggingLevelsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListViolationEvents
+
+        internal virtual ListViolationEventsResponse ListViolationEvents(ListViolationEventsRequest request)
+        {
+            var marshaller = ListViolationEventsRequestMarshaller.Instance;
+            var unmarshaller = ListViolationEventsResponseUnmarshaller.Instance;
+
+            return Invoke<ListViolationEventsRequest,ListViolationEventsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListViolationEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListViolationEvents operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListViolationEvents">REST API Reference for ListViolationEvents Operation</seealso>
+        public virtual Task<ListViolationEventsResponse> ListViolationEventsAsync(ListViolationEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListViolationEventsRequestMarshaller.Instance;
+            var unmarshaller = ListViolationEventsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListViolationEventsRequest,ListViolationEventsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -5261,6 +5901,38 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  StartOnDemandAuditTask
+
+        internal virtual StartOnDemandAuditTaskResponse StartOnDemandAuditTask(StartOnDemandAuditTaskRequest request)
+        {
+            var marshaller = StartOnDemandAuditTaskRequestMarshaller.Instance;
+            var unmarshaller = StartOnDemandAuditTaskResponseUnmarshaller.Instance;
+
+            return Invoke<StartOnDemandAuditTaskRequest,StartOnDemandAuditTaskResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartOnDemandAuditTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartOnDemandAuditTask operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/StartOnDemandAuditTask">REST API Reference for StartOnDemandAuditTask Operation</seealso>
+        public virtual Task<StartOnDemandAuditTaskResponse> StartOnDemandAuditTaskAsync(StartOnDemandAuditTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = StartOnDemandAuditTaskRequestMarshaller.Instance;
+            var unmarshaller = StartOnDemandAuditTaskResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartOnDemandAuditTaskRequest,StartOnDemandAuditTaskResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartThingRegistrationTask
 
         internal virtual StartThingRegistrationTaskResponse StartThingRegistrationTask(StartThingRegistrationTaskRequest request)
@@ -5480,6 +6152,38 @@ namespace Amazon.IoT
             var unmarshaller = TransferCertificateResponseUnmarshaller.Instance;
 
             return InvokeAsync<TransferCertificateRequest,TransferCertificateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateAccountAuditConfiguration
+
+        internal virtual UpdateAccountAuditConfigurationResponse UpdateAccountAuditConfiguration(UpdateAccountAuditConfigurationRequest request)
+        {
+            var marshaller = UpdateAccountAuditConfigurationRequestMarshaller.Instance;
+            var unmarshaller = UpdateAccountAuditConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAccountAuditConfigurationRequest,UpdateAccountAuditConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAccountAuditConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAccountAuditConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateAccountAuditConfiguration">REST API Reference for UpdateAccountAuditConfiguration Operation</seealso>
+        public virtual Task<UpdateAccountAuditConfigurationResponse> UpdateAccountAuditConfigurationAsync(UpdateAccountAuditConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateAccountAuditConfigurationRequestMarshaller.Instance;
+            var unmarshaller = UpdateAccountAuditConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateAccountAuditConfigurationRequest,UpdateAccountAuditConfigurationResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -5729,6 +6433,70 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  UpdateScheduledAudit
+
+        internal virtual UpdateScheduledAuditResponse UpdateScheduledAudit(UpdateScheduledAuditRequest request)
+        {
+            var marshaller = UpdateScheduledAuditRequestMarshaller.Instance;
+            var unmarshaller = UpdateScheduledAuditResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateScheduledAuditRequest,UpdateScheduledAuditResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateScheduledAudit operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateScheduledAudit operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateScheduledAudit">REST API Reference for UpdateScheduledAudit Operation</seealso>
+        public virtual Task<UpdateScheduledAuditResponse> UpdateScheduledAuditAsync(UpdateScheduledAuditRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateScheduledAuditRequestMarshaller.Instance;
+            var unmarshaller = UpdateScheduledAuditResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateScheduledAuditRequest,UpdateScheduledAuditResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateSecurityProfile
+
+        internal virtual UpdateSecurityProfileResponse UpdateSecurityProfile(UpdateSecurityProfileRequest request)
+        {
+            var marshaller = UpdateSecurityProfileRequestMarshaller.Instance;
+            var unmarshaller = UpdateSecurityProfileResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSecurityProfileRequest,UpdateSecurityProfileResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateSecurityProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSecurityProfile operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateSecurityProfile">REST API Reference for UpdateSecurityProfile Operation</seealso>
+        public virtual Task<UpdateSecurityProfileResponse> UpdateSecurityProfileAsync(UpdateSecurityProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateSecurityProfileRequestMarshaller.Instance;
+            var unmarshaller = UpdateSecurityProfileResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateSecurityProfileRequest,UpdateSecurityProfileResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateStream
 
         internal virtual UpdateStreamResponse UpdateStream(UpdateStreamRequest request)
@@ -5852,6 +6620,38 @@ namespace Amazon.IoT
             var unmarshaller = UpdateThingGroupsForThingResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateThingGroupsForThingRequest,UpdateThingGroupsForThingResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ValidateSecurityProfileBehaviors
+
+        internal virtual ValidateSecurityProfileBehaviorsResponse ValidateSecurityProfileBehaviors(ValidateSecurityProfileBehaviorsRequest request)
+        {
+            var marshaller = ValidateSecurityProfileBehaviorsRequestMarshaller.Instance;
+            var unmarshaller = ValidateSecurityProfileBehaviorsResponseUnmarshaller.Instance;
+
+            return Invoke<ValidateSecurityProfileBehaviorsRequest,ValidateSecurityProfileBehaviorsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ValidateSecurityProfileBehaviors operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ValidateSecurityProfileBehaviors operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ValidateSecurityProfileBehaviors">REST API Reference for ValidateSecurityProfileBehaviors Operation</seealso>
+        public virtual Task<ValidateSecurityProfileBehaviorsResponse> ValidateSecurityProfileBehaviorsAsync(ValidateSecurityProfileBehaviorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ValidateSecurityProfileBehaviorsRequestMarshaller.Instance;
+            var unmarshaller = ValidateSecurityProfileBehaviorsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ValidateSecurityProfileBehaviorsRequest,ValidateSecurityProfileBehaviorsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

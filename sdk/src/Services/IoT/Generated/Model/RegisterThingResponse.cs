@@ -36,7 +36,10 @@ namespace Amazon.IoT.Model
         private Dictionary<string, string> _resourceArns = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property CertificatePem.
+        /// Gets and sets the property CertificatePem. 
+        /// <para>
+        /// .
+        /// </para>
         /// </summary>
         public string CertificatePem
         {

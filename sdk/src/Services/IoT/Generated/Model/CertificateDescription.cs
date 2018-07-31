@@ -44,6 +44,7 @@ namespace Amazon.IoT.Model
         private string _previousOwnedBy;
         private CertificateStatus _status;
         private TransferData _transferData;
+        private CertificateValidity _validity;
 
         /// <summary>
         /// Gets and sets the property CaCertificateId. 
@@ -259,6 +260,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetTransferData()
         {
             return this._transferData != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Validity. 
+        /// <para>
+        /// When the certificate is valid.
+        /// </para>
+        /// </summary>
+        public CertificateValidity Validity
+        {
+            get { return this._validity; }
+            set { this._validity = value; }
+        }
+
+        // Check to see if Validity property is set
+        internal bool IsSetValidity()
+        {
+            return this._validity != null;
         }
 
     }

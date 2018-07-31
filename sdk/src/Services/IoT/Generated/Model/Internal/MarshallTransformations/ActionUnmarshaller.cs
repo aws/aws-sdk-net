@@ -148,6 +148,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.Sqs = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("stepFunctions", targetDepth))
+                {
+                    var unmarshaller = StepFunctionsActionUnmarshaller.Instance;
+                    unmarshalledObject.StepFunctions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

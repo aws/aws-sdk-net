@@ -73,7 +73,10 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Stream.
+        /// Gets and sets the property Stream. 
+        /// <para>
+        /// A stream of the certificate chain files.
+        /// </para>
         /// </summary>
         public Stream Stream
         {

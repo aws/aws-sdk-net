@@ -46,6 +46,7 @@ namespace Amazon.IoT.Model
         private SalesforceAction _salesforce;
         private SnsAction _sns;
         private SqsAction _sqs;
+        private StepFunctionsAction _stepFunctions;
 
         /// <summary>
         /// Gets and sets the property CloudwatchAlarm. 
@@ -298,6 +299,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetSqs()
         {
             return this._sqs != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StepFunctions. 
+        /// <para>
+        /// Starts execution of a Step Functions state machine.
+        /// </para>
+        /// </summary>
+        public StepFunctionsAction StepFunctions
+        {
+            get { return this._stepFunctions; }
+            set { this._stepFunctions = value; }
+        }
+
+        // Check to see if StepFunctions property is set
+        internal bool IsSetStepFunctions()
+        {
+            return this._stepFunctions != null;
         }
 
     }

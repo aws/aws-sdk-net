@@ -199,6 +199,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetStepFunctions())
+            {
+                context.Writer.WritePropertyName("stepFunctions");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = StepFunctionsActionMarshaller.Instance;
+                marshaller.Marshall(requestObject.StepFunctions, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>
