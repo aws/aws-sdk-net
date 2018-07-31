@@ -1661,6 +1661,23 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
                 
+        #region  LabelParameterVersion
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the LabelParameterVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the LabelParameterVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/LabelParameterVersion">REST API Reference for LabelParameterVersion Operation</seealso>
+        Task<LabelParameterVersionResponse> LabelParameterVersionAsync(LabelParameterVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListAssociations
 
 

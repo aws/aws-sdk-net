@@ -96,7 +96,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Retries. 
         /// <para>
         /// The number of times to retry a failed health check before the container is considered
-        /// unhealthy. You may specify between 1 and 10 retries. The default value is 3 retries.
+        /// unhealthy. You may specify between 1 and 10 retries. The default value is 3.
         /// </para>
         /// </summary>
         public int Retries
@@ -142,7 +142,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Timeout. 
         /// <para>
         /// The time period in seconds to wait for a health check to succeed before it is considered
-        /// a failure. You may specify between 2 and 60 seconds. The default value is 5 seconds.
+        /// a failure. You may specify between 2 and 60 seconds. The default value is 5.
         /// </para>
         /// </summary>
         public int Timeout

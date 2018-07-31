@@ -79,8 +79,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property HealthCheckIntervalSeconds. 
         /// <para>
         /// The approximate amount of time, in seconds, between health checks of an individual
-        /// target. For Application Load Balancers, the range is 5 to 300 seconds. For Network
-        /// Load Balancers, the supported values are 10 or 30 seconds. The default is 30 seconds.
+        /// target. For Application Load Balancers, the range is 5–300 seconds. For Network Load
+        /// Balancers, the supported values are 10 or 30 seconds. The default is 30 seconds.
         /// </para>
         /// </summary>
         public int HealthCheckIntervalSeconds
@@ -158,9 +158,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property HealthCheckTimeoutSeconds. 
         /// <para>
         /// The amount of time, in seconds, during which no response from a target means a failed
-        /// health check. For Application Load Balancers, the range is 2 to 60 seconds and the
-        /// default is 5 seconds. For Network Load Balancers, this is 10 seconds for TCP and HTTPS
-        /// health checks and 6 seconds for HTTP health checks.
+        /// health check. For Application Load Balancers, the range is 2–60 seconds and the default
+        /// is 5 seconds. For Network Load Balancers, this is 10 seconds for TCP and HTTPS health
+        /// checks and 6 seconds for HTTP health checks.
         /// </para>
         /// </summary>
         public int HealthCheckTimeoutSeconds
@@ -283,8 +283,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The type of target that you must specify when registering targets with this target
         /// group. The possible values are <code>instance</code> (targets are specified by instance
         /// ID) or <code>ip</code> (targets are specified by IP address). The default is <code>instance</code>.
-        /// Note that you can't specify targets for a target group using both instance IDs and
-        /// IP addresses.
+        /// You can't specify targets for a target group using both instance IDs and IP addresses.
         /// </para>
         ///  
         /// <para>

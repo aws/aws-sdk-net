@@ -38,8 +38,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Code. 
         /// <para>
-        /// The low byte represents the state. The high byte is an opaque internal value and should
-        /// be ignored.
+        /// The low byte represents the state. The high byte is used for internal purposes and
+        /// should be ignored.
         /// </para>
         ///  <ul> <li> 
         /// <para>

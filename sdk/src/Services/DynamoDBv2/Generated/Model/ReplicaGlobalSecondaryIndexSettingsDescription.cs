@@ -34,7 +34,9 @@ namespace Amazon.DynamoDBv2.Model
     {
         private string _indexName;
         private IndexStatus _indexStatus;
+        private AutoScalingSettingsDescription _provisionedReadCapacityAutoScalingSettings;
         private long? _provisionedReadCapacityUnits;
+        private AutoScalingSettingsDescription _provisionedWriteCapacityAutoScalingSettings;
         private long? _provisionedWriteCapacityUnits;
 
         /// <summary>
@@ -92,6 +94,24 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ProvisionedReadCapacityAutoScalingSettings. 
+        /// <para>
+        /// Autoscaling settings for a global secondary index replica's read capacity units.
+        /// </para>
+        /// </summary>
+        public AutoScalingSettingsDescription ProvisionedReadCapacityAutoScalingSettings
+        {
+            get { return this._provisionedReadCapacityAutoScalingSettings; }
+            set { this._provisionedReadCapacityAutoScalingSettings = value; }
+        }
+
+        // Check to see if ProvisionedReadCapacityAutoScalingSettings property is set
+        internal bool IsSetProvisionedReadCapacityAutoScalingSettings()
+        {
+            return this._provisionedReadCapacityAutoScalingSettings != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ProvisionedReadCapacityUnits. 
         /// <para>
         /// The maximum number of strongly consistent reads consumed per second before DynamoDB
@@ -108,6 +128,24 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetProvisionedReadCapacityUnits()
         {
             return this._provisionedReadCapacityUnits.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProvisionedWriteCapacityAutoScalingSettings. 
+        /// <para>
+        /// AutoScaling settings for a global secondary index replica's write capacity units.
+        /// </para>
+        /// </summary>
+        public AutoScalingSettingsDescription ProvisionedWriteCapacityAutoScalingSettings
+        {
+            get { return this._provisionedWriteCapacityAutoScalingSettings; }
+            set { this._provisionedWriteCapacityAutoScalingSettings = value; }
+        }
+
+        // Check to see if ProvisionedWriteCapacityAutoScalingSettings property is set
+        internal bool IsSetProvisionedWriteCapacityAutoScalingSettings()
+        {
+            return this._provisionedWriteCapacityAutoScalingSettings != null;
         }
 
         /// <summary>

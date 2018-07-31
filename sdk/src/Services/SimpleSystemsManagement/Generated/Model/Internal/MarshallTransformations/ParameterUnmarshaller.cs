@@ -64,10 +64,34 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ARN", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ARN = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LastModifiedDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastModifiedDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Selector", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Selector = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SourceResult", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SourceResult = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Type", targetDepth))

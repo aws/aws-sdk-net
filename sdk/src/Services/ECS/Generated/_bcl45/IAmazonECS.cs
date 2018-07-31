@@ -215,7 +215,7 @@ namespace Amazon.ECS
         /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.PlatformTaskDefinitionIncompatibilityException">
-        /// The specified platform version does not satisfy the task definition’s required capabilities.
+        /// The specified platform version does not satisfy the task definition's required capabilities.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.PlatformUnknownException">
         /// The specified platform version does not exist.
@@ -1114,7 +1114,7 @@ namespace Amazon.ECS
         /// with the <code>networkMode</code> parameter. The available network modes correspond
         /// to those described in <a href="https://docs.docker.com/engine/reference/run/#/network-settings">Network
         /// settings</a> in the Docker run reference. If you specify the <code>awsvpc</code> network
-        /// mode, the task is allocated an Elastic Network Interface, and you must specify a <a>NetworkConfiguration</a>
+        /// mode, the task is allocated an elastic network interface, and you must specify a <a>NetworkConfiguration</a>
         /// when you create a service or run a task with the task definition. For more information,
         /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
         /// Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -1187,7 +1187,7 @@ namespace Amazon.ECS
         /// Confirm the state of the resource before you run a command to modify it. Run the DescribeTasks
         /// command using an exponential backoff algorithm to ensure that you allow enough time
         /// for the previous command to propagate through the system. To do this, run the DescribeTasks
-        /// command repeatedly, starting with a couple of seconds of wait time, and increasing
+        /// command repeatedly, starting with a couple of seconds of wait time and increasing
         /// gradually up to five minutes of wait time.
         /// </para>
         ///  </li> <li> 
@@ -1221,7 +1221,7 @@ namespace Amazon.ECS
         /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.PlatformTaskDefinitionIncompatibilityException">
-        /// The specified platform version does not satisfy the task definition’s required capabilities.
+        /// The specified platform version does not satisfy the task definition's required capabilities.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.PlatformUnknownException">
         /// The specified platform version does not exist.
@@ -1663,7 +1663,7 @@ namespace Amazon.ECS
         /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.PlatformTaskDefinitionIncompatibilityException">
-        /// The specified platform version does not satisfy the task definition’s required capabilities.
+        /// The specified platform version does not satisfy the task definition's required capabilities.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.PlatformUnknownException">
         /// The specified platform version does not exist.

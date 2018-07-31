@@ -34,12 +34,13 @@ namespace Amazon.EC2.Model
     {
         private SpotAllocationStrategy _allocationStrategy;
         private SpotInstanceInterruptionBehavior _instanceInterruptionBehavior;
+        private int? _instancePoolsToUseCount;
 
         /// <summary>
         /// Gets and sets the property AllocationStrategy. 
         /// <para>
         /// Indicates how to allocate the target capacity across the Spot pools specified by the
-        /// Spot Fleet request. The default is <code>lowestPrice</code>.
+        /// Spot Fleet request. The default is <code>lowest-price</code>.
         /// </para>
         /// </summary>
         public SpotAllocationStrategy AllocationStrategy
@@ -70,6 +71,27 @@ namespace Amazon.EC2.Model
         internal bool IsSetInstanceInterruptionBehavior()
         {
             return this._instanceInterruptionBehavior != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstancePoolsToUseCount. 
+        /// <para>
+        /// The number of Spot pools across which to allocate your target Spot capacity. Valid
+        /// only when <b>AllocationStrategy</b> is set to <code>lowestPrice</code>. EC2 Fleet
+        /// selects the cheapest Spot pools and evenly allocates your target Spot capacity across
+        /// the number of Spot pools that you specify.
+        /// </para>
+        /// </summary>
+        public int InstancePoolsToUseCount
+        {
+            get { return this._instancePoolsToUseCount.GetValueOrDefault(); }
+            set { this._instancePoolsToUseCount = value; }
+        }
+
+        // Check to see if InstancePoolsToUseCount property is set
+        internal bool IsSetInstancePoolsToUseCount()
+        {
+            return this._instancePoolsToUseCount.HasValue; 
         }
 
     }

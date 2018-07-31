@@ -34,6 +34,7 @@ namespace Amazon.DynamoDBv2.Model
     public partial class GlobalTableGlobalSecondaryIndexSettingsUpdate
     {
         private string _indexName;
+        private AutoScalingSettingsUpdate _provisionedWriteCapacityAutoScalingSettingsUpdate;
         private long? _provisionedWriteCapacityUnits;
 
         /// <summary>
@@ -53,6 +54,24 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetIndexName()
         {
             return this._indexName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProvisionedWriteCapacityAutoScalingSettingsUpdate. 
+        /// <para>
+        /// AutoScaling settings for managing a global secondary index's write capacity units.
+        /// </para>
+        /// </summary>
+        public AutoScalingSettingsUpdate ProvisionedWriteCapacityAutoScalingSettingsUpdate
+        {
+            get { return this._provisionedWriteCapacityAutoScalingSettingsUpdate; }
+            set { this._provisionedWriteCapacityAutoScalingSettingsUpdate = value; }
+        }
+
+        // Check to see if ProvisionedWriteCapacityAutoScalingSettingsUpdate property is set
+        internal bool IsSetProvisionedWriteCapacityAutoScalingSettingsUpdate()
+        {
+            return this._provisionedWriteCapacityAutoScalingSettingsUpdate != null;
         }
 
         /// <summary>

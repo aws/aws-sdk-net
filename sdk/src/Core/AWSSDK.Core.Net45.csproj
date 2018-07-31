@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net45</TargetFramework>
     <DefineConstants>DEBUG;TRACE;;BCL;BCL45;AWS_ASYNC_API;CODE_ANALYSIS;LOCAL_FILE</DefineConstants>

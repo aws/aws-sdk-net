@@ -57,6 +57,7 @@ namespace Amazon.Redshift.Model
         private bool? _enhancedVpcRouting;
         private string _hsmClientCertificateIdentifier;
         private string _hsmConfigurationIdentifier;
+        private string _maintenanceTrackName;
         private string _masterUserPassword;
         private string _newClusterIdentifier;
         private string _nodeType;
@@ -365,6 +366,28 @@ namespace Amazon.Redshift.Model
         internal bool IsSetHsmConfigurationIdentifier()
         {
             return this._hsmConfigurationIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaintenanceTrackName. 
+        /// <para>
+        /// The name for the maintenance track that you want to assign for the cluster. This name
+        /// change is asynchronous. The new track name stays in the <code>PendingModifiedValues</code>
+        /// for the cluster until the next maintenance window. When the maintenance track changes,
+        /// the cluster is switched to the latest cluster release available for the maintenance
+        /// track. At this point, the maintenance track name is applied.
+        /// </para>
+        /// </summary>
+        public string MaintenanceTrackName
+        {
+            get { return this._maintenanceTrackName; }
+            set { this._maintenanceTrackName = value; }
+        }
+
+        // Check to see if MaintenanceTrackName property is set
+        internal bool IsSetMaintenanceTrackName()
+        {
+            return this._maintenanceTrackName != null;
         }
 
         /// <summary>

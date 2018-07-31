@@ -51,6 +51,17 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.IndexName);
             }
 
+            if(requestObject.IsSetProvisionedWriteCapacityAutoScalingSettingsUpdate())
+            {
+                context.Writer.WritePropertyName("ProvisionedWriteCapacityAutoScalingSettingsUpdate");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AutoScalingSettingsUpdateMarshaller.Instance;
+                marshaller.Marshall(requestObject.ProvisionedWriteCapacityAutoScalingSettingsUpdate, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetProvisionedWriteCapacityUnits())
             {
                 context.Writer.WritePropertyName("ProvisionedWriteCapacityUnits");

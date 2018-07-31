@@ -40,7 +40,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ReservedNodeId. 
         /// <para>
-        /// A string representing the identifier of the Reserved Node to be exchanged.
+        /// A string representing the node identifier of the DC1 Reserved Node to be exchanged.
         /// </para>
         /// </summary>
         public string ReservedNodeId
@@ -58,7 +58,9 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property TargetReservedNodeOfferingId. 
         /// <para>
-        /// The unique identifier of the Reserved Node offering to be used for the exchange.
+        /// The unique identifier of the DC2 Reserved Node offering to be used for the exchange.
+        /// You can obtain the value for the parameter by calling <a>GetReservedNodeExchangeOfferings</a>
+        /// 
         /// </para>
         /// </summary>
         public string TargetReservedNodeOfferingId

@@ -32,18 +32,18 @@ namespace Amazon.EC2.Model
     /// When you no longer want to use an On-Demand Dedicated Host it can be released. On-Demand
     /// billing is stopped and the host goes into <code>released</code> state. The host ID
     /// of Dedicated Hosts that have been released can no longer be specified in another request,
-    /// e.g., ModifyHosts. You must stop or terminate all instances on a host before it can
-    /// be released.
+    /// for example, ModifyHosts. You must stop or terminate all instances on a host before
+    /// it can be released.
     /// 
     ///  
     /// <para>
-    /// When Dedicated Hosts are released, it make take some time for them to stop counting
+    /// When Dedicated Hosts are released, it may take some time for them to stop counting
     /// toward your limit and you may receive capacity errors when trying to allocate new
-    /// Dedicated hosts. Try waiting a few minutes, and then try again.
+    /// Dedicated Hosts. Wait a few minutes and then try again.
     /// </para>
     ///  
     /// <para>
-    /// Released hosts will still appear in a <a>DescribeHosts</a> response.
+    /// Released hosts still appear in a <a>DescribeHosts</a> response.
     /// </para>
     /// </summary>
     public partial class ReleaseHostsRequest : AmazonEC2Request
@@ -53,7 +53,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property HostIds. 
         /// <para>
-        /// The IDs of the Dedicated Hosts you want to release.
+        /// The IDs of the Dedicated Hosts to release.
         /// </para>
         /// </summary>
         public List<string> HostIds

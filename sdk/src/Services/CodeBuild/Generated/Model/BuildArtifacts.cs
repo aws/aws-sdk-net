@@ -32,9 +32,28 @@ namespace Amazon.CodeBuild.Model
     /// </summary>
     public partial class BuildArtifacts
     {
+        private bool? _encryptionDisabled;
         private string _location;
         private string _md5sum;
         private string _sha256sum;
+
+        /// <summary>
+        /// Gets and sets the property EncryptionDisabled. 
+        /// <para>
+        ///  Information that tells you if encryption for build artifacts is disabled. 
+        /// </para>
+        /// </summary>
+        public bool EncryptionDisabled
+        {
+            get { return this._encryptionDisabled.GetValueOrDefault(); }
+            set { this._encryptionDisabled = value; }
+        }
+
+        // Check to see if EncryptionDisabled property is set
+        internal bool IsSetEncryptionDisabled()
+        {
+            return this._encryptionDisabled.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Location. 

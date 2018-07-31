@@ -22,6 +22,8 @@
   <ItemGroup>
     <Compile Remove="**/35/**" />
     <None Remove="**/35/**" />
+    <Compile Remove="**/obj/**" />
+    <None Remove="**/obj/**" />
     <Compile Include="..\..\CognitoSync\IntegrationTests\CognitoSync.cs" />
     <Compile Include="..\..\Lambda\IntegrationTests\LambdaTests.cs" />
   </ItemGroup>

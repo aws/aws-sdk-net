@@ -30,9 +30,11 @@ namespace Amazon.Inspector.Model
     /// <summary>
     /// Container for the parameters to the CreateAssessmentTarget operation.
     /// Creates a new assessment target using the ARN of the resource group that is generated
-    /// by <a>CreateResourceGroup</a>. If the <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_slr.html">service-linked
-    /// role</a> isn’t already registered, also creates and registers a service-linked role
-    /// to grant Amazon Inspector access to AWS Services needed to perform security assessments.
+    /// by <a>CreateResourceGroup</a>. If resourceGroupArn is not specified, all EC2 instances
+    /// in the current AWS account and region are included in the assessment target. If the
+    /// <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_slr.html">service-linked
+    /// role</a> isn’t already registered, this action also creates and registers a service-linked
+    /// role to grant Amazon Inspector access to AWS Services needed to perform security assessments.
     /// You can create up to 50 assessment targets per AWS account. You can run up to 500
     /// concurrent agents per AWS account. For more information, see <a href="http://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html">
     /// Amazon Inspector Assessment Targets</a>.
@@ -65,6 +67,8 @@ namespace Amazon.Inspector.Model
         /// Gets and sets the property ResourceGroupArn. 
         /// <para>
         /// The ARN that specifies the resource group that is used to create the assessment target.
+        /// If resourceGroupArn is not specified, all EC2 instances in the current AWS account
+        /// and region are included in the assessment target.
         /// </para>
         /// </summary>
         public string ResourceGroupArn

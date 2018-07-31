@@ -39,7 +39,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ContainerPath. 
         /// <para>
-        /// The absolute file path where the tmpfs volume will be mounted.
+        /// The absolute file path where the tmpfs volume is to be mounted.
         /// </para>
         /// </summary>
         public string ContainerPath

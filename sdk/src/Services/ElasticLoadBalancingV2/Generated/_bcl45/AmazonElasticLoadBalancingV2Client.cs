@@ -811,8 +811,8 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         ///  
         /// <para>
-        /// Alternatively, your listener is deleted when you delete the load balancer it is attached
-        /// to using <a>DeleteLoadBalancer</a>.
+        /// Alternatively, your listener is deleted when you delete the load balancer to which
+        /// it is attached, using <a>DeleteLoadBalancer</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteListener service method.</param>
@@ -2109,7 +2109,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         ///  
         /// <para>
-        /// Note that Network Load Balancers must use <code>ipv4</code>.
+        /// Network Load Balancers must use <code>ipv4</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetIpAddressType service method.</param>
@@ -2217,7 +2217,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         ///  
         /// <para>
-        /// Note that you can't specify a security group for a Network Load Balancer.
+        /// You can't specify a security group for a Network Load Balancer.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetSecurityGroups service method.</param>
@@ -2271,7 +2271,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         ///  
         /// <para>
-        /// Note that you can't change the subnets for a Network Load Balancer.
+        /// You can't change the subnets for a Network Load Balancer.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetSubnets service method.</param>

@@ -49,7 +49,7 @@ namespace Amazon.ECS.Model
     /// with the <code>networkMode</code> parameter. The available network modes correspond
     /// to those described in <a href="https://docs.docker.com/engine/reference/run/#/network-settings">Network
     /// settings</a> in the Docker run reference. If you specify the <code>awsvpc</code> network
-    /// mode, the task is allocated an Elastic Network Interface, and you must specify a <a>NetworkConfiguration</a>
+    /// mode, the task is allocated an elastic network interface, and you must specify a <a>NetworkConfiguration</a>
     /// when you create a service or run a task with the task definition. For more information,
     /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
     /// Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -92,8 +92,8 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The number of CPU units used by the task. It can be expressed as an integer using
         /// CPU units, for example <code>1024</code>, or as a string using vCPUs, for example
-        /// <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition but will be converted
-        /// to an integer indicating the CPU units when the task definition is registered.
+        /// <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String values are
+        /// converted to an integer indicating the CPU units when the task definition is registered.
         /// </para>
         ///  <note> 
         /// <para>
@@ -196,8 +196,8 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The amount of memory (in MiB) used by the task. It can be expressed as an integer
         /// using MiB, for example <code>1024</code>, or as a string using GB, for example <code>1GB</code>
-        /// or <code>1 GB</code>, in a task definition but will be converted to an integer indicating
-        /// the MiB when the task definition is registered.
+        /// or <code>1 GB</code>, in a task definition. String values are converted to an integer
+        /// indicating the MiB when the task definition is registered.
         /// </para>
         ///  <note> 
         /// <para>

@@ -190,6 +190,12 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("MaintenanceTrackName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.MaintenanceTrackName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("MasterUsername", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

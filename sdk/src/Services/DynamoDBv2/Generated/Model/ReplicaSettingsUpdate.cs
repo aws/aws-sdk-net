@@ -34,6 +34,7 @@ namespace Amazon.DynamoDBv2.Model
     {
         private string _regionName;
         private List<ReplicaGlobalSecondaryIndexSettingsUpdate> _replicaGlobalSecondaryIndexSettingsUpdate = new List<ReplicaGlobalSecondaryIndexSettingsUpdate>();
+        private AutoScalingSettingsUpdate _replicaProvisionedReadCapacityAutoScalingSettingsUpdate;
         private long? _replicaProvisionedReadCapacityUnits;
 
         /// <summary>
@@ -71,6 +72,25 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetReplicaGlobalSecondaryIndexSettingsUpdate()
         {
             return this._replicaGlobalSecondaryIndexSettingsUpdate != null && this._replicaGlobalSecondaryIndexSettingsUpdate.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicaProvisionedReadCapacityAutoScalingSettingsUpdate.
+        /// 
+        /// <para>
+        /// Autoscaling settings for managing a global table replica's read capacity units.
+        /// </para>
+        /// </summary>
+        public AutoScalingSettingsUpdate ReplicaProvisionedReadCapacityAutoScalingSettingsUpdate
+        {
+            get { return this._replicaProvisionedReadCapacityAutoScalingSettingsUpdate; }
+            set { this._replicaProvisionedReadCapacityAutoScalingSettingsUpdate = value; }
+        }
+
+        // Check to see if ReplicaProvisionedReadCapacityAutoScalingSettingsUpdate property is set
+        internal bool IsSetReplicaProvisionedReadCapacityAutoScalingSettingsUpdate()
+        {
+            return this._replicaProvisionedReadCapacityAutoScalingSettingsUpdate != null;
         }
 
         /// <summary>

@@ -66,10 +66,22 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                         unmarshalledObject.AuthenticateOidcConfig = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("FixedResponseConfig", targetDepth))
+                    {
+                        var unmarshaller = FixedResponseActionConfigUnmarshaller.Instance;
+                        unmarshalledObject.FixedResponseConfig = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Order", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
                         unmarshalledObject.Order = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("RedirectConfig", targetDepth))
+                    {
+                        var unmarshaller = RedirectActionConfigUnmarshaller.Instance;
+                        unmarshalledObject.RedirectConfig = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("TargetGroupArn", targetDepth))

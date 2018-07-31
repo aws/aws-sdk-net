@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AvailableInstanceCapacity. 
         /// <para>
-        /// The total number of instances that the Dedicated Host supports.
+        /// The total number of instances supported by the Dedicated Host.
         /// </para>
         /// </summary>
         public List<InstanceCapacity> AvailableInstanceCapacity

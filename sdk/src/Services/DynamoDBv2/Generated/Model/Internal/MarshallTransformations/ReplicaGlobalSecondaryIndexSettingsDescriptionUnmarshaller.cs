@@ -76,10 +76,22 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     unmarshalledObject.IndexStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ProvisionedReadCapacityAutoScalingSettings", targetDepth))
+                {
+                    var unmarshaller = AutoScalingSettingsDescriptionUnmarshaller.Instance;
+                    unmarshalledObject.ProvisionedReadCapacityAutoScalingSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ProvisionedReadCapacityUnits", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
                     unmarshalledObject.ProvisionedReadCapacityUnits = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ProvisionedWriteCapacityAutoScalingSettings", targetDepth))
+                {
+                    var unmarshaller = AutoScalingSettingsDescriptionUnmarshaller.Instance;
+                    unmarshalledObject.ProvisionedWriteCapacityAutoScalingSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ProvisionedWriteCapacityUnits", targetDepth))

@@ -13,7 +13,9 @@
  * permissions and limitations under the License.
  */
 
+using System;
 using System.Xml;
+using Amazon.S3.Model.Internal.MarshallTransformations;
 
 namespace Amazon.S3.Model
 {
@@ -27,17 +29,41 @@ namespace Amazon.S3.Model
         /// </summary>
         public CSVInput CSV { get; set; }
 
-        internal bool IsSetCSV()
-        {
-            return this.CSV != null;
-        }
+        /// <summary>
+        /// Specifies object's compression format. Valid values: NONE, GZIP. Default Value: NONE.
+        /// </summary>
+        public CompressionType CompressionType { get; set; } = CompressionType.None;
+
+        /// <summary>
+        /// Specifies JSON as object's input serialization format.
+        /// </summary>
+        public JSONInput JSON { get; set; }
+
+        internal bool IsSetCSV() => CSV != null;
+
+        internal bool IsSetCompressionType() => CompressionType != null;
+
+        internal bool IsSetJSON() => JSON != null;
 
         internal void Marshall(string memberName, XmlWriter xmlWriter)
         {
             xmlWriter.WriteStartElement(memberName);
+
+            if (IsSetCompressionType())
+            {
+                xmlWriter.WriteElementString("CompressionType", S3Transforms.ToXmlStringValue(CompressionType.Value));
+            }
+
+            if (IsSetCSV())
             {
                 CSV.Marshall("CSV", xmlWriter);
             }
+
+            if (IsSetJSON())
+            {
+                JSON.Marshall("JSON", xmlWriter);
+            }
+
             xmlWriter.WriteEndElement();
         }
     }

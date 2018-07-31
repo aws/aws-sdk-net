@@ -109,6 +109,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.LaunchTemplateConfigs.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("onDemandOptions", targetDepth))
+                    {
+                        var unmarshaller = OnDemandOptionsUnmarshaller.Instance;
+                        unmarshalledObject.OnDemandOptions = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("replaceUnhealthyInstances", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;

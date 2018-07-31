@@ -63,7 +63,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Attachments. 
         /// <para>
-        /// The Elastic Network Adapter associated with the task if the task uses the <code>awsvpc</code>
+        /// The elastic network adapter associated with the task if the task uses the <code>awsvpc</code>
         /// network mode.
         /// </para>
         /// </summary>
@@ -174,8 +174,8 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The number of CPU units used by the task. It can be expressed as an integer using
         /// CPU units, for example <code>1024</code>, or as a string using vCPUs, for example
-        /// <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition but is converted
-        /// to an integer indicating the CPU units when the task definition is registered.
+        /// <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String values are
+        /// converted to an integer indicating the CPU units when the task definition is registered.
         /// </para>
         ///  
         /// <para>
@@ -373,8 +373,8 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The amount of memory (in MiB) used by the task. It can be expressed as an integer
         /// using MiB, for example <code>1024</code>, or as a string using GB, for example <code>1GB</code>
-        /// or <code>1 GB</code>, in a task definition but is converted to an integer indicating
-        /// the MiB when the task definition is registered.
+        /// or <code>1 GB</code>, in a task definition. String values are converted to an integer
+        /// indicating the MiB when the task definition is registered.
         /// </para>
         ///  
         /// <para>
@@ -578,7 +578,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property StoppingAt. 
         /// <para>
-        /// The Unix time stamp for when the task will stop (transitions from the <code>RUNNING</code>
+        /// The Unix time stamp for when the task stops (transitions from the <code>RUNNING</code>
         /// state to <code>STOPPED</code>).
         /// </para>
         /// </summary>

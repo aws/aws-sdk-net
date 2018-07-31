@@ -120,8 +120,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property NetworkConfiguration. 
         /// <para>
-        /// The VPC subnet and security group configuration for tasks that receive their own Elastic
-        /// Network Interface by using the <code>awsvpc</code> networking mode.
+        /// The VPC subnet and security group configuration for tasks that receive their own elastic
+        /// network interface by using the <code>awsvpc</code> networking mode.
         /// </para>
         /// </summary>
         public NetworkConfiguration NetworkConfiguration

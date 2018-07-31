@@ -31,8 +31,8 @@ namespace Amazon.Inspector.Model
     /// Container for the parameters to the CreateAssessmentTemplate operation.
     /// Creates an assessment template for the assessment target that is specified by the
     /// ARN of the assessment target. If the <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_slr.html">service-linked
-    /// role</a> isn’t already registered, also creates and registers a service-linked role
-    /// to grant Amazon Inspector access to AWS Services needed to perform security assessments.
+    /// role</a> isn’t already registered, this action also creates and registers a service-linked
+    /// role to grant Amazon Inspector access to AWS Services needed to perform security assessments.
     /// </summary>
     public partial class CreateAssessmentTemplateRequest : AmazonInspectorRequest
     {
@@ -85,8 +85,7 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property DurationInSeconds. 
         /// <para>
-        /// The duration of the assessment run in seconds. The default value is 3600 seconds (one
-        /// hour).
+        /// The duration of the assessment run in seconds.
         /// </para>
         /// </summary>
         public int DurationInSeconds

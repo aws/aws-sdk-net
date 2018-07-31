@@ -57,8 +57,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
 
-        [TestMethod]
-        [TestCategory("IdentityManagement")]
+        //[TestMethod]
+        //[TestCategory("IdentityManagement")]
         public void TestPrincipalPolicies()
         {
             string groupname = "sdk-testgroup-" + DateTime.Now.Ticks;

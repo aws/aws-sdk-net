@@ -235,8 +235,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property NetworkConfiguration. 
         /// <para>
-        /// The VPC subnet and security group configuration for tasks that receive their own Elastic
-        /// Network Interface by using the <code>awsvpc</code> networking mode.
+        /// The VPC subnet and security group configuration for tasks that receive their own elastic
+        /// network interface by using the <code>awsvpc</code> networking mode.
         /// </para>
         /// </summary>
         public NetworkConfiguration NetworkConfiguration
@@ -406,7 +406,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property ServiceArn. 
         /// <para>
         /// The ARN that identifies the service. The ARN contains the <code>arn:aws:ecs</code>
-        /// namespace, followed by the region of the service, the AWS account ID of the service
+        /// namespace, followed by the Region of the service, the AWS account ID of the service
         /// owner, the <code>service</code> namespace, and then the service name. For example,
         /// <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i> </code>.
         /// </para>
@@ -428,8 +428,8 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens,
         /// and underscores are allowed. Service names must be unique within a cluster, but you
-        /// can have similarly named services in multiple clusters within a region or across multiple
-        /// regions.
+        /// can have similarly named services in multiple clusters within a Region or across multiple
+        /// Regions.
         /// </para>
         /// </summary>
         public string ServiceName

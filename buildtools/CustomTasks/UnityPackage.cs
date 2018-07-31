@@ -90,7 +90,24 @@ namespace CustomTasks
                 if (!Directory.Exists(pluginsFolder))
                     throw new DirectoryNotFoundException("Cannot find Plugins Directory");
 
-                CopyDirectory(pluginsFolder, Path.Combine(UnityTempProjectPath, @"Assets", @"Plugins"));
+                //copy common plugins folder. The binaries under common folder will be copied for all services
+                var commonFolder = Path.Combine(pluginsFolder, "Common");
+                if (!Directory.Exists(commonFolder))
+                    throw new DirectoryNotFoundException(@"Cannot find Plugins\Common Directory");
+                CopyDirectory(commonFolder, Path.Combine(UnityTempProjectPath, @"Assets", @"Plugins"));
+
+
+                //copy files specified for current service
+                var serviceFolder = Path.Combine(pluginsFolder, ServiceName);
+                if (!Directory.Exists(serviceFolder))
+                {
+                    Log.LogMessage(@"Plugin folder for service {0} is not present. The default folder will be used", ServiceName);
+                    //if the service folder is not present, use the default folder
+                    serviceFolder = Path.Combine(pluginsFolder, "Default");
+                    if (!Directory.Exists(serviceFolder))
+                        throw new DirectoryNotFoundException(@"Cannot find Plugins\Default Directory");
+                }
+                CopyDirectory(serviceFolder, Path.Combine(UnityTempProjectPath, @"Assets", @"Plugins"));
 
                 //create SDK Directory
                 var assetsFolder = Path.Combine(UnityTempProjectPath, @"Assets");

@@ -89,6 +89,17 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.GlobalTableName);
                 }
 
+                if(publicRequest.IsSetGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate())
+                {
+                    context.Writer.WritePropertyName("GlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AutoScalingSettingsUpdateMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.GlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetGlobalTableProvisionedWriteCapacityUnits())
                 {
                     context.Writer.WritePropertyName("GlobalTableProvisionedWriteCapacityUnits");

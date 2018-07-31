@@ -1865,6 +1865,56 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type FleetOnDemandAllocationStrategy.
+    /// </summary>
+    public class FleetOnDemandAllocationStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LowestPrice for FleetOnDemandAllocationStrategy
+        /// </summary>
+        public static readonly FleetOnDemandAllocationStrategy LowestPrice = new FleetOnDemandAllocationStrategy("lowest-price");
+        /// <summary>
+        /// Constant Prioritized for FleetOnDemandAllocationStrategy
+        /// </summary>
+        public static readonly FleetOnDemandAllocationStrategy Prioritized = new FleetOnDemandAllocationStrategy("prioritized");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FleetOnDemandAllocationStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FleetOnDemandAllocationStrategy FindValue(string value)
+        {
+            return FindValue<FleetOnDemandAllocationStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FleetOnDemandAllocationStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FleetStateCode.
     /// </summary>
     public class FleetStateCode : ConstantClass
@@ -3285,6 +3335,78 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType R4Xlarge = new InstanceType("r4.xlarge");
         /// <summary>
+        /// Constant R512xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R512xlarge = new InstanceType("r5.12xlarge");
+        /// <summary>
+        /// Constant R516xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R516xlarge = new InstanceType("r5.16xlarge");
+        /// <summary>
+        /// Constant R524xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R524xlarge = new InstanceType("r5.24xlarge");
+        /// <summary>
+        /// Constant R52xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R52xlarge = new InstanceType("r5.2xlarge");
+        /// <summary>
+        /// Constant R54xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R54xlarge = new InstanceType("r5.4xlarge");
+        /// <summary>
+        /// Constant R58xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R58xlarge = new InstanceType("r5.8xlarge");
+        /// <summary>
+        /// Constant R5d12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5d12xlarge = new InstanceType("r5d.12xlarge");
+        /// <summary>
+        /// Constant R5d16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5d16xlarge = new InstanceType("r5d.16xlarge");
+        /// <summary>
+        /// Constant R5d24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5d24xlarge = new InstanceType("r5d.24xlarge");
+        /// <summary>
+        /// Constant R5d2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5d2xlarge = new InstanceType("r5d.2xlarge");
+        /// <summary>
+        /// Constant R5d4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5d4xlarge = new InstanceType("r5d.4xlarge");
+        /// <summary>
+        /// Constant R5d8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5d8xlarge = new InstanceType("r5d.8xlarge");
+        /// <summary>
+        /// Constant R5dLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5dLarge = new InstanceType("r5d.large");
+        /// <summary>
+        /// Constant R5dMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5dMetal = new InstanceType("r5d.metal");
+        /// <summary>
+        /// Constant R5dXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5dXlarge = new InstanceType("r5d.xlarge");
+        /// <summary>
+        /// Constant R5Large for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5Large = new InstanceType("r5.large");
+        /// <summary>
+        /// Constant R5Metal for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5Metal = new InstanceType("r5.metal");
+        /// <summary>
+        /// Constant R5Xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5Xlarge = new InstanceType("r5.xlarge");
+        /// <summary>
         /// Constant T1Micro for InstanceType
         /// </summary>
         public static readonly InstanceType T1Micro = new InstanceType("t1.micro");
@@ -3348,6 +3470,30 @@ namespace Amazon.EC2
         /// Constant X1eXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType X1eXlarge = new InstanceType("x1e.xlarge");
+        /// <summary>
+        /// Constant Z1d12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Z1d12xlarge = new InstanceType("z1d.12xlarge");
+        /// <summary>
+        /// Constant Z1d2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Z1d2xlarge = new InstanceType("z1d.2xlarge");
+        /// <summary>
+        /// Constant Z1d3xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Z1d3xlarge = new InstanceType("z1d.3xlarge");
+        /// <summary>
+        /// Constant Z1d6xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Z1d6xlarge = new InstanceType("z1d.6xlarge");
+        /// <summary>
+        /// Constant Z1dLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Z1dLarge = new InstanceType("z1d.large");
+        /// <summary>
+        /// Constant Z1dXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Z1dXlarge = new InstanceType("z1d.xlarge");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -4170,6 +4316,56 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OfferingTypeValues(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OnDemandAllocationStrategy.
+    /// </summary>
+    public class OnDemandAllocationStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LowestPrice for OnDemandAllocationStrategy
+        /// </summary>
+        public static readonly OnDemandAllocationStrategy LowestPrice = new OnDemandAllocationStrategy("lowestPrice");
+        /// <summary>
+        /// Constant Prioritized for OnDemandAllocationStrategy
+        /// </summary>
+        public static readonly OnDemandAllocationStrategy Prioritized = new OnDemandAllocationStrategy("prioritized");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OnDemandAllocationStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OnDemandAllocationStrategy FindValue(string value)
+        {
+            return FindValue<OnDemandAllocationStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OnDemandAllocationStrategy(string value)
         {
             return FindValue(value);
         }

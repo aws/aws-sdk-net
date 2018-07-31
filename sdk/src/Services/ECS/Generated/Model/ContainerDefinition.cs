@@ -57,6 +57,7 @@ namespace Amazon.ECS.Model
         private List<PortMapping> _portMappings = new List<PortMapping>();
         private bool? _privileged;
         private bool? _readonlyRootFilesystem;
+        private RepositoryCredentials _repositoryCredentials;
         private List<Ulimit> _ulimits = new List<Ulimit>();
         private string _user;
         private List<VolumeFrom> _volumesFrom = new List<VolumeFrom>();
@@ -405,7 +406,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code>
         /// file on the container. If using the Fargate launch type, this may be used to list
-        /// non-Fargate hosts you want the container to talk to. This parameter maps to <code>ExtraHosts</code>
+        /// non-Fargate hosts to which the container can talk. This parameter maps to <code>ExtraHosts</code>
         /// in the <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
         /// Remote API</a> and the <code>--add-host</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
@@ -835,8 +836,9 @@ namespace Amazon.ECS.Model
         /// <para>
         /// After a task reaches the <code>RUNNING</code> status, manual and automatic host and
         /// container port assignments are visible in the <b>Network Bindings</b> section of a
-        /// container description for a selected task in the Amazon ECS console, or the <code>networkBindings</code>
-        /// section <a>DescribeTasks</a> responses.
+        /// container description for a selected task in the Amazon ECS console. The assignments
+        /// are also visible in the <code>networkBindings</code> section <a>DescribeTasks</a>
+        /// responses.
         /// </para>
         ///  </note>
         /// </summary>
@@ -905,6 +907,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetReadonlyRootFilesystem()
         {
             return this._readonlyRootFilesystem.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RepositoryCredentials. 
+        /// <para>
+        /// The private repository authentication credentials to use.
+        /// </para>
+        /// </summary>
+        public RepositoryCredentials RepositoryCredentials
+        {
+            get { return this._repositoryCredentials; }
+            set { this._repositoryCredentials = value; }
+        }
+
+        // Check to see if RepositoryCredentials property is set
+        internal bool IsSetRepositoryCredentials()
+        {
+            return this._repositoryCredentials != null;
         }
 
         /// <summary>

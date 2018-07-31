@@ -64,6 +64,7 @@ namespace Amazon.Redshift.Model
         private string _hsmConfigurationIdentifier;
         private List<string> _iamRoles = new List<string>();
         private string _kmsKeyId;
+        private string _maintenanceTrackName;
         private string _nodeType;
         private string _ownerAccount;
         private int? _port;
@@ -427,6 +428,29 @@ namespace Amazon.Redshift.Model
         internal bool IsSetKmsKeyId()
         {
             return this._kmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaintenanceTrackName. 
+        /// <para>
+        /// The name of the maintenance track for the restored cluster. When you take a snapshot,
+        /// the snapshot inherits the <code>MaintenanceTrack</code> value from the cluster. The
+        /// snapshot might be on a different track than the cluster that was the source for the
+        /// snapshot. For example, suppose that you take a snapshot of a cluster that is on the
+        /// current track and then change the cluster to be on the trailing track. In this case,
+        /// the snapshot and the source cluster are on different tracks.
+        /// </para>
+        /// </summary>
+        public string MaintenanceTrackName
+        {
+            get { return this._maintenanceTrackName; }
+            set { this._maintenanceTrackName = value; }
+        }
+
+        // Check to see if MaintenanceTrackName property is set
+        internal bool IsSetMaintenanceTrackName()
+        {
+            return this._maintenanceTrackName != null;
         }
 
         /// <summary>

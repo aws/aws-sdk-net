@@ -46,7 +46,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property HostIdSet. 
         /// <para>
-        /// The ID/s of the Dedicated Host/s that the reservation will be associated with.
+        /// The IDs of the Dedicated Hosts with which the reservation is associated.
         /// </para>
         /// </summary>
         public List<string> HostIdSet

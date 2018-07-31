@@ -82,6 +82,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.KeyId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Labels", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Labels = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastModifiedDate", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

@@ -24,12 +24,12 @@
     <None Remove="**/35/**" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Remove="**/obj/**"/>
+    <Compile Remove="**/obj/**" />
     <None Remove="**/obj/**" />
   </ItemGroup>
   
   <ItemGroup>
-    <Compile Include="../Services/*/IntegrationTests/*.cs"/>
+    <Compile Include="../Services/*/IntegrationTests/*.cs" />
   </ItemGroup>
   
   <ItemGroup>
@@ -128,4 +128,13 @@
     <EmbeddedResource Include="Tests\CloudTrailBucketPolicy.json" />
     <EmbeddedResource Include="Tests\ListObjectsResponse.xml" />
   </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="..\Services\S3\IntegrationTests\EmbeddedResource\*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
+  </ItemGroup>
+
 </Project>

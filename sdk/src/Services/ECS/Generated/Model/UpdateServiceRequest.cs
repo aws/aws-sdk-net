@@ -283,7 +283,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property PlatformVersion. 
         /// <para>
-        /// The platform version you want to update your service to run.
+        /// The platform version that your service should run.
         /// </para>
         /// </summary>
         public string PlatformVersion

@@ -1730,4 +1730,65 @@ namespace Amazon.S3
             return FindValue(value);
         }
     }
+
+    /// <summary>
+    /// The type of JSON.
+    /// </summary>
+    public sealed class JsonType : ConstantClass
+    {
+        public static readonly JsonType Document = new JsonType("DOCUMENT");
+        public static readonly JsonType Lines = new JsonType("LINES");
+
+        private JsonType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the JsonType instance for the string value
+        /// </summary>
+        public static JsonType FindValue(string value)
+        {
+            return FindValue<JsonType>(value);
+        }
+
+        /// <summary>
+        /// Converts the string to JsonType instance
+        /// </summary>
+        public static implicit operator JsonType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Specifies object's compression format.
+    /// </summary>
+    public sealed class CompressionType : ConstantClass
+    {
+        public static readonly CompressionType None = new CompressionType("NONE");
+        public static readonly CompressionType Gzip = new CompressionType("GZIP");
+        public static readonly CompressionType Bzip2 = new CompressionType("BZIP2");
+
+        private CompressionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the CompressionType instance for the string value
+        /// </summary>
+        public static CompressionType FindValue(string value)
+        {
+            return FindValue<CompressionType>(value);
+        }
+
+        /// <summary>
+        /// Converts the string to CompressionType instance
+        /// </summary>
+        public static implicit operator CompressionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
 }

@@ -38,6 +38,7 @@ namespace Amazon.CodeBuild.Model
         private StatusType _buildStatus;
         private ProjectCache _cache;
         private string _currentPhase;
+        private string _encryptionKey;
         private DateTime? _endTime;
         private ProjectEnvironment _environment;
         private string _id;
@@ -184,6 +185,30 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetCurrentPhase()
         {
             return this._currentPhase != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionKey. 
+        /// <para>
+        /// The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for
+        /// encrypting the build output artifacts.
+        /// </para>
+        ///  
+        /// <para>
+        /// This is expressed either as the CMK's Amazon Resource Name (ARN) or, if specified,
+        /// the CMK's alias (using the format <code>alias/<i>alias-name</i> </code>).
+        /// </para>
+        /// </summary>
+        public string EncryptionKey
+        {
+            get { return this._encryptionKey; }
+            set { this._encryptionKey = value; }
+        }
+
+        // Check to see if EncryptionKey property is set
+        internal bool IsSetEncryptionKey()
+        {
+            return this._encryptionKey != null;
         }
 
         /// <summary>

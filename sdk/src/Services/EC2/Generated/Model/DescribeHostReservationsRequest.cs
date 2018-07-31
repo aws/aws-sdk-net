@@ -29,8 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeHostReservations operation.
-    /// Describes Dedicated Host Reservations which are associated with Dedicated Hosts in
-    /// your account.
+    /// Describes reservations that are associated with Dedicated Hosts in your account.
     /// </summary>
     public partial class DescribeHostReservationsRequest : AmazonEC2Request
     {
@@ -46,7 +45,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>instance-family</code> - The instance family (e.g., <code>m4</code>).
+        ///  <code>instance-family</code> - The instance family (for example, <code>m4</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -95,8 +94,8 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The maximum number of results to return for the request in a single page. The remaining
         /// results can be seen by sending another request with the returned <code>nextToken</code>
-        /// value. This value can be between 5 and 500; if <code>maxResults</code> is given a
-        /// larger value than 500, you will receive an error.
+        /// value. This value can be between 5 and 500.If <code>maxResults</code> is given a larger
+        /// value than 500, you receive an error.
         /// </para>
         /// </summary>
         public int MaxResults

@@ -39,6 +39,11 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The VPC subnets and security groups associated with a task.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// All specified subnets and security groups must be from the same VPC.
+        /// </para>
+        ///  </note>
         /// </summary>
         public AwsVpcConfiguration AwsvpcConfiguration
         {

@@ -41,11 +41,7 @@ namespace Amazon.EC2.Model
     /// This action is not applicable for Linux/Unix instances or Windows instances that are
     /// backed by Amazon EBS.
     /// </para>
-    ///  </note> 
-    /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/Creating_InstanceStoreBacked_WinAMI.html">Creating
-    /// an Instance Store-Backed Windows AMI</a>.
-    /// </para>
+    ///  </note>
     /// </summary>
     public partial class BundleInstanceRequest : AmazonEC2Request
     {

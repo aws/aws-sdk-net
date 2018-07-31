@@ -57,7 +57,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Actions. 
         /// <para>
-        /// The actions. Each rule must include one forward action.
+        /// The actions. Each rule must include exactly one of the following types of actions:
+        /// <code>forward</code>, <code>fixed-response</code>, or <code>redirect</code>.
         /// </para>
         ///  
         /// <para>
@@ -65,14 +66,24 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  
         /// <para>
-        /// If the action type is <code>authenticate-oidc</code>, you can use an identity provider
-        /// that is OpenID Connect (OIDC) compliant to authenticate users as they access your
-        /// application.
+        /// [HTTPS listener] If the action type is <code>authenticate-oidc</code>, you can use
+        /// an identity provider that is OpenID Connect (OIDC) compliant to authenticate users
+        /// as they access your application.
         /// </para>
         ///  
         /// <para>
-        /// If the action type is <code>authenticate-cognito</code>, you can use Amazon Cognito
-        /// to authenticate users as they access your application.
+        /// [HTTPS listener] If the action type is <code>authenticate-cognito</code>, you can
+        /// use Amazon Cognito to authenticate users as they access your application.
+        /// </para>
+        ///  
+        /// <para>
+        /// [Application Load Balancer] If the action type is <code>redirect</code>, you can redirect
+        /// HTTP and HTTPS requests.
+        /// </para>
+        ///  
+        /// <para>
+        /// [Application Load Balancer] If the action type is <code>fixed-response</code>, you
+        /// can return a custom HTTP response.
         /// </para>
         /// </summary>
         public List<Action> Actions
@@ -96,8 +107,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <para>
         /// If the field name is <code>host-header</code>, you can specify a single host name
         /// (for example, my.example.com). A host name is case insensitive, can be up to 128 characters
-        /// in length, and can contain any of the following characters. Note that you can include
-        /// up to three wildcard characters.
+        /// in length, and can contain any of the following characters. You can include up to
+        /// three wildcard characters.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -118,8 +129,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         ///  </li> </ul> 
         /// <para>
         /// If the field name is <code>path-pattern</code>, you can specify a single path pattern.
-        /// A path pattern is case sensitive, can be up to 128 characters in length, and can contain
-        /// any of the following characters. Note that you can include up to three wildcard characters.
+        /// A path pattern is case-sensitive, can be up to 128 characters in length, and can contain
+        /// any of the following characters. You can include up to three wildcard characters.
         /// </para>
         ///  <ul> <li> 
         /// <para>

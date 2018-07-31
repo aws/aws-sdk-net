@@ -100,6 +100,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     unmarshalledObject.CurrentPhase = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("encryptionKey", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EncryptionKey = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("endTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

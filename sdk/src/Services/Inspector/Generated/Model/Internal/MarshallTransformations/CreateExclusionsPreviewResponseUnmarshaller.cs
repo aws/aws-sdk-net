@@ -92,6 +92,10 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
             {
                 return new PreviewGenerationInProgressException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceTemporarilyUnavailableException"))
+            {
+                return new ServiceTemporarilyUnavailableException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonInspectorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 

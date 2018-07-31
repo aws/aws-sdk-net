@@ -34,7 +34,9 @@ namespace Amazon.DynamoDBv2.Model
     {
         private string _regionName;
         private List<ReplicaGlobalSecondaryIndexSettingsDescription> _replicaGlobalSecondaryIndexSettings = new List<ReplicaGlobalSecondaryIndexSettingsDescription>();
+        private AutoScalingSettingsDescription _replicaProvisionedReadCapacityAutoScalingSettings;
         private long? _replicaProvisionedReadCapacityUnits;
+        private AutoScalingSettingsDescription _replicaProvisionedWriteCapacityAutoScalingSettings;
         private long? _replicaProvisionedWriteCapacityUnits;
         private ReplicaStatus _replicaStatus;
 
@@ -75,6 +77,24 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ReplicaProvisionedReadCapacityAutoScalingSettings. 
+        /// <para>
+        /// Autoscaling settings for a global table replica's read capacity units.
+        /// </para>
+        /// </summary>
+        public AutoScalingSettingsDescription ReplicaProvisionedReadCapacityAutoScalingSettings
+        {
+            get { return this._replicaProvisionedReadCapacityAutoScalingSettings; }
+            set { this._replicaProvisionedReadCapacityAutoScalingSettings = value; }
+        }
+
+        // Check to see if ReplicaProvisionedReadCapacityAutoScalingSettings property is set
+        internal bool IsSetReplicaProvisionedReadCapacityAutoScalingSettings()
+        {
+            return this._replicaProvisionedReadCapacityAutoScalingSettings != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ReplicaProvisionedReadCapacityUnits. 
         /// <para>
         /// The maximum number of strongly consistent reads consumed per second before DynamoDB
@@ -92,6 +112,24 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetReplicaProvisionedReadCapacityUnits()
         {
             return this._replicaProvisionedReadCapacityUnits.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicaProvisionedWriteCapacityAutoScalingSettings. 
+        /// <para>
+        /// AutoScaling settings for a global table replica's write capacity units.
+        /// </para>
+        /// </summary>
+        public AutoScalingSettingsDescription ReplicaProvisionedWriteCapacityAutoScalingSettings
+        {
+            get { return this._replicaProvisionedWriteCapacityAutoScalingSettings; }
+            set { this._replicaProvisionedWriteCapacityAutoScalingSettings = value; }
+        }
+
+        // Check to see if ReplicaProvisionedWriteCapacityAutoScalingSettings property is set
+        internal bool IsSetReplicaProvisionedWriteCapacityAutoScalingSettings()
+        {
+            return this._replicaProvisionedWriteCapacityAutoScalingSettings != null;
         }
 
         /// <summary>

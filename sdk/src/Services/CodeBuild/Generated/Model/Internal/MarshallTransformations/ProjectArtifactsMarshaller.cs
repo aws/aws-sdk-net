@@ -45,6 +45,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ProjectArtifacts requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetEncryptionDisabled())
+            {
+                context.Writer.WritePropertyName("encryptionDisabled");
+                context.Writer.Write(requestObject.EncryptionDisabled);
+            }
+
             if(requestObject.IsSetLocation())
             {
                 context.Writer.WritePropertyName("location");

@@ -240,8 +240,6 @@
         "UploadPartCopy": {
             "name": "CopyPart"
         },
-
-
         "GetBucketNotification": {
             "exclude": true
         },
@@ -254,10 +252,6 @@
         "PutBucketNotification": {
             "exclude": true
         },
-        "SelectObjectContent": {
-          "exclude": true
-        },
-
         "PutBucketNotificationConfiguration": {
             "name": "PutBucketNotification"
         },
@@ -270,7 +264,6 @@
         "GetBucketNotificationConfiguration": {
             "name": "GetBucketNotification"
         },
-
         "GetBucketReplication": {
             "documentation": "Retrieves the replication configuration for the given Amazon S3 bucket."
         }

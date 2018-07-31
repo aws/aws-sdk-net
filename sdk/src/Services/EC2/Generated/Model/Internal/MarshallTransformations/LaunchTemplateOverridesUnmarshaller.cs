@@ -66,6 +66,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("priority", targetDepth))
+                    {
+                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        unmarshalledObject.Priority = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("spotPrice", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

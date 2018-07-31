@@ -137,7 +137,7 @@ namespace Amazon.S3.Util
                     if (!found)
                     {
                         var jsonCond = new JsonData();
-                        jsonCond.SetJsonType(JsonType.Object);
+                        jsonCond.SetJsonType(ThirdParty.Json.LitJson.JsonType.Object);
                         jsonCond[newCond.Key] = newCond.Value;
                         jsonConditions.Add(jsonCond);
                     }
@@ -166,7 +166,7 @@ namespace Amazon.S3.Util
                 if (!found)
                 {
                     var tokenCondition = new JsonData();
-                    tokenCondition.SetJsonType(JsonType.Object);
+                    tokenCondition.SetJsonType(ThirdParty.Json.LitJson.JsonType.Object);
                     tokenCondition[S3Constants.PostFormDataSecurityToken] = token;
                     conditions.Add(tokenCondition);
                 }

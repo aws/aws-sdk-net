@@ -34,6 +34,7 @@ namespace Amazon.DynamoDBv2.Model
     public partial class ReplicaGlobalSecondaryIndexSettingsUpdate
     {
         private string _indexName;
+        private AutoScalingSettingsUpdate _provisionedReadCapacityAutoScalingSettingsUpdate;
         private long? _provisionedReadCapacityUnits;
 
         /// <summary>
@@ -53,6 +54,25 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetIndexName()
         {
             return this._indexName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProvisionedReadCapacityAutoScalingSettingsUpdate. 
+        /// <para>
+        /// Autoscaling settings for managing a global secondary index replica's read capacity
+        /// units.
+        /// </para>
+        /// </summary>
+        public AutoScalingSettingsUpdate ProvisionedReadCapacityAutoScalingSettingsUpdate
+        {
+            get { return this._provisionedReadCapacityAutoScalingSettingsUpdate; }
+            set { this._provisionedReadCapacityAutoScalingSettingsUpdate = value; }
+        }
+
+        // Check to see if ProvisionedReadCapacityAutoScalingSettingsUpdate property is set
+        internal bool IsSetProvisionedReadCapacityAutoScalingSettingsUpdate()
+        {
+            return this._provisionedReadCapacityAutoScalingSettingsUpdate != null;
         }
 
         /// <summary>

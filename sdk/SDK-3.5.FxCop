@@ -326,6 +326,8 @@
             <Namespace Name="Amazon.Runtime" Analyze="True" AnalyzeAllChildren="True" />
             <Namespace Name="Amazon.Runtime.CredentialManagement" Analyze="True" AnalyzeAllChildren="True" />
             <Namespace Name="Amazon.Runtime.CredentialManagement.Internal" Analyze="True" AnalyzeAllChildren="True" />
+            <Namespace Name="Amazon.Runtime.EventStreams" Analyze="True" AnalyzeAllChildren="True" />
+            <Namespace Name="Amazon.Runtime.EventStreams.Internal" Analyze="True" AnalyzeAllChildren="True" />
             <Namespace Name="Amazon.Runtime.Internal" Analyze="True" AnalyzeAllChildren="True" />
             <Namespace Name="Amazon.Runtime.Internal.Auth" Analyze="True" AnalyzeAllChildren="True" />
             <Namespace Name="Amazon.Runtime.Internal.Settings" Analyze="True" AnalyzeAllChildren="True" />

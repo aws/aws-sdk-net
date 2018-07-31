@@ -90,6 +90,12 @@
     <Compile Include="Amazon.Runtime\Credentials\_pcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.Runtime\EventStreams\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Runtime\EventStreams\Internal\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.Runtime\Internal\*.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -115,6 +121,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.Runtime\Internal\Util\_pcl-sl\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Runtime\Internal\_async\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.Runtime\Pipeline\*.cs">

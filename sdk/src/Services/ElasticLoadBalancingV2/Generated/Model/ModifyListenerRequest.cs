@@ -52,7 +52,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property Certificates. 
         /// <para>
         /// [HTTPS listeners] The default SSL server certificate. You must provide exactly one
-        /// certificate. To create a certificate list, use <a>AddListenerCertificates</a>.
+        /// default certificate. To create a certificate list, use <a>AddListenerCertificates</a>.
         /// </para>
         /// </summary>
         public List<Certificate> Certificates
@@ -70,7 +70,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property DefaultActions. 
         /// <para>
-        /// The actions for the default rule. The rule must include one forward action.
+        /// The actions for the default rule. The rule must include one forward action or one
+        /// or more fixed-response actions.
         /// </para>
         ///  
         /// <para>
@@ -80,14 +81,24 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  
         /// <para>
-        /// If the action type is <code>authenticate-oidc</code>, you can use an identity provider
-        /// that is OpenID Connect (OIDC) compliant to authenticate users as they access your
-        /// application.
+        /// [HTTPS listener] If the action type is <code>authenticate-oidc</code>, you can use
+        /// an identity provider that is OpenID Connect (OIDC) compliant to authenticate users
+        /// as they access your application.
         /// </para>
         ///  
         /// <para>
-        /// If the action type is <code>authenticate-cognito</code>, you can use Amazon Cognito
-        /// to authenticate users as they access your application.
+        /// [HTTPS listener] If the action type is <code>authenticate-cognito</code>, you can
+        /// use Amazon Cognito to authenticate users as they access your application.
+        /// </para>
+        ///  
+        /// <para>
+        /// [Application Load Balancer] If the action type is <code>redirect</code>, you can redirect
+        /// HTTP and HTTPS requests.
+        /// </para>
+        ///  
+        /// <para>
+        /// [Application Load Balancer] If the action type is <code>fixed-response</code>, you
+        /// can return a custom HTTP response.
         /// </para>
         /// </summary>
         public List<Action> DefaultActions

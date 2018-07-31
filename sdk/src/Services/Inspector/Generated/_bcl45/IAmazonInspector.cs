@@ -66,6 +66,9 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.ServiceTemporarilyUnavailableException">
+        /// The serice is temporary unavailable.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/AddAttributesToFindings">REST API Reference for AddAttributesToFindings Operation</seealso>
         AddAttributesToFindingsResponse AddAttributesToFindings(AddAttributesToFindingsRequest request);
 
@@ -89,9 +92,11 @@ namespace Amazon.Inspector
 
         /// <summary>
         /// Creates a new assessment target using the ARN of the resource group that is generated
-        /// by <a>CreateResourceGroup</a>. If the <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_slr.html">service-linked
-        /// role</a> isn’t already registered, also creates and registers a service-linked role
-        /// to grant Amazon Inspector access to AWS Services needed to perform security assessments.
+        /// by <a>CreateResourceGroup</a>. If resourceGroupArn is not specified, all EC2 instances
+        /// in the current AWS account and region are included in the assessment target. If the
+        /// <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_slr.html">service-linked
+        /// role</a> isn’t already registered, this action also creates and registers a service-linked
+        /// role to grant Amazon Inspector access to AWS Services needed to perform security assessments.
         /// You can create up to 50 assessment targets per AWS account. You can run up to 500
         /// concurrent agents per AWS account. For more information, see <a href="http://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html">
         /// Amazon Inspector Assessment Targets</a>.
@@ -121,6 +126,9 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.ServiceTemporarilyUnavailableException">
+        /// The serice is temporary unavailable.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateAssessmentTarget">REST API Reference for CreateAssessmentTarget Operation</seealso>
         CreateAssessmentTargetResponse CreateAssessmentTarget(CreateAssessmentTargetRequest request);
 
@@ -145,8 +153,8 @@ namespace Amazon.Inspector
         /// <summary>
         /// Creates an assessment template for the assessment target that is specified by the
         /// ARN of the assessment target. If the <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_slr.html">service-linked
-        /// role</a> isn’t already registered, also creates and registers a service-linked role
-        /// to grant Amazon Inspector access to AWS Services needed to perform security assessments.
+        /// role</a> isn’t already registered, this action also creates and registers a service-linked
+        /// role to grant Amazon Inspector access to AWS Services needed to perform security assessments.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAssessmentTemplate service method.</param>
         /// 
@@ -168,6 +176,9 @@ namespace Amazon.Inspector
         /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.ServiceTemporarilyUnavailableException">
+        /// The serice is temporary unavailable.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateAssessmentTemplate">REST API Reference for CreateAssessmentTemplate Operation</seealso>
         CreateAssessmentTemplateResponse CreateAssessmentTemplate(CreateAssessmentTemplateRequest request);
@@ -216,6 +227,9 @@ namespace Amazon.Inspector
         /// The request is rejected. The specified assessment template is currently generating
         /// an exclusions preview.
         /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.ServiceTemporarilyUnavailableException">
+        /// The serice is temporary unavailable.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateExclusionsPreview">REST API Reference for CreateExclusionsPreview Operation</seealso>
         CreateExclusionsPreviewResponse CreateExclusionsPreview(CreateExclusionsPreviewRequest request);
 
@@ -259,6 +273,9 @@ namespace Amazon.Inspector
         /// <exception cref="Amazon.Inspector.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.ServiceTemporarilyUnavailableException">
+        /// The serice is temporary unavailable.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateResourceGroup">REST API Reference for CreateResourceGroup Operation</seealso>
         CreateResourceGroupResponse CreateResourceGroup(CreateResourceGroupRequest request);
@@ -304,6 +321,9 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.ServiceTemporarilyUnavailableException">
+        /// The serice is temporary unavailable.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DeleteAssessmentRun">REST API Reference for DeleteAssessmentRun Operation</seealso>
         DeleteAssessmentRunResponse DeleteAssessmentRun(DeleteAssessmentRunRequest request);
 
@@ -348,6 +368,9 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.ServiceTemporarilyUnavailableException">
+        /// The serice is temporary unavailable.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DeleteAssessmentTarget">REST API Reference for DeleteAssessmentTarget Operation</seealso>
         DeleteAssessmentTargetResponse DeleteAssessmentTarget(DeleteAssessmentTargetRequest request);
 
@@ -391,6 +414,9 @@ namespace Amazon.Inspector
         /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.ServiceTemporarilyUnavailableException">
+        /// The serice is temporary unavailable.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DeleteAssessmentTemplate">REST API Reference for DeleteAssessmentTemplate Operation</seealso>
         DeleteAssessmentTemplateResponse DeleteAssessmentTemplate(DeleteAssessmentTemplateRequest request);
@@ -706,6 +732,9 @@ namespace Amazon.Inspector
         /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.ServiceTemporarilyUnavailableException">
+        /// The serice is temporary unavailable.
         /// </exception>
         /// <exception cref="Amazon.Inspector.Model.UnsupportedFeatureException">
         /// Used by the <a>GetAssessmentReport</a> API. The request was rejected because you tried
@@ -1254,6 +1283,9 @@ namespace Amazon.Inspector
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
         /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.ServiceTemporarilyUnavailableException">
+        /// The serice is temporary unavailable.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/RegisterCrossAccountAccessRole">REST API Reference for RegisterCrossAccountAccessRole Operation</seealso>
         RegisterCrossAccountAccessRoleResponse RegisterCrossAccountAccessRole(RegisterCrossAccountAccessRoleRequest request);
 
@@ -1296,6 +1328,9 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.ServiceTemporarilyUnavailableException">
+        /// The serice is temporary unavailable.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/RemoveAttributesFromFindings">REST API Reference for RemoveAttributesFromFindings Operation</seealso>
         RemoveAttributesFromFindingsResponse RemoveAttributesFromFindings(RemoveAttributesFromFindingsRequest request);
 
@@ -1337,6 +1372,9 @@ namespace Amazon.Inspector
         /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.ServiceTemporarilyUnavailableException">
+        /// The serice is temporary unavailable.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/SetTagsForResource">REST API Reference for SetTagsForResource Operation</seealso>
         SetTagsForResourceResponse SetTagsForResource(SetTagsForResourceRequest request);
@@ -1393,6 +1431,9 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.ServiceTemporarilyUnavailableException">
+        /// The serice is temporary unavailable.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/StartAssessmentRun">REST API Reference for StartAssessmentRun Operation</seealso>
         StartAssessmentRunResponse StartAssessmentRun(StartAssessmentRunRequest request);
 
@@ -1433,6 +1474,9 @@ namespace Amazon.Inspector
         /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.ServiceTemporarilyUnavailableException">
+        /// The serice is temporary unavailable.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/StopAssessmentRun">REST API Reference for StopAssessmentRun Operation</seealso>
         StopAssessmentRunResponse StopAssessmentRun(StopAssessmentRunRequest request);
@@ -1480,6 +1524,9 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.ServiceTemporarilyUnavailableException">
+        /// The serice is temporary unavailable.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/SubscribeToEvent">REST API Reference for SubscribeToEvent Operation</seealso>
         SubscribeToEventResponse SubscribeToEvent(SubscribeToEventRequest request);
 
@@ -1522,6 +1569,9 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.ServiceTemporarilyUnavailableException">
+        /// The serice is temporary unavailable.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/UnsubscribeFromEvent">REST API Reference for UnsubscribeFromEvent Operation</seealso>
         UnsubscribeFromEventResponse UnsubscribeFromEvent(UnsubscribeFromEventRequest request);
 
@@ -1545,6 +1595,12 @@ namespace Amazon.Inspector
 
         /// <summary>
         /// Updates the assessment target that is specified by the ARN of the assessment target.
+        /// 
+        ///  
+        /// <para>
+        /// If resourceGroupArn is not specified, all EC2 instances in the current AWS account
+        /// and region are included in the assessment target.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAssessmentTarget service method.</param>
         /// 
@@ -1562,6 +1618,9 @@ namespace Amazon.Inspector
         /// <exception cref="Amazon.Inspector.Model.NoSuchEntityException">
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector.Model.ServiceTemporarilyUnavailableException">
+        /// The serice is temporary unavailable.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/UpdateAssessmentTarget">REST API Reference for UpdateAssessmentTarget Operation</seealso>
         UpdateAssessmentTargetResponse UpdateAssessmentTarget(UpdateAssessmentTargetRequest request);

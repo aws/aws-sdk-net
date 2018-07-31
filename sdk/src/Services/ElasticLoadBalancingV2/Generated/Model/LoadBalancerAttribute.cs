@@ -64,7 +64,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         ///  <code>access_logs.s3.bucket</code> - The name of the S3 bucket for the access logs.
         /// This attribute is required if access logs are enabled. The bucket must exist in the
         /// same region as the load balancer and have a bucket policy that grants Elastic Load
-        /// Balancing permission to write to the bucket.
+        /// Balancing permissions to write to the bucket.
         /// </para>
         ///  </li> <li> 
         /// <para>

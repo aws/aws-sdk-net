@@ -1480,6 +1480,38 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  DescribeClusterTracks
+
+        internal virtual DescribeClusterTracksResponse DescribeClusterTracks(DescribeClusterTracksRequest request)
+        {
+            var marshaller = DescribeClusterTracksRequestMarshaller.Instance;
+            var unmarshaller = DescribeClusterTracksResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeClusterTracksRequest,DescribeClusterTracksResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeClusterTracks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClusterTracks operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterTracks">REST API Reference for DescribeClusterTracks Operation</seealso>
+        public virtual Task<DescribeClusterTracksResponse> DescribeClusterTracksAsync(DescribeClusterTracksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeClusterTracksRequestMarshaller.Instance;
+            var unmarshaller = DescribeClusterTracksResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeClusterTracksRequest,DescribeClusterTracksResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeClusterVersions
 
         internal virtual DescribeClusterVersionsResponse DescribeClusterVersions()

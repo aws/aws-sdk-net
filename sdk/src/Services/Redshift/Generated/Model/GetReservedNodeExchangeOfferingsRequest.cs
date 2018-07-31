@@ -29,8 +29,8 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the GetReservedNodeExchangeOfferings operation.
-    /// Returns an array of ReservedNodeOfferings which is filtered by payment type, term,
-    /// and instance type.
+    /// Returns an array of DC2 ReservedNodeOfferings that matches the payment type, term,
+    /// and usage price of the given DC1 reserved node.
     /// </summary>
     public partial class GetReservedNodeExchangeOfferingsRequest : AmazonRedshiftRequest
     {
@@ -77,7 +77,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ReservedNodeId. 
         /// <para>
-        /// A string representing the node identifier for the Reserved Node to be exchanged.
+        /// A string representing the node identifier for the DC1 Reserved Node to be exchanged.
         /// </para>
         /// </summary>
         public string ReservedNodeId

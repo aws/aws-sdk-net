@@ -5466,6 +5466,75 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  LabelParameterVersion
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the LabelParameterVersion service method.</param>
+        /// 
+        /// <returns>The response from the LabelParameterVersion service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterNotFoundException">
+        /// The parameter could not be found. Verify the name and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterVersionLabelLimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterVersionNotFoundException">
+        /// The specified parameter version was not found. Verify the parameter name and version,
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
+        /// There are concurrent updates for a resource that supports one update at a time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/LabelParameterVersion">REST API Reference for LabelParameterVersion Operation</seealso>
+        public virtual LabelParameterVersionResponse LabelParameterVersion(LabelParameterVersionRequest request)
+        {
+            var marshaller = LabelParameterVersionRequestMarshaller.Instance;
+            var unmarshaller = LabelParameterVersionResponseUnmarshaller.Instance;
+
+            return Invoke<LabelParameterVersionRequest,LabelParameterVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the LabelParameterVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the LabelParameterVersion operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndLabelParameterVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/LabelParameterVersion">REST API Reference for LabelParameterVersion Operation</seealso>
+        public virtual IAsyncResult BeginLabelParameterVersion(LabelParameterVersionRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = LabelParameterVersionRequestMarshaller.Instance;
+            var unmarshaller = LabelParameterVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<LabelParameterVersionRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  LabelParameterVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginLabelParameterVersion.</param>
+        /// 
+        /// <returns>Returns a  LabelParameterVersionResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/LabelParameterVersion">REST API Reference for LabelParameterVersion Operation</seealso>
+        public virtual LabelParameterVersionResponse EndLabelParameterVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<LabelParameterVersionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListAssociations
 
         /// <summary>

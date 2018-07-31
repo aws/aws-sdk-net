@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
         private string _availabilityZone;
         private InstanceType _instanceType;
         private string _maxPrice;
+        private double? _priority;
         private string _subnetId;
         private double? _weightedCapacity;
 
@@ -90,6 +91,29 @@ namespace Amazon.EC2.Model
         internal bool IsSetMaxPrice()
         {
             return this._maxPrice != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Priority. 
+        /// <para>
+        /// The priority for the launch template override. If <b>AllocationStrategy</b> is set
+        /// to <code>prioritized</code>, EC2 Fleet uses priority to determine which launch template
+        /// override to use first in fulfilling On-Demand capacity. The highest priority is launched
+        /// first. Valid values are whole numbers starting at <code>0</code>. The lower the number,
+        /// the higher the priority. If no number is set, the launch template override has the
+        /// lowest priority.
+        /// </para>
+        /// </summary>
+        public double Priority
+        {
+            get { return this._priority.GetValueOrDefault(); }
+            set { this._priority = value; }
+        }
+
+        // Check to see if Priority property is set
+        internal bool IsSetPriority()
+        {
+            return this._priority.HasValue; 
         }
 
         /// <summary>

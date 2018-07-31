@@ -26,18 +26,28 @@ namespace Amazon.S3.Model
         /// Describes the serialization of CSV-encoded Select results.
         /// </summary>
         public CSVOutput CSV { get; set; }
+        /// <summary>
+        /// Specifies JSON as request's output serialization format.
+        /// </summary>
+        public JSONOutput JSON { get; set; }
 
-        internal bool IsSetCSV()
-        {
-            return this.CSV != null;
-        }
+        internal bool IsSetCSV() => CSV != null;
+
+        internal bool IsSetJSON() => JSON != null;
 
         internal void Marshall(string propertyName, XmlWriter xmlWriter)
         {
             xmlWriter.WriteStartElement(propertyName);
+
+            if (IsSetCSV())
             {
                 CSV.Marshall("CSV", xmlWriter);
             }
+            if(IsSetJSON())
+            {
+                JSON.Marshall("JSON", xmlWriter);
+            }
+
             xmlWriter.WriteEndElement();
         }
     }

@@ -282,6 +282,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ReadonlyRootFilesystem);
             }
 
+            if(requestObject.IsSetRepositoryCredentials())
+            {
+                context.Writer.WritePropertyName("repositoryCredentials");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RepositoryCredentialsMarshaller.Instance;
+                marshaller.Marshall(requestObject.RepositoryCredentials, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetUlimits())
             {
                 context.Writer.WritePropertyName("ulimits");

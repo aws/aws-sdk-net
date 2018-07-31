@@ -85,7 +85,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property HostIdSet. 
         /// <para>
-        /// The ID/s of the Dedicated Host/s that the reservation will be associated with.
+        /// The IDs of the Dedicated Hosts with which the reservation will be associated.
         /// </para>
         /// </summary>
         public List<string> HostIdSet
@@ -105,8 +105,8 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The specified limit is checked against the total upfront cost of the reservation (calculated
         /// as the offering's upfront cost multiplied by the host count). If the total upfront
-        /// cost is greater than the specified price limit, the request will fail. This is used
-        /// to ensure that the purchase does not exceed the expected upfront cost of the purchase.
+        /// cost is greater than the specified price limit, the request fails. This is used to
+        /// ensure that the purchase does not exceed the expected upfront cost of the purchase.
         /// At this time, the only supported currency is <code>USD</code>. For example, to indicate
         /// a limit price of USD 100, specify 100.00.
         /// </para>

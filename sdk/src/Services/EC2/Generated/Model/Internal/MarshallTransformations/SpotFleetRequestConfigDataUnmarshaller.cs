@@ -90,6 +90,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.InstanceInterruptionBehavior = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("instancePoolsToUseCount", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.InstancePoolsToUseCount = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("launchSpecifications/item", targetDepth))
                     {
                         var unmarshaller = SpotFleetLaunchSpecificationUnmarshaller.Instance;
@@ -108,6 +114,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = LoadBalancersConfigUnmarshaller.Instance;
                         unmarshalledObject.LoadBalancersConfig = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("onDemandAllocationStrategy", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OnDemandAllocationStrategy = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("onDemandFulfilledCapacity", targetDepth))

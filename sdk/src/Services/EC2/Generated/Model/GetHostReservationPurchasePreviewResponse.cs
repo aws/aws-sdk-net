@@ -59,7 +59,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Purchase. 
         /// <para>
-        /// The purchase information of the Dedicated Host Reservation and the Dedicated Hosts
+        /// The purchase information of the Dedicated Host reservation and the Dedicated Hosts
         /// associated with it.
         /// </para>
         /// </summary>

@@ -61,7 +61,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property LaunchType. 
         /// <para>
-        /// The launch type for services you want to list.
+        /// The launch type for the services to list.
         /// </para>
         /// </summary>
         public LaunchType LaunchType
