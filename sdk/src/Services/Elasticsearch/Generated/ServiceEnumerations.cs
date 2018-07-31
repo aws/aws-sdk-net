@@ -233,6 +233,10 @@ namespace Amazon.Elasticsearch
     {
 
         /// <summary>
+        /// Constant ES_APPLICATION_LOGS for LogType
+        /// </summary>
+        public static readonly LogType ES_APPLICATION_LOGS = new LogType("ES_APPLICATION_LOGS");
+        /// <summary>
         /// Constant INDEX_SLOW_LOGS for LogType
         /// </summary>
         public static readonly LogType INDEX_SLOW_LOGS = new LogType("INDEX_SLOW_LOGS");
