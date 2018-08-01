@@ -45,6 +45,12 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Settings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetChannelIdentification())
+            {
+                context.Writer.WritePropertyName("ChannelIdentification");
+                context.Writer.Write(requestObject.ChannelIdentification);
+            }
+
             if(requestObject.IsSetMaxSpeakerLabels())
             {
                 context.Writer.WritePropertyName("MaxSpeakerLabels");

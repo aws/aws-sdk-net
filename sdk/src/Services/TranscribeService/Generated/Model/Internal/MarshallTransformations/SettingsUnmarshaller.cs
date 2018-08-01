@@ -64,6 +64,12 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ChannelIdentification", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.ChannelIdentification = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MaxSpeakerLabels", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
