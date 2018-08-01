@@ -76,8 +76,8 @@ namespace Amazon.StorageGateway
     ///  </li> <li> 
     /// <para>
     ///  <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">AWS Storage
-    /// Gateway Regions and Endpoints:</a> Provides a list of each region and endpoints available
-    /// for use with AWS Storage Gateway. 
+    /// Gateway Regions and Endpoints:</a> Provides a list of each AWS region and endpoints
+    /// available for use with AWS Storage Gateway. 
     /// </para>
     ///  </li> </ul> <note> 
     /// <para>

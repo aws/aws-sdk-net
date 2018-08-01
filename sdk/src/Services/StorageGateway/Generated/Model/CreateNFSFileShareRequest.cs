@@ -32,7 +32,7 @@ namespace Amazon.StorageGateway.Model
     /// Creates a Network File System (NFS) file share on an existing file gateway. In Storage
     /// Gateway, a file share is a file system mount point backed by Amazon S3 cloud storage.
     /// Storage Gateway exposes file shares using a NFS interface. This operation is only
-    /// supported in the file gateway type.
+    /// supported for file gateways.
     /// 
     ///  <important> 
     /// <para>
@@ -106,9 +106,10 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property DefaultStorageClass. 
         /// <para>
-        /// The default storage class for objects put into an Amazon S3 bucket by file gateway.
-        /// Possible values are S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If this field is
-        /// not populated, the default value S3_STANDARD is used. Optional.
+        /// The default storage class for objects put into an Amazon S3 bucket by the file gateway.
+        /// Possible values are <code>S3_STANDARD</code>, <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>.
+        /// If this field is not populated, the default value <code>S3_STANDARD</code> is used.
+        /// Optional.
         /// </para>
         /// </summary>
         public string DefaultStorageClass
@@ -145,9 +146,9 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property GuessMIMETypeEnabled. 
         /// <para>
-        /// Enables guessing of the MIME type for uploaded objects based on file extensions. Set
-        /// this value to true to enable MIME type guessing, and otherwise to false. The default
-        /// value is true.
+        /// A value that enables guessing of the MIME type for uploaded objects based on file
+        /// extensions. Set this value to true to enable MIME type guessing, and otherwise to
+        /// false. The default value is true.
         /// </para>
         /// </summary>
         public bool GuessMIMETypeEnabled
@@ -184,7 +185,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property KMSKey. 
         /// <para>
-        /// The Amazon Resource Name (ARN) KMS key used for Amazon S3 server side encryption.
+        /// The Amazon Resource Name (ARN) AWS KMS key used for Amazon S3 server side encryption.
         /// This value can only be set when KMSEncrypted is true. Optional.
         /// </para>
         /// </summary>
@@ -239,8 +240,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property ObjectACL. 
         /// <para>
-        /// Sets the access control list permission for objects in the Amazon S3 bucket that a
-        /// file gateway puts objects into. The default value is "private".
+        /// A value that sets the access control list permission for objects in the S3 bucket
+        /// that a file gateway puts objects into. The default value is "private".
         /// </para>
         /// </summary>
         public ObjectACL ObjectACL
@@ -258,8 +259,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property ReadOnly. 
         /// <para>
-        /// Sets the write status of a file share. This value is true if the write status is read-only,
-        /// and otherwise false.
+        /// A value that sets the write status of a file share. This value is true if the write
+        /// status is read-only, and otherwise false.
         /// </para>
         /// </summary>
         public bool ReadOnly
@@ -277,9 +278,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property RequesterPays. 
         /// <para>
-        /// Sets who pays the cost of the request and the data download from the Amazon S3 bucket.
-        /// Set this value to true if you want the requester to pay instead of the bucket owner,
-        /// and otherwise to false.
+        /// A value that sets the access control list permission for objects in the Amazon S3
+        /// bucket that a file gateway puts objects into. The default value is <code>private</code>.
         /// </para>
         /// </summary>
         public bool RequesterPays
@@ -320,15 +320,15 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// "RootSquash" - Only root is mapped to anonymous user.
+        ///  <code>RootSquash</code> - Only root is mapped to anonymous user.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// "NoSquash" - No one is mapped to anonymous user.
+        ///  <code>NoSquash</code> - No one is mapped to anonymous user
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// "AllSquash" - Everyone is mapped to anonymous user.
+        ///  <code>AllSquash</code> - Everyone is mapped to anonymous user.
         /// </para>
         ///  </li> </ul>
         /// </summary>

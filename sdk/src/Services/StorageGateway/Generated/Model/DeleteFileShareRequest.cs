@@ -29,8 +29,8 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteFileShare operation.
-    /// Deletes a file share from a file gateway. This operation is only supported in the
-    /// file gateway type.
+    /// Deletes a file share from a file gateway. This operation is only supported for file
+    /// gateways.
     /// </summary>
     public partial class DeleteFileShareRequest : AmazonStorageGatewayRequest
     {

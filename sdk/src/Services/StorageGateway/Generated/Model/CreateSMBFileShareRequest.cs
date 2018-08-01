@@ -32,19 +32,20 @@ namespace Amazon.StorageGateway.Model
     /// Creates a Server Message Block (SMB) file share on an existing file gateway. In Storage
     /// Gateway, a file share is a file system mount point backed by Amazon S3 cloud storage.
     /// Storage Gateway expose file shares using a SMB interface. This operation is only supported
-    /// in the file gateway type.
+    /// for file gateways.
     /// 
     ///  <important> 
     /// <para>
-    /// File gateway requires AWS Security Token Service (AWS STS) to be activated to enable
-    /// you create a file share. Make sure AWS STS is activated in the region you are creating
-    /// your file gateway in. If AWS STS is not activated in the region, activate it. For
-    /// information about how to activate AWS STS, see Activating and Deactivating AWS STS
-    /// in an AWS Region in the AWS Identity and Access Management User Guide. 
+    /// File gateways require AWS Security Token Service (AWS STS) to be activated to enable
+    /// you to create a file share. Make sure that AWS STS is activated in the AWS Region
+    /// you are creating your file gateway in. If AWS STS is not activated in this AWS Region,
+    /// activate it. For information about how to activate AWS STS, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+    /// and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management
+    /// User Guide.</i> 
     /// </para>
     ///  
     /// <para>
-    /// File gateway does not support creating hard or symbolic links on a file share.
+    /// File gateways don't support creating hard or symbolic links on a file share.
     /// </para>
     ///  </important>
     /// </summary>
@@ -72,7 +73,8 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: "ActiveDirectory" or "GuestAccess". The default is "ActiveDirectory".
+        /// Valid values are <code>ActiveDirectory</code> or <code>GuestAccess</code>. The default
+        /// is <code>ActiveDirectory</code>.
         /// </para>
         /// </summary>
         public string Authentication
@@ -109,9 +111,10 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property DefaultStorageClass. 
         /// <para>
-        /// The default storage class for objects put into an Amazon S3 bucket by file gateway.
-        /// Possible values are S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If this field is
-        /// not populated, the default value S3_STANDARD is used. Optional.
+        /// The default storage class for objects put into an Amazon S3 bucket by the file gateway.
+        /// Possible values are <code>S3_STANDARD</code>, <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>.
+        /// If this field is not populated, the default value <code>S3_STANDARD</code> is used.
+        /// Optional.
         /// </para>
         /// </summary>
         public string DefaultStorageClass
@@ -148,9 +151,9 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property GuessMIMETypeEnabled. 
         /// <para>
-        /// Enables guessing of the MIME type for uploaded objects based on file extensions. Set
-        /// this value to true to enable MIME type guessing, and otherwise to false. The default
-        /// value is true.
+        /// A value that enables guessing of the MIME type for uploaded objects based on file
+        /// extensions. Set this value to true to enable MIME type guessing, and otherwise to
+        /// false. The default value is true.
         /// </para>
         /// </summary>
         public bool GuessMIMETypeEnabled
@@ -168,8 +171,9 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property InvalidUserList. 
         /// <para>
-        /// A list of users in the Active Directory that are not allowed to access the file share.
-        /// Can only be set if Authentication is set to "ActiveDirectory".
+        /// A list of users or groups in the Active Directory that are not allowed to access the
+        /// file share. A group must be prefixed with the @ character. For example <code>@group1</code>.
+        /// Can only be set if Authentication is set to <code>ActiveDirectory</code>.
         /// </para>
         /// </summary>
         public List<string> InvalidUserList
@@ -206,7 +210,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property KMSKey. 
         /// <para>
-        /// The Amazon Resource Name (ARN) KMS key used for Amazon S3 server side encryption.
+        /// The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server side encryption.
         /// This value can only be set when KMSEncrypted is true. Optional.
         /// </para>
         /// </summary>
@@ -243,8 +247,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property ObjectACL. 
         /// <para>
-        /// Sets the access control list permission for objects in the Amazon S3 bucket that a
-        /// file gateway puts objects into. The default value is "private".
+        /// A value that sets the access control list permission for objects in the S3 bucket
+        /// that a file gateway puts objects into. The default value is "private".
         /// </para>
         /// </summary>
         public ObjectACL ObjectACL
@@ -262,8 +266,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property ReadOnly. 
         /// <para>
-        /// Sets the write status of a file share. This value is true if the write status is read-only,
-        /// and otherwise false.
+        /// A value that sets the write status of a file share. This value is true if the write
+        /// status is read-only, and otherwise false.
         /// </para>
         /// </summary>
         public bool ReadOnly
@@ -281,9 +285,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property RequesterPays. 
         /// <para>
-        /// Sets who pays the cost of the request and the data download from the Amazon S3 bucket.
-        /// Set this value to true if you want the requester to pay instead of the bucket owner,
-        /// and otherwise to false.
+        /// A value that sets the access control list permission for objects in the Amazon S3
+        /// bucket that a file gateway puts objects into. The default value is <code>private</code>.
         /// </para>
         /// </summary>
         public bool RequesterPays
@@ -320,8 +323,9 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property ValidUserList. 
         /// <para>
-        /// A list of users in the Active Directory that are allowed to access the file share.
-        /// Can only be set if Authentication is set to "ActiveDirectory".
+        /// A list of users or groups in the Active Directory that are allowed to access the file
+        /// share. A group must be prefixed with the @ character. For example <code>@group1</code>.
+        /// Can only be set if Authentication is set to <code>ActiveDirectory</code>.
         /// </para>
         /// </summary>
         public List<string> ValidUserList

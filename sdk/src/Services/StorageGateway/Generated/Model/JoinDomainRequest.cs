@@ -30,7 +30,7 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// Container for the parameters to the JoinDomain operation.
     /// Adds a file gateway to an Active Directory domain. This operation is only supported
-    /// in the file gateway type that supports the SMB file protocol.
+    /// for file gateways that support the SMB file protocol.
     /// </summary>
     public partial class JoinDomainRequest : AmazonStorageGatewayRequest
     {
@@ -60,7 +60,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property GatewayARN. 
         /// <para>
-        /// The unique Amazon Resource Name of the file gateway you want to add to the Active
+        /// The unique Amazon Resource Name (ARN) of the file gateway you want to add to the Active
         /// Directory domain. 
         /// </para>
         /// </summary>

@@ -91,7 +91,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property KMSKey. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the KMS Key used for Amazon S3 server side encryption.
+        /// The Amazon Resource Name (ARN) of the AWS KMS Key used for Amazon S3 server side encryption.
         /// This value can only be set when KMSEncrypted is true. Optional.
         /// </para>
         /// </summary>

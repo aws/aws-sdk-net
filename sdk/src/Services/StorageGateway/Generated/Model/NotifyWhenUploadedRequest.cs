@@ -40,7 +40,7 @@ namespace Amazon.StorageGateway.Model
     /// that you make a request for notification. When the upload is done, Storage Gateway
     /// sends you notification through an Amazon CloudWatch Event. You can configure CloudWatch
     /// Events to send the notification through event targets such as Amazon SNS or AWS Lambda
-    /// function. This operation is only supported in the file gateway type.
+    /// function. This operation is only supported for file gateways.
     /// </para>
     ///  
     /// <para>

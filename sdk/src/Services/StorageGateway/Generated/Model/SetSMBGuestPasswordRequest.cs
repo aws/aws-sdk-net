@@ -29,8 +29,8 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the SetSMBGuestPassword operation.
-    /// Sets the password for the guest user “smbguest”. "smbguest" is the user when the Authentication
-    /// method for the file share is “GuestAccess”.
+    /// Sets the password for the guest user <code>smbguest</code>. The <code>smbguest</code>
+    /// user is the user when the authentication method for the file share is set to <code>GuestAccess</code>.
     /// </summary>
     public partial class SetSMBGuestPasswordRequest : AmazonStorageGatewayRequest
     {
@@ -59,7 +59,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property Password. 
         /// <para>
-        /// The password you want to set for your SMB Server.
+        /// The password that you want to set for your SMB Server.
         /// </para>
         /// </summary>
         public string Password

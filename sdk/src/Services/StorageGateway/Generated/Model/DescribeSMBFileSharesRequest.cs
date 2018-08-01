@@ -30,7 +30,7 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// Container for the parameters to the DescribeSMBFileShares operation.
     /// Gets a description for one or more Server Message Block (SMB) file shares from a file
-    /// gateway. This operation is only supported in the file gateway type.
+    /// gateway. This operation is only supported for file gateways.
     /// </summary>
     public partial class DescribeSMBFileSharesRequest : AmazonStorageGatewayRequest
     {

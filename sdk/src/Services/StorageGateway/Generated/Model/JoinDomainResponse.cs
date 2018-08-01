@@ -37,7 +37,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property GatewayARN. 
         /// <para>
-        /// The unique Amazon Resource Name of the gateway that joined the domain.
+        /// The unique Amazon Resource Name (ARN) of the gateway that joined the domain.
         /// </para>
         /// </summary>
         public string GatewayARN
