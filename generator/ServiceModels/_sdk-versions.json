@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.328.0",
+    "ProductVersion" : "3.3.329.0",
     "CoreVersion"    : "3.3.24.4",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -377,7 +377,7 @@
             "InPreview"               : false
         },
         "StorageGateway"            : {
-            "Version" : "3.3.9.2",
+            "Version" : "3.3.10.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.24.4"
@@ -1049,7 +1049,7 @@
             "InPreview"               : false
         },
         "TranscribeService"               : {
-            "Version" : "3.3.2.1",
+            "Version" : "3.3.3.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.24.4"
