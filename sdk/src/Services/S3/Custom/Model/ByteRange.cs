@@ -75,7 +75,7 @@ namespace Amazon.S3.Model
         {
             get
             {
-                if (this._formattedByteRange != null)
+                if (!string.IsNullOrEmpty(this._formattedByteRange))
                     return this._formattedByteRange;
                 else
                     return string.Format(CultureInfo.InvariantCulture, "bytes={0}-{1}", this.Start, this.End);
