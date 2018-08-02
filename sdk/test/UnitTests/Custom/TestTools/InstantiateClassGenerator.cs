@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Reflection;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Net;
 
 namespace AWSSDK_DotNet35.UnitTests.TestTools
 {
@@ -179,21 +180,20 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                 var type = info.PropertyType;
                 var propertyValue = info.GetMethod.Invoke(owningObject, new object[] { });
 
-                if (owningObject.GetType().FullName.Equals("Amazon.Glacier.Model.GetJobOutputResponse") ||
-                    owningObject.GetType().FullName.Equals("Amazon.Lambda.Model.InvokeAsyncResponse") ||
-                    owningObject.GetType().FullName.Equals("Amazon.Lambda.Model.InvokeResponse")||
-					owningObject.GetType().FullName.Equals("Amazon.MediaStoreData.Model.GetObjectResponse")) 
+                if(type == typeof(int))
                 {
                     if (info.Name == "Status" ||
-                        info.Name == "StatusCode")
+                    info.Name == "StatusCode")
                     {
-						// Special case for GetJobOutputResponse.Status property which is unmarshalled from 
-						// HttpResponse's Status code.
-                        Assert.AreEqual(200, propertyValue);
-                        continue;
+                        if (Enum.IsDefined(typeof(HttpStatusCode), propertyValue))
+                        {
+                            // Special case for GetJobOutputResponse.Status property which is unmarshalled from 
+                            // HttpResponse's Status code.
+                            Assert.AreEqual(200, propertyValue);
+                            continue;
+                        }
                     }
                 }
-
                 ValidatePropertyValueInstantiated(type, propertyValue, info.Name);
             }
         }
@@ -229,7 +229,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
             {
                 Assert.IsTrue(propertyValue is DateTime, "Invalid value for " + propertyName);
                 Assert.AreEqual(((DateTime)propertyValue).ToUniversalTime(), Constants.DEFAULT_DATE.ToUniversalTime(), "Invalid value for " + propertyName);
-            }                
+            }
             else if (type == typeof(MemoryStream))
             {
                 Assert.IsTrue(propertyValue is MemoryStream, "Invalid value for " + propertyName);
@@ -245,13 +245,13 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                 Assert.IsTrue(propertyValue is Amazon.Runtime.ConstantClass, "Invalid value for " + propertyName);
             }
             else
-            {                   
+            {
                 if (type.GetInterface("System.Collections.IList") != null)
                 {
                     var list = propertyValue as System.Collections.IList;
 
                     var listType = type.GenericTypeArguments[0];
-                    foreach(var item in list)
+                    foreach (var item in list)
                     {
                         ValidatePropertyValueInstantiated(listType, item, propertyValue + "_Dictionary");
                     }
@@ -261,13 +261,13 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                     var map = propertyValue as System.Collections.IDictionary;
 
                     var valueType = type.GenericTypeArguments[1];
-                    foreach(var key in map.Keys)
+                    foreach (var key in map.Keys)
                     {
                         ValidatePropertyValueInstantiated(valueType, map[key], propertyValue + "_Dictionary");
                     }
                 }
                 else
-                {                    
+                {
                     ValidateObjectFullyInstantiated(propertyValue);
                 }
             }
