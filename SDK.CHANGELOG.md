@@ -1,3 +1,18 @@
+### 3.3.330.0 (2018-08-02 20:22 UTC)
+* Kinesis (3.3.6.0)
+	* This update introduces SubscribeToShard and RegisterStreamConsumer APIs which allows for retrieving records on a data stream over HTTP2 with enhanced fan-out capabilities. With this new feature the Java SDK now supports event streaming natively which will allow you to define payload and exception structures on the client over a persistent connection. For more information, see Developing Consumers with Enhanced Fan-Out in the Kinesis Developer Guide.
+* Polly (3.3.7.0)
+	* Amazon Polly enables female voice Aditi to speak Hindi language
+* ResourceGroups (3.3.1.0)
+	* AWS Resource Groups service added a new feature to filter group resources by resource-type when using the ListGroupResources operation.
+* SimpleSystemsManagement (3.3.27.0)
+	* This release updates AWS Systems Manager APIs to let customers create and use service-linked roles to register and edit Maintenance Window tasks.
+* Core 3.3.24.5
+	* AWS Greengrass is now available in the Dublin, Ireland (Europe) region, eu-west-1.
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.329.0 (2018-08-01 20:43 UTC)
 * StorageGateway (3.3.10.0)
 	* AWS Storage Gateway now enables you to create stored volumes with AWS KMS support.
