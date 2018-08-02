@@ -55,9 +55,10 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListGroupsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ResourceGroups");
-            request.HttpMethod = "GET";
+            request.Headers["Content-Type"] = "application/x-amz-json-";
+            request.HttpMethod = "POST";
 
-            string uriResourcePath = "/groups";
+            string uriResourcePath = "/groups-list";
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));

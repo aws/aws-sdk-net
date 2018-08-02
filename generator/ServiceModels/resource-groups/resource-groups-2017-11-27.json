@@ -1,0 +1,2524 @@
+{
+  "version": "1.0",
+  "api_version": "2017-11-27",
+  "service_abbreviation": "Resource Groups",
+  "service_full_name": "AWS Resource Groups",
+  "service_id": "Resource Groups",
+  "signature_version": "v4",
+  "signing_name": "resource-groups",
+  "type": "rest-json",
+  "uid": "resource-groups-2017-11-27",
+  "endpoint_prefix": "resource-groups",
+  "documentation": "\n         <fullname>AWS Resource Groups</fullname>\n         <p>AWS Resource Groups lets you organize AWS resources such as Amazon EC2 instances,\n      Amazon Relational Database Service databases, and Amazon S3 buckets into groups using criteria\n      that you define as tags. A resource group is a collection of resources that match the resource\n      types specified in a query, and share one or more tags or portions of tags. You can create a\n      group of resources based on their roles in your cloud infrastructure, lifecycle stages,\n      regions, application layers, or virtually any criteria. Resource groups enable you to automate\n      management tasks, such as those in AWS Systems Manager Automation documents, on tag-related\n      resources in AWS Systems Manager. Groups of tagged resources also let you quickly view a\n      custom console in AWS Systems Manager that shows AWS Config compliance and other monitoring\n      data about member resources.</p>\n         <p>To create a resource group, build a resource query, and specify tags that identify\n      the criteria that members of the group have in common. Tags are key-value pairs.</p>\n         <p>For more information about Resource Groups, see the <a href=\"https://docs.aws.amazon.com/ARG/latest/userguide/welcome.html\">AWS Resource Groups User\n        Guide</a>.</p>\n         <p>AWS Resource Groups uses a REST-compliant API that you can use to perform the following types of operations.</p>\n         <ul>\n            <li>\n               <p>Create, Read, Update, and Delete (CRUD) operations on resource groups and resource query entities</p>\n            </li>\n            <li>\n               <p>Applying, editing, and removing tags from resource groups</p>\n            </li>\n            <li>\n               <p>Resolving resource group member ARNs so they can be returned as search results</p>\n            </li>\n            <li>\n               <p>Getting data about resources that are members of a group</p>\n            </li>\n            <li>\n               <p>Searching AWS resources based on a resource query</p>\n            </li>\n         </ul>\n      ",
+  "operations": {
+    "CreateGroup": {
+      "name": "CreateGroup",
+      "http": {
+        "method": "POST",
+        "uri": "/groups"
+      },
+      "input": {
+        "type": "structure",
+        "members": {
+          "Name": {
+            "type": "string",
+            "pattern": "[a-zA-Z0-9_\\.-]+",
+            "zonbookDocumentation": "\n         <simpara>The name of the group, which is the identifier of the group in other operations. A resource group name cannot be updated after it is created. \n       A resource group name can have a maximum of 128 characters, including letters, numbers, hyphens, dots, and underscores. The name cannot start with \n       <code>AWS</code> or <code>aws</code>; these are reserved. A resource group name must be unique within your account.</simpara>\n      ",
+            "documentation": "\n         <p>The name of the group, which is the identifier of the group in other operations. A resource group name cannot be updated after it is created. \n       A resource group name can have a maximum of 128 characters, including letters, numbers, hyphens, dots, and underscores. The name cannot start with \n       <code>AWS</code> or <code>aws</code>; these are reserved. A resource group name must be unique within your account.</p>\n      ",
+            "required": true,
+            "shape_name": "GroupName",
+            "min_length": 1,
+            "max_length": 128
+          },
+          "Description": {
+            "type": "string",
+            "pattern": "[\\sa-zA-Z0-9_\\.-]*",
+            "zonbookDocumentation": "\n         <simpara>The description of the resource group. Descriptions can have a maximum of 511 characters, including letters, numbers, hyphens, underscores, \n       punctuation, and spaces.</simpara>\n      ",
+            "documentation": "\n         <p>The description of the resource group. Descriptions can have a maximum of 511 characters, including letters, numbers, hyphens, underscores, \n       punctuation, and spaces.</p>\n      ",
+            "shape_name": "GroupDescription",
+            "max_length": 512
+          },
+          "ResourceQuery": {
+            "type": "structure",
+            "members": {
+              "Type": {
+                "type": "string",
+                "enum": [
+                  "TAG_FILTERS_1_0"
+                ],
+                "zonbookDocumentation": "\n         <simpara>The type of the query. The valid value in this release is <code>TAG_FILTERS_1_0</code>.</simpara>\n         <simpara>\n            <emphasis>\n               <code>TAG_FILTERS_1_0:</code>\n            </emphasis> A JSON syntax that lets you specify a collection of simple tag filters for resource types and tags, as supported by the AWS \n       Tagging API GetResources operation. When more than one element is present, only resources that match all filters \n       are part of the result. If a filter specifies more than one value for a key, a resource matches the filter if its tag value matches any of the specified values.</simpara>\n      ",
+                "documentation": "\n         <p>The type of the query. The valid value in this release is <code>TAG_FILTERS_1_0</code>.</p>\n         <p>\n            <i>\n               <code>TAG_FILTERS_1_0:</code>\n            </i> A JSON syntax that lets you specify a collection of simple tag filters for resource types and tags, as supported by the AWS \n       Tagging API GetResources operation. When more than one element is present, only resources that match all filters \n       are part of the result. If a filter specifies more than one value for a key, a resource matches the filter if its tag value matches any of the specified values.</p>\n      ",
+                "required": true,
+                "shape_name": "QueryType"
+              },
+              "Query": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <simpara>The query that defines a group or a search.</simpara>\n      ",
+                "documentation": "\n         <p>The query that defines a group or a search.</p>\n      ",
+                "required": true,
+                "shape_name": "Query",
+                "max_length": 2048
+              }
+            },
+            "zonbookDocumentation": "\n         <simpara>The resource query that determines which AWS resources are members of this group.</simpara>\n      ",
+            "documentation": "\n         <p>The resource query that determines which AWS resources are members of this group.</p>\n      ",
+            "required": true,
+            "shape_name": "ResourceQuery"
+          },
+          "Tags": {
+            "type": "map",
+            "zonbookDocumentation": "\n         <simpara>The tags to add to the group. A tag is a string-to-string map of key-value pairs. Tag keys can have a maximum character length of 128 characters, \n       and tag values can have a maximum length of 256 characters.</simpara>\n      ",
+            "documentation": "\n         <p>The tags to add to the group. A tag is a string-to-string map of key-value pairs. Tag keys can have a maximum character length of 128 characters, \n       and tag values can have a maximum length of 256 characters.</p>\n      ",
+            "shape_name": "Tags",
+            "keys": {
+              "type": "string",
+              "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
+              "shape_name": "TagKey",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 128
+            },
+            "members": {
+              "type": "string",
+              "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
+              "shape_name": "TagValue",
+              "documentation": null,
+              "min_length": 0,
+              "max_length": 256
+            }
+          }
+        },
+        "shape_name": "CreateGroupInput",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "Group": {
+            "type": "structure",
+            "members": {
+              "GroupArn": {
+                "type": "string",
+                "pattern": "arn:aws:resource-groups:[a-z]{2}-[a-z]+-\\d{1}:[0-9]{12}:group/[a-zA-Z0-9_\\.-]{1,128}",
+                "zonbookDocumentation": "\n         <simpara>The ARN of a resource group.</simpara>\n      ",
+                "documentation": "\n         <p>The ARN of a resource group.</p>\n      ",
+                "required": true,
+                "shape_name": "GroupArn"
+              },
+              "Name": {
+                "type": "string",
+                "pattern": "[a-zA-Z0-9_\\.-]+",
+                "zonbookDocumentation": "\n         <simpara>The name of a resource group.</simpara>\n      ",
+                "documentation": "\n         <p>The name of a resource group.</p>\n      ",
+                "required": true,
+                "shape_name": "GroupName",
+                "min_length": 1,
+                "max_length": 128
+              },
+              "Description": {
+                "type": "string",
+                "pattern": "[\\sa-zA-Z0-9_\\.-]*",
+                "zonbookDocumentation": "\n         <simpara>The description of the resource group.</simpara>\n      ",
+                "documentation": "\n         <p>The description of the resource group.</p>\n      ",
+                "shape_name": "GroupDescription",
+                "max_length": 512
+              }
+            },
+            "zonbookDocumentation": "\n         <simpara>A full description of the resource group after it is created.</simpara>\n      ",
+            "documentation": "\n         <p>A full description of the resource group after it is created.</p>\n      ",
+            "shape_name": "Group"
+          },
+          "ResourceQuery": {
+            "type": "structure",
+            "members": {
+              "Type": {
+                "type": "string",
+                "enum": [
+                  "TAG_FILTERS_1_0"
+                ],
+                "zonbookDocumentation": "\n         <simpara>The type of the query. The valid value in this release is <code>TAG_FILTERS_1_0</code>.</simpara>\n         <simpara>\n            <emphasis>\n               <code>TAG_FILTERS_1_0:</code>\n            </emphasis> A JSON syntax that lets you specify a collection of simple tag filters for resource types and tags, as supported by the AWS \n       Tagging API GetResources operation. When more than one element is present, only resources that match all filters \n       are part of the result. If a filter specifies more than one value for a key, a resource matches the filter if its tag value matches any of the specified values.</simpara>\n      ",
+                "documentation": "\n         <p>The type of the query. The valid value in this release is <code>TAG_FILTERS_1_0</code>.</p>\n         <p>\n            <i>\n               <code>TAG_FILTERS_1_0:</code>\n            </i> A JSON syntax that lets you specify a collection of simple tag filters for resource types and tags, as supported by the AWS \n       Tagging API GetResources operation. When more than one element is present, only resources that match all filters \n       are part of the result. If a filter specifies more than one value for a key, a resource matches the filter if its tag value matches any of the specified values.</p>\n      ",
+                "required": true,
+                "shape_name": "QueryType"
+              },
+              "Query": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <simpara>The query that defines a group or a search.</simpara>\n      ",
+                "documentation": "\n         <p>The query that defines a group or a search.</p>\n      ",
+                "required": true,
+                "shape_name": "Query",
+                "max_length": 2048
+              }
+            },
+            "zonbookDocumentation": "\n         <simpara>The resource query associated with the group.</simpara>\n      ",
+            "documentation": "\n         <p>The resource query associated with the group.</p>\n      ",
+            "shape_name": "ResourceQuery"
+          },
+          "Tags": {
+            "type": "map",
+            "zonbookDocumentation": "\n         <simpara>The tags associated with the group.</simpara>\n      ",
+            "documentation": "\n         <p>The tags associated with the group.</p>\n      ",
+            "shape_name": "Tags",
+            "keys": {
+              "type": "string",
+              "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
+              "shape_name": "TagKey",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 128
+            },
+            "members": {
+              "type": "string",
+              "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
+              "shape_name": "TagValue",
+              "documentation": null,
+              "min_length": 0,
+              "max_length": 256
+            }
+          }
+        },
+        "shape_name": "CreateGroupOutput",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request does not comply with validation rules that are defined for the request parameters.</simpara>\n      ",
+          "documentation": "\n         <p>The request does not comply with validation rules that are defined for the request parameters.</p>\n      ",
+          "shape_name": "BadRequestException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The caller is not authorized to make the request.</simpara>\n      ",
+          "documentation": "\n         <p>The caller is not authorized to make the request.</p>\n      ",
+          "shape_name": "ForbiddenException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request uses an HTTP method which is not allowed for the specified resource.</simpara>\n      ",
+          "documentation": "\n         <p>The request uses an HTTP method which is not allowed for the specified resource.</p>\n      ",
+          "shape_name": "MethodNotAllowedException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The caller has exceeded throttling limits.</simpara>\n      ",
+          "documentation": "\n         <p>The caller has exceeded throttling limits.</p>\n      ",
+          "shape_name": "TooManyRequestsException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>An internal error occurred while processing the request.</simpara>\n      ",
+          "documentation": "\n         <p>An internal error occurred while processing the request.</p>\n      ",
+          "shape_name": "InternalServerErrorException"
+        }
+      ],
+      "documentation": "\n         <p>Creates a group with a specified name, description, and resource query.</p>\n      "
+    },
+    "UpdateGroup": {
+      "name": "UpdateGroup",
+      "http": {
+        "method": "PUT",
+        "uri": "/groups/{GroupName}"
+      },
+      "input": {
+        "type": "structure",
+        "members": {
+          "GroupName": {
+            "type": "string",
+            "pattern": "[a-zA-Z0-9_\\.-]+",
+            "zonbookDocumentation": "\n         <simpara>The name of the resource group for which you want to update its description.</simpara>\n      ",
+            "documentation": "\n         <p>The name of the resource group for which you want to update its description.</p>\n      ",
+            "location": "uri",
+            "required": true,
+            "shape_name": "GroupName",
+            "min_length": 1,
+            "max_length": 128
+          },
+          "Description": {
+            "type": "string",
+            "pattern": "[\\sa-zA-Z0-9_\\.-]*",
+            "zonbookDocumentation": "\n         <simpara>The description of the resource group. Descriptions can have a maximum of 511 characters, including letters, numbers, hyphens, underscores, \n       punctuation, and spaces.</simpara>\n      ",
+            "documentation": "\n         <p>The description of the resource group. Descriptions can have a maximum of 511 characters, including letters, numbers, hyphens, underscores, \n       punctuation, and spaces.</p>\n      ",
+            "shape_name": "GroupDescription",
+            "max_length": 512
+          }
+        },
+        "shape_name": "UpdateGroupInput",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "Group": {
+            "type": "structure",
+            "members": {
+              "GroupArn": {
+                "type": "string",
+                "pattern": "arn:aws:resource-groups:[a-z]{2}-[a-z]+-\\d{1}:[0-9]{12}:group/[a-zA-Z0-9_\\.-]{1,128}",
+                "zonbookDocumentation": "\n         <simpara>The ARN of a resource group.</simpara>\n      ",
+                "documentation": "\n         <p>The ARN of a resource group.</p>\n      ",
+                "required": true,
+                "shape_name": "GroupArn"
+              },
+              "Name": {
+                "type": "string",
+                "pattern": "[a-zA-Z0-9_\\.-]+",
+                "zonbookDocumentation": "\n         <simpara>The name of a resource group.</simpara>\n      ",
+                "documentation": "\n         <p>The name of a resource group.</p>\n      ",
+                "required": true,
+                "shape_name": "GroupName",
+                "min_length": 1,
+                "max_length": 128
+              },
+              "Description": {
+                "type": "string",
+                "pattern": "[\\sa-zA-Z0-9_\\.-]*",
+                "zonbookDocumentation": "\n         <simpara>The description of the resource group.</simpara>\n      ",
+                "documentation": "\n         <p>The description of the resource group.</p>\n      ",
+                "shape_name": "GroupDescription",
+                "max_length": 512
+              }
+            },
+            "zonbookDocumentation": "\n         <simpara>The full description of the resource group after it has been updated.</simpara>\n      ",
+            "documentation": "\n         <p>The full description of the resource group after it has been updated.</p>\n      ",
+            "shape_name": "Group"
+          }
+        },
+        "shape_name": "UpdateGroupOutput",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request does not comply with validation rules that are defined for the request parameters.</simpara>\n      ",
+          "documentation": "\n         <p>The request does not comply with validation rules that are defined for the request parameters.</p>\n      ",
+          "shape_name": "BadRequestException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The caller is not authorized to make the request.</simpara>\n      ",
+          "documentation": "\n         <p>The caller is not authorized to make the request.</p>\n      ",
+          "shape_name": "ForbiddenException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>One or more resources specified in the request do not exist.</simpara>\n      ",
+          "documentation": "\n         <p>One or more resources specified in the request do not exist.</p>\n      ",
+          "shape_name": "NotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request uses an HTTP method which is not allowed for the specified resource.</simpara>\n      ",
+          "documentation": "\n         <p>The request uses an HTTP method which is not allowed for the specified resource.</p>\n      ",
+          "shape_name": "MethodNotAllowedException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The caller has exceeded throttling limits.</simpara>\n      ",
+          "documentation": "\n         <p>The caller has exceeded throttling limits.</p>\n      ",
+          "shape_name": "TooManyRequestsException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>An internal error occurred while processing the request.</simpara>\n      ",
+          "documentation": "\n         <p>An internal error occurred while processing the request.</p>\n      ",
+          "shape_name": "InternalServerErrorException"
+        }
+      ],
+      "documentation": "\n         <p>Updates an existing group with a new or changed description. You cannot update the name of a resource group.</p>\n      "
+    },
+    "ListGroups": {
+      "name": "ListGroups",
+      "http": {
+        "method": "POST",
+        "uri": "/groups-list?maxResults={MaxResults}&nextToken={NextToken}"
+      },
+      "input": {
+        "type": "structure",
+        "members": {
+          "MaxResults": {
+            "type": "integer",
+            "zonbookDocumentation": "\n         <simpara>The maximum number of resource group results that are returned by ListGroups in paginated output. By default, this number is 50.</simpara>\n      ",
+            "documentation": "\n         <p>The maximum number of resource group results that are returned by ListGroups in paginated output. By default, this number is 50.</p>\n      ",
+            "location": "uri",
+            "shape_name": "MaxResults",
+            "min_length": 1,
+            "max_length": 50
+          },
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>The NextToken value that is returned in a paginated <code>ListGroups</code> request. To get the next page of results, \n       run the call again, add the NextToken parameter, and specify the NextToken value.</simpara>\n      ",
+            "documentation": "\n         <p>The NextToken value that is returned in a paginated <code>ListGroups</code> request. To get the next page of results, \n       run the call again, add the NextToken parameter, and specify the NextToken value.</p>\n      ",
+            "location": "uri",
+            "shape_name": "NextToken"
+          }
+        },
+        "shape_name": "ListGroupsInput",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "Groups": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>A list of resource groups.</simpara>\n      ",
+            "documentation": "\n         <p>A list of resource groups.</p>\n      ",
+            "shape_name": "GroupList",
+            "members": {
+              "type": "structure",
+              "members": {
+                "GroupArn": {
+                  "type": "string",
+                  "pattern": "arn:aws:resource-groups:[a-z]{2}-[a-z]+-\\d{1}:[0-9]{12}:group/[a-zA-Z0-9_\\.-]{1,128}",
+                  "zonbookDocumentation": "\n         <simpara>The ARN of a resource group.</simpara>\n      ",
+                  "documentation": "\n         <p>The ARN of a resource group.</p>\n      ",
+                  "required": true,
+                  "shape_name": "GroupArn"
+                },
+                "Name": {
+                  "type": "string",
+                  "pattern": "[a-zA-Z0-9_\\.-]+",
+                  "zonbookDocumentation": "\n         <simpara>The name of a resource group.</simpara>\n      ",
+                  "documentation": "\n         <p>The name of a resource group.</p>\n      ",
+                  "required": true,
+                  "shape_name": "GroupName",
+                  "min_length": 1,
+                  "max_length": 128
+                },
+                "Description": {
+                  "type": "string",
+                  "pattern": "[\\sa-zA-Z0-9_\\.-]*",
+                  "zonbookDocumentation": "\n         <simpara>The description of the resource group.</simpara>\n      ",
+                  "documentation": "\n         <p>The description of the resource group.</p>\n      ",
+                  "shape_name": "GroupDescription",
+                  "max_length": 512
+                }
+              },
+              "zonbookDocumentation": "\n         <simpara>A resource group.</simpara>\n      ",
+              "documentation": "\n         <p>A resource group.</p>\n      ",
+              "shape_name": "Group"
+            }
+          },
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>The NextToken value to include in a subsequent <code>ListGroups</code> request, to get more results.</simpara>\n      ",
+            "documentation": "\n         <p>The NextToken value to include in a subsequent <code>ListGroups</code> request, to get more results.</p>\n      ",
+            "shape_name": "NextToken"
+          }
+        },
+        "shape_name": "ListGroupsOutput",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request does not comply with validation rules that are defined for the request parameters.</simpara>\n      ",
+          "documentation": "\n         <p>The request does not comply with validation rules that are defined for the request parameters.</p>\n      ",
+          "shape_name": "BadRequestException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The caller is not authorized to make the request.</simpara>\n      ",
+          "documentation": "\n         <p>The caller is not authorized to make the request.</p>\n      ",
+          "shape_name": "ForbiddenException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request uses an HTTP method which is not allowed for the specified resource.</simpara>\n      ",
+          "documentation": "\n         <p>The request uses an HTTP method which is not allowed for the specified resource.</p>\n      ",
+          "shape_name": "MethodNotAllowedException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The caller has exceeded throttling limits.</simpara>\n      ",
+          "documentation": "\n         <p>The caller has exceeded throttling limits.</p>\n      ",
+          "shape_name": "TooManyRequestsException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>An internal error occurred while processing the request.</simpara>\n      ",
+          "documentation": "\n         <p>An internal error occurred while processing the request.</p>\n      ",
+          "shape_name": "InternalServerErrorException"
+        }
+      ],
+      "documentation": "\n         <p>Returns a list of existing resource groups in your account.</p>\n      "
+    },
+    "ListGroupsV20171127": {
+      "name": "ListGroupsV20171127",
+      "http": {
+        "method": "GET",
+        "uri": "/groups?maxResults={MaxResults}&nextToken={NextToken}"
+      },
+      "input": {
+        "type": "structure",
+        "members": {
+          "MaxResults": {
+            "type": "integer",
+            "location": "uri",
+            "shape_name": "MaxResults",
+            "documentation": null,
+            "min_length": 1,
+            "max_length": 50
+          },
+          "NextToken": {
+            "type": "string",
+            "location": "uri",
+            "shape_name": "NextToken",
+            "documentation": null
+          }
+        },
+        "shape_name": "ListGroupsV20171127Input",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "Groups": {
+            "type": "list",
+            "shape_name": "GroupList",
+            "documentation": null,
+            "members": {
+              "type": "structure",
+              "members": {
+                "GroupArn": {
+                  "type": "string",
+                  "pattern": "arn:aws:resource-groups:[a-z]{2}-[a-z]+-\\d{1}:[0-9]{12}:group/[a-zA-Z0-9_\\.-]{1,128}",
+                  "zonbookDocumentation": "\n         <simpara>The ARN of a resource group.</simpara>\n      ",
+                  "documentation": "\n         <p>The ARN of a resource group.</p>\n      ",
+                  "required": true,
+                  "shape_name": "GroupArn"
+                },
+                "Name": {
+                  "type": "string",
+                  "pattern": "[a-zA-Z0-9_\\.-]+",
+                  "zonbookDocumentation": "\n         <simpara>The name of a resource group.</simpara>\n      ",
+                  "documentation": "\n         <p>The name of a resource group.</p>\n      ",
+                  "required": true,
+                  "shape_name": "GroupName",
+                  "min_length": 1,
+                  "max_length": 128
+                },
+                "Description": {
+                  "type": "string",
+                  "pattern": "[\\sa-zA-Z0-9_\\.-]*",
+                  "zonbookDocumentation": "\n         <simpara>The description of the resource group.</simpara>\n      ",
+                  "documentation": "\n         <p>The description of the resource group.</p>\n      ",
+                  "shape_name": "GroupDescription",
+                  "max_length": 512
+                }
+              },
+              "zonbookDocumentation": "\n         <simpara>A resource group.</simpara>\n      ",
+              "documentation": "\n         <p>A resource group.</p>\n      ",
+              "shape_name": "Group"
+            }
+          },
+          "NextToken": {
+            "type": "string",
+            "shape_name": "NextToken",
+            "documentation": null
+          }
+        },
+        "shape_name": "ListGroupsV20171127Output",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request does not comply with validation rules that are defined for the request parameters.</simpara>\n      ",
+          "documentation": "\n         <p>The request does not comply with validation rules that are defined for the request parameters.</p>\n      ",
+          "shape_name": "BadRequestException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The caller is not authorized to make the request.</simpara>\n      ",
+          "documentation": "\n         <p>The caller is not authorized to make the request.</p>\n      ",
+          "shape_name": "ForbiddenException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request uses an HTTP method which is not allowed for the specified resource.</simpara>\n      ",
+          "documentation": "\n         <p>The request uses an HTTP method which is not allowed for the specified resource.</p>\n      ",
+          "shape_name": "MethodNotAllowedException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The caller has exceeded throttling limits.</simpara>\n      ",
+          "documentation": "\n         <p>The caller has exceeded throttling limits.</p>\n      ",
+          "shape_name": "TooManyRequestsException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>An internal error occurred while processing the request.</simpara>\n      ",
+          "documentation": "\n         <p>An internal error occurred while processing the request.</p>\n      ",
+          "shape_name": "InternalServerErrorException"
+        }
+      ],
+      "documentation": null
+    },
+    "GetGroup": {
+      "name": "GetGroup",
+      "http": {
+        "method": "GET",
+        "uri": "/groups/{GroupName}"
+      },
+      "input": {
+        "type": "structure",
+        "members": {
+          "GroupName": {
+            "type": "string",
+            "pattern": "[a-zA-Z0-9_\\.-]+",
+            "zonbookDocumentation": "\n         <simpara>The name of the resource group.</simpara>\n      ",
+            "documentation": "\n         <p>The name of the resource group.</p>\n      ",
+            "location": "uri",
+            "required": true,
+            "shape_name": "GroupName",
+            "min_length": 1,
+            "max_length": 128
+          }
+        },
+        "shape_name": "GetGroupInput",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "Group": {
+            "type": "structure",
+            "members": {
+              "GroupArn": {
+                "type": "string",
+                "pattern": "arn:aws:resource-groups:[a-z]{2}-[a-z]+-\\d{1}:[0-9]{12}:group/[a-zA-Z0-9_\\.-]{1,128}",
+                "zonbookDocumentation": "\n         <simpara>The ARN of a resource group.</simpara>\n      ",
+                "documentation": "\n         <p>The ARN of a resource group.</p>\n      ",
+                "required": true,
+                "shape_name": "GroupArn"
+              },
+              "Name": {
+                "type": "string",
+                "pattern": "[a-zA-Z0-9_\\.-]+",
+                "zonbookDocumentation": "\n         <simpara>The name of a resource group.</simpara>\n      ",
+                "documentation": "\n         <p>The name of a resource group.</p>\n      ",
+                "required": true,
+                "shape_name": "GroupName",
+                "min_length": 1,
+                "max_length": 128
+              },
+              "Description": {
+                "type": "string",
+                "pattern": "[\\sa-zA-Z0-9_\\.-]*",
+                "zonbookDocumentation": "\n         <simpara>The description of the resource group.</simpara>\n      ",
+                "documentation": "\n         <p>The description of the resource group.</p>\n      ",
+                "shape_name": "GroupDescription",
+                "max_length": 512
+              }
+            },
+            "zonbookDocumentation": "\n         <simpara>A full description of the resource group.</simpara>\n      ",
+            "documentation": "\n         <p>A full description of the resource group.</p>\n      ",
+            "shape_name": "Group"
+          }
+        },
+        "shape_name": "GetGroupOutput",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request does not comply with validation rules that are defined for the request parameters.</simpara>\n      ",
+          "documentation": "\n         <p>The request does not comply with validation rules that are defined for the request parameters.</p>\n      ",
+          "shape_name": "BadRequestException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The caller is not authorized to make the request.</simpara>\n      ",
+          "documentation": "\n         <p>The caller is not authorized to make the request.</p>\n      ",
+          "shape_name": "ForbiddenException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>One or more resources specified in the request do not exist.</simpara>\n      ",
+          "documentation": "\n         <p>One or more resources specified in the request do not exist.</p>\n      ",
+          "shape_name": "NotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request uses an HTTP method which is not allowed for the specified resource.</simpara>\n      ",
+          "documentation": "\n         <p>The request uses an HTTP method which is not allowed for the specified resource.</p>\n      ",
+          "shape_name": "MethodNotAllowedException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The caller has exceeded throttling limits.</simpara>\n      ",
+          "documentation": "\n         <p>The caller has exceeded throttling limits.</p>\n      ",
+          "shape_name": "TooManyRequestsException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>An internal error occurred while processing the request.</simpara>\n      ",
+          "documentation": "\n         <p>An internal error occurred while processing the request.</p>\n      ",
+          "shape_name": "InternalServerErrorException"
+        }
+      ],
+      "documentation": "\n         <p>Returns information about a specified resource group.</p>\n      "
+    },
+    "DeleteGroup": {
+      "name": "DeleteGroup",
+      "http": {
+        "method": "DELETE",
+        "uri": "/groups/{GroupName}"
+      },
+      "input": {
+        "type": "structure",
+        "members": {
+          "GroupName": {
+            "type": "string",
+            "pattern": "[a-zA-Z0-9_\\.-]+",
+            "zonbookDocumentation": "\n         <simpara>The name of the resource group to delete.</simpara>\n      ",
+            "documentation": "\n         <p>The name of the resource group to delete.</p>\n      ",
+            "location": "uri",
+            "required": true,
+            "shape_name": "GroupName",
+            "min_length": 1,
+            "max_length": 128
+          }
+        },
+        "shape_name": "DeleteGroupInput",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "Group": {
+            "type": "structure",
+            "members": {
+              "GroupArn": {
+                "type": "string",
+                "pattern": "arn:aws:resource-groups:[a-z]{2}-[a-z]+-\\d{1}:[0-9]{12}:group/[a-zA-Z0-9_\\.-]{1,128}",
+                "zonbookDocumentation": "\n         <simpara>The ARN of a resource group.</simpara>\n      ",
+                "documentation": "\n         <p>The ARN of a resource group.</p>\n      ",
+                "required": true,
+                "shape_name": "GroupArn"
+              },
+              "Name": {
+                "type": "string",
+                "pattern": "[a-zA-Z0-9_\\.-]+",
+                "zonbookDocumentation": "\n         <simpara>The name of a resource group.</simpara>\n      ",
+                "documentation": "\n         <p>The name of a resource group.</p>\n      ",
+                "required": true,
+                "shape_name": "GroupName",
+                "min_length": 1,
+                "max_length": 128
+              },
+              "Description": {
+                "type": "string",
+                "pattern": "[\\sa-zA-Z0-9_\\.-]*",
+                "zonbookDocumentation": "\n         <simpara>The description of the resource group.</simpara>\n      ",
+                "documentation": "\n         <p>The description of the resource group.</p>\n      ",
+                "shape_name": "GroupDescription",
+                "max_length": 512
+              }
+            },
+            "zonbookDocumentation": "\n         <simpara>A full description of the deleted resource group.</simpara>\n      ",
+            "documentation": "\n         <p>A full description of the deleted resource group.</p>\n      ",
+            "shape_name": "Group"
+          }
+        },
+        "shape_name": "DeleteGroupOutput",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request does not comply with validation rules that are defined for the request parameters.</simpara>\n      ",
+          "documentation": "\n         <p>The request does not comply with validation rules that are defined for the request parameters.</p>\n      ",
+          "shape_name": "BadRequestException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The caller is not authorized to make the request.</simpara>\n      ",
+          "documentation": "\n         <p>The caller is not authorized to make the request.</p>\n      ",
+          "shape_name": "ForbiddenException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>One or more resources specified in the request do not exist.</simpara>\n      ",
+          "documentation": "\n         <p>One or more resources specified in the request do not exist.</p>\n      ",
+          "shape_name": "NotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request uses an HTTP method which is not allowed for the specified resource.</simpara>\n      ",
+          "documentation": "\n         <p>The request uses an HTTP method which is not allowed for the specified resource.</p>\n      ",
+          "shape_name": "MethodNotAllowedException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The caller has exceeded throttling limits.</simpara>\n      ",
+          "documentation": "\n         <p>The caller has exceeded throttling limits.</p>\n      ",
+          "shape_name": "TooManyRequestsException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>An internal error occurred while processing the request.</simpara>\n      ",
+          "documentation": "\n         <p>An internal error occurred while processing the request.</p>\n      ",
+          "shape_name": "InternalServerErrorException"
+        }
+      ],
+      "documentation": "\n         <p>Deletes a specified resource group. Deleting a resource group does not delete resources that are members of the group; it only deletes the group structure.</p>\n      "
+    },
+    "UpdateGroupQuery": {
+      "name": "UpdateGroupQuery",
+      "http": {
+        "method": "PUT",
+        "uri": "/groups/{GroupName}/query"
+      },
+      "input": {
+        "type": "structure",
+        "members": {
+          "GroupName": {
+            "type": "string",
+            "pattern": "[a-zA-Z0-9_\\.-]+",
+            "zonbookDocumentation": "\n         <simpara>The name of the resource group for which you want to edit the query.</simpara>\n      ",
+            "documentation": "\n         <p>The name of the resource group for which you want to edit the query.</p>\n      ",
+            "location": "uri",
+            "required": true,
+            "shape_name": "GroupName",
+            "min_length": 1,
+            "max_length": 128
+          },
+          "ResourceQuery": {
+            "type": "structure",
+            "members": {
+              "Type": {
+                "type": "string",
+                "enum": [
+                  "TAG_FILTERS_1_0"
+                ],
+                "zonbookDocumentation": "\n         <simpara>The type of the query. The valid value in this release is <code>TAG_FILTERS_1_0</code>.</simpara>\n         <simpara>\n            <emphasis>\n               <code>TAG_FILTERS_1_0:</code>\n            </emphasis> A JSON syntax that lets you specify a collection of simple tag filters for resource types and tags, as supported by the AWS \n       Tagging API GetResources operation. When more than one element is present, only resources that match all filters \n       are part of the result. If a filter specifies more than one value for a key, a resource matches the filter if its tag value matches any of the specified values.</simpara>\n      ",
+                "documentation": "\n         <p>The type of the query. The valid value in this release is <code>TAG_FILTERS_1_0</code>.</p>\n         <p>\n            <i>\n               <code>TAG_FILTERS_1_0:</code>\n            </i> A JSON syntax that lets you specify a collection of simple tag filters for resource types and tags, as supported by the AWS \n       Tagging API GetResources operation. When more than one element is present, only resources that match all filters \n       are part of the result. If a filter specifies more than one value for a key, a resource matches the filter if its tag value matches any of the specified values.</p>\n      ",
+                "required": true,
+                "shape_name": "QueryType"
+              },
+              "Query": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <simpara>The query that defines a group or a search.</simpara>\n      ",
+                "documentation": "\n         <p>The query that defines a group or a search.</p>\n      ",
+                "required": true,
+                "shape_name": "Query",
+                "max_length": 2048
+              }
+            },
+            "zonbookDocumentation": "\n         <simpara>The resource query that determines which AWS resources are members of the resource group.</simpara>\n      ",
+            "documentation": "\n         <p>The resource query that determines which AWS resources are members of the resource group.</p>\n      ",
+            "required": true,
+            "shape_name": "ResourceQuery"
+          }
+        },
+        "shape_name": "UpdateGroupQueryInput",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "GroupQuery": {
+            "type": "structure",
+            "members": {
+              "GroupName": {
+                "type": "string",
+                "pattern": "[a-zA-Z0-9_\\.-]+",
+                "zonbookDocumentation": "\n         <simpara>The name of a resource group that is associated with a specific resource query.</simpara>\n      ",
+                "documentation": "\n         <p>The name of a resource group that is associated with a specific resource query.</p>\n      ",
+                "required": true,
+                "shape_name": "GroupName",
+                "min_length": 1,
+                "max_length": 128
+              },
+              "ResourceQuery": {
+                "type": "structure",
+                "members": {
+                  "Type": {
+                    "type": "string",
+                    "enum": [
+                      "TAG_FILTERS_1_0"
+                    ],
+                    "zonbookDocumentation": "\n         <simpara>The type of the query. The valid value in this release is <code>TAG_FILTERS_1_0</code>.</simpara>\n         <simpara>\n            <emphasis>\n               <code>TAG_FILTERS_1_0:</code>\n            </emphasis> A JSON syntax that lets you specify a collection of simple tag filters for resource types and tags, as supported by the AWS \n       Tagging API GetResources operation. When more than one element is present, only resources that match all filters \n       are part of the result. If a filter specifies more than one value for a key, a resource matches the filter if its tag value matches any of the specified values.</simpara>\n      ",
+                    "documentation": "\n         <p>The type of the query. The valid value in this release is <code>TAG_FILTERS_1_0</code>.</p>\n         <p>\n            <i>\n               <code>TAG_FILTERS_1_0:</code>\n            </i> A JSON syntax that lets you specify a collection of simple tag filters for resource types and tags, as supported by the AWS \n       Tagging API GetResources operation. When more than one element is present, only resources that match all filters \n       are part of the result. If a filter specifies more than one value for a key, a resource matches the filter if its tag value matches any of the specified values.</p>\n      ",
+                    "required": true,
+                    "shape_name": "QueryType"
+                  },
+                  "Query": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n         <simpara>The query that defines a group or a search.</simpara>\n      ",
+                    "documentation": "\n         <p>The query that defines a group or a search.</p>\n      ",
+                    "required": true,
+                    "shape_name": "Query",
+                    "max_length": 2048
+                  }
+                },
+                "zonbookDocumentation": "\n         <simpara>The resource query which determines which AWS resources are members of the associated resource group.</simpara>\n      ",
+                "documentation": "\n         <p>The resource query which determines which AWS resources are members of the associated resource group.</p>\n      ",
+                "required": true,
+                "shape_name": "ResourceQuery"
+              }
+            },
+            "zonbookDocumentation": "\n         <simpara>The resource query associated with the resource group after the update.</simpara>\n      ",
+            "documentation": "\n         <p>The resource query associated with the resource group after the update.</p>\n      ",
+            "shape_name": "GroupQuery"
+          }
+        },
+        "shape_name": "UpdateGroupQueryOutput",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request does not comply with validation rules that are defined for the request parameters.</simpara>\n      ",
+          "documentation": "\n         <p>The request does not comply with validation rules that are defined for the request parameters.</p>\n      ",
+          "shape_name": "BadRequestException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The caller is not authorized to make the request.</simpara>\n      ",
+          "documentation": "\n         <p>The caller is not authorized to make the request.</p>\n      ",
+          "shape_name": "ForbiddenException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>One or more resources specified in the request do not exist.</simpara>\n      ",
+          "documentation": "\n         <p>One or more resources specified in the request do not exist.</p>\n      ",
+          "shape_name": "NotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request uses an HTTP method which is not allowed for the specified resource.</simpara>\n      ",
+          "documentation": "\n         <p>The request uses an HTTP method which is not allowed for the specified resource.</p>\n      ",
+          "shape_name": "MethodNotAllowedException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The caller has exceeded throttling limits.</simpara>\n      ",
+          "documentation": "\n         <p>The caller has exceeded throttling limits.</p>\n      ",
+          "shape_name": "TooManyRequestsException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>An internal error occurred while processing the request.</simpara>\n      ",
+          "documentation": "\n         <p>An internal error occurred while processing the request.</p>\n      ",
+          "shape_name": "InternalServerErrorException"
+        }
+      ],
+      "documentation": "\n         <p>Updates the resource query of a group.</p>\n      "
+    },
+    "GetGroupQuery": {
+      "name": "GetGroupQuery",
+      "http": {
+        "method": "GET",
+        "uri": "/groups/{GroupName}/query"
+      },
+      "input": {
+        "type": "structure",
+        "members": {
+          "GroupName": {
+            "type": "string",
+            "pattern": "[a-zA-Z0-9_\\.-]+",
+            "zonbookDocumentation": "\n         <simpara>The name of the resource group.</simpara>\n      ",
+            "documentation": "\n         <p>The name of the resource group.</p>\n      ",
+            "location": "uri",
+            "required": true,
+            "shape_name": "GroupName",
+            "min_length": 1,
+            "max_length": 128
+          }
+        },
+        "shape_name": "GetGroupQueryInput",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "GroupQuery": {
+            "type": "structure",
+            "members": {
+              "GroupName": {
+                "type": "string",
+                "pattern": "[a-zA-Z0-9_\\.-]+",
+                "zonbookDocumentation": "\n         <simpara>The name of a resource group that is associated with a specific resource query.</simpara>\n      ",
+                "documentation": "\n         <p>The name of a resource group that is associated with a specific resource query.</p>\n      ",
+                "required": true,
+                "shape_name": "GroupName",
+                "min_length": 1,
+                "max_length": 128
+              },
+              "ResourceQuery": {
+                "type": "structure",
+                "members": {
+                  "Type": {
+                    "type": "string",
+                    "enum": [
+                      "TAG_FILTERS_1_0"
+                    ],
+                    "zonbookDocumentation": "\n         <simpara>The type of the query. The valid value in this release is <code>TAG_FILTERS_1_0</code>.</simpara>\n         <simpara>\n            <emphasis>\n               <code>TAG_FILTERS_1_0:</code>\n            </emphasis> A JSON syntax that lets you specify a collection of simple tag filters for resource types and tags, as supported by the AWS \n       Tagging API GetResources operation. When more than one element is present, only resources that match all filters \n       are part of the result. If a filter specifies more than one value for a key, a resource matches the filter if its tag value matches any of the specified values.</simpara>\n      ",
+                    "documentation": "\n         <p>The type of the query. The valid value in this release is <code>TAG_FILTERS_1_0</code>.</p>\n         <p>\n            <i>\n               <code>TAG_FILTERS_1_0:</code>\n            </i> A JSON syntax that lets you specify a collection of simple tag filters for resource types and tags, as supported by the AWS \n       Tagging API GetResources operation. When more than one element is present, only resources that match all filters \n       are part of the result. If a filter specifies more than one value for a key, a resource matches the filter if its tag value matches any of the specified values.</p>\n      ",
+                    "required": true,
+                    "shape_name": "QueryType"
+                  },
+                  "Query": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n         <simpara>The query that defines a group or a search.</simpara>\n      ",
+                    "documentation": "\n         <p>The query that defines a group or a search.</p>\n      ",
+                    "required": true,
+                    "shape_name": "Query",
+                    "max_length": 2048
+                  }
+                },
+                "zonbookDocumentation": "\n         <simpara>The resource query which determines which AWS resources are members of the associated resource group.</simpara>\n      ",
+                "documentation": "\n         <p>The resource query which determines which AWS resources are members of the associated resource group.</p>\n      ",
+                "required": true,
+                "shape_name": "ResourceQuery"
+              }
+            },
+            "zonbookDocumentation": "\n         <simpara>The resource query associated with the specified group.</simpara>\n      ",
+            "documentation": "\n         <p>The resource query associated with the specified group.</p>\n      ",
+            "shape_name": "GroupQuery"
+          }
+        },
+        "shape_name": "GetGroupQueryOutput",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request does not comply with validation rules that are defined for the request parameters.</simpara>\n      ",
+          "documentation": "\n         <p>The request does not comply with validation rules that are defined for the request parameters.</p>\n      ",
+          "shape_name": "BadRequestException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The caller is not authorized to make the request.</simpara>\n      ",
+          "documentation": "\n         <p>The caller is not authorized to make the request.</p>\n      ",
+          "shape_name": "ForbiddenException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>One or more resources specified in the request do not exist.</simpara>\n      ",
+          "documentation": "\n         <p>One or more resources specified in the request do not exist.</p>\n      ",
+          "shape_name": "NotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request uses an HTTP method which is not allowed for the specified resource.</simpara>\n      ",
+          "documentation": "\n         <p>The request uses an HTTP method which is not allowed for the specified resource.</p>\n      ",
+          "shape_name": "MethodNotAllowedException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The caller has exceeded throttling limits.</simpara>\n      ",
+          "documentation": "\n         <p>The caller has exceeded throttling limits.</p>\n      ",
+          "shape_name": "TooManyRequestsException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>An internal error occurred while processing the request.</simpara>\n      ",
+          "documentation": "\n         <p>An internal error occurred while processing the request.</p>\n      ",
+          "shape_name": "InternalServerErrorException"
+        }
+      ],
+      "documentation": "\n         <p>Returns the resource query associated with the specified resource group.</p>\n      "
+    },
+    "Tag": {
+      "name": "Tag",
+      "http": {
+        "method": "PUT",
+        "uri": "/resources/{Arn}/tags"
+      },
+      "input": {
+        "type": "structure",
+        "members": {
+          "Arn": {
+            "type": "string",
+            "pattern": "arn:aws:resource-groups:[a-z]{2}-[a-z]+-\\d{1}:[0-9]{12}:group/[a-zA-Z0-9_\\.-]{1,128}",
+            "zonbookDocumentation": "\n         <simpara>The ARN of the resource to which to add tags.</simpara>\n      ",
+            "documentation": "\n         <p>The ARN of the resource to which to add tags.</p>\n      ",
+            "location": "uri",
+            "required": true,
+            "shape_name": "GroupArn"
+          },
+          "Tags": {
+            "type": "map",
+            "zonbookDocumentation": "\n         <simpara>The tags to add to the specified resource. A tag is a string-to-string map of key-value pairs. Tag keys can have a maximum character length of 128 characters, \n       and tag values can have a maximum length of 256 characters.</simpara>\n      ",
+            "documentation": "\n         <p>The tags to add to the specified resource. A tag is a string-to-string map of key-value pairs. Tag keys can have a maximum character length of 128 characters, \n       and tag values can have a maximum length of 256 characters.</p>\n      ",
+            "required": true,
+            "shape_name": "Tags",
+            "keys": {
+              "type": "string",
+              "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
+              "shape_name": "TagKey",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 128
+            },
+            "members": {
+              "type": "string",
+              "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
+              "shape_name": "TagValue",
+              "documentation": null,
+              "min_length": 0,
+              "max_length": 256
+            }
+          }
+        },
+        "shape_name": "TagInput",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "Arn": {
+            "type": "string",
+            "pattern": "arn:aws:resource-groups:[a-z]{2}-[a-z]+-\\d{1}:[0-9]{12}:group/[a-zA-Z0-9_\\.-]{1,128}",
+            "zonbookDocumentation": "\n         <simpara>The ARN of the tagged resource.</simpara>\n      ",
+            "documentation": "\n         <p>The ARN of the tagged resource.</p>\n      ",
+            "shape_name": "GroupArn"
+          },
+          "Tags": {
+            "type": "map",
+            "zonbookDocumentation": "\n         <simpara>The tags that have been added to the specified resource.</simpara>\n      ",
+            "documentation": "\n         <p>The tags that have been added to the specified resource.</p>\n      ",
+            "shape_name": "Tags",
+            "keys": {
+              "type": "string",
+              "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
+              "shape_name": "TagKey",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 128
+            },
+            "members": {
+              "type": "string",
+              "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
+              "shape_name": "TagValue",
+              "documentation": null,
+              "min_length": 0,
+              "max_length": 256
+            }
+          }
+        },
+        "shape_name": "TagOutput",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request does not comply with validation rules that are defined for the request parameters.</simpara>\n      ",
+          "documentation": "\n         <p>The request does not comply with validation rules that are defined for the request parameters.</p>\n      ",
+          "shape_name": "BadRequestException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The caller is not authorized to make the request.</simpara>\n      ",
+          "documentation": "\n         <p>The caller is not authorized to make the request.</p>\n      ",
+          "shape_name": "ForbiddenException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>One or more resources specified in the request do not exist.</simpara>\n      ",
+          "documentation": "\n         <p>One or more resources specified in the request do not exist.</p>\n      ",
+          "shape_name": "NotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request uses an HTTP method which is not allowed for the specified resource.</simpara>\n      ",
+          "documentation": "\n         <p>The request uses an HTTP method which is not allowed for the specified resource.</p>\n      ",
+          "shape_name": "MethodNotAllowedException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The caller has exceeded throttling limits.</simpara>\n      ",
+          "documentation": "\n         <p>The caller has exceeded throttling limits.</p>\n      ",
+          "shape_name": "TooManyRequestsException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>An internal error occurred while processing the request.</simpara>\n      ",
+          "documentation": "\n         <p>An internal error occurred while processing the request.</p>\n      ",
+          "shape_name": "InternalServerErrorException"
+        }
+      ],
+      "documentation": "\n         <p>Adds specified tags to a resource with the specified ARN. Existing tags on a resource are not changed if they are not specified in the request parameters.</p>\n      "
+    },
+    "GetTags": {
+      "name": "GetTags",
+      "http": {
+        "method": "GET",
+        "uri": "/resources/{Arn}/tags"
+      },
+      "input": {
+        "type": "structure",
+        "members": {
+          "Arn": {
+            "type": "string",
+            "pattern": "arn:aws:resource-groups:[a-z]{2}-[a-z]+-\\d{1}:[0-9]{12}:group/[a-zA-Z0-9_\\.-]{1,128}",
+            "zonbookDocumentation": "\n         <simpara>The ARN of the resource for which you want a list of tags. The resource must exist within the account you are using.</simpara>\n      ",
+            "documentation": "\n         <p>The ARN of the resource for which you want a list of tags. The resource must exist within the account you are using.</p>\n      ",
+            "location": "uri",
+            "required": true,
+            "shape_name": "GroupArn"
+          }
+        },
+        "shape_name": "GetTagsInput",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "Arn": {
+            "type": "string",
+            "pattern": "arn:aws:resource-groups:[a-z]{2}-[a-z]+-\\d{1}:[0-9]{12}:group/[a-zA-Z0-9_\\.-]{1,128}",
+            "zonbookDocumentation": "\n         <simpara>The ARN of the tagged resource.</simpara>\n      ",
+            "documentation": "\n         <p>The ARN of the tagged resource.</p>\n      ",
+            "shape_name": "GroupArn"
+          },
+          "Tags": {
+            "type": "map",
+            "zonbookDocumentation": "\n         <simpara>The tags associated with the specified resource.</simpara>\n      ",
+            "documentation": "\n         <p>The tags associated with the specified resource.</p>\n      ",
+            "shape_name": "Tags",
+            "keys": {
+              "type": "string",
+              "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
+              "shape_name": "TagKey",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 128
+            },
+            "members": {
+              "type": "string",
+              "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
+              "shape_name": "TagValue",
+              "documentation": null,
+              "min_length": 0,
+              "max_length": 256
+            }
+          }
+        },
+        "shape_name": "GetTagsOutput",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request does not comply with validation rules that are defined for the request parameters.</simpara>\n      ",
+          "documentation": "\n         <p>The request does not comply with validation rules that are defined for the request parameters.</p>\n      ",
+          "shape_name": "BadRequestException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The caller is not authorized to make the request.</simpara>\n      ",
+          "documentation": "\n         <p>The caller is not authorized to make the request.</p>\n      ",
+          "shape_name": "ForbiddenException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>One or more resources specified in the request do not exist.</simpara>\n      ",
+          "documentation": "\n         <p>One or more resources specified in the request do not exist.</p>\n      ",
+          "shape_name": "NotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request uses an HTTP method which is not allowed for the specified resource.</simpara>\n      ",
+          "documentation": "\n         <p>The request uses an HTTP method which is not allowed for the specified resource.</p>\n      ",
+          "shape_name": "MethodNotAllowedException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The caller has exceeded throttling limits.</simpara>\n      ",
+          "documentation": "\n         <p>The caller has exceeded throttling limits.</p>\n      ",
+          "shape_name": "TooManyRequestsException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>An internal error occurred while processing the request.</simpara>\n      ",
+          "documentation": "\n         <p>An internal error occurred while processing the request.</p>\n      ",
+          "shape_name": "InternalServerErrorException"
+        }
+      ],
+      "documentation": "\n         <p>Returns a list of tags that are associated with a resource, specified by an ARN.</p>\n      "
+    },
+    "Untag": {
+      "name": "Untag",
+      "http": {
+        "method": "PATCH",
+        "uri": "/resources/{Arn}/tags"
+      },
+      "input": {
+        "type": "structure",
+        "members": {
+          "Arn": {
+            "type": "string",
+            "pattern": "arn:aws:resource-groups:[a-z]{2}-[a-z]+-\\d{1}:[0-9]{12}:group/[a-zA-Z0-9_\\.-]{1,128}",
+            "zonbookDocumentation": "\n         <simpara>The ARN of the resource from which to remove tags.</simpara>\n      ",
+            "documentation": "\n         <p>The ARN of the resource from which to remove tags.</p>\n      ",
+            "location": "uri",
+            "required": true,
+            "shape_name": "GroupArn"
+          },
+          "Keys": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>The keys of the tags to be removed.</simpara>\n      ",
+            "documentation": "\n         <p>The keys of the tags to be removed.</p>\n      ",
+            "required": true,
+            "shape_name": "TagKeyList",
+            "members": {
+              "type": "string",
+              "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
+              "shape_name": "TagKey",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 128
+            }
+          }
+        },
+        "shape_name": "UntagInput",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "Arn": {
+            "type": "string",
+            "pattern": "arn:aws:resource-groups:[a-z]{2}-[a-z]+-\\d{1}:[0-9]{12}:group/[a-zA-Z0-9_\\.-]{1,128}",
+            "zonbookDocumentation": "\n         <simpara>The ARN of the resource from which tags have been removed.</simpara>\n      ",
+            "documentation": "\n         <p>The ARN of the resource from which tags have been removed.</p>\n      ",
+            "shape_name": "GroupArn"
+          },
+          "Keys": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>The keys of tags that have been removed.</simpara>\n      ",
+            "documentation": "\n         <p>The keys of tags that have been removed.</p>\n      ",
+            "shape_name": "TagKeyList",
+            "members": {
+              "type": "string",
+              "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
+              "shape_name": "TagKey",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 128
+            }
+          }
+        },
+        "shape_name": "UntagOutput",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request does not comply with validation rules that are defined for the request parameters.</simpara>\n      ",
+          "documentation": "\n         <p>The request does not comply with validation rules that are defined for the request parameters.</p>\n      ",
+          "shape_name": "BadRequestException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The caller is not authorized to make the request.</simpara>\n      ",
+          "documentation": "\n         <p>The caller is not authorized to make the request.</p>\n      ",
+          "shape_name": "ForbiddenException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>One or more resources specified in the request do not exist.</simpara>\n      ",
+          "documentation": "\n         <p>One or more resources specified in the request do not exist.</p>\n      ",
+          "shape_name": "NotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request uses an HTTP method which is not allowed for the specified resource.</simpara>\n      ",
+          "documentation": "\n         <p>The request uses an HTTP method which is not allowed for the specified resource.</p>\n      ",
+          "shape_name": "MethodNotAllowedException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The caller has exceeded throttling limits.</simpara>\n      ",
+          "documentation": "\n         <p>The caller has exceeded throttling limits.</p>\n      ",
+          "shape_name": "TooManyRequestsException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>An internal error occurred while processing the request.</simpara>\n      ",
+          "documentation": "\n         <p>An internal error occurred while processing the request.</p>\n      ",
+          "shape_name": "InternalServerErrorException"
+        }
+      ],
+      "documentation": "\n         <p>Deletes specified tags from a specified resource.</p>\n      "
+    },
+    "ListGroupResources": {
+      "name": "ListGroupResources",
+      "http": {
+        "method": "POST",
+        "uri": "/groups/{GroupName}/resource-identifiers-list?maxResults={MaxResults}&nextToken={NextToken}"
+      },
+      "input": {
+        "type": "structure",
+        "members": {
+          "GroupName": {
+            "type": "string",
+            "pattern": "[a-zA-Z0-9_\\.-]+",
+            "zonbookDocumentation": "\n         <simpara>The name of the resource group.</simpara>\n      ",
+            "documentation": "\n         <p>The name of the resource group.</p>\n      ",
+            "location": "uri",
+            "required": true,
+            "shape_name": "GroupName",
+            "min_length": 1,
+            "max_length": 128
+          },
+          "Filters": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>Filters, formatted as ResourceFilter objects, that you want to apply to a ListGroupResources operation.</simpara>\n         <itemizedlist>\n            <listitem>\n               <simpara>\n                  <code>resource-type</code> - Filter resources by their type. Specify up to five resource types in the format AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.</simpara>\n            </listitem>\n         </itemizedlist>\n      ",
+            "documentation": "\n         <p>Filters, formatted as ResourceFilter objects, that you want to apply to a ListGroupResources operation.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>resource-type</code> - Filter resources by their type. Specify up to five resource types in the format AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.</p>\n            </li>\n         </ul>\n      ",
+            "shape_name": "ResourceFilterList",
+            "members": {
+              "type": "structure",
+              "members": {
+                "Name": {
+                  "type": "string",
+                  "enum": [
+                    "resource-type"
+                  ],
+                  "zonbookDocumentation": "\n         <simpara>The name of the filter. Filter names are case-sensitive.</simpara>\n      ",
+                  "documentation": "\n         <p>The name of the filter. Filter names are case-sensitive.</p>\n      ",
+                  "required": true,
+                  "shape_name": "ResourceFilterName"
+                },
+                "Values": {
+                  "type": "list",
+                  "zonbookDocumentation": "\n         <simpara>One or more filter values. Allowed filter values vary by resource filter name, and are case-sensitive.</simpara>\n      ",
+                  "documentation": "\n         <p>One or more filter values. Allowed filter values vary by resource filter name, and are case-sensitive.</p>\n      ",
+                  "required": true,
+                  "shape_name": "ResourceFilterValues",
+                  "min_length": 1,
+                  "max_length": 5,
+                  "members": {
+                    "type": "string",
+                    "pattern": "AWS::[a-zA-Z0-9]+::[a-zA-Z0-9]+",
+                    "shape_name": "ResourceFilterValue",
+                    "documentation": null,
+                    "min_length": 1,
+                    "max_length": 128
+                  }
+                }
+              },
+              "zonbookDocumentation": "\n         <simpara>A filter name and value pair that is used to obtain more specific results from a list of resources.</simpara>\n      ",
+              "documentation": "\n         <p>A filter name and value pair that is used to obtain more specific results from a list of resources.</p>\n      ",
+              "shape_name": "ResourceFilter"
+            }
+          },
+          "MaxResults": {
+            "type": "integer",
+            "zonbookDocumentation": "\n         <simpara>The maximum number of group member ARNs that are returned in a single call by ListGroupResources, in paginated output. By default, this number is 50.</simpara>\n      ",
+            "documentation": "\n         <p>The maximum number of group member ARNs that are returned in a single call by ListGroupResources, in paginated output. By default, this number is 50.</p>\n      ",
+            "location": "uri",
+            "shape_name": "MaxResults",
+            "min_length": 1,
+            "max_length": 50
+          },
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>The NextToken value that is returned in a paginated ListGroupResources request. To get the next page of results, \n       run the call again, add the NextToken parameter, and specify the NextToken value.</simpara>\n      ",
+            "documentation": "\n         <p>The NextToken value that is returned in a paginated ListGroupResources request. To get the next page of results, \n       run the call again, add the NextToken parameter, and specify the NextToken value.</p>\n      ",
+            "location": "uri",
+            "shape_name": "NextToken"
+          }
+        },
+        "shape_name": "ListGroupResourcesInput",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "ResourceIdentifiers": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>The ARNs and resource types of resources that are members of the group that you specified.</simpara>\n      ",
+            "documentation": "\n         <p>The ARNs and resource types of resources that are members of the group that you specified.</p>\n      ",
+            "shape_name": "ResourceIdentifierList",
+            "members": {
+              "type": "structure",
+              "members": {
+                "ResourceArn": {
+                  "type": "string",
+                  "pattern": "arn:aws:[a-z0-9\\-]*:([a-z]{2}-[a-z]+-\\d{1})?:([0-9]{12})?:.+",
+                  "zonbookDocumentation": "\n         <simpara>The ARN of a resource.</simpara>\n      ",
+                  "documentation": "\n         <p>The ARN of a resource.</p>\n      ",
+                  "shape_name": "ResourceArn"
+                },
+                "ResourceType": {
+                  "type": "string",
+                  "pattern": "AWS::[a-zA-Z0-9]+::\\w+",
+                  "zonbookDocumentation": "\n         <simpara>The resource type of a resource, such as <code>AWS::EC2::Instance</code>.</simpara>\n      ",
+                  "documentation": "\n         <p>The resource type of a resource, such as <code>AWS::EC2::Instance</code>.</p>\n      ",
+                  "shape_name": "ResourceType"
+                }
+              },
+              "zonbookDocumentation": "\n         <simpara>The ARN of a resource, and its resource type.</simpara>\n      ",
+              "documentation": "\n         <p>The ARN of a resource, and its resource type.</p>\n      ",
+              "shape_name": "ResourceIdentifier"
+            }
+          },
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>The NextToken value to include in a subsequent <code>ListGroupResources</code> request, to get more results.</simpara>\n      ",
+            "documentation": "\n         <p>The NextToken value to include in a subsequent <code>ListGroupResources</code> request, to get more results.</p>\n      ",
+            "shape_name": "NextToken"
+          }
+        },
+        "shape_name": "ListGroupResourcesOutput",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request has not been applied because it lacks valid authentication credentials for the target resource.</simpara>\n      ",
+          "documentation": "\n         <p>The request has not been applied because it lacks valid authentication credentials for the target resource.</p>\n      ",
+          "shape_name": "UnauthorizedException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request does not comply with validation rules that are defined for the request parameters.</simpara>\n      ",
+          "documentation": "\n         <p>The request does not comply with validation rules that are defined for the request parameters.</p>\n      ",
+          "shape_name": "BadRequestException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The caller is not authorized to make the request.</simpara>\n      ",
+          "documentation": "\n         <p>The caller is not authorized to make the request.</p>\n      ",
+          "shape_name": "ForbiddenException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>One or more resources specified in the request do not exist.</simpara>\n      ",
+          "documentation": "\n         <p>One or more resources specified in the request do not exist.</p>\n      ",
+          "shape_name": "NotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request uses an HTTP method which is not allowed for the specified resource.</simpara>\n      ",
+          "documentation": "\n         <p>The request uses an HTTP method which is not allowed for the specified resource.</p>\n      ",
+          "shape_name": "MethodNotAllowedException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The caller has exceeded throttling limits.</simpara>\n      ",
+          "documentation": "\n         <p>The caller has exceeded throttling limits.</p>\n      ",
+          "shape_name": "TooManyRequestsException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>An internal error occurred while processing the request.</simpara>\n      ",
+          "documentation": "\n         <p>An internal error occurred while processing the request.</p>\n      ",
+          "shape_name": "InternalServerErrorException"
+        }
+      ],
+      "documentation": "\n         <p>Returns a list of ARNs of resources that are members of a specified resource group.</p>\n      "
+    },
+    "ListGroupResourcesV20171127": {
+      "name": "ListGroupResourcesV20171127",
+      "http": {
+        "method": "GET",
+        "uri": "/groups/{GroupName}/resource-identifiers?maxResults={MaxResults}&nextToken={NextToken}"
+      },
+      "input": {
+        "type": "structure",
+        "members": {
+          "GroupName": {
+            "type": "string",
+            "pattern": "[a-zA-Z0-9_\\.-]+",
+            "location": "uri",
+            "required": true,
+            "shape_name": "GroupName",
+            "documentation": null,
+            "min_length": 1,
+            "max_length": 128
+          },
+          "MaxResults": {
+            "type": "integer",
+            "location": "uri",
+            "shape_name": "MaxResults",
+            "documentation": null,
+            "min_length": 1,
+            "max_length": 50
+          },
+          "NextToken": {
+            "type": "string",
+            "location": "uri",
+            "shape_name": "NextToken",
+            "documentation": null
+          }
+        },
+        "shape_name": "ListGroupResourcesV20171127Input",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "ResourceIdentifiers": {
+            "type": "list",
+            "shape_name": "ResourceIdentifierList",
+            "documentation": null,
+            "members": {
+              "type": "structure",
+              "members": {
+                "ResourceArn": {
+                  "type": "string",
+                  "pattern": "arn:aws:[a-z0-9\\-]*:([a-z]{2}-[a-z]+-\\d{1})?:([0-9]{12})?:.+",
+                  "zonbookDocumentation": "\n         <simpara>The ARN of a resource.</simpara>\n      ",
+                  "documentation": "\n         <p>The ARN of a resource.</p>\n      ",
+                  "shape_name": "ResourceArn"
+                },
+                "ResourceType": {
+                  "type": "string",
+                  "pattern": "AWS::[a-zA-Z0-9]+::\\w+",
+                  "zonbookDocumentation": "\n         <simpara>The resource type of a resource, such as <code>AWS::EC2::Instance</code>.</simpara>\n      ",
+                  "documentation": "\n         <p>The resource type of a resource, such as <code>AWS::EC2::Instance</code>.</p>\n      ",
+                  "shape_name": "ResourceType"
+                }
+              },
+              "zonbookDocumentation": "\n         <simpara>The ARN of a resource, and its resource type.</simpara>\n      ",
+              "documentation": "\n         <p>The ARN of a resource, and its resource type.</p>\n      ",
+              "shape_name": "ResourceIdentifier"
+            }
+          },
+          "NextToken": {
+            "type": "string",
+            "shape_name": "NextToken",
+            "documentation": null
+          }
+        },
+        "shape_name": "ListGroupResourcesV20171127Output",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request has not been applied because it lacks valid authentication credentials for the target resource.</simpara>\n      ",
+          "documentation": "\n         <p>The request has not been applied because it lacks valid authentication credentials for the target resource.</p>\n      ",
+          "shape_name": "UnauthorizedException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request does not comply with validation rules that are defined for the request parameters.</simpara>\n      ",
+          "documentation": "\n         <p>The request does not comply with validation rules that are defined for the request parameters.</p>\n      ",
+          "shape_name": "BadRequestException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The caller is not authorized to make the request.</simpara>\n      ",
+          "documentation": "\n         <p>The caller is not authorized to make the request.</p>\n      ",
+          "shape_name": "ForbiddenException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>One or more resources specified in the request do not exist.</simpara>\n      ",
+          "documentation": "\n         <p>One or more resources specified in the request do not exist.</p>\n      ",
+          "shape_name": "NotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request uses an HTTP method which is not allowed for the specified resource.</simpara>\n      ",
+          "documentation": "\n         <p>The request uses an HTTP method which is not allowed for the specified resource.</p>\n      ",
+          "shape_name": "MethodNotAllowedException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The caller has exceeded throttling limits.</simpara>\n      ",
+          "documentation": "\n         <p>The caller has exceeded throttling limits.</p>\n      ",
+          "shape_name": "TooManyRequestsException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>An internal error occurred while processing the request.</simpara>\n      ",
+          "documentation": "\n         <p>An internal error occurred while processing the request.</p>\n      ",
+          "shape_name": "InternalServerErrorException"
+        }
+      ],
+      "documentation": null
+    },
+    "SearchResources": {
+      "name": "SearchResources",
+      "http": {
+        "method": "POST",
+        "uri": "/resources/search"
+      },
+      "input": {
+        "type": "structure",
+        "members": {
+          "ResourceQuery": {
+            "type": "structure",
+            "members": {
+              "Type": {
+                "type": "string",
+                "enum": [
+                  "TAG_FILTERS_1_0"
+                ],
+                "zonbookDocumentation": "\n         <simpara>The type of the query. The valid value in this release is <code>TAG_FILTERS_1_0</code>.</simpara>\n         <simpara>\n            <emphasis>\n               <code>TAG_FILTERS_1_0:</code>\n            </emphasis> A JSON syntax that lets you specify a collection of simple tag filters for resource types and tags, as supported by the AWS \n       Tagging API GetResources operation. When more than one element is present, only resources that match all filters \n       are part of the result. If a filter specifies more than one value for a key, a resource matches the filter if its tag value matches any of the specified values.</simpara>\n      ",
+                "documentation": "\n         <p>The type of the query. The valid value in this release is <code>TAG_FILTERS_1_0</code>.</p>\n         <p>\n            <i>\n               <code>TAG_FILTERS_1_0:</code>\n            </i> A JSON syntax that lets you specify a collection of simple tag filters for resource types and tags, as supported by the AWS \n       Tagging API GetResources operation. When more than one element is present, only resources that match all filters \n       are part of the result. If a filter specifies more than one value for a key, a resource matches the filter if its tag value matches any of the specified values.</p>\n      ",
+                "required": true,
+                "shape_name": "QueryType"
+              },
+              "Query": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <simpara>The query that defines a group or a search.</simpara>\n      ",
+                "documentation": "\n         <p>The query that defines a group or a search.</p>\n      ",
+                "required": true,
+                "shape_name": "Query",
+                "max_length": 2048
+              }
+            },
+            "zonbookDocumentation": "\n         <simpara>The search query, using the same formats that are supported for resource group definition.</simpara>\n      ",
+            "documentation": "\n         <p>The search query, using the same formats that are supported for resource group definition.</p>\n      ",
+            "required": true,
+            "shape_name": "ResourceQuery"
+          },
+          "MaxResults": {
+            "type": "integer",
+            "zonbookDocumentation": "\n         <simpara>The maximum number of group member ARNs returned by <code>SearchResources</code> in paginated output. By default, this number is 50.</simpara>\n      ",
+            "documentation": "\n         <p>The maximum number of group member ARNs returned by <code>SearchResources</code> in paginated output. By default, this number is 50.</p>\n      ",
+            "shape_name": "MaxResults",
+            "min_length": 1,
+            "max_length": 50
+          },
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>The NextToken value that is returned in a paginated <code>SearchResources</code> request. To get the next page of results, \n       run the call again, add the NextToken parameter, and specify the NextToken value.</simpara>\n      ",
+            "documentation": "\n         <p>The NextToken value that is returned in a paginated <code>SearchResources</code> request. To get the next page of results, \n       run the call again, add the NextToken parameter, and specify the NextToken value.</p>\n      ",
+            "shape_name": "NextToken"
+          }
+        },
+        "shape_name": "SearchResourcesInput",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "ResourceIdentifiers": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>The ARNs and resource types of resources that are members of the group that you specified.</simpara>\n      ",
+            "documentation": "\n         <p>The ARNs and resource types of resources that are members of the group that you specified.</p>\n      ",
+            "shape_name": "ResourceIdentifierList",
+            "members": {
+              "type": "structure",
+              "members": {
+                "ResourceArn": {
+                  "type": "string",
+                  "pattern": "arn:aws:[a-z0-9\\-]*:([a-z]{2}-[a-z]+-\\d{1})?:([0-9]{12})?:.+",
+                  "zonbookDocumentation": "\n         <simpara>The ARN of a resource.</simpara>\n      ",
+                  "documentation": "\n         <p>The ARN of a resource.</p>\n      ",
+                  "shape_name": "ResourceArn"
+                },
+                "ResourceType": {
+                  "type": "string",
+                  "pattern": "AWS::[a-zA-Z0-9]+::\\w+",
+                  "zonbookDocumentation": "\n         <simpara>The resource type of a resource, such as <code>AWS::EC2::Instance</code>.</simpara>\n      ",
+                  "documentation": "\n         <p>The resource type of a resource, such as <code>AWS::EC2::Instance</code>.</p>\n      ",
+                  "shape_name": "ResourceType"
+                }
+              },
+              "zonbookDocumentation": "\n         <simpara>The ARN of a resource, and its resource type.</simpara>\n      ",
+              "documentation": "\n         <p>The ARN of a resource, and its resource type.</p>\n      ",
+              "shape_name": "ResourceIdentifier"
+            }
+          },
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>The NextToken value to include in a subsequent <code>SearchResources</code> request, to get more results.</simpara>\n      ",
+            "documentation": "\n         <p>The NextToken value to include in a subsequent <code>SearchResources</code> request, to get more results.</p>\n      ",
+            "shape_name": "NextToken"
+          }
+        },
+        "shape_name": "SearchResourcesOutput",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request has not been applied because it lacks valid authentication credentials for the target resource.</simpara>\n      ",
+          "documentation": "\n         <p>The request has not been applied because it lacks valid authentication credentials for the target resource.</p>\n      ",
+          "shape_name": "UnauthorizedException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request does not comply with validation rules that are defined for the request parameters.</simpara>\n      ",
+          "documentation": "\n         <p>The request does not comply with validation rules that are defined for the request parameters.</p>\n      ",
+          "shape_name": "BadRequestException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The caller is not authorized to make the request.</simpara>\n      ",
+          "documentation": "\n         <p>The caller is not authorized to make the request.</p>\n      ",
+          "shape_name": "ForbiddenException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request uses an HTTP method which is not allowed for the specified resource.</simpara>\n      ",
+          "documentation": "\n         <p>The request uses an HTTP method which is not allowed for the specified resource.</p>\n      ",
+          "shape_name": "MethodNotAllowedException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The caller has exceeded throttling limits.</simpara>\n      ",
+          "documentation": "\n         <p>The caller has exceeded throttling limits.</p>\n      ",
+          "shape_name": "TooManyRequestsException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>An internal error occurred while processing the request.</simpara>\n      ",
+          "documentation": "\n         <p>An internal error occurred while processing the request.</p>\n      ",
+          "shape_name": "InternalServerErrorException"
+        }
+      ],
+      "documentation": "\n         <p>Returns a list of AWS resource identifiers that matches a specified query. The query uses the same format as a resource query in a CreateGroup or UpdateGroupQuery operation.</p>\n      "
+    }
+  }
+}

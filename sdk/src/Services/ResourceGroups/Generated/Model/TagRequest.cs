@@ -59,8 +59,8 @@ namespace Amazon.ResourceGroups.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// The tags to add to the specified resource. A tag is a string-to-string map of key-value
-        /// pairs. Tag keys can have a maximum character length of 127 characters, and tag values
-        /// can have a maximum length of 255 characters.
+        /// pairs. Tag keys can have a maximum character length of 128 characters, and tag values
+        /// can have a maximum length of 256 characters.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

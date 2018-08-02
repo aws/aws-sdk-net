@@ -3,7 +3,7 @@
   <property-value-rule>
     <property>Amazon.ResourceGroups.Model.CreateGroupRequest.Description</property>
     <max>512</max>
-    <pattern>[\sa-zA-Z0-9_\.-]+</pattern>
+    <pattern>[\sa-zA-Z0-9_\.-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroups.Model.CreateGroupRequest.Name</property>
@@ -77,7 +77,7 @@
   <property-value-rule>
     <property>Amazon.ResourceGroups.Model.UpdateGroupRequest.Description</property>
     <max>512</max>
-    <pattern>[\sa-zA-Z0-9_\.-]+</pattern>
+    <pattern>[\sa-zA-Z0-9_\.-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroups.Model.UpdateGroupRequest.GroupName</property>
@@ -104,7 +104,7 @@
   <property-value-rule>
     <property>Amazon.ResourceGroups.Model.Group.Description</property>
     <max>512</max>
-    <pattern>[\sa-zA-Z0-9_\.-]+</pattern>
+    <pattern>[\sa-zA-Z0-9_\.-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroups.Model.Group.GroupArn</property>
@@ -139,7 +139,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroups.Model.ResourceIdentifier.ResourceArn</property>
-    <pattern>arn:aws:[a-z0-9]*:([a-z]{2}-[a-z]+-\d{1})?:([0-9]{12})?:.+</pattern>
+    <pattern>arn:aws:[a-z0-9\-]*:([a-z]{2}-[a-z]+-\d{1})?:([0-9]{12})?:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceGroups.Model.ResourceIdentifier.ResourceType</property>
