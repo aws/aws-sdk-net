@@ -92,6 +92,10 @@ namespace Amazon.Polly.Model.Internal.MarshallTransformations
             {
                 return new InvalidSsmlException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("LanguageNotSupportedException"))
+            {
+                return new LanguageNotSupportedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("LexiconNotFoundException"))
             {
                 return new LexiconNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

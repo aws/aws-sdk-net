@@ -129,6 +129,10 @@ namespace Amazon.Polly
         /// </summary>
         public static readonly LanguageCode FrFR = new LanguageCode("fr-FR");
         /// <summary>
+        /// Constant HiIN for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode HiIN = new LanguageCode("hi-IN");
+        /// <summary>
         /// Constant IsIS for LanguageCode
         /// </summary>
         public static readonly LanguageCode IsIS = new LanguageCode("is-IS");

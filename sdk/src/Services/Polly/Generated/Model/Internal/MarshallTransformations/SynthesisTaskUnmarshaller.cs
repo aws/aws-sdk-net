@@ -70,6 +70,12 @@ namespace Amazon.Polly.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LanguageCode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LanguageCode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LexiconNames", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

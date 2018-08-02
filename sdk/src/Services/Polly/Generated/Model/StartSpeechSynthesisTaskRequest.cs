@@ -38,6 +38,7 @@ namespace Amazon.Polly.Model
     /// </summary>
     public partial class StartSpeechSynthesisTaskRequest : AmazonPollyRequest
     {
+        private LanguageCode _languageCode;
         private List<string> _lexiconNames = new List<string>();
         private OutputFormat _outputFormat;
         private string _outputS3BucketName;
@@ -48,6 +49,34 @@ namespace Amazon.Polly.Model
         private string _text;
         private TextType _textType;
         private VoiceId _voiceId;
+
+        /// <summary>
+        /// Gets and sets the property LanguageCode. 
+        /// <para>
+        /// Optional language code for the Speech Synthesis request. This is only necessary if
+        /// using a bilingual voice, such as Aditi, which can be used for either Indian English
+        /// (en-IN) or Hindi (hi-IN). 
+        /// </para>
+        ///  
+        /// <para>
+        /// If a bilingual voice is used and no language code is specified, Amazon Polly will
+        /// use the default language of the bilingual voice. The default language for any voice
+        /// is the one returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a>
+        /// operation for the <code>LanguageCode</code> parameter. For example, if no language
+        /// code is specified, Aditi will use Indian English rather than Hindi.
+        /// </para>
+        /// </summary>
+        public LanguageCode LanguageCode
+        {
+            get { return this._languageCode; }
+            set { this._languageCode = value; }
+        }
+
+        // Check to see if LanguageCode property is set
+        internal bool IsSetLanguageCode()
+        {
+            return this._languageCode != null;
+        }
 
         /// <summary>
         /// Gets and sets the property LexiconNames. 
@@ -109,7 +138,7 @@ namespace Amazon.Polly.Model
         /// <summary>
         /// Gets and sets the property OutputS3KeyPrefix. 
         /// <para>
-        /// The Amazon S3 Key prefix for the output speech file.
+        /// The Amazon S3 key prefix for the output speech file.
         /// </para>
         /// </summary>
         public string OutputS3KeyPrefix

@@ -396,6 +396,9 @@ namespace Amazon.Polly
         /// The SSML you provided is invalid. Verify the SSML syntax, spelling of tags and values,
         /// and then try again.
         /// </exception>
+        /// <exception cref="Amazon.Polly.Model.LanguageNotSupportedException">
+        /// The language specified is not currently supported by Amazon Polly in this capacity.
+        /// </exception>
         /// <exception cref="Amazon.Polly.Model.LexiconNotFoundException">
         /// Amazon Polly can't find the specified lexicon. This could be caused by a lexicon that
         /// is missing, its name is misspelled or specifying a lexicon that is in a different
@@ -420,9 +423,9 @@ namespace Amazon.Polly
         /// <exception cref="Amazon.Polly.Model.TextLengthExceededException">
         /// The value of the "Text" parameter is longer than the accepted limits. For the <code>SynthesizeSpeech</code>
         /// API, the limit for input text is a maximum of 6000 characters total, of which no more
-        /// than 3000 can be billed characters. For the <code>SetSpeechSynthesisTask</code> API,
-        /// the maximum is 200,000 characters, of which no more than 100,000 can be billed characters.
-        /// SSML tags are not counted as billed characters.
+        /// than 3000 can be billed characters. For the <code>StartSpeechSynthesisTask</code>
+        /// API, the maximum is 200,000 characters, of which no more than 100,000 can be billed
+        /// characters. SSML tags are not counted as billed characters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/StartSpeechSynthesisTask">REST API Reference for StartSpeechSynthesisTask Operation</seealso>
         StartSpeechSynthesisTaskResponse StartSpeechSynthesisTask(StartSpeechSynthesisTaskRequest request);
@@ -462,6 +465,9 @@ namespace Amazon.Polly
         /// The SSML you provided is invalid. Verify the SSML syntax, spelling of tags and values,
         /// and then try again.
         /// </exception>
+        /// <exception cref="Amazon.Polly.Model.LanguageNotSupportedException">
+        /// The language specified is not currently supported by Amazon Polly in this capacity.
+        /// </exception>
         /// <exception cref="Amazon.Polly.Model.LexiconNotFoundException">
         /// Amazon Polly can't find the specified lexicon. This could be caused by a lexicon that
         /// is missing, its name is misspelled or specifying a lexicon that is in a different
@@ -486,9 +492,9 @@ namespace Amazon.Polly
         /// <exception cref="Amazon.Polly.Model.TextLengthExceededException">
         /// The value of the "Text" parameter is longer than the accepted limits. For the <code>SynthesizeSpeech</code>
         /// API, the limit for input text is a maximum of 6000 characters total, of which no more
-        /// than 3000 can be billed characters. For the <code>SetSpeechSynthesisTask</code> API,
-        /// the maximum is 200,000 characters, of which no more than 100,000 can be billed characters.
-        /// SSML tags are not counted as billed characters.
+        /// than 3000 can be billed characters. For the <code>StartSpeechSynthesisTask</code>
+        /// API, the maximum is 200,000 characters, of which no more than 100,000 can be billed
+        /// characters. SSML tags are not counted as billed characters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/SynthesizeSpeech">REST API Reference for SynthesizeSpeech Operation</seealso>
         SynthesizeSpeechResponse SynthesizeSpeech(SynthesizeSpeechRequest request);

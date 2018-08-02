@@ -57,8 +57,8 @@ namespace Amazon.Polly.Model
         /// <summary>
         /// Gets and sets the property SynthesisTasks. 
         /// <para>
-        /// SynthesisTask object that provides information from the specified task in the list
-        /// request, including output format, creation time, task status, and so on.
+        /// List of SynthesisTask objects that provides information from the specified task in
+        /// the list request, including output format, creation time, task status, and so on.
         /// </para>
         /// </summary>
         public List<SynthesisTask> SynthesisTasks

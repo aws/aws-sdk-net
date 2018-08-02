@@ -38,7 +38,8 @@ namespace AWSSDK.UnitTests
                 "SpeechMarkTypes",
                 "Text",
                 "TextType",
-                "VoiceId"
+                "VoiceId",
+                "LanguageCode"
             };
             var actualPropertyNames = new HashSet<string>(typeof(SynthesizeSpeechRequest).GetProperties().Select(p => p.Name).ToArray());
 

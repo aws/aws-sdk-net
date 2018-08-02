@@ -32,11 +32,37 @@ namespace Amazon.Polly.Model
     /// </summary>
     public partial class Voice
     {
+        private List<string> _additionalLanguageCodes = new List<string>();
         private Gender _gender;
         private VoiceId _id;
         private LanguageCode _languageCode;
         private string _languageName;
         private string _name;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalLanguageCodes. 
+        /// <para>
+        /// Additional codes for languages available for the specified voice in addition to its
+        /// default language. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, the default language for Aditi is Indian English (en-IN) because it was
+        /// first used for that language. Since Aditi is bilingual and fluent in both Indian English
+        /// and Hindi, this parameter would show the code <code>hi-IN</code>.
+        /// </para>
+        /// </summary>
+        public List<string> AdditionalLanguageCodes
+        {
+            get { return this._additionalLanguageCodes; }
+            set { this._additionalLanguageCodes = value; }
+        }
+
+        // Check to see if AdditionalLanguageCodes property is set
+        internal bool IsSetAdditionalLanguageCodes()
+        {
+            return this._additionalLanguageCodes != null && this._additionalLanguageCodes.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Gender. 

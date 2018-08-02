@@ -59,6 +59,9 @@ namespace Amazon.Polly.Model.Internal.MarshallTransformations
 
             string uriResourcePath = "/v1/voices";
             
+            if (publicRequest.IsSetIncludeAdditionalLanguageCodes())
+                request.Parameters.Add("IncludeAdditionalLanguageCodes", StringUtils.FromBool(publicRequest.IncludeAdditionalLanguageCodes));
+            
             if (publicRequest.IsSetLanguageCode())
                 request.Parameters.Add("LanguageCode", StringUtils.FromString(publicRequest.LanguageCode));
             

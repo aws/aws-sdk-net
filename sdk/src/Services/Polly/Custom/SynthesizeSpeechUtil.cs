@@ -94,6 +94,9 @@ namespace Amazon.Polly
             if (request.IsSetSpeechMarkTypes())
                 iRequest.ParameterCollection.Add("SpeechMarkTypes", request.SpeechMarkTypes);
 
+            if (request.IsSetLanguageCode())
+                iRequest.ParameterCollection.Add("LanguageCode", request.LanguageCode);
+
             var immutableCredentials = credentials.GetCredentials();
             if (immutableCredentials.UseToken)
             {

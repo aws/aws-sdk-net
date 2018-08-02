@@ -58,8 +58,31 @@ namespace Amazon.Polly.Model
     /// </summary>
     public partial class DescribeVoicesRequest : AmazonPollyRequest
     {
+        private bool? _includeAdditionalLanguageCodes;
         private LanguageCode _languageCode;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property IncludeAdditionalLanguageCodes. 
+        /// <para>
+        /// Boolean value indicating whether to return any bilingual voices that use the specified
+        /// language as an additional language. For instance, if you request all languages that
+        /// use US English (es-US), and there is an Italian voice that speaks both Italian (it-IT)
+        /// and US English, that voice will be included if you specify <code>yes</code> but not
+        /// if you specify <code>no</code>.
+        /// </para>
+        /// </summary>
+        public bool IncludeAdditionalLanguageCodes
+        {
+            get { return this._includeAdditionalLanguageCodes.GetValueOrDefault(); }
+            set { this._includeAdditionalLanguageCodes = value; }
+        }
+
+        // Check to see if IncludeAdditionalLanguageCodes property is set
+        internal bool IsSetIncludeAdditionalLanguageCodes()
+        {
+            return this._includeAdditionalLanguageCodes.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property LanguageCode. 
