@@ -80,9 +80,9 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  
     /// <para>
-    /// For the default shard limit for an AWS account, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams
-    /// Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>. To increase
-    /// this limit, <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
+    /// For the default shard limit for an AWS account, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Kinesis
+    /// Data Streams Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.
+    /// To increase this limit, <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
     /// AWS Support</a>.
     /// </para>
     ///  

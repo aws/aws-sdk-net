@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DeleteStream Request Marshaller
+    /// ListStreamConsumers Request Marshaller
     /// </summary>       
-    public class DeleteStreamRequestMarshaller : IMarshaller<IRequest, DeleteStreamRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListStreamConsumersRequestMarshaller : IMarshaller<IRequest, ListStreamConsumersRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DeleteStreamRequest)input);
+            return this.Marshall((ListStreamConsumersRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DeleteStreamRequest publicRequest)
+        public IRequest Marshall(ListStreamConsumersRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Kinesis");
-            string target = "Kinesis_20131202.DeleteStream";
+            string target = "Kinesis_20131202.ListStreamConsumers";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -67,16 +67,28 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEnforceConsumerDeletion())
+                if(publicRequest.IsSetMaxResults())
                 {
-                    context.Writer.WritePropertyName("EnforceConsumerDeletion");
-                    context.Writer.Write(publicRequest.EnforceConsumerDeletion);
+                    context.Writer.WritePropertyName("MaxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
                 }
 
-                if(publicRequest.IsSetStreamName())
+                if(publicRequest.IsSetNextToken())
                 {
-                    context.Writer.WritePropertyName("StreamName");
-                    context.Writer.Write(publicRequest.StreamName);
+                    context.Writer.WritePropertyName("NextToken");
+                    context.Writer.Write(publicRequest.NextToken);
+                }
+
+                if(publicRequest.IsSetStreamARN())
+                {
+                    context.Writer.WritePropertyName("StreamARN");
+                    context.Writer.Write(publicRequest.StreamARN);
+                }
+
+                if(publicRequest.IsSetStreamCreationTimestamp())
+                {
+                    context.Writer.WritePropertyName("StreamCreationTimestamp");
+                    context.Writer.Write(publicRequest.StreamCreationTimestamp);
                 }
 
         
@@ -88,9 +100,9 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static DeleteStreamRequestMarshaller _instance = new DeleteStreamRequestMarshaller();        
+        private static ListStreamConsumersRequestMarshaller _instance = new ListStreamConsumersRequestMarshaller();        
 
-        internal static DeleteStreamRequestMarshaller GetInstance()
+        internal static ListStreamConsumersRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -98,7 +110,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteStreamRequestMarshaller Instance
+        public static ListStreamConsumersRequestMarshaller Instance
         {
             get
             {

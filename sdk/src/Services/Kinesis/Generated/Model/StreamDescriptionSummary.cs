@@ -32,6 +32,7 @@ namespace Amazon.Kinesis.Model
     /// </summary>
     public partial class StreamDescriptionSummary
     {
+        private int? _consumerCount;
         private EncryptionType _encryptionType;
         private List<EnhancedMetrics> _enhancedMonitoring = new List<EnhancedMetrics>();
         private string _keyId;
@@ -41,6 +42,24 @@ namespace Amazon.Kinesis.Model
         private DateTime? _streamCreationTimestamp;
         private string _streamName;
         private StreamStatus _streamStatus;
+
+        /// <summary>
+        /// Gets and sets the property ConsumerCount. 
+        /// <para>
+        /// The number of enhanced fan-out consumers registered with the stream.
+        /// </para>
+        /// </summary>
+        public int ConsumerCount
+        {
+            get { return this._consumerCount.GetValueOrDefault(); }
+            set { this._consumerCount = value; }
+        }
+
+        // Check to see if ConsumerCount property is set
+        internal bool IsSetConsumerCount()
+        {
+            return this._consumerCount.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property EncryptionType. 

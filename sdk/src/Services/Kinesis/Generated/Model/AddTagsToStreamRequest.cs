@@ -29,8 +29,10 @@ namespace Amazon.Kinesis.Model
 {
     /// <summary>
     /// Container for the parameters to the AddTagsToStream operation.
-    /// Adds or updates tags for the specified Kinesis data stream. Each stream can have up
-    /// to 10 tags.
+    /// Adds or updates tags for the specified Kinesis data stream. Each time you invoke this
+    /// operation, you can specify up to 10 tags. If you want to add more than 10 tags to
+    /// your stream, you can invoke this operation multiple times. In total, each stream can
+    /// have up to 50 tags.
     /// 
     ///  
     /// <para>
@@ -68,7 +70,7 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The set of key-value pairs to use to create the tags.
+        /// A set of up to 10 key-value pairs to use to create the tags.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

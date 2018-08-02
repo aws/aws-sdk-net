@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DeleteStream Request Marshaller
+    /// RegisterStreamConsumer Request Marshaller
     /// </summary>       
-    public class DeleteStreamRequestMarshaller : IMarshaller<IRequest, DeleteStreamRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class RegisterStreamConsumerRequestMarshaller : IMarshaller<IRequest, RegisterStreamConsumerRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DeleteStreamRequest)input);
+            return this.Marshall((RegisterStreamConsumerRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DeleteStreamRequest publicRequest)
+        public IRequest Marshall(RegisterStreamConsumerRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Kinesis");
-            string target = "Kinesis_20131202.DeleteStream";
+            string target = "Kinesis_20131202.RegisterStreamConsumer";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -67,16 +67,16 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEnforceConsumerDeletion())
+                if(publicRequest.IsSetConsumerName())
                 {
-                    context.Writer.WritePropertyName("EnforceConsumerDeletion");
-                    context.Writer.Write(publicRequest.EnforceConsumerDeletion);
+                    context.Writer.WritePropertyName("ConsumerName");
+                    context.Writer.Write(publicRequest.ConsumerName);
                 }
 
-                if(publicRequest.IsSetStreamName())
+                if(publicRequest.IsSetStreamARN())
                 {
-                    context.Writer.WritePropertyName("StreamName");
-                    context.Writer.Write(publicRequest.StreamName);
+                    context.Writer.WritePropertyName("StreamARN");
+                    context.Writer.Write(publicRequest.StreamARN);
                 }
 
         
@@ -88,9 +88,9 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static DeleteStreamRequestMarshaller _instance = new DeleteStreamRequestMarshaller();        
+        private static RegisterStreamConsumerRequestMarshaller _instance = new RegisterStreamConsumerRequestMarshaller();        
 
-        internal static DeleteStreamRequestMarshaller GetInstance()
+        internal static RegisterStreamConsumerRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -98,7 +98,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteStreamRequestMarshaller Instance
+        public static RegisterStreamConsumerRequestMarshaller Instance
         {
             get
             {

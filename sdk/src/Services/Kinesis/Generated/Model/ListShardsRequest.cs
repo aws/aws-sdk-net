@@ -29,7 +29,8 @@ namespace Amazon.Kinesis.Model
 {
     /// <summary>
     /// Container for the parameters to the ListShards operation.
-    /// Lists the shards in a stream and provides information about each shard.
+    /// Lists the shards in a stream and provides information about each shard. This operation
+    /// has a limit of 100 transactions per second per data stream.
     /// 
     ///  <important> 
     /// <para>
@@ -51,7 +52,8 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property ExclusiveStartShardId. 
         /// <para>
-        /// The ID of the shard to start the list with. 
+        /// Specify this parameter to indicate that you want to list the shards starting with
+        /// the shard whose ID immediately follows <code>ExclusiveStartShardId</code>.
         /// </para>
         ///  
         /// <para>

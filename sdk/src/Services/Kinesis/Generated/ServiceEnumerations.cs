@@ -25,6 +25,60 @@ namespace Amazon.Kinesis
 {
 
     /// <summary>
+    /// Constants used for properties of type ConsumerStatus.
+    /// </summary>
+    public class ConsumerStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ConsumerStatus
+        /// </summary>
+        public static readonly ConsumerStatus ACTIVE = new ConsumerStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for ConsumerStatus
+        /// </summary>
+        public static readonly ConsumerStatus CREATING = new ConsumerStatus("CREATING");
+        /// <summary>
+        /// Constant DELETING for ConsumerStatus
+        /// </summary>
+        public static readonly ConsumerStatus DELETING = new ConsumerStatus("DELETING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConsumerStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConsumerStatus FindValue(string value)
+        {
+            return FindValue<ConsumerStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConsumerStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EncryptionType.
     /// </summary>
     public class EncryptionType : ConstantClass

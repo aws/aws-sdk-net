@@ -62,7 +62,28 @@ namespace Amazon.Kinesis.Model
     /// </summary>
     public partial class DeleteStreamRequest : AmazonKinesisRequest
     {
+        private bool? _enforceConsumerDeletion;
         private string _streamName;
+
+        /// <summary>
+        /// Gets and sets the property EnforceConsumerDeletion. 
+        /// <para>
+        /// If this parameter is unset (<code>null</code>) or if you set it to <code>false</code>,
+        /// and the stream has registered consumers, the call to <code>DeleteStream</code> fails
+        /// with a <code>ResourceInUseException</code>. 
+        /// </para>
+        /// </summary>
+        public bool EnforceConsumerDeletion
+        {
+            get { return this._enforceConsumerDeletion.GetValueOrDefault(); }
+            set { this._enforceConsumerDeletion = value; }
+        }
+
+        // Check to see if EnforceConsumerDeletion property is set
+        internal bool IsSetEnforceConsumerDeletion()
+        {
+            return this._enforceConsumerDeletion.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property StreamName. 

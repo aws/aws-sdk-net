@@ -327,6 +327,34 @@ namespace Amazon.Kinesis
 
         #endregion
         
+        #region  DeregisterStreamConsumer
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeregisterStreamConsumer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterStreamConsumer operation on AmazonKinesisClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DeregisterStreamConsumer">REST API Reference for DeregisterStreamConsumer Operation</seealso>
+        public virtual void DeregisterStreamConsumerAsync(DeregisterStreamConsumerRequest request, AmazonServiceCallback<DeregisterStreamConsumerRequest, DeregisterStreamConsumerResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = DeregisterStreamConsumerRequestMarshaller.Instance;
+            var unmarshaller = DeregisterStreamConsumerResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<DeregisterStreamConsumerRequest,DeregisterStreamConsumerResponse> responseObject 
+                            = new AmazonServiceResult<DeregisterStreamConsumerRequest,DeregisterStreamConsumerResponse>((DeregisterStreamConsumerRequest)req, (DeregisterStreamConsumerResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<DeregisterStreamConsumerRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
         #region  DescribeLimits
 
         /// <summary>
@@ -379,6 +407,34 @@ namespace Amazon.Kinesis
                         callback(responseObject); 
                 };
             BeginInvoke<DescribeStreamRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  DescribeStreamConsumer
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeStreamConsumer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStreamConsumer operation on AmazonKinesisClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeStreamConsumer">REST API Reference for DescribeStreamConsumer Operation</seealso>
+        public virtual void DescribeStreamConsumerAsync(DescribeStreamConsumerRequest request, AmazonServiceCallback<DescribeStreamConsumerRequest, DescribeStreamConsumerResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = DescribeStreamConsumerRequestMarshaller.Instance;
+            var unmarshaller = DescribeStreamConsumerResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<DescribeStreamConsumerRequest,DescribeStreamConsumerResponse> responseObject 
+                            = new AmazonServiceResult<DescribeStreamConsumerRequest,DescribeStreamConsumerResponse>((DescribeStreamConsumerRequest)req, (DescribeStreamConsumerResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<DescribeStreamConsumerRequest>(request, marshaller, unmarshaller, options, callbackHelper);
         }
 
         #endregion
@@ -628,6 +684,34 @@ namespace Amazon.Kinesis
 
         #endregion
         
+        #region  ListStreamConsumers
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListStreamConsumers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListStreamConsumers operation on AmazonKinesisClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListStreamConsumers">REST API Reference for ListStreamConsumers Operation</seealso>
+        public virtual void ListStreamConsumersAsync(ListStreamConsumersRequest request, AmazonServiceCallback<ListStreamConsumersRequest, ListStreamConsumersResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = ListStreamConsumersRequestMarshaller.Instance;
+            var unmarshaller = ListStreamConsumersResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<ListStreamConsumersRequest,ListStreamConsumersResponse> responseObject 
+                            = new AmazonServiceResult<ListStreamConsumersRequest,ListStreamConsumersResponse>((ListStreamConsumersRequest)req, (ListStreamConsumersResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<ListStreamConsumersRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
         #region  ListStreams
 
         /// <summary>
@@ -808,6 +892,34 @@ namespace Amazon.Kinesis
                         callback(responseObject); 
                 };
             BeginInvoke<PutRecordsRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  RegisterStreamConsumer
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterStreamConsumer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterStreamConsumer operation on AmazonKinesisClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/RegisterStreamConsumer">REST API Reference for RegisterStreamConsumer Operation</seealso>
+        public virtual void RegisterStreamConsumerAsync(RegisterStreamConsumerRequest request, AmazonServiceCallback<RegisterStreamConsumerRequest, RegisterStreamConsumerResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = RegisterStreamConsumerRequestMarshaller.Instance;
+            var unmarshaller = RegisterStreamConsumerResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<RegisterStreamConsumerRequest,RegisterStreamConsumerResponse> responseObject 
+                            = new AmazonServiceResult<RegisterStreamConsumerRequest,RegisterStreamConsumerResponse>((RegisterStreamConsumerRequest)req, (RegisterStreamConsumerResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<RegisterStreamConsumerRequest>(request, marshaller, unmarshaller, options, callbackHelper);
         }
 
         #endregion

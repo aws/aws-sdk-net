@@ -406,6 +406,38 @@ namespace Amazon.Kinesis
 
         #endregion
         
+        #region  DeregisterStreamConsumer
+
+        internal virtual DeregisterStreamConsumerResponse DeregisterStreamConsumer(DeregisterStreamConsumerRequest request)
+        {
+            var marshaller = DeregisterStreamConsumerRequestMarshaller.Instance;
+            var unmarshaller = DeregisterStreamConsumerResponseUnmarshaller.Instance;
+
+            return Invoke<DeregisterStreamConsumerRequest,DeregisterStreamConsumerResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeregisterStreamConsumer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterStreamConsumer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DeregisterStreamConsumer">REST API Reference for DeregisterStreamConsumer Operation</seealso>
+        public virtual Task<DeregisterStreamConsumerResponse> DeregisterStreamConsumerAsync(DeregisterStreamConsumerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeregisterStreamConsumerRequestMarshaller.Instance;
+            var unmarshaller = DeregisterStreamConsumerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeregisterStreamConsumerRequest,DeregisterStreamConsumerResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeLimits
 
         internal virtual DescribeLimitsResponse DescribeLimits(DescribeLimitsRequest request)
@@ -465,6 +497,38 @@ namespace Amazon.Kinesis
             var unmarshaller = DescribeStreamResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeStreamRequest,DescribeStreamResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeStreamConsumer
+
+        internal virtual DescribeStreamConsumerResponse DescribeStreamConsumer(DescribeStreamConsumerRequest request)
+        {
+            var marshaller = DescribeStreamConsumerRequestMarshaller.Instance;
+            var unmarshaller = DescribeStreamConsumerResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeStreamConsumerRequest,DescribeStreamConsumerResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeStreamConsumer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStreamConsumer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeStreamConsumer">REST API Reference for DescribeStreamConsumer Operation</seealso>
+        public virtual Task<DescribeStreamConsumerResponse> DescribeStreamConsumerAsync(DescribeStreamConsumerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeStreamConsumerRequestMarshaller.Instance;
+            var unmarshaller = DescribeStreamConsumerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeStreamConsumerRequest,DescribeStreamConsumerResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -741,6 +805,38 @@ namespace Amazon.Kinesis
 
         #endregion
         
+        #region  ListStreamConsumers
+
+        internal virtual ListStreamConsumersResponse ListStreamConsumers(ListStreamConsumersRequest request)
+        {
+            var marshaller = ListStreamConsumersRequestMarshaller.Instance;
+            var unmarshaller = ListStreamConsumersResponseUnmarshaller.Instance;
+
+            return Invoke<ListStreamConsumersRequest,ListStreamConsumersResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListStreamConsumers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListStreamConsumers operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListStreamConsumers">REST API Reference for ListStreamConsumers Operation</seealso>
+        public virtual Task<ListStreamConsumersResponse> ListStreamConsumersAsync(ListStreamConsumersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListStreamConsumersRequestMarshaller.Instance;
+            var unmarshaller = ListStreamConsumersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListStreamConsumersRequest,ListStreamConsumersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListStreams
 
         internal virtual ListStreamsResponse ListStreams()
@@ -941,6 +1037,38 @@ namespace Amazon.Kinesis
             var unmarshaller = PutRecordsResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutRecordsRequest,PutRecordsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RegisterStreamConsumer
+
+        internal virtual RegisterStreamConsumerResponse RegisterStreamConsumer(RegisterStreamConsumerRequest request)
+        {
+            var marshaller = RegisterStreamConsumerRequestMarshaller.Instance;
+            var unmarshaller = RegisterStreamConsumerResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterStreamConsumerRequest,RegisterStreamConsumerResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterStreamConsumer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterStreamConsumer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/RegisterStreamConsumer">REST API Reference for RegisterStreamConsumer Operation</seealso>
+        public virtual Task<RegisterStreamConsumerResponse> RegisterStreamConsumerAsync(RegisterStreamConsumerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = RegisterStreamConsumerRequestMarshaller.Instance;
+            var unmarshaller = RegisterStreamConsumerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RegisterStreamConsumerRequest,RegisterStreamConsumerResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

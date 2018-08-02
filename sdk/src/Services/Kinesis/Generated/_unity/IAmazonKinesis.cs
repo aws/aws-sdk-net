@@ -145,6 +145,23 @@ namespace Amazon.Kinesis
 
         #endregion
         
+        #region  DeregisterStreamConsumer
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeregisterStreamConsumer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterStreamConsumer operation on AmazonKinesisClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DeregisterStreamConsumer">REST API Reference for DeregisterStreamConsumer Operation</seealso>
+        void DeregisterStreamConsumerAsync(DeregisterStreamConsumerRequest request, AmazonServiceCallback<DeregisterStreamConsumerRequest, DeregisterStreamConsumerResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
         #region  DescribeLimits
 
 
@@ -175,6 +192,23 @@ namespace Amazon.Kinesis
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeStream">REST API Reference for DescribeStream Operation</seealso>
         void DescribeStreamAsync(DescribeStreamRequest request, AmazonServiceCallback<DescribeStreamRequest, DescribeStreamResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  DescribeStreamConsumer
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeStreamConsumer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStreamConsumer operation on AmazonKinesisClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeStreamConsumer">REST API Reference for DescribeStreamConsumer Operation</seealso>
+        void DescribeStreamConsumerAsync(DescribeStreamConsumerRequest request, AmazonServiceCallback<DescribeStreamConsumerRequest, DescribeStreamConsumerResponse> callback, AsyncOptions options = null);
 
 
         #endregion
@@ -340,6 +374,23 @@ namespace Amazon.Kinesis
 
         #endregion
         
+        #region  ListStreamConsumers
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListStreamConsumers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListStreamConsumers operation on AmazonKinesisClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListStreamConsumers">REST API Reference for ListStreamConsumers Operation</seealso>
+        void ListStreamConsumersAsync(ListStreamConsumersRequest request, AmazonServiceCallback<ListStreamConsumersRequest, ListStreamConsumersResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
         #region  ListStreams
 
 
@@ -421,6 +472,23 @@ namespace Amazon.Kinesis
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecords">REST API Reference for PutRecords Operation</seealso>
         void PutRecordsAsync(PutRecordsRequest request, AmazonServiceCallback<PutRecordsRequest, PutRecordsResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  RegisterStreamConsumer
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterStreamConsumer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterStreamConsumer operation on AmazonKinesisClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/RegisterStreamConsumer">REST API Reference for RegisterStreamConsumer Operation</seealso>
+        void RegisterStreamConsumerAsync(RegisterStreamConsumerRequest request, AmazonServiceCallback<RegisterStreamConsumerRequest, RegisterStreamConsumerResponse> callback, AsyncOptions options = null);
 
 
         #endregion

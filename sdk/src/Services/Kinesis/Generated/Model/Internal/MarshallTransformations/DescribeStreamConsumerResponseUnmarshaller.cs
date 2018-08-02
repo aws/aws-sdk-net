@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeleteStream operation
+    /// Response Unmarshaller for DescribeStreamConsumer operation
     /// </summary>  
-    public class DeleteStreamResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DescribeStreamConsumerResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,8 +45,19 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DeleteStreamResponse response = new DeleteStreamResponse();
+            DescribeStreamConsumerResponse response = new DescribeStreamConsumerResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("ConsumerDescription", targetDepth))
+                {
+                    var unmarshaller = ConsumerDescriptionUnmarshaller.Instance;
+                    response.ConsumerDescription = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -61,13 +72,13 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidArgumentException"))
+            {
+                return new InvalidArgumentException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
             {
                 return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceInUseException"))
-            {
-                return new ResourceInUseException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
             {
@@ -76,9 +87,9 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
             return new AmazonKinesisException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static DeleteStreamResponseUnmarshaller _instance = new DeleteStreamResponseUnmarshaller();        
+        private static DescribeStreamConsumerResponseUnmarshaller _instance = new DescribeStreamConsumerResponseUnmarshaller();        
 
-        internal static DeleteStreamResponseUnmarshaller GetInstance()
+        internal static DescribeStreamConsumerResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -86,7 +97,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteStreamResponseUnmarshaller Instance
+        public static DescribeStreamConsumerResponseUnmarshaller Instance
         {
             get
             {

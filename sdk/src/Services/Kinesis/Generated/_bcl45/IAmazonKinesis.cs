@@ -45,8 +45,10 @@ namespace Amazon.Kinesis
 
 
         /// <summary>
-        /// Adds or updates tags for the specified Kinesis data stream. Each stream can have up
-        /// to 10 tags.
+        /// Adds or updates tags for the specified Kinesis data stream. Each time you invoke this
+        /// operation, you can specify up to 10 tags. If you want to add more than 10 tags to
+        /// your stream, you can invoke this operation multiple times. In total, each stream can
+        /// have up to 50 tags.
         /// 
         ///  
         /// <para>
@@ -353,6 +355,10 @@ namespace Amazon.Kinesis
         /// The requested resource exceeds the maximum number allowed, or the number of concurrent
         /// stream requests exceeds the maximum number allowed.
         /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
+        /// The resource is not available for this operation. For successful operation, the resource
+        /// must be in the <code>ACTIVE</code> state.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
@@ -371,6 +377,55 @@ namespace Amazon.Kinesis
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DeleteStream">REST API Reference for DeleteStream Operation</seealso>
         Task<DeleteStreamResponse> DeleteStreamAsync(DeleteStreamRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeregisterStreamConsumer
+
+
+        /// <summary>
+        /// To deregister a consumer, provide its ARN. Alternatively, you can provide the ARN
+        /// of the data stream and the name you gave the consumer when you registered it. You
+        /// may also provide all three parameters, as long as they don't conflict with each other.
+        /// If you don't know the name or ARN of the consumer that you want to deregister, you
+        /// can use the <a>ListStreamConsumers</a> operation to get a list of the descriptions
+        /// of all the consumers that are currently registered with a given data stream. The description
+        /// of a consumer contains its name and ARN.
+        /// 
+        ///  
+        /// <para>
+        /// This operation has a limit of five transactions per second per account.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterStreamConsumer service method.</param>
+        /// 
+        /// <returns>The response from the DeregisterStreamConsumer service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DeregisterStreamConsumer">REST API Reference for DeregisterStreamConsumer Operation</seealso>
+        DeregisterStreamConsumerResponse DeregisterStreamConsumer(DeregisterStreamConsumerRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeregisterStreamConsumer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterStreamConsumer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DeregisterStreamConsumer">REST API Reference for DeregisterStreamConsumer Operation</seealso>
+        Task<DeregisterStreamConsumerResponse> DeregisterStreamConsumerAsync(DeregisterStreamConsumerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -471,6 +526,55 @@ namespace Amazon.Kinesis
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeStream">REST API Reference for DescribeStream Operation</seealso>
         Task<DescribeStreamResponse> DescribeStreamAsync(DescribeStreamRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeStreamConsumer
+
+
+        /// <summary>
+        /// To get the description of a registered consumer, provide the ARN of the consumer.
+        /// Alternatively, you can provide the ARN of the data stream and the name you gave the
+        /// consumer when you registered it. You may also provide all three parameters, as long
+        /// as they don't conflict with each other. If you don't know the name or ARN of the consumer
+        /// that you want to describe, you can use the <a>ListStreamConsumers</a> operation to
+        /// get a list of the descriptions of all the consumers that are currently registered
+        /// with a given data stream.
+        /// 
+        ///  
+        /// <para>
+        /// This operation has a limit of 20 transactions per second per account.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStreamConsumer service method.</param>
+        /// 
+        /// <returns>The response from the DescribeStreamConsumer service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeStreamConsumer">REST API Reference for DescribeStreamConsumer Operation</seealso>
+        DescribeStreamConsumerResponse DescribeStreamConsumer(DescribeStreamConsumerRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeStreamConsumer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStreamConsumer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeStreamConsumer">REST API Reference for DescribeStreamConsumer Operation</seealso>
+        Task<DescribeStreamConsumerResponse> DescribeStreamConsumerAsync(DescribeStreamConsumerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -632,22 +736,23 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// Each data record can be up to 1 MB in size, and each shard can read up to 2 MB per
+        /// Each data record can be up to 1 MiB in size, and each shard can read up to 2 MiB per
         /// second. You can ensure that your calls don't exceed the maximum supported size or
         /// throughput by using the <code>Limit</code> parameter to specify the maximum number
         /// of records that <a>GetRecords</a> can return. Consider your average record size when
-        /// determining this limit.
+        /// determining this limit. The maximum number of records that can be returned per call
+        /// is 10,000.
         /// </para>
         ///  
         /// <para>
         /// The size of the data returned by <a>GetRecords</a> varies depending on the utilization
-        /// of the shard. The maximum size of data that <a>GetRecords</a> can return is 10 MB.
-        /// If a call returns this amount of data, subsequent calls made within the next five
-        /// seconds throw <code>ProvisionedThroughputExceededException</code>. If there is insufficient
-        /// provisioned throughput on the stream, subsequent calls made within the next one second
-        /// throw <code>ProvisionedThroughputExceededException</code>. <a>GetRecords</a> won't
+        /// of the shard. The maximum size of data that <a>GetRecords</a> can return is 10 MiB.
+        /// If a call returns this amount of data, subsequent calls made within the next 5 seconds
+        /// throw <code>ProvisionedThroughputExceededException</code>. If there is insufficient
+        /// provisioned throughput on the stream, subsequent calls made within the next 1 second
+        /// throw <code>ProvisionedThroughputExceededException</code>. <a>GetRecords</a> doesn't
         /// return any data when it throws an exception. For this reason, we recommend that you
-        /// wait one second between calls to <a>GetRecords</a>; however, it's possible that the
+        /// wait 1 second between calls to <a>GetRecords</a>. However, it's possible that the
         /// application will get exceptions for longer than 1 second.
         /// </para>
         ///  
@@ -667,6 +772,10 @@ namespace Amazon.Kinesis
         /// time stamp has millisecond precision. There are no guarantees about the time stamp
         /// accuracy, or that the time stamp is always increasing. For example, records in a shard
         /// or across a stream might have time stamps that are out of order.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation has a limit of five transactions per second per account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRecords service method.</param>
@@ -734,8 +843,8 @@ namespace Amazon.Kinesis
 
 
         /// <summary>
-        /// Gets an Amazon Kinesis shard iterator. A shard iterator expires five minutes after
-        /// it is returned to the requester.
+        /// Gets an Amazon Kinesis shard iterator. A shard iterator expires 5 minutes after it
+        /// is returned to the requester.
         /// 
         ///  
         /// <para>
@@ -956,7 +1065,8 @@ namespace Amazon.Kinesis
 
 
         /// <summary>
-        /// Lists the shards in a stream and provides information about each shard.
+        /// Lists the shards in a stream and provides information about each shard. This operation
+        /// has a limit of 100 transactions per second per data stream.
         /// 
         ///  <important> 
         /// <para>
@@ -971,8 +1081,7 @@ namespace Amazon.Kinesis
         /// 
         /// <returns>The response from the ListShards service method, as returned by Kinesis.</returns>
         /// <exception cref="Amazon.Kinesis.Model.ExpiredNextTokenException">
-        /// The pagination token passed to the <code>ListShards</code> operation is expired. For
-        /// more information, see <a>ListShardsInput$NextToken</a>.
+        /// The pagination token passed to the operation is expired.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
@@ -1004,6 +1113,57 @@ namespace Amazon.Kinesis
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListShards">REST API Reference for ListShards Operation</seealso>
         Task<ListShardsResponse> ListShardsAsync(ListShardsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListStreamConsumers
+
+
+        /// <summary>
+        /// Lists the consumers registered to receive data from a stream using enhanced fan-out,
+        /// and provides information about each consumer.
+        /// 
+        ///  
+        /// <para>
+        /// This operation has a limit of 10 transactions per second per account.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStreamConsumers service method.</param>
+        /// 
+        /// <returns>The response from the ListStreamConsumers service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.ExpiredNextTokenException">
+        /// The pagination token passed to the operation is expired.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
+        /// The resource is not available for this operation. For successful operation, the resource
+        /// must be in the <code>ACTIVE</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListStreamConsumers">REST API Reference for ListStreamConsumers Operation</seealso>
+        ListStreamConsumersResponse ListStreamConsumers(ListStreamConsumersRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListStreamConsumers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListStreamConsumers operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListStreamConsumers">REST API Reference for ListStreamConsumers Operation</seealso>
+        Task<ListStreamConsumersResponse> ListStreamConsumersAsync(ListStreamConsumersRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1529,6 +1689,60 @@ namespace Amazon.Kinesis
 
         #endregion
         
+        #region  RegisterStreamConsumer
+
+
+        /// <summary>
+        /// Registers a consumer with a Kinesis data stream. When you use this operation, the
+        /// consumer you register can read data from the stream at a rate of up to 2 MiB per second.
+        /// This rate is unaffected by the total number of consumers that read from the same stream.
+        /// 
+        ///  
+        /// <para>
+        /// You can register up to 5 consumers per stream. A given consumer can only be registered
+        /// with one stream.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation has a limit of five transactions per second per account.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterStreamConsumer service method.</param>
+        /// 
+        /// <returns>The response from the RegisterStreamConsumer service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
+        /// The resource is not available for this operation. For successful operation, the resource
+        /// must be in the <code>ACTIVE</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/RegisterStreamConsumer">REST API Reference for RegisterStreamConsumer Operation</seealso>
+        RegisterStreamConsumerResponse RegisterStreamConsumer(RegisterStreamConsumerRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterStreamConsumer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterStreamConsumer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/RegisterStreamConsumer">REST API Reference for RegisterStreamConsumer Operation</seealso>
+        Task<RegisterStreamConsumerResponse> RegisterStreamConsumerAsync(RegisterStreamConsumerRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  RemoveTagsFromStream
 
 
@@ -1636,9 +1850,9 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// For the default shard limit for an AWS account, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams
-        /// Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>. To increase
-        /// this limit, <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
+        /// For the default shard limit for an AWS account, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Kinesis
+        /// Data Streams Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.
+        /// To increase this limit, <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
         /// AWS Support</a>.
         /// </para>
         ///  
@@ -1712,8 +1926,8 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// Note: It can take up to five seconds after the stream is in an <code>ACTIVE</code>
-        /// status before all records written to the stream are encrypted. After you enable encryption,
+        /// Note: It can take up to 5 seconds after the stream is in an <code>ACTIVE</code> status
+        /// before all records written to the stream are encrypted. After you enable encryption,
         /// you can verify that encryption is applied by inspecting the API response from <code>PutRecord</code>
         /// or <code>PutRecords</code>.
         /// </para>
@@ -1800,9 +2014,9 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// Note: It can take up to five seconds after the stream is in an <code>ACTIVE</code>
-        /// status before all records written to the stream are no longer subject to encryption.
-        /// After you disabled encryption, you can verify that encryption is not applied by inspecting
+        /// Note: It can take up to 5 seconds after the stream is in an <code>ACTIVE</code> status
+        /// before all records written to the stream are no longer subject to encryption. After
+        /// you disabled encryption, you can verify that encryption is not applied by inspecting
         /// the API response from <code>PutRecord</code> or <code>PutRecords</code>.
         /// </para>
         /// </summary>
@@ -1866,7 +2080,7 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// This operation has the following limits. You cannot do the following:
+        /// This operation has the following default limits. By default, you cannot do the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>

@@ -49,7 +49,7 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  
     /// <para>
-    /// This operation has the following limits. You cannot do the following:
+    /// This operation has the following default limits. By default, you cannot do the following:
     /// </para>
     ///  <ul> <li> 
     /// <para>
