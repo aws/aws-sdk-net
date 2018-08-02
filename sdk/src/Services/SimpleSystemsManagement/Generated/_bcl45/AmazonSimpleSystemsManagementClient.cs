@@ -5055,7 +5055,55 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
+        /// A parameter label is a user-defined alias to help you manage different versions of
+        /// a parameter. When you modify a parameter, Systems Manager automatically saves a new
+        /// version and increments the version number by one. A label can help you remember the
+        /// purpose of a parameter when there are multiple versions. 
         /// 
+        ///  
+        /// <para>
+        /// Parameter labels have the following requirements and restrictions.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A version of a parameter can have a maximum of 10 labels.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can't attach the same label to different versions of the same parameter. For example,
+        /// if version 1 has the label Production, then you can't attach Production to version
+        /// 2.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can move a label from one version of a parameter to another.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can't create a label when you create a new parameter. You must attach a label
+        /// to a specific version of a parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can't delete a parameter label. If you no longer want to use a parameter label,
+        /// then you must move it to a different version of a parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A label can have a maximum of 100 characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Labels can contain letters (case sensitive), numbers, periods (.), hyphens (-), or
+        /// underscores (_).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Labels can't begin with a number, "aws," or "ssm" (not case sensitive). If a label
+        /// fails to meet these requirements, then the label is not associated with a parameter
+        /// and the system displays it in the list of InvalidLabels.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the LabelParameterVersion service method.</param>
         /// 
@@ -5067,7 +5115,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The parameter could not be found. Verify the name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterVersionLabelLimitExceededException">
-        /// 
+        /// A parameter version can have a maximum of ten labels.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterVersionNotFoundException">
         /// The specified parameter version was not found. Verify the parameter name and version,

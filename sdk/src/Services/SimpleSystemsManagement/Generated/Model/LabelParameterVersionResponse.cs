@@ -35,7 +35,12 @@ namespace Amazon.SimpleSystemsManagement.Model
         private List<string> _invalidLabels = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property InvalidLabels.
+        /// Gets and sets the property InvalidLabels. 
+        /// <para>
+        /// The label does not meet the requirements. For information about parameter label requirements,
+        /// see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling
+        /// Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// </para>
         /// </summary>
         public List<string> InvalidLabels
         {
