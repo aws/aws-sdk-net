@@ -22,7 +22,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="../Services/*/UnitTests/Custom/*.cs"/>
+    <Compile Include="../Services/*/UnitTests/**/*.cs"/>
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="**/_bcl45/**"/>

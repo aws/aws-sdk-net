@@ -244,10 +244,6 @@
       <Project>{7108CBE8-E6A9-416C-8D5D-8264A15C2AA5}</Project>
       <Name>AWSSDK.DirectoryService.CodeAnalysis</Name>
     </ProjectReference>
-    <ProjectReference Include="../ServiceAnalysis/DiscoveryService/AWSSDK.DiscoveryService.CodeAnalysis.csproj">
-      <Project>{CBD3EFFA-A272-4983-BD2A-61D4B36A2617}</Project>
-      <Name>AWSSDK.DiscoveryService.CodeAnalysis</Name>
-    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/DLM/AWSSDK.DLM.CodeAnalysis.csproj">
       <Project>{677AAD0A-676F-4830-9161-2EFF3E918BE3}</Project>
       <Name>AWSSDK.DLM.CodeAnalysis</Name>

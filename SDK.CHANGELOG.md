@@ -1,3 +1,11 @@
+### 3.3.330.2 (2018-08-03 22:18 UTC)
+* DynamoDBv2 (3.3.11.2)
+	* Updated to use new Core, version 3.3.24.6
+	* Addressed DynamoDB inheritance issue. https://github.com/aws/aws-sdk-net/issues/906
+* Core 3.3.24.6
+	* This update addresses lock contention issues in DefaultInstanceProfileAWSCredentials and introduces nullable int fields in unmarshallers.
+	* All services packages updated to require new Core
+
 ### 3.3.330.1 (2018-08-03 18:10 UTC)
 * AlexaForBusiness (3.3.5.4)
 	* Documentation updates for AWS Alexa For Business
