@@ -97,7 +97,8 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the AssociateDeviceWithRoom service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.DeviceNotRegisteredException">
-        /// 
+        /// The request failed because this device is no longer registered and therefore no longer
+        /// managed by this account.
         /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.LimitExceededException">
         /// You are performing an action that would put you beyond your account's limits. HTTP
@@ -807,7 +808,8 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the DisassociateDeviceFromRoom service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.DeviceNotRegisteredException">
-        /// 
+        /// The request failed because this device is no longer registered and therefore no longer
+        /// managed by this account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateDeviceFromRoom">REST API Reference for DisassociateDeviceFromRoom Operation</seealso>
         DisassociateDeviceFromRoomResponse DisassociateDeviceFromRoom(DisassociateDeviceFromRoomRequest request);
@@ -1186,10 +1188,7 @@ namespace Amazon.AlexaForBusiness
 
 
         /// <summary>
-        /// Lists the Device Event history for up to 30 days. If EventType isn't specified in
-        /// the request, this returns a list of all device events in reverse chronological order.
-        /// If EventType is specified, this returns a list of device events for that EventType
-        /// in reverse chronological order.
+        /// Lists the device event history, including device connection status, for up to 30 days.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDeviceEvents service method.</param>
         /// 
@@ -1272,7 +1271,7 @@ namespace Amazon.AlexaForBusiness
 
 
         /// <summary>
-        /// Lists all tags for a specific resource.
+        /// Lists all tags for the specified resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTags service method.</param>
         /// 
@@ -1778,7 +1777,8 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the StartDeviceSync service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.DeviceNotRegisteredException">
-        /// 
+        /// The request failed because this device is no longer registered and therefore no longer
+        /// managed by this account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/StartDeviceSync">REST API Reference for StartDeviceSync Operation</seealso>
         StartDeviceSyncResponse StartDeviceSync(StartDeviceSyncRequest request);
@@ -1996,7 +1996,8 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the UpdateDevice service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.DeviceNotRegisteredException">
-        /// 
+        /// The request failed because this device is no longer registered and therefore no longer
+        /// managed by this account.
         /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
         /// The resource is not found. HTTP Status Code: 400

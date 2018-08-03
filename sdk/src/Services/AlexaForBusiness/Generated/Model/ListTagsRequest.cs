@@ -29,7 +29,7 @@ namespace Amazon.AlexaForBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTags operation.
-    /// Lists all tags for a specific resource.
+    /// Lists all tags for the specified resource.
     /// </summary>
     public partial class ListTagsRequest : AmazonAlexaForBusinessRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the specific resource for which to list tags. Required.
+        /// The ARN of the specified resource for which to list tags.
         /// </para>
         /// </summary>
         public string Arn

@@ -36,7 +36,10 @@ namespace Amazon.AlexaForBusiness.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property DeviceEvents.
+        /// Gets and sets the property DeviceEvents. 
+        /// <para>
+        /// The device events requested for the device ARN.
+        /// </para>
         /// </summary>
         public List<DeviceEvent> DeviceEvents
         {
@@ -51,7 +54,10 @@ namespace Amazon.AlexaForBusiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token returned to indicate that there is more data available.
+        /// </para>
         /// </summary>
         public string NextToken
         {

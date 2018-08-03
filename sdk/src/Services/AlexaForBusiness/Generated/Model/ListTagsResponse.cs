@@ -56,7 +56,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The list of tags requested for the specific resource.
+        /// The tags requested for the specified resource.
         /// </para>
         /// </summary>
         public List<Tag> Tags

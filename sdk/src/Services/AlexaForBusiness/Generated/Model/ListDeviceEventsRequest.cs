@@ -29,10 +29,7 @@ namespace Amazon.AlexaForBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDeviceEvents operation.
-    /// Lists the Device Event history for up to 30 days. If EventType isn't specified in
-    /// the request, this returns a list of all device events in reverse chronological order.
-    /// If EventType is specified, this returns a list of device events for that EventType
-    /// in reverse chronological order.
+    /// Lists the device event history, including device connection status, for up to 30 days.
     /// </summary>
     public partial class ListDeviceEventsRequest : AmazonAlexaForBusinessRequest
     {
@@ -62,7 +59,10 @@ namespace Amazon.AlexaForBusiness.Model
         /// <summary>
         /// Gets and sets the property EventType. 
         /// <para>
-        /// The event type to filter device events.
+        /// The event type to filter device events. If EventType isn't specified, this returns
+        /// a list of all device events in reverse chronological order. If EventType is specified,
+        /// this returns a list of device events for that EventType in reverse chronological order.
+        /// 
         /// </para>
         /// </summary>
         public DeviceEventType EventType
@@ -80,9 +80,9 @@ namespace Amazon.AlexaForBusiness.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to include in the response. If more results exist than
-        /// the specified MaxResults value, a token is included in the response so that the remaining
-        /// results can be retrieved. Required. 
+        /// The maximum number of results to include in the response. The default value is 50.
+        /// If more results exist than the specified MaxResults value, a token is included in
+        /// the response so that the remaining results can be retrieved. 
         /// </para>
         /// </summary>
         public int MaxResults
@@ -102,7 +102,8 @@ namespace Amazon.AlexaForBusiness.Model
         /// <para>
         /// An optional token returned from a prior request. Use this token for pagination of
         /// results from this action. If this parameter is specified, the response only includes
-        /// results beyond the token, up to the value specified by MaxResults.
+        /// results beyond the token, up to the value specified by MaxResults. When the end of
+        /// results is reached, the response has a value of null.
         /// </para>
         /// </summary>
         public string NextToken
