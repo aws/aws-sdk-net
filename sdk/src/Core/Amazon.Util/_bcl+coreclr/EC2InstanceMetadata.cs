@@ -85,6 +85,14 @@ namespace Amazon.Util
         }
 
         /// <summary>
+        /// Allows to configure the proxy used for HTTP requests. The default value is null.
+        /// </summary>
+        public static IWebProxy Proxy
+        {
+            get; set;
+        }
+
+        /// <summary>
         /// The AMI ID used to launch the instance.
         /// </summary>
         public static string AmiId
@@ -506,7 +514,7 @@ namespace Amazon.Util
                             ? new Uri(relativeOrAbsolutePath)
                             : new Uri(EC2_METADATA_ROOT + relativeOrAbsolutePath);
 
-                var content = AWSSDKUtils.DownloadStringContent(uri,  TimeSpan.FromSeconds(5));
+                var content = AWSSDKUtils.DownloadStringContent(uri,  TimeSpan.FromSeconds(5), Proxy);
                 using (var stream = new StringReader(content))
                 {
                     if (slurp)

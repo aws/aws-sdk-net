@@ -20,6 +20,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Net;
 using System.Security;
 
 namespace Amazon.Runtime
@@ -41,7 +42,13 @@ namespace Amazon.Runtime
 
         public delegate AWSCredentials CredentialsGenerator();
         public static List<CredentialsGenerator> CredentialsGenerators { get; set; }
+
         public static void Reset()
+        {
+            Reset(null);
+        }
+
+        public static void Reset(IWebProxy proxy)
         {
             cachedCredentials = null;
             CredentialsGenerators = new List<CredentialsGenerator>
@@ -53,7 +60,7 @@ namespace Amazon.Runtime
                 // Attempt to load the default profile.  It could be Basic, Session, AssumeRole, or SAML.
                 () => GetAWSCredentials(credentialProfileChain),
                 () => new EnvironmentVariablesAWSCredentials(), // Look for credentials set in environment vars.
-                ECSEC2CredentialsWrapper,                       // either get ECS credentials or instance profile credentials
+                () => ECSEC2CredentialsWrapper(proxy),      // either get ECS credentials or instance profile credentials
 #endif
             };
         }
@@ -76,12 +83,19 @@ namespace Amazon.Runtime
         /// using ECS endpoint instead of referring to instance profile credentials.
         private static AWSCredentials ECSEC2CredentialsWrapper()
         {
+            return ECSEC2CredentialsWrapper(null);
+        }
+
+        /// If AWS_CONTAINER_CREDENTIALS_RELATIVE_URI environment variable is set, we want to attempt to retrieve credentials
+        /// using ECS endpoint instead of referring to instance profile credentials.
+        private static AWSCredentials ECSEC2CredentialsWrapper(IWebProxy proxy)
+        {
             try
             {
                 string uri = System.Environment.GetEnvironmentVariable(ECSTaskCredentials.ContainerCredentialsURIEnvVariable);
                 if (!string.IsNullOrEmpty(uri))
                 {
-                    return new ECSTaskCredentials();
+                    return new ECSTaskCredentials(proxy);
                 }
             }
             catch (SecurityException e)

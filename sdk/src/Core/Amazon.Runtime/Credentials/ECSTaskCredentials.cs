@@ -15,6 +15,7 @@
 using Amazon.Util;
 using System;
 using System.Globalization;
+using System.Net;
 
 namespace Amazon.Runtime
 {
@@ -37,10 +38,15 @@ namespace Amazon.Runtime
         private string Server = null;
         private static int MaxRetries = 5;
 
-        public ECSTaskCredentials()
+        private IWebProxy Proxy;
+
+        public ECSTaskCredentials() : this(null) { }
+
+        public ECSTaskCredentials(IWebProxy proxy)
         {
             Uri = System.Environment.GetEnvironmentVariable(ECSTaskCredentials.ContainerCredentialsURIEnvVariable);
             Server = EndpointAddress;
+            Proxy = proxy;
         }
 
         protected override CredentialsRefreshState GenerateNewCredentials()
@@ -53,7 +59,7 @@ namespace Amazon.Runtime
             {
                 try
                 {
-                    credentials = GetObjectFromResponse<SecurityCredentials>(ecsEndpointUri);
+                    credentials = GetObjectFromResponse<SecurityCredentials>(ecsEndpointUri, Proxy);
                     if (credentials != null)
                     {
                         break;

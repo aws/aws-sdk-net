@@ -935,13 +935,23 @@ namespace Amazon.Util
 
         public static string DownloadStringContent(Uri uri)
         {
-            return DownloadStringContent(uri, TimeSpan.Zero);
+            return DownloadStringContent(uri, TimeSpan.Zero, null);
         }
 
         public static string DownloadStringContent(Uri uri, TimeSpan timeout)
         {
+            return DownloadStringContent(uri, timeout, null);
+        }
+
+        public static string DownloadStringContent(Uri uri, IWebProxy proxy)
+        {
+            return DownloadStringContent(uri, TimeSpan.Zero, proxy);
+        }
+
+        public static string DownloadStringContent(Uri uri, TimeSpan timeout, IWebProxy proxy)
+        {
 #if PCL || CORECLR 
-            using (var client = new System.Net.Http.HttpClient())
+            using (var client = new System.Net.Http.HttpClient(new System.Net.Http.HttpClientHandler() { Proxy = proxy }))
             {
                 if (timeout > TimeSpan.Zero)
                     client.Timeout = timeout;
@@ -953,6 +963,7 @@ namespace Amazon.Util
             }
 #else
             HttpWebRequest request = HttpWebRequest.Create(uri) as HttpWebRequest;
+            request.Proxy = proxy ?? WebRequest.DefaultWebProxy;
             if (timeout > TimeSpan.Zero)
                 request.Timeout = (int)timeout.TotalMilliseconds;
             using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
@@ -965,14 +976,20 @@ namespace Amazon.Util
 
         public static Stream OpenStream(Uri uri)
         {
-#if CORECLR
-            using (var client = new System.Net.Http.HttpClient())
+            return OpenStream(uri, null);
+        }
+
+        public static Stream OpenStream(Uri uri, IWebProxy proxy)
+        {
+#if PCL || CORECLR
+            using (var client = new System.Net.Http.HttpClient(new System.Net.Http.HttpClientHandler() { Proxy = proxy }))
             {
                 var task = client.GetStreamAsync(uri);
                 return task.Result;
             }
 #else
             HttpWebRequest request = WebRequest.Create(uri) as HttpWebRequest;
+            request.Proxy = proxy ?? WebRequest.DefaultWebProxy;
             var asynResult = request.BeginGetResponse(null, null);
             HttpWebResponse response = request.EndGetResponse(asynResult) as HttpWebResponse;
             return response.GetResponseStream();

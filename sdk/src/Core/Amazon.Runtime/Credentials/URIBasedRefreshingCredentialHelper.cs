@@ -27,9 +27,14 @@ namespace Amazon.Runtime
 
         protected static string GetContents(Uri uri)
         {
+            return GetContents(uri, null);
+        }
+
+        protected static string GetContents(Uri uri, IWebProxy proxy)
+        {
             try
             {
-                return AWSSDKUtils.DownloadStringContent(uri);
+                return AWSSDKUtils.DownloadStringContent(uri, proxy);
             }
             catch (WebException)
             {
@@ -39,7 +44,12 @@ namespace Amazon.Runtime
 
         protected static T GetObjectFromResponse<T>(Uri uri)
         {
-            string json = GetContents(uri);
+            return GetObjectFromResponse<T>(uri, null);
+        }
+
+        protected static T GetObjectFromResponse<T>(Uri uri, IWebProxy proxy)
+        {
+            string json = GetContents(uri, proxy);
             return JsonMapper.ToObject<T>(json);
         }
 

@@ -44,6 +44,11 @@ namespace Amazon.Internal
 {
     public class RegionEndpointProviderV2 : IRegionEndpointProvider
     {
+        /// <summary>
+        /// Allows to configure the proxy used for HTTP requests. The default value is null.
+        /// </summary>
+        public static IWebProxy Proxy { get; set; }
+
         public IEnumerable<IRegionEndpoint> AllRegionEndpoints
         {
             get
@@ -333,7 +338,7 @@ namespace Amazon.Internal
                 {
                     try
                     {
-                        using (var stream = Amazon.Util.AWSSDKUtils.OpenStream(new Uri(url)))
+                        using (var stream = Amazon.Util.AWSSDKUtils.OpenStream(new Uri(url), Proxy))
                         {
                             ReadEndpointFile(stream);
                             return;
