@@ -81,10 +81,19 @@ namespace Amazon.Util.Internal
             }
             private static IEnumerable<MemberInfo> GetMembers_Helper(TypeInfo ti)
             {
+                // Keep track of properties already returned. This makes sure properties that are overridden in sub classes are not returned back multiple times.
+                var processedProperties = new HashSet<string>();
+                Func<MemberInfo, bool> alreadyProcessProperty = (member) =>
+                {
+                    return (member is PropertyInfo) && !processedProperties.Add(member.Name);
+                };
+
                 var members = ti.DeclaredMembers;
                 foreach (var member in members)
-                    if (!IsBackingField(member))
+                {
+                    if (!IsBackingField(member) && !alreadyProcessProperty(member))
                         yield return member;
+                }
 
                 var baseType = ti.BaseType;
                 var isObject = (baseType == objectType);
@@ -94,7 +103,12 @@ namespace Amazon.Util.Internal
                     var baseMembers = GetMembers_Helper(baseTi).ToList();
 
                     foreach (var baseMember in baseMembers)
-                        yield return baseMember;
+                    {
+                        if(!alreadyProcessProperty(baseMember))
+                        {
+                            yield return baseMember;
+                        }
+                    }
                 }
             }
 
