@@ -66,23 +66,23 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                 {
                     return "Test_Value";
                 }
-                else if (type == typeof(bool))
+                else if (type == typeof(bool) || type == typeof(bool?))
                 {
                     return true;
                 }
-                else if (type == typeof(int))
+                else if (type == typeof(int) || type == typeof(int?))
                 {
                     return int.MaxValue;
                 }
-                else if (type == typeof(long))
+                else if (type == typeof(long) || type == typeof(long?))
                 {
                     return long.MaxValue;
                 }
-                else if (type == typeof(double))
+                else if (type == typeof(double) || type == typeof(double?))
                 {
                     return double.MaxValue;
                 }
-                else if (type == typeof(DateTime))
+                else if (type == typeof(DateTime) || type == typeof(DateTime?))
                 {
                     return Constants.DEFAULT_DATE;
                 }

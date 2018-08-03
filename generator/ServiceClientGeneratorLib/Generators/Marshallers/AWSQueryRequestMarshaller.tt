@@ -150,15 +150,16 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
             else
             {
                 string context = ComposeContext(parameterContext, marshallName);
+				string memberProperty = variableName + "." + member.PropertyName + (member.UseNullable ? ".Value" : string.Empty);
 				if(string.IsNullOrEmpty(member.CustomMarshallerTransformation)) 
 				{
 #>
-<#=new string(' ', level * 4)#>                    request.Parameters.Add(<#=context#>, StringUtils.From<#= member.GetPrimitiveType() #>(<#=variableName#>.<#=member.PropertyName#>));
+<#=new string(' ', level * 4)#>                    request.Parameters.Add(<#=context#>, StringUtils.From<#= member.GetPrimitiveType() #>(<#=memberProperty#>));
 <#+
 				}
 				else 
 				{#>
-<#=new string(' ', level * 4)#>                    request.Parameters.Add(<#=context#>, <#=member.CustomMarshallerTransformation + "(" + variableName + "." + member.PropertyName + ")"#>);
+<#=new string(' ', level * 4)#>                    request.Parameters.Add(<#=context#>, <#=member.CustomMarshallerTransformation#>(<#=memberProperty#>));
 <#+					
 				}
 				if(member.IsIdempotent)

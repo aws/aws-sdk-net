@@ -48,6 +48,7 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 <#=new string(' ', level * 4)#>            {
 <#=new string(' ', level * 4)#>                context.Writer.WritePropertyName("<#=member.MarshallName#>");
 <#+
+			string memberProperty = variableName + "." + member.PropertyName + (member.UseNullable ? ".Value" : string.Empty);
 			if(member.IsStructure || member.IsList || member.IsMap)
 			{
 				this.ProcessStructure(level, variableName + "." + member.PropertyName, member.Shape);
@@ -55,7 +56,7 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
             else if(!string.IsNullOrEmpty(member.CustomMarshallerTransformation))
             {
 #>
-<#=new string(' ', level * 4)#>                context.Writer.Write(<#=member.CustomMarshallerTransformation + "(" + variableName + "." + member.PropertyName + ")"#>);
+<#=new string(' ', level * 4)#>                context.Writer.Write(<#=member.CustomMarshallerTransformation#>(<#=memberProperty#>));
 <#+
             }
 			else if(member.IsMemoryStream)
@@ -67,7 +68,7 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 			else
 			{
 #>
-<#=new string(' ', level * 4)#>                context.Writer.Write(<#=variableName + "." + member.PropertyName#>);
+<#=new string(' ', level * 4)#>                context.Writer.Write(<#=memberProperty#>);
 <#+
 			}
 #>
