@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.330.0",
+    "ProductVersion" : "3.3.330.1",
     "CoreVersion"    : "3.3.24.5",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -1001,7 +1001,7 @@
             "InPreview"               : false
         },
         "AlexaForBusiness"                : {
-            "Version" : "3.3.5.3",
+            "Version" : "3.3.5.4",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.24.5"
