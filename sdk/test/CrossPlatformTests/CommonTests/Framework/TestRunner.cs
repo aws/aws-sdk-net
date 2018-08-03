@@ -45,7 +45,8 @@ namespace CommonTests.Framework
         internal static AWSCredentials Credentials { get; set; }
         internal static RegionEndpoint RegionEndpoint { get; set; }
         public static TestRunner Instance { get; private set; }
-
+        //Let the setting data can be accessed directly from outside of the class
+        internal static Settings.StoredSettings StoredSettings { get; private set; } 
         private TextWriter LogWriter { get; set; }
         public virtual ITestListener Listener { get; private set; }
         public virtual ITestFilter Filter
@@ -87,6 +88,7 @@ namespace CommonTests.Framework
         {
             TestRunner.Credentials = Settings.Credentials;
             TestRunner.RegionEndpoint = Settings.RegionEndpoint;
+            TestRunner.StoredSettings = Settings.storedSettings; 
             var logging = AWSConfigs.LoggingConfig;
             logging.LogTo = LoggingOptions.SystemDiagnostics;
             logging.LogResponses = ResponseLoggingOption.Always;
@@ -232,6 +234,14 @@ namespace CommonTests.Framework
         }
 
         #endregion
+        //Let the log file path is accessible from outside of the class
+        public string logfilepath
+        {
+            get
+            {
+                return LogWriter.ToString(); 
+            }
+        }
 
         #region Log pushes
 
