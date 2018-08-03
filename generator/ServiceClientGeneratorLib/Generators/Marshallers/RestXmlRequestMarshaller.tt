@@ -123,7 +123,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 			{
 #>
 				if(<#=variableName#>.IsSet<#=member.PropertyName#>())
-					xmlWriter.WriteElementString("<#=member.MarshallName#>", "<#=operation.XmlNamespace#>", StringUtils.From<#=member.GetPrimitiveType()#>(<#=variableName#>.<#=member.PropertyName#>));					
+					xmlWriter.WriteElementString("<#=member.MarshallName#>", "<#=operation.XmlNamespace#>", StringUtils.From<#=member.GetPrimitiveType()#>(<#=variableName#>.<#=member.PropertyName#><#=(member.UseNullable ? ".Value" : string.Empty)#>));					
 
 <#+
 			}
@@ -166,7 +166,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 			{
 #>
 				if(<#=variableName#>.IsSet<#=member.PropertyName#>())
-					xmlWriter.WriteElementString("<#=member.MarshallName#>", "<#=xmlNamespace#>", StringUtils.From<#=member.GetPrimitiveType()#>(<#=variableName#>.<#=member.PropertyName#>));				 
+					xmlWriter.WriteElementString("<#=member.MarshallName#>", "<#=xmlNamespace#>", StringUtils.From<#=member.GetPrimitiveType()#>(<#=variableName#>.<#=member.PropertyName#><#=(member.UseNullable ? ".Value" : string.Empty)#>));				 
 
 <#+
 			}

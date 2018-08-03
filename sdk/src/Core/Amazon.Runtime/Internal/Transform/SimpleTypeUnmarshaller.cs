@@ -19,6 +19,7 @@ using System.Globalization;
 using System.IO;
 
 using Amazon.Runtime.Internal.Util;
+using Amazon.Util;
 using ThirdParty.Json.LitJson;
 
 namespace Amazon.Runtime.Internal.Transform
@@ -71,6 +72,44 @@ namespace Amazon.Runtime.Internal.Transform
         public int Unmarshall(JsonUnmarshallerContext context)
         {
             return SimpleTypeUnmarshaller<int>.Unmarshall(context);
+        }
+    }
+
+    /// <summary>
+    /// Unmarshaller for nullable int fields. Implemented only for JSON context
+    /// to handle cases where value can be null e.g. {'Priority': null}.
+    /// This unmarshaller is not implemented for XML context, as XML responses
+    /// will null elements (xsi:nil='true') will be skipped by the XML parser.
+    /// </summary>
+    public class NullableIntUnmarshaller : IUnmarshaller<int?, JsonUnmarshallerContext>
+    {   
+        private NullableIntUnmarshaller() { }
+
+        private static NullableIntUnmarshaller _instance = new NullableIntUnmarshaller();
+
+        public static NullableIntUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
+        public static NullableIntUnmarshaller GetInstance()
+        {
+            return NullableIntUnmarshaller.Instance;
+        }
+
+        public int? Unmarshall(JsonUnmarshallerContext context)
+        {
+            context.Read();
+            string text = context.ReadText();
+
+            if (text == null)
+            {
+                return null;
+            }
+            return int.Parse(text, CultureInfo.InvariantCulture);
         }
     }
 
@@ -325,25 +364,72 @@ namespace Amazon.Runtime.Internal.Transform
         {
             return SimpleTypeUnmarshaller<DateTime>.Unmarshall(context);
         }
+
         public DateTime Unmarshall(JsonUnmarshallerContext context)
         {
-            DateTime ret;
-            Double seconds;
             context.Read();
             string text = context.ReadText();
+            return UnmarshallInternal(text, treatAsNullable: false).Value;
+        }
+
+        /// <summary>
+        ///  Unmarshalls given string as a DateTime. Handles cases where we want to unmarshall 
+        ///  as just a DateTime or a nullable Datetime.
+        /// </summary>
+        /// <param name="text">Value to be parsed</param>
+        /// <param name="treatAsNullable">If true, the method will return null if text is null. 
+        /// If false, the method will return default(DateTime), if text is null.</param>
+        /// <returns></returns>
+        internal static DateTime? UnmarshallInternal(string text, bool treatAsNullable)
+        {
+            Double seconds;
             if (Double.TryParse(text, NumberStyles.Any, CultureInfo.InvariantCulture, out seconds))
             {
-                ret = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
-                ret = ret.AddSeconds(seconds);
+                return AWSSDKUtils.EPOCH_START.AddSeconds(seconds);
             }
             else
             {
                 if (text == null)
-                    return default(DateTime);
+                {
+                    if (treatAsNullable) { return null; }
+                    else { return default(DateTime); }
+                }
 
-                return (DateTime)Convert.ChangeType(text, typeof(DateTime), CultureInfo.InvariantCulture);
+                return DateTime.Parse(text, CultureInfo.InvariantCulture);
             }
-            return ret;
+        }
+    }
+
+    /// <summary>
+    /// Unmarshaller for nullable DateTime fields. Implemented only for JSON context
+    /// to handle cases where value can be null e.g. {'Priority': null}.
+    /// This unmarshaller is not implemented for XML context, as XML responses
+    /// will null elements (xsi:nil='true') will be skipped by the XML parser.
+    /// </summary>
+    public class NullableDateTimeUnmarshaller : IUnmarshaller<DateTime?, JsonUnmarshallerContext>
+    {
+        private NullableDateTimeUnmarshaller() { }
+
+        private static NullableDateTimeUnmarshaller _instance = new NullableDateTimeUnmarshaller();
+
+        public static NullableDateTimeUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
+        public static NullableDateTimeUnmarshaller GetInstance()
+        {
+            return NullableDateTimeUnmarshaller.Instance;
+        }
+
+        public DateTime? Unmarshall(JsonUnmarshallerContext context)
+        {
+            context.Read();
+            string text = context.ReadText();
+            return DateTimeUnmarshaller.UnmarshallInternal(text, treatAsNullable: true);
         }
     }
 
