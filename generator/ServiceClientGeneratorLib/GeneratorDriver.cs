@@ -96,6 +96,7 @@ namespace ServiceClientGenerator
         public const string TestsSubFoldername = "test";
         public const string CodeAnalysisFoldername = "code-analysis";
         public const string ServicesSubFoldername = "Services";
+        public const string ServicesAnalysisSubFolderName = "ServiceAnalysis";
         public const string CoreSubFoldername = "Core";
         public const string GeneratedCodeFoldername = "Generated";
         public const string CommonTestSubFoldername = "Common";
@@ -112,7 +113,7 @@ namespace ServiceClientGenerator
 
         public HashSet<string> FilesWrittenToGeneratorFolder { get; private set; }
 
-
+        private static new HashSet<string> codeGeneratedServiceList = new HashSet<string>();
         public GeneratorDriver(ServiceConfiguration config, GenerationManifest generationManifest, GeneratorOptions options)
         {
             FilesWrittenToGeneratorFolder = new HashSet<string>();
@@ -140,6 +141,7 @@ namespace ServiceClientGenerator
             ComponentsFilesRoot = Path.Combine(Options.SdkRootFolder, XamarinComponentsSubFolderName, config.ServiceFolderName);
 
             SampleFilesRoot = options.SamplesRootFolder;
+            codeGeneratedServiceList.Add(config.ServiceFolderName);
         }
 
         public void Execute()
@@ -1151,7 +1153,6 @@ namespace ServiceClientGenerator
             generator.Config = this.Configuration;
             var text = generator.TransformText();
             var outputSubFolder = subNamespace == null ? MarshallingTestsSubFolder : Path.Combine(MarshallingTestsSubFolder, subNamespace);
-            WriteFile(TestFilesRoot, outputSubFolder, fileName, text);
             WriteFile(ServiceUnitTestFilesRoot, outputSubFolder, fileName, text);
         }
 
@@ -1183,7 +1184,6 @@ namespace ServiceClientGenerator
             generator.Config = this.Configuration;
             var text = generator.TransformText();
             var outputSubFolder = subNamespace == null ? CustomizationTestsSubFolder : Path.Combine(CustomizationTestsSubFolder, subNamespace);
-            WriteFile(TestFilesRoot, outputSubFolder, fileName, text);
             WriteFile(ServiceUnitTestFilesRoot, outputSubFolder, fileName, text);
         }
 
@@ -1331,10 +1331,21 @@ namespace ServiceClientGenerator
             command.Execute(CodeAnalysisRoot, this.Configuration);
         }
 
-        public static void RemoveOrphanedShapes(HashSet<string> generatedFiles, string rootFolder)
+        public static void RemoveOrphanedShapesAndServices(HashSet<string> generatedFiles, string sdkRootFolder)
+        {
+            var srcFolder = Path.Combine(sdkRootFolder, SourceSubFoldername, ServicesSubFoldername);
+            RemoveOrphanedShapes(generatedFiles, srcFolder);
+            // Cleanup orphaned Service src artifacts. This is encountered when the service identifier is modified.
+            RemoveOrphanedServices(srcFolder);
+            // Cleanup orphaned Service test artifacts. This is encountered when the service identifier is modified.
+            RemoveOrphanedServices(Path.Combine(sdkRootFolder, TestsSubFoldername, ServicesSubFoldername));
+            // Cleanup orphaned Service code analysis artifacts. This is encountered when the service identifier is modified.
+            RemoveOrphanedServices(Path.Combine(sdkRootFolder, CodeAnalysisFoldername, ServicesAnalysisSubFolderName));
+        }
+        public static void RemoveOrphanedShapes(HashSet<string> generatedFiles, string srcFolder)
         {
             // Remove orphaned shapes. Most likely due to taking in a model that was still under development.
-            foreach (var file in Directory.GetFiles(rootFolder, "*.cs", SearchOption.AllDirectories))
+            foreach (var file in Directory.GetFiles(srcFolder, "*.cs", SearchOption.AllDirectories))
             {
                 var fullPath = Path.GetFullPath(file);
                 if (fullPath.IndexOf(string.Format(@"\{0}\", GeneratedCodeFoldername), StringComparison.OrdinalIgnoreCase) < 0)
@@ -1344,6 +1355,18 @@ namespace ServiceClientGenerator
                 {
                     Console.Error.WriteLine("**** Warning: Removing orphaned generated code " + Path.GetFileName(file));
                     File.Delete(file);
+                }
+            }
+        }
+
+
+        private static void RemoveOrphanedServices(string path)
+        {
+            foreach (var directoryName in Directory.GetDirectories(path))
+            {
+                if (!codeGeneratedServiceList.Contains(new DirectoryInfo(directoryName).Name))
+                {
+                    Directory.Delete(directoryName, true);
                 }
             }
         }

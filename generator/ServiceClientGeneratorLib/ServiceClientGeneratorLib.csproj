@@ -17,6 +17,7 @@
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
 
+    <NoWarn>CS1591;CS1572;CS1573;CS1570;CS0109;CS0252</NoWarn>
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="Generators\Component\Component1.cs" />

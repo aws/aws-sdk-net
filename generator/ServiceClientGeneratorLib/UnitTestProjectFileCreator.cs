@@ -89,7 +89,7 @@ namespace ServiceClientGenerator
                 if (_isLegacyProj)
                 {
                     session["AssemblyName"] = string.Format("AWSSDK.UnitTests.{0}", configuration.Name);
-                    session["ExternalFilesInclude"] = "../Services/*/UnitTests/Custom/*.cs";
+                    session["ExternalFilesInclude"] = "../Services/*/UnitTests/**/*.cs";
                     session["EmbeddedResources"] = configuration.EmbeddedResources;
                 }
                 else
