@@ -38,8 +38,14 @@ namespace CognitoAuthentication.IntegrationTests.NET45
         private string identityPoolId;
 
         private AmazonCognitoIdentityClient identityClient;
+
+#if XAMARIN_TESTS
+        RegionEndpoint clientRegion = Settings.RegionEndpoint;
+#else
         AWSCredentials clientCredentials = FallbackCredentialsFactory.GetCredentials();
         RegionEndpoint clientRegion = FallbackRegionFactory.GetRegionEndpoint();
+#endif
+
         private AmazonIdentityManagementServiceClient managementClient;
 
         [Fact]
@@ -57,7 +63,13 @@ namespace CognitoAuthentication.IntegrationTests.NET45
                 }).ConfigureAwait(false);
 
             //Create identity pool
+
+#if XAMARIN_TESTS
+            identityClient = new AmazonCognitoIdentityClient(Settings.storedSettings.AccessKeyId, Settings.storedSettings.SecretAccessKey, Settings.RegionEndpoint);
+#else
             identityClient = new AmazonCognitoIdentityClient(clientCredentials, clientRegion);
+#endif
+
             CreateIdentityPoolResponse poolResponse =
                 await identityClient.CreateIdentityPoolAsync(new CreateIdentityPoolRequest()
                 {
@@ -72,7 +84,15 @@ namespace CognitoAuthentication.IntegrationTests.NET45
             identityPoolId = poolResponse.IdentityPoolId;
 
             //Create role for identity pool
+
+#if XAMARIN_TESTS
+            managementClient = new AmazonIdentityManagementServiceClient(Settings.storedSettings.AccessKeyId, Settings.storedSettings.SecretAccessKey, Settings.RegionEndpoint);
+#else
             managementClient = new AmazonIdentityManagementServiceClient(clientCredentials, clientRegion);
+#endif
+
+
+
             CreateRoleResponse roleResponse = managementClient.CreateRoleAsync(new CreateRoleRequest()
             {
                 RoleName = "_TestRole_" + DateTime.Now.ToString("yyyyMMdd_HHmmss"),

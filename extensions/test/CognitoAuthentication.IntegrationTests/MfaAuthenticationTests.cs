@@ -71,11 +71,15 @@ namespace Amazon.Extensions.CognitoAuthentication.IntegrationTests
             UserPoolPolicyType passwordPolicy = new UserPoolPolicyType();
             List<SchemaAttributeType> requiredAttributes = new List<SchemaAttributeType>();
             List<string> verifiedAttributes = new List<string>();
-
+#if XAMARIN_TESTS
+            provider = new AmazonCognitoIdentityProviderClient(Settings.storedSettings.AccessKeyId,Settings.storedSettings.SecretAccessKey, Settings.RegionEndpoint);
+#else
             var creds = FallbackCredentialsFactory.GetCredentials();
             var region = FallbackRegionFactory.GetRegionEndpoint();
 
             provider = new AmazonCognitoIdentityProviderClient(creds, region);
+#endif
+
 
             AdminCreateUserConfigType adminCreateUser = new AdminCreateUserConfigType()
             {
@@ -110,7 +114,14 @@ namespace Amazon.Extensions.CognitoAuthentication.IntegrationTests
             verifiedAttributes.Add(CognitoConstants.UserAttrPhoneNumber);
 
             //Create Role for MFA
-            using (var managementClient = new AmazonIdentityManagementServiceClient())
+            using (var managementClient =
+
+#if  XAMARIN_TESTS
+                new AmazonIdentityManagementServiceClient(Settings.storedSettings.AccessKeyId,Settings.storedSettings.SecretAccessKey, Settings.RegionEndpoint)  
+#else
+                new AmazonIdentityManagementServiceClient() 
+#endif
+                )
             {
                 CreateRoleResponse roleResponse = managementClient.CreateRoleAsync(new CreateRoleRequest()
                 {
@@ -222,7 +233,7 @@ namespace Amazon.Extensions.CognitoAuthentication.IntegrationTests
             this.user = new CognitoUser("User5", clientCreated.ClientId, pool, provider);
         }
 
-        /// <summary>
+        /// <summary>           
         /// Internal method that cleans up the created user pool (along with associated client/user) 
         /// for testing
         /// </summary>
@@ -230,7 +241,13 @@ namespace Amazon.Extensions.CognitoAuthentication.IntegrationTests
         {
             try
             {
-                using (var client = new AmazonIdentityManagementServiceClient())
+                using (var client =
+#if  XAMARIN_TESTS
+                new AmazonIdentityManagementServiceClient(Settings.storedSettings.AccessKeyId,Settings.storedSettings.SecretAccessKey, Settings.RegionEndpoint) 
+#else
+                new AmazonIdentityManagementServiceClient() 
+#endif
+                    )
                 {
                     client.DetachRolePolicyAsync(new DetachRolePolicyRequest()
                     {
