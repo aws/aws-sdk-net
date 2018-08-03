@@ -24,6 +24,7 @@
     <Compile Include="Runtime\DeprecatedCodeTest.cs" />
     <Compile Include="Runtime\HttpHandlerTests.cs" />
     <Compile Include="Utils.cs" />
+    <Compile Include="ConstantClassTestBase.cs" />
     <Compile Include="CapacityManagerTests.cs" />
     <Compile Include="TestTools\**" />
     <Compile Remove="TestTools\Credentials" />
