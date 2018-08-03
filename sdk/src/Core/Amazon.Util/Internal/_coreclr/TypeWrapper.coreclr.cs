@@ -85,20 +85,7 @@ namespace Amazon.Util.Internal
                 var processedProperties = new HashSet<string>();
                 Func<MemberInfo, bool> alreadyProcessProperty = (member) =>
                 {
-                    if (member is PropertyInfo)
-                    {
-                        if (processedProperties.Contains(member.Name))
-                        {
-                            return true;
-                        }
-                        else
-                        {
-                            processedProperties.Add(member.Name);
-                            return false;
-                        }
-                    }
-
-                    return false;
+                    return (member is PropertyInfo) && !processedProperties.Add(member.Name);
                 };
 
                 var members = ti.DeclaredMembers;

@@ -63,32 +63,39 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
             Client.BeforeRequestEvent -= ClientBeforeRequestEvent;
         }
 
+        static readonly object CONFIGURE_MAPPING_LOCK = new object();
         public DynamoDBTestsFixture()
         {
-            // .NET Core does not support config files yet, so programmatically configure the settings.  See App.45.config
-            AWSConfigsDynamoDB.Context.AddAlias(new TableAlias("FakeTable", "HashRangeTable"));
-            TypeMapping mapping = new TypeMapping(typeof(DynamoDBTests.Employee), "HashRangeTable");
-                mapping.AddProperty(new PropertyConfig("ManagerName") { Attribute = "Manager" });
-                mapping.AddProperty(new PropertyConfig("CompanyName") { Attribute = "Company" });
-                mapping.AddProperty(new PropertyConfig("InternalId") { Ignore  = true });
-                mapping.AddProperty(new PropertyConfig("CurrentStatus") { Attribute = "Status", Converter = typeof(DynamoDBTests.StatusConverter)});
-            AWSConfigsDynamoDB.Context.AddMapping(mapping);
+            lock (CONFIGURE_MAPPING_LOCK)
+            {
+                if(!AWSConfigsDynamoDB.Context.TableAliases.ContainsKey("FakeTable"))
+                {
+                    // .NET Core does not support config files yet, so programmatically configure the settings.  See App.45.config
+                    AWSConfigsDynamoDB.Context.AddAlias(new TableAlias("FakeTable", "HashRangeTable"));
+                    TypeMapping mapping = new TypeMapping(typeof(DynamoDBTests.Employee), "HashRangeTable");
+                    mapping.AddProperty(new PropertyConfig("ManagerName") { Attribute = "Manager" });
+                    mapping.AddProperty(new PropertyConfig("CompanyName") { Attribute = "Company" });
+                    mapping.AddProperty(new PropertyConfig("InternalId") { Ignore = true });
+                    mapping.AddProperty(new PropertyConfig("CurrentStatus") { Attribute = "Status", Converter = typeof(DynamoDBTests.StatusConverter) });
+                    AWSConfigsDynamoDB.Context.AddMapping(mapping);
 
-            mapping = new TypeMapping(typeof(DynamoDBTests.VersionedEmployee), "FakeTable");
-                mapping.AddProperty(new PropertyConfig("Version") { Version = true });
-            AWSConfigsDynamoDB.Context.AddMapping(mapping);
-            AWSConfigsDynamoDB.Context.AddMapping(new TypeMapping(typeof(DynamoDBTests.Employee2), "FakeTable"));
-            AWSConfigsDynamoDB.Context.AddMapping(new TypeMapping(typeof(DynamoDBTests.Employee3), "FakeTable"));
+                    mapping = new TypeMapping(typeof(DynamoDBTests.VersionedEmployee), "FakeTable");
+                    mapping.AddProperty(new PropertyConfig("Version") { Version = true });
+                    AWSConfigsDynamoDB.Context.AddMapping(mapping);
+                    AWSConfigsDynamoDB.Context.AddMapping(new TypeMapping(typeof(DynamoDBTests.Employee2), "FakeTable"));
+                    AWSConfigsDynamoDB.Context.AddMapping(new TypeMapping(typeof(DynamoDBTests.Employee3), "FakeTable"));
+                }
 
-            CreateTestTables().Wait();
+                CreateTestTables().Wait();
 
-            Client.BeforeRequestEvent += ClientBeforeRequestEvent;
+                Client.BeforeRequestEvent += ClientBeforeRequestEvent;
 
-            // Since tables have a variable prefix, configure the prefix for the process
-            AWSConfigsDynamoDB.Context.TableNamePrefix = TableNamePrefix;
+                // Since tables have a variable prefix, configure the prefix for the process
+                AWSConfigsDynamoDB.Context.TableNamePrefix = TableNamePrefix;
 
-            // Construct single context object to use for all operations
-            CreateContext(DynamoDBEntryConversion.V1);
+                // Construct single context object to use for all operations
+                CreateContext(DynamoDBEntryConversion.V1);
+            }
         }
 
         private void ClientBeforeRequestEvent(object sender, Amazon.Runtime.RequestEventArgs e)
