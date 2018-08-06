@@ -67,6 +67,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetBackupType())
+                {
+                    context.Writer.WritePropertyName("BackupType");
+                    context.Writer.Write(publicRequest.BackupType);
+                }
+
                 if(publicRequest.IsSetExclusiveStartBackupArn())
                 {
                     context.Writer.WritePropertyName("ExclusiveStartBackupArn");

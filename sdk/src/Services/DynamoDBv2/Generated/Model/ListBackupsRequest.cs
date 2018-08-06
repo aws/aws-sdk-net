@@ -46,11 +46,47 @@ namespace Amazon.DynamoDBv2.Model
     /// </summary>
     public partial class ListBackupsRequest : AmazonDynamoDBRequest
     {
+        private BackupTypeFilter _backupType;
         private string _exclusiveStartBackupArn;
         private int? _limit;
         private string _tableName;
         private DateTime? _timeRangeLowerBound;
         private DateTime? _timeRangeUpperBound;
+
+        /// <summary>
+        /// Gets and sets the property BackupType. 
+        /// <para>
+        /// The backups from the table specified by BackupType are listed.
+        /// </para>
+        ///  
+        /// <para>
+        /// Where BackupType can be:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>USER</code> - On demand backup created by you.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SYSTEM</code> - On demand backup automatically created by DynamoDB.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ALL</code> - All types of on demand backups (USER and SYSTEM).
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public BackupTypeFilter BackupType
+        {
+            get { return this._backupType; }
+            set { this._backupType = value; }
+        }
+
+        // Check to see if BackupType property is set
+        internal bool IsSetBackupType()
+        {
+            return this._backupType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ExclusiveStartBackupArn. 

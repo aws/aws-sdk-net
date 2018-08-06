@@ -34,9 +34,11 @@ namespace Amazon.DynamoDBv2.Model
     {
         private string _backupArn;
         private DateTime? _backupCreationDateTime;
+        private DateTime? _backupExpiryDateTime;
         private string _backupName;
         private long? _backupSizeBytes;
         private BackupStatus _backupStatus;
+        private BackupType _backupType;
         private string _tableArn;
         private string _tableId;
         private string _tableName;
@@ -75,6 +77,25 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetBackupCreationDateTime()
         {
             return this._backupCreationDateTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BackupExpiryDateTime. 
+        /// <para>
+        /// Time at which the automatic on demand backup created by DynamoDB will expire. This
+        /// <code>SYSTEM</code> on demand backup expires automatically 35 days after its creation.
+        /// </para>
+        /// </summary>
+        public DateTime BackupExpiryDateTime
+        {
+            get { return this._backupExpiryDateTime.GetValueOrDefault(); }
+            set { this._backupExpiryDateTime = value; }
+        }
+
+        // Check to see if BackupExpiryDateTime property is set
+        internal bool IsSetBackupExpiryDateTime()
+        {
+            return this._backupExpiryDateTime.HasValue; 
         }
 
         /// <summary>
@@ -129,6 +150,33 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetBackupStatus()
         {
             return this._backupStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BackupType. 
+        /// <para>
+        /// BackupType:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>USER</code> - On demand backup created by you.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SYSTEM</code> - On demand backup automatically created by DynamoDB.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public BackupType BackupType
+        {
+            get { return this._backupType; }
+            set { this._backupType = value; }
+        }
+
+        // Check to see if BackupType property is set
+        internal bool IsSetBackupType()
+        {
+            return this._backupType != null;
         }
 
         /// <summary>

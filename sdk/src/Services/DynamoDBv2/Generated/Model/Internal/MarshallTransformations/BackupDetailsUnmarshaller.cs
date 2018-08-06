@@ -76,6 +76,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     unmarshalledObject.BackupCreationDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("BackupExpiryDateTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.BackupExpiryDateTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("BackupName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -92,6 +98,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BackupStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("BackupType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BackupType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
