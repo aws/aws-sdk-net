@@ -87,17 +87,17 @@
   <property-value-rule>
     <property>Amazon.AWSHealth.Model.AffectedEntity.EventArn</property>
     <max>1600</max>
-    <pattern>arn:aws:health:[^:]*:[^:]*:event/[\w-]+</pattern>
+    <pattern>arn:aws:health:[^:]*:[^:]*:event(?:/[\w-]+){1}((?:/[\w-]+){2})?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSHealth.Model.EntityAggregate.EventArn</property>
     <max>1600</max>
-    <pattern>arn:aws:health:[^:]*:[^:]*:event/[\w-]+</pattern>
+    <pattern>arn:aws:health:[^:]*:[^:]*:event(?:/[\w-]+){1}((?:/[\w-]+){2})?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSHealth.Model.Event.Arn</property>
     <max>1600</max>
-    <pattern>arn:aws:health:[^:]*:[^:]*:event/[\w-]+</pattern>
+    <pattern>arn:aws:health:[^:]*:[^:]*:event(?:/[\w-]+){1}((?:/[\w-]+){2})?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSHealth.Model.Event.AvailabilityZone</property>
@@ -125,7 +125,7 @@
   <property-value-rule>
     <property>Amazon.AWSHealth.Model.EventDetailsErrorItem.EventArn</property>
     <max>1600</max>
-    <pattern>arn:aws:health:[^:]*:[^:]*:event/[\w-]+</pattern>
+    <pattern>arn:aws:health:[^:]*:[^:]*:event(?:/[\w-]+){1}((?:/[\w-]+){2})?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSHealth.Model.EventType.Category</property>

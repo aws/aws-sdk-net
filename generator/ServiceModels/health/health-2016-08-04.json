@@ -1,0 +1,1529 @@
+{
+  "version": "1.0",
+  "type": "json",
+  "json_version": "1.1",
+  "signature_version": "v4",
+  "service_full_name": "AWS Health APIs and Notifications",
+  "service_abbreviation": "AWSHealth",
+  "service_id": "Health",
+  "uid": "health-2016-08-04",
+  "endpoint_prefix": "health",
+  "api_version": "2016-08-04",
+  "target_prefix": "AWSHealth_20160804",
+  "documentation": "\n\n         <fullname>AWS Health</fullname>\n      \n         <p>The AWS Health API provides programmatic access to the AWS Health information that is presented in the <a href=\"https://phd.aws.amazon.com/phd/home#/\">AWS Personal Health Dashboard</a>. You can get information about events that affect your AWS resources:</p>\n         <ul>\n            <li>\n               <p>\n                  <a>DescribeEvents</a>: Summary information about events.</p>\n            </li>\n            <li>\n               <p>\n                  <a>DescribeEventDetails</a>: Detailed information about one or more events.</p>\n            </li>\n            <li>\n               <p>\n                  <a>DescribeAffectedEntities</a>: Information about AWS resources that are affected by one or more events.</p>\n            </li>\n         </ul>\n         <p>In addition, these operations provide information about event types and summary counts of events or affected entities:</p>\n         <ul>\n            <li>\n               <p>\n                  <a>DescribeEventTypes</a>: Information about the kinds of events that AWS Health tracks.</p>\n            </li>\n            <li>\n               <p>\n                  <a>DescribeEventAggregates</a>: A count of the number of events that meet specified criteria.</p>\n            </li>\n            <li>\n               <p>\n                  <a>DescribeEntityAggregates</a>: A count of the number of affected entities that meet specified criteria.</p>\n            </li>\n         </ul>\n\n         <p>The Health API requires a Business or Enterprise support plan from <a href=\"http://aws.amazon.com/premiumsupport/\">AWS Support</a>. Calling the Health API from an account that does not have a Business or Enterprise support plan causes a <code>SubscriptionRequiredException</code>. </p>\n\n         <p>For authentication of requests, AWS Health uses the <a href=\"http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html\">Signature Version 4 Signing Process</a>.</p>\n\n         <p>See the <a href=\"http://docs.aws.amazon.com/health/latest/ug/what-is-aws-health.html\">AWS Health User Guide</a> for information about how to use the API.</p>\n\n         <p>\n            <b>Service Endpoint</b>\n         </p>\n         <p>The HTTP endpoint for the AWS Health API is:</p>\n         <ul>\n            <li>\n               <p>https://health.us-east-1.amazonaws.com </p>\n            </li>\n         </ul>\n\n      ",
+  "operations": {
+    "DescribeEvents": {
+      "name": "DescribeEvents",
+      "input": {
+        "type": "structure",
+        "members": {
+          "filter": {
+            "type": "structure",
+            "members": {
+              "eventArns": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <simpara>A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456\", \"arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101\"</code>\n         </simpara>\n      ",
+                "documentation": "\n         <p>A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456\", \"arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101\"</code>\n         </p>\n      ",
+                "shape_name": "eventArnList",
+                "min_length": 1,
+                "max_length": 10,
+                "members": {
+                  "type": "string",
+                  "pattern": "arn:aws:health:[^:]*:[^:]*:event(?:/[\\w-]+){1}((?:/[\\w-]+){2})?",
+                  "shape_name": "eventArn",
+                  "documentation": null,
+                  "max_length": 1600
+                }
+              },
+              "eventTypeCodes": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <simpara>A list of unique identifiers for event types. For example, <code>\"AWS_EC2_SYSTEM_MAINTENANCE_EVENT\",\"AWS_RDS_MAINTENANCE_SCHEDULED\"</code>\n         </simpara>\n      ",
+                "documentation": "\n         <p>A list of unique identifiers for event types. For example, <code>\"AWS_EC2_SYSTEM_MAINTENANCE_EVENT\",\"AWS_RDS_MAINTENANCE_SCHEDULED\"</code>\n         </p>\n      ",
+                "shape_name": "eventTypeList",
+                "min_length": 1,
+                "max_length": 10,
+                "members": {
+                  "type": "string",
+                  "shape_name": "eventType",
+                  "documentation": null,
+                  "min_length": 3,
+                  "max_length": 100
+                }
+              },
+              "services": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <simpara>The AWS services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</simpara>\n      ",
+                "documentation": "\n         <p>The AWS services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>\n      ",
+                "shape_name": "serviceList",
+                "min_length": 1,
+                "max_length": 10,
+                "members": {
+                  "type": "string",
+                  "shape_name": "service",
+                  "documentation": null,
+                  "min_length": 2,
+                  "max_length": 30
+                }
+              },
+              "regions": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <simpara>A list of AWS regions.</simpara>\n      ",
+                "documentation": "\n         <p>A list of AWS regions.</p>\n      ",
+                "shape_name": "regionList",
+                "min_length": 1,
+                "max_length": 10,
+                "members": {
+                  "type": "string",
+                  "pattern": "[^:/]{2,25}",
+                  "shape_name": "region",
+                  "documentation": null
+                }
+              },
+              "availabilityZones": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <simpara>A list of AWS availability zones.</simpara>\n      ",
+                "documentation": "\n         <p>A list of AWS availability zones.</p>\n      ",
+                "shape_name": "availabilityZones",
+                "members": {
+                  "type": "string",
+                  "pattern": "[a-z]{2}\\-[0-9a-z\\-]{4,16}",
+                  "shape_name": "availabilityZone",
+                  "documentation": null
+                }
+              },
+              "startTimes": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <simpara>A list of dates and times that the event began.</simpara>\n      ",
+                "documentation": "\n         <p>A list of dates and times that the event began.</p>\n      ",
+                "shape_name": "dateTimeRangeList",
+                "min_length": 1,
+                "max_length": 10,
+                "members": {
+                  "type": "structure",
+                  "members": {
+                    "from": {
+                      "type": "timestamp",
+                      "zonbookDocumentation": "\n         <simpara>The starting date and time of a time range.</simpara>\n      ",
+                      "documentation": "\n         <p>The starting date and time of a time range.</p>\n      ",
+                      "shape_name": "timestamp"
+                    },
+                    "to": {
+                      "type": "timestamp",
+                      "zonbookDocumentation": "\n         <simpara>The ending date and time of a time range.</simpara>\n      ",
+                      "documentation": "\n         <p>The ending date and time of a time range.</p>\n      ",
+                      "shape_name": "timestamp"
+                    }
+                  },
+                  "zonbookDocumentation": "\n         <simpara>A range of dates and times that is used by the <xref linkend=\"EventFilter\"/> and <xref linkend=\"EntityFilter\"/> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.</simpara>\n      ",
+                  "documentation": "\n         <p>A range of dates and times that is used by the <a>EventFilter</a> and <a>EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.</p>\n      ",
+                  "shape_name": "DateTimeRange"
+                }
+              },
+              "endTimes": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <simpara>A list of dates and times that the event ended.</simpara>\n      ",
+                "documentation": "\n         <p>A list of dates and times that the event ended.</p>\n      ",
+                "shape_name": "dateTimeRangeList",
+                "min_length": 1,
+                "max_length": 10,
+                "members": {
+                  "type": "structure",
+                  "members": {
+                    "from": {
+                      "type": "timestamp",
+                      "zonbookDocumentation": "\n         <simpara>The starting date and time of a time range.</simpara>\n      ",
+                      "documentation": "\n         <p>The starting date and time of a time range.</p>\n      ",
+                      "shape_name": "timestamp"
+                    },
+                    "to": {
+                      "type": "timestamp",
+                      "zonbookDocumentation": "\n         <simpara>The ending date and time of a time range.</simpara>\n      ",
+                      "documentation": "\n         <p>The ending date and time of a time range.</p>\n      ",
+                      "shape_name": "timestamp"
+                    }
+                  },
+                  "zonbookDocumentation": "\n         <simpara>A range of dates and times that is used by the <xref linkend=\"EventFilter\"/> and <xref linkend=\"EntityFilter\"/> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.</simpara>\n      ",
+                  "documentation": "\n         <p>A range of dates and times that is used by the <a>EventFilter</a> and <a>EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.</p>\n      ",
+                  "shape_name": "DateTimeRange"
+                }
+              },
+              "lastUpdatedTimes": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <simpara>A list of dates and times that the event was last updated.</simpara>\n      ",
+                "documentation": "\n         <p>A list of dates and times that the event was last updated.</p>\n      ",
+                "shape_name": "dateTimeRangeList",
+                "min_length": 1,
+                "max_length": 10,
+                "members": {
+                  "type": "structure",
+                  "members": {
+                    "from": {
+                      "type": "timestamp",
+                      "zonbookDocumentation": "\n         <simpara>The starting date and time of a time range.</simpara>\n      ",
+                      "documentation": "\n         <p>The starting date and time of a time range.</p>\n      ",
+                      "shape_name": "timestamp"
+                    },
+                    "to": {
+                      "type": "timestamp",
+                      "zonbookDocumentation": "\n         <simpara>The ending date and time of a time range.</simpara>\n      ",
+                      "documentation": "\n         <p>The ending date and time of a time range.</p>\n      ",
+                      "shape_name": "timestamp"
+                    }
+                  },
+                  "zonbookDocumentation": "\n         <simpara>A range of dates and times that is used by the <xref linkend=\"EventFilter\"/> and <xref linkend=\"EntityFilter\"/> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.</simpara>\n      ",
+                  "documentation": "\n         <p>A range of dates and times that is used by the <a>EventFilter</a> and <a>EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.</p>\n      ",
+                  "shape_name": "DateTimeRange"
+                }
+              },
+              "entityArns": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <simpara>A list of entity ARNs (unique identifiers).</simpara>\n      ",
+                "documentation": "\n         <p>A list of entity ARNs (unique identifiers).</p>\n      ",
+                "shape_name": "entityArnList",
+                "min_length": 1,
+                "max_length": 100,
+                "members": {
+                  "type": "string",
+                  "shape_name": "entityArn",
+                  "documentation": null,
+                  "max_length": 1600
+                }
+              },
+              "entityValues": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <simpara>A list of entity identifiers, such as EC2 instance IDs (<code>i-34ab692e</code>) or EBS volumes (<code>vol-426ab23e</code>).</simpara>\n      ",
+                "documentation": "\n         <p>A list of entity identifiers, such as EC2 instance IDs (<code>i-34ab692e</code>) or EBS volumes (<code>vol-426ab23e</code>).</p>\n      ",
+                "shape_name": "entityValueList",
+                "min_length": 1,
+                "max_length": 100,
+                "members": {
+                  "type": "string",
+                  "shape_name": "entityValue",
+                  "documentation": null,
+                  "max_length": 256
+                }
+              },
+              "eventTypeCategories": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <simpara>A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>, or <code>accountNotification</code>).</simpara>\n      ",
+                "documentation": "\n         <p>A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>, or <code>accountNotification</code>).</p>\n      ",
+                "shape_name": "eventTypeCategoryList",
+                "min_length": 1,
+                "max_length": 10,
+                "members": {
+                  "type": "string",
+                  "enum": [
+                    "issue",
+                    "accountNotification",
+                    "scheduledChange"
+                  ],
+                  "shape_name": "eventTypeCategory",
+                  "documentation": null,
+                  "min_length": 3,
+                  "max_length": 255
+                }
+              },
+              "tags": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <simpara>A map of entity tags attached to the affected entity.</simpara>\n      ",
+                "documentation": "\n         <p>A map of entity tags attached to the affected entity.</p>\n      ",
+                "shape_name": "tagFilter",
+                "max_length": 50,
+                "members": {
+                  "type": "map",
+                  "shape_name": "tagSet",
+                  "documentation": null,
+                  "max_length": 50,
+                  "keys": {
+                    "type": "string",
+                    "shape_name": "tagKey",
+                    "documentation": null,
+                    "max_length": 127
+                  },
+                  "members": {
+                    "type": "string",
+                    "shape_name": "tagValue",
+                    "documentation": null,
+                    "max_length": 255
+                  }
+                }
+              },
+              "eventStatusCodes": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <simpara>A list of event status codes.</simpara>\n      ",
+                "documentation": "\n         <p>A list of event status codes.</p>\n      ",
+                "shape_name": "eventStatusCodeList",
+                "min_length": 1,
+                "max_length": 6,
+                "members": {
+                  "type": "string",
+                  "enum": [
+                    "open",
+                    "closed",
+                    "upcoming"
+                  ],
+                  "shape_name": "eventStatusCode",
+                  "documentation": null
+                }
+              }
+            },
+            "zonbookDocumentation": "\n         <simpara>Values to narrow the results returned.</simpara>\n      ",
+            "documentation": "\n         <p>Values to narrow the results returned.</p>\n      ",
+            "shape_name": "EventFilter"
+          },
+          "nextToken": {
+            "type": "string",
+            "pattern": "[a-zA-Z0-9=/+_.-]{4,512}",
+            "zonbookDocumentation": "\n         <simpara>If the results of a search are large, only a portion of the\nresults are returned, and a <code>nextToken</code> pagination token is returned in the response. To\nretrieve the next batch of results, reissue the search request and include the returned token.\nWhen all results have been returned, the response does not contain a pagination token value.</simpara>\n      ",
+            "documentation": "\n         <p>If the results of a search are large, only a portion of the\nresults are returned, and a <code>nextToken</code> pagination token is returned in the response. To\nretrieve the next batch of results, reissue the search request and include the returned token.\nWhen all results have been returned, the response does not contain a pagination token value.</p>\n      ",
+            "shape_name": "nextToken"
+          },
+          "maxResults": {
+            "type": "integer",
+            "zonbookDocumentation": "\n         <simpara>The maximum number of items to return in one batch, between 10 and 100, inclusive.</simpara>\n      ",
+            "documentation": "\n         <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n      ",
+            "shape_name": "maxResults",
+            "min_length": 10,
+            "max_length": 100
+          },
+          "locale": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</simpara>\n      ",
+            "documentation": "\n         <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n      ",
+            "shape_name": "locale",
+            "min_length": 2,
+            "max_length": 256
+          }
+        },
+        "shape_name": "DescribeEventsRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "events": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>The events that match the specified filter criteria.</simpara>\n      ",
+            "documentation": "\n         <p>The events that match the specified filter criteria.</p>\n      ",
+            "shape_name": "EventList",
+            "members": {
+              "type": "structure",
+              "members": {
+                "arn": {
+                  "type": "string",
+                  "pattern": "arn:aws:health:[^:]*:[^:]*:event(?:/[\\w-]+){1}((?:/[\\w-]+){2})?",
+                  "zonbookDocumentation": "\n         <simpara>The unique identifier for the event. Format: <code>arn:aws:health:<emphasis>event-region</emphasis>::event/<emphasis>SERVICE</emphasis>/<emphasis>EVENT_TYPE_CODE</emphasis>/<emphasis>EVENT_TYPE_PLUS_ID</emphasis>\n            </code>. Example: <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>\n         </simpara>\n      ",
+                  "documentation": "\n         <p>The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>\n            </code>. Example: <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>\n         </p>\n      ",
+                  "shape_name": "eventArn",
+                  "max_length": 1600
+                },
+                "service": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The AWS service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</simpara>\n      ",
+                  "documentation": "\n         <p>The AWS service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>\n      ",
+                  "shape_name": "service",
+                  "min_length": 2,
+                  "max_length": 30
+                },
+                "eventTypeCode": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The unique identifier for the event type. The format is <code>AWS_<emphasis>SERVICE</emphasis>_<emphasis>DESCRIPTION</emphasis>\n            </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</simpara>\n      ",
+                  "documentation": "\n         <p>The unique identifier for the event type. The format is <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i>\n            </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>\n      ",
+                  "shape_name": "eventTypeCode",
+                  "min_length": 3,
+                  "max_length": 100
+                },
+                "eventTypeCategory": {
+                  "type": "string",
+                  "enum": [
+                    "issue",
+                    "accountNotification",
+                    "scheduledChange"
+                  ],
+                  "zonbookDocumentation": "\n         <simpara>The category of the event. Possible values are <code>issue</code>, <code>scheduledChange</code>, and <code>accountNotification</code>.</simpara>\n      ",
+                  "documentation": "\n         <p>The category of the event. Possible values are <code>issue</code>, <code>scheduledChange</code>, and <code>accountNotification</code>.</p>\n      ",
+                  "shape_name": "eventTypeCategory",
+                  "min_length": 3,
+                  "max_length": 255
+                },
+                "region": {
+                  "type": "string",
+                  "pattern": "[^:/]{2,25}",
+                  "zonbookDocumentation": "\n         <simpara>The AWS region name of the event.</simpara>\n      ",
+                  "documentation": "\n         <p>The AWS region name of the event.</p>\n      ",
+                  "shape_name": "region"
+                },
+                "availabilityZone": {
+                  "type": "string",
+                  "pattern": "[a-z]{2}\\-[0-9a-z\\-]{4,16}",
+                  "zonbookDocumentation": "\n         <simpara>The AWS Availability Zone of the event. For example, us-east-1a.</simpara>\n      ",
+                  "documentation": "\n         <p>The AWS Availability Zone of the event. For example, us-east-1a.</p>\n      ",
+                  "shape_name": "availabilityZone"
+                },
+                "startTime": {
+                  "type": "timestamp",
+                  "zonbookDocumentation": "\n         <simpara>The date and time that the event began.</simpara>\n      ",
+                  "documentation": "\n         <p>The date and time that the event began.</p>\n      ",
+                  "shape_name": "timestamp"
+                },
+                "endTime": {
+                  "type": "timestamp",
+                  "zonbookDocumentation": "\n         <simpara>The date and time that the event ended.</simpara>\n      ",
+                  "documentation": "\n         <p>The date and time that the event ended.</p>\n      ",
+                  "shape_name": "timestamp"
+                },
+                "lastUpdatedTime": {
+                  "type": "timestamp",
+                  "zonbookDocumentation": "\n         <simpara>The most recent date and time that the event was updated.</simpara>\n      ",
+                  "documentation": "\n         <p>The most recent date and time that the event was updated.</p>\n      ",
+                  "shape_name": "timestamp"
+                },
+                "statusCode": {
+                  "type": "string",
+                  "enum": [
+                    "open",
+                    "closed",
+                    "upcoming"
+                  ],
+                  "zonbookDocumentation": "\n         <simpara>The most recent status of the event. Possible values are <code>open</code>, <code>closed</code>, and <code>upcoming</code>.</simpara>\n      ",
+                  "documentation": "\n         <p>The most recent status of the event. Possible values are <code>open</code>, <code>closed</code>, and <code>upcoming</code>.</p>\n      ",
+                  "shape_name": "eventStatusCode"
+                }
+              },
+              "zonbookDocumentation": "\n         <simpara>Summary information about an event, returned by the <xref linkend=\"DescribeEvents\"/> operation. The <xref linkend=\"DescribeEventDetails\"/> operation also returns this information, as well as the <xref linkend=\"EventDescription\"/> and additional event metadata.</simpara>\n      ",
+              "documentation": "\n         <p>Summary information about an event, returned by the <a>DescribeEvents</a> operation. The <a>DescribeEventDetails</a> operation also returns this information, as well as the <a>EventDescription</a> and additional event metadata.</p>\n      ",
+              "shape_name": "Event"
+            }
+          },
+          "nextToken": {
+            "type": "string",
+            "pattern": "[a-zA-Z0-9=/+_.-]{4,512}",
+            "zonbookDocumentation": "\n         <simpara>If the results of a search are large, only a portion of the\nresults are returned, and a <code>nextToken</code> pagination token is returned in the response. To\nretrieve the next batch of results, reissue the search request and include the returned token.\nWhen all results have been returned, the response does not contain a pagination token value.</simpara>\n      ",
+            "documentation": "\n         <p>If the results of a search are large, only a portion of the\nresults are returned, and a <code>nextToken</code> pagination token is returned in the response. To\nretrieve the next batch of results, reissue the search request and include the returned token.\nWhen all results have been returned, the response does not contain a pagination token value.</p>\n      ",
+            "shape_name": "nextToken"
+          }
+        },
+        "shape_name": "DescribeEventsResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "shape_name": "string",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The specified pagination token (<code>nextToken</code>) is not valid.</simpara>\n      ",
+          "documentation": "\n         <p>The specified pagination token (<code>nextToken</code>) is not valid.</p>\n      ",
+          "shape_name": "InvalidPaginationToken"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "shape_name": "string",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The specified locale is not supported.</simpara>\n      ",
+          "documentation": "\n         <p>The specified locale is not supported.</p>\n      ",
+          "shape_name": "UnsupportedLocale"
+        }
+      ],
+      "documentation": "\n         <p>Returns information about events that meet the specified filter criteria. Events are returned in a summary form and do not include the detailed description, any  additional metadata that depends on the event type, or any affected resources. To retrieve that information, use the <a>DescribeEventDetails</a> and <a>DescribeAffectedEntities</a> operations.</p>\n        <p>If no filter criteria are specified, all events are returned. Results are sorted by <code>lastModifiedTime</code>, starting with the most recent.</p>\n      "
+    },
+    "DescribeEventDetails": {
+      "name": "DescribeEventDetails",
+      "input": {
+        "type": "structure",
+        "members": {
+          "eventArns": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456\", \"arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101\"</code>\n         </simpara>\n      ",
+            "documentation": "\n         <p>A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456\", \"arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101\"</code>\n         </p>\n      ",
+            "required": true,
+            "shape_name": "eventArnList",
+            "min_length": 1,
+            "max_length": 10,
+            "members": {
+              "type": "string",
+              "pattern": "arn:aws:health:[^:]*:[^:]*:event(?:/[\\w-]+){1}((?:/[\\w-]+){2})?",
+              "shape_name": "eventArn",
+              "documentation": null,
+              "max_length": 1600
+            }
+          },
+          "locale": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</simpara>\n      ",
+            "documentation": "\n         <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n      ",
+            "shape_name": "locale",
+            "min_length": 2,
+            "max_length": 256
+          }
+        },
+        "shape_name": "DescribeEventDetailsRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "successfulSet": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>Information about the events that could be retrieved.</simpara>\n      ",
+            "documentation": "\n         <p>Information about the events that could be retrieved.</p>\n      ",
+            "shape_name": "DescribeEventDetailsSuccessfulSet",
+            "members": {
+              "type": "structure",
+              "members": {
+                "event": {
+                  "type": "structure",
+                  "members": {
+                    "arn": {
+                      "type": "string",
+                      "pattern": "arn:aws:health:[^:]*:[^:]*:event(?:/[\\w-]+){1}((?:/[\\w-]+){2})?",
+                      "zonbookDocumentation": "\n         <simpara>The unique identifier for the event. Format: <code>arn:aws:health:<emphasis>event-region</emphasis>::event/<emphasis>SERVICE</emphasis>/<emphasis>EVENT_TYPE_CODE</emphasis>/<emphasis>EVENT_TYPE_PLUS_ID</emphasis>\n            </code>. Example: <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>\n         </simpara>\n      ",
+                      "documentation": "\n         <p>The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>\n            </code>. Example: <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>\n         </p>\n      ",
+                      "shape_name": "eventArn",
+                      "max_length": 1600
+                    },
+                    "service": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n         <simpara>The AWS service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</simpara>\n      ",
+                      "documentation": "\n         <p>The AWS service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>\n      ",
+                      "shape_name": "service",
+                      "min_length": 2,
+                      "max_length": 30
+                    },
+                    "eventTypeCode": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n         <simpara>The unique identifier for the event type. The format is <code>AWS_<emphasis>SERVICE</emphasis>_<emphasis>DESCRIPTION</emphasis>\n            </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</simpara>\n      ",
+                      "documentation": "\n         <p>The unique identifier for the event type. The format is <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i>\n            </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>\n      ",
+                      "shape_name": "eventTypeCode",
+                      "min_length": 3,
+                      "max_length": 100
+                    },
+                    "eventTypeCategory": {
+                      "type": "string",
+                      "enum": [
+                        "issue",
+                        "accountNotification",
+                        "scheduledChange"
+                      ],
+                      "zonbookDocumentation": "\n         <simpara>The category of the event. Possible values are <code>issue</code>, <code>scheduledChange</code>, and <code>accountNotification</code>.</simpara>\n      ",
+                      "documentation": "\n         <p>The category of the event. Possible values are <code>issue</code>, <code>scheduledChange</code>, and <code>accountNotification</code>.</p>\n      ",
+                      "shape_name": "eventTypeCategory",
+                      "min_length": 3,
+                      "max_length": 255
+                    },
+                    "region": {
+                      "type": "string",
+                      "pattern": "[^:/]{2,25}",
+                      "zonbookDocumentation": "\n         <simpara>The AWS region name of the event.</simpara>\n      ",
+                      "documentation": "\n         <p>The AWS region name of the event.</p>\n      ",
+                      "shape_name": "region"
+                    },
+                    "availabilityZone": {
+                      "type": "string",
+                      "pattern": "[a-z]{2}\\-[0-9a-z\\-]{4,16}",
+                      "zonbookDocumentation": "\n         <simpara>The AWS Availability Zone of the event. For example, us-east-1a.</simpara>\n      ",
+                      "documentation": "\n         <p>The AWS Availability Zone of the event. For example, us-east-1a.</p>\n      ",
+                      "shape_name": "availabilityZone"
+                    },
+                    "startTime": {
+                      "type": "timestamp",
+                      "zonbookDocumentation": "\n         <simpara>The date and time that the event began.</simpara>\n      ",
+                      "documentation": "\n         <p>The date and time that the event began.</p>\n      ",
+                      "shape_name": "timestamp"
+                    },
+                    "endTime": {
+                      "type": "timestamp",
+                      "zonbookDocumentation": "\n         <simpara>The date and time that the event ended.</simpara>\n      ",
+                      "documentation": "\n         <p>The date and time that the event ended.</p>\n      ",
+                      "shape_name": "timestamp"
+                    },
+                    "lastUpdatedTime": {
+                      "type": "timestamp",
+                      "zonbookDocumentation": "\n         <simpara>The most recent date and time that the event was updated.</simpara>\n      ",
+                      "documentation": "\n         <p>The most recent date and time that the event was updated.</p>\n      ",
+                      "shape_name": "timestamp"
+                    },
+                    "statusCode": {
+                      "type": "string",
+                      "enum": [
+                        "open",
+                        "closed",
+                        "upcoming"
+                      ],
+                      "zonbookDocumentation": "\n         <simpara>The most recent status of the event. Possible values are <code>open</code>, <code>closed</code>, and <code>upcoming</code>.</simpara>\n      ",
+                      "documentation": "\n         <p>The most recent status of the event. Possible values are <code>open</code>, <code>closed</code>, and <code>upcoming</code>.</p>\n      ",
+                      "shape_name": "eventStatusCode"
+                    }
+                  },
+                  "zonbookDocumentation": "\n         <simpara>Summary information about the event.</simpara>\n      ",
+                  "documentation": "\n         <p>Summary information about the event.</p>\n      ",
+                  "shape_name": "Event"
+                },
+                "eventDescription": {
+                  "type": "structure",
+                  "members": {
+                    "latestDescription": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n         <simpara>The most recent description of the event.</simpara>\n      ",
+                      "documentation": "\n         <p>The most recent description of the event.</p>\n      ",
+                      "shape_name": "eventDescription"
+                    }
+                  },
+                  "zonbookDocumentation": "\n         <simpara>The most recent description of the event.</simpara>\n      ",
+                  "documentation": "\n         <p>The most recent description of the event.</p>\n      ",
+                  "shape_name": "EventDescription"
+                },
+                "eventMetadata": {
+                  "type": "map",
+                  "zonbookDocumentation": "\n         <simpara>Additional metadata about the event.</simpara>\n      ",
+                  "documentation": "\n         <p>Additional metadata about the event.</p>\n      ",
+                  "shape_name": "eventMetadata",
+                  "keys": {
+                    "type": "string",
+                    "shape_name": "metadataKey",
+                    "documentation": null
+                  },
+                  "members": {
+                    "type": "string",
+                    "shape_name": "metadataValue",
+                    "documentation": null,
+                    "max_length": 10240
+                  }
+                }
+              },
+              "zonbookDocumentation": "\n         <simpara>Detailed information about an event. A combination of an <xref linkend=\"Event\"/> object, an <xref linkend=\"EventDescription\"/> object, and additional metadata about the event. Returned by the <xref linkend=\"DescribeEventDetails\"/> operation.</simpara>\n      ",
+              "documentation": "\n         <p>Detailed information about an event. A combination of an <a>Event</a> object, an <a>EventDescription</a> object, and additional metadata about the event. Returned by the <a>DescribeEventDetails</a> operation.</p>\n      ",
+              "shape_name": "EventDetails"
+            }
+          },
+          "failedSet": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>Error messages for any events that could not be retrieved.</simpara>\n      ",
+            "documentation": "\n         <p>Error messages for any events that could not be retrieved.</p>\n      ",
+            "shape_name": "DescribeEventDetailsFailedSet",
+            "members": {
+              "type": "structure",
+              "members": {
+                "eventArn": {
+                  "type": "string",
+                  "pattern": "arn:aws:health:[^:]*:[^:]*:event(?:/[\\w-]+){1}((?:/[\\w-]+){2})?",
+                  "zonbookDocumentation": "\n         <simpara>The unique identifier for the event. Format: <code>arn:aws:health:<emphasis>event-region</emphasis>::event/<emphasis>SERVICE</emphasis>/<emphasis>EVENT_TYPE_CODE</emphasis>/<emphasis>EVENT_TYPE_PLUS_ID</emphasis>\n            </code>. Example: <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>\n         </simpara>\n      ",
+                  "documentation": "\n         <p>The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>\n            </code>. Example: <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>\n         </p>\n      ",
+                  "shape_name": "eventArn",
+                  "max_length": 1600
+                },
+                "errorName": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The name of the error.</simpara>\n      ",
+                  "documentation": "\n         <p>The name of the error.</p>\n      ",
+                  "shape_name": "string"
+                },
+                "errorMessage": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>A message that describes the error.</simpara>\n      ",
+                  "documentation": "\n         <p>A message that describes the error.</p>\n      ",
+                  "shape_name": "string"
+                }
+              },
+              "zonbookDocumentation": "\n         <simpara>Error information returned when a <xref linkend=\"DescribeEventDetails\"/> operation cannot find a specified event.</simpara>\n      ",
+              "documentation": "\n         <p>Error information returned when a <a>DescribeEventDetails</a> operation cannot find a specified event.</p>\n      ",
+              "shape_name": "EventDetailsErrorItem"
+            }
+          }
+        },
+        "shape_name": "DescribeEventDetailsResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "shape_name": "string",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The specified locale is not supported.</simpara>\n      ",
+          "documentation": "\n         <p>The specified locale is not supported.</p>\n      ",
+          "shape_name": "UnsupportedLocale"
+        }
+      ],
+      "documentation": "\n         <p>Returns detailed information about one or more specified events. Information includes standard event data (region, service, etc., as returned by <a>DescribeEvents</a>), a detailed event description, and possible additional metadata that depends upon the nature of the event. Affected entities are not included; to retrieve those, use the <a>DescribeAffectedEntities</a> operation.</p>\n         <p>If a specified event cannot be retrieved, an error message is returned for that event.</p>\n      "
+    },
+    "DescribeAffectedEntities": {
+      "name": "DescribeAffectedEntities",
+      "input": {
+        "type": "structure",
+        "members": {
+          "filter": {
+            "type": "structure",
+            "members": {
+              "eventArns": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <simpara>A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456\", \"arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101\"</code>\n         </simpara>\n      ",
+                "documentation": "\n         <p>A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456\", \"arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101\"</code>\n         </p>\n      ",
+                "required": true,
+                "shape_name": "eventArnList",
+                "min_length": 1,
+                "max_length": 10,
+                "members": {
+                  "type": "string",
+                  "pattern": "arn:aws:health:[^:]*:[^:]*:event(?:/[\\w-]+){1}((?:/[\\w-]+){2})?",
+                  "shape_name": "eventArn",
+                  "documentation": null,
+                  "max_length": 1600
+                }
+              },
+              "entityArns": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <simpara>A list of entity ARNs (unique identifiers).</simpara>\n      ",
+                "documentation": "\n         <p>A list of entity ARNs (unique identifiers).</p>\n      ",
+                "shape_name": "entityArnList",
+                "min_length": 1,
+                "max_length": 100,
+                "members": {
+                  "type": "string",
+                  "shape_name": "entityArn",
+                  "documentation": null,
+                  "max_length": 1600
+                }
+              },
+              "entityValues": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <simpara>A list of IDs for affected entities.</simpara>\n      ",
+                "documentation": "\n         <p>A list of IDs for affected entities.</p>\n      ",
+                "shape_name": "entityValueList",
+                "min_length": 1,
+                "max_length": 100,
+                "members": {
+                  "type": "string",
+                  "shape_name": "entityValue",
+                  "documentation": null,
+                  "max_length": 256
+                }
+              },
+              "lastUpdatedTimes": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <simpara>A list of the most recent dates and times that the entity was updated.</simpara>\n      ",
+                "documentation": "\n         <p>A list of the most recent dates and times that the entity was updated.</p>\n      ",
+                "shape_name": "dateTimeRangeList",
+                "min_length": 1,
+                "max_length": 10,
+                "members": {
+                  "type": "structure",
+                  "members": {
+                    "from": {
+                      "type": "timestamp",
+                      "zonbookDocumentation": "\n         <simpara>The starting date and time of a time range.</simpara>\n      ",
+                      "documentation": "\n         <p>The starting date and time of a time range.</p>\n      ",
+                      "shape_name": "timestamp"
+                    },
+                    "to": {
+                      "type": "timestamp",
+                      "zonbookDocumentation": "\n         <simpara>The ending date and time of a time range.</simpara>\n      ",
+                      "documentation": "\n         <p>The ending date and time of a time range.</p>\n      ",
+                      "shape_name": "timestamp"
+                    }
+                  },
+                  "zonbookDocumentation": "\n         <simpara>A range of dates and times that is used by the <xref linkend=\"EventFilter\"/> and <xref linkend=\"EntityFilter\"/> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.</simpara>\n      ",
+                  "documentation": "\n         <p>A range of dates and times that is used by the <a>EventFilter</a> and <a>EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.</p>\n      ",
+                  "shape_name": "DateTimeRange"
+                }
+              },
+              "tags": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <simpara>A map of entity tags attached to the affected entity.</simpara>\n      ",
+                "documentation": "\n         <p>A map of entity tags attached to the affected entity.</p>\n      ",
+                "shape_name": "tagFilter",
+                "max_length": 50,
+                "members": {
+                  "type": "map",
+                  "shape_name": "tagSet",
+                  "documentation": null,
+                  "max_length": 50,
+                  "keys": {
+                    "type": "string",
+                    "shape_name": "tagKey",
+                    "documentation": null,
+                    "max_length": 127
+                  },
+                  "members": {
+                    "type": "string",
+                    "shape_name": "tagValue",
+                    "documentation": null,
+                    "max_length": 255
+                  }
+                }
+              },
+              "statusCodes": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <simpara>A list of entity status codes (<code>IMPAIRED</code>, <code>UNIMPAIRED</code>, or <code>UNKNOWN</code>).</simpara>\n      ",
+                "documentation": "\n         <p>A list of entity status codes (<code>IMPAIRED</code>, <code>UNIMPAIRED</code>, or <code>UNKNOWN</code>).</p>\n      ",
+                "shape_name": "entityStatusCodeList",
+                "min_length": 1,
+                "max_length": 3,
+                "members": {
+                  "type": "string",
+                  "enum": [
+                    "IMPAIRED",
+                    "UNIMPAIRED",
+                    "UNKNOWN"
+                  ],
+                  "shape_name": "entityStatusCode",
+                  "documentation": null
+                }
+              }
+            },
+            "zonbookDocumentation": "\n         <simpara>Values to narrow the results returned. At least one event ARN is required. </simpara>\n      ",
+            "documentation": "\n         <p>Values to narrow the results returned. At least one event ARN is required. </p>\n      ",
+            "required": true,
+            "shape_name": "EntityFilter"
+          },
+          "locale": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</simpara>\n      ",
+            "documentation": "\n         <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n      ",
+            "shape_name": "locale",
+            "min_length": 2,
+            "max_length": 256
+          },
+          "nextToken": {
+            "type": "string",
+            "pattern": "[a-zA-Z0-9=/+_.-]{4,512}",
+            "zonbookDocumentation": "\n         <simpara>If the results of a search are large, only a portion of the\nresults are returned, and a <code>nextToken</code> pagination token is returned in the response. To\nretrieve the next batch of results, reissue the search request and include the returned token.\nWhen all results have been returned, the response does not contain a pagination token value.</simpara>\n      ",
+            "documentation": "\n         <p>If the results of a search are large, only a portion of the\nresults are returned, and a <code>nextToken</code> pagination token is returned in the response. To\nretrieve the next batch of results, reissue the search request and include the returned token.\nWhen all results have been returned, the response does not contain a pagination token value.</p>\n      ",
+            "shape_name": "nextToken"
+          },
+          "maxResults": {
+            "type": "integer",
+            "zonbookDocumentation": "\n         <simpara>The maximum number of items to return in one batch, between 10 and 100, inclusive.</simpara>\n      ",
+            "documentation": "\n         <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n      ",
+            "shape_name": "maxResults",
+            "min_length": 10,
+            "max_length": 100
+          }
+        },
+        "shape_name": "DescribeAffectedEntitiesRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "entities": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>The entities that match the filter criteria.</simpara>\n      ",
+            "documentation": "\n         <p>The entities that match the filter criteria.</p>\n      ",
+            "shape_name": "EntityList",
+            "members": {
+              "type": "structure",
+              "members": {
+                "entityArn": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The unique identifier for the entity. Format: <code>arn:aws:health:<emphasis>entity-region</emphasis>:<emphasis>aws-account</emphasis>:entity/<emphasis>entity-id</emphasis>\n            </code>. Example: <code>arn:aws:health:us-east-1:111222333444:entity/AVh5GGT7ul1arKr1sE1K</code>\n         </simpara>\n      ",
+                  "documentation": "\n         <p>The unique identifier for the entity. Format: <code>arn:aws:health:<i>entity-region</i>:<i>aws-account</i>:entity/<i>entity-id</i>\n            </code>. Example: <code>arn:aws:health:us-east-1:111222333444:entity/AVh5GGT7ul1arKr1sE1K</code>\n         </p>\n      ",
+                  "shape_name": "entityArn",
+                  "max_length": 1600
+                },
+                "eventArn": {
+                  "type": "string",
+                  "pattern": "arn:aws:health:[^:]*:[^:]*:event(?:/[\\w-]+){1}((?:/[\\w-]+){2})?",
+                  "zonbookDocumentation": "\n         <simpara>The unique identifier for the event. Format: <code>arn:aws:health:<emphasis>event-region</emphasis>::event/<emphasis>SERVICE</emphasis>/<emphasis>EVENT_TYPE_CODE</emphasis>/<emphasis>EVENT_TYPE_PLUS_ID</emphasis>\n            </code>. Example: <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>\n         </simpara>\n      ",
+                  "documentation": "\n         <p>The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>\n            </code>. Example: <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>\n         </p>\n      ",
+                  "shape_name": "eventArn",
+                  "max_length": 1600
+                },
+                "entityValue": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The ID of the affected entity.</simpara>\n      ",
+                  "documentation": "\n         <p>The ID of the affected entity.</p>\n      ",
+                  "shape_name": "entityValue",
+                  "max_length": 256
+                },
+                "awsAccountId": {
+                  "type": "string",
+                  "pattern": "[0-9]{12}",
+                  "zonbookDocumentation": "\n         <simpara>The 12-digit AWS account number that contains the affected entity.</simpara>\n      ",
+                  "documentation": "\n         <p>The 12-digit AWS account number that contains the affected entity.</p>\n      ",
+                  "shape_name": "accountId"
+                },
+                "lastUpdatedTime": {
+                  "type": "timestamp",
+                  "zonbookDocumentation": "\n         <simpara>The most recent time that the entity was updated.</simpara>\n      ",
+                  "documentation": "\n         <p>The most recent time that the entity was updated.</p>\n      ",
+                  "shape_name": "timestamp"
+                },
+                "statusCode": {
+                  "type": "string",
+                  "enum": [
+                    "IMPAIRED",
+                    "UNIMPAIRED",
+                    "UNKNOWN"
+                  ],
+                  "zonbookDocumentation": "\n         <simpara>The most recent status of the entity affected by the event.\n        The possible values are <code>IMPAIRED</code>, <code>UNIMPAIRED</code>, and <code>UNKNOWN</code>.</simpara>\n      ",
+                  "documentation": "\n         <p>The most recent status of the entity affected by the event.\n        The possible values are <code>IMPAIRED</code>, <code>UNIMPAIRED</code>, and <code>UNKNOWN</code>.</p>\n      ",
+                  "shape_name": "entityStatusCode"
+                },
+                "tags": {
+                  "type": "map",
+                  "zonbookDocumentation": "\n         <simpara>A map of entity tags attached to the affected entity.</simpara>\n      ",
+                  "documentation": "\n         <p>A map of entity tags attached to the affected entity.</p>\n      ",
+                  "shape_name": "tagSet",
+                  "max_length": 50,
+                  "keys": {
+                    "type": "string",
+                    "shape_name": "tagKey",
+                    "documentation": null,
+                    "max_length": 127
+                  },
+                  "members": {
+                    "type": "string",
+                    "shape_name": "tagValue",
+                    "documentation": null,
+                    "max_length": 255
+                  }
+                }
+              },
+              "zonbookDocumentation": "\n         <simpara>Information about an entity that is affected by a Health event.</simpara>\n      ",
+              "documentation": "\n         <p>Information about an entity that is affected by a Health event.</p>\n      ",
+              "shape_name": "AffectedEntity"
+            }
+          },
+          "nextToken": {
+            "type": "string",
+            "pattern": "[a-zA-Z0-9=/+_.-]{4,512}",
+            "zonbookDocumentation": "\n         <simpara>If the results of a search are large, only a portion of the\nresults are returned, and a <code>nextToken</code> pagination token is returned in the response. To\nretrieve the next batch of results, reissue the search request and include the returned token.\nWhen all results have been returned, the response does not contain a pagination token value.</simpara>\n      ",
+            "documentation": "\n         <p>If the results of a search are large, only a portion of the\nresults are returned, and a <code>nextToken</code> pagination token is returned in the response. To\nretrieve the next batch of results, reissue the search request and include the returned token.\nWhen all results have been returned, the response does not contain a pagination token value.</p>\n      ",
+            "shape_name": "nextToken"
+          }
+        },
+        "shape_name": "DescribeAffectedEntitiesResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "shape_name": "string",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The specified pagination token (<code>nextToken</code>) is not valid.</simpara>\n      ",
+          "documentation": "\n         <p>The specified pagination token (<code>nextToken</code>) is not valid.</p>\n      ",
+          "shape_name": "InvalidPaginationToken"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "shape_name": "string",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The specified locale is not supported.</simpara>\n      ",
+          "documentation": "\n         <p>The specified locale is not supported.</p>\n      ",
+          "shape_name": "UnsupportedLocale"
+        }
+      ],
+      "documentation": "\n         <p>Returns a list of entities that have been affected by the specified events, based on the specified filter criteria. Entities can refer to individual customer resources, groups of customer resources, or any other construct, depending on the AWS service. Events that have impact beyond that of the affected entities, or where the extent of impact is unknown, include at least one entity indicating this.</p>\n        <p>At least one event ARN is required. Results are sorted by the <code>lastUpdatedTime</code> of the entity, starting with the most recent.</p>\n      "
+    },
+    "DescribeEventTypes": {
+      "name": "DescribeEventTypes",
+      "input": {
+        "type": "structure",
+        "members": {
+          "filter": {
+            "type": "structure",
+            "members": {
+              "eventTypeCodes": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <simpara>A list of event type codes.</simpara>\n      ",
+                "documentation": "\n         <p>A list of event type codes.</p>\n      ",
+                "shape_name": "EventTypeCodeList",
+                "min_length": 1,
+                "max_length": 10,
+                "members": {
+                  "type": "string",
+                  "shape_name": "eventTypeCode",
+                  "documentation": null,
+                  "min_length": 3,
+                  "max_length": 100
+                }
+              },
+              "services": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <simpara>The AWS services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</simpara>\n      ",
+                "documentation": "\n         <p>The AWS services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>\n      ",
+                "shape_name": "serviceList",
+                "min_length": 1,
+                "max_length": 10,
+                "members": {
+                  "type": "string",
+                  "shape_name": "service",
+                  "documentation": null,
+                  "min_length": 2,
+                  "max_length": 30
+                }
+              },
+              "eventTypeCategories": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <simpara>A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>, or <code>accountNotification</code>).</simpara>\n      ",
+                "documentation": "\n         <p>A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>, or <code>accountNotification</code>).</p>\n      ",
+                "shape_name": "EventTypeCategoryList",
+                "min_length": 1,
+                "max_length": 10,
+                "members": {
+                  "type": "string",
+                  "enum": [
+                    "issue",
+                    "accountNotification",
+                    "scheduledChange"
+                  ],
+                  "shape_name": "eventTypeCategory",
+                  "documentation": null,
+                  "min_length": 3,
+                  "max_length": 255
+                }
+              }
+            },
+            "zonbookDocumentation": "\n         <simpara>Values to narrow the results returned.</simpara>\n      ",
+            "documentation": "\n         <p>Values to narrow the results returned.</p>\n      ",
+            "shape_name": "EventTypeFilter"
+          },
+          "locale": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</simpara>\n      ",
+            "documentation": "\n         <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n      ",
+            "shape_name": "locale",
+            "min_length": 2,
+            "max_length": 256
+          },
+          "nextToken": {
+            "type": "string",
+            "pattern": "[a-zA-Z0-9=/+_.-]{4,512}",
+            "zonbookDocumentation": "\n         <simpara>If the results of a search are large, only a portion of the\nresults are returned, and a <code>nextToken</code> pagination token is returned in the response. To\nretrieve the next batch of results, reissue the search request and include the returned token.\nWhen all results have been returned, the response does not contain a pagination token value.</simpara>\n      ",
+            "documentation": "\n         <p>If the results of a search are large, only a portion of the\nresults are returned, and a <code>nextToken</code> pagination token is returned in the response. To\nretrieve the next batch of results, reissue the search request and include the returned token.\nWhen all results have been returned, the response does not contain a pagination token value.</p>\n      ",
+            "shape_name": "nextToken"
+          },
+          "maxResults": {
+            "type": "integer",
+            "zonbookDocumentation": "\n         <simpara>The maximum number of items to return in one batch, between 10 and 100, inclusive.</simpara>\n      ",
+            "documentation": "\n         <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n      ",
+            "shape_name": "maxResults",
+            "min_length": 10,
+            "max_length": 100
+          }
+        },
+        "shape_name": "DescribeEventTypesRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "eventTypes": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>A list of event types that match the filter criteria. Event types have a category\n            (<code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>),\n         a service (for example, <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>,\n            <code>BILLING</code>), and a code (in the format\n               <code>AWS_<emphasis>SERVICE</emphasis>_<emphasis>DESCRIPTION</emphasis>\n            </code>; for\n         example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</simpara>\n      ",
+            "documentation": "\n         <p>A list of event types that match the filter criteria. Event types have a category\n            (<code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>),\n         a service (for example, <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>,\n            <code>BILLING</code>), and a code (in the format\n               <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i>\n            </code>; for\n         example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>\n      ",
+            "shape_name": "EventTypeList",
+            "members": {
+              "type": "structure",
+              "members": {
+                "service": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The AWS service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</simpara>\n      ",
+                  "documentation": "\n         <p>The AWS service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>\n      ",
+                  "shape_name": "service",
+                  "min_length": 2,
+                  "max_length": 30
+                },
+                "code": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The unique identifier for the event type. The format is <code>AWS_<emphasis>SERVICE</emphasis>_<emphasis>DESCRIPTION</emphasis>\n            </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</simpara>\n      ",
+                  "documentation": "\n         <p>The unique identifier for the event type. The format is <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i>\n            </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>\n      ",
+                  "shape_name": "eventTypeCode",
+                  "min_length": 3,
+                  "max_length": 100
+                },
+                "category": {
+                  "type": "string",
+                  "enum": [
+                    "issue",
+                    "accountNotification",
+                    "scheduledChange"
+                  ],
+                  "zonbookDocumentation": "\n         <simpara>A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>, or <code>accountNotification</code>).</simpara>\n      ",
+                  "documentation": "\n         <p>A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>, or <code>accountNotification</code>).</p>\n      ",
+                  "shape_name": "eventTypeCategory",
+                  "min_length": 3,
+                  "max_length": 255
+                }
+              },
+              "zonbookDocumentation": "\n         <simpara>Metadata about a type of event that is reported by AWS Health. Data consists of the category (for example, <code>issue</code>), the service (for example, <code>EC2</code>), and the event type code (for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</simpara>\n      ",
+              "documentation": "\n         <p>Metadata about a type of event that is reported by AWS Health. Data consists of the category (for example, <code>issue</code>), the service (for example, <code>EC2</code>), and the event type code (for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>\n      ",
+              "shape_name": "EventType"
+            }
+          },
+          "nextToken": {
+            "type": "string",
+            "pattern": "[a-zA-Z0-9=/+_.-]{4,512}",
+            "zonbookDocumentation": "\n         <simpara>If the results of a search are large, only a portion of the\nresults are returned, and a <code>nextToken</code> pagination token is returned in the response. To\nretrieve the next batch of results, reissue the search request and include the returned token.\nWhen all results have been returned, the response does not contain a pagination token value.</simpara>\n      ",
+            "documentation": "\n         <p>If the results of a search are large, only a portion of the\nresults are returned, and a <code>nextToken</code> pagination token is returned in the response. To\nretrieve the next batch of results, reissue the search request and include the returned token.\nWhen all results have been returned, the response does not contain a pagination token value.</p>\n      ",
+            "shape_name": "nextToken"
+          }
+        },
+        "shape_name": "DescribeEventTypesResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "shape_name": "string",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The specified pagination token (<code>nextToken</code>) is not valid.</simpara>\n      ",
+          "documentation": "\n         <p>The specified pagination token (<code>nextToken</code>) is not valid.</p>\n      ",
+          "shape_name": "InvalidPaginationToken"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "shape_name": "string",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The specified locale is not supported.</simpara>\n      ",
+          "documentation": "\n         <p>The specified locale is not supported.</p>\n      ",
+          "shape_name": "UnsupportedLocale"
+        }
+      ],
+      "documentation": "\n         <p>Returns the event types that meet the specified filter criteria. If no filter criteria are specified, all event types are returned, in no particular order.</p>\n      "
+    },
+    "DescribeEventAggregates": {
+      "name": "DescribeEventAggregates",
+      "input": {
+        "type": "structure",
+        "members": {
+          "filter": {
+            "type": "structure",
+            "members": {
+              "eventArns": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <simpara>A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456\", \"arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101\"</code>\n         </simpara>\n      ",
+                "documentation": "\n         <p>A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456\", \"arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101\"</code>\n         </p>\n      ",
+                "shape_name": "eventArnList",
+                "min_length": 1,
+                "max_length": 10,
+                "members": {
+                  "type": "string",
+                  "pattern": "arn:aws:health:[^:]*:[^:]*:event(?:/[\\w-]+){1}((?:/[\\w-]+){2})?",
+                  "shape_name": "eventArn",
+                  "documentation": null,
+                  "max_length": 1600
+                }
+              },
+              "eventTypeCodes": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <simpara>A list of unique identifiers for event types. For example, <code>\"AWS_EC2_SYSTEM_MAINTENANCE_EVENT\",\"AWS_RDS_MAINTENANCE_SCHEDULED\"</code>\n         </simpara>\n      ",
+                "documentation": "\n         <p>A list of unique identifiers for event types. For example, <code>\"AWS_EC2_SYSTEM_MAINTENANCE_EVENT\",\"AWS_RDS_MAINTENANCE_SCHEDULED\"</code>\n         </p>\n      ",
+                "shape_name": "eventTypeList",
+                "min_length": 1,
+                "max_length": 10,
+                "members": {
+                  "type": "string",
+                  "shape_name": "eventType",
+                  "documentation": null,
+                  "min_length": 3,
+                  "max_length": 100
+                }
+              },
+              "services": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <simpara>The AWS services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</simpara>\n      ",
+                "documentation": "\n         <p>The AWS services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>\n      ",
+                "shape_name": "serviceList",
+                "min_length": 1,
+                "max_length": 10,
+                "members": {
+                  "type": "string",
+                  "shape_name": "service",
+                  "documentation": null,
+                  "min_length": 2,
+                  "max_length": 30
+                }
+              },
+              "regions": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <simpara>A list of AWS regions.</simpara>\n      ",
+                "documentation": "\n         <p>A list of AWS regions.</p>\n      ",
+                "shape_name": "regionList",
+                "min_length": 1,
+                "max_length": 10,
+                "members": {
+                  "type": "string",
+                  "pattern": "[^:/]{2,25}",
+                  "shape_name": "region",
+                  "documentation": null
+                }
+              },
+              "availabilityZones": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <simpara>A list of AWS availability zones.</simpara>\n      ",
+                "documentation": "\n         <p>A list of AWS availability zones.</p>\n      ",
+                "shape_name": "availabilityZones",
+                "members": {
+                  "type": "string",
+                  "pattern": "[a-z]{2}\\-[0-9a-z\\-]{4,16}",
+                  "shape_name": "availabilityZone",
+                  "documentation": null
+                }
+              },
+              "startTimes": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <simpara>A list of dates and times that the event began.</simpara>\n      ",
+                "documentation": "\n         <p>A list of dates and times that the event began.</p>\n      ",
+                "shape_name": "dateTimeRangeList",
+                "min_length": 1,
+                "max_length": 10,
+                "members": {
+                  "type": "structure",
+                  "members": {
+                    "from": {
+                      "type": "timestamp",
+                      "zonbookDocumentation": "\n         <simpara>The starting date and time of a time range.</simpara>\n      ",
+                      "documentation": "\n         <p>The starting date and time of a time range.</p>\n      ",
+                      "shape_name": "timestamp"
+                    },
+                    "to": {
+                      "type": "timestamp",
+                      "zonbookDocumentation": "\n         <simpara>The ending date and time of a time range.</simpara>\n      ",
+                      "documentation": "\n         <p>The ending date and time of a time range.</p>\n      ",
+                      "shape_name": "timestamp"
+                    }
+                  },
+                  "zonbookDocumentation": "\n         <simpara>A range of dates and times that is used by the <xref linkend=\"EventFilter\"/> and <xref linkend=\"EntityFilter\"/> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.</simpara>\n      ",
+                  "documentation": "\n         <p>A range of dates and times that is used by the <a>EventFilter</a> and <a>EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.</p>\n      ",
+                  "shape_name": "DateTimeRange"
+                }
+              },
+              "endTimes": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <simpara>A list of dates and times that the event ended.</simpara>\n      ",
+                "documentation": "\n         <p>A list of dates and times that the event ended.</p>\n      ",
+                "shape_name": "dateTimeRangeList",
+                "min_length": 1,
+                "max_length": 10,
+                "members": {
+                  "type": "structure",
+                  "members": {
+                    "from": {
+                      "type": "timestamp",
+                      "zonbookDocumentation": "\n         <simpara>The starting date and time of a time range.</simpara>\n      ",
+                      "documentation": "\n         <p>The starting date and time of a time range.</p>\n      ",
+                      "shape_name": "timestamp"
+                    },
+                    "to": {
+                      "type": "timestamp",
+                      "zonbookDocumentation": "\n         <simpara>The ending date and time of a time range.</simpara>\n      ",
+                      "documentation": "\n         <p>The ending date and time of a time range.</p>\n      ",
+                      "shape_name": "timestamp"
+                    }
+                  },
+                  "zonbookDocumentation": "\n         <simpara>A range of dates and times that is used by the <xref linkend=\"EventFilter\"/> and <xref linkend=\"EntityFilter\"/> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.</simpara>\n      ",
+                  "documentation": "\n         <p>A range of dates and times that is used by the <a>EventFilter</a> and <a>EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.</p>\n      ",
+                  "shape_name": "DateTimeRange"
+                }
+              },
+              "lastUpdatedTimes": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <simpara>A list of dates and times that the event was last updated.</simpara>\n      ",
+                "documentation": "\n         <p>A list of dates and times that the event was last updated.</p>\n      ",
+                "shape_name": "dateTimeRangeList",
+                "min_length": 1,
+                "max_length": 10,
+                "members": {
+                  "type": "structure",
+                  "members": {
+                    "from": {
+                      "type": "timestamp",
+                      "zonbookDocumentation": "\n         <simpara>The starting date and time of a time range.</simpara>\n      ",
+                      "documentation": "\n         <p>The starting date and time of a time range.</p>\n      ",
+                      "shape_name": "timestamp"
+                    },
+                    "to": {
+                      "type": "timestamp",
+                      "zonbookDocumentation": "\n         <simpara>The ending date and time of a time range.</simpara>\n      ",
+                      "documentation": "\n         <p>The ending date and time of a time range.</p>\n      ",
+                      "shape_name": "timestamp"
+                    }
+                  },
+                  "zonbookDocumentation": "\n         <simpara>A range of dates and times that is used by the <xref linkend=\"EventFilter\"/> and <xref linkend=\"EntityFilter\"/> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.</simpara>\n      ",
+                  "documentation": "\n         <p>A range of dates and times that is used by the <a>EventFilter</a> and <a>EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.</p>\n      ",
+                  "shape_name": "DateTimeRange"
+                }
+              },
+              "entityArns": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <simpara>A list of entity ARNs (unique identifiers).</simpara>\n      ",
+                "documentation": "\n         <p>A list of entity ARNs (unique identifiers).</p>\n      ",
+                "shape_name": "entityArnList",
+                "min_length": 1,
+                "max_length": 100,
+                "members": {
+                  "type": "string",
+                  "shape_name": "entityArn",
+                  "documentation": null,
+                  "max_length": 1600
+                }
+              },
+              "entityValues": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <simpara>A list of entity identifiers, such as EC2 instance IDs (<code>i-34ab692e</code>) or EBS volumes (<code>vol-426ab23e</code>).</simpara>\n      ",
+                "documentation": "\n         <p>A list of entity identifiers, such as EC2 instance IDs (<code>i-34ab692e</code>) or EBS volumes (<code>vol-426ab23e</code>).</p>\n      ",
+                "shape_name": "entityValueList",
+                "min_length": 1,
+                "max_length": 100,
+                "members": {
+                  "type": "string",
+                  "shape_name": "entityValue",
+                  "documentation": null,
+                  "max_length": 256
+                }
+              },
+              "eventTypeCategories": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <simpara>A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>, or <code>accountNotification</code>).</simpara>\n      ",
+                "documentation": "\n         <p>A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>, or <code>accountNotification</code>).</p>\n      ",
+                "shape_name": "eventTypeCategoryList",
+                "min_length": 1,
+                "max_length": 10,
+                "members": {
+                  "type": "string",
+                  "enum": [
+                    "issue",
+                    "accountNotification",
+                    "scheduledChange"
+                  ],
+                  "shape_name": "eventTypeCategory",
+                  "documentation": null,
+                  "min_length": 3,
+                  "max_length": 255
+                }
+              },
+              "tags": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <simpara>A map of entity tags attached to the affected entity.</simpara>\n      ",
+                "documentation": "\n         <p>A map of entity tags attached to the affected entity.</p>\n      ",
+                "shape_name": "tagFilter",
+                "max_length": 50,
+                "members": {
+                  "type": "map",
+                  "shape_name": "tagSet",
+                  "documentation": null,
+                  "max_length": 50,
+                  "keys": {
+                    "type": "string",
+                    "shape_name": "tagKey",
+                    "documentation": null,
+                    "max_length": 127
+                  },
+                  "members": {
+                    "type": "string",
+                    "shape_name": "tagValue",
+                    "documentation": null,
+                    "max_length": 255
+                  }
+                }
+              },
+              "eventStatusCodes": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <simpara>A list of event status codes.</simpara>\n      ",
+                "documentation": "\n         <p>A list of event status codes.</p>\n      ",
+                "shape_name": "eventStatusCodeList",
+                "min_length": 1,
+                "max_length": 6,
+                "members": {
+                  "type": "string",
+                  "enum": [
+                    "open",
+                    "closed",
+                    "upcoming"
+                  ],
+                  "shape_name": "eventStatusCode",
+                  "documentation": null
+                }
+              }
+            },
+            "zonbookDocumentation": "\n         <simpara>Values to narrow the results returned.</simpara>\n      ",
+            "documentation": "\n         <p>Values to narrow the results returned.</p>\n      ",
+            "shape_name": "EventFilter"
+          },
+          "aggregateField": {
+            "type": "string",
+            "enum": [
+              "eventTypeCategory"
+            ],
+            "zonbookDocumentation": "\n         <simpara>The only currently supported value is <code>eventTypeCategory</code>.</simpara>\n      ",
+            "documentation": "\n         <p>The only currently supported value is <code>eventTypeCategory</code>.</p>\n      ",
+            "required": true,
+            "shape_name": "eventAggregateField"
+          },
+          "maxResults": {
+            "type": "integer",
+            "zonbookDocumentation": "\n         <simpara>The maximum number of items to return in one batch, between 10 and 100, inclusive.</simpara>\n      ",
+            "documentation": "\n         <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n      ",
+            "shape_name": "maxResults",
+            "min_length": 10,
+            "max_length": 100
+          },
+          "nextToken": {
+            "type": "string",
+            "pattern": "[a-zA-Z0-9=/+_.-]{4,512}",
+            "zonbookDocumentation": "\n         <simpara>If the results of a search are large, only a portion of the\nresults are returned, and a <code>nextToken</code> pagination token is returned in the response. To\nretrieve the next batch of results, reissue the search request and include the returned token.\nWhen all results have been returned, the response does not contain a pagination token value.</simpara>\n      ",
+            "documentation": "\n         <p>If the results of a search are large, only a portion of the\nresults are returned, and a <code>nextToken</code> pagination token is returned in the response. To\nretrieve the next batch of results, reissue the search request and include the returned token.\nWhen all results have been returned, the response does not contain a pagination token value.</p>\n      ",
+            "shape_name": "nextToken"
+          }
+        },
+        "shape_name": "DescribeEventAggregatesRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "eventAggregates": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>The number of events in each category that meet the optional filter criteria.</simpara>\n      ",
+            "documentation": "\n         <p>The number of events in each category that meet the optional filter criteria.</p>\n      ",
+            "shape_name": "EventAggregateList",
+            "members": {
+              "type": "structure",
+              "members": {
+                "aggregateValue": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The issue type for the associated count.</simpara>\n      ",
+                  "documentation": "\n         <p>The issue type for the associated count.</p>\n      ",
+                  "shape_name": "aggregateValue"
+                },
+                "count": {
+                  "type": "integer",
+                  "zonbookDocumentation": "\n         <simpara>The number of events of the associated issue type.</simpara>\n      ",
+                  "documentation": "\n         <p>The number of events of the associated issue type.</p>\n      ",
+                  "shape_name": "count"
+                }
+              },
+              "zonbookDocumentation": "\n         <simpara>The number of events of each issue type. Returned by the <xref linkend=\"DescribeEventAggregates\"/> operation.</simpara>\n      ",
+              "documentation": "\n         <p>The number of events of each issue type. Returned by the <a>DescribeEventAggregates</a> operation.</p>\n      ",
+              "shape_name": "EventAggregate"
+            }
+          },
+          "nextToken": {
+            "type": "string",
+            "pattern": "[a-zA-Z0-9=/+_.-]{4,512}",
+            "zonbookDocumentation": "\n         <simpara>If the results of a search are large, only a portion of the\nresults are returned, and a <code>nextToken</code> pagination token is returned in the response. To\nretrieve the next batch of results, reissue the search request and include the returned token.\nWhen all results have been returned, the response does not contain a pagination token value.</simpara>\n      ",
+            "documentation": "\n         <p>If the results of a search are large, only a portion of the\nresults are returned, and a <code>nextToken</code> pagination token is returned in the response. To\nretrieve the next batch of results, reissue the search request and include the returned token.\nWhen all results have been returned, the response does not contain a pagination token value.</p>\n      ",
+            "shape_name": "nextToken"
+          }
+        },
+        "shape_name": "DescribeEventAggregatesResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "shape_name": "string",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The specified pagination token (<code>nextToken</code>) is not valid.</simpara>\n      ",
+          "documentation": "\n         <p>The specified pagination token (<code>nextToken</code>) is not valid.</p>\n      ",
+          "shape_name": "InvalidPaginationToken"
+        }
+      ],
+      "documentation": "\n         <p>Returns the number of events of each event type (issue, scheduled change, and account notification). If no filter is specified, the counts of all events in each category are returned.</p>\n      "
+    },
+    "DescribeEntityAggregates": {
+      "name": "DescribeEntityAggregates",
+      "input": {
+        "type": "structure",
+        "members": {
+          "eventArns": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456\", \"arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101\"</code>\n         </simpara>\n      ",
+            "documentation": "\n         <p>A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456\", \"arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101\"</code>\n         </p>\n      ",
+            "shape_name": "EventArnsList",
+            "min_length": 1,
+            "max_length": 50,
+            "members": {
+              "type": "string",
+              "pattern": "arn:aws:health:[^:]*:[^:]*:event(?:/[\\w-]+){1}((?:/[\\w-]+){2})?",
+              "shape_name": "eventArn",
+              "documentation": null,
+              "max_length": 1600
+            }
+          }
+        },
+        "shape_name": "DescribeEntityAggregatesRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "entityAggregates": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>The number of entities that are affected by each of the specified events.</simpara>\n      ",
+            "documentation": "\n         <p>The number of entities that are affected by each of the specified events.</p>\n      ",
+            "shape_name": "EntityAggregateList",
+            "members": {
+              "type": "structure",
+              "members": {
+                "eventArn": {
+                  "type": "string",
+                  "pattern": "arn:aws:health:[^:]*:[^:]*:event(?:/[\\w-]+){1}((?:/[\\w-]+){2})?",
+                  "zonbookDocumentation": "\n         <simpara>The unique identifier for the event. Format: <code>arn:aws:health:<emphasis>event-region</emphasis>::event/<emphasis>SERVICE</emphasis>/<emphasis>EVENT_TYPE_CODE</emphasis>/<emphasis>EVENT_TYPE_PLUS_ID</emphasis>\n            </code>. Example: <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>\n         </simpara>\n      ",
+                  "documentation": "\n         <p>The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>\n            </code>. Example: <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>\n         </p>\n      ",
+                  "shape_name": "eventArn",
+                  "max_length": 1600
+                },
+                "count": {
+                  "type": "integer",
+                  "zonbookDocumentation": "\n         <simpara>The number entities that match the criteria for the specified events.</simpara>\n      ",
+                  "documentation": "\n         <p>The number entities that match the criteria for the specified events.</p>\n      ",
+                  "shape_name": "count"
+                }
+              },
+              "zonbookDocumentation": "\n         <simpara>The number of entities that are affected by one or more events. Returned by the <xref linkend=\"DescribeEntityAggregates\"/> operation.</simpara>\n      ",
+              "documentation": "\n         <p>The number of entities that are affected by one or more events. Returned by the <a>DescribeEntityAggregates</a> operation.</p>\n      ",
+              "shape_name": "EntityAggregate"
+            }
+          }
+        },
+        "shape_name": "DescribeEntityAggregatesResponse",
+        "documentation": null
+      },
+      "errors": [
+
+      ],
+      "documentation": "\n         <p>Returns the number of entities that are affected by each of the specified events. If no events are specified, the counts of all affected entities are returned.</p>\n      "
+    }
+  }
+}
