@@ -1,3 +1,9 @@
+### 3.3.331.0 (2018-08-06 22:16 UTC)
+* AWSHealth (3.3.1.0)
+	* Updates the ARN structure vended by AWS Health API. All ARNs will now include the service and type code of the associated event, as vended by DescribeEventTypes.
+* DynamoDBv2 (3.3.12.0)
+	*  Amazon DynamoDB Point-in-time recovery (PITR) provides continuous backups of your table data. DynamoDB now supports the ability to self-restore a deleted PITR enabled table. Now, when a table with PITR enabled is deleted, a system backup is automatically created and retained for 35 days (at no additional cost). System backups allow you to restore the deleted PITR enabled table to the state it was just before the point of deletion. For more information, see the Amazon DynamoDB Developer Guide.
+
 ### 3.3.330.2 (2018-08-03 22:18 UTC)
 * DynamoDBv2 (3.3.11.2)
 	* Updated to use new Core, version 3.3.24.6
