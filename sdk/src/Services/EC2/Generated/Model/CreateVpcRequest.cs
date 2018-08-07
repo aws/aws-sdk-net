@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the CreateVpc operation.
     /// Creates a VPC with the specified IPv4 CIDR block. The smallest VPC you can create
     /// uses a /28 netmask (16 IPv4 addresses), and the largest uses a /16 netmask (65,536
-    /// IPv4 addresses). To help you decide how big to make your VPC, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
+    /// IPv4 addresses). For more information about how large to make your VPC, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
     /// VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
     /// 
     ///  
@@ -43,8 +43,8 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// By default, each instance you launch in the VPC has the default DHCP options, which
-    /// includes only a default DNS server that we provide (AmazonProvidedDNS). For more information
-    /// about DHCP options, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
+    /// include only a default DNS server that we provide (AmazonProvidedDNS). For more information,
+    /// see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
     /// Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
     /// </para>
     ///  

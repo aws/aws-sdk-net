@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the attachment of a VPC to an Internet gateway or an egress-only Internet
+    /// Describes the attachment of a VPC to an internet gateway or an egress-only internet
     /// gateway.
     /// </summary>
     public partial class InternetGatewayAttachment
@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The current state of the attachment. For an Internet gateway, the state is <code>available</code>
+        /// The current state of the attachment. For an internet gateway, the state is <code>available</code>
         /// when attached to a VPC; otherwise, this value is not returned.
         /// </para>
         /// </summary>

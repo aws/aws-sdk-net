@@ -382,20 +382,23 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Allocates an Elastic IP address.
+        /// Allocates an Elastic IP address to your AWS account. After you allocate the Elastic
+        /// IP address you can associate it with an instance or network interface. After you release
+        /// an Elastic IP address, it is released to the IP address pool and can be allocated
+        /// to a different AWS account.
         /// 
+        ///  
+        /// <para>
+        /// [EC2-VPC] If you release an Elastic IP address, you might be able to recover it. You
+        /// cannot recover an Elastic IP address that you released after it is allocated to another
+        /// AWS account. You cannot recover an Elastic IP address for EC2-Classic. To attempt
+        /// to recover an Elastic IP address that you released, specify it in this operation.
+        /// </para>
         ///  
         /// <para>
         /// An Elastic IP address is for use either in the EC2-Classic platform or in a VPC. By
         /// default, you can allocate 5 Elastic IP addresses for EC2-Classic per region and 5
         /// Elastic IP addresses for EC2-VPC per region.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you release an Elastic IP address for use in a VPC, you might be able to recover
-        /// it. To recover an Elastic IP address that you released, specify it in the <code>Address</code>
-        /// parameter. Note that you cannot recover an Elastic IP address that you released after
-        /// it is allocated to another AWS account.
         /// </para>
         ///  
         /// <para>
@@ -1668,12 +1671,12 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates an Internet gateway for use with a VPC. After creating the Internet gateway,
+        /// Creates an internet gateway for use with a VPC. After creating the internet gateway,
         /// you attach it to a VPC using <a>AttachInternetGateway</a>.
         /// 
         ///  
         /// <para>
-        /// For more information about your VPC and Internet gateway, see the <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/">Amazon
+        /// For more information about your VPC and internet gateway, see the <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/">Amazon
         /// Virtual Private Cloud User Guide</a>.
         /// </para>
         /// </summary>
@@ -4077,7 +4080,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about DHCP options sets, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
         /// Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -5000,7 +5003,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of your Internet gateways.
+        /// Describes one or more of your internet gateways.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -5240,7 +5243,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about network ACLs, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
         /// ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -5852,7 +5855,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information about route tables, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
         /// Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -6518,7 +6521,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about subnets, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
         /// VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>

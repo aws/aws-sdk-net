@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InternetGateway. 
         /// <para>
-        /// Information about the Internet gateway.
+        /// Information about the internet gateway.
         /// </para>
         /// </summary>
         public InternetGateway InternetGateway

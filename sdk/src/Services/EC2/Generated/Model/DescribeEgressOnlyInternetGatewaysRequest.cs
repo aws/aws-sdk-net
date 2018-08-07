@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeEgressOnlyInternetGateways operation.
-    /// Describes one or more of your egress-only Internet gateways.
+    /// Describes one or more of your egress-only internet gateways.
     /// </summary>
     public partial class DescribeEgressOnlyInternetGatewaysRequest : AmazonEC2Request
     {
@@ -40,7 +40,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property EgressOnlyInternetGatewayIds. 
         /// <para>
-        /// One or more egress-only Internet gateway IDs.
+        /// One or more egress-only internet gateway IDs.
         /// </para>
         /// </summary>
         public List<string> EgressOnlyInternetGatewayIds
@@ -60,7 +60,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The maximum number of results to return for the request in a single page. The remaining
         /// results can be seen by sending another request with the returned <code>NextToken</code>
-        /// value. This value can be between 5 and 1000; if <code>MaxResults</code> is given a
+        /// value. This value can be between 5 and 1000. If <code>MaxResults</code> is given a
         /// value larger than 1000, only 1000 results are returned.
         /// </para>
         /// </summary>

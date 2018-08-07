@@ -38,7 +38,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
+        /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request.
         /// </para>
         /// </summary>
         public string ClientToken
@@ -56,7 +57,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property EgressOnlyInternetGateway. 
         /// <para>
-        /// Information about the egress-only Internet gateway.
+        /// Information about the egress-only internet gateway.
         /// </para>
         /// </summary>
         public EgressOnlyInternetGateway EgressOnlyInternetGateway

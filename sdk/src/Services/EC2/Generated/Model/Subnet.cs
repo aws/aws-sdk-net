@@ -84,8 +84,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AvailableIpAddressCount. 
         /// <para>
-        /// The number of unused private IPv4 addresses in the subnet. Note that the IPv4 addresses
-        /// for any stopped instances are considered unavailable.
+        /// The number of unused private IPv4 addresses in the subnet. The IPv4 addresses for
+        /// any stopped instances are considered unavailable.
         /// </para>
         /// </summary>
         public int AvailableIpAddressCount

@@ -66,6 +66,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DeliverLogsPermissionArn", StringUtils.FromString(publicRequest.DeliverLogsPermissionArn));
                 }
+                if(publicRequest.IsSetLogDestination())
+                {
+                    request.Parameters.Add("LogDestination", StringUtils.FromString(publicRequest.LogDestination));
+                }
+                if(publicRequest.IsSetLogDestinationType())
+                {
+                    request.Parameters.Add("LogDestinationType", StringUtils.FromString(publicRequest.LogDestinationType));
+                }
                 if(publicRequest.IsSetLogGroupName())
                 {
                     request.Parameters.Add("LogGroupName", StringUtils.FromString(publicRequest.LogGroupName));

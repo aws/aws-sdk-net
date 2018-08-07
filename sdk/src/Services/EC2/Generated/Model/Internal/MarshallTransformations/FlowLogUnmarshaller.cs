@@ -90,6 +90,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.FlowLogStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("logDestination", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.LogDestination = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("logDestinationType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.LogDestinationType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("logGroupName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

@@ -29,8 +29,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the AttachInternetGateway operation.
-    /// Attaches an Internet gateway to a VPC, enabling connectivity between the Internet
-    /// and the VPC. For more information about your VPC and Internet gateway, see the <a
+    /// Attaches an internet gateway to a VPC, enabling connectivity between the internet
+    /// and the VPC. For more information about your VPC and internet gateway, see the <a
     /// href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/">Amazon Virtual Private
     /// Cloud User Guide</a>.
     /// </summary>
@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InternetGatewayId. 
         /// <para>
-        /// The ID of the Internet gateway.
+        /// The ID of the internet gateway.
         /// </para>
         /// </summary>
         public string InternetGatewayId

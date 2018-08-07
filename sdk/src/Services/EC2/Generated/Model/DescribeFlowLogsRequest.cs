@@ -52,6 +52,12 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>log-destination-type</code> - The type of destination to which the flow log
+        /// publishes data. Possible destination types include <code>cloud-watch-logs</code> and
+        /// <code>S3</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>flow-log-id</code> - The ID of the flow log.
         /// </para>
         ///  </li> <li> 
@@ -65,7 +71,7 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>traffic-type</code> - The type of traffic (<code>ACCEPT</code> | <code>REJECT</code>
-        /// | <code>ALL</code>)
+        /// | <code>ALL</code>).
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -104,7 +110,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The maximum number of results to return for the request in a single page. The remaining
         /// results can be seen by sending another request with the returned <code>NextToken</code>
-        /// value. This value can be between 5 and 1000; if <code>MaxResults</code> is given a
+        /// value. This value can be between 5 and 1000. If <code>MaxResults</code> is given a
         /// value larger than 1000, only 1000 results are returned. You cannot specify this parameter
         /// and the flow log IDs parameter in the same request.
         /// </para>

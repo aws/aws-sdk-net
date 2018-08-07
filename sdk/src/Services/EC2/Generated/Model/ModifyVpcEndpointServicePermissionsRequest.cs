@@ -32,6 +32,13 @@ namespace Amazon.EC2.Model
     /// Modifies the permissions for your <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/endpoint-service.html">VPC
     /// endpoint service</a>. You can add or remove permissions for service consumers (IAM
     /// users, IAM roles, and AWS accounts) to connect to your endpoint service.
+    /// 
+    ///  
+    /// <para>
+    /// If you grant permissions to all principals, the service is public. Any users who know
+    /// the name of a public service can send a request to attach an endpoint. If the service
+    /// does not require manual approval, attachments are automatically approved.
+    /// </para>
     /// </summary>
     public partial class ModifyVpcEndpointServicePermissionsRequest : AmazonEC2Request
     {
@@ -42,8 +49,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AddAllowedPrincipals. 
         /// <para>
-        /// One or more Amazon Resource Names (ARNs) of principals for which to allow permission.
-        /// Specify <code>*</code> to allow all principals.
+        /// The Amazon Resource Names (ARN) of one or more principals. Permissions are granted
+        /// to the principals in this list. To grant permissions to all principals, specify an
+        /// asterisk (*).
         /// </para>
         /// </summary>
         public List<string> AddAllowedPrincipals
@@ -61,7 +69,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RemoveAllowedPrincipals. 
         /// <para>
-        /// One or more Amazon Resource Names (ARNs) of principals for which to remove permission.
+        /// The Amazon Resource Names (ARN) of one or more principals. Permissions are revoked
+        /// for principals in this list.
         /// </para>
         /// </summary>
         public List<string> RemoveAllowedPrincipals

@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AssociationId. 
         /// <para>
-        /// The route table association ID (needed to disassociate the route table).
+        /// The route table association ID. This ID is required for disassociating the route table.
         /// </para>
         /// </summary>
         public string AssociationId

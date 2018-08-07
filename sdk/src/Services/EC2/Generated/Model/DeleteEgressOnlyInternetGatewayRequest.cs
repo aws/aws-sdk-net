@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteEgressOnlyInternetGateway operation.
-    /// Deletes an egress-only Internet gateway.
+    /// Deletes an egress-only internet gateway.
     /// </summary>
     public partial class DeleteEgressOnlyInternetGatewayRequest : AmazonEC2Request
     {
@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property EgressOnlyInternetGatewayId. 
         /// <para>
-        /// The ID of the egress-only Internet gateway.
+        /// The ID of the egress-only internet gateway.
         /// </para>
         /// </summary>
         public string EgressOnlyInternetGatewayId

@@ -40,8 +40,8 @@ namespace Amazon.EC2.Model
     ///  <code>domain-name-servers</code> - The IP addresses of up to four domain name servers,
     /// or AmazonProvidedDNS. The default DHCP option set specifies AmazonProvidedDNS. If
     /// specifying more than one domain name server, specify the IP addresses in a single
-    /// parameter, separated by commas. If you want your instance to receive a custom DNS
-    /// hostname as specified in <code>domain-name</code>, you must set <code>domain-name-servers</code>
+    /// parameter, separated by commas. ITo have your instance to receive a custom DNS hostname
+    /// as specified in <code>domain-name</code>, you must set <code>domain-name-servers</code>
     /// to a custom DNS server.
     /// </para>
     ///  </li> <li> 
@@ -76,9 +76,9 @@ namespace Amazon.EC2.Model
     /// <para>
     /// Your VPC automatically starts out with a set of DHCP options that includes only a
     /// DNS server that we provide (AmazonProvidedDNS). If you create a set of options, and
-    /// if your VPC has an Internet gateway, make sure to set the <code>domain-name-servers</code>
+    /// if your VPC has an internet gateway, make sure to set the <code>domain-name-servers</code>
     /// option either to <code>AmazonProvidedDNS</code> or to a domain name server of your
-    /// choice. For more information about DHCP options, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
+    /// choice. For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
     /// Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
     /// </para>
     /// </summary>

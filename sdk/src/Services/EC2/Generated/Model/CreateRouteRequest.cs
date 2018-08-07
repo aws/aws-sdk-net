@@ -33,9 +33,9 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// You must specify one of the following targets: Internet gateway or virtual private
+    /// You must specify one of the following targets: internet gateway or virtual private
     /// gateway, NAT instance, NAT gateway, VPC peering connection, network interface, or
-    /// egress-only Internet gateway.
+    /// egress-only internet gateway.
     /// </para>
     ///  
     /// <para>
@@ -116,7 +116,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property EgressOnlyInternetGatewayId. 
         /// <para>
-        /// [IPv6 traffic only] The ID of an egress-only Internet gateway.
+        /// [IPv6 traffic only] The ID of an egress-only internet gateway.
         /// </para>
         /// </summary>
         public string EgressOnlyInternetGatewayId
@@ -134,7 +134,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property GatewayId. 
         /// <para>
-        /// The ID of an Internet gateway or virtual private gateway attached to your VPC.
+        /// The ID of an internet gateway or virtual private gateway attached to your VPC.
         /// </para>
         /// </summary>
         public string GatewayId

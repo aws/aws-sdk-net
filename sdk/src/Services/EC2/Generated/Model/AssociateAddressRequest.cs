@@ -29,7 +29,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateAddress operation.
-    /// Associates an Elastic IP address with an instance or a network interface.
+    /// Associates an Elastic IP address with an instance or a network interface. Before you
+    /// can use an Elastic IP address, you must allocate it to your account.
     /// 
     ///  
     /// <para>

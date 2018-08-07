@@ -38,6 +38,8 @@ namespace Amazon.EC2.Model
         private string _deliverLogsStatus;
         private string _flowLogId;
         private string _flowLogStatus;
+        private string _logDestination;
+        private LogDestinationType _logDestinationType;
         private string _logGroupName;
         private string _resourceId;
         private TrafficType _trafficType;
@@ -64,11 +66,11 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property DeliverLogsErrorMessage. 
         /// <para>
         /// Information about the error that occurred. <code>Rate limited</code> indicates that
-        /// CloudWatch logs throttling has been applied for one or more network interfaces, or
-        /// that you've reached the limit on the number of CloudWatch Logs log groups that you
-        /// can create. <code>Access error</code> indicates that the IAM role associated with
-        /// the flow log does not have sufficient permissions to publish to CloudWatch Logs. <code>Unknown
-        /// error</code> indicates an internal error.
+        /// CloudWatch Logs throttling has been applied for one or more network interfaces, or
+        /// that you've reached the limit on the number of log groups that you can create. <code>Access
+        /// error</code> indicates that the IAM role associated with the flow log does not have
+        /// sufficient permissions to publish to CloudWatch Logs. <code>Unknown error</code> indicates
+        /// an internal error.
         /// </para>
         /// </summary>
         public string DeliverLogsErrorMessage
@@ -153,6 +155,48 @@ namespace Amazon.EC2.Model
         internal bool IsSetFlowLogStatus()
         {
             return this._flowLogStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogDestination. 
+        /// <para>
+        /// Specifies the destination to which the flow log data is published. Flow log data can
+        /// be published to an CloudWatch Logs log group or an Amazon S3 bucket. If the flow log
+        /// publishes to CloudWatch Logs, this element indicates the Amazon Resource Name (ARN)
+        /// of the CloudWatch Logs log group to which the data is published. If the flow log publishes
+        /// to Amazon S3, this element indicates the ARN of the Amazon S3 bucket to which the
+        /// data is published.
+        /// </para>
+        /// </summary>
+        public string LogDestination
+        {
+            get { return this._logDestination; }
+            set { this._logDestination = value; }
+        }
+
+        // Check to see if LogDestination property is set
+        internal bool IsSetLogDestination()
+        {
+            return this._logDestination != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogDestinationType. 
+        /// <para>
+        /// Specifies the type of destination to which the flow log data is published. Flow log
+        /// data can be published to CloudWatch Logs or Amazon S3.
+        /// </para>
+        /// </summary>
+        public LogDestinationType LogDestinationType
+        {
+            get { return this._logDestinationType; }
+            set { this._logDestinationType = value; }
+        }
+
+        // Check to see if LogDestinationType property is set
+        internal bool IsSetLogDestinationType()
+        {
+            return this._logDestinationType != null;
         }
 
         /// <summary>

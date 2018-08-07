@@ -163,20 +163,23 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Allocates an Elastic IP address.
+        /// Allocates an Elastic IP address to your AWS account. After you allocate the Elastic
+        /// IP address you can associate it with an instance or network interface. After you release
+        /// an Elastic IP address, it is released to the IP address pool and can be allocated
+        /// to a different AWS account.
         /// 
+        ///  
+        /// <para>
+        /// [EC2-VPC] If you release an Elastic IP address, you might be able to recover it. You
+        /// cannot recover an Elastic IP address that you released after it is allocated to another
+        /// AWS account. You cannot recover an Elastic IP address for EC2-Classic. To attempt
+        /// to recover an Elastic IP address that you released, specify it in this operation.
+        /// </para>
         ///  
         /// <para>
         /// An Elastic IP address is for use either in the EC2-Classic platform or in a VPC. By
         /// default, you can allocate 5 Elastic IP addresses for EC2-Classic per region and 5
         /// Elastic IP addresses for EC2-VPC per region.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you release an Elastic IP address for use in a VPC, you might be able to recover
-        /// it. To recover an Elastic IP address that you released, specify it in the <code>Address</code>
-        /// parameter. Note that you cannot recover an Elastic IP address that you released after
-        /// it is allocated to another AWS account.
         /// </para>
         ///  
         /// <para>
@@ -191,20 +194,23 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Allocates an Elastic IP address.
+        /// Allocates an Elastic IP address to your AWS account. After you allocate the Elastic
+        /// IP address you can associate it with an instance or network interface. After you release
+        /// an Elastic IP address, it is released to the IP address pool and can be allocated
+        /// to a different AWS account.
         /// 
+        ///  
+        /// <para>
+        /// [EC2-VPC] If you release an Elastic IP address, you might be able to recover it. You
+        /// cannot recover an Elastic IP address that you released after it is allocated to another
+        /// AWS account. You cannot recover an Elastic IP address for EC2-Classic. To attempt
+        /// to recover an Elastic IP address that you released, specify it in this operation.
+        /// </para>
         ///  
         /// <para>
         /// An Elastic IP address is for use either in the EC2-Classic platform or in a VPC. By
         /// default, you can allocate 5 Elastic IP addresses for EC2-Classic per region and 5
         /// Elastic IP addresses for EC2-VPC per region.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you release an Elastic IP address for use in a VPC, you might be able to recover
-        /// it. To recover an Elastic IP address that you released, specify it in the <code>Address</code>
-        /// parameter. Note that you cannot recover an Elastic IP address that you released after
-        /// it is allocated to another AWS account.
         /// </para>
         ///  
         /// <para>
@@ -220,20 +226,23 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Allocates an Elastic IP address.
+        /// Allocates an Elastic IP address to your AWS account. After you allocate the Elastic
+        /// IP address you can associate it with an instance or network interface. After you release
+        /// an Elastic IP address, it is released to the IP address pool and can be allocated
+        /// to a different AWS account.
         /// 
+        ///  
+        /// <para>
+        /// [EC2-VPC] If you release an Elastic IP address, you might be able to recover it. You
+        /// cannot recover an Elastic IP address that you released after it is allocated to another
+        /// AWS account. You cannot recover an Elastic IP address for EC2-Classic. To attempt
+        /// to recover an Elastic IP address that you released, specify it in this operation.
+        /// </para>
         ///  
         /// <para>
         /// An Elastic IP address is for use either in the EC2-Classic platform or in a VPC. By
         /// default, you can allocate 5 Elastic IP addresses for EC2-Classic per region and 5
         /// Elastic IP addresses for EC2-VPC per region.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you release an Elastic IP address for use in a VPC, you might be able to recover
-        /// it. To recover an Elastic IP address that you released, specify it in the <code>Address</code>
-        /// parameter. Note that you cannot recover an Elastic IP address that you released after
-        /// it is allocated to another AWS account.
         /// </para>
         ///  
         /// <para>
@@ -368,7 +377,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Associates an Elastic IP address with an instance or a network interface.
+        /// Associates an Elastic IP address with an instance or a network interface. Before you
+        /// can use an Elastic IP address, you must allocate it to your account.
         /// 
         ///  
         /// <para>
@@ -504,7 +514,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about route tables, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
         /// Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -639,8 +649,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Attaches an Internet gateway to a VPC, enabling connectivity between the Internet
-        /// and the VPC. For more information about your VPC and Internet gateway, see the <a
+        /// Attaches an internet gateway to a VPC, enabling connectivity between the internet
+        /// and the VPC. For more information about your VPC and internet gateway, see the <a
         /// href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/">Amazon Virtual Private
         /// Cloud User Guide</a>.
         /// </summary>
@@ -1405,13 +1415,13 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// You can create a default VPC if you deleted your previous default VPC. You cannot
-        /// have more than one default VPC per region. 
+        /// iIf you deleted your previous default VPC, you can create a default VPC. You cannot
+        /// have more than one default VPC per Region. 
         /// </para>
         ///  
         /// <para>
         /// If your account supports EC2-Classic, you cannot use this action to create a default
-        /// VPC in a region that supports EC2-Classic. If you want a default VPC in a region that
+        /// VPC in a Region that supports EC2-Classic. If you want a default VPC in a Region that
         /// supports EC2-Classic, see "I really want a default VPC for my existing EC2 account.
         /// Is that possible?" in the <a href="http://aws.amazon.com/vpc/faqs/#Default_VPCs">Default
         /// VPCs FAQ</a>.
@@ -1453,8 +1463,8 @@ namespace Amazon.EC2
         ///  <code>domain-name-servers</code> - The IP addresses of up to four domain name servers,
         /// or AmazonProvidedDNS. The default DHCP option set specifies AmazonProvidedDNS. If
         /// specifying more than one domain name server, specify the IP addresses in a single
-        /// parameter, separated by commas. If you want your instance to receive a custom DNS
-        /// hostname as specified in <code>domain-name</code>, you must set <code>domain-name-servers</code>
+        /// parameter, separated by commas. ITo have your instance to receive a custom DNS hostname
+        /// as specified in <code>domain-name</code>, you must set <code>domain-name-servers</code>
         /// to a custom DNS server.
         /// </para>
         ///  </li> <li> 
@@ -1489,9 +1499,9 @@ namespace Amazon.EC2
         /// <para>
         /// Your VPC automatically starts out with a set of DHCP options that includes only a
         /// DNS server that we provide (AmazonProvidedDNS). If you create a set of options, and
-        /// if your VPC has an Internet gateway, make sure to set the <code>domain-name-servers</code>
+        /// if your VPC has an internet gateway, make sure to set the <code>domain-name-servers</code>
         /// option either to <code>AmazonProvidedDNS</code> or to a domain name server of your
-        /// choice. For more information about DHCP options, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
+        /// choice. For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
         /// Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -1520,9 +1530,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// [IPv6 only] Creates an egress-only Internet gateway for your VPC. An egress-only Internet
+        /// [IPv6 only] Creates an egress-only internet gateway for your VPC. An egress-only internet
         /// gateway is used to enable outbound communication over IPv6 from instances in your
-        /// VPC to the Internet, and prevents hosts outside of your VPC from initiating an IPv6
+        /// VPC to the internet, and prevents hosts outside of your VPC from initiating an IPv6
         /// connection with your instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEgressOnlyInternetGateway service method.</param>
@@ -1588,17 +1598,22 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates one or more flow logs to capture IP traffic for a specific network interface,
-        /// subnet, or VPC. Flow logs are delivered to a specified log group in Amazon CloudWatch
-        /// Logs. If you specify a VPC or subnet in the request, a log stream is created in CloudWatch
-        /// Logs for each network interface in the subnet or VPC. Log streams can include information
-        /// about accepted and rejected traffic to a network interface. You can view the data
-        /// in your log streams using Amazon CloudWatch Logs.
+        /// Creates one or more flow logs to capture information about IP traffic for a specific
+        /// network interface, subnet, or VPC. 
         /// 
         ///  
         /// <para>
-        /// In your request, you must also specify an IAM role that has permission to publish
-        /// logs to CloudWatch Logs.
+        /// Flow log data for a monitored network interface is recorded as flow log records, which
+        /// are log events consisting of fields that describe the traffic flow. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html#flow-log-records">Flow
+        /// Log Records</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When publishing to CloudWatch Logs, flow log records are published to a log group,
+        /// and each network interface has a unique log stream in the log group. When publishing
+        /// to Amazon S3, flow log records for all of the monitored network interfaces are published
+        /// to a single log file object that is stored in the specified bucket.
         /// </para>
         ///  
         /// <para>
@@ -1745,12 +1760,12 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates an Internet gateway for use with a VPC. After creating the Internet gateway,
+        /// Creates an internet gateway for use with a VPC. After creating the internet gateway,
         /// you attach it to a VPC using <a>AttachInternetGateway</a>.
         /// 
         ///  
         /// <para>
-        /// For more information about your VPC and Internet gateway, see the <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/">Amazon
+        /// For more information about your VPC and internet gateway, see the <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/">Amazon
         /// Virtual Private Cloud User Guide</a>.
         /// </para>
         /// </summary>
@@ -1761,12 +1776,12 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates an Internet gateway for use with a VPC. After creating the Internet gateway,
+        /// Creates an internet gateway for use with a VPC. After creating the internet gateway,
         /// you attach it to a VPC using <a>AttachInternetGateway</a>.
         /// 
         ///  
         /// <para>
-        /// For more information about your VPC and Internet gateway, see the <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/">Amazon
+        /// For more information about your VPC and internet gateway, see the <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/">Amazon
         /// Virtual Private Cloud User Guide</a>.
         /// </para>
         /// </summary>
@@ -1778,12 +1793,12 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates an Internet gateway for use with a VPC. After creating the Internet gateway,
+        /// Creates an internet gateway for use with a VPC. After creating the internet gateway,
         /// you attach it to a VPC using <a>AttachInternetGateway</a>.
         /// 
         ///  
         /// <para>
-        /// For more information about your VPC and Internet gateway, see the <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/">Amazon
+        /// For more information about your VPC and internet gateway, see the <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/">Amazon
         /// Virtual Private Cloud User Guide</a>.
         /// </para>
         /// </summary>
@@ -1960,7 +1975,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about network ACLs, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
         /// ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -2208,9 +2223,9 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// You must specify one of the following targets: Internet gateway or virtual private
+        /// You must specify one of the following targets: internet gateway or virtual private
         /// gateway, NAT instance, NAT gateway, VPC peering connection, network interface, or
-        /// egress-only Internet gateway.
+        /// egress-only internet gateway.
         /// </para>
         ///  
         /// <para>
@@ -2268,7 +2283,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about route tables, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
         /// Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -2462,13 +2477,12 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// When you create each subnet, you provide the VPC ID and the IPv4 CIDR block you want
-        /// for the subnet. After you create a subnet, you can't change its CIDR block. The size
-        /// of the subnet's IPv4 CIDR block can be the same as a VPC's IPv4 CIDR block, or a subset
-        /// of a VPC's IPv4 CIDR block. If you create more than one subnet in a VPC, the subnets'
-        /// CIDR blocks must not overlap. The smallest IPv4 subnet (and VPC) you can create uses
-        /// a /28 netmask (16 IPv4 addresses), and the largest uses a /16 netmask (65,536 IPv4
-        /// addresses).
+        /// When you create each subnet, you provide the VPC ID and IPv4 CIDR block for the subnet.
+        /// After you create a subnet, you can't change its CIDR block. The size of the subnet's
+        /// IPv4 CIDR block can be the same as a VPC's IPv4 CIDR block, or a subset of a VPC's
+        /// IPv4 CIDR block. If you create more than one subnet in a VPC, the subnets' CIDR blocks
+        /// must not overlap. The smallest IPv4 subnet (and VPC) you can create uses a /28 netmask
+        /// (16 IPv4 addresses), and the largest uses a /16 netmask (65,536 IPv4 addresses).
         /// </para>
         ///  
         /// <para>
@@ -2619,7 +2633,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Creates a VPC with the specified IPv4 CIDR block. The smallest VPC you can create
         /// uses a /28 netmask (16 IPv4 addresses), and the largest uses a /16 netmask (65,536
-        /// IPv4 addresses). To help you decide how big to make your VPC, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
+        /// IPv4 addresses). For more information about how large to make your VPC, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
         /// VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// 
         ///  
@@ -2631,8 +2645,8 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// By default, each instance you launch in the VPC has the default DHCP options, which
-        /// includes only a default DNS server that we provide (AmazonProvidedDNS). For more information
-        /// about DHCP options, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
+        /// include only a default DNS server that we provide (AmazonProvidedDNS). For more information,
+        /// see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
         /// Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         ///  
@@ -2790,7 +2804,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Requests a VPC peering connection between two VPCs: a requester VPC that you own and
         /// an accepter VPC with which to create the connection. The accepter VPC can belong to
-        /// another AWS account and can be in a different region to the requester VPC. The requester
+        /// another AWS account and can be in a different Region to the requester VPC. The requester
         /// VPC and accepter VPC cannot have overlapping CIDR blocks.
         /// 
         ///  <note> 
@@ -3018,7 +3032,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Deletes an egress-only Internet gateway.
+        /// Deletes an egress-only internet gateway.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEgressOnlyInternetGateway service method.</param>
         /// 
@@ -3135,7 +3149,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Deletes the specified Internet gateway. You must detach the Internet gateway from
+        /// Deletes the specified internet gateway. You must detach the internet gateway from
         /// the VPC before you can delete it.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteInternetGateway service method.</param>
@@ -4395,7 +4409,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes one or more of your linked EC2-Classic instances. This request only returns
-        /// information about EC2-Classic instances linked to a VPC through ClassicLink; you cannot
+        /// information about EC2-Classic instances linked to a VPC through ClassicLink. You cannot
         /// use this request to return information about other instances.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeClassicLinkInstances service method.</param>
@@ -4562,7 +4576,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about DHCP options sets, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
         /// Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -4577,7 +4591,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about DHCP options sets, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
         /// Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -4593,7 +4607,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about DHCP options sets, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
         /// Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -4624,7 +4638,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of your egress-only Internet gateways.
+        /// Describes one or more of your egress-only internet gateways.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEgressOnlyInternetGateways service method.</param>
         /// 
@@ -5611,7 +5625,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of your Internet gateways.
+        /// Describes one or more of your internet gateways.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeInternetGateways service method, as returned by EC2.</returns>
@@ -5620,7 +5634,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of your Internet gateways.
+        /// Describes one or more of your internet gateways.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInternetGateways service method.</param>
         /// 
@@ -5630,7 +5644,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of your Internet gateways.
+        /// Describes one or more of your internet gateways.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -5809,7 +5823,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of the your NAT gateways.
+        /// Describes one or more of your NAT gateways.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeNatGateways service method.</param>
         /// 
@@ -5840,7 +5854,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about network ACLs, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
         /// ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -5855,7 +5869,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about network ACLs, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
         /// ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -5871,7 +5885,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about network ACLs, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
         /// ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -6574,7 +6588,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information about route tables, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
         /// Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -6595,7 +6609,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information about route tables, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
         /// Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -6617,7 +6631,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information about route tables, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
         /// Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -7437,7 +7451,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about subnets, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
         /// VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -7452,7 +7466,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about subnets, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
         /// VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -7468,7 +7482,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about subnets, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
         /// VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -8425,7 +8439,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Detaches an Internet gateway from a VPC, disabling connectivity between the Internet
+        /// Detaches an internet gateway from a VPC, disabling connectivity between the internet
         /// and the VPC. The VPC must not contain any running instances with Elastic IP addresses
         /// or public IPv4 addresses.
         /// </summary>
@@ -8619,7 +8633,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Disables ClassicLink DNS support for a VPC. If disabled, DNS hostnames resolve to
         /// public IP addresses when addressed between a linked EC2-Classic instance and instances
-        /// in the VPC to which it's linked. For more information about ClassicLink, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+        /// in the VPC to which it's linked. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
         /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableVpcClassicLinkDnsSupport service method.</param>
@@ -8877,7 +8891,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Enables a VPC for ClassicLink. You can then link EC2-Classic instances to your ClassicLink-enabled
         /// VPC to allow communication over private IP addresses. You cannot enable your VPC for
-        /// ClassicLink if any of your VPC's route tables have existing routes for address ranges
+        /// ClassicLink if any of your VPC route tables have existing routes for address ranges
         /// within the <code>10.0.0.0/8</code> IP address range, excluding local routes for VPCs
         /// in the <code>10.0.0.0/16</code> and <code>10.1.0.0/16</code> IP address ranges. For
         /// more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
@@ -8912,7 +8926,7 @@ namespace Amazon.EC2
         /// DNS hostname of a linked EC2-Classic instance resolves to its private IP address when
         /// addressed from an instance in the VPC to which it's linked. Similarly, the DNS hostname
         /// of an instance in a VPC resolves to its private IP address when addressed from a linked
-        /// EC2-Classic instance. For more information about ClassicLink, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+        /// EC2-Classic instance. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
         /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableVpcClassicLinkDnsSupport service method.</param>
@@ -8943,24 +8957,25 @@ namespace Amazon.EC2
         /// Gets the console output for the specified instance. For Linux instances, the instance
         /// console output displays the exact console output that would normally be displayed
         /// on a physical monitor attached to a computer. For Windows instances, the instance
-        /// console output includes output from the EC2Config service.
+        /// console output includes the last three system event log errors.
         /// 
-        ///  
-        /// <para>
-        ///  <a>GetConsoleOutput</a> returns up to 64 KB of console output shortly after it's
-        /// generated by the instance.
-        /// </para>
         ///  
         /// <para>
         /// By default, the console output returns buffered information that was posted shortly
         /// after an instance transition state (start, stop, reboot, or terminate). This information
-        /// is available for at least one hour after the most recent post.
+        /// is available for at least one hour after the most recent post. Only the most recent
+        /// 64 KB of console output is available.
         /// </para>
         ///  
         /// <para>
         /// You can optionally retrieve the latest serial console output at any time during the
-        /// instance lifecycle. This option is only supported on C5, M5, and <code>i3.metal</code>
-        /// instances.
+        /// instance lifecycle. This option is supported on instance types that use the Nitro
+        /// hypervisor.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html#instance-console-console-output">Instance
+        /// Console Output</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetConsoleOutput service method.</param>
@@ -10162,6 +10177,13 @@ namespace Amazon.EC2
         /// Modifies the permissions for your <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/endpoint-service.html">VPC
         /// endpoint service</a>. You can add or remove permissions for service consumers (IAM
         /// users, IAM roles, and AWS accounts) to connect to your endpoint service.
+        /// 
+        ///  
+        /// <para>
+        /// If you grant permissions to all principals, the service is public. Any users who know
+        /// the name of a public service can send a request to attach an endpoint. If the service
+        /// does not require manual approval, attachments are automatically approved.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyVpcEndpointServicePermissions service method.</param>
         /// 
@@ -10253,7 +10275,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information about Dedicated Instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html">Dedicated
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html">Dedicated
         /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -10759,8 +10781,8 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Changes which network ACL a subnet is associated with. By default when you create
-        /// a subnet, it's automatically associated with the default network ACL. For more information
-        /// about network ACLs, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
+        /// a subnet, it's automatically associated with the default network ACL. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
         /// ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// 
         ///  
@@ -10793,8 +10815,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Replaces an entry (rule) in a network ACL. For more information about network ACLs,
-        /// see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
+        /// Replaces an entry (rule) in a network ACL. For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
         /// ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ReplaceNetworkAclEntry service method.</param>
@@ -10823,12 +10844,12 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Replaces an existing route within a route table in a VPC. You must provide only one
-        /// of the following: Internet gateway or virtual private gateway, NAT instance, NAT gateway,
-        /// VPC peering connection, network interface, or egress-only Internet gateway.
+        /// of the following: internet gateway or virtual private gateway, NAT instance, NAT gateway,
+        /// VPC peering connection, network interface, or egress-only internet gateway.
         /// 
         ///  
         /// <para>
-        /// For more information about route tables, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
         /// Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>

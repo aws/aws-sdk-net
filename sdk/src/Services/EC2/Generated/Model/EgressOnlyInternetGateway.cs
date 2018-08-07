@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes an egress-only Internet gateway.
+    /// Describes an egress-only internet gateway.
     /// </summary>
     public partial class EgressOnlyInternetGateway
     {
@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Attachments. 
         /// <para>
-        /// Information about the attachment of the egress-only Internet gateway.
+        /// Information about the attachment of the egress-only internet gateway.
         /// </para>
         /// </summary>
         public List<InternetGatewayAttachment> Attachments
@@ -56,7 +56,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property EgressOnlyInternetGatewayId. 
         /// <para>
-        /// The ID of the egress-only Internet gateway.
+        /// The ID of the egress-only internet gateway.
         /// </para>
         /// </summary>
         public string EgressOnlyInternetGatewayId

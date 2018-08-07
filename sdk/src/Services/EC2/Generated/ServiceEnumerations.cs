@@ -3763,6 +3763,56 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type LogDestinationType.
+    /// </summary>
+    public class LogDestinationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CloudWatchLogs for LogDestinationType
+        /// </summary>
+        public static readonly LogDestinationType CloudWatchLogs = new LogDestinationType("cloud-watch-logs");
+        /// <summary>
+        /// Constant S3 for LogDestinationType
+        /// </summary>
+        public static readonly LogDestinationType S3 = new LogDestinationType("s3");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LogDestinationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LogDestinationType FindValue(string value)
+        {
+            return FindValue<LogDestinationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LogDestinationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MarketType.
     /// </summary>
     public class MarketType : ConstantClass

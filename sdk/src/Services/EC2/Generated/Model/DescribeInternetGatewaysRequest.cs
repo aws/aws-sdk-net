@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeInternetGateways operation.
-    /// Describes one or more of your Internet gateways.
+    /// Describes one or more of your internet gateways.
     /// </summary>
     public partial class DescribeInternetGatewaysRequest : AmazonEC2Request
     {
@@ -84,11 +84,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InternetGatewayIds. 
         /// <para>
-        /// One or more Internet gateway IDs.
+        /// One or more internet gateway IDs.
         /// </para>
         ///  
         /// <para>
-        /// Default: Describes all your Internet gateways.
+        /// Default: Describes all your internet gateways.
         /// </para>
         /// </summary>
         public List<string> InternetGatewayIds

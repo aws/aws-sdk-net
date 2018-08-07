@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes an Internet gateway.
+    /// Describes an internet gateway.
     /// </summary>
     public partial class InternetGateway
     {
@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Attachments. 
         /// <para>
-        /// Any VPCs attached to the Internet gateway.
+        /// Any VPCs attached to the internet gateway.
         /// </para>
         /// </summary>
         public List<InternetGatewayAttachment> Attachments
@@ -57,7 +57,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InternetGatewayId. 
         /// <para>
-        /// The ID of the Internet gateway.
+        /// The ID of the internet gateway.
         /// </para>
         /// </summary>
         public string InternetGatewayId
@@ -75,7 +75,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Any tags assigned to the Internet gateway.
+        /// Any tags assigned to the internet gateway.
         /// </para>
         /// </summary>
         public List<Tag> Tags

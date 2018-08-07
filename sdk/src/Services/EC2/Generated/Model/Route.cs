@@ -102,7 +102,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property EgressOnlyInternetGatewayId. 
         /// <para>
-        /// The ID of the egress-only Internet gateway.
+        /// The ID of the egress-only internet gateway.
         /// </para>
         /// </summary>
         public string EgressOnlyInternetGatewayId

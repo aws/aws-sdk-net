@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property EgressOnlyInternetGateways. 
         /// <para>
-        /// Information about the egress-only Internet gateways.
+        /// Information about the egress-only internet gateways.
         /// </para>
         /// </summary>
         public List<EgressOnlyInternetGateway> EgressOnlyInternetGateways

@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information about Dedicated Instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html">Dedicated
+    /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html">Dedicated
     /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     /// </summary>

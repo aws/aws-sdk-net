@@ -30,12 +30,12 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the ReplaceRoute operation.
     /// Replaces an existing route within a route table in a VPC. You must provide only one
-    /// of the following: Internet gateway or virtual private gateway, NAT instance, NAT gateway,
-    /// VPC peering connection, network interface, or egress-only Internet gateway.
+    /// of the following: internet gateway or virtual private gateway, NAT instance, NAT gateway,
+    /// VPC peering connection, network interface, or egress-only internet gateway.
     /// 
     ///  
     /// <para>
-    /// For more information about route tables, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
+    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
     /// Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
     /// </para>
     /// </summary>
@@ -54,7 +54,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DestinationCidrBlock. 
         /// <para>
-        /// The IPv4 CIDR address block used for the destination match. The value you provide
+        /// The IPv4 CIDR address block used for the destination match. The value that you provide
         /// must match the CIDR of an existing route in the table.
         /// </para>
         /// </summary>
@@ -73,7 +73,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DestinationIpv6CidrBlock. 
         /// <para>
-        /// The IPv6 CIDR address block used for the destination match. The value you provide
+        /// The IPv6 CIDR address block used for the destination match. The value that you provide
         /// must match the CIDR of an existing route in the table.
         /// </para>
         /// </summary>
@@ -92,7 +92,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property EgressOnlyInternetGatewayId. 
         /// <para>
-        /// [IPv6 traffic only] The ID of an egress-only Internet gateway.
+        /// [IPv6 traffic only] The ID of an egress-only internet gateway.
         /// </para>
         /// </summary>
         public string EgressOnlyInternetGatewayId
@@ -110,7 +110,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property GatewayId. 
         /// <para>
-        /// The ID of an Internet gateway or virtual private gateway.
+        /// The ID of an internet gateway or virtual private gateway.
         /// </para>
         /// </summary>
         public string GatewayId

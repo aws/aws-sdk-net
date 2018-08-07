@@ -29,9 +29,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateEgressOnlyInternetGateway operation.
-    /// [IPv6 only] Creates an egress-only Internet gateway for your VPC. An egress-only Internet
+    /// [IPv6 only] Creates an egress-only internet gateway for your VPC. An egress-only internet
     /// gateway is used to enable outbound communication over IPv6 from instances in your
-    /// VPC to the Internet, and prevents hosts outside of your VPC from initiating an IPv6
+    /// VPC to the internet, and prevents hosts outside of your VPC from initiating an IPv6
     /// connection with your instance.
     /// </summary>
     public partial class CreateEgressOnlyInternetGatewayRequest : AmazonEC2Request
@@ -42,8 +42,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+        /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
         /// to Ensure Idempotency</a>.
         /// </para>
         /// </summary>
@@ -62,7 +62,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        /// The ID of the VPC for which to create the egress-only Internet gateway.
+        /// The ID of the VPC for which to create the egress-only internet gateway.
         /// </para>
         /// </summary>
         public string VpcId

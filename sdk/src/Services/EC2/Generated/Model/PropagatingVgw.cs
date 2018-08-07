@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property GatewayId. 
         /// <para>
-        /// The ID of the virtual private gateway (VGW).
+        /// The ID of the virtual private gateway.
         /// </para>
         /// </summary>
         public string GatewayId

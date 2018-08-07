@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the DescribeClassicLinkInstances operation.
     /// Describes one or more of your linked EC2-Classic instances. This request only returns
-    /// information about EC2-Classic instances linked to a VPC through ClassicLink; you cannot
+    /// information about EC2-Classic instances linked to a VPC through ClassicLink. You cannot
     /// use this request to return information about other instances.
     /// </summary>
     public partial class DescribeClassicLinkInstancesRequest : AmazonEC2Request
@@ -68,6 +68,10 @@ namespace Amazon.EC2.Model
         /// to find all resources assigned a tag with a specific key, regardless of the tag value.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        ///  <code>vpc-id</code> - The ID of the VPC to which the instance is linked.
+        /// </para>
+        ///  
         /// <para>
         ///  <code>vpc-id</code> - The ID of the VPC that the instance is linked to.
         /// </para>
@@ -108,7 +112,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The maximum number of results to return for the request in a single page. The remaining
         /// results of the initial request can be seen by sending another request with the returned
-        /// <code>NextToken</code> value. This value can be between 5 and 1000; if <code>MaxResults</code>
+        /// <code>NextToken</code> value. This value can be between 5 and 1000. If <code>MaxResults</code>
         /// is given a value larger than 1000, only 1000 results are returned. You cannot specify
         /// this parameter and the instance IDs parameter in the same request.
         /// </para>

@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeNatGateways operation.
-    /// Describes one or more of the your NAT gateways.
+    /// Describes one or more of your NAT gateways.
     /// </summary>
     public partial class DescribeNatGatewaysRequest : AmazonEC2Request
     {

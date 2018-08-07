@@ -33,13 +33,12 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// When you create each subnet, you provide the VPC ID and the IPv4 CIDR block you want
-    /// for the subnet. After you create a subnet, you can't change its CIDR block. The size
-    /// of the subnet's IPv4 CIDR block can be the same as a VPC's IPv4 CIDR block, or a subset
-    /// of a VPC's IPv4 CIDR block. If you create more than one subnet in a VPC, the subnets'
-    /// CIDR blocks must not overlap. The smallest IPv4 subnet (and VPC) you can create uses
-    /// a /28 netmask (16 IPv4 addresses), and the largest uses a /16 netmask (65,536 IPv4
-    /// addresses).
+    /// When you create each subnet, you provide the VPC ID and IPv4 CIDR block for the subnet.
+    /// After you create a subnet, you can't change its CIDR block. The size of the subnet's
+    /// IPv4 CIDR block can be the same as a VPC's IPv4 CIDR block, or a subset of a VPC's
+    /// IPv4 CIDR block. If you create more than one subnet in a VPC, the subnets' CIDR blocks
+    /// must not overlap. The smallest IPv4 subnet (and VPC) you can create uses a /28 netmask
+    /// (16 IPv4 addresses), and the largest uses a /16 netmask (65,536 IPv4 addresses).
     /// </para>
     ///  
     /// <para>

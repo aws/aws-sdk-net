@@ -172,7 +172,7 @@
       "errors": [
 
       ],
-      "documentation": "\n         <p>Allocates an Elastic IP address.</p>\n         <p>An Elastic IP address is for use either in the EC2-Classic platform or in a VPC. By default, you can allocate\n         5 Elastic IP addresses for EC2-Classic per region and 5 Elastic IP addresses for EC2-VPC per region.</p>\n         <p>If you release an Elastic IP address for use in a VPC, you might be able to recover it.\n       To recover an Elastic IP address that you released, specify it in the <code>Address</code> parameter.\n       Note that you cannot recover an Elastic IP address that you released after it is allocated to another AWS account.</p>\n         <p>For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html\">Elastic IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>\n     \n      "
+      "documentation": "\n         <p>Allocates an Elastic IP address to your AWS account. After you allocate the Elastic IP address you can associate  \n         it with an instance or network interface. After you release an Elastic IP address, it is released to the IP address \n         pool and can be allocated to a different AWS account.</p>\n         <p>[EC2-VPC] If you release an Elastic IP address, you might be able to recover it. You cannot recover an \n         Elastic IP address that you released after it is allocated to another AWS account. You cannot recover an Elastic IP\n         address for EC2-Classic. To attempt to recover an Elastic IP address that you released, specify it in this operation.</p>\n         <p>An Elastic IP address is for use either in the EC2-Classic platform or in a VPC. By default, you can allocate\n         5 Elastic IP addresses for EC2-Classic per region and 5 Elastic IP addresses for EC2-VPC per region.</p>\n         <p>For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html\">Elastic IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>\n     \n      "
     },
     "AssignIpv6Addresses": {
       "name": "AssignIpv6Addresses",
@@ -358,7 +358,7 @@
       "errors": [
 
       ],
-      "documentation": "\n         <p>Associates an Elastic IP address with an instance or a network interface.</p>\n         <p>An Elastic IP address is for use in either the EC2-Classic platform or in a VPC.\n\t\t\t\tFor more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html\">Elastic IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>\n         <p>[EC2-Classic, VPC in an EC2-VPC-only account] If the Elastic IP address is already\n      associated with a different instance, it is disassociated from that instance and associated\n      with the specified instance. If you associate an Elastic IP address with an instance that has\n      an existing Elastic IP address, the existing address is disassociated from the instance, but\n      remains allocated to your account.</p>\n         <p>[VPC in an EC2-Classic account] If you don't specify a private IP address, the Elastic\n      IP address is associated with the primary IP address. If the Elastic IP address is already\n      associated with a different instance or a network interface, you get an error unless you allow\n      reassociation. You cannot associate an Elastic IP address with an instance or network\n      interface that has an existing Elastic IP address.</p>\n         <important>\n            <p>This is an idempotent operation. If you perform the operation more than once, Amazon EC2\n        doesn't return an error, and you may be charged for each time the Elastic IP address is\n        remapped to the same instance. For more information, see the <i>Elastic IP\n          Addresses</i> section of <a href=\"http://aws.amazon.com/ec2/pricing/\">Amazon EC2\n          Pricing</a>.</p>\n         </important>\n     \n      "
+      "documentation": "\n         <p>Associates an Elastic IP address with an instance or a network interface. Before you can\n      use an Elastic IP address, you must allocate it to your account.</p>\n         <p>An Elastic IP address is for use in either the EC2-Classic platform or in a VPC.\n\t\t\tFor more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html\">Elastic IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>\n         <p>[EC2-Classic, VPC in an EC2-VPC-only account] If the Elastic IP address is already\n      associated with a different instance, it is disassociated from that instance and associated\n      with the specified instance. If you associate an Elastic IP address with an instance that has\n      an existing Elastic IP address, the existing address is disassociated from the instance, but\n      remains allocated to your account.</p>\n         <p>[VPC in an EC2-Classic account] If you don't specify a private IP address, the Elastic\n      IP address is associated with the primary IP address. If the Elastic IP address is already\n      associated with a different instance or a network interface, you get an error unless you allow\n      reassociation. You cannot associate an Elastic IP address with an instance or network\n      interface that has an existing Elastic IP address.</p>\n         <important>\n            <p>This is an idempotent operation. If you perform the operation more than once, Amazon EC2\n        doesn't return an error, and you may be charged for each time the Elastic IP address is\n        remapped to the same instance. For more information, see the <i>Elastic IP\n          Addresses</i> section of <a href=\"http://aws.amazon.com/ec2/pricing/\">Amazon EC2\n          Pricing</a>.</p>\n         </important>\n     \n      "
     },
     "DescribeAddresses": {
       "name": "DescribeAddresses",
@@ -1617,7 +1617,7 @@
       "errors": [
 
       ],
-      "documentation": "\n         <p>Disables ClassicLink DNS support for a VPC. If disabled, DNS hostnames resolve to public IP\n      addresses when addressed between a linked EC2-Classic instance and instances in the VPC to\n      which it's linked. For more information about ClassicLink, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html\">ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>\n      \n      "
+      "documentation": "\n         <p>Disables ClassicLink DNS support for a VPC. If disabled, DNS hostnames resolve to\n\t\t\tpublic IP addresses when addressed between a linked EC2-Classic instance and instances\n\t\t\tin the VPC to which it's linked. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html\">ClassicLink</a> in the\n\t\t\t\t<i>Amazon Elastic Compute Cloud User Guide</i>.</p>\n      \n      "
     },
     "EnableVpcClassicLinkDnsSupport": {
       "name": "EnableVpcClassicLinkDnsSupport",
@@ -1653,7 +1653,7 @@
       "errors": [
 
       ],
-      "documentation": "\n         <p>Enables a VPC to support DNS hostname resolution for ClassicLink. If enabled, the DNS\n      hostname of a linked EC2-Classic instance resolves to its private IP address when addressed\n      from an instance in the VPC to which it's linked. Similarly, the DNS hostname of an instance\n      in a VPC resolves to its private IP address when addressed from a linked EC2-Classic instance.\n      For more information about ClassicLink, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html\">ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>\n      \n      "
+      "documentation": "\n         <p>Enables a VPC to support DNS hostname resolution for ClassicLink. If enabled, the DNS\n\t\t\thostname of a linked EC2-Classic instance resolves to its private IP address when\n\t\t\taddressed from an instance in the VPC to which it's linked. Similarly, the DNS hostname\n\t\t\tof an instance in a VPC resolves to its private IP address when addressed from a linked\n\t\t\tEC2-Classic instance. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html\">ClassicLink</a> in the\n\t\t\t\t<i>Amazon Elastic Compute Cloud User Guide</i>.</p>\n      \n      "
     },
     "DescribeClassicLinkInstances": {
       "name": "DescribeClassicLinkInstances",
@@ -1662,8 +1662,8 @@
         "members": {
           "Filters": {
             "type": "list",
-            "zonbookDocumentation": "\n\t\t       <simpara>One or more filters.</simpara>\n\t\t       <itemizedlist>\n\t\t\t         <listitem>\n                      <para>\n                  <code>group-id</code> - The ID of a VPC security group that's associated with the instance.</para>\n                  </listitem>\n\t\t\t         <listitem>\n\t\t\t\t           <para>\n                  <code>instance-id</code> - The ID of the instance.</para>\n\t\t\t         </listitem>\n\t\t\t         <listitem>\n\t\t\t            <para>\n                  <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value.\n    For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</para>\n\t\t\t         </listitem>\n\t\t\t         <listitem>\n\t\t\t\t           <para>\n                  <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</para>\n\t\t\t         </listitem>\n\t\t\t         <listitem>\n\t\t\t\t           <para>\n                  <code>vpc-id</code> - The ID of the VPC that the instance is linked to.</para>\n\t\t\t         </listitem>\n\t\t       </itemizedlist>\n\t\t\n\t     ",
-            "documentation": "\n\t\t       <p>One or more filters.</p>\n\t\t       <ul>\n            <li>\n                      <p>\n                  <code>group-id</code> - The ID of a VPC security group that's associated with the instance.</p>\n                  </li>\n            <li>\n\t\t\t\t           <p>\n                  <code>instance-id</code> - The ID of the instance.</p>\n\t\t\t         </li>\n            <li>\n\t\t\t            <p>\n                  <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value.\n    For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>\n\t\t\t         </li>\n            <li>\n\t\t\t\t           <p>\n                  <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p>\n\t\t\t         </li>\n            <li>\n\t\t\t\t           <p>\n                  <code>vpc-id</code> - The ID of the VPC that the instance is linked to.</p>\n\t\t\t         </li>\n         </ul>\n\t\t\n\t     ",
+            "zonbookDocumentation": "\n\t\t       <simpara>One or more filters.</simpara>\n\t\t       <itemizedlist>\n\t\t\t         <listitem>\n                      <para>\n                  <code>group-id</code> - The ID of a VPC security group that's associated with the instance.</para>\n                  </listitem>\n\t\t\t         <listitem>\n\t\t\t\t           <para>\n                  <code>instance-id</code> - The ID of the instance.</para>\n\t\t\t         </listitem>\n\t\t\t         <listitem>\n\t\t\t            <para>\n                  <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value.\n    For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</para>\n\t\t\t         </listitem>\n\t\t\t         <listitem>\n\t\t\t\t           <para>\n                  <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</para>\n\t\t\t         </listitem>\n\t\t\t         <listitem>\n\n\t\t\t\t           <simpara>\n\t\t\t\t\t             <code>vpc-id</code> - The ID of the VPC to which the instance is\n\t\t\t\t\tlinked.</simpara>\n\n\t\t\t\t           <para>\n                  <code>vpc-id</code> - The ID of the VPC that the instance is linked to.</para>\n\n\t\t\t         </listitem>\n\t\t       </itemizedlist>\n\t\t\n\t     ",
+            "documentation": "\n\t\t       <p>One or more filters.</p>\n\t\t       <ul>\n            <li>\n                      <p>\n                  <code>group-id</code> - The ID of a VPC security group that's associated with the instance.</p>\n                  </li>\n            <li>\n\t\t\t\t           <p>\n                  <code>instance-id</code> - The ID of the instance.</p>\n\t\t\t         </li>\n            <li>\n\t\t\t            <p>\n                  <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value.\n    For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>\n\t\t\t         </li>\n            <li>\n\t\t\t\t           <p>\n                  <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p>\n\t\t\t         </li>\n            <li>\n\n\t\t\t\t           <p>\n\t\t\t\t\t             <code>vpc-id</code> - The ID of the VPC to which the instance is\n\t\t\t\t\tlinked.</p>\n\n\t\t\t\t           <p>\n                  <code>vpc-id</code> - The ID of the VPC that the instance is linked to.</p>\n\n\t\t\t         </li>\n         </ul>\n\t\t\n\t     ",
             "shape_name": "FilterList",
             "members": {
               "type": "structure",
@@ -1716,8 +1716,8 @@
           },
           "MaxResults": {
             "type": "integer",
-            "zonbookDocumentation": "\n\t        <simpara>The maximum number of results to return for the request in a single page. The remaining results of the initial request can be seen by sending another\n\t    request with the returned <code>NextToken</code> value. This value can be between 5 and 1000;\n\t    if <code>MaxResults</code> is given a value larger than 1000, only 1000 results are returned. You cannot specify this parameter and the instance IDs parameter in the same\n\t    request.</simpara>\n\t\t       <simpara>Constraint: If the value is greater than 1000, we return only 1000 items.</simpara>\n\t     ",
-            "documentation": "\n\t        <p>The maximum number of results to return for the request in a single page. The remaining results of the initial request can be seen by sending another\n\t    request with the returned <code>NextToken</code> value. This value can be between 5 and 1000;\n\t    if <code>MaxResults</code> is given a value larger than 1000, only 1000 results are returned. You cannot specify this parameter and the instance IDs parameter in the same\n\t    request.</p>\n\t\t       <p>Constraint: If the value is greater than 1000, we return only 1000 items.</p>\n\t     ",
+            "zonbookDocumentation": "\n\t        <simpara>The maximum number of results to return for the request in a single page. The\n\t\t\tremaining results of the initial request can be seen by sending another request with the\n\t\t\treturned <code>NextToken</code> value. This value can be between 5 and 1000. If\n\t\t\t\t<code>MaxResults</code> is given a value larger than 1000, only 1000 results are\n\t\t\treturned. You cannot specify this parameter and the instance IDs parameter in the same\n\t\t\trequest.</simpara>\n\t\t       <simpara>Constraint: If the value is greater than 1000, we return only 1000 items.</simpara>\n\t     ",
+            "documentation": "\n\t        <p>The maximum number of results to return for the request in a single page. The\n\t\t\tremaining results of the initial request can be seen by sending another request with the\n\t\t\treturned <code>NextToken</code> value. This value can be between 5 and 1000. If\n\t\t\t\t<code>MaxResults</code> is given a value larger than 1000, only 1000 results are\n\t\t\treturned. You cannot specify this parameter and the instance IDs parameter in the same\n\t\t\trequest.</p>\n\t\t       <p>Constraint: If the value is greater than 1000, we return only 1000 items.</p>\n\t     ",
             "shape_name": "Integer"
           },
           "NextToken": {
@@ -1839,7 +1839,7 @@
       "errors": [
 
       ],
-      "documentation": "\n\t\t       <p>Describes one or more of your linked EC2-Classic instances. This request only returns information about EC2-Classic instances linked to a VPC through ClassicLink; you cannot use this request to return information about other instances.</p>\n\t\t    \n\t     "
+      "documentation": "\n\t\t       <p>Describes one or more of your linked EC2-Classic instances. This request only returns\n\t\t\tinformation about EC2-Classic instances linked to a VPC through ClassicLink. You cannot\n\t\t\tuse this request to return information about other instances.</p>\n\t\t    \n\t     "
     },
     "GetConsoleOutput": {
       "name": "GetConsoleOutput",
@@ -1902,7 +1902,7 @@
       "errors": [
 
       ],
-      "documentation": "\n        <p>Gets the console output for the specified instance. For Linux instances, the\n            instance console output displays the exact console output that would normally be\n            displayed on a physical monitor attached to a computer. For Windows instances, the\n            instance console output includes output from the EC2Config service.</p>\n        <p>\n            <a>GetConsoleOutput</a> returns up to 64 KB of console output shortly\n            after it's generated by the instance.</p>\n        <p>By default, the console output returns buffered information that was posted shortly\n            after an instance transition state (start, stop, reboot, or terminate). This\n            information is available for at least one hour after the most recent post.</p>\n        <p>You can optionally retrieve the latest serial console output at any time during the\n            instance lifecycle. This option is only supported on C5, M5, and <code>i3.metal</code>\n            instances.</p>\n        \n      "
+      "documentation": "\n        <p>Gets the console output for the specified instance. For Linux instances, the\n            instance console output displays the exact console output that would normally be\n            displayed on a physical monitor attached to a computer. For Windows instances, the\n            instance console output includes the last three system event log errors.</p>\n        <p>By default, the console output returns buffered information that was posted shortly\n            after an instance transition state (start, stop, reboot, or terminate). This\n            information is available for at least one hour after the most recent post.\n            Only the most recent 64 KB of console output is available.</p>\n        <p>You can optionally retrieve the latest serial console output at any time during the\n            instance lifecycle. This option is supported on instance types that use the Nitro \n            hypervisor.</p> \n        <p>For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html#instance-console-console-output\">Instance Console Output</a> \n            in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>\n        \n      "
     },
     "GetConsoleScreenshot": {
       "name": "GetConsoleScreenshot",
@@ -2869,7 +2869,7 @@
       "errors": [
 
       ],
-      "documentation": "\n\t\t       <p>Creates a set of DHCP options for your VPC. After creating the set, you must\n\t\t\t\tassociate it with the VPC, causing all existing and new instances that you launch in\n\t\t\t\tthe VPC to use this set of DHCP options. The following are the individual DHCP\n\t\t\t\toptions you can specify. For more information about the options, see <a href=\"http://www.ietf.org/rfc/rfc2132.txt\">RFC 2132</a>.</p>\n         <ul>\n            <li>\n               <p>\n                    <code>domain-name-servers</code> - The IP addresses of up to four domain name\n                    servers, or AmazonProvidedDNS. The default DHCP option set specifies\n                    AmazonProvidedDNS. If specifying more than one domain name server, specify the\n                    IP addresses in a single parameter, separated by commas. If you want your\n                    instance to receive a custom DNS hostname as specified in\n                        <code>domain-name</code>, you must set <code>domain-name-servers</code> to a\n                    custom DNS server.</p>\n            </li>\n            <li>\n               <p>\n                    <code>domain-name</code> - If you're using AmazonProvidedDNS in\n                        <code>us-east-1</code>, specify <code>ec2.internal</code>. If you're using\n                    AmazonProvidedDNS in another region, specify\n                        <code>region.compute.internal</code> (for example,\n                        <code>ap-northeast-1.compute.internal</code>). Otherwise, specify a domain\n                    name (for example, <code>MyCompany.com</code>). This value is used to complete\n                    unqualified DNS hostnames. <b>Important</b>: Some\n                    Linux operating systems accept multiple domain names separated by spaces.\n                    However, Windows and other Linux operating systems treat the value as a single\n                    domain, which results in unexpected behavior. If your DHCP options set is\n                    associated with a VPC that has instances with multiple operating systems,\n                    specify only one domain name.</p>\n            </li>\n            <li>\n               <p>\n                  <code>ntp-servers</code> - The IP addresses of up to four Network Time Protocol (NTP)\n        servers.</p>\n            </li>\n            <li>\n               <p>\n                  <code>netbios-name-servers</code> - The IP addresses of up to four NetBIOS name\n        servers.</p>\n            </li>\n            <li>\n               <p>\n                  <code>netbios-node-type</code> - The NetBIOS node type (1, 2, 4, or 8). We recommend that\n        you specify 2 (broadcast and multicast are not currently supported). For more information\n        about these node types, see <a href=\"http://www.ietf.org/rfc/rfc2132.txt\">RFC 2132</a>.</p>\n            </li>\n         </ul>\n         <p>Your VPC automatically starts out with a set of DHCP options that includes only a DNS server\n      that we provide (AmazonProvidedDNS). If you create a set of options, and if your VPC has an\n      Internet gateway, make sure to set the <code>domain-name-servers</code> option either to\n        <code>AmazonProvidedDNS</code> or to a domain name server of your choice. For more\n      information about DHCP options, see <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html\">DHCP Options\n          Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>\n      \n      "
+      "documentation": "\n\t\t       <p>Creates a set of DHCP options for your VPC. After creating the set, you must\n\t\t\t\tassociate it with the VPC, causing all existing and new instances that you launch in\n\t\t\t\tthe VPC to use this set of DHCP options. The following are the individual DHCP\n\t\t\t\toptions you can specify. For more information about the options, see <a href=\"http://www.ietf.org/rfc/rfc2132.txt\">RFC 2132</a>.</p>\n         <ul>\n            <li>\n               <p>\n\t\t\t\t\t             <code>domain-name-servers</code> - The IP addresses of up to four domain name\n\t\t\t\t\tservers, or AmazonProvidedDNS. The default DHCP option set specifies\n\t\t\t\t\tAmazonProvidedDNS. If specifying more than one domain name server, specify the\n\t\t\t\t\tIP addresses in a single parameter, separated by commas. ITo have your instance\n\t\t\t\t\tto receive a custom DNS hostname as specified in <code>domain-name</code>, you\n\t\t\t\t\tmust set <code>domain-name-servers</code> to a custom DNS server.</p>\n            </li>\n            <li>\n               <p>\n                    <code>domain-name</code> - If you're using AmazonProvidedDNS in\n                        <code>us-east-1</code>, specify <code>ec2.internal</code>. If you're using\n                    AmazonProvidedDNS in another region, specify\n                        <code>region.compute.internal</code> (for example,\n                        <code>ap-northeast-1.compute.internal</code>). Otherwise, specify a domain\n                    name (for example, <code>MyCompany.com</code>). This value is used to complete\n                    unqualified DNS hostnames. <b>Important</b>: Some\n                    Linux operating systems accept multiple domain names separated by spaces.\n                    However, Windows and other Linux operating systems treat the value as a single\n                    domain, which results in unexpected behavior. If your DHCP options set is\n                    associated with a VPC that has instances with multiple operating systems,\n                    specify only one domain name.</p>\n            </li>\n            <li>\n               <p>\n                  <code>ntp-servers</code> - The IP addresses of up to four Network Time Protocol (NTP)\n        servers.</p>\n            </li>\n            <li>\n               <p>\n                  <code>netbios-name-servers</code> - The IP addresses of up to four NetBIOS name\n        servers.</p>\n            </li>\n            <li>\n               <p>\n                  <code>netbios-node-type</code> - The NetBIOS node type (1, 2, 4, or 8). We recommend that\n        you specify 2 (broadcast and multicast are not currently supported). For more information\n        about these node types, see <a href=\"http://www.ietf.org/rfc/rfc2132.txt\">RFC 2132</a>.</p>\n            </li>\n         </ul>\n         <p>Your VPC automatically starts out with a set of DHCP options that includes only a DNS\n\t\t\tserver that we provide (AmazonProvidedDNS). If you create a set of options, and if your\n\t\t\tVPC has an internet gateway, make sure to set the <code>domain-name-servers</code>\n\t\t\toption either to <code>AmazonProvidedDNS</code> or to a domain name server of your\n\t\t\tchoice. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html\">DHCP Options Sets</a> in the\n\t\t\t\t<i>Amazon Virtual Private Cloud User Guide</i>.</p>\n      \n      "
     },
     "DeleteDhcpOptions": {
       "name": "DeleteDhcpOptions",
@@ -3074,7 +3074,7 @@
       "errors": [
 
       ],
-      "documentation": "\n\t\t       <p>Describes one or more of your DHCP options sets.</p>\n\t\t       <p>For more information about DHCP options sets, see <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html\">DHCP Options Sets</a>\n\t\t        in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>\n     \n      "
+      "documentation": "\n\t\t       <p>Describes one or more of your DHCP options sets.</p>\n\t\t       <p>For more information, see <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html\">DHCP Options Sets</a> in the\n\t\t\t\t<i>Amazon Virtual Private Cloud User Guide</i>.</p>\n     \n      "
     },
     "CreateEgressOnlyInternetGateway": {
       "name": "CreateEgressOnlyInternetGateway",
@@ -3083,8 +3083,8 @@
         "members": {
           "ClientToken": {
             "type": "string",
-            "zonbookDocumentation": "\n        <simpara>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see <ulink type=\"documentation\" url=\"AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html\">How to Ensure Idempotency</ulink>.</simpara>\n      ",
-            "documentation": "\n        <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html\">How to Ensure Idempotency</a>.</p>\n      ",
+            "zonbookDocumentation": "\n        <simpara>Unique, case-sensitive identifier that you provide to ensure the idempotency of the\n\t\t\trequest. For more information, see <ulink type=\"documentation\" url=\"AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html\">How to Ensure\n\t\t\t\tIdempotency</ulink>.</simpara>\n      ",
+            "documentation": "\n        <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the\n\t\t\trequest. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html\">How to Ensure\n\t\t\t\tIdempotency</a>.</p>\n      ",
             "shape_name": "String"
           },
           "DryRun": {
@@ -3095,8 +3095,8 @@
           },
           "VpcId": {
             "type": "string",
-            "zonbookDocumentation": "\n        <simpara>The ID of the VPC for which to create the egress-only Internet gateway.</simpara>\n      ",
-            "documentation": "\n        <p>The ID of the VPC for which to create the egress-only Internet gateway.</p>\n      ",
+            "zonbookDocumentation": "\n        <simpara>The ID of the VPC for which to create the egress-only internet gateway.</simpara>\n      ",
+            "documentation": "\n        <p>The ID of the VPC for which to create the egress-only internet gateway.</p>\n      ",
             "required": true,
             "shape_name": "String"
           }
@@ -3109,8 +3109,8 @@
         "members": {
           "ClientToken": {
             "type": "string",
-            "zonbookDocumentation": "\n        <simpara>Unique, case-sensitive identifier you provide to ensure the idempotency of the request.</simpara>\n      ",
-            "documentation": "\n        <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request.</p>\n      ",
+            "zonbookDocumentation": "\n        <simpara>Unique, case-sensitive identifier that you provide to ensure the idempotency of the\n\t\t\trequest.</simpara>\n      ",
+            "documentation": "\n        <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the\n\t\t\trequest.</p>\n      ",
             "shape_name": "String",
             "xmlname": "clientToken"
           },
@@ -3119,8 +3119,8 @@
             "members": {
               "Attachments": {
                 "type": "list",
-                "zonbookDocumentation": "\n        <simpara>Information about the attachment of the egress-only Internet gateway.</simpara>\n      ",
-                "documentation": "\n        <p>Information about the attachment of the egress-only Internet gateway.</p>\n      ",
+                "zonbookDocumentation": "\n        <simpara>Information about the attachment of the egress-only internet gateway.</simpara>\n      ",
+                "documentation": "\n        <p>Information about the attachment of the egress-only internet gateway.</p>\n      ",
                 "shape_name": "InternetGatewayAttachmentList",
                 "xmlname": "attachmentSet",
                 "members": {
@@ -3134,8 +3134,8 @@
                         "detaching",
                         "detached"
                       ],
-                      "zonbookDocumentation": "\n\t\t       <simpara>The current state of the attachment. For an Internet gateway, the state is\n                <code>available</code> when attached to a VPC; otherwise, this value is not\n            returned.</simpara>\n      ",
-                      "documentation": "\n\t\t       <p>The current state of the attachment. For an Internet gateway, the state is\n                <code>available</code> when attached to a VPC; otherwise, this value is not\n            returned.</p>\n      ",
+                      "zonbookDocumentation": "\n\t\t       <simpara>The current state of the attachment. For an internet gateway, the state is\n\t\t\t\t<code>available</code> when attached to a VPC; otherwise, this value is not\n\t\t\treturned.</simpara>\n      ",
+                      "documentation": "\n\t\t       <p>The current state of the attachment. For an internet gateway, the state is\n\t\t\t\t<code>available</code> when attached to a VPC; otherwise, this value is not\n\t\t\treturned.</p>\n      ",
                       "shape_name": "AttachmentStatus",
                       "xmlname": "state"
                     },
@@ -3147,22 +3147,22 @@
                       "xmlname": "vpcId"
                     }
                   },
-                  "zonbookDocumentation": "\n\t\t       <simpara>Describes the attachment of a VPC to an Internet gateway or an egress-only Internet gateway.</simpara>\n      ",
-                  "documentation": "\n\t\t       <p>Describes the attachment of a VPC to an Internet gateway or an egress-only Internet gateway.</p>\n      ",
+                  "zonbookDocumentation": "\n\t\t       <simpara>Describes the attachment of a VPC to an internet gateway or an egress-only internet\n\t\t\tgateway.</simpara>\n      ",
+                  "documentation": "\n\t\t       <p>Describes the attachment of a VPC to an internet gateway or an egress-only internet\n\t\t\tgateway.</p>\n      ",
                   "shape_name": "InternetGatewayAttachment",
                   "xmlname": "item"
                 }
               },
               "EgressOnlyInternetGatewayId": {
                 "type": "string",
-                "zonbookDocumentation": "\n        <simpara>The ID of the egress-only Internet gateway.</simpara>\n      ",
-                "documentation": "\n        <p>The ID of the egress-only Internet gateway.</p>\n      ",
+                "zonbookDocumentation": "\n        <simpara>The ID of the egress-only internet gateway.</simpara>\n      ",
+                "documentation": "\n        <p>The ID of the egress-only internet gateway.</p>\n      ",
                 "shape_name": "EgressOnlyInternetGatewayId",
                 "xmlname": "egressOnlyInternetGatewayId"
               }
             },
-            "zonbookDocumentation": "\n        <simpara>Information about the egress-only Internet gateway.</simpara>\n      ",
-            "documentation": "\n        <p>Information about the egress-only Internet gateway.</p>\n      ",
+            "zonbookDocumentation": "\n        <simpara>Information about the egress-only internet gateway.</simpara>\n      ",
+            "documentation": "\n        <p>Information about the egress-only internet gateway.</p>\n      ",
             "shape_name": "EgressOnlyInternetGateway",
             "xmlname": "egressOnlyInternetGateway"
           }
@@ -3173,7 +3173,7 @@
       "errors": [
 
       ],
-      "documentation": "\n        <p>[IPv6 only] Creates an egress-only Internet gateway for your VPC. An egress-only\n            Internet gateway is used to enable outbound communication over IPv6 from instances in\n            your VPC to the Internet, and prevents hosts outside of your VPC from initiating an IPv6\n            connection with your instance.</p>\n        \n      "
+      "documentation": "\n        <p>[IPv6 only] Creates an egress-only internet gateway for your VPC. An egress-only\n\t\t\tinternet gateway is used to enable outbound communication over IPv6 from instances in\n\t\t\tyour VPC to the internet, and prevents hosts outside of your VPC from initiating an IPv6\n\t\t\tconnection with your instance.</p>\n        \n      "
     },
     "DeleteEgressOnlyInternetGateway": {
       "name": "DeleteEgressOnlyInternetGateway",
@@ -3188,8 +3188,8 @@
           },
           "EgressOnlyInternetGatewayId": {
             "type": "string",
-            "zonbookDocumentation": "\n        <simpara>The ID of the egress-only Internet gateway.</simpara>\n      ",
-            "documentation": "\n        <p>The ID of the egress-only Internet gateway.</p>\n      ",
+            "zonbookDocumentation": "\n        <simpara>The ID of the egress-only internet gateway.</simpara>\n      ",
+            "documentation": "\n        <p>The ID of the egress-only internet gateway.</p>\n      ",
             "required": true,
             "shape_name": "EgressOnlyInternetGatewayId"
           }
@@ -3214,7 +3214,7 @@
       "errors": [
 
       ],
-      "documentation": "\n        <p>Deletes an egress-only Internet gateway.</p>\n        \n      "
+      "documentation": "\n        <p>Deletes an egress-only internet gateway.</p>\n        \n      "
     },
     "DescribeEgressOnlyInternetGateways": {
       "name": "DescribeEgressOnlyInternetGateways",
@@ -3229,8 +3229,8 @@
           },
           "EgressOnlyInternetGatewayIds": {
             "type": "list",
-            "zonbookDocumentation": "\n        <simpara>One or more egress-only Internet gateway IDs.</simpara>\n      ",
-            "documentation": "\n        <p>One or more egress-only Internet gateway IDs.</p>\n      ",
+            "zonbookDocumentation": "\n        <simpara>One or more egress-only internet gateway IDs.</simpara>\n      ",
+            "documentation": "\n        <p>One or more egress-only internet gateway IDs.</p>\n      ",
             "shape_name": "EgressOnlyInternetGatewayIdList",
             "members": {
               "type": "string",
@@ -3242,8 +3242,8 @@
           },
           "MaxResults": {
             "type": "integer",
-            "zonbookDocumentation": "\n        <simpara>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another\n            request with the returned <code>NextToken</code> value. This value can be between 5 and 1000;\n            if <code>MaxResults</code> is given a value larger than 1000, only 1000 results are returned.</simpara>\n      ",
-            "documentation": "\n        <p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another\n            request with the returned <code>NextToken</code> value. This value can be between 5 and 1000;\n            if <code>MaxResults</code> is given a value larger than 1000, only 1000 results are returned.</p>\n      ",
+            "zonbookDocumentation": "\n        <simpara>The maximum number of results to return for the request in a single page. The\n\t\t\tremaining results can be seen by sending another request with the returned\n\t\t\t\t<code>NextToken</code> value. This value can be between 5 and 1000. If\n\t\t\t\t<code>MaxResults</code> is given a value larger than 1000, only 1000 results are\n\t\t\treturned.</simpara>\n      ",
+            "documentation": "\n        <p>The maximum number of results to return for the request in a single page. The\n\t\t\tremaining results can be seen by sending another request with the returned\n\t\t\t\t<code>NextToken</code> value. This value can be between 5 and 1000. If\n\t\t\t\t<code>MaxResults</code> is given a value larger than 1000, only 1000 results are\n\t\t\treturned.</p>\n      ",
             "shape_name": "Integer"
           },
           "NextToken": {
@@ -3261,8 +3261,8 @@
         "members": {
           "EgressOnlyInternetGateways": {
             "type": "list",
-            "zonbookDocumentation": "\n        <simpara>Information about the egress-only Internet gateways.</simpara>\n      ",
-            "documentation": "\n        <p>Information about the egress-only Internet gateways.</p>\n      ",
+            "zonbookDocumentation": "\n        <simpara>Information about the egress-only internet gateways.</simpara>\n      ",
+            "documentation": "\n        <p>Information about the egress-only internet gateways.</p>\n      ",
             "shape_name": "EgressOnlyInternetGatewayList",
             "xmlname": "egressOnlyInternetGatewaySet",
             "members": {
@@ -3270,8 +3270,8 @@
               "members": {
                 "Attachments": {
                   "type": "list",
-                  "zonbookDocumentation": "\n        <simpara>Information about the attachment of the egress-only Internet gateway.</simpara>\n      ",
-                  "documentation": "\n        <p>Information about the attachment of the egress-only Internet gateway.</p>\n      ",
+                  "zonbookDocumentation": "\n        <simpara>Information about the attachment of the egress-only internet gateway.</simpara>\n      ",
+                  "documentation": "\n        <p>Information about the attachment of the egress-only internet gateway.</p>\n      ",
                   "shape_name": "InternetGatewayAttachmentList",
                   "xmlname": "attachmentSet",
                   "members": {
@@ -3285,8 +3285,8 @@
                           "detaching",
                           "detached"
                         ],
-                        "zonbookDocumentation": "\n\t\t       <simpara>The current state of the attachment. For an Internet gateway, the state is\n                <code>available</code> when attached to a VPC; otherwise, this value is not\n            returned.</simpara>\n      ",
-                        "documentation": "\n\t\t       <p>The current state of the attachment. For an Internet gateway, the state is\n                <code>available</code> when attached to a VPC; otherwise, this value is not\n            returned.</p>\n      ",
+                        "zonbookDocumentation": "\n\t\t       <simpara>The current state of the attachment. For an internet gateway, the state is\n\t\t\t\t<code>available</code> when attached to a VPC; otherwise, this value is not\n\t\t\treturned.</simpara>\n      ",
+                        "documentation": "\n\t\t       <p>The current state of the attachment. For an internet gateway, the state is\n\t\t\t\t<code>available</code> when attached to a VPC; otherwise, this value is not\n\t\t\treturned.</p>\n      ",
                         "shape_name": "AttachmentStatus",
                         "xmlname": "state"
                       },
@@ -3298,22 +3298,22 @@
                         "xmlname": "vpcId"
                       }
                     },
-                    "zonbookDocumentation": "\n\t\t       <simpara>Describes the attachment of a VPC to an Internet gateway or an egress-only Internet gateway.</simpara>\n      ",
-                    "documentation": "\n\t\t       <p>Describes the attachment of a VPC to an Internet gateway or an egress-only Internet gateway.</p>\n      ",
+                    "zonbookDocumentation": "\n\t\t       <simpara>Describes the attachment of a VPC to an internet gateway or an egress-only internet\n\t\t\tgateway.</simpara>\n      ",
+                    "documentation": "\n\t\t       <p>Describes the attachment of a VPC to an internet gateway or an egress-only internet\n\t\t\tgateway.</p>\n      ",
                     "shape_name": "InternetGatewayAttachment",
                     "xmlname": "item"
                   }
                 },
                 "EgressOnlyInternetGatewayId": {
                   "type": "string",
-                  "zonbookDocumentation": "\n        <simpara>The ID of the egress-only Internet gateway.</simpara>\n      ",
-                  "documentation": "\n        <p>The ID of the egress-only Internet gateway.</p>\n      ",
+                  "zonbookDocumentation": "\n        <simpara>The ID of the egress-only internet gateway.</simpara>\n      ",
+                  "documentation": "\n        <p>The ID of the egress-only internet gateway.</p>\n      ",
                   "shape_name": "EgressOnlyInternetGatewayId",
                   "xmlname": "egressOnlyInternetGatewayId"
                 }
               },
-              "zonbookDocumentation": "\n        <simpara>Describes an egress-only Internet gateway.</simpara>\n      ",
-              "documentation": "\n        <p>Describes an egress-only Internet gateway.</p>\n      ",
+              "zonbookDocumentation": "\n        <simpara>Describes an egress-only internet gateway.</simpara>\n      ",
+              "documentation": "\n        <p>Describes an egress-only internet gateway.</p>\n      ",
               "shape_name": "EgressOnlyInternetGateway",
               "xmlname": "item"
             }
@@ -3332,7 +3332,7 @@
       "errors": [
 
       ],
-      "documentation": "\n        <p>Describes one or more of your egress-only Internet gateways.</p>\n        \n      "
+      "documentation": "\n        <p>Describes one or more of your egress-only internet gateways.</p>\n        \n      "
     },
     "DescribeElasticGpus": {
       "name": "DescribeElasticGpus",
@@ -5535,24 +5535,28 @@
       "input": {
         "type": "structure",
         "members": {
+          "DryRun": {
+            "type": "boolean",
+            "zonbookDocumentation": "\n\t\t       <simpara>Checks whether you have the required permissions for the action, without actually making the request, \n\t\t\tand provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n\t\t\tOtherwise, it is <code>UnauthorizedOperation</code>.</simpara>\n\t     ",
+            "documentation": "\n\t\t       <p>Checks whether you have the required permissions for the action, without actually making the request, \n\t\t\tand provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n\t\t\tOtherwise, it is <code>UnauthorizedOperation</code>.</p>\n\t     ",
+            "shape_name": "Boolean"
+          },
           "ClientToken": {
             "type": "string",
-            "zonbookDocumentation": "\n         <simpara>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see <ulink type=\"documentation\" url=\"AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html\">How to Ensure Idempotency</ulink>.</simpara>\n      ",
-            "documentation": "\n         <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html\">How to Ensure Idempotency</a>.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>Unique, case-sensitive identifier that you provide to ensure the idempotency of the\n\t\t\trequest. For more information, see <ulink type=\"documentation\" url=\"AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html\">How to Ensure\n\t\t\tIdempotency</ulink>.</simpara>\n      ",
+            "documentation": "\n         <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the\n\t\t\trequest. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html\">How to Ensure\n\t\t\tIdempotency</a>.</p>\n      ",
             "shape_name": "String"
           },
           "DeliverLogsPermissionArn": {
             "type": "string",
-            "zonbookDocumentation": "\n         <simpara>The ARN for the IAM role that's used to post flow logs to a CloudWatch Logs log group.</simpara>\n      ",
-            "documentation": "\n         <p>The ARN for the IAM role that's used to post flow logs to a CloudWatch Logs log group.</p>\n      ",
-            "required": true,
+            "zonbookDocumentation": "\n         <simpara>The ARN for the IAM role that's used to post flow logs to a log group.</simpara>\n      ",
+            "documentation": "\n         <p>The ARN for the IAM role that's used to post flow logs to a log group.</p>\n      ",
             "shape_name": "String"
           },
           "LogGroupName": {
             "type": "string",
-            "zonbookDocumentation": "\n         <simpara>The name of the CloudWatch log group.</simpara>\n      ",
-            "documentation": "\n         <p>The name of the CloudWatch log group.</p>\n      ",
-            "required": true,
+            "zonbookDocumentation": "\n         <simpara>The name of the log group.</simpara>\n      ",
+            "documentation": "\n         <p>The name of the log group.</p>\n      ",
             "shape_name": "String"
           },
           "ResourceIds": {
@@ -5592,6 +5596,22 @@
             "documentation": "\n         <p>The type of traffic to log.</p>\n      ",
             "required": true,
             "shape_name": "TrafficType"
+          },
+          "LogDestinationType": {
+            "type": "string",
+            "enum": [
+              "cloud-watch-logs",
+              "s3"
+            ],
+            "zonbookDocumentation": "\n\t\t       <simpara>Specifies the type of destination to which the flow log data is to be published. Flow log data can be \n\t\t\tpublished to CloudWatch Logs or Amazon S3. To publish flow log data to CloudWatch Logs, specify <code>cloud-watch-logs</code>. To \n\t\t\tpublish flow log data to Amazon S3, specify <code>s3</code>.</simpara>\n\t\t       <simpara>Default: <code>cloud-watch-logs</code>\n         </simpara>\n\t     ",
+            "documentation": "\n\t\t       <p>Specifies the type of destination to which the flow log data is to be published. Flow log data can be \n\t\t\tpublished to CloudWatch Logs or Amazon S3. To publish flow log data to CloudWatch Logs, specify <code>cloud-watch-logs</code>. To \n\t\t\tpublish flow log data to Amazon S3, specify <code>s3</code>.</p>\n\t\t       <p>Default: <code>cloud-watch-logs</code>\n         </p>\n\t     ",
+            "shape_name": "LogDestinationType"
+          },
+          "LogDestination": {
+            "type": "string",
+            "zonbookDocumentation": "\n\t\t       <simpara>Specifies the destination to which the flow log data is to be published. Flow log data can be published \n\t\t\tto an CloudWatch Logs log group or an Amazon S3 bucket. The value specified for this parameter depends on the value specified\n\t\t\tfor LogDestinationType.</simpara>\n\t\t       <simpara>If LogDestinationType is not specified or <code>cloud-watch-logs</code>, specify the Amazon Resource Name \n\t\t\t(ARN) of the CloudWatch Logs log group.</simpara> \n\t\t       <simpara>If LogDestinationType is <code>s3</code>, specify the ARN of the Amazon S3 bucket. You can also specify a \n\t\t\tsubfolder in the bucket. To specify a subfolder in the bucket, use the following  ARN format: \n\t\t\t<code>bucket_ARN/subfolder_name/</code>. For example, to specify a subfolder named <code>my-logs</code> in a \n\t\t\tbucket named <code>my-bucket</code>, use the following ARN: <code>arn:aws:s3:::my-bucket/my-logs/</code>.</simpara>\n      ",
+            "documentation": "\n\t\t       <p>Specifies the destination to which the flow log data is to be published. Flow log data can be published \n\t\t\tto an CloudWatch Logs log group or an Amazon S3 bucket. The value specified for this parameter depends on the value specified\n\t\t\tfor LogDestinationType.</p>\n\t\t       <p>If LogDestinationType is not specified or <code>cloud-watch-logs</code>, specify the Amazon Resource Name \n\t\t\t(ARN) of the CloudWatch Logs log group.</p> \n\t\t       <p>If LogDestinationType is <code>s3</code>, specify the ARN of the Amazon S3 bucket. You can also specify a \n\t\t\tsubfolder in the bucket. To specify a subfolder in the bucket, use the following  ARN format: \n\t\t\t<code>bucket_ARN/subfolder_name/</code>. For example, to specify a subfolder named <code>my-logs</code> in a \n\t\t\tbucket named <code>my-bucket</code>, use the following ARN: <code>arn:aws:s3:::my-bucket/my-logs/</code>.</p>\n      ",
+            "shape_name": "String"
           }
         },
         "zonbookDocumentation": "\n         <simpara>Contains the parameters for CreateFlowLogs.</simpara>\n      ",
@@ -5603,8 +5623,8 @@
         "members": {
           "ClientToken": {
             "type": "string",
-            "zonbookDocumentation": "\n         <simpara>Unique, case-sensitive identifier you provide to ensure the idempotency of the request.</simpara>\n      ",
-            "documentation": "\n         <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>Unique, case-sensitive identifier that you provide to ensure the idempotency of the\n\t\t\trequest.</simpara>\n      ",
+            "documentation": "\n         <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the\n\t\t\trequest.</p>\n      ",
             "shape_name": "String",
             "xmlname": "clientToken"
           },
@@ -5678,13 +5698,19 @@
       "errors": [
 
       ],
-      "documentation": "\n         <p>Creates one or more flow logs to capture IP traffic for a specific network interface,\n            subnet, or VPC. Flow logs are delivered to a specified log group in Amazon CloudWatch\n            Logs. If you specify a VPC or subnet in the request, a log stream is created in\n            CloudWatch Logs for each network interface in the subnet or VPC. Log streams can include\n            information about accepted and rejected traffic to a network interface. You can view the\n            data in your log streams using Amazon CloudWatch Logs.</p>\n         <p>In your request, you must also specify an IAM role that has permission to publish logs to CloudWatch Logs.</p>\n         <p>For more information, see <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html\">VPC Flow Logs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>\n      \n      "
+      "documentation": "\n\n  \t      <p>Creates one or more flow logs to capture information about IP traffic for a specific network interface,\n  \t\tsubnet, or VPC. </p>\n  \t\n  \t      <p>Flow log data for a monitored network interface is recorded as flow log records, which are log events \n  \t\tconsisting of fields that describe the traffic flow. For more information, see \n  \t\t<a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html#flow-log-records\">Flow Log Records</a> \n  \t\tin the <i>Amazon Virtual Private Cloud User Guide</i>.</p>\n  \t\n  \t      <p>When publishing to CloudWatch Logs, flow log records are published to a log group, and each network \n  \t\tinterface has a unique log stream in the log group. When publishing to Amazon S3, flow log records for all \n  \t\tof the monitored network interfaces are published to a single log file object that is stored in the specified \n  \t\tbucket.</p>\n\n         <p>For more information, see <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html\">VPC Flow Logs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>\n      \n      "
     },
     "DeleteFlowLogs": {
       "name": "DeleteFlowLogs",
       "input": {
         "type": "structure",
         "members": {
+          "DryRun": {
+            "type": "boolean",
+            "zonbookDocumentation": "\n\t\t       <simpara>Checks whether you have the required permissions for the action, without actually making the request, \n\t\t\tand provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n\t\t\tOtherwise, it is <code>UnauthorizedOperation</code>.</simpara>\n\t     ",
+            "documentation": "\n\t\t       <p>Checks whether you have the required permissions for the action, without actually making the request, \n\t\t\tand provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n\t\t\tOtherwise, it is <code>UnauthorizedOperation</code>.</p>\n\t     ",
+            "shape_name": "Boolean"
+          },
           "FlowLogIds": {
             "type": "list",
             "zonbookDocumentation": "\n         <simpara>One or more flow log IDs.</simpara>\n      ",
@@ -5771,10 +5797,16 @@
       "input": {
         "type": "structure",
         "members": {
+          "DryRun": {
+            "type": "boolean",
+            "zonbookDocumentation": "\n\t\t       <simpara>Checks whether you have the required permissions for the action, without actually making the request, \n\t\t\tand provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n\t\t\tOtherwise, it is <code>UnauthorizedOperation</code>.</simpara>\n\t     ",
+            "documentation": "\n\t\t       <p>Checks whether you have the required permissions for the action, without actually making the request, \n\t\t\tand provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n\t\t\tOtherwise, it is <code>UnauthorizedOperation</code>.</p>\n\t     ",
+            "shape_name": "Boolean"
+          },
           "Filter": {
             "type": "list",
-            "zonbookDocumentation": "\n         <simpara>One or more filters.</simpara>\n         <itemizedlist>\n            <listitem>\n               <simpara>\n                  <code>deliver-log-status</code> - The status of the logs delivery (<code>SUCCESS</code> |\n            <code>FAILED</code>).</simpara>\n            </listitem>\n            <listitem>\n               <simpara>\n                  <code>flow-log-id</code> - The ID of the flow log.</simpara>\n            </listitem>\n            <listitem>\n               <simpara>\n                  <code>log-group-name</code> - The name of the log group.</simpara>\n            </listitem>\n            <listitem>\n               <simpara>\n                  <code>resource-id</code> - The ID of the VPC, subnet, or network interface.</simpara>\n            </listitem>\n            <listitem>\n               <simpara>\n                  <code>traffic-type</code> - The type of traffic (<code>ACCEPT</code> | <code>REJECT</code> |\n            <code>ALL</code>)</simpara>\n            </listitem>\n         </itemizedlist>\n      ",
-            "documentation": "\n         <p>One or more filters.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>deliver-log-status</code> - The status of the logs delivery (<code>SUCCESS</code> |\n            <code>FAILED</code>).</p>\n            </li>\n            <li>\n               <p>\n                  <code>flow-log-id</code> - The ID of the flow log.</p>\n            </li>\n            <li>\n               <p>\n                  <code>log-group-name</code> - The name of the log group.</p>\n            </li>\n            <li>\n               <p>\n                  <code>resource-id</code> - The ID of the VPC, subnet, or network interface.</p>\n            </li>\n            <li>\n               <p>\n                  <code>traffic-type</code> - The type of traffic (<code>ACCEPT</code> | <code>REJECT</code> |\n            <code>ALL</code>)</p>\n            </li>\n         </ul>\n      ",
+            "zonbookDocumentation": "\n         <simpara>One or more filters.</simpara>\n         <itemizedlist>\n            <listitem>\n               <simpara>\n                  <code>deliver-log-status</code> - The status of the logs delivery (<code>SUCCESS</code> |\n            <code>FAILED</code>).</simpara>\n            </listitem>\n      \t     <listitem>\n      \t\t       <simpara>\n\t\t\t\t\t             <code>log-destination-type</code> - The type of destination to which the flow\n\t\t\t\t\tlog publishes data. Possible destination types include\n\t\t\t\t\t\t<code>cloud-watch-logs</code> and <code>S3</code>.</simpara>\n      \t     </listitem>\n            <listitem>\n               <simpara>\n                  <code>flow-log-id</code> - The ID of the flow log.</simpara>\n            </listitem>\n            <listitem>\n               <simpara>\n                  <code>log-group-name</code> - The name of the log group.</simpara>\n            </listitem>\n            <listitem>\n               <simpara>\n                  <code>resource-id</code> - The ID of the VPC, subnet, or network interface.</simpara>\n            </listitem>\n            <listitem>\n               <simpara>\n\t\t\t\t\t             <code>traffic-type</code> - The type of traffic (<code>ACCEPT</code> |\n\t\t\t\t\t\t<code>REJECT</code> | <code>ALL</code>).</simpara>\n            </listitem>\n         </itemizedlist>\n      ",
+            "documentation": "\n         <p>One or more filters.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>deliver-log-status</code> - The status of the logs delivery (<code>SUCCESS</code> |\n            <code>FAILED</code>).</p>\n            </li>\n            <li>\n      \t\t       <p>\n\t\t\t\t\t             <code>log-destination-type</code> - The type of destination to which the flow\n\t\t\t\t\tlog publishes data. Possible destination types include\n\t\t\t\t\t\t<code>cloud-watch-logs</code> and <code>S3</code>.</p>\n      \t     </li>\n            <li>\n               <p>\n                  <code>flow-log-id</code> - The ID of the flow log.</p>\n            </li>\n            <li>\n               <p>\n                  <code>log-group-name</code> - The name of the log group.</p>\n            </li>\n            <li>\n               <p>\n                  <code>resource-id</code> - The ID of the VPC, subnet, or network interface.</p>\n            </li>\n            <li>\n               <p>\n\t\t\t\t\t             <code>traffic-type</code> - The type of traffic (<code>ACCEPT</code> |\n\t\t\t\t\t\t<code>REJECT</code> | <code>ALL</code>).</p>\n            </li>\n         </ul>\n      ",
             "shape_name": "FilterList",
             "members": {
               "type": "structure",
@@ -5820,8 +5852,8 @@
           },
           "MaxResults": {
             "type": "integer",
-            "zonbookDocumentation": "\n         <simpara>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another\n      request with the returned <code>NextToken</code> value. This value can be between 5 and 1000;\n      if <code>MaxResults</code> is given a value larger than 1000, only 1000 results are returned. You cannot specify this parameter and the flow log IDs parameter in the same\n      request.</simpara>\n      ",
-            "documentation": "\n         <p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another\n      request with the returned <code>NextToken</code> value. This value can be between 5 and 1000;\n      if <code>MaxResults</code> is given a value larger than 1000, only 1000 results are returned. You cannot specify this parameter and the flow log IDs parameter in the same\n      request.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>The maximum number of results to return for the request in a single page. The\n\t\t\tremaining results can be seen by sending another request with the returned\n\t\t\t\t<code>NextToken</code> value. This value can be between 5 and 1000. If\n\t\t\t\t<code>MaxResults</code> is given a value larger than 1000, only 1000 results are\n\t\t\treturned. You cannot specify this parameter and the flow log IDs parameter in the same\n\t\t\trequest.</simpara>\n      ",
+            "documentation": "\n         <p>The maximum number of results to return for the request in a single page. The\n\t\t\tremaining results can be seen by sending another request with the returned\n\t\t\t\t<code>NextToken</code> value. This value can be between 5 and 1000. If\n\t\t\t\t<code>MaxResults</code> is given a value larger than 1000, only 1000 results are\n\t\t\treturned. You cannot specify this parameter and the flow log IDs parameter in the same\n\t\t\trequest.</p>\n      ",
             "shape_name": "Integer"
           },
           "NextToken": {
@@ -5856,8 +5888,8 @@
                 },
                 "DeliverLogsErrorMessage": {
                   "type": "string",
-                  "zonbookDocumentation": "\n         <simpara>Information about the error that occurred. <code>Rate limited</code> indicates that\n      CloudWatch logs throttling has been applied for one or more network interfaces, or that you've\n      reached the limit on the number of CloudWatch Logs log groups that you can create.\n        <code>Access error</code> indicates that the IAM role associated with the flow log does not\n      have sufficient permissions to publish to CloudWatch Logs. <code>Unknown error</code>\n      indicates an internal error.</simpara>\n      ",
-                  "documentation": "\n         <p>Information about the error that occurred. <code>Rate limited</code> indicates that\n      CloudWatch logs throttling has been applied for one or more network interfaces, or that you've\n      reached the limit on the number of CloudWatch Logs log groups that you can create.\n        <code>Access error</code> indicates that the IAM role associated with the flow log does not\n      have sufficient permissions to publish to CloudWatch Logs. <code>Unknown error</code>\n      indicates an internal error.</p>\n      ",
+                  "zonbookDocumentation": "\n         <simpara>Information about the error that occurred. <code>Rate limited</code> indicates that\n\t\t\tCloudWatch Logs throttling has been applied for one or more network interfaces, or that you've\n\t\t\treached the limit on the number of log groups that you can create. <code>Access\n\t\t\t\terror</code> indicates that the IAM role associated with the flow log does not have\n\t\t\tsufficient permissions to publish to CloudWatch Logs. <code>Unknown error</code> indicates an\n\t\t\tinternal error.</simpara>\n      ",
+                  "documentation": "\n         <p>Information about the error that occurred. <code>Rate limited</code> indicates that\n\t\t\tCloudWatch Logs throttling has been applied for one or more network interfaces, or that you've\n\t\t\treached the limit on the number of log groups that you can create. <code>Access\n\t\t\t\terror</code> indicates that the IAM role associated with the flow log does not have\n\t\t\tsufficient permissions to publish to CloudWatch Logs. <code>Unknown error</code> indicates an\n\t\t\tinternal error.</p>\n      ",
                   "shape_name": "String",
                   "xmlname": "deliverLogsErrorMessage"
                 },
@@ -5914,6 +5946,24 @@
                   "documentation": "\n         <p>The type of traffic captured for the flow log.</p>\n      ",
                   "shape_name": "TrafficType",
                   "xmlname": "trafficType"
+                },
+                "LogDestinationType": {
+                  "type": "string",
+                  "enum": [
+                    "cloud-watch-logs",
+                    "s3"
+                  ],
+                  "zonbookDocumentation": "\n\t\t       <simpara>Specifies the type of destination to which the flow log data is published. Flow log data can be \n\t\t\tpublished to CloudWatch Logs or Amazon S3.</simpara>\n\t     ",
+                  "documentation": "\n\t\t       <p>Specifies the type of destination to which the flow log data is published. Flow log data can be \n\t\t\tpublished to CloudWatch Logs or Amazon S3.</p>\n\t     ",
+                  "shape_name": "LogDestinationType",
+                  "xmlname": "logDestinationType"
+                },
+                "LogDestination": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n\t\t       <simpara>Specifies the destination to which the flow log data is published. Flow log data can be\n\t\t\tpublished to an CloudWatch Logs log group or an Amazon S3 bucket. If the flow log publishes to CloudWatch Logs,\n\t\t\tthis element indicates the Amazon Resource Name (ARN) of the CloudWatch Logs log group to which\n\t\t\tthe data is published. If the flow log publishes to Amazon S3, this element indicates the ARN\n\t\t\tof the Amazon S3 bucket to which the data is published.</simpara>\n\t     ",
+                  "documentation": "\n\t\t       <p>Specifies the destination to which the flow log data is published. Flow log data can be\n\t\t\tpublished to an CloudWatch Logs log group or an Amazon S3 bucket. If the flow log publishes to CloudWatch Logs,\n\t\t\tthis element indicates the Amazon Resource Name (ARN) of the CloudWatch Logs log group to which\n\t\t\tthe data is published. If the flow log publishes to Amazon S3, this element indicates the ARN\n\t\t\tof the Amazon S3 bucket to which the data is published.</p>\n\t     ",
+                  "shape_name": "String",
+                  "xmlname": "logDestination"
                 }
               },
               "zonbookDocumentation": "\n         <simpara>Describes a flow log.</simpara>\n      ",
@@ -5937,7 +5987,7 @@
       "errors": [
 
       ],
-      "documentation": "\n         <p>Describes one or more flow logs. To view the information in your flow logs (the log streams for the network interfaces), you must use the CloudWatch Logs console or the CloudWatch Logs API.</p>\n      \n      "
+      "documentation": "\n         <p>Describes one or more flow logs. To view the information in your flow logs (the log\n\t\t\tstreams for the network interfaces), you must use the CloudWatch Logs console or the CloudWatch Logs\n\t\t\tAPI.</p>\n      \n      "
     },
     "CopyFpgaImage": {
       "name": "CopyFpgaImage",
@@ -12694,8 +12744,8 @@
                           },
                           "GroupName": {
                             "type": "string",
-                            "zonbookDocumentation": "\n        <simpara>The name of the placement group the instance is in (for cluster compute\n            instances).</simpara>\n      ",
-                            "documentation": "\n        <p>The name of the placement group the instance is in (for cluster compute\n            instances).</p>\n      ",
+                            "zonbookDocumentation": "\n        <simpara>The name of the placement group the instance is in.</simpara>\n      ",
+                            "documentation": "\n        <p>The name of the placement group the instance is in.</p>\n      ",
                             "shape_name": "String",
                             "xmlname": "groupName"
                           },
@@ -13866,8 +13916,8 @@
                   },
                   "GroupName": {
                     "type": "string",
-                    "zonbookDocumentation": "\n        <simpara>The name of the placement group the instance is in (for cluster compute\n            instances).</simpara>\n      ",
-                    "documentation": "\n        <p>The name of the placement group the instance is in (for cluster compute\n            instances).</p>\n      ",
+                    "zonbookDocumentation": "\n        <simpara>The name of the placement group the instance is in.</simpara>\n      ",
+                    "documentation": "\n        <p>The name of the placement group the instance is in.</p>\n      ",
                     "shape_name": "String"
                   },
                   "HostId": {
@@ -15284,8 +15334,8 @@
               },
               "GroupName": {
                 "type": "string",
-                "zonbookDocumentation": "\n        <simpara>The name of the placement group the instance is in (for cluster compute\n            instances).</simpara>\n      ",
-                "documentation": "\n        <p>The name of the placement group the instance is in (for cluster compute\n            instances).</p>\n      ",
+                "zonbookDocumentation": "\n        <simpara>The name of the placement group the instance is in.</simpara>\n      ",
+                "documentation": "\n        <p>The name of the placement group the instance is in.</p>\n      ",
                 "shape_name": "String"
               },
               "HostId": {
@@ -16055,8 +16105,8 @@
                     },
                     "GroupName": {
                       "type": "string",
-                      "zonbookDocumentation": "\n        <simpara>The name of the placement group the instance is in (for cluster compute\n            instances).</simpara>\n      ",
-                      "documentation": "\n        <p>The name of the placement group the instance is in (for cluster compute\n            instances).</p>\n      ",
+                      "zonbookDocumentation": "\n        <simpara>The name of the placement group the instance is in.</simpara>\n      ",
+                      "documentation": "\n        <p>The name of the placement group the instance is in.</p>\n      ",
                       "shape_name": "String",
                       "xmlname": "groupName"
                     },
@@ -17395,8 +17445,8 @@
           },
           "InternetGatewayId": {
             "type": "string",
-            "zonbookDocumentation": "\n\t\t       <simpara>The ID of the Internet gateway.</simpara>\n      ",
-            "documentation": "\n\t\t       <p>The ID of the Internet gateway.</p>\n      ",
+            "zonbookDocumentation": "\n\t\t       <simpara>The ID of the internet gateway.</simpara>\n      ",
+            "documentation": "\n\t\t       <p>The ID of the internet gateway.</p>\n      ",
             "required": true,
             "shape_name": "String"
           },
@@ -17416,7 +17466,7 @@
       "errors": [
 
       ],
-      "documentation": "\n\t\t       <p>Attaches an Internet gateway to a VPC, enabling connectivity between the Internet\n\t\t\t\tand the VPC. For more information about your VPC and Internet gateway, see the\n\t\t\t\t<a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/\">Amazon Virtual Private Cloud User Guide</a>.</p>\n     \n      "
+      "documentation": "\n\t\t       <p>Attaches an internet gateway to a VPC, enabling connectivity between the internet and\n\t\t\tthe VPC. For more information about your VPC and internet gateway, see the <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/\">Amazon Virtual Private Cloud User Guide</a>.</p>\n     \n      "
     },
     "CreateInternetGateway": {
       "name": "CreateInternetGateway",
@@ -17442,8 +17492,8 @@
             "members": {
               "Attachments": {
                 "type": "list",
-                "zonbookDocumentation": "\n\t\t       <simpara>Any VPCs attached to the Internet gateway.</simpara>\n      ",
-                "documentation": "\n\t\t       <p>Any VPCs attached to the Internet gateway.</p>\n      ",
+                "zonbookDocumentation": "\n\t\t       <simpara>Any VPCs attached to the internet gateway.</simpara>\n      ",
+                "documentation": "\n\t\t       <p>Any VPCs attached to the internet gateway.</p>\n      ",
                 "shape_name": "InternetGatewayAttachmentList",
                 "xmlname": "attachmentSet",
                 "members": {
@@ -17457,8 +17507,8 @@
                         "detaching",
                         "detached"
                       ],
-                      "zonbookDocumentation": "\n\t\t       <simpara>The current state of the attachment. For an Internet gateway, the state is\n                <code>available</code> when attached to a VPC; otherwise, this value is not\n            returned.</simpara>\n      ",
-                      "documentation": "\n\t\t       <p>The current state of the attachment. For an Internet gateway, the state is\n                <code>available</code> when attached to a VPC; otherwise, this value is not\n            returned.</p>\n      ",
+                      "zonbookDocumentation": "\n\t\t       <simpara>The current state of the attachment. For an internet gateway, the state is\n\t\t\t\t<code>available</code> when attached to a VPC; otherwise, this value is not\n\t\t\treturned.</simpara>\n      ",
+                      "documentation": "\n\t\t       <p>The current state of the attachment. For an internet gateway, the state is\n\t\t\t\t<code>available</code> when attached to a VPC; otherwise, this value is not\n\t\t\treturned.</p>\n      ",
                       "shape_name": "AttachmentStatus",
                       "xmlname": "state"
                     },
@@ -17470,23 +17520,23 @@
                       "xmlname": "vpcId"
                     }
                   },
-                  "zonbookDocumentation": "\n\t\t       <simpara>Describes the attachment of a VPC to an Internet gateway or an egress-only Internet gateway.</simpara>\n      ",
-                  "documentation": "\n\t\t       <p>Describes the attachment of a VPC to an Internet gateway or an egress-only Internet gateway.</p>\n      ",
+                  "zonbookDocumentation": "\n\t\t       <simpara>Describes the attachment of a VPC to an internet gateway or an egress-only internet\n\t\t\tgateway.</simpara>\n      ",
+                  "documentation": "\n\t\t       <p>Describes the attachment of a VPC to an internet gateway or an egress-only internet\n\t\t\tgateway.</p>\n      ",
                   "shape_name": "InternetGatewayAttachment",
                   "xmlname": "item"
                 }
               },
               "InternetGatewayId": {
                 "type": "string",
-                "zonbookDocumentation": "\n\t\t       <simpara>The ID of the Internet gateway.</simpara>\n      ",
-                "documentation": "\n\t\t       <p>The ID of the Internet gateway.</p>\n      ",
+                "zonbookDocumentation": "\n\t\t       <simpara>The ID of the internet gateway.</simpara>\n      ",
+                "documentation": "\n\t\t       <p>The ID of the internet gateway.</p>\n      ",
                 "shape_name": "String",
                 "xmlname": "internetGatewayId"
               },
               "Tags": {
                 "type": "list",
-                "zonbookDocumentation": "\n\t\t       <simpara>Any tags assigned to the Internet gateway.</simpara>\n      ",
-                "documentation": "\n\t\t       <p>Any tags assigned to the Internet gateway.</p>\n      ",
+                "zonbookDocumentation": "\n\t\t       <simpara>Any tags assigned to the internet gateway.</simpara>\n      ",
+                "documentation": "\n\t\t       <p>Any tags assigned to the internet gateway.</p>\n      ",
                 "shape_name": "TagList",
                 "xmlname": "tagSet",
                 "members": {
@@ -17514,8 +17564,8 @@
                 }
               }
             },
-            "zonbookDocumentation": "\n\t\t       <simpara>Information about the Internet gateway.</simpara>\n      ",
-            "documentation": "\n\t\t       <p>Information about the Internet gateway.</p>\n      ",
+            "zonbookDocumentation": "\n\t\t       <simpara>Information about the internet gateway.</simpara>\n      ",
+            "documentation": "\n\t\t       <p>Information about the internet gateway.</p>\n      ",
             "shape_name": "InternetGateway",
             "xmlname": "internetGateway"
           }
@@ -17527,7 +17577,7 @@
       "errors": [
 
       ],
-      "documentation": "\n\t\t       <p>Creates an Internet gateway for use with a VPC. After creating the Internet\n\t\t\t\tgateway, you attach it to a VPC using <a>AttachInternetGateway</a>.</p>\n         <p>For more information about your VPC and Internet gateway, see the <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/\">Amazon Virtual Private Cloud User Guide</a>.</p>\n     \n      "
+      "documentation": "\n\t\t       <p>Creates an internet gateway for use with a VPC. After creating the internet gateway,\n\t\t\tyou attach it to a VPC using <a>AttachInternetGateway</a>.</p>\n         <p>For more information about your VPC and internet gateway, see the <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/\">Amazon Virtual Private Cloud User Guide</a>.</p>\n     \n      "
     },
     "DeleteInternetGateway": {
       "name": "DeleteInternetGateway",
@@ -17542,8 +17592,8 @@
           },
           "InternetGatewayId": {
             "type": "string",
-            "zonbookDocumentation": "\n\t\t       <simpara>The ID of the Internet gateway.</simpara>\n      ",
-            "documentation": "\n\t\t       <p>The ID of the Internet gateway.</p>\n      ",
+            "zonbookDocumentation": "\n\t\t       <simpara>The ID of the internet gateway.</simpara>\n      ",
+            "documentation": "\n\t\t       <p>The ID of the internet gateway.</p>\n      ",
             "required": true,
             "shape_name": "String"
           }
@@ -17556,7 +17606,7 @@
       "errors": [
 
       ],
-      "documentation": "\n\t\t       <p>Deletes the specified Internet gateway. You must detach the Internet gateway from the VPC before you can delete it.</p>\n     \n      "
+      "documentation": "\n\t\t       <p>Deletes the specified internet gateway. You must detach the internet gateway from the\n\t\t\tVPC before you can delete it.</p>\n     \n      "
     },
     "DescribeInternetGateways": {
       "name": "DescribeInternetGateways",
@@ -17606,8 +17656,8 @@
           },
           "InternetGatewayIds": {
             "type": "list",
-            "zonbookDocumentation": "\n\t\t       <simpara>One or more Internet gateway IDs.</simpara>\n\t\t       <simpara>Default: Describes all your Internet gateways.</simpara>\n      ",
-            "documentation": "\n\t\t       <p>One or more Internet gateway IDs.</p>\n\t\t       <p>Default: Describes all your Internet gateways.</p>\n      ",
+            "zonbookDocumentation": "\n\t\t       <simpara>One or more internet gateway IDs.</simpara>\n\t\t       <simpara>Default: Describes all your internet gateways.</simpara>\n      ",
+            "documentation": "\n\t\t       <p>One or more internet gateway IDs.</p>\n\t\t       <p>Default: Describes all your internet gateways.</p>\n      ",
             "shape_name": "ValueStringList",
             "members": {
               "type": "string",
@@ -17627,8 +17677,8 @@
         "members": {
           "InternetGateways": {
             "type": "list",
-            "zonbookDocumentation": "\n\t\t       <simpara>Information about one or more Internet gateways.</simpara>\n      ",
-            "documentation": "\n\t\t       <p>Information about one or more Internet gateways.</p>\n      ",
+            "zonbookDocumentation": "\n\t\t       <simpara>Information about one or more internet gateways.</simpara>\n      ",
+            "documentation": "\n\t\t       <p>Information about one or more internet gateways.</p>\n      ",
             "shape_name": "InternetGatewayList",
             "xmlname": "internetGatewaySet",
             "members": {
@@ -17636,8 +17686,8 @@
               "members": {
                 "Attachments": {
                   "type": "list",
-                  "zonbookDocumentation": "\n\t\t       <simpara>Any VPCs attached to the Internet gateway.</simpara>\n      ",
-                  "documentation": "\n\t\t       <p>Any VPCs attached to the Internet gateway.</p>\n      ",
+                  "zonbookDocumentation": "\n\t\t       <simpara>Any VPCs attached to the internet gateway.</simpara>\n      ",
+                  "documentation": "\n\t\t       <p>Any VPCs attached to the internet gateway.</p>\n      ",
                   "shape_name": "InternetGatewayAttachmentList",
                   "xmlname": "attachmentSet",
                   "members": {
@@ -17651,8 +17701,8 @@
                           "detaching",
                           "detached"
                         ],
-                        "zonbookDocumentation": "\n\t\t       <simpara>The current state of the attachment. For an Internet gateway, the state is\n                <code>available</code> when attached to a VPC; otherwise, this value is not\n            returned.</simpara>\n      ",
-                        "documentation": "\n\t\t       <p>The current state of the attachment. For an Internet gateway, the state is\n                <code>available</code> when attached to a VPC; otherwise, this value is not\n            returned.</p>\n      ",
+                        "zonbookDocumentation": "\n\t\t       <simpara>The current state of the attachment. For an internet gateway, the state is\n\t\t\t\t<code>available</code> when attached to a VPC; otherwise, this value is not\n\t\t\treturned.</simpara>\n      ",
+                        "documentation": "\n\t\t       <p>The current state of the attachment. For an internet gateway, the state is\n\t\t\t\t<code>available</code> when attached to a VPC; otherwise, this value is not\n\t\t\treturned.</p>\n      ",
                         "shape_name": "AttachmentStatus",
                         "xmlname": "state"
                       },
@@ -17664,23 +17714,23 @@
                         "xmlname": "vpcId"
                       }
                     },
-                    "zonbookDocumentation": "\n\t\t       <simpara>Describes the attachment of a VPC to an Internet gateway or an egress-only Internet gateway.</simpara>\n      ",
-                    "documentation": "\n\t\t       <p>Describes the attachment of a VPC to an Internet gateway or an egress-only Internet gateway.</p>\n      ",
+                    "zonbookDocumentation": "\n\t\t       <simpara>Describes the attachment of a VPC to an internet gateway or an egress-only internet\n\t\t\tgateway.</simpara>\n      ",
+                    "documentation": "\n\t\t       <p>Describes the attachment of a VPC to an internet gateway or an egress-only internet\n\t\t\tgateway.</p>\n      ",
                     "shape_name": "InternetGatewayAttachment",
                     "xmlname": "item"
                   }
                 },
                 "InternetGatewayId": {
                   "type": "string",
-                  "zonbookDocumentation": "\n\t\t       <simpara>The ID of the Internet gateway.</simpara>\n      ",
-                  "documentation": "\n\t\t       <p>The ID of the Internet gateway.</p>\n      ",
+                  "zonbookDocumentation": "\n\t\t       <simpara>The ID of the internet gateway.</simpara>\n      ",
+                  "documentation": "\n\t\t       <p>The ID of the internet gateway.</p>\n      ",
                   "shape_name": "String",
                   "xmlname": "internetGatewayId"
                 },
                 "Tags": {
                   "type": "list",
-                  "zonbookDocumentation": "\n\t\t       <simpara>Any tags assigned to the Internet gateway.</simpara>\n      ",
-                  "documentation": "\n\t\t       <p>Any tags assigned to the Internet gateway.</p>\n      ",
+                  "zonbookDocumentation": "\n\t\t       <simpara>Any tags assigned to the internet gateway.</simpara>\n      ",
+                  "documentation": "\n\t\t       <p>Any tags assigned to the internet gateway.</p>\n      ",
                   "shape_name": "TagList",
                   "xmlname": "tagSet",
                   "members": {
@@ -17708,8 +17758,8 @@
                   }
                 }
               },
-              "zonbookDocumentation": "\n\t\t       <simpara>Describes an Internet gateway.</simpara>\n      ",
-              "documentation": "\n\t\t       <p>Describes an Internet gateway.</p>\n      ",
+              "zonbookDocumentation": "\n\t\t       <simpara>Describes an internet gateway.</simpara>\n      ",
+              "documentation": "\n\t\t       <p>Describes an internet gateway.</p>\n      ",
               "shape_name": "InternetGateway",
               "xmlname": "item"
             }
@@ -17722,7 +17772,7 @@
       "errors": [
 
       ],
-      "documentation": "\n\t\t       <p>Describes one or more of your Internet gateways.</p>\n     \n      "
+      "documentation": "\n\t\t       <p>Describes one or more of your internet gateways.</p>\n     \n      "
     },
     "DetachInternetGateway": {
       "name": "DetachInternetGateway",
@@ -17737,8 +17787,8 @@
           },
           "InternetGatewayId": {
             "type": "string",
-            "zonbookDocumentation": "\n\t\t       <simpara>The ID of the Internet gateway.</simpara>\n      ",
-            "documentation": "\n\t\t       <p>The ID of the Internet gateway.</p>\n      ",
+            "zonbookDocumentation": "\n\t\t       <simpara>The ID of the internet gateway.</simpara>\n      ",
+            "documentation": "\n\t\t       <p>The ID of the internet gateway.</p>\n      ",
             "required": true,
             "shape_name": "String"
           },
@@ -17758,7 +17808,7 @@
       "errors": [
 
       ],
-      "documentation": "\n\t\t       <p>Detaches an Internet gateway from a VPC, disabling connectivity between the Internet\n            and the VPC. The VPC must not contain any running instances with Elastic IP addresses or\n            public IPv4 addresses.</p>\n     \n      "
+      "documentation": "\n\t\t       <p>Detaches an internet gateway from a VPC, disabling connectivity between the internet\n\t\t\tand the VPC. The VPC must not contain any running instances with Elastic IP addresses or\n\t\t\tpublic IPv4 addresses.</p>\n     \n      "
     },
     "CreateKeyPair": {
       "name": "CreateKeyPair",
@@ -22980,8 +23030,8 @@
           },
           "ClientToken": {
             "type": "string",
-            "zonbookDocumentation": "\n         <simpara>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see <ulink type=\"documentation\" url=\"AWSEC2/latest/APIReference/Run_Instance_Idempotency.html\">How to Ensure Idempotency</ulink>.</simpara>\n         <simpara>Constraint: Maximum 64 ASCII characters.</simpara>\n      ",
-            "documentation": "\n         <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html\">How to Ensure Idempotency</a>.</p>\n         <p>Constraint: Maximum 64 ASCII characters.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>Unique, case-sensitive identifier that you provide to ensure the idempotency of the\n\t\t\trequest. For more information, see <ulink type=\"documentation\" url=\"AWSEC2/latest/APIReference/Run_Instance_Idempotency.html\">How to Ensure\n\t\t\t\tIdempotency</ulink>.</simpara>\n         <simpara>Constraint: Maximum 64 ASCII characters.</simpara>\n      ",
+            "documentation": "\n         <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the\n\t\t\trequest. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html\">How to Ensure\n\t\t\t\tIdempotency</a>.</p>\n         <p>Constraint: Maximum 64 ASCII characters.</p>\n      ",
             "shape_name": "String"
           },
           "SubnetId": {
@@ -23527,7 +23577,7 @@
       "errors": [
 
       ],
-      "documentation": "\n         <p>Describes one or more of the your NAT gateways.</p>\n      \n      "
+      "documentation": "\n         <p>Describes one or more of your NAT gateways.</p>\n      \n      "
     },
     "CreateNetworkAclEntry": {
       "name": "CreateNetworkAclEntry",
@@ -23609,8 +23659,8 @@
           },
           "Protocol": {
             "type": "string",
-            "zonbookDocumentation": "\n\t\t       <simpara>The protocol. A value of <code>-1</code> or <code>all</code> means all protocols. If\n            you specify <code>all</code>, <code>-1</code>, or a protocol number other than\n                <code>6</code> (tcp), <code>17</code> (udp), or <code>1</code> (icmp), traffic on\n            all ports is allowed, regardless of any ports or ICMP types or codes you specify. If you\n            specify protocol <code>58</code> (ICMPv6) and specify an IPv4 CIDR block, traffic for\n            all ICMP types and codes allowed, regardless of any that you specify. If you specify\n            protocol <code>58</code> (ICMPv6) and specify an IPv6 CIDR block, you must specify an\n            ICMP type and code.</simpara>\n      ",
-            "documentation": "\n\t\t       <p>The protocol. A value of <code>-1</code> or <code>all</code> means all protocols. If\n            you specify <code>all</code>, <code>-1</code>, or a protocol number other than\n                <code>6</code> (tcp), <code>17</code> (udp), or <code>1</code> (icmp), traffic on\n            all ports is allowed, regardless of any ports or ICMP types or codes you specify. If you\n            specify protocol <code>58</code> (ICMPv6) and specify an IPv4 CIDR block, traffic for\n            all ICMP types and codes allowed, regardless of any that you specify. If you specify\n            protocol <code>58</code> (ICMPv6) and specify an IPv6 CIDR block, you must specify an\n            ICMP type and code.</p>\n      ",
+            "zonbookDocumentation": "\n\t\t       <simpara>The protocol. A value of <code>-1</code> or <code>all</code> means all protocols. If\n\t\t\tyou specify <code>all</code>, <code>-1</code>, or a protocol number other than\n\t\t\t\t<code>6</code> (tcp), <code>17</code> (udp), or <code>1</code> (icmp), traffic on\n\t\t\tall ports is allowed, regardless of any ports or ICMP types or codes that you specify.\n\t\t\tIf you specify protocol <code>58</code> (ICMPv6) and specify an IPv4 CIDR block, traffic\n\t\t\tfor all ICMP types and codes allowed, regardless of any that you specify. If you specify\n\t\t\tprotocol <code>58</code> (ICMPv6) and specify an IPv6 CIDR block, you must specify an\n\t\t\tICMP type and code.</simpara>\n      ",
+            "documentation": "\n\t\t       <p>The protocol. A value of <code>-1</code> or <code>all</code> means all protocols. If\n\t\t\tyou specify <code>all</code>, <code>-1</code>, or a protocol number other than\n\t\t\t\t<code>6</code> (tcp), <code>17</code> (udp), or <code>1</code> (icmp), traffic on\n\t\t\tall ports is allowed, regardless of any ports or ICMP types or codes that you specify.\n\t\t\tIf you specify protocol <code>58</code> (ICMPv6) and specify an IPv4 CIDR block, traffic\n\t\t\tfor all ICMP types and codes allowed, regardless of any that you specify. If you specify\n\t\t\tprotocol <code>58</code> (ICMPv6) and specify an IPv6 CIDR block, you must specify an\n\t\t\tICMP type and code.</p>\n      ",
             "required": true,
             "shape_name": "String"
           },
@@ -23766,8 +23816,8 @@
           },
           "Protocol": {
             "type": "string",
-            "zonbookDocumentation": "\n\t\t       <simpara>The IP protocol. You can specify <code>all</code> or <code>-1</code> to mean all\n            protocols. If you specify <code>all</code>, <code>-1</code>, or a protocol number other\n            than <code>tcp</code>, <code>udp</code>, or <code>icmp</code>, traffic on all ports is\n            allowed, regardless of any ports or ICMP types or codes you specify. If you specify\n            protocol <code>58</code> (ICMPv6) and specify an IPv4 CIDR block, traffic for all ICMP\n            types and codes allowed, regardless of any that you specify. If you specify protocol\n                <code>58</code> (ICMPv6) and specify an IPv6 CIDR block, you must specify an ICMP\n            type and code.</simpara>\n      ",
-            "documentation": "\n\t\t       <p>The IP protocol. You can specify <code>all</code> or <code>-1</code> to mean all\n            protocols. If you specify <code>all</code>, <code>-1</code>, or a protocol number other\n            than <code>tcp</code>, <code>udp</code>, or <code>icmp</code>, traffic on all ports is\n            allowed, regardless of any ports or ICMP types or codes you specify. If you specify\n            protocol <code>58</code> (ICMPv6) and specify an IPv4 CIDR block, traffic for all ICMP\n            types and codes allowed, regardless of any that you specify. If you specify protocol\n                <code>58</code> (ICMPv6) and specify an IPv6 CIDR block, you must specify an ICMP\n            type and code.</p>\n      ",
+            "zonbookDocumentation": "\n\t\t       <simpara>The IP protocol. You can specify <code>all</code> or <code>-1</code> to mean all\n\t\t\tprotocols. If you specify <code>all</code>, <code>-1</code>, or a protocol number other\n\t\t\tthan <code>tcp</code>, <code>udp</code>, or <code>icmp</code>, traffic on all ports is\n\t\t\tallowed, regardless of any ports or ICMP types or codes you that specify. If you specify\n\t\t\tprotocol <code>58</code> (ICMPv6) and specify an IPv4 CIDR block, traffic for all ICMP\n\t\t\ttypes and codes allowed, regardless of any that you specify. If you specify protocol\n\t\t\t\t<code>58</code> (ICMPv6) and specify an IPv6 CIDR block, you must specify an ICMP\n\t\t\ttype and code.</simpara>\n      ",
+            "documentation": "\n\t\t       <p>The IP protocol. You can specify <code>all</code> or <code>-1</code> to mean all\n\t\t\tprotocols. If you specify <code>all</code>, <code>-1</code>, or a protocol number other\n\t\t\tthan <code>tcp</code>, <code>udp</code>, or <code>icmp</code>, traffic on all ports is\n\t\t\tallowed, regardless of any ports or ICMP types or codes you that specify. If you specify\n\t\t\tprotocol <code>58</code> (ICMPv6) and specify an IPv4 CIDR block, traffic for all ICMP\n\t\t\ttypes and codes allowed, regardless of any that you specify. If you specify protocol\n\t\t\t\t<code>58</code> (ICMPv6) and specify an IPv6 CIDR block, you must specify an ICMP\n\t\t\ttype and code.</p>\n      ",
             "required": true,
             "shape_name": "String"
           },
@@ -23798,7 +23848,7 @@
       "errors": [
 
       ],
-      "documentation": "\n\t\t       <p>Replaces an entry (rule) in a network ACL. For more information about network ACLs,\n\t\t\t\tsee <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html\">Network ACLs</a> in the\n\t\t\t\t<i>Amazon Virtual Private Cloud User Guide</i>.</p>\n     \n      "
+      "documentation": "\n\t\t       <p>Replaces an entry (rule) in a network ACL. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html\">Network ACLs</a> in the\n\t\t\t\t<i>Amazon Virtual Private Cloud User Guide</i>.</p>\n     \n      "
     },
     "CreateNetworkAcl": {
       "name": "CreateNetworkAcl",
@@ -24039,7 +24089,7 @@
       "errors": [
 
       ],
-      "documentation": "\n\t\t       <p>Creates a network ACL in a VPC. Network ACLs provide an optional layer of security (in addition to security groups) for the instances in your VPC.</p>\n\t\t       <p>For more information about network ACLs, see <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html\">Network ACLs</a> in\n\t\t        the <i>Amazon Virtual Private Cloud User Guide</i>.</p>\n     \n      "
+      "documentation": "\n\t\t       <p>Creates a network ACL in a VPC. Network ACLs provide an optional layer of security (in addition to security groups) for the instances in your VPC.</p>\n\t\t       <p>For more information, see <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html\">Network ACLs</a> in the\n\t\t\t\t<i>Amazon Virtual Private Cloud User Guide</i>.</p>\n     \n      "
     },
     "DeleteNetworkAcl": {
       "name": "DeleteNetworkAcl",
@@ -24357,7 +24407,7 @@
       "errors": [
 
       ],
-      "documentation": "\n\t\t       <p>Describes one or more of your network ACLs.</p>\n\t\t       <p>For more information about network ACLs, see <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html\">Network ACLs</a> in the\n\t\t        <i>Amazon Virtual Private Cloud User Guide</i>.</p>\n     \n      "
+      "documentation": "\n\t\t       <p>Describes one or more of your network ACLs.</p>\n\t\t       <p>For more information, see <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html\">Network ACLs</a> in the\n\t\t\t\t<i>Amazon Virtual Private Cloud User Guide</i>.</p>\n     \n      "
     },
     "ReplaceNetworkAclAssociation": {
       "name": "ReplaceNetworkAclAssociation",
@@ -24407,7 +24457,7 @@
       "errors": [
 
       ],
-      "documentation": "\n         <p>Changes which network ACL a subnet is associated with. By default when you create a subnet,\n      it's automatically associated with the default network ACL. For more information about network\n      ACLs, see <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html\">Network ACLs</a> in the\n        <i>Amazon Virtual Private Cloud User Guide</i>.</p>\n        <p>This is an idempotent operation.</p>\n      \n      "
+      "documentation": "\n         <p>Changes which network ACL a subnet is associated with. By default when you create a\n\t\t\tsubnet, it's automatically associated with the default network ACL. For more\n\t\t\tinformation, see <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html\">Network\n\t\t\t\tACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>\n        <p>This is an idempotent operation.</p>\n      \n      "
     },
     "AttachNetworkInterface": {
       "name": "AttachNetworkInterface",
@@ -26698,7 +26748,7 @@
       "errors": [
 
       ],
-      "documentation": "\n\t\t       <p>Describes available AWS services in a prefix list format, which includes the prefix list name and \n\t\t\tprefix list ID of the service and the IP address range for the service. A prefix list ID is required \n\t\t\tfor creating an outbound security group rule that allows traffic from a VPC to access an AWS service \n\t\t\tthrough a gateway VPC endpoint. Currently, the services that support this action are Amazon S3 and \n\t\t\tAmazon DynamoDB.</p>\n\t\t    \n\t     "
+      "documentation": "\n\t\t       <p>Describes available AWS services in a prefix list format, which includes the prefix list\n\t\t\tname and prefix list ID of the service and the IP address range for the service. A\n\t\t\tprefix list ID is required for creating an outbound security group rule that allows\n\t\t\ttraffic from a VPC to access an AWS service through a gateway VPC endpoint. Currently,\n\t\t\tthe services that support this action are Amazon S3 and Amazon DynamoDB.</p>\n\t\t    \n\t     "
     },
     "DescribeRegions": {
       "name": "DescribeRegions",
@@ -29777,14 +29827,14 @@
           },
           "EgressOnlyInternetGatewayId": {
             "type": "string",
-            "zonbookDocumentation": "\n        <simpara>[IPv6 traffic only] The ID of an egress-only Internet gateway.</simpara>\n      ",
-            "documentation": "\n        <p>[IPv6 traffic only] The ID of an egress-only Internet gateway.</p>\n      ",
+            "zonbookDocumentation": "\n        <simpara>[IPv6 traffic only] The ID of an egress-only internet gateway.</simpara>\n      ",
+            "documentation": "\n        <p>[IPv6 traffic only] The ID of an egress-only internet gateway.</p>\n      ",
             "shape_name": "String"
           },
           "GatewayId": {
             "type": "string",
-            "zonbookDocumentation": "\n\t\t       <simpara>The ID of an Internet gateway or virtual private gateway attached to your VPC.</simpara>\n      ",
-            "documentation": "\n\t\t       <p>The ID of an Internet gateway or virtual private gateway attached to your VPC.</p>\n      ",
+            "zonbookDocumentation": "\n\t\t       <simpara>The ID of an internet gateway or virtual private gateway attached to your\n\t\t\tVPC.</simpara>\n      ",
+            "documentation": "\n\t\t       <p>The ID of an internet gateway or virtual private gateway attached to your\n\t\t\tVPC.</p>\n      ",
             "shape_name": "String"
           },
           "InstanceId": {
@@ -29841,7 +29891,7 @@
       "errors": [
 
       ],
-      "documentation": "\n         <p>Creates a route in a route table within a VPC.</p>\n         <p>You must specify one of the following targets: Internet gateway or virtual private\n            gateway, NAT instance, NAT gateway, VPC peering connection, network interface, or\n            egress-only Internet gateway.</p>\n         <p>When determining how to route traffic, we use the route with the most specific match.\n            For example, traffic is destined for the IPv4 address <code>192.0.2.3</code>, and the\n            route table includes the following two IPv4 routes:</p>\n\t\t\t      <ul>\n            <li>\n\t\t\t\t\t          <p>\n                  <code>192.0.2.0/24</code> (goes to some target A)</p>\n\t\t\t\t        </li>\n            <li>\n\t\t\t\t\t          <p>\n                  <code>192.0.2.0/28</code> (goes to some target B)</p>\n\t\t\t\t        </li>\n         </ul>\n\t\t       <p>Both routes apply to the traffic destined for <code>192.0.2.3</code>. However, the second route\n\t\t\t\tin the list covers a smaller number of IP addresses and is therefore more specific,\n\t\t\t\tso we use that route to determine where to target the traffic.</p>\n         <p>For more information about route tables, see <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html\">Route Tables</a> in the\n         <i>Amazon Virtual Private Cloud User Guide</i>.</p>\n     \n      "
+      "documentation": "\n         <p>Creates a route in a route table within a VPC.</p>\n         <p>You must specify one of the following targets: internet gateway or virtual private\n\t\t\tgateway, NAT instance, NAT gateway, VPC peering connection, network interface, or\n\t\t\tegress-only internet gateway.</p>\n         <p>When determining how to route traffic, we use the route with the most specific match.\n            For example, traffic is destined for the IPv4 address <code>192.0.2.3</code>, and the\n            route table includes the following two IPv4 routes:</p>\n\t\t\t      <ul>\n            <li>\n\t\t\t\t\t          <p>\n                  <code>192.0.2.0/24</code> (goes to some target A)</p>\n\t\t\t\t        </li>\n            <li>\n\t\t\t\t\t          <p>\n                  <code>192.0.2.0/28</code> (goes to some target B)</p>\n\t\t\t\t        </li>\n         </ul>\n\t\t       <p>Both routes apply to the traffic destined for <code>192.0.2.3</code>. However, the second route\n\t\t\t\tin the list covers a smaller number of IP addresses and is therefore more specific,\n\t\t\t\tso we use that route to determine where to target the traffic.</p>\n         <p>For more information about route tables, see <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html\">Route Tables</a> in the\n         <i>Amazon Virtual Private Cloud User Guide</i>.</p>\n     \n      "
     },
     "DeleteRoute": {
       "name": "DeleteRoute",
@@ -29891,14 +29941,14 @@
         "members": {
           "DestinationCidrBlock": {
             "type": "string",
-            "zonbookDocumentation": "\n\t\t       <simpara>The IPv4 CIDR address block used for the destination match. The value you provide\n            must match the CIDR of an existing route in the table.</simpara>\n      ",
-            "documentation": "\n\t\t       <p>The IPv4 CIDR address block used for the destination match. The value you provide\n            must match the CIDR of an existing route in the table.</p>\n      ",
+            "zonbookDocumentation": "\n\t\t       <simpara>The IPv4 CIDR address block used for the destination match. The value that you\n\t\t\tprovide must match the CIDR of an existing route in the table.</simpara>\n      ",
+            "documentation": "\n\t\t       <p>The IPv4 CIDR address block used for the destination match. The value that you\n\t\t\tprovide must match the CIDR of an existing route in the table.</p>\n      ",
             "shape_name": "String"
           },
           "DestinationIpv6CidrBlock": {
             "type": "string",
-            "zonbookDocumentation": "\n        <simpara>The IPv6 CIDR address block used for the destination match. The value you provide must match the CIDR of an existing route in the table.</simpara>\n      ",
-            "documentation": "\n        <p>The IPv6 CIDR address block used for the destination match. The value you provide must match the CIDR of an existing route in the table.</p>\n      ",
+            "zonbookDocumentation": "\n        <simpara>The IPv6 CIDR address block used for the destination match. The value that you\n\t\t\tprovide must match the CIDR of an existing route in the table.</simpara>\n      ",
+            "documentation": "\n        <p>The IPv6 CIDR address block used for the destination match. The value that you\n\t\t\tprovide must match the CIDR of an existing route in the table.</p>\n      ",
             "shape_name": "String"
           },
           "DryRun": {
@@ -29909,14 +29959,14 @@
           },
           "EgressOnlyInternetGatewayId": {
             "type": "string",
-            "zonbookDocumentation": "\n        <simpara>[IPv6 traffic only] The ID of an egress-only Internet gateway.</simpara>\n      ",
-            "documentation": "\n        <p>[IPv6 traffic only] The ID of an egress-only Internet gateway.</p>\n      ",
+            "zonbookDocumentation": "\n        <simpara>[IPv6 traffic only] The ID of an egress-only internet gateway.</simpara>\n      ",
+            "documentation": "\n        <p>[IPv6 traffic only] The ID of an egress-only internet gateway.</p>\n      ",
             "shape_name": "String"
           },
           "GatewayId": {
             "type": "string",
-            "zonbookDocumentation": "\n\t\t       <simpara>The ID of an Internet gateway or virtual private gateway.</simpara>\n      ",
-            "documentation": "\n\t\t       <p>The ID of an Internet gateway or virtual private gateway.</p>\n      ",
+            "zonbookDocumentation": "\n\t\t       <simpara>The ID of an internet gateway or virtual private gateway.</simpara>\n      ",
+            "documentation": "\n\t\t       <p>The ID of an internet gateway or virtual private gateway.</p>\n      ",
             "shape_name": "String"
           },
           "InstanceId": {
@@ -29959,7 +30009,7 @@
       "errors": [
 
       ],
-      "documentation": "\n\t\t       <p>Replaces an existing route within a route table in a VPC. You must provide only one\n            of the following: Internet gateway or virtual private gateway, NAT instance, NAT\n            gateway, VPC peering connection, network interface, or egress-only Internet\n            gateway.</p>\n         <p>For more information about route tables, see <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html\">Route Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>\n     \n      "
+      "documentation": "\n\t\t       <p>Replaces an existing route within a route table in a VPC. You must provide only one\n\t\t\tof the following: internet gateway or virtual private gateway, NAT instance, NAT\n\t\t\tgateway, VPC peering connection, network interface, or egress-only internet\n\t\t\tgateway.</p>\n         <p>For more information, see <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html\">Route Tables</a> in the\n\t\t\t\t<i>Amazon Virtual Private Cloud User Guide</i>.</p>\n     \n      "
     },
     "AssociateRouteTable": {
       "name": "AssociateRouteTable",
@@ -29996,8 +30046,8 @@
         "members": {
           "AssociationId": {
             "type": "string",
-            "zonbookDocumentation": "\n\t\t       <simpara>The route table association ID (needed to disassociate the route table).</simpara>\n      ",
-            "documentation": "\n\t\t       <p>The route table association ID (needed to disassociate the route table).</p>\n      ",
+            "zonbookDocumentation": "\n\t\t       <simpara>The route table association ID. This ID is required for disassociating the route\n\t\t\ttable.</simpara>\n      ",
+            "documentation": "\n\t\t       <p>The route table association ID. This ID is required for disassociating the route\n\t\t\ttable.</p>\n      ",
             "shape_name": "String",
             "xmlname": "associationId"
           }
@@ -30009,7 +30059,7 @@
       "errors": [
 
       ],
-      "documentation": "\n         <p>Associates a subnet with a route table. The subnet and route table must be in the same VPC. This association causes traffic originating from the subnet to be routed according to the routes in the route table. The action returns an association ID, which you need in order to disassociate the route table from the subnet later. A route table can be associated with multiple subnets.</p>\n\t\t       <p>For more information about route tables, see <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html\">Route Tables</a> in the\n\t\t        <i>Amazon Virtual Private Cloud User Guide</i>.</p>\n     \n      "
+      "documentation": "\n         <p>Associates a subnet with a route table. The subnet and route table must be in the same VPC. This association causes traffic originating from the subnet to be routed according to the routes in the route table. The action returns an association ID, which you need in order to disassociate the route table from the subnet later. A route table can be associated with multiple subnets.</p>\n\t\t       <p>For more information, see <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html\">Route Tables</a> in the\n\t\t\t\t<i>Amazon Virtual Private Cloud User Guide</i>.</p>\n     \n      "
     },
     "CreateRouteTable": {
       "name": "CreateRouteTable",
@@ -30095,8 +30145,8 @@
                   "members": {
                     "GatewayId": {
                       "type": "string",
-                      "zonbookDocumentation": "\n\t\t       <simpara>The ID of the virtual private gateway (VGW).</simpara>\n      ",
-                      "documentation": "\n\t\t       <p>The ID of the virtual private gateway (VGW).</p>\n      ",
+                      "zonbookDocumentation": "\n\t\t       <simpara>The ID of the virtual private gateway.</simpara>\n      ",
+                      "documentation": "\n\t\t       <p>The ID of the virtual private gateway.</p>\n      ",
                       "shape_name": "String",
                       "xmlname": "gatewayId"
                     }
@@ -30146,8 +30196,8 @@
                     },
                     "EgressOnlyInternetGatewayId": {
                       "type": "string",
-                      "zonbookDocumentation": "\n        <simpara>The ID of the egress-only Internet gateway.</simpara>\n      ",
-                      "documentation": "\n        <p>The ID of the egress-only Internet gateway.</p>\n      ",
+                      "zonbookDocumentation": "\n        <simpara>The ID of the egress-only internet gateway.</simpara>\n      ",
+                      "documentation": "\n        <p>The ID of the egress-only internet gateway.</p>\n      ",
                       "shape_name": "String",
                       "xmlname": "egressOnlyInternetGatewayId"
                     },
@@ -30274,7 +30324,7 @@
       "errors": [
 
       ],
-      "documentation": "\n\t\t       <p>Creates a route table for the specified VPC. After you create a route table, you can add routes and associate the table with a subnet.</p>\n         <p>For more information about route tables, see <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html\">Route Tables</a> in\n         the <i>Amazon Virtual Private Cloud User Guide</i>.</p>\n     \n      "
+      "documentation": "\n\t\t       <p>Creates a route table for the specified VPC. After you create a route table, you can add routes and associate the table with a subnet.</p>\n         <p>For more information, see <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html\">Route Tables</a> in the\n\t\t\t\t<i>Amazon Virtual Private Cloud User Guide</i>.</p>\n     \n      "
     },
     "DeleteRouteTable": {
       "name": "DeleteRouteTable",
@@ -30312,8 +30362,8 @@
         "members": {
           "Filters": {
             "type": "list",
-            "zonbookDocumentation": "\n\t\t       <simpara>One or more filters.</simpara>\n\t\t       <itemizedlist>\n\t\t          <listitem>\n\t\t             <para>\n                  <code>association.route-table-association-id</code> - The ID of an association\n                    ID for the route table.</para>\n\t\t          </listitem>\n\t\t          <listitem>\n\t\t             <para>\n                  <code>association.route-table-id</code> - The ID of the route table involved in\n                    the association.</para>\n\t\t          </listitem>\n\t\t          <listitem>\n\t\t             <para>\n                  <code>association.subnet-id</code> - The ID of the subnet involved in the\n                    association.</para>\n\t\t          </listitem>\n\t\t          <listitem>\n\t\t             <para>\n                  <code>association.main</code> - Indicates whether the route table is the main\n                    route table for the VPC (<code>true</code> | <code>false</code>). Route tables\n                    that do not have an association ID are not returned in the response.</para>\n\t\t          </listitem>\n\t\t          <listitem>\n\t\t             <para>\n                  <code>route-table-id</code> - The ID of the route table.</para>\n\t\t          </listitem>\n\t\t          <listitem>\n\t\t\t\t           <para>\n                  <code>route.destination-cidr-block</code> - The IPv4 CIDR range specified in a\n                    route in the table.</para>\n\t\t\t         </listitem>\n               <listitem>\n                  <para>\n                  <code>route.destination-ipv6-cidr-block</code> - The IPv6 CIDR range specified in a route in the route table.</para>\n               </listitem>\n\t\t\t         <listitem>\n\t\t\t\t           <para>\n                  <code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS\n                    service specified in a route in the table.</para>\n\t\t\t         </listitem>\n               <listitem>\n                  <para>\n                  <code>route.egress-only-internet-gateway-id</code> - The ID of an\n                    egress-only Internet gateway specified in a route in the route table.</para>\n               </listitem>\n\t\t          <listitem>\n\t\t             <para>\n                  <code>route.gateway-id</code> - The ID of a gateway specified in a route in the table.</para>\n\t\t          </listitem>\n\t\t          <listitem>\n                  <para>\n                  <code>route.instance-id</code> - The ID of an instance specified in a route in the table.</para>\n               </listitem>\n               <listitem>\n                  <para>\n                  <code>route.nat-gateway-id</code> - The ID of a NAT gateway.</para> \n               </listitem>\n\t\t          <listitem>\n\t\t             <para>\n                  <code>route.origin</code> - Describes how the route was created. \n                        <code>CreateRouteTable</code> indicates that the route was automatically\n                    created when the route table was created; <code>CreateRoute</code> indicates\n                    that the route was manually added to the route table;\n                        <code>EnableVgwRoutePropagation</code> indicates that the route was\n                    propagated by route propagation.</para>\n\t\t          </listitem>\n\t\t          <listitem>\n                  <para>\n                  <code>route.state</code> - The state of a route in the route table\n                        (<code>active</code> | <code>blackhole</code>). The blackhole state\n                    indicates that the route's target isn't available (for example, the specified\n                    gateway isn't attached to the VPC, the specified NAT instance has been\n                    terminated, and so on).</para>\n               </listitem>\n            <listitem>\n               <para>\n                  <code>route.vpc-peering-connection-id</code> - The ID of a VPC peering\n                    connection specified in a route in the table.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value.\n    For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>vpc-id</code> - The ID of the VPC for the route table.</para>\n            </listitem>\n         </itemizedlist>\n      ",
-            "documentation": "\n\t\t       <p>One or more filters.</p>\n\t\t       <ul>\n            <li>\n\t\t             <p>\n                  <code>association.route-table-association-id</code> - The ID of an association\n                    ID for the route table.</p>\n\t\t          </li>\n            <li>\n\t\t             <p>\n                  <code>association.route-table-id</code> - The ID of the route table involved in\n                    the association.</p>\n\t\t          </li>\n            <li>\n\t\t             <p>\n                  <code>association.subnet-id</code> - The ID of the subnet involved in the\n                    association.</p>\n\t\t          </li>\n            <li>\n\t\t             <p>\n                  <code>association.main</code> - Indicates whether the route table is the main\n                    route table for the VPC (<code>true</code> | <code>false</code>). Route tables\n                    that do not have an association ID are not returned in the response.</p>\n\t\t          </li>\n            <li>\n\t\t             <p>\n                  <code>route-table-id</code> - The ID of the route table.</p>\n\t\t          </li>\n            <li>\n\t\t\t\t           <p>\n                  <code>route.destination-cidr-block</code> - The IPv4 CIDR range specified in a\n                    route in the table.</p>\n\t\t\t         </li>\n            <li>\n                  <p>\n                  <code>route.destination-ipv6-cidr-block</code> - The IPv6 CIDR range specified in a route in the route table.</p>\n               </li>\n            <li>\n\t\t\t\t           <p>\n                  <code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS\n                    service specified in a route in the table.</p>\n\t\t\t         </li>\n            <li>\n                  <p>\n                  <code>route.egress-only-internet-gateway-id</code> - The ID of an\n                    egress-only Internet gateway specified in a route in the route table.</p>\n               </li>\n            <li>\n\t\t             <p>\n                  <code>route.gateway-id</code> - The ID of a gateway specified in a route in the table.</p>\n\t\t          </li>\n            <li>\n                  <p>\n                  <code>route.instance-id</code> - The ID of an instance specified in a route in the table.</p>\n               </li>\n            <li>\n                  <p>\n                  <code>route.nat-gateway-id</code> - The ID of a NAT gateway.</p> \n               </li>\n            <li>\n\t\t             <p>\n                  <code>route.origin</code> - Describes how the route was created. \n                        <code>CreateRouteTable</code> indicates that the route was automatically\n                    created when the route table was created; <code>CreateRoute</code> indicates\n                    that the route was manually added to the route table;\n                        <code>EnableVgwRoutePropagation</code> indicates that the route was\n                    propagated by route propagation.</p>\n\t\t          </li>\n            <li>\n                  <p>\n                  <code>route.state</code> - The state of a route in the route table\n                        (<code>active</code> | <code>blackhole</code>). The blackhole state\n                    indicates that the route's target isn't available (for example, the specified\n                    gateway isn't attached to the VPC, the specified NAT instance has been\n                    terminated, and so on).</p>\n               </li>\n            <li>\n               <p>\n                  <code>route.vpc-peering-connection-id</code> - The ID of a VPC peering\n                    connection specified in a route in the table.</p>\n            </li>\n            <li>\n               <p>\n                  <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value.\n    For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>\n            </li>\n            <li>\n               <p>\n                  <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p>\n            </li>\n            <li>\n               <p>\n                  <code>vpc-id</code> - The ID of the VPC for the route table.</p>\n            </li>\n         </ul>\n      ",
+            "zonbookDocumentation": "\n\t\t       <simpara>One or more filters.</simpara>\n\t\t       <itemizedlist>\n\t\t          <listitem>\n\t\t             <para>\n                  <code>association.route-table-association-id</code> - The ID of an association\n                    ID for the route table.</para>\n\n\t\t          </listitem>\n\t\t          <listitem>\n\t\t             <para>\n                  <code>association.route-table-id</code> - The ID of the route table involved in\n                    the association.</para>\n\t\t          </listitem>\n\t\t          <listitem>\n\t\t             <para>\n                  <code>association.subnet-id</code> - The ID of the subnet involved in the\n                    association.</para>\n\t\t          </listitem>\n\t\t          <listitem>\n\t\t             <para>\n                  <code>association.main</code> - Indicates whether the route table is the main\n                    route table for the VPC (<code>true</code> | <code>false</code>). Route tables\n                    that do not have an association ID are not returned in the response.</para>\n\t\t          </listitem>\n\t\t          <listitem>\n\t\t             <para>\n                  <code>route-table-id</code> - The ID of the route table.</para>\n\t\t          </listitem>\n\t\t          <listitem>\n\t\t\t\t           <para>\n                  <code>route.destination-cidr-block</code> - The IPv4 CIDR range specified in a\n                    route in the table.</para>\n\t\t\t         </listitem>\n               <listitem>\n                  <para>\n                  <code>route.destination-ipv6-cidr-block</code> - The IPv6 CIDR range specified in a route in the route table.</para>\n               </listitem>\n\t\t\t         <listitem>\n\t\t\t\t           <para>\n                  <code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS\n                    service specified in a route in the table.</para>\n\t\t\t         </listitem>\n               <listitem>\n                  <para>\n                  <code>route.egress-only-internet-gateway-id</code> - The ID of an\n                    egress-only Internet gateway specified in a route in the route table.</para>\n               </listitem>\n\t\t          <listitem>\n\t\t             <para>\n                  <code>route.gateway-id</code> - The ID of a gateway specified in a route in the table.</para>\n\t\t          </listitem>\n\t\t          <listitem>\n                  <para>\n                  <code>route.instance-id</code> - The ID of an instance specified in a route in the table.</para>\n               </listitem>\n               <listitem>\n                  <para>\n                  <code>route.nat-gateway-id</code> - The ID of a NAT gateway.</para> \n               </listitem>\n\t\t          <listitem>\n\t\t             <para>\n                  <code>route.origin</code> - Describes how the route was created. \n                        <code>CreateRouteTable</code> indicates that the route was automatically\n                    created when the route table was created; <code>CreateRoute</code> indicates\n                    that the route was manually added to the route table;\n                        <code>EnableVgwRoutePropagation</code> indicates that the route was\n                    propagated by route propagation.</para>\n\t\t          </listitem>\n\t\t          <listitem>\n                  <para>\n                  <code>route.state</code> - The state of a route in the route table\n                        (<code>active</code> | <code>blackhole</code>). The blackhole state\n                    indicates that the route's target isn't available (for example, the specified\n                    gateway isn't attached to the VPC, the specified NAT instance has been\n                    terminated, and so on).</para>\n               </listitem>\n            <listitem>\n               <para>\n                  <code>route.vpc-peering-connection-id</code> - The ID of a VPC peering\n                    connection specified in a route in the table.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value.\n    For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>vpc-id</code> - The ID of the VPC for the route table.</para>\n            </listitem>\n         </itemizedlist>\n      ",
+            "documentation": "\n\t\t       <p>One or more filters.</p>\n\t\t       <ul>\n            <li>\n\t\t             <p>\n                  <code>association.route-table-association-id</code> - The ID of an association\n                    ID for the route table.</p>\n\n\t\t          </li>\n            <li>\n\t\t             <p>\n                  <code>association.route-table-id</code> - The ID of the route table involved in\n                    the association.</p>\n\t\t          </li>\n            <li>\n\t\t             <p>\n                  <code>association.subnet-id</code> - The ID of the subnet involved in the\n                    association.</p>\n\t\t          </li>\n            <li>\n\t\t             <p>\n                  <code>association.main</code> - Indicates whether the route table is the main\n                    route table for the VPC (<code>true</code> | <code>false</code>). Route tables\n                    that do not have an association ID are not returned in the response.</p>\n\t\t          </li>\n            <li>\n\t\t             <p>\n                  <code>route-table-id</code> - The ID of the route table.</p>\n\t\t          </li>\n            <li>\n\t\t\t\t           <p>\n                  <code>route.destination-cidr-block</code> - The IPv4 CIDR range specified in a\n                    route in the table.</p>\n\t\t\t         </li>\n            <li>\n                  <p>\n                  <code>route.destination-ipv6-cidr-block</code> - The IPv6 CIDR range specified in a route in the route table.</p>\n               </li>\n            <li>\n\t\t\t\t           <p>\n                  <code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS\n                    service specified in a route in the table.</p>\n\t\t\t         </li>\n            <li>\n                  <p>\n                  <code>route.egress-only-internet-gateway-id</code> - The ID of an\n                    egress-only Internet gateway specified in a route in the route table.</p>\n               </li>\n            <li>\n\t\t             <p>\n                  <code>route.gateway-id</code> - The ID of a gateway specified in a route in the table.</p>\n\t\t          </li>\n            <li>\n                  <p>\n                  <code>route.instance-id</code> - The ID of an instance specified in a route in the table.</p>\n               </li>\n            <li>\n                  <p>\n                  <code>route.nat-gateway-id</code> - The ID of a NAT gateway.</p> \n               </li>\n            <li>\n\t\t             <p>\n                  <code>route.origin</code> - Describes how the route was created. \n                        <code>CreateRouteTable</code> indicates that the route was automatically\n                    created when the route table was created; <code>CreateRoute</code> indicates\n                    that the route was manually added to the route table;\n                        <code>EnableVgwRoutePropagation</code> indicates that the route was\n                    propagated by route propagation.</p>\n\t\t          </li>\n            <li>\n                  <p>\n                  <code>route.state</code> - The state of a route in the route table\n                        (<code>active</code> | <code>blackhole</code>). The blackhole state\n                    indicates that the route's target isn't available (for example, the specified\n                    gateway isn't attached to the VPC, the specified NAT instance has been\n                    terminated, and so on).</p>\n               </li>\n            <li>\n               <p>\n                  <code>route.vpc-peering-connection-id</code> - The ID of a VPC peering\n                    connection specified in a route in the table.</p>\n            </li>\n            <li>\n               <p>\n                  <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value.\n    For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>\n            </li>\n            <li>\n               <p>\n                  <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p>\n            </li>\n            <li>\n               <p>\n                  <code>vpc-id</code> - The ID of the VPC for the route table.</p>\n            </li>\n         </ul>\n      ",
             "shape_name": "FilterList",
             "members": {
               "type": "structure",
@@ -30436,8 +30486,8 @@
                     "members": {
                       "GatewayId": {
                         "type": "string",
-                        "zonbookDocumentation": "\n\t\t       <simpara>The ID of the virtual private gateway (VGW).</simpara>\n      ",
-                        "documentation": "\n\t\t       <p>The ID of the virtual private gateway (VGW).</p>\n      ",
+                        "zonbookDocumentation": "\n\t\t       <simpara>The ID of the virtual private gateway.</simpara>\n      ",
+                        "documentation": "\n\t\t       <p>The ID of the virtual private gateway.</p>\n      ",
                         "shape_name": "String",
                         "xmlname": "gatewayId"
                       }
@@ -30487,8 +30537,8 @@
                       },
                       "EgressOnlyInternetGatewayId": {
                         "type": "string",
-                        "zonbookDocumentation": "\n        <simpara>The ID of the egress-only Internet gateway.</simpara>\n      ",
-                        "documentation": "\n        <p>The ID of the egress-only Internet gateway.</p>\n      ",
+                        "zonbookDocumentation": "\n        <simpara>The ID of the egress-only internet gateway.</simpara>\n      ",
+                        "documentation": "\n        <p>The ID of the egress-only internet gateway.</p>\n      ",
                         "shape_name": "String",
                         "xmlname": "egressOnlyInternetGatewayId"
                       },
@@ -30616,7 +30666,7 @@
       "errors": [
 
       ],
-      "documentation": "\n\t\t       <p>Describes one or more of your route tables.</p>\n         <p>Each subnet in your VPC must be associated with a route table. If a subnet is not explicitly associated with any route table, it is implicitly associated with the main route table. This command does not return the subnet ID for implicit associations.</p>\n\t\t       <p>For more information about route tables, see <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html\">Route Tables</a> in the\n\t\t\t\t<i>Amazon Virtual Private Cloud User Guide</i>.</p>\n     \n      "
+      "documentation": "\n\t\t       <p>Describes one or more of your route tables.</p>\n         <p>Each subnet in your VPC must be associated with a route table. If a subnet is not explicitly associated with any route table, it is implicitly associated with the main route table. This command does not return the subnet ID for implicit associations.</p>\n\t\t       <p>For more information, see <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html\">Route Tables</a> in the\n\t\t\t\t<i>Amazon Virtual Private Cloud User Guide</i>.</p>\n     \n      "
     },
     "DisassociateRouteTable": {
       "name": "DisassociateRouteTable",
@@ -41783,8 +41833,8 @@
               },
               "AvailableIpAddressCount": {
                 "type": "integer",
-                "zonbookDocumentation": "\n\t\t       <simpara>The number of unused private IPv4 addresses in the subnet. Note that the IPv4 addresses for any stopped instances are considered unavailable.</simpara>\n      ",
-                "documentation": "\n\t\t       <p>The number of unused private IPv4 addresses in the subnet. Note that the IPv4 addresses for any stopped instances are considered unavailable.</p>\n      ",
+                "zonbookDocumentation": "\n\t\t       <simpara>The number of unused private IPv4 addresses in the subnet. The IPv4 addresses for any\n\t\t\tstopped instances are considered unavailable.</simpara>\n      ",
+                "documentation": "\n\t\t       <p>The number of unused private IPv4 addresses in the subnet. The IPv4 addresses for any\n\t\t\tstopped instances are considered unavailable.</p>\n      ",
                 "shape_name": "Integer",
                 "xmlname": "availableIpAddressCount"
               },
@@ -42004,8 +42054,8 @@
               },
               "AvailableIpAddressCount": {
                 "type": "integer",
-                "zonbookDocumentation": "\n\t\t       <simpara>The number of unused private IPv4 addresses in the subnet. Note that the IPv4 addresses for any stopped instances are considered unavailable.</simpara>\n      ",
-                "documentation": "\n\t\t       <p>The number of unused private IPv4 addresses in the subnet. Note that the IPv4 addresses for any stopped instances are considered unavailable.</p>\n      ",
+                "zonbookDocumentation": "\n\t\t       <simpara>The number of unused private IPv4 addresses in the subnet. The IPv4 addresses for any\n\t\t\tstopped instances are considered unavailable.</simpara>\n      ",
+                "documentation": "\n\t\t       <p>The number of unused private IPv4 addresses in the subnet. The IPv4 addresses for any\n\t\t\tstopped instances are considered unavailable.</p>\n      ",
                 "shape_name": "Integer",
                 "xmlname": "availableIpAddressCount"
               },
@@ -42167,7 +42217,7 @@
       "errors": [
 
       ],
-      "documentation": "\n         <p>Creates a subnet in an existing VPC.</p>\n         <p>When you create each subnet, you provide the VPC ID and the IPv4 CIDR block you want\n            for the subnet. After you create a subnet, you can't change its CIDR block. The size of\n            the subnet's IPv4 CIDR block can be the same as a VPC's IPv4 CIDR block, or a subset of\n            a VPC's IPv4 CIDR block. If you create more than one subnet in a VPC, the subnets' CIDR\n            blocks must not overlap. The smallest IPv4 subnet (and VPC) you can create uses a /28\n            netmask (16 IPv4 addresses), and the largest uses a /16 netmask (65,536 IPv4\n            addresses).</p>\n        <p>If you've associated an IPv6 CIDR block with your VPC, you can create a subnet with\n            an IPv6 CIDR block that uses a /64 prefix length. </p>\n         <important>\n            <p>AWS reserves both the first four and the last IPv4 address in each subnet's CIDR\n                block. They're not available for use.</p>\n         </important>\n\t\t       <p>If you add more than one subnet to a VPC, they're set up in a star topology with a logical router in the middle.</p>\n\t\t       <p>If you launch an instance in a VPC using an Amazon EBS-backed AMI, the IP address doesn't change if you stop and restart the instance (unlike a similar instance launched outside a VPC, which gets a new IP address when restarted). It's therefore possible to have a subnet with no running instances (they're all stopped), but no remaining IP addresses available.</p>\n\t\t       <p>For more information about subnets, see <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html\">Your VPC and Subnets</a>\n\t\t        in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>\n     \n      "
+      "documentation": "\n         <p>Creates a subnet in an existing VPC.</p>\n         <p>When you create each subnet, you provide the VPC ID and IPv4 CIDR block for the\n\t\t\tsubnet. After you create a subnet, you can't change its CIDR block. The size of the\n\t\t\tsubnet's IPv4 CIDR block can be the same as a VPC's IPv4 CIDR block, or a subset of a\n\t\t\tVPC's IPv4 CIDR block. If you create more than one subnet in a VPC, the subnets' CIDR\n\t\t\tblocks must not overlap. The smallest IPv4 subnet (and VPC) you can create uses a /28\n\t\t\tnetmask (16 IPv4 addresses), and the largest uses a /16 netmask (65,536 IPv4\n\t\t\taddresses).</p>\n        <p>If you've associated an IPv6 CIDR block with your VPC, you can create a subnet with\n            an IPv6 CIDR block that uses a /64 prefix length. </p>\n         <important>\n            <p>AWS reserves both the first four and the last IPv4 address in each subnet's CIDR\n                block. They're not available for use.</p>\n         </important>\n\t\t       <p>If you add more than one subnet to a VPC, they're set up in a star topology with a logical router in the middle.</p>\n\t\t       <p>If you launch an instance in a VPC using an Amazon EBS-backed AMI, the IP address doesn't change if you stop and restart the instance (unlike a similar instance launched outside a VPC, which gets a new IP address when restarted). It's therefore possible to have a subnet with no running instances (they're all stopped), but no remaining IP addresses available.</p>\n\t\t       <p>For more information about subnets, see <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html\">Your VPC and Subnets</a>\n\t\t        in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>\n     \n      "
     },
     "DeleteSubnet": {
       "name": "DeleteSubnet",
@@ -42283,8 +42333,8 @@
                 },
                 "AvailableIpAddressCount": {
                   "type": "integer",
-                  "zonbookDocumentation": "\n\t\t       <simpara>The number of unused private IPv4 addresses in the subnet. Note that the IPv4 addresses for any stopped instances are considered unavailable.</simpara>\n      ",
-                  "documentation": "\n\t\t       <p>The number of unused private IPv4 addresses in the subnet. Note that the IPv4 addresses for any stopped instances are considered unavailable.</p>\n      ",
+                  "zonbookDocumentation": "\n\t\t       <simpara>The number of unused private IPv4 addresses in the subnet. The IPv4 addresses for any\n\t\t\tstopped instances are considered unavailable.</simpara>\n      ",
+                  "documentation": "\n\t\t       <p>The number of unused private IPv4 addresses in the subnet. The IPv4 addresses for any\n\t\t\tstopped instances are considered unavailable.</p>\n      ",
                   "shape_name": "Integer",
                   "xmlname": "availableIpAddressCount"
                 },
@@ -42447,7 +42497,7 @@
       "errors": [
 
       ],
-      "documentation": "\n         <p>Describes one or more of your subnets.</p>\n         <p>For more information about subnets, see <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html\">Your VPC and\n        Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>\n      \n      "
+      "documentation": "\n         <p>Describes one or more of your subnets.</p>\n         <p>For more information, see <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html\">Your VPC and Subnets</a> in the\n\t\t\t\t<i>Amazon Virtual Private Cloud User Guide</i>.</p>\n      \n      "
     },
     "DisassociateSubnetCidrBlock": {
       "name": "DisassociateSubnetCidrBlock",
@@ -45761,7 +45811,7 @@
       "errors": [
 
       ],
-      "documentation": "\n         <p>Enables a VPC for ClassicLink. You can then link EC2-Classic instances to your\n            ClassicLink-enabled VPC to allow communication over private IP addresses. You cannot\n            enable your VPC for ClassicLink if any of your VPC's route tables have existing routes\n            for address ranges within the <code>10.0.0.0/8</code> IP address range, excluding local\n            routes for VPCs in the <code>10.0.0.0/16</code> and <code>10.1.0.0/16</code> IP address\n            ranges. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html\">ClassicLink</a> in the\n                <i>Amazon Elastic Compute Cloud User Guide</i>.</p>\n      \n\t     "
+      "documentation": "\n         <p>Enables a VPC for ClassicLink. You can then link EC2-Classic instances to your\n\t\t\tClassicLink-enabled VPC to allow communication over private IP addresses. You cannot\n\t\t\tenable your VPC for ClassicLink if any of your VPC route tables have existing routes for\n\t\t\taddress ranges within the <code>10.0.0.0/8</code> IP address range, excluding local\n\t\t\troutes for VPCs in the <code>10.0.0.0/16</code> and <code>10.1.0.0/16</code> IP address\n\t\t\tranges. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html\">ClassicLink</a> in the\n\t\t\t\t<i>Amazon Elastic Compute Cloud User Guide</i>.</p>\n      \n\t     "
     },
     "CreateVpcEndpoint": {
       "name": "CreateVpcEndpoint",
@@ -48140,21 +48190,21 @@
         "members": {
           "DryRun": {
             "type": "boolean",
-            "zonbookDocumentation": "\n        <simpara>Checks whether you have the required permissions for the action, without actually making the request, \n            and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n            Otherwise, it is <code>UnauthorizedOperation</code>.</simpara>\n      ",
+            "zonbookDocumentation": "\n        <para>Checks whether you have the required permissions for the action, without actually making the request, \n            and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n            Otherwise, it is <code>UnauthorizedOperation</code>.</para>\n      ",
             "documentation": "\n        <p>Checks whether you have the required permissions for the action, without actually making the request, \n            and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n            Otherwise, it is <code>UnauthorizedOperation</code>.</p>\n      ",
             "shape_name": "Boolean"
           },
           "ServiceId": {
             "type": "string",
-            "zonbookDocumentation": "\n\t\t       <simpara>The ID of the service.</simpara>\n\t     ",
+            "zonbookDocumentation": "\n\t\t       <para>The ID of the service.</para>\n\t     ",
             "documentation": "\n\t\t       <p>The ID of the service.</p>\n\t     ",
             "required": true,
             "shape_name": "String"
           },
           "AddAllowedPrincipals": {
             "type": "list",
-            "zonbookDocumentation": "\n\t\t       <simpara>One or more Amazon Resource Names (ARNs) of principals for which to allow permission.\n            Specify <code>*</code> to allow all principals.</simpara>\n\t     ",
-            "documentation": "\n\t\t       <p>One or more Amazon Resource Names (ARNs) of principals for which to allow permission.\n            Specify <code>*</code> to allow all principals.</p>\n\t     ",
+            "zonbookDocumentation": "\n\t        <para>The Amazon Resource Names (ARN) of one or more principals.\n\t        Permissions are granted to the principals in this list.\n\t        To grant permissions to all principals, specify an asterisk (*).</para>\n\t     ",
+            "documentation": "\n\t        <p>The Amazon Resource Names (ARN) of one or more principals.\n\t        Permissions are granted to the principals in this list.\n\t        To grant permissions to all principals, specify an asterisk (*).</p>\n\t     ",
             "shape_name": "ValueStringList",
             "members": {
               "type": "string",
@@ -48165,8 +48215,8 @@
           },
           "RemoveAllowedPrincipals": {
             "type": "list",
-            "zonbookDocumentation": "\n\t\t       <simpara>One or more Amazon Resource Names (ARNs) of principals for which to remove\n            permission.</simpara>\n\t     ",
-            "documentation": "\n\t\t       <p>One or more Amazon Resource Names (ARNs) of principals for which to remove\n            permission.</p>\n\t     ",
+            "zonbookDocumentation": "\n\t        <para>The Amazon Resource Names (ARN) of one or more principals.\n\t        Permissions are revoked for principals in this list.</para>\n\t     ",
+            "documentation": "\n\t        <p>The Amazon Resource Names (ARN) of one or more principals.\n\t        Permissions are revoked for principals in this list.</p>\n\t     ",
             "shape_name": "ValueStringList",
             "members": {
               "type": "string",
@@ -48184,7 +48234,7 @@
         "members": {
           "ReturnValue": {
             "type": "boolean",
-            "zonbookDocumentation": "\n\t\t       <simpara>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</simpara>\n\t     ",
+            "zonbookDocumentation": "\n\t\t       <para>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</para>\n\t     ",
             "documentation": "\n\t\t       <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>\n\t     ",
             "shape_name": "Boolean",
             "xmlname": "return"
@@ -48196,7 +48246,7 @@
       "errors": [
 
       ],
-      "documentation": "\n\t        <p>Modifies the permissions for your <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/endpoint-service.html\">VPC endpoint service</a>. You can add\n            or remove permissions for service consumers (IAM users, IAM roles, and AWS accounts) to\n            connect to your endpoint service.</p>\n\t\t\n\t     "
+      "documentation": "\n\t        <p>Modifies the permissions for your <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/endpoint-service.html\">VPC endpoint service</a>. You can add or remove permissions for service consumers (IAM users, \n\t        IAM roles, and AWS accounts) to connect to your endpoint service.</p>\n\t        <p>If you grant permissions to all principals, the service is public. Any users who know the name of a\n\t        public service can send a request to attach an endpoint. If the service does not require manual approval,\n\t        attachments are automatically approved.</p>\n\t    \n\t     "
     },
     "DescribeVpcEndpointServicePermissions": {
       "name": "DescribeVpcEndpointServicePermissions",
@@ -48782,7 +48832,7 @@
       "errors": [
 
       ],
-      "documentation": "\n\t\t       <p>Creates a default VPC with a size <code>/16</code> IPv4 CIDR block and a default subnet\n\t\t\tin each Availability Zone. For more information about the components of a default VPC,\n\t\t\tsee <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html\">Default VPC and\n\t\t\t\tDefault Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>. You cannot\n\t\t\tspecify the components of the default VPC yourself.</p>\n\t\t       <p>You can create a default VPC if you deleted your previous default VPC. You cannot have\n\t\t\tmore than one default VPC per region. </p>\n\t\t       <p>If your account supports EC2-Classic, you cannot use this action to create a default VPC\n\t\t\tin a region that supports EC2-Classic. If you want a default VPC in a region that\n\t\t\tsupports EC2-Classic, see \"I really want a default VPC for my existing EC2 account. Is\n\t\t\tthat possible?\" in the <a href=\"http://aws.amazon.com/vpc/faqs/#Default_VPCs\">Default VPCs\n\t\t\t\tFAQ</a>.</p>\n\t\t\n\t     "
+      "documentation": "\n\t\t       <p>Creates a default VPC with a size <code>/16</code> IPv4 CIDR block and a default subnet\n\t\t\tin each Availability Zone. For more information about the components of a default VPC,\n\t\t\tsee <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html\">Default VPC and\n\t\t\t\tDefault Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>. You cannot\n\t\t\tspecify the components of the default VPC yourself.</p>\n\t\t       <p>iIf you deleted your previous default VPC, you can create a default VPC. You cannot have\n\t\t\tmore than one default VPC per Region. </p>\n\t\t       <p>If your account supports EC2-Classic, you cannot use this action to create a default VPC\n\t\t\tin a Region that supports EC2-Classic. If you want a default VPC in a Region that\n\t\t\tsupports EC2-Classic, see \"I really want a default VPC for my existing EC2 account. Is\n\t\t\tthat possible?\" in the <a href=\"http://aws.amazon.com/vpc/faqs/#Default_VPCs\">Default VPCs\n\t\t\t\tFAQ</a>.</p>\n\t\t\n\t     "
     },
     "CreateVpc": {
       "name": "CreateVpc",
@@ -49047,7 +49097,7 @@
       "errors": [
 
       ],
-      "documentation": "\n\t\t       <p>Creates a VPC with the specified IPv4 CIDR block. The smallest VPC you can create\n            uses a /28 netmask (16 IPv4 addresses), and the largest uses a /16 netmask (65,536 IPv4\n            addresses). To help you decide how big to make your VPC, see <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html\">Your VPC and Subnets</a> in\n\t\t        the <i>Amazon Virtual Private Cloud User Guide</i>.</p>\n        <p>You can optionally request an Amazon-provided IPv6 CIDR block for the VPC. The IPv6\n            CIDR block uses a /56 prefix length, and is allocated from Amazon's pool of IPv6\n            addresses. You cannot choose the IPv6 range for your VPC.</p>\n\t\t       <p>By default, each instance you launch in the VPC has the default DHCP options, which\n\t\t\t  includes only a default DNS server that we provide (AmazonProvidedDNS).\n\t\t\t  For more information about DHCP options, see <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html\">DHCP Options Sets</a>\n\t\t        in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>\n         <p>You can specify the instance tenancy value for the VPC when you create it. You can't change\n      this value for the VPC after you create it. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html\">Dedicated Instances</a> in the\n          <i>Amazon Elastic Compute Cloud User Guide</i>.</p>\n     \n      "
+      "documentation": "\n\t\t       <p>Creates a VPC with the specified IPv4 CIDR block. The smallest VPC you can create\n\t\t\tuses a /28 netmask (16 IPv4 addresses), and the largest uses a /16 netmask (65,536 IPv4\n\t\t\taddresses). For more information about how large to make your VPC, see <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html\">Your VPC and\n\t\t\t\tSubnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>\n        <p>You can optionally request an Amazon-provided IPv6 CIDR block for the VPC. The IPv6\n            CIDR block uses a /56 prefix length, and is allocated from Amazon's pool of IPv6\n            addresses. You cannot choose the IPv6 range for your VPC.</p>\n\t\t       <p>By default, each instance you launch in the VPC has the default DHCP options, which\n\t\t\tinclude only a default DNS server that we provide (AmazonProvidedDNS). For more\n\t\t\tinformation, see <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html\">DHCP Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>\n         <p>You can specify the instance tenancy value for the VPC when you create it. You can't change\n      this value for the VPC after you create it. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html\">Dedicated Instances</a> in the\n          <i>Amazon Elastic Compute Cloud User Guide</i>.</p>\n     \n      "
     },
     "DeleteVpc": {
       "name": "DeleteVpc",
@@ -49682,8 +49732,8 @@
                 "shape_name": "Boolean"
               }
             },
-            "zonbookDocumentation": "\n\t\t       <simpara>Indicates whether the DNS resolution is supported for the VPC. If enabled, queries to the Amazon provided DNS server at the 169.254.169.253 IP address, or the reserved IP address at the base of the VPC network range \"plus two\" will succeed. If disabled, the Amazon provided DNS service in the VPC that resolves public DNS hostnames to IP addresses is not enabled.</simpara>\n         <simpara>You cannot modify the DNS resolution and DNS hostnames attributes in the same request. Use separate requests for each attribute.</simpara>\n      ",
-            "documentation": "\n\t\t       <p>Indicates whether the DNS resolution is supported for the VPC. If enabled, queries to the Amazon provided DNS server at the 169.254.169.253 IP address, or the reserved IP address at the base of the VPC network range \"plus two\" will succeed. If disabled, the Amazon provided DNS service in the VPC that resolves public DNS hostnames to IP addresses is not enabled.</p>\n         <p>You cannot modify the DNS resolution and DNS hostnames attributes in the same request. Use separate requests for each attribute.</p>\n      ",
+            "zonbookDocumentation": "\n\t\t       <simpara>Indicates whether the DNS resolution is supported for the VPC. If enabled, queries to\n\t\t\tthe Amazon provided DNS server at the 169.254.169.253 IP address, or the reserved IP\n\t\t\taddress at the base of the VPC network range \"plus two\" succeed. If disabled, the Amazon\n\t\t\tprovided DNS service in the VPC that resolves public DNS hostnames to IP addresses is\n\t\t\tnot enabled.</simpara>\n         <simpara>You cannot modify the DNS resolution and DNS hostnames attributes in the same request. Use separate requests for each attribute.</simpara>\n      ",
+            "documentation": "\n\t\t       <p>Indicates whether the DNS resolution is supported for the VPC. If enabled, queries to\n\t\t\tthe Amazon provided DNS server at the 169.254.169.253 IP address, or the reserved IP\n\t\t\taddress at the base of the VPC network range \"plus two\" succeed. If disabled, the Amazon\n\t\t\tprovided DNS service in the VPC that resolves public DNS hostnames to IP addresses is\n\t\t\tnot enabled.</p>\n         <p>You cannot modify the DNS resolution and DNS hostnames attributes in the same request. Use separate requests for each attribute.</p>\n      ",
             "shape_name": "AttributeBooleanValue"
           },
           "VpcId": {
@@ -49755,7 +49805,7 @@
       "errors": [
 
       ],
-      "documentation": "\n        <p>Modifies the instance tenancy attribute of the specified VPC. You can change the\n            instance tenancy attribute of a VPC to <code>default</code> only. You cannot change the\n            instance tenancy attribute to <code>dedicated</code>.</p>\n        <p>After you modify the tenancy of the VPC, any new instances that you launch into the\n            VPC have a tenancy of <code>default</code>, unless you specify otherwise during launch.\n            The tenancy of any existing instances in the VPC is not affected.</p>\n        <p>For more information about Dedicated Instances, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html\">Dedicated Instances</a> in the\n                <i>Amazon Elastic Compute Cloud User Guide</i>.</p>\n        \n      "
+      "documentation": "\n        <p>Modifies the instance tenancy attribute of the specified VPC. You can change the\n            instance tenancy attribute of a VPC to <code>default</code> only. You cannot change the\n            instance tenancy attribute to <code>dedicated</code>.</p>\n        <p>After you modify the tenancy of the VPC, any new instances that you launch into the\n            VPC have a tenancy of <code>default</code>, unless you specify otherwise during launch.\n            The tenancy of any existing instances in the VPC is not affected.</p>\n        <p>For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html\">Dedicated Instances</a> in the\n\t\t\t\t<i>Amazon Elastic Compute Cloud User Guide</i>.</p>\n        \n      "
     },
     "AcceptVpcPeeringConnection": {
       "name": "AcceptVpcPeeringConnection",
@@ -50469,7 +50519,7 @@
       "errors": [
 
       ],
-      "documentation": "\n         <p>Requests a VPC peering connection between two VPCs: a requester VPC that you own and\n            an accepter VPC with which to create the connection. The accepter VPC can belong to\n            another AWS account and can be in a different region to the requester VPC. The requester\n            VPC and accepter VPC cannot have overlapping CIDR blocks.</p>\n         <note>\n            <p>Limitations and rules apply to a VPC peering connection. For more information, see the <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/vpc-peering-basics.html#vpc-peering-limitations\">limitations</a> section in the <i>VPC Peering Guide</i>.</p>\n         </note>\n         <p>The owner of the accepter VPC must accept the peering request to activate the peering\n            connection. The VPC peering connection request expires after 7 days, after which it\n            cannot be accepted or rejected.</p>\n         <p>If you create a VPC peering connection request between VPCs with overlapping CIDR\n            blocks, the VPC peering connection has a status of <code>failed</code>.</p>\n      \n      "
+      "documentation": "\n         <p>Requests a VPC peering connection between two VPCs: a requester VPC that you own and\n\t\t\tan accepter VPC with which to create the connection. The accepter VPC can belong to\n\t\t\tanother AWS account and can be in a different Region to the requester VPC. The requester\n\t\t\tVPC and accepter VPC cannot have overlapping CIDR blocks.</p>\n         <note>\n            <p>Limitations and rules apply to a VPC peering connection. For more information, see the <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/vpc-peering-basics.html#vpc-peering-limitations\">limitations</a> section in the <i>VPC Peering Guide</i>.</p>\n         </note>\n         <p>The owner of the accepter VPC must accept the peering request to activate the peering\n            connection. The VPC peering connection request expires after 7 days, after which it\n            cannot be accepted or rejected.</p>\n         <p>If you create a VPC peering connection request between VPCs with overlapping CIDR\n            blocks, the VPC peering connection has a status of <code>failed</code>.</p>\n      \n      "
     },
     "DeleteVpcPeeringConnection": {
       "name": "DeleteVpcPeeringConnection",
