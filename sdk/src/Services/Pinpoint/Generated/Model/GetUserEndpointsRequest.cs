@@ -29,7 +29,7 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the GetUserEndpoints operation.
-    /// Returns information about the endpoints associated with an user id.
+    /// Returns information about the endpoints that are associated with a User ID.
     /// </summary>
     public partial class GetUserEndpointsRequest : AmazonPinpointRequest
     {

@@ -40,7 +40,8 @@ namespace Amazon.Pinpoint.Model
         private int? _size;
 
         /// <summary>
-        /// Gets and sets the property ChannelCounts. Channel type counts
+        /// Gets and sets the property ChannelCounts. The number of channel types in the imported
+        /// segment.
         /// </summary>
         public Dictionary<string, int> ChannelCounts
         {
@@ -55,7 +56,7 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ExternalId. DEPRECATED. Your AWS account ID, which you
+        /// Gets and sets the property ExternalId. (Deprecated) Your AWS account ID, which you
         /// assigned to the ExternalID key in an IAM trust policy. Used by Amazon Pinpoint to
         /// assume an IAM role. This requirement is removed, and external IDs are not recommended
         /// for IAM roles assumed by Amazon Pinpoint.
@@ -105,8 +106,8 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property S3Url. A URL that points to the Amazon S3 location from
-        /// which the endpoints for this segment were imported.
+        /// Gets and sets the property S3Url. The URL of the S3 bucket that the segment was imported
+        /// from.
         /// </summary>
         public string S3Url
         {

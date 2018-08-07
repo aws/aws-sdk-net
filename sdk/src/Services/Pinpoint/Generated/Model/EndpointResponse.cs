@@ -49,8 +49,8 @@ namespace Amazon.Pinpoint.Model
         private EndpointUser _user;
 
         /// <summary>
-        /// Gets and sets the property Address. The address or token of the endpoint as provided
-        /// by your push provider (e.g. DeviceToken or RegistrationId).
+        /// Gets and sets the property Address. The address of the endpoint as provided by your
+        /// push provider. For example, the DeviceToken or RegistrationId.
         /// </summary>
         public string Address
         {
@@ -65,8 +65,8 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ApplicationId. The ID of the application associated with
-        /// the endpoint.
+        /// Gets and sets the property ApplicationId. The ID of the application that is associated
+        /// with the endpoint.
         /// </summary>
         public string ApplicationId
         {
@@ -83,11 +83,11 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property Attributes. Custom attributes that describe the endpoint
         /// by associating a name with an array of values. For example, an attribute named "interests"
-        /// might have the values ["science", "politics", "travel"]. You can use these attributes
-        /// as selection criteria when you create a segment of users to engage with a messaging
-        /// campaign.The following characters are not recommended in attribute names: # : ? \
-        /// /. The Amazon Pinpoint console does not display attributes that include these characters
-        /// in the name. This limitation does not apply to attribute values.
+        /// might have the following values: ["science", "politics", "travel"]. You can use these
+        /// attributes as selection criteria when you create segments.The Amazon Pinpoint console
+        /// can't display attribute names that include the following characters: hash/pound sign
+        /// (#), colon (:), question mark (?), backslash (\), and forward slash (/). For this
+        /// reason, you should avoid using these characters in the names of custom attributes.
         /// </summary>
         public Dictionary<string, List<string>> Attributes
         {
@@ -118,7 +118,7 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CohortId. A number from 0 - 99 that represents the cohort
+        /// Gets and sets the property CohortId. A number from 0-99 that represents the cohort
         /// the endpoint is assigned to. Endpoints are grouped into cohorts randomly, and each
         /// cohort contains approximately 1 percent of the endpoints for an app. Amazon Pinpoint
         /// assigns cohorts to the holdout or treatment allocations for a campaign.
@@ -136,8 +136,8 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreationDate. The last time the endpoint was created. Provided
-        /// in ISO 8601 format.
+        /// Gets and sets the property CreationDate. The date and time when the endpoint was created,
+        /// shown in ISO 8601 format.
         /// </summary>
         public string CreationDate
         {
@@ -167,8 +167,8 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EffectiveDate. The last time the endpoint was updated.
-        /// Provided in ISO 8601 format.
+        /// Gets and sets the property EffectiveDate. The date and time when the endpoint was
+        /// last updated, shown in ISO 8601 format.
         /// </summary>
         public string EffectiveDate
         {
@@ -199,8 +199,8 @@ namespace Amazon.Pinpoint.Model
 
         /// <summary>
         /// Gets and sets the property Id. The unique ID that you assigned to the endpoint. The
-        /// ID should be a globally unique identifier (GUID) to ensure that it is unique compared
-        /// to all other endpoints for the application.
+        /// ID should be a globally unique identifier (GUID) to ensure that it doesn't conflict
+        /// with other endpoint IDs associated with the application.
         /// </summary>
         public string Id
         {

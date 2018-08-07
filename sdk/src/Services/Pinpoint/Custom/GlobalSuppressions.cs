@@ -31,3 +31,7 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Scope = "member", Target = "Amazon.Pinpoint.Model.BaiduMessage.#Substitutions")]
 [module: SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Scope = "member", Target = "Amazon.Pinpoint.Model.EndpointSendConfiguration.#Substitutions")]
 [module: SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Scope = "member", Target = "Amazon.Pinpoint.Model.SendUsersMessageResponse.#Result")]
+[module: SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Scope = "member", Target = "Amazon.Pinpoint.Model.PublicEndpoint.#Attributes")]
+
+// Suppressions for identifier should not match keywords
+[module: SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords", Scope = "type", Target = "Amazon.Pinpoint.Model.Event", MessageId="Event")]

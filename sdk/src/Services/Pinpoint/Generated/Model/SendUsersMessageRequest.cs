@@ -34,6 +34,7 @@ namespace Amazon.Pinpoint.Model
     {
         private Dictionary<string, string> _context = new Dictionary<string, string>();
         private DirectMessageConfiguration _messageConfiguration;
+        private string _traceId;
         private Dictionary<string, EndpointSendConfiguration> _users = new Dictionary<string, EndpointSendConfiguration>();
 
         /// <summary>
@@ -68,6 +69,22 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetMessageConfiguration()
         {
             return this._messageConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TraceId. A unique ID that you can use to trace a message.
+        /// This ID is visible to recipients.
+        /// </summary>
+        public string TraceId
+        {
+            get { return this._traceId; }
+            set { this._traceId = value; }
+        }
+
+        // Check to see if TraceId property is set
+        internal bool IsSetTraceId()
+        {
+            return this._traceId != null;
         }
 
         /// <summary>

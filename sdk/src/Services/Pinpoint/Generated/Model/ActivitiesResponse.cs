@@ -33,6 +33,7 @@ namespace Amazon.Pinpoint.Model
     public partial class ActivitiesResponse
     {
         private List<ActivityResponse> _item = new List<ActivityResponse>();
+        private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property Item. List of campaign activities
@@ -47,6 +48,22 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetItem()
         {
             return this._item != null && this._item.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. The string that you use in a subsequent request
+        /// to get the next page of results in a paginated response.
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
     }

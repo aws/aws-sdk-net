@@ -868,6 +868,22 @@ namespace Amazon.Pinpoint
 
         #endregion
                 
+        #region  PutEvents
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutEvents operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<PutEventsResponse> PutEventsAsync(PutEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  PutEventStream
 
 

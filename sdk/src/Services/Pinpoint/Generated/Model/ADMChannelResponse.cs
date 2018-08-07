@@ -60,7 +60,7 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreationDate. When was this segment created
+        /// Gets and sets the property CreationDate. The date and time when this channel was created.
         /// </summary>
         public string CreationDate
         {
@@ -75,7 +75,8 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Enabled. If the channel is enabled for sending messages.
+        /// Gets and sets the property Enabled. Indicates whether or not the channel is enabled
+        /// for sending messages.
         /// </summary>
         public bool Enabled
         {
@@ -105,7 +106,8 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. Channel ID. Not used, only for backwards compatibility.
+        /// Gets and sets the property Id. (Deprecated) An identifier for the channel. Retained
+        /// for backwards compatibility.
         /// </summary>
         public string Id
         {
@@ -120,7 +122,7 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IsArchived. Is this channel archived
+        /// Gets and sets the property IsArchived. Indicates whether or not the channel is archived.
         /// </summary>
         public bool IsArchived
         {
@@ -135,7 +137,7 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastModifiedBy. Who last updated this entry
+        /// Gets and sets the property LastModifiedBy. The user who last updated this channel.
         /// </summary>
         public string LastModifiedBy
         {
@@ -150,7 +152,8 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastModifiedDate. Last date this was updated
+        /// Gets and sets the property LastModifiedDate. The date and time when this channel was
+        /// last modified.
         /// </summary>
         public string LastModifiedDate
         {
@@ -165,7 +168,8 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Platform. Platform type. Will be "ADM"
+        /// Gets and sets the property Platform. The platform type. For this channel, the value
+        /// is always "ADM."
         /// </summary>
         public string Platform
         {
@@ -180,7 +184,7 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Version. Version of channel
+        /// Gets and sets the property Version. The channel version.
         /// </summary>
         public int Version
         {

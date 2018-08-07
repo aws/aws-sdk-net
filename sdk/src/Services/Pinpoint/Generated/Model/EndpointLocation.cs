@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Endpoint location data
+    /// Location data for the endpoint.
     /// </summary>
     public partial class EndpointLocation
     {
@@ -55,8 +55,9 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Country. Country according to ISO 3166-1 Alpha-2 codes.
-        /// For example, US.
+        /// Gets and sets the property Country. The two-letter code for the country or region
+        /// of the endpoint. Specified as an ISO 3166-1 Alpha-2 code, such as "US" for the United
+        /// States.
         /// </summary>
         public string Country
         {
@@ -71,8 +72,8 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Latitude. The latitude of the endpoint location. Rounded
-        /// to one decimal (Roughly corresponding to a mile).
+        /// Gets and sets the property Latitude. The latitude of the endpoint location, rounded
+        /// to one decimal place.
         /// </summary>
         public double Latitude
         {
@@ -87,8 +88,8 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Longitude. The longitude of the endpoint location. Rounded
-        /// to one decimal (Roughly corresponding to a mile).
+        /// Gets and sets the property Longitude. The longitude of the endpoint location, rounded
+        /// to one decimal place.
         /// </summary>
         public double Longitude
         {
@@ -119,7 +120,7 @@ namespace Amazon.Pinpoint.Model
 
         /// <summary>
         /// Gets and sets the property Region. The region of the endpoint location. For example,
-        /// corresponds to a state in US.
+        /// in the United States, this corresponds to a state.
         /// </summary>
         public string Region
         {

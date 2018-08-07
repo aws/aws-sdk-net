@@ -67,8 +67,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SegmentGroups. Segment definition groups. We currently
-        /// only support one. If specified Dimensions must be empty.
+        /// Gets and sets the property SegmentGroups. A segment group, which consists of zero
+        /// or more source segments, plus dimensions that are applied to those source segments.
+        /// Your request can only include one segment group. Your request can include either a
+        /// SegmentGroups object or a Dimensions object, but not both.
         /// </summary>
         public SegmentGroupList SegmentGroups
         {

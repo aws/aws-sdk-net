@@ -29,7 +29,7 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateSegment operation.
-    /// Use to update a segment.
+    /// Used to update a segment.
     /// </summary>
     public partial class UpdateSegmentRequest : AmazonPinpointRequest
     {

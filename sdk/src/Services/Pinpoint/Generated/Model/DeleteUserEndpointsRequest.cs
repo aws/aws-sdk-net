@@ -29,7 +29,7 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteUserEndpoints operation.
-    /// Deletes endpoints associated with an user id.
+    /// Deletes endpoints that are associated with a User ID.
     /// </summary>
     public partial class DeleteUserEndpointsRequest : AmazonPinpointRequest
     {

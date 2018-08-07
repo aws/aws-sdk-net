@@ -36,7 +36,7 @@ namespace Amazon.Pinpoint.Model
         private int? _version;
 
         /// <summary>
-        /// Gets and sets the property Id. Segment Id.
+        /// Gets and sets the property Id. A unique identifier for the segment.
         /// </summary>
         public string Id
         {

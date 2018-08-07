@@ -37,7 +37,8 @@ namespace Amazon.Pinpoint.Model
         private bool? _enabled;
 
         /// <summary>
-        /// Gets and sets the property ClientId. Client ID as gotten from Amazon
+        /// Gets and sets the property ClientId. The Client ID that you obtained from the Amazon
+        /// App Distribution Portal.
         /// </summary>
         public string ClientId
         {
@@ -52,7 +53,8 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ClientSecret. Client secret as gotten from Amazon
+        /// Gets and sets the property ClientSecret. The Client Secret that you obtained from
+        /// the Amazon App Distribution Portal.
         /// </summary>
         public string ClientSecret
         {
@@ -67,7 +69,8 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Enabled. If the channel is enabled for sending messages.
+        /// Gets and sets the property Enabled. Indicates whether or not the channel is enabled
+        /// for sending messages.
         /// </summary>
         public bool Enabled
         {

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Default Message across push notification, email, and sms.
+    /// The default message to use across all channels.
     /// </summary>
     public partial class DefaultMessage
     {

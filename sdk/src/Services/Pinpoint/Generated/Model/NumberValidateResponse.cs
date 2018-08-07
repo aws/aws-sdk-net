@@ -48,8 +48,8 @@ namespace Amazon.Pinpoint.Model
         private string _zipCode;
 
         /// <summary>
-        /// Gets and sets the property Carrier. The carrier that the phone number is registered
-        /// with.
+        /// Gets and sets the property Carrier. The carrier or servive provider that the phone
+        /// number is currently registered with.
         /// </summary>
         public string Carrier
         {
@@ -79,8 +79,8 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CleansedPhoneNumberE164. The cleansed (standardized) phone
-        /// number in E.164 format.
+        /// Gets and sets the property CleansedPhoneNumberE164. The cleansed phone number, shown
+        /// in E.164 format.
         /// </summary>
         public string CleansedPhoneNumberE164
         {
@@ -95,8 +95,8 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CleansedPhoneNumberNational. The cleansed phone number
-        /// in national format.
+        /// Gets and sets the property CleansedPhoneNumberNational. The cleansed phone number,
+        /// shown in the local phone number format.
         /// </summary>
         public string CleansedPhoneNumberNational
         {
@@ -111,8 +111,8 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Country. The country where the phone number was originally
-        /// registered.
+        /// Gets and sets the property Country. The country or region where the phone number was
+        /// originally registered.
         /// </summary>
         public string Country
         {
@@ -127,8 +127,8 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CountryCodeIso2. The two-character ISO country code for
-        /// the country where the phone number was originally registered.
+        /// Gets and sets the property CountryCodeIso2. The two-character ISO code for the country
+        /// or region where the phone number was originally registered.
         /// </summary>
         public string CountryCodeIso2
         {
@@ -143,8 +143,8 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CountryCodeNumeric. The numeric country code for the country
-        /// where the phone number was originally registered.
+        /// Gets and sets the property CountryCodeNumeric. The numeric code for the country or
+        /// region where the phone number was originally registered.
         /// </summary>
         public string CountryCodeNumeric
         {
@@ -175,8 +175,8 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OriginalCountryCodeIso2. The two-character ISO country
-        /// code that was included in the request body.
+        /// Gets and sets the property OriginalCountryCodeIso2. The two-character ISO code for
+        /// the country or region that you included in the request body.
         /// </summary>
         public string OriginalCountryCodeIso2
         {
@@ -208,7 +208,7 @@ namespace Amazon.Pinpoint.Model
 
         /// <summary>
         /// Gets and sets the property PhoneType. A description of the phone type. Possible values
-        /// include MOBILE, LANDLINE, VOIP, INVALID, and OTHER.
+        /// are MOBILE, LANDLINE, VOIP, INVALID, PREPAID, and OTHER.
         /// </summary>
         public string PhoneType
         {
@@ -223,8 +223,9 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PhoneTypeCode. The phone type as an integer. Possible values
-        /// include 0 (MOBILE), 1 (LANDLINE), 2 (VOIP), 3 (INVALID), and 4 (OTHER).
+        /// Gets and sets the property PhoneTypeCode. The phone type, represented by an integer.
+        /// Possible values include 0 (MOBILE), 1 (LANDLINE), 2 (VOIP), 3 (INVALID), 4 (OTHER),
+        /// and 5 (PREPAID).
         /// </summary>
         public int PhoneTypeCode
         {
@@ -255,7 +256,7 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ZipCode. The zip code for the location where the phone
+        /// Gets and sets the property ZipCode. The postal code for the location where the phone
         /// number was originally registered.
         /// </summary>
         public string ZipCode

@@ -58,7 +58,7 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ExternalId. DEPRECATED. Your AWS account ID, which you
+        /// Gets and sets the property ExternalId. (Deprecated) Your AWS account ID, which you
         /// assigned to the ExternalID key in an IAM trust policy. Used by Amazon Pinpoint to
         /// assume an IAM role. This requirement is removed, and external IDs are not recommended
         /// for IAM roles assumed by Amazon Pinpoint.
@@ -125,10 +125,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property S3Url. A URL that points to the location within an Amazon
-        /// S3 bucket that contains the endpoints to import. The location can be a folder or a
-        /// single file.The URL should follow this format: s3://bucket-name/folder-name/file-nameAmazon
-        /// Pinpoint will import endpoints from this location and any subfolders it contains.
+        /// Gets and sets the property S3Url. The URL of the S3 bucket that contains the segment
+        /// information to import. The location can be a folder or a single file. The URL should
+        /// use the following format: s3://bucket-name/folder-name/file-nameAmazon Pinpoint imports
+        /// endpoints from this location and any subfolders it contains.
         /// </summary>
         public string S3Url
         {

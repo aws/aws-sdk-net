@@ -69,8 +69,7 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Body. The message body of the notification, the email body
-        /// or the text message.
+        /// Gets and sets the property Body. The message body of the notification.
         /// </summary>
         public string Body
         {

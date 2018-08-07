@@ -47,8 +47,8 @@ namespace Amazon.Pinpoint.Model
         private string _type;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId. The unique ID of the application to which
-        /// the job applies.
+        /// Gets and sets the property ApplicationId. The unique ID of the application associated
+        /// with the export job.
         /// </summary>
         public string ApplicationId
         {

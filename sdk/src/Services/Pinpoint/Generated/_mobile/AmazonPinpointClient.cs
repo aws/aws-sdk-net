@@ -1842,6 +1842,37 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  PutEvents
+
+        internal virtual PutEventsResponse PutEvents(PutEventsRequest request)
+        {
+            var marshaller = PutEventsRequestMarshaller.Instance;
+            var unmarshaller = PutEventsResponseUnmarshaller.Instance;
+
+            return Invoke<PutEventsRequest,PutEventsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutEvents operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<PutEventsResponse> PutEventsAsync(PutEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = PutEventsRequestMarshaller.Instance;
+            var unmarshaller = PutEventsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutEventsRequest,PutEventsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutEventStream
 
         internal virtual PutEventStreamResponse PutEventStream(PutEventStreamRequest request)

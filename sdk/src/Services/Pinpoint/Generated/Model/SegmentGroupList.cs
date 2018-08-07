@@ -36,7 +36,7 @@ namespace Amazon.Pinpoint.Model
         private Include _include;
 
         /// <summary>
-        /// Gets and sets the property Groups. List of dimension groups to evaluate.
+        /// Gets and sets the property Groups. A set of segment criteria to evaluate.
         /// </summary>
         public List<SegmentGroup> Groups
         {
@@ -51,7 +51,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Include. How should the groups be applied for the result
+        /// Gets and sets the property Include. Specify how to handle multiple segment groups.
+        /// For example, if the segment includes three segment groups, should the resulting segment
+        /// include endpoints that are matched by all, any, or none of the segment groups you
+        /// created. Acceptable values: ALL, ANY, or NONE.
         /// </summary>
         public Include Include
         {

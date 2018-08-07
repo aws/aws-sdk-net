@@ -858,7 +858,7 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Deletes endpoints associated with an user id.
+        /// Deletes endpoints that are associated with a User ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteUserEndpoints service method.</param>
         /// 
@@ -2191,7 +2191,7 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Returns information about the endpoints associated with an user id.
+        /// Returns information about the endpoints that are associated with a User ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetUserEndpoints service method.</param>
         /// 
@@ -2270,6 +2270,50 @@ namespace Amazon.Pinpoint
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<PhoneNumberValidateResponse> PhoneNumberValidateAsync(PhoneNumberValidateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutEvents
+
+
+        /// <summary>
+        /// Use to record events for endpoints. This method creates events and creates or updates
+        /// the endpoints that those events are associated with.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutEvents service method.</param>
+        /// 
+        /// <returns>The response from the PutEvents service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        PutEventsResponse PutEvents(PutEventsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutEvents operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<PutEventsResponse> PutEventsAsync(PutEventsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2363,13 +2407,7 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Use this resource to send a direct message, which is a one time message that you send
-        /// to a limited audience without creating a campaign. You can send the message to up
-        /// to 100 recipients. You cannot use the message to engage a segment. When you send the
-        /// message, Amazon Pinpoint delivers it immediately, and you cannot schedule the delivery.
-        /// To engage a user segment, and to schedule the message delivery, create a campaign
-        /// instead of sending a direct message.You can send a direct message as a push notification
-        /// to your mobile app or as an SMS message to SMS-enabled devices.
+        /// Used to send a direct message.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendMessages service method.</param>
         /// 
@@ -2412,21 +2450,7 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Use this resource to message a list of users. Amazon Pinpoint sends the message to
-        /// all of the endpoints that are associated with each user.A user represents an individual
-        /// who is assigned a unique user ID, and this ID is assigned to one or more endpoints.
-        /// For example, if an individual uses your app on multiple devices, your app could assign
-        /// that person's user ID to the endpoint for each device.With the users-messages resource,
-        /// you specify the message recipients as user IDs. For each user ID, Amazon Pinpoint
-        /// delivers the message to all of the user's endpoints. Within the body of your request,
-        /// you can specify a default message, and you can tailor your message for different channels,
-        /// including those for mobile push and SMS.With this resource, you send a direct message,
-        /// which is a one time message that you send to a limited audience without creating a
-        /// campaign. You can send the message to up to 100 users per request. You cannot use
-        /// the message to engage a segment. When you send the message, Amazon Pinpoint delivers
-        /// it immediately, and you cannot schedule the delivery. To engage a user segment, and
-        /// to schedule the message delivery, create a campaign instead of using the users-messages
-        /// resource.
+        /// Used to send a message to a list of users.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendUsersMessages service method.</param>
         /// 
@@ -2985,7 +3009,7 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Use to update a segment.
+        /// Used to update a segment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSegment service method.</param>
         /// 

@@ -44,8 +44,8 @@ namespace Amazon.Pinpoint.Model
         private int? _version;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId. The ID of the application to which the segment
-        /// applies.
+        /// Gets and sets the property ApplicationId. The ID of the application that the segment
+        /// applies to.
         /// </summary>
         public string ApplicationId
         {
@@ -60,8 +60,7 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreationDate. The date the segment was created in ISO 8601
-        /// format.
+        /// Gets and sets the property CreationDate. The date and time when the segment was created.
         /// </summary>
         public string CreationDate
         {
@@ -121,8 +120,8 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastModifiedDate. The date the segment was last updated
-        /// in ISO 8601 format.
+        /// Gets and sets the property LastModifiedDate. The date and time when the segment was
+        /// last modified.
         /// </summary>
         public string LastModifiedDate
         {
@@ -137,7 +136,7 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. The name of segment
+        /// Gets and sets the property Name. The name of the segment.
         /// </summary>
         public string Name
         {
@@ -152,8 +151,8 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SegmentGroups. Segment definition groups. We currently
-        /// only support one. If specified Dimensions must be empty.
+        /// Gets and sets the property SegmentGroups. A segment group, which consists of zero
+        /// or more source segments, plus dimensions that are applied to those source segments.
         /// </summary>
         public SegmentGroupList SegmentGroups
         {

@@ -49,7 +49,7 @@ namespace Amazon.Pinpoint.Model
         /// this endpoint. The address varies by channel. For mobile push channels, use the token
         /// provided by the push notification service, such as the APNs device token or the FCM
         /// registration token. For the SMS channel, use a phone number in E.164 format, such
-        /// as +1206XXX5550100. For the email channel, use an email address.
+        /// as +12065550100. For the email channel, use an email address.
         /// </summary>
         public string Address
         {
@@ -101,7 +101,7 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Demographic. The endpoint demographic attributes.
+        /// Gets and sets the property Demographic. Demographic attributes for the endpoint.
         /// </summary>
         public EndpointDemographic Demographic
         {
@@ -116,8 +116,8 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EffectiveDate. The last time the endpoint was updated.
-        /// Provided in ISO 8601 format.
+        /// Gets and sets the property EffectiveDate. The date and time when the endpoint was
+        /// updated, shown in ISO 8601 format.
         /// </summary>
         public string EffectiveDate
         {

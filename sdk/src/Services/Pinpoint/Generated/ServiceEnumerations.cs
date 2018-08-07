@@ -904,6 +904,10 @@ namespace Amazon.Pinpoint
         /// Constant ANY for SourceType
         /// </summary>
         public static readonly SourceType ANY = new SourceType("ANY");
+        /// <summary>
+        /// Constant NONE for SourceType
+        /// </summary>
+        public static readonly SourceType NONE = new SourceType("NONE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

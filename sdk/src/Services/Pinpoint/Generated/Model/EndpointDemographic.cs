@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Endpoint demographic data
+    /// Demographic information about the endpoint.
     /// </summary>
     public partial class EndpointDemographic
     {
@@ -75,7 +75,8 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Make. The endpoint make, such as such as Apple or Samsung.
+        /// Gets and sets the property Make. The manufacturer of the endpoint device, such as
+        /// Apple or Samsung.
         /// </summary>
         public string Make
         {
@@ -90,7 +91,8 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Model. The endpoint model, such as iPhone.
+        /// Gets and sets the property Model. The model name or number of the endpoint device,
+        /// such as iPhone.
         /// </summary>
         public string Model
         {
@@ -105,7 +107,7 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ModelVersion. The endpoint model version.
+        /// Gets and sets the property ModelVersion. The model version of the endpoint device.
         /// </summary>
         public string ModelVersion
         {
@@ -120,7 +122,8 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Platform. The endpoint platform, such as ios or android.
+        /// Gets and sets the property Platform. The platform of the endpoint device, such as
+        /// iOS or Android.
         /// </summary>
         public string Platform
         {
@@ -135,7 +138,7 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PlatformVersion. The endpoint platform version.
+        /// Gets and sets the property PlatformVersion. The platform version of the endpoint device.
         /// </summary>
         public string PlatformVersion
         {

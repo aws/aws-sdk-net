@@ -53,8 +53,11 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceSegments. Segments that define the source of this
-        /// segment. Currently a maximum of 1 import segment is supported.
+        /// Gets and sets the property SourceSegments. The base segment that you build your segment
+        /// on. The source segment defines the starting "universe" of endpoints. When you add
+        /// dimensions to the segment, it filters the source segment based on the dimensions that
+        /// you specify. You can specify more than one dimensional segment. You can only specify
+        /// one imported segment.
         /// </summary>
         public List<SegmentReference> SourceSegments
         {
@@ -69,7 +72,9 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceType. Include or exclude the source.
+        /// Gets and sets the property SourceType. Specify how to handle multiple source segments.
+        /// For example, if you specify three source segments, should the resulting segment be
+        /// based on any or all of the segments? Acceptable values: ANY or ALL.
         /// </summary>
         public SourceType SourceType
         {
@@ -84,7 +89,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type. How should the dimensions be applied for the result
+        /// Gets and sets the property Type. Specify how to handle multiple segment dimensions.
+        /// For example, if you specify three dimensions, should the resulting segment include
+        /// endpoints that are matched by all, any, or none of the dimensions? Acceptable values:
+        /// ALL, ANY, or NONE.
         /// </summary>
         public Type Type
         {
