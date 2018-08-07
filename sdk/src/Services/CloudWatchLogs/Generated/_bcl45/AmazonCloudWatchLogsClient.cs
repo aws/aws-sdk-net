@@ -1730,9 +1730,11 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The log events in the batch must be in chronological ordered by their time stamp (the
-        /// time the event occurred, expressed as the number of milliseconds after Jan 1, 1970
-        /// 00:00:00 UTC).
+        /// The log events in the batch must be in chronological ordered by their time stamp.
+        /// The time stamp is the time the event occurred, expressed as the number of milliseconds
+        /// after Jan 1, 1970 00:00:00 UTC. (In AWS Tools for PowerShell and the AWS SDK for .NET,
+        /// the timestamp is specified in .NET format: yyyy-mm-ddThh:mm:ss. For example, 2017-09-15T13:45:30.)
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1743,7 +1745,11 @@ namespace Amazon.CloudWatchLogs
         /// A batch of log events in a single request cannot span more than 24 hours. Otherwise,
         /// the operation fails.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// If a call to PutLogEvents returns "UnrecognizedClientException" the most likely cause
+        /// is an invalid AWS access key ID or secret key. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutLogEvents service method.</param>
         /// 
@@ -1762,6 +1768,9 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.UnrecognizedClientException">
+        /// The most likely cause is an invalid AWS access key ID or secret key.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutLogEvents">REST API Reference for PutLogEvents Operation</seealso>
         public virtual PutLogEventsResponse PutLogEvents(PutLogEventsRequest request)
@@ -1859,7 +1868,7 @@ namespace Amazon.CloudWatchLogs
 
         /// <summary>
         /// Creates or updates a resource policy allowing other AWS services to put log events
-        /// to this account, such as Amazon Route 53. An account can have up to 50 resource policies
+        /// to this account, such as Amazon Route 53. An account can have up to 10 resource policies
         /// per region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>

@@ -124,7 +124,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  
         /// <para>
-        /// iIf <code>orderBy</code> is <code>LastEventTime</code>,you cannot specify this parameter.
+        /// If <code>orderBy</code> is <code>LastEventTime</code>,you cannot specify this parameter.
         /// </para>
         /// </summary>
         public string LogStreamNamePrefix

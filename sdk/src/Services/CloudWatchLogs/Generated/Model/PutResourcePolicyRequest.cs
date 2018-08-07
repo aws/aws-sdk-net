@@ -30,7 +30,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// <summary>
     /// Container for the parameters to the PutResourcePolicy operation.
     /// Creates or updates a resource policy allowing other AWS services to put log events
-    /// to this account, such as Amazon Route 53. An account can have up to 50 resource policies
+    /// to this account, such as Amazon Route 53. An account can have up to 10 resource policies
     /// per region.
     /// </summary>
     public partial class PutResourcePolicyRequest : AmazonCloudWatchLogsRequest
@@ -52,9 +52,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  
         /// <para>
-        ///  { "Version": "2012-10-17" "Statement": [ { "Sid": "Route53LogsToCloudWatchLogs",
+        ///  <code>{ "Version": "2012-10-17", "Statement": [ { "Sid": "Route53LogsToCloudWatchLogs",
         /// "Effect": "Allow", "Principal": { "Service": [ "route53.amazonaws.com" ] }, "Action":"logs:PutLogEvents",
-        /// "Resource": logArn } ] } 
+        /// "Resource": "logArn" } ] } </code> 
         /// </para>
         /// </summary>
         public string PolicyDocument

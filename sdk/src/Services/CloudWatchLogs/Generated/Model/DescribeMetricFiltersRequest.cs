@@ -112,7 +112,12 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MetricName.
+        /// Gets and sets the property MetricName. 
+        /// <para>
+        /// Filters results to include only those with the specified metric name. If you include
+        /// this parameter in your request, you must also include the <code>metricNamespace</code>
+        /// parameter.
+        /// </para>
         /// </summary>
         public string MetricName
         {
@@ -129,7 +134,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property MetricNamespace. 
         /// <para>
-        /// The namespace of the CloudWatch metric.
+        /// Filters results to include only those in the specified namespace. If you include this
+        /// parameter in your request, you must also include the <code>metricName</code> parameter.
         /// </para>
         /// </summary>
         public string MetricNamespace
