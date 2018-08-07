@@ -82,6 +82,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     unmarshalledObject.Md5sum = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("overrideArtifactName", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.OverrideArtifactName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sha256sum", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

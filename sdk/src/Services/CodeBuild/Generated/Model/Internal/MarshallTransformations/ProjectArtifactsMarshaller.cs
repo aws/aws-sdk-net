@@ -69,6 +69,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.NamespaceType);
             }
 
+            if(requestObject.IsSetOverrideArtifactName())
+            {
+                context.Writer.WritePropertyName("overrideArtifactName");
+                context.Writer.Write(requestObject.OverrideArtifactName);
+            }
+
             if(requestObject.IsSetPackaging())
             {
                 context.Writer.WritePropertyName("packaging");

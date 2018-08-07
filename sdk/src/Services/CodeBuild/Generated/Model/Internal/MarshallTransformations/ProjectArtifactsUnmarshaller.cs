@@ -88,6 +88,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     unmarshalledObject.NamespaceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("overrideArtifactName", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.OverrideArtifactName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("packaging", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
