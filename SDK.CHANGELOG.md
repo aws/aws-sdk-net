@@ -1,3 +1,15 @@
+### 3.3.332.0 (2018-08-07 23:53 UTC)
+* CloudWatchLogs (3.3.5.0)
+	* Documentation Update
+* CodeBuild (3.3.14.0)
+	* Release semantic versioning feature for CodeBuild
+* EC2 (3.3.58.0)
+	* Amazon VPC Flow Logs adds support for delivering flow logs directly to S3
+* Pinpoint (3.3.9.0)
+	* This release includes a new batch API call for Amazon Pinpoint which can be used to update endpoints and submit events. This call will accept events from clients such as mobile devices and AWS SDKs. This call will accept requests which has multiple endpoints and multiple events attached to those endpoints in a single call. This call will update the endpoints attached and will ingest events for those endpoints. The response from this call will be a multipart response per endpoint/per event submitted.
+* SimpleSystemsManagement (3.3.28.0)
+	* Two new filters ExecutionStage and DocumentName will be added to ListCommands so that customers will have more approaches to query their commands.
+
 ### 3.3.331.0 (2018-08-06 22:16 UTC)
 * AWSHealth (3.3.1.0)
 	* Updates the ARN structure vended by AWS Health API. All ARNs will now include the service and type code of the associated event, as vended by DescribeEventTypes.
