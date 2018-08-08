@@ -67,6 +67,12 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetForceDeleteWithoutRecovery())
+                {
+                    context.Writer.WritePropertyName("ForceDeleteWithoutRecovery");
+                    context.Writer.Write(publicRequest.ForceDeleteWithoutRecovery);
+                }
+
                 if(publicRequest.IsSetRecoveryWindowInDays())
                 {
                     context.Writer.WritePropertyName("RecoveryWindowInDays");

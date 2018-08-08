@@ -39,7 +39,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property ARN. 
         /// <para>
-        /// The ARN of this secret.
+        /// The ARN of the secret that was updated.
         /// </para>
         ///  <note> 
         /// <para>
@@ -66,7 +66,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The friendly name of this secret.
+        /// The friendly name of the secret that was updated.
         /// </para>
         /// </summary>
         public string Name
@@ -84,8 +84,8 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property VersionId. 
         /// <para>
-        /// If a version of the secret was created or updated by this operation, then its unique
-        /// identifier is returned.
+        /// If a new version of the secret was created by this operation, then <code>VersionId</code>
+        /// contains the unique identifier of the new version.
         /// </para>
         /// </summary>
         public string VersionId

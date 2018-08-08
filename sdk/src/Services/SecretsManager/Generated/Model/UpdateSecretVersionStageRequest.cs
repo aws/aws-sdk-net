@@ -97,7 +97,7 @@ namespace Amazon.SecretsManager.Model
         ///  
         /// <para>
         /// If any of the staging labels are already attached to a different version of the secret,
-        /// then they are removed from that version before adding them to this version.
+        /// then they are automatically removed from that version before adding them to this version.
         /// </para>
         /// </summary>
         public string MoveToVersionId

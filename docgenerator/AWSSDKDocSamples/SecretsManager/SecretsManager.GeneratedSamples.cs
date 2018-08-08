@@ -46,6 +46,21 @@ namespace AWSSDKDocSamples.Amazon.SecretsManager.Generated
             #endregion
         }
 
+        public void SecretsManagerDeleteResourcePolicy()
+        {
+            #region to-delete-the-resource-based-policy-attached-to-a-secret-1530209419204
+
+            var response = client.DeleteResourcePolicy(new DeleteResourcePolicyRequest 
+            {
+                SecretId = "MyTestDatabaseSecret"
+            });
+
+            string arn = response.ARN;
+            string name = response.Name;
+
+            #endregion
+        }
+
         public void SecretsManagerDeleteSecret()
         {
             #region to-delete-a-secret-1523996905092
@@ -104,6 +119,22 @@ namespace AWSSDKDocSamples.Amazon.SecretsManager.Generated
             #endregion
         }
 
+        public void SecretsManagerGetResourcePolicy()
+        {
+            #region to-retrieve-the-resource-based-policy-attached-to-a-secret-1530209677536
+
+            var response = client.GetResourcePolicy(new GetResourcePolicyRequest 
+            {
+                SecretId = "MyTestDatabaseSecret"
+            });
+
+            string arn = response.ARN;
+            string name = response.Name;
+            string resourcePolicy = response.ResourcePolicy;
+
+            #endregion
+        }
+
         public void SecretsManagerGetSecretValue()
         {
             #region to-retrieve-the-encrypted-secret-value-of-a-secret-1524000702484
@@ -150,6 +181,32 @@ namespace AWSSDKDocSamples.Amazon.SecretsManager.Generated
             string arn = response.ARN;
             string name = response.Name;
             List<SecretVersionsListEntry> versions = response.Versions;
+
+            #endregion
+        }
+
+        public void SecretsManagerPutResourcePolicy()
+        {
+            #region to-add-a-resource-based-policy-to-a-secret-1530209881839
+
+            var response = client.PutResourcePolicy(new PutResourcePolicyRequest 
+            {
+                ResourcePolicy = "{
+\"Version\":\"2012-10-17\",
+\"Statement\":[{
+\"Effect\":\"Allow\",
+\"Principal\":{
+\"AWS\":\"arn:aws:iam::123456789012:root\"
+},
+\"Action\":\"secretsmanager:GetSecretValue\",
+\"Resource\":\"*\"
+}]
+}",
+                SecretId = "MyTestDatabaseSecret"
+            });
+
+            string arn = response.ARN;
+            string name = response.Name;
 
             #endregion
         }
