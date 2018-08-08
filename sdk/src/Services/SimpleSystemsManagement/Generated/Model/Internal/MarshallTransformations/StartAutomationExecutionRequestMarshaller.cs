@@ -122,6 +122,30 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetTargetMaps())
+                {
+                    context.Writer.WritePropertyName("TargetMaps");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTargetMapsListValue in publicRequest.TargetMaps)
+                    {
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTargetMapsListValueKvp in publicRequestTargetMapsListValue)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTargetMapsListValueKvp.Key);
+                            var publicRequestTargetMapsListValueValue = publicRequestTargetMapsListValueKvp.Value;
+
+                            context.Writer.WriteArrayStart();
+                            foreach(var publicRequestTargetMapsListValueValueListValue in publicRequestTargetMapsListValueValue)
+                            {
+                                    context.Writer.Write(publicRequestTargetMapsListValueValueListValue);
+                            }
+                            context.Writer.WriteArrayEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetTargetParameterName())
                 {
                     context.Writer.WritePropertyName("TargetParameterName");

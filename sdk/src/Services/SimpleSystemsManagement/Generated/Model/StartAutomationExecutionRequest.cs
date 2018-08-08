@@ -40,6 +40,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _maxErrors;
         private ExecutionMode _mode;
         private Dictionary<string, List<string>> _parameters = new Dictionary<string, List<string>>();
+        private List<Dictionary<string, List<string>>> _targetMaps = new List<Dictionary<string, List<string>>>();
         private string _targetParameterName;
         private List<Target> _targets = new List<Target>();
 
@@ -185,6 +186,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetParameters()
         {
             return this._parameters != null && this._parameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetMaps. 
+        /// <para>
+        /// A key-value mapping of document parameters to target resources. Both Targets and TargetMaps
+        /// cannot be specified together.
+        /// </para>
+        /// </summary>
+        public List<Dictionary<string, List<string>>> TargetMaps
+        {
+            get { return this._targetMaps; }
+            set { this._targetMaps = value; }
+        }
+
+        // Check to see if TargetMaps property is set
+        internal bool IsSetTargetMaps()
+        {
+            return this._targetMaps != null && this._targetMaps.Count > 0; 
         }
 
         /// <summary>

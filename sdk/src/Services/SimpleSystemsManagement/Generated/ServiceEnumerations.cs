@@ -461,14 +461,6 @@ namespace Amazon.SimpleSystemsManagement
     {
 
         /// <summary>
-        /// Constant DocumentName for CommandFilterKey
-        /// </summary>
-        public static readonly CommandFilterKey DocumentName = new CommandFilterKey("DocumentName");
-        /// <summary>
-        /// Constant ExecutionStage for CommandFilterKey
-        /// </summary>
-        public static readonly CommandFilterKey ExecutionStage = new CommandFilterKey("ExecutionStage");
-        /// <summary>
         /// Constant InvokedAfter for CommandFilterKey
         /// </summary>
         public static readonly CommandFilterKey InvokedAfter = new CommandFilterKey("InvokedAfter");

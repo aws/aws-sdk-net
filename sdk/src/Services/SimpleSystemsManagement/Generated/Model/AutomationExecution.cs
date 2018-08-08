@@ -52,6 +52,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private List<StepExecution> _stepExecutions = new List<StepExecution>();
         private bool? _stepExecutionsTruncated;
         private string _target;
+        private List<Dictionary<string, List<string>>> _targetMaps = new List<Dictionary<string, List<string>>>();
         private string _targetParameterName;
         private List<Target> _targets = new List<Target>();
 
@@ -416,6 +417,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetTarget()
         {
             return this._target != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetMaps. 
+        /// <para>
+        /// The specified key-value mapping of document parameters to target resources.
+        /// </para>
+        /// </summary>
+        public List<Dictionary<string, List<string>>> TargetMaps
+        {
+            get { return this._targetMaps; }
+            set { this._targetMaps = value; }
+        }
+
+        // Check to see if TargetMaps property is set
+        internal bool IsSetTargetMaps()
+        {
+            return this._targetMaps != null && this._targetMaps.Count > 0; 
         }
 
         /// <summary>
