@@ -231,4 +231,62 @@ namespace Amazon.DAX
         }
     }
 
+
+    /// <summary>
+    /// Constants used for properties of type SSEStatus.
+    /// </summary>
+    public class SSEStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for SSEStatus
+        /// </summary>
+        public static readonly SSEStatus DISABLED = new SSEStatus("DISABLED");
+        /// <summary>
+        /// Constant DISABLING for SSEStatus
+        /// </summary>
+        public static readonly SSEStatus DISABLING = new SSEStatus("DISABLING");
+        /// <summary>
+        /// Constant ENABLED for SSEStatus
+        /// </summary>
+        public static readonly SSEStatus ENABLED = new SSEStatus("ENABLED");
+        /// <summary>
+        /// Constant ENABLING for SSEStatus
+        /// </summary>
+        public static readonly SSEStatus ENABLING = new SSEStatus("ENABLING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SSEStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SSEStatus FindValue(string value)
+        {
+            return FindValue<SSEStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SSEStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
 }

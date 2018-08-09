@@ -85,6 +85,9 @@ namespace Amazon.DAX
         /// <exception cref="Amazon.DAX.Model.ParameterGroupNotFoundException">
         /// The specified parameter group does not exist.
         /// </exception>
+        /// <exception cref="Amazon.DAX.Model.ServiceLinkedRoleNotFoundException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.DAX.Model.SubnetGroupNotFoundException">
         /// The requested subnet group name does not refer to an existing subnet group.
         /// </exception>
@@ -134,6 +137,9 @@ namespace Amazon.DAX
         /// <exception cref="Amazon.DAX.Model.ParameterGroupQuotaExceededException">
         /// You have attempted to exceed the maximum number of parameter groups.
         /// </exception>
+        /// <exception cref="Amazon.DAX.Model.ServiceLinkedRoleNotFoundException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/CreateParameterGroup">REST API Reference for CreateParameterGroup Operation</seealso>
         CreateParameterGroupResponse CreateParameterGroup(CreateParameterGroupRequest request);
 
@@ -163,6 +169,9 @@ namespace Amazon.DAX
         /// <returns>The response from the CreateSubnetGroup service method, as returned by DAX.</returns>
         /// <exception cref="Amazon.DAX.Model.InvalidSubnetException">
         /// An invalid subnet identifier was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.ServiceLinkedRoleNotFoundException">
+        /// 
         /// </exception>
         /// <exception cref="Amazon.DAX.Model.SubnetGroupAlreadyExistsException">
         /// The specified subnet group already exists.
@@ -224,6 +233,9 @@ namespace Amazon.DAX
         /// <exception cref="Amazon.DAX.Model.NodeNotFoundException">
         /// None of the nodes in the cluster have the given node ID.
         /// </exception>
+        /// <exception cref="Amazon.DAX.Model.ServiceLinkedRoleNotFoundException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DecreaseReplicationFactor">REST API Reference for DecreaseReplicationFactor Operation</seealso>
         DecreaseReplicationFactorResponse DecreaseReplicationFactor(DecreaseReplicationFactorRequest request);
 
@@ -266,6 +278,9 @@ namespace Amazon.DAX
         /// <exception cref="Amazon.DAX.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
+        /// <exception cref="Amazon.DAX.Model.ServiceLinkedRoleNotFoundException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         DeleteClusterResponse DeleteCluster(DeleteClusterRequest request);
 
@@ -306,6 +321,9 @@ namespace Amazon.DAX
         /// <exception cref="Amazon.DAX.Model.ParameterGroupNotFoundException">
         /// The specified parameter group does not exist.
         /// </exception>
+        /// <exception cref="Amazon.DAX.Model.ServiceLinkedRoleNotFoundException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DeleteParameterGroup">REST API Reference for DeleteParameterGroup Operation</seealso>
         DeleteParameterGroupResponse DeleteParameterGroup(DeleteParameterGroupRequest request);
 
@@ -339,6 +357,9 @@ namespace Amazon.DAX
         /// <param name="request">Container for the necessary parameters to execute the DeleteSubnetGroup service method.</param>
         /// 
         /// <returns>The response from the DeleteSubnetGroup service method, as returned by DAX.</returns>
+        /// <exception cref="Amazon.DAX.Model.ServiceLinkedRoleNotFoundException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.DAX.Model.SubnetGroupInUseException">
         /// The specified subnet group is currently in use.
         /// </exception>
@@ -404,6 +425,9 @@ namespace Amazon.DAX
         /// <exception cref="Amazon.DAX.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
+        /// <exception cref="Amazon.DAX.Model.ServiceLinkedRoleNotFoundException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeClusters">REST API Reference for DescribeClusters Operation</seealso>
         DescribeClustersResponse DescribeClusters(DescribeClustersRequest request);
 
@@ -436,6 +460,9 @@ namespace Amazon.DAX
         /// </exception>
         /// <exception cref="Amazon.DAX.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.ServiceLinkedRoleNotFoundException">
+        /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeDefaultParameters">REST API Reference for DescribeDefaultParameters Operation</seealso>
         DescribeDefaultParametersResponse DescribeDefaultParameters(DescribeDefaultParametersRequest request);
@@ -478,6 +505,9 @@ namespace Amazon.DAX
         /// <exception cref="Amazon.DAX.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
+        /// <exception cref="Amazon.DAX.Model.ServiceLinkedRoleNotFoundException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         DescribeEventsResponse DescribeEvents(DescribeEventsRequest request);
 
@@ -515,6 +545,9 @@ namespace Amazon.DAX
         /// <exception cref="Amazon.DAX.Model.ParameterGroupNotFoundException">
         /// The specified parameter group does not exist.
         /// </exception>
+        /// <exception cref="Amazon.DAX.Model.ServiceLinkedRoleNotFoundException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeParameterGroups">REST API Reference for DescribeParameterGroups Operation</seealso>
         DescribeParameterGroupsResponse DescribeParameterGroups(DescribeParameterGroupsRequest request);
 
@@ -551,6 +584,9 @@ namespace Amazon.DAX
         /// <exception cref="Amazon.DAX.Model.ParameterGroupNotFoundException">
         /// The specified parameter group does not exist.
         /// </exception>
+        /// <exception cref="Amazon.DAX.Model.ServiceLinkedRoleNotFoundException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DescribeParameters">REST API Reference for DescribeParameters Operation</seealso>
         DescribeParametersResponse DescribeParameters(DescribeParametersRequest request);
 
@@ -579,6 +615,9 @@ namespace Amazon.DAX
         /// <param name="request">Container for the necessary parameters to execute the DescribeSubnetGroups service method.</param>
         /// 
         /// <returns>The response from the DescribeSubnetGroups service method, as returned by DAX.</returns>
+        /// <exception cref="Amazon.DAX.Model.ServiceLinkedRoleNotFoundException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.DAX.Model.SubnetGroupNotFoundException">
         /// The requested subnet group name does not refer to an existing subnet group.
         /// </exception>
@@ -634,6 +673,9 @@ namespace Amazon.DAX
         /// <exception cref="Amazon.DAX.Model.NodeQuotaForCustomerExceededException">
         /// You have attempted to exceed the maximum number of nodes for your AWS account.
         /// </exception>
+        /// <exception cref="Amazon.DAX.Model.ServiceLinkedRoleNotFoundException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/IncreaseReplicationFactor">REST API Reference for IncreaseReplicationFactor Operation</seealso>
         IncreaseReplicationFactorResponse IncreaseReplicationFactor(IncreaseReplicationFactorRequest request);
 
@@ -676,6 +718,9 @@ namespace Amazon.DAX
         /// </exception>
         /// <exception cref="Amazon.DAX.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.ServiceLinkedRoleNotFoundException">
+        /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/ListTags">REST API Reference for ListTags Operation</seealso>
         ListTagsResponse ListTags(ListTagsRequest request);
@@ -720,6 +765,9 @@ namespace Amazon.DAX
         /// <exception cref="Amazon.DAX.Model.NodeNotFoundException">
         /// None of the nodes in the cluster have the given node ID.
         /// </exception>
+        /// <exception cref="Amazon.DAX.Model.ServiceLinkedRoleNotFoundException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/RebootNode">REST API Reference for RebootNode Operation</seealso>
         RebootNodeResponse RebootNode(RebootNodeRequest request);
 
@@ -762,6 +810,9 @@ namespace Amazon.DAX
         /// </exception>
         /// <exception cref="Amazon.DAX.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.ServiceLinkedRoleNotFoundException">
+        /// 
         /// </exception>
         /// <exception cref="Amazon.DAX.Model.TagQuotaPerResourceExceededException">
         /// You have exceeded the maximum number of tags for this DAX cluster.
@@ -808,6 +859,9 @@ namespace Amazon.DAX
         /// </exception>
         /// <exception cref="Amazon.DAX.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.ServiceLinkedRoleNotFoundException">
+        /// 
         /// </exception>
         /// <exception cref="Amazon.DAX.Model.TagNotFoundException">
         /// The tag does not exist.
@@ -858,6 +912,9 @@ namespace Amazon.DAX
         /// <exception cref="Amazon.DAX.Model.ParameterGroupNotFoundException">
         /// The specified parameter group does not exist.
         /// </exception>
+        /// <exception cref="Amazon.DAX.Model.ServiceLinkedRoleNotFoundException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
         UpdateClusterResponse UpdateCluster(UpdateClusterRequest request);
 
@@ -898,6 +955,9 @@ namespace Amazon.DAX
         /// <exception cref="Amazon.DAX.Model.ParameterGroupNotFoundException">
         /// The specified parameter group does not exist.
         /// </exception>
+        /// <exception cref="Amazon.DAX.Model.ServiceLinkedRoleNotFoundException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/UpdateParameterGroup">REST API Reference for UpdateParameterGroup Operation</seealso>
         UpdateParameterGroupResponse UpdateParameterGroup(UpdateParameterGroupRequest request);
 
@@ -927,6 +987,9 @@ namespace Amazon.DAX
         /// <returns>The response from the UpdateSubnetGroup service method, as returned by DAX.</returns>
         /// <exception cref="Amazon.DAX.Model.InvalidSubnetException">
         /// An invalid subnet identifier was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DAX.Model.ServiceLinkedRoleNotFoundException">
+        /// 
         /// </exception>
         /// <exception cref="Amazon.DAX.Model.SubnetGroupNotFoundException">
         /// The requested subnet group name does not refer to an existing subnet group.

@@ -137,6 +137,17 @@ namespace Amazon.DAX.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetSSESpecification())
+                {
+                    context.Writer.WritePropertyName("SSESpecification");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SSESpecificationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SSESpecification, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSubnetGroupName())
                 {
                     context.Writer.WritePropertyName("SubnetGroupName");

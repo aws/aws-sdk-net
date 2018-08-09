@@ -43,6 +43,7 @@ namespace Amazon.DAX.Model
         private string _preferredMaintenanceWindow;
         private int? _replicationFactor;
         private List<string> _securityGroupIds = new List<string>();
+        private SSESpecification _sseSpecification;
         private string _subnetGroupName;
         private List<Tag> _tags = new List<Tag>();
 
@@ -306,6 +307,24 @@ namespace Amazon.DAX.Model
         internal bool IsSetSecurityGroupIds()
         {
             return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SSESpecification. 
+        /// <para>
+        /// Represents the settings used to enable server-side encryption on the cluster.
+        /// </para>
+        /// </summary>
+        public SSESpecification SSESpecification
+        {
+            get { return this._sseSpecification; }
+            set { this._sseSpecification = value; }
+        }
+
+        // Check to see if SSESpecification property is set
+        internal bool IsSetSSESpecification()
+        {
+            return this._sseSpecification != null;
         }
 
         /// <summary>

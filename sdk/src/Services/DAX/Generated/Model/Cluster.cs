@@ -45,6 +45,7 @@ namespace Amazon.DAX.Model
         private ParameterGroupStatus _parameterGroup;
         private string _preferredMaintenanceWindow;
         private List<SecurityGroupMembership> _securityGroups = new List<SecurityGroupMembership>();
+        private SSEDescription _sseDescription;
         private string _status;
         private string _subnetGroup;
         private int? _totalNodes;
@@ -289,6 +290,24 @@ namespace Amazon.DAX.Model
         internal bool IsSetSecurityGroups()
         {
             return this._securityGroups != null && this._securityGroups.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SSEDescription. 
+        /// <para>
+        /// The description of the server-side encryption status on the specified DAX cluster.
+        /// </para>
+        /// </summary>
+        public SSEDescription SSEDescription
+        {
+            get { return this._sseDescription; }
+            set { this._sseDescription = value; }
+        }
+
+        // Check to see if SSEDescription property is set
+        internal bool IsSetSSEDescription()
+        {
+            return this._sseDescription != null;
         }
 
         /// <summary>

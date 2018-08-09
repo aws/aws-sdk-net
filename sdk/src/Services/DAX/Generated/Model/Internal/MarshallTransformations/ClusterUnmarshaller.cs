@@ -142,6 +142,12 @@ namespace Amazon.DAX.Model.Internal.MarshallTransformations
                     unmarshalledObject.SecurityGroups = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SSEDescription", targetDepth))
+                {
+                    var unmarshaller = SSEDescriptionUnmarshaller.Instance;
+                    unmarshalledObject.SSEDescription = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
