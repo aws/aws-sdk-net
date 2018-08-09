@@ -58,10 +58,12 @@ namespace Amazon.RDS.Model
         private List<string> _enableCloudwatchLogsExports = new List<string>();
         private bool? _enableIAMDatabaseAuthentication;
         private string _engine;
+        private string _engineMode;
         private string _engineVersion;
         private string _kmsKeyId;
         private string _optionGroupName;
         private int? _port;
+        private ScalingConfiguration _scalingConfiguration;
         private string _snapshotIdentifier;
         private List<Tag> _tags = new List<Tag>();
         private List<string> _vpcSecurityGroupIds = new List<string>();
@@ -203,7 +205,11 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EnableCloudwatchLogsExports. 
         /// <para>
-        /// The list of logs that the restored DB cluster is to export to CloudWatch Logs.
+        /// The list of logs that the restored DB cluster is to export to CloudWatch Logs. The
+        /// values in the list depend on the DB engine being used. For more information, see <a
+        /// href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+        /// Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database
+        /// Service User Guide</i>.
         /// </para>
         /// </summary>
         public List<string> EnableCloudwatchLogsExports
@@ -265,6 +271,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetEngine()
         {
             return this._engine != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EngineMode. 
+        /// <para>
+        /// The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.
+        /// </para>
+        /// </summary>
+        public string EngineMode
+        {
+            get { return this._engineMode; }
+            set { this._engineMode = value; }
+        }
+
+        // Check to see if EngineMode property is set
+        internal bool IsSetEngineMode()
+        {
+            return this._engineMode != null;
         }
 
         /// <summary>
@@ -370,6 +394,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetPort()
         {
             return this._port.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScalingConfiguration. 
+        /// <para>
+        /// For DB clusters in <code>serverless</code> DB engine mode, the scaling properties
+        /// of the DB cluster.
+        /// </para>
+        /// </summary>
+        public ScalingConfiguration ScalingConfiguration
+        {
+            get { return this._scalingConfiguration; }
+            set { this._scalingConfiguration = value; }
+        }
+
+        // Check to see if ScalingConfiguration property is set
+        internal bool IsSetScalingConfiguration()
+        {
+            return this._scalingConfiguration != null;
         }
 
         /// <summary>

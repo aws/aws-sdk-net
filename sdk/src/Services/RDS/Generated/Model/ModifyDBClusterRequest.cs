@@ -50,6 +50,7 @@ namespace Amazon.RDS.Model
         private int? _port;
         private string _preferredBackupWindow;
         private string _preferredMaintenanceWindow;
+        private ScalingConfiguration _scalingConfiguration;
         private List<string> _vpcSecurityGroupIds = new List<string>();
 
         /// <summary>
@@ -462,6 +463,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetPreferredMaintenanceWindow()
         {
             return this._preferredMaintenanceWindow != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScalingConfiguration. 
+        /// <para>
+        /// The scaling properties of the DB cluster. You can only modify scaling properties for
+        /// DB clusters in <code>serverless</code> DB engine mode.
+        /// </para>
+        /// </summary>
+        public ScalingConfiguration ScalingConfiguration
+        {
+            get { return this._scalingConfiguration; }
+            set { this._scalingConfiguration = value; }
+        }
+
+        // Check to see if ScalingConfiguration property is set
+        internal bool IsSetScalingConfiguration()
+        {
+            return this._scalingConfiguration != null;
         }
 
         /// <summary>

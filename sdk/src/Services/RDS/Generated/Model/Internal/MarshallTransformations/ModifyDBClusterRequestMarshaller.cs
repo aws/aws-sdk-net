@@ -131,6 +131,25 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("PreferredMaintenanceWindow", StringUtils.FromString(publicRequest.PreferredMaintenanceWindow));
                 }
+                if(publicRequest.IsSetScalingConfiguration())
+                {
+                    if(publicRequest.ScalingConfiguration.IsSetAutoPause())
+                    {
+                        request.Parameters.Add("ScalingConfiguration" + "." + "AutoPause", StringUtils.FromBool(publicRequest.ScalingConfiguration.AutoPause));
+                    }
+                    if(publicRequest.ScalingConfiguration.IsSetMaxCapacity())
+                    {
+                        request.Parameters.Add("ScalingConfiguration" + "." + "MaxCapacity", StringUtils.FromInt(publicRequest.ScalingConfiguration.MaxCapacity));
+                    }
+                    if(publicRequest.ScalingConfiguration.IsSetMinCapacity())
+                    {
+                        request.Parameters.Add("ScalingConfiguration" + "." + "MinCapacity", StringUtils.FromInt(publicRequest.ScalingConfiguration.MinCapacity));
+                    }
+                    if(publicRequest.ScalingConfiguration.IsSetSecondsUntilAutoPause())
+                    {
+                        request.Parameters.Add("ScalingConfiguration" + "." + "SecondsUntilAutoPause", StringUtils.FromInt(publicRequest.ScalingConfiguration.SecondsUntilAutoPause));
+                    }
+                }
                 if(publicRequest.IsSetVpcSecurityGroupIds())
                 {
                     int publicRequestlistValueIndex = 1;

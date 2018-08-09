@@ -146,6 +146,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.StorageType = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("SupportedEngineModes/member", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.SupportedEngineModes.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("SupportsEnhancedMonitoring", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;

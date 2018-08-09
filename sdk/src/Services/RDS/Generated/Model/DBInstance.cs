@@ -474,6 +474,12 @@ namespace Amazon.RDS.Model
         /// <para>
         /// A list of log types that this DB instance is configured to export to CloudWatch Logs.
         /// </para>
+        ///  
+        /// <para>
+        /// Log types vary by DB engine. For information about the log types for each DB engine,
+        /// see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon
+        /// RDS Database Log Files</a> in the <i>Amazon RDS User Guide.</i> 
+        /// </para>
         /// </summary>
         public List<string> EnabledCloudwatchLogsExports
         {
@@ -941,26 +947,6 @@ namespace Amazon.RDS.Model
         /// an Internet-facing instance with a publicly resolvable DNS name, which resolves to
         /// a public IP address. A value of false specifies an internal instance with a DNS name
         /// that resolves to a private IP address.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: The default behavior varies depending on whether a VPC has been requested
-        /// or not. The following list shows the default behavior in each case.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <b>Default VPC:</b>true
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>VPC:</b>false
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// If no DB subnet group has been specified as part of the request and the PubliclyAccessible
-        /// value has not been set, the DB instance is publicly accessible. If a specific DB subnet
-        /// group has been specified as part of the request and the PubliclyAccessible value has
-        /// not been set, the DB instance is private.
         /// </para>
         /// </summary>
         public bool PubliclyAccessible

@@ -49,6 +49,7 @@ namespace Amazon.RDS.Model
         private string _parameterName;
         private string _parameterValue;
         private string _source;
+        private List<string> _supportedEngineModes = new List<string>();
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -235,6 +236,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetSource()
         {
             return this._source != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedEngineModes. 
+        /// <para>
+        /// The valid DB engine modes.
+        /// </para>
+        /// </summary>
+        public List<string> SupportedEngineModes
+        {
+            get { return this._supportedEngineModes; }
+            set { this._supportedEngineModes = value; }
+        }
+
+        // Check to see if SupportedEngineModes property is set
+        internal bool IsSetSupportedEngineModes()
+        {
+            return this._supportedEngineModes != null && this._supportedEngineModes.Count > 0; 
         }
 
     }

@@ -876,6 +876,9 @@ namespace Amazon.RDS
         /// RDS also may not be authorized by using IAM to perform necessary actions on your behalf.
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.BackupPolicyNotFoundException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
         /// <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
         /// </exception>
@@ -3292,6 +3295,69 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  ModifyCurrentDBClusterCapacity
+
+
+        /// <summary>
+        /// Set the capacity of an Aurora Serverless DB cluster to a specific value.
+        /// 
+        ///  
+        /// <para>
+        /// Aurora Serverless scales seamlessly based on the workload on the DB cluster. In some
+        /// cases, the capacity might not scale fast enough to meet a sudden change in workload,
+        /// such as a large number of new transactions. Call <code>ModifyCurrentDBClusterCapacity</code>
+        /// to set the capacity explicitly.
+        /// </para>
+        ///  
+        /// <para>
+        /// After this call sets the DB cluster capacity, Aurora Serverless can automatically
+        /// scale the DB cluster based on the cooldown period for scaling up and the cooldown
+        /// period for scaling down.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about Aurora Serverless, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/aurora-serverless.html">Using
+        /// Amazon Aurora Serverless</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you call <code>ModifyCurrentDBClusterCapacity</code> with the default <code>TimeoutAction</code>,
+        /// connections to the DB cluster are dropped when the capacity is set.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyCurrentDBClusterCapacity service method.</param>
+        /// 
+        /// <returns>The response from the ModifyCurrentDBClusterCapacity service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterCapacityException">
+        /// <i>Capacity</i> isn't a valid Aurora Serverless DB cluster capacity. Valid capacity
+        /// values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>,
+        /// <code>64</code>, <code>128</code>, and <code>256</code>.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The DB cluster isn't in a valid state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyCurrentDBClusterCapacity">REST API Reference for ModifyCurrentDBClusterCapacity Operation</seealso>
+        ModifyCurrentDBClusterCapacityResponse ModifyCurrentDBClusterCapacity(ModifyCurrentDBClusterCapacityRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyCurrentDBClusterCapacity operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyCurrentDBClusterCapacity operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyCurrentDBClusterCapacity">REST API Reference for ModifyCurrentDBClusterCapacity Operation</seealso>
+        Task<ModifyCurrentDBClusterCapacityResponse> ModifyCurrentDBClusterCapacityAsync(ModifyCurrentDBClusterCapacityRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ModifyDBCluster
 
 
@@ -3500,6 +3566,9 @@ namespace Amazon.RDS
         /// <para>
         /// RDS also may not be authorized by using IAM to perform necessary actions on your behalf.
         /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.BackupPolicyNotFoundException">
+        /// 
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
         /// <i>CertificateIdentifier</i> doesn't refer to an existing certificate.
@@ -4556,6 +4625,9 @@ namespace Amazon.RDS
         /// RDS also may not be authorized by using IAM to perform necessary actions on your behalf.
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.BackupPolicyNotFoundException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceAlreadyExistsException">
         /// The user already has a DB instance with the given identifier.
         /// </exception>
@@ -4653,6 +4725,9 @@ namespace Amazon.RDS
         /// <para>
         /// RDS also may not be authorized by using IAM to perform necessary actions on your behalf.
         /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.BackupPolicyNotFoundException">
+        /// 
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceAlreadyExistsException">
         /// The user already has a DB instance with the given identifier.
@@ -4758,6 +4833,9 @@ namespace Amazon.RDS
         /// <para>
         /// RDS also may not be authorized by using IAM to perform necessary actions on your behalf.
         /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.BackupPolicyNotFoundException">
+        /// 
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceAlreadyExistsException">
         /// The user already has a DB instance with the given identifier.

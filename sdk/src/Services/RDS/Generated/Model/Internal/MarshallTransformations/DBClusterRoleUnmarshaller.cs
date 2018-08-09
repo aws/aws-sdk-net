@@ -54,6 +54,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("FeatureName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.FeatureName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("RoleArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

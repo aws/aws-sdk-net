@@ -53,6 +53,7 @@ namespace Amazon.RDS.Model
         private bool? _multiAZCapable;
         private bool? _readReplicaCapable;
         private string _storageType;
+        private List<string> _supportedEngineModes = new List<string>();
         private bool? _supportsEnhancedMonitoring;
         private bool? _supportsIAMDatabaseAuthentication;
         private bool? _supportsIops;
@@ -328,6 +329,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetStorageType()
         {
             return this._storageType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedEngineModes. 
+        /// <para>
+        /// A list of the supported DB engine modes.
+        /// </para>
+        /// </summary>
+        public List<string> SupportedEngineModes
+        {
+            get { return this._supportedEngineModes; }
+            set { this._supportedEngineModes = value; }
+        }
+
+        // Check to see if SupportedEngineModes property is set
+        internal bool IsSetSupportedEngineModes()
+        {
+            return this._supportedEngineModes != null && this._supportedEngineModes.Count > 0; 
         }
 
         /// <summary>

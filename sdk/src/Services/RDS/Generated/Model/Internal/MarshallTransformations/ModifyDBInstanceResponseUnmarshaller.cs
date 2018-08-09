@@ -108,6 +108,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 return new AuthorizationNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("BackupPolicyNotFoundFault"))
+            {
+                return new BackupPolicyNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("CertificateNotFound"))
             {
                 return new CertificateNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

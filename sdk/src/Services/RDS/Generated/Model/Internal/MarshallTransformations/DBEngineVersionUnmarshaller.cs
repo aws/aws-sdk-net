@@ -104,6 +104,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.SupportedCharacterSets.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("SupportedEngineModes/member", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.SupportedEngineModes.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("SupportedTimezones/Timezone", targetDepth))
                     {
                         var unmarshaller = TimezoneUnmarshaller.Instance;

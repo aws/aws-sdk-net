@@ -40,6 +40,7 @@ namespace Amazon.RDS.Model
         private string _engineVersion;
         private List<string> _exportableLogTypes = new List<string>();
         private List<CharacterSet> _supportedCharacterSets = new List<CharacterSet>();
+        private List<string> _supportedEngineModes = new List<string>();
         private List<Timezone> _supportedTimezones = new List<Timezone>();
         private bool? _supportsLogExportsToCloudwatchLogs;
         private bool? _supportsReadReplica;
@@ -195,6 +196,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetSupportedCharacterSets()
         {
             return this._supportedCharacterSets != null && this._supportedCharacterSets.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedEngineModes. 
+        /// <para>
+        /// A list of the supported DB engine modes.
+        /// </para>
+        /// </summary>
+        public List<string> SupportedEngineModes
+        {
+            get { return this._supportedEngineModes; }
+            set { this._supportedEngineModes = value; }
+        }
+
+        // Check to see if SupportedEngineModes property is set
+        internal bool IsSetSupportedEngineModes()
+        {
+            return this._supportedEngineModes != null && this._supportedEngineModes.Count > 0; 
         }
 
         /// <summary>

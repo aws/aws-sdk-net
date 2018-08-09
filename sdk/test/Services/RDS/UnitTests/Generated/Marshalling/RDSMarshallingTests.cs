@@ -1569,6 +1569,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void ModifyCurrentDBClusterCapacityMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyCurrentDBClusterCapacity");
+
+            var request = InstantiateClassGenerator.Execute<ModifyCurrentDBClusterCapacityRequest>();
+            var marshaller = new ModifyCurrentDBClusterCapacityRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ModifyCurrentDBClusterCapacityResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyCurrentDBClusterCapacityResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void ModifyDBClusterMarshallTest()
         {
             var operation = service_model.FindOperation("ModifyDBCluster");

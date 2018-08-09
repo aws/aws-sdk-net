@@ -107,6 +107,15 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Source", StringUtils.FromString(publicRequestlistValue.Source));
                         }
+                        if(publicRequestlistValue.IsSetSupportedEngineModes())
+                        {
+                            int publicRequestlistValuelistValueIndex = 1;
+                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.SupportedEngineModes)
+                            {
+                                request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "SupportedEngineModes" + "." + "member" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                publicRequestlistValuelistValueIndex++;
+                            }
+                        }
                         publicRequestlistValueIndex++;
                     }
                 }

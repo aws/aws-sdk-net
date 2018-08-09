@@ -2696,6 +2696,38 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  ModifyCurrentDBClusterCapacity
+
+        internal virtual ModifyCurrentDBClusterCapacityResponse ModifyCurrentDBClusterCapacity(ModifyCurrentDBClusterCapacityRequest request)
+        {
+            var marshaller = ModifyCurrentDBClusterCapacityRequestMarshaller.Instance;
+            var unmarshaller = ModifyCurrentDBClusterCapacityResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyCurrentDBClusterCapacityRequest,ModifyCurrentDBClusterCapacityResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyCurrentDBClusterCapacity operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyCurrentDBClusterCapacity operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyCurrentDBClusterCapacity">REST API Reference for ModifyCurrentDBClusterCapacity Operation</seealso>
+        public virtual Task<ModifyCurrentDBClusterCapacityResponse> ModifyCurrentDBClusterCapacityAsync(ModifyCurrentDBClusterCapacityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ModifyCurrentDBClusterCapacityRequestMarshaller.Instance;
+            var unmarshaller = ModifyCurrentDBClusterCapacityResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyCurrentDBClusterCapacityRequest,ModifyCurrentDBClusterCapacityResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ModifyDBCluster
 
         internal virtual ModifyDBClusterResponse ModifyDBCluster(ModifyDBClusterRequest request)

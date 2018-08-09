@@ -33,8 +33,24 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DBClusterRole
     {
+        private string _featureName;
         private string _roleArn;
         private string _status;
+
+        /// <summary>
+        /// Gets and sets the property FeatureName.
+        /// </summary>
+        public string FeatureName
+        {
+            get { return this._featureName; }
+            set { this._featureName = value; }
+        }
+
+        // Check to see if FeatureName property is set
+        internal bool IsSetFeatureName()
+        {
+            return this._featureName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property RoleArn. 

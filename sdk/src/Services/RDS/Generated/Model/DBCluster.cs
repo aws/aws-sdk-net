@@ -44,6 +44,7 @@ namespace Amazon.RDS.Model
         private long? _backtrackConsumedChangeRecords;
         private long? _backtrackWindow;
         private int? _backupRetentionPeriod;
+        private int? _capacity;
         private string _characterSetName;
         private string _cloneGroupId;
         private DateTime? _clusterCreateTime;
@@ -60,6 +61,7 @@ namespace Amazon.RDS.Model
         private List<string> _enabledCloudwatchLogsExports = new List<string>();
         private string _endpoint;
         private string _engine;
+        private string _engineMode;
         private string _engineVersion;
         private string _hostedZoneId;
         private bool? _iamDatabaseAuthenticationEnabled;
@@ -74,6 +76,7 @@ namespace Amazon.RDS.Model
         private string _readerEndpoint;
         private List<string> _readReplicaIdentifiers = new List<string>();
         private string _replicationSourceIdentifier;
+        private ScalingConfigurationInfo _scalingConfigurationInfo;
         private string _status;
         private bool? _storageEncrypted;
         private List<VpcSecurityGroupMembership> _vpcSecurityGroups = new List<VpcSecurityGroupMembership>();
@@ -191,6 +194,21 @@ namespace Amazon.RDS.Model
         internal bool IsSetBackupRetentionPeriod()
         {
             return this._backupRetentionPeriod.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Capacity.
+        /// </summary>
+        public int Capacity
+        {
+            get { return this._capacity.GetValueOrDefault(); }
+            set { this._capacity = value; }
+        }
+
+        // Check to see if Capacity property is set
+        internal bool IsSetCapacity()
+        {
+            return this._capacity.HasValue; 
         }
 
         /// <summary>
@@ -440,6 +458,12 @@ namespace Amazon.RDS.Model
         /// <para>
         /// A list of log types that this DB cluster is configured to export to CloudWatch Logs.
         /// </para>
+        ///  
+        /// <para>
+        /// Log types vary by DB engine. For information about the log types for each DB engine,
+        /// see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon
+        /// RDS Database Log Files</a> in the <i>Amazon RDS User Guide.</i> 
+        /// </para>
         /// </summary>
         public List<string> EnabledCloudwatchLogsExports
         {
@@ -487,6 +511,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetEngine()
         {
             return this._engine != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EngineMode. 
+        /// <para>
+        /// The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.
+        /// </para>
+        /// </summary>
+        public string EngineMode
+        {
+            get { return this._engineMode; }
+            set { this._engineMode = value; }
+        }
+
+        // Check to see if EngineMode property is set
+        internal bool IsSetEngineMode()
+        {
+            return this._engineMode != null;
         }
 
         /// <summary>
@@ -754,6 +796,21 @@ namespace Amazon.RDS.Model
         internal bool IsSetReplicationSourceIdentifier()
         {
             return this._replicationSourceIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScalingConfigurationInfo.
+        /// </summary>
+        public ScalingConfigurationInfo ScalingConfigurationInfo
+        {
+            get { return this._scalingConfigurationInfo; }
+            set { this._scalingConfigurationInfo = value; }
+        }
+
+        // Check to see if ScalingConfigurationInfo property is set
+        internal bool IsSetScalingConfigurationInfo()
+        {
+            return this._scalingConfigurationInfo != null;
         }
 
         /// <summary>

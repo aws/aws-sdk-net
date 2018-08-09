@@ -114,6 +114,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.Source = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("SupportedEngineModes/member", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.SupportedEngineModes.Add(item);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

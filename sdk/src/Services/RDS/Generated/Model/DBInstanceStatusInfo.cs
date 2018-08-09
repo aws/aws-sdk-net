@@ -79,7 +79,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// Status of the DB instance. For a StatusType of read replica, the values can be replicating,
-        /// error, stopped, or terminated.
+        /// replication stop point set, replication stop point reached, error, stopped, or terminated.
         /// </para>
         /// </summary>
         public string Status

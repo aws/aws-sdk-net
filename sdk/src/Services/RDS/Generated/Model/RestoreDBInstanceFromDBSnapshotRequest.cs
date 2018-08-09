@@ -356,7 +356,11 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EnableCloudwatchLogsExports. 
         /// <para>
-        /// The list of logs that the restored DB instance is to export to CloudWatch Logs.
+        /// The list of logs that the restored DB instance is to export to CloudWatch Logs. The
+        /// values in the list depend on the DB engine being used. For more information, see <a
+        /// href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+        /// Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database
+        /// Service User Guide</i>.
         /// </para>
         /// </summary>
         public List<string> EnableCloudwatchLogsExports
@@ -639,27 +643,7 @@ namespace Amazon.RDS.Model
         /// Specifies the accessibility options for the DB instance. A value of true specifies
         /// an Internet-facing instance with a publicly resolvable DNS name, which resolves to
         /// a public IP address. A value of false specifies an internal instance with a DNS name
-        /// that resolves to a private IP address.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: The default behavior varies depending on whether a VPC has been requested
-        /// or not. The following list shows the default behavior in each case.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <b>Default VPC:</b> true
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>VPC:</b> false
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// If no DB subnet group has been specified as part of the request and the PubliclyAccessible
-        /// value has not been set, the DB instance is publicly accessible. If a specific DB subnet
-        /// group has been specified as part of the request and the PubliclyAccessible value has
-        /// not been set, the DB instance is private.
+        /// that resolves to a private IP address. For more information, see <a>CreateDBInstance</a>.
         /// </para>
         /// </summary>
         public bool PubliclyAccessible

@@ -92,6 +92,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.BackupRetentionPeriod = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("Capacity", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.Capacity = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("CharacterSetName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -191,6 +197,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.Engine = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("EngineMode", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.EngineMode = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("EngineVersion", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -274,6 +286,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ReplicationSourceIdentifier = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ScalingConfigurationInfo", targetDepth))
+                    {
+                        var unmarshaller = ScalingConfigurationInfoUnmarshaller.Instance;
+                        unmarshalledObject.ScalingConfigurationInfo = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Status", targetDepth))
