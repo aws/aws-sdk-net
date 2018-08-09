@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.333.0",
+    "ProductVersion" : "3.3.334.0",
     "CoreVersion"    : "3.3.24.6",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -159,7 +159,7 @@
             "InPreview"               : false
         },
         "ECS"               : {
-            "Version" : "3.3.16.2",
+            "Version" : "3.3.17.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.24.6"
@@ -281,7 +281,7 @@
             "InPreview"               : false
         },
         "RDS"                  : {
-            "Version" : "3.3.26.5",
+            "Version" : "3.3.27.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.24.6"
@@ -809,7 +809,7 @@
             "InPreview"               : false
         },
         "DAX"                             : {
-            "Version" : "3.3.0.18",
+            "Version" : "3.3.1.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.24.6"

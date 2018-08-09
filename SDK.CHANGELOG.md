@@ -1,3 +1,11 @@
+### 3.3.334.0 (2018-08-09 22:10 UTC)
+* DAX (3.3.1.0)
+	* Add the SSESpecification field to CreateCluster to allow creation of clusters with server-side encryption, and add the SSEDescription field to DescribeClusters to display the status of server-side encryption for a cluster. 
+* ECS (3.3.17.0)
+	* This release of Amazon Elastic Container Service (Amazon ECS) introduces support for Docker volumes and Docker volume drivers. Customers can now configure their ECS Tasks to use Docker volumes, enabling stateful and storage-intensive applications to be deployed on ECS.
+* RDS (3.3.27.0)
+	* Launch RDS Aurora Serverless
+
 ### 3.3.333.0 (2018-08-08 20:29 UTC)
 * SecretsManager (3.3.2.0)
 	* This release introduces a ForceDeleteWithoutRecovery parameter to the DeleteSecret API enabling customers to force the deletion of a secret without any recovery window
