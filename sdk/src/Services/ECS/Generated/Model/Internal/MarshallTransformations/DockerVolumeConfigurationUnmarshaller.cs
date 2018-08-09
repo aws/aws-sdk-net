@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Volume Object
+    /// Response Unmarshaller for DockerVolumeConfiguration Object
     /// </summary>  
-    public class VolumeUnmarshaller : IUnmarshaller<Volume, XmlUnmarshallerContext>, IUnmarshaller<Volume, JsonUnmarshallerContext>
+    public class DockerVolumeConfigurationUnmarshaller : IUnmarshaller<DockerVolumeConfiguration, XmlUnmarshallerContext>, IUnmarshaller<DockerVolumeConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Volume IUnmarshaller<Volume, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DockerVolumeConfiguration IUnmarshaller<DockerVolumeConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,45 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Volume Unmarshall(JsonUnmarshallerContext context)
+        public DockerVolumeConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Volume unmarshalledObject = new Volume();
+            DockerVolumeConfiguration unmarshalledObject = new DockerVolumeConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("dockerVolumeConfiguration", targetDepth))
+                if (context.TestExpression("autoprovision", targetDepth))
                 {
-                    var unmarshaller = DockerVolumeConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.DockerVolumeConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Autoprovision = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("host", targetDepth))
-                {
-                    var unmarshaller = HostVolumePropertiesUnmarshaller.Instance;
-                    unmarshalledObject.Host = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("driver", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Driver = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("driverOpts", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.DriverOpts = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("labels", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Labels = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("scope", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Scope = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +100,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         }
 
 
-        private static VolumeUnmarshaller _instance = new VolumeUnmarshaller();        
+        private static DockerVolumeConfigurationUnmarshaller _instance = new DockerVolumeConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static VolumeUnmarshaller Instance
+        public static DockerVolumeConfigurationUnmarshaller Instance
         {
             get
             {

@@ -123,7 +123,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property RegisteredContainerInstancesCount. 
         /// <para>
-        /// The number of container instances registered into the cluster.
+        /// The number of container instances registered into the cluster. This includes container
+        /// instances in both <code>ACTIVE</code> and <code>DRAINING</code> status.
         /// </para>
         /// </summary>
         public int RegisteredContainerInstancesCount

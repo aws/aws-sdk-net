@@ -77,7 +77,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property SourceVolume. 
         /// <para>
-        /// The name of the volume to mount.
+        /// The name of the volume to mount. Must be a volume name referenced in the <code>name</code>
+        /// parameter of task definition <code>volume</code>.
         /// </para>
         /// </summary>
         public string SourceVolume

@@ -250,7 +250,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property DesiredStatus. 
         /// <para>
-        /// The desired status of the task.
+        /// The desired status of the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task
+        /// Lifecycle</a>.
         /// </para>
         /// </summary>
         public string DesiredStatus
@@ -335,7 +336,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property LastStatus. 
         /// <para>
-        /// The last known status of the task.
+        /// The last known status of the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task
+        /// Lifecycle</a>.
         /// </para>
         /// </summary>
         public string LastStatus

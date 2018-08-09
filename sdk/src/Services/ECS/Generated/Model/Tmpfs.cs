@@ -65,7 +65,8 @@ namespace Amazon.ECS.Model
         /// | "exec" | "noexec" | "sync" | "async" | "dirsync" | "remount" | "mand" | "nomand"
         /// | "atime" | "noatime" | "diratime" | "nodiratime" | "bind" | "rbind" | "unbindable"
         /// | "runbindable" | "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave"
-        /// | "relatime" | "norelatime" | "strictatime" | "nostrictatime"</code> 
+        /// | "relatime" | "norelatime" | "strictatime" | "nostrictatime" | "mode" | "uid" | "gid"
+        /// | "nr_inodes" | "nr_blocks" | "mpol"</code> 
         /// </para>
         /// </summary>
         public List<string> MountOptions

@@ -46,7 +46,12 @@ namespace Amazon.ECS.Model
     /// ECS record keeping, and <a>DescribeServices</a> API operations on those services return
     /// a <code>ServiceNotFoundException</code> error.
     /// </para>
-    ///  </note>
+    ///  </note> <important> 
+    /// <para>
+    /// If you attempt to create a new service with the same name as an existing service in
+    /// either <code>ACTIVE</code> or <code>DRAINING</code> status, you will receive an error.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class DeleteServiceRequest : AmazonECSRequest
     {

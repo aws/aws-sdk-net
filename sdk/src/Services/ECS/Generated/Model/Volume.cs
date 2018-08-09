@@ -28,18 +28,44 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// A data volume used in a task definition.
+    /// A data volume used in a task definition. For tasks that use a Docker volume, specify
+    /// a <code>DockerVolumeConfiguration</code>. For tasks that use a bind mount host volume,
+    /// specify a <code>host</code> and optional <code>sourcePath</code>. For more information,
+    /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideusing_data_volumes.html">Using
+    /// Data Volumes in Tasks</a>.
     /// </summary>
     public partial class Volume
     {
+        private DockerVolumeConfiguration _dockerVolumeConfiguration;
         private HostVolumeProperties _host;
         private string _name;
 
         /// <summary>
+        /// Gets and sets the property DockerVolumeConfiguration. 
+        /// <para>
+        /// The configuration for the Docker volume. This parameter is specified when using Docker
+        /// volumes.
+        /// </para>
+        /// </summary>
+        public DockerVolumeConfiguration DockerVolumeConfiguration
+        {
+            get { return this._dockerVolumeConfiguration; }
+            set { this._dockerVolumeConfiguration = value; }
+        }
+
+        // Check to see if DockerVolumeConfiguration property is set
+        internal bool IsSetDockerVolumeConfiguration()
+        {
+            return this._dockerVolumeConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Host. 
         /// <para>
-        /// The contents of the <code>host</code> parameter determine whether your data volume
-        /// persists on the host container instance and where it is stored. If the host parameter
+        /// This parameter is specified when using bind mount host volumes. Bind mount host volumes
+        /// are supported when using either the EC2 or Fargate launch types. The contents of the
+        /// <code>host</code> parameter determine whether your bind mount host volume persists
+        /// on the host container instance and where it is stored. If the <code>host</code> parameter
         /// is empty, then the Docker daemon assigns a host path for your data volume, but the
         /// data is not guaranteed to persist after the containers associated with it stop running.
         /// </para>

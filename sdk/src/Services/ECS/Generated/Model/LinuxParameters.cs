@@ -67,8 +67,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Devices. 
         /// <para>
         /// Any host devices to expose to the container. This parameter maps to <code>Devices</code>
-        /// in the <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
-        /// a container</a> section of the <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
+        /// in the <a href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create
+        /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
         /// Remote API</a> and the <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>.
         /// </para>
