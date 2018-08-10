@@ -130,6 +130,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.ManifestDurationFormat = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("minFinalSegmentLength", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.MinFinalSegmentLength = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("minSegmentLength", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

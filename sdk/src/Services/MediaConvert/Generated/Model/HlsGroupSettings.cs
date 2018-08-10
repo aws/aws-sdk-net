@@ -43,6 +43,7 @@ namespace Amazon.MediaConvert.Model
         private HlsEncryptionSettings _encryption;
         private HlsManifestCompression _manifestCompression;
         private HlsManifestDurationFormat _manifestDurationFormat;
+        private double? _minFinalSegmentLength;
         private int? _minSegmentLength;
         private HlsOutputSelection _outputSelection;
         private HlsProgramDateTime _programDateTime;
@@ -226,6 +227,31 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetManifestDurationFormat()
         {
             return this._manifestDurationFormat != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MinFinalSegmentLength. Keep this setting at the default
+        /// value of 0, unless you are troubleshooting a problem with how devices play back the
+        /// end of your video asset. If you know that player devices are hanging on the final
+        /// segment of your video because the length of your final segment is too short, use this
+        /// setting to specify a minimum final segment length, in seconds. Choose a value that
+        /// is greater than or equal to 1 and less than your segment length. When you specify
+        /// a value for this setting, the encoder will combine any final segment that is shorter
+        /// than the length that you specify with the previous segment. For example, your segment
+        /// length is 3 seconds and your final segment is .5 seconds without a minimum final segment
+        /// length; when you set the minimum final segment length to 1, your final segment is
+        /// 3.5 seconds.
+        /// </summary>
+        public double MinFinalSegmentLength
+        {
+            get { return this._minFinalSegmentLength.GetValueOrDefault(); }
+            set { this._minFinalSegmentLength = value; }
+        }
+
+        // Check to see if MinFinalSegmentLength property is set
+        internal bool IsSetMinFinalSegmentLength()
+        {
+            return this._minFinalSegmentLength.HasValue; 
         }
 
         /// <summary>

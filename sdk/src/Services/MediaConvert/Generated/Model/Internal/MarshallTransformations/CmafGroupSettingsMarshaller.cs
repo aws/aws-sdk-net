@@ -104,6 +104,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MinBufferTime);
             }
 
+            if(requestObject.IsSetMinFinalSegmentLength())
+            {
+                context.Writer.WritePropertyName("minFinalSegmentLength");
+                context.Writer.Write(requestObject.MinFinalSegmentLength);
+            }
+
             if(requestObject.IsSetSegmentControl())
             {
                 context.Writer.WritePropertyName("segmentControl");

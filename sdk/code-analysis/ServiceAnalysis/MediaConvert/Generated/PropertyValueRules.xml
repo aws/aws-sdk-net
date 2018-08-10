@@ -396,6 +396,16 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.H264QvbrSettings.MaxAverageBitrate</property>
+    <min>1000</min>
+    <max>1152000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.H264QvbrSettings.QvbrQualityLevel</property>
+    <min>1</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.H264Settings.Bitrate</property>
     <min>1000</min>
     <max>1152000000</max>
@@ -464,6 +474,16 @@
     <property>Amazon.MediaConvert.Model.H264Settings.Softness</property>
     <min>0</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.H265QvbrSettings.MaxAverageBitrate</property>
+    <min>1000</min>
+    <max>1466400000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.H265QvbrSettings.QvbrQualityLevel</property>
+    <min>1</min>
+    <max>10</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.H265Settings.Bitrate</property>
@@ -1014,22 +1034,22 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.Rectangle.Height</property>
-    <min>-2147483648</min>
+    <min>2</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.Rectangle.Width</property>
-    <min>-2147483648</min>
+    <min>2</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.Rectangle.X</property>
-    <min>-2147483648</min>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.Rectangle.Y</property>
-    <min>-2147483648</min>
+    <min>0</min>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>

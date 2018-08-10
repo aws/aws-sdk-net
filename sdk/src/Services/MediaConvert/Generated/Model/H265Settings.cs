@@ -37,6 +37,7 @@ namespace Amazon.MediaConvert.Model
         private int? _bitrate;
         private H265CodecLevel _codecLevel;
         private H265CodecProfile _codecProfile;
+        private H265DynamicSubGop _dynamicSubGop;
         private H265FlickerAdaptiveQuantization _flickerAdaptiveQuantization;
         private H265FramerateControl _framerateControl;
         private H265FramerateConversionAlgorithm _framerateConversionAlgorithm;
@@ -57,6 +58,7 @@ namespace Amazon.MediaConvert.Model
         private int? _parDenominator;
         private int? _parNumerator;
         private H265QualityTuningLevel _qualityTuningLevel;
+        private H265QvbrSettings _qvbrSettings;
         private H265RateControlMode _rateControlMode;
         private H265SampleAdaptiveOffsetFilterMode _sampleAdaptiveOffsetFilterMode;
         private H265SceneChangeDetect _sceneChangeDetect;
@@ -145,6 +147,25 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetCodecProfile()
         {
             return this._codecProfile != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DynamicSubGop. Choose Adaptive to improve subjective video
+        /// quality for high-motion content. This will cause the service to use fewer B-frames
+        /// (which infer information based on other frames) for high-motion portions of the video
+        /// and more B-frames for low-motion portions. The maximum number of B-frames is limited
+        /// by the value you provide for the setting B frames between reference frames (numberBFramesBetweenReferenceFrames).
+        /// </summary>
+        public H265DynamicSubGop DynamicSubGop
+        {
+            get { return this._dynamicSubGop; }
+            set { this._dynamicSubGop = value; }
+        }
+
+        // Check to see if DynamicSubGop property is set
+        internal bool IsSetDynamicSubGop()
+        {
+            return this._dynamicSubGop != null;
         }
 
         /// <summary>
@@ -335,7 +356,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxBitrate. Maximum bitrate in bits/second.
+        /// Gets and sets the property MaxBitrate. Maximum bitrate in bits/second. For example,
+        /// enter five megabits per second as 5000000. Required when Rate control mode is QVBR.
         /// </summary>
         public int MaxBitrate
         {
@@ -460,6 +482,24 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetQualityTuningLevel()
         {
             return this._qualityTuningLevel != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QvbrSettings. Settings for quality-defined variable bitrate
+        /// encoding with the H.265 codec. Required when you set Rate control mode to QVBR. Not
+        /// valid when you set Rate control mode to a value other than QVBR, or when you don't
+        /// define Rate control mode.
+        /// </summary>
+        public H265QvbrSettings QvbrSettings
+        {
+            get { return this._qvbrSettings; }
+            set { this._qvbrSettings = value; }
+        }
+
+        // Check to see if QvbrSettings property is set
+        internal bool IsSetQvbrSettings()
+        {
+            return this._qvbrSettings != null;
         }
 
         /// <summary>

@@ -69,6 +69,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CodecProfile);
             }
 
+            if(requestObject.IsSetDynamicSubGop())
+            {
+                context.Writer.WritePropertyName("dynamicSubGop");
+                context.Writer.Write(requestObject.DynamicSubGop);
+            }
+
             if(requestObject.IsSetFramerateControl())
             {
                 context.Writer.WritePropertyName("framerateControl");

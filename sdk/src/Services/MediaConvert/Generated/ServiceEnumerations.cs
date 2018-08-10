@@ -4407,6 +4407,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type H264DynamicSubGop.
+    /// </summary>
+    public class H264DynamicSubGop : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADAPTIVE for H264DynamicSubGop
+        /// </summary>
+        public static readonly H264DynamicSubGop ADAPTIVE = new H264DynamicSubGop("ADAPTIVE");
+        /// <summary>
+        /// Constant STATIC for H264DynamicSubGop
+        /// </summary>
+        public static readonly H264DynamicSubGop STATIC = new H264DynamicSubGop("STATIC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public H264DynamicSubGop(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static H264DynamicSubGop FindValue(string value)
+        {
+            return FindValue<H264DynamicSubGop>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator H264DynamicSubGop(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type H264EntropyEncoding.
     /// </summary>
     public class H264EntropyEncoding : ConstantClass
@@ -4932,6 +4982,10 @@ namespace Amazon.MediaConvert
         /// Constant CBR for H264RateControlMode
         /// </summary>
         public static readonly H264RateControlMode CBR = new H264RateControlMode("CBR");
+        /// <summary>
+        /// Constant QVBR for H264RateControlMode
+        /// </summary>
+        public static readonly H264RateControlMode QVBR = new H264RateControlMode("QVBR");
         /// <summary>
         /// Constant VBR for H264RateControlMode
         /// </summary>
@@ -5665,6 +5719,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type H265DynamicSubGop.
+    /// </summary>
+    public class H265DynamicSubGop : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADAPTIVE for H265DynamicSubGop
+        /// </summary>
+        public static readonly H265DynamicSubGop ADAPTIVE = new H265DynamicSubGop("ADAPTIVE");
+        /// <summary>
+        /// Constant STATIC for H265DynamicSubGop
+        /// </summary>
+        public static readonly H265DynamicSubGop STATIC = new H265DynamicSubGop("STATIC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public H265DynamicSubGop(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static H265DynamicSubGop FindValue(string value)
+        {
+            return FindValue<H265DynamicSubGop>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator H265DynamicSubGop(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type H265FlickerAdaptiveQuantization.
     /// </summary>
     public class H265FlickerAdaptiveQuantization : ConstantClass
@@ -6090,6 +6194,10 @@ namespace Amazon.MediaConvert
         /// Constant CBR for H265RateControlMode
         /// </summary>
         public static readonly H265RateControlMode CBR = new H265RateControlMode("CBR");
+        /// <summary>
+        /// Constant QVBR for H265RateControlMode
+        /// </summary>
+        public static readonly H265RateControlMode QVBR = new H265RateControlMode("QVBR");
         /// <summary>
         /// Constant VBR for H265RateControlMode
         /// </summary>
@@ -9964,6 +10072,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Mpeg2CodecProfile(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Mpeg2DynamicSubGop.
+    /// </summary>
+    public class Mpeg2DynamicSubGop : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADAPTIVE for Mpeg2DynamicSubGop
+        /// </summary>
+        public static readonly Mpeg2DynamicSubGop ADAPTIVE = new Mpeg2DynamicSubGop("ADAPTIVE");
+        /// <summary>
+        /// Constant STATIC for Mpeg2DynamicSubGop
+        /// </summary>
+        public static readonly Mpeg2DynamicSubGop STATIC = new Mpeg2DynamicSubGop("STATIC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Mpeg2DynamicSubGop(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Mpeg2DynamicSubGop FindValue(string value)
+        {
+            return FindValue<Mpeg2DynamicSubGop>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Mpeg2DynamicSubGop(string value)
         {
             return FindValue(value);
         }
