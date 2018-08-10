@@ -1,3 +1,9 @@
+### 3.3.335.0 (2018-08-10 20:30 UTC)
+* MediaConvert (3.3.6.0)
+	* This release adds support for a new rate control mode, Quality-Defined Variable Bitrate (QVBR) encoding, includes updates to optimize transcoding performance, and resolves previously reported bugs.
+* RDS (3.3.27.1)
+	* Documentation updates for rds
+
 ### 3.3.334.0 (2018-08-09 22:10 UTC)
 * DAX (3.3.1.0)
 	* Add the SSESpecification field to CreateCluster to allow creation of clusters with server-side encryption, and add the SSEDescription field to DescribeClusters to display the status of server-side encryption for a cluster. 
