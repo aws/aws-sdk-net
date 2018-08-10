@@ -559,9 +559,6 @@
             Condition="Exists('$(InternalBuildTools)\references.targets') And $(RunKeyScan)"
             DependsOnTargets="build-tools">
         <ItemGroup>
-            <PrivateKeyException Include="generator\ServiceModels\acm\acm-2015-12-08.normal.json" />
-            <PrivateKeyException Include="generator\ServiceModels\ec2\ec2-2014-02-01.normal.json" />
-            <PrivateKeyException Include="generator\ServiceModels\iam\iam-2010-05-08.normal.json" />
             <PrivateKeyException Include="sdk\code-analysis\ServiceAnalysis\CertificateManager\Generated\PropertyValueRules.xml" />
             <PrivateKeyException Include="sdk\test\Services\EC2\UnitTests\Custom\PasswordTest.cs" />
             <PrivateKeyException Include="sdk\test\CoreCLR\UnitTests\sample.rsa.private.key.txt" />
@@ -573,11 +570,16 @@
 			<FileException Include="generator\ServiceClientGenerator\bin\Release\customizations\elasticbeanstalk.customizations.json" />
 		</ItemGroup>
 
+        <ItemGroup>
+            <FolderException Include="generator\ServiceModels"/>
+        </ItemGroup>
+
         <KeyScannerTask
             Folder="$(MSBuildProjectDirectory)\.."
             FilePattern="**"
             PrivateKeyExceptions="@(PrivateKeyException)"
-			FileExceptions="@(FileException)"
+            FileExceptions="@(FileException)"
+            FolderExceptions="@(FolderException)"
             ParallelScan="true"
             />
 
