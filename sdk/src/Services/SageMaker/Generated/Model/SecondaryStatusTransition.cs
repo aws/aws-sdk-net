@@ -43,8 +43,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property EndTime. 
         /// <para>
         /// A timestamp that shows when the secondary status has ended and the job has transitioned
-        /// into another secondary status. The <code>EndTime</code> timestamp is also set after
-        /// the training job has ended.
+        /// into another secondary status. 
         /// </para>
         /// </summary>
         public DateTime EndTime

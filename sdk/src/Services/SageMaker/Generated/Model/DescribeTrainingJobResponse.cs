@@ -282,8 +282,8 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MaxRuntimeExceeded</code> - the training job exceeded the specified max run
-        /// time and has been stopped.
+        ///  <code>MaxRuntimeExceeded</code> - the training exceed the specified the max run time,
+        /// which means the training job is stopping.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -296,7 +296,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul> <important> 
         /// <para>
-        /// The valid values for <code>SecondaryStatus</code> are subject to change. They primarily
+        /// The valid values for <code>SecondaryStatus</code> are subject to change. They primary
         /// provide information on the progress of the training job.
         /// </para>
         ///  </important>
@@ -316,8 +316,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SecondaryStatusTransitions. 
         /// <para>
-        /// To give an overview of the training job lifecycle, <code>SecondaryStatusTransitions</code>
-        /// is a log of time-ordered secondary statuses that a training job has transitioned.
+        /// A log of time-ordered secondary statuses that a training job has transitioned.
         /// </para>
         /// </summary>
         public List<SecondaryStatusTransition> SecondaryStatusTransitions

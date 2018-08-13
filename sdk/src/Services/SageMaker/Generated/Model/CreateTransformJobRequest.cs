@@ -94,13 +94,6 @@ namespace Amazon.SageMaker.Model
         /// is set to contain as many records that can fit within the <code>MaxPayloadInMB</code>
         /// limit.
         /// </para>
-        ///  
-        /// <para>
-        /// Batch transform will automatically split your input data into whatever payload size
-        /// is specified if you set <code>SplitType</code> to <code>Line</code> and <code>BatchStrategy</code>
-        /// to <code>MultiRecord</code>. There's no need to split the dataset into smaller files
-        /// or to use larger payload sizes unless the records in your dataset are very large.
-        /// </para>
         /// </summary>
         public BatchStrategy BatchStrategy
         {

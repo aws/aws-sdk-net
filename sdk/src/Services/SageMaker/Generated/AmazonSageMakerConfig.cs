@@ -51,7 +51,7 @@ namespace Amazon.SageMaker
         {
             get
             {
-                return "sagemaker";
+                return "api.sagemaker";
             }
         }
 
