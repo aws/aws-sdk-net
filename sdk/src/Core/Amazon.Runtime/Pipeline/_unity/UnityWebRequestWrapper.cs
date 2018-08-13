@@ -67,8 +67,8 @@ namespace Amazon.Runtime.Internal
             PropertyInfo errorProperty = unityWebRequestType.GetProperty("error");
 
             setRequestHeaderMethod = unityWebRequestType.GetMethod("SetRequestHeader");
-            sendMethod = unityWebRequestType.GetMethod("Send");
-            sendMethod = sendMethod ?? unityWebRequestType.GetMethod("SendWebRequest"); // from Unity 2017.2
+            sendMethod = unityWebRequestType.GetMethod("SendWebRequest"); // from Unity 2017.2
+            sendMethod = sendMethod ?? unityWebRequestType.GetMethod("Send");
             getResponseHeadersMethod = unityWebRequestType.GetMethod("GetResponseHeaders");
 
             isDoneGetMethod = isDoneProperty.GetGetMethod();
