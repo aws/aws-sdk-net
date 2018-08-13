@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+    #line 1 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class JsonRPCStructureMarshaller : BaseRequestMarshaller
     {
@@ -29,7 +29,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
         public override string TransformText()
         {
             
-            #line 6 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+            #line 6 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 
 	AddLicenseHeader();
 
@@ -40,28 +40,28 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("using ThirdParty.Json.LitJson;\r\n\r\nnamespace ");
             
-            #line 13 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+            #line 13 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(".Model.Internal.MarshallTransformations\r\n{\r\n\t/// <summary>\r\n\t/// ");
             
-            #line 16 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+            #line 16 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
             
             #line default
             #line hidden
             this.Write(" Marshaller\r\n\t/// </summary>       \r\n\tpublic class ");
             
-            #line 18 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+            #line 18 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
             
             #line default
             #line hidden
             this.Write("Marshaller : IRequestMarshaller<");
             
-            #line 18 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+            #line 18 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
             
             #line default
@@ -76,14 +76,14 @@ namespace ServiceClientGenerator.Generators.Marshallers
         /// <returns></returns>
 		public void Marshall(");
             
-            #line 26 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+            #line 26 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
             
             #line default
             #line hidden
             this.Write(" requestObject, JsonMarshallerContext context)\r\n\t\t{\r\n");
             
-            #line 28 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+            #line 28 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 
     ProcessMembers(0, "requestObject", this.Structure.Members);
 
@@ -93,14 +93,14 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("\t\t}\r\n\r\n        /// <summary>\r\n        /// Singleton Marshaller.\r\n        /// </su" +
                     "mmary>  \r\n\t\tpublic readonly static ");
             
-            #line 36 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+            #line 36 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
             
             #line default
             #line hidden
             this.Write("Marshaller Instance = new ");
             
-            #line 36 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+            #line 36 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
             
             #line default
@@ -109,7 +109,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 41 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 41 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 
 	protected void ProcessMembers(int level, string variableName, IEnumerable<Member> members)
 	{
@@ -120,91 +120,91 @@ namespace ServiceClientGenerator.Generators.Marshallers
         #line default
         #line hidden
         
-        #line 47 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 47 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 47 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 47 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("            if(");
 
         
         #line default
         #line hidden
         
-        #line 47 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 47 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 47 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 47 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(".IsSet");
 
         
         #line default
         #line hidden
         
-        #line 47 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 47 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 47 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 47 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("())\r\n");
 
         
         #line default
         #line hidden
         
-        #line 48 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 48 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 48 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 48 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("            {\r\n");
 
         
         #line default
         #line hidden
         
-        #line 49 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 49 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 49 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 49 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("                context.Writer.WritePropertyName(\"");
 
         
         #line default
         #line hidden
         
-        #line 49 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 49 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallName));
 
         
         #line default
         #line hidden
         
-        #line 49 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 49 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("\");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 50 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 50 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 
 			string memberProperty = variableName + "." + member.PropertyName + (member.UseNullable ? ".Value" : string.Empty);
 			if(member.IsStructure || member.IsList || member.IsMap)
@@ -218,49 +218,49 @@ this.Write("\");\r\n");
         #line default
         #line hidden
         
-        #line 59 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 59 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 59 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 59 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("                context.Writer.Write(");
 
         
         #line default
         #line hidden
         
-        #line 59 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 59 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.CustomMarshallerTransformation));
 
         
         #line default
         #line hidden
         
-        #line 59 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 59 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 59 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 59 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(memberProperty));
 
         
         #line default
         #line hidden
         
-        #line 59 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 59 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 60 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 60 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 
             }
 			else if(member.IsMemoryStream)
@@ -270,95 +270,151 @@ this.Write("));\r\n");
         #line default
         #line hidden
         
-        #line 65 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 65 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 65 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 65 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("                context.Writer.Write(StringUtils.FromMemoryStream(");
 
         
         #line default
         #line hidden
         
-        #line 65 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 65 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName + "." + member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 65 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 65 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 66 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 66 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 
 			}
 			else
 			{
+				// Only use timestamp format based marshalling if format is not Unix epoch, which is the default for json/rest-json
+				if(member.IsDateTime && member.TimestampFormat != TimestampFormat.UnixTimestamp)
+				{
 
         
         #line default
         #line hidden
         
-        #line 71 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 74 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 71 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 74 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("                context.Writer.Write(");
 
         
         #line default
         #line hidden
         
-        #line 71 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(memberProperty));
+        #line 74 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(member.PrimitiveMarshaller));
 
         
         #line default
         #line hidden
         
-        #line 71 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write(");\r\n");
+        #line 74 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 72 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-
-			}
+        #line 74 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(variableName + "." + member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 75 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 74 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("));\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 75 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+
+				}
+				else
+				{
+
+        
+        #line default
+        #line hidden
+        
+        #line 80 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 75 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 80 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("                context.Writer.Write(");
+
+        
+        #line default
+        #line hidden
+        
+        #line 80 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(memberProperty));
+
+        
+        #line default
+        #line hidden
+        
+        #line 80 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(");\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 81 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+
+				}
+			}
+
+        
+        #line default
+        #line hidden
+        
+        #line 85 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 85 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("            }\r\n\r\n");
 
         
         #line default
         #line hidden
         
-        #line 77 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 87 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 
 			if(member.IsIdempotent)
 			{
@@ -367,119 +423,119 @@ this.Write("            }\r\n\r\n");
         #line default
         #line hidden
         
-        #line 81 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 91 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 81 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 91 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(" \t\t   else if(!(");
 
         
         #line default
         #line hidden
         
-        #line 81 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 91 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 81 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 91 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(".IsSet");
 
         
         #line default
         #line hidden
         
-        #line 81 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 91 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 81 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 91 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("()))\r\n");
 
         
         #line default
         #line hidden
         
-        #line 82 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 92 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 82 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 92 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(" \t\t   {\r\n");
 
         
         #line default
         #line hidden
         
-        #line 83 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 93 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 83 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 93 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("                context.Writer.WritePropertyName(\"");
 
         
         #line default
         #line hidden
         
-        #line 83 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 93 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallName));
 
         
         #line default
         #line hidden
         
-        #line 83 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 93 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("\");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 84 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 94 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 84 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 94 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("                context.Writer.Write(Guid.NewGuid().ToString());\t\t\t\t\t\t\t\t\t\t\t\t\r\n");
 
         
         #line default
         #line hidden
         
-        #line 85 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 95 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 85 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 95 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(" \t\t   }\r\n");
 
         
         #line default
         #line hidden
         
-        #line 86 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 96 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 					
 			}
 		}
@@ -492,70 +548,70 @@ this.Write(" \t\t   }\r\n");
         #line default
         #line hidden
         
-        #line 93 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 103 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("\r\n");
 
         
         #line default
         #line hidden
         
-        #line 95 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 105 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 95 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 105 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("                var marshaller = ");
 
         
         #line default
         #line hidden
         
-        #line 95 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 105 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(structure.Name));
 
         
         #line default
         #line hidden
         
-        #line 95 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 105 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("Marshaller.Instance;\r\n");
 
         
         #line default
         #line hidden
         
-        #line 96 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 106 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 96 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 106 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("                marshaller.Marshall(");
 
         
         #line default
         #line hidden
         
-        #line 96 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 106 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 96 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 106 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(", context);\r\n");
 
         
         #line default
         #line hidden
         
-        #line 97 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 107 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 
     }
 
@@ -570,77 +626,77 @@ this.Write(", context);\r\n");
         #line default
         #line hidden
         
-        #line 107 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 117 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 107 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 117 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("                context.Writer.WriteArrayStart();\r\n");
 
         
         #line default
         #line hidden
         
-        #line 108 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 118 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 108 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 118 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("                foreach(var ");
 
         
         #line default
         #line hidden
         
-        #line 108 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 118 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(flatVariableName));
 
         
         #line default
         #line hidden
         
-        #line 108 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 118 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("ListValue in ");
 
         
         #line default
         #line hidden
         
-        #line 108 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 118 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 108 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 118 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(")\r\n");
 
         
         #line default
         #line hidden
         
-        #line 109 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 119 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 109 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 119 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("                {\r\n");
 
         
         #line default
         #line hidden
         
-        #line 110 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 120 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
  
 				ProcessStructure(level + 1, flatVariableName + "ListValue", structure.ListShape);
 
@@ -648,35 +704,35 @@ this.Write("                {\r\n");
         #line default
         #line hidden
         
-        #line 113 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 123 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 113 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 123 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("                }\r\n");
 
         
         #line default
         #line hidden
         
-        #line 114 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 124 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 114 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 124 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("                context.Writer.WriteArrayEnd();\r\n");
 
         
         #line default
         #line hidden
         
-        #line 115 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 125 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 
 			}
 			else if(structure.IsMap)
@@ -686,147 +742,147 @@ this.Write("                context.Writer.WriteArrayEnd();\r\n");
         #line default
         #line hidden
         
-        #line 120 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 130 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 120 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 130 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("                context.Writer.WriteObjectStart();\r\n");
 
         
         #line default
         #line hidden
         
-        #line 121 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 131 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 121 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 131 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("                foreach (var ");
 
         
         #line default
         #line hidden
         
-        #line 121 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 131 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(flatVariableName));
 
         
         #line default
         #line hidden
         
-        #line 121 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 131 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("Kvp in ");
 
         
         #line default
         #line hidden
         
-        #line 121 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 131 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 121 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 131 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(")\r\n");
 
         
         #line default
         #line hidden
         
-        #line 122 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 132 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 122 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 132 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("                {\r\n");
 
         
         #line default
         #line hidden
         
-        #line 123 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 133 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 123 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 133 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("                    context.Writer.WritePropertyName(");
 
         
         #line default
         #line hidden
         
-        #line 123 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 133 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(flatVariableName));
 
         
         #line default
         #line hidden
         
-        #line 123 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 133 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("Kvp.Key);\r\n");
 
         
         #line default
         #line hidden
         
-        #line 124 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 134 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 124 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 134 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("                    var ");
 
         
         #line default
         #line hidden
         
-        #line 124 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 134 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(flatVariableName));
 
         
         #line default
         #line hidden
         
-        #line 124 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 134 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("Value = ");
 
         
         #line default
         #line hidden
         
-        #line 124 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 134 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(flatVariableName));
 
         
         #line default
         #line hidden
         
-        #line 124 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 134 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("Kvp.Value;\r\n\r\n");
 
         
         #line default
         #line hidden
         
-        #line 126 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 136 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
  
 				ProcessStructure(level + 1, flatVariableName + "Value", structure.ValueShape);
 
@@ -834,35 +890,35 @@ this.Write("Kvp.Value;\r\n\r\n");
         #line default
         #line hidden
         
-        #line 129 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 139 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 129 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 139 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("                }\r\n");
 
         
         #line default
         #line hidden
         
-        #line 130 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 140 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 130 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 140 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("                context.Writer.WriteObjectEnd();\r\n");
 
         
         #line default
         #line hidden
         
-        #line 131 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 141 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 
 			}
 			else if(structure.IsStructure)
@@ -872,91 +928,91 @@ this.Write("                context.Writer.WriteObjectEnd();\r\n");
         #line default
         #line hidden
         
-        #line 136 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 146 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 136 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 146 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("                context.Writer.WriteObjectStart();\r\n\r\n");
 
         
         #line default
         #line hidden
         
-        #line 138 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 148 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 138 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 148 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("                var marshaller = ");
 
         
         #line default
         #line hidden
         
-        #line 138 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 148 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(structure.Name));
 
         
         #line default
         #line hidden
         
-        #line 138 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 148 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("Marshaller.Instance;\r\n");
 
         
         #line default
         #line hidden
         
-        #line 139 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 149 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 139 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 149 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("                marshaller.Marshall(");
 
         
         #line default
         #line hidden
         
-        #line 139 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 149 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 139 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 149 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(", context);\r\n\r\n");
 
         
         #line default
         #line hidden
         
-        #line 141 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 151 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 141 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 151 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("                context.Writer.WriteObjectEnd();\r\n");
 
         
         #line default
         #line hidden
         
-        #line 142 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 152 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 
 			}
 			else if(structure.IsMemoryStream)
@@ -966,74 +1022,132 @@ this.Write("                context.Writer.WriteObjectEnd();\r\n");
         #line default
         #line hidden
         
-        #line 147 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 157 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 147 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 157 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("                context.Writer.Write(StringUtils.FromMemoryStream(");
 
         
         #line default
         #line hidden
         
-        #line 147 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 157 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 147 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 157 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write("));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 148 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 158 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 
 			}
 			else
 			{
+				// Only use timestamp format based marshalling if format is not Unix epoch, which is the default for json/rest-json
+				if(structure.IsDateTime && structure.GetTimestampFormat(MarshallLocation.Body) != TimestampFormat.UnixTimestamp)
+				{
 
         
         #line default
         #line hidden
         
-        #line 153 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 166 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
 
         
         #line default
         #line hidden
         
-        #line 153 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
-this.Write("                    context.Writer.Write(");
+        #line 166 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("\t\t\t\t    context.Writer.Write(");
 
         
         #line default
         #line hidden
         
-        #line 153 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 166 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(structure.PrimitiveMarshaller(MarshallLocation.Body)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 166 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("(");
+
+        
+        #line default
+        #line hidden
+        
+        #line 166 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 153 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 166 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("));\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 167 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+
+				}
+				else
+				{
+
+
+        
+        #line default
+        #line hidden
+        
+        #line 173 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(new string(' ', level * 4)));
+
+        
+        #line default
+        #line hidden
+        
+        #line 173 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write("                    context.Writer.Write(");
+
+        
+        #line default
+        #line hidden
+        
+        #line 173 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 173 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 this.Write(");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 154 "C:\data\dev\sdk\AWSDotNetPublic.Xray\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
+        #line 174 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 
+				}
+				
 			}
 	}
 

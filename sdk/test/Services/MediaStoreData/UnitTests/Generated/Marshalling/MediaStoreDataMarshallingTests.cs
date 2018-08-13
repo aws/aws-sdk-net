@@ -93,7 +93,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"Content-Length",long.MaxValue.ToString(CultureInfo.InvariantCulture)},
                     {"Content-Type","Content-Type_Value"},
                     {"ETag","ETag_Value"},
-                    {"Last-Modified",Constants.DEFAULT_DATE.ToString("O")},
+                    {"Last-Modified",ValidatorUtils.GetTestDate(TimestampFormat.RFC822)},
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"}
                 }
@@ -131,7 +131,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"Content-Range","Content-Range_Value"},
                     {"Content-Type","Content-Type_Value"},
                     {"ETag","ETag_Value"},
-                    {"Last-Modified",Constants.DEFAULT_DATE.ToString("O")},
+                    {"Last-Modified",ValidatorUtils.GetTestDate(TimestampFormat.RFC822)},
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"}
                 }

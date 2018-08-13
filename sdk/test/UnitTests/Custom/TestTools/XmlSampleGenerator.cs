@@ -87,7 +87,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
                 if (member.Shape.IsMap)
                 {
-                    WriteMap(writer, member.MarshallName, member.Shape);  // map not used by EC2 protocol
+                    WriteMap(writer, member, member.Shape);  // map not used by EC2 protocol
                 }
                 else if (member.Shape.IsList)
                 {
@@ -105,7 +105,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                         writer.WriteStartElement(el);
                     }
 
-                    this.Write(writer, member.Shape);
+                    this.Write(writer, member, member.Shape);
 
                     for (var i = 0; i < nameElements.Length; i++)
                     {
@@ -115,7 +115,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
             }
         }
 
-        private void Write(XmlWriter writer, Shape shape)
+        private void Write(XmlWriter writer, Member member, Shape shape)
         {
             if (shape.IsStructure)
                 WriteStructure(writer, shape);
@@ -135,7 +135,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
             else if (shape.IsDouble)
                 writer.WriteValue(double.MaxValue);
             else if (shape.IsDateTime)
-                writer.WriteValue(Constants.DEFAULT_DATE);
+                writer.WriteValue(ValidatorUtils.GetTestDate(member, shape));
             else if (shape.IsBoolean)
                 writer.WriteValue(true);
             else if (shape.IsBlob)
@@ -155,7 +155,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
             for (int i = 0; i < shape.Name.Length % 5 + 2; i++)
             {
                 writer.WriteStartElement(shape.ListMarshallName ?? "member");
-                Write(writer, shape.ModelListShape);
+                Write(writer, member, shape.ModelListShape);
                 writer.WriteEndElement();
             }
 
@@ -163,8 +163,9 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                 writer.WriteEndElement();
         }
 
-        private void WriteMap(XmlWriter writer, string memberMarshallName, Shape shape)
+        private void WriteMap(XmlWriter writer, Member member, Shape shape)
         {
+            var memberMarshallName = member.MarshallName;
             if (!shape.IsFlattened)
                 writer.WriteStartElement(memberMarshallName);
 
@@ -180,7 +181,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                 writer.WriteEndElement();
 
                 writer.WriteStartElement(shape.ValueMarshallName);
-                Write(writer, shape.ValueShape);
+                Write(writer, member, shape.ValueShape);
                 writer.WriteEndElement();
 
                 writer.WriteEndElement();

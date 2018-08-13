@@ -117,13 +117,13 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 			}
 			else if(member.IsMap)
 			{
-				throw new NotImplementedException();
+				throw new NotImplementedException("Marshalling maps for rest-xml protocol is not implemented.");
 			}
 			else
 			{
 #>
 				if(<#=variableName#>.IsSet<#=member.PropertyName#>())
-					xmlWriter.WriteElementString("<#=member.MarshallName#>", "<#=operation.XmlNamespace#>", StringUtils.From<#=member.GetPrimitiveType()#>(<#=variableName#>.<#=member.PropertyName#><#=(member.UseNullable ? ".Value" : string.Empty)#>));					
+					xmlWriter.WriteElementString("<#=member.MarshallName#>", "<#=operation.XmlNamespace#>", <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#><#=(member.UseNullable ? ".Value" : string.Empty)#>));					
 
 <#+
 			}
@@ -160,13 +160,13 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 			}
 			else if(member.IsMap)
 			{
-				throw new NotImplementedException();
+				throw new NotImplementedException("Marshalling maps for rest-xml protocol is not implemented.");
 			}
 			else
 			{
 #>
 				if(<#=variableName#>.IsSet<#=member.PropertyName#>())
-					xmlWriter.WriteElementString("<#=member.MarshallName#>", "<#=xmlNamespace#>", StringUtils.From<#=member.GetPrimitiveType()#>(<#=variableName#>.<#=member.PropertyName#><#=(member.UseNullable ? ".Value" : string.Empty)#>));				 
+					xmlWriter.WriteElementString("<#=member.MarshallName#>", "<#=xmlNamespace#>", <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#><#=(member.UseNullable ? ".Value" : string.Empty)#>));				 
 
 <#+
 			}
@@ -213,12 +213,25 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 			}
 			else
 			{
+				if(member.Shape.ListShape.IsDateTime)
+				{
+					// Use shape's ListMarshallName as it's a list structure.
+#>
+					xmlWriter.WriteStartElement("<#=member.Shape.ListMarshallName#>", "<#=xmlNamespace#>");
+                    xmlWriter.WriteValue(<#=member.Shape.ListShape.PrimitiveMarshaller(MarshallLocation.Body)#>(<#=listItemVariable#>));
+                    xmlWriter.WriteEndElement();
+<#+				
+
+				}
+				else
+				{
 					// Use shape's ListMarshallName as it's a list structure.
 #>
 					xmlWriter.WriteStartElement("<#=member.Shape.ListMarshallName#>", "<#=xmlNamespace#>");
                     xmlWriter.WriteValue(<#=listItemVariable#>);
                     xmlWriter.WriteEndElement();
 <#+				
+				}
 			}
 			PopIndent();			
 #>

@@ -125,6 +125,19 @@ namespace ServiceClientGenerator
                        .SingleOrDefault();
         }
 
+        /// <summary>
+        /// Parses the timestampFormat attribute if specified and returns it.
+        /// </summary>
+        public static TimestampFormat GetTimestampFormat(this JsonData self)
+        {
+            var value = self[Shape.TimestampFormatKey];
+            if (value == null) { return TimestampFormat.None; }
+
+            return Enum.TryParse<TimestampFormat>(value.ToString(), true, out var parsedValue) ?
+                parsedValue :
+                throw new Exception("Encountered unknown timestampFormat: "+ parsedValue);
+        }
+
         public static string JsonDataToString(JsonData data)
         {
             return (data == null)

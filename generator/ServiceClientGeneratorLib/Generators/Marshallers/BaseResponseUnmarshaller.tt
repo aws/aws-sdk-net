@@ -111,7 +111,8 @@ using Amazon.Runtime.Internal.Util;
 		}
 <#+
 	}
-
+	
+	// Only applicable for rest-json and rest-xml
     // Generates code to parse present header members into the response object
 	protected void UnmarshallHeaders()
 	{
@@ -154,9 +155,23 @@ using Amazon.Runtime.Internal.Util;
 				}
 				else if (member.Shape.IsDateTime)
 				{
+					if(	member.TimestampFormat == TimestampFormat.ISO8601 || 
+						member.TimestampFormat == TimestampFormat.RFC822)
+					{
 #>
 				response.<#=member.PropertyName#> = DateTime.Parse(context.ResponseData.GetHeaderValue("<#=member.MarshallLocationName#>"), CultureInfo.InvariantCulture);
 <#+
+					}
+					else if(member.TimestampFormat == TimestampFormat.UnixTimestamp)
+					{
+#>
+				response.<#=member.PropertyName#> = Amazon.Util.AWSSDKUtils.ConvertFromUnixEpochSeconds(int.Parse(context.ResponseData.GetHeaderValue("<#=member.MarshallLocationName#>"), CultureInfo.InvariantCulture));
+<#+					
+					}
+					else
+					{
+						throw new Exception(string.Format("Unable to determine the TimestampFormat for member {0}, type {1}.", member.Shape.Name, member.Shape.Type));
+					}
 				}
 				else
 				{
