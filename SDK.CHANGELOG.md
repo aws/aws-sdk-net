@@ -1,3 +1,7 @@
+### 3.3.336.0 (2018-08-13 23:00 UTC)
+* SageMaker (3.3.10.0)
+	* SageMaker updated the default endpoint URL to support Private Link via the CLI/SDK.
+
 ### 3.3.335.0 (2018-08-10 20:30 UTC)
 * MediaConvert (3.3.6.0)
 	* This release adds support for a new rate control mode, Quality-Defined Variable Bitrate (QVBR) encoding, includes updates to optimize transcoding performance, and resolves previously reported bugs.
