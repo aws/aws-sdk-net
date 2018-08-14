@@ -1,3 +1,16 @@
+### 3.3.337.0 (2018-08-14 22:15 UTC)
+* AutoScaling (3.3.5.0)
+	* Add batch operations for creating/updating and deleting scheduled scaling actions.
+* CloudFront (3.3.9.0)
+	* Lambda@Edge Now Provides You Access to the Request Body for HTTP POST/PUT Processing. With this feature, you can now offload more origin logic to the edge and improve end-user latency. Developers typically use Web/HTML forms or Web Beacons/Bugs as a mechanism to collect data from the end users and then process that data at their origins servers. For example, if you are collecting end user behavior data through a web beacon on your website, you can use this feature to access the user behavior data and directly log it to an Amazon Kinesis Firehose endpoint from the Lambda function, thereby simplifying your origin infrastructure.
+* Elasticsearch (3.3.8.0)
+	* Amazon Elasticsearch Service adds support for no downtime, in-place upgrade for Elasticsearch version 5.1 and above.
+* Core 3.3.24.7
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.336.0 (2018-08-13 23:00 UTC)
 * SageMaker (3.3.10.0)
 	* SageMaker updated the default endpoint URL to support Private Link via the CLI/SDK.
