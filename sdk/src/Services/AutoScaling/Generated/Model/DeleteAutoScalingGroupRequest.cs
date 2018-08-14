@@ -45,7 +45,7 @@ namespace Amazon.AutoScaling.Model
     /// <para>
     /// To remove instances from the Auto Scaling group before deleting it, call <a>DetachInstances</a>
     /// with the list of instances and the option to decrement the desired capacity so that
-    /// Auto Scaling does not launch replacement instances.
+    /// Amazon EC2 Auto Scaling does not launch replacement instances.
     /// </para>
     ///  
     /// <para>

@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Describes an Auto Scaling process that has been suspended. For more information, see
-    /// <a>ProcessType</a>.
+    /// Describes an automatic scaling process that has been suspended. For more information,
+    /// see <a>ProcessType</a>.
     /// </summary>
     public partial class SuspendedProcess
     {

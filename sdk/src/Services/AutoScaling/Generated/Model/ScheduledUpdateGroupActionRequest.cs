@@ -28,20 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Container for the parameters to the PutScheduledUpdateGroupAction operation.
-    /// Creates or updates a scheduled scaling action for an Auto Scaling group. When updating
-    /// a scheduled scaling action, if you leave a parameter unspecified, the corresponding
-    /// value remains unchanged.
+    /// Describes one or more scheduled scaling action updates for a specified Auto Scaling
+    /// group. Used in combination with <a>BatchPutScheduledUpdateGroupAction</a>. 
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/schedule_time.html">Scheduled
-    /// Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+    /// When updating a scheduled scaling action, all optional parameters are left unchanged
+    /// if not specified. 
     /// </para>
     /// </summary>
-    public partial class PutScheduledUpdateGroupActionRequest : AmazonAutoScalingRequest
+    public partial class ScheduledUpdateGroupActionRequest
     {
-        private string _autoScalingGroupName;
         private int? _desiredCapacity;
         private DateTime? _endTime;
         private int? _maxSize;
@@ -49,25 +46,6 @@ namespace Amazon.AutoScaling.Model
         private string _recurrence;
         private string _scheduledActionName;
         private DateTime? _startTime;
-        private DateTime? _time;
-
-        /// <summary>
-        /// Gets and sets the property AutoScalingGroupName. 
-        /// <para>
-        /// The name of the Auto Scaling group.
-        /// </para>
-        /// </summary>
-        public string AutoScalingGroupName
-        {
-            get { return this._autoScalingGroupName; }
-            set { this._autoScalingGroupName = value; }
-        }
-
-        // Check to see if AutoScalingGroupName property is set
-        internal bool IsSetAutoScalingGroupName()
-        {
-            return this._autoScalingGroupName != null;
-        }
 
         /// <summary>
         /// Gets and sets the property DesiredCapacity. 
@@ -109,7 +87,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MaxSize. 
         /// <para>
-        /// The maximum size for the Auto Scaling group.
+        /// The maximum size of the group.
         /// </para>
         /// </summary>
         public int MaxSize
@@ -127,7 +105,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MinSize. 
         /// <para>
-        /// The minimum size for the Auto Scaling group.
+        /// The minimum size of the group.
         /// </para>
         /// </summary>
         public int MinSize
@@ -145,7 +123,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Recurrence. 
         /// <para>
-        /// The recurring schedule for this action, in Unix cron syntax format. For more information
+        /// The recurring schedule for the action, in Unix cron syntax format. For more information
         /// about this format, see <a href="http://crontab.org">Crontab</a>.
         /// </para>
         /// </summary>
@@ -164,7 +142,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ScheduledActionName. 
         /// <para>
-        /// The name of this scaling action.
+        /// The name of the scaling action.
         /// </para>
         /// </summary>
         public string ScheduledActionName
@@ -182,7 +160,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The time for this action to start, in "YYYY-MM-DDThh:mm:ssZ" format in UTC/GMT only
+        /// The time for the action to start, in "YYYY-MM-DDThh:mm:ssZ" format in UTC/GMT only
         /// (for example, <code>2014-06-01T00:00:00Z</code>).
         /// </para>
         ///  
@@ -193,7 +171,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// If you try to schedule your action in the past, Amazon EC2 Auto Scaling returns an
+        /// If you try to schedule the action in the past, Amazon EC2 Auto Scaling returns an
         /// error message.
         /// </para>
         /// </summary>
@@ -207,24 +185,6 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetStartTime()
         {
             return this._startTime.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property Time. 
-        /// <para>
-        /// This parameter is deprecated.
-        /// </para>
-        /// </summary>
-        public DateTime Time
-        {
-            get { return this._time.GetValueOrDefault(); }
-            set { this._time = value; }
-        }
-
-        // Check to see if Time property is set
-        internal bool IsSetTime()
-        {
-            return this._time.HasValue; 
         }
 
     }

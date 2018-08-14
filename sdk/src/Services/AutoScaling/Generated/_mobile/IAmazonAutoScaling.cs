@@ -93,6 +93,40 @@ namespace Amazon.AutoScaling
 
         #endregion
                 
+        #region  BatchDeleteScheduledAction
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchDeleteScheduledAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteScheduledAction operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/BatchDeleteScheduledAction">REST API Reference for BatchDeleteScheduledAction Operation</seealso>
+        Task<BatchDeleteScheduledActionResponse> BatchDeleteScheduledActionAsync(BatchDeleteScheduledActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  BatchPutScheduledUpdateGroupAction
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchPutScheduledUpdateGroupAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchPutScheduledUpdateGroupAction operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/BatchPutScheduledUpdateGroupAction">REST API Reference for BatchPutScheduledUpdateGroupAction Operation</seealso>
+        Task<BatchPutScheduledUpdateGroupActionResponse> BatchPutScheduledUpdateGroupActionAsync(BatchPutScheduledUpdateGroupActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CompleteLifecycleAction
 
 
@@ -288,8 +322,8 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// For information about requesting an increase in these limits, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-account-limits.html">Auto
-        /// Scaling Limits</a> in the <i>Auto Scaling User Guide</i>.
+        /// For information about requesting an increase in these limits, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Auto
+        /// Scaling Limits</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -428,7 +462,7 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Describes the notification types that are supported by Auto Scaling.
+        /// Describes the notification types that are supported by Amazon EC2 Auto Scaling.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -565,7 +599,7 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Describes the available CloudWatch metrics for Auto Scaling.
+        /// Describes the available CloudWatch metrics for Amazon EC2 Auto Scaling.
         /// 
         ///  
         /// <para>
@@ -834,7 +868,7 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Describes the termination policies supported by Auto Scaling.
+        /// Describes the termination policies supported by Amazon EC2 Auto Scaling.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.

@@ -83,8 +83,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property HonorCooldown. 
         /// <para>
-        /// Indicates whether Auto Scaling waits for the cooldown period to complete before executing
-        /// the policy.
+        /// Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete
+        /// before executing the policy.
         /// </para>
         ///  
         /// <para>
@@ -92,8 +92,8 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/Cooldown.html">Auto
-        /// Scaling Cooldowns</a> in the <i>Auto Scaling User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
+        /// Cooldowns</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         public bool HonorCooldown

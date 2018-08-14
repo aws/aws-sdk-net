@@ -29,7 +29,7 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeMetricCollectionTypes operation.
-    /// Describes the available CloudWatch metrics for Auto Scaling.
+    /// Describes the available CloudWatch metrics for Amazon EC2 Auto Scaling.
     /// 
     ///  
     /// <para>

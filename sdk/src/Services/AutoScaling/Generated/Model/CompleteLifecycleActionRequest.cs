@@ -40,13 +40,13 @@ namespace Amazon.AutoScaling.Model
     ///  <ol> <li> 
     /// <para>
     /// (Optional) Create a Lambda function and a rule that allows CloudWatch Events to invoke
-    /// your Lambda function when Auto Scaling launches or terminates instances.
+    /// your Lambda function when Amazon EC2 Auto Scaling launches or terminates instances.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// (Optional) Create a notification target and an IAM role. The target can be either
-    /// an Amazon SQS queue or an Amazon SNS topic. The role allows Auto Scaling to publish
-    /// lifecycle notifications to the target.
+    /// an Amazon SQS queue or an Amazon SNS topic. The role allows Amazon EC2 Auto Scaling
+    /// to publish lifecycle notifications to the target.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -65,8 +65,8 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  </li> </ol> 
     /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
-    /// Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
+    /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Auto
+    /// Scaling Lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CompleteLifecycleActionRequest : AmazonAutoScalingRequest
@@ -136,8 +136,8 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property LifecycleActionToken. 
         /// <para>
         /// A universally unique identifier (UUID) that identifies a specific lifecycle action
-        /// associated with an instance. Auto Scaling sends this token to the notification target
-        /// you specified when you created the lifecycle hook.
+        /// associated with an instance. Amazon EC2 Auto Scaling sends this token to the notification
+        /// target you specified when you created the lifecycle hook.
         /// </para>
         /// </summary>
         public string LifecycleActionToken

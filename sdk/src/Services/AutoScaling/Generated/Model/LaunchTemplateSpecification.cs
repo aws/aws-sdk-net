@@ -78,10 +78,10 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property Version. 
         /// <para>
         /// The version number, <code>$Latest</code>, or <code>$Default</code>. If the value is
-        /// <code>$Latest</code>, Auto Scaling selects the latest version of the launch template
-        /// when launching instances. If the value is <code>$Default</code>, Auto Scaling selects
-        /// the default version of the launch template when launching instances. The default value
-        /// is <code>$Default</code>.
+        /// <code>$Latest</code>, Amazon EC2 Auto Scaling selects the latest version of the launch
+        /// template when launching instances. If the value is <code>$Default</code>, Amazon EC2
+        /// Auto Scaling selects the default version of the launch template when launching instances.
+        /// The default value is <code>$Default</code>.
         /// </para>
         /// </summary>
         public string Version

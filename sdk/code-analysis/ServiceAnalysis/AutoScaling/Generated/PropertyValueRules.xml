@@ -16,6 +16,16 @@
     <max>1600</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AutoScaling.Model.BatchDeleteScheduledActionRequest.AutoScalingGroupName</property>
+    <min>1</min>
+    <max>1600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.BatchPutScheduledUpdateGroupActionRequest.AutoScalingGroupName</property>
+    <min>1</min>
+    <max>1600</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AutoScaling.Model.CompleteLifecycleActionRequest.AutoScalingGroupName</property>
     <min>1</min>
     <max>1600</max>
@@ -643,6 +653,19 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AutoScaling.Model.FailedScheduledUpdateGroupActionRequest.ErrorCode</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.FailedScheduledUpdateGroupActionRequest.ErrorMessage</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.FailedScheduledUpdateGroupActionRequest.ScheduledActionName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AutoScaling.Model.Filter.Name</property>
   </property-value-rule>
   <property-value-rule>
@@ -914,6 +937,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.ScheduledUpdateGroupAction.ScheduledActionName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.ScheduledUpdateGroupActionRequest.Recurrence</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.ScheduledUpdateGroupActionRequest.ScheduledActionName</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>

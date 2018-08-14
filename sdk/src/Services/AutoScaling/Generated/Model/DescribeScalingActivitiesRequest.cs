@@ -41,11 +41,10 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ActivityIds. 
         /// <para>
-        /// The activity IDs of the desired scaling activities. If you omit this parameter, all
-        /// activities for the past six weeks are described. If you specify an Auto Scaling group,
-        /// the results are limited to that group. The list of requested activities cannot contain
-        /// more than 50 items. If unknown activities are requested, they are ignored with no
-        /// error.
+        /// The activity IDs of the desired scaling activities. You can specify up to 50 IDs.
+        /// If you omit this parameter, all activities for the past six weeks are described. If
+        /// unknown activities are requested, they are ignored with no error. If you specify an
+        /// Auto Scaling group, the results are limited to that group.
         /// </para>
         /// </summary>
         public List<string> ActivityIds

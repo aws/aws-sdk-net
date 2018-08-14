@@ -28,30 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeTerminationPolicyTypes operation.
+    /// This is the response object from the BatchDeleteScheduledAction operation.
     /// </summary>
-    public partial class DescribeTerminationPolicyTypesResponse : AmazonWebServiceResponse
+    public partial class BatchDeleteScheduledActionResponse : AmazonWebServiceResponse
     {
-        private List<string> _terminationPolicyTypes = new List<string>();
+        private List<FailedScheduledUpdateGroupActionRequest> _failedScheduledActions = new List<FailedScheduledUpdateGroupActionRequest>();
 
         /// <summary>
-        /// Gets and sets the property TerminationPolicyTypes. 
+        /// Gets and sets the property FailedScheduledActions. 
         /// <para>
-        /// The termination policies supported by Amazon EC2 Auto Scaling (<code>OldestInstance</code>,
-        /// <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>,
-        /// and <code>Default</code>).
+        /// The names of the scheduled actions that could not be deleted, including an error message.
+        /// 
         /// </para>
         /// </summary>
-        public List<string> TerminationPolicyTypes
+        public List<FailedScheduledUpdateGroupActionRequest> FailedScheduledActions
         {
-            get { return this._terminationPolicyTypes; }
-            set { this._terminationPolicyTypes = value; }
+            get { return this._failedScheduledActions; }
+            set { this._failedScheduledActions = value; }
         }
 
-        // Check to see if TerminationPolicyTypes property is set
-        internal bool IsSetTerminationPolicyTypes()
+        // Check to see if FailedScheduledActions property is set
+        internal bool IsSetFailedScheduledActions()
         {
-            return this._terminationPolicyTypes != null && this._terminationPolicyTypes.Count > 0; 
+            return this._failedScheduledActions != null && this._failedScheduledActions.Count > 0; 
         }
 
     }

@@ -40,9 +40,9 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property InstanceIds. 
         /// <para>
-        /// The instances to describe; up to 50 instance IDs. If you omit this parameter, all
-        /// Auto Scaling instances are described. If you specify an ID that does not exist, it
-        /// is ignored with no error.
+        /// The IDs of the instances. You can specify up to <code>MaxRecords</code> IDs. If you
+        /// omit this parameter, all Auto Scaling instances are described. If you specify an ID
+        /// that does not exist, it is ignored with no error.
         /// </para>
         /// </summary>
         public List<string> InstanceIds

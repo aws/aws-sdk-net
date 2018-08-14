@@ -187,8 +187,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property HealthCheckGracePeriod. 
         /// <para>
-        /// The amount of time, in seconds, that Auto Scaling waits before checking the health
-        /// status of an EC2 instance that has come into service.
+        /// The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking
+        /// the health status of an EC2 instance that has come into service.
         /// </para>
         /// </summary>
         public int HealthCheckGracePeriod

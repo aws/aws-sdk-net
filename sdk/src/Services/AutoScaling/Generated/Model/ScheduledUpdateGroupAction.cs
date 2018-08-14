@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Describes a scheduled update to an Auto Scaling group.
+    /// Describes a scheduled scaling action. Used in response to <a>DescribeScheduledActions</a>.
     /// </summary>
     public partial class ScheduledUpdateGroupAction
     {

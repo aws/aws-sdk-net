@@ -30,6 +30,20 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// Container for the parameters to the DescribeLifecycleHookTypes operation.
     /// Describes the available types of lifecycle hooks.
+    /// 
+    ///  
+    /// <para>
+    /// The following hook types are supported:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// autoscaling:EC2_INSTANCE_LAUNCHING
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// autoscaling:EC2_INSTANCE_TERMINATING
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class DescribeLifecycleHookTypesRequest : AmazonAutoScalingRequest
     {

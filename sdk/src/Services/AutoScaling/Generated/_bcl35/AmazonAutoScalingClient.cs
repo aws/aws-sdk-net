@@ -236,10 +236,10 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// When you attach instances, Auto Scaling increases the desired capacity of the group
-        /// by the number of instances being attached. If the number of instances being attached
-        /// plus the desired capacity of the group exceeds the maximum size of the group, the
-        /// operation fails.
+        /// When you attach instances, Amazon EC2 Auto Scaling increases the desired capacity
+        /// of the group by the number of instances being attached. If the number of instances
+        /// being attached plus the desired capacity of the group exceeds the maximum size of
+        /// the group, the operation fails.
         /// </para>
         ///  
         /// <para>
@@ -249,8 +249,9 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/attach-instance-asg.html">Attach
-        /// EC2 Instances to Your Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-instance-asg.html">Attach
+        /// EC2 Instances to Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachInstances service method.</param>
@@ -324,8 +325,9 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/attach-load-balancer-asg.html">Attach
-        /// a Load Balancer to Your Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html">Attach
+        /// a Load Balancer to Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachLoadBalancers service method.</param>
@@ -395,8 +397,9 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/attach-load-balancer-asg.html">Attach
-        /// a Load Balancer to Your Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html">Attach
+        /// a Load Balancer to Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachLoadBalancerTargetGroups service method.</param>
@@ -454,6 +457,129 @@ namespace Amazon.AutoScaling
 
         #endregion
         
+        #region  BatchDeleteScheduledAction
+
+        /// <summary>
+        /// Deletes one or more scheduled actions for the specified Auto Scaling group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteScheduledAction service method.</param>
+        /// 
+        /// <returns>The response from the BatchDeleteScheduledAction service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/BatchDeleteScheduledAction">REST API Reference for BatchDeleteScheduledAction Operation</seealso>
+        public virtual BatchDeleteScheduledActionResponse BatchDeleteScheduledAction(BatchDeleteScheduledActionRequest request)
+        {
+            var marshaller = BatchDeleteScheduledActionRequestMarshaller.Instance;
+            var unmarshaller = BatchDeleteScheduledActionResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDeleteScheduledActionRequest,BatchDeleteScheduledActionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchDeleteScheduledAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteScheduledAction operation on AmazonAutoScalingClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchDeleteScheduledAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/BatchDeleteScheduledAction">REST API Reference for BatchDeleteScheduledAction Operation</seealso>
+        public virtual IAsyncResult BeginBatchDeleteScheduledAction(BatchDeleteScheduledActionRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = BatchDeleteScheduledActionRequestMarshaller.Instance;
+            var unmarshaller = BatchDeleteScheduledActionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<BatchDeleteScheduledActionRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchDeleteScheduledAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchDeleteScheduledAction.</param>
+        /// 
+        /// <returns>Returns a  BatchDeleteScheduledActionResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/BatchDeleteScheduledAction">REST API Reference for BatchDeleteScheduledAction Operation</seealso>
+        public virtual BatchDeleteScheduledActionResponse EndBatchDeleteScheduledAction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchDeleteScheduledActionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  BatchPutScheduledUpdateGroupAction
+
+        /// <summary>
+        /// Creates or updates one or more scheduled scaling actions for an Auto Scaling group.
+        /// When updating a scheduled scaling action, if you leave a parameter unspecified, the
+        /// corresponding value remains unchanged.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchPutScheduledUpdateGroupAction service method.</param>
+        /// 
+        /// <returns>The response from the BatchPutScheduledUpdateGroupAction service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.AlreadyExistsException">
+        /// You already have an Auto Scaling group or launch configuration with this name.
+        /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.LimitExceededException">
+        /// You have already reached a limit for your Auto Scaling resources (for example, groups,
+        /// launch configurations, or lifecycle hooks). For more information, see <a>DescribeAccountLimits</a>.
+        /// </exception>
+        /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
+        /// You already have a pending update to an Auto Scaling resource (for example, a group,
+        /// instance, or load balancer).
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/BatchPutScheduledUpdateGroupAction">REST API Reference for BatchPutScheduledUpdateGroupAction Operation</seealso>
+        public virtual BatchPutScheduledUpdateGroupActionResponse BatchPutScheduledUpdateGroupAction(BatchPutScheduledUpdateGroupActionRequest request)
+        {
+            var marshaller = BatchPutScheduledUpdateGroupActionRequestMarshaller.Instance;
+            var unmarshaller = BatchPutScheduledUpdateGroupActionResponseUnmarshaller.Instance;
+
+            return Invoke<BatchPutScheduledUpdateGroupActionRequest,BatchPutScheduledUpdateGroupActionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchPutScheduledUpdateGroupAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchPutScheduledUpdateGroupAction operation on AmazonAutoScalingClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchPutScheduledUpdateGroupAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/BatchPutScheduledUpdateGroupAction">REST API Reference for BatchPutScheduledUpdateGroupAction Operation</seealso>
+        public virtual IAsyncResult BeginBatchPutScheduledUpdateGroupAction(BatchPutScheduledUpdateGroupActionRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = BatchPutScheduledUpdateGroupActionRequestMarshaller.Instance;
+            var unmarshaller = BatchPutScheduledUpdateGroupActionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<BatchPutScheduledUpdateGroupActionRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchPutScheduledUpdateGroupAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchPutScheduledUpdateGroupAction.</param>
+        /// 
+        /// <returns>Returns a  BatchPutScheduledUpdateGroupActionResult from AutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/BatchPutScheduledUpdateGroupAction">REST API Reference for BatchPutScheduledUpdateGroupAction Operation</seealso>
+        public virtual BatchPutScheduledUpdateGroupActionResponse EndBatchPutScheduledUpdateGroupAction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchPutScheduledUpdateGroupActionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CompleteLifecycleAction
 
         /// <summary>
@@ -468,13 +594,13 @@ namespace Amazon.AutoScaling
         ///  <ol> <li> 
         /// <para>
         /// (Optional) Create a Lambda function and a rule that allows CloudWatch Events to invoke
-        /// your Lambda function when Auto Scaling launches or terminates instances.
+        /// your Lambda function when Amazon EC2 Auto Scaling launches or terminates instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// (Optional) Create a notification target and an IAM role. The target can be either
-        /// an Amazon SQS queue or an Amazon SNS topic. The role allows Auto Scaling to publish
-        /// lifecycle notifications to the target.
+        /// an Amazon SQS queue or an Amazon SNS topic. The role allows Amazon EC2 Auto Scaling
+        /// to publish lifecycle notifications to the target.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -493,8 +619,8 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  </li> </ol> 
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
-        /// Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Auto
+        /// Scaling Lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CompleteLifecycleAction service method.</param>
@@ -558,13 +684,13 @@ namespace Amazon.AutoScaling
         /// <para>
         /// If you exceed your maximum limit of Auto Scaling groups, the call fails. For information
         /// about viewing this limit, see <a>DescribeAccountLimits</a>. For information about
-        /// updating this limit, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-account-limits.html">Auto
-        /// Scaling Limits</a> in the <i>Auto Scaling User Guide</i>.
+        /// updating this limit, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Auto
+        /// Scaling Limits</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroup.html">Auto
-        /// Scaling Groups</a> in the <i>Auto Scaling User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html">Auto
+        /// Scaling Groups</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAutoScalingGroup service method.</param>
@@ -638,13 +764,13 @@ namespace Amazon.AutoScaling
         /// <para>
         /// If you exceed your maximum limit of launch configurations, the call fails. For information
         /// about viewing this limit, see <a>DescribeAccountLimits</a>. For information about
-        /// updating this limit, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-account-limits.html">Auto
-        /// Scaling Limits</a> in the <i>Auto Scaling User Guide</i>.
+        /// updating this limit, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Auto
+        /// Scaling Limits</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/LaunchConfiguration.html">Launch
-        /// Configurations</a> in the <i>Auto Scaling User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/LaunchConfiguration.html">Launch
+        /// Configurations</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLaunchConfiguration service method.</param>
@@ -718,8 +844,8 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/autoscaling-tagging.html">Tagging
-        /// Auto Scaling Groups and Instances</a> in the <i>Auto Scaling User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging
+        /// Auto Scaling Groups and Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateOrUpdateTags service method.</param>
@@ -803,7 +929,7 @@ namespace Amazon.AutoScaling
         /// <para>
         /// To remove instances from the Auto Scaling group before deleting it, call <a>DetachInstances</a>
         /// with the list of instances and the option to decrement the desired capacity so that
-        /// Auto Scaling does not launch replacement instances.
+        /// Amazon EC2 Auto Scaling does not launch replacement instances.
         /// </para>
         ///  
         /// <para>
@@ -1245,8 +1371,8 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// For information about requesting an increase in these limits, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-account-limits.html">Auto
-        /// Scaling Limits</a> in the <i>Auto Scaling User Guide</i>.
+        /// For information about requesting an increase in these limits, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Auto
+        /// Scaling Limits</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// 
@@ -1266,8 +1392,8 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// For information about requesting an increase in these limits, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-account-limits.html">Auto
-        /// Scaling Limits</a> in the <i>Auto Scaling User Guide</i>.
+        /// For information about requesting an increase in these limits, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Auto
+        /// Scaling Limits</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountLimits service method.</param>
@@ -1553,7 +1679,7 @@ namespace Amazon.AutoScaling
         #region  DescribeAutoScalingNotificationTypes
 
         /// <summary>
-        /// Describes the notification types that are supported by Auto Scaling.
+        /// Describes the notification types that are supported by Amazon EC2 Auto Scaling.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeAutoScalingNotificationTypes service method, as returned by AutoScaling.</returns>
@@ -1568,7 +1694,7 @@ namespace Amazon.AutoScaling
         }
 
         /// <summary>
-        /// Describes the notification types that are supported by Auto Scaling.
+        /// Describes the notification types that are supported by Amazon EC2 Auto Scaling.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAutoScalingNotificationTypes service method.</param>
         /// 
@@ -1761,6 +1887,20 @@ namespace Amazon.AutoScaling
 
         /// <summary>
         /// Describes the available types of lifecycle hooks.
+        /// 
+        ///  
+        /// <para>
+        /// The following hook types are supported:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// autoscaling:EC2_INSTANCE_LAUNCHING
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// autoscaling:EC2_INSTANCE_TERMINATING
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLifecycleHookTypes service method.</param>
         /// 
@@ -1937,7 +2077,7 @@ namespace Amazon.AutoScaling
         #region  DescribeMetricCollectionTypes
 
         /// <summary>
-        /// Describes the available CloudWatch metrics for Auto Scaling.
+        /// Describes the available CloudWatch metrics for Amazon EC2 Auto Scaling.
         /// 
         ///  
         /// <para>
@@ -1958,7 +2098,7 @@ namespace Amazon.AutoScaling
         }
 
         /// <summary>
-        /// Describes the available CloudWatch metrics for Auto Scaling.
+        /// Describes the available CloudWatch metrics for Amazon EC2 Auto Scaling.
         /// 
         ///  
         /// <para>
@@ -2517,7 +2657,7 @@ namespace Amazon.AutoScaling
         #region  DescribeTerminationPolicyTypes
 
         /// <summary>
-        /// Describes the termination policies supported by Auto Scaling.
+        /// Describes the termination policies supported by Amazon EC2 Auto Scaling.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeTerminationPolicyTypes service method, as returned by AutoScaling.</returns>
@@ -2532,7 +2672,7 @@ namespace Amazon.AutoScaling
         }
 
         /// <summary>
-        /// Describes the termination policies supported by Auto Scaling.
+        /// Describes the termination policies supported by Amazon EC2 Auto Scaling.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTerminationPolicyTypes service method.</param>
         /// 
@@ -2598,8 +2738,8 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// If you do not specify the option to decrement the desired capacity, Auto Scaling launches
-        /// instances to replace the ones that are detached.
+        /// If you do not specify the option to decrement the desired capacity, Amazon EC2 Auto
+        /// Scaling launches instances to replace the ones that are detached.
         /// </para>
         ///  
         /// <para>
@@ -2609,8 +2749,9 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/detach-instance-asg.html">Detach
-        /// EC2 Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/detach-instance-asg.html">Detach
+        /// EC2 Instances from Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachInstances service method.</param>
@@ -2853,8 +2994,9 @@ namespace Amazon.AutoScaling
 
         /// <summary>
         /// Enables group metrics for the specified Auto Scaling group. For more information,
-        /// see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html">Monitoring
-        /// Your Auto Scaling Groups and Instances</a> in the <i>Auto Scaling User Guide</i>.
+        /// see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-monitoring.html">Monitoring
+        /// Your Auto Scaling Groups and Instances</a> in the <i>Amazon EC2 Auto Scaling User
+        /// Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableMetricsCollection service method.</param>
         /// 
@@ -2915,8 +3057,9 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-enter-exit-standby.html">Temporarily
-        /// Removing Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enter-exit-standby.html">Temporarily
+        /// Removing Instances from Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnterStandby service method.</param>
@@ -3038,8 +3181,9 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-enter-exit-standby.html">Temporarily
-        /// Removing Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enter-exit-standby.html">Temporarily
+        /// Removing Instances from Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExitStandby service method.</param>
@@ -3101,9 +3245,9 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// A lifecycle hook tells Auto Scaling that you want to perform an action on an instance
-        /// that is not actively in service; for example, either when the instance launches or
-        /// before the instance terminates.
+        /// A lifecycle hook tells Amazon EC2 Auto Scaling that you want to perform an action
+        /// on an instance that is not actively in service; for example, either when the instance
+        /// launches or before the instance terminates.
         /// </para>
         ///  
         /// <para>
@@ -3113,13 +3257,13 @@ namespace Amazon.AutoScaling
         ///  <ol> <li> 
         /// <para>
         /// (Optional) Create a Lambda function and a rule that allows CloudWatch Events to invoke
-        /// your Lambda function when Auto Scaling launches or terminates instances.
+        /// your Lambda function when Amazon EC2 Auto Scaling launches or terminates instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// (Optional) Create a notification target and an IAM role. The target can be either
-        /// an Amazon SQS queue or an Amazon SNS topic. The role allows Auto Scaling to publish
-        /// lifecycle notifications to the target.
+        /// an Amazon SQS queue or an Amazon SNS topic. The role allows Amazon EC2 Auto Scaling
+        /// to publish lifecycle notifications to the target.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3137,8 +3281,8 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  </li> </ol> 
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/lifecycle-hooks.html">Auto
-        /// Scaling Lifecycle Hooks</a> in the <i>Auto Scaling User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Auto
+        /// Scaling Lifecycle Hooks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -3216,7 +3360,7 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// For more information see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/ASGettingNotifications.html">Getting
+        /// For more information see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/ASGettingNotifications.html">Getting
         /// SNS Notifications When Your Auto Scaling Group Scales</a> in the <i>Auto Scaling User
         /// Guide</i>.
         /// </para>
@@ -3363,8 +3507,8 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/schedule_time.html">Scheduled
-        /// Scaling</a> in the <i>Auto Scaling User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/schedule_time.html">Scheduled
+        /// Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutScheduledUpdateGroupAction service method.</param>
@@ -3440,13 +3584,13 @@ namespace Amazon.AutoScaling
         ///  <ol> <li> 
         /// <para>
         /// (Optional) Create a Lambda function and a rule that allows CloudWatch Events to invoke
-        /// your Lambda function when Auto Scaling launches or terminates instances.
+        /// your Lambda function when Amazon EC2 Auto Scaling launches or terminates instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// (Optional) Create a notification target and an IAM role. The target can be either
-        /// an Amazon SQS queue or an Amazon SNS topic. The role allows Auto Scaling to publish
-        /// lifecycle notifications to the target.
+        /// an Amazon SQS queue or an Amazon SNS topic. The role allows Amazon EC2 Auto Scaling
+        /// to publish lifecycle notifications to the target.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3464,8 +3608,8 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  </li> </ol> 
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
-        /// Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Auto
+        /// Scaling Lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RecordLifecycleActionHeartbeat service method.</param>
@@ -3523,13 +3667,13 @@ namespace Amazon.AutoScaling
         #region  ResumeProcesses
 
         /// <summary>
-        /// Resumes the specified suspended Auto Scaling processes, or all suspended process,
+        /// Resumes the specified suspended automatic scaling processes, or all suspended process,
         /// for the specified Auto Scaling group.
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-suspend-resume-processes.html">Suspending
-        /// and Resuming Auto Scaling Processes</a> in the <i>Auto Scaling User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html">Suspending
+        /// and Resuming Scaling Processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResumeProcesses service method.</param>
@@ -3594,8 +3738,8 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// For more information about desired capacity, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/WhatIsAutoScaling.html">What
-        /// Is Auto Scaling?</a> in the <i>Auto Scaling User Guide</i>.
+        /// For more information about desired capacity, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/WhatIsAutoScaling.html">What
+        /// Is Amazon EC2 Auto Scaling?</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetDesiredCapacity service method.</param>
@@ -3660,8 +3804,8 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/healthcheck.html">Health
-        /// Checks</a> in the <i>Auto Scaling User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
+        /// Checks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetInstanceHealth service method.</param>
@@ -3723,8 +3867,8 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-termination.html#instance-protection">Instance
-        /// Protection</a> in the <i>Auto Scaling User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
+        /// Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetInstanceProtection service method.</param>
@@ -3786,7 +3930,7 @@ namespace Amazon.AutoScaling
         #region  SuspendProcesses
 
         /// <summary>
-        /// Suspends the specified Auto Scaling processes, or all processes, for the specified
+        /// Suspends the specified automatic scaling processes, or all processes, for the specified
         /// Auto Scaling group.
         /// 
         ///  
@@ -3800,8 +3944,8 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-suspend-resume-processes.html">Suspending
-        /// and Resuming Auto Scaling Processes</a> in the <i>Auto Scaling User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html">Suspending
+        /// and Resuming Scaling Processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SuspendProcesses service method.</param>

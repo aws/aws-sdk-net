@@ -111,6 +111,54 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("AutoScaling")]
+        public void BatchDeleteScheduledActionMarshallTest()
+        {
+            var operation = service_model.FindOperation("BatchDeleteScheduledAction");
+
+            var request = InstantiateClassGenerator.Execute<BatchDeleteScheduledActionRequest>();
+            var marshaller = new BatchDeleteScheduledActionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = BatchDeleteScheduledActionResponseUnmarshaller.Instance.Unmarshall(context)
+                as BatchDeleteScheduledActionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("AutoScaling")]
+        public void BatchPutScheduledUpdateGroupActionMarshallTest()
+        {
+            var operation = service_model.FindOperation("BatchPutScheduledUpdateGroupAction");
+
+            var request = InstantiateClassGenerator.Execute<BatchPutScheduledUpdateGroupActionRequest>();
+            var marshaller = new BatchPutScheduledUpdateGroupActionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = BatchPutScheduledUpdateGroupActionResponseUnmarshaller.Instance.Unmarshall(context)
+                as BatchPutScheduledUpdateGroupActionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("AutoScaling")]
         public void CompleteLifecycleActionMarshallTest()
         {
             var operation = service_model.FindOperation("CompleteLifecycleAction");

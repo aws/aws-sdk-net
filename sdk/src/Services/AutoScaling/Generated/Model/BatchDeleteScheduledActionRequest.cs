@@ -28,20 +28,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Container for the parameters to the SetInstanceProtection operation.
-    /// Updates the instance protection settings of the specified instances.
-    /// 
-    ///  
-    /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
-    /// Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
-    /// </para>
+    /// Container for the parameters to the BatchDeleteScheduledAction operation.
+    /// Deletes one or more scheduled actions for the specified Auto Scaling group.
     /// </summary>
-    public partial class SetInstanceProtectionRequest : AmazonAutoScalingRequest
+    public partial class BatchDeleteScheduledActionRequest : AmazonAutoScalingRequest
     {
         private string _autoScalingGroupName;
-        private List<string> _instanceIds = new List<string>();
-        private bool? _protectedFromScaleIn;
+        private List<string> _scheduledActionNames = new List<string>();
 
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
@@ -62,40 +55,21 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceIds. 
+        /// Gets and sets the property ScheduledActionNames. 
         /// <para>
-        /// One or more instance IDs.
+        /// The names of the scheduled actions to delete. The maximum number allowed is 50. 
         /// </para>
         /// </summary>
-        public List<string> InstanceIds
+        public List<string> ScheduledActionNames
         {
-            get { return this._instanceIds; }
-            set { this._instanceIds = value; }
+            get { return this._scheduledActionNames; }
+            set { this._scheduledActionNames = value; }
         }
 
-        // Check to see if InstanceIds property is set
-        internal bool IsSetInstanceIds()
+        // Check to see if ScheduledActionNames property is set
+        internal bool IsSetScheduledActionNames()
         {
-            return this._instanceIds != null && this._instanceIds.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property ProtectedFromScaleIn. 
-        /// <para>
-        /// Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling
-        /// when scaling in.
-        /// </para>
-        /// </summary>
-        public bool ProtectedFromScaleIn
-        {
-            get { return this._protectedFromScaleIn.GetValueOrDefault(); }
-            set { this._protectedFromScaleIn = value; }
-        }
-
-        // Check to see if ProtectedFromScaleIn property is set
-        internal bool IsSetProtectedFromScaleIn()
-        {
-            return this._protectedFromScaleIn.HasValue; 
+            return this._scheduledActionNames != null && this._scheduledActionNames.Count > 0; 
         }
 
     }

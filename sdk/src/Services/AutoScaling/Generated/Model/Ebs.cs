@@ -156,10 +156,6 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code> 
         /// </para>
-        ///  
-        /// <para>
-        /// Default: <code>standard</code> 
-        /// </para>
         /// </summary>
         public string VolumeType
         {

@@ -28,13 +28,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Describes a lifecycle hook, which tells Auto Scaling that you want to perform an action
-    /// whenever it launches instances or whenever it terminates instances.
+    /// Describes a lifecycle hook, which tells Amazon EC2 Auto Scaling that you want to perform
+    /// an action whenever it launches instances or whenever it terminates instances.
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/lifecycle-hooks.html">Auto
-    /// Scaling Lifecycle Hooks</a> in the <i>Auto Scaling User Guide</i>.
+    /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Lifecycle
+    /// Hooks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     /// </para>
     /// </summary>
     public partial class LifecycleHookSpecification
@@ -71,8 +71,8 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property HeartbeatTimeout. 
         /// <para>
         /// The maximum time, in seconds, that can elapse before the lifecycle hook times out.
-        /// If the lifecycle hook times out, Auto Scaling performs the default action. You can
-        /// prevent the lifecycle hook from timing out by calling <a>RecordLifecycleActionHeartbeat</a>.
+        /// If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the default action.
+        /// You can prevent the lifecycle hook from timing out by calling <a>RecordLifecycleActionHeartbeat</a>.
         /// </para>
         /// </summary>
         public int HeartbeatTimeout
@@ -108,9 +108,18 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LifecycleTransition. 
         /// <para>
-        /// The state of the EC2 instance to which you want to attach the lifecycle hook. For
-        /// a list of lifecycle hook types, see <a>DescribeLifecycleHookTypes</a>.
+        /// The state of the EC2 instance to which you want to attach the lifecycle hook. The
+        /// possible values are:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// autoscaling:EC2_INSTANCE_LAUNCHING
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// autoscaling:EC2_INSTANCE_TERMINATING
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string LifecycleTransition
         {
@@ -127,8 +136,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property NotificationMetadata. 
         /// <para>
-        /// Additional information that you want to include any time Auto Scaling sends a message
-        /// to the notification target.
+        /// Additional information that you want to include any time Amazon EC2 Auto Scaling sends
+        /// a message to the notification target.
         /// </para>
         /// </summary>
         public string NotificationMetadata
@@ -146,9 +155,9 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property NotificationTargetARN. 
         /// <para>
-        /// The ARN of the target that Auto Scaling sends notifications to when an instance is
-        /// in the transition state for the lifecycle hook. The notification target can be either
-        /// an SQS queue or an SNS topic.
+        /// The ARN of the target that Amazon EC2 Auto Scaling sends notifications to when an
+        /// instance is in the transition state for the lifecycle hook. The notification target
+        /// can be either an SQS queue or an SNS topic.
         /// </para>
         /// </summary>
         public string NotificationTargetARN

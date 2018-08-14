@@ -28,20 +28,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Container for the parameters to the SetInstanceProtection operation.
-    /// Updates the instance protection settings of the specified instances.
-    /// 
-    ///  
-    /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
-    /// Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
-    /// </para>
+    /// Container for the parameters to the BatchPutScheduledUpdateGroupAction operation.
+    /// Creates or updates one or more scheduled scaling actions for an Auto Scaling group.
+    /// When updating a scheduled scaling action, if you leave a parameter unspecified, the
+    /// corresponding value remains unchanged.
     /// </summary>
-    public partial class SetInstanceProtectionRequest : AmazonAutoScalingRequest
+    public partial class BatchPutScheduledUpdateGroupActionRequest : AmazonAutoScalingRequest
     {
         private string _autoScalingGroupName;
-        private List<string> _instanceIds = new List<string>();
-        private bool? _protectedFromScaleIn;
+        private List<ScheduledUpdateGroupActionRequest> _scheduledUpdateGroupActions = new List<ScheduledUpdateGroupActionRequest>();
 
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
@@ -62,40 +57,21 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceIds. 
+        /// Gets and sets the property ScheduledUpdateGroupActions. 
         /// <para>
-        /// One or more instance IDs.
+        /// One or more scheduled actions. The maximum number allowed is 50. 
         /// </para>
         /// </summary>
-        public List<string> InstanceIds
+        public List<ScheduledUpdateGroupActionRequest> ScheduledUpdateGroupActions
         {
-            get { return this._instanceIds; }
-            set { this._instanceIds = value; }
+            get { return this._scheduledUpdateGroupActions; }
+            set { this._scheduledUpdateGroupActions = value; }
         }
 
-        // Check to see if InstanceIds property is set
-        internal bool IsSetInstanceIds()
+        // Check to see if ScheduledUpdateGroupActions property is set
+        internal bool IsSetScheduledUpdateGroupActions()
         {
-            return this._instanceIds != null && this._instanceIds.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property ProtectedFromScaleIn. 
-        /// <para>
-        /// Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling
-        /// when scaling in.
-        /// </para>
-        /// </summary>
-        public bool ProtectedFromScaleIn
-        {
-            get { return this._protectedFromScaleIn.GetValueOrDefault(); }
-            set { this._protectedFromScaleIn = value; }
-        }
-
-        // Check to see if ProtectedFromScaleIn property is set
-        internal bool IsSetProtectedFromScaleIn()
-        {
-            return this._protectedFromScaleIn.HasValue; 
+            return this._scheduledUpdateGroupActions != null && this._scheduledUpdateGroupActions.Count > 0; 
         }
 
     }

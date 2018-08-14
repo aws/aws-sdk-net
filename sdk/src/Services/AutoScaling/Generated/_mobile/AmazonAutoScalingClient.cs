@@ -332,6 +332,70 @@ namespace Amazon.AutoScaling
 
         #endregion
         
+        #region  BatchDeleteScheduledAction
+
+        internal virtual BatchDeleteScheduledActionResponse BatchDeleteScheduledAction(BatchDeleteScheduledActionRequest request)
+        {
+            var marshaller = BatchDeleteScheduledActionRequestMarshaller.Instance;
+            var unmarshaller = BatchDeleteScheduledActionResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDeleteScheduledActionRequest,BatchDeleteScheduledActionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchDeleteScheduledAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteScheduledAction operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/BatchDeleteScheduledAction">REST API Reference for BatchDeleteScheduledAction Operation</seealso>
+        public virtual Task<BatchDeleteScheduledActionResponse> BatchDeleteScheduledActionAsync(BatchDeleteScheduledActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = BatchDeleteScheduledActionRequestMarshaller.Instance;
+            var unmarshaller = BatchDeleteScheduledActionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchDeleteScheduledActionRequest,BatchDeleteScheduledActionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchPutScheduledUpdateGroupAction
+
+        internal virtual BatchPutScheduledUpdateGroupActionResponse BatchPutScheduledUpdateGroupAction(BatchPutScheduledUpdateGroupActionRequest request)
+        {
+            var marshaller = BatchPutScheduledUpdateGroupActionRequestMarshaller.Instance;
+            var unmarshaller = BatchPutScheduledUpdateGroupActionResponseUnmarshaller.Instance;
+
+            return Invoke<BatchPutScheduledUpdateGroupActionRequest,BatchPutScheduledUpdateGroupActionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchPutScheduledUpdateGroupAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchPutScheduledUpdateGroupAction operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/BatchPutScheduledUpdateGroupAction">REST API Reference for BatchPutScheduledUpdateGroupAction Operation</seealso>
+        public virtual Task<BatchPutScheduledUpdateGroupActionResponse> BatchPutScheduledUpdateGroupActionAsync(BatchPutScheduledUpdateGroupActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = BatchPutScheduledUpdateGroupActionRequestMarshaller.Instance;
+            var unmarshaller = BatchPutScheduledUpdateGroupActionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchPutScheduledUpdateGroupActionRequest,BatchPutScheduledUpdateGroupActionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CompleteLifecycleAction
 
         internal virtual CompleteLifecycleActionResponse CompleteLifecycleAction(CompleteLifecycleActionRequest request)
@@ -704,8 +768,8 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// For information about requesting an increase in these limits, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-account-limits.html">Auto
-        /// Scaling Limits</a> in the <i>Auto Scaling User Guide</i>.
+        /// For information about requesting an increase in these limits, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Auto
+        /// Scaling Limits</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -932,7 +996,7 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Describes the notification types that are supported by Auto Scaling.
+        /// Describes the notification types that are supported by Amazon EC2 Auto Scaling.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1173,7 +1237,7 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Describes the available CloudWatch metrics for Auto Scaling.
+        /// Describes the available CloudWatch metrics for Amazon EC2 Auto Scaling.
         /// 
         ///  
         /// <para>
@@ -1596,7 +1660,7 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Describes the termination policies supported by Auto Scaling.
+        /// Describes the termination policies supported by Amazon EC2 Auto Scaling.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.

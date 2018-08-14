@@ -33,10 +33,10 @@ namespace Amazon.AutoScaling.Model
     /// 
     ///  
     /// <para>
-    /// When you attach instances, Auto Scaling increases the desired capacity of the group
-    /// by the number of instances being attached. If the number of instances being attached
-    /// plus the desired capacity of the group exceeds the maximum size of the group, the
-    /// operation fails.
+    /// When you attach instances, Amazon EC2 Auto Scaling increases the desired capacity
+    /// of the group by the number of instances being attached. If the number of instances
+    /// being attached plus the desired capacity of the group exceeds the maximum size of
+    /// the group, the operation fails.
     /// </para>
     ///  
     /// <para>
@@ -46,8 +46,9 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/attach-instance-asg.html">Attach
-    /// EC2 Instances to Your Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
+    /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-instance-asg.html">Attach
+    /// EC2 Instances to Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User
+    /// Guide</i>.
     /// </para>
     /// </summary>
     public partial class AttachInstancesRequest : AmazonAutoScalingRequest

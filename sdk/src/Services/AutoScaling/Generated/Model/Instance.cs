@@ -63,7 +63,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The last reported health status of the instance. "Healthy" means that the instance
         /// is healthy and should remain in service. "Unhealthy" means that the instance is unhealthy
-        /// and Auto Scaling should terminate and replace it.
+        /// and Amazon EC2 Auto Scaling should terminate and replace it.
         /// </para>
         /// </summary>
         public string HealthStatus
@@ -154,8 +154,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ProtectedFromScaleIn. 
         /// <para>
-        /// Indicates whether the instance is protected from termination by Auto Scaling when
-        /// scaling in.
+        /// Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling
+        /// when scaling in.
         /// </para>
         /// </summary>
         public bool ProtectedFromScaleIn

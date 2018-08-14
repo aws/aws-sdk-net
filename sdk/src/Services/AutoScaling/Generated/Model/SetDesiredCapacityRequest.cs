@@ -33,8 +33,8 @@ namespace Amazon.AutoScaling.Model
     /// 
     ///  
     /// <para>
-    /// For more information about desired capacity, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/WhatIsAutoScaling.html">What
-    /// Is Auto Scaling?</a> in the <i>Auto Scaling User Guide</i>.
+    /// For more information about desired capacity, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/WhatIsAutoScaling.html">What
+    /// Is Amazon EC2 Auto Scaling?</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     /// </para>
     /// </summary>
     public partial class SetDesiredCapacityRequest : AmazonAutoScalingRequest
@@ -82,9 +82,10 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property HonorCooldown. 
         /// <para>
-        /// Indicates whether Auto Scaling waits for the cooldown period to complete before initiating
-        /// a scaling activity to set your Auto Scaling group to its new capacity. By default,
-        /// Auto Scaling does not honor the cooldown period during manual scaling activities.
+        /// Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete
+        /// before initiating a scaling activity to set your Auto Scaling group to its new capacity.
+        /// By default, Amazon EC2 Auto Scaling does not honor the cooldown period during manual
+        /// scaling activities.
         /// </para>
         /// </summary>
         public bool HonorCooldown

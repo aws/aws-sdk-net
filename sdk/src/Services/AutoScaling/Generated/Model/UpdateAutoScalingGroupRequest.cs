@@ -129,8 +129,8 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/Cooldown.html">Auto
-        /// Scaling Cooldowns</a> in the <i>Auto Scaling User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
+        /// Cooldowns</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         public int DefaultCooldown
@@ -168,13 +168,13 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property HealthCheckGracePeriod. 
         /// <para>
-        /// The amount of time, in seconds, that Auto Scaling waits before checking the health
-        /// status of an EC2 instance that has come into service. The default is 0.
+        /// The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking
+        /// the health status of an EC2 instance that has come into service. The default is 0.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/healthcheck.html">Health
-        /// Checks</a> in the <i>Auto Scaling User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
+        /// Checks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         public int HealthCheckGracePeriod
@@ -348,7 +348,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-termination.html">Controlling
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
         /// Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto Scaling
         /// User Guide</i>.
         /// </para>
@@ -378,8 +378,8 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/asg-in-vpc.html">Launching
-        /// Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching
+        /// Auto Scaling Instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         public string VPCZoneIdentifier

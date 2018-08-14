@@ -38,8 +38,8 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  
     /// <para>
-    /// If you do not specify the option to decrement the desired capacity, Auto Scaling launches
-    /// instances to replace the ones that are detached.
+    /// If you do not specify the option to decrement the desired capacity, Amazon EC2 Auto
+    /// Scaling launches instances to replace the ones that are detached.
     /// </para>
     ///  
     /// <para>
@@ -49,8 +49,9 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/detach-instance-asg.html">Detach
-    /// EC2 Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
+    /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/detach-instance-asg.html">Detach
+    /// EC2 Instances from Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User
+    /// Guide</i>.
     /// </para>
     /// </summary>
     public partial class DetachInstancesRequest : AmazonAutoScalingRequest
