@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2017-10-30.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2018-06-18.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -108,7 +108,12 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FieldLevelEncryptionId.
+        /// Gets and sets the property FieldLevelEncryptionId. 
+        /// <para>
+        /// The value of <code>ID</code> for the field-level encryption configuration that you
+        /// want CloudFront to use for encrypting specific fields of data for a cache behavior
+        /// or for the default cache behavior in your distribution.
+        /// </para>
         /// </summary>
         public string FieldLevelEncryptionId
         {
@@ -229,7 +234,7 @@ namespace Amazon.CloudFront.Model
         /// <para>
         /// The value of <code>ID</code> for the origin that you want CloudFront to route requests
         /// to when a request matches the path pattern either for a cache behavior or for the
-        /// default cache behavior.
+        /// default cache behavior in your distribution.
         /// </para>
         /// </summary>
         public string TargetOriginId

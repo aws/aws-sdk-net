@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2017-10-30.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2018-06-18.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -56,7 +56,7 @@ namespace Amazon.CloudFront.Model
     /// Update the XML document that was returned in the response to your <code>GetDistributionConfig</code>
     /// request to include the desired changes. You can't change the value of <code>CallerReference</code>.
     /// If you try to change this value, CloudFront returns an <code>IllegalUpdate</code>
-    /// error.
+    /// error. Note that you must strip out the ETag parameter that is returned.
     /// </para>
     ///  <important> 
     /// <para>

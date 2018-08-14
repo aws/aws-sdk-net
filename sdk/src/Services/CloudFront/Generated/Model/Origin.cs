@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2017-10-30.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2018-06-18.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -90,6 +90,8 @@ namespace Amazon.CloudFront.Model
         /// <para>
         ///  <b>Amazon S3 origins</b>: The DNS name of the Amazon S3 bucket from which you want
         /// CloudFront to get objects for this origin, for example, <code>myawsbucket.s3.amazonaws.com</code>.
+        /// If you set up your bucket to be configured as a website endpoint, enter the Amazon
+        /// S3 static website hosting endpoint for the bucket.
         /// </para>
         ///  
         /// <para>

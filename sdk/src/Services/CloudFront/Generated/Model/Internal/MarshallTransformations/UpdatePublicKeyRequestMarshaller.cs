@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2017-10-30.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2018-06-18.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -56,7 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "PUT";
-            string uriResourcePath = "/2017-10-30/public-key/{Id}/config";
+            string uriResourcePath = "/2018-06-18/public-key/{Id}/config";
         
             if(publicRequest.IsSetIfMatch())
                 request.Headers["If-Match"] = publicRequest.IfMatch;
@@ -68,18 +68,18 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             var stringWriter = new StringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true }))
             {   
-                xmlWriter.WriteStartElement("PublicKeyConfig", "http://cloudfront.amazonaws.com/doc/2017-10-30/");                                
+                xmlWriter.WriteStartElement("PublicKeyConfig", "http://cloudfront.amazonaws.com/doc/2018-06-18/");                                
                 if(publicRequest.PublicKeyConfig.IsSetCallerReference())
-                    xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2017-10-30/", StringUtils.FromString(publicRequest.PublicKeyConfig.CallerReference));                    
+                    xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2018-06-18/", StringUtils.FromString(publicRequest.PublicKeyConfig.CallerReference));                    
 
                 if(publicRequest.PublicKeyConfig.IsSetComment())
-                    xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2017-10-30/", StringUtils.FromString(publicRequest.PublicKeyConfig.Comment));                    
+                    xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2018-06-18/", StringUtils.FromString(publicRequest.PublicKeyConfig.Comment));                    
 
                 if(publicRequest.PublicKeyConfig.IsSetEncodedKey())
-                    xmlWriter.WriteElementString("EncodedKey", "http://cloudfront.amazonaws.com/doc/2017-10-30/", StringUtils.FromString(publicRequest.PublicKeyConfig.EncodedKey));                    
+                    xmlWriter.WriteElementString("EncodedKey", "http://cloudfront.amazonaws.com/doc/2018-06-18/", StringUtils.FromString(publicRequest.PublicKeyConfig.EncodedKey));                    
 
                 if(publicRequest.PublicKeyConfig.IsSetName())
-                    xmlWriter.WriteElementString("Name", "http://cloudfront.amazonaws.com/doc/2017-10-30/", StringUtils.FromString(publicRequest.PublicKeyConfig.Name));                    
+                    xmlWriter.WriteElementString("Name", "http://cloudfront.amazonaws.com/doc/2018-06-18/", StringUtils.FromString(publicRequest.PublicKeyConfig.Name));                    
 
 
                 xmlWriter.WriteEndElement();

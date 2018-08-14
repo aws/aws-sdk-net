@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2017-10-30.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2018-06-18.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -33,6 +33,7 @@ namespace Amazon.CloudFront.Model
     public partial class LambdaFunctionAssociation
     {
         private EventType _eventType;
+        private bool? _includeBody;
         private string _lambdaFunctionARN;
 
         /// <summary>
@@ -87,6 +88,26 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetEventType()
         {
             return this._eventType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeBody. 
+        /// <para>
+        /// A flag that allows a Lambda function to have read access to the body content. For
+        /// more information, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/">Accessing
+        /// Body Content</a> in the Amazon CloudFront Developer Guide.
+        /// </para>
+        /// </summary>
+        public bool IncludeBody
+        {
+            get { return this._includeBody.GetValueOrDefault(); }
+            set { this._includeBody = value; }
+        }
+
+        // Check to see if IncludeBody property is set
+        internal bool IsSetIncludeBody()
+        {
+            return this._includeBody.HasValue; 
         }
 
         /// <summary>
