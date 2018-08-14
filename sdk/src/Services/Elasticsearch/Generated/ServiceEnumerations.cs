@@ -389,6 +389,118 @@ namespace Amazon.Elasticsearch
 
 
     /// <summary>
+    /// Constants used for properties of type UpgradeStatus.
+    /// </summary>
+    public class UpgradeStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for UpgradeStatus
+        /// </summary>
+        public static readonly UpgradeStatus FAILED = new UpgradeStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for UpgradeStatus
+        /// </summary>
+        public static readonly UpgradeStatus IN_PROGRESS = new UpgradeStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant SUCCEEDED for UpgradeStatus
+        /// </summary>
+        public static readonly UpgradeStatus SUCCEEDED = new UpgradeStatus("SUCCEEDED");
+        /// <summary>
+        /// Constant SUCCEEDED_WITH_ISSUES for UpgradeStatus
+        /// </summary>
+        public static readonly UpgradeStatus SUCCEEDED_WITH_ISSUES = new UpgradeStatus("SUCCEEDED_WITH_ISSUES");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UpgradeStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UpgradeStatus FindValue(string value)
+        {
+            return FindValue<UpgradeStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UpgradeStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UpgradeStep.
+    /// </summary>
+    public class UpgradeStep : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PRE_UPGRADE_CHECK for UpgradeStep
+        /// </summary>
+        public static readonly UpgradeStep PRE_UPGRADE_CHECK = new UpgradeStep("PRE_UPGRADE_CHECK");
+        /// <summary>
+        /// Constant SNAPSHOT for UpgradeStep
+        /// </summary>
+        public static readonly UpgradeStep SNAPSHOT = new UpgradeStep("SNAPSHOT");
+        /// <summary>
+        /// Constant UPGRADE for UpgradeStep
+        /// </summary>
+        public static readonly UpgradeStep UPGRADE = new UpgradeStep("UPGRADE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UpgradeStep(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UpgradeStep FindValue(string value)
+        {
+            return FindValue<UpgradeStep>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UpgradeStep(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type VolumeType.
     /// </summary>
     public class VolumeType : ConstantClass

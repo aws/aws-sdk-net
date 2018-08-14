@@ -400,6 +400,11 @@
                 "documentation": "\n      <p>The status of the Elasticsearch domain configuration. <code>True</code> if Amazon Elasticsearch Service is processing configuration changes. <code>False</code> if the configuration is active.</p>\n   ",
                 "shape_name": "Boolean"
               },
+              "UpgradeProcessing": {
+                "type": "boolean",
+                "documentation": "\n      <p>The status of an Elasticsearch domain version upgrade. <code>True</code> if Amazon Elasticsearch Service is undergoing a version upgrade. <code>False</code> if the configuration is active.</p>\n   ",
+                "shape_name": "Boolean"
+              },
               "ElasticsearchVersion": {
                 "type": "string",
                 "shape_name": "ElasticsearchVersionString",
@@ -872,6 +877,11 @@
                 "documentation": "\n      <p>The status of the Elasticsearch domain configuration. <code>True</code> if Amazon Elasticsearch Service is processing configuration changes. <code>False</code> if the configuration is active.</p>\n   ",
                 "shape_name": "Boolean"
               },
+              "UpgradeProcessing": {
+                "type": "boolean",
+                "documentation": "\n      <p>The status of an Elasticsearch domain version upgrade. <code>True</code> if Amazon Elasticsearch Service is undergoing a version upgrade. <code>False</code> if the configuration is active.</p>\n   ",
+                "shape_name": "Boolean"
+              },
               "ElasticsearchVersion": {
                 "type": "string",
                 "shape_name": "ElasticsearchVersionString",
@@ -1331,6 +1341,11 @@
                 "Processing": {
                   "type": "boolean",
                   "documentation": "\n      <p>The status of the Elasticsearch domain configuration. <code>True</code> if Amazon Elasticsearch Service is processing configuration changes. <code>False</code> if the configuration is active.</p>\n   ",
+                  "shape_name": "Boolean"
+                },
+                "UpgradeProcessing": {
+                  "type": "boolean",
+                  "documentation": "\n      <p>The status of an Elasticsearch domain version upgrade. <code>True</code> if Amazon Elasticsearch Service is undergoing a version upgrade. <code>False</code> if the configuration is active.</p>\n   ",
                   "shape_name": "Boolean"
                 },
                 "ElasticsearchVersion": {
@@ -3853,6 +3868,11 @@
                 "documentation": "\n      <p>The status of the Elasticsearch domain configuration. <code>True</code> if Amazon Elasticsearch Service is processing configuration changes. <code>False</code> if the configuration is active.</p>\n   ",
                 "shape_name": "Boolean"
               },
+              "UpgradeProcessing": {
+                "type": "boolean",
+                "documentation": "\n      <p>The status of an Elasticsearch domain version upgrade. <code>True</code> if Amazon Elasticsearch Service is undergoing a version upgrade. <code>False</code> if the configuration is active.</p>\n   ",
+                "shape_name": "Boolean"
+              },
               "ElasticsearchVersion": {
                 "type": "string",
                 "shape_name": "ElasticsearchVersionString",
@@ -5550,6 +5570,490 @@
         }
       ],
       "documentation": "\n\t\t<p>Allows you to purchase reserved Elasticsearch instances.</p>\n\t"
+    },
+    "GetCompatibleElasticsearchVersions": {
+      "name": "GetCompatibleElasticsearchVersions",
+      "http": {
+        "method": "GET",
+        "uri": "/2015-01-01/es/compatibleVersions?domainName={DomainName}"
+      },
+      "input": {
+        "type": "structure",
+        "members": {
+          "DomainName": {
+            "type": "string",
+            "documentation": "\n    <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>\n   ",
+            "pattern": "[a-z][a-z0-9\\-]+",
+            "location": "uri",
+            "shape_name": "DomainName",
+            "min_length": 3,
+            "max_length": 28
+          }
+        },
+        "documentation": "\n    <p>\n      Container for request parameters to\n      <code>\n        <a>GetCompatibleElasticsearchVersions</a>\n      </code>\n      operation.\n    </p>\n  ",
+        "shape_name": "GetCompatibleElasticsearchVersionsRequest"
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "CompatibleElasticsearchVersions": {
+            "type": "list",
+            "documentation": "\n    <p>\n      A map of compatible Elasticsearch versions returned as part of the\n      <code>\n        <a>GetCompatibleElasticsearchVersions</a>\n      </code>\n      operation.\n    </p>\n  ",
+            "shape_name": "CompatibleElasticsearchVersionsList",
+            "members": {
+              "type": "structure",
+              "members": {
+                "SourceVersion": {
+                  "type": "string",
+                  "documentation": "\n    <p>The current version of Elasticsearch on which a domain is.</p>\n  ",
+                  "shape_name": "ElasticsearchVersionString"
+                },
+                "TargetVersions": {
+                  "type": "list",
+                  "documentation": "\n    <p>List of supported elastic search versions.\n    </p>\n  ",
+                  "shape_name": "ElasticsearchVersionList",
+                  "members": {
+                    "type": "string",
+                    "shape_name": "ElasticsearchVersionString",
+                    "documentation": null
+                  }
+                }
+              },
+              "documentation": "\n    <p>\n      A map from an\n      <code>\n        <a>ElasticsearchVersion</a>\n      </code>\n      to a list of compatible\n      <code>\n        <a>ElasticsearchVersion</a>\n      </code>\n      s to which the domain can be upgraded.\n    </p>\n  ",
+              "shape_name": "CompatibleVersionsMap"
+            }
+          }
+        },
+        "documentation": "\n    <p>\n      Container for response returned by\n      <code>\n        <a>GetCompatibleElasticsearchVersions</a>\n      </code>\n      operation.\n    </p>\n  ",
+        "shape_name": "GetCompatibleElasticsearchVersionsResponse"
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "documentation": "\n      <p>A description of the error.</p>\n   ",
+              "shape_name": "ErrorMessage"
+            }
+          },
+          "documentation": "\n      <p>An error occurred while processing the request.</p>\n   ",
+          "shape_name": "BaseException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "documentation": "\n      <p>An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.</p>\n   ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "documentation": "\n      <p>An error occured because the client wanted to access a not supported operation. Gives http status code of 409.</p>\n   ",
+          "shape_name": "DisabledOperationException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "documentation": "\n      <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>\n   ",
+          "shape_name": "ValidationException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "documentation": "\n      <p>The request processing has failed because of an unknown error, exception or failure (the failure is internal to the service) . Gives http status code of 500.</p>\n   ",
+          "shape_name": "InternalException"
+        }
+      ],
+      "documentation": "\n\t  <p>\n        Returns a list of upgrade compatible Elastisearch versions.\n        You can optionally pass a\n        <code>\n          <a>DomainName</a>\n        </code>\n        to get all upgrade compatible Elasticsearch versions for that specific domain.\n      </p>\n    "
+    },
+    "UpgradeElasticsearchDomain": {
+      "name": "UpgradeElasticsearchDomain",
+      "http": {
+        "method": "POST",
+        "uri": "/2015-01-01/es/upgradeDomain"
+      },
+      "input": {
+        "type": "structure",
+        "members": {
+          "DomainName": {
+            "type": "string",
+            "documentation": "\n    <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>\n   ",
+            "pattern": "[a-z][a-z0-9\\-]+",
+            "required": true,
+            "shape_name": "DomainName",
+            "min_length": 3,
+            "max_length": 28
+          },
+          "TargetVersion": {
+            "type": "string",
+            "documentation": "\n    <p>The version of Elasticsearch that you intend to upgrade the domain to.</p>\n  ",
+            "required": true,
+            "shape_name": "ElasticsearchVersionString"
+          },
+          "PerformCheckOnly": {
+            "type": "boolean",
+            "documentation": "\n    <p>\n      This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed.\n      This will not actually perform the Upgrade.\n    </p>\n  ",
+            "shape_name": "Boolean"
+          }
+        },
+        "documentation": "\n    <p>\n      Container for request parameters to\n      <code>\n        <a>UpgradeElasticsearchDomain</a>\n      </code>\n      operation.\n    </p>\n  ",
+        "shape_name": "UpgradeElasticsearchDomainRequest"
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "DomainName": {
+            "type": "string",
+            "documentation": "\n    <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>\n   ",
+            "pattern": "[a-z][a-z0-9\\-]+",
+            "shape_name": "DomainName",
+            "min_length": 3,
+            "max_length": 28
+          },
+          "TargetVersion": {
+            "type": "string",
+            "documentation": "\n    <p>The version of Elasticsearch that you intend to upgrade the domain to.</p>\n  ",
+            "shape_name": "ElasticsearchVersionString"
+          },
+          "PerformCheckOnly": {
+            "type": "boolean",
+            "documentation": "\n    <p>\n      This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed.\n      This will not actually perform the Upgrade.\n    </p>\n  ",
+            "shape_name": "Boolean"
+          }
+        },
+        "documentation": "\n    <p>\n      Container for response returned by\n      <code>\n        <a>UpgradeElasticsearchDomain</a>\n      </code>\n      operation.\n    </p>\n  ",
+        "shape_name": "UpgradeElasticsearchDomainResponse"
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "documentation": "\n      <p>A description of the error.</p>\n   ",
+              "shape_name": "ErrorMessage"
+            }
+          },
+          "documentation": "\n      <p>An error occurred while processing the request.</p>\n   ",
+          "shape_name": "BaseException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "documentation": "\n      <p>An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.</p>\n   ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "documentation": "\n      <p>An exception for creating a resource that already exists. Gives http status code of 400.</p>\n   ",
+          "shape_name": "ResourceAlreadyExistsException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "documentation": "\n      <p>An error occured because the client wanted to access a not supported operation. Gives http status code of 409.</p>\n   ",
+          "shape_name": "DisabledOperationException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "documentation": "\n      <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>\n   ",
+          "shape_name": "ValidationException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "documentation": "\n      <p>The request processing has failed because of an unknown error, exception or failure (the failure is internal to the service) . Gives http status code of 500.</p>\n   ",
+          "shape_name": "InternalException"
+        }
+      ],
+      "documentation": "\n\t\t<p>Allows you to either upgrade your domain or perform an Upgrade eligibility check to a compatible Elasticsearch version.</p>\n    "
+    },
+    "GetUpgradeStatus": {
+      "name": "GetUpgradeStatus",
+      "http": {
+        "method": "GET",
+        "uri": "/2015-01-01/es/upgradeDomain/{DomainName}/status"
+      },
+      "input": {
+        "type": "structure",
+        "members": {
+          "DomainName": {
+            "type": "string",
+            "documentation": "\n    <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>\n   ",
+            "pattern": "[a-z][a-z0-9\\-]+",
+            "required": true,
+            "location": "uri",
+            "shape_name": "DomainName",
+            "min_length": 3,
+            "max_length": 28
+          }
+        },
+        "documentation": "\n    <p>\n      Container for request parameters to\n      <code>\n        <a>GetUpgradeStatus</a>\n      </code>\n      operation.\n    </p>\n  ",
+        "shape_name": "GetUpgradeStatusRequest"
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "UpgradeStep": {
+            "type": "string",
+            "enum": [
+              "PRE_UPGRADE_CHECK",
+              "SNAPSHOT",
+              "UPGRADE"
+            ],
+            "documentation": "\n    <p>\n      Represents one of 3 steps that an Upgrade or Upgrade Eligibility Check does through:\n      <ul>\n        <li>PreUpgradeCheck</li>\n        <li>Snapshot</li>\n        <li>Upgrade</li>\n      </ul>\n    </p>\n  ",
+            "shape_name": "UpgradeStep"
+          },
+          "StepStatus": {
+            "type": "string",
+            "enum": [
+              "IN_PROGRESS",
+              "SUCCEEDED",
+              "SUCCEEDED_WITH_ISSUES",
+              "FAILED"
+            ],
+            "documentation": "\n    <p>\n      One of 4 statuses that a step can go through returned as part of the\n      <code>\n        <a>GetUpgradeStatusResponse</a>\n      </code>\n      object. The status can take one of the following values:\n      <ul>\n        <li>In Progress</li>\n        <li>Succeeded</li>\n        <li>Succeeded with Issues</li>\n        <li>Failed</li>\n      </ul>\n    </p>\n  ",
+            "shape_name": "UpgradeStatus"
+          },
+          "UpgradeName": {
+            "type": "string",
+            "documentation": "\n    <p>A string that describes the update briefly</p>\n  ",
+            "shape_name": "UpgradeName"
+          }
+        },
+        "documentation": "\n    <p>\n      Container for response returned by\n      <code>\n        <a>GetUpgradeStatus</a>\n      </code>\n      operation.\n    </p>\n  ",
+        "shape_name": "GetUpgradeStatusResponse"
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "documentation": "\n      <p>A description of the error.</p>\n   ",
+              "shape_name": "ErrorMessage"
+            }
+          },
+          "documentation": "\n      <p>An error occurred while processing the request.</p>\n   ",
+          "shape_name": "BaseException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "documentation": "\n      <p>An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.</p>\n   ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "documentation": "\n      <p>An error occured because the client wanted to access a not supported operation. Gives http status code of 409.</p>\n   ",
+          "shape_name": "DisabledOperationException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "documentation": "\n      <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>\n   ",
+          "shape_name": "ValidationException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "documentation": "\n      <p>The request processing has failed because of an unknown error, exception or failure (the failure is internal to the service) . Gives http status code of 500.</p>\n   ",
+          "shape_name": "InternalException"
+        }
+      ],
+      "documentation": "\n\t\t<p>Retrieves the latest status of the last upgrade or upgrade eligibility check that was performed on the domain.</p>\n    "
+    },
+    "GetUpgradeHistory": {
+      "name": "GetUpgradeHistory",
+      "http": {
+        "method": "GET",
+        "uri": "/2015-01-01/es/upgradeDomain/{DomainName}/history?maxResults={MaxResults}&nextToken={NextToken}"
+      },
+      "input": {
+        "type": "structure",
+        "members": {
+          "DomainName": {
+            "type": "string",
+            "documentation": "\n    <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>\n   ",
+            "pattern": "[a-z][a-z0-9\\-]+",
+            "required": true,
+            "location": "uri",
+            "shape_name": "DomainName",
+            "min_length": 3,
+            "max_length": 28
+          },
+          "MaxResults": {
+            "type": "integer",
+            "documentation": "\n    <p>\n      Set this value to limit the number of results returned.\n    </p>\n  ",
+            "pageSize": true,
+            "location": "uri",
+            "shape_name": "MaxResults",
+            "max_length": 100
+          },
+          "NextToken": {
+            "type": "string",
+            "documentation": "\n    <p>\n      Paginated APIs accepts NextToken input to returns next page results and provides\n      a NextToken output in the response which can be used by the client to retrieve more results.\n    </p>\n  ",
+            "paginationToken": true,
+            "location": "uri",
+            "shape_name": "NextToken"
+          }
+        },
+        "documentation": "\n    <p>\n      Container for request parameters to\n      <code>\n        <a>GetUpgradeHistory</a>\n      </code>\n      operation.\n    </p>\n  ",
+        "shape_name": "GetUpgradeHistoryRequest"
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "UpgradeHistories": {
+            "type": "list",
+            "documentation": "\n    <p>\n      A list of\n      <code>\n        <a>UpgradeHistory</a>\n      </code>\n      objects corresponding to each Upgrade or Upgrade Eligibility Check performed on a domain returned as part of\n      <code>\n        <a>GetUpgradeHistoryResponse</a>\n      </code>\n      object.\n    </p>\n  ",
+            "shape_name": "UpgradeHistoryList",
+            "members": {
+              "type": "structure",
+              "members": {
+                "UpgradeName": {
+                  "type": "string",
+                  "documentation": "\n    <p>A string that describes the update briefly</p>\n  ",
+                  "shape_name": "UpgradeName"
+                },
+                "StartTimestamp": {
+                  "type": "timestamp",
+                  "documentation": "\n    <p>UTC Timestamp at which the Upgrade API call was made in \"yyyy-MM-ddTHH:mm:ssZ\" format.</p>\n  ",
+                  "shape_name": "StartTimestamp"
+                },
+                "UpgradeStatus": {
+                  "type": "string",
+                  "enum": [
+                    "IN_PROGRESS",
+                    "SUCCEEDED",
+                    "SUCCEEDED_WITH_ISSUES",
+                    "FAILED"
+                  ],
+                  "documentation": "\n   <p>\n      The overall status of the update. The status can take one of the following values:\n      <ul>\n        <li>In Progress</li>\n        <li>Succeeded</li>\n        <li>Succeeded with Issues</li>\n        <li>Failed</li>\n      </ul>\n    </p>\n  ",
+                  "shape_name": "UpgradeStatus"
+                },
+                "StepsList": {
+                  "type": "list",
+                  "documentation": "\n    <p>\n      A list of\n      <code>\n        <a>UpgradeStepItem</a>\n      </code>\n      s representing information about each step performed as pard of a specific Upgrade or Upgrade Eligibility Check.\n    </p>\n  ",
+                  "shape_name": "UpgradeStepsList",
+                  "members": {
+                    "type": "structure",
+                    "members": {
+                      "UpgradeStep": {
+                        "type": "string",
+                        "enum": [
+                          "PRE_UPGRADE_CHECK",
+                          "SNAPSHOT",
+                          "UPGRADE"
+                        ],
+                        "documentation": "\n    <p>\n      Represents one of 3 steps that an Upgrade or Upgrade Eligibility Check does through:\n      <ul>\n        <li>PreUpgradeCheck</li>\n        <li>Snapshot</li>\n        <li>Upgrade</li>\n      </ul>\n    </p>\n  ",
+                        "shape_name": "UpgradeStep"
+                      },
+                      "UpgradeStepStatus": {
+                        "type": "string",
+                        "enum": [
+                          "IN_PROGRESS",
+                          "SUCCEEDED",
+                          "SUCCEEDED_WITH_ISSUES",
+                          "FAILED"
+                        ],
+                        "documentation": "\n    <p>\n      The status of a particular step during an upgrade. The status can take one of the following values:\n      <ul>\n        <li>In Progress</li>\n        <li>Succeeded</li>\n        <li>Succeeded with Issues</li>\n        <li>Failed</li>\n      </ul>\n    </p>\n  ",
+                        "shape_name": "UpgradeStatus"
+                      },
+                      "Issues": {
+                        "type": "list",
+                        "documentation": "\n    <p>A list of strings containing detailed information about the errors encountered in a particular step.</p>\n  ",
+                        "shape_name": "Issues",
+                        "members": {
+                          "type": "string",
+                          "shape_name": "Issue",
+                          "documentation": null
+                        }
+                      },
+                      "ProgressPercent": {
+                        "type": "double",
+                        "documentation": "\n    <p>The Floating point value representing progress percentage of a particular step.</p>\n  ",
+                        "shape_name": "Double"
+                      }
+                    },
+                    "documentation": "\n    <p>Represents a single step of the Upgrade or Upgrade Eligibility Check workflow.</p>\n  ",
+                    "shape_name": "UpgradeStepItem"
+                  }
+                }
+              },
+              "documentation": "\n    <p>History of the last 10 Upgrades and Upgrade Eligibility Checks.</p>\n  ",
+              "shape_name": "UpgradeHistory"
+            }
+          },
+          "NextToken": {
+            "type": "string",
+            "documentation": "\n    <p>Pagination token that needs to be supplied to the next call to get the next page of results</p>\n  ",
+            "shape_name": "String"
+          }
+        },
+        "documentation": "\n    <p>\n      Container for response returned by\n      <code>\n        <a>GetUpgradeHistory</a>\n      </code>\n      operation.\n    </p>\n  ",
+        "shape_name": "GetUpgradeHistoryResponse"
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "documentation": "\n      <p>A description of the error.</p>\n   ",
+              "shape_name": "ErrorMessage"
+            }
+          },
+          "documentation": "\n      <p>An error occurred while processing the request.</p>\n   ",
+          "shape_name": "BaseException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "documentation": "\n      <p>An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.</p>\n   ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "documentation": "\n      <p>An error occured because the client wanted to access a not supported operation. Gives http status code of 409.</p>\n   ",
+          "shape_name": "DisabledOperationException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "documentation": "\n      <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>\n   ",
+          "shape_name": "ValidationException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "documentation": "\n      <p>The request processing has failed because of an unknown error, exception or failure (the failure is internal to the service) . Gives http status code of 500.</p>\n   ",
+          "shape_name": "InternalException"
+        }
+      ],
+      "documentation": "\n\t\t<p>Retrieves the complete history of the last 10 upgrades that were performed on the domain.</p>\n    "
     }
   }
 }

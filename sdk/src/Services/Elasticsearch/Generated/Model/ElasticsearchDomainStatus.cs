@@ -49,6 +49,7 @@ namespace Amazon.Elasticsearch.Model
         private Dictionary<string, LogPublishingOption> _logPublishingOptions = new Dictionary<string, LogPublishingOption>();
         private bool? _processing;
         private SnapshotOptions _snapshotOptions;
+        private bool? _upgradeProcessing;
         private VPCDerivedInfo _vpcOptions;
 
         /// <summary>
@@ -366,6 +367,26 @@ namespace Amazon.Elasticsearch.Model
         internal bool IsSetSnapshotOptions()
         {
             return this._snapshotOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpgradeProcessing. 
+        /// <para>
+        /// The status of an Elasticsearch domain version upgrade. <code>True</code> if Amazon
+        /// Elasticsearch Service is undergoing a version upgrade. <code>False</code> if the configuration
+        /// is active.
+        /// </para>
+        /// </summary>
+        public bool UpgradeProcessing
+        {
+            get { return this._upgradeProcessing.GetValueOrDefault(); }
+            set { this._upgradeProcessing = value; }
+        }
+
+        // Check to see if UpgradeProcessing property is set
+        internal bool IsSetUpgradeProcessing()
+        {
+            return this._upgradeProcessing.HasValue; 
         }
 
         /// <summary>

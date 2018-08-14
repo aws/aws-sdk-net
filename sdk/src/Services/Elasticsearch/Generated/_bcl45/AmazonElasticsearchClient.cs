@@ -774,6 +774,175 @@ namespace Amazon.Elasticsearch
 
         #endregion
         
+        #region  GetCompatibleElasticsearchVersions
+
+
+        /// <summary>
+        /// Returns a list of upgrade compatible Elastisearch versions. You can optionally pass
+        /// a <code> <a>DomainName</a> </code> to get all upgrade compatible Elasticsearch versions
+        /// for that specific domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCompatibleElasticsearchVersions service method.</param>
+        /// 
+        /// <returns>The response from the GetCompatibleElasticsearchVersions service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        public virtual GetCompatibleElasticsearchVersionsResponse GetCompatibleElasticsearchVersions(GetCompatibleElasticsearchVersionsRequest request)
+        {
+            var marshaller = GetCompatibleElasticsearchVersionsRequestMarshaller.Instance;
+            var unmarshaller = GetCompatibleElasticsearchVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<GetCompatibleElasticsearchVersionsRequest,GetCompatibleElasticsearchVersionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCompatibleElasticsearchVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCompatibleElasticsearchVersions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<GetCompatibleElasticsearchVersionsResponse> GetCompatibleElasticsearchVersionsAsync(GetCompatibleElasticsearchVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetCompatibleElasticsearchVersionsRequestMarshaller.Instance;
+            var unmarshaller = GetCompatibleElasticsearchVersionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCompatibleElasticsearchVersionsRequest,GetCompatibleElasticsearchVersionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetUpgradeHistory
+
+
+        /// <summary>
+        /// Retrieves the complete history of the last 10 upgrades that were performed on the
+        /// domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUpgradeHistory service method.</param>
+        /// 
+        /// <returns>The response from the GetUpgradeHistory service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        public virtual GetUpgradeHistoryResponse GetUpgradeHistory(GetUpgradeHistoryRequest request)
+        {
+            var marshaller = GetUpgradeHistoryRequestMarshaller.Instance;
+            var unmarshaller = GetUpgradeHistoryResponseUnmarshaller.Instance;
+
+            return Invoke<GetUpgradeHistoryRequest,GetUpgradeHistoryResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetUpgradeHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetUpgradeHistory operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<GetUpgradeHistoryResponse> GetUpgradeHistoryAsync(GetUpgradeHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetUpgradeHistoryRequestMarshaller.Instance;
+            var unmarshaller = GetUpgradeHistoryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetUpgradeHistoryRequest,GetUpgradeHistoryResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetUpgradeStatus
+
+
+        /// <summary>
+        /// Retrieves the latest status of the last upgrade or upgrade eligibility check that
+        /// was performed on the domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUpgradeStatus service method.</param>
+        /// 
+        /// <returns>The response from the GetUpgradeStatus service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        public virtual GetUpgradeStatusResponse GetUpgradeStatus(GetUpgradeStatusRequest request)
+        {
+            var marshaller = GetUpgradeStatusRequestMarshaller.Instance;
+            var unmarshaller = GetUpgradeStatusResponseUnmarshaller.Instance;
+
+            return Invoke<GetUpgradeStatusRequest,GetUpgradeStatusResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetUpgradeStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetUpgradeStatus operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<GetUpgradeStatusResponse> GetUpgradeStatusAsync(GetUpgradeStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetUpgradeStatusRequestMarshaller.Instance;
+            var unmarshaller = GetUpgradeStatusResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetUpgradeStatusRequest,GetUpgradeStatusResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListDomainNames
 
 
@@ -1132,6 +1301,66 @@ namespace Amazon.Elasticsearch
             var unmarshaller = UpdateElasticsearchDomainConfigResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateElasticsearchDomainConfigRequest,UpdateElasticsearchDomainConfigResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpgradeElasticsearchDomain
+
+
+        /// <summary>
+        /// Allows you to either upgrade your domain or perform an Upgrade eligibility check to
+        /// a compatible Elasticsearch version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpgradeElasticsearchDomain service method.</param>
+        /// 
+        /// <returns>The response from the UpgradeElasticsearchDomain service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceAlreadyExistsException">
+        /// An exception for creating a resource that already exists. Gives http status code of
+        /// 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        public virtual UpgradeElasticsearchDomainResponse UpgradeElasticsearchDomain(UpgradeElasticsearchDomainRequest request)
+        {
+            var marshaller = UpgradeElasticsearchDomainRequestMarshaller.Instance;
+            var unmarshaller = UpgradeElasticsearchDomainResponseUnmarshaller.Instance;
+
+            return Invoke<UpgradeElasticsearchDomainRequest,UpgradeElasticsearchDomainResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpgradeElasticsearchDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpgradeElasticsearchDomain operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<UpgradeElasticsearchDomainResponse> UpgradeElasticsearchDomainAsync(UpgradeElasticsearchDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpgradeElasticsearchDomainRequestMarshaller.Instance;
+            var unmarshaller = UpgradeElasticsearchDomainResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpgradeElasticsearchDomainRequest,UpgradeElasticsearchDomainResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

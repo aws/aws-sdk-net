@@ -551,6 +551,99 @@ namespace Amazon.Elasticsearch
 
         #endregion
         
+        #region  GetCompatibleElasticsearchVersions
+
+        internal virtual GetCompatibleElasticsearchVersionsResponse GetCompatibleElasticsearchVersions(GetCompatibleElasticsearchVersionsRequest request)
+        {
+            var marshaller = GetCompatibleElasticsearchVersionsRequestMarshaller.Instance;
+            var unmarshaller = GetCompatibleElasticsearchVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<GetCompatibleElasticsearchVersionsRequest,GetCompatibleElasticsearchVersionsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCompatibleElasticsearchVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCompatibleElasticsearchVersions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<GetCompatibleElasticsearchVersionsResponse> GetCompatibleElasticsearchVersionsAsync(GetCompatibleElasticsearchVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetCompatibleElasticsearchVersionsRequestMarshaller.Instance;
+            var unmarshaller = GetCompatibleElasticsearchVersionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCompatibleElasticsearchVersionsRequest,GetCompatibleElasticsearchVersionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetUpgradeHistory
+
+        internal virtual GetUpgradeHistoryResponse GetUpgradeHistory(GetUpgradeHistoryRequest request)
+        {
+            var marshaller = GetUpgradeHistoryRequestMarshaller.Instance;
+            var unmarshaller = GetUpgradeHistoryResponseUnmarshaller.Instance;
+
+            return Invoke<GetUpgradeHistoryRequest,GetUpgradeHistoryResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetUpgradeHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetUpgradeHistory operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<GetUpgradeHistoryResponse> GetUpgradeHistoryAsync(GetUpgradeHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetUpgradeHistoryRequestMarshaller.Instance;
+            var unmarshaller = GetUpgradeHistoryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetUpgradeHistoryRequest,GetUpgradeHistoryResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetUpgradeStatus
+
+        internal virtual GetUpgradeStatusResponse GetUpgradeStatus(GetUpgradeStatusRequest request)
+        {
+            var marshaller = GetUpgradeStatusRequestMarshaller.Instance;
+            var unmarshaller = GetUpgradeStatusResponseUnmarshaller.Instance;
+
+            return Invoke<GetUpgradeStatusRequest,GetUpgradeStatusResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetUpgradeStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetUpgradeStatus operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<GetUpgradeStatusResponse> GetUpgradeStatusAsync(GetUpgradeStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetUpgradeStatusRequestMarshaller.Instance;
+            var unmarshaller = GetUpgradeStatusResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetUpgradeStatusRequest,GetUpgradeStatusResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListDomainNames
 
         internal virtual ListDomainNamesResponse ListDomainNames(ListDomainNamesRequest request)
@@ -763,6 +856,37 @@ namespace Amazon.Elasticsearch
             var unmarshaller = UpdateElasticsearchDomainConfigResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateElasticsearchDomainConfigRequest,UpdateElasticsearchDomainConfigResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpgradeElasticsearchDomain
+
+        internal virtual UpgradeElasticsearchDomainResponse UpgradeElasticsearchDomain(UpgradeElasticsearchDomainRequest request)
+        {
+            var marshaller = UpgradeElasticsearchDomainRequestMarshaller.Instance;
+            var unmarshaller = UpgradeElasticsearchDomainResponseUnmarshaller.Instance;
+
+            return Invoke<UpgradeElasticsearchDomainRequest,UpgradeElasticsearchDomainResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpgradeElasticsearchDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpgradeElasticsearchDomain operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<UpgradeElasticsearchDomainResponse> UpgradeElasticsearchDomainAsync(UpgradeElasticsearchDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpgradeElasticsearchDomainRequestMarshaller.Instance;
+            var unmarshaller = UpgradeElasticsearchDomainResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpgradeElasticsearchDomainRequest,UpgradeElasticsearchDomainResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

@@ -45,6 +45,28 @@
     <property>Amazon.Elasticsearch.Model.DescribeReservedElasticsearchInstancesRequest.ReservedElasticsearchInstanceId</property>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.GetCompatibleElasticsearchVersionsRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.GetUpgradeHistoryRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.GetUpgradeHistoryRequest.MaxResults</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.GetUpgradeStatusRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Elasticsearch.Model.ListElasticsearchInstanceTypesRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
@@ -80,6 +102,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.UpdateElasticsearchDomainConfigRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.UpgradeElasticsearchDomainRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.UpgradeElasticsearchDomainResponse.DomainName</property>
     <min>3</min>
     <max>28</max>
     <pattern>[a-z][a-z0-9\-]+</pattern>

@@ -902,6 +902,214 @@ namespace Amazon.Elasticsearch
 
         #endregion
         
+        #region  GetCompatibleElasticsearchVersions
+
+        /// <summary>
+        /// Returns a list of upgrade compatible Elastisearch versions. You can optionally pass
+        /// a <code> <a>DomainName</a> </code> to get all upgrade compatible Elasticsearch versions
+        /// for that specific domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCompatibleElasticsearchVersions service method.</param>
+        /// 
+        /// <returns>The response from the GetCompatibleElasticsearchVersions service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        public virtual GetCompatibleElasticsearchVersionsResponse GetCompatibleElasticsearchVersions(GetCompatibleElasticsearchVersionsRequest request)
+        {
+            var marshaller = GetCompatibleElasticsearchVersionsRequestMarshaller.Instance;
+            var unmarshaller = GetCompatibleElasticsearchVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<GetCompatibleElasticsearchVersionsRequest,GetCompatibleElasticsearchVersionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCompatibleElasticsearchVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCompatibleElasticsearchVersions operation on AmazonElasticsearchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCompatibleElasticsearchVersions
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginGetCompatibleElasticsearchVersions(GetCompatibleElasticsearchVersionsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = GetCompatibleElasticsearchVersionsRequestMarshaller.Instance;
+            var unmarshaller = GetCompatibleElasticsearchVersionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetCompatibleElasticsearchVersionsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetCompatibleElasticsearchVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCompatibleElasticsearchVersions.</param>
+        /// 
+        /// <returns>Returns a  GetCompatibleElasticsearchVersionsResult from Elasticsearch.</returns>
+        public virtual GetCompatibleElasticsearchVersionsResponse EndGetCompatibleElasticsearchVersions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetCompatibleElasticsearchVersionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetUpgradeHistory
+
+        /// <summary>
+        /// Retrieves the complete history of the last 10 upgrades that were performed on the
+        /// domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUpgradeHistory service method.</param>
+        /// 
+        /// <returns>The response from the GetUpgradeHistory service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        public virtual GetUpgradeHistoryResponse GetUpgradeHistory(GetUpgradeHistoryRequest request)
+        {
+            var marshaller = GetUpgradeHistoryRequestMarshaller.Instance;
+            var unmarshaller = GetUpgradeHistoryResponseUnmarshaller.Instance;
+
+            return Invoke<GetUpgradeHistoryRequest,GetUpgradeHistoryResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetUpgradeHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetUpgradeHistory operation on AmazonElasticsearchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetUpgradeHistory
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginGetUpgradeHistory(GetUpgradeHistoryRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = GetUpgradeHistoryRequestMarshaller.Instance;
+            var unmarshaller = GetUpgradeHistoryResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetUpgradeHistoryRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetUpgradeHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetUpgradeHistory.</param>
+        /// 
+        /// <returns>Returns a  GetUpgradeHistoryResult from Elasticsearch.</returns>
+        public virtual GetUpgradeHistoryResponse EndGetUpgradeHistory(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetUpgradeHistoryResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetUpgradeStatus
+
+        /// <summary>
+        /// Retrieves the latest status of the last upgrade or upgrade eligibility check that
+        /// was performed on the domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUpgradeStatus service method.</param>
+        /// 
+        /// <returns>The response from the GetUpgradeStatus service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        public virtual GetUpgradeStatusResponse GetUpgradeStatus(GetUpgradeStatusRequest request)
+        {
+            var marshaller = GetUpgradeStatusRequestMarshaller.Instance;
+            var unmarshaller = GetUpgradeStatusResponseUnmarshaller.Instance;
+
+            return Invoke<GetUpgradeStatusRequest,GetUpgradeStatusResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetUpgradeStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetUpgradeStatus operation on AmazonElasticsearchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetUpgradeStatus
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginGetUpgradeStatus(GetUpgradeStatusRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = GetUpgradeStatusRequestMarshaller.Instance;
+            var unmarshaller = GetUpgradeStatusResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetUpgradeStatusRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetUpgradeStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetUpgradeStatus.</param>
+        /// 
+        /// <returns>Returns a  GetUpgradeStatusResult from Elasticsearch.</returns>
+        public virtual GetUpgradeStatusResponse EndGetUpgradeStatus(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetUpgradeStatusResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListDomainNames
 
         /// <summary>
@@ -1352,6 +1560,79 @@ namespace Amazon.Elasticsearch
         public virtual UpdateElasticsearchDomainConfigResponse EndUpdateElasticsearchDomainConfig(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateElasticsearchDomainConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpgradeElasticsearchDomain
+
+        /// <summary>
+        /// Allows you to either upgrade your domain or perform an Upgrade eligibility check to
+        /// a compatible Elasticsearch version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpgradeElasticsearchDomain service method.</param>
+        /// 
+        /// <returns>The response from the UpgradeElasticsearchDomain service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceAlreadyExistsException">
+        /// An exception for creating a resource that already exists. Gives http status code of
+        /// 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        public virtual UpgradeElasticsearchDomainResponse UpgradeElasticsearchDomain(UpgradeElasticsearchDomainRequest request)
+        {
+            var marshaller = UpgradeElasticsearchDomainRequestMarshaller.Instance;
+            var unmarshaller = UpgradeElasticsearchDomainResponseUnmarshaller.Instance;
+
+            return Invoke<UpgradeElasticsearchDomainRequest,UpgradeElasticsearchDomainResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpgradeElasticsearchDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpgradeElasticsearchDomain operation on AmazonElasticsearchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpgradeElasticsearchDomain
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginUpgradeElasticsearchDomain(UpgradeElasticsearchDomainRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = UpgradeElasticsearchDomainRequestMarshaller.Instance;
+            var unmarshaller = UpgradeElasticsearchDomainResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpgradeElasticsearchDomainRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpgradeElasticsearchDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpgradeElasticsearchDomain.</param>
+        /// 
+        /// <returns>Returns a  UpgradeElasticsearchDomainResult from Elasticsearch.</returns>
+        public virtual UpgradeElasticsearchDomainResponse EndUpgradeElasticsearchDomain(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpgradeElasticsearchDomainResponse>(asyncResult);
         }
 
         #endregion

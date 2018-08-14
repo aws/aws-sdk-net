@@ -334,6 +334,102 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Elasticsearch")]
+        public void GetCompatibleElasticsearchVersionsMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetCompatibleElasticsearchVersions");
+
+            var request = InstantiateClassGenerator.Execute<GetCompatibleElasticsearchVersionsRequest>();
+            var marshaller = new GetCompatibleElasticsearchVersionsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetCompatibleElasticsearchVersions", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetCompatibleElasticsearchVersionsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetCompatibleElasticsearchVersionsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Elasticsearch")]
+        public void GetUpgradeHistoryMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetUpgradeHistory");
+
+            var request = InstantiateClassGenerator.Execute<GetUpgradeHistoryRequest>();
+            var marshaller = new GetUpgradeHistoryRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetUpgradeHistory", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetUpgradeHistoryResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetUpgradeHistoryResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Elasticsearch")]
+        public void GetUpgradeStatusMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetUpgradeStatus");
+
+            var request = InstantiateClassGenerator.Execute<GetUpgradeStatusRequest>();
+            var marshaller = new GetUpgradeStatusRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetUpgradeStatus", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetUpgradeStatusResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetUpgradeStatusResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Elasticsearch")]
         public void ListDomainNamesMarshallTest()
         {
             var operation = service_model.FindOperation("ListDomainNames");
@@ -535,6 +631,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = UpdateElasticsearchDomainConfigResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as UpdateElasticsearchDomainConfigResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Elasticsearch")]
+        public void UpgradeElasticsearchDomainMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpgradeElasticsearchDomain");
+
+            var request = InstantiateClassGenerator.Execute<UpgradeElasticsearchDomainRequest>();
+            var marshaller = new UpgradeElasticsearchDomainRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("UpgradeElasticsearchDomain", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = UpgradeElasticsearchDomainResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as UpgradeElasticsearchDomainResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
