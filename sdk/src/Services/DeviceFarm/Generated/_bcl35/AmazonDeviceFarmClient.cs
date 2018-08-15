@@ -4050,6 +4050,76 @@ namespace Amazon.DeviceFarm
 
         #endregion
         
+        #region  StopJob
+
+        /// <summary>
+        /// Initiates a stop request for the current job. AWS Device Farm will immediately stop
+        /// the job on the device where tests have not started executing, and you will not be
+        /// billed for this device. On the device where tests have started executing, Setup Suite
+        /// and Teardown Suite tests will run to completion before stopping execution on the device.
+        /// You will be billed for Setup, Teardown, and any tests that were in progress or already
+        /// completed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopJob service method.</param>
+        /// 
+        /// <returns>The response from the StopJob service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopJob">REST API Reference for StopJob Operation</seealso>
+        public virtual StopJobResponse StopJob(StopJobRequest request)
+        {
+            var marshaller = StopJobRequestMarshaller.Instance;
+            var unmarshaller = StopJobResponseUnmarshaller.Instance;
+
+            return Invoke<StopJobRequest,StopJobResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopJob operation on AmazonDeviceFarmClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopJob">REST API Reference for StopJob Operation</seealso>
+        public virtual IAsyncResult BeginStopJob(StopJobRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = StopJobRequestMarshaller.Instance;
+            var unmarshaller = StopJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke<StopJobRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopJob.</param>
+        /// 
+        /// <returns>Returns a  StopJobResult from DeviceFarm.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopJob">REST API Reference for StopJob Operation</seealso>
+        public virtual StopJobResponse EndStopJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StopRemoteAccessSession
 
         /// <summary>
@@ -4508,6 +4578,71 @@ namespace Amazon.DeviceFarm
         public virtual UpdateProjectResponse EndUpdateProject(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateProjectResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateUpload
+
+        /// <summary>
+        /// Update an uploaded test specification (test spec).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUpload service method.</param>
+        /// 
+        /// <returns>The response from the UpdateUpload service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateUpload">REST API Reference for UpdateUpload Operation</seealso>
+        public virtual UpdateUploadResponse UpdateUpload(UpdateUploadRequest request)
+        {
+            var marshaller = UpdateUploadRequestMarshaller.Instance;
+            var unmarshaller = UpdateUploadResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateUploadRequest,UpdateUploadResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateUpload operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUpload operation on AmazonDeviceFarmClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateUpload
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateUpload">REST API Reference for UpdateUpload Operation</seealso>
+        public virtual IAsyncResult BeginUpdateUpload(UpdateUploadRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = UpdateUploadRequestMarshaller.Instance;
+            var unmarshaller = UpdateUploadResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateUploadRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateUpload operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateUpload.</param>
+        /// 
+        /// <returns>Returns a  UpdateUploadResult from DeviceFarm.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateUpload">REST API Reference for UpdateUpload Operation</seealso>
+        public virtual UpdateUploadResponse EndUpdateUpload(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateUploadResponse>(asyncResult);
         }
 
         #endregion

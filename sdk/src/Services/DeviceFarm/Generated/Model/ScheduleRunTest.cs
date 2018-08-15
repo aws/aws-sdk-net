@@ -35,6 +35,7 @@ namespace Amazon.DeviceFarm.Model
         private string _filter;
         private Dictionary<string, string> _parameters = new Dictionary<string, string>();
         private string _testPackageArn;
+        private string _testSpecArn;
         private TestType _type;
 
         /// <summary>
@@ -224,6 +225,24 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetTestPackageArn()
         {
             return this._testPackageArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TestSpecArn. 
+        /// <para>
+        /// The ARN of the YAML-formatted test specification.
+        /// </para>
+        /// </summary>
+        public string TestSpecArn
+        {
+            get { return this._testSpecArn; }
+            set { this._testSpecArn = value; }
+        }
+
+        // Check to see if TestSpecArn property is set
+        internal bool IsSetTestSpecArn()
+        {
+            return this._testSpecArn != null;
         }
 
         /// <summary>

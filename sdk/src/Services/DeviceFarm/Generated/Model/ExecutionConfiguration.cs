@@ -37,6 +37,7 @@ namespace Amazon.DeviceFarm.Model
         private bool? _appPackagesCleanup;
         private int? _jobTimeoutMinutes;
         private bool? _skipAppResign;
+        private bool? _videoCapture;
 
         /// <summary>
         /// Gets and sets the property AccountsCleanup. 
@@ -115,6 +116,24 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetSkipAppResign()
         {
             return this._skipAppResign.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VideoCapture. 
+        /// <para>
+        /// Set to true to enable video capture; otherwise, set to false. The default is true.
+        /// </para>
+        /// </summary>
+        public bool VideoCapture
+        {
+            get { return this._videoCapture.GetValueOrDefault(); }
+            set { this._videoCapture = value; }
+        }
+
+        // Check to see if VideoCapture property is set
+        internal bool IsSetVideoCapture()
+        {
+            return this._videoCapture.HasValue; 
         }
 
     }

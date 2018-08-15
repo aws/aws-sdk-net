@@ -35,6 +35,7 @@ namespace Amazon.DeviceFarm.Model
     {
         private string _arn;
         private string _nextToken;
+        private UploadType _type;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -71,6 +72,125 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of upload.
+        /// </para>
+        ///  
+        /// <para>
+        /// Must be one of the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// ANDROID_APP: An Android upload.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// IOS_APP: An iOS upload.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// WEB_APP: A web appliction upload.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EXTERNAL_DATA: An external data upload.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CALABASH_TEST_PACKAGE: A Calabash test package upload.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// XCTEST_TEST_PACKAGE: An XCode test package upload.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INSTRUMENTATION_TEST_SPEC: An instrumentation test spec upload.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public UploadType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

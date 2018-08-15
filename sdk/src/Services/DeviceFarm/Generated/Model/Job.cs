@@ -45,6 +45,8 @@ namespace Amazon.DeviceFarm.Model
         private ExecutionStatus _status;
         private DateTime? _stopped;
         private TestType _type;
+        private bool? _videoCapture;
+        private string _videoEndpoint;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -414,6 +416,42 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetType()
         {
             return this._type != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VideoCapture. 
+        /// <para>
+        /// This value is set to true if video capture is enabled; otherwise, it is set to false.
+        /// </para>
+        /// </summary>
+        public bool VideoCapture
+        {
+            get { return this._videoCapture.GetValueOrDefault(); }
+            set { this._videoCapture = value; }
+        }
+
+        // Check to see if VideoCapture property is set
+        internal bool IsSetVideoCapture()
+        {
+            return this._videoCapture.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VideoEndpoint. 
+        /// <para>
+        /// The endpoint for streaming device video.
+        /// </para>
+        /// </summary>
+        public string VideoEndpoint
+        {
+            get { return this._videoEndpoint; }
+            set { this._videoEndpoint = value; }
+        }
+
+        // Check to see if VideoEndpoint property is set
+        internal bool IsSetVideoEndpoint()
+        {
+            return this._videoEndpoint != null;
         }
 
     }

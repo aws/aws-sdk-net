@@ -71,6 +71,12 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.TestPackageArn);
             }
 
+            if(requestObject.IsSetTestSpecArn())
+            {
+                context.Writer.WritePropertyName("testSpecArn");
+                context.Writer.Write(requestObject.TestSpecArn);
+            }
+
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");

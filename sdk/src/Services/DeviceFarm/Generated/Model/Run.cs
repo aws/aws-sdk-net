@@ -59,6 +59,7 @@ namespace Amazon.DeviceFarm.Model
         private DateTime? _started;
         private ExecutionStatus _status;
         private DateTime? _stopped;
+        private string _testSpecArn;
         private int? _totalJobs;
         private TestType _type;
         private string _webUrl;
@@ -630,6 +631,24 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetStopped()
         {
             return this._stopped.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TestSpecArn. 
+        /// <para>
+        /// The ARN of the YAML-formatted test specification for the run.
+        /// </para>
+        /// </summary>
+        public string TestSpecArn
+        {
+            get { return this._testSpecArn; }
+            set { this._testSpecArn = value; }
+        }
+
+        // Check to see if TestSpecArn property is set
+        internal bool IsSetTestSpecArn()
+        {
+            return this._testSpecArn != null;
         }
 
         /// <summary>

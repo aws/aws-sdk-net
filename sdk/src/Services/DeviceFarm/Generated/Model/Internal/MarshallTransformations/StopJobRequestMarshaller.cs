@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListUploads Request Marshaller
+    /// StopJob Request Marshaller
     /// </summary>       
-    public class ListUploadsRequestMarshaller : IMarshaller<IRequest, ListUploadsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class StopJobRequestMarshaller : IMarshaller<IRequest, StopJobRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListUploadsRequest)input);
+            return this.Marshall((StopJobRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListUploadsRequest publicRequest)
+        public IRequest Marshall(StopJobRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.DeviceFarm");
-            string target = "DeviceFarm_20150623.ListUploads";
+            string target = "DeviceFarm_20150623.StopJob";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -73,18 +73,6 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Arn);
                 }
 
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetType())
-                {
-                    context.Writer.WritePropertyName("type");
-                    context.Writer.Write(publicRequest.Type);
-                }
-
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
@@ -94,9 +82,9 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static ListUploadsRequestMarshaller _instance = new ListUploadsRequestMarshaller();        
+        private static StopJobRequestMarshaller _instance = new StopJobRequestMarshaller();        
 
-        internal static ListUploadsRequestMarshaller GetInstance()
+        internal static StopJobRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -104,7 +92,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListUploadsRequestMarshaller Instance
+        public static StopJobRequestMarshaller Instance
         {
             get
             {

@@ -2261,6 +2261,38 @@ namespace Amazon.DeviceFarm
 
         #endregion
         
+        #region  StopJob
+
+        internal virtual StopJobResponse StopJob(StopJobRequest request)
+        {
+            var marshaller = StopJobRequestMarshaller.Instance;
+            var unmarshaller = StopJobResponseUnmarshaller.Instance;
+
+            return Invoke<StopJobRequest,StopJobResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopJob">REST API Reference for StopJob Operation</seealso>
+        public virtual Task<StopJobResponse> StopJobAsync(StopJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = StopJobRequestMarshaller.Instance;
+            var unmarshaller = StopJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopJobRequest,StopJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StopRemoteAccessSession
 
         internal virtual StopRemoteAccessSessionResponse StopRemoteAccessSession(StopRemoteAccessSessionRequest request)
@@ -2480,6 +2512,38 @@ namespace Amazon.DeviceFarm
             var unmarshaller = UpdateProjectResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateProjectRequest,UpdateProjectResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateUpload
+
+        internal virtual UpdateUploadResponse UpdateUpload(UpdateUploadRequest request)
+        {
+            var marshaller = UpdateUploadRequestMarshaller.Instance;
+            var unmarshaller = UpdateUploadResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateUploadRequest,UpdateUploadResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateUpload operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUpload operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateUpload">REST API Reference for UpdateUpload Operation</seealso>
+        public virtual Task<UpdateUploadResponse> UpdateUploadAsync(UpdateUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateUploadRequestMarshaller.Instance;
+            var unmarshaller = UpdateUploadResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateUploadRequest,UpdateUploadResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

@@ -505,6 +505,10 @@
     <min>32</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.StopJobRequest.Arn</property>
+    <min>32</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DeviceFarm.Model.StopRemoteAccessSessionRequest.Arn</property>
     <min>32</min>
   </property-value-rule>
@@ -578,6 +582,20 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.UpdateProjectRequest.Name</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.UpdateUploadRequest.Arn</property>
+    <min>32</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.UpdateUploadRequest.ContentType</property>
+    <min>0</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.UpdateUploadRequest.Name</property>
     <min>0</min>
     <max>256</max>
   </property-value-rule>
@@ -854,6 +872,10 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.Run.TestSpecArn</property>
+    <min>32</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Sample.Arn</property>
     <min>32</min>
   </property-value-rule>
@@ -877,6 +899,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ScheduleRunTest.TestPackageArn</property>
+    <min>32</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.ScheduleRunTest.TestSpecArn</property>
     <min>32</min>
   </property-value-rule>
   <property-value-rule>

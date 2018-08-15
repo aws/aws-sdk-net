@@ -114,7 +114,7 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WEB_APP: A web appliction upload.
+        /// WEB_APP: A web application upload.
         /// </para>
         ///  </li> <li> 
         /// <para>

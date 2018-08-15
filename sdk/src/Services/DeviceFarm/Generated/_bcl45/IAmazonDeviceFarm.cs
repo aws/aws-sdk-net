@@ -2645,6 +2645,50 @@ namespace Amazon.DeviceFarm
 
         #endregion
         
+        #region  StopJob
+
+
+        /// <summary>
+        /// Initiates a stop request for the current job. AWS Device Farm will immediately stop
+        /// the job on the device where tests have not started executing, and you will not be
+        /// billed for this device. On the device where tests have started executing, Setup Suite
+        /// and Teardown Suite tests will run to completion before stopping execution on the device.
+        /// You will be billed for Setup, Teardown, and any tests that were in progress or already
+        /// completed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopJob service method.</param>
+        /// 
+        /// <returns>The response from the StopJob service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopJob">REST API Reference for StopJob Operation</seealso>
+        StopJobResponse StopJob(StopJobRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopJob">REST API Reference for StopJob Operation</seealso>
+        Task<StopJobResponse> StopJobAsync(StopJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  StopRemoteAccessSession
 
 
@@ -2922,6 +2966,45 @@ namespace Amazon.DeviceFarm
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
         Task<UpdateProjectResponse> UpdateProjectAsync(UpdateProjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateUpload
+
+
+        /// <summary>
+        /// Update an uploaded test specification (test spec).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUpload service method.</param>
+        /// 
+        /// <returns>The response from the UpdateUpload service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateUpload">REST API Reference for UpdateUpload Operation</seealso>
+        UpdateUploadResponse UpdateUpload(UpdateUploadRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateUpload operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUpload operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateUpload">REST API Reference for UpdateUpload Operation</seealso>
+        Task<UpdateUploadResponse> UpdateUploadAsync(UpdateUploadRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

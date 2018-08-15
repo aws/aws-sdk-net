@@ -220,6 +220,12 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                     unmarshalledObject.Stopped = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("testSpecArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TestSpecArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("totalJobs", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

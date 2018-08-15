@@ -33,6 +33,7 @@ namespace Amazon.DeviceFarm.Model
     public partial class Upload
     {
         private string _arn;
+        private UploadCategory _category;
         private string _contentType;
         private DateTime? _created;
         private string _message;
@@ -58,6 +59,33 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Category. 
+        /// <para>
+        /// The upload's category. Allowed values include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// CURATED: An upload managed by AWS Device Farm.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PRIVATE: An upload managed by the AWS Device Farm customer.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public UploadCategory Category
+        {
+            get { return this._category; }
+            set { this._category = value; }
+        }
+
+        // Check to see if Category property is set
+        internal bool IsSetCategory()
+        {
+            return this._category != null;
         }
 
         /// <summary>

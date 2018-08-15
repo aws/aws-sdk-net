@@ -173,6 +173,10 @@ namespace Amazon.DeviceFarm
         /// </summary>
         public static readonly ArtifactType SERVICE_LOG = new ArtifactType("SERVICE_LOG");
         /// <summary>
+        /// Constant TESTSPEC_OUTPUT for ArtifactType
+        /// </summary>
+        public static readonly ArtifactType TESTSPEC_OUTPUT = new ArtifactType("TESTSPEC_OUTPUT");
+        /// <summary>
         /// Constant UNKNOWN for ArtifactType
         /// </summary>
         public static readonly ArtifactType UNKNOWN = new ArtifactType("UNKNOWN");
@@ -1349,6 +1353,56 @@ namespace Amazon.DeviceFarm
 
 
     /// <summary>
+    /// Constants used for properties of type UploadCategory.
+    /// </summary>
+    public class UploadCategory : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CURATED for UploadCategory
+        /// </summary>
+        public static readonly UploadCategory CURATED = new UploadCategory("CURATED");
+        /// <summary>
+        /// Constant PRIVATE for UploadCategory
+        /// </summary>
+        public static readonly UploadCategory PRIVATE = new UploadCategory("PRIVATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UploadCategory(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UploadCategory FindValue(string value)
+        {
+            return FindValue<UploadCategory>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UploadCategory(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type UploadStatus.
     /// </summary>
     public class UploadStatus : ConstantClass
@@ -1421,25 +1475,49 @@ namespace Amazon.DeviceFarm
         /// </summary>
         public static readonly UploadType APPIUM_JAVA_JUNIT_TEST_PACKAGE = new UploadType("APPIUM_JAVA_JUNIT_TEST_PACKAGE");
         /// <summary>
+        /// Constant APPIUM_JAVA_JUNIT_TEST_SPEC for UploadType
+        /// </summary>
+        public static readonly UploadType APPIUM_JAVA_JUNIT_TEST_SPEC = new UploadType("APPIUM_JAVA_JUNIT_TEST_SPEC");
+        /// <summary>
         /// Constant APPIUM_JAVA_TESTNG_TEST_PACKAGE for UploadType
         /// </summary>
         public static readonly UploadType APPIUM_JAVA_TESTNG_TEST_PACKAGE = new UploadType("APPIUM_JAVA_TESTNG_TEST_PACKAGE");
+        /// <summary>
+        /// Constant APPIUM_JAVA_TESTNG_TEST_SPEC for UploadType
+        /// </summary>
+        public static readonly UploadType APPIUM_JAVA_TESTNG_TEST_SPEC = new UploadType("APPIUM_JAVA_TESTNG_TEST_SPEC");
         /// <summary>
         /// Constant APPIUM_PYTHON_TEST_PACKAGE for UploadType
         /// </summary>
         public static readonly UploadType APPIUM_PYTHON_TEST_PACKAGE = new UploadType("APPIUM_PYTHON_TEST_PACKAGE");
         /// <summary>
+        /// Constant APPIUM_PYTHON_TEST_SPEC for UploadType
+        /// </summary>
+        public static readonly UploadType APPIUM_PYTHON_TEST_SPEC = new UploadType("APPIUM_PYTHON_TEST_SPEC");
+        /// <summary>
         /// Constant APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE for UploadType
         /// </summary>
         public static readonly UploadType APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE = new UploadType("APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE");
+        /// <summary>
+        /// Constant APPIUM_WEB_JAVA_JUNIT_TEST_SPEC for UploadType
+        /// </summary>
+        public static readonly UploadType APPIUM_WEB_JAVA_JUNIT_TEST_SPEC = new UploadType("APPIUM_WEB_JAVA_JUNIT_TEST_SPEC");
         /// <summary>
         /// Constant APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE for UploadType
         /// </summary>
         public static readonly UploadType APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE = new UploadType("APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE");
         /// <summary>
+        /// Constant APPIUM_WEB_JAVA_TESTNG_TEST_SPEC for UploadType
+        /// </summary>
+        public static readonly UploadType APPIUM_WEB_JAVA_TESTNG_TEST_SPEC = new UploadType("APPIUM_WEB_JAVA_TESTNG_TEST_SPEC");
+        /// <summary>
         /// Constant APPIUM_WEB_PYTHON_TEST_PACKAGE for UploadType
         /// </summary>
         public static readonly UploadType APPIUM_WEB_PYTHON_TEST_PACKAGE = new UploadType("APPIUM_WEB_PYTHON_TEST_PACKAGE");
+        /// <summary>
+        /// Constant APPIUM_WEB_PYTHON_TEST_SPEC for UploadType
+        /// </summary>
+        public static readonly UploadType APPIUM_WEB_PYTHON_TEST_SPEC = new UploadType("APPIUM_WEB_PYTHON_TEST_SPEC");
         /// <summary>
         /// Constant CALABASH_TEST_PACKAGE for UploadType
         /// </summary>
@@ -1452,6 +1530,10 @@ namespace Amazon.DeviceFarm
         /// Constant INSTRUMENTATION_TEST_PACKAGE for UploadType
         /// </summary>
         public static readonly UploadType INSTRUMENTATION_TEST_PACKAGE = new UploadType("INSTRUMENTATION_TEST_PACKAGE");
+        /// <summary>
+        /// Constant INSTRUMENTATION_TEST_SPEC for UploadType
+        /// </summary>
+        public static readonly UploadType INSTRUMENTATION_TEST_SPEC = new UploadType("INSTRUMENTATION_TEST_SPEC");
         /// <summary>
         /// Constant IOS_APP for UploadType
         /// </summary>
@@ -1476,6 +1558,10 @@ namespace Amazon.DeviceFarm
         /// Constant XCTEST_UI_TEST_PACKAGE for UploadType
         /// </summary>
         public static readonly UploadType XCTEST_UI_TEST_PACKAGE = new UploadType("XCTEST_UI_TEST_PACKAGE");
+        /// <summary>
+        /// Constant XCTEST_UI_TEST_SPEC for UploadType
+        /// </summary>
+        public static readonly UploadType XCTEST_UI_TEST_SPEC = new UploadType("XCTEST_UI_TEST_SPEC");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

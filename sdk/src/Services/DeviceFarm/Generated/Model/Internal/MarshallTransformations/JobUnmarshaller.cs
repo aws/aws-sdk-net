@@ -142,6 +142,18 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("videoCapture", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.VideoCapture = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("videoEndpoint", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VideoEndpoint = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

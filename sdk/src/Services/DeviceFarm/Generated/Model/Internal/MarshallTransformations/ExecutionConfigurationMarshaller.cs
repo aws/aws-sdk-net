@@ -69,6 +69,12 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.SkipAppResign);
             }
 
+            if(requestObject.IsSetVideoCapture())
+            {
+                context.Writer.WritePropertyName("videoCapture");
+                context.Writer.Write(requestObject.VideoCapture);
+            }
+
         }
 
         /// <summary>
