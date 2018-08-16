@@ -1,3 +1,12 @@
+### 3.3.338.0 (2018-08-15 23:06 UTC)
+* DeviceFarm (3.3.8.0)
+	* Support for running tests in a custom environment with live logs/video streaming, full test features parity and reduction in overall test execution time.
+* Core 3.3.24.8
+	* We are launching AWS IoT Core and AWS IoT Device Mgmt in GovCloud (us-gov-west-1) region.
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.337.0 (2018-08-14 22:15 UTC)
 * AutoScaling (3.3.5.0)
 	* Add batch operations for creating/updating and deleting scheduled scaling actions.
