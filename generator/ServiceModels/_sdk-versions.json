@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.338.0",
+    "ProductVersion" : "3.3.339.0",
     "CoreVersion"    : "3.3.24.8",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -289,7 +289,7 @@
             "InPreview"               : false
         },
         "Redshift"             : {
-            "Version" : "3.3.6.4",
+            "Version" : "3.3.7.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.24.8"
@@ -369,7 +369,7 @@
             "InPreview"               : false
         },
         "SimpleSystemsManagement"   : {
-            "Version" : "3.3.29.2",
+            "Version" : "3.3.30.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.24.8"
@@ -545,7 +545,7 @@
             "InPreview"               : false
         },
         "ApplicationDiscoveryService"     : {
-            "Version" : "3.3.3.19",
+            "Version" : "3.3.4.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.24.8"
@@ -897,7 +897,7 @@
             "InPreview"               : false
         },
         "MediaConvert"                    : {
-            "Version" : "3.3.6.2",
+            "Version" : "3.3.7.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.24.8"

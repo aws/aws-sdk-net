@@ -1,3 +1,13 @@
+### 3.3.339.0 (2018-08-17 00:35 UTC)
+* ApplicationDiscoveryService (3.3.4.0)
+	* The Application Discovery Service's Continuous Export APIs allow you to analyze your on-premises server inventory data, including system performance and network dependencies, in Amazon Athena.
+* MediaConvert (3.3.7.0)
+	* Added WriteSegmentTimelineInRepresentation option for Dash Outputs
+* Redshift (3.3.7.0)
+	* You can now resize your Amazon Redshift cluster quickly. With the new ResizeCluster action, your cluster is available for read and write operations within minutes
+* SimpleSystemsManagement (3.3.30.0)
+	* AWS Systems Manager Inventory now supports groups to quickly see a count of which managed instances are and arent configured to collect one or more Inventory types
+
 ### 3.3.338.0 (2018-08-15 23:06 UTC)
 * DeviceFarm (3.3.8.0)
 	* Support for running tests in a custom environment with live logs/video streaming, full test features parity and reduction in overall test execution time.
