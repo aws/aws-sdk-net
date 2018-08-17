@@ -67,10 +67,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDisassociateLifecycleConfig())
+                {
+                    context.Writer.WritePropertyName("DisassociateLifecycleConfig");
+                    context.Writer.Write(publicRequest.DisassociateLifecycleConfig);
+                }
+
                 if(publicRequest.IsSetInstanceType())
                 {
                     context.Writer.WritePropertyName("InstanceType");
                     context.Writer.Write(publicRequest.InstanceType);
+                }
+
+                if(publicRequest.IsSetLifecycleConfigName())
+                {
+                    context.Writer.WritePropertyName("LifecycleConfigName");
+                    context.Writer.Write(publicRequest.LifecycleConfigName);
                 }
 
                 if(publicRequest.IsSetNotebookInstanceName())

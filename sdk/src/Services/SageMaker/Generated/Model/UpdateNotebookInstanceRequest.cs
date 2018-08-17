@@ -35,9 +35,30 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class UpdateNotebookInstanceRequest : AmazonSageMakerRequest
     {
+        private bool? _disassociateLifecycleConfig;
         private InstanceType _instanceType;
+        private string _lifecycleConfigName;
         private string _notebookInstanceName;
         private string _roleArn;
+
+        /// <summary>
+        /// Gets and sets the property DisassociateLifecycleConfig. 
+        /// <para>
+        /// Set to <code>true</code> to remove the notebook instance lifecycle configuration currently
+        /// associated with the notebook instance.
+        /// </para>
+        /// </summary>
+        public bool DisassociateLifecycleConfig
+        {
+            get { return this._disassociateLifecycleConfig.GetValueOrDefault(); }
+            set { this._disassociateLifecycleConfig = value; }
+        }
+
+        // Check to see if DisassociateLifecycleConfig property is set
+        internal bool IsSetDisassociateLifecycleConfig()
+        {
+            return this._disassociateLifecycleConfig.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property InstanceType. 
@@ -55,6 +76,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetInstanceType()
         {
             return this._instanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LifecycleConfigName. 
+        /// <para>
+        /// The name of a lifecycle configuration to associate with the notebook instance. For
+        /// information about lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+        /// </para>
+        /// </summary>
+        public string LifecycleConfigName
+        {
+            get { return this._lifecycleConfigName; }
+            set { this._lifecycleConfigName = value; }
+        }
+
+        // Check to see if LifecycleConfigName property is set
+        internal bool IsSetLifecycleConfigName()
+        {
+            return this._lifecycleConfigName != null;
         }
 
         /// <summary>

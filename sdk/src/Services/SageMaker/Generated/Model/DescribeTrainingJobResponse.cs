@@ -249,20 +249,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LaunchingMLInstances</code> - launching ML instances for the training job.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>PreparingTrainingStack</code> - preparing the ML instances for the training
-        /// job.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>Downloading</code> - downloading the input data.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>DownloadingTrainingImage</code> - downloading the training algorithm image.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -282,8 +269,8 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MaxRuntimeExceeded</code> - the training exceed the specified the max run time,
-        /// which means the training job is stopping.
+        ///  <code>MaxRuntimeExceeded</code> - the training job exceeded the specified max run
+        /// time and has been stopped.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -291,12 +278,12 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Failed</code> - the training job has failed. The failure reason is provided
-        /// in the <code>StatusMessage</code>.
+        ///  <code>Failed</code> - the training job has failed. The failure reason is stored in
+        /// the <code>FailureReason</code> field of <code>DescribeTrainingJobResponse</code>.
         /// </para>
         ///  </li> </ul> <important> 
         /// <para>
-        /// The valid values for <code>SecondaryStatus</code> are subject to change. They primary
+        /// The valid values for <code>SecondaryStatus</code> are subject to change. They primarily
         /// provide information on the progress of the training job.
         /// </para>
         ///  </important>
@@ -316,7 +303,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SecondaryStatusTransitions. 
         /// <para>
-        /// A log of time-ordered secondary statuses that a training job has transitioned.
+        /// To give an overview of the training job lifecycle, <code>SecondaryStatusTransitions</code>
+        /// is a log of time-ordered secondary statuses that a training job has transitioned.
         /// </para>
         /// </summary>
         public List<SecondaryStatusTransition> SecondaryStatusTransitions
