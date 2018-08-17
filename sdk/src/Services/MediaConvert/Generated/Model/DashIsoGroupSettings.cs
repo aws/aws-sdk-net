@@ -40,6 +40,7 @@ namespace Amazon.MediaConvert.Model
         private int? _minBufferTime;
         private DashIsoSegmentControl _segmentControl;
         private int? _segmentLength;
+        private DashIsoWriteSegmentTimelineInRepresentation _writeSegmentTimelineInRepresentation;
 
         /// <summary>
         /// Gets and sets the property BaseUrl. A partial URI prefix that will be put in the manifest
@@ -175,6 +176,23 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetSegmentLength()
         {
             return this._segmentLength.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WriteSegmentTimelineInRepresentation. When ENABLED, segment
+        /// durations are indicated in the manifest using SegmentTimeline and SegmentTimeline
+        /// will be promoted down into Representation from AdaptationSet.
+        /// </summary>
+        public DashIsoWriteSegmentTimelineInRepresentation WriteSegmentTimelineInRepresentation
+        {
+            get { return this._writeSegmentTimelineInRepresentation; }
+            set { this._writeSegmentTimelineInRepresentation = value; }
+        }
+
+        // Check to see if WriteSegmentTimelineInRepresentation property is set
+        internal bool IsSetWriteSegmentTimelineInRepresentation()
+        {
+            return this._writeSegmentTimelineInRepresentation != null;
         }
 
     }
