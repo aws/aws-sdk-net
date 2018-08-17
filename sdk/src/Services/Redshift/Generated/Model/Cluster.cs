@@ -48,6 +48,7 @@ namespace Amazon.Redshift.Model
         private string _clusterVersion;
         private string _dbName;
         private ElasticIpStatus _elasticIpStatus;
+        private string _elasticResizeNumberOfNodeOptions;
         private bool? _encrypted;
         private Endpoint _endpoint;
         private bool? _enhancedVpcRouting;
@@ -433,6 +434,25 @@ namespace Amazon.Redshift.Model
         internal bool IsSetElasticIpStatus()
         {
             return this._elasticIpStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ElasticResizeNumberOfNodeOptions. 
+        /// <para>
+        /// Indicates the number of nodes the cluster can be resized to with the elastic resize
+        /// method. 
+        /// </para>
+        /// </summary>
+        public string ElasticResizeNumberOfNodeOptions
+        {
+            get { return this._elasticResizeNumberOfNodeOptions; }
+            set { this._elasticResizeNumberOfNodeOptions = value; }
+        }
+
+        // Check to see if ElasticResizeNumberOfNodeOptions property is set
+        internal bool IsSetElasticResizeNumberOfNodeOptions()
+        {
+            return this._elasticResizeNumberOfNodeOptions != null;
         }
 
         /// <summary>

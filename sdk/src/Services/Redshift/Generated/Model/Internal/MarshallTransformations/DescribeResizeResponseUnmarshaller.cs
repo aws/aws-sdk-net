@@ -120,10 +120,22 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         response.ImportTablesNotStarted.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("Message", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.Message = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ProgressInMegaBytes", targetDepth))
                     {
                         var unmarshaller = LongUnmarshaller.Instance;
                         response.ProgressInMegaBytes = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ResizeType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.ResizeType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Status", targetDepth))

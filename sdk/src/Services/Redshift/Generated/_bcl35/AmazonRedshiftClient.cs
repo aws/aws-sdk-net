@@ -5302,6 +5302,88 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  ResizeCluster
+
+        /// <summary>
+        /// Changes the cluster's type, node type, or number of nodes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResizeCluster service method.</param>
+        /// 
+        /// <returns>The response from the ResizeCluster service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InsufficientClusterCapacityException">
+        /// The number of nodes specified exceeds the allotted capacity of the cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.LimitExceededException">
+        /// The encryption key has exceeded its grant limit in AWS KMS.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.NumberOfNodesPerClusterLimitExceededException">
+        /// The operation would exceed the number of nodes allowed for a cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.NumberOfNodesQuotaExceededException">
+        /// The operation would exceed the number of nodes allotted to the account. For information
+        /// about increasing your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits
+        /// in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
+        /// Your account is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOptionException">
+        /// A request option was specified that is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResizeCluster">REST API Reference for ResizeCluster Operation</seealso>
+        public virtual ResizeClusterResponse ResizeCluster(ResizeClusterRequest request)
+        {
+            var marshaller = ResizeClusterRequestMarshaller.Instance;
+            var unmarshaller = ResizeClusterResponseUnmarshaller.Instance;
+
+            return Invoke<ResizeClusterRequest,ResizeClusterResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResizeCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResizeCluster operation on AmazonRedshiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResizeCluster
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResizeCluster">REST API Reference for ResizeCluster Operation</seealso>
+        public virtual IAsyncResult BeginResizeCluster(ResizeClusterRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ResizeClusterRequestMarshaller.Instance;
+            var unmarshaller = ResizeClusterResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ResizeClusterRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ResizeCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginResizeCluster.</param>
+        /// 
+        /// <returns>Returns a  ResizeClusterResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResizeCluster">REST API Reference for ResizeCluster Operation</seealso>
+        public virtual ResizeClusterResponse EndResizeCluster(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ResizeClusterResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  RestoreFromClusterSnapshot
 
         /// <summary>

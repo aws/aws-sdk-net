@@ -1511,6 +1511,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("Redshift")]
+        public void ResizeClusterMarshallTest()
+        {
+            var operation = service_model.FindOperation("ResizeCluster");
+
+            var request = InstantiateClassGenerator.Execute<ResizeClusterRequest>();
+            var marshaller = new ResizeClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ResizeClusterResponseUnmarshaller.Instance.Unmarshall(context)
+                as ResizeClusterResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
         public void RestoreFromClusterSnapshotMarshallTest()
         {
             var operation = service_model.FindOperation("RestoreFromClusterSnapshot");

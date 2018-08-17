@@ -777,6 +777,156 @@
       ],
       "documentation": "\n        <p>Authorizes the specified AWS customer account to restore the specified\n            snapshot.</p>\n        <p>\nFor more information about working with snapshots, go to \n<a href=\"http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html\">Amazon Redshift Snapshots</a> \nin the <i>Amazon Redshift Cluster Management Guide</i>.</p>\n      "
     },
+    "CancelResize": {
+      "name": "CancelResize",
+      "input": {
+        "type": "structure",
+        "members": {
+          "ClusterIdentifier": {
+            "type": "string",
+            "required": true,
+            "shape_name": "String",
+            "documentation": null
+          }
+        },
+        "shape_name": "CancelResizeMessage",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "TargetNodeType": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <simpara>The node type that the cluster will have after the resize operation is\n            complete.</simpara>\n      ",
+            "documentation": "\n        <p>The node type that the cluster will have after the resize operation is\n            complete.</p>\n      ",
+            "shape_name": "String"
+          },
+          "TargetNumberOfNodes": {
+            "type": "integer",
+            "zonbookDocumentation": "\n        <simpara>The number of nodes that the cluster will have after the resize operation is\n            complete.</simpara>\n      ",
+            "documentation": "\n        <p>The number of nodes that the cluster will have after the resize operation is\n            complete.</p>\n      ",
+            "shape_name": "IntegerOptional"
+          },
+          "TargetClusterType": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <simpara>The cluster type after the resize operation is complete.</simpara>\n        <simpara>Valid Values: <code>multi-node</code> | <code>single-node</code>\n        </simpara>\n      ",
+            "documentation": "\n        <p>The cluster type after the resize operation is complete.</p>\n        <p>Valid Values: <code>multi-node</code> | <code>single-node</code>\n        </p>\n      ",
+            "shape_name": "String"
+          },
+          "Status": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <simpara>The status of the resize operation.</simpara>\n        <simpara>Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> |\n                <code>SUCCEEDED</code>\n        </simpara>\n      ",
+            "documentation": "\n        <p>The status of the resize operation.</p>\n        <p>Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> |\n                <code>SUCCEEDED</code>\n        </p>\n      ",
+            "shape_name": "String"
+          },
+          "ImportTablesCompleted": {
+            "type": "list",
+            "zonbookDocumentation": "\n        <simpara>The names of tables that have been completely imported .</simpara>\n        <simpara>Valid Values: List of table names.</simpara>\n      ",
+            "documentation": "\n        <p>The names of tables that have been completely imported .</p>\n        <p>Valid Values: List of table names.</p>\n      ",
+            "shape_name": "ImportTablesCompleted",
+            "members": {
+              "type": "string",
+              "shape_name": "String",
+              "documentation": null
+            }
+          },
+          "ImportTablesInProgress": {
+            "type": "list",
+            "zonbookDocumentation": "\n        <simpara>The names of tables that are being currently imported.</simpara>\n        <simpara>Valid Values: List of table names.</simpara>\n      ",
+            "documentation": "\n        <p>The names of tables that are being currently imported.</p>\n        <p>Valid Values: List of table names.</p>\n      ",
+            "shape_name": "ImportTablesInProgress",
+            "members": {
+              "type": "string",
+              "shape_name": "String",
+              "documentation": null
+            }
+          },
+          "ImportTablesNotStarted": {
+            "type": "list",
+            "zonbookDocumentation": "\n        <simpara>The names of tables that have not been yet imported.</simpara>\n        <simpara>Valid Values: List of table names</simpara>\n      ",
+            "documentation": "\n        <p>The names of tables that have not been yet imported.</p>\n        <p>Valid Values: List of table names</p>\n      ",
+            "shape_name": "ImportTablesNotStarted",
+            "members": {
+              "type": "string",
+              "shape_name": "String",
+              "documentation": null
+            }
+          },
+          "AvgResizeRateInMegaBytesPerSecond": {
+            "type": "double",
+            "zonbookDocumentation": "\n        <simpara>The average rate of the resize operation over the last few minutes, measured in\n            megabytes per second. After the resize operation completes, this value shows the average\n            rate of the entire resize operation.</simpara>\n      ",
+            "documentation": "\n        <p>The average rate of the resize operation over the last few minutes, measured in\n            megabytes per second. After the resize operation completes, this value shows the average\n            rate of the entire resize operation.</p>\n      ",
+            "shape_name": "DoubleOptional"
+          },
+          "TotalResizeDataInMegaBytes": {
+            "type": "long",
+            "zonbookDocumentation": "\n        <simpara>The estimated total amount of data, in megabytes, on the cluster before the resize\n            operation began.</simpara>\n      ",
+            "documentation": "\n        <p>The estimated total amount of data, in megabytes, on the cluster before the resize\n            operation began.</p>\n      ",
+            "shape_name": "LongOptional"
+          },
+          "ProgressInMegaBytes": {
+            "type": "long",
+            "zonbookDocumentation": "\n        <simpara>While the resize operation is in progress, this value shows the current amount of\n            data, in megabytes, that has been processed so far. When the resize operation is\n            complete, this value shows the total amount of data, in megabytes, on the cluster, which\n            may be more or less than TotalResizeDataInMegaBytes (the estimated total amount of data\n            before resize).</simpara>\n      ",
+            "documentation": "\n        <p>While the resize operation is in progress, this value shows the current amount of\n            data, in megabytes, that has been processed so far. When the resize operation is\n            complete, this value shows the total amount of data, in megabytes, on the cluster, which\n            may be more or less than TotalResizeDataInMegaBytes (the estimated total amount of data\n            before resize).</p>\n      ",
+            "shape_name": "LongOptional"
+          },
+          "ElapsedTimeInSeconds": {
+            "type": "long",
+            "zonbookDocumentation": "\n        <simpara>The amount of seconds that have elapsed since the resize operation began. After the\n            resize operation completes, this value shows the total actual time, in seconds, for the\n            resize operation.</simpara>\n      ",
+            "documentation": "\n        <p>The amount of seconds that have elapsed since the resize operation began. After the\n            resize operation completes, this value shows the total actual time, in seconds, for the\n            resize operation.</p>\n      ",
+            "shape_name": "LongOptional"
+          },
+          "EstimatedTimeToCompletionInSeconds": {
+            "type": "long",
+            "zonbookDocumentation": "\n        <simpara>The estimated time remaining, in seconds, until the resize operation is complete.\n            This value is calculated based on the average resize rate and the estimated amount of\n            data remaining to be processed. Once the resize operation is complete, this value will\n            be 0.</simpara>\n      ",
+            "documentation": "\n        <p>The estimated time remaining, in seconds, until the resize operation is complete.\n            This value is calculated based on the average resize rate and the estimated amount of\n            data remaining to be processed. Once the resize operation is complete, this value will\n            be 0.</p>\n      ",
+            "shape_name": "LongOptional"
+          },
+          "ResizeType": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <para>An enum with possible values of ClassicResize and ElasticResize. These values describe the type of resize operation being performed. </para>\n      ",
+            "documentation": "\n        <p>An enum with possible values of ClassicResize and ElasticResize. These values describe the type of resize operation being performed. </p>\n      ",
+            "shape_name": "String"
+          },
+          "Message": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <para>An optional string to provide additional details about the resize action.</para>\n      ",
+            "documentation": "\n        <p>An optional string to provide additional details about the resize action.</p>\n      ",
+            "shape_name": "String"
+          }
+        },
+        "zonbookDocumentation": "\n        <simpara>Describes the result of a cluster resize operation.</simpara>\n      ",
+        "documentation": "\n        <p>Describes the result of a cluster resize operation.</p>\n      ",
+        "shape_name": "ResizeProgressMessage"
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.\n        </simpara>\n      ",
+          "documentation": "\n        <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.\n        </p>\n      ",
+          "shape_name": "ClusterNotFoundFault"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>A resize operation for the specified cluster is not found.</simpara>\n      ",
+          "documentation": "\n        <p>A resize operation for the specified cluster is not found.</p>\n      ",
+          "shape_name": "ResizeNotFoundFault"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>The specified cluster is not in the <code>available</code> state. </simpara>\n      ",
+          "documentation": "\n        <p>The specified cluster is not in the <code>available</code> state. </p>\n      ",
+          "shape_name": "InvalidClusterStateFault"
+        }
+      ],
+      "documentation": null
+    },
     "CopyClusterSnapshot": {
       "name": "CopyClusterSnapshot",
       "input": {
@@ -1858,6 +2008,12 @@
                 "type": "string",
                 "zonbookDocumentation": "\n        <para>The name of the maintenance track for the cluster.</para>\n      ",
                 "documentation": "\n        <p>The name of the maintenance track for the cluster.</p>\n      ",
+                "shape_name": "String"
+              },
+              "ElasticResizeNumberOfNodeOptions": {
+                "type": "string",
+                "zonbookDocumentation": "\n        <para>Indicates the number of nodes the cluster can be resized to with the elastic resize method. </para>\n      ",
+                "documentation": "\n        <p>Indicates the number of nodes the cluster can be resized to with the elastic resize method. </p>\n      ",
                 "shape_name": "String"
               }
             },
@@ -4472,6 +4628,12 @@
                 "zonbookDocumentation": "\n        <para>The name of the maintenance track for the cluster.</para>\n      ",
                 "documentation": "\n        <p>The name of the maintenance track for the cluster.</p>\n      ",
                 "shape_name": "String"
+              },
+              "ElasticResizeNumberOfNodeOptions": {
+                "type": "string",
+                "zonbookDocumentation": "\n        <para>Indicates the number of nodes the cluster can be resized to with the elastic resize method. </para>\n      ",
+                "documentation": "\n        <p>Indicates the number of nodes the cluster can be resized to with the elastic resize method. </p>\n      ",
+                "shape_name": "String"
               }
             },
             "zonbookDocumentation": "\n        <simpara>Describes a cluster.</simpara>\n      ",
@@ -5993,6 +6155,12 @@
                   "type": "string",
                   "zonbookDocumentation": "\n        <para>The name of the maintenance track for the cluster.</para>\n      ",
                   "documentation": "\n        <p>The name of the maintenance track for the cluster.</p>\n      ",
+                  "shape_name": "String"
+                },
+                "ElasticResizeNumberOfNodeOptions": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n        <para>Indicates the number of nodes the cluster can be resized to with the elastic resize method. </para>\n      ",
+                  "documentation": "\n        <p>Indicates the number of nodes the cluster can be resized to with the elastic resize method. </p>\n      ",
                   "shape_name": "String"
                 }
               },
@@ -8631,6 +8799,18 @@
             "zonbookDocumentation": "\n        <simpara>The estimated time remaining, in seconds, until the resize operation is complete.\n            This value is calculated based on the average resize rate and the estimated amount of\n            data remaining to be processed. Once the resize operation is complete, this value will\n            be 0.</simpara>\n      ",
             "documentation": "\n        <p>The estimated time remaining, in seconds, until the resize operation is complete.\n            This value is calculated based on the average resize rate and the estimated amount of\n            data remaining to be processed. Once the resize operation is complete, this value will\n            be 0.</p>\n      ",
             "shape_name": "LongOptional"
+          },
+          "ResizeType": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <para>An enum with possible values of ClassicResize and ElasticResize. These values describe the type of resize operation being performed. </para>\n      ",
+            "documentation": "\n        <p>An enum with possible values of ClassicResize and ElasticResize. These values describe the type of resize operation being performed. </p>\n      ",
+            "shape_name": "String"
+          },
+          "Message": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <para>An optional string to provide additional details about the resize action.</para>\n      ",
+            "documentation": "\n        <p>An optional string to provide additional details about the resize action.</p>\n      ",
+            "shape_name": "String"
           }
         },
         "zonbookDocumentation": "\n        <simpara>Describes the result of a cluster resize operation.</simpara>\n      ",
@@ -9795,6 +9975,12 @@
                 "zonbookDocumentation": "\n        <para>The name of the maintenance track for the cluster.</para>\n      ",
                 "documentation": "\n        <p>The name of the maintenance track for the cluster.</p>\n      ",
                 "shape_name": "String"
+              },
+              "ElasticResizeNumberOfNodeOptions": {
+                "type": "string",
+                "zonbookDocumentation": "\n        <para>Indicates the number of nodes the cluster can be resized to with the elastic resize method. </para>\n      ",
+                "documentation": "\n        <p>Indicates the number of nodes the cluster can be resized to with the elastic resize method. </p>\n      ",
+                "shape_name": "String"
               }
             },
             "zonbookDocumentation": "\n        <simpara>Describes a cluster.</simpara>\n      ",
@@ -10500,6 +10686,12 @@
                 "type": "string",
                 "zonbookDocumentation": "\n        <para>The name of the maintenance track for the cluster.</para>\n      ",
                 "documentation": "\n        <p>The name of the maintenance track for the cluster.</p>\n      ",
+                "shape_name": "String"
+              },
+              "ElasticResizeNumberOfNodeOptions": {
+                "type": "string",
+                "zonbookDocumentation": "\n        <para>Indicates the number of nodes the cluster can be resized to with the elastic resize method. </para>\n      ",
+                "documentation": "\n        <p>Indicates the number of nodes the cluster can be resized to with the elastic resize method. </p>\n      ",
                 "shape_name": "String"
               }
             },
@@ -11697,6 +11889,12 @@
                 "zonbookDocumentation": "\n        <para>The name of the maintenance track for the cluster.</para>\n      ",
                 "documentation": "\n        <p>The name of the maintenance track for the cluster.</p>\n      ",
                 "shape_name": "String"
+              },
+              "ElasticResizeNumberOfNodeOptions": {
+                "type": "string",
+                "zonbookDocumentation": "\n        <para>Indicates the number of nodes the cluster can be resized to with the elastic resize method. </para>\n      ",
+                "documentation": "\n        <p>Indicates the number of nodes the cluster can be resized to with the elastic resize method. </p>\n      ",
+                "shape_name": "String"
               }
             },
             "zonbookDocumentation": "\n        <simpara>Describes a cluster.</simpara>\n      ",
@@ -12435,6 +12633,12 @@
                 "zonbookDocumentation": "\n        <para>The name of the maintenance track for the cluster.</para>\n      ",
                 "documentation": "\n        <p>The name of the maintenance track for the cluster.</p>\n      ",
                 "shape_name": "String"
+              },
+              "ElasticResizeNumberOfNodeOptions": {
+                "type": "string",
+                "zonbookDocumentation": "\n        <para>Indicates the number of nodes the cluster can be resized to with the elastic resize method. </para>\n      ",
+                "documentation": "\n        <p>Indicates the number of nodes the cluster can be resized to with the elastic resize method. </p>\n      ",
+                "shape_name": "String"
               }
             },
             "zonbookDocumentation": "\n        <simpara>Describes a cluster.</simpara>\n      ",
@@ -13064,6 +13268,12 @@
                 "type": "string",
                 "zonbookDocumentation": "\n        <para>The name of the maintenance track for the cluster.</para>\n      ",
                 "documentation": "\n        <p>The name of the maintenance track for the cluster.</p>\n      ",
+                "shape_name": "String"
+              },
+              "ElasticResizeNumberOfNodeOptions": {
+                "type": "string",
+                "zonbookDocumentation": "\n        <para>Indicates the number of nodes the cluster can be resized to with the elastic resize method. </para>\n      ",
+                "documentation": "\n        <p>Indicates the number of nodes the cluster can be resized to with the elastic resize method. </p>\n      ",
                 "shape_name": "String"
               }
             },
@@ -14016,6 +14226,12 @@
                 "type": "string",
                 "zonbookDocumentation": "\n        <para>The name of the maintenance track for the cluster.</para>\n      ",
                 "documentation": "\n        <p>The name of the maintenance track for the cluster.</p>\n      ",
+                "shape_name": "String"
+              },
+              "ElasticResizeNumberOfNodeOptions": {
+                "type": "string",
+                "zonbookDocumentation": "\n        <para>Indicates the number of nodes the cluster can be resized to with the elastic resize method. </para>\n      ",
+                "documentation": "\n        <p>Indicates the number of nodes the cluster can be resized to with the elastic resize method. </p>\n      ",
                 "shape_name": "String"
               }
             },
@@ -15063,6 +15279,12 @@
                 "zonbookDocumentation": "\n        <para>The name of the maintenance track for the cluster.</para>\n      ",
                 "documentation": "\n        <p>The name of the maintenance track for the cluster.</p>\n      ",
                 "shape_name": "String"
+              },
+              "ElasticResizeNumberOfNodeOptions": {
+                "type": "string",
+                "zonbookDocumentation": "\n        <para>Indicates the number of nodes the cluster can be resized to with the elastic resize method. </para>\n      ",
+                "documentation": "\n        <p>Indicates the number of nodes the cluster can be resized to with the elastic resize method. </p>\n      ",
+                "shape_name": "String"
               }
             },
             "zonbookDocumentation": "\n        <simpara>Describes a cluster.</simpara>\n      ",
@@ -15091,6 +15313,690 @@
         }
       ],
       "documentation": "\n        <p>Reboots a cluster. This action is taken as soon as possible. It results in a\n            momentary outage to the cluster, during which the cluster status is set to\n                <code>rebooting</code>. A cluster event is created when the reboot is completed. Any\n            pending cluster modifications (see <a>ModifyCluster</a>) are applied at this\n            reboot. \nFor more information about managing clusters, go to \n<a href=\"http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html\">Amazon Redshift Clusters</a> \nin the <i>Amazon Redshift Cluster Management Guide</i>. </p>\n        \n      "
+    },
+    "ResizeCluster": {
+      "name": "ResizeCluster",
+      "input": {
+        "type": "structure",
+        "members": {
+          "ClusterIdentifier": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <para>The unique identifier for the cluster to resize.</para>\n      ",
+            "documentation": "\n        <p>The unique identifier for the cluster to resize.</p>\n      ",
+            "required": true,
+            "shape_name": "String"
+          },
+          "ClusterType": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <para>The new cluster type for the specified cluster.</para>\n      ",
+            "documentation": "\n        <p>The new cluster type for the specified cluster.</p>\n      ",
+            "shape_name": "String"
+          },
+          "NodeType": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <para>The new node type for the nodes you are adding.</para>\n      ",
+            "documentation": "\n        <p>The new node type for the nodes you are adding.</p>\n      ",
+            "shape_name": "String"
+          },
+          "NumberOfNodes": {
+            "type": "integer",
+            "zonbookDocumentation": "\n        <para>The new number of nodes for the cluster.</para>\n      ",
+            "documentation": "\n        <p>The new number of nodes for the cluster.</p>\n      ",
+            "required": true,
+            "shape_name": "Integer"
+          },
+          "Classic": {
+            "type": "boolean",
+            "zonbookDocumentation": "\n        <para>A boolean value indicating whether the resize operation is using the classic resize process.</para>\n      ",
+            "documentation": "\n        <p>A boolean value indicating whether the resize operation is using the classic resize process.</p>\n      ",
+            "shape_name": "BooleanOptional"
+          }
+        },
+        "shape_name": "ResizeClusterMessage",
+        "documentation": null
+      },
+      "output": {
+        "shape_name": "ClusterWrapper",
+        "type": "structure",
+        "members": {
+          "Cluster": {
+            "type": "structure",
+            "members": {
+              "ClusterIdentifier": {
+                "type": "string",
+                "zonbookDocumentation": "\n        <simpara>The unique identifier of the cluster.</simpara>\n      ",
+                "documentation": "\n        <p>The unique identifier of the cluster.</p>\n      ",
+                "shape_name": "String"
+              },
+              "NodeType": {
+                "type": "string",
+                "zonbookDocumentation": "\n        <simpara>The node type for the nodes in the cluster.</simpara>\n      ",
+                "documentation": "\n        <p>The node type for the nodes in the cluster.</p>\n      ",
+                "shape_name": "String"
+              },
+              "ClusterStatus": {
+                "type": "string",
+                "zonbookDocumentation": "\n        <simpara> The current state of the cluster. Possible values are the following:</simpara>\n        <itemizedlist>\n            <listitem>\n                <simpara>\n                    <code>available</code>\n                </simpara>\n            </listitem>\n            <listitem>\n                <simpara>\n                    <code>creating</code>\n                </simpara>\n            </listitem>\n            <listitem>\n                <simpara>\n                    <code>deleting</code>\n                </simpara>\n            </listitem>\n            <listitem>\n                <simpara>\n                    <code>final-snapshot</code>\n                </simpara>\n            </listitem>\n            <listitem>\n                <simpara>\n                    <code>hardware-failure</code>\n                </simpara>\n            </listitem>\n            <listitem>\n                <simpara>\n                    <code>incompatible-hsm</code>\n                </simpara>\n            </listitem>\n            <listitem>\n                <simpara>\n                    <code>incompatible-network</code>\n                </simpara>\n            </listitem>\n            <listitem>\n                <simpara>\n                    <code>incompatible-parameters</code>\n                </simpara>\n            </listitem>\n            <listitem>\n                <simpara>\n                    <code>incompatible-restore</code>\n                </simpara>\n            </listitem>\n            <listitem>\n                <simpara>\n                    <code>modifying</code>\n                </simpara>\n            </listitem>\n            <listitem>\n                <simpara>\n                    <code>rebooting</code>\n                </simpara>\n            </listitem>\n            <listitem>\n                <simpara>\n                    <code>renaming</code>\n                </simpara>\n            </listitem>\n            \n            \n            <listitem>\n                <simpara>\n                    <code>resizing</code>\n                </simpara>\n            </listitem>\n            <listitem>\n                <simpara>\n                    <code>rotating-keys</code>\n                </simpara>\n            </listitem>\n            <listitem>\n                <simpara>\n                    <code>storage-full</code>\n                </simpara>\n            </listitem>\n            <listitem>\n                <simpara>\n                    <code>updating-hsm</code>\n                </simpara>\n            </listitem>\n        </itemizedlist>\n\n      ",
+                "documentation": "\n        <p> The current state of the cluster. Possible values are the following:</p>\n        <ul>\n            <li>\n                <p>\n                    <code>available</code>\n                </p>\n            </li>\n            <li>\n                <p>\n                    <code>creating</code>\n                </p>\n            </li>\n            <li>\n                <p>\n                    <code>deleting</code>\n                </p>\n            </li>\n            <li>\n                <p>\n                    <code>final-snapshot</code>\n                </p>\n            </li>\n            <li>\n                <p>\n                    <code>hardware-failure</code>\n                </p>\n            </li>\n            <li>\n                <p>\n                    <code>incompatible-hsm</code>\n                </p>\n            </li>\n            <li>\n                <p>\n                    <code>incompatible-network</code>\n                </p>\n            </li>\n            <li>\n                <p>\n                    <code>incompatible-parameters</code>\n                </p>\n            </li>\n            <li>\n                <p>\n                    <code>incompatible-restore</code>\n                </p>\n            </li>\n            <li>\n                <p>\n                    <code>modifying</code>\n                </p>\n            </li>\n            <li>\n                <p>\n                    <code>rebooting</code>\n                </p>\n            </li>\n            <li>\n                <p>\n                    <code>renaming</code>\n                </p>\n            </li>\n            <li>\n                <p>\n                    <code>resizing</code>\n                </p>\n            </li>\n            <li>\n                <p>\n                    <code>rotating-keys</code>\n                </p>\n            </li>\n            <li>\n                <p>\n                    <code>storage-full</code>\n                </p>\n            </li>\n            <li>\n                <p>\n                    <code>updating-hsm</code>\n                </p>\n            </li>\n         </ul>\n\n      ",
+                "shape_name": "String"
+              },
+              "ModifyStatus": {
+                "type": "string",
+                "zonbookDocumentation": "\n        <simpara>The status of a modify operation, if any, initiated for the cluster.</simpara>\n      ",
+                "documentation": "\n        <p>The status of a modify operation, if any, initiated for the cluster.</p>\n      ",
+                "shape_name": "String"
+              },
+              "MasterUsername": {
+                "type": "string",
+                "zonbookDocumentation": "\n        <simpara>The master user name for the cluster. This name is used to connect to the database\n            that is specified in the <emphasis role=\"bold\">DBName</emphasis> parameter. </simpara>\n      ",
+                "documentation": "\n        <p>The master user name for the cluster. This name is used to connect to the database\n            that is specified in the <b>DBName</b> parameter. </p>\n      ",
+                "shape_name": "String"
+              },
+              "DBName": {
+                "type": "string",
+                "zonbookDocumentation": "\n        <simpara>The name of the initial database that was created when the cluster was created.\n            This same name is returned for the life of the cluster. If an initial database was not\n            specified, a database named <code>dev</code>dev was created by default. </simpara>\n      ",
+                "documentation": "\n        <p>The name of the initial database that was created when the cluster was created.\n            This same name is returned for the life of the cluster. If an initial database was not\n            specified, a database named <code>dev</code>dev was created by default. </p>\n      ",
+                "shape_name": "String"
+              },
+              "Endpoint": {
+                "type": "structure",
+                "members": {
+                  "Address": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n        <simpara>The DNS address of the Cluster.</simpara>\n      ",
+                    "documentation": "\n        <p>The DNS address of the Cluster.</p>\n      ",
+                    "shape_name": "String"
+                  },
+                  "Port": {
+                    "type": "integer",
+                    "zonbookDocumentation": "\n        <simpara>The port that the database engine is listening on.</simpara>\n      ",
+                    "documentation": "\n        <p>The port that the database engine is listening on.</p>\n      ",
+                    "shape_name": "Integer"
+                  }
+                },
+                "zonbookDocumentation": "\n        <simpara>The connection endpoint.</simpara>\n      ",
+                "documentation": "\n        <p>The connection endpoint.</p>\n      ",
+                "shape_name": "Endpoint"
+              },
+              "ClusterCreateTime": {
+                "type": "timestamp",
+                "zonbookDocumentation": "\n        <simpara>The date and time that the cluster was created.</simpara>\n      ",
+                "documentation": "\n        <p>The date and time that the cluster was created.</p>\n      ",
+                "shape_name": "TStamp"
+              },
+              "AutomatedSnapshotRetentionPeriod": {
+                "type": "integer",
+                "zonbookDocumentation": "\n        <simpara>The number of days that automatic cluster snapshots are retained.</simpara>\n      ",
+                "documentation": "\n        <p>The number of days that automatic cluster snapshots are retained.</p>\n      ",
+                "shape_name": "Integer"
+              },
+              "ClusterSecurityGroups": {
+                "type": "list",
+                "zonbookDocumentation": "\n        <simpara>A list of cluster security group that are associated with the cluster. Each\n            security group is represented by an element that contains\n                <code>ClusterSecurityGroup.Name</code> and <code>ClusterSecurityGroup.Status</code>\n            subelements. </simpara>\n        <simpara>Cluster security groups are used when the cluster is not created in an Amazon\n            Virtual Private Cloud (VPC). Clusters that are created in a VPC use VPC security groups,\n            which are listed by the <emphasis role=\"bold\">VpcSecurityGroups</emphasis> parameter.\n        </simpara>\n      ",
+                "documentation": "\n        <p>A list of cluster security group that are associated with the cluster. Each\n            security group is represented by an element that contains\n                <code>ClusterSecurityGroup.Name</code> and <code>ClusterSecurityGroup.Status</code>\n            subelements. </p>\n        <p>Cluster security groups are used when the cluster is not created in an Amazon\n            Virtual Private Cloud (VPC). Clusters that are created in a VPC use VPC security groups,\n            which are listed by the <b>VpcSecurityGroups</b> parameter.\n        </p>\n      ",
+                "shape_name": "ClusterSecurityGroupMembershipList",
+                "members": {
+                  "type": "structure",
+                  "members": {
+                    "ClusterSecurityGroupName": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n        <simpara>The name of the cluster security group.</simpara>\n      ",
+                      "documentation": "\n        <p>The name of the cluster security group.</p>\n      ",
+                      "shape_name": "String"
+                    },
+                    "Status": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n        <simpara>The status of the cluster security group.</simpara>\n      ",
+                      "documentation": "\n        <p>The status of the cluster security group.</p>\n      ",
+                      "shape_name": "String"
+                    }
+                  },
+                  "zonbookDocumentation": "\n        <simpara>Describes a cluster security group.</simpara>\n      ",
+                  "documentation": "\n        <p>Describes a cluster security group.</p>\n      ",
+                  "shape_name": "ClusterSecurityGroupMembership",
+                  "xmlname": "ClusterSecurityGroup"
+                }
+              },
+              "VpcSecurityGroups": {
+                "type": "list",
+                "zonbookDocumentation": "\n        <simpara>A list of Amazon Virtual Private Cloud (Amazon VPC) security groups that are\n            associated with the cluster. This parameter is returned only if the cluster is in a\n            VPC.</simpara>\n      ",
+                "documentation": "\n        <p>A list of Amazon Virtual Private Cloud (Amazon VPC) security groups that are\n            associated with the cluster. This parameter is returned only if the cluster is in a\n            VPC.</p>\n      ",
+                "shape_name": "VpcSecurityGroupMembershipList",
+                "members": {
+                  "type": "structure",
+                  "members": {
+                    "VpcSecurityGroupId": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n        <simpara>The identifier of the VPC security group.</simpara>\n      ",
+                      "documentation": "\n        <p>The identifier of the VPC security group.</p>\n      ",
+                      "shape_name": "String"
+                    },
+                    "Status": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n        <simpara>The status of the VPC security group.</simpara>\n      ",
+                      "documentation": "\n        <p>The status of the VPC security group.</p>\n      ",
+                      "shape_name": "String"
+                    }
+                  },
+                  "zonbookDocumentation": "\n        <simpara>Describes the members of a VPC security group.</simpara>\n      ",
+                  "documentation": "\n        <p>Describes the members of a VPC security group.</p>\n      ",
+                  "shape_name": "VpcSecurityGroupMembership",
+                  "xmlname": "VpcSecurityGroup"
+                }
+              },
+              "ClusterParameterGroups": {
+                "type": "list",
+                "zonbookDocumentation": "\n        <simpara>The list of cluster parameter groups that are associated with this cluster. Each\n            parameter group in the list is returned with its status.</simpara>\n      ",
+                "documentation": "\n        <p>The list of cluster parameter groups that are associated with this cluster. Each\n            parameter group in the list is returned with its status.</p>\n      ",
+                "shape_name": "ClusterParameterGroupStatusList",
+                "members": {
+                  "type": "structure",
+                  "members": {
+                    "ParameterGroupName": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n        <simpara>The name of the cluster parameter group.</simpara>\n      ",
+                      "documentation": "\n        <p>The name of the cluster parameter group.</p>\n      ",
+                      "shape_name": "String"
+                    },
+                    "ParameterApplyStatus": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n        <simpara>The status of parameter updates.</simpara>\n      ",
+                      "documentation": "\n        <p>The status of parameter updates.</p>\n      ",
+                      "shape_name": "String"
+                    },
+                    "ClusterParameterStatusList": {
+                      "type": "list",
+                      "zonbookDocumentation": "\n        <simpara>The list of parameter statuses.</simpara>\n        <simpara>\nFor more information about parameters and parameter groups, go to \n<ulink type=\"documentation\" url=\"redshift/latest/mgmt/working-with-parameter-groups.html\">Amazon Redshift Parameter Groups</ulink> \nin the <emphasis>Amazon Redshift Cluster Management Guide</emphasis>.</simpara>\n      ",
+                      "documentation": "\n        <p>The list of parameter statuses.</p>\n        <p>\nFor more information about parameters and parameter groups, go to \n<a href=\"http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html\">Amazon Redshift Parameter Groups</a> \nin the <i>Amazon Redshift Cluster Management Guide</i>.</p>\n      ",
+                      "shape_name": "ClusterParameterStatusList",
+                      "members": {
+                        "type": "structure",
+                        "members": {
+                          "ParameterName": {
+                            "type": "string",
+                            "zonbookDocumentation": "\n        <simpara>The name of the parameter.</simpara>\n      ",
+                            "documentation": "\n        <p>The name of the parameter.</p>\n      ",
+                            "shape_name": "String"
+                          },
+                          "ParameterApplyStatus": {
+                            "type": "string",
+                            "zonbookDocumentation": "\n        <simpara>The status of the parameter that indicates whether the parameter is in sync with\n            the database, waiting for a cluster reboot, or encountered an error when being\n            applied.</simpara>\n        <simpara>The following are possible statuses and descriptions.</simpara>\n        <itemizedlist>\n            <listitem>\n                <simpara>\n                    <code>in-sync</code>: The parameter value is in sync with the\n                    database.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>\n                    <code>pending-reboot</code>: The parameter value will be applied after the\n                    cluster reboots.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>\n                    <code>applying</code>: The parameter value is being applied to the\n                    database.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>\n                    <code>invalid-parameter</code>: Cannot apply the parameter value because it has\n                    an invalid value or syntax.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>\n                    <code>apply-deferred</code>: The parameter contains static property changes. The\n                    changes are deferred until the cluster reboots.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>\n                    <code>apply-error</code>: Cannot connect to the cluster. The parameter change\n                    will be applied after the cluster reboots.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>\n                    <code>unknown-error</code>: Cannot apply the parameter change right now. The\n                    change will be applied after the cluster reboots.</simpara>\n            </listitem>\n        </itemizedlist>\n\n      ",
+                            "documentation": "\n        <p>The status of the parameter that indicates whether the parameter is in sync with\n            the database, waiting for a cluster reboot, or encountered an error when being\n            applied.</p>\n        <p>The following are possible statuses and descriptions.</p>\n        <ul>\n            <li>\n                <p>\n                    <code>in-sync</code>: The parameter value is in sync with the\n                    database.</p>\n            </li>\n            <li>\n                <p>\n                    <code>pending-reboot</code>: The parameter value will be applied after the\n                    cluster reboots.</p>\n            </li>\n            <li>\n                <p>\n                    <code>applying</code>: The parameter value is being applied to the\n                    database.</p>\n            </li>\n            <li>\n                <p>\n                    <code>invalid-parameter</code>: Cannot apply the parameter value because it has\n                    an invalid value or syntax.</p>\n            </li>\n            <li>\n                <p>\n                    <code>apply-deferred</code>: The parameter contains static property changes. The\n                    changes are deferred until the cluster reboots.</p>\n            </li>\n            <li>\n                <p>\n                    <code>apply-error</code>: Cannot connect to the cluster. The parameter change\n                    will be applied after the cluster reboots.</p>\n            </li>\n            <li>\n                <p>\n                    <code>unknown-error</code>: Cannot apply the parameter change right now. The\n                    change will be applied after the cluster reboots.</p>\n            </li>\n         </ul>\n\n      ",
+                            "shape_name": "String"
+                          },
+                          "ParameterApplyErrorDescription": {
+                            "type": "string",
+                            "zonbookDocumentation": "\n        <simpara>The error that prevented the parameter from being applied to the\n            database.</simpara>\n      ",
+                            "documentation": "\n        <p>The error that prevented the parameter from being applied to the\n            database.</p>\n      ",
+                            "shape_name": "String"
+                          }
+                        },
+                        "zonbookDocumentation": "\n        <simpara>Describes the status of a parameter group.</simpara>\n      ",
+                        "documentation": "\n        <p>Describes the status of a parameter group.</p>\n      ",
+                        "shape_name": "ClusterParameterStatus"
+                      }
+                    }
+                  },
+                  "zonbookDocumentation": "\n        <simpara>Describes the status of a parameter group.</simpara>\n      ",
+                  "documentation": "\n        <p>Describes the status of a parameter group.</p>\n      ",
+                  "shape_name": "ClusterParameterGroupStatus",
+                  "xmlname": "ClusterParameterGroup"
+                }
+              },
+              "ClusterSubnetGroupName": {
+                "type": "string",
+                "zonbookDocumentation": "\n        <simpara>The name of the subnet group that is associated with the cluster. This parameter is\n            valid only when the cluster is in a VPC.</simpara>\n      ",
+                "documentation": "\n        <p>The name of the subnet group that is associated with the cluster. This parameter is\n            valid only when the cluster is in a VPC.</p>\n      ",
+                "shape_name": "String"
+              },
+              "VpcId": {
+                "type": "string",
+                "zonbookDocumentation": "\n        <simpara>The identifier of the VPC the cluster is in, if the cluster is in a VPC.</simpara>\n      ",
+                "documentation": "\n        <p>The identifier of the VPC the cluster is in, if the cluster is in a VPC.</p>\n      ",
+                "shape_name": "String"
+              },
+              "AvailabilityZone": {
+                "type": "string",
+                "zonbookDocumentation": "\n        <simpara>The name of the Availability Zone in which the cluster is located.</simpara>\n      ",
+                "documentation": "\n        <p>The name of the Availability Zone in which the cluster is located.</p>\n      ",
+                "shape_name": "String"
+              },
+              "PreferredMaintenanceWindow": {
+                "type": "string",
+                "zonbookDocumentation": "\n        <simpara>The weekly time range, in Universal Coordinated Time (UTC), during which system\n            maintenance can occur.</simpara>\n      ",
+                "documentation": "\n        <p>The weekly time range, in Universal Coordinated Time (UTC), during which system\n            maintenance can occur.</p>\n      ",
+                "shape_name": "String"
+              },
+              "PendingModifiedValues": {
+                "type": "structure",
+                "members": {
+                  "MasterUserPassword": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n        <simpara>The pending or in-progress change of the master user password for the\n            cluster.</simpara>\n      ",
+                    "documentation": "\n        <p>The pending or in-progress change of the master user password for the\n            cluster.</p>\n      ",
+                    "shape_name": "String"
+                  },
+                  "NodeType": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n        <simpara>The pending or in-progress change of the cluster's node type.</simpara>\n      ",
+                    "documentation": "\n        <p>The pending or in-progress change of the cluster's node type.</p>\n      ",
+                    "shape_name": "String"
+                  },
+                  "NumberOfNodes": {
+                    "type": "integer",
+                    "zonbookDocumentation": "\n        <simpara>The pending or in-progress change of the number of nodes in the cluster.</simpara>\n      ",
+                    "documentation": "\n        <p>The pending or in-progress change of the number of nodes in the cluster.</p>\n      ",
+                    "shape_name": "IntegerOptional"
+                  },
+                  "ClusterType": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n        <simpara>The pending or in-progress change of the cluster type.</simpara>\n      ",
+                    "documentation": "\n        <p>The pending or in-progress change of the cluster type.</p>\n      ",
+                    "shape_name": "String"
+                  },
+                  "ClusterVersion": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n        <simpara>The pending or in-progress change of the service version.</simpara>\n      ",
+                    "documentation": "\n        <p>The pending or in-progress change of the service version.</p>\n      ",
+                    "shape_name": "String"
+                  },
+                  "AutomatedSnapshotRetentionPeriod": {
+                    "type": "integer",
+                    "zonbookDocumentation": "\n        <simpara>The pending or in-progress change of the automated snapshot retention\n            period.</simpara>\n      ",
+                    "documentation": "\n        <p>The pending or in-progress change of the automated snapshot retention\n            period.</p>\n      ",
+                    "shape_name": "IntegerOptional"
+                  },
+                  "ClusterIdentifier": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n        <simpara>The pending or in-progress change of the new identifier for the cluster.</simpara>\n      ",
+                    "documentation": "\n        <p>The pending or in-progress change of the new identifier for the cluster.</p>\n      ",
+                    "shape_name": "String"
+                  },
+                  "PubliclyAccessible": {
+                    "type": "boolean",
+                    "zonbookDocumentation": "\n        <simpara>The pending or in-progress change of the ability to connect to the cluster from the\n            public network.</simpara>\n      ",
+                    "documentation": "\n        <p>The pending or in-progress change of the ability to connect to the cluster from the\n            public network.</p>\n      ",
+                    "shape_name": "BooleanOptional"
+                  },
+                  "EnhancedVpcRouting": {
+                    "type": "boolean",
+                    "zonbookDocumentation": "\n        <simpara>An option that specifies whether to create the cluster with enhanced VPC routing\n            enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a\n            VPC. For more information, see <ulink type=\"documentation\" url=\"redshift/latest/mgmt/enhanced-vpc-routing.html\">Enhanced VPC Routing</ulink> in\n            the Amazon Redshift Cluster Management Guide.</simpara>\n        <simpara>If this option is <code>true</code>, enhanced VPC routing is enabled. </simpara>\n        <simpara>Default: false</simpara>\n      ",
+                    "documentation": "\n        <p>An option that specifies whether to create the cluster with enhanced VPC routing\n            enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a\n            VPC. For more information, see <a href=\"http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html\">Enhanced VPC Routing</a> in\n            the Amazon Redshift Cluster Management Guide.</p>\n        <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>\n        <p>Default: false</p>\n      ",
+                    "shape_name": "BooleanOptional"
+                  },
+                  "MaintenanceTrackName": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n        <para>The name of the maintenance track that the cluster will change to during the next\n            maintenance window.</para>\n        \n      ",
+                    "documentation": "\n        <p>The name of the maintenance track that the cluster will change to during the next\n            maintenance window.</p>\n        \n      ",
+                    "shape_name": "String"
+                  }
+                },
+                "zonbookDocumentation": "\n        <simpara>A value that, if present, indicates that changes to the cluster are pending.\n            Specific pending changes are identified by subelements.</simpara>\n      ",
+                "documentation": "\n        <p>A value that, if present, indicates that changes to the cluster are pending.\n            Specific pending changes are identified by subelements.</p>\n      ",
+                "shape_name": "PendingModifiedValues"
+              },
+              "ClusterVersion": {
+                "type": "string",
+                "zonbookDocumentation": "\n        <simpara>The version ID of the Amazon Redshift engine that is running on the cluster.</simpara>\n      ",
+                "documentation": "\n        <p>The version ID of the Amazon Redshift engine that is running on the cluster.</p>\n      ",
+                "shape_name": "String"
+              },
+              "AllowVersionUpgrade": {
+                "type": "boolean",
+                "zonbookDocumentation": "\n        <simpara>A Boolean value that, if <code>true</code>, indicates that major version upgrades\n            will be applied automatically to the cluster during the maintenance window. </simpara>\n      ",
+                "documentation": "\n        <p>A Boolean value that, if <code>true</code>, indicates that major version upgrades\n            will be applied automatically to the cluster during the maintenance window. </p>\n      ",
+                "shape_name": "Boolean"
+              },
+              "NumberOfNodes": {
+                "type": "integer",
+                "zonbookDocumentation": "\n        <simpara>The number of compute nodes in the cluster.</simpara>\n      ",
+                "documentation": "\n        <p>The number of compute nodes in the cluster.</p>\n      ",
+                "shape_name": "Integer"
+              },
+              "PubliclyAccessible": {
+                "type": "boolean",
+                "zonbookDocumentation": "\n        <simpara>A Boolean value that, if <code>true</code>, indicates that the cluster can be\n            accessed from a public network.</simpara>\n      ",
+                "documentation": "\n        <p>A Boolean value that, if <code>true</code>, indicates that the cluster can be\n            accessed from a public network.</p>\n      ",
+                "shape_name": "Boolean"
+              },
+              "Encrypted": {
+                "type": "boolean",
+                "zonbookDocumentation": "\n        <simpara>A Boolean value that, if <code>true</code>, indicates that data in the cluster is\n            encrypted at rest.</simpara>\n      ",
+                "documentation": "\n        <p>A Boolean value that, if <code>true</code>, indicates that data in the cluster is\n            encrypted at rest.</p>\n      ",
+                "shape_name": "Boolean"
+              },
+              "RestoreStatus": {
+                "type": "structure",
+                "members": {
+                  "Status": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n        <simpara>The status of the restore action. Returns starting, restoring, completed, or\n            failed.</simpara>\n      ",
+                    "documentation": "\n        <p>The status of the restore action. Returns starting, restoring, completed, or\n            failed.</p>\n      ",
+                    "shape_name": "String"
+                  },
+                  "CurrentRestoreRateInMegaBytesPerSecond": {
+                    "type": "double",
+                    "zonbookDocumentation": "\n        <simpara>The number of megabytes per second being transferred from the backup storage.\n            Returns the average rate for a completed backup.</simpara>\n      ",
+                    "documentation": "\n        <p>The number of megabytes per second being transferred from the backup storage.\n            Returns the average rate for a completed backup.</p>\n      ",
+                    "shape_name": "Double"
+                  },
+                  "SnapshotSizeInMegaBytes": {
+                    "type": "long",
+                    "zonbookDocumentation": "\n        <simpara>The size of the set of snapshot data used to restore the cluster.</simpara>\n      ",
+                    "documentation": "\n        <p>The size of the set of snapshot data used to restore the cluster.</p>\n      ",
+                    "shape_name": "Long"
+                  },
+                  "ProgressInMegaBytes": {
+                    "type": "long",
+                    "zonbookDocumentation": "\n        <simpara>The number of megabytes that have been transferred from snapshot storage.</simpara>\n      ",
+                    "documentation": "\n        <p>The number of megabytes that have been transferred from snapshot storage.</p>\n      ",
+                    "shape_name": "Long"
+                  },
+                  "ElapsedTimeInSeconds": {
+                    "type": "long",
+                    "zonbookDocumentation": "\n        <simpara>The amount of time an in-progress restore has been running, or the amount of time\n            it took a completed restore to finish.</simpara>\n      ",
+                    "documentation": "\n        <p>The amount of time an in-progress restore has been running, or the amount of time\n            it took a completed restore to finish.</p>\n      ",
+                    "shape_name": "Long"
+                  },
+                  "EstimatedTimeToCompletionInSeconds": {
+                    "type": "long",
+                    "zonbookDocumentation": "\n        <simpara>The estimate of the time remaining before the restore will complete. Returns 0 for\n            a completed restore.</simpara>\n      ",
+                    "documentation": "\n        <p>The estimate of the time remaining before the restore will complete. Returns 0 for\n            a completed restore.</p>\n      ",
+                    "shape_name": "Long"
+                  }
+                },
+                "zonbookDocumentation": "\n        <simpara>A value that describes the status of a cluster restore action. This parameter\n            returns null if the cluster was not created by restoring a snapshot.</simpara>\n      ",
+                "documentation": "\n        <p>A value that describes the status of a cluster restore action. This parameter\n            returns null if the cluster was not created by restoring a snapshot.</p>\n      ",
+                "shape_name": "RestoreStatus"
+              },
+              "HsmStatus": {
+                "type": "structure",
+                "members": {
+                  "HsmClientCertificateIdentifier": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n        <simpara>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to\n            retrieve the data encryption keys stored in an HSM.</simpara>\n      ",
+                    "documentation": "\n        <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to\n            retrieve the data encryption keys stored in an HSM.</p>\n      ",
+                    "shape_name": "String"
+                  },
+                  "HsmConfigurationIdentifier": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n        <simpara>Specifies the name of the HSM configuration that contains the information the\n            Amazon Redshift cluster can use to retrieve and store keys in an HSM.</simpara>\n      ",
+                    "documentation": "\n        <p>Specifies the name of the HSM configuration that contains the information the\n            Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>\n      ",
+                    "shape_name": "String"
+                  },
+                  "Status": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n        <simpara>Reports whether the Amazon Redshift cluster has finished applying any HSM settings\n            changes specified in a modify cluster command.</simpara>\n        <simpara>Values: active, applying</simpara>\n      ",
+                    "documentation": "\n        <p>Reports whether the Amazon Redshift cluster has finished applying any HSM settings\n            changes specified in a modify cluster command.</p>\n        <p>Values: active, applying</p>\n      ",
+                    "shape_name": "String"
+                  }
+                },
+                "zonbookDocumentation": "\n        <simpara>A value that reports whether the Amazon Redshift cluster has finished applying any\n            hardware security module (HSM) settings changes specified in a modify cluster\n            command.</simpara>\n        <simpara>Values: active, applying</simpara>\n      ",
+                "documentation": "\n        <p>A value that reports whether the Amazon Redshift cluster has finished applying any\n            hardware security module (HSM) settings changes specified in a modify cluster\n            command.</p>\n        <p>Values: active, applying</p>\n      ",
+                "shape_name": "HsmStatus"
+              },
+              "ClusterSnapshotCopyStatus": {
+                "type": "structure",
+                "members": {
+                  "DestinationRegion": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n        <simpara>The destination region that snapshots are automatically copied to when cross-region\n            snapshot copy is enabled.</simpara>\n      ",
+                    "documentation": "\n        <p>The destination region that snapshots are automatically copied to when cross-region\n            snapshot copy is enabled.</p>\n      ",
+                    "shape_name": "String"
+                  },
+                  "RetentionPeriod": {
+                    "type": "long",
+                    "zonbookDocumentation": "\n        <simpara>The number of days that automated snapshots are retained in the destination region\n            after they are copied from a source region.</simpara>\n      ",
+                    "documentation": "\n        <p>The number of days that automated snapshots are retained in the destination region\n            after they are copied from a source region.</p>\n      ",
+                    "shape_name": "Long"
+                  },
+                  "SnapshotCopyGrantName": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n        <simpara>The name of the snapshot copy grant.</simpara>\n      ",
+                    "documentation": "\n        <p>The name of the snapshot copy grant.</p>\n      ",
+                    "shape_name": "String"
+                  }
+                },
+                "zonbookDocumentation": "\n        <simpara>A value that returns the destination region and retention period that are\n            configured for cross-region snapshot copy.</simpara>\n      ",
+                "documentation": "\n        <p>A value that returns the destination region and retention period that are\n            configured for cross-region snapshot copy.</p>\n      ",
+                "shape_name": "ClusterSnapshotCopyStatus"
+              },
+              "ClusterPublicKey": {
+                "type": "string",
+                "zonbookDocumentation": "\n        <simpara>The public key for the cluster.</simpara>\n      ",
+                "documentation": "\n        <p>The public key for the cluster.</p>\n      ",
+                "shape_name": "String"
+              },
+              "ClusterNodes": {
+                "type": "list",
+                "zonbookDocumentation": "\n        <simpara>The nodes in the cluster.</simpara>\n      ",
+                "documentation": "\n        <p>The nodes in the cluster.</p>\n      ",
+                "shape_name": "ClusterNodesList",
+                "members": {
+                  "type": "structure",
+                  "members": {
+                    "NodeRole": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n        <simpara>Whether the node is a leader node or a compute node.</simpara>\n      ",
+                      "documentation": "\n        <p>Whether the node is a leader node or a compute node.</p>\n      ",
+                      "shape_name": "String"
+                    },
+                    "PrivateIPAddress": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n        <simpara>The private IP address of a node within a cluster.</simpara>\n      ",
+                      "documentation": "\n        <p>The private IP address of a node within a cluster.</p>\n      ",
+                      "shape_name": "String"
+                    },
+                    "PublicIPAddress": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n        <simpara>The public IP address of a node within a cluster.</simpara>\n      ",
+                      "documentation": "\n        <p>The public IP address of a node within a cluster.</p>\n      ",
+                      "shape_name": "String"
+                    }
+                  },
+                  "zonbookDocumentation": "\n        <simpara>The identifier of a node in a cluster.</simpara>\n      ",
+                  "documentation": "\n        <p>The identifier of a node in a cluster.</p>\n      ",
+                  "shape_name": "ClusterNode"
+                }
+              },
+              "ElasticIpStatus": {
+                "type": "structure",
+                "members": {
+                  "ElasticIp": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n        <simpara>The elastic IP (EIP) address for the cluster.</simpara>\n      ",
+                    "documentation": "\n        <p>The elastic IP (EIP) address for the cluster.</p>\n      ",
+                    "shape_name": "String"
+                  },
+                  "Status": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n        <simpara>The status of the elastic IP (EIP) address.</simpara>\n      ",
+                    "documentation": "\n        <p>The status of the elastic IP (EIP) address.</p>\n      ",
+                    "shape_name": "String"
+                  }
+                },
+                "zonbookDocumentation": "\n        <simpara>The status of the elastic IP (EIP) address.</simpara>\n      ",
+                "documentation": "\n        <p>The status of the elastic IP (EIP) address.</p>\n      ",
+                "shape_name": "ElasticIpStatus"
+              },
+              "ClusterRevisionNumber": {
+                "type": "string",
+                "zonbookDocumentation": "\n        <simpara>The specific revision number of the database in the cluster.</simpara>\n      ",
+                "documentation": "\n        <p>The specific revision number of the database in the cluster.</p>\n      ",
+                "shape_name": "String"
+              },
+              "Tags": {
+                "type": "list",
+                "zonbookDocumentation": "\n        <simpara>The list of tags for the cluster.</simpara>\n      ",
+                "documentation": "\n        <p>The list of tags for the cluster.</p>\n      ",
+                "shape_name": "TagList",
+                "members": {
+                  "type": "structure",
+                  "members": {
+                    "Key": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n        <simpara>The key, or name, for the resource tag.</simpara>\n      ",
+                      "documentation": "\n        <p>The key, or name, for the resource tag.</p>\n      ",
+                      "shape_name": "String"
+                    },
+                    "Value": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n        <simpara>The value for the resource tag.</simpara>\n      ",
+                      "documentation": "\n        <p>The value for the resource tag.</p>\n      ",
+                      "shape_name": "String"
+                    }
+                  },
+                  "zonbookDocumentation": "\n        <simpara>A tag consisting of a name/value pair for a resource.</simpara>\n      ",
+                  "documentation": "\n        <p>A tag consisting of a name/value pair for a resource.</p>\n      ",
+                  "shape_name": "Tag",
+                  "xmlname": "Tag"
+                }
+              },
+              "KmsKeyId": {
+                "type": "string",
+                "zonbookDocumentation": "\n        <simpara>The AWS Key Management Service (AWS KMS) key ID of the encryption key used to\n            encrypt data in the cluster.</simpara>\n      ",
+                "documentation": "\n        <p>The AWS Key Management Service (AWS KMS) key ID of the encryption key used to\n            encrypt data in the cluster.</p>\n      ",
+                "shape_name": "String"
+              },
+              "EnhancedVpcRouting": {
+                "type": "boolean",
+                "zonbookDocumentation": "\n        <simpara>An option that specifies whether to create the cluster with enhanced VPC routing\n            enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a\n            VPC. For more information, see <ulink type=\"documentation\" url=\"redshift/latest/mgmt/enhanced-vpc-routing.html\">Enhanced VPC Routing</ulink> in\n            the Amazon Redshift Cluster Management Guide.</simpara>\n        <simpara>If this option is <code>true</code>, enhanced VPC routing is enabled. </simpara>\n        <simpara>Default: false</simpara>\n      ",
+                "documentation": "\n        <p>An option that specifies whether to create the cluster with enhanced VPC routing\n            enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a\n            VPC. For more information, see <a href=\"http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html\">Enhanced VPC Routing</a> in\n            the Amazon Redshift Cluster Management Guide.</p>\n        <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>\n        <p>Default: false</p>\n      ",
+                "shape_name": "Boolean"
+              },
+              "IamRoles": {
+                "type": "list",
+                "zonbookDocumentation": "\n        <simpara>A list of AWS Identity and Access Management (IAM) roles that can be used by the\n            cluster to access other AWS services.</simpara>\n      ",
+                "documentation": "\n        <p>A list of AWS Identity and Access Management (IAM) roles that can be used by the\n            cluster to access other AWS services.</p>\n      ",
+                "shape_name": "ClusterIamRoleList",
+                "members": {
+                  "type": "structure",
+                  "members": {
+                    "IamRoleArn": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n        <simpara>The Amazon Resource Name (ARN) of the IAM role, for example,\n                <code>arn:aws:iam::123456789012:role/RedshiftCopyUnload</code>. </simpara>\n      ",
+                      "documentation": "\n        <p>The Amazon Resource Name (ARN) of the IAM role, for example,\n                <code>arn:aws:iam::123456789012:role/RedshiftCopyUnload</code>. </p>\n      ",
+                      "shape_name": "String"
+                    },
+                    "ApplyStatus": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n        <simpara>A value that describes the status of the IAM role's association with an Amazon\n            Redshift cluster.</simpara>\n        <simpara>The following are possible statuses and descriptions.</simpara>\n        <itemizedlist>\n            <listitem>\n                <simpara>\n                    <code>in-sync</code>: The role is available for use by the cluster.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>\n                    <code>adding</code>: The role is in the process of being associated with the\n                    cluster.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>\n                    <code>removing</code>: The role is in the process of being disassociated with\n                    the cluster.</simpara>\n            </listitem>\n        </itemizedlist>\n\n      ",
+                      "documentation": "\n        <p>A value that describes the status of the IAM role's association with an Amazon\n            Redshift cluster.</p>\n        <p>The following are possible statuses and descriptions.</p>\n        <ul>\n            <li>\n                <p>\n                    <code>in-sync</code>: The role is available for use by the cluster.</p>\n            </li>\n            <li>\n                <p>\n                    <code>adding</code>: The role is in the process of being associated with the\n                    cluster.</p>\n            </li>\n            <li>\n                <p>\n                    <code>removing</code>: The role is in the process of being disassociated with\n                    the cluster.</p>\n            </li>\n         </ul>\n\n      ",
+                      "shape_name": "String"
+                    }
+                  },
+                  "zonbookDocumentation": "\n        <simpara>An AWS Identity and Access Management (IAM) role that can be used by the associated\n            Amazon Redshift cluster to access other AWS services.</simpara>\n      ",
+                  "documentation": "\n        <p>An AWS Identity and Access Management (IAM) role that can be used by the associated\n            Amazon Redshift cluster to access other AWS services.</p>\n      ",
+                  "shape_name": "ClusterIamRole",
+                  "xmlname": "ClusterIamRole"
+                }
+              },
+              "PendingActions": {
+                "type": "list",
+                "zonbookDocumentation": "\n        <para>Cluster operations that are waiting to be started.</para>\n      ",
+                "documentation": "\n        <p>Cluster operations that are waiting to be started.</p>\n      ",
+                "shape_name": "PendingActionsList",
+                "members": {
+                  "type": "string",
+                  "shape_name": "String",
+                  "documentation": null
+                }
+              },
+              "MaintenanceTrackName": {
+                "type": "string",
+                "zonbookDocumentation": "\n        <para>The name of the maintenance track for the cluster.</para>\n      ",
+                "documentation": "\n        <p>The name of the maintenance track for the cluster.</p>\n      ",
+                "shape_name": "String"
+              },
+              "ElasticResizeNumberOfNodeOptions": {
+                "type": "string",
+                "zonbookDocumentation": "\n        <para>Indicates the number of nodes the cluster can be resized to with the elastic resize method. </para>\n      ",
+                "documentation": "\n        <p>Indicates the number of nodes the cluster can be resized to with the elastic resize method. </p>\n      ",
+                "shape_name": "String"
+              }
+            },
+            "zonbookDocumentation": "\n        <simpara>Describes a cluster.</simpara>\n      ",
+            "documentation": "\n        <p>Describes a cluster.</p>\n      ",
+            "wrapper": true,
+            "shape_name": "Cluster"
+          }
+        }
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>The specified cluster is not in the <code>available</code> state. </simpara>\n      ",
+          "documentation": "\n        <p>The specified cluster is not in the <code>available</code> state. </p>\n      ",
+          "shape_name": "InvalidClusterStateFault"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.\n        </simpara>\n      ",
+          "documentation": "\n        <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.\n        </p>\n      ",
+          "shape_name": "ClusterNotFoundFault"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>The operation would exceed the number of nodes allotted to the account.\n            \nFor information about increasing your quota, go to <ulink type=\"documentation\" url=\"redshift/latest/mgmt/amazon-redshift-limits.html\">Limits in Amazon Redshift</ulink> \nin the <emphasis>Amazon Redshift Cluster Management Guide</emphasis>.\n</simpara>\n      ",
+          "documentation": "\n        <p>The operation would exceed the number of nodes allotted to the account.\n            \nFor information about increasing your quota, go to <a href=\"http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html\">Limits in Amazon Redshift</a> \nin the <i>Amazon Redshift Cluster Management Guide</i>.\n</p>\n      ",
+          "shape_name": "NumberOfNodesQuotaExceededFault"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>The operation would exceed the number of nodes allowed for a cluster.</simpara>\n      ",
+          "documentation": "\n        <p>The operation would exceed the number of nodes allowed for a cluster.</p>\n      ",
+          "shape_name": "NumberOfNodesPerClusterLimitExceededFault"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>The number of nodes specified exceeds the allotted capacity of the\n            cluster.</simpara>\n      ",
+          "documentation": "\n        <p>The number of nodes specified exceeds the allotted capacity of the\n            cluster.</p>\n      ",
+          "shape_name": "InsufficientClusterCapacityFault"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>A request option was specified that is not supported.</simpara>\n      ",
+          "documentation": "\n        <p>A request option was specified that is not supported.</p>\n      ",
+          "shape_name": "UnsupportedOptionFault"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>The requested operation isn't supported.</simpara>\n      ",
+          "documentation": "\n        <p>The requested operation isn't supported.</p>\n      ",
+          "shape_name": "UnsupportedOperationFault"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>Your account is not authorized to perform the requested operation.</simpara>\n      ",
+          "documentation": "\n        <p>Your account is not authorized to perform the requested operation.</p>\n      ",
+          "shape_name": "UnauthorizedOperation"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>The encryption key has exceeded its grant limit in AWS KMS.</simpara>\n      ",
+          "documentation": "\n        <p>The encryption key has exceeded its grant limit in AWS KMS.</p>\n      ",
+          "shape_name": "LimitExceededFault"
+        }
+      ],
+      "documentation": "\n        <p>Changes the cluster's type, node type, or number of nodes.</p>\n      "
     },
     "RestoreFromClusterSnapshot": {
       "name": "RestoreFromClusterSnapshot",
@@ -15811,6 +16717,12 @@
                 "type": "string",
                 "zonbookDocumentation": "\n        <para>The name of the maintenance track for the cluster.</para>\n      ",
                 "documentation": "\n        <p>The name of the maintenance track for the cluster.</p>\n      ",
+                "shape_name": "String"
+              },
+              "ElasticResizeNumberOfNodeOptions": {
+                "type": "string",
+                "zonbookDocumentation": "\n        <para>Indicates the number of nodes the cluster can be resized to with the elastic resize method. </para>\n      ",
+                "documentation": "\n        <p>Indicates the number of nodes the cluster can be resized to with the elastic resize method. </p>\n      ",
                 "shape_name": "String"
               }
             },
@@ -17466,6 +18378,12 @@
                 "type": "string",
                 "zonbookDocumentation": "\n        <para>The name of the maintenance track for the cluster.</para>\n      ",
                 "documentation": "\n        <p>The name of the maintenance track for the cluster.</p>\n      ",
+                "shape_name": "String"
+              },
+              "ElasticResizeNumberOfNodeOptions": {
+                "type": "string",
+                "zonbookDocumentation": "\n        <para>Indicates the number of nodes the cluster can be resized to with the elastic resize method. </para>\n      ",
+                "documentation": "\n        <p>Indicates the number of nodes the cluster can be resized to with the elastic resize method. </p>\n      ",
                 "shape_name": "String"
               }
             },

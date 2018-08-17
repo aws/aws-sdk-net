@@ -153,6 +153,12 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         unmarshalledObject.ElasticIpStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ElasticResizeNumberOfNodeOptions", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ElasticResizeNumberOfNodeOptions = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Encrypted", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;

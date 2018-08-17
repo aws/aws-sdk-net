@@ -1548,6 +1548,23 @@ namespace Amazon.Redshift
 
         #endregion
                 
+        #region  ResizeCluster
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResizeCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResizeCluster operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResizeCluster">REST API Reference for ResizeCluster Operation</seealso>
+        Task<ResizeClusterResponse> ResizeClusterAsync(ResizeClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  RestoreFromClusterSnapshot
 
 

@@ -38,7 +38,9 @@ namespace Amazon.Redshift.Model
         private List<string> _importTablesCompleted = new List<string>();
         private List<string> _importTablesInProgress = new List<string>();
         private List<string> _importTablesNotStarted = new List<string>();
+        private string _message;
         private long? _progressInMegaBytes;
+        private string _resizeType;
         private string _status;
         private string _targetClusterType;
         private string _targetNodeType;
@@ -173,6 +175,24 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Message. 
+        /// <para>
+        /// An optional string to provide additional details about the resize action.
+        /// </para>
+        /// </summary>
+        public string Message
+        {
+            get { return this._message; }
+            set { this._message = value; }
+        }
+
+        // Check to see if Message property is set
+        internal bool IsSetMessage()
+        {
+            return this._message != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ProgressInMegaBytes. 
         /// <para>
         /// While the resize operation is in progress, this value shows the current amount of
@@ -192,6 +212,25 @@ namespace Amazon.Redshift.Model
         internal bool IsSetProgressInMegaBytes()
         {
             return this._progressInMegaBytes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResizeType. 
+        /// <para>
+        /// An enum with possible values of ClassicResize and ElasticResize. These values describe
+        /// the type of resize operation being performed. 
+        /// </para>
+        /// </summary>
+        public string ResizeType
+        {
+            get { return this._resizeType; }
+            set { this._resizeType = value; }
+        }
+
+        // Check to see if ResizeType property is set
+        internal bool IsSetResizeType()
+        {
+            return this._resizeType != null;
         }
 
         /// <summary>
