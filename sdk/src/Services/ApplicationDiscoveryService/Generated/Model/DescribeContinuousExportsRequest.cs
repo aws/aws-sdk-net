@@ -28,63 +28,40 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeTags operation.
-    /// Retrieves a list of configuration items that have tags as specified by the key-value
-    /// pairs, name and value, passed to the optional parameter <code>filters</code>.
-    /// 
-    ///  
-    /// <para>
-    /// There are three valid tag filter names:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// tagKey
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// tagValue
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// configurationId
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// Also, all configuration items associated with your user account that have tags can
-    /// be listed if you call <code>DescribeTags</code> as is without passing any parameters.
-    /// </para>
+    /// Container for the parameters to the DescribeContinuousExports operation.
+    /// Lists exports as specified by ID. All continuous exports associated with your user
+    /// account can be listed if you call <code>DescribeContinuousExports</code> as is without
+    /// passing any parameters.
     /// </summary>
-    public partial class DescribeTagsRequest : AmazonApplicationDiscoveryServiceRequest
+    public partial class DescribeContinuousExportsRequest : AmazonApplicationDiscoveryServiceRequest
     {
-        private List<TagFilter> _filters = new List<TagFilter>();
+        private List<string> _exportIds = new List<string>();
         private int? _maxResults;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Filters. 
+        /// Gets and sets the property ExportIds. 
         /// <para>
-        /// You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these
-        /// items by using logical operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>,
-        /// and <code>configurationId</code>. 
+        /// The unique IDs assigned to the exports.
         /// </para>
         /// </summary>
-        public List<TagFilter> Filters
+        public List<string> ExportIds
         {
-            get { return this._filters; }
-            set { this._filters = value; }
+            get { return this._exportIds; }
+            set { this._exportIds = value; }
         }
 
-        // Check to see if Filters property is set
-        internal bool IsSetFilters()
+        // Check to see if ExportIds property is set
+        internal bool IsSetExportIds()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._exportIds != null && this._exportIds.Count > 0; 
         }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The total number of items to return in a single page of output. The maximum value
-        /// is 100.
+        /// A number between 1 and 100 specifying the maximum number of continuous export descriptions
+        /// returned.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -102,7 +79,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token to start the list. Use this token to get the next set of results.
+        /// The token from the previous call to <code>DescribeExportTasks</code>.
         /// </para>
         /// </summary>
         public string NextToken

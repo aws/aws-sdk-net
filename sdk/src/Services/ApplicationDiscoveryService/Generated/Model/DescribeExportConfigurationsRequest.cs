@@ -29,12 +29,12 @@ namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeExportConfigurations operation.
-    /// Deprecated. Use <code>DescribeExportTasks</code> instead.
+    /// <code>DescribeExportConfigurations</code> is deprecated.
     /// 
     ///  
     /// <para>
-    /// Retrieves the status of a given export process. You can retrieve status from a maximum
-    /// of 100 processes.
+    /// Use instead <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html">
+    /// <code>DescribeExportTasks</code> </a>.
     /// </para>
     /// </summary>
     public partial class DescribeExportConfigurationsRequest : AmazonApplicationDiscoveryServiceRequest
@@ -46,7 +46,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property ExportIds. 
         /// <para>
-        /// A unique identifier that you can use to query the export status.
+        /// A list of continuous export ids to search for.
         /// </para>
         /// </summary>
         public List<string> ExportIds
@@ -64,7 +64,8 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results that you want to display as a part of the query.
+        /// A number between 1 and 100 specifying the maximum number of continuous export descriptions
+        /// returned.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -82,9 +83,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token to get the next set of results. For example, if you specify 100 IDs for <code>DescribeExportConfigurationsRequest$exportIds</code>
-        /// but set <code>DescribeExportConfigurationsRequest$maxResults</code> to 10, you get
-        /// results in a set of 10. Use the token in the query to get the next set of 10.
+        /// The token from the previous call to describe-export-tasks.
         /// </para>
         /// </summary>
         public string NextToken

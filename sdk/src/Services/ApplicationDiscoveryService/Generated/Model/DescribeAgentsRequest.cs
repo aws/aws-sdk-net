@@ -29,8 +29,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAgents operation.
-    /// Lists agents or the Connector by ID or lists all agents/Connectors associated with
-    /// your user account if you did not specify an ID.
+    /// Lists agents or connectors as specified by ID or other filters. All agents/connectors
+    /// associated with your user account can be listed if you call <code>DescribeAgents</code>
+    /// as is without passing any parameters.
     /// </summary>
     public partial class DescribeAgentsRequest : AmazonApplicationDiscoveryServiceRequest
     {

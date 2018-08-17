@@ -28,17 +28,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetDiscoverySummary operation.
-    /// Retrieves a short summary of discovered assets.
-    /// 
-    ///  
-    /// <para>
-    /// This API operation takes no request parameters and is called as is at the command
-    /// prompt as shown in the example.
-    /// </para>
+    /// Container for the parameters to the StopContinuousExport operation.
+    /// Stop the continuous flow of agent's discovered data into Amazon Athena.
     /// </summary>
-    public partial class GetDiscoverySummaryRequest : AmazonApplicationDiscoveryServiceRequest
+    public partial class StopContinuousExportRequest : AmazonApplicationDiscoveryServiceRequest
     {
+        private string _exportId;
+
+        /// <summary>
+        /// Gets and sets the property ExportId. 
+        /// <para>
+        /// The unique ID assigned to this export.
+        /// </para>
+        /// </summary>
+        public string ExportId
+        {
+            get { return this._exportId; }
+            set { this._exportId = value; }
+        }
+
+        // Check to see if ExportId property is set
+        internal bool IsSetExportId()
+        {
+            return this._exportId != null;
+        }
 
     }
 }

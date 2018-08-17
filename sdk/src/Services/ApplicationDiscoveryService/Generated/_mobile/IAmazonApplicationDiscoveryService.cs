@@ -232,6 +232,23 @@ namespace Amazon.ApplicationDiscoveryService
 
         #endregion
                 
+        #region  DescribeContinuousExports
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeContinuousExports operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeContinuousExports operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeContinuousExports">REST API Reference for DescribeContinuousExports Operation</seealso>
+        Task<DescribeContinuousExportsResponse> DescribeContinuousExportsAsync(DescribeContinuousExportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeExportConfigurations
 
 
@@ -370,6 +387,23 @@ namespace Amazon.ApplicationDiscoveryService
 
         #endregion
                 
+        #region  StartContinuousExport
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartContinuousExport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartContinuousExport operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartContinuousExport">REST API Reference for StartContinuousExport Operation</seealso>
+        Task<StartContinuousExportResponse> StartContinuousExportAsync(StartContinuousExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  StartDataCollectionByAgentIds
 
 
@@ -401,6 +435,23 @@ namespace Amazon.ApplicationDiscoveryService
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartExportTask">REST API Reference for StartExportTask Operation</seealso>
         Task<StartExportTaskResponse> StartExportTaskAsync(StartExportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StopContinuousExport
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopContinuousExport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopContinuousExport operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StopContinuousExport">REST API Reference for StopContinuousExport Operation</seealso>
+        Task<StopContinuousExportResponse> StopContinuousExportAsync(StopContinuousExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

@@ -28,32 +28,35 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeExportConfigurations operation.
+    /// This is the response object from the DescribeContinuousExports operation.
     /// </summary>
-    public partial class DescribeExportConfigurationsResponse : AmazonWebServiceResponse
+    public partial class DescribeContinuousExportsResponse : AmazonWebServiceResponse
     {
-        private List<ExportInfo> _exportsInfo = new List<ExportInfo>();
+        private List<ContinuousExportDescription> _descriptions = new List<ContinuousExportDescription>();
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property ExportsInfo.
+        /// Gets and sets the property Descriptions. 
+        /// <para>
+        /// A list of continuous export descriptions.
+        /// </para>
         /// </summary>
-        public List<ExportInfo> ExportsInfo
+        public List<ContinuousExportDescription> Descriptions
         {
-            get { return this._exportsInfo; }
-            set { this._exportsInfo = value; }
+            get { return this._descriptions; }
+            set { this._descriptions = value; }
         }
 
-        // Check to see if ExportsInfo property is set
-        internal bool IsSetExportsInfo()
+        // Check to see if Descriptions property is set
+        internal bool IsSetDescriptions()
         {
-            return this._exportsInfo != null && this._exportsInfo.Count > 0; 
+            return this._descriptions != null && this._descriptions.Count > 0; 
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token from the previous call to describe-export-tasks.
+        /// The token from the previous call to <code>DescribeExportTasks</code>.
         /// </para>
         /// </summary>
         public string NextToken

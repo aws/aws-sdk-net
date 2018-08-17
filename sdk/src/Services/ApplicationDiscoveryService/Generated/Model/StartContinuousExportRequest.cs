@@ -28,16 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetDiscoverySummary operation.
-    /// Retrieves a short summary of discovered assets.
-    /// 
-    ///  
-    /// <para>
-    /// This API operation takes no request parameters and is called as is at the command
-    /// prompt as shown in the example.
-    /// </para>
+    /// Container for the parameters to the StartContinuousExport operation.
+    /// Start the continuous flow of agent's discovered data into Amazon Athena.
     /// </summary>
-    public partial class GetDiscoverySummaryRequest : AmazonApplicationDiscoveryServiceRequest
+    public partial class StartContinuousExportRequest : AmazonApplicationDiscoveryServiceRequest
     {
 
     }

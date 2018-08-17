@@ -29,8 +29,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListConfigurations operation.
-    /// Retrieves a list of configuration items according to criteria that you specify in
-    /// a filter. The filter criteria identifies the relationship requirements.
+    /// Retrieves a list of configuration items as specified by the value passed to the required
+    /// paramater <code>configurationType</code>. Optional filtering may be applied to refine
+    /// search results.
     /// </summary>
     public partial class ListConfigurationsRequest : AmazonApplicationDiscoveryServiceRequest
     {

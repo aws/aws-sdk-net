@@ -149,6 +149,122 @@ namespace Amazon.ApplicationDiscoveryService
 
 
     /// <summary>
+    /// Constants used for properties of type ContinuousExportStatus.
+    /// </summary>
+    public class ContinuousExportStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ContinuousExportStatus
+        /// </summary>
+        public static readonly ContinuousExportStatus ACTIVE = new ContinuousExportStatus("ACTIVE");
+        /// <summary>
+        /// Constant ERROR for ContinuousExportStatus
+        /// </summary>
+        public static readonly ContinuousExportStatus ERROR = new ContinuousExportStatus("ERROR");
+        /// <summary>
+        /// Constant INACTIVE for ContinuousExportStatus
+        /// </summary>
+        public static readonly ContinuousExportStatus INACTIVE = new ContinuousExportStatus("INACTIVE");
+        /// <summary>
+        /// Constant START_FAILED for ContinuousExportStatus
+        /// </summary>
+        public static readonly ContinuousExportStatus START_FAILED = new ContinuousExportStatus("START_FAILED");
+        /// <summary>
+        /// Constant START_IN_PROGRESS for ContinuousExportStatus
+        /// </summary>
+        public static readonly ContinuousExportStatus START_IN_PROGRESS = new ContinuousExportStatus("START_IN_PROGRESS");
+        /// <summary>
+        /// Constant STOP_FAILED for ContinuousExportStatus
+        /// </summary>
+        public static readonly ContinuousExportStatus STOP_FAILED = new ContinuousExportStatus("STOP_FAILED");
+        /// <summary>
+        /// Constant STOP_IN_PROGRESS for ContinuousExportStatus
+        /// </summary>
+        public static readonly ContinuousExportStatus STOP_IN_PROGRESS = new ContinuousExportStatus("STOP_IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContinuousExportStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContinuousExportStatus FindValue(string value)
+        {
+            return FindValue<ContinuousExportStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContinuousExportStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DataSource.
+    /// </summary>
+    public class DataSource : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AGENT for DataSource
+        /// </summary>
+        public static readonly DataSource AGENT = new DataSource("AGENT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataSource(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataSource FindValue(string value)
+        {
+            return FindValue<DataSource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataSource(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ExportDataFormat.
     /// </summary>
     public class ExportDataFormat : ConstantClass

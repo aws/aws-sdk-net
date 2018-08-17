@@ -581,8 +581,9 @@ namespace Amazon.ApplicationDiscoveryService
 
 
         /// <summary>
-        /// Lists agents or the Connector by ID or lists all agents/Connectors associated with
-        /// your user account if you did not specify an ID.
+        /// Lists agents or connectors as specified by ID or other filters. All agents/connectors
+        /// associated with your user account can be listed if you call <code>DescribeAgents</code>
+        /// as is without passing any parameters.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAgents service method.</param>
         /// 
@@ -635,17 +636,40 @@ namespace Amazon.ApplicationDiscoveryService
 
 
         /// <summary>
-        /// Retrieves attributes for a list of configuration item IDs. All of the supplied IDs
-        /// must be for the same asset type (server, application, process, or connection). Output
-        /// fields are specific to the asset type selected. For example, the output for a <i>server</i>
-        /// configuration item includes a list of attributes about the server, such as host name,
-        /// operating system, and number of network cards.
+        /// Retrieves attributes for a list of configuration item IDs.
         /// 
+        ///  <note> 
+        /// <para>
+        /// All of the supplied IDs must be for the same asset type from one of the follwoing:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// server
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// application
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// process
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// connection
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Output fields are specific to the asset type specified. For example, the output for
+        /// a <i>server</i> configuration item includes a list of attributes about the server,
+        /// such as host name, operating system, number of network cards, etc.
+        /// </para>
         ///  
         /// <para>
         /// For a complete list of outputs for each asset type, see <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#DescribeConfigurations">Using
         /// the DescribeConfigurations Action</a>.
         /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurations service method.</param>
         /// 
@@ -694,16 +718,78 @@ namespace Amazon.ApplicationDiscoveryService
 
         #endregion
         
+        #region  DescribeContinuousExports
+
+
+        /// <summary>
+        /// Lists exports as specified by ID. All continuous exports associated with your user
+        /// account can be listed if you call <code>DescribeContinuousExports</code> as is without
+        /// passing any parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeContinuousExports service method.</param>
+        /// 
+        /// <returns>The response from the DescribeContinuousExports service method, as returned by ApplicationDiscoveryService.</returns>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid. Verify the parameters and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterValueException">
+        /// The value of one or more parameters are either invalid or out of range. Verify the
+        /// parameter values and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.OperationNotPermittedException">
+        /// This operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ResourceNotFoundException">
+        /// The specified configuration ID was not located. Verify the configuration ID and try
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeContinuousExports">REST API Reference for DescribeContinuousExports Operation</seealso>
+        public virtual DescribeContinuousExportsResponse DescribeContinuousExports(DescribeContinuousExportsRequest request)
+        {
+            var marshaller = DescribeContinuousExportsRequestMarshaller.Instance;
+            var unmarshaller = DescribeContinuousExportsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeContinuousExportsRequest,DescribeContinuousExportsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeContinuousExports operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeContinuousExports operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeContinuousExports">REST API Reference for DescribeContinuousExports Operation</seealso>
+        public virtual Task<DescribeContinuousExportsResponse> DescribeContinuousExportsAsync(DescribeContinuousExportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeContinuousExportsRequestMarshaller.Instance;
+            var unmarshaller = DescribeContinuousExportsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeContinuousExportsRequest,DescribeContinuousExportsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeExportConfigurations
 
 
         /// <summary>
-        /// Deprecated. Use <code>DescribeExportTasks</code> instead.
+        /// <code>DescribeExportConfigurations</code> is deprecated.
         /// 
         ///  
         /// <para>
-        /// Retrieves the status of a given export process. You can retrieve status from a maximum
-        /// of 100 processes.
+        /// Use instead <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html">
+        /// <code>DescribeExportTasks</code> </a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeExportConfigurations service method.</param>
@@ -817,8 +903,30 @@ namespace Amazon.ApplicationDiscoveryService
 
 
         /// <summary>
-        /// Retrieves a list of configuration items that are tagged with a specific tag. Or retrieves
-        /// a list of all tags assigned to a specific configuration item.
+        /// Retrieves a list of configuration items that have tags as specified by the key-value
+        /// pairs, name and value, passed to the optional parameter <code>filters</code>.
+        /// 
+        ///  
+        /// <para>
+        /// There are three valid tag filter names:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// tagKey
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// tagValue
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// configurationId
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Also, all configuration items associated with your user account that have tags can
+        /// be listed if you call <code>DescribeTags</code> as is without passing any parameters.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTags service method.</param>
         /// 
@@ -996,6 +1104,12 @@ namespace Amazon.ApplicationDiscoveryService
 
         /// <summary>
         /// Retrieves a short summary of discovered assets.
+        /// 
+        ///  
+        /// <para>
+        /// This API operation takes no request parameters and is called as is at the command
+        /// prompt as shown in the example.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDiscoverySummary service method.</param>
         /// 
@@ -1048,8 +1162,9 @@ namespace Amazon.ApplicationDiscoveryService
 
 
         /// <summary>
-        /// Retrieves a list of configuration items according to criteria that you specify in
-        /// a filter. The filter criteria identifies the relationship requirements.
+        /// Retrieves a list of configuration items as specified by the value passed to the required
+        /// paramater <code>configurationType</code>. Optional filtering may be applied to refine
+        /// search results.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListConfigurations service method.</param>
         /// 
@@ -1150,6 +1265,68 @@ namespace Amazon.ApplicationDiscoveryService
             var unmarshaller = ListServerNeighborsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListServerNeighborsRequest,ListServerNeighborsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartContinuousExport
+
+
+        /// <summary>
+        /// Start the continuous flow of agent's discovered data into Amazon Athena.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartContinuousExport service method.</param>
+        /// 
+        /// <returns>The response from the StartContinuousExport service method, as returned by ApplicationDiscoveryService.</returns>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ConflictErrorException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid. Verify the parameters and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterValueException">
+        /// The value of one or more parameters are either invalid or out of range. Verify the
+        /// parameter values and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.OperationNotPermittedException">
+        /// This operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ResourceInUseException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartContinuousExport">REST API Reference for StartContinuousExport Operation</seealso>
+        public virtual StartContinuousExportResponse StartContinuousExport(StartContinuousExportRequest request)
+        {
+            var marshaller = StartContinuousExportRequestMarshaller.Instance;
+            var unmarshaller = StartContinuousExportResponseUnmarshaller.Instance;
+
+            return Invoke<StartContinuousExportRequest,StartContinuousExportResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartContinuousExport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartContinuousExport operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartContinuousExport">REST API Reference for StartContinuousExport Operation</seealso>
+        public virtual Task<StartContinuousExportResponse> StartContinuousExportAsync(StartContinuousExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = StartContinuousExportRequestMarshaller.Instance;
+            var unmarshaller = StartContinuousExportResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartContinuousExportRequest,StartContinuousExportResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1274,6 +1451,69 @@ namespace Amazon.ApplicationDiscoveryService
             var unmarshaller = StartExportTaskResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartExportTaskRequest,StartExportTaskResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopContinuousExport
+
+
+        /// <summary>
+        /// Stop the continuous flow of agent's discovered data into Amazon Athena.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopContinuousExport service method.</param>
+        /// 
+        /// <returns>The response from the StopContinuousExport service method, as returned by ApplicationDiscoveryService.</returns>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid. Verify the parameters and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterValueException">
+        /// The value of one or more parameters are either invalid or out of range. Verify the
+        /// parameter values and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.OperationNotPermittedException">
+        /// This operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ResourceInUseException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ResourceNotFoundException">
+        /// The specified configuration ID was not located. Verify the configuration ID and try
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StopContinuousExport">REST API Reference for StopContinuousExport Operation</seealso>
+        public virtual StopContinuousExportResponse StopContinuousExport(StopContinuousExportRequest request)
+        {
+            var marshaller = StopContinuousExportRequestMarshaller.Instance;
+            var unmarshaller = StopContinuousExportResponseUnmarshaller.Instance;
+
+            return Invoke<StopContinuousExportRequest,StopContinuousExportResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopContinuousExport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopContinuousExport operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StopContinuousExport">REST API Reference for StopContinuousExport Operation</seealso>
+        public virtual Task<StopContinuousExportResponse> StopContinuousExportAsync(StopContinuousExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = StopContinuousExportRequestMarshaller.Instance;
+            var unmarshaller = StopContinuousExportResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopContinuousExportRequest,StopContinuousExportResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

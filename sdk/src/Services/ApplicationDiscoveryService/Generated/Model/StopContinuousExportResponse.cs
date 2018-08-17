@@ -28,44 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeExportConfigurations operation.
+    /// This is the response object from the StopContinuousExport operation.
     /// </summary>
-    public partial class DescribeExportConfigurationsResponse : AmazonWebServiceResponse
+    public partial class StopContinuousExportResponse : AmazonWebServiceResponse
     {
-        private List<ExportInfo> _exportsInfo = new List<ExportInfo>();
-        private string _nextToken;
+        private DateTime? _startTime;
+        private DateTime? _stopTime;
 
         /// <summary>
-        /// Gets and sets the property ExportsInfo.
-        /// </summary>
-        public List<ExportInfo> ExportsInfo
-        {
-            get { return this._exportsInfo; }
-            set { this._exportsInfo = value; }
-        }
-
-        // Check to see if ExportsInfo property is set
-        internal bool IsSetExportsInfo()
-        {
-            return this._exportsInfo != null && this._exportsInfo.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property StartTime. 
         /// <para>
-        /// The token from the previous call to describe-export-tasks.
+        /// Timestamp that represents when this continuous export started collecting data.
         /// </para>
         /// </summary>
-        public string NextToken
+        public DateTime StartTime
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._startTime.GetValueOrDefault(); }
+            set { this._startTime = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if StartTime property is set
+        internal bool IsSetStartTime()
         {
-            return this._nextToken != null;
+            return this._startTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StopTime. 
+        /// <para>
+        /// Timestamp that represents when this continuous export was stopped.
+        /// </para>
+        /// </summary>
+        public DateTime StopTime
+        {
+            get { return this._stopTime.GetValueOrDefault(); }
+            set { this._stopTime = value; }
+        }
+
+        // Check to see if StopTime property is set
+        internal bool IsSetStopTime()
+        {
+            return this._stopTime.HasValue; 
         }
 
     }
