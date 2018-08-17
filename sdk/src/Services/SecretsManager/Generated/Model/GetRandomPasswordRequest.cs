@@ -123,6 +123,17 @@ namespace Amazon.SecretsManager.Model
         /// default if you do not include this switch parameter is that punctuation characters
         /// can be included.
         /// </para>
+        ///  
+        /// <para>
+        /// The following are the punctuation characters that <i>can</i> be included in the generated
+        /// password if you don't explicitly exclude them with <code>ExcludeCharacters</code>
+        /// or <code>ExcludePunctuation</code>:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>! " # $ % &amp; ' ( ) * + , - . / : ; &lt; = &gt; ? @ [ \ ] ^ _ ` { | } ~</code>
+        /// 
+        /// </para>
         /// </summary>
         public bool ExcludePunctuation
         {

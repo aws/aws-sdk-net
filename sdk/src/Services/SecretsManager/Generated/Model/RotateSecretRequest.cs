@@ -49,6 +49,14 @@ namespace Amazon.SecretsManager.Model
     /// </para>
     ///  
     /// <para>
+    /// Secrets Manager schedules the next rotation when the previous one is complete. Secrets
+    /// Manager schedules the date by adding the rotation interval (number of days) to the
+    /// actual date of the last rotation. The service chooses the hour within that 24-hour
+    /// date window randomly. The minute is also chosen somewhat randomly, but weighted towards
+    /// the top of the hour and influenced by a variety of factors that help distribute load.
+    /// </para>
+    ///  
+    /// <para>
     /// The rotation function must end with the versions of the secret in one of two states:
     /// </para>
     ///  <ul> <li> 
@@ -137,28 +145,8 @@ namespace Amazon.SecretsManager.Model
         ///  
         /// <para>
         /// Secrets Manager uses this value to prevent the accidental creation of duplicate versions
-        /// if there are failures and retries during the function's processing.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// If the <code>ClientRequestToken</code> value isn't already associated with a version
-        /// of the secret then a new version of the secret is created. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If a version with this value already exists and that version's <code>SecretString</code>
-        /// and <code>SecretBinary</code> values are the same as the request, then the request
-        /// is ignored (the operation is idempotent). 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If a version with this value already exists and that version's <code>SecretString</code>
-        /// and <code>SecretBinary</code> values are different from the request then an error
-        /// occurs because you cannot modify an existing secret value.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// This value becomes the <code>SecretVersionId</code> of the new version.
+        /// if there are failures and retries during the function's processing. This value becomes
+        /// the <code>VersionId</code> of the new version.
         /// </para>
         /// </summary>
         public string ClientRequestToken

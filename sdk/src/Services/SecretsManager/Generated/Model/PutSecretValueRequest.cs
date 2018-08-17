@@ -60,11 +60,11 @@ namespace Amazon.SecretsManager.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// This operation is idempotent. If a version with a <code>SecretVersionId</code> with
-    /// the same value as the <code>ClientRequestToken</code> parameter already exists and
-    /// you specify the same secret data, the operation succeeds but does nothing. However,
-    /// if the secret data is different, then the operation fails because you cannot modify
-    /// an existing version; you can only create new ones.
+    /// This operation is idempotent. If a version with a <code>VersionId</code> with the
+    /// same value as the <code>ClientRequestToken</code> parameter already exists and you
+    /// specify the same secret data, the operation succeeds but does nothing. However, if
+    /// the secret data is different, then the operation fails because you cannot modify an
+    /// existing version; you can only create new ones.
     /// </para>
     ///  </li> </ul> <note> <ul> <li> 
     /// <para>
@@ -178,7 +178,7 @@ namespace Amazon.SecretsManager.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// This value becomes the <code>SecretVersionId</code> of the new version.
+        /// This value becomes the <code>VersionId</code> of the new version.
         /// </para>
         /// </summary>
         public string ClientRequestToken

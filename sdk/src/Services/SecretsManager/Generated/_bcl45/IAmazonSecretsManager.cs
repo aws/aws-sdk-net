@@ -139,9 +139,9 @@ namespace Amazon.SecretsManager
         /// If you cancel a rotation that is in progress, it can leave the <code>VersionStage</code>
         /// labels in an unexpected state. Depending on what step of the rotation was in progress,
         /// you might need to remove the staging label <code>AWSPENDING</code> from the partially
-        /// created version, specified by the <code>SecretVersionId</code> response value. You
-        /// should also evaluate the partially rotated new version to see if it should be deleted,
-        /// which you can do by removing all staging labels from the new version's <code>VersionStage</code>
+        /// created version, specified by the <code>VersionId</code> response value. You should
+        /// also evaluate the partially rotated new version to see if it should be deleted, which
+        /// you can do by removing all staging labels from the new version's <code>VersionStage</code>
         /// field.
         /// </para>
         ///  </note> 
@@ -1188,11 +1188,11 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// This operation is idempotent. If a version with a <code>SecretVersionId</code> with
-        /// the same value as the <code>ClientRequestToken</code> parameter already exists and
-        /// you specify the same secret data, the operation succeeds but does nothing. However,
-        /// if the secret data is different, then the operation fails because you cannot modify
-        /// an existing version; you can only create new ones.
+        /// This operation is idempotent. If a version with a <code>VersionId</code> with the
+        /// same value as the <code>ClientRequestToken</code> parameter already exists and you
+        /// specify the same secret data, the operation succeeds but does nothing. However, if
+        /// the secret data is different, then the operation fails because you cannot modify an
+        /// existing version; you can only create new ones.
         /// </para>
         ///  </li> </ul> <note> <ul> <li> 
         /// <para>
@@ -1416,6 +1416,14 @@ namespace Amazon.SecretsManager
         /// to use the new version. For more information about rotating secrets and how to configure
         /// a Lambda function to rotate the secrets for your protected service, see <a href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html">Rotating
         /// Secrets in AWS Secrets Manager</a> in the <i>AWS Secrets Manager User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Secrets Manager schedules the next rotation when the previous one is complete. Secrets
+        /// Manager schedules the date by adding the rotation interval (number of days) to the
+        /// actual date of the last rotation. The service chooses the hour within that 24-hour
+        /// date window randomly. The minute is also chosen somewhat randomly, but weighted towards
+        /// the top of the hour and influenced by a variety of factors that help distribute load.
         /// </para>
         ///  
         /// <para>
@@ -1759,7 +1767,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// If a version with a <code>SecretVersionId</code> with the same value as the <code>ClientRequestToken</code>
+        /// If a version with a <code>VersionId</code> with the same value as the <code>ClientRequestToken</code>
         /// parameter already exists, the operation results in an error. You cannot modify an
         /// existing version, you can only create a new version.
         /// </para>

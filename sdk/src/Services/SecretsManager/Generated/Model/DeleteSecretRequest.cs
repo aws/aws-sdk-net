@@ -96,9 +96,9 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property ForceDeleteWithoutRecovery. 
         /// <para>
-        /// (Optional) Specifies that the secret is to be deleted immediately without any recovery
-        /// window. You cannot use both this parameter and the <code>RecoveryWindowInDays</code>
-        /// parameter in the same API call.
+        /// (Optional) Specifies that the secret is to be deleted without any recovery window.
+        /// You can't use both this parameter and the <code>RecoveryWindowInDays</code> parameter
+        /// in the same API call.
         /// </para>
         ///  
         /// <para>
@@ -132,7 +132,8 @@ namespace Amazon.SecretsManager.Model
         /// Gets and sets the property RecoveryWindowInDays. 
         /// <para>
         /// (Optional) Specifies the number of days that Secrets Manager waits before it can delete
-        /// the secret.
+        /// the secret. You can't use both this parameter and the <code>ForceDeleteWithoutRecovery</code>
+        /// parameter in the same API call.
         /// </para>
         ///  
         /// <para>

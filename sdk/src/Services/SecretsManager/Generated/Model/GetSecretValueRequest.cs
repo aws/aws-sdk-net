@@ -94,8 +94,8 @@ namespace Amazon.SecretsManager.Model
         /// <para>
         /// Specifies the unique identifier of the version of the secret that you want to retrieve.
         /// If you specify this parameter then don't specify <code>VersionStage</code>. If you
-        /// don't specify either a <code>VersionStage</code> or <code>SecretVersionId</code> then
-        /// the default is to perform the operation on the version with the <code>VersionStage</code>
+        /// don't specify either a <code>VersionStage</code> or <code>VersionId</code> then the
+        /// default is to perform the operation on the version with the <code>VersionStage</code>
         /// value of <code>AWSCURRENT</code>.
         /// </para>
         ///  
@@ -125,10 +125,10 @@ namespace Amazon.SecretsManager.Model
         ///  
         /// <para>
         /// Staging labels are used to keep track of different versions during the rotation process.
-        /// If you use this parameter then don't specify <code>SecretVersionId</code>. If you
-        /// don't specify either a <code>VersionStage</code> or <code>SecretVersionId</code>,
-        /// then the default is to perform the operation on the version with the <code>VersionStage</code>
-        /// value of <code>AWSCURRENT</code>.
+        /// If you use this parameter then don't specify <code>VersionId</code>. If you don't
+        /// specify either a <code>VersionStage</code> or <code>VersionId</code>, then the default
+        /// is to perform the operation on the version with the <code>VersionStage</code> value
+        /// of <code>AWSCURRENT</code>.
         /// </para>
         /// </summary>
         public string VersionStage

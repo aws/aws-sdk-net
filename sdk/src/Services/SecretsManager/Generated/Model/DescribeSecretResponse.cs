@@ -169,8 +169,8 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property LastRotatedDate. 
         /// <para>
-        /// The last date and time that the Secrets Manager rotation process for this secret was
-        /// invoked.
+        /// The most recent date and time that the Secrets Manager rotation process was successfully
+        /// completed. This value is null if the secret has never rotated.
         /// </para>
         /// </summary>
         public DateTime LastRotatedDate
@@ -286,8 +286,8 @@ namespace Amazon.SecretsManager.Model
         /// Gets and sets the property VersionIdsToStages. 
         /// <para>
         /// A list of all of the currently assigned <code>VersionStage</code> staging labels and
-        /// the <code>SecretVersionId</code> that each is attached to. Staging labels are used
-        /// to keep track of the different versions during the rotation process.
+        /// the <code>VersionId</code> that each is attached to. Staging labels are used to keep
+        /// track of the different versions during the rotation process.
         /// </para>
         ///  <note> 
         /// <para>

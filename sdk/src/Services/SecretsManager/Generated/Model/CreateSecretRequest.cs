@@ -187,7 +187,7 @@ namespace Amazon.SecretsManager.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// This value becomes the <code>SecretVersionId</code> of the new version.
+        /// This value becomes the <code>VersionId</code> of the new version.
         /// </para>
         /// </summary>
         public string ClientRequestToken

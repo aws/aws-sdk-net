@@ -46,7 +46,7 @@ namespace Amazon.SecretsManager.Model
     /// </para>
     ///  </note> <ul> <li> 
     /// <para>
-    /// If a version with a <code>SecretVersionId</code> with the same value as the <code>ClientRequestToken</code>
+    /// If a version with a <code>VersionId</code> with the same value as the <code>ClientRequestToken</code>
     /// parameter already exists, the operation results in an error. You cannot modify an
     /// existing version, you can only create a new version.
     /// </para>
@@ -178,7 +178,7 @@ namespace Amazon.SecretsManager.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// This value becomes the <code>SecretVersionId</code> of the new version.
+        /// This value becomes the <code>VersionId</code> of the new version.
         /// </para>
         /// </summary>
         public string ClientRequestToken
