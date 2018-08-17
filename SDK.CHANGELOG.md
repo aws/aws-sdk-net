@@ -1,3 +1,9 @@
+### 3.3.340.0 (2018-08-17 20:47 UTC)
+* SageMaker (3.3.11.0)
+	* Added an optional boolean parameter, 'DisassociateLifecycleConfig', to the UpdateNotebookInstance operation. When set to true, the lifecycle configuration associated with the notebook instance will be removed, allowing a new one to be set via a new 'LifecycleConfigName' parameter.
+* SecretsManager (3.3.2.3)
+	* Documentation updates for Secrets Manager
+
 ### 3.3.339.0 (2018-08-17 00:35 UTC)
 * ApplicationDiscoveryService (3.3.4.0)
 	* The Application Discovery Service's Continuous Export APIs allow you to analyze your on-premises server inventory data, including system performance and network dependencies, in Amazon Athena.
