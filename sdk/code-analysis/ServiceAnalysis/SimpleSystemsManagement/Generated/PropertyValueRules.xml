@@ -1892,6 +1892,7 @@
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.CommandFilter.Value</property>
     <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.CommandInvocation.CommandId</property>
@@ -2233,6 +2234,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.InventoryFilter.Key</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InventoryGroup.Name</property>
     <min>1</min>
     <max>200</max>
   </property-value-rule>

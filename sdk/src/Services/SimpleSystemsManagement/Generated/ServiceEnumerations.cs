@@ -461,6 +461,14 @@ namespace Amazon.SimpleSystemsManagement
     {
 
         /// <summary>
+        /// Constant DocumentName for CommandFilterKey
+        /// </summary>
+        public static readonly CommandFilterKey DocumentName = new CommandFilterKey("DocumentName");
+        /// <summary>
+        /// Constant ExecutionStage for CommandFilterKey
+        /// </summary>
+        public static readonly CommandFilterKey ExecutionStage = new CommandFilterKey("ExecutionStage");
+        /// <summary>
         /// Constant InvokedAfter for CommandFilterKey
         /// </summary>
         public static readonly CommandFilterKey InvokedAfter = new CommandFilterKey("InvokedAfter");
@@ -1666,6 +1674,10 @@ namespace Amazon.SimpleSystemsManagement
         /// Constant Equal for InventoryQueryOperatorType
         /// </summary>
         public static readonly InventoryQueryOperatorType Equal = new InventoryQueryOperatorType("Equal");
+        /// <summary>
+        /// Constant Exists for InventoryQueryOperatorType
+        /// </summary>
+        public static readonly InventoryQueryOperatorType Exists = new InventoryQueryOperatorType("Exists");
         /// <summary>
         /// Constant GreaterThan for InventoryQueryOperatorType
         /// </summary>

@@ -601,7 +601,7 @@ namespace Amazon.SimpleSystemsManagement
         ///  
         /// <para>
         /// When you associate a document with one or more instances using instance IDs or tags,
-        /// the SSM Agent running on the instance processes the document and configures the instance
+        /// SSM Agent running on the instance processes the document and configures the instance
         /// as specified.
         /// </para>
         ///  
@@ -688,7 +688,7 @@ namespace Amazon.SimpleSystemsManagement
         ///  
         /// <para>
         /// When you associate a document with one or more instances using instance IDs or tags,
-        /// the SSM Agent running on the instance processes the document and configures the instance
+        /// SSM Agent running on the instance processes the document and configures the instance
         /// as specified.
         /// </para>
         ///  
@@ -811,7 +811,7 @@ namespace Amazon.SimpleSystemsManagement
         ///  
         /// <para>
         /// When you associate a document with one or more instances using instance IDs or tags,
-        /// the SSM Agent running on the instance processes the document and configures the instance
+        /// SSM Agent running on the instance processes the document and configures the instance
         /// as specified.
         /// </para>
         ///  
@@ -4607,8 +4607,15 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidAggregatorException">
+        /// The specified aggregator is not valid for inventory groups. Verify that the aggregator
+        /// uses a valid inventory type such as <code>AWS:Application</code> or <code>AWS:InstanceInformation</code>.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
         /// The filter name is not valid. Verify the you entered the correct name and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInventoryGroupException">
+        /// The specified inventory group is not valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.

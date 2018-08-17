@@ -35,7 +35,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     ///  
     /// <para>
     /// When you associate a document with one or more instances using instance IDs or tags,
-    /// the SSM Agent running on the instance processes the document and configures the instance
+    /// SSM Agent running on the instance processes the document and configures the instance
     /// as specified.
     /// </para>
     ///  

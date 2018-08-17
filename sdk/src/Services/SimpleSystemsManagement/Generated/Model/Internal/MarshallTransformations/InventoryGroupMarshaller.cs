@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// InventoryAggregator Marshaller
+    /// InventoryGroup Marshaller
     /// </summary>       
-    public class InventoryAggregatorMarshaller : IRequestMarshaller<InventoryAggregator, JsonMarshallerContext> 
+    public class InventoryGroupMarshaller : IRequestMarshaller<InventoryGroup, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,44 +43,28 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(InventoryAggregator requestObject, JsonMarshallerContext context)
+        public void Marshall(InventoryGroup requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAggregators())
+            if(requestObject.IsSetFilters())
             {
-                context.Writer.WritePropertyName("Aggregators");
+                context.Writer.WritePropertyName("Filters");
                 context.Writer.WriteArrayStart();
-                foreach(var requestObjectAggregatorsListValue in requestObject.Aggregators)
+                foreach(var requestObjectFiltersListValue in requestObject.Filters)
                 {
                     context.Writer.WriteObjectStart();
 
-                    var marshaller = InventoryAggregatorMarshaller.Instance;
-                    marshaller.Marshall(requestObjectAggregatorsListValue, context);
+                    var marshaller = InventoryFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectFiltersListValue, context);
 
                     context.Writer.WriteObjectEnd();
                 }
                 context.Writer.WriteArrayEnd();
             }
 
-            if(requestObject.IsSetExpression())
+            if(requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("Expression");
-                context.Writer.Write(requestObject.Expression);
-            }
-
-            if(requestObject.IsSetGroups())
-            {
-                context.Writer.WritePropertyName("Groups");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectGroupsListValue in requestObject.Groups)
-                {
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = InventoryGroupMarshaller.Instance;
-                    marshaller.Marshall(requestObjectGroupsListValue, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WritePropertyName("Name");
+                context.Writer.Write(requestObject.Name);
             }
 
         }
@@ -88,7 +72,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static InventoryAggregatorMarshaller Instance = new InventoryAggregatorMarshaller();
+        public readonly static InventoryGroupMarshaller Instance = new InventoryGroupMarshaller();
 
     }
 }

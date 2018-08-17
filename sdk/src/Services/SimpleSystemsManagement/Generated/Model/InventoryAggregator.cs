@@ -34,6 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
         private List<InventoryAggregator> _aggregators = new List<InventoryAggregator>();
         private string _expression;
+        private List<InventoryGroup> _groups = new List<InventoryGroup>();
 
         /// <summary>
         /// Gets and sets the property Aggregators. 
@@ -69,6 +70,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetExpression()
         {
             return this._expression != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Groups. 
+        /// <para>
+        /// A user-defined set of one or more filters on which to aggregate inventory data. Groups
+        /// return a count of resources that match and don't match the specified criteria.
+        /// </para>
+        /// </summary>
+        public List<InventoryGroup> Groups
+        {
+            get { return this._groups; }
+            set { this._groups = value; }
+        }
+
+        // Check to see if Groups property is set
+        internal bool IsSetGroups()
+        {
+            return this._groups != null && this._groups.Count > 0; 
         }
 
     }
