@@ -1,3 +1,7 @@
+### 3.3.341.0 (2018-08-20 21:11 UTC)
+* DynamoDBv2 (3.3.13.0)
+	* Added SSESpecification block to update-table command which allows users to modify table Server-Side Encryption. Added two new fields (SSEType and KMSMasterKeyId) to SSESpecification block used by create-table and update-table commands. Added new SSEDescription Status value UPDATING.
+
 ### 3.3.340.0 (2018-08-17 20:47 UTC)
 * SageMaker (3.3.11.0)
 	* Added an optional boolean parameter, 'DisassociateLifecycleConfig', to the UpdateNotebookInstance operation. When set to true, the lifecycle configuration associated with the notebook instance will be removed, allowing a new one to be set via a new 'LifecycleConfigName' parameter.
