@@ -82,8 +82,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property BackupExpiryDateTime. 
         /// <para>
-        /// Time at which the automatic on demand backup created by DynamoDB will expire. This
-        /// <code>SYSTEM</code> on demand backup expires automatically 35 days after its creation.
+        /// Time at which the automatic on-demand backup created by DynamoDB will expire. This
+        /// <code>SYSTEM</code> on-demand backup expires automatically 35 days after its creation.
         /// </para>
         /// </summary>
         public DateTime BackupExpiryDateTime
@@ -159,11 +159,11 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>USER</code> - On demand backup created by you.
+        ///  <code>USER</code> - On-demand backup created by you.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SYSTEM</code> - On demand backup automatically created by DynamoDB.
+        ///  <code>SYSTEM</code> - On-demand backup automatically created by DynamoDB.
         /// </para>
         ///  </li> </ul>
         /// </summary>

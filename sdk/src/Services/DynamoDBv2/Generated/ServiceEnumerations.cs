@@ -1058,6 +1058,10 @@ namespace Amazon.DynamoDBv2
         /// Constant ENABLING for SSEStatus
         /// </summary>
         public static readonly SSEStatus ENABLING = new SSEStatus("ENABLING");
+        /// <summary>
+        /// Constant UPDATING for SSEStatus
+        /// </summary>
+        public static readonly SSEStatus UPDATING = new SSEStatus("UPDATING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

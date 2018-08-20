@@ -67,6 +67,7 @@ namespace Amazon.DynamoDBv2.Model
         private List<AttributeDefinition> _attributeDefinitions = new List<AttributeDefinition>();
         private List<GlobalSecondaryIndexUpdate> _globalSecondaryIndexUpdates = new List<GlobalSecondaryIndexUpdate>();
         private ProvisionedThroughput _provisionedThroughput;
+        private SSESpecification _sseSpecification;
         private StreamSpecification _streamSpecification;
         private string _tableName;
 
@@ -159,6 +160,24 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetProvisionedThroughput()
         {
             return this._provisionedThroughput != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SSESpecification. 
+        /// <para>
+        /// The new server-side encryption settings for the specified table.
+        /// </para>
+        /// </summary>
+        public SSESpecification SSESpecification
+        {
+            get { return this._sseSpecification; }
+            set { this._sseSpecification = value; }
+        }
+
+        // Check to see if SSESpecification property is set
+        internal bool IsSetSSESpecification()
+        {
+            return this._sseSpecification != null;
         }
 
         /// <summary>

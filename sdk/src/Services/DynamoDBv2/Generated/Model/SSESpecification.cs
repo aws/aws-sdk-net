@@ -33,6 +33,8 @@ namespace Amazon.DynamoDBv2.Model
     public partial class SSESpecification
     {
         private bool? _enabled;
+        private string _kmsMasterKeyId;
+        private SSEType _sseType;
 
         /// <summary>
         /// Gets and sets the property Enabled. 
@@ -51,6 +53,55 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetEnabled()
         {
             return this._enabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property KMSMasterKeyId. 
+        /// <para>
+        /// The KMS Master Key (CMK) which should be used for the KMS encryption. To specify a
+        /// CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. Note that
+        /// you should only provide this parameter if the key is different from the default DynamoDB
+        /// KMS Master Key alias/aws/dynamodb.
+        /// </para>
+        /// </summary>
+        public string KMSMasterKeyId
+        {
+            get { return this._kmsMasterKeyId; }
+            set { this._kmsMasterKeyId = value; }
+        }
+
+        // Check to see if KMSMasterKeyId property is set
+        internal bool IsSetKMSMasterKeyId()
+        {
+            return this._kmsMasterKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SSEType. 
+        /// <para>
+        /// Server-side encryption type:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>AES256</code> - Server-side encryption which uses the AES256 algorithm.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>KMS</code> - Server-side encryption which uses AWS Key Management Service.
+        /// (default)
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public SSEType SSEType
+        {
+            get { return this._sseType; }
+            set { this._sseType = value; }
+        }
+
+        // Check to see if SSEType property is set
+        internal bool IsSetSSEType()
+        {
+            return this._sseType != null;
         }
 
     }

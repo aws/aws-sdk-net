@@ -56,23 +56,23 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property BackupType. 
         /// <para>
-        /// The backups from the table specified by BackupType are listed.
+        /// The backups from the table specified by <code>BackupType</code> are listed.
         /// </para>
         ///  
         /// <para>
-        /// Where BackupType can be:
+        /// Where <code>BackupType</code> can be:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>USER</code> - On demand backup created by you.
+        ///  <code>USER</code> - On-demand backup created by you.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SYSTEM</code> - On demand backup automatically created by DynamoDB.
+        ///  <code>SYSTEM</code> - On-demand backup automatically created by DynamoDB.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ALL</code> - All types of on demand backups (USER and SYSTEM).
+        ///  <code>ALL</code> - All types of on-demand backups (USER and SYSTEM).
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -130,7 +130,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property TableName. 
         /// <para>
-        /// The backups from the table specified by TableName are listed. 
+        /// The backups from the table specified by <code>TableName</code> are listed. 
         /// </para>
         /// </summary>
         public string TableName

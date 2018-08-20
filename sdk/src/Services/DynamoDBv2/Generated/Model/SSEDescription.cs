@@ -102,6 +102,10 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         ///  <code>DISABLED</code> - Server-side encryption is disabled.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UPDATING</code> - Server-side encryption is being updated.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public SSEStatus Status

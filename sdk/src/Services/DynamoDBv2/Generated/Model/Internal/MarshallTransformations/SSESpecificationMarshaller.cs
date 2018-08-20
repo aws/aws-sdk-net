@@ -51,6 +51,18 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Enabled);
             }
 
+            if(requestObject.IsSetKMSMasterKeyId())
+            {
+                context.Writer.WritePropertyName("KMSMasterKeyId");
+                context.Writer.Write(requestObject.KMSMasterKeyId);
+            }
+
+            if(requestObject.IsSetSSEType())
+            {
+                context.Writer.WritePropertyName("SSEType");
+                context.Writer.Write(requestObject.SSEType);
+            }
+
         }
 
         /// <summary>
