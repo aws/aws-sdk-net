@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.341.0",
+    "ProductVersion" : "3.3.342.0",
     "CoreVersion"    : "3.3.24.8",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -151,7 +151,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.3.58.2",
+            "Version" : "3.3.59.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.24.8"
@@ -175,7 +175,7 @@
             "InPreview"               : false
         },
         "ElasticBeanstalk"  : {
-            "Version" : "3.3.9.6",
+            "Version" : "3.3.10.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.24.8"
@@ -1153,7 +1153,7 @@
             "InPreview"               : false
         },
         "DLM"                             : {
-            "Version" : "3.3.0.6",
+            "Version" : "3.3.0.7",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.24.8"

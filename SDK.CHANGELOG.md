@@ -1,3 +1,11 @@
+### 3.3.342.0 (2018-08-21 20:28 UTC)
+* DLM (3.3.0.7)
+	* Documentation updates for Lifecycle
+* EC2 (3.3.59.0)
+	* Added support for T3 Instance type in EC2. To learn more about T3 instances, please see https://aws.amazon.com/ec2/instance-types/t3/
+* ElasticBeanstalk (3.3.10.0)
+	* Elastic Beanstalk adds the "Privileged" field to the "CPUUtilization" type, to support enhanced health reporting in Windows environments.
+
 ### 3.3.341.0 (2018-08-20 21:11 UTC)
 * DynamoDBv2 (3.3.13.0)
 	* Added SSESpecification block to update-table command which allows users to modify table Server-Side Encryption. Added two new fields (SSEType and KMSMasterKeyId) to SSESpecification block used by create-table and update-table commands. Added new SSEDescription Status value UPDATING.
