@@ -66,20 +66,21 @@ namespace Microsoft.Extensions.Configuration
         }
 
         /// <summary>
-        /// Adds an <see cref="IConfigurationProvider"/> that reads configuration values from environment variables.
+        /// Adds an <see cref="IConfigurationProvider"/> that reads configuration values from AWS Systems Manager Parameter variables with a specified path.
         /// </summary>
         /// <param name="builder">The <see cref="IConfigurationBuilder"/> to add to.</param>
         /// <param name="configureSource">Configures the source.</param>
         /// <returns>The <see cref="IConfigurationBuilder"/>.</returns>
         public static IConfigurationBuilder AddAWSSystemsManager(this IConfigurationBuilder builder, Action<AWSSystemsManagerConfigurationSource> configureSource)
         {
-            var configurationSource = new AWSSystemsManagerConfigurationSource();
-            configureSource(configurationSource);
-            if (string.IsNullOrWhiteSpace(configurationSource.Path)) throw new ArgumentNullException(nameof(configurationSource.Path));
-            if (configurationSource.AwsOptions != null) return builder.Add(configurationSource);
+            var source = new AWSSystemsManagerConfigurationSource();
+            configureSource(source);
+            if (string.IsNullOrWhiteSpace(source.Path)) throw new ArgumentNullException(nameof(source.Path));
+            if (source.AwsOptions != null) return builder.Add(source);
+            
             var config = builder.Build();
-            configurationSource.AwsOptions = config.GetAWSOptions();
-            return builder.Add(configurationSource);
+            source.AwsOptions = config.GetAWSOptions();
+            return builder.Add(source);
         }
     }
 }

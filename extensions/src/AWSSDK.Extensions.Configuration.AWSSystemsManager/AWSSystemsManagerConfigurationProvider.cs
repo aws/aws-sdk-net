@@ -32,30 +32,32 @@ namespace Amazon.Extensions.Configuration.AWSSystemsManager
     /// </summary>
     public class AWSSystemsManagerConfigurationProvider : ConfigurationProvider
     {
-        private readonly AWSSystemsManagerConfigurationSource _configurationSource;
         private readonly IAWSSystemsManagerProcessor _awsSystemsManagerProcessor;
+
+        public AWSSystemsManagerConfigurationSource Source { get; }
 
         /// <inheritdoc />
         /// <summary>
         /// Initializes a new instance with the specified source.
         /// </summary>
-        /// <param name="configurationSource">The <see cref="IConfigurationSource"/> used to retrieve values from AWS Systems Manager Parameter Store</param>
-        public AWSSystemsManagerConfigurationProvider(AWSSystemsManagerConfigurationSource configurationSource) : this(configurationSource, new AWSSystemsManagerProcessor())
+        /// <param name="source">The <see cref="IConfigurationSource"/> used to retrieve values from AWS Systems Manager Parameter Store</param>
+        public AWSSystemsManagerConfigurationProvider(AWSSystemsManagerConfigurationSource source) : this(source, new AWSSystemsManagerProcessor())
         {
         }
 
-        public AWSSystemsManagerConfigurationProvider(AWSSystemsManagerConfigurationSource configurationSource, IAWSSystemsManagerProcessor awsSystemsManagerProcessor)
+        public AWSSystemsManagerConfigurationProvider(AWSSystemsManagerConfigurationSource source, IAWSSystemsManagerProcessor awsSystemsManagerProcessor)
         {
-            _configurationSource = configurationSource ?? throw new ArgumentNullException(nameof(configurationSource));
+            Source = source ?? throw new ArgumentNullException(nameof(source));
             _awsSystemsManagerProcessor = awsSystemsManagerProcessor;
-            if (configurationSource.AwsOptions == null) throw new ArgumentNullException(nameof(configurationSource.AwsOptions));
-            if (configurationSource.Path == null) throw new ArgumentNullException(nameof(configurationSource.Path));
 
-            if (configurationSource.ReloadAfter != null)
+            if (source.AwsOptions == null) throw new ArgumentNullException(nameof(source.AwsOptions));
+            if (source.Path == null) throw new ArgumentNullException(nameof(source.Path));
+
+            if (source.ReloadAfter != null)
             {
                 ChangeToken.OnChange(() =>
                 {
-                    var cancellationTokenSource = new CancellationTokenSource(configurationSource.ReloadAfter.Value);
+                    var cancellationTokenSource = new CancellationTokenSource(source.ReloadAfter.Value);
                     var cancellationChangeToken = new CancellationChangeToken(cancellationTokenSource.Token);
                     return cancellationChangeToken;
                 }, async () => await LoadAsync(true));
@@ -72,8 +74,8 @@ namespace Amazon.Extensions.Configuration.AWSSystemsManager
         {
             try
             {
-                var path = _configurationSource.Path;
-                var awsOptions = _configurationSource.AwsOptions;
+                var path = Source.Path;
+                var awsOptions = Source.AwsOptions;
                 var parameters = await _awsSystemsManagerProcessor.GetParametersByPathAsync(awsOptions, path);
 
                 Data = ProcessParameters(parameters, path);
@@ -82,18 +84,17 @@ namespace Amazon.Extensions.Configuration.AWSSystemsManager
             }
             catch (Exception ex)
             {
-                var optional = this._configurationSource.Optional;
-                if (optional | reload) return;
+                if (Source.Optional || reload) return;
 
                 var ignoreException = false;
-                if (_configurationSource.OnLoadException != null)
+                if (Source.OnLoadException != null)
                 {
                     var exceptionContext = new AWSSystemsManagerExceptionContext
                     {
                         Provider = this,
                         Exception = ex
                     };
-                    _configurationSource.OnLoadException(exceptionContext);
+                    Source.OnLoadException(exceptionContext);
                     ignoreException = exceptionContext.Ignore;
                 }
 
