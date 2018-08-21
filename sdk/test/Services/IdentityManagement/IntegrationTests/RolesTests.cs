@@ -74,6 +74,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             }
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("IdentityManagement")]
         public void Roles()
@@ -126,6 +127,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             AssertExtensions.ExpectException(() => client.GetRole(new GetRoleRequest { RoleName = roleName }));
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("IdentityManagement")]
         public void RolePolicies()
@@ -213,6 +215,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             Assert.AreEqual(0, rolePolicies.Count);
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("IdentityManagement")]
         public void IdentityProfiles()
@@ -291,6 +294,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             Assert.AreEqual(originalCount, profiles.Count);
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("IdentityManagement")]
         public void AssumeRolePolicyDocument()

@@ -17,7 +17,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
     
     public class AccessKeyTests : TestBase<AmazonIdentityManagementServiceClient>
     {
-        [Fact]
+        [Fact(Skip = "Excluding tests that need IAM Write/Permissions management.")]
         [Trait(CategoryAttribute,"IAM")]
         public async Task TestCreateAccessKey()
         {
@@ -40,7 +40,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             }
         }
 
-        [Fact]
+        [Fact(Skip = "Excluding tests that need IAM Write/Permissions management.")]
         [Trait(CategoryAttribute,"IAM")]
         //[ExpectedException(typeof(NoSuchEntityException))]
         public async Task TestCreateAccessKeyNonExistentUserException()
@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             await AssertExtensions.ExpectExceptionAsync<NoSuchEntityException>(Client.CreateAccessKeyAsync(new CreateAccessKeyRequest() { UserName = username }));
         }
 
-        [Fact]
+        [Fact(Skip="Excluding tests that need IAM Write/Permissions management.")]
         [Trait(CategoryAttribute,"IAM")]
         public async Task TestListAccessKeys()
         {
@@ -83,7 +83,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
 
-        [Fact]
+        [Fact(Skip = "Excluding tests that need IAM Write/Permissions management.")]
         [Trait(CategoryAttribute, "IAM")]
         public async Task TestDeleteAccessKey()
         {
@@ -114,7 +114,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             }
         }
 
-        [Fact]
+        [Fact(Skip = "Excluding tests that need IAM Write/Permissions management.")]
         [Trait(CategoryAttribute,"IAM")]
         public async Task TestDeleteNonExistentAccessKeyException()
         {

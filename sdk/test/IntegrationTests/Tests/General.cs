@@ -34,6 +34,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
     [TestClass]
     public partial class General
     {
+        private readonly string fakeData = "obviously-super-duper-fake-data";
+
         [TestMethod]
         [TestCategory("General")]
         // Test exception parsing with selected services
@@ -80,8 +82,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         // Test exception parsing with selected services
         public void TestExceptions()
         {
-            var fakeData = "obviously-super-duper-fake-data";
-
             using (var client = new Amazon.Lightsail.AmazonLightsailClient())
             {
                 var ex = AssertExtensions.ExpectException<Amazon.Lightsail.Model.NotFoundException>(() =>
@@ -137,7 +137,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 Assert.AreEqual(ErrorType.Unknown, ex.ErrorType);
             }
 
-            using(var client = new Amazon.Glacier.AmazonGlacierClient())
+            using (var client = new Amazon.Glacier.AmazonGlacierClient())
             {
                 var ex = AssertExtensions.ExpectException<Amazon.Glacier.Model.ResourceNotFoundException>(() =>
                 {
@@ -151,7 +151,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 });
                 Assert.AreEqual(ErrorType.Unknown, ex.ErrorType);
             }
+        }
 
+        [TestMethod]
+        [TestCategory("General")]
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
+        public void IAMTestExceptions()
+        {
             using (var client = new Amazon.IdentityManagement.AmazonIdentityManagementServiceClient())
             {
                 var ex = AssertExtensions.ExpectException<Amazon.IdentityManagement.Model.NoSuchEntityException>(() =>
@@ -165,7 +171,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 Assert.AreEqual(ErrorType.Sender, ex.ErrorType);
             }
         }
-
 
         [TestMethod]
         [TestCategory("General")]

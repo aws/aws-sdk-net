@@ -22,6 +22,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             BaseClean();
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("IdentityManagement")]
         public void CRUDPasswordPolicy()

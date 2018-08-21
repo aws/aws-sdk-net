@@ -609,6 +609,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             AWSConfigsS3.UseSignatureVersion4 = false;
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("S3")]
         public void TemporaryRedirectForS3Operations()

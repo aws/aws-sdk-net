@@ -39,6 +39,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         private static readonly string TestExternalId = Guid.NewGuid().ToString();
         private static readonly string TestMfaSerialNumber = Guid.NewGuid().ToString();
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("SecurityToken")]
         [TestCategory("IdentityManagement")]
@@ -59,6 +60,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             }, typeof(Exception), MfaTokenCodeErrorMessage);
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("SecurityToken")]
         [TestCategory("IdentityManagement")]
@@ -73,6 +75,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             }, typeof(InvalidOperationException), new Regex(MfaCallbackErrorMessage));
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("SecurityToken")]
         [TestCategory("IdentityManagement")]
@@ -87,6 +90,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             }, typeof(AmazonSecurityTokenServiceException), new Regex(SecurityTokenErrorMessage));
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("SecurityToken")]
         [TestCategory("IdentityManagement")]
@@ -101,6 +105,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             }, typeof(AmazonSecurityTokenServiceException), new Regex(SecurityTokenErrorMessage));
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("SecurityToken")]
         [TestCategory("IdentityManagement")]
@@ -109,6 +114,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             TestAssumeRoleProfile(TestExternalId, TestExternalId, null, null, false, false);
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("SecurityToken")]
         [TestCategory("IdentityManagement")]
@@ -117,6 +123,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             TestAssumeRoleProfile(null, null, null, null, false, false);
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("SecurityToken")]
         [TestCategory("IdentityManagement")]

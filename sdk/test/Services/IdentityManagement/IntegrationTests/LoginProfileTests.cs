@@ -51,6 +51,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             IAMUtil.DeleteUsersAndGroupsInTestNameSpace(Client);
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("IdentityManagement")]
         public void TestCreateGetLoginProfile()
@@ -103,6 +104,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             }
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("IdentityManagement")]
         [ExpectedException(typeof(EntityAlreadyExistsException))]
@@ -123,6 +125,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             }
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("IdentityManagement")]
         [ExpectedException(typeof(NoSuchEntityException))]

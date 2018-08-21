@@ -56,9 +56,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             IAMUtil.DeleteUsersAndGroupsInTestNameSpace(Client);
         }
 
-
-        //[TestMethod]
-        //[TestCategory("IdentityManagement")]
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
+        [TestMethod]
+        [TestCategory("IdentityManagement")]
         public void TestPrincipalPolicies()
         {
             string groupname = "sdk-testgroup-" + DateTime.Now.Ticks;
@@ -303,6 +303,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             Assert.AreEqual(PolicyEvaluationDecisionType.ImplicitDeny, result.EvalDecision);
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("IdentityManagement")]
         public void TestPutGetUserPolicy()
@@ -333,6 +334,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             }
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("IdentityManagement")]
         public void TestPutGetGroupPolicy()
@@ -365,6 +367,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             }
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("IdentityManagement")]
         [ExpectedException(typeof(NoSuchEntityException))]
@@ -384,6 +387,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             }
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("IdentityManagement")]
         public void TestListUserPolicies()
@@ -427,6 +431,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             }
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("IdentityManagement")]
         public void TestListGroupPolicies()
@@ -477,6 +482,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             }
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("IdentityManagement")]
         public void TestListUserPoliciesPaging()
@@ -537,6 +543,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             }
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("IdentityManagement")]
         public void TestListGroupPoliciesPaging()
@@ -604,6 +611,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             }
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("IdentityManagement")]
         public void TestDeleteUserPolicy()
@@ -637,6 +645,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             }
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("IdentityManagement")]
         public void TestDeleteGroupPolicy()
@@ -672,6 +681,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             }
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("IdentityManagement")]
         [ExpectedException(typeof(NoSuchEntityException))]
@@ -690,6 +700,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             }
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("IdentityManagement")]
         [ExpectedException(typeof(NoSuchEntityException))]
@@ -708,6 +719,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             }
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("IdentityManagement")]
         [ExpectedException(typeof(NoSuchEntityException))]
@@ -725,6 +737,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             }
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("IdentityManagement")]
         [ExpectedException(typeof(NoSuchEntityException))]
@@ -742,6 +755,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             }
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("IdentityManagement")]
         [ExpectedException(typeof(MalformedPolicyDocumentException))]
@@ -765,6 +779,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             }
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("IdentityManagement")]
         public void TestCreateManagedPolicy()
@@ -817,6 +832,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             } while (response.IsTruncated);
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("IdentityManagement")]
         public void TestAttachManagedPolicy()

@@ -65,7 +65,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             }
         }
 
-
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("IdentityManagement")]
         public void CreateAccountAlias()

@@ -182,6 +182,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             {}
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("Kinesis")]
         public void TestListDeliveryStreams()
@@ -190,6 +191,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.IsNotNull(streamNames);
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("Kinesis")]
         public void TestPutRecord()
@@ -210,6 +212,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             }
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("Kinesis")]
         [ExpectedException(typeof(ResourceNotFoundException))]
@@ -228,6 +231,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             }
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("Kinesis")]
         public void TestPutRecordBatch()

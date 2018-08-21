@@ -124,6 +124,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Client.DeleteUser(new DeleteUserRequest { UserName = _userName });
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("SecurityToken")]
         public void TestAssumeRole()
@@ -156,6 +157,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.IsNotNull(response);
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("SecurityToken")]
         public void TestAssumeRoleCredentials()

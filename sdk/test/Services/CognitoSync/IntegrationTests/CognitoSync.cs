@@ -106,8 +106,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
 
-// This test depends on functionality that is only in 4.5
+        // This test depends on functionality that is only in 4.5
 #if BCL45
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("CognitoSync")]
         public void EventsTest()
@@ -154,7 +155,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.AreEqual(0, events.Count);
         }
 #endif
-
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("CognitoSync")]
         public void IdentityTests()
@@ -245,6 +246,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             }
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("CognitoSync")]
         public void CredentialsTests()

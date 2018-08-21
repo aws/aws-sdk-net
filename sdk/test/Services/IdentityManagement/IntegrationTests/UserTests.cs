@@ -63,6 +63,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             //Assert.AreEqual(string.Format("arn:aws:iam::{0}:root", response.User.UserId), response.User.Arn);
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("IdentityManagement")]
         public void TestCreateGetUser()
@@ -84,6 +85,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             }
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("IdentityManagement")]
         public void TestListUsers()
@@ -115,6 +117,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             }
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("IdentityManagement")]
         public void TestUserWithPath()
@@ -134,6 +137,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             }
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("IdentityManagement")]
         public void TestListUsersByPath()
@@ -201,6 +205,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             }
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("IdentityManagement")]
         public void TestListUsersMaxResults()
@@ -258,6 +263,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             }
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("IdentityManagement")]
         public void TestUpdateUser()
@@ -292,6 +298,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             }
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("IdentityManagement")]
         [ExpectedException(typeof(NoSuchEntityException))]
@@ -309,6 +316,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             Client.GetUser(new GetUserRequest() { UserName = username });
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("IdentityManagement")]
         [ExpectedException(typeof(EntityAlreadyExistsException))]
@@ -327,6 +335,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             }
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("IdentityManagement")]
         [ExpectedException(typeof(NoSuchEntityException))]

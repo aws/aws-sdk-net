@@ -114,6 +114,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.IsTrue(presets.Count > 0);
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("ElasticTranscoder")]
         public void TestPipelineOperations()

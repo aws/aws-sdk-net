@@ -21,6 +21,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             BaseClean();
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("ElastiCache")]
         public void TestCacheParameterGroups()

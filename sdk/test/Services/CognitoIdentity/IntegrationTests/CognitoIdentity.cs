@@ -46,6 +46,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             BaseClean();
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("CognitoIdentity")]
         public void TestIdentityPools()
@@ -70,6 +71,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.AreEqual(poolCount, pools.Count);
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("CognitoIdentity")]
         public void TestIdentities()

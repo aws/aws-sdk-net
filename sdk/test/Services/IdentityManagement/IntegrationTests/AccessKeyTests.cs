@@ -50,6 +50,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             IAMUtil.DeleteUsersAndGroupsInTestNameSpace(Client);
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("IdentityManagement")]
         public void TestCreateAccessKey()
@@ -72,6 +73,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             }
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("IdentityManagement")]
         [ExpectedException(typeof(NoSuchEntityException))]
@@ -82,6 +84,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             Client.CreateAccessKey(new CreateAccessKeyRequest() { UserName = username });
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("IdentityManagement")]
         public void TestListAccessKeys()
@@ -119,6 +122,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         // There is a limit of 2 access keys per user
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("IdentityManagement")]
         [ExpectedException(typeof(LimitExceededException))]
@@ -139,6 +143,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             }
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("IdentityManagement")]
         public void TestDeleteAccessKey()
@@ -173,6 +178,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
             }
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("IdentityManagement")]
         [ExpectedException(typeof(NoSuchEntityException))]

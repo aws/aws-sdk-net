@@ -93,9 +93,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             } while (!string.IsNullOrEmpty(request.Marker));
         }
 
-// This test depends on functionality that is only in 4.5
+        // This test depends on functionality that is only in 4.5
 #if BCL45
-
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("Lambda")]
         public void PolicyAndPermissionTest()
@@ -149,6 +149,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             }
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("Lambda")]
         public void LambdaFunctionTest()

@@ -35,6 +35,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             }
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("OpsWorks")]
         public void CRUDUserProfile()
