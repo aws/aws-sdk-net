@@ -57,7 +57,7 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property Schedules. 
         /// <para>
-        /// The schedule.
+        /// The schedule of policy-defined actions.
         /// </para>
         /// </summary>
         public List<Schedule> Schedules
@@ -75,7 +75,7 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property TargetTags. 
         /// <para>
-        /// The target tags.
+        /// The single tag that identifies targeted resources for this policy.
         /// </para>
         /// </summary>
         public List<Tag> TargetTags

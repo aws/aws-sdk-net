@@ -79,7 +79,7 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property PolicyDetails. 
         /// <para>
-        /// The configuration of the lifecycle policy.
+        /// The configuration details of the lifecycle policy.
         /// </para>
         ///  
         /// <para>

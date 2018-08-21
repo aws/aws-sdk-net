@@ -94,8 +94,8 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property TagsToAdd. 
         /// <para>
-        /// The tags to add to policy-created resources. These tags are added in addition to the
-        /// default lifecycle tags.
+        /// The tags to apply to policy-created resources. These user-defined tags are in addition
+        /// to the AWS-added lifecycle tags.
         /// </para>
         /// </summary>
         public List<Tag> TagsToAdd

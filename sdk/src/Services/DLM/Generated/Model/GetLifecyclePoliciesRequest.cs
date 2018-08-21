@@ -101,15 +101,15 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property TagsToAdd. 
         /// <para>
-        /// The tags to add to the resources.
+        /// The tags to add to objects created by the policy.
         /// </para>
         ///  
         /// <para>
-        /// Tags are strings in the format <code>key:value</code>.
+        /// Tags are strings in the format <code>key=value</code>.
         /// </para>
         ///  
         /// <para>
-        /// These tags are added in addition to the AWS-added lifecycle tags.
+        /// These user-defined tags are added in addition to the AWS-added lifecycle tags.
         /// </para>
         /// </summary>
         public List<string> TagsToAdd
@@ -127,11 +127,11 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property TargetTags. 
         /// <para>
-        /// The target tags.
+        /// The target tag for a policy.
         /// </para>
         ///  
         /// <para>
-        /// Tags are strings in the format <code>key:value</code>.
+        /// Tags are strings in the format <code>key=value</code>.
         /// </para>
         /// </summary>
         public List<string> TargetTags
