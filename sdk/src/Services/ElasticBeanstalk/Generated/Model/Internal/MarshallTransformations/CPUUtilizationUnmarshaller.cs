@@ -78,6 +78,12 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                         unmarshalledObject.Nice = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("Privileged", targetDepth))
+                    {
+                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        unmarshalledObject.Privileged = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("SoftIRQ", targetDepth))
                     {
                         var unmarshaller = DoubleUnmarshaller.Instance;

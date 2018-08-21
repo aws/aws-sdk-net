@@ -392,6 +392,11 @@ namespace Amazon.ElasticBeanstalk
         /// 
         ///  
         /// <para>
+        /// Templates aren't associated with any environment. The <code>EnvironmentName</code>
+        /// response element is always <code>null</code>.
+        /// </para>
+        ///  
+        /// <para>
         /// Related Topics
         /// </para>
         ///  <ul> <li> 

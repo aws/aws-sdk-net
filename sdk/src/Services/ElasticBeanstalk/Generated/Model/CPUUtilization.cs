@@ -36,6 +36,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private double? _ioWait;
         private double? _irq;
         private double? _nice;
+        private double? _privileged;
         private double? _softIRQ;
         private double? _system;
         private double? _user;
@@ -62,6 +63,10 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property IOWait. 
         /// <para>
+        /// Available on Linux environments only.
+        /// </para>
+        ///  
+        /// <para>
         /// Percentage of time that the CPU has spent in the <code>I/O Wait</code> state over
         /// the last 10 seconds.
         /// </para>
@@ -80,6 +85,10 @@ namespace Amazon.ElasticBeanstalk.Model
 
         /// <summary>
         /// Gets and sets the property IRQ. 
+        /// <para>
+        /// Available on Linux environments only.
+        /// </para>
+        ///  
         /// <para>
         /// Percentage of time that the CPU has spent in the <code>IRQ</code> state over the last
         /// 10 seconds.
@@ -100,6 +109,10 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Nice. 
         /// <para>
+        /// Available on Linux environments only.
+        /// </para>
+        ///  
+        /// <para>
         /// Percentage of time that the CPU has spent in the <code>Nice</code> state over the
         /// last 10 seconds.
         /// </para>
@@ -117,7 +130,34 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Privileged. 
+        /// <para>
+        /// Available on Windows environments only.
+        /// </para>
+        ///  
+        /// <para>
+        /// Percentage of time that the CPU has spent in the <code>Privileged</code> state over
+        /// the last 10 seconds.
+        /// </para>
+        /// </summary>
+        public double Privileged
+        {
+            get { return this._privileged.GetValueOrDefault(); }
+            set { this._privileged = value; }
+        }
+
+        // Check to see if Privileged property is set
+        internal bool IsSetPrivileged()
+        {
+            return this._privileged.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property SoftIRQ. 
+        /// <para>
+        /// Available on Linux environments only.
+        /// </para>
+        ///  
         /// <para>
         /// Percentage of time that the CPU has spent in the <code>SoftIRQ</code> state over the
         /// last 10 seconds.
@@ -137,6 +177,10 @@ namespace Amazon.ElasticBeanstalk.Model
 
         /// <summary>
         /// Gets and sets the property System. 
+        /// <para>
+        /// Available on Linux environments only.
+        /// </para>
+        ///  
         /// <para>
         /// Percentage of time that the CPU has spent in the <code>System</code> state over the
         /// last 10 seconds.

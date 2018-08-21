@@ -42,6 +42,11 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <para>
         /// Detailed health information about each instance.
         /// </para>
+        ///  
+        /// <para>
+        /// The output differs slightly between Linux and Windows environments. There is a difference
+        /// in the members that are supported under the <code>&lt;CPUUtilization&gt;</code> type.
+        /// </para>
         /// </summary>
         public List<SingleInstanceHealth> InstanceHealthList
         {
