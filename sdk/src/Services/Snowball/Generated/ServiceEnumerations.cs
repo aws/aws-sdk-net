@@ -137,6 +137,10 @@ namespace Amazon.Snowball
         /// </summary>
         public static readonly JobState WithAWS = new JobState("WithAWS");
         /// <summary>
+        /// Constant WithAWSSortingFacility for JobState
+        /// </summary>
+        public static readonly JobState WithAWSSortingFacility = new JobState("WithAWSSortingFacility");
+        /// <summary>
         /// Constant WithCustomer for JobState
         /// </summary>
         public static readonly JobState WithCustomer = new JobState("WithCustomer");
