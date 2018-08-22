@@ -163,7 +163,7 @@ namespace CommonTests.IntegrationTests.S3
                 PutObjectRequest request = new PutObjectRequest()
                 {
                     BucketName = bucketName,
-                    FilePath = relativePath,
+                    FilePath = fullPath,
                     CannedACL = S3CannedACL.AuthenticatedRead
                 };
                 PutObjectResponse response = await Client.PutObjectAsync(request);

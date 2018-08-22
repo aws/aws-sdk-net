@@ -27,7 +27,6 @@ namespace CommonTests.IntegrationTests.S3
         private const string testContent = "This is the content body!";
         private const string testFile = "PutObjectFile.txt";
         private string fullPath;
-        private string relativePath;
 
         [OneTimeSetUp]
         public void Initialize()
@@ -40,8 +39,10 @@ namespace CommonTests.IntegrationTests.S3
                         (testFile, CreationCollisionOption.ReplaceExisting);
                     await file.WriteAllTextAsync(testContent);
                     fullPath = file.Path;
-                    relativePath = UtilityMethods.GetRelativePath(fullPath);
-                    bucketName = await UtilityMethods.CreateBucketAsync(Client);
+					bucketName = await UtilityMethods.CreateBucketAsync(Client);
+                    var folder = PCLStorage.FileSystem.Current.GetFileFromPathAsync(fullPath).Result;
+                    Console.WriteLine($"{folder.Path}");
+
                 }
                 catch(Exception e)
                 {
@@ -60,45 +61,154 @@ namespace CommonTests.IntegrationTests.S3
 
         [Test(TestOf = typeof(AmazonS3Client))]
         [Category("S3")]
-        public void SimpleUpload()
+        public void SimpleUploadWithFilepath()
         {
             RunAsSync(async () =>
             {
                 var client = Client;
                 using (var tu = new Amazon.S3.Transfer.TransferUtility(client))
                 {
-                    await tu.UploadAsync(relativePath, bucketName);
-
-                    var response = await client.GetObjectMetadataAsync(new GetObjectMetadataRequest
-                    {
-                        BucketName = bucketName,
-                        Key = testFile
-                    });
-                    Assert.IsTrue(response.ETag.Length > 0);
-
-                    var downloadPath = relativePath + ".download";
-                    var downloadRequest = new Amazon.S3.Transfer.TransferUtilityDownloadRequest
-                    {
-                        BucketName = bucketName,
-                        Key = testFile,
-                        FilePath = downloadPath
-                    };
-                    var fileExists = await this.BaseFolder.CheckExistsAsync(downloadPath);
-                    Assert.IsTrue(fileExists == ExistenceCheckResult.NotFound);
-                    await tu.DownloadAsync(downloadRequest);
-                    await TestDownloadedFile(downloadPath);
-
-                    // empty out file, except for 1 byte
-                    var file = await this.BaseFolder.GetFileAsync(downloadPath);
-                    await file.WriteAllTextAsync(testContent.Substring(0, 1));
-                    await tu.DownloadAsync(downloadRequest);
-                    await TestDownloadedFile(downloadPath);
+                    await tu.UploadAsync(fullPath, bucketName);
+                    await VerifyUploadResponse(client);
+                    await TestDownloadedFile(fullPath, tu);
                 }
             });
         }
 
-        private async Task TestDownloadedFile(string downloadPath)
+        [Test(TestOf = typeof(AmazonS3Client))]
+        [Category("S3")]
+        public void SimpleUploadWithFilepathAndKey()
         {
+            
+            RunAsSync(async () =>
+            {
+                try
+                {
+                    var client = Client;
+                    using (var tu = new Amazon.S3.Transfer.TransferUtility(client))
+                    {
+                        string key = System.Guid.NewGuid().ToString();
+                        await tu.UploadAsync(fullPath, bucketName, key);
+                        await VerifyUploadResponse(client, key);
+                        await TestDownloadedFile(fullPath, tu, key);
+                    }
+                }
+                catch(Exception e)
+                {
+                    throw e; 
+                }
+
+            });
+        }
+
+        [Test(TestOf = typeof(AmazonS3Client))]
+        [Category("S3")]
+        public void SimpleUploadWithStream()
+        {
+            RunAsSync(async () =>
+            {
+                try
+                {
+                    var client = Client;                    
+                    using (var tu = new Amazon.S3.Transfer.TransferUtility(client))
+                    {
+                        Stream filestream = this.BaseFolder.GetFileAsync(fullPath).Result.OpenAsync(FileAccess.Read).Result ;
+                        string key = System.Guid.NewGuid().ToString();
+                        await tu.UploadAsync(fullPath, bucketName, key);
+                        await VerifyUploadResponse(client, key);
+                        await TestDownloadedFile(fullPath, tu, key);
+                    }
+                }
+                catch (Exception e)
+                {
+                    throw e;
+                }
+            });
+        }
+
+        [Test(TestOf = typeof(AmazonS3Client))]
+        [Category("S3")]
+        public void SimpleUploadWithRequest()
+        {
+            RunAsSync(async () =>
+            {
+                try
+                {
+                    var client = Client;
+                    using (var tu = new Amazon.S3.Transfer.TransferUtility(client))
+                    {
+                        string key = System.Guid.NewGuid().ToString();
+
+                        Amazon.S3.Transfer.TransferUtilityUploadRequest request = new Amazon.S3.Transfer.TransferUtilityUploadRequest
+                        {
+                            BucketName = bucketName,
+                            FilePath = fullPath,
+                            StorageClass = S3StorageClass.ReducedRedundancy,
+                            PartSize = 6291456, // 6 MB.
+                            Key = key,
+                            CannedACL = S3CannedACL.PublicRead
+                        };
+                        Stream filestream = this.BaseFolder.GetFileAsync(fullPath).Result.OpenAsync(FileAccess.Read).Result;
+                        await tu.UploadAsync(fullPath, bucketName, key);
+                        await VerifyUploadResponse(client, key);
+                        await TestDownloadedFile(fullPath, tu, key);
+                    }
+                }
+                catch (Exception e)
+                {
+                    throw e;
+                }
+            });
+        }
+
+        private async Task VerifyUploadResponse(AmazonS3Client client, string key = null)
+        {
+            if (key == null)
+            {
+                key = testFile;
+            }
+            var response = await client.GetObjectMetadataAsync(new GetObjectMetadataRequest
+            {
+                BucketName = bucketName,
+                Key = key
+            });
+            Assert.IsTrue(response.ETag.Length > 0);
+        }
+
+        private async Task TestDownloadedFile(string fullPath, Amazon.S3.Transfer.TransferUtility tu, string key = null)
+        {
+            if (key == null)
+            {
+                key = testFile;
+            }
+            var downloadPath = fullPath + ".download";
+            var downloadRequest = new Amazon.S3.Transfer.TransferUtilityDownloadRequest
+            {
+                BucketName = bucketName,
+                Key = key,
+                FilePath = downloadPath
+            };
+            var fileExists = await this.BaseFolder.CheckExistsAsync(downloadPath);
+            if(fileExists == ExistenceCheckResult.FileExists)
+            {
+                this.BaseFolder.GetFileAsync(downloadPath).Result.DeleteAsync().Wait();
+            }
+
+            fileExists = await this.BaseFolder.CheckExistsAsync(downloadPath);
+            Assert.IsTrue(fileExists == ExistenceCheckResult.NotFound);
+            await tu.DownloadAsync(downloadRequest);
+            await VerifyDownloadedFile(downloadPath);
+
+            // empty out file, except for 1 byte
+            var file = await this.BaseFolder.GetFileAsync(downloadPath);
+            await file.WriteAllTextAsync(testContent.Substring(0, 1));
+            await tu.DownloadAsync(downloadRequest);
+            await VerifyDownloadedFile(downloadPath);
+        }
+        private async Task VerifyDownloadedFile(string downloadPath)
+        {
+
+
             ExistenceCheckResult fileExists;
             fileExists = await this.BaseFolder.CheckExistsAsync(downloadPath);
             Assert.IsTrue(fileExists == ExistenceCheckResult.FileExists);
