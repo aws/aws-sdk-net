@@ -26,7 +26,7 @@ namespace CommonTests.IntegrationTests.S3
         private static string bucketName;
         private const string testContent = "This is the content body!";
         private string fullPath = string.Empty;
-        private string relativePath = string.Empty;
+
 
         [OneTimeSetUp]
         public void Initialize()
@@ -39,7 +39,6 @@ namespace CommonTests.IntegrationTests.S3
                 await file.WriteAllTextAsync("This is some sample text.!!");
                 bucketName = await UtilityMethods.CreateBucketAsync(Client);
                 fullPath = file.Path;
-                relativePath = UtilityMethods.GetRelativePath(fullPath);
             });
             Console.WriteLine("Done initializing PutObjectTest");
         }
