@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.342.0",
+    "ProductVersion" : "3.3.343.0",
     "CoreVersion"    : "3.3.24.8",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -585,7 +585,7 @@
             "InPreview"               : false
         },
         "Snowball"                        : {
-            "Version" : "3.3.3.5",
+            "Version" : "3.3.4.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.24.8"
