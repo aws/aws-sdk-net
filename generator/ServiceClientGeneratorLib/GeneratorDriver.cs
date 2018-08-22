@@ -12,6 +12,7 @@ using StructureGenerator = ServiceClientGenerator.Generators.SourceFiles.Structu
 using ServiceClientGenerator.Generators.Component;
 
 using Json.LitJson;
+using System.Collections.Concurrent;
 
 namespace ServiceClientGenerator
 {
@@ -113,7 +114,7 @@ namespace ServiceClientGenerator
 
         public HashSet<string> FilesWrittenToGeneratorFolder { get; private set; }
 
-        private static new HashSet<string> codeGeneratedServiceList = new HashSet<string>();
+        private static ConcurrentBag<string> codeGeneratedServiceNames = new ConcurrentBag<string>();
         public GeneratorDriver(ServiceConfiguration config, GenerationManifest generationManifest, GeneratorOptions options)
         {
             FilesWrittenToGeneratorFolder = new HashSet<string>();
@@ -122,26 +123,18 @@ namespace ServiceClientGenerator
             ProjectFileConfigurations = GenerationManifest.ProjectFileConfigurations;
             Options = options;
 
-            // Base name in the manifest is not a reliable source of info, as if append-service
-            // is set 'Service' gets appended and in the case of IAM then sends us to the wrong folder.
-            // Instead we'll use the namespace and rip off any Amazon. prefix. This also helps us
-            // handle versioned namespaces too.
-            var serviceNameRoot = Configuration.Namespace.StartsWith("Amazon.", StringComparison.Ordinal)
-                ? Configuration.Namespace.Substring(7)
-                : Configuration.Namespace;
-
-            ServiceFilesRoot = Path.Combine(Options.SdkRootFolder, SourceSubFoldername, ServicesSubFoldername, config.ServiceFolderName);
-            ServiceUnitTestFilesRoot = Path.Combine(Options.SdkRootFolder, TestsSubFoldername, ServicesSubFoldername, config.ServiceFolderName);
+            ServiceFilesRoot = Path.Combine(Options.SdkRootFolder, SourceSubFoldername, ServicesSubFoldername, Configuration.ServiceFolderName);
+            ServiceUnitTestFilesRoot = Path.Combine(Options.SdkRootFolder, TestsSubFoldername, ServicesSubFoldername, Configuration.ServiceFolderName);
             GeneratedFilesRoot = Path.Combine(ServiceFilesRoot, GeneratedCodeFoldername);
 
-            CodeAnalysisRoot = Path.Combine(Options.SdkRootFolder, CodeAnalysisFoldername, "ServiceAnalysis", serviceNameRoot);
+            CodeAnalysisRoot = Path.Combine(Options.SdkRootFolder, CodeAnalysisFoldername, ServicesAnalysisSubFolderName, Configuration.ServiceFolderName);
 
             TestFilesRoot = Path.Combine(Options.SdkRootFolder, TestsSubFoldername);
 
-            ComponentsFilesRoot = Path.Combine(Options.SdkRootFolder, XamarinComponentsSubFolderName, config.ServiceFolderName);
+            ComponentsFilesRoot = Path.Combine(Options.SdkRootFolder, XamarinComponentsSubFolderName, Configuration.ServiceFolderName);
 
             SampleFilesRoot = options.SamplesRootFolder;
-            codeGeneratedServiceList.Add(config.ServiceFolderName);
+            codeGeneratedServiceNames.Add(Configuration.ServiceFolderName);
         }
 
         public void Execute()
@@ -1333,14 +1326,15 @@ namespace ServiceClientGenerator
 
         public static void RemoveOrphanedShapesAndServices(HashSet<string> generatedFiles, string sdkRootFolder)
         {
+            var codeGeneratedServiceList = codeGeneratedServiceNames.Distinct();
             var srcFolder = Path.Combine(sdkRootFolder, SourceSubFoldername, ServicesSubFoldername);
             RemoveOrphanedShapes(generatedFiles, srcFolder);
             // Cleanup orphaned Service src artifacts. This is encountered when the service identifier is modified.
-            RemoveOrphanedServices(srcFolder);
+            RemoveOrphanedServices(srcFolder, codeGeneratedServiceList);
             // Cleanup orphaned Service test artifacts. This is encountered when the service identifier is modified.
-            RemoveOrphanedServices(Path.Combine(sdkRootFolder, TestsSubFoldername, ServicesSubFoldername));
+            RemoveOrphanedServices(Path.Combine(sdkRootFolder, TestsSubFoldername, ServicesSubFoldername), codeGeneratedServiceList);
             // Cleanup orphaned Service code analysis artifacts. This is encountered when the service identifier is modified.
-            RemoveOrphanedServices(Path.Combine(sdkRootFolder, CodeAnalysisFoldername, ServicesAnalysisSubFolderName));
+            RemoveOrphanedServices(Path.Combine(sdkRootFolder, CodeAnalysisFoldername, ServicesAnalysisSubFolderName), codeGeneratedServiceList);
         }
         public static void RemoveOrphanedShapes(HashSet<string> generatedFiles, string srcFolder)
         {
@@ -1360,7 +1354,7 @@ namespace ServiceClientGenerator
         }
 
 
-        private static void RemoveOrphanedServices(string path)
+        private static void RemoveOrphanedServices(string path, IEnumerable<string> codeGeneratedServiceList)
         {
             foreach (var directoryName in Directory.GetDirectories(path))
             {
