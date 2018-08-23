@@ -786,6 +786,10 @@ namespace Amazon.LexModelBuildingService
         /// Constant READY for Status
         /// </summary>
         public static readonly Status READY = new Status("READY");
+        /// <summary>
+        /// Constant READY_BASIC_TESTING for Status
+        /// </summary>
+        public static readonly Status READY_BASIC_TESTING = new Status("READY_BASIC_TESTING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
