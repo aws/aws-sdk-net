@@ -44,6 +44,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("MediaLive")]
+        public void BatchUpdateScheduleMarshallTest()
+        {
+            var operation = service_model.FindOperation("BatchUpdateSchedule");
+
+            var request = InstantiateClassGenerator.Execute<BatchUpdateScheduleRequest>();
+            var marshaller = new BatchUpdateScheduleRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("BatchUpdateSchedule", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = BatchUpdateScheduleResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as BatchUpdateScheduleResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("MediaLive")]
         public void CreateChannelMarshallTest()
         {
             var operation = service_model.FindOperation("CreateChannel");
@@ -420,6 +452,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = DescribeReservationResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as DescribeReservationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("MediaLive")]
+        public void DescribeScheduleMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeSchedule");
+
+            var request = InstantiateClassGenerator.Execute<DescribeScheduleRequest>();
+            var marshaller = new DescribeScheduleRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DescribeSchedule", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DescribeScheduleResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as DescribeScheduleResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 

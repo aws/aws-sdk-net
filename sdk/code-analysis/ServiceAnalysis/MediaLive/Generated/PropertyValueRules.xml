@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.DescribeScheduleRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.ListChannelsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
@@ -558,14 +563,116 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.Scte35ReturnToNetworkScheduleActionSettings.SpliceEventId</property>
+    <min>0</min>
+    <max>4294967295</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.Scte35SegmentationDescriptor.SegmentationDuration</property>
+    <min>0</min>
+    <max>1099511627775</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.Scte35SegmentationDescriptor.SegmentationEventId</property>
+    <min>0</min>
+    <max>4294967295</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.Scte35SegmentationDescriptor.SegmentationTypeId</property>
+    <min>0</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.Scte35SegmentationDescriptor.SegmentationUpidType</property>
+    <min>0</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.Scte35SegmentationDescriptor.SegmentNum</property>
+    <min>0</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.Scte35SegmentationDescriptor.SegmentsExpected</property>
+    <min>0</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.Scte35SegmentationDescriptor.SubSegmentNum</property>
+    <min>0</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.Scte35SegmentationDescriptor.SubSegmentsExpected</property>
+    <min>0</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.Scte35SpliceInsert.AdAvailOffset</property>
     <min>-1000</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.Scte35SpliceInsertScheduleActionSettings.Duration</property>
+    <min>0</min>
+    <max>8589934591</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.Scte35SpliceInsertScheduleActionSettings.SpliceEventId</property>
+    <min>0</min>
+    <max>4294967295</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.Scte35TimeSignalApos.AdAvailOffset</property>
     <min>-1000</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.StaticImageActivateScheduleActionSettings.Duration</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.StaticImageActivateScheduleActionSettings.FadeIn</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.StaticImageActivateScheduleActionSettings.FadeOut</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.StaticImageActivateScheduleActionSettings.Height</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.StaticImageActivateScheduleActionSettings.ImageX</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.StaticImageActivateScheduleActionSettings.ImageY</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.StaticImageActivateScheduleActionSettings.Layer</property>
+    <min>0</min>
+    <max>7</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.StaticImageActivateScheduleActionSettings.Opacity</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.StaticImageActivateScheduleActionSettings.Width</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.StaticImageDeactivateScheduleActionSettings.FadeOut</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.StaticImageDeactivateScheduleActionSettings.Layer</property>
+    <min>0</min>
+    <max>7</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaLive.Model.StaticKeySettings.StaticKeyValue</property>

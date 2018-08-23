@@ -223,6 +223,83 @@ namespace Amazon.MediaLive
         #endregion
 
         
+        #region  BatchUpdateSchedule
+
+        /// <summary>
+        /// Update a channel schedule
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateSchedule service method.</param>
+        /// 
+        /// <returns>The response from the BatchUpdateSchedule service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.UnprocessableEntityException">
+        /// Placeholder documentation for UnprocessableEntityException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchUpdateSchedule">REST API Reference for BatchUpdateSchedule Operation</seealso>
+        public virtual BatchUpdateScheduleResponse BatchUpdateSchedule(BatchUpdateScheduleRequest request)
+        {
+            var marshaller = BatchUpdateScheduleRequestMarshaller.Instance;
+            var unmarshaller = BatchUpdateScheduleResponseUnmarshaller.Instance;
+
+            return Invoke<BatchUpdateScheduleRequest,BatchUpdateScheduleResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchUpdateSchedule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateSchedule operation on AmazonMediaLiveClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchUpdateSchedule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchUpdateSchedule">REST API Reference for BatchUpdateSchedule Operation</seealso>
+        public virtual IAsyncResult BeginBatchUpdateSchedule(BatchUpdateScheduleRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = BatchUpdateScheduleRequestMarshaller.Instance;
+            var unmarshaller = BatchUpdateScheduleResponseUnmarshaller.Instance;
+
+            return BeginInvoke<BatchUpdateScheduleRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchUpdateSchedule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchUpdateSchedule.</param>
+        /// 
+        /// <returns>Returns a  BatchUpdateScheduleResult from MediaLive.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchUpdateSchedule">REST API Reference for BatchUpdateSchedule Operation</seealso>
+        public virtual BatchUpdateScheduleResponse EndBatchUpdateSchedule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchUpdateScheduleResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateChannel
 
         /// <summary>
@@ -1113,6 +1190,80 @@ namespace Amazon.MediaLive
         public virtual DescribeReservationResponse EndDescribeReservation(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeReservationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeSchedule
+
+        /// <summary>
+        /// Get a channel schedule
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSchedule service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSchedule service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeSchedule">REST API Reference for DescribeSchedule Operation</seealso>
+        public virtual DescribeScheduleResponse DescribeSchedule(DescribeScheduleRequest request)
+        {
+            var marshaller = DescribeScheduleRequestMarshaller.Instance;
+            var unmarshaller = DescribeScheduleResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeScheduleRequest,DescribeScheduleResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSchedule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSchedule operation on AmazonMediaLiveClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSchedule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeSchedule">REST API Reference for DescribeSchedule Operation</seealso>
+        public virtual IAsyncResult BeginDescribeSchedule(DescribeScheduleRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DescribeScheduleRequestMarshaller.Instance;
+            var unmarshaller = DescribeScheduleResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeScheduleRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeSchedule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSchedule.</param>
+        /// 
+        /// <returns>Returns a  DescribeScheduleResult from MediaLive.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeSchedule">REST API Reference for DescribeSchedule Operation</seealso>
+        public virtual DescribeScheduleResponse EndDescribeSchedule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeScheduleResponse>(asyncResult);
         }
 
         #endregion

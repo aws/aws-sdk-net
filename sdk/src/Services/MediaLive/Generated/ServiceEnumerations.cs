@@ -8083,6 +8083,214 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type Scte35ArchiveAllowedFlag.
+    /// </summary>
+    public class Scte35ArchiveAllowedFlag : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ARCHIVE_ALLOWED for Scte35ArchiveAllowedFlag
+        /// </summary>
+        public static readonly Scte35ArchiveAllowedFlag ARCHIVE_ALLOWED = new Scte35ArchiveAllowedFlag("ARCHIVE_ALLOWED");
+        /// <summary>
+        /// Constant ARCHIVE_NOT_ALLOWED for Scte35ArchiveAllowedFlag
+        /// </summary>
+        public static readonly Scte35ArchiveAllowedFlag ARCHIVE_NOT_ALLOWED = new Scte35ArchiveAllowedFlag("ARCHIVE_NOT_ALLOWED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Scte35ArchiveAllowedFlag(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Scte35ArchiveAllowedFlag FindValue(string value)
+        {
+            return FindValue<Scte35ArchiveAllowedFlag>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Scte35ArchiveAllowedFlag(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Scte35DeviceRestrictions.
+    /// </summary>
+    public class Scte35DeviceRestrictions : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NONE for Scte35DeviceRestrictions
+        /// </summary>
+        public static readonly Scte35DeviceRestrictions NONE = new Scte35DeviceRestrictions("NONE");
+        /// <summary>
+        /// Constant RESTRICT_GROUP0 for Scte35DeviceRestrictions
+        /// </summary>
+        public static readonly Scte35DeviceRestrictions RESTRICT_GROUP0 = new Scte35DeviceRestrictions("RESTRICT_GROUP0");
+        /// <summary>
+        /// Constant RESTRICT_GROUP1 for Scte35DeviceRestrictions
+        /// </summary>
+        public static readonly Scte35DeviceRestrictions RESTRICT_GROUP1 = new Scte35DeviceRestrictions("RESTRICT_GROUP1");
+        /// <summary>
+        /// Constant RESTRICT_GROUP2 for Scte35DeviceRestrictions
+        /// </summary>
+        public static readonly Scte35DeviceRestrictions RESTRICT_GROUP2 = new Scte35DeviceRestrictions("RESTRICT_GROUP2");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Scte35DeviceRestrictions(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Scte35DeviceRestrictions FindValue(string value)
+        {
+            return FindValue<Scte35DeviceRestrictions>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Scte35DeviceRestrictions(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Scte35NoRegionalBlackoutFlag.
+    /// </summary>
+    public class Scte35NoRegionalBlackoutFlag : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NO_REGIONAL_BLACKOUT for Scte35NoRegionalBlackoutFlag
+        /// </summary>
+        public static readonly Scte35NoRegionalBlackoutFlag NO_REGIONAL_BLACKOUT = new Scte35NoRegionalBlackoutFlag("NO_REGIONAL_BLACKOUT");
+        /// <summary>
+        /// Constant REGIONAL_BLACKOUT for Scte35NoRegionalBlackoutFlag
+        /// </summary>
+        public static readonly Scte35NoRegionalBlackoutFlag REGIONAL_BLACKOUT = new Scte35NoRegionalBlackoutFlag("REGIONAL_BLACKOUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Scte35NoRegionalBlackoutFlag(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Scte35NoRegionalBlackoutFlag FindValue(string value)
+        {
+            return FindValue<Scte35NoRegionalBlackoutFlag>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Scte35NoRegionalBlackoutFlag(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Scte35SegmentationCancelIndicator.
+    /// </summary>
+    public class Scte35SegmentationCancelIndicator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SEGMENTATION_EVENT_CANCELED for Scte35SegmentationCancelIndicator
+        /// </summary>
+        public static readonly Scte35SegmentationCancelIndicator SEGMENTATION_EVENT_CANCELED = new Scte35SegmentationCancelIndicator("SEGMENTATION_EVENT_CANCELED");
+        /// <summary>
+        /// Constant SEGMENTATION_EVENT_NOT_CANCELED for Scte35SegmentationCancelIndicator
+        /// </summary>
+        public static readonly Scte35SegmentationCancelIndicator SEGMENTATION_EVENT_NOT_CANCELED = new Scte35SegmentationCancelIndicator("SEGMENTATION_EVENT_NOT_CANCELED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Scte35SegmentationCancelIndicator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Scte35SegmentationCancelIndicator FindValue(string value)
+        {
+            return FindValue<Scte35SegmentationCancelIndicator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Scte35SegmentationCancelIndicator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Scte35SpliceInsertNoRegionalBlackoutBehavior.
     /// </summary>
     public class Scte35SpliceInsertNoRegionalBlackoutBehavior : ConstantClass
@@ -8176,6 +8384,56 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Scte35SpliceInsertWebDeliveryAllowedBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Scte35WebDeliveryAllowedFlag.
+    /// </summary>
+    public class Scte35WebDeliveryAllowedFlag : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant WEB_DELIVERY_ALLOWED for Scte35WebDeliveryAllowedFlag
+        /// </summary>
+        public static readonly Scte35WebDeliveryAllowedFlag WEB_DELIVERY_ALLOWED = new Scte35WebDeliveryAllowedFlag("WEB_DELIVERY_ALLOWED");
+        /// <summary>
+        /// Constant WEB_DELIVERY_NOT_ALLOWED for Scte35WebDeliveryAllowedFlag
+        /// </summary>
+        public static readonly Scte35WebDeliveryAllowedFlag WEB_DELIVERY_NOT_ALLOWED = new Scte35WebDeliveryAllowedFlag("WEB_DELIVERY_NOT_ALLOWED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Scte35WebDeliveryAllowedFlag(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Scte35WebDeliveryAllowedFlag FindValue(string value)
+        {
+            return FindValue<Scte35WebDeliveryAllowedFlag>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Scte35WebDeliveryAllowedFlag(string value)
         {
             return FindValue(value);
         }

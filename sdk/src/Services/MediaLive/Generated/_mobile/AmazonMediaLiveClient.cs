@@ -230,6 +230,38 @@ namespace Amazon.MediaLive
         #endregion
 
         
+        #region  BatchUpdateSchedule
+
+        internal virtual BatchUpdateScheduleResponse BatchUpdateSchedule(BatchUpdateScheduleRequest request)
+        {
+            var marshaller = BatchUpdateScheduleRequestMarshaller.Instance;
+            var unmarshaller = BatchUpdateScheduleResponseUnmarshaller.Instance;
+
+            return Invoke<BatchUpdateScheduleRequest,BatchUpdateScheduleResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchUpdateSchedule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateSchedule operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchUpdateSchedule">REST API Reference for BatchUpdateSchedule Operation</seealso>
+        public virtual Task<BatchUpdateScheduleResponse> BatchUpdateScheduleAsync(BatchUpdateScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = BatchUpdateScheduleRequestMarshaller.Instance;
+            var unmarshaller = BatchUpdateScheduleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchUpdateScheduleRequest,BatchUpdateScheduleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateChannel
 
         internal virtual CreateChannelResponse CreateChannel(CreateChannelRequest request)
@@ -609,6 +641,38 @@ namespace Amazon.MediaLive
             var unmarshaller = DescribeReservationResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeReservationRequest,DescribeReservationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeSchedule
+
+        internal virtual DescribeScheduleResponse DescribeSchedule(DescribeScheduleRequest request)
+        {
+            var marshaller = DescribeScheduleRequestMarshaller.Instance;
+            var unmarshaller = DescribeScheduleResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeScheduleRequest,DescribeScheduleResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSchedule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSchedule operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeSchedule">REST API Reference for DescribeSchedule Operation</seealso>
+        public virtual Task<DescribeScheduleResponse> DescribeScheduleAsync(DescribeScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeScheduleRequestMarshaller.Instance;
+            var unmarshaller = DescribeScheduleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeScheduleRequest,DescribeScheduleResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
