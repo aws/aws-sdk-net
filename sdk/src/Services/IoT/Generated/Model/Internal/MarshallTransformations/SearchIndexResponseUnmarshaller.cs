@@ -57,6 +57,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("thingGroups", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ThingGroupDocument, ThingGroupDocumentUnmarshaller>(ThingGroupDocumentUnmarshaller.Instance);
+                    response.ThingGroups = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("things", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<ThingDocument, ThingDocumentUnmarshaller>(ThingDocumentUnmarshaller.Instance);

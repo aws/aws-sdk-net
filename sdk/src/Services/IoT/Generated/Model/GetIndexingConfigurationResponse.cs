@@ -32,7 +32,26 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class GetIndexingConfigurationResponse : AmazonWebServiceResponse
     {
+        private ThingGroupIndexingConfiguration _thingGroupIndexingConfiguration;
         private ThingIndexingConfiguration _thingIndexingConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property ThingGroupIndexingConfiguration. 
+        /// <para>
+        /// The index configuration.
+        /// </para>
+        /// </summary>
+        public ThingGroupIndexingConfiguration ThingGroupIndexingConfiguration
+        {
+            get { return this._thingGroupIndexingConfiguration; }
+            set { this._thingGroupIndexingConfiguration = value; }
+        }
+
+        // Check to see if ThingGroupIndexingConfiguration property is set
+        internal bool IsSetThingGroupIndexingConfiguration()
+        {
+            return this._thingGroupIndexingConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ThingIndexingConfiguration. 

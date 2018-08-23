@@ -1269,7 +1269,6 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.SearchIndexRequest.QueryString</property>
     <min>1</min>
-    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.SetDefaultAuthorizerRequest.AuthorizerName</property>
@@ -1931,6 +1930,22 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ThingDocument.ThingTypeName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ThingGroupDocument.ThingGroupDescription</property>
+    <max>2028</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ThingGroupDocument.ThingGroupId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ThingGroupDocument.ThingGroupName</property>
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9:_-]+</pattern>

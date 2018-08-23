@@ -65,6 +65,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetThingGroupIndexingConfiguration())
+                {
+                    context.Writer.WritePropertyName("thingGroupIndexingConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ThingGroupIndexingConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ThingGroupIndexingConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetThingIndexingConfiguration())
                 {
                     context.Writer.WritePropertyName("thingIndexingConfiguration");

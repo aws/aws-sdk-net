@@ -13610,8 +13610,8 @@
         "members": {
           "endpointType": {
             "type": "string",
-            "zonbookDocumentation": "\n         <simpara>The endpoint type.</simpara>\n      ",
-            "documentation": "\n         <p>The endpoint type.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>The endpoint type (such as <code>iot:Data</code>,\n        <code>iot:CredentialProvider</code> and <code>iot:Jobs</code>). </simpara>\n      ",
+            "documentation": "\n         <p>The endpoint type (such as <code>iot:Data</code>,\n        <code>iot:CredentialProvider</code> and <code>iot:Jobs</code>). </p>\n      ",
             "location": "uri",
             "shape_name": "EndpointType"
           }
@@ -19788,8 +19788,8 @@
           "indexName": {
             "type": "string",
             "pattern": "[a-zA-Z0-9:_-]+",
-            "zonbookDocumentation": "\n        <simpara>The index name.</simpara>\n      ",
-            "documentation": "\n        <p>The index name.</p>\n      ",
+            "zonbookDocumentation": "\n\t\t       <simpara>The index name.</simpara>\n\t     ",
+            "documentation": "\n\t\t       <p>The index name.</p>\n\t     ",
             "location": "uri",
             "required": true,
             "shape_name": "IndexName",
@@ -19806,8 +19806,8 @@
           "indexName": {
             "type": "string",
             "pattern": "[a-zA-Z0-9:_-]+",
-            "zonbookDocumentation": "\n        <simpara>The index name.</simpara>\n      ",
-            "documentation": "\n        <p>The index name.</p>\n      ",
+            "zonbookDocumentation": "\n\t\t       <simpara>The index name.</simpara>\n\t     ",
+            "documentation": "\n\t\t       <p>The index name.</p>\n\t     ",
             "shape_name": "IndexName",
             "min_length": 1,
             "max_length": 128
@@ -19819,14 +19819,14 @@
               "BUILDING",
               "REBUILDING"
             ],
-            "zonbookDocumentation": "\n        <simpara>The index status.</simpara>\n      ",
-            "documentation": "\n        <p>The index status.</p>\n      ",
+            "zonbookDocumentation": "\n\t\t       <simpara>The index status.</simpara>\n\t     ",
+            "documentation": "\n\t\t       <p>The index status.</p>\n\t     ",
             "shape_name": "IndexStatus"
           },
           "schema": {
             "type": "string",
-            "zonbookDocumentation": "\n        <simpara>Contains a value that specifies the type of indexing performed. Valid values are:</simpara>\n        <orderedlist>\n            <listitem>\n                <simpara>REGISTRY – Your thing index will contain only registry data.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>REGISTRY_AND_SHADOW - Your thing index will contain registry and shadow data.</simpara>\n            </listitem>\n        </orderedlist>\n      ",
-            "documentation": "\n        <p>Contains a value that specifies the type of indexing performed. Valid values are:</p>\n        <ol>\n            <li>\n                <p>REGISTRY – Your thing index will contain only registry data.</p>\n            </li>\n            <li>\n                <p>REGISTRY_AND_SHADOW - Your thing index will contain registry and shadow data.</p>\n            </li>\n         </ol>\n      ",
+            "zonbookDocumentation": "\n\t\t       <simpara>Contains a value that specifies the type of indexing performed. Valid values are:</simpara>\n\t\t       <orderedlist>\n\t\t\t         <listitem>\n\t\t\t\t           <simpara>REGISTRY – Your thing index will contain only registry data.</simpara>\n\t\t\t         </listitem>\n\t\t\t         <listitem>\n\t\t\t\t           <simpara>REGISTRY_AND_SHADOW - Your thing index will contain registry and shadow data.</simpara>\n\t\t\t         </listitem>\n\t\t       </orderedlist>\n\t     ",
+            "documentation": "\n\t\t       <p>Contains a value that specifies the type of indexing performed. Valid values are:</p>\n\t\t       <ol>\n            <li>\n\t\t\t\t           <p>REGISTRY – Your thing index will contain only registry data.</p>\n\t\t\t         </li>\n            <li>\n\t\t\t\t           <p>REGISTRY_AND_SHADOW - Your thing index will contain registry and shadow data.</p>\n\t\t\t         </li>\n         </ol>\n\t     ",
             "shape_name": "IndexSchema"
           }
         },
@@ -19919,7 +19919,7 @@
           "shape_name": "ResourceNotFoundException"
         }
       ],
-      "documentation": "\n        <p>Describes a search index.</p>\n      "
+      "documentation": "\n\t\t       <p>Describes a search index.</p>\n\t     "
     },
     "ListIndices": {
       "name": "ListIndices",
@@ -19932,15 +19932,15 @@
         "members": {
           "nextToken": {
             "type": "string",
-            "zonbookDocumentation": "\n        <simpara>The token used to get the next set of results, or <emphasis role=\"bold\">null</emphasis> if there are no\n            additional results.</simpara>\n      ",
-            "documentation": "\n        <p>The token used to get the next set of results, or <b>null</b> if there are no\n            additional results.</p>\n      ",
+            "zonbookDocumentation": "\n\t\t       <simpara>The token used to get the next set of results, or <emphasis role=\"bold\">null</emphasis> if there are no\n\t\t\tadditional results.</simpara>\n\t     ",
+            "documentation": "\n\t\t       <p>The token used to get the next set of results, or <b>null</b> if there are no\n\t\t\tadditional results.</p>\n\t     ",
             "location": "uri",
             "shape_name": "NextToken"
           },
           "maxResults": {
             "type": "integer",
-            "zonbookDocumentation": "\n        <simpara>The maximum number of results to return at one time.</simpara>\n      ",
-            "documentation": "\n        <p>The maximum number of results to return at one time.</p>\n      ",
+            "zonbookDocumentation": "\n\t\t       <simpara>The maximum number of results to return at one time.</simpara>\n\t     ",
+            "documentation": "\n\t\t       <p>The maximum number of results to return at one time.</p>\n\t     ",
             "location": "uri",
             "shape_name": "QueryMaxResults",
             "min_length": 1,
@@ -19955,8 +19955,8 @@
         "members": {
           "indexNames": {
             "type": "list",
-            "zonbookDocumentation": "\n        <simpara>The index names.</simpara>\n      ",
-            "documentation": "\n        <p>The index names.</p>\n      ",
+            "zonbookDocumentation": "\n\t\t       <simpara>The index names.</simpara>\n\t     ",
+            "documentation": "\n\t\t       <p>The index names.</p>\n\t     ",
             "shape_name": "IndexNamesList",
             "members": {
               "type": "string",
@@ -19969,8 +19969,8 @@
           },
           "nextToken": {
             "type": "string",
-            "zonbookDocumentation": "\n        <simpara>The token used to get the next set of results, or <emphasis role=\"bold\">null</emphasis> if there are no\n            additional results.</simpara>\n      ",
-            "documentation": "\n        <p>The token used to get the next set of results, or <b>null</b> if there are no\n            additional results.</p>\n      ",
+            "zonbookDocumentation": "\n\t\t       <simpara>The token used to get the next set of results, or <emphasis role=\"bold\">null</emphasis> if there are no\n\t\t\tadditional results.</simpara>\n\t     ",
+            "documentation": "\n\t\t       <p>The token used to get the next set of results, or <b>null</b> if there are no\n\t\t\tadditional results.</p>\n\t     ",
             "shape_name": "NextToken"
           }
         },
@@ -20049,7 +20049,7 @@
           "shape_name": "InternalFailureException"
         }
       ],
-      "documentation": "\n        <p>Lists the search indices.</p>\n      "
+      "documentation": "\n\t\t       <p>Lists the search indices.</p>\n\t     "
     },
     "SearchIndex": {
       "name": "SearchIndex",
@@ -20063,39 +20063,38 @@
           "indexName": {
             "type": "string",
             "pattern": "[a-zA-Z0-9:_-]+",
-            "zonbookDocumentation": "\n        <simpara>The search index name.</simpara>\n      ",
-            "documentation": "\n        <p>The search index name.</p>\n      ",
+            "zonbookDocumentation": "\n\t\t       <simpara>The search index name.</simpara>\n\t     ",
+            "documentation": "\n\t\t       <p>The search index name.</p>\n\t     ",
             "shape_name": "IndexName",
             "min_length": 1,
             "max_length": 128
           },
           "queryString": {
             "type": "string",
-            "zonbookDocumentation": "\n        <simpara>The search query string.</simpara>\n      ",
-            "documentation": "\n        <p>The search query string.</p>\n      ",
+            "zonbookDocumentation": "\n\t\t       <simpara>The search query string.</simpara>\n\t     ",
+            "documentation": "\n\t\t       <p>The search query string.</p>\n\t     ",
             "required": true,
             "shape_name": "QueryString",
-            "min_length": 1,
-            "max_length": 1000
+            "min_length": 1
           },
           "nextToken": {
             "type": "string",
-            "zonbookDocumentation": "\n        <simpara>The token used to get the next set of results, or <emphasis role=\"bold\">null</emphasis> if there are no\n            additional results.</simpara>\n      ",
-            "documentation": "\n        <p>The token used to get the next set of results, or <b>null</b> if there are no\n            additional results.</p>\n      ",
+            "zonbookDocumentation": "\n\t\t       <simpara>The token used to get the next set of results, or <emphasis role=\"bold\">null</emphasis> if there are no\n\t\t\tadditional results.</simpara>\n\t     ",
+            "documentation": "\n\t\t       <p>The token used to get the next set of results, or <b>null</b> if there are no\n\t\t\tadditional results.</p>\n\t     ",
             "shape_name": "NextToken"
           },
           "maxResults": {
             "type": "integer",
-            "zonbookDocumentation": "\n        <simpara>The maximum number of results to return at one time.</simpara>\n      ",
-            "documentation": "\n        <p>The maximum number of results to return at one time.</p>\n      ",
+            "zonbookDocumentation": "\n\t\t       <simpara>The maximum number of results to return at one time.</simpara>\n\t     ",
+            "documentation": "\n\t\t       <p>The maximum number of results to return at one time.</p>\n\t     ",
             "shape_name": "QueryMaxResults",
             "min_length": 1,
             "max_length": 500
           },
           "queryVersion": {
             "type": "string",
-            "zonbookDocumentation": "\n        <simpara>The query version.</simpara>\n      ",
-            "documentation": "\n        <p>The query version.</p>\n      ",
+            "zonbookDocumentation": "\n\t\t       <simpara>The query version.</simpara>\n\t     ",
+            "documentation": "\n\t\t       <p>The query version.</p>\n\t     ",
             "shape_name": "QueryVersion"
           }
         },
@@ -20107,14 +20106,14 @@
         "members": {
           "nextToken": {
             "type": "string",
-            "zonbookDocumentation": "\n        <simpara>The token used to get the next set of results, or <emphasis role=\"bold\">null</emphasis> if there are no\n            additional results.</simpara>\n      ",
-            "documentation": "\n        <p>The token used to get the next set of results, or <b>null</b> if there are no\n            additional results.</p>\n      ",
+            "zonbookDocumentation": "\n\t\t       <simpara>The token used to get the next set of results, or <emphasis role=\"bold\">null</emphasis> if there are no\n\t\t\tadditional results.</simpara>\n\t     ",
+            "documentation": "\n\t\t       <p>The token used to get the next set of results, or <b>null</b> if there are no\n\t\t\tadditional results.</p>\n\t     ",
             "shape_name": "NextToken"
           },
           "things": {
             "type": "list",
-            "zonbookDocumentation": "\n        <simpara>The things that match the search query.</simpara>\n      ",
-            "documentation": "\n        <p>The things that match the search query.</p>\n      ",
+            "zonbookDocumentation": "\n\t\t       <simpara>The things that match the search query.</simpara>\n\t     ",
+            "documentation": "\n\t\t       <p>The things that match the search query.</p>\n\t     ",
             "shape_name": "ThingDocumentList",
             "members": {
               "type": "structure",
@@ -20122,31 +20121,31 @@
                 "thingName": {
                   "type": "string",
                   "pattern": "[a-zA-Z0-9:_-]+",
-                  "zonbookDocumentation": "\n        <simpara>The thing name.</simpara>\n      ",
-                  "documentation": "\n        <p>The thing name.</p>\n      ",
+                  "zonbookDocumentation": "\n\t\t       <simpara>The thing name.</simpara>\n\t     ",
+                  "documentation": "\n\t\t       <p>The thing name.</p>\n\t     ",
                   "shape_name": "ThingName",
                   "min_length": 1,
                   "max_length": 128
                 },
                 "thingId": {
                   "type": "string",
-                  "zonbookDocumentation": "\n        <simpara>The thing ID.</simpara>\n      ",
-                  "documentation": "\n        <p>The thing ID.</p>\n      ",
+                  "zonbookDocumentation": "\n\t\t       <simpara>The thing ID.</simpara>\n\t     ",
+                  "documentation": "\n\t\t       <p>The thing ID.</p>\n\t     ",
                   "shape_name": "ThingId"
                 },
                 "thingTypeName": {
                   "type": "string",
                   "pattern": "[a-zA-Z0-9:_-]+",
-                  "zonbookDocumentation": "\n        <simpara>The thing type name.</simpara>\n      ",
-                  "documentation": "\n        <p>The thing type name.</p>\n      ",
+                  "zonbookDocumentation": "\n\t\t       <simpara>The thing type name.</simpara>\n\t     ",
+                  "documentation": "\n\t\t       <p>The thing type name.</p>\n\t     ",
                   "shape_name": "ThingTypeName",
                   "min_length": 1,
                   "max_length": 128
                 },
                 "thingGroupNames": {
                   "type": "list",
-                  "zonbookDocumentation": "\n        <simpara>Thing group names.</simpara>\n      ",
-                  "documentation": "\n        <p>Thing group names.</p>\n      ",
+                  "zonbookDocumentation": "\n\t\t       <simpara>Thing group names.</simpara>\n\t     ",
+                  "documentation": "\n\t\t       <p>Thing group names.</p>\n\t     ",
                   "shape_name": "ThingGroupNameList",
                   "members": {
                     "type": "string",
@@ -20159,8 +20158,8 @@
                 },
                 "attributes": {
                   "type": "map",
-                  "zonbookDocumentation": "\n        <simpara>The attributes.</simpara>\n      ",
-                  "documentation": "\n        <p>The attributes.</p>\n      ",
+                  "zonbookDocumentation": "\n\t\t       <simpara>The attributes.</simpara>\n\t     ",
+                  "documentation": "\n\t\t       <p>The attributes.</p>\n\t     ",
                   "shape_name": "Attributes",
                   "keys": {
                     "type": "string",
@@ -20179,14 +20178,88 @@
                 },
                 "shadow": {
                   "type": "string",
-                  "zonbookDocumentation": "\n        <simpara>The shadow.</simpara>\n      ",
-                  "documentation": "\n        <p>The shadow.</p>\n      ",
+                  "zonbookDocumentation": "\n\t\t       <simpara>The shadow.</simpara>\n\t     ",
+                  "documentation": "\n\t\t       <p>The shadow.</p>\n\t     ",
                   "shape_name": "JsonDocument"
                 }
               },
-              "zonbookDocumentation": "\n        <simpara>The thing search index document.</simpara>\n      ",
-              "documentation": "\n        <p>The thing search index document.</p>\n      ",
+              "zonbookDocumentation": "\n\t\t       <simpara>The thing search index document.</simpara>\n\t     ",
+              "documentation": "\n\t\t       <p>The thing search index document.</p>\n\t     ",
               "shape_name": "ThingDocument"
+            }
+          },
+          "thingGroups": {
+            "type": "list",
+            "zonbookDocumentation": "\n\t\t       <para>The thing groups that match the search query.</para>\n\t     ",
+            "documentation": "\n\t\t       <p>The thing groups that match the search query.</p>\n\t     ",
+            "shape_name": "ThingGroupDocumentList",
+            "members": {
+              "type": "structure",
+              "members": {
+                "thingGroupName": {
+                  "type": "string",
+                  "pattern": "[a-zA-Z0-9:_-]+",
+                  "zonbookDocumentation": "\n\t\t       <para>The thing group name.</para>\n\t     ",
+                  "documentation": "\n\t\t       <p>The thing group name.</p>\n\t     ",
+                  "shape_name": "ThingGroupName",
+                  "min_length": 1,
+                  "max_length": 128
+                },
+                "thingGroupId": {
+                  "type": "string",
+                  "pattern": "[a-zA-Z0-9\\-]+",
+                  "zonbookDocumentation": "\n\t\t       <para>The thing group ID.</para>\n\t     ",
+                  "documentation": "\n\t\t       <p>The thing group ID.</p>\n\t     ",
+                  "shape_name": "ThingGroupId",
+                  "min_length": 1,
+                  "max_length": 128
+                },
+                "thingGroupDescription": {
+                  "type": "string",
+                  "pattern": "[\\p{Graph}\\x20]*",
+                  "zonbookDocumentation": "\n\t\t       <para>The thing group description.</para>\n\t     ",
+                  "documentation": "\n\t\t       <p>The thing group description.</p>\n\t     ",
+                  "shape_name": "ThingGroupDescription",
+                  "max_length": 2028
+                },
+                "attributes": {
+                  "type": "map",
+                  "zonbookDocumentation": "\n\t\t       <para>The thing group attributes.</para>\n\t     ",
+                  "documentation": "\n\t\t       <p>The thing group attributes.</p>\n\t     ",
+                  "shape_name": "Attributes",
+                  "keys": {
+                    "type": "string",
+                    "pattern": "[a-zA-Z0-9_.,@/:#-]+",
+                    "shape_name": "AttributeName",
+                    "documentation": null,
+                    "max_length": 128
+                  },
+                  "members": {
+                    "type": "string",
+                    "pattern": "[a-zA-Z0-9_.,@/:#-]*",
+                    "shape_name": "AttributeValue",
+                    "documentation": null,
+                    "max_length": 800
+                  }
+                },
+                "parentGroupNames": {
+                  "type": "list",
+                  "zonbookDocumentation": "\n\t\t       <para>Parent group names.</para>\n\t     ",
+                  "documentation": "\n\t\t       <p>Parent group names.</p>\n\t     ",
+                  "shape_name": "ThingGroupNameList",
+                  "members": {
+                    "type": "string",
+                    "pattern": "[a-zA-Z0-9:_-]+",
+                    "shape_name": "ThingGroupName",
+                    "documentation": null,
+                    "min_length": 1,
+                    "max_length": 128
+                  }
+                }
+              },
+              "zonbookDocumentation": "\n\t\t       <para>The thing group search index document.</para>\n\t     ",
+              "documentation": "\n\t\t       <p>The thing group search index document.</p>\n\t     ",
+              "shape_name": "ThingGroupDocument"
             }
           }
         },
@@ -20283,13 +20356,13 @@
           "members": {
             "message": {
               "type": "string",
-              "zonbookDocumentation": "\n         <simpara>The message for the exception.</simpara>\n      ",
-              "documentation": "\n         <p>The message for the exception.</p>\n      ",
+              "zonbookDocumentation": "\n\t\t       <simpara>The message for the exception.</simpara>\n\t     ",
+              "documentation": "\n\t\t       <p>The message for the exception.</p>\n\t     ",
               "shape_name": "errorMessage"
             }
           },
-          "zonbookDocumentation": "\n        <simpara>The query is invalid.</simpara>\n      ",
-          "documentation": "\n        <p>The query is invalid.</p>\n      ",
+          "zonbookDocumentation": "\n\t\t       <simpara>The query is invalid.</simpara>\n\t     ",
+          "documentation": "\n\t\t       <p>The query is invalid.</p>\n\t     ",
           "shape_name": "InvalidQueryException"
         },
         {
@@ -20297,17 +20370,17 @@
           "members": {
             "message": {
               "type": "string",
-              "zonbookDocumentation": "\n         <simpara>The message for the exception.</simpara>\n      ",
-              "documentation": "\n         <p>The message for the exception.</p>\n      ",
+              "zonbookDocumentation": "\n\t\t       <simpara>The message for the exception.</simpara>\n\t     ",
+              "documentation": "\n\t\t       <p>The message for the exception.</p>\n\t     ",
               "shape_name": "errorMessage"
             }
           },
-          "zonbookDocumentation": "\n        <simpara>The index is not ready.</simpara>\n      ",
-          "documentation": "\n        <p>The index is not ready.</p>\n      ",
+          "zonbookDocumentation": "\n\t\t       <simpara>The index is not ready.</simpara>\n\t     ",
+          "documentation": "\n\t\t       <p>The index is not ready.</p>\n\t     ",
           "shape_name": "IndexNotReadyException"
         }
       ],
-      "documentation": "\n        <p>The query search index.</p>\n      "
+      "documentation": "\n\t\t       <p>The query search index.</p>\n\t     "
     },
     "UpdateIndexingConfiguration": {
       "name": "UpdateIndexingConfiguration",
@@ -20328,14 +20401,34 @@
                   "REGISTRY",
                   "REGISTRY_AND_SHADOW"
                 ],
-                "zonbookDocumentation": "\n        <simpara>Thing indexing mode. Valid values are: </simpara>\n            <itemizedlist>\n                <listitem>\n                    <simpara>REGISTRY – Your thing index will contain only registry data.</simpara>\n                </listitem>\n                <listitem>\n                    <simpara>REGISTRY_AND_SHADOW - Your thing index will contain registry and shadow data.</simpara>\n                </listitem>\n                <listitem>\n                    <simpara>OFF - Thing indexing is disabled.</simpara>\n                </listitem>\n            </itemizedlist>\n      ",
-                "documentation": "\n        <p>Thing indexing mode. Valid values are: </p>\n            <ul>\n            <li>\n                    <p>REGISTRY – Your thing index will contain only registry data.</p>\n                </li>\n            <li>\n                    <p>REGISTRY_AND_SHADOW - Your thing index will contain registry and shadow data.</p>\n                </li>\n            <li>\n                    <p>OFF - Thing indexing is disabled.</p>\n                </li>\n         </ul>\n      ",
+                "zonbookDocumentation": "\n\t\t       <simpara>Thing indexing mode. Valid values are: </simpara>\n\t\t       <itemizedlist>\n\t\t\t         <listitem>\n\t\t\t\t           <simpara>REGISTRY – Your thing index will contain only registry data.</simpara>\n\t\t\t         </listitem>\n\t\t\t         <listitem>\n\t\t\t\t           <simpara>REGISTRY_AND_SHADOW - Your thing index will contain registry and shadow data.</simpara>\n\t\t\t         </listitem>\n\t\t\t         <listitem>\n\t\t\t\t           <simpara>OFF - Thing indexing is disabled.</simpara>\n\t\t\t         </listitem>\n\t\t       </itemizedlist>\n\t     ",
+                "documentation": "\n\t\t       <p>Thing indexing mode. Valid values are: </p>\n\t\t       <ul>\n            <li>\n\t\t\t\t           <p>REGISTRY – Your thing index will contain only registry data.</p>\n\t\t\t         </li>\n            <li>\n\t\t\t\t           <p>REGISTRY_AND_SHADOW - Your thing index will contain registry and shadow data.</p>\n\t\t\t         </li>\n            <li>\n\t\t\t\t           <p>OFF - Thing indexing is disabled.</p>\n\t\t\t         </li>\n         </ul>\n\t     ",
+                "required": true,
                 "shape_name": "ThingIndexingMode"
               }
             },
-            "zonbookDocumentation": "\n        <simpara>Thing indexing configuration.</simpara>\n      ",
-            "documentation": "\n        <p>Thing indexing configuration.</p>\n      ",
+            "zonbookDocumentation": "\n\t\t       <simpara>Thing indexing configuration.</simpara>\n\t     ",
+            "documentation": "\n\t\t       <p>Thing indexing configuration.</p>\n\t     ",
             "shape_name": "ThingIndexingConfiguration"
+          },
+          "thingGroupIndexingConfiguration": {
+            "type": "structure",
+            "members": {
+              "thingGroupIndexingMode": {
+                "type": "string",
+                "enum": [
+                  "OFF",
+                  "ON"
+                ],
+                "zonbookDocumentation": "\n\t\t       <para>Thing group indexing mode.</para>\n\t     ",
+                "documentation": "\n\t\t       <p>Thing group indexing mode.</p>\n\t     ",
+                "required": true,
+                "shape_name": "ThingGroupIndexingMode"
+              }
+            },
+            "zonbookDocumentation": "\n\t\t       <para>Thing group indexing configuration.</para>\n\t     ",
+            "documentation": "\n\t\t       <p>Thing group indexing configuration.</p>\n\t     ",
+            "shape_name": "ThingGroupIndexingConfiguration"
           }
         },
         "shape_name": "UpdateIndexingConfigurationRequest",
@@ -20420,7 +20513,7 @@
           "shape_name": "InternalFailureException"
         }
       ],
-      "documentation": "\n        <p>Updates the search configuration.</p>\n      "
+      "documentation": "\n\t\t       <p>Updates the search configuration.</p>\n\t     "
     },
     "GetIndexingConfiguration": {
       "name": "GetIndexingConfiguration",
@@ -20448,14 +20541,34 @@
                   "REGISTRY",
                   "REGISTRY_AND_SHADOW"
                 ],
-                "zonbookDocumentation": "\n        <simpara>Thing indexing mode. Valid values are: </simpara>\n            <itemizedlist>\n                <listitem>\n                    <simpara>REGISTRY – Your thing index will contain only registry data.</simpara>\n                </listitem>\n                <listitem>\n                    <simpara>REGISTRY_AND_SHADOW - Your thing index will contain registry and shadow data.</simpara>\n                </listitem>\n                <listitem>\n                    <simpara>OFF - Thing indexing is disabled.</simpara>\n                </listitem>\n            </itemizedlist>\n      ",
-                "documentation": "\n        <p>Thing indexing mode. Valid values are: </p>\n            <ul>\n            <li>\n                    <p>REGISTRY – Your thing index will contain only registry data.</p>\n                </li>\n            <li>\n                    <p>REGISTRY_AND_SHADOW - Your thing index will contain registry and shadow data.</p>\n                </li>\n            <li>\n                    <p>OFF - Thing indexing is disabled.</p>\n                </li>\n         </ul>\n      ",
+                "zonbookDocumentation": "\n\t\t       <simpara>Thing indexing mode. Valid values are: </simpara>\n\t\t       <itemizedlist>\n\t\t\t         <listitem>\n\t\t\t\t           <simpara>REGISTRY – Your thing index will contain only registry data.</simpara>\n\t\t\t         </listitem>\n\t\t\t         <listitem>\n\t\t\t\t           <simpara>REGISTRY_AND_SHADOW - Your thing index will contain registry and shadow data.</simpara>\n\t\t\t         </listitem>\n\t\t\t         <listitem>\n\t\t\t\t           <simpara>OFF - Thing indexing is disabled.</simpara>\n\t\t\t         </listitem>\n\t\t       </itemizedlist>\n\t     ",
+                "documentation": "\n\t\t       <p>Thing indexing mode. Valid values are: </p>\n\t\t       <ul>\n            <li>\n\t\t\t\t           <p>REGISTRY – Your thing index will contain only registry data.</p>\n\t\t\t         </li>\n            <li>\n\t\t\t\t           <p>REGISTRY_AND_SHADOW - Your thing index will contain registry and shadow data.</p>\n\t\t\t         </li>\n            <li>\n\t\t\t\t           <p>OFF - Thing indexing is disabled.</p>\n\t\t\t         </li>\n         </ul>\n\t     ",
+                "required": true,
                 "shape_name": "ThingIndexingMode"
               }
             },
-            "zonbookDocumentation": "\n        <simpara>Thing indexing configuration.</simpara>\n      ",
-            "documentation": "\n        <p>Thing indexing configuration.</p>\n      ",
+            "zonbookDocumentation": "\n\t\t       <simpara>Thing indexing configuration.</simpara>\n\t     ",
+            "documentation": "\n\t\t       <p>Thing indexing configuration.</p>\n\t     ",
             "shape_name": "ThingIndexingConfiguration"
+          },
+          "thingGroupIndexingConfiguration": {
+            "type": "structure",
+            "members": {
+              "thingGroupIndexingMode": {
+                "type": "string",
+                "enum": [
+                  "OFF",
+                  "ON"
+                ],
+                "zonbookDocumentation": "\n\t\t       <para>Thing group indexing mode.</para>\n\t     ",
+                "documentation": "\n\t\t       <p>Thing group indexing mode.</p>\n\t     ",
+                "required": true,
+                "shape_name": "ThingGroupIndexingMode"
+              }
+            },
+            "zonbookDocumentation": "\n\t\t       <para>The index configuration.</para>\n\t     ",
+            "documentation": "\n\t\t       <p>The index configuration.</p>\n\t     ",
+            "shape_name": "ThingGroupIndexingConfiguration"
           }
         },
         "shape_name": "GetIndexingConfigurationResponse",
@@ -20533,7 +20646,7 @@
           "shape_name": "InternalFailureException"
         }
       ],
-      "documentation": "\n        <p>Gets the search configuration.</p>\n      "
+      "documentation": "\n\t\t       <p>Gets the search configuration.</p>\n\t     "
     },
     "RegisterThing": {
       "name": "RegisterThing",

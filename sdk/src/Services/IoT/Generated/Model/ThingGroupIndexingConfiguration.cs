@@ -28,30 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeEndpoint operation.
-    /// Returns a unique endpoint specific to the AWS account making the call.
+    /// Thing group indexing configuration.
     /// </summary>
-    public partial class DescribeEndpointRequest : AmazonIoTRequest
+    public partial class ThingGroupIndexingConfiguration
     {
-        private string _endpointType;
+        private ThingGroupIndexingMode _thingGroupIndexingMode;
 
         /// <summary>
-        /// Gets and sets the property EndpointType. 
+        /// Gets and sets the property ThingGroupIndexingMode. 
         /// <para>
-        /// The endpoint type (such as <code>iot:Data</code>, <code>iot:CredentialProvider</code>
-        /// and <code>iot:Jobs</code>). 
+        /// Thing group indexing mode.
         /// </para>
         /// </summary>
-        public string EndpointType
+        public ThingGroupIndexingMode ThingGroupIndexingMode
         {
-            get { return this._endpointType; }
-            set { this._endpointType = value; }
+            get { return this._thingGroupIndexingMode; }
+            set { this._thingGroupIndexingMode = value; }
         }
 
-        // Check to see if EndpointType property is set
-        internal bool IsSetEndpointType()
+        // Check to see if ThingGroupIndexingMode property is set
+        internal bool IsSetThingGroupIndexingMode()
         {
-            return this._endpointType != null;
+            return this._thingGroupIndexingMode != null;
         }
 
     }
