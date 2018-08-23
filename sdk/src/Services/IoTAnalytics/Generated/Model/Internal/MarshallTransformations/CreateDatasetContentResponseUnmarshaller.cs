@@ -47,6 +47,17 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         {
             CreateDatasetContentResponse response = new CreateDatasetContentResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("versionId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.VersionId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }

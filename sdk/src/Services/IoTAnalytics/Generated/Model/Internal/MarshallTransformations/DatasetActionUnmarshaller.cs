@@ -70,6 +70,12 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
                     unmarshalledObject.ActionName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("containerAction", targetDepth))
+                {
+                    var unmarshaller = ContainerDatasetActionUnmarshaller.Instance;
+                    unmarshalledObject.ContainerAction = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("queryAction", targetDepth))
                 {
                     var unmarshaller = SqlQueryDatasetActionUnmarshaller.Instance;

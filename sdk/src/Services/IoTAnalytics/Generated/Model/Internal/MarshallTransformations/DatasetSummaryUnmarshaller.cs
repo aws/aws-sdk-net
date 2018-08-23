@@ -64,6 +64,12 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("actions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DatasetActionSummary, DatasetActionSummaryUnmarshaller>(DatasetActionSummaryUnmarshaller.Instance);
+                    unmarshalledObject.Actions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("creationTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -86,6 +92,12 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("triggers", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DatasetTrigger, DatasetTriggerUnmarshaller>(DatasetTriggerUnmarshaller.Instance);
+                    unmarshalledObject.Triggers = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

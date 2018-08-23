@@ -32,6 +32,25 @@ namespace Amazon.IoTAnalytics.Model
     /// </summary>
     public partial class CreateDatasetContentResponse : AmazonWebServiceResponse
     {
+        private string _versionId;
+
+        /// <summary>
+        /// Gets and sets the property VersionId. 
+        /// <para>
+        /// The version ID of the data set contents which are being created.
+        /// </para>
+        /// </summary>
+        public string VersionId
+        {
+            get { return this._versionId; }
+            set { this._versionId = value; }
+        }
+
+        // Check to see if VersionId property is set
+        internal bool IsSetVersionId()
+        {
+            return this._versionId != null;
+        }
 
     }
 }

@@ -33,12 +33,13 @@ namespace Amazon.IoTAnalytics.Model
     public partial class DatasetAction
     {
         private string _actionName;
+        private ContainerDatasetAction _containerAction;
         private SqlQueryDatasetAction _queryAction;
 
         /// <summary>
         /// Gets and sets the property ActionName. 
         /// <para>
-        /// The name of the data set action.
+        /// The name of the data set action by which data set contents are automatically created.
         /// </para>
         /// </summary>
         public string ActionName
@@ -51,6 +52,26 @@ namespace Amazon.IoTAnalytics.Model
         internal bool IsSetActionName()
         {
             return this._actionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContainerAction. 
+        /// <para>
+        /// Information which allows the system to run a containerized application in order to
+        /// create the data set contents. The application must be in a Docker container along
+        /// with any needed support libraries.
+        /// </para>
+        /// </summary>
+        public ContainerDatasetAction ContainerAction
+        {
+            get { return this._containerAction; }
+            set { this._containerAction = value; }
+        }
+
+        // Check to see if ContainerAction property is set
+        internal bool IsSetContainerAction()
+        {
+            return this._containerAction != null;
         }
 
         /// <summary>

@@ -45,6 +45,17 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DatasetTrigger requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetDataset())
+            {
+                context.Writer.WritePropertyName("dataset");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TriggeringDatasetMarshaller.Instance;
+                marshaller.Marshall(requestObject.Dataset, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSchedule())
             {
                 context.Writer.WritePropertyName("schedule");

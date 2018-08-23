@@ -79,6 +79,106 @@ namespace Amazon.IoTAnalytics
 
 
     /// <summary>
+    /// Constants used for properties of type ComputeType.
+    /// </summary>
+    public class ComputeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACU_1 for ComputeType
+        /// </summary>
+        public static readonly ComputeType ACU_1 = new ComputeType("ACU_1");
+        /// <summary>
+        /// Constant ACU_2 for ComputeType
+        /// </summary>
+        public static readonly ComputeType ACU_2 = new ComputeType("ACU_2");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ComputeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ComputeType FindValue(string value)
+        {
+            return FindValue<ComputeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ComputeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DatasetActionType.
+    /// </summary>
+    public class DatasetActionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONTAINER for DatasetActionType
+        /// </summary>
+        public static readonly DatasetActionType CONTAINER = new DatasetActionType("CONTAINER");
+        /// <summary>
+        /// Constant QUERY for DatasetActionType
+        /// </summary>
+        public static readonly DatasetActionType QUERY = new DatasetActionType("QUERY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DatasetActionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DatasetActionType FindValue(string value)
+        {
+            return FindValue<DatasetActionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DatasetActionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DatasetContentState.
     /// </summary>
     public class DatasetContentState : ConstantClass

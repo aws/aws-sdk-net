@@ -32,7 +32,26 @@ namespace Amazon.IoTAnalytics.Model
     /// </summary>
     public partial class DatasetTrigger
     {
+        private TriggeringDataset _dataset;
         private Schedule _schedule;
+
+        /// <summary>
+        /// Gets and sets the property Dataset. 
+        /// <para>
+        /// The data set whose content creation will trigger the creation of this data set's contents.
+        /// </para>
+        /// </summary>
+        public TriggeringDataset Dataset
+        {
+            get { return this._dataset; }
+            set { this._dataset = value; }
+        }
+
+        // Check to see if Dataset property is set
+        internal bool IsSetDataset()
+        {
+            return this._dataset != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Schedule. 

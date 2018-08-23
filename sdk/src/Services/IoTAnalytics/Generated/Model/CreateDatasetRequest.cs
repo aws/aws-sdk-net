@@ -30,26 +30,22 @@ namespace Amazon.IoTAnalytics.Model
     /// <summary>
     /// Container for the parameters to the CreateDataset operation.
     /// Creates a data set. A data set stores data retrieved from a data store by applying
-    /// an SQL action.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// This operation creates the skeleton of a data set. To populate the data set, call
-    /// "CreateDatasetContent".
-    /// </para>
-    ///  </note>
+    /// a "queryAction" (a SQL query) or a "containerAction" (executing a containerized application).
+    /// This operation creates the skeleton of a data set. The data set can be populated manually
+    /// by calling "CreateDatasetContent" or automatically according to a "trigger" you specify.
     /// </summary>
     public partial class CreateDatasetRequest : AmazonIoTAnalyticsRequest
     {
         private List<DatasetAction> _actions = new List<DatasetAction>();
         private string _datasetName;
+        private RetentionPeriod _retentionPeriod;
         private List<Tag> _tags = new List<Tag>();
         private List<DatasetTrigger> _triggers = new List<DatasetTrigger>();
 
         /// <summary>
         /// Gets and sets the property Actions. 
         /// <para>
-        /// A list of actions that create the data set. Only one action is supported at this time.
+        /// A list of actions that create the data set contents.
         /// </para>
         /// </summary>
         public List<DatasetAction> Actions
@@ -83,6 +79,26 @@ namespace Amazon.IoTAnalytics.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RetentionPeriod. 
+        /// <para>
+        /// [Optional] How long, in days, message data is kept for the data set. If not given
+        /// or set to null, the latest version of the dataset content plus the latest succeeded
+        /// version (if they are different) are retained for at most 90 days.
+        /// </para>
+        /// </summary>
+        public RetentionPeriod RetentionPeriod
+        {
+            get { return this._retentionPeriod; }
+            set { this._retentionPeriod = value; }
+        }
+
+        // Check to see if RetentionPeriod property is set
+        internal bool IsSetRetentionPeriod()
+        {
+            return this._retentionPeriod != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
         /// Metadata which can be used to manage the data set.
@@ -103,9 +119,9 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Triggers. 
         /// <para>
-        /// A list of triggers. A trigger causes data set content to be populated at a specified
-        /// time or time interval. The list of triggers can be empty or contain up to five <b>DataSetTrigger</b>
-        /// objects.
+        /// A list of triggers. A trigger causes data set contents to be populated at a specified
+        /// time interval or when another data set's contents are created. The list of triggers
+        /// can be empty or contain up to five <b>DataSetTrigger</b> objects.
         /// </para>
         /// </summary>
         public List<DatasetTrigger> Triggers

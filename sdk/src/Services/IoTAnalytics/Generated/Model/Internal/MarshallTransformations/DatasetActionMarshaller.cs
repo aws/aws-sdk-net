@@ -51,6 +51,17 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ActionName);
             }
 
+            if(requestObject.IsSetContainerAction())
+            {
+                context.Writer.WritePropertyName("containerAction");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ContainerDatasetActionMarshaller.Instance;
+                marshaller.Marshall(requestObject.ContainerAction, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetQueryAction())
             {
                 context.Writer.WritePropertyName("queryAction");

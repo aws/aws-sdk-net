@@ -87,6 +87,17 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DatasetName);
                 }
 
+                if(publicRequest.IsSetRetentionPeriod())
+                {
+                    context.Writer.WritePropertyName("retentionPeriod");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RetentionPeriodMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.RetentionPeriod, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");

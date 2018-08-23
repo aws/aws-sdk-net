@@ -32,12 +32,31 @@ namespace Amazon.IoTAnalytics.Model
     /// </summary>
     public partial class SqlQueryDatasetAction
     {
+        private List<QueryFilter> _filters = new List<QueryFilter>();
         private string _sqlQuery;
+
+        /// <summary>
+        /// Gets and sets the property Filters. 
+        /// <para>
+        /// Pre-filters applied to message data.
+        /// </para>
+        /// </summary>
+        public List<QueryFilter> Filters
+        {
+            get { return this._filters; }
+            set { this._filters = value; }
+        }
+
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
+        {
+            return this._filters != null && this._filters.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property SqlQuery. 
         /// <para>
-        /// An SQL query string.
+        /// A SQL query string.
         /// </para>
         /// </summary>
         public string SqlQuery

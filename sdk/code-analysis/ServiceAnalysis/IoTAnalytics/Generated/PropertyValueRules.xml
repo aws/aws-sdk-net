@@ -43,6 +43,11 @@
     <pattern>^[a-zA-Z0-9_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.CreateDatasetContentResponse.VersionId</property>
+    <min>7</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTAnalytics.Model.CreateDatastoreRequest.DatastoreName</property>
     <min>1</min>
     <max>128</max>
@@ -85,6 +90,11 @@
     <pattern>^[a-zA-Z0-9_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.DeleteDatasetContentRequest.VersionId</property>
+    <min>7</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTAnalytics.Model.DeleteDatastoreRequest.DatastoreName</property>
     <min>1</min>
     <max>128</max>
@@ -125,6 +135,11 @@
     <min>1</min>
     <max>128</max>
     <pattern>^[a-zA-Z0-9_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.GetDatasetContentRequest.VersionId</property>
+    <min>7</min>
+    <max>36</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTAnalytics.Model.ListChannelsRequest.MaxResults</property>
@@ -246,6 +261,15 @@
     <pattern>^[a-zA-Z0-9_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.ContainerDatasetAction.ExecutionRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.ContainerDatasetAction.Image</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTAnalytics.Model.Dataset.Name</property>
     <min>1</min>
     <max>128</max>
@@ -253,6 +277,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTAnalytics.Model.DatasetAction.ActionName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.DatasetActionSummary.ActionName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.DatasetContentVersionValue.DatasetName</property>
     <min>1</min>
     <max>128</max>
     <pattern>^[a-zA-Z0-9_]+$</pattern>
@@ -403,6 +439,10 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.OutputFileUriValue.FileName</property>
+    <pattern>[\w\.-]{1,255}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTAnalytics.Model.Pipeline.Name</property>
     <min>1</min>
     <max>128</max>
@@ -423,6 +463,11 @@
     <property>Amazon.IoTAnalytics.Model.RemoveAttributesActivity.Next</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.ResourceConfiguration.VolumeSizeInGB</property>
+    <min>1</min>
+    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTAnalytics.Model.RetentionPeriod.NumberOfDays</property>
@@ -447,5 +492,21 @@
     <property>Amazon.IoTAnalytics.Model.Tag.Value</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.TriggeringDataset.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.Variable.Name</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.Variable.StringValue</property>
+    <min>0</min>
+    <max>1024</max>
   </property-value-rule>
 </property-value-rules>

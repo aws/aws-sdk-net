@@ -64,6 +64,12 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("dataset", targetDepth))
+                {
+                    var unmarshaller = TriggeringDatasetUnmarshaller.Instance;
+                    unmarshalledObject.Dataset = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("schedule", targetDepth))
                 {
                     var unmarshaller = ScheduleUnmarshaller.Instance;

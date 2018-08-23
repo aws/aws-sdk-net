@@ -35,12 +35,13 @@ namespace Amazon.IoTAnalytics.Model
     {
         private List<DatasetAction> _actions = new List<DatasetAction>();
         private string _datasetName;
+        private RetentionPeriod _retentionPeriod;
         private List<DatasetTrigger> _triggers = new List<DatasetTrigger>();
 
         /// <summary>
         /// Gets and sets the property Actions. 
         /// <para>
-        /// A list of "DatasetAction" objects. Only one action is supported at this time.
+        /// A list of "DatasetAction" objects.
         /// </para>
         /// </summary>
         public List<DatasetAction> Actions
@@ -71,6 +72,24 @@ namespace Amazon.IoTAnalytics.Model
         internal bool IsSetDatasetName()
         {
             return this._datasetName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetentionPeriod. 
+        /// <para>
+        /// How long, in days, message data is kept for the data set.
+        /// </para>
+        /// </summary>
+        public RetentionPeriod RetentionPeriod
+        {
+            get { return this._retentionPeriod; }
+            set { this._retentionPeriod = value; }
+        }
+
+        // Check to see if RetentionPeriod property is set
+        internal bool IsSetRetentionPeriod()
+        {
+            return this._retentionPeriod != null;
         }
 
         /// <summary>

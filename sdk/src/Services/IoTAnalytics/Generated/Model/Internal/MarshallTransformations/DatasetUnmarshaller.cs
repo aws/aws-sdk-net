@@ -94,6 +94,12 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("retentionPeriod", targetDepth))
+                {
+                    var unmarshaller = RetentionPeriodUnmarshaller.Instance;
+                    unmarshalledObject.RetentionPeriod = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

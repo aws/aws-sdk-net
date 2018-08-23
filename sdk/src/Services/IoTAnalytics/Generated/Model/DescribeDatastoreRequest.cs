@@ -57,7 +57,8 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property IncludeStatistics. 
         /// <para>
-        /// If true, include statistics about the data store in the response.
+        /// If true, additional statistical information about the datastore is included in the
+        /// response.
         /// </para>
         /// </summary>
         public bool IncludeStatistics

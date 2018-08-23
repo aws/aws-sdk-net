@@ -198,14 +198,9 @@ namespace Amazon.IoTAnalytics
 
         /// <summary>
         /// Creates a data set. A data set stores data retrieved from a data store by applying
-        /// an SQL action.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// This operation creates the skeleton of a data set. To populate the data set, call
-        /// "CreateDatasetContent".
-        /// </para>
-        ///  </note>
+        /// a "queryAction" (a SQL query) or a "containerAction" (executing a containerized application).
+        /// This operation creates the skeleton of a data set. The data set can be populated manually
+        /// by calling "CreateDatasetContent" or automatically according to a "trigger" you specify.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataset service method.</param>
         /// 
@@ -250,7 +245,7 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Creates the content of a data set by applying an SQL action.
+        /// Creates the content of a data set by applying a SQL action.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDatasetContent service method.</param>
         /// 

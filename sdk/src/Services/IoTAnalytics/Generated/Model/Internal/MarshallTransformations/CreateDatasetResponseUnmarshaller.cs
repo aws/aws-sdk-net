@@ -63,6 +63,12 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
                     response.DatasetName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("retentionPeriod", targetDepth))
+                {
+                    var unmarshaller = RetentionPeriodUnmarshaller.Instance;
+                    response.RetentionPeriod = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

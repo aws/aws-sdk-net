@@ -34,6 +34,7 @@ namespace Amazon.IoTAnalytics.Model
     {
         private string _datasetArn;
         private string _datasetName;
+        private RetentionPeriod _retentionPeriod;
 
         /// <summary>
         /// Gets and sets the property DatasetArn. 
@@ -69,6 +70,24 @@ namespace Amazon.IoTAnalytics.Model
         internal bool IsSetDatasetName()
         {
             return this._datasetName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetentionPeriod. 
+        /// <para>
+        /// How long, in days, message data is kept for the data set.
+        /// </para>
+        /// </summary>
+        public RetentionPeriod RetentionPeriod
+        {
+            get { return this._retentionPeriod; }
+            set { this._retentionPeriod = value; }
+        }
+
+        // Check to see if RetentionPeriod property is set
+        internal bool IsSetRetentionPeriod()
+        {
+            return this._retentionPeriod != null;
         }
 
     }

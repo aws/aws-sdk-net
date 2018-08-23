@@ -39,7 +39,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Filter. 
         /// <para>
-        /// An expression that looks like an SQL WHERE clause that must return a Boolean value.
+        /// An expression that looks like a SQL WHERE clause that must return a Boolean value.
         /// </para>
         /// </summary>
         public string Filter

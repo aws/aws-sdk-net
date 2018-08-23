@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// Statistics information about the data store.
+    /// Statistical information about the data store.
     /// </summary>
     public partial class DatastoreStatistics
     {

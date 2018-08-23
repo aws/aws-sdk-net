@@ -45,6 +45,22 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SqlQueryDatasetAction requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetFilters())
+            {
+                context.Writer.WritePropertyName("filters");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectFiltersListValue in requestObject.Filters)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = QueryFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectFiltersListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetSqlQuery())
             {
                 context.Writer.WritePropertyName("sqlQuery");

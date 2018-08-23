@@ -32,10 +32,30 @@ namespace Amazon.IoTAnalytics.Model
     /// </summary>
     public partial class DatasetSummary
     {
+        private List<DatasetActionSummary> _actions = new List<DatasetActionSummary>();
         private DateTime? _creationTime;
         private string _datasetName;
         private DateTime? _lastUpdateTime;
         private DatasetStatus _status;
+        private List<DatasetTrigger> _triggers = new List<DatasetTrigger>();
+
+        /// <summary>
+        /// Gets and sets the property Actions. 
+        /// <para>
+        /// A list of "DataActionSummary" objects.
+        /// </para>
+        /// </summary>
+        public List<DatasetActionSummary> Actions
+        {
+            get { return this._actions; }
+            set { this._actions = value; }
+        }
+
+        // Check to see if Actions property is set
+        internal bool IsSetActions()
+        {
+            return this._actions != null && this._actions.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
@@ -107,6 +127,26 @@ namespace Amazon.IoTAnalytics.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Triggers. 
+        /// <para>
+        /// A list of triggers. A trigger causes data set content to be populated at a specified
+        /// time interval or when another data set is populated. The list of triggers can be empty
+        /// or contain up to five DataSetTrigger objects
+        /// </para>
+        /// </summary>
+        public List<DatasetTrigger> Triggers
+        {
+            get { return this._triggers; }
+            set { this._triggers = value; }
+        }
+
+        // Check to see if Triggers property is set
+        internal bool IsSetTriggers()
+        {
+            return this._triggers != null && this._triggers.Count > 0; 
         }
 
     }
