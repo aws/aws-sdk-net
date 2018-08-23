@@ -53,6 +53,7 @@ namespace Amazon.Rekognition.Model
     public partial class StartCelebrityRecognitionRequest : AmazonRekognitionRequest
     {
         private string _clientRequestToken;
+        private bool? _enablePersonTracking;
         private string _jobTag;
         private NotificationChannel _notificationChannel;
         private Video _video;
@@ -76,6 +77,21 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetClientRequestToken()
         {
             return this._clientRequestToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnablePersonTracking.
+        /// </summary>
+        public bool EnablePersonTracking
+        {
+            get { return this._enablePersonTracking.GetValueOrDefault(); }
+            set { this._enablePersonTracking = value; }
+        }
+
+        // Check to see if EnablePersonTracking property is set
+        internal bool IsSetEnablePersonTracking()
+        {
+            return this._enablePersonTracking.HasValue; 
         }
 
         /// <summary>

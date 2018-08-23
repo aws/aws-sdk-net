@@ -32,11 +32,44 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class GetContentModerationResponse : AmazonWebServiceResponse
     {
+        private int? _billableDurationSeconds;
+        private string _errorCode;
         private VideoJobStatus _jobStatus;
         private List<ContentModerationDetection> _moderationLabels = new List<ContentModerationDetection>();
         private string _nextToken;
         private string _statusMessage;
         private VideoMetadata _videoMetadata;
+        private List<Warning> _warnings = new List<Warning>();
+
+        /// <summary>
+        /// Gets and sets the property BillableDurationSeconds.
+        /// </summary>
+        public int BillableDurationSeconds
+        {
+            get { return this._billableDurationSeconds.GetValueOrDefault(); }
+            set { this._billableDurationSeconds = value; }
+        }
+
+        // Check to see if BillableDurationSeconds property is set
+        internal bool IsSetBillableDurationSeconds()
+        {
+            return this._billableDurationSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ErrorCode.
+        /// </summary>
+        public string ErrorCode
+        {
+            get { return this._errorCode; }
+            set { this._errorCode = value; }
+        }
+
+        // Check to see if ErrorCode property is set
+        internal bool IsSetErrorCode()
+        {
+            return this._errorCode != null;
+        }
 
         /// <summary>
         /// Gets and sets the property JobStatus. 
@@ -129,6 +162,21 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetVideoMetadata()
         {
             return this._videoMetadata != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Warnings.
+        /// </summary>
+        public List<Warning> Warnings
+        {
+            get { return this._warnings; }
+            set { this._warnings = value; }
+        }
+
+        // Check to see if Warnings property is set
+        internal bool IsSetWarnings()
+        {
+            return this._warnings != null && this._warnings.Count > 0; 
         }
 
     }

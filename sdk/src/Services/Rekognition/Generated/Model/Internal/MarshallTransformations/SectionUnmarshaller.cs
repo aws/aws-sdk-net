@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Face Object
+    /// Response Unmarshaller for Section Object
     /// </summary>  
-    public class FaceUnmarshaller : IUnmarshaller<Face, XmlUnmarshallerContext>, IUnmarshaller<Face, JsonUnmarshallerContext>
+    public class SectionUnmarshaller : IUnmarshaller<Section, XmlUnmarshallerContext>, IUnmarshaller<Section, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Face IUnmarshaller<Face, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Section IUnmarshaller<Section, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,27 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Face Unmarshall(JsonUnmarshallerContext context)
+        public Section Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Face unmarshalledObject = new Face();
+            Section unmarshalledObject = new Section();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AssociationScore", targetDepth))
+                if (context.TestExpression("EndTimestamp", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
-                    unmarshalledObject.AssociationScore = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.EndTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("BoundingBox", targetDepth))
+                if (context.TestExpression("StartTimestamp", targetDepth))
                 {
-                    var unmarshaller = BoundingBoxUnmarshaller.Instance;
-                    unmarshalledObject.BoundingBox = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Confidence", targetDepth))
-                {
-                    var unmarshaller = FloatUnmarshaller.Instance;
-                    unmarshalledObject.Confidence = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ExternalImageId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExternalImageId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("FaceId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FaceId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ImageId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ImageId = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.StartTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +82,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         }
 
 
-        private static FaceUnmarshaller _instance = new FaceUnmarshaller();        
+        private static SectionUnmarshaller _instance = new SectionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FaceUnmarshaller Instance
+        public static SectionUnmarshaller Instance
         {
             get
             {

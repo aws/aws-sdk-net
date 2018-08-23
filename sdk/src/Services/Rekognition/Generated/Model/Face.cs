@@ -33,11 +33,27 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class Face
     {
+        private float? _associationScore;
         private BoundingBox _boundingBox;
         private float? _confidence;
         private string _externalImageId;
         private string _faceId;
         private string _imageId;
+
+        /// <summary>
+        /// Gets and sets the property AssociationScore.
+        /// </summary>
+        public float AssociationScore
+        {
+            get { return this._associationScore.GetValueOrDefault(); }
+            set { this._associationScore = value; }
+        }
+
+        // Check to see if AssociationScore property is set
+        internal bool IsSetAssociationScore()
+        {
+            return this._associationScore.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property BoundingBox. 

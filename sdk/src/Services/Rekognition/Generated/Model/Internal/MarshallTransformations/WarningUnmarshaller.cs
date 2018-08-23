@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Face Object
+    /// Response Unmarshaller for Warning Object
     /// </summary>  
-    public class FaceUnmarshaller : IUnmarshaller<Face, XmlUnmarshallerContext>, IUnmarshaller<Face, JsonUnmarshallerContext>
+    public class WarningUnmarshaller : IUnmarshaller<Warning, XmlUnmarshallerContext>, IUnmarshaller<Warning, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Face IUnmarshaller<Face, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Warning IUnmarshaller<Warning, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,33 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Face Unmarshall(JsonUnmarshallerContext context)
+        public Warning Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Face unmarshalledObject = new Face();
+            Warning unmarshalledObject = new Warning();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AssociationScore", targetDepth))
-                {
-                    var unmarshaller = FloatUnmarshaller.Instance;
-                    unmarshalledObject.AssociationScore = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("BoundingBox", targetDepth))
-                {
-                    var unmarshaller = BoundingBoxUnmarshaller.Instance;
-                    unmarshalledObject.BoundingBox = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Confidence", targetDepth))
-                {
-                    var unmarshaller = FloatUnmarshaller.Instance;
-                    unmarshalledObject.Confidence = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ExternalImageId", targetDepth))
+                if (context.TestExpression("ErrorCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExternalImageId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ErrorCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("FaceId", targetDepth))
+                if (context.TestExpression("Message", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FaceId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Message = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ImageId", targetDepth))
+                if (context.TestExpression("Sections", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ImageId = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<Section, SectionUnmarshaller>(SectionUnmarshaller.Instance);
+                    unmarshalledObject.Sections = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +88,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         }
 
 
-        private static FaceUnmarshaller _instance = new FaceUnmarshaller();        
+        private static WarningUnmarshaller _instance = new WarningUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FaceUnmarshaller Instance
+        public static WarningUnmarshaller Instance
         {
             get
             {

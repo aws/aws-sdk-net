@@ -41,13 +41,14 @@ namespace Amazon.Rekognition.Model
     /// to the Amazon Simple Notification Service topic that you specify in <code>NotificationChannel</code>.
     /// To get the search results, first check that the status value published to the Amazon
     /// SNS topic is <code>SUCCEEDED</code>. If so, call and pass the job identifier (<code>JobId</code>)
-    /// from the initial call to <code>StartFaceSearch</code>. For more information, see <a>collections-search-person</a>.
+    /// from the initial call to <code>StartFaceSearch</code>. For more information, see <a>procedure-person-search-videos</a>.
     /// </para>
     /// </summary>
     public partial class StartFaceSearchRequest : AmazonRekognitionRequest
     {
         private string _clientRequestToken;
         private string _collectionId;
+        private bool? _enablePersonTracking;
         private float? _faceMatchThreshold;
         private string _jobTag;
         private NotificationChannel _notificationChannel;
@@ -90,6 +91,21 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetCollectionId()
         {
             return this._collectionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnablePersonTracking.
+        /// </summary>
+        public bool EnablePersonTracking
+        {
+            get { return this._enablePersonTracking.GetValueOrDefault(); }
+            set { this._enablePersonTracking = value; }
+        }
+
+        // Check to see if EnablePersonTracking property is set
+        internal bool IsSetEnablePersonTracking()
+        {
+            return this._enablePersonTracking.HasValue; 
         }
 
         /// <summary>

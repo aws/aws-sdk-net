@@ -422,6 +422,38 @@ namespace Amazon.Rekognition
 
         #endregion
         
+        #region  DescribeCollection
+
+        internal virtual DescribeCollectionResponse DescribeCollection(DescribeCollectionRequest request)
+        {
+            var marshaller = DescribeCollectionRequestMarshaller.Instance;
+            var unmarshaller = DescribeCollectionResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCollectionRequest,DescribeCollectionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeCollection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCollection operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeCollection">REST API Reference for DescribeCollection Operation</seealso>
+        public virtual Task<DescribeCollectionResponse> DescribeCollectionAsync(DescribeCollectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeCollectionRequestMarshaller.Instance;
+            var unmarshaller = DescribeCollectionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeCollectionRequest,DescribeCollectionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeStreamProcessor
 
         internal virtual DescribeStreamProcessorResponse DescribeStreamProcessor(DescribeStreamProcessorRequest request)

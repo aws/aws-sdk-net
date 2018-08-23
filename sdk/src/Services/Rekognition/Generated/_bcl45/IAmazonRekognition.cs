@@ -453,6 +453,53 @@ namespace Amazon.Rekognition
 
         #endregion
         
+        #region  DescribeCollection
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCollection service method.</param>
+        /// 
+        /// <returns>The response from the DescribeCollection service method, as returned by Rekognition.</returns>
+        /// <exception cref="Amazon.Rekognition.Model.AccessDeniedException">
+        /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InternalServerErrorException">
+        /// Amazon Rekognition experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidParameterException">
+        /// Input parameter violated a constraint. Validate your parameter before calling the
+        /// API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Rekognition.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
+        /// The collection specified in the request cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
+        /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeCollection">REST API Reference for DescribeCollection Operation</seealso>
+        DescribeCollectionResponse DescribeCollection(DescribeCollectionRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeCollection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCollection operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeCollection">REST API Reference for DescribeCollection Operation</seealso>
+        Task<DescribeCollectionResponse> DescribeCollectionAsync(DescribeCollectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeStreamProcessor
 
 
@@ -1547,7 +1594,7 @@ namespace Amazon.Rekognition
         /// is detected and stored, and an image ID assigned by the service for the input image.
         /// If you request all facial attributes (using the <code>detectionAttributes</code> parameter,
         /// Amazon Rekognition returns detailed facial attributes such as facial landmarks (for
-        /// example, location of eye and mount) and other facial attributes such gender. If you
+        /// example, location of eye and mouth) and other facial attributes such gender. If you
         /// provide the same image, specify the same collection, and use the same external ID
         /// in the <code>IndexFaces</code> operation, Amazon Rekognition doesn't save duplicate
         /// face metadata.
@@ -2323,7 +2370,7 @@ namespace Amazon.Rekognition
         /// to the Amazon Simple Notification Service topic that you specify in <code>NotificationChannel</code>.
         /// To get the search results, first check that the status value published to the Amazon
         /// SNS topic is <code>SUCCEEDED</code>. If so, call and pass the job identifier (<code>JobId</code>)
-        /// from the initial call to <code>StartFaceSearch</code>. For more information, see <a>collections-search-person</a>.
+        /// from the initial call to <code>StartFaceSearch</code>. For more information, see <a>procedure-person-search-videos</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartFaceSearch service method.</param>

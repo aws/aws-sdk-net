@@ -79,6 +79,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.CollectionId);
                 }
 
+                if(publicRequest.IsSetEnablePersonTracking())
+                {
+                    context.Writer.WritePropertyName("EnablePersonTracking");
+                    context.Writer.Write(publicRequest.EnablePersonTracking);
+                }
+
                 if(publicRequest.IsSetFaceMatchThreshold())
                 {
                     context.Writer.WritePropertyName("FaceMatchThreshold");

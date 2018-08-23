@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetCelebrityRecognition operation
+    /// Response Unmarshaller for DescribeCollection operation
     /// </summary>  
-    public class GetCelebrityRecognitionResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DescribeCollectionResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,58 +45,34 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetCelebrityRecognitionResponse response = new GetCelebrityRecognitionResponse();
+            DescribeCollectionResponse response = new DescribeCollectionResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("BillableDurationSeconds", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    response.BillableDurationSeconds = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Celebrities", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<CelebrityRecognition, CelebrityRecognitionUnmarshaller>(CelebrityRecognitionUnmarshaller.Instance);
-                    response.Celebrities = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ErrorCode", targetDepth))
+                if (context.TestExpression("CollectionARN", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ErrorCode = unmarshaller.Unmarshall(context);
+                    response.CollectionARN = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("JobStatus", targetDepth))
+                if (context.TestExpression("CreationTimestamp", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.CreationTimestamp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FaceCount", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    response.FaceCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FaceModelVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.JobStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("NextToken", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.NextToken = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("StatusMessage", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.StatusMessage = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("VideoMetadata", targetDepth))
-                {
-                    var unmarshaller = VideoMetadataUnmarshaller.Instance;
-                    response.VideoMetadata = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Warnings", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Warning, WarningUnmarshaller>(WarningUnmarshaller.Instance);
-                    response.Warnings = unmarshaller.Unmarshall(context);
+                    response.FaceModelVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -122,10 +98,6 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             {
                 return new InternalServerErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidPaginationTokenException"))
-            {
-                return new InvalidPaginationTokenException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterException"))
             {
                 return new InvalidParameterException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -145,9 +117,9 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             return new AmazonRekognitionException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static GetCelebrityRecognitionResponseUnmarshaller _instance = new GetCelebrityRecognitionResponseUnmarshaller();        
+        private static DescribeCollectionResponseUnmarshaller _instance = new DescribeCollectionResponseUnmarshaller();        
 
-        internal static GetCelebrityRecognitionResponseUnmarshaller GetInstance()
+        internal static DescribeCollectionResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -155,7 +127,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetCelebrityRecognitionResponseUnmarshaller Instance
+        public static DescribeCollectionResponseUnmarshaller Instance
         {
             get
             {

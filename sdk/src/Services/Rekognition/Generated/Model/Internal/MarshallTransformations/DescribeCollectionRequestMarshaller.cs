@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// StartCelebrityRecognition Request Marshaller
+    /// DescribeCollection Request Marshaller
     /// </summary>       
-    public class StartCelebrityRecognitionRequestMarshaller : IMarshaller<IRequest, StartCelebrityRecognitionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DescribeCollectionRequestMarshaller : IMarshaller<IRequest, DescribeCollectionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((StartCelebrityRecognitionRequest)input);
+            return this.Marshall((DescribeCollectionRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(StartCelebrityRecognitionRequest publicRequest)
+        public IRequest Marshall(DescribeCollectionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Rekognition");
-            string target = "RekognitionService.StartCelebrityRecognition";
+            string target = "RekognitionService.DescribeCollection";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -67,44 +67,10 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientRequestToken())
+                if(publicRequest.IsSetCollectionId())
                 {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
-                }
-
-                if(publicRequest.IsSetEnablePersonTracking())
-                {
-                    context.Writer.WritePropertyName("EnablePersonTracking");
-                    context.Writer.Write(publicRequest.EnablePersonTracking);
-                }
-
-                if(publicRequest.IsSetJobTag())
-                {
-                    context.Writer.WritePropertyName("JobTag");
-                    context.Writer.Write(publicRequest.JobTag);
-                }
-
-                if(publicRequest.IsSetNotificationChannel())
-                {
-                    context.Writer.WritePropertyName("NotificationChannel");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = NotificationChannelMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.NotificationChannel, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetVideo())
-                {
-                    context.Writer.WritePropertyName("Video");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = VideoMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Video, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("CollectionId");
+                    context.Writer.Write(publicRequest.CollectionId);
                 }
 
         
@@ -116,9 +82,9 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static StartCelebrityRecognitionRequestMarshaller _instance = new StartCelebrityRecognitionRequestMarshaller();        
+        private static DescribeCollectionRequestMarshaller _instance = new DescribeCollectionRequestMarshaller();        
 
-        internal static StartCelebrityRecognitionRequestMarshaller GetInstance()
+        internal static DescribeCollectionRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -126,7 +92,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StartCelebrityRecognitionRequestMarshaller Instance
+        public static DescribeCollectionRequestMarshaller Instance
         {
             get
             {
