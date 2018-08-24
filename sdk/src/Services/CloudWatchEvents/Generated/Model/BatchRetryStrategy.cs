@@ -39,7 +39,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property Attempts. 
         /// <para>
-        /// The number of times to attempt to retry, if the job fails. Valid values are 1 to 10.
+        /// The number of times to attempt to retry, if the job fails. Valid values are 1–10.
         /// </para>
         /// </summary>
         public int Attempts

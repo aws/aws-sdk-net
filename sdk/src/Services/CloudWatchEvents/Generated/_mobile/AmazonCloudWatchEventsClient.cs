@@ -49,8 +49,8 @@ namespace Amazon.CloudWatchEvents
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Direct specific API records from CloudTrail to an Amazon Kinesis stream for detailed
-    /// analysis of potential security or availability risks.
+    /// Direct specific API records from AWS CloudTrail to an Amazon Kinesis data stream for
+    /// detailed analysis of potential security or availability risks.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -464,6 +464,12 @@ namespace Amazon.CloudWatchEvents
         /// <summary>
         /// Lists your Amazon CloudWatch Events rules. You can either list all the rules or you
         /// can provide a prefix to match to the rule names.
+        /// 
+        ///  
+        /// <para>
+        /// ListRules does not list the targets of a rule. To see the targets associated with
+        /// a rule, use <a>ListTargetsByRule</a>.
+        /// </para>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.

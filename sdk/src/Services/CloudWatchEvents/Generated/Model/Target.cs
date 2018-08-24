@@ -28,9 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
-    /// Targets are the resources to be invoked when a rule is triggered. Target types include
-    /// EC2 instances, AWS Lambda functions, Amazon Kinesis streams, Amazon ECS tasks, AWS
-    /// Step Functions state machines, Run Command, and built-in targets.
+    /// Targets are the resources to be invoked when a rule is triggered. For a complete list
+    /// of services and resources that can be set as a target, see <a>PutTargets</a>.
     /// </summary>
     public partial class Target
     {
@@ -67,8 +66,8 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property BatchParameters. 
         /// <para>
-        /// Contains the job definition, job name, and other parameters if the event target is
-        /// an AWS Batch job. For more information about AWS Batch, see <a href="http://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a>
+        /// If the event target is an AWS Batch job, this contains the job definition, job name,
+        /// and other parameters. For more information, see <a href="http://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a>
         /// in the <i>AWS Batch User Guide</i>.
         /// </para>
         /// </summary>
@@ -185,9 +184,9 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property KinesisParameters. 
         /// <para>
-        /// The custom parameter you can use to control shard assignment, when the target is an
-        /// Amazon Kinesis stream. If you do not include this parameter, the default is to use
-        /// the <code>eventId</code> as the partition key.
+        /// The custom parameter you can use to control the shard assignment, when the target
+        /// is a Kinesis data stream. If you do not include this parameter, the default is to
+        /// use the <code>eventId</code> as the partition key.
         /// </para>
         /// </summary>
         public KinesisParameters KinesisParameters
@@ -244,6 +243,11 @@ namespace Amazon.CloudWatchEvents.Model
         /// Gets and sets the property SqsParameters. 
         /// <para>
         /// Contains the message group ID to use when the target is a FIFO queue.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify an SQS FIFO queue as a target, the queue must have content-based deduplication
+        /// enabled.
         /// </para>
         /// </summary>
         public SqsParameters SqsParameters

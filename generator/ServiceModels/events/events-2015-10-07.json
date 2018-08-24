@@ -1,0 +1,2379 @@
+{
+  "version": "1.0",
+  "type": "json",
+  "json_version": "1.1",
+  "signature_version": "v4",
+  "service_full_name": "Amazon CloudWatch Events",
+  "service_id": "CloudWatch Events",
+  "uid": "events-2015-10-07",
+  "endpoint_prefix": "events",
+  "api_version": "2015-10-07",
+  "xmlnamespace": "http://events.amazonaws.com/doc/2015-10-07",
+  "target_prefix": "AWSEvents",
+  "documentation": "\n        <p>Amazon CloudWatch Events helps you to respond to state changes in your AWS resources. When your resources change state, they automatically send events into an event stream.\n            You can create rules that match selected events in the stream and route them to targets to take action. You can also use rules to take action on a pre-determined schedule. \n            For example, you can configure rules to:</p>\n        <ul>\n            <li>\n               <p>Automatically invoke an AWS Lambda function to update DNS entries when an event notifies you that Amazon EC2 instance enters the running state.</p>\n            </li>\n            <li>\n               <p>Direct specific API records from AWS CloudTrail to an Amazon Kinesis data stream for\n                    detailed analysis of potential security or availability risks.</p>\n            </li>\n            <li>\n               <p>Periodically invoke a built-in target to create a snapshot of an Amazon EBS volume.</p>\n            </li>\n         </ul>\n        <p>For more information about the features of Amazon CloudWatch Events, see the \n            <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events\">Amazon CloudWatch Events User Guide</a>.</p>\n      ",
+  "operations": {
+    "PutRule": {
+      "name": "PutRule",
+      "input": {
+        "type": "structure",
+        "members": {
+          "Name": {
+            "type": "string",
+            "pattern": "[\\.\\-_A-Za-z0-9]+",
+            "zonbookDocumentation": "\n        <simpara>The name of the rule that you are creating or updating.</simpara>\n      ",
+            "documentation": "\n        <p>The name of the rule that you are creating or updating.</p>\n      ",
+            "required": true,
+            "shape_name": "RuleName",
+            "min_length": 1,
+            "max_length": 64
+          },
+          "ScheduleExpression": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <simpara>The scheduling expression. For example, \"cron(0 20 * * ? *)\" or \"rate(5 minutes)\".</simpara>\n      ",
+            "documentation": "\n        <p>The scheduling expression. For example, \"cron(0 20 * * ? *)\" or \"rate(5 minutes)\".</p>\n      ",
+            "shape_name": "ScheduleExpression",
+            "max_length": 256
+          },
+          "EventPattern": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <simpara>The event pattern. For more information, see <ulink type=\"documentation\" url=\"AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</ulink> in the <emphasis>Amazon CloudWatch Events User Guide</emphasis>.</simpara>\n      ",
+            "documentation": "\n        <p>The event pattern. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>\n      ",
+            "shape_name": "EventPattern"
+          },
+          "State": {
+            "type": "string",
+            "enum": [
+              "ENABLED",
+              "DISABLED"
+            ],
+            "zonbookDocumentation": "\n        <simpara>Indicates whether the rule is enabled or disabled.</simpara>\n      ",
+            "documentation": "\n        <p>Indicates whether the rule is enabled or disabled.</p>\n      ",
+            "shape_name": "RuleState"
+          },
+          "Description": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <simpara>A description of the rule.</simpara>\n      ",
+            "documentation": "\n        <p>A description of the rule.</p>\n      ",
+            "shape_name": "RuleDescription",
+            "max_length": 512
+          },
+          "RoleArn": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <simpara>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</simpara>\n      ",
+            "documentation": "\n        <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>\n      ",
+            "shape_name": "RoleArn",
+            "min_length": 1,
+            "max_length": 1600
+          }
+        },
+        "shape_name": "PutRuleRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "RuleArn": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <simpara>The Amazon Resource Name (ARN) of the rule.</simpara>\n      ",
+            "documentation": "\n        <p>The Amazon Resource Name (ARN) of the rule.</p>\n      ",
+            "shape_name": "RuleArn",
+            "min_length": 1,
+            "max_length": 1600
+          }
+        },
+        "shape_name": "PutRuleResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>The event pattern is not valid.</simpara>\n      ",
+          "documentation": "\n        <p>The event pattern is not valid.</p>\n      ",
+          "shape_name": "InvalidEventPatternException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>You tried to create more rules or add more targets to a rule than is allowed.</simpara>\n      ",
+          "documentation": "\n        <p>You tried to create more rules or add more targets to a rule than is allowed.</p>\n      ",
+          "shape_name": "LimitExceededException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>There is concurrent modification on a rule or target.</simpara>\n      ",
+          "documentation": "\n        <p>There is concurrent modification on a rule or target.</p>\n      ",
+          "shape_name": "ConcurrentModificationException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>This exception occurs due to unexpected causes.</simpara>\n      ",
+          "documentation": "\n        <p>This exception occurs due to unexpected causes.</p>\n      ",
+          "shape_name": "InternalException"
+        }
+      ],
+      "documentation": "\n        <p>Creates or updates the specified rule. Rules are enabled by default, or based on value of the state.\n            You can disable a rule using <a>DisableRule</a>.</p>\n        \n        <p>If you are updating an existing rule, the rule is replaced with what you specify in\n            this <code>PutRule</code> command. If you omit arguments in <code>PutRule</code>, the\n            old values for those arguments are not kept. Instead, they are replaced with null\n            values.</p>\n        \n        <p>When you create or update a rule, incoming events might not immediately start\n            matching to new or updated rules. Allow a short period of time for changes to take\n            effect.</p>\n        \n        <p>A rule must contain at least an EventPattern or ScheduleExpression. Rules with EventPatterns are triggered when a matching event is observed. Rules with ScheduleExpressions self-trigger based on the given schedule. A rule can have both an EventPattern and a ScheduleExpression, in which case the rule triggers on matching events as well as on a schedule.</p>\n        \n        <p>Most services in AWS treat : or / as the same character in Amazon Resource Names (ARNs). \n            However, CloudWatch Events uses an exact match in event patterns and rules. Be sure to use the\n            correct ARN characters when creating event patterns so that they match the ARN\n            syntax in the event you want to match.</p>\n\n        \n      "
+    },
+    "DeleteRule": {
+      "name": "DeleteRule",
+      "input": {
+        "type": "structure",
+        "members": {
+          "Name": {
+            "type": "string",
+            "pattern": "[\\.\\-_A-Za-z0-9]+",
+            "zonbookDocumentation": "\n        <simpara>The name of the rule.</simpara>\n      ",
+            "documentation": "\n        <p>The name of the rule.</p>\n      ",
+            "required": true,
+            "shape_name": "RuleName",
+            "min_length": 1,
+            "max_length": 64
+          }
+        },
+        "shape_name": "DeleteRuleRequest",
+        "documentation": null
+      },
+      "output": null,
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>There is concurrent modification on a rule or target.</simpara>\n      ",
+          "documentation": "\n        <p>There is concurrent modification on a rule or target.</p>\n      ",
+          "shape_name": "ConcurrentModificationException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>This exception occurs due to unexpected causes.</simpara>\n      ",
+          "documentation": "\n        <p>This exception occurs due to unexpected causes.</p>\n      ",
+          "shape_name": "InternalException"
+        }
+      ],
+      "documentation": "\n        <p>Deletes the specified rule.</p> \n        <p>Before you can delete the rule, you must remove all targets, using <a>RemoveTargets</a>.</p>\n        \n        <p>When you delete a rule, incoming events might continue to match to the deleted\n            rule. Allow a short period of time for changes to take effect.</p>\n        \n        \n      "
+    },
+    "ListRules": {
+      "name": "ListRules",
+      "input": {
+        "type": "structure",
+        "members": {
+          "NamePrefix": {
+            "type": "string",
+            "pattern": "[\\.\\-_A-Za-z0-9]+",
+            "zonbookDocumentation": "\n        <simpara>The prefix matching the rule name.</simpara>\n      ",
+            "documentation": "\n        <p>The prefix matching the rule name.</p>\n      ",
+            "shape_name": "RuleName",
+            "min_length": 1,
+            "max_length": 64
+          },
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <simpara>The token returned by a previous call to retrieve the next set of results.</simpara>\n      ",
+            "documentation": "\n        <p>The token returned by a previous call to retrieve the next set of results.</p>\n      ",
+            "shape_name": "NextToken",
+            "min_length": 1,
+            "max_length": 2048
+          },
+          "Limit": {
+            "type": "integer",
+            "zonbookDocumentation": "\n        <simpara>The maximum number of results to return.</simpara>\n      ",
+            "documentation": "\n        <p>The maximum number of results to return.</p>\n      ",
+            "shape_name": "LimitMax100",
+            "min_length": 1,
+            "max_length": 100
+          }
+        },
+        "shape_name": "ListRulesRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "Rules": {
+            "type": "list",
+            "zonbookDocumentation": "\n        <simpara>The rules that match the specified criteria.</simpara>\n      ",
+            "documentation": "\n        <p>The rules that match the specified criteria.</p>\n      ",
+            "shape_name": "RuleResponseList",
+            "members": {
+              "type": "structure",
+              "members": {
+                "Name": {
+                  "type": "string",
+                  "pattern": "[\\.\\-_A-Za-z0-9]+",
+                  "zonbookDocumentation": "\n        <simpara>The name of the rule.</simpara>\n      ",
+                  "documentation": "\n        <p>The name of the rule.</p>\n      ",
+                  "shape_name": "RuleName",
+                  "min_length": 1,
+                  "max_length": 64
+                },
+                "Arn": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n        <simpara>The Amazon Resource Name (ARN) of the rule.</simpara>\n      ",
+                  "documentation": "\n        <p>The Amazon Resource Name (ARN) of the rule.</p>\n      ",
+                  "shape_name": "RuleArn",
+                  "min_length": 1,
+                  "max_length": 1600
+                },
+                "EventPattern": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n        <simpara>The event pattern of the rule. For more information, see <ulink type=\"documentation\" url=\"AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</ulink> in the <emphasis>Amazon CloudWatch Events User Guide</emphasis>.</simpara>\n      ",
+                  "documentation": "\n        <p>The event pattern of the rule. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>\n      ",
+                  "shape_name": "EventPattern"
+                },
+                "State": {
+                  "type": "string",
+                  "enum": [
+                    "ENABLED",
+                    "DISABLED"
+                  ],
+                  "zonbookDocumentation": "\n        <simpara>The state of the rule.</simpara>\n      ",
+                  "documentation": "\n        <p>The state of the rule.</p>\n      ",
+                  "shape_name": "RuleState"
+                },
+                "Description": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n        <simpara>The description of the rule.</simpara>\n      ",
+                  "documentation": "\n        <p>The description of the rule.</p>\n      ",
+                  "shape_name": "RuleDescription",
+                  "max_length": 512
+                },
+                "ScheduleExpression": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n        <simpara>The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".</simpara>\n      ",
+                  "documentation": "\n        <p>The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".</p>\n      ",
+                  "shape_name": "ScheduleExpression",
+                  "max_length": 256
+                },
+                "RoleArn": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n        <simpara>The Amazon Resource Name (ARN) of the role that is used for target invocation.</simpara>\n      ",
+                  "documentation": "\n        <p>The Amazon Resource Name (ARN) of the role that is used for target invocation.</p>\n      ",
+                  "shape_name": "RoleArn",
+                  "min_length": 1,
+                  "max_length": 1600
+                }
+              },
+              "zonbookDocumentation": "\n        <simpara>Contains information about a rule in Amazon CloudWatch Events.</simpara>\n      ",
+              "documentation": "\n        <p>Contains information about a rule in Amazon CloudWatch Events.</p>\n      ",
+              "shape_name": "Rule"
+            }
+          },
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <simpara>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</simpara>\n      ",
+            "documentation": "\n        <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>\n      ",
+            "shape_name": "NextToken",
+            "min_length": 1,
+            "max_length": 2048
+          }
+        },
+        "shape_name": "ListRulesResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>This exception occurs due to unexpected causes.</simpara>\n      ",
+          "documentation": "\n        <p>This exception occurs due to unexpected causes.</p>\n      ",
+          "shape_name": "InternalException"
+        }
+      ],
+      "documentation": "\n        <p>Lists your Amazon CloudWatch Events rules. \n            You can either list all the rules or you can provide a prefix to match to the rule names.</p>\n        \n        <p>ListRules does not list the targets of a rule. To see the targets associated with a rule, use <a>ListTargetsByRule</a>.</p>\n        \n        \n      "
+    },
+    "ListRuleNamesByTarget": {
+      "name": "ListRuleNamesByTarget",
+      "input": {
+        "type": "structure",
+        "members": {
+          "TargetArn": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <simpara>The Amazon Resource Name (ARN) of the target resource.</simpara>\n      ",
+            "documentation": "\n        <p>The Amazon Resource Name (ARN) of the target resource.</p>\n      ",
+            "required": true,
+            "shape_name": "TargetArn",
+            "min_length": 1,
+            "max_length": 1600
+          },
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <simpara>The token returned by a previous call to retrieve the next set of results.</simpara>\n      ",
+            "documentation": "\n        <p>The token returned by a previous call to retrieve the next set of results.</p>\n      ",
+            "shape_name": "NextToken",
+            "min_length": 1,
+            "max_length": 2048
+          },
+          "Limit": {
+            "type": "integer",
+            "zonbookDocumentation": "\n        <simpara>The maximum number of results to return.</simpara>\n      ",
+            "documentation": "\n        <p>The maximum number of results to return.</p>\n      ",
+            "shape_name": "LimitMax100",
+            "min_length": 1,
+            "max_length": 100
+          }
+        },
+        "shape_name": "ListRuleNamesByTargetRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "RuleNames": {
+            "type": "list",
+            "zonbookDocumentation": "\n        <simpara>The names of the rules that can invoke the given target.</simpara>\n      ",
+            "documentation": "\n        <p>The names of the rules that can invoke the given target.</p>\n      ",
+            "shape_name": "RuleNameList",
+            "members": {
+              "type": "string",
+              "pattern": "[\\.\\-_A-Za-z0-9]+",
+              "shape_name": "RuleName",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 64
+            }
+          },
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <simpara>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</simpara>\n      ",
+            "documentation": "\n        <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>\n      ",
+            "shape_name": "NextToken",
+            "min_length": 1,
+            "max_length": 2048
+          }
+        },
+        "shape_name": "ListRuleNamesByTargetResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>This exception occurs due to unexpected causes.</simpara>\n      ",
+          "documentation": "\n        <p>This exception occurs due to unexpected causes.</p>\n      ",
+          "shape_name": "InternalException"
+        }
+      ],
+      "documentation": "\n        <p>Lists the rules for the specified target.\n            You can see which of the rules in Amazon CloudWatch Events can invoke a specific target in your account.</p>\n        \n           \n      "
+    },
+    "EnableRule": {
+      "name": "EnableRule",
+      "input": {
+        "type": "structure",
+        "members": {
+          "Name": {
+            "type": "string",
+            "pattern": "[\\.\\-_A-Za-z0-9]+",
+            "zonbookDocumentation": "\n        <simpara>The name of the rule.</simpara>\n      ",
+            "documentation": "\n        <p>The name of the rule.</p>\n      ",
+            "required": true,
+            "shape_name": "RuleName",
+            "min_length": 1,
+            "max_length": 64
+          }
+        },
+        "shape_name": "EnableRuleRequest",
+        "documentation": null
+      },
+      "output": null,
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>An entity that you specified does not exist.</simpara>\n      ",
+          "documentation": "\n        <p>An entity that you specified does not exist.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>There is concurrent modification on a rule or target.</simpara>\n      ",
+          "documentation": "\n        <p>There is concurrent modification on a rule or target.</p>\n      ",
+          "shape_name": "ConcurrentModificationException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>This exception occurs due to unexpected causes.</simpara>\n      ",
+          "documentation": "\n        <p>This exception occurs due to unexpected causes.</p>\n      ",
+          "shape_name": "InternalException"
+        }
+      ],
+      "documentation": "\n        <p>Enables the specified rule. If the rule does not exist, the operation fails.</p>\n        \n        <p>When you enable a rule, incoming events might not immediately start matching to a\n            newly enabled rule. Allow a short period of time for changes to take effect.</p>\n        \n        \n      "
+    },
+    "DisableRule": {
+      "name": "DisableRule",
+      "input": {
+        "type": "structure",
+        "members": {
+          "Name": {
+            "type": "string",
+            "pattern": "[\\.\\-_A-Za-z0-9]+",
+            "zonbookDocumentation": "\n        <simpara>The name of the rule.</simpara>\n      ",
+            "documentation": "\n        <p>The name of the rule.</p>\n      ",
+            "required": true,
+            "shape_name": "RuleName",
+            "min_length": 1,
+            "max_length": 64
+          }
+        },
+        "shape_name": "DisableRuleRequest",
+        "documentation": null
+      },
+      "output": null,
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>An entity that you specified does not exist.</simpara>\n      ",
+          "documentation": "\n        <p>An entity that you specified does not exist.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>There is concurrent modification on a rule or target.</simpara>\n      ",
+          "documentation": "\n        <p>There is concurrent modification on a rule or target.</p>\n      ",
+          "shape_name": "ConcurrentModificationException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>This exception occurs due to unexpected causes.</simpara>\n      ",
+          "documentation": "\n        <p>This exception occurs due to unexpected causes.</p>\n      ",
+          "shape_name": "InternalException"
+        }
+      ],
+      "documentation": "\n        <p>Disables the specified rule. A disabled rule won't match any events, and won't self-trigger if it has a schedule expression.</p>\n        \n        <p>When you disable a rule, incoming events might continue to match to the disabled\n            rule. Allow a short period of time for changes to take effect.</p>\n        \n        \n      "
+    },
+    "PutTargets": {
+      "name": "PutTargets",
+      "input": {
+        "type": "structure",
+        "members": {
+          "Rule": {
+            "type": "string",
+            "pattern": "[\\.\\-_A-Za-z0-9]+",
+            "zonbookDocumentation": "\n        <simpara>The name of the rule.</simpara>\n      ",
+            "documentation": "\n        <p>The name of the rule.</p>\n      ",
+            "required": true,
+            "shape_name": "RuleName",
+            "min_length": 1,
+            "max_length": 64
+          },
+          "Targets": {
+            "type": "list",
+            "zonbookDocumentation": "\n        <simpara>The targets to update or add to the rule.</simpara>\n      ",
+            "documentation": "\n        <p>The targets to update or add to the rule.</p>\n      ",
+            "required": true,
+            "shape_name": "TargetList",
+            "min_length": 1,
+            "max_length": 100,
+            "members": {
+              "type": "structure",
+              "members": {
+                "Id": {
+                  "type": "string",
+                  "pattern": "[\\.\\-_A-Za-z0-9]+",
+                  "zonbookDocumentation": "\n        <simpara>The ID of the target.</simpara>\n      ",
+                  "documentation": "\n        <p>The ID of the target.</p>\n      ",
+                  "required": true,
+                  "shape_name": "TargetId",
+                  "min_length": 1,
+                  "max_length": 64
+                },
+                "Arn": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n        <simpara>The Amazon Resource Name (ARN) of the target.</simpara>\n      ",
+                  "documentation": "\n        <p>The Amazon Resource Name (ARN) of the target.</p>\n      ",
+                  "required": true,
+                  "shape_name": "TargetArn",
+                  "min_length": 1,
+                  "max_length": 1600
+                },
+                "RoleArn": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n        <simpara>The Amazon Resource Name (ARN) of the IAM role to be used for this target when the rule is triggered. If one rule triggers \n        multiple targets, you can use a different IAM role for each target.</simpara>\n      ",
+                  "documentation": "\n        <p>The Amazon Resource Name (ARN) of the IAM role to be used for this target when the rule is triggered. If one rule triggers \n        multiple targets, you can use a different IAM role for each target.</p>\n      ",
+                  "shape_name": "RoleArn",
+                  "min_length": 1,
+                  "max_length": 1600
+                },
+                "Input": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n        <simpara>Valid JSON text passed to the target. In this case, nothing from the event itself is passed\n            to the target. For more information, see <ulink url=\"http://www.rfc-editor.org/rfc/rfc7159.txt\">The JavaScript Object Notation (JSON) Data Interchange Format</ulink>.</simpara>\n      ",
+                  "documentation": "\n        <p>Valid JSON text passed to the target. In this case, nothing from the event itself is passed\n            to the target. For more information, see <a href=\"http://www.rfc-editor.org/rfc/rfc7159.txt\">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>\n      ",
+                  "shape_name": "TargetInput",
+                  "max_length": 8192
+                },
+                "InputPath": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n        <simpara>The value of the JSONPath that is used for extracting part of the matched event when\n            passing it to the target. You must use JSON dot notation, not bracket notation. For more information about JSON\n            paths, see <ulink url=\"http://goessner.net/articles/JsonPath/\">JSONPath</ulink>.</simpara>\n      ",
+                  "documentation": "\n        <p>The value of the JSONPath that is used for extracting part of the matched event when\n            passing it to the target. You must use JSON dot notation, not bracket notation. For more information about JSON\n            paths, see <a href=\"http://goessner.net/articles/JsonPath/\">JSONPath</a>.</p>\n      ",
+                  "shape_name": "TargetInputPath",
+                  "max_length": 256
+                },
+                "InputTransformer": {
+                  "type": "structure",
+                  "members": {
+                    "InputPathsMap": {
+                      "type": "map",
+                      "zonbookDocumentation": "\n        <simpara>Map of JSON paths to be extracted from the event. You can then insert these in the template in <code>InputTemplate</code> to produce the \n            output you want to be sent to the target.</simpara>\n        <simpara>\n            <code>InputPathsMap</code> is an array key-value pairs, where each value is a valid JSON path. You can have\n            as many as 10 key-value pairs.\n            You must use JSON dot notation, not bracket notation.</simpara>\n        <simpara>The keys cannot start with \"AWS.\" </simpara>\n      ",
+                      "documentation": "\n        <p>Map of JSON paths to be extracted from the event. You can then insert these in the template in <code>InputTemplate</code> to produce the \n            output you want to be sent to the target.</p>\n        <p>\n            <code>InputPathsMap</code> is an array key-value pairs, where each value is a valid JSON path. You can have\n            as many as 10 key-value pairs.\n            You must use JSON dot notation, not bracket notation.</p>\n        <p>The keys cannot start with \"AWS.\" </p>\n      ",
+                      "shape_name": "TransformerPaths",
+                      "max_length": 10,
+                      "keys": {
+                        "type": "string",
+                        "pattern": "[A-Za-z0-9\\_\\-]+",
+                        "shape_name": "InputTransformerPathKey",
+                        "documentation": null,
+                        "min_length": 1,
+                        "max_length": 256
+                      },
+                      "members": {
+                        "type": "string",
+                        "shape_name": "TargetInputPath",
+                        "documentation": null,
+                        "max_length": 256
+                      }
+                    },
+                    "InputTemplate": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n        \n        <simpara>Input template where you specify placeholders that will be filled with the values of the keys from <code>InputPathsMap</code> \n            to customize the data sent to the target. Enclose\n            each <code>InputPathsMaps</code> value in brackets: &lt;<emphasis>value</emphasis>&gt; The InputTemplate\n        must be valid JSON.</simpara>\n\n        <simpara>If <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the following restrictions apply:</simpara>\n        <itemizedlist>\n            <listitem>\n                <simpara>The placeholder cannot be used as an object key.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>Object values cannot include quote marks.</simpara>\n            </listitem>\n        </itemizedlist>\n        <simpara>The following example shows the syntax for using <code>InputPathsMap</code> and <code>InputTemplate</code>.</simpara>\n        <simpara>\n            <code> \"InputTransformer\":</code>\n         </simpara>\n         <simpara>\n            <code>{</code>\n         </simpara>\n         <simpara>\n            <code>\"InputPathsMap\": {\"instance\": \"$.detail.instance\",\"status\": \"$.detail.status\"},</code>\n         </simpara>\n         <simpara>\n            <code>\"InputTemplate\": \"&lt;instance&gt; is in state &lt;status&gt;\"</code>\n         </simpara>\n         <simpara>\n            <code>}</code>\n         </simpara>\n        <para>To have the <code>InputTemplate</code> include quote marks within a JSON string, escape each quote marks with a slash, as in the following example:</para>\n        <simpara>\n            <code> \"InputTransformer\":</code>\n         </simpara>\n        <simpara>\n            <code>{</code>\n         </simpara>\n        <simpara>\n            <code>\"InputPathsMap\": {\"instance\": \"$.detail.instance\",\"status\": \"$.detail.status\"},</code>\n         </simpara>\n        <simpara>\n            <code>\"InputTemplate\": \"&lt;instance&gt; is in state \\\"&lt;status&gt;\\\"\"</code>\n         </simpara>\n        <simpara>\n            <code>}</code>\n         </simpara>\n      ",
+                      "documentation": "\n        \n        <p>Input template where you specify placeholders that will be filled with the values of the keys from <code>InputPathsMap</code> \n            to customize the data sent to the target. Enclose\n            each <code>InputPathsMaps</code> value in brackets: &lt;<i>value</i>&gt; The InputTemplate\n        must be valid JSON.</p>\n\n        <p>If <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the following restrictions apply:</p>\n        <ul>\n            <li>\n                <p>The placeholder cannot be used as an object key.</p>\n            </li>\n            <li>\n                <p>Object values cannot include quote marks.</p>\n            </li>\n         </ul>\n        <p>The following example shows the syntax for using <code>InputPathsMap</code> and <code>InputTemplate</code>.</p>\n        <p>\n            <code> \"InputTransformer\":</code>\n         </p>\n         <p>\n            <code>{</code>\n         </p>\n         <p>\n            <code>\"InputPathsMap\": {\"instance\": \"$.detail.instance\",\"status\": \"$.detail.status\"},</code>\n         </p>\n         <p>\n            <code>\"InputTemplate\": \"&lt;instance&gt; is in state &lt;status&gt;\"</code>\n         </p>\n         <p>\n            <code>}</code>\n         </p>\n        <p>To have the <code>InputTemplate</code> include quote marks within a JSON string, escape each quote marks with a slash, as in the following example:</p>\n        <p>\n            <code> \"InputTransformer\":</code>\n         </p>\n        <p>\n            <code>{</code>\n         </p>\n        <p>\n            <code>\"InputPathsMap\": {\"instance\": \"$.detail.instance\",\"status\": \"$.detail.status\"},</code>\n         </p>\n        <p>\n            <code>\"InputTemplate\": \"&lt;instance&gt; is in state \\\"&lt;status&gt;\\\"\"</code>\n         </p>\n        <p>\n            <code>}</code>\n         </p>\n      ",
+                      "required": true,
+                      "shape_name": "TransformerInput",
+                      "min_length": 1,
+                      "max_length": 8192
+                    }
+                  },
+                  "zonbookDocumentation": "\n        \n        <simpara>Settings to enable you to provide custom input to a target based on certain event data. You can extract one or more key-value pairs\n        from the event and then use that data to send customized input to the target.</simpara>\n      ",
+                  "documentation": "\n        \n        <p>Settings to enable you to provide custom input to a target based on certain event data. You can extract one or more key-value pairs\n        from the event and then use that data to send customized input to the target.</p>\n      ",
+                  "shape_name": "InputTransformer"
+                },
+                "KinesisParameters": {
+                  "type": "structure",
+                  "members": {
+                    "PartitionKeyPath": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n        <simpara>The JSON path to be extracted from the event and used as the partition key. For more information, see <ulink type=\"documentation\" url=\"streams/latest/dev/key-concepts.html#partition-key\">Amazon Kinesis Streams Key Concepts</ulink> in the <emphasis>Amazon Kinesis Streams Developer Guide</emphasis>.</simpara>\n      ",
+                      "documentation": "\n        <p>The JSON path to be extracted from the event and used as the partition key. For more information, see <a href=\"http://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key\">Amazon Kinesis Streams Key Concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.</p>\n      ",
+                      "required": true,
+                      "shape_name": "TargetPartitionKeyPath",
+                      "max_length": 256
+                    }
+                  },
+                  "zonbookDocumentation": "\n        <simpara>The custom parameter you can use to control the shard assignment, when the target\n            is a Kinesis data stream. If you do not include this parameter, the default is to use\n            the <code>eventId</code> as the partition key.</simpara>\n      ",
+                  "documentation": "\n        <p>The custom parameter you can use to control the shard assignment, when the target\n            is a Kinesis data stream. If you do not include this parameter, the default is to use\n            the <code>eventId</code> as the partition key.</p>\n      ",
+                  "shape_name": "KinesisParameters"
+                },
+                "RunCommandParameters": {
+                  "type": "structure",
+                  "members": {
+                    "RunCommandTargets": {
+                      "type": "list",
+                      "zonbookDocumentation": "       \n        <simpara>Currently, we support including only one RunCommandTarget block, which specifies either an array of InstanceIds or a tag.</simpara>\n      ",
+                      "documentation": "       \n        <p>Currently, we support including only one RunCommandTarget block, which specifies either an array of InstanceIds or a tag.</p>\n      ",
+                      "required": true,
+                      "shape_name": "RunCommandTargets",
+                      "min_length": 1,
+                      "max_length": 5,
+                      "members": {
+                        "type": "structure",
+                        "members": {
+                          "Key": {
+                            "type": "string",
+                            "pattern": "^[\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*$",
+                            "zonbookDocumentation": "\n        \n        <simpara>Can be either <code>tag:</code>\n            <emphasis>tag-key</emphasis> or <code>InstanceIds</code>.</simpara>\n      ",
+                            "documentation": "\n        \n        <p>Can be either <code>tag:</code>\n            <i>tag-key</i> or <code>InstanceIds</code>.</p>\n      ",
+                            "required": true,
+                            "shape_name": "RunCommandTargetKey",
+                            "min_length": 1,
+                            "max_length": 128
+                          },
+                          "Values": {
+                            "type": "list",
+                            "zonbookDocumentation": "\n        <simpara>If <code>Key</code> is <code>tag:</code>\n            <emphasis>tag-key</emphasis>, <code>Values</code> is a list of tag values. \n            If <code>Key</code> is <code>InstanceIds</code>, <code>Values</code> is a list of Amazon EC2 instance IDs.</simpara>\n        \n      ",
+                            "documentation": "\n        <p>If <code>Key</code> is <code>tag:</code>\n            <i>tag-key</i>, <code>Values</code> is a list of tag values. \n            If <code>Key</code> is <code>InstanceIds</code>, <code>Values</code> is a list of Amazon EC2 instance IDs.</p>\n        \n      ",
+                            "required": true,
+                            "shape_name": "RunCommandTargetValues",
+                            "min_length": 1,
+                            "max_length": 50,
+                            "members": {
+                              "type": "string",
+                              "shape_name": "RunCommandTargetValue",
+                              "documentation": null,
+                              "min_length": 1,
+                              "max_length": 256
+                            }
+                          }
+                        },
+                        "zonbookDocumentation": "\n        <simpara>Information about the EC2 instances that are to be sent the command, specified as key-value pairs. Each <code>RunCommandTarget</code> block can \n            include only one key, but this key may specify multiple values.</simpara>\n      ",
+                        "documentation": "\n        <p>Information about the EC2 instances that are to be sent the command, specified as key-value pairs. Each <code>RunCommandTarget</code> block can \n            include only one key, but this key may specify multiple values.</p>\n      ",
+                        "shape_name": "RunCommandTarget"
+                      }
+                    }
+                  },
+                  "zonbookDocumentation": "\n        <simpara>Parameters used when you are using the rule to invoke Amazon EC2 Run Command.</simpara>\n      ",
+                  "documentation": "\n        <p>Parameters used when you are using the rule to invoke Amazon EC2 Run Command.</p>\n      ",
+                  "shape_name": "RunCommandParameters"
+                },
+                "EcsParameters": {
+                  "type": "structure",
+                  "members": {
+                    "TaskDefinitionArn": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n        <simpara>The ARN of the task definition to use if the event target is an Amazon ECS task. </simpara>\n      ",
+                      "documentation": "\n        <p>The ARN of the task definition to use if the event target is an Amazon ECS task. </p>\n      ",
+                      "required": true,
+                      "shape_name": "Arn",
+                      "min_length": 1,
+                      "max_length": 1600
+                    },
+                    "TaskCount": {
+                      "type": "integer",
+                      "zonbookDocumentation": "\n        <simpara>The number of tasks to create based on <code>TaskDefinition</code>. The default is\n            1.</simpara>\n      ",
+                      "documentation": "\n        <p>The number of tasks to create based on <code>TaskDefinition</code>. The default is\n            1.</p>\n      ",
+                      "shape_name": "LimitMin1",
+                      "min_length": 1
+                    },
+                    "LaunchType": {
+                      "type": "string",
+                      "enum": [
+                        "EC2",
+                        "FARGATE"
+                      ],
+                      "zonbookDocumentation": "\n        <para>Specifies the launch type on which your task is running. The launch type that you\n            specify here must match one of the launch type (compatibilities) of the target task. The <code>FARGATE</code>\n            value is supported only in the Regions where AWS Fargate with Amazon ECS is supported.\n            For more information, see <ulink type=\"documentation\" url=\"AmazonECS/latest/developerguide/AWS-Fargate.html\">AWS Fargate on Amazon\n                ECS</ulink> in the <emphasis>Amazon Elastic Container Service Developer\n                Guide</emphasis>.</para>\n      ",
+                      "documentation": "\n        <p>Specifies the launch type on which your task is running. The launch type that you\n            specify here must match one of the launch type (compatibilities) of the target task. The <code>FARGATE</code>\n            value is supported only in the Regions where AWS Fargate with Amazon ECS is supported.\n            For more information, see <a href=\"http://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html\">AWS Fargate on Amazon\n                ECS</a> in the <i>Amazon Elastic Container Service Developer\n                Guide</i>.</p>\n      ",
+                      "shape_name": "LaunchType"
+                    },
+                    "NetworkConfiguration": {
+                      "type": "structure",
+                      "members": {
+                        "awsvpcConfiguration": {
+                          "type": "structure",
+                          "members": {
+                            "Subnets": {
+                              "type": "list",
+                              "zonbookDocumentation": "\n        <para>Specifies the subnets associated with the task. These subnets must all be in the same\n            VPC. You can specify as many as 16 subnets.</para>\n      ",
+                              "documentation": "\n        <p>Specifies the subnets associated with the task. These subnets must all be in the same\n            VPC. You can specify as many as 16 subnets.</p>\n      ",
+                              "required": true,
+                              "shape_name": "StringList",
+                              "members": {
+                                "type": "string",
+                                "shape_name": "String",
+                                "documentation": null
+                              }
+                            },
+                            "SecurityGroups": {
+                              "type": "list",
+                              "zonbookDocumentation": "\n        <para>Specifies the security groups associated with the task. These security groups must all\n            be in the same VPC. You can specify as many as five security groups. If you do not\n            specify a security group, the default security group for the VPC is used.</para>\n      ",
+                              "documentation": "\n        <p>Specifies the security groups associated with the task. These security groups must all\n            be in the same VPC. You can specify as many as five security groups. If you do not\n            specify a security group, the default security group for the VPC is used.</p>\n      ",
+                              "shape_name": "StringList",
+                              "members": {
+                                "type": "string",
+                                "shape_name": "String",
+                                "documentation": null
+                              }
+                            },
+                            "AssignPublicIp": {
+                              "type": "string",
+                              "enum": [
+                                "ENABLED",
+                                "DISABLED"
+                              ],
+                              "zonbookDocumentation": "\n        <para>Specifies whether the task's elastic network interface receives a public IP address. You can specify <code>ENABLED</code> only when\n        <code>LaunchType</code> in <code>EcsParameters</code> is set to <code>FARGATE</code>.</para>\n      ",
+                              "documentation": "\n        <p>Specifies whether the task's elastic network interface receives a public IP address. You can specify <code>ENABLED</code> only when\n        <code>LaunchType</code> in <code>EcsParameters</code> is set to <code>FARGATE</code>.</p>\n      ",
+                              "shape_name": "AssignPublicIp"
+                            }
+                          },
+                          "zonbookDocumentation": "\n        <para>Use this structure to specify the VPC subnets and security groups for the task, and\n            whether a public IP address is to be used. This structure is relevant only for ECS tasks\n            that use the <code>awsvpc</code> network mode.</para>\n      ",
+                          "documentation": "\n        <p>Use this structure to specify the VPC subnets and security groups for the task, and\n            whether a public IP address is to be used. This structure is relevant only for ECS tasks\n            that use the <code>awsvpc</code> network mode.</p>\n      ",
+                          "shape_name": "AwsVpcConfiguration"
+                        }
+                      },
+                      "zonbookDocumentation": "\n        <para>Use this structure if the ECS task uses the <code>awsvpc</code> network mode. This\n            structure specifies the VPC subnets and security groups associated with the task, and\n            whether a public IP address is to be used. This structure is required if\n                <code>LaunchType</code> is <code>FARGATE</code> because the <code>awsvpc</code> mode\n            is required for Fargate tasks.</para>\n        <para>If you specify <code>NetworkConfiguration</code> when the target ECS task does not use\n            the <code>awsvpc</code> network mode, the task fails.</para>\n      ",
+                      "documentation": "\n        <p>Use this structure if the ECS task uses the <code>awsvpc</code> network mode. This\n            structure specifies the VPC subnets and security groups associated with the task, and\n            whether a public IP address is to be used. This structure is required if\n                <code>LaunchType</code> is <code>FARGATE</code> because the <code>awsvpc</code> mode\n            is required for Fargate tasks.</p>\n        <p>If you specify <code>NetworkConfiguration</code> when the target ECS task does not use\n            the <code>awsvpc</code> network mode, the task fails.</p>\n      ",
+                      "shape_name": "NetworkConfiguration"
+                    },
+                    "PlatformVersion": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n        <para>Specifies the platform version for the task. Specify only the numeric portion of the\n            platform version, such as <code>1.1.0</code>.</para>\n            <para>This structure is used only if <code>LaunchType</code> is <code>FARGATE</code>.\n            For more information about valid platform versions, see <ulink type=\"documentation\" url=\"AmazonECS/latest/developerguide/platform_versions.html\">AWS Fargate Platform\n                Versions</ulink> in the <emphasis>Amazon Elastic Container Service Developer\n                Guide</emphasis>.</para>\n      ",
+                      "documentation": "\n        <p>Specifies the platform version for the task. Specify only the numeric portion of the\n            platform version, such as <code>1.1.0</code>.</p>\n            <p>This structure is used only if <code>LaunchType</code> is <code>FARGATE</code>.\n            For more information about valid platform versions, see <a href=\"http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html\">AWS Fargate Platform\n                Versions</a> in the <i>Amazon Elastic Container Service Developer\n                Guide</i>.</p>\n      ",
+                      "shape_name": "String"
+                    },
+                    "Group": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n        <para>Specifies an ECS task group for the task. The maximum length is 255 characters.</para>\n      ",
+                      "documentation": "\n        <p>Specifies an ECS task group for the task. The maximum length is 255 characters.</p>\n      ",
+                      "shape_name": "String"
+                    }
+                  },
+                  "zonbookDocumentation": "        \n        <simpara>Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS task. For more information about Amazon ECS tasks, \n            see <ulink type=\"documentation\" url=\"AmazonECS/latest/developerguide/task_defintions.html\">Task Definitions </ulink> in the <emphasis>Amazon EC2 Container Service Developer Guide</emphasis>.</simpara>\n      ",
+                  "documentation": "        \n        <p>Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS task. For more information about Amazon ECS tasks, \n            see <a href=\"http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html\">Task Definitions </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>\n      ",
+                  "shape_name": "EcsParameters"
+                },
+                "BatchParameters": {
+                  "type": "structure",
+                  "members": {
+                    "JobDefinition": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n        <simpara>The ARN or name of the job definition to use if the event target is an AWS Batch job. This job definition must already exist.</simpara>\n      ",
+                      "documentation": "\n        <p>The ARN or name of the job definition to use if the event target is an AWS Batch job. This job definition must already exist.</p>\n      ",
+                      "required": true,
+                      "shape_name": "String"
+                    },
+                    "JobName": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n        <simpara>The name to use for this execution of the job, if the target is an AWS Batch job.</simpara>\n      ",
+                      "documentation": "\n        <p>The name to use for this execution of the job, if the target is an AWS Batch job.</p>\n      ",
+                      "required": true,
+                      "shape_name": "String"
+                    },
+                    "ArrayProperties": {
+                      "type": "structure",
+                      "members": {
+                        "Size": {
+                          "type": "integer",
+                          "zonbookDocumentation": "\n        <para>The size of the array, if this is an array batch job. Valid values are\n            integers between 2 and 10,000.</para>\n      ",
+                          "documentation": "\n        <p>The size of the array, if this is an array batch job. Valid values are\n            integers between 2 and 10,000.</p>\n      ",
+                          "shape_name": "Integer"
+                        }
+                      },
+                      "zonbookDocumentation": "\n        <simpara>The array properties for the submitted job, such as the size of the \n            array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This\n        parameter is used only if the target is an AWS Batch job.</simpara>\n      ",
+                      "documentation": "\n        <p>The array properties for the submitted job, such as the size of the \n            array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This\n        parameter is used only if the target is an AWS Batch job.</p>\n      ",
+                      "shape_name": "BatchArrayProperties"
+                    },
+                    "RetryStrategy": {
+                      "type": "structure",
+                      "members": {
+                        "Attempts": {
+                          "type": "integer",
+                          "zonbookDocumentation": "\n        <para>The number of times to attempt to retry, if the job fails. Valid values are\n            1–10.</para>\n      ",
+                          "documentation": "\n        <p>The number of times to attempt to retry, if the job fails. Valid values are\n            1–10.</p>\n      ",
+                          "shape_name": "Integer"
+                        }
+                      },
+                      "zonbookDocumentation": "\n        <simpara>The retry strategy to use for failed jobs, if the target is an AWS Batch job. The\n            retry strategy is the number of times to retry the failed job execution. Valid values\n            are 1–10. When you specify a retry strategy here, it overrides the retry strategy\n            defined in the job definition.</simpara>\n      ",
+                      "documentation": "\n        <p>The retry strategy to use for failed jobs, if the target is an AWS Batch job. The\n            retry strategy is the number of times to retry the failed job execution. Valid values\n            are 1–10. When you specify a retry strategy here, it overrides the retry strategy\n            defined in the job definition.</p>\n      ",
+                      "shape_name": "BatchRetryStrategy"
+                    }
+                  },
+                  "zonbookDocumentation": "        \n        <simpara>If the event target is an AWS Batch job, this contains the job definition, job\n            name, and other parameters. For more information, see <ulink type=\"documentation\" url=\"batch/latest/userguide/jobs.html\">Jobs</ulink> in the <emphasis>AWS Batch User\n                Guide</emphasis>.</simpara>\n      ",
+                  "documentation": "        \n        <p>If the event target is an AWS Batch job, this contains the job definition, job\n            name, and other parameters. For more information, see <a href=\"http://docs.aws.amazon.com/batch/latest/userguide/jobs.html\">Jobs</a> in the <i>AWS Batch User\n                Guide</i>.</p>\n      ",
+                  "shape_name": "BatchParameters"
+                },
+                "SqsParameters": {
+                  "type": "structure",
+                  "members": {
+                    "MessageGroupId": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n        <para>The FIFO message group ID to use as the target.</para>\n      ",
+                      "documentation": "\n        <p>The FIFO message group ID to use as the target.</p>\n      ",
+                      "shape_name": "MessageGroupId"
+                    }
+                  },
+                  "zonbookDocumentation": "\n        <para>Contains the message group ID to use when the target is a FIFO queue.</para>\n        <simpara>If you specify an SQS FIFO queue as a target, the queue must have content-based deduplication enabled.</simpara>\n      ",
+                  "documentation": "\n        <p>Contains the message group ID to use when the target is a FIFO queue.</p>\n        <p>If you specify an SQS FIFO queue as a target, the queue must have content-based deduplication enabled.</p>\n      ",
+                  "shape_name": "SqsParameters"
+                }
+              },
+              "zonbookDocumentation": "\n        <simpara>Targets are the resources to be invoked when a rule is triggered. For a complete list of services and resources that can be \n            set as a target, see <xref linkend=\"PutTargets\"/>.</simpara>\n        \n        \n      ",
+              "documentation": "\n        <p>Targets are the resources to be invoked when a rule is triggered. For a complete list of services and resources that can be \n            set as a target, see <a>PutTargets</a>.</p>\n        \n        \n      ",
+              "shape_name": "Target"
+            }
+          }
+        },
+        "shape_name": "PutTargetsRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "FailedEntryCount": {
+            "type": "integer",
+            "zonbookDocumentation": "\n        <simpara>The number of failed entries.</simpara>\n      ",
+            "documentation": "\n        <p>The number of failed entries.</p>\n      ",
+            "shape_name": "Integer"
+          },
+          "FailedEntries": {
+            "type": "list",
+            "zonbookDocumentation": "\n        <simpara>The failed target entries.</simpara>\n      ",
+            "documentation": "\n        <p>The failed target entries.</p>\n      ",
+            "shape_name": "PutTargetsResultEntryList",
+            "members": {
+              "type": "structure",
+              "members": {
+                "TargetId": {
+                  "type": "string",
+                  "pattern": "[\\.\\-_A-Za-z0-9]+",
+                  "zonbookDocumentation": "\n        <simpara>The ID of the target.</simpara>\n      ",
+                  "documentation": "\n        <p>The ID of the target.</p>\n      ",
+                  "shape_name": "TargetId",
+                  "min_length": 1,
+                  "max_length": 64
+                },
+                "ErrorCode": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n        <simpara>The error code that indicates why the target addition failed. If the value is <code>ConcurrentModificationException</code>, too many \n        requests were made at the same time.</simpara>\n      ",
+                  "documentation": "\n        <p>The error code that indicates why the target addition failed. If the value is <code>ConcurrentModificationException</code>, too many \n        requests were made at the same time.</p>\n      ",
+                  "shape_name": "ErrorCode"
+                },
+                "ErrorMessage": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n        <simpara>The error message that explains why the target addition failed.</simpara>\n      ",
+                  "documentation": "\n        <p>The error message that explains why the target addition failed.</p>\n      ",
+                  "shape_name": "ErrorMessage"
+                }
+              },
+              "zonbookDocumentation": "\n        <simpara>Represents a target that failed to be added to a rule.</simpara>\n      ",
+              "documentation": "\n        <p>Represents a target that failed to be added to a rule.</p>\n      ",
+              "shape_name": "PutTargetsResultEntry"
+            }
+          }
+        },
+        "shape_name": "PutTargetsResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>An entity that you specified does not exist.</simpara>\n      ",
+          "documentation": "\n        <p>An entity that you specified does not exist.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>There is concurrent modification on a rule or target.</simpara>\n      ",
+          "documentation": "\n        <p>There is concurrent modification on a rule or target.</p>\n      ",
+          "shape_name": "ConcurrentModificationException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>You tried to create more rules or add more targets to a rule than is allowed.</simpara>\n      ",
+          "documentation": "\n        <p>You tried to create more rules or add more targets to a rule than is allowed.</p>\n      ",
+          "shape_name": "LimitExceededException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>This exception occurs due to unexpected causes.</simpara>\n      ",
+          "documentation": "\n        <p>This exception occurs due to unexpected causes.</p>\n      ",
+          "shape_name": "InternalException"
+        }
+      ],
+      "documentation": "\n        <p>Adds the specified targets to the specified rule, or updates the targets if they are already associated with the rule.</p>\n        <p>Targets are the resources that are invoked when a rule is triggered.</p>\n        <p>You can configure the following as targets for CloudWatch Events:</p>\n\n           <ul>\n            <li>\n               <p>EC2 instances</p>\n            </li>\n            <li>\n               <p>SSM Run Command</p>\n            </li>\n            <li>\n               <p>SSM Automation</p>\n            </li>\n            <li>\n               <p>AWS Lambda functions</p>\n            </li>\n            <li>\n               <p>Data streams in Amazon Kinesis Data Streams</p>\n            </li>\n            <li>\n               <p>Data delivery streams in Amazon Kinesis Data Firehose</p>\n            </li>\n            <li>\n               <p>Amazon ECS tasks</p>\n            </li>\n            <li>\n               <p>AWS Step Functions state machines</p>\n            </li>\n            <li>\n               <p>AWS Batch jobs</p>\n            </li>\n            <li>\n               <p>AWS CodeBuild projects</p>\n            </li>\n            <li>\n               <p>Pipelines in AWS CodePipeline</p>\n            </li>\n            <li>\n               <p>Amazon Inspector assessment templates</p>\n            </li>\n            <li>\n               <p>Amazon SNS topics</p>\n            </li>\n            <li>\n               <p>Amazon SQS queues, including FIFO queues</p>\n            </li>\n            <li>\n               <p>The default event bus of another AWS account</p>\n            </li>\n         </ul> \n        \n        \n        \n        <p>Creating rules with built-in targets is supported only in the AWS Management Console. The built-in targets are <code>EC2 CreateSnapshot API call</code>,\n            <code>EC2 RebootInstances API call</code>, <code>EC2 StopInstances API call</code>, and <code>EC2 TerminateInstances API call</code>.\n                        \n        </p>\n  \n        <p>For some target types, <code>PutTargets</code> provides target-specific parameters.\n            If the target is a Kinesis data stream, you can optionally specify which shard the event\n            goes to by using the <code>KinesisParameters</code> argument. To invoke a command on\n            multiple EC2 instances with one rule, you can use the <code>RunCommandParameters</code>\n            field.</p>\n        <p>To be able to make API calls against the resources that you own, Amazon CloudWatch\n            Events needs the appropriate permissions. For AWS Lambda and Amazon SNS resources,\n            CloudWatch Events relies on resource-based policies. For EC2 instances, Kinesis data\n            streams, and AWS Step Functions state machines, CloudWatch Events relies on IAM roles\n            that you specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For\n            more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/auth-and-access-control-cwe.html\">Authentication\n                and Access Control</a> in the <i>Amazon CloudWatch Events User\n                Guide</i>.</p>\n        <p>If another AWS account is in the same region and has granted you permission (using\n                <code>PutPermission</code>), you can send events to that account. Set that account's\n            event bus as a target of the rules in your account. To send the matched events to the\n            other account, specify that account's event bus as the <code>Arn</code> value when you\n            run <code>PutTargets</code>. If your account sends events to another account, your\n            account is charged for each sent event. Each event sent to another account is charged as\n            a custom event. The account receiving the event is not charged. For more information,\n            see <a href=\"https://aws.amazon.com/cloudwatch/pricing/\">Amazon CloudWatch\n                Pricing</a>.</p>\n     \n        <p>For more information about enabling cross-account\n            events, see <a>PutPermission</a>.</p>\n        \n        <p>\n            <b>Input</b>, <b>InputPath</b>, and\n                <b>InputTransformer</b> are mutually exclusive and\n            optional parameters of a target. When a rule is triggered due to a matched\n            event:</p>\n        \n        <ul>\n            <li>\n               <p>If none of the following arguments are specified for a target, then the entire event is\n                    passed to the target in JSON format (unless the target is Amazon EC2 Run Command\n                    or Amazon ECS task, in which case nothing from the event is passed to the\n                    target).</p>\n            </li>\n            <li>\n                <p>If <b>Input</b> is specified in the form of valid JSON, then the matched event is overridden with this constant.</p>\n            </li>\n            <li>\n               <p>If \n                <b>InputPath</b> is specified in the form of JSONPath (for example, <code>$.detail</code>), then only\n                the part of the event specified in the path is passed to the target (for example, only the detail part of the event is passed).</p>\n            </li>\n            <li>\n               <p>If \n                <b>InputTransformer</b> is specified, then one or more specified JSONPaths are extracted from the event and used as values in a template that you specify as the input to the target.</p>\n            </li>\n         </ul>\n        \n        <p>When you specify <code>InputPath</code> or <code>InputTransformer</code>, you must use JSON dot notation, not bracket notation.</p>\n        \n        <p>When you add targets to a rule and the associated rule triggers soon after, new or\n            updated targets might not be immediately invoked. Allow a short period of time for\n            changes to take effect.</p>\n        \n        <p>This action can partially fail if too many requests are made at the same time. If that happens, <code>FailedEntryCount</code> is non-zero in the response and \n            each entry in <code>FailedEntries</code> provides the ID of the failed target and the error code.</p>\n        \n        \n        \n      "
+    },
+    "RemoveTargets": {
+      "name": "RemoveTargets",
+      "input": {
+        "type": "structure",
+        "members": {
+          "Rule": {
+            "type": "string",
+            "pattern": "[\\.\\-_A-Za-z0-9]+",
+            "zonbookDocumentation": "\n        <simpara>The name of the rule.</simpara>\n      ",
+            "documentation": "\n        <p>The name of the rule.</p>\n      ",
+            "required": true,
+            "shape_name": "RuleName",
+            "min_length": 1,
+            "max_length": 64
+          },
+          "Ids": {
+            "type": "list",
+            "zonbookDocumentation": "\n        <simpara>The IDs of the targets to remove from the rule.</simpara>\n      ",
+            "documentation": "\n        <p>The IDs of the targets to remove from the rule.</p>\n      ",
+            "required": true,
+            "shape_name": "TargetIdList",
+            "min_length": 1,
+            "max_length": 100,
+            "members": {
+              "type": "string",
+              "pattern": "[\\.\\-_A-Za-z0-9]+",
+              "shape_name": "TargetId",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 64
+            }
+          }
+        },
+        "shape_name": "RemoveTargetsRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "FailedEntryCount": {
+            "type": "integer",
+            "zonbookDocumentation": "\n        <simpara>The number of failed entries.</simpara>\n      ",
+            "documentation": "\n        <p>The number of failed entries.</p>\n      ",
+            "shape_name": "Integer"
+          },
+          "FailedEntries": {
+            "type": "list",
+            "zonbookDocumentation": "\n        <simpara>The failed target entries.</simpara>\n      ",
+            "documentation": "\n        <p>The failed target entries.</p>\n      ",
+            "shape_name": "RemoveTargetsResultEntryList",
+            "members": {
+              "type": "structure",
+              "members": {
+                "TargetId": {
+                  "type": "string",
+                  "pattern": "[\\.\\-_A-Za-z0-9]+",
+                  "zonbookDocumentation": "\n        <simpara>The ID of the target.</simpara>\n      ",
+                  "documentation": "\n        <p>The ID of the target.</p>\n      ",
+                  "shape_name": "TargetId",
+                  "min_length": 1,
+                  "max_length": 64
+                },
+                "ErrorCode": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n        <simpara>The error code that indicates why the target removal failed. If the value is <code>ConcurrentModificationException</code>, too many \n            requests were made at the same time.</simpara>\n      ",
+                  "documentation": "\n        <p>The error code that indicates why the target removal failed. If the value is <code>ConcurrentModificationException</code>, too many \n            requests were made at the same time.</p>\n      ",
+                  "shape_name": "ErrorCode"
+                },
+                "ErrorMessage": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n        <simpara>The error message that explains why the target removal failed.</simpara>\n      ",
+                  "documentation": "\n        <p>The error message that explains why the target removal failed.</p>\n      ",
+                  "shape_name": "ErrorMessage"
+                }
+              },
+              "zonbookDocumentation": "\n        <simpara>Represents a target that failed to be removed from a rule.</simpara>\n      ",
+              "documentation": "\n        <p>Represents a target that failed to be removed from a rule.</p>\n      ",
+              "shape_name": "RemoveTargetsResultEntry"
+            }
+          }
+        },
+        "shape_name": "RemoveTargetsResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>An entity that you specified does not exist.</simpara>\n      ",
+          "documentation": "\n        <p>An entity that you specified does not exist.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>There is concurrent modification on a rule or target.</simpara>\n      ",
+          "documentation": "\n        <p>There is concurrent modification on a rule or target.</p>\n      ",
+          "shape_name": "ConcurrentModificationException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>This exception occurs due to unexpected causes.</simpara>\n      ",
+          "documentation": "\n        <p>This exception occurs due to unexpected causes.</p>\n      ",
+          "shape_name": "InternalException"
+        }
+      ],
+      "documentation": "\n        <p>Removes the specified targets from the specified rule. When the rule is triggered, those targets are no longer be invoked.</p>\n        \n        <p>When you remove a target, when the associated rule triggers, removed targets might\n            continue to be invoked. Allow a short period of time for changes to take\n            effect.</p>\n        \n        <p>This action can partially fail if too many requests are made at the same time. If that happens, <code>FailedEntryCount</code> is non-zero in the response and \n            each entry in <code>FailedEntries</code> provides the ID of the failed target and the error code.</p>\n        \n        \n      "
+    },
+    "DescribeRule": {
+      "name": "DescribeRule",
+      "input": {
+        "type": "structure",
+        "members": {
+          "Name": {
+            "type": "string",
+            "pattern": "[\\.\\-_A-Za-z0-9]+",
+            "zonbookDocumentation": "\n        <simpara>The name of the rule.</simpara>\n      ",
+            "documentation": "\n        <p>The name of the rule.</p>\n      ",
+            "required": true,
+            "shape_name": "RuleName",
+            "min_length": 1,
+            "max_length": 64
+          }
+        },
+        "shape_name": "DescribeRuleRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "Name": {
+            "type": "string",
+            "pattern": "[\\.\\-_A-Za-z0-9]+",
+            "zonbookDocumentation": "\n        <simpara>The name of the rule.</simpara>\n      ",
+            "documentation": "\n        <p>The name of the rule.</p>\n      ",
+            "shape_name": "RuleName",
+            "min_length": 1,
+            "max_length": 64
+          },
+          "Arn": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <simpara>The Amazon Resource Name (ARN) of the rule.</simpara>\n      ",
+            "documentation": "\n        <p>The Amazon Resource Name (ARN) of the rule.</p>\n      ",
+            "shape_name": "RuleArn",
+            "min_length": 1,
+            "max_length": 1600
+          },
+          "EventPattern": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <simpara>The event pattern. For more information, see <ulink type=\"documentation\" url=\"AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</ulink> in the <emphasis>Amazon CloudWatch Events User Guide</emphasis>.</simpara>\n      ",
+            "documentation": "\n        <p>The event pattern. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>\n      ",
+            "shape_name": "EventPattern"
+          },
+          "ScheduleExpression": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <simpara>The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".</simpara>\n      ",
+            "documentation": "\n        <p>The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".</p>\n      ",
+            "shape_name": "ScheduleExpression",
+            "max_length": 256
+          },
+          "State": {
+            "type": "string",
+            "enum": [
+              "ENABLED",
+              "DISABLED"
+            ],
+            "zonbookDocumentation": "\n        <simpara>Specifies whether the rule is enabled or disabled.</simpara>\n      ",
+            "documentation": "\n        <p>Specifies whether the rule is enabled or disabled.</p>\n      ",
+            "shape_name": "RuleState"
+          },
+          "Description": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <simpara>The description of the rule.</simpara>\n      ",
+            "documentation": "\n        <p>The description of the rule.</p>\n      ",
+            "shape_name": "RuleDescription",
+            "max_length": 512
+          },
+          "RoleArn": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <simpara>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</simpara>\n      ",
+            "documentation": "\n        <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>\n      ",
+            "shape_name": "RoleArn",
+            "min_length": 1,
+            "max_length": 1600
+          }
+        },
+        "shape_name": "DescribeRuleResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>An entity that you specified does not exist.</simpara>\n      ",
+          "documentation": "\n        <p>An entity that you specified does not exist.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>This exception occurs due to unexpected causes.</simpara>\n      ",
+          "documentation": "\n        <p>This exception occurs due to unexpected causes.</p>\n      ",
+          "shape_name": "InternalException"
+        }
+      ],
+      "documentation": "\n        <p>Describes the specified rule.</p>\n        <p>DescribeRule does not list the targets of a rule. To see the targets associated with a rule, use <a>ListTargetsByRule</a>.</p>\n        \n        \n      "
+    },
+    "ListTargetsByRule": {
+      "name": "ListTargetsByRule",
+      "input": {
+        "type": "structure",
+        "members": {
+          "Rule": {
+            "type": "string",
+            "pattern": "[\\.\\-_A-Za-z0-9]+",
+            "zonbookDocumentation": "\n        <simpara>The name of the rule.</simpara>\n      ",
+            "documentation": "\n        <p>The name of the rule.</p>\n      ",
+            "required": true,
+            "shape_name": "RuleName",
+            "min_length": 1,
+            "max_length": 64
+          },
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <simpara>The token returned by a previous call to retrieve the next set of results.</simpara>\n      ",
+            "documentation": "\n        <p>The token returned by a previous call to retrieve the next set of results.</p>\n      ",
+            "shape_name": "NextToken",
+            "min_length": 1,
+            "max_length": 2048
+          },
+          "Limit": {
+            "type": "integer",
+            "zonbookDocumentation": "\n        <simpara>The maximum number of results to return.</simpara>\n      ",
+            "documentation": "\n        <p>The maximum number of results to return.</p>\n      ",
+            "shape_name": "LimitMax100",
+            "min_length": 1,
+            "max_length": 100
+          }
+        },
+        "shape_name": "ListTargetsByRuleRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "Targets": {
+            "type": "list",
+            "zonbookDocumentation": "\n        <simpara>The targets assigned to the rule.</simpara>\n      ",
+            "documentation": "\n        <p>The targets assigned to the rule.</p>\n      ",
+            "shape_name": "TargetList",
+            "min_length": 1,
+            "max_length": 100,
+            "members": {
+              "type": "structure",
+              "members": {
+                "Id": {
+                  "type": "string",
+                  "pattern": "[\\.\\-_A-Za-z0-9]+",
+                  "zonbookDocumentation": "\n        <simpara>The ID of the target.</simpara>\n      ",
+                  "documentation": "\n        <p>The ID of the target.</p>\n      ",
+                  "required": true,
+                  "shape_name": "TargetId",
+                  "min_length": 1,
+                  "max_length": 64
+                },
+                "Arn": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n        <simpara>The Amazon Resource Name (ARN) of the target.</simpara>\n      ",
+                  "documentation": "\n        <p>The Amazon Resource Name (ARN) of the target.</p>\n      ",
+                  "required": true,
+                  "shape_name": "TargetArn",
+                  "min_length": 1,
+                  "max_length": 1600
+                },
+                "RoleArn": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n        <simpara>The Amazon Resource Name (ARN) of the IAM role to be used for this target when the rule is triggered. If one rule triggers \n        multiple targets, you can use a different IAM role for each target.</simpara>\n      ",
+                  "documentation": "\n        <p>The Amazon Resource Name (ARN) of the IAM role to be used for this target when the rule is triggered. If one rule triggers \n        multiple targets, you can use a different IAM role for each target.</p>\n      ",
+                  "shape_name": "RoleArn",
+                  "min_length": 1,
+                  "max_length": 1600
+                },
+                "Input": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n        <simpara>Valid JSON text passed to the target. In this case, nothing from the event itself is passed\n            to the target. For more information, see <ulink url=\"http://www.rfc-editor.org/rfc/rfc7159.txt\">The JavaScript Object Notation (JSON) Data Interchange Format</ulink>.</simpara>\n      ",
+                  "documentation": "\n        <p>Valid JSON text passed to the target. In this case, nothing from the event itself is passed\n            to the target. For more information, see <a href=\"http://www.rfc-editor.org/rfc/rfc7159.txt\">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>\n      ",
+                  "shape_name": "TargetInput",
+                  "max_length": 8192
+                },
+                "InputPath": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n        <simpara>The value of the JSONPath that is used for extracting part of the matched event when\n            passing it to the target. You must use JSON dot notation, not bracket notation. For more information about JSON\n            paths, see <ulink url=\"http://goessner.net/articles/JsonPath/\">JSONPath</ulink>.</simpara>\n      ",
+                  "documentation": "\n        <p>The value of the JSONPath that is used for extracting part of the matched event when\n            passing it to the target. You must use JSON dot notation, not bracket notation. For more information about JSON\n            paths, see <a href=\"http://goessner.net/articles/JsonPath/\">JSONPath</a>.</p>\n      ",
+                  "shape_name": "TargetInputPath",
+                  "max_length": 256
+                },
+                "InputTransformer": {
+                  "type": "structure",
+                  "members": {
+                    "InputPathsMap": {
+                      "type": "map",
+                      "zonbookDocumentation": "\n        <simpara>Map of JSON paths to be extracted from the event. You can then insert these in the template in <code>InputTemplate</code> to produce the \n            output you want to be sent to the target.</simpara>\n        <simpara>\n            <code>InputPathsMap</code> is an array key-value pairs, where each value is a valid JSON path. You can have\n            as many as 10 key-value pairs.\n            You must use JSON dot notation, not bracket notation.</simpara>\n        <simpara>The keys cannot start with \"AWS.\" </simpara>\n      ",
+                      "documentation": "\n        <p>Map of JSON paths to be extracted from the event. You can then insert these in the template in <code>InputTemplate</code> to produce the \n            output you want to be sent to the target.</p>\n        <p>\n            <code>InputPathsMap</code> is an array key-value pairs, where each value is a valid JSON path. You can have\n            as many as 10 key-value pairs.\n            You must use JSON dot notation, not bracket notation.</p>\n        <p>The keys cannot start with \"AWS.\" </p>\n      ",
+                      "shape_name": "TransformerPaths",
+                      "max_length": 10,
+                      "keys": {
+                        "type": "string",
+                        "pattern": "[A-Za-z0-9\\_\\-]+",
+                        "shape_name": "InputTransformerPathKey",
+                        "documentation": null,
+                        "min_length": 1,
+                        "max_length": 256
+                      },
+                      "members": {
+                        "type": "string",
+                        "shape_name": "TargetInputPath",
+                        "documentation": null,
+                        "max_length": 256
+                      }
+                    },
+                    "InputTemplate": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n        \n        <simpara>Input template where you specify placeholders that will be filled with the values of the keys from <code>InputPathsMap</code> \n            to customize the data sent to the target. Enclose\n            each <code>InputPathsMaps</code> value in brackets: &lt;<emphasis>value</emphasis>&gt; The InputTemplate\n        must be valid JSON.</simpara>\n\n        <simpara>If <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the following restrictions apply:</simpara>\n        <itemizedlist>\n            <listitem>\n                <simpara>The placeholder cannot be used as an object key.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>Object values cannot include quote marks.</simpara>\n            </listitem>\n        </itemizedlist>\n        <simpara>The following example shows the syntax for using <code>InputPathsMap</code> and <code>InputTemplate</code>.</simpara>\n        <simpara>\n            <code> \"InputTransformer\":</code>\n         </simpara>\n         <simpara>\n            <code>{</code>\n         </simpara>\n         <simpara>\n            <code>\"InputPathsMap\": {\"instance\": \"$.detail.instance\",\"status\": \"$.detail.status\"},</code>\n         </simpara>\n         <simpara>\n            <code>\"InputTemplate\": \"&lt;instance&gt; is in state &lt;status&gt;\"</code>\n         </simpara>\n         <simpara>\n            <code>}</code>\n         </simpara>\n        <para>To have the <code>InputTemplate</code> include quote marks within a JSON string, escape each quote marks with a slash, as in the following example:</para>\n        <simpara>\n            <code> \"InputTransformer\":</code>\n         </simpara>\n        <simpara>\n            <code>{</code>\n         </simpara>\n        <simpara>\n            <code>\"InputPathsMap\": {\"instance\": \"$.detail.instance\",\"status\": \"$.detail.status\"},</code>\n         </simpara>\n        <simpara>\n            <code>\"InputTemplate\": \"&lt;instance&gt; is in state \\\"&lt;status&gt;\\\"\"</code>\n         </simpara>\n        <simpara>\n            <code>}</code>\n         </simpara>\n      ",
+                      "documentation": "\n        \n        <p>Input template where you specify placeholders that will be filled with the values of the keys from <code>InputPathsMap</code> \n            to customize the data sent to the target. Enclose\n            each <code>InputPathsMaps</code> value in brackets: &lt;<i>value</i>&gt; The InputTemplate\n        must be valid JSON.</p>\n\n        <p>If <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the following restrictions apply:</p>\n        <ul>\n            <li>\n                <p>The placeholder cannot be used as an object key.</p>\n            </li>\n            <li>\n                <p>Object values cannot include quote marks.</p>\n            </li>\n         </ul>\n        <p>The following example shows the syntax for using <code>InputPathsMap</code> and <code>InputTemplate</code>.</p>\n        <p>\n            <code> \"InputTransformer\":</code>\n         </p>\n         <p>\n            <code>{</code>\n         </p>\n         <p>\n            <code>\"InputPathsMap\": {\"instance\": \"$.detail.instance\",\"status\": \"$.detail.status\"},</code>\n         </p>\n         <p>\n            <code>\"InputTemplate\": \"&lt;instance&gt; is in state &lt;status&gt;\"</code>\n         </p>\n         <p>\n            <code>}</code>\n         </p>\n        <p>To have the <code>InputTemplate</code> include quote marks within a JSON string, escape each quote marks with a slash, as in the following example:</p>\n        <p>\n            <code> \"InputTransformer\":</code>\n         </p>\n        <p>\n            <code>{</code>\n         </p>\n        <p>\n            <code>\"InputPathsMap\": {\"instance\": \"$.detail.instance\",\"status\": \"$.detail.status\"},</code>\n         </p>\n        <p>\n            <code>\"InputTemplate\": \"&lt;instance&gt; is in state \\\"&lt;status&gt;\\\"\"</code>\n         </p>\n        <p>\n            <code>}</code>\n         </p>\n      ",
+                      "required": true,
+                      "shape_name": "TransformerInput",
+                      "min_length": 1,
+                      "max_length": 8192
+                    }
+                  },
+                  "zonbookDocumentation": "\n        \n        <simpara>Settings to enable you to provide custom input to a target based on certain event data. You can extract one or more key-value pairs\n        from the event and then use that data to send customized input to the target.</simpara>\n      ",
+                  "documentation": "\n        \n        <p>Settings to enable you to provide custom input to a target based on certain event data. You can extract one or more key-value pairs\n        from the event and then use that data to send customized input to the target.</p>\n      ",
+                  "shape_name": "InputTransformer"
+                },
+                "KinesisParameters": {
+                  "type": "structure",
+                  "members": {
+                    "PartitionKeyPath": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n        <simpara>The JSON path to be extracted from the event and used as the partition key. For more information, see <ulink type=\"documentation\" url=\"streams/latest/dev/key-concepts.html#partition-key\">Amazon Kinesis Streams Key Concepts</ulink> in the <emphasis>Amazon Kinesis Streams Developer Guide</emphasis>.</simpara>\n      ",
+                      "documentation": "\n        <p>The JSON path to be extracted from the event and used as the partition key. For more information, see <a href=\"http://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key\">Amazon Kinesis Streams Key Concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.</p>\n      ",
+                      "required": true,
+                      "shape_name": "TargetPartitionKeyPath",
+                      "max_length": 256
+                    }
+                  },
+                  "zonbookDocumentation": "\n        <simpara>The custom parameter you can use to control the shard assignment, when the target\n            is a Kinesis data stream. If you do not include this parameter, the default is to use\n            the <code>eventId</code> as the partition key.</simpara>\n      ",
+                  "documentation": "\n        <p>The custom parameter you can use to control the shard assignment, when the target\n            is a Kinesis data stream. If you do not include this parameter, the default is to use\n            the <code>eventId</code> as the partition key.</p>\n      ",
+                  "shape_name": "KinesisParameters"
+                },
+                "RunCommandParameters": {
+                  "type": "structure",
+                  "members": {
+                    "RunCommandTargets": {
+                      "type": "list",
+                      "zonbookDocumentation": "       \n        <simpara>Currently, we support including only one RunCommandTarget block, which specifies either an array of InstanceIds or a tag.</simpara>\n      ",
+                      "documentation": "       \n        <p>Currently, we support including only one RunCommandTarget block, which specifies either an array of InstanceIds or a tag.</p>\n      ",
+                      "required": true,
+                      "shape_name": "RunCommandTargets",
+                      "min_length": 1,
+                      "max_length": 5,
+                      "members": {
+                        "type": "structure",
+                        "members": {
+                          "Key": {
+                            "type": "string",
+                            "pattern": "^[\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*$",
+                            "zonbookDocumentation": "\n        \n        <simpara>Can be either <code>tag:</code>\n            <emphasis>tag-key</emphasis> or <code>InstanceIds</code>.</simpara>\n      ",
+                            "documentation": "\n        \n        <p>Can be either <code>tag:</code>\n            <i>tag-key</i> or <code>InstanceIds</code>.</p>\n      ",
+                            "required": true,
+                            "shape_name": "RunCommandTargetKey",
+                            "min_length": 1,
+                            "max_length": 128
+                          },
+                          "Values": {
+                            "type": "list",
+                            "zonbookDocumentation": "\n        <simpara>If <code>Key</code> is <code>tag:</code>\n            <emphasis>tag-key</emphasis>, <code>Values</code> is a list of tag values. \n            If <code>Key</code> is <code>InstanceIds</code>, <code>Values</code> is a list of Amazon EC2 instance IDs.</simpara>\n        \n      ",
+                            "documentation": "\n        <p>If <code>Key</code> is <code>tag:</code>\n            <i>tag-key</i>, <code>Values</code> is a list of tag values. \n            If <code>Key</code> is <code>InstanceIds</code>, <code>Values</code> is a list of Amazon EC2 instance IDs.</p>\n        \n      ",
+                            "required": true,
+                            "shape_name": "RunCommandTargetValues",
+                            "min_length": 1,
+                            "max_length": 50,
+                            "members": {
+                              "type": "string",
+                              "shape_name": "RunCommandTargetValue",
+                              "documentation": null,
+                              "min_length": 1,
+                              "max_length": 256
+                            }
+                          }
+                        },
+                        "zonbookDocumentation": "\n        <simpara>Information about the EC2 instances that are to be sent the command, specified as key-value pairs. Each <code>RunCommandTarget</code> block can \n            include only one key, but this key may specify multiple values.</simpara>\n      ",
+                        "documentation": "\n        <p>Information about the EC2 instances that are to be sent the command, specified as key-value pairs. Each <code>RunCommandTarget</code> block can \n            include only one key, but this key may specify multiple values.</p>\n      ",
+                        "shape_name": "RunCommandTarget"
+                      }
+                    }
+                  },
+                  "zonbookDocumentation": "\n        <simpara>Parameters used when you are using the rule to invoke Amazon EC2 Run Command.</simpara>\n      ",
+                  "documentation": "\n        <p>Parameters used when you are using the rule to invoke Amazon EC2 Run Command.</p>\n      ",
+                  "shape_name": "RunCommandParameters"
+                },
+                "EcsParameters": {
+                  "type": "structure",
+                  "members": {
+                    "TaskDefinitionArn": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n        <simpara>The ARN of the task definition to use if the event target is an Amazon ECS task. </simpara>\n      ",
+                      "documentation": "\n        <p>The ARN of the task definition to use if the event target is an Amazon ECS task. </p>\n      ",
+                      "required": true,
+                      "shape_name": "Arn",
+                      "min_length": 1,
+                      "max_length": 1600
+                    },
+                    "TaskCount": {
+                      "type": "integer",
+                      "zonbookDocumentation": "\n        <simpara>The number of tasks to create based on <code>TaskDefinition</code>. The default is\n            1.</simpara>\n      ",
+                      "documentation": "\n        <p>The number of tasks to create based on <code>TaskDefinition</code>. The default is\n            1.</p>\n      ",
+                      "shape_name": "LimitMin1",
+                      "min_length": 1
+                    },
+                    "LaunchType": {
+                      "type": "string",
+                      "enum": [
+                        "EC2",
+                        "FARGATE"
+                      ],
+                      "zonbookDocumentation": "\n        <para>Specifies the launch type on which your task is running. The launch type that you\n            specify here must match one of the launch type (compatibilities) of the target task. The <code>FARGATE</code>\n            value is supported only in the Regions where AWS Fargate with Amazon ECS is supported.\n            For more information, see <ulink type=\"documentation\" url=\"AmazonECS/latest/developerguide/AWS-Fargate.html\">AWS Fargate on Amazon\n                ECS</ulink> in the <emphasis>Amazon Elastic Container Service Developer\n                Guide</emphasis>.</para>\n      ",
+                      "documentation": "\n        <p>Specifies the launch type on which your task is running. The launch type that you\n            specify here must match one of the launch type (compatibilities) of the target task. The <code>FARGATE</code>\n            value is supported only in the Regions where AWS Fargate with Amazon ECS is supported.\n            For more information, see <a href=\"http://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html\">AWS Fargate on Amazon\n                ECS</a> in the <i>Amazon Elastic Container Service Developer\n                Guide</i>.</p>\n      ",
+                      "shape_name": "LaunchType"
+                    },
+                    "NetworkConfiguration": {
+                      "type": "structure",
+                      "members": {
+                        "awsvpcConfiguration": {
+                          "type": "structure",
+                          "members": {
+                            "Subnets": {
+                              "type": "list",
+                              "zonbookDocumentation": "\n        <para>Specifies the subnets associated with the task. These subnets must all be in the same\n            VPC. You can specify as many as 16 subnets.</para>\n      ",
+                              "documentation": "\n        <p>Specifies the subnets associated with the task. These subnets must all be in the same\n            VPC. You can specify as many as 16 subnets.</p>\n      ",
+                              "required": true,
+                              "shape_name": "StringList",
+                              "members": {
+                                "type": "string",
+                                "shape_name": "String",
+                                "documentation": null
+                              }
+                            },
+                            "SecurityGroups": {
+                              "type": "list",
+                              "zonbookDocumentation": "\n        <para>Specifies the security groups associated with the task. These security groups must all\n            be in the same VPC. You can specify as many as five security groups. If you do not\n            specify a security group, the default security group for the VPC is used.</para>\n      ",
+                              "documentation": "\n        <p>Specifies the security groups associated with the task. These security groups must all\n            be in the same VPC. You can specify as many as five security groups. If you do not\n            specify a security group, the default security group for the VPC is used.</p>\n      ",
+                              "shape_name": "StringList",
+                              "members": {
+                                "type": "string",
+                                "shape_name": "String",
+                                "documentation": null
+                              }
+                            },
+                            "AssignPublicIp": {
+                              "type": "string",
+                              "enum": [
+                                "ENABLED",
+                                "DISABLED"
+                              ],
+                              "zonbookDocumentation": "\n        <para>Specifies whether the task's elastic network interface receives a public IP address. You can specify <code>ENABLED</code> only when\n        <code>LaunchType</code> in <code>EcsParameters</code> is set to <code>FARGATE</code>.</para>\n      ",
+                              "documentation": "\n        <p>Specifies whether the task's elastic network interface receives a public IP address. You can specify <code>ENABLED</code> only when\n        <code>LaunchType</code> in <code>EcsParameters</code> is set to <code>FARGATE</code>.</p>\n      ",
+                              "shape_name": "AssignPublicIp"
+                            }
+                          },
+                          "zonbookDocumentation": "\n        <para>Use this structure to specify the VPC subnets and security groups for the task, and\n            whether a public IP address is to be used. This structure is relevant only for ECS tasks\n            that use the <code>awsvpc</code> network mode.</para>\n      ",
+                          "documentation": "\n        <p>Use this structure to specify the VPC subnets and security groups for the task, and\n            whether a public IP address is to be used. This structure is relevant only for ECS tasks\n            that use the <code>awsvpc</code> network mode.</p>\n      ",
+                          "shape_name": "AwsVpcConfiguration"
+                        }
+                      },
+                      "zonbookDocumentation": "\n        <para>Use this structure if the ECS task uses the <code>awsvpc</code> network mode. This\n            structure specifies the VPC subnets and security groups associated with the task, and\n            whether a public IP address is to be used. This structure is required if\n                <code>LaunchType</code> is <code>FARGATE</code> because the <code>awsvpc</code> mode\n            is required for Fargate tasks.</para>\n        <para>If you specify <code>NetworkConfiguration</code> when the target ECS task does not use\n            the <code>awsvpc</code> network mode, the task fails.</para>\n      ",
+                      "documentation": "\n        <p>Use this structure if the ECS task uses the <code>awsvpc</code> network mode. This\n            structure specifies the VPC subnets and security groups associated with the task, and\n            whether a public IP address is to be used. This structure is required if\n                <code>LaunchType</code> is <code>FARGATE</code> because the <code>awsvpc</code> mode\n            is required for Fargate tasks.</p>\n        <p>If you specify <code>NetworkConfiguration</code> when the target ECS task does not use\n            the <code>awsvpc</code> network mode, the task fails.</p>\n      ",
+                      "shape_name": "NetworkConfiguration"
+                    },
+                    "PlatformVersion": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n        <para>Specifies the platform version for the task. Specify only the numeric portion of the\n            platform version, such as <code>1.1.0</code>.</para>\n            <para>This structure is used only if <code>LaunchType</code> is <code>FARGATE</code>.\n            For more information about valid platform versions, see <ulink type=\"documentation\" url=\"AmazonECS/latest/developerguide/platform_versions.html\">AWS Fargate Platform\n                Versions</ulink> in the <emphasis>Amazon Elastic Container Service Developer\n                Guide</emphasis>.</para>\n      ",
+                      "documentation": "\n        <p>Specifies the platform version for the task. Specify only the numeric portion of the\n            platform version, such as <code>1.1.0</code>.</p>\n            <p>This structure is used only if <code>LaunchType</code> is <code>FARGATE</code>.\n            For more information about valid platform versions, see <a href=\"http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html\">AWS Fargate Platform\n                Versions</a> in the <i>Amazon Elastic Container Service Developer\n                Guide</i>.</p>\n      ",
+                      "shape_name": "String"
+                    },
+                    "Group": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n        <para>Specifies an ECS task group for the task. The maximum length is 255 characters.</para>\n      ",
+                      "documentation": "\n        <p>Specifies an ECS task group for the task. The maximum length is 255 characters.</p>\n      ",
+                      "shape_name": "String"
+                    }
+                  },
+                  "zonbookDocumentation": "        \n        <simpara>Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS task. For more information about Amazon ECS tasks, \n            see <ulink type=\"documentation\" url=\"AmazonECS/latest/developerguide/task_defintions.html\">Task Definitions </ulink> in the <emphasis>Amazon EC2 Container Service Developer Guide</emphasis>.</simpara>\n      ",
+                  "documentation": "        \n        <p>Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS task. For more information about Amazon ECS tasks, \n            see <a href=\"http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html\">Task Definitions </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>\n      ",
+                  "shape_name": "EcsParameters"
+                },
+                "BatchParameters": {
+                  "type": "structure",
+                  "members": {
+                    "JobDefinition": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n        <simpara>The ARN or name of the job definition to use if the event target is an AWS Batch job. This job definition must already exist.</simpara>\n      ",
+                      "documentation": "\n        <p>The ARN or name of the job definition to use if the event target is an AWS Batch job. This job definition must already exist.</p>\n      ",
+                      "required": true,
+                      "shape_name": "String"
+                    },
+                    "JobName": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n        <simpara>The name to use for this execution of the job, if the target is an AWS Batch job.</simpara>\n      ",
+                      "documentation": "\n        <p>The name to use for this execution of the job, if the target is an AWS Batch job.</p>\n      ",
+                      "required": true,
+                      "shape_name": "String"
+                    },
+                    "ArrayProperties": {
+                      "type": "structure",
+                      "members": {
+                        "Size": {
+                          "type": "integer",
+                          "zonbookDocumentation": "\n        <para>The size of the array, if this is an array batch job. Valid values are\n            integers between 2 and 10,000.</para>\n      ",
+                          "documentation": "\n        <p>The size of the array, if this is an array batch job. Valid values are\n            integers between 2 and 10,000.</p>\n      ",
+                          "shape_name": "Integer"
+                        }
+                      },
+                      "zonbookDocumentation": "\n        <simpara>The array properties for the submitted job, such as the size of the \n            array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This\n        parameter is used only if the target is an AWS Batch job.</simpara>\n      ",
+                      "documentation": "\n        <p>The array properties for the submitted job, such as the size of the \n            array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This\n        parameter is used only if the target is an AWS Batch job.</p>\n      ",
+                      "shape_name": "BatchArrayProperties"
+                    },
+                    "RetryStrategy": {
+                      "type": "structure",
+                      "members": {
+                        "Attempts": {
+                          "type": "integer",
+                          "zonbookDocumentation": "\n        <para>The number of times to attempt to retry, if the job fails. Valid values are\n            1–10.</para>\n      ",
+                          "documentation": "\n        <p>The number of times to attempt to retry, if the job fails. Valid values are\n            1–10.</p>\n      ",
+                          "shape_name": "Integer"
+                        }
+                      },
+                      "zonbookDocumentation": "\n        <simpara>The retry strategy to use for failed jobs, if the target is an AWS Batch job. The\n            retry strategy is the number of times to retry the failed job execution. Valid values\n            are 1–10. When you specify a retry strategy here, it overrides the retry strategy\n            defined in the job definition.</simpara>\n      ",
+                      "documentation": "\n        <p>The retry strategy to use for failed jobs, if the target is an AWS Batch job. The\n            retry strategy is the number of times to retry the failed job execution. Valid values\n            are 1–10. When you specify a retry strategy here, it overrides the retry strategy\n            defined in the job definition.</p>\n      ",
+                      "shape_name": "BatchRetryStrategy"
+                    }
+                  },
+                  "zonbookDocumentation": "        \n        <simpara>If the event target is an AWS Batch job, this contains the job definition, job\n            name, and other parameters. For more information, see <ulink type=\"documentation\" url=\"batch/latest/userguide/jobs.html\">Jobs</ulink> in the <emphasis>AWS Batch User\n                Guide</emphasis>.</simpara>\n      ",
+                  "documentation": "        \n        <p>If the event target is an AWS Batch job, this contains the job definition, job\n            name, and other parameters. For more information, see <a href=\"http://docs.aws.amazon.com/batch/latest/userguide/jobs.html\">Jobs</a> in the <i>AWS Batch User\n                Guide</i>.</p>\n      ",
+                  "shape_name": "BatchParameters"
+                },
+                "SqsParameters": {
+                  "type": "structure",
+                  "members": {
+                    "MessageGroupId": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n        <para>The FIFO message group ID to use as the target.</para>\n      ",
+                      "documentation": "\n        <p>The FIFO message group ID to use as the target.</p>\n      ",
+                      "shape_name": "MessageGroupId"
+                    }
+                  },
+                  "zonbookDocumentation": "\n        <para>Contains the message group ID to use when the target is a FIFO queue.</para>\n        <simpara>If you specify an SQS FIFO queue as a target, the queue must have content-based deduplication enabled.</simpara>\n      ",
+                  "documentation": "\n        <p>Contains the message group ID to use when the target is a FIFO queue.</p>\n        <p>If you specify an SQS FIFO queue as a target, the queue must have content-based deduplication enabled.</p>\n      ",
+                  "shape_name": "SqsParameters"
+                }
+              },
+              "zonbookDocumentation": "\n        <simpara>Targets are the resources to be invoked when a rule is triggered. For a complete list of services and resources that can be \n            set as a target, see <xref linkend=\"PutTargets\"/>.</simpara>\n        \n        \n      ",
+              "documentation": "\n        <p>Targets are the resources to be invoked when a rule is triggered. For a complete list of services and resources that can be \n            set as a target, see <a>PutTargets</a>.</p>\n        \n        \n      ",
+              "shape_name": "Target"
+            }
+          },
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <simpara>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</simpara>\n      ",
+            "documentation": "\n        <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>\n      ",
+            "shape_name": "NextToken",
+            "min_length": 1,
+            "max_length": 2048
+          }
+        },
+        "shape_name": "ListTargetsByRuleResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>An entity that you specified does not exist.</simpara>\n      ",
+          "documentation": "\n        <p>An entity that you specified does not exist.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>This exception occurs due to unexpected causes.</simpara>\n      ",
+          "documentation": "\n        <p>This exception occurs due to unexpected causes.</p>\n      ",
+          "shape_name": "InternalException"
+        }
+      ],
+      "documentation": "\n        <p>Lists the targets assigned to the specified rule.</p>\n        \n        \n      "
+    },
+    "TestEventPattern": {
+      "name": "TestEventPattern",
+      "input": {
+        "type": "structure",
+        "members": {
+          "EventPattern": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <simpara>The event pattern. For more information, see <ulink type=\"documentation\" url=\"AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</ulink> in the <emphasis>Amazon CloudWatch Events User Guide</emphasis>.</simpara>\n      ",
+            "documentation": "\n        <p>The event pattern. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>\n      ",
+            "required": true,
+            "shape_name": "EventPattern"
+          },
+          "Event": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <simpara>The event, in JSON format, to test against the event pattern.</simpara>\n      ",
+            "documentation": "\n        <p>The event, in JSON format, to test against the event pattern.</p>\n      ",
+            "required": true,
+            "shape_name": "String"
+          }
+        },
+        "shape_name": "TestEventPatternRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "Result": {
+            "type": "boolean",
+            "zonbookDocumentation": "\n        <simpara>Indicates whether the event matches the event pattern.</simpara>\n      ",
+            "documentation": "\n        <p>Indicates whether the event matches the event pattern.</p>\n      ",
+            "shape_name": "Boolean"
+          }
+        },
+        "shape_name": "TestEventPatternResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>The event pattern is not valid.</simpara>\n      ",
+          "documentation": "\n        <p>The event pattern is not valid.</p>\n      ",
+          "shape_name": "InvalidEventPatternException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>This exception occurs due to unexpected causes.</simpara>\n      ",
+          "documentation": "\n        <p>This exception occurs due to unexpected causes.</p>\n      ",
+          "shape_name": "InternalException"
+        }
+      ],
+      "documentation": "\n        <p>Tests whether the specified event pattern matches the provided event.</p>\n        <p>Most services in AWS treat : or / as the same character in Amazon Resource Names (ARNs). \n            However, CloudWatch Events uses an exact match in event patterns and rules. Be sure to use the\n            correct ARN characters when creating event patterns so that they match the ARN\n            syntax in the event you want to match.</p>\n\n        \n      "
+    },
+    "TestScheduleExpression": {
+      "name": "TestScheduleExpression",
+      "input": {
+        "type": "structure",
+        "members": {
+          "Expression": {
+            "type": "string",
+            "required": true,
+            "shape_name": "ScheduleExpression",
+            "documentation": null,
+            "max_length": 256
+          },
+          "StartDate": {
+            "type": "timestamp",
+            "shape_name": "Timestamp",
+            "documentation": null
+          },
+          "Limit": {
+            "type": "integer",
+            "shape_name": "LimitMax10",
+            "documentation": null,
+            "min_length": 1,
+            "max_length": 10
+          }
+        },
+        "shape_name": "TestScheduleExpressionRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "NextTriggerDates": {
+            "type": "list",
+            "shape_name": "TriggerDateList",
+            "documentation": null,
+            "members": {
+              "type": "timestamp",
+              "shape_name": "Timestamp",
+              "documentation": null
+            }
+          }
+        },
+        "shape_name": "TestScheduleExpressionResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>This exception occurs due to unexpected causes.</simpara>\n      ",
+          "documentation": "\n        <p>This exception occurs due to unexpected causes.</p>\n      ",
+          "shape_name": "InternalException"
+        }
+      ],
+      "documentation": null
+    },
+    "PutEvents": {
+      "name": "PutEvents",
+      "input": {
+        "type": "structure",
+        "members": {
+          "Entries": {
+            "type": "list",
+            "zonbookDocumentation": "\n        <simpara>The entry that defines an event in your system. You can specify several parameters for the entry such as the source and type of the event, resources associated with the event, and so on.</simpara>\n      ",
+            "documentation": "\n        <p>The entry that defines an event in your system. You can specify several parameters for the entry such as the source and type of the event, resources associated with the event, and so on.</p>\n      ",
+            "required": true,
+            "shape_name": "PutEventsRequestEntryList",
+            "min_length": 1,
+            "max_length": 10,
+            "members": {
+              "type": "structure",
+              "members": {
+                "Time": {
+                  "type": "timestamp",
+                  "zonbookDocumentation": "\n        <simpara>The time stamp of the event, per <ulink url=\"https://www.rfc-editor.org/rfc/rfc3339.txt\">RFC3339</ulink>. If no time stamp\n            is provided, the time stamp of the <xref linkend=\"PutEvents\"/> call is used.</simpara>\n      ",
+                  "documentation": "\n        <p>The time stamp of the event, per <a href=\"https://www.rfc-editor.org/rfc/rfc3339.txt\">RFC3339</a>. If no time stamp\n            is provided, the time stamp of the <a>PutEvents</a> call is used.</p>\n      ",
+                  "shape_name": "EventTime"
+                },
+                "Source": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n        <simpara>The source of the event. This field is required.</simpara>\n      ",
+                  "documentation": "\n        <p>The source of the event. This field is required.</p>\n      ",
+                  "shape_name": "String"
+                },
+                "Resources": {
+                  "type": "list",
+                  "zonbookDocumentation": "\n        <simpara>AWS resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number, including zero, may be present.</simpara>\n      ",
+                  "documentation": "\n        <p>AWS resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number, including zero, may be present.</p>\n      ",
+                  "shape_name": "EventResourceList",
+                  "members": {
+                    "type": "string",
+                    "shape_name": "EventResource",
+                    "documentation": null
+                  }
+                },
+                "DetailType": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n        <simpara>Free-form string used to decide what fields to expect in the event detail.</simpara>\n      ",
+                  "documentation": "\n        <p>Free-form string used to decide what fields to expect in the event detail.</p>\n      ",
+                  "shape_name": "String"
+                },
+                "Detail": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n        <simpara>A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested subobjects.</simpara>\n      ",
+                  "documentation": "\n        <p>A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested subobjects.</p>\n      ",
+                  "shape_name": "String"
+                }
+              },
+              "zonbookDocumentation": "\n        <simpara>Represents an event to be submitted.</simpara>\n      ",
+              "documentation": "\n        <p>Represents an event to be submitted.</p>\n      ",
+              "shape_name": "PutEventsRequestEntry"
+            }
+          }
+        },
+        "shape_name": "PutEventsRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "FailedEntryCount": {
+            "type": "integer",
+            "zonbookDocumentation": "\n        <simpara>The number of failed entries.</simpara>\n      ",
+            "documentation": "\n        <p>The number of failed entries.</p>\n      ",
+            "shape_name": "Integer"
+          },
+          "Entries": {
+            "type": "list",
+            "zonbookDocumentation": "\n        <simpara>The successfully and unsuccessfully ingested events results. If the ingestion was successful, \n            the entry has the event ID in it. Otherwise, you can use the error code and error message \n            to identify the problem with the entry.</simpara>\n      ",
+            "documentation": "\n        <p>The successfully and unsuccessfully ingested events results. If the ingestion was successful, \n            the entry has the event ID in it. Otherwise, you can use the error code and error message \n            to identify the problem with the entry.</p>\n      ",
+            "shape_name": "PutEventsResultEntryList",
+            "members": {
+              "type": "structure",
+              "members": {
+                "EventId": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n        <simpara>The ID of the event.</simpara>\n      ",
+                  "documentation": "\n        <p>The ID of the event.</p>\n      ",
+                  "shape_name": "EventId"
+                },
+                "ErrorCode": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n        <simpara>The error code that indicates why the event submission failed.</simpara>\n      ",
+                  "documentation": "\n        <p>The error code that indicates why the event submission failed.</p>\n      ",
+                  "shape_name": "ErrorCode"
+                },
+                "ErrorMessage": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n        <simpara>The error message that explains why the event submission failed.</simpara>\n      ",
+                  "documentation": "\n        <p>The error message that explains why the event submission failed.</p>\n      ",
+                  "shape_name": "ErrorMessage"
+                }
+              },
+              "zonbookDocumentation": "\n        <simpara>Represents an event that failed to be submitted.</simpara>\n      ",
+              "documentation": "\n        <p>Represents an event that failed to be submitted.</p>\n      ",
+              "shape_name": "PutEventsResultEntry"
+            }
+          }
+        },
+        "shape_name": "PutEventsResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>This exception occurs due to unexpected causes.</simpara>\n      ",
+          "documentation": "\n        <p>This exception occurs due to unexpected causes.</p>\n      ",
+          "shape_name": "InternalException"
+        }
+      ],
+      "documentation": "\n        <p>Sends custom events to Amazon CloudWatch Events so that they can be matched to rules.</p>\n        \n        \n      "
+    },
+    "PutServiceEvents": {
+      "name": "PutServiceEvents",
+      "input": {
+        "type": "structure",
+        "members": {
+          "Entries": {
+            "type": "list",
+            "required": true,
+            "shape_name": "PutServiceEventsRequestEntryList",
+            "documentation": null,
+            "min_length": 1,
+            "max_length": 500,
+            "members": {
+              "type": "structure",
+              "members": {
+                "Time": {
+                  "type": "timestamp",
+                  "shape_name": "EventTime",
+                  "documentation": null
+                },
+                "Source": {
+                  "type": "string",
+                  "enum": [
+                    "aws.apigateway",
+                    "aws.apimanager",
+                    "aws.autoscaling",
+                    "aws.cloudformation",
+                    "aws.cloudfront",
+                    "aws.cloudhsm",
+                    "aws.cloudsearch",
+                    "aws.cloudtrail",
+                    "aws.codedeploy",
+                    "aws.codepipeline",
+                    "aws.config",
+                    "aws.datapipeline",
+                    "aws.devicefarm",
+                    "aws.directconnect",
+                    "aws.ds",
+                    "aws.dynamodb",
+                    "aws.ebs",
+                    "aws.ec2",
+                    "aws.ecs",
+                    "aws.elasticache",
+                    "aws.elasticbeanstalk",
+                    "aws.elasticfilesystem",
+                    "aws.elasticloadbalancing",
+                    "aws.elasticmapreduce",
+                    "aws.elasticsearch",
+                    "aws.elastictranscoder",
+                    "aws.es",
+                    "aws.events",
+                    "aws.eventstest",
+                    "aws.glacier",
+                    "aws.iam",
+                    "aws.kinesis",
+                    "aws.kms",
+                    "aws.lambda",
+                    "aws.machinelearning",
+                    "aws.sagemaker",
+                    "aws.monitoring",
+                    "aws.opsworks",
+                    "aws.rds",
+                    "aws.redshift",
+                    "aws.route53",
+                    "aws.s3",
+                    "aws.servicecatalog",
+                    "aws.ses",
+                    "aws.signin",
+                    "aws.health",
+                    "aws.sns",
+                    "aws.sqs",
+                    "aws.ssm",
+                    "aws.storagegateway",
+                    "aws.sts",
+                    "aws.swf",
+                    "aws.workspaces",
+                    "aws.workdocs",
+                    "aws.trustedadvisor",
+                    "aws.jellyfish",
+                    "aws.mediastore",
+                    "aws.macie",
+                    "aws.mediatranscode",
+                    "aws.mediaconvert",
+                    "aws.medialive",
+                    "aws.signer",
+                    "aws.dlm",
+                    "aws.fms",
+                    "aws.appmigration"
+                  ],
+                  "shape_name": "Source",
+                  "documentation": null
+                },
+                "Resources": {
+                  "type": "list",
+                  "shape_name": "EventResourceList",
+                  "documentation": null,
+                  "members": {
+                    "type": "string",
+                    "shape_name": "EventResource",
+                    "documentation": null
+                  }
+                },
+                "DetailType": {
+                  "type": "string",
+                  "enum": [
+                    "Test Event",
+                    "Scheduled Event",
+                    "AWS API Call via CloudTrail",
+                    "AWS Service Event via CloudTrail",
+                    "AWS Console Sign In via CloudTrail",
+                    "EC2 Instance Launch Successful",
+                    "EC2 Instance Launch Unsuccessful",
+                    "EC2 Instance Terminate Successful",
+                    "EC2 Instance Terminate Unsuccessful",
+                    "EC2 Instance-launch Lifecycle Action",
+                    "EC2 Instance-terminate Lifecycle Action",
+                    "EC2 Instance State-change Notification",
+                    "EC2 Command Status-change Notification",
+                    "EC2 Command Invocation Status-change Notification",
+                    "EC2 Instance Drive Replacement Successful",
+                    "EC2 Instance Drive Replacement Unsuccessful",
+                    "EC2 Instance Drive Detachment Unsuccessful",
+                    "EC2 Instance Drive Needs Replacement",
+                    "Alarm State-change Notification",
+                    "Config Rule Compliance-change Event",
+                    "ECS Container Instance State Change",
+                    "ECS Task State Change",
+                    "EBS Volume Notification",
+                    "EBS Snapshot Notification",
+                    "CodeDeploy Deployment State-change Notification",
+                    "CodeDeploy Instance State-change Notification",
+                    "Trusted Advisor Check Item Refresh Notification",
+                    "AWS Health Event",
+                    "KMS Imported Key Material Expiration",
+                    "KMS CMK Rotation",
+                    "KMS CMK Deletion",
+                    "OpsWorks Instance State-change Notification",
+                    "OpsWorks Command State-change Notification",
+                    "OpsWorks Deployment State-change Notification",
+                    "Directory Service Domain Controller Discovery Update",
+                    "EC2 Automation Step Status-change Notification",
+                    "EC2 Automation Execution Status-change Notification",
+                    "CodePipeline Pipeline State Change",
+                    "CodePipeline Stage State Change",
+                    "CodePipeline Action State Change",
+                    "Jellyfish Object Upload State Change",
+                    "Jellyfish Collection State Change",
+                    "Jellyfish Collection Storage Tier State Change",
+                    "Jellyfish Collection Metadata State Change",
+                    "Jellyfish Container State Change",
+                    "MediaStore Object Upload State Change",
+                    "MediaStore Container State Change",
+                    "Glue Job State Change",
+                    "Glue Catalog State Change",
+                    "Glue Crawler State Change",
+                    "Macie Alert",
+                    "Mediatranscode Job State Change",
+                    "MediaConvert Job State Change",
+                    "Workspaces CPU Credit Balance Alert",
+                    "WorkSpaces Access",
+                    "MediaLive Channel State Change",
+                    "MediaLive Channel Alert",
+                    "SageMaker Endpoint Operation Result",
+                    "EC2 Spot Instance Termination Warning",
+                    "Signer Job Status Change",
+                    "DLM Policy State Change",
+                    "FMS Policy",
+                    "FMS Config Settings",
+                    "FMS Onboarding",
+                    "App Migration Replication State Change",
+                    "App Migration Launch State Change",
+                    "App Migration Validation State Change"
+                  ],
+                  "shape_name": "DetailType",
+                  "documentation": null
+                },
+                "Detail": {
+                  "type": "string",
+                  "shape_name": "String",
+                  "documentation": null
+                },
+                "Account": {
+                  "type": "string",
+                  "shape_name": "String",
+                  "documentation": null
+                },
+                "Metadata": {
+                  "type": "string",
+                  "documentation": "Free-form text that is passed to the event bus along with the event. Metadata is not customer visible. Use this field if you are a direct consumer of the event bus.",
+                  "shape_name": "Metadata",
+                  "min_length": 1,
+                  "max_length": 128
+                }
+              },
+              "shape_name": "PutServiceEventsRequestEntry",
+              "documentation": null
+            }
+          }
+        },
+        "shape_name": "PutServiceEventsRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "FailedEntryCount": {
+            "type": "integer",
+            "shape_name": "Integer",
+            "documentation": null
+          },
+          "NumberOfEntriesWithWarning": {
+            "type": "integer",
+            "shape_name": "Integer",
+            "documentation": null
+          },
+          "Entries": {
+            "type": "list",
+            "shape_name": "PutServiceEventsResultEntryList",
+            "documentation": null,
+            "members": {
+              "type": "structure",
+              "members": {
+                "EventId": {
+                  "type": "string",
+                  "shape_name": "EventId",
+                  "documentation": null
+                },
+                "WarningCode": {
+                  "type": "string",
+                  "shape_name": "WarningCode",
+                  "documentation": null
+                },
+                "ErrorCode": {
+                  "type": "string",
+                  "shape_name": "ErrorCode",
+                  "documentation": null
+                },
+                "ErrorMessage": {
+                  "type": "string",
+                  "shape_name": "ErrorMessage",
+                  "documentation": null
+                }
+              },
+              "shape_name": "PutServiceEventsResultEntry",
+              "documentation": null
+            }
+          }
+        },
+        "shape_name": "PutServiceEventsResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>This exception occurs due to unexpected causes.</simpara>\n      ",
+          "documentation": "\n        <p>This exception occurs due to unexpected causes.</p>\n      ",
+          "shape_name": "InternalException"
+        }
+      ],
+      "documentation": null
+    },
+    "DescribeAccountAttributes": {
+      "name": "DescribeAccountAttributes",
+      "input": {
+        "type": "structure",
+        "members": {
+          "Attributes": {
+            "type": "list",
+            "shape_name": "AccountAttributeNameList",
+            "documentation": null,
+            "members": {
+              "type": "string",
+              "enum": [
+                "RuleLimit",
+                "TargetPerRuleLimit"
+              ],
+              "shape_name": "AccountAttributeName",
+              "documentation": null
+            }
+          }
+        },
+        "shape_name": "DescribeAccountAttributesRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "RuleLimit": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "TargetPerRuleLimit": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          }
+        },
+        "shape_name": "DescribeAccountAttributesResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>This exception occurs due to unexpected causes.</simpara>\n      ",
+          "documentation": "\n        <p>This exception occurs due to unexpected causes.</p>\n      ",
+          "shape_name": "InternalException"
+        }
+      ],
+      "documentation": null
+    },
+    "PutPermission": {
+      "name": "PutPermission",
+      "input": {
+        "type": "structure",
+        "members": {
+          "Action": {
+            "type": "string",
+            "pattern": "events:[a-zA-Z]+",
+            "zonbookDocumentation": "\n        <simpara>The action that you are enabling the other account to perform. Currently, this must be <code>events:PutEvents</code>.</simpara>\n      ",
+            "documentation": "\n        <p>The action that you are enabling the other account to perform. Currently, this must be <code>events:PutEvents</code>.</p>\n      ",
+            "required": true,
+            "shape_name": "Action",
+            "min_length": 1,
+            "max_length": 64
+          },
+          "Principal": {
+            "type": "string",
+            "pattern": "(\\d{12}|\\*)",
+            "zonbookDocumentation": "\n        <simpara>The 12-digit AWS account ID that you are permitting to put events to your default \n            event bus. Specify \"*\" to permit any account to put events to your default event bus.</simpara>\n        <simpara>If you specify \"*\", avoid creating rules that may match undesirable events. To create \n            more secure rules, make sure that the event pattern for each rule contains an <code>account</code> \n            field with a specific account ID from which to receive events. Rules with an account \n            field do not match any events sent from other accounts.</simpara>\n\n      ",
+            "documentation": "\n        <p>The 12-digit AWS account ID that you are permitting to put events to your default \n            event bus. Specify \"*\" to permit any account to put events to your default event bus.</p>\n        <p>If you specify \"*\", avoid creating rules that may match undesirable events. To create \n            more secure rules, make sure that the event pattern for each rule contains an <code>account</code> \n            field with a specific account ID from which to receive events. Rules with an account \n            field do not match any events sent from other accounts.</p>\n\n      ",
+            "required": true,
+            "shape_name": "Principal",
+            "min_length": 1,
+            "max_length": 12
+          },
+          "StatementId": {
+            "type": "string",
+            "pattern": "[a-zA-Z0-9-_]+",
+            "zonbookDocumentation": "\n        <simpara>An identifier string for the external account that you are granting permissions to. If you later want to revoke\n            the permission for this external account, specify this <code>StatementId</code> when you run <xref linkend=\"RemovePermission\"/>.</simpara>\n      ",
+            "documentation": "\n        <p>An identifier string for the external account that you are granting permissions to. If you later want to revoke\n            the permission for this external account, specify this <code>StatementId</code> when you run <a>RemovePermission</a>.</p>\n      ",
+            "required": true,
+            "shape_name": "StatementId",
+            "min_length": 1,
+            "max_length": 64
+          }
+        },
+        "shape_name": "PutPermissionRequest",
+        "documentation": null
+      },
+      "output": null,
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>An entity that you specified does not exist.</simpara>\n      ",
+          "documentation": "\n        <p>An entity that you specified does not exist.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        \n        <simpara>The event bus policy is too long. For more information, see the limits.</simpara>\n      ",
+          "documentation": "\n        \n        <p>The event bus policy is too long. For more information, see the limits.</p>\n      ",
+          "shape_name": "PolicyLengthExceededException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>This exception occurs due to unexpected causes.</simpara>\n      ",
+          "documentation": "\n        <p>This exception occurs due to unexpected causes.</p>\n      ",
+          "shape_name": "InternalException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>There is concurrent modification on a rule or target.</simpara>\n      ",
+          "documentation": "\n        <p>There is concurrent modification on a rule or target.</p>\n      ",
+          "shape_name": "ConcurrentModificationException"
+        }
+      ],
+      "documentation": "\n        <p>Running <code>PutPermission</code> permits the specified AWS account to put events to your account's default <i>event bus</i>. \n            CloudWatch Events rules in your account are triggered by these events arriving to your default event bus.  </p>\n        <p>For another account to send events to your account, that external account must have a CloudWatch Events rule with your account's\n        default event bus as a target.</p>\n        <p>To enable multiple AWS accounts to put events to your default event bus, run <code>PutPermission</code> once for each of these accounts.</p>\n        <p>The permission policy on the default event bus cannot exceed 10 KB in\n            size.</p>\n      "
+    },
+    "RemovePermission": {
+      "name": "RemovePermission",
+      "input": {
+        "type": "structure",
+        "members": {
+          "StatementId": {
+            "type": "string",
+            "pattern": "[a-zA-Z0-9-_]+",
+            "zonbookDocumentation": "\n        <simpara>The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.</simpara>\n      ",
+            "documentation": "\n        <p>The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.</p>\n      ",
+            "required": true,
+            "shape_name": "StatementId",
+            "min_length": 1,
+            "max_length": 64
+          }
+        },
+        "shape_name": "RemovePermissionRequest",
+        "documentation": null
+      },
+      "output": null,
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>An entity that you specified does not exist.</simpara>\n      ",
+          "documentation": "\n        <p>An entity that you specified does not exist.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>This exception occurs due to unexpected causes.</simpara>\n      ",
+          "documentation": "\n        <p>This exception occurs due to unexpected causes.</p>\n      ",
+          "shape_name": "InternalException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>There is concurrent modification on a rule or target.</simpara>\n      ",
+          "documentation": "\n        <p>There is concurrent modification on a rule or target.</p>\n      ",
+          "shape_name": "ConcurrentModificationException"
+        }
+      ],
+      "documentation": "\n        <p>Revokes the permission of another AWS account to be able to put events to your default event bus. Specify the account to \n            revoke by the <code>StatementId</code> value that you associated with the account when you granted it permission with <code>PutPermission</code>. \n            You can find the <code>StatementId</code> by using <a>DescribeEventBus</a>.</p>\n      "
+    },
+    "DescribeEventBus": {
+      "name": "DescribeEventBus",
+      "input": {
+        "type": "structure",
+        "members": {
+        },
+        "shape_name": "DescribeEventBusRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "Name": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <simpara>The name of the event bus. Currently, this is always <code>default</code>.</simpara>\n      ",
+            "documentation": "\n        <p>The name of the event bus. Currently, this is always <code>default</code>.</p>\n      ",
+            "shape_name": "String"
+          },
+          "Arn": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <simpara>The Amazon Resource Name (ARN) of the account permitted to write events to the current account.</simpara>\n      ",
+            "documentation": "\n        <p>The Amazon Resource Name (ARN) of the account permitted to write events to the current account.</p>\n      ",
+            "shape_name": "String"
+          },
+          "Policy": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <simpara>The policy that enables the external account to send events to your account.</simpara>\n      ",
+            "documentation": "\n        <p>The policy that enables the external account to send events to your account.</p>\n      ",
+            "shape_name": "String"
+          }
+        },
+        "shape_name": "DescribeEventBusResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>An entity that you specified does not exist.</simpara>\n      ",
+          "documentation": "\n        <p>An entity that you specified does not exist.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>This exception occurs due to unexpected causes.</simpara>\n      ",
+          "documentation": "\n        <p>This exception occurs due to unexpected causes.</p>\n      ",
+          "shape_name": "InternalException"
+        }
+      ],
+      "documentation": "\n        <p>Displays the external AWS accounts that are permitted to write events to your account using your account's event bus, and the associated policy.\n            To enable your account to \n            receive events from other accounts, use <a>PutPermission</a>.</p>\n\n        \n    \n    \n      "
+    },
+    "InvokeActions": {
+      "name": "InvokeActions",
+      "input": {
+        "type": "structure",
+        "members": {
+          "Entries": {
+            "type": "list",
+            "required": true,
+            "shape_name": "InvokeActionsRequestEntryList",
+            "documentation": null,
+            "min_length": 1,
+            "max_length": 1,
+            "members": {
+              "type": "structure",
+              "members": {
+                "MonitorId": {
+                  "type": "string",
+                  "shape_name": "MonitorId",
+                  "documentation": null
+                },
+                "TargetType": {
+                  "type": "string",
+                  "enum": [
+                    "EC2"
+                  ],
+                  "required": true,
+                  "shape_name": "TargetType",
+                  "documentation": null
+                },
+                "EC2Parameters": {
+                  "type": "structure",
+                  "members": {
+                    "ActionArn": {
+                      "type": "string",
+                      "required": true,
+                      "shape_name": "ActionArn",
+                      "documentation": null,
+                      "min_length": 1,
+                      "max_length": 1600
+                    },
+                    "Resource": {
+                      "type": "structure",
+                      "members": {
+                        "ResourceId": {
+                          "type": "string",
+                          "shape_name": "EC2ResourceId",
+                          "documentation": null
+                        }
+                      },
+                      "shape_name": "EC2Resource",
+                      "documentation": null
+                    },
+                    "Trigger": {
+                      "type": "structure",
+                      "members": {
+                        "Name": {
+                          "type": "string",
+                          "required": true,
+                          "shape_name": "TriggerName",
+                          "documentation": null
+                        },
+                        "Context": {
+                          "type": "string",
+                          "shape_name": "TriggerContext",
+                          "documentation": null
+                        },
+                        "Source": {
+                          "type": "string",
+                          "required": true,
+                          "shape_name": "TriggerSource",
+                          "documentation": null
+                        }
+                      },
+                      "required": true,
+                      "shape_name": "Trigger",
+                      "documentation": null
+                    },
+                    "Customer": {
+                      "type": "structure",
+                      "members": {
+                        "AccountId": {
+                          "type": "string",
+                          "pattern": "\\d{12}",
+                          "required": true,
+                          "shape_name": "AccountId",
+                          "documentation": null,
+                          "min_length": 12,
+                          "max_length": 12
+                        },
+                        "IamUserId": {
+                          "type": "string",
+                          "shape_name": "IamUserId",
+                          "documentation": null
+                        }
+                      },
+                      "required": true,
+                      "shape_name": "Customer",
+                      "documentation": null
+                    }
+                  },
+                  "required": true,
+                  "shape_name": "EC2Parameters",
+                  "documentation": null
+                }
+              },
+              "shape_name": "InvokeActionsRequestEntry",
+              "documentation": null
+            }
+          }
+        },
+        "shape_name": "InvokeActionsRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "Entries": {
+            "type": "list",
+            "shape_name": "InvokeActionsResponseEntryList",
+            "documentation": null,
+            "min_length": 1,
+            "max_length": 1,
+            "members": {
+              "type": "structure",
+              "members": {
+                "ErrorCode": {
+                  "type": "string",
+                  "shape_name": "ErrorCode",
+                  "documentation": null
+                },
+                "ErrorMessage": {
+                  "type": "string",
+                  "shape_name": "ErrorMessage",
+                  "documentation": null
+                },
+                "ActionInstanceId": {
+                  "type": "string",
+                  "shape_name": "ActionInstanceId",
+                  "documentation": null
+                }
+              },
+              "shape_name": "InvokeActionsResponseEntry",
+              "documentation": null
+            }
+          }
+        },
+        "shape_name": "InvokeActionsResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>This exception occurs due to unexpected causes.</simpara>\n      ",
+          "documentation": "\n        <p>This exception occurs due to unexpected causes.</p>\n      ",
+          "shape_name": "InternalException"
+        }
+      ],
+      "documentation": null
+    }
+  }
+}

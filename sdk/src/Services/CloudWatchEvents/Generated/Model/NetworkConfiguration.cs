@@ -28,35 +28,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeRule operation.
-    /// Describes the specified rule.
-    /// 
-    ///  
-    /// <para>
-    /// DescribeRule does not list the targets of a rule. To see the targets associated with
-    /// a rule, use <a>ListTargetsByRule</a>.
-    /// </para>
+    /// This structure specifies the network configuration for an ECS task.
     /// </summary>
-    public partial class DescribeRuleRequest : AmazonCloudWatchEventsRequest
+    public partial class NetworkConfiguration
     {
-        private string _name;
+        private AwsVpcConfiguration _awsvpcConfiguration;
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property AwsvpcConfiguration. 
         /// <para>
-        /// The name of the rule.
+        /// Use this structure to specify the VPC subnets and security groups for the task, and
+        /// whether a public IP address is to be used. This structure is relevant only for ECS
+        /// tasks that use the <code>awsvpc</code> network mode.
         /// </para>
         /// </summary>
-        public string Name
+        public AwsVpcConfiguration AwsvpcConfiguration
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._awsvpcConfiguration; }
+            set { this._awsvpcConfiguration = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if AwsvpcConfiguration property is set
+        internal bool IsSetAwsvpcConfiguration()
         {
-            return this._name != null;
+            return this._awsvpcConfiguration != null;
         }
 
     }

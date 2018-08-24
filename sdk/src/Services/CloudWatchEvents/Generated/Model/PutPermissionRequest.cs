@@ -45,7 +45,7 @@ namespace Amazon.CloudWatchEvents.Model
     /// </para>
     ///  
     /// <para>
-    /// The permission policy on the default event bus cannot exceed 10KB in size.
+    /// The permission policy on the default event bus cannot exceed 10 KB in size.
     /// </para>
     /// </summary>
     public partial class PutPermissionRequest : AmazonCloudWatchEventsRequest

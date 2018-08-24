@@ -35,7 +35,7 @@ namespace Amazon.CloudWatchEvents.Model
     ///  
     /// <para>
     /// When you disable a rule, incoming events might continue to match to the disabled rule.
-    /// Please allow a short period of time for changes to take effect.
+    /// Allow a short period of time for changes to take effect.
     /// </para>
     /// </summary>
     public partial class DisableRuleRequest : AmazonCloudWatchEventsRequest

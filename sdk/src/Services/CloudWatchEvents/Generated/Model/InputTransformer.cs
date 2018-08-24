@@ -39,8 +39,19 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property InputPathsMap. 
         /// <para>
-        /// Map of JSON paths to be extracted from the event. These are key-value pairs, where
-        /// each value is a JSON path. You must use JSON dot notation, not bracket notation.
+        /// Map of JSON paths to be extracted from the event. You can then insert these in the
+        /// template in <code>InputTemplate</code> to produce the output you want to be sent to
+        /// the target.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>InputPathsMap</code> is an array key-value pairs, where each value is a valid
+        /// JSON path. You can have as many as 10 key-value pairs. You must use JSON dot notation,
+        /// not bracket notation.
+        /// </para>
+        ///  
+        /// <para>
+        /// The keys cannot start with "AWS." 
         /// </para>
         /// </summary>
         public Dictionary<string, string> InputPathsMap
@@ -58,8 +69,74 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property InputTemplate. 
         /// <para>
-        /// Input template where you can use the values of the keys from <code>InputPathsMap</code>
-        /// to customize the data sent to the target.
+        /// Input template where you specify placeholders that will be filled with the values
+        /// of the keys from <code>InputPathsMap</code> to customize the data sent to the target.
+        /// Enclose each <code>InputPathsMaps</code> value in brackets: &lt;<i>value</i>&gt; The
+        /// InputTemplate must be valid JSON.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the following
+        /// restrictions apply:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The placeholder cannot be used as an object key.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Object values cannot include quote marks.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The following example shows the syntax for using <code>InputPathsMap</code> and <code>InputTemplate</code>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code> "InputTransformer":</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>{</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"InputTemplate": "&lt;instance&gt; is in state &lt;status&gt;"</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>}</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To have the <code>InputTemplate</code> include quote marks within a JSON string, escape
+        /// each quote marks with a slash, as in the following example:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code> "InputTransformer":</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>{</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"InputTemplate": "&lt;instance&gt; is in state \"&lt;status&gt;\""</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>}</code> 
         /// </para>
         /// </summary>
         public string InputTemplate

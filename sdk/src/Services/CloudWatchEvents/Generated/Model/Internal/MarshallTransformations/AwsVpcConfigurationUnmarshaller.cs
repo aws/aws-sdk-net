@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for EcsParameters Object
+    /// Response Unmarshaller for AwsVpcConfiguration Object
     /// </summary>  
-    public class EcsParametersUnmarshaller : IUnmarshaller<EcsParameters, XmlUnmarshallerContext>, IUnmarshaller<EcsParameters, JsonUnmarshallerContext>
+    public class AwsVpcConfigurationUnmarshaller : IUnmarshaller<AwsVpcConfiguration, XmlUnmarshallerContext>, IUnmarshaller<AwsVpcConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        EcsParameters IUnmarshaller<EcsParameters, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AwsVpcConfiguration IUnmarshaller<AwsVpcConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,33 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public EcsParameters Unmarshall(JsonUnmarshallerContext context)
+        public AwsVpcConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            EcsParameters unmarshalledObject = new EcsParameters();
+            AwsVpcConfiguration unmarshalledObject = new AwsVpcConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Group", targetDepth))
+                if (context.TestExpression("AssignPublicIp", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Group = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AssignPublicIp = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("LaunchType", targetDepth))
+                if (context.TestExpression("SecurityGroups", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LaunchType = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SecurityGroups = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("NetworkConfiguration", targetDepth))
+                if (context.TestExpression("Subnets", targetDepth))
                 {
-                    var unmarshaller = NetworkConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.NetworkConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("PlatformVersion", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PlatformVersion = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TaskCount", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.TaskCount = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TaskDefinitionArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TaskDefinitionArn = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Subnets = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +88,12 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
         }
 
 
-        private static EcsParametersUnmarshaller _instance = new EcsParametersUnmarshaller();        
+        private static AwsVpcConfigurationUnmarshaller _instance = new AwsVpcConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EcsParametersUnmarshaller Instance
+        public static AwsVpcConfigurationUnmarshaller Instance
         {
             get
             {

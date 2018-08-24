@@ -97,7 +97,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        /// The source of the event.
+        /// The source of the event. This field is required.
         /// </para>
         /// </summary>
         public string Source
@@ -115,8 +115,8 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property Time. 
         /// <para>
-        /// The timestamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>.
-        /// If no timestamp is provided, the timestamp of the <a>PutEvents</a> call is used.
+        /// The time stamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>.
+        /// If no time stamp is provided, the time stamp of the <a>PutEvents</a> call is used.
         /// </para>
         /// </summary>
         public DateTime Time

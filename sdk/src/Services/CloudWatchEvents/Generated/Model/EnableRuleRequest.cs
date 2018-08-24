@@ -34,7 +34,7 @@ namespace Amazon.CloudWatchEvents.Model
     ///  
     /// <para>
     /// When you enable a rule, incoming events might not immediately start matching to a
-    /// newly enabled rule. Please allow a short period of time for changes to take effect.
+    /// newly enabled rule. Allow a short period of time for changes to take effect.
     /// </para>
     /// </summary>
     public partial class EnableRuleRequest : AmazonCloudWatchEventsRequest

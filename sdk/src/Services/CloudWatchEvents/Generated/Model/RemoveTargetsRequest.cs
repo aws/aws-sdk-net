@@ -35,7 +35,7 @@ namespace Amazon.CloudWatchEvents.Model
     ///  
     /// <para>
     /// When you remove a target, when the associated rule triggers, removed targets might
-    /// continue to be invoked. Please allow a short period of time for changes to take effect.
+    /// continue to be invoked. Allow a short period of time for changes to take effect.
     /// </para>
     ///  
     /// <para>

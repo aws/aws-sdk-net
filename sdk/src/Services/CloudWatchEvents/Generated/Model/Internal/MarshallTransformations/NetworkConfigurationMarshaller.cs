@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// EcsParameters Marshaller
+    /// NetworkConfiguration Marshaller
     /// </summary>       
-    public class EcsParametersMarshaller : IRequestMarshaller<EcsParameters, JsonMarshallerContext> 
+    public class NetworkConfigurationMarshaller : IRequestMarshaller<NetworkConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,47 +43,17 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(EcsParameters requestObject, JsonMarshallerContext context)
+        public void Marshall(NetworkConfiguration requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetGroup())
+            if(requestObject.IsSetAwsvpcConfiguration())
             {
-                context.Writer.WritePropertyName("Group");
-                context.Writer.Write(requestObject.Group);
-            }
-
-            if(requestObject.IsSetLaunchType())
-            {
-                context.Writer.WritePropertyName("LaunchType");
-                context.Writer.Write(requestObject.LaunchType);
-            }
-
-            if(requestObject.IsSetNetworkConfiguration())
-            {
-                context.Writer.WritePropertyName("NetworkConfiguration");
+                context.Writer.WritePropertyName("awsvpcConfiguration");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = NetworkConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.NetworkConfiguration, context);
+                var marshaller = AwsVpcConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsvpcConfiguration, context);
 
                 context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetPlatformVersion())
-            {
-                context.Writer.WritePropertyName("PlatformVersion");
-                context.Writer.Write(requestObject.PlatformVersion);
-            }
-
-            if(requestObject.IsSetTaskCount())
-            {
-                context.Writer.WritePropertyName("TaskCount");
-                context.Writer.Write(requestObject.TaskCount);
-            }
-
-            if(requestObject.IsSetTaskDefinitionArn())
-            {
-                context.Writer.WritePropertyName("TaskDefinitionArn");
-                context.Writer.Write(requestObject.TaskDefinitionArn);
             }
 
         }
@@ -91,7 +61,7 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static EcsParametersMarshaller Instance = new EcsParametersMarshaller();
+        public readonly static NetworkConfigurationMarshaller Instance = new NetworkConfigurationMarshaller();
 
     }
 }
