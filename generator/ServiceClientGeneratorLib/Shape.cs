@@ -30,6 +30,7 @@ namespace ServiceClientGenerator
         public const string ErrorKey = "error";
         public const string ErrorCodeKey = "code";
         public const string EventStreamKey = "eventstream";
+        public const string TimestampFormatKey = "timestampFormat";
 
         public static readonly HashSet<string> NullableTypes = new HashSet<string> {
             "bool",
@@ -696,5 +697,36 @@ namespace ServiceClientGenerator
                 return null;
             }
         }
+
+        /// <summary>
+        /// Returns the marshaller method to use in the generated marshaller code for a
+        /// shape of primitive type. This is used while marshalling lists and maps.
+        /// </summary>
+        public string PrimitiveMarshaller(MarshallLocation marshallLocation)
+        {
+            if (this.IsDateTime)
+            {
+                var timestampFormat = GetTimestampFormat(marshallLocation);
+                return "StringUtils.FromDateTimeTo" + timestampFormat;
+            }
+            else
+            {
+                return "StringUtils.From" + this.GetPrimitiveType();
+            }
+        }
+
+        /// <summary>
+        /// Timestamp format for the shape.
+        /// </summary>
+        public TimestampFormat GetTimestampFormat(MarshallLocation marshallLocation)
+        {
+            var timestampFormat = data.GetTimestampFormat();
+            if (timestampFormat == TimestampFormat.None)
+            {
+                timestampFormat = Member.GetDefaultTimestampFormat(marshallLocation, this.model.Type);
+            }
+            return timestampFormat;
+        }
+        
     }
 }

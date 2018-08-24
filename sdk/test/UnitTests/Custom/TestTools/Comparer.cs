@@ -10,7 +10,7 @@ using System.Collections;
 using System.IO;
 using Amazon.Runtime.Internal.Util;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
+using ServiceClientGenerator;
 
 namespace AWSSDK_DotNet35.UnitTests.TestTools
 {
@@ -289,6 +289,8 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                             value = ParseMemoryStream(reader, valueType);
                         else if (valueType.BaseType.FullName == "Amazon.Runtime.ConstantClass")
                             value = ParseConstant(reader, valueType);
+                        else if (valueType == typeof(DateTime))
+                            value = ConvertToDateTime(tokenValue);
                         else
                             value = tokenValue;
                     }
@@ -340,10 +342,12 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                 }
                 else if (IsPrimitiveToken(token))
                 {
-                    if (itemType == typeof(MemoryStream))                    
-                        list.Add(ParseMemoryStream(reader, itemType));                    
-                    else if (itemType.BaseType.FullName == "Amazon.Runtime.ConstantClass")                    
-                        list.Add(ParseConstant(reader, itemType));                    
+                    if (itemType == typeof(MemoryStream))
+                        list.Add(ParseMemoryStream(reader, itemType));
+                    else if (itemType.BaseType.FullName == "Amazon.Runtime.ConstantClass")
+                        list.Add(ParseConstant(reader, itemType));
+                    else if (itemType == typeof(DateTime))
+                        list.Add(ConvertToDateTime(value));
                     else
                         list.Add(value);                    
                 }
@@ -366,18 +370,21 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
         }
 
         private static object ConvertToDateTime(object value)
-        {            
+        {
             if (value.GetType() == typeof(int))
-                return new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc)
+                return GeneratorHelpers.EPOCH_START
                 .AddSeconds((int)value);
 
             if (value.GetType() == typeof(double))
-                return new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc)
+                return GeneratorHelpers.EPOCH_START
                 .AddSeconds((double)value);
 
             if (value.GetType() == typeof(long))
-                return new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc)
+                return GeneratorHelpers.EPOCH_START
                 .AddMilliseconds((long)value);
+
+            if (value.GetType() == typeof(string))
+                return DateTime.Parse((string)value, CultureInfo.InvariantCulture);
 
             throw new InvalidOperationException(string.Format("Could not convert {0} of type {1} to DateTime",
                 value, value.GetType()));

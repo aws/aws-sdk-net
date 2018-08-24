@@ -362,7 +362,8 @@ namespace Amazon.Runtime.Internal.Transform
 
         public DateTime Unmarshall(XmlUnmarshallerContext context)
         {
-            return SimpleTypeUnmarshaller<DateTime>.Unmarshall(context);
+            string text = context.ReadText();
+            return UnmarshallInternal(text, treatAsNullable: false).Value;
         }
 
         public DateTime Unmarshall(JsonUnmarshallerContext context)

@@ -29,7 +29,8 @@ namespace ServiceClientGenerator
         }
 
 
-        private static readonly DateTime EPOCH_START = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+        public static readonly DateTime EPOCH_START = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+
         public static int ConvertToUnixEpochSeconds(DateTime dateTime)
         {
             TimeSpan ts = new TimeSpan(dateTime.ToUniversalTime().Ticks - EPOCH_START.Ticks);

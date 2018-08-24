@@ -3,6 +3,7 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Globalization" #>
 
 <#+
     // Adds the neccesary namespaces for the marshaller
@@ -26,6 +27,7 @@ using Amazon.Runtime.Internal.Util;
 #>
 
 <#+
+	// Only applicable for rest-json and rest-xml
     // Generates code to add members to the header of the request
     // If it's a custom marshaller then it calls the custom marshaller first
 	protected void ProcessHeaderMembers(string variableName, IEnumerable<Member> members)
@@ -49,13 +51,28 @@ using Amazon.Runtime.Internal.Util;
             }
             else
             {
+				if(member.IsList || member.IsMap)
+				{
+					throw new NotImplementedException("Marshalling lists and maps as header value is not implemented");
+				}
+
+				if(member.IsDateTime)
+				{
+#>
+				request.Headers["<#=member.MarshallLocationName#>"] = <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>);
+<#+					
+				}
+				else
+				{
 #>
 				request.Headers["<#=member.MarshallLocationName#>"] = <#=variableName#>.<#=member.PropertyName#>;
 <#+			
+				}
 		    }
         }
 	}
 
+	// Only applicable for rest-json and rest-xml
     // Generates code to add the operation's requestURIMembers to the uriResourcePath
 	protected void ProcessUriMembers(string variableName, Operation operation)
 	{
@@ -69,13 +86,13 @@ using Amazon.Runtime.Internal.Util;
 				if(isGreedy)
 				{
 #>
-			uriResourcePath = uriResourcePath.Replace("<#=marshallLocationName#>", <#=variableName#>.IsSet<#=member.PropertyName#>() ? StringUtils.From<#=member.GetPrimitiveType()#>(<#=variableName#>.<#=member.PropertyName#>.TrimStart('/')) : string.Empty);
+			uriResourcePath = uriResourcePath.Replace("<#=marshallLocationName#>", <#=variableName#>.IsSet<#=member.PropertyName#>() ? <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>.TrimStart('/')) : string.Empty);
 <#+
 				}
 				else
 				{
 #>
-			uriResourcePath = uriResourcePath.Replace("<#=marshallLocationName#>", <#=variableName#>.IsSet<#=member.PropertyName#>() ? StringUtils.From<#=member.GetPrimitiveType()#>(<#=variableName#>.<#=member.PropertyName#>) : string.Empty);
+			uriResourcePath = uriResourcePath.Replace("<#=marshallLocationName#>", <#=variableName#>.IsSet<#=member.PropertyName#>() ? <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>) : string.Empty);
 <#+
 				}
 
@@ -89,13 +106,13 @@ using Amazon.Runtime.Internal.Util;
 			if(isGreedy)
 				{
 #>
-			uriResourcePath = uriResourcePath.Replace("<#=marshallLocationName#>", StringUtils.From<#=member.GetPrimitiveType()#>(<#=variableName#>.<#=member.PropertyName#>.TrimStart('/')));
+			uriResourcePath = uriResourcePath.Replace("<#=marshallLocationName#>", <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>.TrimStart('/')));
 <#+
 				}
 				else
 				{
 #>
-			uriResourcePath = uriResourcePath.Replace("<#=marshallLocationName#>", StringUtils.From<#=member.GetPrimitiveType()#>(<#=variableName#>.<#=member.PropertyName#>));
+			uriResourcePath = uriResourcePath.Replace("<#=marshallLocationName#>", <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>));
 <#+
 				}
             }
@@ -124,6 +141,7 @@ using Amazon.Runtime.Internal.Util;
 		}
 	}
 
+	// Only applicable for rest-json and rest-xml
     // Generates code to add any operation query members to the query string for the request
     // If the marshaller is customized, it marshalls the value before changing it to a string
 	protected void ProcessQueryStringMembers(string variableName, Operation operation)
@@ -143,6 +161,12 @@ using Amazon.Runtime.Internal.Util;
                 }
                 else if (member.IsMap)
                 {
+					if(!member.Shape.ValueShape.IsString)
+					{
+						throw new NotImplementedException(string.Format(CultureInfo.InvariantCulture,
+							"Marshalling map with value type of {0} as query string param is not implemented.",
+							member.Shape.ValueShape.Type));
+					}
 #>
             {
                 foreach(var kvp in <#=variableName#>.<#=member.PropertyName#>)
@@ -154,6 +178,12 @@ using Amazon.Runtime.Internal.Util;
                 }
                 else if (member.IsList)
                 {
+					if(!member.Shape.ListShape.IsString)
+					{
+						throw new NotImplementedException(string.Format(CultureInfo.InvariantCulture,
+							"Marshalling list of {0} as query string param is not implemented.",
+							member.Shape.ListShape.Type));
+					}
 #>
                 request.ParameterCollection.Add("<#=member.MarshallLocationName#>", <#=variableName#>.<#=member.PropertyName#>);
 <#+
@@ -161,7 +191,7 @@ using Amazon.Runtime.Internal.Util;
                 else
                 {
 #>
-				request.Parameters.Add("<#=member.MarshallLocationName#>", StringUtils.From<#=member.GetPrimitiveType()#>(<#=variableName#>.<#=member.PropertyName#>));
+				request.Parameters.Add("<#=member.MarshallLocationName#>", <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>));
 <#+			
 				}
 			}

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Globalization;
 
 namespace ServiceClientGenerator
 {
@@ -829,6 +830,72 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
+        /// TimestampFormat that may be specified on a member or a shape.        
+        /// </summary>
+        public TimestampFormat TimestampFormat
+        {
+            get
+            {
+                if (!this.IsDateTime)
+                {
+                    throw new InvalidOperationException(string.Format(
+                        CultureInfo.InvariantCulture,
+                        "Property TimestampFormat is not valid for member {0} of type {1}.",
+                        this.ModeledName, this.DetermineType()));
+                }
+
+                var resolvedTimestampFormat = data.GetTimestampFormat();
+                if (resolvedTimestampFormat == TimestampFormat.None)
+                {
+                    // Fallback to shape's TimestampFormat if not specified at member level
+                    // Fallback to marshall location/protocol rules if not specified at shape level
+                    resolvedTimestampFormat = this.Shape.GetTimestampFormat(this.MarshallLocation);                    
+                }                
+                return resolvedTimestampFormat;
+            }
+        }
+
+        /// <summary>
+        /// Returns if the member's type is timestamp.
+        /// </summary>
+        public bool IsDateTime
+        {
+            get
+            {
+                return this.DetermineType().Equals("DateTime", StringComparison.InvariantCulture);
+            }
+        }
+
+        /// <summary>
+        /// Returns the marshaller method to use in the generated marshaller code for a
+        /// member of primitive type.
+        /// </summary>
+        public string PrimitiveMarshaller
+        {
+            get
+            {
+                if (this.IsDateTime)
+                {
+                    var isDefaultTimestampFormat =
+                        this.TimestampFormat == GetDefaultTimestampFormat(this.MarshallLocation, this.model.Type);
+
+                    if (this.TimestampFormat == TimestampFormat.ISO8601 && isDefaultTimestampFormat)
+                    {
+                        // For cases where the members is marshalled as ISO8601 by default (based on protocol/location),
+                        // use existing method in the SDK that does ISO8601 marshalling for backward compatibility.
+                        return "StringUtils.FromDateTime";
+                    }
+                    return "StringUtils.FromDateTimeTo" + this.TimestampFormat;
+                }
+                else
+                {
+                    return "StringUtils.From" + this.GetPrimitiveType();
+                }
+
+            }
+        }
+
+        /// <summary>
         /// Creates a representation of the member as a string using the member name
         /// </summary>
         /// <returns>The member name as a string</returns>
@@ -836,5 +903,46 @@ namespace ServiceClientGenerator
         {
             return this._name;
         }
+
+        internal static TimestampFormat GetDefaultTimestampFormat(MarshallLocation marshallLocation, ServiceType serviceType)
+        {
+            // Rules used to default the format if timestampFormat is not specified.
+            // 1. All timestamp values serialized in HTTP headers are formatted using rfc822 by default.
+            // 2. All timestamp values serialized in query strings are formatted using iso8601 by default.    
+            if (marshallLocation == MarshallLocation.Header)
+            {
+                return TimestampFormat.RFC822;
+            }
+            else if (marshallLocation == MarshallLocation.QueryString)
+            {
+                return TimestampFormat.ISO8601;
+            }
+            else
+            {
+                // Return protocol defaults if marshall location is not header or querystring.
+                // The default timestamp formats per protocol for structured payload shapes are as follows. 
+                //     rest-json: unixTimestamp
+                //     jsonrpc: unixTimestamp
+                //     rest-xml: iso8601
+                //     query: iso8601
+                //     ec2: iso8601                
+                switch (serviceType)
+                {
+                    case ServiceType.Rest_Json:
+                        return TimestampFormat.UnixTimestamp;
+                    case ServiceType.Json:
+                        return TimestampFormat.UnixTimestamp;
+                    case ServiceType.Query:
+                        return TimestampFormat.ISO8601;
+                    case ServiceType.Rest_Xml:
+                        return TimestampFormat.ISO8601;
+
+                    default:
+                        throw new InvalidOperationException(
+                            "Encountered unknown model type (protocol): " + serviceType);
+                }
+            }
+        }
+
     }
 }

@@ -55,8 +55,12 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 	
     // Generates code to add members of the request to the request being created by the marshaller
 	ProcessRequestUri(this.Operation);
-	ProcessUriMembers("publicRequest", this.Operation);
-	ProcessQueryStringMembers("publicRequest", this.Operation);
+
+	if (this.Config.ServiceModel.Type == ServiceType.Rest_Json)
+	{
+		ProcessUriMembers("publicRequest", this.Operation);
+		ProcessQueryStringMembers("publicRequest", this.Operation);
+	}
 #>
 			request.ResourcePath = uriResourcePath;
 <#    
@@ -105,7 +109,10 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 <#
 	}
 
-	ProcessHeaderMembers("publicRequest", this.Operation.RequestHeaderMembers);		
+	if (this.Config.ServiceModel.Type == ServiceType.Rest_Json)
+	{
+		ProcessHeaderMembers("publicRequest", this.Operation.RequestHeaderMembers);		
+	}
 
 	// If there aren't any members that are marshalled as part of the body or streamed	
 	if(this.Operation.UseQueryString)

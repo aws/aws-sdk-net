@@ -92,7 +92,7 @@ if( operation.ResponseHeaderMembers.Count() > 0 )
 				else if (member.Shape.IsDateTime)
                 {
 #>
-					{"<#=member.MarshallLocationName#>",Constants.DEFAULT_DATE.ToString("O")},
+					{"<#=member.MarshallLocationName#>",ValidatorUtils.GetTestDate(TimestampFormat.<#=member.TimestampFormat#>)},
 <#	
                 }
 				else

@@ -87,7 +87,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 					if(string.IsNullOrEmpty(member.CustomMarshallerTransformation)) 
 					{
 				#>
-<#=new string(' ', level * 4)#>                        request.Parameters.Add(<#=listItemContext#>, StringUtils.From<#= member.Shape.ListShape.GetPrimitiveType() #>(<#=variableNameFragment#>listValue));
+<#=new string(' ', level * 4)#>                        request.Parameters.Add(<#=listItemContext#>, <#=member.Shape.ListShape.PrimitiveMarshaller(MarshallLocation.Body)#>(<#=variableNameFragment#>listValue));
 <#+
 					}
 					else 
@@ -114,7 +114,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 <#=new string(' ', level * 4)#>                    {
 <#=new string(' ', level * 4)#>                        <#= member.Shape.ValueShape.IsStructure ? member.Shape.ValueShape.Name : member.Shape.ValueShape.GetPrimitiveType() #> value;
 <#=new string(' ', level * 4)#>                        bool hasValue = <#=variableName#>.<#=member.PropertyName#>.TryGetValue(key, out value);
-<#=new string(' ', level * 4)#>                        request.Parameters.Add(<#=mapKeyContext#>, StringUtils.From<#= member.Shape.KeyShape.GetPrimitiveType() #>(key));
+<#=new string(' ', level * 4)#>                        request.Parameters.Add(<#=mapKeyContext#>, <#=member.Shape.KeyShape.PrimitiveMarshaller(MarshallLocation.Body)#>(key));
 <#=new string(' ', level * 4)#>                        if (hasValue)
 <#=new string(' ', level * 4)#>                        {
 <#+
@@ -127,7 +127,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 					if(string.IsNullOrEmpty(member.CustomMarshallerTransformation)) 
 					{
                     #>
-<#=new string(' ', level * 4)#>                            request.Parameters.Add(<#=mapValueContext#>, StringUtils.From<#= member.Shape.ValueShape.GetPrimitiveType() #>(value));
+<#=new string(' ', level * 4)#>                            request.Parameters.Add(<#=mapValueContext#>, <#=member.Shape.ValueShape.PrimitiveMarshaller(MarshallLocation.Body)#>(value));
 <#+
 					}
 					else 
@@ -154,7 +154,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 				if(string.IsNullOrEmpty(member.CustomMarshallerTransformation)) 
 				{
 #>
-<#=new string(' ', level * 4)#>                    request.Parameters.Add(<#=context#>, StringUtils.From<#= member.GetPrimitiveType() #>(<#=memberProperty#>));
+<#=new string(' ', level * 4)#>                    request.Parameters.Add(<#=context#>, <#=member.PrimitiveMarshaller#>(<#=memberProperty#>));
 <#+
 				}
 				else 

@@ -1,9 +1,11 @@
 ﻿using Amazon.Runtime.Internal;
+using Amazon.Util;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ServiceClientGenerator;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -242,7 +244,8 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
         {
             foreach (var property in properties)
             {
-                if (property.PropertyType.IsPrimitive || property.PropertyType == typeof(string))
+                if (property.PropertyType.IsPrimitive || property.PropertyType == typeof(string) ||
+                    property.PropertyType == typeof(DateTime))
                 {
                     var member = this.Operation.RequestHeaderMembers.SingleOrDefault(m =>
                         m.PropertyName == property.Name);
@@ -255,6 +258,11 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                             {
                                 var encodedValue = Convert.ToBase64String(Encoding.UTF8.GetBytes((string)property.GetValue(this.Request)));
                                 Assert.AreEqual(encodedValue, this.MarshalledRequest.Headers[member.MarshallLocationName]);
+                            }
+                            else if(member.IsDateTime)
+                            {
+                                var value = ParseUsingFormat(this.MarshalledRequest.Headers[member.MarshallLocationName], member.TimestampFormat);
+                                Assert.AreEqual(((DateTime)property.GetValue(this.Request)).ToUniversalTime(), value.ToUniversalTime());
                             }
                             else
                                 Assert.AreEqual(property.GetValue(this.Request), this.MarshalledRequest.Headers[member.MarshallLocationName]);
@@ -270,16 +278,23 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
             {
                 foreach (var property in properties)
                 {
-                    if (property.PropertyType.IsPrimitive || property.PropertyType == typeof(string))
-                    {
-                        var member = this.Operation.RequestQueryStringMembers.SingleOrDefault(m =>
+                    var member = this.Operation.RequestQueryStringMembers.SingleOrDefault(m =>
                             m.PropertyName == property.Name);
-                        if (member == null)
-                            continue;
+                    if (member == null)
+                        continue;
+                    if (property.PropertyType.IsPrimitive || property.PropertyType == typeof(string))
+                    {   
                         Assert.IsTrue(this.MarshalledRequest.Parameters.ContainsKey(member.MarshallLocationName));
                         var value = this.MarshalledRequest.Parameters[member.MarshallLocationName];
                         var convertedValue = Convert.ChangeType(value, property.PropertyType);
                         Assert.AreEqual(property.GetValue(this.Request), convertedValue);
+                    }
+                    else if(property.PropertyType == typeof(DateTime))
+                    {
+                        Assert.IsTrue(this.MarshalledRequest.Parameters.ContainsKey(member.MarshallLocationName));
+                        var value = ParseUsingFormat(this.MarshalledRequest.Parameters[member.MarshallLocationName],
+                            member.TimestampFormat);
+                        Assert.AreEqual(((DateTime)property.GetValue(this.Request)).ToUniversalTime(), value.ToUniversalTime());
                     }
                 }
             }
@@ -316,6 +331,25 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                         }
                     }
                 }
+            }
+        }
+
+        private DateTime ParseUsingFormat(string text, TimestampFormat timestampFormat)
+        {
+            if (timestampFormat == TimestampFormat.ISO8601 ||
+                        timestampFormat == TimestampFormat.RFC822)
+            {
+                return DateTime.Parse(text, CultureInfo.InvariantCulture);
+            }
+            else if (timestampFormat == TimestampFormat.UnixTimestamp)
+            {
+                var epochSeconds = Double.Parse(text, NumberStyles.Any, CultureInfo.InvariantCulture);
+                return AWSSDKUtils.EPOCH_START.AddSeconds(epochSeconds);
+
+            }
+            else
+            {
+                throw new InvalidOperationException("Cannot parse for format " + timestampFormat);
             }
         }
     }

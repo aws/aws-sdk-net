@@ -67,9 +67,19 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 			}
 			else
 			{
+				// Only use timestamp format based marshalling if format is not Unix epoch, which is the default for json/rest-json
+				if(member.IsDateTime && member.TimestampFormat != TimestampFormat.UnixTimestamp)
+				{
+#>
+<#=new string(' ', level * 4)#>                context.Writer.Write(<#=member.PrimitiveMarshaller#>(<#=variableName + "." + member.PropertyName#>));
+<#+
+				}
+				else
+				{
 #>
 <#=new string(' ', level * 4)#>                context.Writer.Write(<#=memberProperty#>);
 <#+
+				}
 			}
 #>
 <#=new string(' ', level * 4)#>            }
@@ -149,9 +159,21 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 			}
 			else
 			{
+				// Only use timestamp format based marshalling if format is not Unix epoch, which is the default for json/rest-json
+				if(structure.IsDateTime && structure.GetTimestampFormat(MarshallLocation.Body) != TimestampFormat.UnixTimestamp)
+				{
+#>
+<#=new string(' ', level * 4)#>				    context.Writer.Write(<#=structure.PrimitiveMarshaller(MarshallLocation.Body)#>(<#=variableName#>));
+<#+
+				}
+				else
+				{
+
 #>
 <#=new string(' ', level * 4)#>                    context.Writer.Write(<#=variableName#>);
 <#+
+				}
+				
 			}
 	}
 #>
