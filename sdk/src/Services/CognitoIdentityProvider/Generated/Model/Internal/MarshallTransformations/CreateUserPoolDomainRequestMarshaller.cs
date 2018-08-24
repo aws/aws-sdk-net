@@ -67,6 +67,17 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCustomDomainConfig())
+                {
+                    context.Writer.WritePropertyName("CustomDomainConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CustomDomainConfigTypeMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CustomDomainConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDomain())
                 {
                     context.Writer.WritePropertyName("Domain");

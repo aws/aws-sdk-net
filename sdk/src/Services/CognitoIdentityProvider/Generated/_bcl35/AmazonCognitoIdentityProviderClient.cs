@@ -3466,6 +3466,9 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
+        /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user is not authorized.
         /// </exception>
@@ -4452,7 +4455,7 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Client method for returning the configuration information and metadata of the specified
-        /// user pool client.
+        /// user pool app client.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeUserPoolClient service method.</param>
         /// 
@@ -7648,7 +7651,9 @@ namespace Amazon.CognitoIdentityProvider
         #region  UpdateUserPool
 
         /// <summary>
-        /// Updates the specified user pool with the specified attributes.
+        /// Updates the specified user pool with the specified attributes. If you don't provide
+        /// a value for an attribute, it will be set to the default value. You can get a list
+        /// of the current user pool settings with .
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateUserPool service method.</param>
         /// 
@@ -7741,7 +7746,9 @@ namespace Amazon.CognitoIdentityProvider
         #region  UpdateUserPoolClient
 
         /// <summary>
-        /// Allows the developer to update the specified user pool client and password policy.
+        /// Updates the specified user pool app client with the specified attributes. If you don't
+        /// provide a value for an attribute, it will be set to the default value. You can get
+        /// a list of the current user pool app client settings with .
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateUserPoolClient service method.</param>
         /// 

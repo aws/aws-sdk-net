@@ -76,6 +76,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     unmarshalledObject.CloudFrontDistribution = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CustomDomainConfig", targetDepth))
+                {
+                    var unmarshaller = CustomDomainConfigTypeUnmarshaller.Instance;
+                    unmarshalledObject.CustomDomainConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Domain", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

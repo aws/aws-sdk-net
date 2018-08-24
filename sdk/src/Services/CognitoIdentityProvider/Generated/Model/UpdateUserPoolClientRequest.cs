@@ -29,7 +29,9 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateUserPoolClient operation.
-    /// Allows the developer to update the specified user pool client and password policy.
+    /// Updates the specified user pool app client with the specified attributes. If you don't
+    /// provide a value for an attribute, it will be set to the default value. You can get
+    /// a list of the current user pool app client settings with .
     /// </summary>
     public partial class UpdateUserPoolClientRequest : AmazonCognitoIdentityProviderRequest
     {
@@ -149,16 +151,21 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Not use HTTP without TLS (i.e. use HTTPS instead of HTTP).
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// Not include a fragment component.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection
         /// Endpoint</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes
+        /// only.
+        /// </para>
+        ///  
+        /// <para>
+        /// App callback URLs such as myapp://example are also supported.
         /// </para>
         /// </summary>
         public List<string> CallbackURLs
@@ -228,16 +235,21 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Not use HTTP without TLS (i.e. use HTTPS instead of HTTP).
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// Not include a fragment component.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection
         /// Endpoint</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes
+        /// only.
+        /// </para>
+        ///  
+        /// <para>
+        /// App callback URLs such as myapp://example are also supported.
         /// </para>
         /// </summary>
         public string DefaultRedirectURI

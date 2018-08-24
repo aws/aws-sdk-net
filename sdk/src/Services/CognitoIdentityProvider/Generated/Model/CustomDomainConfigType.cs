@@ -28,29 +28,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// This is the response object from the CreateUserPoolDomain operation.
+    /// The configuration for a custom domain that hosts the sign-up and sign-in webpages
+    /// for your application.
     /// </summary>
-    public partial class CreateUserPoolDomainResponse : AmazonWebServiceResponse
+    public partial class CustomDomainConfigType
     {
-        private string _cloudFrontDomain;
+        private string _certificateArn;
 
         /// <summary>
-        /// Gets and sets the property CloudFrontDomain. 
+        /// Gets and sets the property CertificateArn. 
         /// <para>
-        /// The Amazon CloudFront endpoint that you use as the target of the alias that you set
-        /// up with your Domain Name Service (DNS) provider.
+        /// The Amazon Resource Name (ARN) of an AWS Certificate Manager SSL certificate. You
+        /// use this certificate for the subdomain of your custom domain.
         /// </para>
         /// </summary>
-        public string CloudFrontDomain
+        public string CertificateArn
         {
-            get { return this._cloudFrontDomain; }
-            set { this._cloudFrontDomain = value; }
+            get { return this._certificateArn; }
+            set { this._certificateArn = value; }
         }
 
-        // Check to see if CloudFrontDomain property is set
-        internal bool IsSetCloudFrontDomain()
+        // Check to see if CertificateArn property is set
+        internal bool IsSetCertificateArn()
         {
-            return this._cloudFrontDomain != null;
+            return this._certificateArn != null;
         }
 
     }

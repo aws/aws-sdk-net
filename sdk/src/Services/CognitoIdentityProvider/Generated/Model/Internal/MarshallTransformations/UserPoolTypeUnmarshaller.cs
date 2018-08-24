@@ -94,6 +94,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CustomDomain", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CustomDomain = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DeviceConfiguration", targetDepth))
                 {
                     var unmarshaller = DeviceConfigurationTypeUnmarshaller.Instance;

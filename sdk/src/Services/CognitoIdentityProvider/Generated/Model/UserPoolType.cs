@@ -37,6 +37,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         private string _arn;
         private List<string> _autoVerifiedAttributes = new List<string>();
         private DateTime? _creationDate;
+        private string _customDomain;
         private DeviceConfigurationType _deviceConfiguration;
         private string _domain;
         private EmailConfigurationType _emailConfiguration;
@@ -149,6 +150,21 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetCreationDate()
         {
             return this._creationDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomDomain.
+        /// </summary>
+        public string CustomDomain
+        {
+            get { return this._customDomain; }
+            set { this._customDomain = value; }
+        }
+
+        // Check to see if CustomDomain property is set
+        internal bool IsSetCustomDomain()
+        {
+            return this._customDomain != null;
         }
 
         /// <summary>

@@ -30,7 +30,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// <summary>
     /// Container for the parameters to the DescribeUserPoolClient operation.
     /// Client method for returning the configuration information and metadata of the specified
-    /// user pool client.
+    /// user pool app client.
     /// </summary>
     public partial class DescribeUserPoolClientRequest : AmazonCognitoIdentityProviderRequest
     {

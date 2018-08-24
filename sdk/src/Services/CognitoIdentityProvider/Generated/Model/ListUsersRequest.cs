@@ -119,11 +119,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>cognito:user_status</code> (called <b>Enabled</b> in the Console) (case-sensitive)
+        ///  <code>cognito:user_status</code> (called <b>Status</b> in the Console) (case-insensitive)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>status</code> (case-insensitive)
+        ///  <code>status (called <b>Enabled</b> in the Console) (case-sensitive)</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>

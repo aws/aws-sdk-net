@@ -34,6 +34,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
         private string _awsAccountId;
         private string _cloudFrontDistribution;
+        private CustomDomainConfigType _customDomainConfig;
         private string _domain;
         private string _s3Bucket;
         private DomainStatusType _status;
@@ -74,6 +75,21 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetCloudFrontDistribution()
         {
             return this._cloudFrontDistribution != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomDomainConfig.
+        /// </summary>
+        public CustomDomainConfigType CustomDomainConfig
+        {
+            get { return this._customDomainConfig; }
+            set { this._customDomainConfig = value; }
+        }
+
+        // Check to see if CustomDomainConfig property is set
+        internal bool IsSetCustomDomainConfig()
+        {
+            return this._customDomainConfig != null;
         }
 
         /// <summary>

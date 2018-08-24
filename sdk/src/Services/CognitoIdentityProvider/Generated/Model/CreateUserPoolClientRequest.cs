@@ -149,16 +149,21 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Not use HTTP without TLS (i.e. use HTTPS instead of HTTP).
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// Not include a fragment component.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection
         /// Endpoint</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes
+        /// only.
+        /// </para>
+        ///  
+        /// <para>
+        /// App callback URLs such as myapp://example are also supported.
         /// </para>
         /// </summary>
         public List<string> CallbackURLs
@@ -210,16 +215,21 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Not use HTTP without TLS (i.e. use HTTPS instead of HTTP).
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// Not include a fragment component.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection
         /// Endpoint</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes
+        /// only.
+        /// </para>
+        ///  
+        /// <para>
+        /// App callback URLs such as myapp://example are also supported.
         /// </para>
         /// </summary>
         public string DefaultRedirectURI

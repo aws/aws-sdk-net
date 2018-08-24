@@ -47,6 +47,17 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         {
             CreateUserPoolDomainResponse response = new CreateUserPoolDomainResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("CloudFrontDomain", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.CloudFrontDomain = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -68,6 +79,10 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterException"))
             {
                 return new InvalidParameterException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
+            {
+                return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("NotAuthorizedException"))
             {
