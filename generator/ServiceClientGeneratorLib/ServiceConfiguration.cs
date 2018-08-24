@@ -142,6 +142,10 @@ namespace ServiceClientGenerator
             set { this._namespace = value; } 
         }
 
+        // Base name in the manifest is not a reliable source of info, as if append-service
+        // is set 'Service' gets appended and in the case of IAM then sends us to the wrong folder.
+        // Instead we'll use the namespace and rip off any Amazon. prefix. This also helps us
+        // handle versioned namespaces too.
         public string ServiceFolderName
         {
             get
