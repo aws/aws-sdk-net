@@ -284,7 +284,7 @@ namespace ServiceClientGenerator
             if (string.IsNullOrEmpty(locationName) || !isEC2Protocol)
                 return locationName;
 
-            return string.Concat(locationName.Substring(0, 1).ToUpper(), locationName.Substring(1));
+            return locationName.ToUpperFirstCharacter();
         }
 
         // common code to lower case, when EC2, the first char of the unmarshall location name
@@ -293,7 +293,7 @@ namespace ServiceClientGenerator
             if (string.IsNullOrEmpty(locationName) || !isEC2Protocol)
                 return locationName;
 
-            return string.Concat(locationName.Substring(0, 1).ToLower(), locationName.Substring(1));
+            return locationName.ToLowerFirstCharacter();
         }
 
         /// <summary>
@@ -363,6 +363,28 @@ namespace ServiceClientGenerator
         public static string ToClassMemberCase(this string s)
         {
             return "_" + s.ToCamelCase();
+        }
+
+        /// <summary>
+        /// Capitalizes the first character of a string, used to create proper naming for services, attributes, and operations
+        /// </summary>
+        public static string ToUpperFirstCharacter(this string s)
+        {
+            var txt = s.Substring(0,1).ToUpperInvariant();
+            if (s.Length > 1)
+                txt += s.Substring(1);
+            return txt;
+        }
+
+        /// <summary>
+        /// Changes first character of a string to lower case.
+        /// </summary>
+        public static string ToLowerFirstCharacter(this string s)
+        {
+            var txt = s.Substring(0, 1).ToLowerInvariant();
+            if (s.Length > 1)
+                txt += s.Substring(1);
+            return txt;
         }
     }
 }

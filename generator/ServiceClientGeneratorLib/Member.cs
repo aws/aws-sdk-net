@@ -171,10 +171,7 @@ namespace ServiceClientGenerator
                     }
                 }
 
-                string txt = this._name[0].ToString().ToUpper();
-                if (this._name.Length > 1)
-                    txt += this._name.Substring(1);
-                return txt;
+                return _name.ToUpperFirstCharacter();
             }
         }
 
@@ -419,7 +416,7 @@ namespace ServiceClientGenerator
                 case "string":
                     if (!treatEnumsAsString && memberShape["enum"] != null)
                     {
-                        return ServiceModel.CapitalizeFirstChar(renameShape ?? extendsNode.ToString());
+                        return (renameShape ?? extendsNode.ToString()).ToUpperFirstCharacter();
                     }
                     return "string";
                 case "blob":
@@ -648,7 +645,7 @@ namespace ServiceClientGenerator
                 case "string":
                 case "boolean":
                 case "double":
-                    return "Get" + ServiceModel.CapitalizeFirstChar(simpleTypeName);
+                    return "Get" + simpleTypeName.ToUpperFirstCharacter();
                 case "float":
                     return "GetSingle";
                 case "integer":

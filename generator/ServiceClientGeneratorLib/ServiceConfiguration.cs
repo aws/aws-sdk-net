@@ -78,7 +78,7 @@ namespace ServiceClientGenerator
             // concatenate all the words by removing whitespace.
             className = System.Text.RegularExpressions.Regex.Replace(className, @"[^a-zA-Z0-9]", "");
 
-            return className;
+            return className.ToUpperFirstCharacter();
         }
 
 

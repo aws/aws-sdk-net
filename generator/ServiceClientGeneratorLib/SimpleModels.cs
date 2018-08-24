@@ -209,8 +209,8 @@ namespace ServiceClientGenerator
 
             var overrideName = model.Customizations.GetOverrideShapeName(_modelName);
             _outputName = !string.IsNullOrEmpty(overrideName) 
-                ? ServiceModel.CapitalizeFirstChar(overrideName)
-                : ServiceModel.CapitalizeFirstChar(_modelName);
+                ? overrideName.ToUpperFirstCharacter()
+                : _modelName.ToUpperFirstCharacter();
         }
 
         /// <summary>

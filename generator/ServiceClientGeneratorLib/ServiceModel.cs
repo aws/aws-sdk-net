@@ -420,17 +420,6 @@ namespace ServiceClientGenerator
             return true;
         }
 
-        /// <summary>
-        /// Capitalizes the first character of a string, used to create proper naming for services, attributes, and operations
-        /// </summary>
-        /// <param name="text">The string to capitalize the first character of</param>
-        /// <returns>The string with the first character capatalized</returns>
-        internal static string CapitalizeFirstChar(string text)
-        {
-            var chars = text.ToCharArray();
-            chars[0] = char.ToUpperInvariant(chars[0]);
-            return new string(chars);
-        }
 
         /// <summary>
         /// The service model represented as a string
