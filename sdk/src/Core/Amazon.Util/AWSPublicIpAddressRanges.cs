@@ -101,6 +101,15 @@ namespace Amazon.Util
         /// </summary>
         public static AWSPublicIpAddressRanges Load()
         {
+            return Load(null);
+        }
+
+        /// <summary>
+        /// Downloads the most recent copy of the endpoint address file and
+        /// parses it to a collection of address range objects.
+        /// </summary>
+        public static AWSPublicIpAddressRanges Load(IWebProxy proxy)
+        {
             const int maxDownloadRetries = 3;
 
             var retries = 0;
@@ -108,7 +117,7 @@ namespace Amazon.Util
             {
                 try
                 {
-                    var content = AWSSDKUtils.DownloadStringContent(IpAddressRangeEndpoint);
+                    var content = AWSSDKUtils.DownloadStringContent(IpAddressRangeEndpoint, proxy);
                     AWSPublicIpAddressRanges instance = Parse(content);
 
                     return instance;

@@ -17,6 +17,7 @@ using Amazon.Util;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Net;
 
 namespace Amazon.Runtime
 {
@@ -30,9 +31,10 @@ namespace Amazon.Runtime
         // Set preempt expiry to 15 minutes. New access keys are available at least 15 minutes before expiry time.
         // http://docs.aws.amazon.com/IAM/latest/UserGuide/role-usecase-ec2app.html
         private static TimeSpan _preemptExpiryTime = TimeSpan.FromMinutes(15);
+        private static TimeSpan _refreshAttemptPeriod = TimeSpan.FromHours(1);
 
         private CredentialsRefreshState _currentRefreshState = null;
-        private static TimeSpan _refreshAttemptPeriod = TimeSpan.FromHours(1);
+        private IWebProxy _proxy = null;
 
         #endregion
 
@@ -86,7 +88,16 @@ namespace Amazon.Runtime
         /// </summary>
         /// <param name="role">Role to use</param>
         public InstanceProfileAWSCredentials(string role)
+            : this(role, null) { }
+
+        /// <summary>
+        /// Constructs a InstanceProfileAWSCredentials object for specific role
+        /// </summary>
+        /// <param name="role">Role to use</param>
+        public InstanceProfileAWSCredentials(string role, IWebProxy proxy)
         {
+            this._proxy = proxy;
+
             if (role == null)
                 throw new ArgumentNullException(nameof(role));
             else if (IsNullOrWhiteSpace(role))
@@ -100,7 +111,13 @@ namespace Amazon.Runtime
         /// Constructs a InstanceProfileAWSCredentials object for the first found role
         /// </summary>
         public InstanceProfileAWSCredentials()
-            : this(GetFirstRole()) { }
+            : this(proxy: null) { }
+
+        /// <summary>
+        /// Constructs a InstanceProfileAWSCredentials object for the first found role
+        /// </summary>
+        public InstanceProfileAWSCredentials(IWebProxy proxy)
+            : this(GetFirstRole(proxy), proxy) { }
 
         #endregion
 
@@ -113,7 +130,16 @@ namespace Amazon.Runtime
         /// <returns></returns>
         public static IEnumerable<string> GetAvailableRoles()
         {
-            string allAliases = GetContents(RolesUri);
+            return GetAvailableRoles(null);
+        }
+
+        /// <summary>
+        /// Retrieves a list of all roles available through current InstanceProfile service
+        /// </summary>
+        /// <returns></returns>
+        public static IEnumerable<string> GetAvailableRoles(IWebProxy proxy)
+        {
+            string allAliases = GetContents(RolesUri, proxy);
             if (string.IsNullOrEmpty(allAliases))
                 yield break;
 
@@ -177,7 +203,7 @@ namespace Amazon.Runtime
 
         private CredentialsRefreshState GetRefreshState()
         {
-            SecurityInfo info = GetServiceInfo();
+            SecurityInfo info = GetServiceInfo(_proxy);
             if (!string.IsNullOrEmpty(info.Message))
             {
                 throw new AmazonServiceException(string.Format(CultureInfo.InvariantCulture,
@@ -195,16 +221,16 @@ namespace Amazon.Runtime
             return refreshState;
         }
 
-        private static SecurityInfo GetServiceInfo()
+        private static SecurityInfo GetServiceInfo(IWebProxy proxy)
         {
             CheckIsIMDSEnabled();
-            return GetObjectFromResponse<SecurityInfo>(InfoUri);
+            return GetObjectFromResponse<SecurityInfo>(InfoUri, proxy);
         }
 
         private SecurityCredentials GetRoleCredentials()
         {
             CheckIsIMDSEnabled();
-            return GetObjectFromResponse<SecurityCredentials>(CurrentRoleUri);
+            return GetObjectFromResponse<SecurityCredentials>(CurrentRoleUri, _proxy);
         }
 
         private static void CheckIsIMDSEnabled()
@@ -215,7 +241,12 @@ namespace Amazon.Runtime
 
         private static string GetFirstRole()
         {
-            IEnumerable<string> roles = GetAvailableRoles();
+            return GetFirstRole(null);
+        }
+
+        private static string GetFirstRole(IWebProxy proxy)
+        {
+            IEnumerable<string> roles = GetAvailableRoles(proxy);
             foreach (string role in roles)
             {
                 return role;

@@ -28,7 +28,7 @@ namespace AWSSDK.UnitTests
         {
             AssertExtensions.ExpectException(() =>
             {
-                var creds = new InstanceProfileAWSCredentials(null);
+                var creds = new InstanceProfileAWSCredentials(role: null);
             }, typeof(ArgumentNullException), "Value cannot be null." + Environment.NewLine + "Parameter name: role");
         }
 
