@@ -1,3 +1,9 @@
+### 3.3.346.0 (2018-08-24 17:52 UTC)
+* CloudWatchEvents (3.3.6.0)
+	* Added Fargate and NetworkConfiguration support to EcsParameters.
+* CognitoIdentityProvider (3.3.11.0)
+	* Amazon Cognito now has API support for creating custom domains for our hosted UI for User Pools.
+
 ### 3.3.345.0 (2018-08-24 00:12 UTC)
 * S3 (3.3.21.0)
 	* Implement support for user-specified byte-ranged in S3's GetObject (https://github.com/aws/aws-sdk-net/pull/999)

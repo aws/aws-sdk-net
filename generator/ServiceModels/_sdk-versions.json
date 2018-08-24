@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.345.0",
+    "ProductVersion" : "3.3.346.0",
     "CoreVersion"    : "3.3.25.0",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -497,7 +497,7 @@
             "InPreview"               : false
         },
         "CloudWatchEvents"                : {
-            "Version" : "3.3.5.12",
+            "Version" : "3.3.6.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.24.8"
@@ -537,7 +537,7 @@
             "InPreview"               : false
         },
         "CognitoIdentityProvider"         : {
-            "Version" : "3.3.10.9",
+            "Version" : "3.3.11.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.24.8"
