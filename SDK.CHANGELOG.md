@@ -1,3 +1,9 @@
+### 3.3.345.0 (2018-08-24 00:12 UTC)
+* S3 (3.3.21.0)
+	* Implement support for user-specified byte-ranged in S3's GetObject (https://github.com/aws/aws-sdk-net/pull/999)
+* Core 3.3.25.0
+	* Allow specifying a proxy for HTTP downloads which are not related to service interaction
+
 ### 3.3.344.0 (2018-08-23 20:55 UTC)
 * IoT (3.3.16.0)
 	* This release adds support for IoT Thing Group Indexing and Searching functionality.
