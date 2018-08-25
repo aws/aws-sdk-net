@@ -114,6 +114,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.RoleArn);
                 }
 
+                if(publicRequest.IsSetSecurityConfiguration())
+                {
+                    context.Writer.WritePropertyName("SecurityConfiguration");
+                    context.Writer.Write(publicRequest.SecurityConfiguration);
+                }
+
                 if(publicRequest.IsSetSecurityGroupIds())
                 {
                     context.Writer.WritePropertyName("SecurityGroupIds");

@@ -37,6 +37,7 @@ namespace Amazon.Glue.Model
         private List<string> _classifiers = new List<string>();
         private string _configuration;
         private long? _crawlElapsedTime;
+        private string _crawlerSecurityConfiguration;
         private DateTime? _creationTime;
         private string _databaseName;
         private string _description;
@@ -73,8 +74,19 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property Configuration. 
         /// <para>
         /// Crawler configuration information. This versioned JSON string allows users to specify
-        /// aspects of a crawler's behavior. For more information, see <a href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
-        /// a Crawler</a>.
+        /// aspects of a Crawler's behavior.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use this field to force partitions to inherit metadata such as classification,
+        /// input format, output format, serde information, and schema from their parent table,
+        /// rather than detect this information separately for each partition. Use the following
+        /// JSON string to specify that behavior:
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>'{ "Version": 1.0, "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior":
+        /// "InheritFromTable" } } }'</code> 
         /// </para>
         /// </summary>
         public string Configuration
@@ -105,6 +117,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetCrawlElapsedTime()
         {
             return this._crawlElapsedTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CrawlerSecurityConfiguration. 
+        /// <para>
+        /// The name of the SecurityConfiguration structure to be used by this Crawler.
+        /// </para>
+        /// </summary>
+        public string CrawlerSecurityConfiguration
+        {
+            get { return this._crawlerSecurityConfiguration; }
+            set { this._crawlerSecurityConfiguration = value; }
+        }
+
+        // Check to see if CrawlerSecurityConfiguration property is set
+        internal bool IsSetCrawlerSecurityConfiguration()
+        {
+            return this._crawlerSecurityConfiguration != null;
         }
 
         /// <summary>

@@ -161,6 +161,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Role);
                 }
 
+                if(publicRequest.IsSetSecurityConfiguration())
+                {
+                    context.Writer.WritePropertyName("SecurityConfiguration");
+                    context.Writer.Write(publicRequest.SecurityConfiguration);
+                }
+
                 if(publicRequest.IsSetTimeout())
                 {
                     context.Writer.WritePropertyName("Timeout");

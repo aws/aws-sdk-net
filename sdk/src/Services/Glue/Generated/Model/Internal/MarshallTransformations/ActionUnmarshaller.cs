@@ -82,6 +82,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.NotificationProperty = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SecurityConfiguration", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SecurityConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Timeout", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

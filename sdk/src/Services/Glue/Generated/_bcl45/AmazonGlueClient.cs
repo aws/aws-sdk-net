@@ -243,6 +243,9 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
         /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.InternalServiceException">
         /// An internal service error occurred.
         /// </exception>
@@ -386,6 +389,20 @@ namespace Amazon.Glue
 
         /// <summary>
         /// Deletes multiple tables at once.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// After completing this operation, you will no longer have access to the table versions
+        /// and partitions that belong to the deleted table. AWS Glue deletes these "orphaned"
+        /// resources asynchronously in a timely manner, at the discretion of the service.
+        /// </para>
+        ///  
+        /// <para>
+        /// To ensure immediate deletion of all related resources, before calling <code>BatchDeleteTable</code>,
+        /// use <code>DeleteTableVersion</code> or <code>BatchDeleteTableVersion</code>, and <code>DeletePartition</code>
+        /// or <code>BatchDeletePartition</code>, to delete any resources that belong to the table.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDeleteTable service method.</param>
         /// 
@@ -494,6 +511,9 @@ namespace Amazon.Glue
         /// <returns>The response from the BatchGetPartition service method, as returned by Glue.</returns>
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -644,6 +664,9 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
         /// A resource to be created or added already exists.
         /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.InvalidInputException">
         /// The input provided was not valid.
         /// </exception>
@@ -747,6 +770,9 @@ namespace Amazon.Glue
         /// <returns>The response from the CreateDatabase service method, as returned by Glue.</returns>
         /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
         /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -928,6 +954,9 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
         /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.InternalServiceException">
         /// An internal service error occurred.
         /// </exception>
@@ -1018,6 +1047,60 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  CreateSecurityConfiguration
+
+
+        /// <summary>
+        /// Creates a new security configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSecurityConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the CreateSecurityConfiguration service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateSecurityConfiguration">REST API Reference for CreateSecurityConfiguration Operation</seealso>
+        public virtual CreateSecurityConfigurationResponse CreateSecurityConfiguration(CreateSecurityConfigurationRequest request)
+        {
+            var marshaller = CreateSecurityConfigurationRequestMarshaller.Instance;
+            var unmarshaller = CreateSecurityConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSecurityConfigurationRequest,CreateSecurityConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateSecurityConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateSecurityConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateSecurityConfiguration">REST API Reference for CreateSecurityConfiguration Operation</seealso>
+        public virtual Task<CreateSecurityConfigurationResponse> CreateSecurityConfigurationAsync(CreateSecurityConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateSecurityConfigurationRequestMarshaller.Instance;
+            var unmarshaller = CreateSecurityConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateSecurityConfigurationRequest,CreateSecurityConfigurationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateTable
 
 
@@ -1032,6 +1115,9 @@ namespace Amazon.Glue
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -1149,6 +1235,9 @@ namespace Amazon.Glue
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -1338,6 +1427,23 @@ namespace Amazon.Glue
 
         /// <summary>
         /// Removes a specified Database from a Data Catalog.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// After completing this operation, you will no longer have access to the tables (and
+        /// all table versions and partitions that might belong to the tables) and the user-defined
+        /// functions in the deleted database. AWS Glue deletes these "orphaned" resources asynchronously
+        /// in a timely manner, at the discretion of the service.
+        /// </para>
+        ///  
+        /// <para>
+        /// To ensure immediate deletion of all related resources, before calling <code>DeleteDatabase</code>,
+        /// use <code>DeleteTableVersion</code> or <code>BatchDeleteTableVersion</code>, <code>DeletePartition</code>
+        /// or <code>BatchDeletePartition</code>, <code>DeleteUserDefinedFunction</code>, and
+        /// <code>DeleteTable</code> or <code>BatchDeleteTable</code>, to delete any resources
+        /// that belong to the database.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDatabase service method.</param>
         /// 
@@ -1535,11 +1641,76 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  DeleteSecurityConfiguration
+
+
+        /// <summary>
+        /// Deletes a specified security configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSecurityConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSecurityConfiguration service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteSecurityConfiguration">REST API Reference for DeleteSecurityConfiguration Operation</seealso>
+        public virtual DeleteSecurityConfigurationResponse DeleteSecurityConfiguration(DeleteSecurityConfigurationRequest request)
+        {
+            var marshaller = DeleteSecurityConfigurationRequestMarshaller.Instance;
+            var unmarshaller = DeleteSecurityConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSecurityConfigurationRequest,DeleteSecurityConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSecurityConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSecurityConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteSecurityConfiguration">REST API Reference for DeleteSecurityConfiguration Operation</seealso>
+        public virtual Task<DeleteSecurityConfigurationResponse> DeleteSecurityConfigurationAsync(DeleteSecurityConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteSecurityConfigurationRequestMarshaller.Instance;
+            var unmarshaller = DeleteSecurityConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteSecurityConfigurationRequest,DeleteSecurityConfigurationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteTable
 
 
         /// <summary>
         /// Removes a table definition from the Data Catalog.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// After completing this operation, you will no longer have access to the table versions
+        /// and partitions that belong to the deleted table. AWS Glue deletes these "orphaned"
+        /// resources asynchronously in a timely manner, at the discretion of the service.
+        /// </para>
+        ///  
+        /// <para>
+        /// To ensure immediate deletion of all related resources, before calling <code>DeleteTable</code>,
+        /// use <code>DeleteTableVersion</code> or <code>BatchDeleteTableVersion</code>, and <code>DeletePartition</code>
+        /// or <code>BatchDeletePartition</code>, to delete any resources that belong to the table.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTable service method.</param>
         /// 
@@ -1883,6 +2054,12 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
         /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
         /// The operation timed out.
         /// </exception>
@@ -1927,6 +2104,12 @@ namespace Amazon.Glue
         /// <returns>The response from the GetConnections service method, as returned by Glue.</returns>
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
         /// The operation timed out.
@@ -2102,6 +2285,9 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
         /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.InternalServiceException">
         /// An internal service error occurred.
         /// </exception>
@@ -2150,6 +2336,9 @@ namespace Amazon.Glue
         /// <param name="request">Container for the necessary parameters to execute the GetDatabases service method.</param>
         /// 
         /// <returns>The response from the GetDatabases service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.InternalServiceException">
         /// An internal service error occurred.
         /// </exception>
@@ -2606,6 +2795,9 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
         /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.InternalServiceException">
         /// An internal service error occurred.
         /// </exception>
@@ -2656,6 +2848,9 @@ namespace Amazon.Glue
         /// <returns>The response from the GetPartitions service method, as returned by Glue.</returns>
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -2744,6 +2939,108 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  GetSecurityConfiguration
+
+
+        /// <summary>
+        /// Retrieves a specified security configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSecurityConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetSecurityConfiguration service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSecurityConfiguration">REST API Reference for GetSecurityConfiguration Operation</seealso>
+        public virtual GetSecurityConfigurationResponse GetSecurityConfiguration(GetSecurityConfigurationRequest request)
+        {
+            var marshaller = GetSecurityConfigurationRequestMarshaller.Instance;
+            var unmarshaller = GetSecurityConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetSecurityConfigurationRequest,GetSecurityConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSecurityConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSecurityConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSecurityConfiguration">REST API Reference for GetSecurityConfiguration Operation</seealso>
+        public virtual Task<GetSecurityConfigurationResponse> GetSecurityConfigurationAsync(GetSecurityConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetSecurityConfigurationRequestMarshaller.Instance;
+            var unmarshaller = GetSecurityConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetSecurityConfigurationRequest,GetSecurityConfigurationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetSecurityConfigurations
+
+
+        /// <summary>
+        /// Retrieves a list of all security configurations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSecurityConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the GetSecurityConfigurations service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSecurityConfigurations">REST API Reference for GetSecurityConfigurations Operation</seealso>
+        public virtual GetSecurityConfigurationsResponse GetSecurityConfigurations(GetSecurityConfigurationsRequest request)
+        {
+            var marshaller = GetSecurityConfigurationsRequestMarshaller.Instance;
+            var unmarshaller = GetSecurityConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<GetSecurityConfigurationsRequest,GetSecurityConfigurationsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSecurityConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSecurityConfigurations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSecurityConfigurations">REST API Reference for GetSecurityConfigurations Operation</seealso>
+        public virtual Task<GetSecurityConfigurationsResponse> GetSecurityConfigurationsAsync(GetSecurityConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetSecurityConfigurationsRequestMarshaller.Instance;
+            var unmarshaller = GetSecurityConfigurationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetSecurityConfigurationsRequest,GetSecurityConfigurationsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetTable
 
 
@@ -2755,6 +3052,9 @@ namespace Amazon.Glue
         /// <returns>The response from the GetTable service method, as returned by Glue.</returns>
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -2807,6 +3107,9 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
         /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.InternalServiceException">
         /// An internal service error occurred.
         /// </exception>
@@ -2858,6 +3161,9 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
         /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.InternalServiceException">
         /// An internal service error occurred.
         /// </exception>
@@ -2908,6 +3214,9 @@ namespace Amazon.Glue
         /// <returns>The response from the GetTableVersions service method, as returned by Glue.</returns>
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -3062,6 +3371,9 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
         /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.InternalServiceException">
         /// An internal service error occurred.
         /// </exception>
@@ -3112,6 +3424,9 @@ namespace Amazon.Glue
         /// <returns>The response from the GetUserDefinedFunctions service method, as returned by Glue.</returns>
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -3192,6 +3507,55 @@ namespace Amazon.Glue
             var unmarshaller = ImportCatalogToGlueResponseUnmarshaller.Instance;
 
             return InvokeAsync<ImportCatalogToGlueRequest,ImportCatalogToGlueResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutDataCatalogEncryptionSettings
+
+
+        /// <summary>
+        /// Sets the security configuration for a specified catalog. Once the configuration has
+        /// been set, the specified encryption is applied to every catalog write thereafter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutDataCatalogEncryptionSettings service method.</param>
+        /// 
+        /// <returns>The response from the PutDataCatalogEncryptionSettings service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutDataCatalogEncryptionSettings">REST API Reference for PutDataCatalogEncryptionSettings Operation</seealso>
+        public virtual PutDataCatalogEncryptionSettingsResponse PutDataCatalogEncryptionSettings(PutDataCatalogEncryptionSettingsRequest request)
+        {
+            var marshaller = PutDataCatalogEncryptionSettingsRequestMarshaller.Instance;
+            var unmarshaller = PutDataCatalogEncryptionSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<PutDataCatalogEncryptionSettingsRequest,PutDataCatalogEncryptionSettingsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutDataCatalogEncryptionSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutDataCatalogEncryptionSettings operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutDataCatalogEncryptionSettings">REST API Reference for PutDataCatalogEncryptionSettings Operation</seealso>
+        public virtual Task<PutDataCatalogEncryptionSettingsResponse> PutDataCatalogEncryptionSettingsAsync(PutDataCatalogEncryptionSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = PutDataCatalogEncryptionSettingsRequestMarshaller.Instance;
+            var unmarshaller = PutDataCatalogEncryptionSettingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutDataCatalogEncryptionSettingsRequest,PutDataCatalogEncryptionSettingsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -3688,6 +4052,12 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
         /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.InvalidInputException">
         /// The input provided was not valid.
         /// </exception>
@@ -3844,6 +4214,9 @@ namespace Amazon.Glue
         /// <returns>The response from the UpdateDatabase service method, as returned by Glue.</returns>
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -4004,6 +4377,9 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
         /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.InternalServiceException">
         /// An internal service error occurred.
         /// </exception>
@@ -4057,6 +4433,9 @@ namespace Amazon.Glue
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -4165,6 +4544,9 @@ namespace Amazon.Glue
         /// <returns>The response from the UpdateUserDefinedFunction service method, as returned by Glue.</returns>
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.InternalServiceException">
         /// An internal service error occurred.

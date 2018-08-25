@@ -25,6 +25,106 @@ namespace Amazon.Glue
 {
 
     /// <summary>
+    /// Constants used for properties of type CatalogEncryptionMode.
+    /// </summary>
+    public class CatalogEncryptionMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for CatalogEncryptionMode
+        /// </summary>
+        public static readonly CatalogEncryptionMode DISABLED = new CatalogEncryptionMode("DISABLED");
+        /// <summary>
+        /// Constant SSEKMS for CatalogEncryptionMode
+        /// </summary>
+        public static readonly CatalogEncryptionMode SSEKMS = new CatalogEncryptionMode("SSE-KMS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CatalogEncryptionMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CatalogEncryptionMode FindValue(string value)
+        {
+            return FindValue<CatalogEncryptionMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CatalogEncryptionMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CloudWatchEncryptionMode.
+    /// </summary>
+    public class CloudWatchEncryptionMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for CloudWatchEncryptionMode
+        /// </summary>
+        public static readonly CloudWatchEncryptionMode DISABLED = new CloudWatchEncryptionMode("DISABLED");
+        /// <summary>
+        /// Constant SSEKMS for CloudWatchEncryptionMode
+        /// </summary>
+        public static readonly CloudWatchEncryptionMode SSEKMS = new CloudWatchEncryptionMode("SSE-KMS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CloudWatchEncryptionMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CloudWatchEncryptionMode FindValue(string value)
+        {
+            return FindValue<CloudWatchEncryptionMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CloudWatchEncryptionMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConnectionPropertyKey.
     /// </summary>
     public class ConnectionPropertyKey : ConstantClass
@@ -54,6 +154,10 @@ namespace Amazon.Glue
         /// Constant JDBC_DRIVER_JAR_URI for ConnectionPropertyKey
         /// </summary>
         public static readonly ConnectionPropertyKey JDBC_DRIVER_JAR_URI = new ConnectionPropertyKey("JDBC_DRIVER_JAR_URI");
+        /// <summary>
+        /// Constant JDBC_ENFORCE_SSL for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey JDBC_ENFORCE_SSL = new ConnectionPropertyKey("JDBC_ENFORCE_SSL");
         /// <summary>
         /// Constant JDBC_ENGINE for ConnectionPropertyKey
         /// </summary>
@@ -262,6 +366,56 @@ namespace Amazon.Glue
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DeleteBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type JobBookmarksEncryptionMode.
+    /// </summary>
+    public class JobBookmarksEncryptionMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CSEKMS for JobBookmarksEncryptionMode
+        /// </summary>
+        public static readonly JobBookmarksEncryptionMode CSEKMS = new JobBookmarksEncryptionMode("CSE-KMS");
+        /// <summary>
+        /// Constant DISABLED for JobBookmarksEncryptionMode
+        /// </summary>
+        public static readonly JobBookmarksEncryptionMode DISABLED = new JobBookmarksEncryptionMode("DISABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public JobBookmarksEncryptionMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JobBookmarksEncryptionMode FindValue(string value)
+        {
+            return FindValue<JobBookmarksEncryptionMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JobBookmarksEncryptionMode(string value)
         {
             return FindValue(value);
         }
@@ -640,6 +794,60 @@ namespace Amazon.Glue
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type S3EncryptionMode.
+    /// </summary>
+    public class S3EncryptionMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for S3EncryptionMode
+        /// </summary>
+        public static readonly S3EncryptionMode DISABLED = new S3EncryptionMode("DISABLED");
+        /// <summary>
+        /// Constant SSEKMS for S3EncryptionMode
+        /// </summary>
+        public static readonly S3EncryptionMode SSEKMS = new S3EncryptionMode("SSE-KMS");
+        /// <summary>
+        /// Constant SSES3 for S3EncryptionMode
+        /// </summary>
+        public static readonly S3EncryptionMode SSES3 = new S3EncryptionMode("SSE-S3");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public S3EncryptionMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static S3EncryptionMode FindValue(string value)
+        {
+            return FindValue<S3EncryptionMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator S3EncryptionMode(string value)
         {
             return FindValue(value);
         }

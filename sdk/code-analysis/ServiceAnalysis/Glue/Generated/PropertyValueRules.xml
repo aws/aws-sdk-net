@@ -86,6 +86,11 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.CreateCrawlerRequest.CrawlerSecurityConfiguration</property>
+    <min>0</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.CreateCrawlerRequest.Description</property>
     <min>0</min>
     <max>2048</max>
@@ -110,8 +115,18 @@
     <pattern>arn:aws:iam::\d{12}:role/.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.CreateDevEndpointRequest.SecurityConfiguration</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.CreateDevEndpointResponse.RoleArn</property>
     <pattern>arn:aws:iam::\d{12}:role/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CreateDevEndpointResponse.SecurityConfiguration</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.CreateJobRequest.Description</property>
@@ -120,6 +135,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.CreateJobRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CreateJobRequest.SecurityConfiguration</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
@@ -144,6 +164,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.CreatePartitionRequest.TableName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CreateSecurityConfigurationRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CreateSecurityConfigurationResponse.Name</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
@@ -234,6 +264,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.DeletePartitionRequest.TableName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DeleteSecurityConfigurationRequest.Name</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
@@ -443,6 +478,16 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.GetSecurityConfigurationRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetSecurityConfigurationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.GetTableRequest.CatalogId</property>
     <min>1</min>
     <max>255</max>
@@ -573,6 +618,11 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.PutDataCatalogEncryptionSettingsRequest.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.StartCrawlerRequest.Name</property>
     <min>1</min>
     <max>255</max>
@@ -589,6 +639,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.StartJobRunRequest.JobRunId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.StartJobRunRequest.SecurityConfiguration</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>
@@ -640,6 +695,11 @@
     <property>Amazon.Glue.Model.UpdateConnectionRequest.Name</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.UpdateCrawlerRequest.CrawlerSecurityConfiguration</property>
+    <min>0</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.UpdateCrawlerRequest.Description</property>
@@ -732,6 +792,11 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.Action.SecurityConfiguration</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.Action.Timeout</property>
     <min>1</min>
   </property-value-rule>
@@ -769,6 +834,10 @@
     <property>Amazon.Glue.Model.CatalogImportStatus.ImportedBy</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CloudWatchEncryption.KmsKeyArn</property>
+    <pattern>arn:aws:kms:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.CodeGenEdge.Source</property>
@@ -832,6 +901,11 @@
     <property>Amazon.Glue.Model.ConnectionInput.Name</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.Crawler.CrawlerSecurityConfiguration</property>
+    <min>0</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.Crawler.Description</property>
@@ -937,6 +1011,16 @@
     <pattern>arn:aws:iam::\d{12}:role/.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.DevEndpoint.SecurityConfiguration</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.EncryptionAtRest.SseAwsKmsKeyId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.ErrorDetail.ErrorCode</property>
     <min>1</min>
     <max>255</max>
@@ -972,8 +1056,17 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.Job.SecurityConfiguration</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.Job.Timeout</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.JobBookmarksEncryption.KmsKeyArn</property>
+    <pattern>arn:aws:kms:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.JobRun.Id</property>
@@ -991,6 +1084,11 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.JobRun.SecurityConfiguration</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.JobRun.Timeout</property>
     <min>1</min>
   </property-value-rule>
@@ -1003,6 +1101,11 @@
     <property>Amazon.Glue.Model.JobUpdate.Description</property>
     <min>0</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.JobUpdate.SecurityConfiguration</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.JobUpdate.Timeout</property>
@@ -1083,6 +1186,15 @@
     <property>Amazon.Glue.Model.ResourceUri.Uri</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.S3Encryption.KmsKeyArn</property>
+    <pattern>arn:aws:kms:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.SecurityConfiguration.Name</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.Segment.SegmentNumber</property>

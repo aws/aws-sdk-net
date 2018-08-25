@@ -79,7 +79,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property DeletePublicKeys. 
         /// <para>
-        /// The list of public keys to be deleted from the DevEndpoint. 
+        /// The list of public keys to be deleted from the DevEndpoint.
         /// </para>
         /// </summary>
         public List<string> DeletePublicKeys

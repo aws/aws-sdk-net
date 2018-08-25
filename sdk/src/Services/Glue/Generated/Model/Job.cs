@@ -45,6 +45,7 @@ namespace Amazon.Glue.Model
         private string _name;
         private NotificationProperty _notificationProperty;
         private string _role;
+        private string _securityConfiguration;
         private int? _timeout;
 
         /// <summary>
@@ -304,9 +305,29 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SecurityConfiguration. 
+        /// <para>
+        /// The name of the SecurityConfiguration structure to be used with this job.
+        /// </para>
+        /// </summary>
+        public string SecurityConfiguration
+        {
+            get { return this._securityConfiguration; }
+            set { this._securityConfiguration = value; }
+        }
+
+        // Check to see if SecurityConfiguration property is set
+        internal bool IsSetSecurityConfiguration()
+        {
+            return this._securityConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Timeout. 
         /// <para>
-        /// The job timeout in minutes.
+        /// The job timeout in minutes. This is the maximum time that a job run can consume resources
+        /// before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880
+        /// minutes (48 hours).
         /// </para>
         /// </summary>
         public int Timeout

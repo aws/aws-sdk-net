@@ -42,9 +42,11 @@ namespace Amazon.Glue.Model
         private string _jobName;
         private JobRunState _jobRunState;
         private DateTime? _lastModifiedOn;
+        private string _logGroupName;
         private NotificationProperty _notificationProperty;
         private List<Predecessor> _predecessorRuns = new List<Predecessor>();
         private string _previousRunId;
+        private string _securityConfiguration;
         private DateTime? _startedOn;
         private int? _timeout;
         private string _triggerName;
@@ -252,6 +254,28 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LogGroupName. 
+        /// <para>
+        /// The name of the log group for secure logging, that can be server-side encrypted in
+        /// CloudWatch using KMS. This name can be <code>/aws-glue/jobs/</code>, in which case
+        /// the default encryption is <code>NONE</code>. If you add a role name and SecurityConfiguration
+        /// name (in other words, <code>/aws-glue/jobs-yourRoleName-yourSecurityConfigurationName/</code>),
+        /// then that security configuration will be used to encrypt the log group.
+        /// </para>
+        /// </summary>
+        public string LogGroupName
+        {
+            get { return this._logGroupName; }
+            set { this._logGroupName = value; }
+        }
+
+        // Check to see if LogGroupName property is set
+        internal bool IsSetLogGroupName()
+        {
+            return this._logGroupName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property NotificationProperty. 
         /// <para>
         /// Specifies configuration properties of a job run notification.
@@ -307,6 +331,24 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SecurityConfiguration. 
+        /// <para>
+        /// The name of the SecurityConfiguration structure to be used with this job run.
+        /// </para>
+        /// </summary>
+        public string SecurityConfiguration
+        {
+            get { return this._securityConfiguration; }
+            set { this._securityConfiguration = value; }
+        }
+
+        // Check to see if SecurityConfiguration property is set
+        internal bool IsSetSecurityConfiguration()
+        {
+            return this._securityConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property StartedOn. 
         /// <para>
         /// The date and time at which this job run was started.
@@ -327,7 +369,9 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Timeout. 
         /// <para>
-        /// The job run timeout in minutes.
+        /// The JobRun timeout in minutes. This is the maximum time that a job run can consume
+        /// resources before it is terminated and enters <code>TIMEOUT</code> status. The default
+        /// is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.
         /// </para>
         /// </summary>
         public int Timeout

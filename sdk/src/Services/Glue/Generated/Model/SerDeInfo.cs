@@ -58,7 +58,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// A list of initialization parameters for the SerDe, in key-value form.
+        /// These key-value pairs define initialization parameters for the SerDe.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Parameters

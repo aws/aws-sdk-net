@@ -95,7 +95,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// A list of key-value pairs that define parameters and properties of the database.
+        /// Thes key-value pairs define parameters and properties of the database.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Parameters

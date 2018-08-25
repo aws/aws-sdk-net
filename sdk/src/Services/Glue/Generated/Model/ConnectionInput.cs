@@ -42,7 +42,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ConnectionProperties. 
         /// <para>
-        /// A list of key-value pairs used as parameters for this connection.
+        /// These key-value pairs define parameters for the connection.
         /// </para>
         /// </summary>
         public Dictionary<string, string> ConnectionProperties

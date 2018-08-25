@@ -82,6 +82,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.CrawlElapsedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CrawlerSecurityConfiguration", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CrawlerSecurityConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

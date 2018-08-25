@@ -713,6 +713,38 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  CreateSecurityConfiguration
+
+        internal virtual CreateSecurityConfigurationResponse CreateSecurityConfiguration(CreateSecurityConfigurationRequest request)
+        {
+            var marshaller = CreateSecurityConfigurationRequestMarshaller.Instance;
+            var unmarshaller = CreateSecurityConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSecurityConfigurationRequest,CreateSecurityConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateSecurityConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateSecurityConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateSecurityConfiguration">REST API Reference for CreateSecurityConfiguration Operation</seealso>
+        public virtual Task<CreateSecurityConfigurationResponse> CreateSecurityConfigurationAsync(CreateSecurityConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateSecurityConfigurationRequestMarshaller.Instance;
+            var unmarshaller = CreateSecurityConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateSecurityConfigurationRequest,CreateSecurityConfigurationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateTable
 
         internal virtual CreateTableResponse CreateTable(CreateTableRequest request)
@@ -1028,6 +1060,38 @@ namespace Amazon.Glue
             var unmarshaller = DeletePartitionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeletePartitionRequest,DeletePartitionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteSecurityConfiguration
+
+        internal virtual DeleteSecurityConfigurationResponse DeleteSecurityConfiguration(DeleteSecurityConfigurationRequest request)
+        {
+            var marshaller = DeleteSecurityConfigurationRequestMarshaller.Instance;
+            var unmarshaller = DeleteSecurityConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSecurityConfigurationRequest,DeleteSecurityConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSecurityConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSecurityConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteSecurityConfiguration">REST API Reference for DeleteSecurityConfiguration Operation</seealso>
+        public virtual Task<DeleteSecurityConfigurationResponse> DeleteSecurityConfigurationAsync(DeleteSecurityConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteSecurityConfigurationRequestMarshaller.Instance;
+            var unmarshaller = DeleteSecurityConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteSecurityConfigurationRequest,DeleteSecurityConfigurationResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1833,6 +1897,70 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  GetSecurityConfiguration
+
+        internal virtual GetSecurityConfigurationResponse GetSecurityConfiguration(GetSecurityConfigurationRequest request)
+        {
+            var marshaller = GetSecurityConfigurationRequestMarshaller.Instance;
+            var unmarshaller = GetSecurityConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetSecurityConfigurationRequest,GetSecurityConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSecurityConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSecurityConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSecurityConfiguration">REST API Reference for GetSecurityConfiguration Operation</seealso>
+        public virtual Task<GetSecurityConfigurationResponse> GetSecurityConfigurationAsync(GetSecurityConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetSecurityConfigurationRequestMarshaller.Instance;
+            var unmarshaller = GetSecurityConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetSecurityConfigurationRequest,GetSecurityConfigurationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetSecurityConfigurations
+
+        internal virtual GetSecurityConfigurationsResponse GetSecurityConfigurations(GetSecurityConfigurationsRequest request)
+        {
+            var marshaller = GetSecurityConfigurationsRequestMarshaller.Instance;
+            var unmarshaller = GetSecurityConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<GetSecurityConfigurationsRequest,GetSecurityConfigurationsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSecurityConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSecurityConfigurations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSecurityConfigurations">REST API Reference for GetSecurityConfigurations Operation</seealso>
+        public virtual Task<GetSecurityConfigurationsResponse> GetSecurityConfigurationsAsync(GetSecurityConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetSecurityConfigurationsRequestMarshaller.Instance;
+            var unmarshaller = GetSecurityConfigurationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetSecurityConfigurationsRequest,GetSecurityConfigurationsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetTable
 
         internal virtual GetTableResponse GetTable(GetTableRequest request)
@@ -2116,6 +2244,38 @@ namespace Amazon.Glue
             var unmarshaller = ImportCatalogToGlueResponseUnmarshaller.Instance;
 
             return InvokeAsync<ImportCatalogToGlueRequest,ImportCatalogToGlueResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutDataCatalogEncryptionSettings
+
+        internal virtual PutDataCatalogEncryptionSettingsResponse PutDataCatalogEncryptionSettings(PutDataCatalogEncryptionSettingsRequest request)
+        {
+            var marshaller = PutDataCatalogEncryptionSettingsRequestMarshaller.Instance;
+            var unmarshaller = PutDataCatalogEncryptionSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<PutDataCatalogEncryptionSettingsRequest,PutDataCatalogEncryptionSettingsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutDataCatalogEncryptionSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutDataCatalogEncryptionSettings operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutDataCatalogEncryptionSettings">REST API Reference for PutDataCatalogEncryptionSettings Operation</seealso>
+        public virtual Task<PutDataCatalogEncryptionSettingsResponse> PutDataCatalogEncryptionSettingsAsync(PutDataCatalogEncryptionSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = PutDataCatalogEncryptionSettingsRequestMarshaller.Instance;
+            var unmarshaller = PutDataCatalogEncryptionSettingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutDataCatalogEncryptionSettingsRequest,PutDataCatalogEncryptionSettingsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

@@ -76,6 +76,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSecurityConfiguration())
+            {
+                context.Writer.WritePropertyName("SecurityConfiguration");
+                context.Writer.Write(requestObject.SecurityConfiguration);
+            }
+
             if(requestObject.IsSetTimeout())
             {
                 context.Writer.WritePropertyName("Timeout");

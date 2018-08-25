@@ -124,6 +124,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.LastModifiedOn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LogGroupName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LogGroupName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("NotificationProperty", targetDepth))
                 {
                     var unmarshaller = NotificationPropertyUnmarshaller.Instance;
@@ -140,6 +146,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PreviousRunId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SecurityConfiguration", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SecurityConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("StartedOn", targetDepth))

@@ -45,8 +45,62 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ConnectionProperties. 
         /// <para>
-        /// A list of key-value pairs used as parameters for this connection.
+        /// These key-value pairs define parameters for the connection:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>HOST</code> - The host URI: either the fully qualified domain name (FQDN) or
+        /// the IPv4 address of the database host.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PORT</code> - The port number, between 1024 and 65535, of the port on which
+        /// the database host is listening for database connections.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>USER_NAME</code> - The name under which to log in to the database.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PASSWORD</code> - A password, if one is used, for the user name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that contains the
+        /// JDBC driver to use.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to use.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>JDBC_ENGINE</code> - The name of the JDBC engine to use.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>JDBC_ENGINE_VERSION</code> - The version of the JDBC engine to use.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CONFIG_FILES</code> - (Reserved for future use).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>INSTANCE_ID</code> - The instance ID to use.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>JDBC_CONNECTION_URL</code> - The URL for the JDBC connection.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>JDBC_ENFORCE_SSL</code> - A Boolean string (true, false) specifying whether
+        /// SSL with hostname matching will be enforced for the JDBC connection on the client.
+        /// The default is false.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public Dictionary<string, string> ConnectionProperties
         {

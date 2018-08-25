@@ -30,6 +30,20 @@ namespace Amazon.Glue.Model
     /// <summary>
     /// Container for the parameters to the DeleteTable operation.
     /// Removes a table definition from the Data Catalog.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// After completing this operation, you will no longer have access to the table versions
+    /// and partitions that belong to the deleted table. AWS Glue deletes these "orphaned"
+    /// resources asynchronously in a timely manner, at the discretion of the service.
+    /// </para>
+    ///  
+    /// <para>
+    /// To ensure immediate deletion of all related resources, before calling <code>DeleteTable</code>,
+    /// use <code>DeleteTableVersion</code> or <code>BatchDeleteTableVersion</code>, and <code>DeletePartition</code>
+    /// or <code>BatchDeletePartition</code>, to delete any resources that belong to the table.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DeleteTableRequest : AmazonGlueRequest
     {

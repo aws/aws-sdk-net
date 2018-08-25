@@ -84,6 +84,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Configuration);
                 }
 
+                if(publicRequest.IsSetCrawlerSecurityConfiguration())
+                {
+                    context.Writer.WritePropertyName("CrawlerSecurityConfiguration");
+                    context.Writer.Write(publicRequest.CrawlerSecurityConfiguration);
+                }
+
                 if(publicRequest.IsSetDatabaseName())
                 {
                     context.Writer.WritePropertyName("DatabaseName");

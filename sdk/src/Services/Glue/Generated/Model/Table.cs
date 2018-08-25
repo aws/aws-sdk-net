@@ -198,7 +198,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// Properties associated with this table, as a list of key-value pairs.
+        /// These key-value pairs define properties associated with the table.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Parameters

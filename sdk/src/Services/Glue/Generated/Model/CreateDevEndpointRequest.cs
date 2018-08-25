@@ -40,6 +40,7 @@ namespace Amazon.Glue.Model
         private string _publicKey;
         private List<string> _publicKeys = new List<string>();
         private string _roleArn;
+        private string _securityConfiguration;
         private List<string> _securityGroupIds = new List<string>();
         private string _subnetId;
 
@@ -186,6 +187,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecurityConfiguration. 
+        /// <para>
+        /// The name of the SecurityConfiguration structure to be used with this DevEndpoint.
+        /// </para>
+        /// </summary>
+        public string SecurityConfiguration
+        {
+            get { return this._securityConfiguration; }
+            set { this._securityConfiguration = value; }
+        }
+
+        // Check to see if SecurityConfiguration property is set
+        internal bool IsSetSecurityConfiguration()
+        {
+            return this._securityConfiguration != null;
         }
 
         /// <summary>

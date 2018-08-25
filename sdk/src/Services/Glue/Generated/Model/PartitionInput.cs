@@ -77,7 +77,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// Partition parameters, in the form of a list of key-value pairs.
+        /// These key-value pairs define partition parameters.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Parameters
