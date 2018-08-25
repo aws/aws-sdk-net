@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.346.0",
+    "ProductVersion" : "3.3.347.0",
     "CoreVersion"    : "3.3.25.0",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -825,7 +825,7 @@
             "InPreview"               : false
         },
         "Glue"                            : {
-            "Version" : "3.3.10.4",
+            "Version" : "3.3.11.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.24.8"
