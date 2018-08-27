@@ -269,6 +269,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.ServiceDiscovery.CodeAnalysis" Path="|AWSSDK.ServiceDiscovery.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Shield.CodeAnalysis" Path="|AWSSDK.Shield.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Shield.CodeAnalysis" Path="|AWSSDK.Shield.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Signer.CodeAnalysis" Path="|AWSSDK.Signer.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Signer.CodeAnalysis" Path="|AWSSDK.Signer.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.SimpleDB.CodeAnalysis" Path="|AWSSDK.SimpleDB.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.SimpleDB.CodeAnalysis" Path="|AWSSDK.SimpleDB.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.SimpleEmail.CodeAnalysis" Path="|AWSSDK.SimpleEmail.CodeAnalysis|"/>

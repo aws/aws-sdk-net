@@ -159,6 +159,7 @@
     <ProjectReference Include="..\..\src\Services\ServiceCatalog\AWSSDK.ServiceCatalog.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\ServiceDiscovery\AWSSDK.ServiceDiscovery.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\Shield\AWSSDK.Shield.Net45.csproj"/>
+    <ProjectReference Include="..\..\src\Services\Signer\AWSSDK.Signer.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\SimpleDB\AWSSDK.SimpleDB.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\SimpleEmail\AWSSDK.SimpleEmail.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\SimpleNotificationService\AWSSDK.SimpleNotificationService.Net45.csproj"/>

@@ -52,3 +52,5 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Design", "CA1008:EnumsShouldHaveZeroValue", Scope = "type", Target = "Amazon.CloudFront.AmazonCloudFrontCookieSigner+Protocols")]
 // Should not have next public types
 [module: SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible", Scope = "type", Target = "Amazon.CloudFront.AmazonCloudFrontCookieSigner+Protocols")]
+// Amazon.CloudFront.Model.Signer type conflicts with Amazon.Signer service namespace.
+[module: SuppressMessage("Microsoft.Naming", "CA1724:TypeNamesShouldNotMatchNamespaces", Scope = "type", Target = "Amazon.CloudFront.Model.Signer")]

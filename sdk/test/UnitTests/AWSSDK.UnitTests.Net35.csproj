@@ -162,6 +162,7 @@
     <ProjectReference Include="..\..\src\Services\ServiceCatalog\AWSSDK.ServiceCatalog.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\ServiceDiscovery\AWSSDK.ServiceDiscovery.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\Shield\AWSSDK.Shield.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\Signer\AWSSDK.Signer.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\SimpleDB\AWSSDK.SimpleDB.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\SimpleEmail\AWSSDK.SimpleEmail.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\SimpleNotificationService\AWSSDK.SimpleNotificationService.Net35.csproj"/>

@@ -385,3 +385,6 @@ using System.Diagnostics.CodeAnalysis;
 
 // ignore as this is used to create a default instance of the exception object
 [module: SuppressMessage("Microsoft.Design", "CA1004:GenericMethodsShouldProvideTypeParameter", Scope = "member", Target = "Amazon.Runtime.Internal.Transform.ResponseUnmarshaller.#GetDefaultErrorMessage`1()")]
+
+// Amazon.Runtime.Internal.Signer type conflicts with Amazon.Signer service namespace. 
+[module: SuppressMessage("Microsoft.Naming", "CA1724:TypeNamesShouldNotMatchNamespaces", Scope = "type", Target = "Amazon.Runtime.Internal.Signer")]
