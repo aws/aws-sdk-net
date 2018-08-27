@@ -147,6 +147,17 @@
     <max>250</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.ListDatasetContentsRequest.DatasetName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.ListDatasetContentsRequest.MaxResults</property>
+    <min>1</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTAnalytics.Model.ListDatasetsRequest.MaxResults</property>
     <min>1</min>
     <max>250</max>
@@ -286,6 +297,11 @@
     <min>1</min>
     <max>128</max>
     <pattern>^[a-zA-Z0-9_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.DatasetContentSummary.Version</property>
+    <min>7</min>
+    <max>36</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTAnalytics.Model.DatasetContentVersionValue.DatasetName</property>

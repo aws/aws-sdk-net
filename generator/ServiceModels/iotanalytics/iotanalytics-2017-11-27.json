@@ -6471,6 +6471,190 @@
       ],
       "documentation": "\n         <p>Deletes the content of the specified data set.</p>\n      "
     },
+    "ListDatasetContents": {
+      "name": "ListDatasetContents",
+      "http": {
+        "method": "GET",
+        "uri": "/datasets/{datasetName}/contents?nextToken={nextToken}&maxResults={maxResults}"
+      },
+      "input": {
+        "type": "structure",
+        "members": {
+          "datasetName": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_]+$",
+            "zonbookDocumentation": "\n         <para>The name of the data set whose contents information you want to list.</para>\n      ",
+            "documentation": "\n         <p>The name of the data set whose contents information you want to list.</p>\n      ",
+            "required": true,
+            "location": "uri",
+            "shape_name": "DatasetName",
+            "min_length": 1,
+            "max_length": 128
+          },
+          "nextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>The token for the next set of results.</para>\n      ",
+            "documentation": "\n         <p>The token for the next set of results.</p>\n      ",
+            "location": "uri",
+            "paginationToken": true,
+            "shape_name": "NextToken"
+          },
+          "maxResults": {
+            "type": "integer",
+            "zonbookDocumentation": "\n         <para>The maximum number of results to return in this request.</para>\n      ",
+            "documentation": "\n         <p>The maximum number of results to return in this request.</p>\n      ",
+            "location": "uri",
+            "pageSize": true,
+            "shape_name": "MaxResults",
+            "min_length": 1,
+            "max_length": 250
+          }
+        },
+        "shape_name": "ListDatasetContentsRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "datasetContentSummaries": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <para>Summary information about data set contents that have been created.</para>\n      ",
+            "documentation": "\n         <p>Summary information about data set contents that have been created.</p>\n      ",
+            "shape_name": "DatasetContentSummaries",
+            "members": {
+              "type": "structure",
+              "members": {
+                "version": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <para>The version of the data set contents.</para>\n      ",
+                  "documentation": "\n         <p>The version of the data set contents.</p>\n      ",
+                  "shape_name": "DatasetContentVersion",
+                  "min_length": 7,
+                  "max_length": 36
+                },
+                "status": {
+                  "type": "structure",
+                  "members": {
+                    "state": {
+                      "type": "string",
+                      "enum": [
+                        "CREATING",
+                        "SUCCEEDED",
+                        "FAILED"
+                      ],
+                      "zonbookDocumentation": "\n         <para>The state of the data set contents. Can be one of \"READY\", \"CREATING\", \"SUCCEEDED\" or\n         \"FAILED\".</para>\n      ",
+                      "documentation": "\n         <p>The state of the data set contents. Can be one of \"READY\", \"CREATING\", \"SUCCEEDED\" or\n         \"FAILED\".</p>\n      ",
+                      "shape_name": "DatasetContentState"
+                    },
+                    "reason": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n         <para>The reason the data set contents are in this state.</para>\n      ",
+                      "documentation": "\n         <p>The reason the data set contents are in this state.</p>\n      ",
+                      "shape_name": "Reason"
+                    }
+                  },
+                  "zonbookDocumentation": "\n         <para>The status of the data set contents.</para>\n      ",
+                  "documentation": "\n         <p>The status of the data set contents.</p>\n      ",
+                  "shape_name": "DatasetContentStatus"
+                },
+                "creationTime": {
+                  "type": "timestamp",
+                  "zonbookDocumentation": "\n         <para>The actual time the creation of the data set contents was started.</para>\n      ",
+                  "documentation": "\n         <p>The actual time the creation of the data set contents was started.</p>\n      ",
+                  "shape_name": "Timestamp"
+                },
+                "scheduleTime": {
+                  "type": "timestamp",
+                  "zonbookDocumentation": "\n         <para>The time the creation of the data set contents was scheduled to start.</para>\n      ",
+                  "documentation": "\n         <p>The time the creation of the data set contents was scheduled to start.</p>\n      ",
+                  "shape_name": "Timestamp"
+                }
+              },
+              "zonbookDocumentation": "\n         <para>Summary information about data set contents.</para>\n      ",
+              "documentation": "\n         <p>Summary information about data set contents.</p>\n      ",
+              "shape_name": "DatasetContentSummary"
+            }
+          },
+          "nextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>The token to retrieve the next set of results, or <code>null</code> if there are no\n           more results.</para>\n      ",
+            "documentation": "\n         <p>The token to retrieve the next set of results, or <code>null</code> if there are no\n           more results.</p>\n      ",
+            "paginationToken": true,
+            "shape_name": "NextToken"
+          }
+        },
+        "shape_name": "ListDatasetContentsResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The request was not valid.</para>\n      ",
+          "documentation": "\n         <p>The request was not valid.</p>\n      ",
+          "shape_name": "InvalidRequestException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>There was an internal failure.</para>\n      ",
+          "documentation": "\n         <p>There was an internal failure.</p>\n      ",
+          "shape_name": "InternalFailureException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The service is temporarily unavailable.</para>\n      ",
+          "documentation": "\n         <p>The service is temporarily unavailable.</p>\n      ",
+          "shape_name": "ServiceUnavailableException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The request was denied due to request throttling.</para>\n      ",
+          "documentation": "\n         <p>The request was denied due to request throttling.</p>\n      ",
+          "shape_name": "ThrottlingException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>A resource with the specified name could not be found.</para>\n      ",
+          "documentation": "\n         <p>A resource with the specified name could not be found.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        }
+      ],
+      "documentation": "\n         <p>Lists information about data set contents that have been created.</p>\n      "
+    },
     "PutLoggingOptions": {
       "name": "PutLoggingOptions",
       "http": {

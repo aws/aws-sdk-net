@@ -1560,6 +1560,74 @@ namespace Amazon.IoTAnalytics
 
         #endregion
         
+        #region  ListDatasetContents
+
+        /// <summary>
+        /// Lists information about data set contents that have been created.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDatasetContents service method.</param>
+        /// 
+        /// <returns>The response from the ListDatasetContents service method, as returned by IoTAnalytics.</returns>
+        /// <exception cref="Amazon.IoTAnalytics.Model.InternalFailureException">
+        /// There was an internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.IoTAnalytics.Model.InvalidRequestException">
+        /// The request was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoTAnalytics.Model.ResourceNotFoundException">
+        /// A resource with the specified name could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTAnalytics.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoTAnalytics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ListDatasetContents">REST API Reference for ListDatasetContents Operation</seealso>
+        public virtual ListDatasetContentsResponse ListDatasetContents(ListDatasetContentsRequest request)
+        {
+            var marshaller = ListDatasetContentsRequestMarshaller.Instance;
+            var unmarshaller = ListDatasetContentsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDatasetContentsRequest,ListDatasetContentsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDatasetContents operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDatasetContents operation on AmazonIoTAnalyticsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDatasetContents
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ListDatasetContents">REST API Reference for ListDatasetContents Operation</seealso>
+        public virtual IAsyncResult BeginListDatasetContents(ListDatasetContentsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ListDatasetContentsRequestMarshaller.Instance;
+            var unmarshaller = ListDatasetContentsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListDatasetContentsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDatasetContents operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDatasetContents.</param>
+        /// 
+        /// <returns>Returns a  ListDatasetContentsResult from IoTAnalytics.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ListDatasetContents">REST API Reference for ListDatasetContents Operation</seealso>
+        public virtual ListDatasetContentsResponse EndListDatasetContents(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListDatasetContentsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListDatasets
 
         /// <summary>
