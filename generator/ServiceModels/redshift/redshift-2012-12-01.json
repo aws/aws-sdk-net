@@ -15347,8 +15347,8 @@
           },
           "Classic": {
             "type": "boolean",
-            "zonbookDocumentation": "\n        <para>A boolean value indicating whether the resize operation is using the classic resize process.</para>\n      ",
-            "documentation": "\n        <p>A boolean value indicating whether the resize operation is using the classic resize process.</p>\n      ",
+            "zonbookDocumentation": "\n        <para>A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide this parameter or set the value to <code>false</code> the resize type is elastic.  </para>\n      ",
+            "documentation": "\n        <p>A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide this parameter or set the value to <code>false</code> the resize type is elastic.  </p>\n      ",
             "shape_name": "BooleanOptional"
           }
         },
@@ -15996,7 +15996,7 @@
           "shape_name": "LimitExceededFault"
         }
       ],
-      "documentation": "\n        <p>Changes the cluster's type, node type, or number of nodes.</p>\n      "
+      "documentation": "\n        <p>Changes the size of the cluster. You can change the cluster's type, or change the number or type of nodes. The default behavior is to use the elastic resize method. With an elastic resize your cluster is avaialble for read and write operations more quickly than with the classic resize method. </p>\n        <p>Elastic resize operations have the following restrictions:</p>\n        <ul>\n            <li>\n               <p>You can only resize clusters of the following types:</p>\n                <ul>\n                  <li>\n                     <p>dc2.large</p>\n                  </li>\n                  <li>\n                     <p>dc2.8xlarge</p>\n                  </li>\n                  <li>\n                     <p>ds2.xlarge</p>\n                  </li>\n                  <li>\n                     <p>ds2.8xlarge</p>\n                  </li>\n               </ul>\n            </li>\n            <li>\n               <p>The type of nodes you add must match the node type for the cluster.</p>\n            </li>\n         </ul>\n      "
     },
     "RestoreFromClusterSnapshot": {
       "name": "RestoreFromClusterSnapshot",
