@@ -34,7 +34,6 @@ namespace Amazon.IoT.Model
     {
         private string _certificateName;
         private string _inlineDocument;
-        private Stream _stream;
 
         /// <summary>
         /// Gets and sets the property CertificateName. 
@@ -70,24 +69,6 @@ namespace Amazon.IoT.Model
         internal bool IsSetInlineDocument()
         {
             return this._inlineDocument != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Stream. 
-        /// <para>
-        /// A stream of the certificate chain files.
-        /// </para>
-        /// </summary>
-        public Stream Stream
-        {
-            get { return this._stream; }
-            set { this._stream = value; }
-        }
-
-        // Check to see if Stream property is set
-        internal bool IsSetStream()
-        {
-            return this._stream != null;
         }
 
     }

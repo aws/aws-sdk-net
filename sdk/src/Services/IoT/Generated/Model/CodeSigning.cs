@@ -34,6 +34,7 @@ namespace Amazon.IoT.Model
     {
         private string _awsSignerJobId;
         private CustomCodeSigning _customCodeSigning;
+        private StartSigningJobParameter _startSigningJobParameter;
 
         /// <summary>
         /// Gets and sets the property AwsSignerJobId. 
@@ -69,6 +70,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetCustomCodeSigning()
         {
             return this._customCodeSigning != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartSigningJobParameter. 
+        /// <para>
+        /// Describes the code-signing job.
+        /// </para>
+        /// </summary>
+        public StartSigningJobParameter StartSigningJobParameter
+        {
+            get { return this._startSigningJobParameter; }
+            set { this._startSigningJobParameter = value; }
+        }
+
+        // Check to see if StartSigningJobParameter property is set
+        internal bool IsSetStartSigningJobParameter()
+        {
+            return this._startSigningJobParameter != null;
         }
 
     }

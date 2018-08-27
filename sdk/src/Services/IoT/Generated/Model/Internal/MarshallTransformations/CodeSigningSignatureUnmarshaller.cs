@@ -70,12 +70,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.InlineDocument = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("stream", targetDepth))
-                {
-                    var unmarshaller = StreamUnmarshaller.Instance;
-                    unmarshalledObject.Stream = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
           
             return unmarshalledObject;

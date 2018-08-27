@@ -61,7 +61,14 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetOtaUpdateId())
                 throw new AmazonIoTException("Request object does not have required field OtaUpdateId set");
             uriResourcePath = uriResourcePath.Replace("{otaUpdateId}", StringUtils.FromString(publicRequest.OtaUpdateId));
+            
+            if (publicRequest.IsSetDeleteStream())
+                request.Parameters.Add("deleteStream", StringUtils.FromBool(publicRequest.DeleteStream));
+            
+            if (publicRequest.IsSetForceDeleteAWSJob())
+                request.Parameters.Add("forceDeleteAWSJob", StringUtils.FromBool(publicRequest.ForceDeleteAWSJob));
             request.ResourcePath = uriResourcePath;
+            request.UseQueryString = true;
 
             return request;
         }

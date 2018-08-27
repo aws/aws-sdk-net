@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CodeSigning Object
+    /// Response Unmarshaller for SigningProfileParameter Object
     /// </summary>  
-    public class CodeSigningUnmarshaller : IUnmarshaller<CodeSigning, XmlUnmarshallerContext>, IUnmarshaller<CodeSigning, JsonUnmarshallerContext>
+    public class SigningProfileParameterUnmarshaller : IUnmarshaller<SigningProfileParameter, XmlUnmarshallerContext>, IUnmarshaller<SigningProfileParameter, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CodeSigning IUnmarshaller<CodeSigning, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SigningProfileParameter IUnmarshaller<SigningProfileParameter, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,33 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public CodeSigning Unmarshall(JsonUnmarshallerContext context)
+        public SigningProfileParameter Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            CodeSigning unmarshalledObject = new CodeSigning();
+            SigningProfileParameter unmarshalledObject = new SigningProfileParameter();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("awsSignerJobId", targetDepth))
+                if (context.TestExpression("certificateArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AwsSignerJobId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CertificateArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("customCodeSigning", targetDepth))
+                if (context.TestExpression("certificatePathOnDevice", targetDepth))
                 {
-                    var unmarshaller = CustomCodeSigningUnmarshaller.Instance;
-                    unmarshalledObject.CustomCodeSigning = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CertificatePathOnDevice = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("startSigningJobParameter", targetDepth))
+                if (context.TestExpression("platform", targetDepth))
                 {
-                    var unmarshaller = StartSigningJobParameterUnmarshaller.Instance;
-                    unmarshalledObject.StartSigningJobParameter = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Platform = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +88,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         }
 
 
-        private static CodeSigningUnmarshaller _instance = new CodeSigningUnmarshaller();        
+        private static SigningProfileParameterUnmarshaller _instance = new SigningProfileParameterUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CodeSigningUnmarshaller Instance
+        public static SigningProfileParameterUnmarshaller Instance
         {
             get
             {

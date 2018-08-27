@@ -57,17 +57,6 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.InlineDocument);
             }
 
-            if(requestObject.IsSetStream())
-            {
-                context.Writer.WritePropertyName("stream");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = StreamMarshaller.Instance;
-                marshaller.Marshall(requestObject.Stream, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
         }
 
         /// <summary>

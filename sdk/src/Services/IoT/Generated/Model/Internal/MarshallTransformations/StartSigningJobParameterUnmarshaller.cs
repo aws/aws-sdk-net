@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CodeSigning Object
+    /// Response Unmarshaller for StartSigningJobParameter Object
     /// </summary>  
-    public class CodeSigningUnmarshaller : IUnmarshaller<CodeSigning, XmlUnmarshallerContext>, IUnmarshaller<CodeSigning, JsonUnmarshallerContext>
+    public class StartSigningJobParameterUnmarshaller : IUnmarshaller<StartSigningJobParameter, XmlUnmarshallerContext>, IUnmarshaller<StartSigningJobParameter, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CodeSigning IUnmarshaller<CodeSigning, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        StartSigningJobParameter IUnmarshaller<StartSigningJobParameter, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,33 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public CodeSigning Unmarshall(JsonUnmarshallerContext context)
+        public StartSigningJobParameter Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            CodeSigning unmarshalledObject = new CodeSigning();
+            StartSigningJobParameter unmarshalledObject = new StartSigningJobParameter();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("awsSignerJobId", targetDepth))
+                if (context.TestExpression("destination", targetDepth))
+                {
+                    var unmarshaller = DestinationUnmarshaller.Instance;
+                    unmarshalledObject.Destination = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("signingProfileName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AwsSignerJobId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SigningProfileName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("customCodeSigning", targetDepth))
+                if (context.TestExpression("signingProfileParameter", targetDepth))
                 {
-                    var unmarshaller = CustomCodeSigningUnmarshaller.Instance;
-                    unmarshalledObject.CustomCodeSigning = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("startSigningJobParameter", targetDepth))
-                {
-                    var unmarshaller = StartSigningJobParameterUnmarshaller.Instance;
-                    unmarshalledObject.StartSigningJobParameter = unmarshaller.Unmarshall(context);
+                    var unmarshaller = SigningProfileParameterUnmarshaller.Instance;
+                    unmarshalledObject.SigningProfileParameter = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +88,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         }
 
 
-        private static CodeSigningUnmarshaller _instance = new CodeSigningUnmarshaller();        
+        private static StartSigningJobParameterUnmarshaller _instance = new StartSigningJobParameterUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CodeSigningUnmarshaller Instance
+        public static StartSigningJobParameterUnmarshaller Instance
         {
             get
             {

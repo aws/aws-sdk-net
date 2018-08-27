@@ -1458,6 +1458,9 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
         /// The request is not valid.
         /// </exception>
+        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
+        /// A limit has been exceeded.
+        /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
         /// The resource already exists.
         /// </exception>
@@ -1958,6 +1961,9 @@ namespace Amazon.IoT
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
         /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
+        /// A limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
         /// The resource already exists.
@@ -2688,6 +2694,10 @@ namespace Amazon.IoT
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.VersionConflictException">
+        /// An exception thrown when the version of an entity specified with the <code>expectedVersion</code>
+        /// parameter does not match the latest version in the system.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteOTAUpdate">REST API Reference for DeleteOTAUpdate Operation</seealso>
         DeleteOTAUpdateResponse DeleteOTAUpdate(DeleteOTAUpdateRequest request);

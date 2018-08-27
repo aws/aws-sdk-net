@@ -28,28 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Describes the signature for a file.
+    /// Describes the location of the updated firmware.
     /// </summary>
-    public partial class CodeSigningSignature
+    public partial class Destination
     {
-        private MemoryStream _inlineDocument;
+        private S3Destination _s3Destination;
 
         /// <summary>
-        /// Gets and sets the property InlineDocument. 
+        /// Gets and sets the property S3Destination. 
         /// <para>
-        /// A base64 encoded binary representation of the code signing signature.
+        /// Describes the location in S3 of the updated firmware.
         /// </para>
         /// </summary>
-        public MemoryStream InlineDocument
+        public S3Destination S3Destination
         {
-            get { return this._inlineDocument; }
-            set { this._inlineDocument = value; }
+            get { return this._s3Destination; }
+            set { this._s3Destination = value; }
         }
 
-        // Check to see if InlineDocument property is set
-        internal bool IsSetInlineDocument()
+        // Check to see if S3Destination property is set
+        internal bool IsSetS3Destination()
         {
-            return this._inlineDocument != null;
+            return this._s3Destination != null;
         }
 
     }

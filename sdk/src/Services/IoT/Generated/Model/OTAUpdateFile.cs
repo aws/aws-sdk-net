@@ -34,8 +34,8 @@ namespace Amazon.IoT.Model
     {
         private Dictionary<string, string> _attributes = new Dictionary<string, string>();
         private CodeSigning _codeSigning;
+        private FileLocation _fileLocation;
         private string _fileName;
-        private Stream _fileSource;
         private string _fileVersion;
 
         /// <summary>
@@ -75,6 +75,24 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FileLocation. 
+        /// <para>
+        /// The location of the updated firmware.
+        /// </para>
+        /// </summary>
+        public FileLocation FileLocation
+        {
+            get { return this._fileLocation; }
+            set { this._fileLocation = value; }
+        }
+
+        // Check to see if FileLocation property is set
+        internal bool IsSetFileLocation()
+        {
+            return this._fileLocation != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FileName. 
         /// <para>
         /// The name of the file.
@@ -90,24 +108,6 @@ namespace Amazon.IoT.Model
         internal bool IsSetFileName()
         {
             return this._fileName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property FileSource. 
-        /// <para>
-        /// The source of the file.
-        /// </para>
-        /// </summary>
-        public Stream FileSource
-        {
-            get { return this._fileSource; }
-            set { this._fileSource = value; }
-        }
-
-        // Check to see if FileSource property is set
-        internal bool IsSetFileSource()
-        {
-            return this._fileSource != null;
         }
 
         /// <summary>

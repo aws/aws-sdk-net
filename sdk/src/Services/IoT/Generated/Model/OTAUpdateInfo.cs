@@ -35,6 +35,7 @@ namespace Amazon.IoT.Model
         private Dictionary<string, string> _additionalParameters = new Dictionary<string, string>();
         private string _awsIotJobArn;
         private string _awsIotJobId;
+        private AwsJobExecutionsRolloutConfig _awsJobExecutionsRolloutConfig;
         private DateTime? _creationDate;
         private string _description;
         private ErrorInfo _errorInfo;
@@ -98,6 +99,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetAwsIotJobId()
         {
             return this._awsIotJobId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsJobExecutionsRolloutConfig. 
+        /// <para>
+        /// Configuration for the rollout of OTA updates.
+        /// </para>
+        /// </summary>
+        public AwsJobExecutionsRolloutConfig AwsJobExecutionsRolloutConfig
+        {
+            get { return this._awsJobExecutionsRolloutConfig; }
+            set { this._awsJobExecutionsRolloutConfig = value; }
+        }
+
+        // Check to see if AwsJobExecutionsRolloutConfig property is set
+        internal bool IsSetAwsJobExecutionsRolloutConfig()
+        {
+            return this._awsJobExecutionsRolloutConfig != null;
         }
 
         /// <summary>

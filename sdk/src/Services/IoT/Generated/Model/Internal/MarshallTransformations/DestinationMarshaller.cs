@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CodeSigning Marshaller
+    /// Destination Marshaller
     /// </summary>       
-    public class CodeSigningMarshaller : IRequestMarshaller<CodeSigning, JsonMarshallerContext> 
+    public class DestinationMarshaller : IRequestMarshaller<Destination, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,32 +43,15 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CodeSigning requestObject, JsonMarshallerContext context)
+        public void Marshall(Destination requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAwsSignerJobId())
+            if(requestObject.IsSetS3Destination())
             {
-                context.Writer.WritePropertyName("awsSignerJobId");
-                context.Writer.Write(requestObject.AwsSignerJobId);
-            }
-
-            if(requestObject.IsSetCustomCodeSigning())
-            {
-                context.Writer.WritePropertyName("customCodeSigning");
+                context.Writer.WritePropertyName("s3Destination");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = CustomCodeSigningMarshaller.Instance;
-                marshaller.Marshall(requestObject.CustomCodeSigning, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetStartSigningJobParameter())
-            {
-                context.Writer.WritePropertyName("startSigningJobParameter");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = StartSigningJobParameterMarshaller.Instance;
-                marshaller.Marshall(requestObject.StartSigningJobParameter, context);
+                var marshaller = S3DestinationMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3Destination, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -78,7 +61,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static CodeSigningMarshaller Instance = new CodeSigningMarshaller();
+        public readonly static DestinationMarshaller Instance = new DestinationMarshaller();
 
     }
 }

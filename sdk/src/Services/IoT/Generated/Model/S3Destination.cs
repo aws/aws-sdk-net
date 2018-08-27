@@ -28,28 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Describes the signature for a file.
+    /// Describes the location of updated firmware in S3.
     /// </summary>
-    public partial class CodeSigningSignature
+    public partial class S3Destination
     {
-        private MemoryStream _inlineDocument;
+        private string _bucket;
+        private string _prefix;
 
         /// <summary>
-        /// Gets and sets the property InlineDocument. 
+        /// Gets and sets the property Bucket. 
         /// <para>
-        /// A base64 encoded binary representation of the code signing signature.
+        /// The S3 bucket that contains the updated firmware.
         /// </para>
         /// </summary>
-        public MemoryStream InlineDocument
+        public string Bucket
         {
-            get { return this._inlineDocument; }
-            set { this._inlineDocument = value; }
+            get { return this._bucket; }
+            set { this._bucket = value; }
         }
 
-        // Check to see if InlineDocument property is set
-        internal bool IsSetInlineDocument()
+        // Check to see if Bucket property is set
+        internal bool IsSetBucket()
         {
-            return this._inlineDocument != null;
+            return this._bucket != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Prefix. 
+        /// <para>
+        /// The S3 prefix.
+        /// </para>
+        /// </summary>
+        public string Prefix
+        {
+            get { return this._prefix; }
+            set { this._prefix = value; }
+        }
+
+        // Check to see if Prefix property is set
+        internal bool IsSetPrefix()
+        {
+            return this._prefix != null;
         }
 
     }

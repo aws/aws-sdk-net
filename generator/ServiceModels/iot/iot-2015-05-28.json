@@ -21545,7 +21545,7 @@
             "required": true,
             "shape_name": "StreamFiles",
             "min_length": 1,
-            "max_length": 10,
+            "max_length": 50,
             "members": {
               "type": "structure",
               "members": {
@@ -21562,24 +21562,22 @@
                   "members": {
                     "bucket": {
                       "type": "string",
-                      "zonbookDocumentation": "\n\t\t       <para>The S3 bucket that contains the file to stream.</para>\n\t     ",
-                      "documentation": "\n\t\t       <p>The S3 bucket that contains the file to stream.</p>\n\t     ",
-                      "required": true,
+                      "zonbookDocumentation": "\n\t\t       <para>The S3 bucket.</para>\n\t     ",
+                      "documentation": "\n\t\t       <p>The S3 bucket.</p>\n\t     ",
                       "shape_name": "S3Bucket",
                       "min_length": 1
                     },
                     "key": {
                       "type": "string",
-                      "zonbookDocumentation": "\n\t\t       <para>The name of the file within the S3 bucket to stream.</para>\n\t     ",
-                      "documentation": "\n\t\t       <p>The name of the file within the S3 bucket to stream.</p>\n\t     ",
-                      "required": true,
+                      "zonbookDocumentation": "\n\t\t       <para>The S3 key.</para>\n\t     ",
+                      "documentation": "\n\t\t       <p>The S3 key.</p>\n\t     ",
                       "shape_name": "S3Key",
                       "min_length": 1
                     },
                     "version": {
                       "type": "string",
-                      "zonbookDocumentation": "\n\t\t       <para>The file version.</para>\n\t     ",
-                      "documentation": "\n\t\t       <p>The file version.</p>\n\t     ",
+                      "zonbookDocumentation": "\n\t\t       <para>The S3 bucket version.</para>\n\t     ",
+                      "documentation": "\n\t\t       <p>The S3 bucket version.</p>\n\t     ",
                       "shape_name": "S3Version"
                     }
                   },
@@ -21658,6 +21656,20 @@
           "zonbookDocumentation": "\n         <simpara>The request is not valid.</simpara>\n      ",
           "documentation": "\n         <p>The request is not valid.</p>\n      ",
           "shape_name": "InvalidRequestException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The message for the exception.</simpara>\n      ",
+              "documentation": "\n         <p>The message for the exception.</p>\n      ",
+              "shape_name": "errorMessage"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>A limit has been exceeded.</simpara>\n      ",
+          "documentation": "\n         <p>A limit has been exceeded.</p>\n      ",
+          "shape_name": "LimitExceededException"
         },
         {
           "type": "structure",
@@ -21792,7 +21804,7 @@
             "documentation": "\n\t\t       <p>The files associated with the stream.</p>\n\t     ",
             "shape_name": "StreamFiles",
             "min_length": 1,
-            "max_length": 10,
+            "max_length": 50,
             "members": {
               "type": "structure",
               "members": {
@@ -21809,24 +21821,22 @@
                   "members": {
                     "bucket": {
                       "type": "string",
-                      "zonbookDocumentation": "\n\t\t       <para>The S3 bucket that contains the file to stream.</para>\n\t     ",
-                      "documentation": "\n\t\t       <p>The S3 bucket that contains the file to stream.</p>\n\t     ",
-                      "required": true,
+                      "zonbookDocumentation": "\n\t\t       <para>The S3 bucket.</para>\n\t     ",
+                      "documentation": "\n\t\t       <p>The S3 bucket.</p>\n\t     ",
                       "shape_name": "S3Bucket",
                       "min_length": 1
                     },
                     "key": {
                       "type": "string",
-                      "zonbookDocumentation": "\n\t\t       <para>The name of the file within the S3 bucket to stream.</para>\n\t     ",
-                      "documentation": "\n\t\t       <p>The name of the file within the S3 bucket to stream.</p>\n\t     ",
-                      "required": true,
+                      "zonbookDocumentation": "\n\t\t       <para>The S3 key.</para>\n\t     ",
+                      "documentation": "\n\t\t       <p>The S3 key.</p>\n\t     ",
                       "shape_name": "S3Key",
                       "min_length": 1
                     },
                     "version": {
                       "type": "string",
-                      "zonbookDocumentation": "\n\t\t       <para>The file version.</para>\n\t     ",
-                      "documentation": "\n\t\t       <p>The file version.</p>\n\t     ",
+                      "zonbookDocumentation": "\n\t\t       <para>The S3 bucket version.</para>\n\t     ",
+                      "documentation": "\n\t\t       <p>The S3 bucket version.</p>\n\t     ",
                       "shape_name": "S3Version"
                     }
                   },
@@ -22178,7 +22188,7 @@
                 "documentation": "\n\t\t       <p>The files to stream.</p>\n\t     ",
                 "shape_name": "StreamFiles",
                 "min_length": 1,
-                "max_length": 10,
+                "max_length": 50,
                 "members": {
                   "type": "structure",
                   "members": {
@@ -22195,24 +22205,22 @@
                       "members": {
                         "bucket": {
                           "type": "string",
-                          "zonbookDocumentation": "\n\t\t       <para>The S3 bucket that contains the file to stream.</para>\n\t     ",
-                          "documentation": "\n\t\t       <p>The S3 bucket that contains the file to stream.</p>\n\t     ",
-                          "required": true,
+                          "zonbookDocumentation": "\n\t\t       <para>The S3 bucket.</para>\n\t     ",
+                          "documentation": "\n\t\t       <p>The S3 bucket.</p>\n\t     ",
                           "shape_name": "S3Bucket",
                           "min_length": 1
                         },
                         "key": {
                           "type": "string",
-                          "zonbookDocumentation": "\n\t\t       <para>The name of the file within the S3 bucket to stream.</para>\n\t     ",
-                          "documentation": "\n\t\t       <p>The name of the file within the S3 bucket to stream.</p>\n\t     ",
-                          "required": true,
+                          "zonbookDocumentation": "\n\t\t       <para>The S3 key.</para>\n\t     ",
+                          "documentation": "\n\t\t       <p>The S3 key.</p>\n\t     ",
                           "shape_name": "S3Key",
                           "min_length": 1
                         },
                         "version": {
                           "type": "string",
-                          "zonbookDocumentation": "\n\t\t       <para>The file version.</para>\n\t     ",
-                          "documentation": "\n\t\t       <p>The file version.</p>\n\t     ",
+                          "zonbookDocumentation": "\n\t\t       <para>The S3 bucket version.</para>\n\t     ",
+                          "documentation": "\n\t\t       <p>The S3 bucket version.</p>\n\t     ",
                           "shape_name": "S3Version"
                         }
                       },
@@ -22562,6 +22570,22 @@
             "documentation": "\n\t\t       <p>Specifies whether the update will continue to run (CONTINUOUS), or will be complete after all the things\n\t\t\tspecified as targets have completed the update (SNAPSHOT). If continuous, the update may also be run on a\n\t\t\tthing when a change is detected in a target. For example, an update will run on a thing when the thing is\n\t\t\tadded to a target group, even after the update was completed by all things originally in the group. Valid\n\t\t\tvalues: CONTINUOUS | SNAPSHOT.</p>\n\t     ",
             "shape_name": "TargetSelection"
           },
+          "awsJobExecutionsRolloutConfig": {
+            "type": "structure",
+            "members": {
+              "maximumPerMinute": {
+                "type": "integer",
+                "zonbookDocumentation": "\n\t\t       <para>The maximum number of OTA update job executions started per minute.</para>\n\t     ",
+                "documentation": "\n\t\t       <p>The maximum number of OTA update job executions started per minute.</p>\n\t     ",
+                "shape_name": "MaximumPerMinute",
+                "min_length": 1,
+                "max_length": 1000
+              }
+            },
+            "zonbookDocumentation": "\n\t\t       <para>Configuration for the rollout of OTA updates.</para>\n\t     ",
+            "documentation": "\n\t\t       <p>Configuration for the rollout of OTA updates.</p>\n\t     ",
+            "shape_name": "AwsJobExecutionsRolloutConfig"
+          },
           "files": {
             "type": "list",
             "zonbookDocumentation": "\n\t\t       <para>The files to be streamed by the OTA update.</para>\n\t     ",
@@ -22569,7 +22593,7 @@
             "required": true,
             "shape_name": "OTAUpdateFiles",
             "min_length": 1,
-            "max_length": 10,
+            "max_length": 50,
             "members": {
               "type": "structure",
               "members": {
@@ -22585,30 +22609,66 @@
                   "documentation": "\n\t\t       <p>The file version.</p>\n\t     ",
                   "shape_name": "OTAUpdateFileVersion"
                 },
-                "fileSource": {
+                "fileLocation": {
                   "type": "structure",
                   "members": {
-                    "streamId": {
-                      "type": "string",
-                      "pattern": "[a-zA-Z0-9_-]+",
-                      "zonbookDocumentation": "\n\t\t       <para>The stream ID.</para>\n\t     ",
-                      "documentation": "\n\t\t       <p>The stream ID.</p>\n\t     ",
-                      "shape_name": "StreamId",
-                      "min_length": 1,
-                      "max_length": 128
+                    "stream": {
+                      "type": "structure",
+                      "members": {
+                        "streamId": {
+                          "type": "string",
+                          "pattern": "[a-zA-Z0-9_-]+",
+                          "zonbookDocumentation": "\n\t\t       <para>The stream ID.</para>\n\t     ",
+                          "documentation": "\n\t\t       <p>The stream ID.</p>\n\t     ",
+                          "shape_name": "StreamId",
+                          "min_length": 1,
+                          "max_length": 128
+                        },
+                        "fileId": {
+                          "type": "integer",
+                          "zonbookDocumentation": "\n\t\t       <para>The ID of a file associated with a stream.</para>\n\t     ",
+                          "documentation": "\n\t\t       <p>The ID of a file associated with a stream.</p>\n\t     ",
+                          "shape_name": "FileId",
+                          "min_length": 0,
+                          "max_length": 255
+                        }
+                      },
+                      "zonbookDocumentation": "\n\t\t       <para>The stream that contains the OTA update.</para>\n\t     ",
+                      "documentation": "\n\t\t       <p>The stream that contains the OTA update.</p>\n\t     ",
+                      "shape_name": "Stream"
                     },
-                    "fileId": {
-                      "type": "integer",
-                      "zonbookDocumentation": "\n\t\t       <para>The ID of a file associated with a stream.</para>\n\t     ",
-                      "documentation": "\n\t\t       <p>The ID of a file associated with a stream.</p>\n\t     ",
-                      "shape_name": "FileId",
-                      "min_length": 0,
-                      "max_length": 255
+                    "s3Location": {
+                      "type": "structure",
+                      "members": {
+                        "bucket": {
+                          "type": "string",
+                          "zonbookDocumentation": "\n\t\t       <para>The S3 bucket.</para>\n\t     ",
+                          "documentation": "\n\t\t       <p>The S3 bucket.</p>\n\t     ",
+                          "shape_name": "S3Bucket",
+                          "min_length": 1
+                        },
+                        "key": {
+                          "type": "string",
+                          "zonbookDocumentation": "\n\t\t       <para>The S3 key.</para>\n\t     ",
+                          "documentation": "\n\t\t       <p>The S3 key.</p>\n\t     ",
+                          "shape_name": "S3Key",
+                          "min_length": 1
+                        },
+                        "version": {
+                          "type": "string",
+                          "zonbookDocumentation": "\n\t\t       <para>The S3 bucket version.</para>\n\t     ",
+                          "documentation": "\n\t\t       <p>The S3 bucket version.</p>\n\t     ",
+                          "shape_name": "S3Version"
+                        }
+                      },
+                      "zonbookDocumentation": "\n\t\t       <para>The location of the updated firmware in S3.</para>\n\t     ",
+                      "documentation": "\n\t\t       <p>The location of the updated firmware in S3.</p>\n\t     ",
+                      "shape_name": "S3Location"
                     }
                   },
-                  "zonbookDocumentation": "\n\t\t       <para>The source of the file.</para>\n\t     ",
-                  "documentation": "\n\t\t       <p>The source of the file.</p>\n\t     ",
-                  "shape_name": "Stream"
+                  "zonbookDocumentation": "\n\t\t       <para>The location of the updated firmware.</para>\n\t     ",
+                  "documentation": "\n\t\t       <p>The location of the updated firmware.</p>\n\t     ",
+                  "shape_name": "FileLocation"
                 },
                 "codeSigning": {
                   "type": "structure",
@@ -22619,37 +22679,81 @@
                       "documentation": "\n\t\t       <p>The ID of the AWSSignerJob which was created to sign the file.</p>\n\t     ",
                       "shape_name": "SigningJobId"
                     },
+                    "startSigningJobParameter": {
+                      "type": "structure",
+                      "members": {
+                        "signingProfileParameter": {
+                          "type": "structure",
+                          "members": {
+                            "certificateArn": {
+                              "type": "string",
+                              "zonbookDocumentation": "\n\t\t       <para>Certificate ARN.</para>\n\t     ",
+                              "documentation": "\n\t\t       <p>Certificate ARN.</p>\n\t     ",
+                              "shape_name": "CertificateArn"
+                            },
+                            "platform": {
+                              "type": "string",
+                              "zonbookDocumentation": "\n\t\t       <para>The hardware platform of your device.</para>\n\t     ",
+                              "documentation": "\n\t\t       <p>The hardware platform of your device.</p>\n\t     ",
+                              "shape_name": "Platform"
+                            },
+                            "certificatePathOnDevice": {
+                              "type": "string",
+                              "zonbookDocumentation": "\n\t\t       <para>The location of the code-signing certificate on your device.</para>\n\t     ",
+                              "documentation": "\n\t\t       <p>The location of the code-signing certificate on your device.</p>\n\t     ",
+                              "shape_name": "CertificatePathOnDevice"
+                            }
+                          },
+                          "zonbookDocumentation": "\n\t\t       <para>Describes the code-signing profile.</para>\n\t     ",
+                          "documentation": "\n\t\t       <p>Describes the code-signing profile.</p>\n\t     ",
+                          "shape_name": "SigningProfileParameter"
+                        },
+                        "signingProfileName": {
+                          "type": "string",
+                          "zonbookDocumentation": "\n\t\t       <para>The code-signing profile name.</para>\n\t     ",
+                          "documentation": "\n\t\t       <p>The code-signing profile name.</p>\n\t     ",
+                          "shape_name": "SigningProfileName"
+                        },
+                        "destination": {
+                          "type": "structure",
+                          "members": {
+                            "s3Destination": {
+                              "type": "structure",
+                              "members": {
+                                "bucket": {
+                                  "type": "string",
+                                  "zonbookDocumentation": "\n\t\t       <para>The S3 bucket that contains the updated firmware.</para>\n\t     ",
+                                  "documentation": "\n\t\t       <p>The S3 bucket that contains the updated firmware.</p>\n\t     ",
+                                  "shape_name": "S3Bucket",
+                                  "min_length": 1
+                                },
+                                "prefix": {
+                                  "type": "string",
+                                  "zonbookDocumentation": "\n\t\t       <para>The S3 prefix.</para>\n\t     ",
+                                  "documentation": "\n\t\t       <p>The S3 prefix.</p>\n\t     ",
+                                  "shape_name": "Prefix"
+                                }
+                              },
+                              "zonbookDocumentation": "\n\t\t       <para>Describes the location in S3 of the updated firmware.</para>\n\t     ",
+                              "documentation": "\n\t\t       <p>Describes the location in S3 of the updated firmware.</p>\n\t     ",
+                              "shape_name": "S3Destination"
+                            }
+                          },
+                          "zonbookDocumentation": "\n\t\t       <para>The location to write the code-signed file.</para>\n\t     ",
+                          "documentation": "\n\t\t       <p>The location to write the code-signed file.</p>\n\t     ",
+                          "shape_name": "Destination"
+                        }
+                      },
+                      "zonbookDocumentation": "\n\t\t       <para>Describes the code-signing job.</para>\n\t     ",
+                      "documentation": "\n\t\t       <p>Describes the code-signing job.</p>\n\t     ",
+                      "shape_name": "StartSigningJobParameter"
+                    },
                     "customCodeSigning": {
                       "type": "structure",
                       "members": {
                         "signature": {
                           "type": "structure",
                           "members": {
-                            "stream": {
-                              "type": "structure",
-                              "members": {
-                                "streamId": {
-                                  "type": "string",
-                                  "pattern": "[a-zA-Z0-9_-]+",
-                                  "zonbookDocumentation": "\n\t\t       <para>The stream ID.</para>\n\t     ",
-                                  "documentation": "\n\t\t       <p>The stream ID.</p>\n\t     ",
-                                  "shape_name": "StreamId",
-                                  "min_length": 1,
-                                  "max_length": 128
-                                },
-                                "fileId": {
-                                  "type": "integer",
-                                  "zonbookDocumentation": "\n\t\t       <para>The ID of a file associated with a stream.</para>\n\t     ",
-                                  "documentation": "\n\t\t       <p>The ID of a file associated with a stream.</p>\n\t     ",
-                                  "shape_name": "FileId",
-                                  "min_length": 0,
-                                  "max_length": 255
-                                }
-                              },
-                              "zonbookDocumentation": "\n\t\t       <para>A stream of the code signing signature.</para>\n\t     ",
-                              "documentation": "\n\t\t       <p>A stream of the code signing signature.</p>\n\t     ",
-                              "shape_name": "Stream"
-                            },
                             "inlineDocument": {
                               "type": "blob",
                               "zonbookDocumentation": "\n\t\t       <para>A base64 encoded binary representation of the code signing signature.</para>\n\t     ",
@@ -22664,31 +22768,6 @@
                         "certificateChain": {
                           "type": "structure",
                           "members": {
-                            "stream": {
-                              "type": "structure",
-                              "members": {
-                                "streamId": {
-                                  "type": "string",
-                                  "pattern": "[a-zA-Z0-9_-]+",
-                                  "zonbookDocumentation": "\n\t\t       <para>The stream ID.</para>\n\t     ",
-                                  "documentation": "\n\t\t       <p>The stream ID.</p>\n\t     ",
-                                  "shape_name": "StreamId",
-                                  "min_length": 1,
-                                  "max_length": 128
-                                },
-                                "fileId": {
-                                  "type": "integer",
-                                  "zonbookDocumentation": "\n\t\t       <para>The ID of a file associated with a stream.</para>\n\t     ",
-                                  "documentation": "\n\t\t       <p>The ID of a file associated with a stream.</p>\n\t     ",
-                                  "shape_name": "FileId",
-                                  "min_length": 0,
-                                  "max_length": 255
-                                }
-                              },
-                              "zonbookDocumentation": "\n\t\t       <para>A stream of the certificate chain files.</para>\n\t     ",
-                              "documentation": "\n\t\t       <p>A stream of the certificate chain files.</p>\n\t     ",
-                              "shape_name": "Stream"
-                            },
                             "certificateName": {
                               "type": "string",
                               "zonbookDocumentation": "\n\t\t       <para>The name of the certificate.</para>\n\t     ",
@@ -22735,7 +22814,7 @@
                   "shape_name": "AttributesMap",
                   "keys": {
                     "type": "string",
-                    "shape_name": "Key",
+                    "shape_name": "AttributeKey",
                     "documentation": null
                   },
                   "members": {
@@ -22766,7 +22845,7 @@
             "shape_name": "AdditionalParameterMap",
             "keys": {
               "type": "string",
-              "shape_name": "Key",
+              "shape_name": "AttributeKey",
               "documentation": null
             },
             "members": {
@@ -22839,6 +22918,20 @@
           "zonbookDocumentation": "\n         <simpara>The request is not valid.</simpara>\n      ",
           "documentation": "\n         <p>The request is not valid.</p>\n      ",
           "shape_name": "InvalidRequestException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The message for the exception.</simpara>\n      ",
+              "documentation": "\n         <p>The message for the exception.</p>\n      ",
+              "shape_name": "errorMessage"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>A limit has been exceeded.</simpara>\n      ",
+          "documentation": "\n         <p>A limit has been exceeded.</p>\n      ",
+          "shape_name": "LimitExceededException"
         },
         {
           "type": "structure",
@@ -23016,6 +23109,22 @@
                   "documentation": null
                 }
               },
+              "awsJobExecutionsRolloutConfig": {
+                "type": "structure",
+                "members": {
+                  "maximumPerMinute": {
+                    "type": "integer",
+                    "zonbookDocumentation": "\n\t\t       <para>The maximum number of OTA update job executions started per minute.</para>\n\t     ",
+                    "documentation": "\n\t\t       <p>The maximum number of OTA update job executions started per minute.</p>\n\t     ",
+                    "shape_name": "MaximumPerMinute",
+                    "min_length": 1,
+                    "max_length": 1000
+                  }
+                },
+                "zonbookDocumentation": "\n\t\t       <para>Configuration for the rollout of OTA updates.</para>\n\t     ",
+                "documentation": "\n\t\t       <p>Configuration for the rollout of OTA updates.</p>\n\t     ",
+                "shape_name": "AwsJobExecutionsRolloutConfig"
+              },
               "targetSelection": {
                 "type": "string",
                 "enum": [
@@ -23032,7 +23141,7 @@
                 "documentation": "\n\t\t       <p>A list of files associated with the OTA update.</p>\n\t     ",
                 "shape_name": "OTAUpdateFiles",
                 "min_length": 1,
-                "max_length": 10,
+                "max_length": 50,
                 "members": {
                   "type": "structure",
                   "members": {
@@ -23048,30 +23157,66 @@
                       "documentation": "\n\t\t       <p>The file version.</p>\n\t     ",
                       "shape_name": "OTAUpdateFileVersion"
                     },
-                    "fileSource": {
+                    "fileLocation": {
                       "type": "structure",
                       "members": {
-                        "streamId": {
-                          "type": "string",
-                          "pattern": "[a-zA-Z0-9_-]+",
-                          "zonbookDocumentation": "\n\t\t       <para>The stream ID.</para>\n\t     ",
-                          "documentation": "\n\t\t       <p>The stream ID.</p>\n\t     ",
-                          "shape_name": "StreamId",
-                          "min_length": 1,
-                          "max_length": 128
+                        "stream": {
+                          "type": "structure",
+                          "members": {
+                            "streamId": {
+                              "type": "string",
+                              "pattern": "[a-zA-Z0-9_-]+",
+                              "zonbookDocumentation": "\n\t\t       <para>The stream ID.</para>\n\t     ",
+                              "documentation": "\n\t\t       <p>The stream ID.</p>\n\t     ",
+                              "shape_name": "StreamId",
+                              "min_length": 1,
+                              "max_length": 128
+                            },
+                            "fileId": {
+                              "type": "integer",
+                              "zonbookDocumentation": "\n\t\t       <para>The ID of a file associated with a stream.</para>\n\t     ",
+                              "documentation": "\n\t\t       <p>The ID of a file associated with a stream.</p>\n\t     ",
+                              "shape_name": "FileId",
+                              "min_length": 0,
+                              "max_length": 255
+                            }
+                          },
+                          "zonbookDocumentation": "\n\t\t       <para>The stream that contains the OTA update.</para>\n\t     ",
+                          "documentation": "\n\t\t       <p>The stream that contains the OTA update.</p>\n\t     ",
+                          "shape_name": "Stream"
                         },
-                        "fileId": {
-                          "type": "integer",
-                          "zonbookDocumentation": "\n\t\t       <para>The ID of a file associated with a stream.</para>\n\t     ",
-                          "documentation": "\n\t\t       <p>The ID of a file associated with a stream.</p>\n\t     ",
-                          "shape_name": "FileId",
-                          "min_length": 0,
-                          "max_length": 255
+                        "s3Location": {
+                          "type": "structure",
+                          "members": {
+                            "bucket": {
+                              "type": "string",
+                              "zonbookDocumentation": "\n\t\t       <para>The S3 bucket.</para>\n\t     ",
+                              "documentation": "\n\t\t       <p>The S3 bucket.</p>\n\t     ",
+                              "shape_name": "S3Bucket",
+                              "min_length": 1
+                            },
+                            "key": {
+                              "type": "string",
+                              "zonbookDocumentation": "\n\t\t       <para>The S3 key.</para>\n\t     ",
+                              "documentation": "\n\t\t       <p>The S3 key.</p>\n\t     ",
+                              "shape_name": "S3Key",
+                              "min_length": 1
+                            },
+                            "version": {
+                              "type": "string",
+                              "zonbookDocumentation": "\n\t\t       <para>The S3 bucket version.</para>\n\t     ",
+                              "documentation": "\n\t\t       <p>The S3 bucket version.</p>\n\t     ",
+                              "shape_name": "S3Version"
+                            }
+                          },
+                          "zonbookDocumentation": "\n\t\t       <para>The location of the updated firmware in S3.</para>\n\t     ",
+                          "documentation": "\n\t\t       <p>The location of the updated firmware in S3.</p>\n\t     ",
+                          "shape_name": "S3Location"
                         }
                       },
-                      "zonbookDocumentation": "\n\t\t       <para>The source of the file.</para>\n\t     ",
-                      "documentation": "\n\t\t       <p>The source of the file.</p>\n\t     ",
-                      "shape_name": "Stream"
+                      "zonbookDocumentation": "\n\t\t       <para>The location of the updated firmware.</para>\n\t     ",
+                      "documentation": "\n\t\t       <p>The location of the updated firmware.</p>\n\t     ",
+                      "shape_name": "FileLocation"
                     },
                     "codeSigning": {
                       "type": "structure",
@@ -23082,37 +23227,81 @@
                           "documentation": "\n\t\t       <p>The ID of the AWSSignerJob which was created to sign the file.</p>\n\t     ",
                           "shape_name": "SigningJobId"
                         },
+                        "startSigningJobParameter": {
+                          "type": "structure",
+                          "members": {
+                            "signingProfileParameter": {
+                              "type": "structure",
+                              "members": {
+                                "certificateArn": {
+                                  "type": "string",
+                                  "zonbookDocumentation": "\n\t\t       <para>Certificate ARN.</para>\n\t     ",
+                                  "documentation": "\n\t\t       <p>Certificate ARN.</p>\n\t     ",
+                                  "shape_name": "CertificateArn"
+                                },
+                                "platform": {
+                                  "type": "string",
+                                  "zonbookDocumentation": "\n\t\t       <para>The hardware platform of your device.</para>\n\t     ",
+                                  "documentation": "\n\t\t       <p>The hardware platform of your device.</p>\n\t     ",
+                                  "shape_name": "Platform"
+                                },
+                                "certificatePathOnDevice": {
+                                  "type": "string",
+                                  "zonbookDocumentation": "\n\t\t       <para>The location of the code-signing certificate on your device.</para>\n\t     ",
+                                  "documentation": "\n\t\t       <p>The location of the code-signing certificate on your device.</p>\n\t     ",
+                                  "shape_name": "CertificatePathOnDevice"
+                                }
+                              },
+                              "zonbookDocumentation": "\n\t\t       <para>Describes the code-signing profile.</para>\n\t     ",
+                              "documentation": "\n\t\t       <p>Describes the code-signing profile.</p>\n\t     ",
+                              "shape_name": "SigningProfileParameter"
+                            },
+                            "signingProfileName": {
+                              "type": "string",
+                              "zonbookDocumentation": "\n\t\t       <para>The code-signing profile name.</para>\n\t     ",
+                              "documentation": "\n\t\t       <p>The code-signing profile name.</p>\n\t     ",
+                              "shape_name": "SigningProfileName"
+                            },
+                            "destination": {
+                              "type": "structure",
+                              "members": {
+                                "s3Destination": {
+                                  "type": "structure",
+                                  "members": {
+                                    "bucket": {
+                                      "type": "string",
+                                      "zonbookDocumentation": "\n\t\t       <para>The S3 bucket that contains the updated firmware.</para>\n\t     ",
+                                      "documentation": "\n\t\t       <p>The S3 bucket that contains the updated firmware.</p>\n\t     ",
+                                      "shape_name": "S3Bucket",
+                                      "min_length": 1
+                                    },
+                                    "prefix": {
+                                      "type": "string",
+                                      "zonbookDocumentation": "\n\t\t       <para>The S3 prefix.</para>\n\t     ",
+                                      "documentation": "\n\t\t       <p>The S3 prefix.</p>\n\t     ",
+                                      "shape_name": "Prefix"
+                                    }
+                                  },
+                                  "zonbookDocumentation": "\n\t\t       <para>Describes the location in S3 of the updated firmware.</para>\n\t     ",
+                                  "documentation": "\n\t\t       <p>Describes the location in S3 of the updated firmware.</p>\n\t     ",
+                                  "shape_name": "S3Destination"
+                                }
+                              },
+                              "zonbookDocumentation": "\n\t\t       <para>The location to write the code-signed file.</para>\n\t     ",
+                              "documentation": "\n\t\t       <p>The location to write the code-signed file.</p>\n\t     ",
+                              "shape_name": "Destination"
+                            }
+                          },
+                          "zonbookDocumentation": "\n\t\t       <para>Describes the code-signing job.</para>\n\t     ",
+                          "documentation": "\n\t\t       <p>Describes the code-signing job.</p>\n\t     ",
+                          "shape_name": "StartSigningJobParameter"
+                        },
                         "customCodeSigning": {
                           "type": "structure",
                           "members": {
                             "signature": {
                               "type": "structure",
                               "members": {
-                                "stream": {
-                                  "type": "structure",
-                                  "members": {
-                                    "streamId": {
-                                      "type": "string",
-                                      "pattern": "[a-zA-Z0-9_-]+",
-                                      "zonbookDocumentation": "\n\t\t       <para>The stream ID.</para>\n\t     ",
-                                      "documentation": "\n\t\t       <p>The stream ID.</p>\n\t     ",
-                                      "shape_name": "StreamId",
-                                      "min_length": 1,
-                                      "max_length": 128
-                                    },
-                                    "fileId": {
-                                      "type": "integer",
-                                      "zonbookDocumentation": "\n\t\t       <para>The ID of a file associated with a stream.</para>\n\t     ",
-                                      "documentation": "\n\t\t       <p>The ID of a file associated with a stream.</p>\n\t     ",
-                                      "shape_name": "FileId",
-                                      "min_length": 0,
-                                      "max_length": 255
-                                    }
-                                  },
-                                  "zonbookDocumentation": "\n\t\t       <para>A stream of the code signing signature.</para>\n\t     ",
-                                  "documentation": "\n\t\t       <p>A stream of the code signing signature.</p>\n\t     ",
-                                  "shape_name": "Stream"
-                                },
                                 "inlineDocument": {
                                   "type": "blob",
                                   "zonbookDocumentation": "\n\t\t       <para>A base64 encoded binary representation of the code signing signature.</para>\n\t     ",
@@ -23127,31 +23316,6 @@
                             "certificateChain": {
                               "type": "structure",
                               "members": {
-                                "stream": {
-                                  "type": "structure",
-                                  "members": {
-                                    "streamId": {
-                                      "type": "string",
-                                      "pattern": "[a-zA-Z0-9_-]+",
-                                      "zonbookDocumentation": "\n\t\t       <para>The stream ID.</para>\n\t     ",
-                                      "documentation": "\n\t\t       <p>The stream ID.</p>\n\t     ",
-                                      "shape_name": "StreamId",
-                                      "min_length": 1,
-                                      "max_length": 128
-                                    },
-                                    "fileId": {
-                                      "type": "integer",
-                                      "zonbookDocumentation": "\n\t\t       <para>The ID of a file associated with a stream.</para>\n\t     ",
-                                      "documentation": "\n\t\t       <p>The ID of a file associated with a stream.</p>\n\t     ",
-                                      "shape_name": "FileId",
-                                      "min_length": 0,
-                                      "max_length": 255
-                                    }
-                                  },
-                                  "zonbookDocumentation": "\n\t\t       <para>A stream of the certificate chain files.</para>\n\t     ",
-                                  "documentation": "\n\t\t       <p>A stream of the certificate chain files.</p>\n\t     ",
-                                  "shape_name": "Stream"
-                                },
                                 "certificateName": {
                                   "type": "string",
                                   "zonbookDocumentation": "\n\t\t       <para>The name of the certificate.</para>\n\t     ",
@@ -23198,7 +23362,7 @@
                       "shape_name": "AttributesMap",
                       "keys": {
                         "type": "string",
-                        "shape_name": "Key",
+                        "shape_name": "AttributeKey",
                         "documentation": null
                       },
                       "members": {
@@ -23264,7 +23428,7 @@
                 "shape_name": "AdditionalParameterMap",
                 "keys": {
                   "type": "string",
-                  "shape_name": "Key",
+                  "shape_name": "AttributeKey",
                   "documentation": null
                 },
                 "members": {
@@ -23374,7 +23538,7 @@
       "name": "DeleteOTAUpdate",
       "http": {
         "method": "DELETE",
-        "uri": "/otaUpdates/{otaUpdateId}"
+        "uri": "/otaUpdates/{otaUpdateId}?deleteStream={deleteStream}&forceDeleteAWSJob={forceDeleteAWSJob}"
       },
       "input": {
         "type": "structure",
@@ -23389,6 +23553,20 @@
             "shape_name": "OTAUpdateId",
             "min_length": 1,
             "max_length": 128
+          },
+          "deleteStream": {
+            "type": "boolean",
+            "zonbookDocumentation": "\n\t\t       <para>Specifies if the stream associated with an OTA update should be deleted when the OTA update is deleted.</para>\n\t     ",
+            "documentation": "\n\t\t       <p>Specifies if the stream associated with an OTA update should be deleted when the OTA update is deleted.</p>\n\t     ",
+            "location": "uri",
+            "shape_name": "DeleteStream"
+          },
+          "forceDeleteAWSJob": {
+            "type": "boolean",
+            "zonbookDocumentation": "\n\t\t       <para>Specifies if the AWS Job associated with the OTA update should be deleted with the OTA update is deleted.</para>\n\t     ",
+            "documentation": "\n\t\t       <p>Specifies if the AWS Job associated with the OTA update should be deleted with the OTA update is deleted.</p>\n\t     ",
+            "location": "uri",
+            "shape_name": "ForceDeleteAWSJob"
           }
         },
         "shape_name": "DeleteOTAUpdateRequest",
@@ -23485,6 +23663,20 @@
           "zonbookDocumentation": "\n         <simpara>The service is temporarily unavailable.</simpara>\n      ",
           "documentation": "\n         <p>The service is temporarily unavailable.</p>\n      ",
           "shape_name": "ServiceUnavailableException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The message for the exception.</simpara>\n      ",
+              "documentation": "\n         <p>The message for the exception.</p>\n      ",
+              "shape_name": "errorMessage"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>An exception thrown when the version of an entity specified with the <code>expectedVersion</code> \n      parameter does not match the latest version in the system.</simpara>\n      ",
+          "documentation": "\n         <p>An exception thrown when the version of an entity specified with the <code>expectedVersion</code> \n      parameter does not match the latest version in the system.</p>\n      ",
+          "shape_name": "VersionConflictException"
         }
       ],
       "documentation": "\n\t\t       <p>Delete an OTA update.</p>\n\t     "

@@ -28,28 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Describes the signature for a file.
+    /// Configuration for the rollout of OTA updates.
     /// </summary>
-    public partial class CodeSigningSignature
+    public partial class AwsJobExecutionsRolloutConfig
     {
-        private MemoryStream _inlineDocument;
+        private int? _maximumPerMinute;
 
         /// <summary>
-        /// Gets and sets the property InlineDocument. 
+        /// Gets and sets the property MaximumPerMinute. 
         /// <para>
-        /// A base64 encoded binary representation of the code signing signature.
+        /// The maximum number of OTA update job executions started per minute.
         /// </para>
         /// </summary>
-        public MemoryStream InlineDocument
+        public int MaximumPerMinute
         {
-            get { return this._inlineDocument; }
-            set { this._inlineDocument = value; }
+            get { return this._maximumPerMinute.GetValueOrDefault(); }
+            set { this._maximumPerMinute = value; }
         }
 
-        // Check to see if InlineDocument property is set
-        internal bool IsSetInlineDocument()
+        // Check to see if MaximumPerMinute property is set
+        internal bool IsSetMaximumPerMinute()
         {
-            return this._inlineDocument != null;
+            return this._maximumPerMinute.HasValue; 
         }
 
     }

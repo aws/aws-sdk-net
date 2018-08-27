@@ -82,6 +82,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.AwsIotJobId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("awsJobExecutionsRolloutConfig", targetDepth))
+                {
+                    var unmarshaller = AwsJobExecutionsRolloutConfigUnmarshaller.Instance;
+                    unmarshalledObject.AwsJobExecutionsRolloutConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("creationDate", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

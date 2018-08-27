@@ -70,21 +70,21 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetFileLocation())
+            {
+                context.Writer.WritePropertyName("fileLocation");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = FileLocationMarshaller.Instance;
+                marshaller.Marshall(requestObject.FileLocation, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetFileName())
             {
                 context.Writer.WritePropertyName("fileName");
                 context.Writer.Write(requestObject.FileName);
-            }
-
-            if(requestObject.IsSetFileSource())
-            {
-                context.Writer.WritePropertyName("fileSource");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = StreamMarshaller.Instance;
-                marshaller.Marshall(requestObject.FileSource, context);
-
-                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetFileVersion())

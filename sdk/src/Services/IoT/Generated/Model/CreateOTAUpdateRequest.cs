@@ -34,6 +34,7 @@ namespace Amazon.IoT.Model
     public partial class CreateOTAUpdateRequest : AmazonIoTRequest
     {
         private Dictionary<string, string> _additionalParameters = new Dictionary<string, string>();
+        private AwsJobExecutionsRolloutConfig _awsJobExecutionsRolloutConfig;
         private string _description;
         private List<OTAUpdateFile> _files = new List<OTAUpdateFile>();
         private string _otaUpdateId;
@@ -57,6 +58,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetAdditionalParameters()
         {
             return this._additionalParameters != null && this._additionalParameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsJobExecutionsRolloutConfig. 
+        /// <para>
+        /// Configuration for the rollout of OTA updates.
+        /// </para>
+        /// </summary>
+        public AwsJobExecutionsRolloutConfig AwsJobExecutionsRolloutConfig
+        {
+            get { return this._awsJobExecutionsRolloutConfig; }
+            set { this._awsJobExecutionsRolloutConfig = value; }
+        }
+
+        // Check to see if AwsJobExecutionsRolloutConfig property is set
+        internal bool IsSetAwsJobExecutionsRolloutConfig()
+        {
+            return this._awsJobExecutionsRolloutConfig != null;
         }
 
         /// <summary>

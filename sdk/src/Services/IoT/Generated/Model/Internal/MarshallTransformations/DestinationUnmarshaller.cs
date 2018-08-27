@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CodeSigning Object
+    /// Response Unmarshaller for Destination Object
     /// </summary>  
-    public class CodeSigningUnmarshaller : IUnmarshaller<CodeSigning, XmlUnmarshallerContext>, IUnmarshaller<CodeSigning, JsonUnmarshallerContext>
+    public class DestinationUnmarshaller : IUnmarshaller<Destination, XmlUnmarshallerContext>, IUnmarshaller<Destination, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CodeSigning IUnmarshaller<CodeSigning, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Destination IUnmarshaller<Destination, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,21 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public CodeSigning Unmarshall(JsonUnmarshallerContext context)
+        public Destination Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            CodeSigning unmarshalledObject = new CodeSigning();
+            Destination unmarshalledObject = new Destination();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("awsSignerJobId", targetDepth))
+                if (context.TestExpression("s3Destination", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AwsSignerJobId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("customCodeSigning", targetDepth))
-                {
-                    var unmarshaller = CustomCodeSigningUnmarshaller.Instance;
-                    unmarshalledObject.CustomCodeSigning = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("startSigningJobParameter", targetDepth))
-                {
-                    var unmarshaller = StartSigningJobParameterUnmarshaller.Instance;
-                    unmarshalledObject.StartSigningJobParameter = unmarshaller.Unmarshall(context);
+                    var unmarshaller = S3DestinationUnmarshaller.Instance;
+                    unmarshalledObject.S3Destination = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +76,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         }
 
 
-        private static CodeSigningUnmarshaller _instance = new CodeSigningUnmarshaller();        
+        private static DestinationUnmarshaller _instance = new DestinationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CodeSigningUnmarshaller Instance
+        public static DestinationUnmarshaller Instance
         {
             get
             {

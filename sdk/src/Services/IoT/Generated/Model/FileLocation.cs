@@ -28,28 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Describes the signature for a file.
+    /// The location of the OTA update.
     /// </summary>
-    public partial class CodeSigningSignature
+    public partial class FileLocation
     {
-        private MemoryStream _inlineDocument;
+        private S3Location _s3Location;
+        private Stream _stream;
 
         /// <summary>
-        /// Gets and sets the property InlineDocument. 
+        /// Gets and sets the property S3Location. 
         /// <para>
-        /// A base64 encoded binary representation of the code signing signature.
+        /// The location of the updated firmware in S3.
         /// </para>
         /// </summary>
-        public MemoryStream InlineDocument
+        public S3Location S3Location
         {
-            get { return this._inlineDocument; }
-            set { this._inlineDocument = value; }
+            get { return this._s3Location; }
+            set { this._s3Location = value; }
         }
 
-        // Check to see if InlineDocument property is set
-        internal bool IsSetInlineDocument()
+        // Check to see if S3Location property is set
+        internal bool IsSetS3Location()
         {
-            return this._inlineDocument != null;
+            return this._s3Location != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Stream. 
+        /// <para>
+        /// The stream that contains the OTA update.
+        /// </para>
+        /// </summary>
+        public Stream Stream
+        {
+            get { return this._stream; }
+            set { this._stream = value; }
+        }
+
+        // Check to see if Stream property is set
+        internal bool IsSetStream()
+        {
+            return this._stream != null;
         }
 
     }

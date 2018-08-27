@@ -1568,6 +1568,11 @@
     <pattern>[\w=,@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.AwsJobExecutionsRolloutConfig.MaximumPerMinute</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.Behavior.Name</property>
     <min>1</min>
     <max>128</max>
@@ -1823,6 +1828,10 @@
     <property>Amazon.IoT.Model.RoleAliasDescription.RoleArn</property>
     <min>20</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.S3Destination.Bucket</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.S3Location.Bucket</property>

@@ -76,16 +76,16 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.CodeSigning = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("fileLocation", targetDepth))
+                {
+                    var unmarshaller = FileLocationUnmarshaller.Instance;
+                    unmarshalledObject.FileLocation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("fileName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FileName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("fileSource", targetDepth))
-                {
-                    var unmarshaller = StreamUnmarshaller.Instance;
-                    unmarshalledObject.FileSource = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("fileVersion", targetDepth))
