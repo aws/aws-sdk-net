@@ -28,48 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Specifies a version of a table.
+    /// This is the response object from the PutResourcePolicy operation.
     /// </summary>
-    public partial class TableVersion
+    public partial class PutResourcePolicyResponse : AmazonWebServiceResponse
     {
-        private Table _table;
-        private string _versionId;
+        private string _policyHash;
 
         /// <summary>
-        /// Gets and sets the property Table. 
+        /// Gets and sets the property PolicyHash. 
         /// <para>
-        /// The table in question
+        /// A hash of the policy that has just been set. This must be included in a subsequent
+        /// call that overwrites or updates this policy.
         /// </para>
         /// </summary>
-        public Table Table
+        public string PolicyHash
         {
-            get { return this._table; }
-            set { this._table = value; }
+            get { return this._policyHash; }
+            set { this._policyHash = value; }
         }
 
-        // Check to see if Table property is set
-        internal bool IsSetTable()
+        // Check to see if PolicyHash property is set
+        internal bool IsSetPolicyHash()
         {
-            return this._table != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property VersionId. 
-        /// <para>
-        /// The ID value that identifies this table version. A <code>VersionId</code> is a string
-        /// representation of an integer. Each version is incremented by 1.
-        /// </para>
-        /// </summary>
-        public string VersionId
-        {
-            get { return this._versionId; }
-            set { this._versionId = value; }
-        }
-
-        // Check to see if VersionId property is set
-        internal bool IsSetVersionId()
-        {
-            return this._versionId != null;
+            return this._policyHash != null;
         }
 
     }

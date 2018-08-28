@@ -268,6 +268,11 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.DeleteResourcePolicyRequest.PolicyHashCondition</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.DeleteSecurityConfigurationRequest.Name</property>
     <min>1</min>
     <max>255</max>
@@ -478,6 +483,16 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.GetResourcePolicyResponse.PolicyHash</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetResourcePolicyResponse.PolicyInJson</property>
+    <min>2</min>
+    <max>10240</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.GetSecurityConfigurationRequest.Name</property>
     <min>1</min>
     <max>255</max>
@@ -619,6 +634,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.PutDataCatalogEncryptionSettingsRequest.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.PutResourcePolicyRequest.PolicyHashCondition</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.PutResourcePolicyRequest.PolicyInJson</property>
+    <min>2</min>
+    <max>10240</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.PutResourcePolicyResponse.PolicyHash</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>

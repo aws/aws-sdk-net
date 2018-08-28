@@ -97,7 +97,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property VersionId. 
         /// <para>
-        /// The ID value of the table version to be retrieved.
+        /// The ID value of the table version to be retrieved. A <code>VersionID</code> is a string
+        /// representation of an integer. Each version is incremented by 1. 
         /// </para>
         /// </summary>
         public string VersionId

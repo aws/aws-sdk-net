@@ -28,48 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Specifies a version of a table.
+    /// Container for the parameters to the DeleteResourcePolicy operation.
+    /// Deletes a specified policy.
     /// </summary>
-    public partial class TableVersion
+    public partial class DeleteResourcePolicyRequest : AmazonGlueRequest
     {
-        private Table _table;
-        private string _versionId;
+        private string _policyHashCondition;
 
         /// <summary>
-        /// Gets and sets the property Table. 
+        /// Gets and sets the property PolicyHashCondition. 
         /// <para>
-        /// The table in question
+        /// The hash value returned when this policy was set.
         /// </para>
         /// </summary>
-        public Table Table
+        public string PolicyHashCondition
         {
-            get { return this._table; }
-            set { this._table = value; }
+            get { return this._policyHashCondition; }
+            set { this._policyHashCondition = value; }
         }
 
-        // Check to see if Table property is set
-        internal bool IsSetTable()
+        // Check to see if PolicyHashCondition property is set
+        internal bool IsSetPolicyHashCondition()
         {
-            return this._table != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property VersionId. 
-        /// <para>
-        /// The ID value that identifies this table version. A <code>VersionId</code> is a string
-        /// representation of an integer. Each version is incremented by 1.
-        /// </para>
-        /// </summary>
-        public string VersionId
-        {
-            get { return this._versionId; }
-            set { this._versionId = value; }
-        }
-
-        // Check to see if VersionId property is set
-        internal bool IsSetVersionId()
-        {
-            return this._versionId != null;
+            return this._policyHashCondition != null;
         }
 
     }

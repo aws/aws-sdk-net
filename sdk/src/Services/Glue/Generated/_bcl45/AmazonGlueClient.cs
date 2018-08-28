@@ -1641,6 +1641,60 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  DeleteResourcePolicy
+
+
+        /// <summary>
+        /// Deletes a specified policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteResourcePolicy service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConditionCheckFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
+        {
+            var marshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            var unmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteResourcePolicyRequest,DeleteResourcePolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public virtual Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            var unmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteResourcePolicyRequest,DeleteResourcePolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteSecurityConfiguration
 
 
@@ -2939,6 +2993,57 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  GetResourcePolicy
+
+
+        /// <summary>
+        /// Retrieves a specified resource policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetResourcePolicy service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        public virtual GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request)
+        {
+            var marshaller = GetResourcePolicyRequestMarshaller.Instance;
+            var unmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetResourcePolicyRequest,GetResourcePolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        public virtual Task<GetResourcePolicyResponse> GetResourcePolicyAsync(GetResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetResourcePolicyRequestMarshaller.Instance;
+            var unmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetResourcePolicyRequest,GetResourcePolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetSecurityConfiguration
 
 
@@ -3556,6 +3661,60 @@ namespace Amazon.Glue
             var unmarshaller = PutDataCatalogEncryptionSettingsResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutDataCatalogEncryptionSettingsRequest,PutDataCatalogEncryptionSettingsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutResourcePolicy
+
+
+        /// <summary>
+        /// Sets the Data Catalog resource policy for access control.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutResourcePolicy service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConditionCheckFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
+        {
+            var marshaller = PutResourcePolicyRequestMarshaller.Instance;
+            var unmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutResourcePolicyRequest,PutResourcePolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public virtual Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = PutResourcePolicyRequestMarshaller.Instance;
+            var unmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutResourcePolicyRequest,PutResourcePolicyResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
