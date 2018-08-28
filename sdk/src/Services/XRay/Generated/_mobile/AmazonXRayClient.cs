@@ -262,6 +262,68 @@ namespace Amazon.XRay
 
         #endregion
         
+        #region  CreateSamplingRule
+
+        internal virtual CreateSamplingRuleResponse CreateSamplingRule(CreateSamplingRuleRequest request)
+        {
+            var marshaller = CreateSamplingRuleRequestMarshaller.Instance;
+            var unmarshaller = CreateSamplingRuleResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSamplingRuleRequest,CreateSamplingRuleResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateSamplingRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateSamplingRule operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<CreateSamplingRuleResponse> CreateSamplingRuleAsync(CreateSamplingRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateSamplingRuleRequestMarshaller.Instance;
+            var unmarshaller = CreateSamplingRuleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateSamplingRuleRequest,CreateSamplingRuleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteSamplingRule
+
+        internal virtual DeleteSamplingRuleResponse DeleteSamplingRule(DeleteSamplingRuleRequest request)
+        {
+            var marshaller = DeleteSamplingRuleRequestMarshaller.Instance;
+            var unmarshaller = DeleteSamplingRuleResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSamplingRuleRequest,DeleteSamplingRuleResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSamplingRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSamplingRule operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<DeleteSamplingRuleResponse> DeleteSamplingRuleAsync(DeleteSamplingRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteSamplingRuleRequestMarshaller.Instance;
+            var unmarshaller = DeleteSamplingRuleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteSamplingRuleRequest,DeleteSamplingRuleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetEncryptionConfig
 
         internal virtual GetEncryptionConfigResponse GetEncryptionConfig(GetEncryptionConfigRequest request)
@@ -288,6 +350,99 @@ namespace Amazon.XRay
             var unmarshaller = GetEncryptionConfigResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetEncryptionConfigRequest,GetEncryptionConfigResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetSamplingRules
+
+        internal virtual GetSamplingRulesResponse GetSamplingRules(GetSamplingRulesRequest request)
+        {
+            var marshaller = GetSamplingRulesRequestMarshaller.Instance;
+            var unmarshaller = GetSamplingRulesResponseUnmarshaller.Instance;
+
+            return Invoke<GetSamplingRulesRequest,GetSamplingRulesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSamplingRules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSamplingRules operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<GetSamplingRulesResponse> GetSamplingRulesAsync(GetSamplingRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetSamplingRulesRequestMarshaller.Instance;
+            var unmarshaller = GetSamplingRulesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetSamplingRulesRequest,GetSamplingRulesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetSamplingStatisticSummaries
+
+        internal virtual GetSamplingStatisticSummariesResponse GetSamplingStatisticSummaries(GetSamplingStatisticSummariesRequest request)
+        {
+            var marshaller = GetSamplingStatisticSummariesRequestMarshaller.Instance;
+            var unmarshaller = GetSamplingStatisticSummariesResponseUnmarshaller.Instance;
+
+            return Invoke<GetSamplingStatisticSummariesRequest,GetSamplingStatisticSummariesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSamplingStatisticSummaries operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSamplingStatisticSummaries operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<GetSamplingStatisticSummariesResponse> GetSamplingStatisticSummariesAsync(GetSamplingStatisticSummariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetSamplingStatisticSummariesRequestMarshaller.Instance;
+            var unmarshaller = GetSamplingStatisticSummariesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetSamplingStatisticSummariesRequest,GetSamplingStatisticSummariesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetSamplingTargets
+
+        internal virtual GetSamplingTargetsResponse GetSamplingTargets(GetSamplingTargetsRequest request)
+        {
+            var marshaller = GetSamplingTargetsRequestMarshaller.Instance;
+            var unmarshaller = GetSamplingTargetsResponseUnmarshaller.Instance;
+
+            return Invoke<GetSamplingTargetsRequest,GetSamplingTargetsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSamplingTargets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSamplingTargets operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<GetSamplingTargetsResponse> GetSamplingTargetsAsync(GetSamplingTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetSamplingTargetsRequestMarshaller.Instance;
+            var unmarshaller = GetSamplingTargetsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetSamplingTargetsRequest,GetSamplingTargetsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -474,6 +629,37 @@ namespace Amazon.XRay
             var unmarshaller = PutTraceSegmentsResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutTraceSegmentsRequest,PutTraceSegmentsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateSamplingRule
+
+        internal virtual UpdateSamplingRuleResponse UpdateSamplingRule(UpdateSamplingRuleRequest request)
+        {
+            var marshaller = UpdateSamplingRuleRequestMarshaller.Instance;
+            var unmarshaller = UpdateSamplingRuleResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSamplingRuleRequest,UpdateSamplingRuleResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateSamplingRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSamplingRule operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<UpdateSamplingRuleResponse> UpdateSamplingRuleAsync(UpdateSamplingRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateSamplingRuleRequestMarshaller.Instance;
+            var unmarshaller = UpdateSamplingRuleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateSamplingRuleRequest,UpdateSamplingRuleResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

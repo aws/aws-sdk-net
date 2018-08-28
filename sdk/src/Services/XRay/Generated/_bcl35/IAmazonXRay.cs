@@ -81,6 +81,101 @@ namespace Amazon.XRay
 
         #endregion
         
+        #region  CreateSamplingRule
+
+
+        /// <summary>
+        /// Creates a rule to control sampling behavior for instrumented applications. Services
+        /// retrieve rules with <a>GetSamplingRules</a>, and evaluate each rule in ascending order
+        /// of <i>priority</i> for each request. If a rule matches, the service records a trace,
+        /// borrowing it from the reservoir size. After 10 seconds, the service reports back to
+        /// X-Ray with <a>GetSamplingTargets</a> to get updated versions of each in-use rule.
+        /// The updated rule contains a trace quota that the service can use instead of borrowing
+        /// from the reservoir.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSamplingRule service method.</param>
+        /// 
+        /// <returns>The response from the CreateSamplingRule service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.RuleLimitExceededException">
+        /// You have reached the maximum number of sampling rules.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        CreateSamplingRuleResponse CreateSamplingRule(CreateSamplingRuleRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateSamplingRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateSamplingRule operation on AmazonXRayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSamplingRule
+        ///         operation.</returns>
+        IAsyncResult BeginCreateSamplingRule(CreateSamplingRuleRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateSamplingRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSamplingRule.</param>
+        /// 
+        /// <returns>Returns a  CreateSamplingRuleResult from XRay.</returns>
+        CreateSamplingRuleResponse EndCreateSamplingRule(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteSamplingRule
+
+
+        /// <summary>
+        /// Deletes a sampling rule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSamplingRule service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSamplingRule service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        DeleteSamplingRuleResponse DeleteSamplingRule(DeleteSamplingRuleRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSamplingRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSamplingRule operation on AmazonXRayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSamplingRule
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteSamplingRule(DeleteSamplingRuleRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteSamplingRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSamplingRule.</param>
+        /// 
+        /// <returns>Returns a  DeleteSamplingRuleResult from XRay.</returns>
+        DeleteSamplingRuleResponse EndDeleteSamplingRule(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetEncryptionConfig
 
 
@@ -121,6 +216,135 @@ namespace Amazon.XRay
         /// 
         /// <returns>Returns a  GetEncryptionConfigResult from XRay.</returns>
         GetEncryptionConfigResponse EndGetEncryptionConfig(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetSamplingRules
+
+
+        /// <summary>
+        /// Retrieves all sampling rules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSamplingRules service method.</param>
+        /// 
+        /// <returns>The response from the GetSamplingRules service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        GetSamplingRulesResponse GetSamplingRules(GetSamplingRulesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSamplingRules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSamplingRules operation on AmazonXRayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSamplingRules
+        ///         operation.</returns>
+        IAsyncResult BeginGetSamplingRules(GetSamplingRulesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSamplingRules operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSamplingRules.</param>
+        /// 
+        /// <returns>Returns a  GetSamplingRulesResult from XRay.</returns>
+        GetSamplingRulesResponse EndGetSamplingRules(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetSamplingStatisticSummaries
+
+
+        /// <summary>
+        /// Retrieves information about recent sampling results for all sampling rules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSamplingStatisticSummaries service method.</param>
+        /// 
+        /// <returns>The response from the GetSamplingStatisticSummaries service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        GetSamplingStatisticSummariesResponse GetSamplingStatisticSummaries(GetSamplingStatisticSummariesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSamplingStatisticSummaries operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSamplingStatisticSummaries operation on AmazonXRayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSamplingStatisticSummaries
+        ///         operation.</returns>
+        IAsyncResult BeginGetSamplingStatisticSummaries(GetSamplingStatisticSummariesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSamplingStatisticSummaries operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSamplingStatisticSummaries.</param>
+        /// 
+        /// <returns>Returns a  GetSamplingStatisticSummariesResult from XRay.</returns>
+        GetSamplingStatisticSummariesResponse EndGetSamplingStatisticSummaries(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetSamplingTargets
+
+
+        /// <summary>
+        /// Requests a sampling quota for rules that the service is using to sample requests.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSamplingTargets service method.</param>
+        /// 
+        /// <returns>The response from the GetSamplingTargets service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        GetSamplingTargetsResponse GetSamplingTargets(GetSamplingTargetsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSamplingTargets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSamplingTargets operation on AmazonXRayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSamplingTargets
+        ///         operation.</returns>
+        IAsyncResult BeginGetSamplingTargets(GetSamplingTargetsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSamplingTargets operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSamplingTargets.</param>
+        /// 
+        /// <returns>Returns a  GetSamplingTargetsResult from XRay.</returns>
+        GetSamplingTargetsResponse EndGetSamplingTargets(IAsyncResult asyncResult);
 
         #endregion
         
@@ -476,6 +700,49 @@ namespace Amazon.XRay
         /// 
         /// <returns>Returns a  PutTraceSegmentsResult from XRay.</returns>
         PutTraceSegmentsResponse EndPutTraceSegments(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateSamplingRule
+
+
+        /// <summary>
+        /// Modifies a sampling rule's configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSamplingRule service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSamplingRule service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        UpdateSamplingRuleResponse UpdateSamplingRule(UpdateSamplingRuleRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateSamplingRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSamplingRule operation on AmazonXRayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSamplingRule
+        ///         operation.</returns>
+        IAsyncResult BeginUpdateSamplingRule(UpdateSamplingRuleRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateSamplingRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSamplingRule.</param>
+        /// 
+        /// <returns>Returns a  UpdateSamplingRuleResult from XRay.</returns>
+        UpdateSamplingRuleResponse EndUpdateSamplingRule(IAsyncResult asyncResult);
 
         #endregion
         

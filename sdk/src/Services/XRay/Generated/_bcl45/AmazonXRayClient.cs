@@ -271,6 +271,101 @@ namespace Amazon.XRay
 
         #endregion
         
+        #region  CreateSamplingRule
+
+
+        /// <summary>
+        /// Creates a rule to control sampling behavior for instrumented applications. Services
+        /// retrieve rules with <a>GetSamplingRules</a>, and evaluate each rule in ascending order
+        /// of <i>priority</i> for each request. If a rule matches, the service records a trace,
+        /// borrowing it from the reservoir size. After 10 seconds, the service reports back to
+        /// X-Ray with <a>GetSamplingTargets</a> to get updated versions of each in-use rule.
+        /// The updated rule contains a trace quota that the service can use instead of borrowing
+        /// from the reservoir.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSamplingRule service method.</param>
+        /// 
+        /// <returns>The response from the CreateSamplingRule service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.RuleLimitExceededException">
+        /// You have reached the maximum number of sampling rules.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        public virtual CreateSamplingRuleResponse CreateSamplingRule(CreateSamplingRuleRequest request)
+        {
+            var marshaller = CreateSamplingRuleRequestMarshaller.Instance;
+            var unmarshaller = CreateSamplingRuleResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSamplingRuleRequest,CreateSamplingRuleResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateSamplingRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateSamplingRule operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<CreateSamplingRuleResponse> CreateSamplingRuleAsync(CreateSamplingRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateSamplingRuleRequestMarshaller.Instance;
+            var unmarshaller = CreateSamplingRuleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateSamplingRuleRequest,CreateSamplingRuleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteSamplingRule
+
+
+        /// <summary>
+        /// Deletes a sampling rule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSamplingRule service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSamplingRule service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        public virtual DeleteSamplingRuleResponse DeleteSamplingRule(DeleteSamplingRuleRequest request)
+        {
+            var marshaller = DeleteSamplingRuleRequestMarshaller.Instance;
+            var unmarshaller = DeleteSamplingRuleResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSamplingRuleRequest,DeleteSamplingRuleResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSamplingRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSamplingRule operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<DeleteSamplingRuleResponse> DeleteSamplingRuleAsync(DeleteSamplingRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteSamplingRuleRequestMarshaller.Instance;
+            var unmarshaller = DeleteSamplingRuleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteSamplingRuleRequest,DeleteSamplingRuleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetEncryptionConfig
 
 
@@ -309,6 +404,135 @@ namespace Amazon.XRay
             var unmarshaller = GetEncryptionConfigResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetEncryptionConfigRequest,GetEncryptionConfigResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetSamplingRules
+
+
+        /// <summary>
+        /// Retrieves all sampling rules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSamplingRules service method.</param>
+        /// 
+        /// <returns>The response from the GetSamplingRules service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        public virtual GetSamplingRulesResponse GetSamplingRules(GetSamplingRulesRequest request)
+        {
+            var marshaller = GetSamplingRulesRequestMarshaller.Instance;
+            var unmarshaller = GetSamplingRulesResponseUnmarshaller.Instance;
+
+            return Invoke<GetSamplingRulesRequest,GetSamplingRulesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSamplingRules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSamplingRules operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<GetSamplingRulesResponse> GetSamplingRulesAsync(GetSamplingRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetSamplingRulesRequestMarshaller.Instance;
+            var unmarshaller = GetSamplingRulesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetSamplingRulesRequest,GetSamplingRulesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetSamplingStatisticSummaries
+
+
+        /// <summary>
+        /// Retrieves information about recent sampling results for all sampling rules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSamplingStatisticSummaries service method.</param>
+        /// 
+        /// <returns>The response from the GetSamplingStatisticSummaries service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        public virtual GetSamplingStatisticSummariesResponse GetSamplingStatisticSummaries(GetSamplingStatisticSummariesRequest request)
+        {
+            var marshaller = GetSamplingStatisticSummariesRequestMarshaller.Instance;
+            var unmarshaller = GetSamplingStatisticSummariesResponseUnmarshaller.Instance;
+
+            return Invoke<GetSamplingStatisticSummariesRequest,GetSamplingStatisticSummariesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSamplingStatisticSummaries operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSamplingStatisticSummaries operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<GetSamplingStatisticSummariesResponse> GetSamplingStatisticSummariesAsync(GetSamplingStatisticSummariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetSamplingStatisticSummariesRequestMarshaller.Instance;
+            var unmarshaller = GetSamplingStatisticSummariesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetSamplingStatisticSummariesRequest,GetSamplingStatisticSummariesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetSamplingTargets
+
+
+        /// <summary>
+        /// Requests a sampling quota for rules that the service is using to sample requests.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSamplingTargets service method.</param>
+        /// 
+        /// <returns>The response from the GetSamplingTargets service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        public virtual GetSamplingTargetsResponse GetSamplingTargets(GetSamplingTargetsRequest request)
+        {
+            var marshaller = GetSamplingTargetsRequestMarshaller.Instance;
+            var unmarshaller = GetSamplingTargetsResponseUnmarshaller.Instance;
+
+            return Invoke<GetSamplingTargetsRequest,GetSamplingTargetsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSamplingTargets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSamplingTargets operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<GetSamplingTargetsResponse> GetSamplingTargetsAsync(GetSamplingTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetSamplingTargetsRequestMarshaller.Instance;
+            var unmarshaller = GetSamplingTargetsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetSamplingTargetsRequest,GetSamplingTargetsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -664,6 +888,49 @@ namespace Amazon.XRay
             var unmarshaller = PutTraceSegmentsResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutTraceSegmentsRequest,PutTraceSegmentsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateSamplingRule
+
+
+        /// <summary>
+        /// Modifies a sampling rule's configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSamplingRule service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSamplingRule service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        public virtual UpdateSamplingRuleResponse UpdateSamplingRule(UpdateSamplingRuleRequest request)
+        {
+            var marshaller = UpdateSamplingRuleRequestMarshaller.Instance;
+            var unmarshaller = UpdateSamplingRuleResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSamplingRuleRequest,UpdateSamplingRuleResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateSamplingRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSamplingRule operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<UpdateSamplingRuleResponse> UpdateSamplingRuleAsync(UpdateSamplingRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateSamplingRuleRequestMarshaller.Instance;
+            var unmarshaller = UpdateSamplingRuleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateSamplingRuleRequest,UpdateSamplingRuleResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

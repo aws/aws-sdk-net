@@ -57,9 +57,8 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The encryption status. After modifying encryption configuration with <a>PutEncryptionConfig</a>,
-        /// the status can be <code>UPDATING</code> for up to one hour before X-Ray starts encrypting
-        /// data with the new key.
+        /// The encryption status. While the status is <code>UPDATING</code>, X-Ray may encrypt
+        /// data with a combination of the new and old settings.
         /// </para>
         /// </summary>
         public EncryptionStatus Status

@@ -76,6 +76,70 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("XRay")]
+        public void CreateSamplingRuleMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateSamplingRule");
+
+            var request = InstantiateClassGenerator.Execute<CreateSamplingRuleRequest>();
+            var marshaller = new CreateSamplingRuleRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("CreateSamplingRule", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CreateSamplingRuleResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as CreateSamplingRuleResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("XRay")]
+        public void DeleteSamplingRuleMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteSamplingRule");
+
+            var request = InstantiateClassGenerator.Execute<DeleteSamplingRuleRequest>();
+            var marshaller = new DeleteSamplingRuleRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteSamplingRule", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DeleteSamplingRuleResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as DeleteSamplingRuleResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("XRay")]
         public void GetEncryptionConfigMarshallTest()
         {
             var operation = service_model.FindOperation("GetEncryptionConfig");
@@ -100,6 +164,102 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = GetEncryptionConfigResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as GetEncryptionConfigResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("XRay")]
+        public void GetSamplingRulesMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetSamplingRules");
+
+            var request = InstantiateClassGenerator.Execute<GetSamplingRulesRequest>();
+            var marshaller = new GetSamplingRulesRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetSamplingRules", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetSamplingRulesResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetSamplingRulesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("XRay")]
+        public void GetSamplingStatisticSummariesMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetSamplingStatisticSummaries");
+
+            var request = InstantiateClassGenerator.Execute<GetSamplingStatisticSummariesRequest>();
+            var marshaller = new GetSamplingStatisticSummariesRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetSamplingStatisticSummaries", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetSamplingStatisticSummariesResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetSamplingStatisticSummariesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("XRay")]
+        public void GetSamplingTargetsMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetSamplingTargets");
+
+            var request = InstantiateClassGenerator.Execute<GetSamplingTargetsRequest>();
+            var marshaller = new GetSamplingTargetsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetSamplingTargets", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetSamplingTargetsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetSamplingTargetsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
@@ -292,6 +452,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = PutTraceSegmentsResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as PutTraceSegmentsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("XRay")]
+        public void UpdateSamplingRuleMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateSamplingRule");
+
+            var request = InstantiateClassGenerator.Execute<UpdateSamplingRuleRequest>();
+            var marshaller = new UpdateSamplingRuleRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("UpdateSamplingRule", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = UpdateSamplingRuleResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as UpdateSamplingRuleResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
