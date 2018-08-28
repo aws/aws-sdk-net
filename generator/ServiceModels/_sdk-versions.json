@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.348.0",
+    "ProductVersion" : "3.3.349.0",
     "CoreVersion"    : "3.3.25.1",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -689,7 +689,7 @@
             "InPreview"               : false
         },
         "XRay"                            : {
-            "Version" : "3.3.2.10",
+            "Version" : "3.3.3.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.25.1"
@@ -825,7 +825,7 @@
             "InPreview"               : false
         },
         "Glue"                            : {
-            "Version" : "3.3.11.1",
+            "Version" : "3.3.12.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.25.1"

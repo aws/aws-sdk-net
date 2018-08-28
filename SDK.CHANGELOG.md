@@ -1,3 +1,9 @@
+### 3.3.349.0 (2018-08-28 19:43 UTC)
+* Glue (3.3.12.0)
+	* New Glue APIs for creating, updating, reading and deleting Data Catalog resource-based policies.
+* XRay (3.3.3.0)
+	* Support for new APIs that enable management of sampling rules.
+
 ### 3.3.348.0 (2018-08-27 22:49 UTC)
 * IoT (3.3.17.0)
 	* This release adds support to create a Stream and Code signing for Amazon FreeRTOS job along with Over-the-air updates.
