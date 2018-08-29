@@ -257,7 +257,19 @@ namespace Amazon.Runtime.Internal.Util
         /// </returns>
         public override int Read(byte[] buffer, int offset, int count)
         {
-            return BaseStream.Read(buffer, offset, count);
+            try
+            {
+                return BaseStream.Read(buffer, offset, count);
+            }
+            catch (ObjectDisposedException e)
+            {
+                string fullname = BaseStream.GetType().FullName;
+                if (fullname == "System.Net.WebConnectionStream")
+                {
+                    throw new System.IO.IOException("HttpClient.SendAsync throws ObjectDisposedException exception due to network connectivity failure.", e);
+                }
+                throw; 
+            }
         }
 
         /// <summary>

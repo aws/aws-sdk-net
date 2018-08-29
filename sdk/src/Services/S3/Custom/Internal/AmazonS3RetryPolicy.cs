@@ -45,6 +45,10 @@ namespace Amazon.S3.Internal
         public AmazonS3RetryPolicy(IClientConfig config) :
             base(config)
         {
+#if !PCL
+            WebExceptionStatusesToRetryOn.Add((WebExceptionStatus)10);   //SecureChannelFailure, disconnected network may cause this exception)
+#endif
+
         }
 
         /// <summary>
@@ -113,6 +117,17 @@ namespace Amazon.S3.Internal
                         // this means that the synchronous check is inconclusive and
                         // the caller needs to check for a bucket/region mismatch
                         return null;
+                    }
+                }
+            }
+            else
+            {
+                WebException webException = exception as WebException;
+                if (exception is WebException || IsInnerException<WebException>(exception, out webException))
+                {
+                    if (this.WebExceptionStatusesToRetryOn.Contains(webException.Status))
+                    {
+                        return true;
                     }
                 }
             }
