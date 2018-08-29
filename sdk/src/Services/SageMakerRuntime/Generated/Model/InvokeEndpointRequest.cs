@@ -36,20 +36,34 @@ namespace Amazon.SageMakerRuntime.Model
     ///  
     /// <para>
     /// For an overview of Amazon SageMaker, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How
-    /// It Works</a> 
+    /// It Works</a>. 
     /// </para>
     ///  
     /// <para>
-    ///  Amazon SageMaker strips all POST headers except those supported by the API. Amazon
+    /// Amazon SageMaker strips all POST headers except those supported by the API. Amazon
     /// SageMaker might add additional headers. You should not rely on the behavior of headers
     /// outside those enumerated in the request syntax. 
     /// </para>
+    ///  
+    /// <para>
+    /// Cals to <code>InvokeEndpoint</code> are authenticated by using AWS Signature Version
+    /// 4. For information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
+    /// Requests (AWS Signature Version 4)</a> in the <i>Amazon S3 API Reference</i>.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// Endpoints are scoped to an individual account, and are not public. The URL does not
+    /// contain the account ID, but Amazon SageMaker determines the account ID from the authentication
+    /// token that is supplied by the caller.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class InvokeEndpointRequest : AmazonSageMakerRuntimeRequest
     {
         private string _accept;
         private MemoryStream _body;
         private string _contentType;
+        private string _customAttributes;
         private string _endpointName;
 
         /// <summary>
@@ -75,6 +89,11 @@ namespace Amazon.SageMakerRuntime.Model
         /// <para>
         /// Provides input data, in the format specified in the <code>ContentType</code> request
         /// header. Amazon SageMaker passes all of the data in the body to the model. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about the format of the request body, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common
+        /// Data Formats—Inference</a>.
         /// </para>
         /// </summary>
         public MemoryStream Body
@@ -105,6 +124,21 @@ namespace Amazon.SageMakerRuntime.Model
         internal bool IsSetContentType()
         {
             return this._contentType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomAttributes.
+        /// </summary>
+        public string CustomAttributes
+        {
+            get { return this._customAttributes; }
+            set { this._customAttributes = value; }
+        }
+
+        // Check to see if CustomAttributes property is set
+        internal bool IsSetCustomAttributes()
+        {
+            return this._customAttributes != null;
         }
 
         /// <summary>

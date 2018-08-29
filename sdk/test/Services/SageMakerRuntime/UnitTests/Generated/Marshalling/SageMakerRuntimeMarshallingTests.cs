@@ -58,6 +58,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             {
                 Headers = {
                     {"Content-Type","Content-Type_Value"},
+                    {"X-Amzn-SageMaker-Custom-Attributes","X-Amzn-SageMaker-Custom-Attributes_Value"},
                     {"x-Amzn-Invoked-Production-Variant","x-Amzn-Invoked-Production-Variant_Value"},
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"}

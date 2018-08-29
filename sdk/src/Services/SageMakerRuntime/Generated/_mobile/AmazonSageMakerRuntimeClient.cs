@@ -36,7 +36,7 @@ namespace Amazon.SageMakerRuntime
     /// <summary>
     /// Implementation for accessing SageMakerRuntime
     ///
-    /// Amazon SageMaker runtime API.
+    /// The Amazon SageMaker runtime API.
     /// </summary>
     public partial class AmazonSageMakerRuntimeClient : AmazonServiceClient, IAmazonSageMakerRuntime
     {

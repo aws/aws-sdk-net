@@ -34,12 +34,18 @@ namespace Amazon.SageMakerRuntime.Model
     {
         private MemoryStream _body;
         private string _contentType;
+        private string _customAttributes;
         private string _invokedProductionVariant;
 
         /// <summary>
         /// Gets and sets the property Body. 
         /// <para>
         /// Includes the inference provided by the model.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about the format of the response body, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common
+        /// Data Formats—Inference</a>.
         /// </para>
         /// </summary>
         public MemoryStream Body
@@ -70,6 +76,21 @@ namespace Amazon.SageMakerRuntime.Model
         internal bool IsSetContentType()
         {
             return this._contentType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomAttributes.
+        /// </summary>
+        public string CustomAttributes
+        {
+            get { return this._customAttributes; }
+            set { this._customAttributes = value; }
+        }
+
+        // Check to see if CustomAttributes property is set
+        internal bool IsSetCustomAttributes()
+        {
+            return this._customAttributes != null;
         }
 
         /// <summary>

@@ -31,7 +31,7 @@ namespace Amazon.SageMakerRuntime
     /// <summary>
     /// Interface for accessing SageMakerRuntime
     ///
-    /// Amazon SageMaker runtime API.
+    /// The Amazon SageMaker runtime API.
     /// </summary>
     public partial interface IAmazonSageMakerRuntime : IAmazonService, IDisposable
     {

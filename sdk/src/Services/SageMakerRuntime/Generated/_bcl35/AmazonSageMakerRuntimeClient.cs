@@ -33,7 +33,7 @@ namespace Amazon.SageMakerRuntime
     /// <summary>
     /// Implementation for accessing SageMakerRuntime
     ///
-    /// Amazon SageMaker runtime API.
+    /// The Amazon SageMaker runtime API.
     /// </summary>
     public partial class AmazonSageMakerRuntimeClient : AmazonServiceClient, IAmazonSageMakerRuntime
     {
@@ -233,26 +233,39 @@ namespace Amazon.SageMakerRuntime
         ///  
         /// <para>
         /// For an overview of Amazon SageMaker, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How
-        /// It Works</a> 
+        /// It Works</a>. 
         /// </para>
         ///  
         /// <para>
-        ///  Amazon SageMaker strips all POST headers except those supported by the API. Amazon
+        /// Amazon SageMaker strips all POST headers except those supported by the API. Amazon
         /// SageMaker might add additional headers. You should not rely on the behavior of headers
         /// outside those enumerated in the request syntax. 
         /// </para>
+        ///  
+        /// <para>
+        /// Cals to <code>InvokeEndpoint</code> are authenticated by using AWS Signature Version
+        /// 4. For information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
+        /// Requests (AWS Signature Version 4)</a> in the <i>Amazon S3 API Reference</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Endpoints are scoped to an individual account, and are not public. The URL does not
+        /// contain the account ID, but Amazon SageMaker determines the account ID from the authentication
+        /// token that is supplied by the caller.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InvokeEndpoint service method.</param>
         /// 
         /// <returns>The response from the InvokeEndpoint service method, as returned by SageMakerRuntime.</returns>
         /// <exception cref="Amazon.SageMakerRuntime.Model.InternalFailureException">
-        /// Internal failure occurred.
+        /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.SageMakerRuntime.Model.ModelErrorException">
         /// Model (owned by the customer in the container) returned an error 500.
         /// </exception>
         /// <exception cref="Amazon.SageMakerRuntime.Model.ServiceUnavailableException">
-        /// Service is unavailable. Try your call again.
+        /// The service is unavailable. Try your call again.
         /// </exception>
         /// <exception cref="Amazon.SageMakerRuntime.Model.ValidationErrorException">
         /// Inspect your request and try again.

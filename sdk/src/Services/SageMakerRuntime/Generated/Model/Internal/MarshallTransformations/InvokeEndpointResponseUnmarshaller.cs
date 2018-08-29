@@ -53,6 +53,8 @@ namespace Amazon.SageMakerRuntime.Model.Internal.MarshallTransformations
             response.Body = ms;
             if (context.ResponseData.IsHeaderPresent("Content-Type"))
                 response.ContentType = context.ResponseData.GetHeaderValue("Content-Type");
+            if (context.ResponseData.IsHeaderPresent("X-Amzn-SageMaker-Custom-Attributes"))
+                response.CustomAttributes = context.ResponseData.GetHeaderValue("X-Amzn-SageMaker-Custom-Attributes");
             if (context.ResponseData.IsHeaderPresent("x-Amzn-Invoked-Production-Variant"))
                 response.InvokedProductionVariant = context.ResponseData.GetHeaderValue("x-Amzn-Invoked-Production-Variant");
 
