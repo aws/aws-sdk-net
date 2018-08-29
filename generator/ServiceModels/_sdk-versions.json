@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.349.0",
+    "ProductVersion" : "3.3.350.0",
     "CoreVersion"    : "3.3.25.1",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -825,7 +825,7 @@
             "InPreview"               : false
         },
         "Glue"                            : {
-            "Version" : "3.3.12.0",
+            "Version" : "3.3.13.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.25.1"
@@ -865,7 +865,7 @@
             "InPreview"               : false
         },
         "MediaPackage"                    : {
-            "Version" : "3.3.2.6",
+            "Version" : "3.3.3.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.25.1"
@@ -929,7 +929,7 @@
             "InPreview"               : false
         },
         "SageMakerRuntime"                : {
-            "Version" : "3.3.0.15",
+            "Version" : "3.3.1.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.25.1"
