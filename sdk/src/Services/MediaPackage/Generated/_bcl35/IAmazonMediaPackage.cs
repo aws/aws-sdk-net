@@ -503,7 +503,8 @@ namespace Amazon.MediaPackage
 
 
         /// <summary>
-        /// Changes the Channel ingest username and password.
+        /// Changes the Channel's first IngestEndpoint's username and password. WARNING - This
+        /// API is deprecated. Please use RotateIngestEndpointCredentials instead
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RotateChannelCredentials service method.</param>
         /// 
@@ -527,6 +528,7 @@ namespace Amazon.MediaPackage
         /// The parameters sent in the request are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/RotateChannelCredentials">REST API Reference for RotateChannelCredentials Operation</seealso>
+        [Obsolete("This API is deprecated. Please use RotateIngestEndpointCredentials instead.")]
         RotateChannelCredentialsResponse RotateChannelCredentials(RotateChannelCredentialsRequest request);
 
         /// <summary>
@@ -541,6 +543,7 @@ namespace Amazon.MediaPackage
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRotateChannelCredentials
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/RotateChannelCredentials">REST API Reference for RotateChannelCredentials Operation</seealso>
+        [Obsolete("This API is deprecated. Please use RotateIngestEndpointCredentials instead.")]
         IAsyncResult BeginRotateChannelCredentials(RotateChannelCredentialsRequest request, AsyncCallback callback, object state);
 
 
@@ -553,7 +556,67 @@ namespace Amazon.MediaPackage
         /// 
         /// <returns>Returns a  RotateChannelCredentialsResult from MediaPackage.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/RotateChannelCredentials">REST API Reference for RotateChannelCredentials Operation</seealso>
+        [Obsolete("This API is deprecated. Please use RotateIngestEndpointCredentials instead.")]
         RotateChannelCredentialsResponse EndRotateChannelCredentials(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  RotateIngestEndpointCredentials
+
+
+        /// <summary>
+        /// Rotate the IngestEndpoint's username and password, as specified by the IngestEndpoint's
+        /// id.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RotateIngestEndpointCredentials service method.</param>
+        /// 
+        /// <returns>The response from the RotateIngestEndpointCredentials service method, as returned by MediaPackage.</returns>
+        /// <exception cref="Amazon.MediaPackage.Model.ForbiddenException">
+        /// The client is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackage.Model.InternalServerErrorException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackage.Model.NotFoundException">
+        /// The requested resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackage.Model.ServiceUnavailableException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackage.Model.TooManyRequestsException">
+        /// The client has exceeded their resource or throttling limits.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackage.Model.UnprocessableEntityException">
+        /// The parameters sent in the request are not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/RotateIngestEndpointCredentials">REST API Reference for RotateIngestEndpointCredentials Operation</seealso>
+        RotateIngestEndpointCredentialsResponse RotateIngestEndpointCredentials(RotateIngestEndpointCredentialsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RotateIngestEndpointCredentials operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RotateIngestEndpointCredentials operation on AmazonMediaPackageClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRotateIngestEndpointCredentials
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/RotateIngestEndpointCredentials">REST API Reference for RotateIngestEndpointCredentials Operation</seealso>
+        IAsyncResult BeginRotateIngestEndpointCredentials(RotateIngestEndpointCredentialsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RotateIngestEndpointCredentials operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRotateIngestEndpointCredentials.</param>
+        /// 
+        /// <returns>Returns a  RotateIngestEndpointCredentialsResult from MediaPackage.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/RotateIngestEndpointCredentials">REST API Reference for RotateIngestEndpointCredentials Operation</seealso>
+        RotateIngestEndpointCredentialsResponse EndRotateIngestEndpointCredentials(IAsyncResult asyncResult);
 
         #endregion
         

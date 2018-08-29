@@ -32,9 +32,25 @@ namespace Amazon.MediaPackage.Model
     /// </summary>
     public partial class IngestEndpoint
     {
+        private string _id;
         private string _password;
         private string _url;
         private string _username;
+
+        /// <summary>
+        /// Gets and sets the property Id. The system generated unique identifier for the IngestEndpoint
+        /// </summary>
+        public string Id
+        {
+            get { return this._id; }
+            set { this._id = value; }
+        }
+
+        // Check to see if Id property is set
+        internal bool IsSetId()
+        {
+            return this._id != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Password. The system generated password for ingest authentication.

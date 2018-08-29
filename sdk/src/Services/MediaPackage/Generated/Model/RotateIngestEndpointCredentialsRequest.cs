@@ -28,16 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaPackage.Model
 {
     /// <summary>
-    /// Container for the parameters to the RotateChannelCredentials operation.
-    /// Changes the Channel's first IngestEndpoint's username and password. WARNING - This
-    /// API is deprecated. Please use RotateIngestEndpointCredentials instead
+    /// Container for the parameters to the RotateIngestEndpointCredentials operation.
+    /// Rotate the IngestEndpoint's username and password, as specified by the IngestEndpoint's
+    /// id.
     /// </summary>
-    public partial class RotateChannelCredentialsRequest : AmazonMediaPackageRequest
+    public partial class RotateIngestEndpointCredentialsRequest : AmazonMediaPackageRequest
     {
         private string _id;
+        private string _ingestEndpointId;
 
         /// <summary>
-        /// Gets and sets the property Id. The ID of the channel to update.
+        /// Gets and sets the property Id. The ID of the channel the IngestEndpoint is on.
         /// </summary>
         public string Id
         {
@@ -49,6 +50,22 @@ namespace Amazon.MediaPackage.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IngestEndpointId. The id of the IngestEndpoint whose credentials
+        /// should be rotated
+        /// </summary>
+        public string IngestEndpointId
+        {
+            get { return this._ingestEndpointId; }
+            set { this._ingestEndpointId = value; }
+        }
+
+        // Check to see if IngestEndpointId property is set
+        internal bool IsSetIngestEndpointId()
+        {
+            return this._ingestEndpointId != null;
         }
 
     }
