@@ -373,60 +373,6 @@ namespace Amazon.Glue
 
 
     /// <summary>
-    /// Constants used for properties of type ExistCondition.
-    /// </summary>
-    public class ExistCondition : ConstantClass
-    {
-
-        /// <summary>
-        /// Constant MUST_EXIST for ExistCondition
-        /// </summary>
-        public static readonly ExistCondition MUST_EXIST = new ExistCondition("MUST_EXIST");
-        /// <summary>
-        /// Constant NONE for ExistCondition
-        /// </summary>
-        public static readonly ExistCondition NONE = new ExistCondition("NONE");
-        /// <summary>
-        /// Constant NOT_EXIST for ExistCondition
-        /// </summary>
-        public static readonly ExistCondition NOT_EXIST = new ExistCondition("NOT_EXIST");
-
-        /// <summary>
-        /// This constant constructor does not need to be called if the constant
-        /// you are attempting to use is already defined as a static instance of 
-        /// this class.
-        /// This constructor should be used to construct constants that are not
-        /// defined as statics, for instance if attempting to use a feature that is
-        /// newer than the current version of the SDK.
-        /// </summary>
-        public ExistCondition(string value)
-            : base(value)
-        {
-        }
-
-        /// <summary>
-        /// Finds the constant for the unique value.
-        /// </summary>
-        /// <param name="value">The unique value for the constant</param>
-        /// <returns>The constant for the unique value</returns>
-        public static ExistCondition FindValue(string value)
-        {
-            return FindValue<ExistCondition>(value);
-        }
-
-        /// <summary>
-        /// Utility method to convert strings to the constant class.
-        /// </summary>
-        /// <param name="value">The string value to convert to the constant class.</param>
-        /// <returns></returns>
-        public static implicit operator ExistCondition(string value)
-        {
-            return FindValue(value);
-        }
-    }
-
-
-    /// <summary>
     /// Constants used for properties of type JobBookmarksEncryptionMode.
     /// </summary>
     public class JobBookmarksEncryptionMode : ConstantClass
