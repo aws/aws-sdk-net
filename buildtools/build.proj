@@ -6,6 +6,7 @@
         <DisablePCLSupport Condition="'$(DisablePCLSupport)'==''">false</DisablePCLSupport>
         <DisableUnitySupport Condition="'$(DisableUnitySupport)'==''">false</DisableUnitySupport>
         <DisableValidateRepo Condition="'$(DisableValidateRepo)'==''">false</DisableValidateRepo>
+        <RunCognitoAuthExtensionTests Condition="'$(RunCognitoAuthExtensionTests)'==''">false</RunCognitoAuthExtensionTests>
         <PartialBuildList Condition="'$(PartialBuildList)'==''"></PartialBuildList>
         <ServiceList>Core</ServiceList>
 
@@ -469,7 +470,7 @@
         <Exec Command="dotnet build -c $(Configuration) --no-incremental CognitoAuthentication.NET45.sln /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true" WorkingDirectory="..\extensions"/>
     </Target>
 
-        <Target Name="test-cognito-auth-extension" DependsOnTargets="build-cognito-auth-extension-net45;build-cognito-auth-extension-coreCLR" Condition="'$(RunIntegTests)' != '' And '$(RunIntegTests)' != 'false'">
+        <Target Name="test-cognito-auth-extension" DependsOnTargets="build-cognito-auth-extension-net45;build-cognito-auth-extension-coreCLR" Condition="'$(RunCognitoAuthExtensionTests)' != '' And '$(RunCognitoAuthExtensionTests)' != 'false'">
             <XUnitWrapperTask
             TestSuiteRunner="dotnet"
             TestContainer="..\extensions\test\CognitoAuthentication.UnitTests\CognitoAuthentication.UnitTests.CoreCLR.csproj"
