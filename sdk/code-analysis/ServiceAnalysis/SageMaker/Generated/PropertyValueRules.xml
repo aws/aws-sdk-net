@@ -1012,6 +1012,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.TransformResources.VolumeKmsKeyId</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.TransformS3DataSource.S3Uri</property>
     <max>1024</max>
     <pattern>^(https|s3)://([^/]+)/?(.*)$</pattern>

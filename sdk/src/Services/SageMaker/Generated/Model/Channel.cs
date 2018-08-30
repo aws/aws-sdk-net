@@ -118,7 +118,7 @@ namespace Amazon.SageMaker.Model
         /// Specify RecordIO as the value when input data is in raw format but the training algorithm
         /// requires the RecordIO format, in which case, Amazon SageMaker wraps each individual
         /// S3 object in a RecordIO record. If the input data is already in RecordIO format, you
-        /// don't need to set this attribute. For more information, see <a href="https://mxnet.incubator.apache.org/how_to/recordio.html?highlight=im2rec">Create
+        /// don't need to set this attribute. For more information, see <a href="https://mxnet.incubator.apache.org/architecture/note_data_loading.html#data-format">Create
         /// a Dataset Using RecordIO</a>. 
         /// </para>
         ///  

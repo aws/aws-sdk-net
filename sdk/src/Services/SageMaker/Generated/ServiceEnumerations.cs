@@ -359,6 +359,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly EndpointStatus RollingBack = new EndpointStatus("RollingBack");
         /// <summary>
+        /// Constant SystemUpdating for EndpointStatus
+        /// </summary>
+        public static readonly EndpointStatus SystemUpdating = new EndpointStatus("SystemUpdating");
+        /// <summary>
         /// Constant Updating for EndpointStatus
         /// </summary>
         public static readonly EndpointStatus Updating = new EndpointStatus("Updating");
