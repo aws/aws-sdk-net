@@ -42,8 +42,11 @@ namespace Amazon.Extensions.CognitoAuthentication.IntegrationTests
             UserPoolPolicyType passwordPolicy = new UserPoolPolicyType();
             List<SchemaAttributeType> requiredAttributes = new List<SchemaAttributeType>();
             List<string> verifiedAttributes = new List<string>();
-
+#if  XAMARIN_TESTS
+            provider = new AmazonCognitoIdentityProviderClient(Settings.storedSettings.AccessKeyId,Settings.storedSettings.SecretAccessKey, Settings.RegionEndpoint);
+#else
             provider = new AmazonCognitoIdentityProviderClient();
+#endif
 
             AdminCreateUserConfigType adminCreateUser = new AdminCreateUserConfigType()
             {
