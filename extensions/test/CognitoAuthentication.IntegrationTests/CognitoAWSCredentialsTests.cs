@@ -38,8 +38,8 @@ namespace CognitoAuthentication.IntegrationTests.NET45
         private string identityPoolId;
 
         private AmazonCognitoIdentityClient identityClient;
-        AWSCredentials clientCredentials = FallbackCredentialsFactory.GetCredentials();
-        RegionEndpoint clientRegion = FallbackRegionFactory.GetRegionEndpoint();
+
+
         private AmazonIdentityManagementServiceClient managementClient;
 
         [Fact]
@@ -57,7 +57,9 @@ namespace CognitoAuthentication.IntegrationTests.NET45
                 }).ConfigureAwait(false);
 
             //Create identity pool
-            identityClient = new AmazonCognitoIdentityClient(clientCredentials, clientRegion);
+
+            identityClient = GetAmazonCognitoIdentityClient();
+
             CreateIdentityPoolResponse poolResponse =
                 await identityClient.CreateIdentityPoolAsync(new CreateIdentityPoolRequest()
                 {
@@ -72,7 +74,9 @@ namespace CognitoAuthentication.IntegrationTests.NET45
             identityPoolId = poolResponse.IdentityPoolId;
 
             //Create role for identity pool
-            managementClient = new AmazonIdentityManagementServiceClient(clientCredentials, clientRegion);
+
+            managementClient = GetAmazonIdentityManagementServiceClient();
+
             CreateRoleResponse roleResponse = managementClient.CreateRoleAsync(new CreateRoleRequest()
             {
                 RoleName = "_TestRole_" + DateTime.Now.ToString("yyyyMMdd_HHmmss"),
