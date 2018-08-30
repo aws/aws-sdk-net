@@ -32,11 +32,30 @@ namespace Amazon.CodeBuild.Model
     /// </summary>
     public partial class BuildArtifacts
     {
+        private string _artifactIdentifier;
         private bool? _encryptionDisabled;
         private string _location;
         private string _md5sum;
         private bool? _overrideArtifactName;
         private string _sha256sum;
+
+        /// <summary>
+        /// Gets and sets the property ArtifactIdentifier. 
+        /// <para>
+        ///  An identifier for this artifact definition. 
+        /// </para>
+        /// </summary>
+        public string ArtifactIdentifier
+        {
+            get { return this._artifactIdentifier; }
+            set { this._artifactIdentifier = value; }
+        }
+
+        // Check to see if ArtifactIdentifier property is set
+        internal bool IsSetArtifactIdentifier()
+        {
+            return this._artifactIdentifier != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EncryptionDisabled. 

@@ -124,6 +124,38 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetSecondaryArtifacts())
+                {
+                    context.Writer.WritePropertyName("secondaryArtifacts");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSecondaryArtifactsListValue in publicRequest.SecondaryArtifacts)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ProjectArtifactsMarshaller.Instance;
+                        marshaller.Marshall(publicRequestSecondaryArtifactsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetSecondarySources())
+                {
+                    context.Writer.WritePropertyName("secondarySources");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSecondarySourcesListValue in publicRequest.SecondarySources)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ProjectSourceMarshaller.Instance;
+                        marshaller.Marshall(publicRequestSecondarySourcesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetServiceRole())
                 {
                     context.Writer.WritePropertyName("serviceRole");

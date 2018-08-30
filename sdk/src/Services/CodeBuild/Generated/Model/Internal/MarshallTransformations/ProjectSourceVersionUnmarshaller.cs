@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for BuildArtifacts Object
+    /// Response Unmarshaller for ProjectSourceVersion Object
     /// </summary>  
-    public class BuildArtifactsUnmarshaller : IUnmarshaller<BuildArtifacts, XmlUnmarshallerContext>, IUnmarshaller<BuildArtifacts, JsonUnmarshallerContext>
+    public class ProjectSourceVersionUnmarshaller : IUnmarshaller<ProjectSourceVersion, XmlUnmarshallerContext>, IUnmarshaller<ProjectSourceVersion, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        BuildArtifacts IUnmarshaller<BuildArtifacts, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ProjectSourceVersion IUnmarshaller<ProjectSourceVersion, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,27 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public BuildArtifacts Unmarshall(JsonUnmarshallerContext context)
+        public ProjectSourceVersion Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            BuildArtifacts unmarshalledObject = new BuildArtifacts();
+            ProjectSourceVersion unmarshalledObject = new ProjectSourceVersion();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("artifactIdentifier", targetDepth))
+                if (context.TestExpression("sourceIdentifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ArtifactIdentifier = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceIdentifier = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("encryptionDisabled", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.EncryptionDisabled = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("location", targetDepth))
+                if (context.TestExpression("sourceVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Location = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("md5sum", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Md5sum = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("overrideArtifactName", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.OverrideArtifactName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("sha256sum", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Sha256sum = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +82,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         }
 
 
-        private static BuildArtifactsUnmarshaller _instance = new BuildArtifactsUnmarshaller();        
+        private static ProjectSourceVersionUnmarshaller _instance = new ProjectSourceVersionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static BuildArtifactsUnmarshaller Instance
+        public static ProjectSourceVersionUnmarshaller Instance
         {
             get
             {

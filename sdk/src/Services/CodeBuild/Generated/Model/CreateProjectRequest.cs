@@ -40,6 +40,8 @@ namespace Amazon.CodeBuild.Model
         private string _encryptionKey;
         private ProjectEnvironment _environment;
         private string _name;
+        private List<ProjectArtifacts> _secondaryArtifacts = new List<ProjectArtifacts>();
+        private List<ProjectSource> _secondarySources = new List<ProjectSource>();
         private string _serviceRole;
         private ProjectSource _source;
         private List<Tag> _tags = new List<Tag>();
@@ -176,6 +178,42 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecondaryArtifacts. 
+        /// <para>
+        ///  An array of <code>ProjectArtifacts</code> objects. 
+        /// </para>
+        /// </summary>
+        public List<ProjectArtifacts> SecondaryArtifacts
+        {
+            get { return this._secondaryArtifacts; }
+            set { this._secondaryArtifacts = value; }
+        }
+
+        // Check to see if SecondaryArtifacts property is set
+        internal bool IsSetSecondaryArtifacts()
+        {
+            return this._secondaryArtifacts != null && this._secondaryArtifacts.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecondarySources. 
+        /// <para>
+        ///  An array of <code>ProjectSource</code> objects. 
+        /// </para>
+        /// </summary>
+        public List<ProjectSource> SecondarySources
+        {
+            get { return this._secondarySources; }
+            set { this._secondarySources = value; }
+        }
+
+        // Check to see if SecondarySources property is set
+        internal bool IsSetSecondarySources()
+        {
+            return this._secondarySources != null && this._secondarySources.Count > 0; 
         }
 
         /// <summary>

@@ -47,6 +47,9 @@ namespace Amazon.CodeBuild.Model
         private bool? _privilegedModeOverride;
         private string _projectName;
         private bool? _reportBuildStatusOverride;
+        private List<ProjectArtifacts> _secondaryArtifactsOverride = new List<ProjectArtifacts>();
+        private List<ProjectSource> _secondarySourcesOverride = new List<ProjectSource>();
+        private List<ProjectSourceVersion> _secondarySourcesVersionOverride = new List<ProjectSourceVersion>();
         private string _serviceRoleOverride;
         private SourceAuth _sourceAuthOverride;
         private string _sourceLocationOverride;
@@ -320,6 +323,61 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetReportBuildStatusOverride()
         {
             return this._reportBuildStatusOverride.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecondaryArtifactsOverride. 
+        /// <para>
+        ///  An array of <code>ProjectArtifacts</code> objects. 
+        /// </para>
+        /// </summary>
+        public List<ProjectArtifacts> SecondaryArtifactsOverride
+        {
+            get { return this._secondaryArtifactsOverride; }
+            set { this._secondaryArtifactsOverride = value; }
+        }
+
+        // Check to see if SecondaryArtifactsOverride property is set
+        internal bool IsSetSecondaryArtifactsOverride()
+        {
+            return this._secondaryArtifactsOverride != null && this._secondaryArtifactsOverride.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecondarySourcesOverride. 
+        /// <para>
+        ///  An array of <code>ProjectSource</code> objects. 
+        /// </para>
+        /// </summary>
+        public List<ProjectSource> SecondarySourcesOverride
+        {
+            get { return this._secondarySourcesOverride; }
+            set { this._secondarySourcesOverride = value; }
+        }
+
+        // Check to see if SecondarySourcesOverride property is set
+        internal bool IsSetSecondarySourcesOverride()
+        {
+            return this._secondarySourcesOverride != null && this._secondarySourcesOverride.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecondarySourcesVersionOverride. 
+        /// <para>
+        ///  An array of <code>ProjectSourceVersion</code> objects that specify one or more versions
+        /// of the project's secondary sources to be used for this build only. 
+        /// </para>
+        /// </summary>
+        public List<ProjectSourceVersion> SecondarySourcesVersionOverride
+        {
+            get { return this._secondarySourcesVersionOverride; }
+            set { this._secondarySourcesVersionOverride = value; }
+        }
+
+        // Check to see if SecondarySourcesVersionOverride property is set
+        internal bool IsSetSecondarySourcesVersionOverride()
+        {
+            return this._secondarySourcesVersionOverride != null && this._secondarySourcesVersionOverride.Count > 0; 
         }
 
         /// <summary>

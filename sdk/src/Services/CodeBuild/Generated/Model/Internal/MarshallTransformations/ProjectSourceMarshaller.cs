@@ -86,6 +86,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ReportBuildStatus);
             }
 
+            if(requestObject.IsSetSourceIdentifier())
+            {
+                context.Writer.WritePropertyName("sourceIdentifier");
+                context.Writer.Write(requestObject.SourceIdentifier);
+            }
+
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");

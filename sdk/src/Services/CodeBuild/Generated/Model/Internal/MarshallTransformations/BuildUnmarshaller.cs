@@ -154,6 +154,24 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     unmarshalledObject.ProjectName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("secondaryArtifacts", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<BuildArtifacts, BuildArtifactsUnmarshaller>(BuildArtifactsUnmarshaller.Instance);
+                    unmarshalledObject.SecondaryArtifacts = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("secondarySources", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ProjectSource, ProjectSourceUnmarshaller>(ProjectSourceUnmarshaller.Instance);
+                    unmarshalledObject.SecondarySources = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("secondarySourceVersions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ProjectSourceVersion, ProjectSourceVersionUnmarshaller>(ProjectSourceVersionUnmarshaller.Instance);
+                    unmarshalledObject.SecondarySourceVersions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("serviceRole", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

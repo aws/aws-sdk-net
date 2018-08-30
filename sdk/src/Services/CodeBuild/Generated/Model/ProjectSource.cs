@@ -38,6 +38,7 @@ namespace Amazon.CodeBuild.Model
         private bool? _insecureSsl;
         private string _location;
         private bool? _reportBuildStatus;
+        private string _sourceIdentifier;
         private SourceType _type;
 
         /// <summary>
@@ -205,6 +206,24 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetReportBuildStatus()
         {
             return this._reportBuildStatus.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceIdentifier. 
+        /// <para>
+        ///  An identifier for this project source. 
+        /// </para>
+        /// </summary>
+        public string SourceIdentifier
+        {
+            get { return this._sourceIdentifier; }
+            set { this._sourceIdentifier = value; }
+        }
+
+        // Check to see if SourceIdentifier property is set
+        internal bool IsSetSourceIdentifier()
+        {
+            return this._sourceIdentifier != null;
         }
 
         /// <summary>

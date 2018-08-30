@@ -171,6 +171,54 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ReportBuildStatusOverride);
                 }
 
+                if(publicRequest.IsSetSecondaryArtifactsOverride())
+                {
+                    context.Writer.WritePropertyName("secondaryArtifactsOverride");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSecondaryArtifactsOverrideListValue in publicRequest.SecondaryArtifactsOverride)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ProjectArtifactsMarshaller.Instance;
+                        marshaller.Marshall(publicRequestSecondaryArtifactsOverrideListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetSecondarySourcesOverride())
+                {
+                    context.Writer.WritePropertyName("secondarySourcesOverride");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSecondarySourcesOverrideListValue in publicRequest.SecondarySourcesOverride)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ProjectSourceMarshaller.Instance;
+                        marshaller.Marshall(publicRequestSecondarySourcesOverrideListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetSecondarySourcesVersionOverride())
+                {
+                    context.Writer.WritePropertyName("secondarySourcesVersionOverride");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSecondarySourcesVersionOverrideListValue in publicRequest.SecondarySourcesVersionOverride)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ProjectSourceVersionMarshaller.Instance;
+                        marshaller.Marshall(publicRequestSecondarySourcesVersionOverrideListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetServiceRoleOverride())
                 {
                     context.Writer.WritePropertyName("serviceRoleOverride");
