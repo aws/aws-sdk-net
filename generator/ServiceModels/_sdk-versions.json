@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.351.0",
+    "ProductVersion" : "3.3.352.0",
     "CoreVersion"    : "3.3.25.1",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -433,7 +433,7 @@
             "InPreview"               : false
         },
         "WAF"                       : {
-            "Version" : "3.3.5.15",
+            "Version" : "3.3.6.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.25.1"
@@ -697,7 +697,7 @@
             "InPreview"               : false
         },
         "WAFRegional"                     : {
-            "Version" : "3.3.4.15",
+            "Version" : "3.3.5.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.25.1"
@@ -1137,7 +1137,7 @@
             "InPreview"               : false
         },
         "EKS"                             : {
-            "Version" : "3.3.0.9",
+            "Version" : "3.3.1.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.25.1"

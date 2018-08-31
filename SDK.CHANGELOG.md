@@ -1,3 +1,11 @@
+### 3.3.352.0 (2018-08-31 21:53 UTC)
+* EKS (3.3.1.0)
+	* Amazon EKS DescribeCluster API returns a platformVersion attribute which allows you to identify the features that are currently enabled for your clusters. The Amazon EKS platform version represents capabilities of the cluster control plane, such as which Kubernetes API server flags are enabled, as well as the current Kubernetes patch version. 
+* WAF (3.3.6.0)
+	* This change includes support for the WAF FullLogging feature through which Customers will have access to all the logs of requests that are inspected by a WAF WebACL. The new APIs allow Customers to manage association of a WebACL with one or more supported "LogDestination" and redact any request fields from the logs. 
+* WAFRegional (3.3.5.0)
+	* This change includes support for the WAF FullLogging feature through which Customers will have access to all the logs of requests that are inspected by a WAF WebACL. The new APIs allow Customers to manage association of a WebACL with one or more supported "LogDestination" and redact any request fields from the logs. 
+
 ### 3.3.351.0 (2018-08-30 19:17 UTC)
 * CodeBuild (3.3.15.0)
 	* Support multiple sources and artifacts for CodeBuild projects. 
