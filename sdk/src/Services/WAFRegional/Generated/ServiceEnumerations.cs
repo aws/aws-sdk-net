@@ -1335,6 +1335,10 @@ namespace Amazon.WAFRegional
     {
 
         /// <summary>
+        /// Constant ALL_QUERY_ARGS for MatchFieldType
+        /// </summary>
+        public static readonly MatchFieldType ALL_QUERY_ARGS = new MatchFieldType("ALL_QUERY_ARGS");
+        /// <summary>
         /// Constant BODY for MatchFieldType
         /// </summary>
         public static readonly MatchFieldType BODY = new MatchFieldType("BODY");
@@ -1350,6 +1354,10 @@ namespace Amazon.WAFRegional
         /// Constant QUERY_STRING for MatchFieldType
         /// </summary>
         public static readonly MatchFieldType QUERY_STRING = new MatchFieldType("QUERY_STRING");
+        /// <summary>
+        /// Constant SINGLE_QUERY_ARG for MatchFieldType
+        /// </summary>
+        public static readonly MatchFieldType SINGLE_QUERY_ARG = new MatchFieldType("SINGLE_QUERY_ARG");
         /// <summary>
         /// Constant URI for MatchFieldType
         /// </summary>

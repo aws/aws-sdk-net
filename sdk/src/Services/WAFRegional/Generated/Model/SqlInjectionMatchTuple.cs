@@ -65,11 +65,15 @@ namespace Amazon.WAFRegional.Model
         /// </para>
         ///  
         /// <para>
+        /// You can only specify a single type of TextTransformation.
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>CMD_LINE</b> 
         /// </para>
         ///  
         /// <para>
-        /// When you're concerned that attackers are injecting an operating system commandline
+        /// When you're concerned that attackers are injecting an operating system command line
         /// command and using unusual formatting to disguise some or all of the command, use this
         /// option to perform the following transformations:
         /// </para>

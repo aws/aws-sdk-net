@@ -153,6 +153,10 @@ namespace Amazon.WAFRegional.Model
         /// </para>
         ///  
         /// <para>
+        /// You can only specify a single type of TextTransformation.
+        /// </para>
+        ///  
+        /// <para>
         /// Note that if you choose <code>BODY</code> for the value of <code>Type</code>, you
         /// must choose <code>NONE</code> for <code>TextTransformation</code> because CloudFront
         /// forwards only the first 8192 bytes for inspection. 

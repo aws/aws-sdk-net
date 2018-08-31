@@ -111,6 +111,10 @@ namespace Amazon.WAFRegional.Model
         /// </para>
         ///  
         /// <para>
+        /// You can only specify a single type of TextTransformation.
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>CMD_LINE</b> 
         /// </para>
         ///  

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeleteRuleGroup operation
+    /// Response Unmarshaller for ListLoggingConfigurations operation
     /// </summary>  
-    public class DeleteRuleGroupResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListLoggingConfigurationsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,22 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DeleteRuleGroupResponse response = new DeleteRuleGroupResponse();
+            ListLoggingConfigurationsResponse response = new ListLoggingConfigurationsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ChangeToken", targetDepth))
+                if (context.TestExpression("LoggingConfigurations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<LoggingConfiguration, LoggingConfigurationUnmarshaller>(LoggingConfigurationUnmarshaller.Instance);
+                    response.LoggingConfigurations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NextMarker", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ChangeToken = unmarshaller.Unmarshall(context);
+                    response.NextMarker = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -76,32 +82,20 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
             {
                 return new WAFInternalErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFInvalidOperationException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFInvalidParameterException"))
             {
-                return new WAFInvalidOperationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFNonEmptyEntityException"))
-            {
-                return new WAFNonEmptyEntityException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new WAFInvalidParameterException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("WAFNonexistentItemException"))
             {
                 return new WAFNonexistentItemException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFReferencedItemException"))
-            {
-                return new WAFReferencedItemException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFStaleDataException"))
-            {
-                return new WAFStaleDataException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             return new AmazonWAFRegionalException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static DeleteRuleGroupResponseUnmarshaller _instance = new DeleteRuleGroupResponseUnmarshaller();        
+        private static ListLoggingConfigurationsResponseUnmarshaller _instance = new ListLoggingConfigurationsResponseUnmarshaller();        
 
-        internal static DeleteRuleGroupResponseUnmarshaller GetInstance()
+        internal static ListLoggingConfigurationsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -109,7 +103,7 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteRuleGroupResponseUnmarshaller Instance
+        public static ListLoggingConfigurationsResponseUnmarshaller Instance
         {
             get
             {

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeleteRuleGroup operation
+    /// Response Unmarshaller for PutLoggingConfiguration operation
     /// </summary>  
-    public class DeleteRuleGroupResponseUnmarshaller : JsonResponseUnmarshaller
+    public class PutLoggingConfigurationResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,16 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DeleteRuleGroupResponse response = new DeleteRuleGroupResponse();
+            PutLoggingConfigurationResponse response = new PutLoggingConfigurationResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ChangeToken", targetDepth))
+                if (context.TestExpression("LoggingConfiguration", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ChangeToken = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LoggingConfigurationUnmarshaller.Instance;
+                    response.LoggingConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -76,21 +76,9 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
             {
                 return new WAFInternalErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFInvalidOperationException"))
-            {
-                return new WAFInvalidOperationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFNonEmptyEntityException"))
-            {
-                return new WAFNonEmptyEntityException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("WAFNonexistentItemException"))
             {
                 return new WAFNonexistentItemException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFReferencedItemException"))
-            {
-                return new WAFReferencedItemException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("WAFStaleDataException"))
             {
@@ -99,9 +87,9 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
             return new AmazonWAFRegionalException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static DeleteRuleGroupResponseUnmarshaller _instance = new DeleteRuleGroupResponseUnmarshaller();        
+        private static PutLoggingConfigurationResponseUnmarshaller _instance = new PutLoggingConfigurationResponseUnmarshaller();        
 
-        internal static DeleteRuleGroupResponseUnmarshaller GetInstance()
+        internal static PutLoggingConfigurationResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -109,7 +97,7 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteRuleGroupResponseUnmarshaller Instance
+        public static PutLoggingConfigurationResponseUnmarshaller Instance
         {
             get
             {

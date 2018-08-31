@@ -49,6 +49,10 @@ namespace Amazon.WAFRegional.Model
     /// supported because the AWS resource forwards only the first <code>8192</code> bytes
     /// of your request to AWS WAF.
     /// </para>
+    ///  
+    /// <para>
+    /// You can only specify a single type of TextTransformation.
+    /// </para>
     ///  </li> <li> 
     /// <para>
     /// A <code>ComparisonOperator</code> used for evaluating the selected part of the request

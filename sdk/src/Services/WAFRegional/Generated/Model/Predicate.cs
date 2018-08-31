@@ -95,8 +95,7 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of predicate in a <code>Rule</code>, such as <code>ByteMatchSet</code> or
-        /// <code>IPSet</code>.
+        /// The type of predicate in a <code>Rule</code>, such as <code>ByteMatch</code> or <code>IPSet</code>.
         /// </para>
         /// </summary>
         public PredicateType Type
