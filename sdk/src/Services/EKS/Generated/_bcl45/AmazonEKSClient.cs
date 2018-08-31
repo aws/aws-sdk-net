@@ -44,31 +44,7 @@ namespace Amazon.EKS
     /// 
     ///  
     /// <para>
-    /// Amazon EKS runs three Kubernetes control plane instances across three Availability
-    /// Zones to ensure high availability. Amazon EKS automatically detects and replaces unhealthy
-    /// control plane instances, and it provides automated version upgrades and patching for
-    /// them.
-    /// </para>
-    ///  
-    /// <para>
-    /// Amazon EKS is also integrated with many AWS services to provide scalability and security
-    /// for your applications, including the following: 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// Elastic Load Balancing for load distribution
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// IAM for authentication
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Amazon VPC for isolation
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// Amazon EKS runs up to date versions of the open-source Kubernetes software, so you
+    /// Amazon EKS runs up-to-date versions of the open-source Kubernetes software, so you
     /// can use all the existing plugins and tooling from the Kubernetes community. Applications
     /// running on Amazon EKS are fully compatible with applications running on any standard
     /// Kubernetes environment, whether running in on-premises data centers or public clouds.
@@ -320,11 +296,11 @@ namespace Amazon.EKS
         /// These errors are usually caused by a server-side issue.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServiceUnavailableException">
-        /// The service is unavailable, back off and retry the operation.
+        /// The service is unavailable. Back off and retry the operation.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.UnsupportedAvailabilityZoneException">
         /// At least one of your specified cluster subnets is in an Availability Zone that does
-        /// not support Amazon EKS. The exception output will specify the supported Availability
+        /// not support Amazon EKS. The exception output specifies the supported Availability
         /// Zones for your account, from which you can choose subnets for your cluster.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
@@ -386,13 +362,13 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. Amazon EKS clusters are region-specific.
+        /// <a>ListClusters</a>. Amazon EKS clusters are Region-specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServiceUnavailableException">
-        /// The service is unavailable, back off and retry the operation.
+        /// The service is unavailable. Back off and retry the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         public virtual DeleteClusterResponse DeleteCluster(DeleteClusterRequest request)
@@ -454,13 +430,13 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <a>ListClusters</a>. Amazon EKS clusters are region-specific.
+        /// <a>ListClusters</a>. Amazon EKS clusters are Region-specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServiceUnavailableException">
-        /// The service is unavailable, back off and retry the operation.
+        /// The service is unavailable. Back off and retry the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeCluster">REST API Reference for DescribeCluster Operation</seealso>
         public virtual DescribeClusterResponse DescribeCluster(DescribeClusterRequest request)
@@ -496,7 +472,7 @@ namespace Amazon.EKS
 
 
         /// <summary>
-        /// Lists the Amazon EKS clusters in your AWS account in the specified region.
+        /// Lists the Amazon EKS clusters in your AWS account in the specified Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListClusters service method.</param>
         /// 
@@ -513,7 +489,7 @@ namespace Amazon.EKS
         /// These errors are usually caused by a server-side issue.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServiceUnavailableException">
-        /// The service is unavailable, back off and retry the operation.
+        /// The service is unavailable. Back off and retry the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListClusters">REST API Reference for ListClusters Operation</seealso>
         public virtual ListClustersResponse ListClusters(ListClustersRequest request)

@@ -38,7 +38,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Clusters. 
         /// <para>
-        /// A list of all of the clusters for your account in the specified region.
+        /// A list of all of the clusters for your account in the specified Region.
         /// </para>
         /// </summary>
         public List<string> Clusters

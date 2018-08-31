@@ -112,7 +112,9 @@ namespace Amazon.EKS.Model
         /// VPC resources have specific requirements to work properly with Kubernetes. For more
         /// information, see <a href="http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster
         /// VPC Considerations</a> and <a href="http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
-        /// Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>.
+        /// Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must specify
+        /// at least two subnets. You may specify up to 5 security groups, but we recommend that
+        /// you use a dedicated security group for your cluster control plane.
         /// </para>
         /// </summary>
         public VpcConfigRequest ResourcesVpcConfig
@@ -133,7 +135,7 @@ namespace Amazon.EKS.Model
         /// The Amazon Resource Name (ARN) of the IAM role that provides permissions for Amazon
         /// EKS to make calls to other AWS API operations on your behalf. For more information,
         /// see <a href="http://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon
-        /// EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i> 
+        /// EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
         /// </para>
         /// </summary>
         public string RoleArn

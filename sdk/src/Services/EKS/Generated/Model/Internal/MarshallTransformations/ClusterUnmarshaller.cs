@@ -100,6 +100,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("platformVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PlatformVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("resourcesVpcConfig", targetDepth))
                 {
                     var unmarshaller = VpcConfigResponseUnmarshaller.Instance;

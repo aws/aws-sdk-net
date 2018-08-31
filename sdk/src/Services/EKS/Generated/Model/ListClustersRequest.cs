@@ -29,7 +29,7 @@ namespace Amazon.EKS.Model
 {
     /// <summary>
     /// Container for the parameters to the ListClusters operation.
-    /// Lists the Amazon EKS clusters in your AWS account in the specified region.
+    /// Lists the Amazon EKS clusters in your AWS account in the specified Region.
     /// </summary>
     public partial class ListClustersRequest : AmazonEKSRequest
     {

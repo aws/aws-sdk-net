@@ -38,6 +38,7 @@ namespace Amazon.EKS.Model
         private DateTime? _createdAt;
         private string _endpoint;
         private string _name;
+        private string _platformVersion;
         private VpcConfigResponse _resourcesVpcConfig;
         private string _roleArn;
         private ClusterStatus _status;
@@ -149,6 +150,25 @@ namespace Amazon.EKS.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlatformVersion. 
+        /// <para>
+        /// The platform version of your Amazon EKS cluster. For more information, see <a href="eks/latest/userguide/platform-versions.html">Platform
+        /// Versions</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+        /// </para>
+        /// </summary>
+        public string PlatformVersion
+        {
+            get { return this._platformVersion; }
+            set { this._platformVersion = value; }
+        }
+
+        // Check to see if PlatformVersion property is set
+        internal bool IsSetPlatformVersion()
+        {
+            return this._platformVersion != null;
         }
 
         /// <summary>
