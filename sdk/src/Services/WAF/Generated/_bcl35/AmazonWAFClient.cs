@@ -3134,6 +3134,70 @@ namespace Amazon.WAF
 
         #endregion
         
+        #region  DeleteLoggingConfiguration
+
+        /// <summary>
+        /// Permanently deletes the <a>LoggingConfiguration</a> from the specified web ACL.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLoggingConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLoggingConfiguration service method, as returned by WAF.</returns>
+        /// <exception cref="Amazon.WAF.Model.WAFInternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
+        /// The operation failed because the referenced object doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
+        /// The operation failed because you tried to create, update, or delete an object by using
+        /// a change token that has already been used.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteLoggingConfiguration">REST API Reference for DeleteLoggingConfiguration Operation</seealso>
+        public virtual DeleteLoggingConfigurationResponse DeleteLoggingConfiguration(DeleteLoggingConfigurationRequest request)
+        {
+            var marshaller = DeleteLoggingConfigurationRequestMarshaller.Instance;
+            var unmarshaller = DeleteLoggingConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLoggingConfigurationRequest,DeleteLoggingConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteLoggingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLoggingConfiguration operation on AmazonWAFClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLoggingConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteLoggingConfiguration">REST API Reference for DeleteLoggingConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginDeleteLoggingConfiguration(DeleteLoggingConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DeleteLoggingConfigurationRequestMarshaller.Instance;
+            var unmarshaller = DeleteLoggingConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteLoggingConfigurationRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteLoggingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLoggingConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteLoggingConfigurationResult from WAF.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteLoggingConfiguration">REST API Reference for DeleteLoggingConfiguration Operation</seealso>
+        public virtual DeleteLoggingConfigurationResponse EndDeleteLoggingConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteLoggingConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeletePermissionPolicy
 
         /// <summary>
@@ -3844,6 +3908,36 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFInternalErrorException">
         /// The operation failed because of a system problem, even though the request was valid.
         /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFInvalidOperationException">
+        /// The operation failed because there was nothing to do. For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code>
+        /// isn't in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't
+        /// in the specified <code>IPSet</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>,
+        /// but the <code>ByteMatchTuple</code> isn't in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code>
+        /// already exists in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but
+        /// the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonEmptyEntityException">
         /// The operation failed because you tried to delete an object that isn't empty. For example:
@@ -5118,6 +5212,66 @@ namespace Amazon.WAF
 
         #endregion
         
+        #region  GetLoggingConfiguration
+
+        /// <summary>
+        /// Returns the <a>LoggingConfiguration</a> for the specified web ACL.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLoggingConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetLoggingConfiguration service method, as returned by WAF.</returns>
+        /// <exception cref="Amazon.WAF.Model.WAFInternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
+        /// The operation failed because the referenced object doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetLoggingConfiguration">REST API Reference for GetLoggingConfiguration Operation</seealso>
+        public virtual GetLoggingConfigurationResponse GetLoggingConfiguration(GetLoggingConfigurationRequest request)
+        {
+            var marshaller = GetLoggingConfigurationRequestMarshaller.Instance;
+            var unmarshaller = GetLoggingConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetLoggingConfigurationRequest,GetLoggingConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLoggingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetLoggingConfiguration operation on AmazonWAFClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetLoggingConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetLoggingConfiguration">REST API Reference for GetLoggingConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginGetLoggingConfiguration(GetLoggingConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = GetLoggingConfigurationRequestMarshaller.Instance;
+            var unmarshaller = GetLoggingConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetLoggingConfigurationRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetLoggingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetLoggingConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetLoggingConfigurationResult from WAF.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetLoggingConfiguration">REST API Reference for GetLoggingConfiguration Operation</seealso>
+        public virtual GetLoggingConfigurationResponse EndGetLoggingConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetLoggingConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetPermissionPolicy
 
         /// <summary>
@@ -6317,6 +6471,115 @@ namespace Amazon.WAF
 
         #endregion
         
+        #region  ListLoggingConfigurations
+
+        /// <summary>
+        /// Returns an array of <a>LoggingConfiguration</a> objects.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLoggingConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListLoggingConfigurations service method, as returned by WAF.</returns>
+        /// <exception cref="Amazon.WAF.Model.WAFInternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFInvalidParameterException">
+        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
+        /// For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an invalid parameter name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>,
+        /// or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value
+        /// other than <code>IP</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
+        /// but no value for <code>Data</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL cannot be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
+        /// The operation failed because the referenced object doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListLoggingConfigurations">REST API Reference for ListLoggingConfigurations Operation</seealso>
+        public virtual ListLoggingConfigurationsResponse ListLoggingConfigurations(ListLoggingConfigurationsRequest request)
+        {
+            var marshaller = ListLoggingConfigurationsRequestMarshaller.Instance;
+            var unmarshaller = ListLoggingConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListLoggingConfigurationsRequest,ListLoggingConfigurationsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListLoggingConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListLoggingConfigurations operation on AmazonWAFClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListLoggingConfigurations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListLoggingConfigurations">REST API Reference for ListLoggingConfigurations Operation</seealso>
+        public virtual IAsyncResult BeginListLoggingConfigurations(ListLoggingConfigurationsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ListLoggingConfigurationsRequestMarshaller.Instance;
+            var unmarshaller = ListLoggingConfigurationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListLoggingConfigurationsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListLoggingConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListLoggingConfigurations.</param>
+        /// 
+        /// <returns>Returns a  ListLoggingConfigurationsResult from WAF.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListLoggingConfigurations">REST API Reference for ListLoggingConfigurations Operation</seealso>
+        public virtual ListLoggingConfigurationsResponse EndListLoggingConfigurations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListLoggingConfigurationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListRateBasedRules
 
         /// <summary>
@@ -6922,6 +7185,95 @@ namespace Amazon.WAF
 
         #endregion
         
+        #region  PutLoggingConfiguration
+
+        /// <summary>
+        /// Associates a <a>LoggingConfiguration</a> with a specified web ACL.
+        /// 
+        ///  
+        /// <para>
+        /// You can access information about all traffic that AWS WAF inspects using the following
+        /// steps:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Create an Amazon Kinesis Data Firehose delivery stream. For more information, see
+        /// <a href="https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html">Creating
+        /// an Amazon Kinesis Data Firehose Delivery Stream</a>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Associate that delivery stream to your web ACL using a <code>PutLoggingConfiguration</code>
+        /// request.
+        /// </para>
+        ///  </li> </ol> 
+        /// <para>
+        /// When you successfully enable logging using a <code>PutLoggingConfiguration</code>
+        /// request, AWS WAF will create a service linked role with the necessary permissions
+        /// to write logs to the Amazon Kinesis Data Firehose delivery stream. For more information,
+        /// see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
+        /// Web ACL Traffic Information</a> in the <i>AWS WAF Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutLoggingConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutLoggingConfiguration service method, as returned by WAF.</returns>
+        /// <exception cref="Amazon.WAF.Model.WAFInternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
+        /// The operation failed because the referenced object doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
+        /// The operation failed because you tried to create, update, or delete an object by using
+        /// a change token that has already been used.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/PutLoggingConfiguration">REST API Reference for PutLoggingConfiguration Operation</seealso>
+        public virtual PutLoggingConfigurationResponse PutLoggingConfiguration(PutLoggingConfigurationRequest request)
+        {
+            var marshaller = PutLoggingConfigurationRequestMarshaller.Instance;
+            var unmarshaller = PutLoggingConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutLoggingConfigurationRequest,PutLoggingConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutLoggingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutLoggingConfiguration operation on AmazonWAFClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutLoggingConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/PutLoggingConfiguration">REST API Reference for PutLoggingConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginPutLoggingConfiguration(PutLoggingConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = PutLoggingConfigurationRequestMarshaller.Instance;
+            var unmarshaller = PutLoggingConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<PutLoggingConfigurationRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutLoggingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutLoggingConfiguration.</param>
+        /// 
+        /// <returns>Returns a  PutLoggingConfigurationResult from WAF.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/PutLoggingConfiguration">REST API Reference for PutLoggingConfiguration Operation</seealso>
+        public virtual PutLoggingConfigurationResponse EndPutLoggingConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutLoggingConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  PutPermissionPolicy
 
         /// <summary>
@@ -6947,8 +7299,9 @@ namespace Amazon.WAF
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <code>Action</code> in the policy must be <code>waf:UpdateWebACL</code> and <code>waf-regional:UpdateWebACL</code>.
-        /// Any extra or wildcard actions in the policy will be rejected.
+        /// The <code>Action</code> in the policy must be <code>waf:UpdateWebACL</code>, <code>waf-regional:UpdateWebACL</code>,
+        /// <code>waf:GetRuleGroup</code> and <code>waf-regional:GetRuleGroup</code> . Any extra
+        /// or wildcard actions in the policy will be rejected.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7006,8 +7359,9 @@ namespace Amazon.WAF
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <code>Action</code> in the policy must be <code>waf:UpdateWebACL</code> or <code>waf-regional:UpdateWebACL</code>.
-        /// Any extra or wildcard actions in the policy will be rejected.
+        /// The <code>Action</code> in the policy must be <code>waf:UpdateWebACL</code>, <code>waf-regional:UpdateWebACL</code>,
+        /// <code>waf:GetRuleGroup</code> and <code>waf-regional:GetRuleGroup</code> . Any extra
+        /// or wildcard actions in the policy will be rejected.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7179,11 +7533,6 @@ namespace Amazon.WAF
         /// <para>
         /// You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code>
         /// already exists in the specified <code>WebACL</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to add an IP address to an <code>IPSet</code>, but the IP address already
-        /// exists in the specified <code>IPSet</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7385,11 +7734,6 @@ namespace Amazon.WAF
         /// <para>
         /// You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code>
         /// already exists in the specified <code>WebACL</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to add an IP address to an <code>IPSet</code>, but the IP address already
-        /// exists in the specified <code>IPSet</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7618,11 +7962,6 @@ namespace Amazon.WAF
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You tried to add an IP address to an <code>IPSet</code>, but the IP address already
-        /// exists in the specified <code>IPSet</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but
         /// the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.
         /// </para>
@@ -7797,9 +8136,9 @@ namespace Amazon.WAF
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// AWS WAF supports /8, /16, /24, and /32 IP address ranges for IPv4, and /24, /32, /48,
-        /// /56, /64 and /128 for IPv6. For more information about CIDR notation, see the Wikipedia
-        /// entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
+        /// AWS WAF supports IPv4 address ranges: /8 and any range between /16 through /32. AWS
+        /// WAF supports IPv6 address ranges: /16, /24, /32, /48, /56, /64, and /128. For more
+        /// information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
         /// Inter-Domain Routing</a>.
         /// </para>
         ///  
@@ -7856,13 +8195,17 @@ namespace Amazon.WAF
         /// </para>
         ///  
         /// <para>
+        /// You can insert a maximum of 1000 addresses in a single request.
+        /// </para>
+        ///  
+        /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
         /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
         /// Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="ipSetId">The <code>IPSetId</code> of the <a>IPSet</a> that you want to update. <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by <a>ListIPSets</a>.</param>
-        /// <param name="updates">An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <a>IPSet</a>. For more information, see the applicable data types: <ul> <li>  <a>IPSetUpdate</a>: Contains <code>Action</code> and <code>IPSetDescriptor</code>  </li> <li>  <a>IPSetDescriptor</a>: Contains <code>Type</code> and <code>Value</code>  </li> </ul></param>
+        /// <param name="updates">An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <a>IPSet</a>. For more information, see the applicable data types: <ul> <li>  <a>IPSetUpdate</a>: Contains <code>Action</code> and <code>IPSetDescriptor</code>  </li> <li>  <a>IPSetDescriptor</a>: Contains <code>Type</code> and <code>Value</code>  </li> </ul> You can insert a maximum of 1000 addresses in a single request.</param>
         /// <param name="changeToken">The value returned by the most recent call to <a>GetChangeToken</a>.</param>
         /// 
         /// <returns>The response from the UpdateIPSet service method, as returned by WAF.</returns>
@@ -7896,11 +8239,6 @@ namespace Amazon.WAF
         /// <para>
         /// You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code>
         /// already exists in the specified <code>WebACL</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to add an IP address to an <code>IPSet</code>, but the IP address already
-        /// exists in the specified <code>IPSet</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8042,9 +8380,9 @@ namespace Amazon.WAF
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// AWS WAF supports /8, /16, /24, and /32 IP address ranges for IPv4, and /24, /32, /48,
-        /// /56, /64 and /128 for IPv6. For more information about CIDR notation, see the Wikipedia
-        /// entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
+        /// AWS WAF supports IPv4 address ranges: /8 and any range between /16 through /32. AWS
+        /// WAF supports IPv6 address ranges: /16, /24, /32, /48, /56, /64, and /128. For more
+        /// information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
         /// Inter-Domain Routing</a>.
         /// </para>
         ///  
@@ -8101,6 +8439,10 @@ namespace Amazon.WAF
         /// </para>
         ///  
         /// <para>
+        /// You can insert a maximum of 1000 addresses in a single request.
+        /// </para>
+        ///  
+        /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
         /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
         /// Guide</a>.
@@ -8139,11 +8481,6 @@ namespace Amazon.WAF
         /// <para>
         /// You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code>
         /// already exists in the specified <code>WebACL</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to add an IP address to an <code>IPSet</code>, but the IP address already
-        /// exists in the specified <code>IPSet</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8402,11 +8739,6 @@ namespace Amazon.WAF
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You tried to add an IP address to an <code>IPSet</code>, but the IP address already
-        /// exists in the specified <code>IPSet</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but
         /// the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.
         /// </para>
@@ -8657,11 +8989,6 @@ namespace Amazon.WAF
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You tried to add an IP address to an <code>IPSet</code>, but the IP address already
-        /// exists in the specified <code>IPSet</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but
         /// the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.
         /// </para>
@@ -8845,11 +9172,6 @@ namespace Amazon.WAF
         /// <para>
         /// You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code>
         /// already exists in the specified <code>WebACL</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to add an IP address to an <code>IPSet</code>, but the IP address already
-        /// exists in the specified <code>IPSet</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9043,11 +9365,6 @@ namespace Amazon.WAF
         /// <para>
         /// You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code>
         /// already exists in the specified <code>WebACL</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to add an IP address to an <code>IPSet</code>, but the IP address already
-        /// exists in the specified <code>IPSet</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9262,11 +9579,6 @@ namespace Amazon.WAF
         /// <para>
         /// You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code>
         /// already exists in the specified <code>WebACL</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to add an IP address to an <code>IPSet</code>, but the IP address already
-        /// exists in the specified <code>IPSet</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9501,11 +9813,6 @@ namespace Amazon.WAF
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You tried to add an IP address to an <code>IPSet</code>, but the IP address already
-        /// exists in the specified <code>IPSet</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but
         /// the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.
         /// </para>
@@ -9666,6 +9973,10 @@ namespace Amazon.WAF
         /// supported because the AWS resource forwards only the first <code>8192</code> bytes
         /// of your request to AWS WAF.
         /// </para>
+        ///  
+        /// <para>
+        /// You can only specify a single type of TextTransformation.
+        /// </para>
         ///  </li> <li> 
         /// <para>
         /// A <code>ComparisonOperator</code> used for evaluating the selected part of the request
@@ -9742,11 +10053,6 @@ namespace Amazon.WAF
         /// <para>
         /// You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code>
         /// already exists in the specified <code>WebACL</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to add an IP address to an <code>IPSet</code>, but the IP address already
-        /// exists in the specified <code>IPSet</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9916,12 +10222,17 @@ namespace Amazon.WAF
         ///  </li> <li> 
         /// <para>
         ///  <code>FieldToMatch</code>: The part of web requests that you want AWS WAF to inspect
-        /// and, if you want AWS WAF to inspect a header, the name of the header.
+        /// and, if you want AWS WAF to inspect a header or custom query parameter, the name of
+        /// the header or parameter.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>TextTransformation</code>: Which text transformation, if any, to perform on
         /// the web request before inspecting the request for snippets of malicious SQL code.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can only specify a single type of TextTransformation.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -9992,11 +10303,6 @@ namespace Amazon.WAF
         /// <para>
         /// You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code>
         /// already exists in the specified <code>WebACL</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to add an IP address to an <code>IPSet</code>, but the IP address already
-        /// exists in the specified <code>IPSet</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10116,12 +10422,17 @@ namespace Amazon.WAF
         ///  </li> <li> 
         /// <para>
         ///  <code>FieldToMatch</code>: The part of web requests that you want AWS WAF to inspect
-        /// and, if you want AWS WAF to inspect a header, the name of the header.
+        /// and, if you want AWS WAF to inspect a header or custom query parameter, the name of
+        /// the header or parameter.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>TextTransformation</code>: Which text transformation, if any, to perform on
         /// the web request before inspecting the request for snippets of malicious SQL code.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can only specify a single type of TextTransformation.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -10190,11 +10501,6 @@ namespace Amazon.WAF
         /// <para>
         /// You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code>
         /// already exists in the specified <code>WebACL</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to add an IP address to an <code>IPSet</code>, but the IP address already
-        /// exists in the specified <code>IPSet</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10450,11 +10756,6 @@ namespace Amazon.WAF
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You tried to add an IP address to an <code>IPSet</code>, but the IP address already
-        /// exists in the specified <code>IPSet</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but
         /// the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.
         /// </para>
@@ -10624,12 +10925,17 @@ namespace Amazon.WAF
         ///  </li> <li> 
         /// <para>
         ///  <code>FieldToMatch</code>: The part of web requests that you want AWS WAF to inspect
-        /// and, if you want AWS WAF to inspect a header, the name of the header.
+        /// and, if you want AWS WAF to inspect a header or custom query parameter, the name of
+        /// the header or parameter.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>TextTransformation</code>: Which text transformation, if any, to perform on
         /// the web request before inspecting the request for cross-site scripting attacks.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can only specify a single type of TextTransformation.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -10697,11 +11003,6 @@ namespace Amazon.WAF
         /// <para>
         /// You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code>
         /// already exists in the specified <code>WebACL</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to add an IP address to an <code>IPSet</code>, but the IP address already
-        /// exists in the specified <code>IPSet</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>

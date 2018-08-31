@@ -970,6 +970,23 @@ namespace Amazon.WAF
 
         #endregion
                 
+        #region  DeleteLoggingConfiguration
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteLoggingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLoggingConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteLoggingConfiguration">REST API Reference for DeleteLoggingConfiguration Operation</seealso>
+        Task<DeleteLoggingConfigurationResponse> DeleteLoggingConfigurationAsync(DeleteLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeletePermissionPolicy
 
 
@@ -1613,6 +1630,23 @@ namespace Amazon.WAF
 
         #endregion
                 
+        #region  GetLoggingConfiguration
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLoggingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetLoggingConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetLoggingConfiguration">REST API Reference for GetLoggingConfiguration Operation</seealso>
+        Task<GetLoggingConfigurationResponse> GetLoggingConfigurationAsync(GetLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetPermissionPolicy
 
 
@@ -1955,6 +1989,23 @@ namespace Amazon.WAF
 
         #endregion
                 
+        #region  ListLoggingConfigurations
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListLoggingConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListLoggingConfigurations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListLoggingConfigurations">REST API Reference for ListLoggingConfigurations Operation</seealso>
+        Task<ListLoggingConfigurationsResponse> ListLoggingConfigurationsAsync(ListLoggingConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListRateBasedRules
 
 
@@ -2125,6 +2176,23 @@ namespace Amazon.WAF
 
         #endregion
                 
+        #region  PutLoggingConfiguration
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutLoggingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutLoggingConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/PutLoggingConfiguration">REST API Reference for PutLoggingConfiguration Operation</seealso>
+        Task<PutLoggingConfigurationResponse> PutLoggingConfigurationAsync(PutLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  PutPermissionPolicy
 
 
@@ -2245,11 +2313,6 @@ namespace Amazon.WAF
         /// <para>
         /// You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code>
         /// already exists in the specified <code>WebACL</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to add an IP address to an <code>IPSet</code>, but the IP address already
-        /// exists in the specified <code>IPSet</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2403,9 +2466,9 @@ namespace Amazon.WAF
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// AWS WAF supports /8, /16, /24, and /32 IP address ranges for IPv4, and /24, /32, /48,
-        /// /56, /64 and /128 for IPv6. For more information about CIDR notation, see the Wikipedia
-        /// entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
+        /// AWS WAF supports IPv4 address ranges: /8 and any range between /16 through /32. AWS
+        /// WAF supports IPv6 address ranges: /16, /24, /32, /48, /56, /64, and /128. For more
+        /// information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
         /// Inter-Domain Routing</a>.
         /// </para>
         ///  
@@ -2462,13 +2525,17 @@ namespace Amazon.WAF
         /// </para>
         ///  
         /// <para>
+        /// You can insert a maximum of 1000 addresses in a single request.
+        /// </para>
+        ///  
+        /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
         /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
         /// Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="ipSetId">The <code>IPSetId</code> of the <a>IPSet</a> that you want to update. <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by <a>ListIPSets</a>.</param>
-        /// <param name="updates">An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <a>IPSet</a>. For more information, see the applicable data types: <ul> <li>  <a>IPSetUpdate</a>: Contains <code>Action</code> and <code>IPSetDescriptor</code>  </li> <li>  <a>IPSetDescriptor</a>: Contains <code>Type</code> and <code>Value</code>  </li> </ul></param>
+        /// <param name="updates">An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <a>IPSet</a>. For more information, see the applicable data types: <ul> <li>  <a>IPSetUpdate</a>: Contains <code>Action</code> and <code>IPSetDescriptor</code>  </li> <li>  <a>IPSetDescriptor</a>: Contains <code>Type</code> and <code>Value</code>  </li> </ul> You can insert a maximum of 1000 addresses in a single request.</param>
         /// <param name="changeToken">The value returned by the most recent call to <a>GetChangeToken</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -2505,11 +2572,6 @@ namespace Amazon.WAF
         /// <para>
         /// You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code>
         /// already exists in the specified <code>WebACL</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to add an IP address to an <code>IPSet</code>, but the IP address already
-        /// exists in the specified <code>IPSet</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2792,11 +2854,6 @@ namespace Amazon.WAF
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You tried to add an IP address to an <code>IPSet</code>, but the IP address already
-        /// exists in the specified <code>IPSet</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but
         /// the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.
         /// </para>
@@ -2970,12 +3027,17 @@ namespace Amazon.WAF
         ///  </li> <li> 
         /// <para>
         ///  <code>FieldToMatch</code>: The part of web requests that you want AWS WAF to inspect
-        /// and, if you want AWS WAF to inspect a header, the name of the header.
+        /// and, if you want AWS WAF to inspect a header or custom query parameter, the name of
+        /// the header or parameter.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>TextTransformation</code>: Which text transformation, if any, to perform on
         /// the web request before inspecting the request for snippets of malicious SQL code.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can only specify a single type of TextTransformation.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -3049,11 +3111,6 @@ namespace Amazon.WAF
         /// <para>
         /// You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code>
         /// already exists in the specified <code>WebACL</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You tried to add an IP address to an <code>IPSet</code>, but the IP address already
-        /// exists in the specified <code>IPSet</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>

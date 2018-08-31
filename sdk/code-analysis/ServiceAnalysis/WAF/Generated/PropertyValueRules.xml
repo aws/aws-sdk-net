@@ -51,6 +51,7 @@
   <property-value-rule>
     <property>Amazon.WAF.Model.CreateRateBasedRuleRequest.RateLimit</property>
     <min>2000</min>
+    <max>2000000000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.CreateRateBasedRuleResponse.ChangeToken</property>
@@ -200,6 +201,11 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAF.Model.DeleteLoggingConfigurationRequest.ResourceArn</property>
+    <min>1</min>
+    <max>1224</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAF.Model.DeletePermissionPolicyRequest.ResourceArn</property>
     <min>1</min>
     <max>1224</max>
@@ -345,6 +351,11 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAF.Model.GetLoggingConfigurationRequest.ResourceArn</property>
+    <min>1</min>
+    <max>1224</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAF.Model.GetPermissionPolicyRequest.ResourceArn</property>
     <min>1</min>
     <max>1224</max>
@@ -481,6 +492,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.ListIPSetsResponse.NextMarker</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.ListLoggingConfigurationsRequest.Limit</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.ListLoggingConfigurationsRequest.NextMarker</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.ListLoggingConfigurationsResponse.NextMarker</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -668,6 +692,7 @@
   <property-value-rule>
     <property>Amazon.WAF.Model.UpdateRateBasedRuleRequest.RateLimit</property>
     <min>2000</min>
+    <max>2000000000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.UpdateRateBasedRuleRequest.RuleId</property>
@@ -848,6 +873,11 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAF.Model.LoggingConfiguration.ResourceArn</property>
+    <min>1</min>
+    <max>1224</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAF.Model.Predicate.DataId</property>
     <min>1</min>
     <max>128</max>
@@ -860,6 +890,7 @@
   <property-value-rule>
     <property>Amazon.WAF.Model.RateBasedRule.RateLimit</property>
     <min>2000</min>
+    <max>2000000000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.RateBasedRule.RuleId</property>

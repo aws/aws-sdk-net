@@ -49,9 +49,9 @@ namespace Amazon.WAF.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// AWS WAF supports /8, /16, /24, and /32 IP address ranges for IPv4, and /24, /32, /48,
-    /// /56, /64 and /128 for IPv6. For more information about CIDR notation, see the Wikipedia
-    /// entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
+    /// AWS WAF supports IPv4 address ranges: /8 and any range between /16 through /32. AWS
+    /// WAF supports IPv6 address ranges: /16, /24, /32, /48, /56, /64, and /128. For more
+    /// information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
     /// Inter-Domain Routing</a>.
     /// </para>
     ///  
@@ -105,6 +105,10 @@ namespace Amazon.WAF.Model
     /// When you update an <code>IPSet</code>, you specify the IP addresses that you want
     /// to add and/or the IP addresses that you want to delete. If you want to change an IP
     /// address, you delete the existing IP address and add the new one.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can insert a maximum of 1000 addresses in a single request.
     /// </para>
     ///  
     /// <para>
@@ -171,7 +175,10 @@ namespace Amazon.WAF.Model
         /// <para>
         ///  <a>IPSetDescriptor</a>: Contains <code>Type</code> and <code>Value</code> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// You can insert a maximum of 1000 addresses in a single request.
+        /// </para>
         /// </summary>
         public List<IPSetUpdate> Updates
         {

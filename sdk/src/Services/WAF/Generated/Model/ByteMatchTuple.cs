@@ -191,6 +191,18 @@ namespace Amazon.WAF.Model
         /// To allow or block requests based on the length of the body, you can create a size
         /// constraint set. For more information, see <a>CreateSizeConstraintSet</a>. 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect,
+        /// such as <i>UserName</i> or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code>
+        /// is 30 characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but instead
+        /// of inspecting a single parameter, AWS WAF inspects all parameters within the query
+        /// string for the value or regex pattern that you specify in <code>TargetString</code>.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// If <code>TargetString</code> includes alphabetic characters A-Z and a-z, note that
@@ -245,11 +257,15 @@ namespace Amazon.WAF.Model
         /// </para>
         ///  
         /// <para>
+        /// You can only specify a single type of TextTransformation.
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>CMD_LINE</b> 
         /// </para>
         ///  
         /// <para>
-        /// When you're concerned that attackers are injecting an operating system commandline
+        /// When you're concerned that attackers are injecting an operating system command line
         /// command and using unusual formatting to disguise some or all of the command, use this
         /// option to perform the following transformations:
         /// </para>

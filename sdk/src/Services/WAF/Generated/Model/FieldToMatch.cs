@@ -40,11 +40,17 @@ namespace Amazon.WAF.Model
         /// <para>
         /// When the value of <code>Type</code> is <code>HEADER</code>, enter the name of the
         /// header that you want AWS WAF to search, for example, <code>User-Agent</code> or <code>Referer</code>.
-        /// If the value of <code>Type</code> is any other value, omit <code>Data</code>.
+        /// The name of the header is not case sensitive.
         /// </para>
         ///  
         /// <para>
-        /// The name of the header is not case sensitive.
+        /// When the value of <code>Type</code> is <code>SINGLE_QUERY_ARG</code>, enter the name
+        /// of the parameter that you want AWS WAF to search, for example, <code>UserName</code>
+        /// or <code>SalesRegion</code>. The parameter name is not case sensitive.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the value of <code>Type</code> is any other value, omit <code>Data</code>.
         /// </para>
         /// </summary>
         public string Data
@@ -96,6 +102,18 @@ namespace Amazon.WAF.Model
         /// <code>8192</code> bytes of the request body are forwarded to AWS WAF for inspection.
         /// To allow or block requests based on the length of the body, you can create a size
         /// constraint set. For more information, see <a>CreateSizeConstraintSet</a>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect,
+        /// such as <i>UserName</i> or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code>
+        /// is 30 characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but rather
+        /// than inspecting a single parameter, AWS WAF will inspect all parameters within the
+        /// query for the value or regex pattern that you specify in <code>TargetString</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
