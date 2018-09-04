@@ -30,8 +30,9 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Container for the parameters to the AddRoleToDBCluster operation.
     /// Associates an Identity and Access Management (IAM) role from an Aurora DB cluster.
-    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Authorizing.AWSServices.html">Authorizing
-    /// Amazon Aurora to Access Other AWS Services On Your Behalf</a>.
+    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.Authorizing.html">Authorizing
+    /// Amazon Aurora MySQL to Access Other AWS Services on Your Behalf</a> in the <i>Amazon
+    /// Aurora User Guide</i>.
     /// </summary>
     public partial class AddRoleToDBClusterRequest : AmazonRDSRequest
     {

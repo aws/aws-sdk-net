@@ -1019,7 +1019,8 @@ namespace Amazon.RDS.Model
         /// The amount of Provisioned IOPS (input/output operations per second) to be initially
         /// allocated for the DB instance. For information about valid Iops values, see see <a
         /// href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
-        /// RDS Provisioned IOPS Storage to Improve Performance</a>. 
+        /// RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User
+        /// Guide</i>. 
         /// </para>
         ///  
         /// <para>
@@ -1352,7 +1353,7 @@ namespace Amazon.RDS.Model
         /// The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon
         /// CloudWatch Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>.
         /// For information on creating a monitoring role, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
-        /// Up and Enabling Enhanced Monitoring</a>.
+        /// Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -1568,7 +1569,7 @@ namespace Amazon.RDS.Model
         ///  The daily time range during which automated backups are created if automated backups
         /// are enabled, using the <code>BackupRetentionPeriod</code> parameter. For more information,
         /// see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
-        /// Backup Window</a>. 
+        /// Backup Window</a> in the <i>Amazon RDS User Guide</i>. 
         /// </para>
         ///  
         /// <para>
@@ -1583,7 +1584,8 @@ namespace Amazon.RDS.Model
         /// <para>
         ///  The default is a 30-minute window selected at random from an 8-hour block of time
         /// for each AWS Region. To see the time blocks available, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow">
-        /// Adjusting the Preferred DB Instance Maintenance Window</a>. 
+        /// Adjusting the Preferred DB Instance Maintenance Window</a> in the <i>Amazon RDS User
+        /// Guide</i>. 
         /// </para>
         ///  
         /// <para>
@@ -1680,8 +1682,9 @@ namespace Amazon.RDS.Model
         /// <para>
         /// A value that specifies the order in which an Aurora Replica is promoted to the primary
         /// instance after a failure of the existing primary instance. For more information, see
-        /// <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
-        /// Fault Tolerance for an Aurora DB Cluster</a>. 
+        /// <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
+        /// Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
+        /// 
         /// </para>
         ///  
         /// <para>

@@ -111,8 +111,9 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Associates an Identity and Access Management (IAM) role from an Aurora DB cluster.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Authorizing.AWSServices.html">Authorizing
-        /// Amazon Aurora to Access Other AWS Services On Your Behalf</a>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.Authorizing.html">Authorizing
+        /// Amazon Aurora MySQL to Access Other AWS Services on Your Behalf</a> in the <i>Amazon
+        /// Aurora User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddRoleToDBCluster service method.</param>
         /// 
@@ -386,8 +387,8 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// For more information on backtracking, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AuroraMySQL.Managing.Backtrack.html">
-        /// Backtracking an Aurora DB Cluster</a> in the <i>Amazon RDS User Guide.</i> 
+        /// For more information on backtracking, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Managing.Backtrack.html">
+        /// Backtracking an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide.</i> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BacktrackDBCluster service method.</param>
@@ -565,14 +566,13 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information on copying encrypted DB cluster snapshots from one AWS Region
-        /// to another, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopyDBClusterSnapshot.CrossRegion">
-        /// Copying a DB Cluster Snapshot in the Same Account, Either in the Same Region or Across
-        /// Regions</a> in the <i>Amazon RDS User Guide.</i> 
+        /// to another, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html">
+        /// Copying a Snapshot</a> in the <i>Amazon Aurora User Guide.</i> 
         /// </para>
         ///  
         /// <para>
-        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
+        /// For more information on Amazon Aurora, see the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// <i>Amazon Aurora User Guide.</i> </a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyDBClusterSnapshot service method.</param>
@@ -809,8 +809,8 @@ namespace Amazon.RDS
         /// </para>
         ///  
         /// <para>
-        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
+        /// For more information on Amazon Aurora, see the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// <i>Amazon Aurora User Guide.</i> </a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBCluster service method.</param>
@@ -936,8 +936,8 @@ namespace Amazon.RDS
         /// </para>
         ///  </important> 
         /// <para>
-        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
+        /// For more information on Amazon Aurora, see the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// <i>Amazon Aurora User Guide</i> </a>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBClusterParameterGroup service method.</param>
@@ -985,9 +985,9 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Creates a snapshot of a DB cluster. For more information on Amazon Aurora, see <a
-        /// href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+        /// Creates a snapshot of a DB cluster. For more information on Amazon Aurora, see the
+        /// <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// <i>Amazon Aurora User Guide</i> </a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBClusterSnapshot service method.</param>
         /// 
@@ -1152,7 +1152,8 @@ namespace Amazon.RDS
         /// Creates a new DB instance that acts as a Read Replica for an existing source DB instance.
         /// You can create a Read Replica for a DB instance running MySQL, MariaDB, or PostgreSQL.
         /// For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working
-        /// with PostgreSQL, MySQL, and MariaDB Read Replicas</a>. 
+        /// with PostgreSQL, MySQL, and MariaDB Read Replicas</a> in the <i>Amazon RDS User Guide</i>.
+        /// 
         /// 
         ///  
         /// <para>
@@ -1642,8 +1643,8 @@ namespace Amazon.RDS
         /// 
         ///   
         /// <para>
-        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
+        /// For more information on Amazon Aurora, see the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// <i>Amazon Aurora User Guide</i> </a>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBCluster service method.</param>
@@ -1704,8 +1705,8 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
+        /// For more information on Amazon Aurora, see the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// <i>Amazon Aurora User Guide</i> </a>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBClusterParameterGroup service method.</param>
@@ -1763,8 +1764,8 @@ namespace Amazon.RDS
         /// </para>
         ///  </note> 
         /// <para>
-        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
+        /// For more information on Amazon Aurora, see the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// <i>Amazon Aurora User Guide</i> </a>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBClusterSnapshot service method.</param>
@@ -2315,8 +2316,8 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
+        /// For more information on Amazon Aurora, see the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// <i>Amazon Aurora User Guide</i> </a>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusterBacktracks service method.</param>
@@ -2369,8 +2370,8 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
+        /// For more information on Amazon Aurora, see the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// <i>Amazon Aurora User Guide</i> </a>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusterParameterGroups service method.</param>
@@ -2418,8 +2419,8 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
+        /// For more information on Amazon Aurora, see the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// <i>Amazon Aurora User Guide</i> </a>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusterParameters service method.</param>
@@ -2467,8 +2468,8 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
+        /// For more information on Amazon Aurora, see the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// <i>Amazon Aurora User Guide</i> </a>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusters service method.</param>
@@ -2575,8 +2576,8 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
+        /// For more information on Amazon Aurora, see the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// <i>Amazon Aurora User Guide</i> </a>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusterSnapshots service method.</param>
@@ -3109,8 +3110,8 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
+        /// For more information on Amazon Aurora, see the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// <i>Amazon Aurora User Guide</i> </a>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEngineDefaultClusterParameters service method.</param>
@@ -3807,8 +3808,8 @@ namespace Amazon.RDS
         /// </para>
         ///  
         /// <para>
-        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
+        /// For more information on Amazon Aurora, see the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// <i>Amazon Aurora User Guide</i> </a>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the FailoverDBCluster service method.</param>
@@ -3863,7 +3864,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For an overview on tagging an Amazon RDS resource, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging
-        /// Amazon RDS Resources</a>.
+        /// Amazon RDS Resources</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
@@ -3930,15 +3931,15 @@ namespace Amazon.RDS
         /// </para>
         ///  
         /// <para>
-        /// For more information about Aurora Serverless, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/aurora-serverless.html">Using
-        /// Amazon Aurora Serverless</a> in the <i>Amazon RDS User Guide</i>.
+        /// For more information about Aurora Serverless, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
+        /// Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  <important> 
         /// <para>
         /// If you call <code>ModifyCurrentDBClusterCapacity</code> with the default <code>TimeoutAction</code>,
         /// connections that prevent Aurora Serverless from finding a scaling point might be dropped.
-        /// For more information about scaling points, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling">
-        /// Autoscaling for Aurora Serverless</a> in the <i>Amazon RDS User Guide</i>.
+        /// For more information about scaling points, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling">
+        /// Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -3993,8 +3994,8 @@ namespace Amazon.RDS
         /// <summary>
         /// Modify a setting for an Amazon Aurora DB cluster. You can change one or more database
         /// configuration parameters by specifying these parameters and the new values in the
-        /// request. For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+        /// request. For more information on Amazon Aurora, see the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// <i>Amazon Aurora User Guide</i> </a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBCluster service method.</param>
         /// 
@@ -4078,8 +4079,8 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
+        /// For more information on Amazon Aurora, see the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// <i>Amazon Aurora User Guide</i> </a>. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -4577,7 +4578,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// You can see a list of the event categories for a given SourceType in the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
-        /// topic in the Amazon RDS User Guide or by using the <b>DescribeEventCategories</b>
+        /// topic in the <i>Amazon RDS User Guide</i> or by using the <b>DescribeEventCategories</b>
         /// action.
         /// </para>
         /// </summary>
@@ -4853,7 +4854,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information about rebooting, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_RebootInstance.html">Rebooting
-        /// a DB Instance</a>. 
+        /// a DB Instance</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RebootDBInstance service method.</param>
@@ -4901,8 +4902,9 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Disassociates an Identity and Access Management (IAM) role from an Aurora DB cluster.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Authorizing.AWSServices.html">Authorizing
-        /// Amazon Aurora to Access Other AWS Services On Your Behalf</a>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.Authorizing.html">Authorizing
+        /// Amazon Aurora MySQL to Access Other AWS Services on Your Behalf </a> in the <i>Amazon
+        /// Aurora User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveRoleFromDBCluster service method.</param>
         /// 
@@ -5003,7 +5005,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For an overview on tagging an Amazon RDS resource, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging
-        /// Amazon RDS Resources</a>.
+        /// Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromResource service method.</param>
@@ -5069,8 +5071,8 @@ namespace Amazon.RDS
         /// </para>
         ///  
         /// <para>
-        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
+        /// For more information on Amazon Aurora, see the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// <i>Amazon Aurora User Guide</i> </a>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResetDBClusterParameterGroup service method.</param>
@@ -5175,8 +5177,9 @@ namespace Amazon.RDS
         /// <summary>
         /// Creates an Amazon Aurora DB cluster from data stored in an Amazon S3 bucket. Amazon
         /// RDS must be authorized to access the Amazon S3 bucket and the data must be created
-        /// using the Percona XtraBackup utility as described in <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Migrate.MySQL.html#Aurora.Migrate.MySQL.S3">Migrating
-        /// Data from MySQL by Using an Amazon S3 Bucket</a>.
+        /// using the Percona XtraBackup utility as described in <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Migrating.html">
+        /// Migrating Data to an Amazon Aurora MySQL DB Cluster</a> in the <i>Amazon Aurora User
+        /// Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreDBClusterFromS3 service method.</param>
         /// 
@@ -5279,8 +5282,8 @@ namespace Amazon.RDS
         /// </para>
         ///  
         /// <para>
-        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
+        /// For more information on Amazon Aurora, see the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// <i>Amazon Aurora User Guide</i> </a>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreDBClusterFromSnapshot service method.</param>
@@ -5399,8 +5402,8 @@ namespace Amazon.RDS
         /// </para>
         ///  </note> 
         /// <para>
-        /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-        /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
+        /// For more information on Amazon Aurora, see the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+        /// <i>Amazon Aurora User Guide</i> </a>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreDBClusterToPointInTime service method.</param>
@@ -5640,7 +5643,7 @@ namespace Amazon.RDS
         /// by using backup files. You can create a backup of your on-premises database, store
         /// it on Amazon Simple Storage Service (Amazon S3), and then restore the backup file
         /// onto a new Amazon RDS DB instance running MySQL. For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html">Importing
-        /// Data into an Amazon RDS MySQL DB Instance</a>.
+        /// Data into an Amazon RDS MySQL DB Instance</a> in the <i>Amazon RDS User Guide.</i>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreDBInstanceFromS3 service method.</param>
         /// 

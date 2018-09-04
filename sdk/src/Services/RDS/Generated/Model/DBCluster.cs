@@ -461,8 +461,8 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// Log types vary by DB engine. For information about the log types for each DB engine,
-        /// see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon
-        /// RDS Database Log Files</a> in the <i>Amazon RDS User Guide.</i> 
+        /// see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon
+        /// RDS Database Log Files</a> in the <i>Amazon Aurora User Guide.</i> 
         /// </para>
         /// </summary>
         public List<string> EnabledCloudwatchLogsExports

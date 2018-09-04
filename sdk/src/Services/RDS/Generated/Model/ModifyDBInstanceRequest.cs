@@ -157,9 +157,10 @@ namespace Amazon.RDS.Model
         /// during the next maintenance window. Some parameter changes can cause an outage and
         /// are applied on the next call to <a>RebootDBInstance</a>, or the next failure reboot.
         /// Review the table of parameters in <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html">Modifying
-        /// a DB Instance and Using the Apply Immediately Parameter</a> to see the impact that
-        /// setting <code>ApplyImmediately</code> to <code>true</code> or <code>false</code> has
-        /// for each modified parameter and to determine when the changes are applied. 
+        /// a DB Instance and Using the Apply Immediately Parameter</a> in the <i>Amazon RDS User
+        /// Guide.</i> to see the impact that setting <code>ApplyImmediately</code> to <code>true</code>
+        /// or <code>false</code> has for each modified parameter and to determine when the changes
+        /// are applied. 
         /// </para>
         ///  
         /// <para>
@@ -550,7 +551,7 @@ namespace Amazon.RDS.Model
         /// DB instance to a different VPC. If your DB instance is not in a VPC, you can also
         /// use this parameter to move your DB instance into a VPC. For more information, see
         /// <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Updating
-        /// the VPC for a DB Instance</a>. 
+        /// the VPC for a DB Instance</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         ///  
         /// <para>
@@ -918,7 +919,8 @@ namespace Amazon.RDS.Model
         /// The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon
         /// CloudWatch Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>.
         /// For information on creating a monitoring role, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
-        /// create an IAM role for Amazon RDS Enhanced Monitoring</a>.
+        /// create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS User
+        /// Guide.</i> 
         /// </para>
         ///  
         /// <para>
@@ -1186,8 +1188,9 @@ namespace Amazon.RDS.Model
         /// <para>
         /// A value that specifies the order in which an Aurora Replica is promoted to the primary
         /// instance after a failure of the existing primary instance. For more information, see
-        /// <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
-        /// Fault Tolerance for an Aurora DB Cluster</a>. 
+        /// <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
+        /// Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
+        /// 
         /// </para>
         ///  
         /// <para>

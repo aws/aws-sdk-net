@@ -924,8 +924,9 @@ namespace Amazon.RDS.Model
         /// <para>
         /// A value that specifies the order in which an Aurora Replica is promoted to the primary
         /// instance after a failure of the existing primary instance. For more information, see
-        /// <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
-        /// Fault Tolerance for an Aurora DB Cluster</a>. 
+        /// <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
+        /// Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
+        /// 
         /// </para>
         /// </summary>
         public int PromotionTier
@@ -964,8 +965,11 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ReadReplicaDBClusterIdentifiers. 
         /// <para>
-        /// Contains one or more identifiers of Aurora DB clusters that are Read Replicas of this
-        /// DB instance.
+        /// Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance
+        /// is replicated as a Read Replica. For example, when you create an Aurora Read Replica
+        /// of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the Aurora Read Replica
+        /// is shown. This output does not contain information about cross region Aurora Read
+        /// Replicas.
         /// </para>
         /// </summary>
         public List<string> ReadReplicaDBClusterIdentifiers

@@ -38,8 +38,8 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-    /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
+    /// For more information on Amazon Aurora, see the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+    /// <i>Amazon Aurora User Guide</i> </a>. 
     /// </para>
     /// </summary>
     public partial class DeleteDBClusterSnapshotRequest : AmazonRDSRequest

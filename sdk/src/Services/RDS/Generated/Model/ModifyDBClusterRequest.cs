@@ -31,8 +31,8 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the ModifyDBCluster operation.
     /// Modify a setting for an Amazon Aurora DB cluster. You can change one or more database
     /// configuration parameters by specifying these parameters and the new values in the
-    /// request. For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-    /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+    /// request. For more information on Amazon Aurora, see the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+    /// <i>Amazon Aurora User Guide</i> </a>.
     /// </summary>
     public partial class ModifyDBClusterRequest : AmazonRDSRequest
     {
@@ -63,10 +63,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>ApplyImmediately</code> parameter only affects the <code>NewDBClusterIdentifier</code>
-        /// and <code>MasterUserPassword</code> values. If you set the <code>ApplyImmediately</code>
-        /// parameter value to false, then changes to the <code>NewDBClusterIdentifier</code>
-        /// and <code>MasterUserPassword</code> values are applied during the next maintenance
+        /// The <code>ApplyImmediately</code> parameter only affects the <code>EnableIAMDatabaseAuthentication</code>,
+        /// <code>MasterUserPassword</code>, and <code>NewDBClusterIdentifier</code> values. If
+        /// you set the <code>ApplyImmediately</code> parameter value to false, then changes to
+        /// the <code>EnableIAMDatabaseAuthentication</code>, <code>MasterUserPassword</code>,
+        /// and <code>NewDBClusterIdentifier</code> values are applied during the next maintenance
         /// window. All other changes are applied immediately, regardless of the value of the
         /// <code>ApplyImmediately</code> parameter.
         /// </para>
@@ -388,9 +389,9 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// The default is a 30-minute window selected at random from an 8-hour block of time
-        /// for each AWS Region. To see the time blocks available, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-        /// Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
-        /// 
+        /// for each AWS Region. To see the time blocks available, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
+        /// Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora
+        /// User Guide.</i> 
         /// </para>
         ///  
         /// <para>
@@ -440,9 +441,9 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The default is a 30-minute window selected at random from an 8-hour block of time
         /// for each AWS Region, occurring on a random day of the week. To see the time blocks
-        /// available, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-        /// Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
-        /// 
+        /// available, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
+        /// Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora
+        /// User Guide.</i> 
         /// </para>
         ///  
         /// <para>

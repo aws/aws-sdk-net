@@ -29,9 +29,9 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDBClusterSnapshot operation.
-    /// Creates a snapshot of a DB cluster. For more information on Amazon Aurora, see <a
-    /// href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-    /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+    /// Creates a snapshot of a DB cluster. For more information on Amazon Aurora, see the
+    /// <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+    /// <i>Amazon Aurora User Guide</i> </a>.
     /// </summary>
     public partial class CreateDBClusterSnapshotRequest : AmazonRDSRequest
     {

@@ -44,8 +44,8 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-    /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
+    /// For more information on Amazon Aurora, see the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+    /// <i>Amazon Aurora User Guide</i> </a>. 
     /// </para>
     /// </summary>
     public partial class RestoreDBClusterFromSnapshotRequest : AmazonRDSRequest
@@ -207,9 +207,8 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The list of logs that the restored DB cluster is to export to CloudWatch Logs. The
         /// values in the list depend on the DB engine being used. For more information, see <a
-        /// href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-        /// Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database
-        /// Service User Guide</i>.
+        /// href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+        /// Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         /// </summary>
         public List<string> EnableCloudwatchLogsExports

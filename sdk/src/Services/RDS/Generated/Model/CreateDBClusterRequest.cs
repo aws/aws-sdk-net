@@ -40,8 +40,8 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-    /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
+    /// For more information on Amazon Aurora, see the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+    /// <i>Amazon Aurora User Guide.</i> </a> 
     /// </para>
     /// </summary>
     public partial class CreateDBClusterRequest : AmazonRDSRequest
@@ -77,8 +77,8 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
         /// A list of EC2 Availability Zones that instances in the DB cluster can be created in.
-        /// For information on AWS Regions and Availability Zones, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
-        /// and Availability Zones</a>. 
+        /// For information on AWS Regions and Availability Zones, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html">Choosing
+        /// the Regions and Availability Zones</a> in the <i>Amazon Aurora User Guide</i>. 
         /// </para>
         /// </summary>
         public List<string> AvailabilityZones
@@ -292,9 +292,8 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The list of log types that need to be enabled for exporting to CloudWatch Logs. The
         /// values in the list depend on the DB engine being used. For more information, see <a
-        /// href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-        /// Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database
-        /// Service User Guide</i>.
+        /// href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+        /// Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         /// </summary>
         public List<string> EnableCloudwatchLogsExports
@@ -572,9 +571,9 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// The default is a 30-minute window selected at random from an 8-hour block of time
-        /// for each AWS Region. To see the time blocks available, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-        /// Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
-        /// 
+        /// for each AWS Region. To see the time blocks available, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
+        /// Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora
+        /// User Guide.</i> 
         /// </para>
         ///  
         /// <para>
@@ -624,9 +623,9 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The default is a 30-minute window selected at random from an 8-hour block of time
         /// for each AWS Region, occurring on a random day of the week. To see the time blocks
-        /// available, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-        /// Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
-        /// 
+        /// available, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
+        /// Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora
+        /// User Guide.</i> 
         /// </para>
         ///  
         /// <para>

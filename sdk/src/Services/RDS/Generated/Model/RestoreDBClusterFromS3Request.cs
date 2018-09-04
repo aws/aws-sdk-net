@@ -31,8 +31,9 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the RestoreDBClusterFromS3 operation.
     /// Creates an Amazon Aurora DB cluster from data stored in an Amazon S3 bucket. Amazon
     /// RDS must be authorized to access the Amazon S3 bucket and the data must be created
-    /// using the Percona XtraBackup utility as described in <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Migrate.MySQL.html#Aurora.Migrate.MySQL.S3">Migrating
-    /// Data from MySQL by Using an Amazon S3 Bucket</a>.
+    /// using the Percona XtraBackup utility as described in <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Migrating.html">
+    /// Migrating Data to an Amazon Aurora MySQL DB Cluster</a> in the <i>Amazon Aurora User
+    /// Guide</i>.
     /// </summary>
     public partial class RestoreDBClusterFromS3Request : AmazonRDSRequest
     {
@@ -282,9 +283,8 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The list of logs that the restored DB cluster is to export to CloudWatch Logs. The
         /// values in the list depend on the DB engine being used. For more information, see <a
-        /// href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-        /// Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database
-        /// Service User Guide</i>.
+        /// href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+        /// Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         /// </summary>
         public List<string> EnableCloudwatchLogsExports
@@ -523,8 +523,8 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// The default is a 30-minute window selected at random from an 8-hour block of time
-        /// for each AWS Region. To see the time blocks available, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-        /// Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
+        /// for each AWS Region. To see the time blocks available, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
+        /// Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
         /// 
         /// </para>
         ///  
@@ -575,8 +575,8 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The default is a 30-minute window selected at random from an 8-hour block of time
         /// for each AWS Region, occurring on a random day of the week. To see the time blocks
-        /// available, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
-        /// Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
+        /// available, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
+        /// Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
         /// 
         /// </para>
         ///  

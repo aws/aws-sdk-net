@@ -110,14 +110,13 @@ namespace Amazon.RDS.Model
     ///  
     /// <para>
     /// For more information on copying encrypted DB cluster snapshots from one AWS Region
-    /// to another, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopyDBClusterSnapshot.CrossRegion">
-    /// Copying a DB Cluster Snapshot in the Same Account, Either in the Same Region or Across
-    /// Regions</a> in the <i>Amazon RDS User Guide.</i> 
+    /// to another, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html">
+    /// Copying a Snapshot</a> in the <i>Amazon Aurora User Guide.</i> 
     /// </para>
     ///  
     /// <para>
-    /// For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora
-    /// on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
+    /// For more information on Amazon Aurora, see the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+    /// <i>Amazon Aurora User Guide.</i> </a> 
     /// </para>
     /// </summary>
     public partial class CopyDBClusterSnapshotRequest : AmazonRDSRequest
@@ -273,8 +272,8 @@ namespace Amazon.RDS.Model
         ///  </li> <li> 
         /// <para>
         /// If the source snapshot is in a different AWS Region than the copy, specify a valid
-        /// DB cluster snapshot ARN. For more information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
-        /// Copying a DB Snapshot or DB Cluster Snapshot</a>.
+        /// DB cluster snapshot ARN. For more information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions">
+        /// Copying Snapshots Across AWS Regions</a> in the <i>Amazon Aurora User Guide.</i> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
