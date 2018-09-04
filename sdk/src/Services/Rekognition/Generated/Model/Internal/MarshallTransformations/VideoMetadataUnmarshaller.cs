@@ -100,12 +100,6 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     unmarshalledObject.FrameWidth = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Rotation", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Rotation = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
           
             return unmarshalledObject;

@@ -73,12 +73,6 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ClientRequestToken);
                 }
 
-                if(publicRequest.IsSetEnablePersonTracking())
-                {
-                    context.Writer.WritePropertyName("EnablePersonTracking");
-                    context.Writer.Write(publicRequest.EnablePersonTracking);
-                }
-
                 if(publicRequest.IsSetJobTag())
                 {
                     context.Writer.WritePropertyName("JobTag");

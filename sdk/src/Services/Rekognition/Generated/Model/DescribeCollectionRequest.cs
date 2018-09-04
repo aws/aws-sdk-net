@@ -29,14 +29,25 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCollection operation.
+    /// Describes the specified collection. You can use <code>DescribeCollection</code> to
+    /// get information, such as the number of faces indexed into a collection and the version
+    /// of the model used by the collection for face detection.
     /// 
+    ///  
+    /// <para>
+    /// For more information, see Describing a Collection in the Amazon Rekognition Developer
+    /// Guide.
+    /// </para>
     /// </summary>
     public partial class DescribeCollectionRequest : AmazonRekognitionRequest
     {
         private string _collectionId;
 
         /// <summary>
-        /// Gets and sets the property CollectionId.
+        /// Gets and sets the property CollectionId. 
+        /// <para>
+        /// The ID of the collection to describe.
+        /// </para>
         /// </summary>
         public string CollectionId
         {

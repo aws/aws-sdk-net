@@ -51,18 +51,6 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("BillableDurationSeconds", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    response.BillableDurationSeconds = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ErrorCode", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ErrorCode = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("Faces", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<FaceDetection, FaceDetectionUnmarshaller>(FaceDetectionUnmarshaller.Instance);
@@ -91,12 +79,6 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = VideoMetadataUnmarshaller.Instance;
                     response.VideoMetadata = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Warnings", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Warning, WarningUnmarshaller>(WarningUnmarshaller.Instance);
-                    response.Warnings = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

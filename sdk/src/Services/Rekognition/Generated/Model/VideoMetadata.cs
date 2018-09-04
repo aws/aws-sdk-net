@@ -39,7 +39,6 @@ namespace Amazon.Rekognition.Model
         private long? _frameHeight;
         private float? _frameRate;
         private long? _frameWidth;
-        private int? _rotation;
 
         /// <summary>
         /// Gets and sets the property Codec. 
@@ -147,21 +146,6 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetFrameWidth()
         {
             return this._frameWidth.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property Rotation.
-        /// </summary>
-        public int Rotation
-        {
-            get { return this._rotation.GetValueOrDefault(); }
-            set { this._rotation = value; }
-        }
-
-        // Check to see if Rotation property is set
-        internal bool IsSetRotation()
-        {
-            return this._rotation.HasValue; 
         }
 
     }

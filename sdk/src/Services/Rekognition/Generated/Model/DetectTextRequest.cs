@@ -67,7 +67,7 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
-    /// To be detected, text must be within +/- 30 degrees orientation of the horizontal axis.
+    /// To be detected, text must be within +/- 90 degrees orientation of the horizontal axis.
     /// </para>
     ///  
     /// <para>

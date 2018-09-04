@@ -201,9 +201,10 @@
           "CollectionId": {
             "type": "string",
             "pattern": "[a-zA-Z0-9_.\\-]+",
+            "zonbookDocumentation": "\n         <para>The ID of the collection to describe.</para>\n      ",
+            "documentation": "\n         <p>The ID of the collection to describe.</p>\n      ",
             "required": true,
             "shape_name": "CollectionId",
-            "documentation": null,
             "min_length": 1,
             "max_length": 255
           }
@@ -216,24 +217,28 @@
         "members": {
           "FaceCount": {
             "type": "long",
+            "zonbookDocumentation": "\n         <para>The number of faces that are indexed into the collection. To index faces into a\n         collection, use <xref linkend=\"API_IndexFaces\"/>.</para>\n      ",
+            "documentation": "\n         <p>The number of faces that are indexed into the collection. To index faces into a\n         collection, use .</p>\n      ",
             "shape_name": "ULong",
-            "documentation": null,
             "min_length": 0
           },
           "FaceModelVersion": {
             "type": "string",
-            "shape_name": "String",
-            "documentation": null
+            "zonbookDocumentation": "\n         <para>The version of the face model that's used by the collection for face detection.</para>\n         <simpara>For more information, see <xref linkend=\"face-detection-model\"/>.</simpara>\n     \n      ",
+            "documentation": "\n         <p>The version of the face model that's used by the collection for face detection.</p>\n      \n         <p>For more information, see Model Versioning in the \n     Amazon Rekognition Developer Guide.</p>\n      ",
+            "shape_name": "String"
           },
           "CollectionARN": {
             "type": "string",
-            "shape_name": "String",
-            "documentation": null
+            "zonbookDocumentation": "\n         <para>The Amazon Resource Name (ARN) of the collection.</para>\n      ",
+            "documentation": "\n         <p>The Amazon Resource Name (ARN) of the collection.</p>\n      ",
+            "shape_name": "String"
           },
           "CreationTimestamp": {
             "type": "timestamp",
-            "shape_name": "DateTime",
-            "documentation": null
+            "zonbookDocumentation": "\n         <para>The number of milliseconds since the Unix epoch time until the creation of the collection.\n         The Unix epoch time is 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January 1970.</para>\n      ",
+            "documentation": "\n         <p>The number of milliseconds since the Unix epoch time until the creation of the collection.\n         The Unix epoch time is 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January 1970.</p>\n      ",
+            "shape_name": "DateTime"
           }
         },
         "shape_name": "DescribeCollectionResponse",
@@ -289,7 +294,7 @@
           "shape_name": "ResourceNotFoundException"
         }
       ],
-      "documentation": null
+      "documentation": "\n         <p>Describes the specified collection. You can use <code>DescribeCollection</code> to get\n         information, such as the number of faces indexed into a collection and the version of the\n         model used by the collection for face detection.</p>\n    \n         <p>For more information, see Describing a Collection in the \n     Amazon Rekognition Developer Guide.</p>\n      "
     },
     "Analyze": {
       "name": "Analyze",
@@ -495,34 +500,6 @@
                           "shape_name": "Percent",
                           "min_length": 0,
                           "max_length": 100
-                        },
-                        "AssociationScore": {
-                          "type": "float",
-                          "shape_name": "Percent",
-                          "documentation": null,
-                          "min_length": 0,
-                          "max_length": 100
-                        },
-                        "AssociationMethod": {
-                          "type": "string",
-                          "enum": [
-                            "MANUAL",
-                            "AUTO_SEARCH",
-                            "AUTO_CLUSTER",
-                            "NOT_ASSOCIATED"
-                          ],
-                          "internalonly": true,
-                          "shape_name": "AssociationMethod",
-                          "documentation": null
-                        },
-                        "Identity": {
-                          "type": "string",
-                          "pattern": "[a-zA-Z0-9_.\\-:]+",
-                          "internalonly": true,
-                          "shape_name": "Identity",
-                          "documentation": null,
-                          "min_length": 1,
-                          "max_length": 128
                         }
                       },
                       "zonbookDocumentation": "\n         <simpara>Describes the face properties such as the bounding box, face ID, image ID of the input\n      image, and external image ID that you assigned. </simpara>\n      ",
@@ -1091,34 +1068,6 @@
                   "shape_name": "Percent",
                   "min_length": 0,
                   "max_length": 100
-                },
-                "AssociationScore": {
-                  "type": "float",
-                  "shape_name": "Percent",
-                  "documentation": null,
-                  "min_length": 0,
-                  "max_length": 100
-                },
-                "AssociationMethod": {
-                  "type": "string",
-                  "enum": [
-                    "MANUAL",
-                    "AUTO_SEARCH",
-                    "AUTO_CLUSTER",
-                    "NOT_ASSOCIATED"
-                  ],
-                  "internalonly": true,
-                  "shape_name": "AssociationMethod",
-                  "documentation": null
-                },
-                "Identity": {
-                  "type": "string",
-                  "pattern": "[a-zA-Z0-9_.\\-:]+",
-                  "internalonly": true,
-                  "shape_name": "Identity",
-                  "documentation": null,
-                  "min_length": 1,
-                  "max_length": 128
                 }
               },
               "zonbookDocumentation": "\n         <simpara>Describes the face properties such as the bounding box, face ID, image ID of the input\n      image, and external image ID that you assigned. </simpara>\n      ",
@@ -1218,12 +1167,9 @@
           },
           "PersonId": {
             "type": "string",
-            "pattern": "[a-zA-Z0-9_.\\-:]+",
-            "internalonly": true,
-            "shape_name": "Identity",
-            "documentation": null,
-            "min_length": 1,
-            "max_length": 128
+            "pattern": "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}",
+            "shape_name": "PersonId",
+            "documentation": null
           },
           "NextToken": {
             "type": "string",
@@ -1287,8 +1233,8 @@
                       "shape_name": "Float"
                     }
                   },
-                  "zonbookDocumentation": "\n         <simpara>Identifies the bounding box around the object, face or text. The <code>left</code>\n      (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and\n      left sides of the bounding box. Note that the upper-left corner of the image is the origin\n      (0,0). </simpara>\n         <simpara>The <code>top</code> and <code>left</code> values returned are ratios of the overall\n      image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of\n      the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700)\n      and a <code>top</code> value of 0.25 (50/200).</simpara>\n         <simpara>The <code>width</code> and <code>height</code> values represent the dimensions of the\n      bounding box as a ratio of the overall image dimension. For example, if the input image is\n      700x200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1. </simpara>\n         <note>\n            <simpara> The bounding box coordinates can have negative values. For example, if Amazon Rekognition is\n        able to detect a face that is at the image edge and is only partially visible, the service\n        can return coordinates that are outside the image bounds and, depending on the image edge,\n        you might get negative values or values greater than 1 for the <code>left</code> or\n          <code>top</code> values. </simpara>\n         </note>\n      ",
-                  "documentation": "\n         <p>Identifies the bounding box around the object, face or text. The <code>left</code>\n      (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and\n      left sides of the bounding box. Note that the upper-left corner of the image is the origin\n      (0,0). </p>\n         <p>The <code>top</code> and <code>left</code> values returned are ratios of the overall\n      image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of\n      the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700)\n      and a <code>top</code> value of 0.25 (50/200).</p>\n         <p>The <code>width</code> and <code>height</code> values represent the dimensions of the\n      bounding box as a ratio of the overall image dimension. For example, if the input image is\n      700x200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1. </p>\n         <note>\n            <p> The bounding box coordinates can have negative values. For example, if Amazon Rekognition is\n        able to detect a face that is at the image edge and is only partially visible, the service\n        can return coordinates that are outside the image bounds and, depending on the image edge,\n        you might get negative values or values greater than 1 for the <code>left</code> or\n          <code>top</code> values. </p>\n         </note>\n      ",
+                  "zonbookDocumentation": "\n         <simpara>Identifies the bounding box around the face or text. The <code>left</code>\n      (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and\n      left sides of the bounding box. Note that the upper-left corner of the image is the origin\n      (0,0). </simpara>\n         <simpara>The <code>top</code> and <code>left</code> values returned are ratios of the overall\n      image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of\n      the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700)\n      and a <code>top</code> value of 0.25 (50/200).</simpara>\n         <simpara>The <code>width</code> and <code>height</code> values represent the dimensions of the\n      bounding box as a ratio of the overall image dimension. For example, if the input image is\n      700x200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1. </simpara>\n         <note>\n            <simpara> The bounding box coordinates can have negative values. For example, if Amazon Rekognition is\n        able to detect a face that is at the image edge and is only partially visible, the service\n        can return coordinates that are outside the image bounds and, depending on the image edge,\n        you might get negative values or values greater than 1 for the <code>left</code> or\n          <code>top</code> values. </simpara>\n         </note>\n      ",
+                  "documentation": "\n         <p>Identifies the bounding box around the face or text. The <code>left</code>\n      (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and\n      left sides of the bounding box. Note that the upper-left corner of the image is the origin\n      (0,0). </p>\n         <p>The <code>top</code> and <code>left</code> values returned are ratios of the overall\n      image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of\n      the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700)\n      and a <code>top</code> value of 0.25 (50/200).</p>\n         <p>The <code>width</code> and <code>height</code> values represent the dimensions of the\n      bounding box as a ratio of the overall image dimension. For example, if the input image is\n      700x200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1. </p>\n         <note>\n            <p> The bounding box coordinates can have negative values. For example, if Amazon Rekognition is\n        able to detect a face that is at the image edge and is only partially visible, the service\n        can return coordinates that are outside the image bounds and, depending on the image edge,\n        you might get negative values or values greater than 1 for the <code>left</code> or\n          <code>top</code> values. </p>\n         </note>\n      ",
                   "shape_name": "BoundingBox"
                 },
                 "ImageId": {
@@ -1305,14 +1251,11 @@
                   "min_length": 1,
                   "max_length": 255
                 },
-                "Identity": {
+                "PersonId": {
                   "type": "string",
-                  "pattern": "[a-zA-Z0-9_.\\-:]+",
-                  "internalonly": true,
-                  "shape_name": "Identity",
-                  "documentation": null,
-                  "min_length": 1,
-                  "max_length": 128
+                  "pattern": "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}",
+                  "shape_name": "PersonId",
+                  "documentation": null
                 },
                 "Confidence": {
                   "type": "float",
@@ -1324,17 +1267,6 @@
                 "DistanceToCentroid": {
                   "type": "float",
                   "shape_name": "Float",
-                  "documentation": null
-                },
-                "IsManagedFace": {
-                  "type": "string",
-                  "enum": [
-                    "DEFAULT",
-                    "USER_MANAGED",
-                    "AUTO_RECOGNIZED"
-                  ],
-                  "internalonly": true,
-                  "shape_name": "IsManagedFace",
                   "documentation": null
                 }
               },
@@ -1462,12 +1394,18 @@
               "members": {
                 "PersonId": {
                   "type": "string",
+                  "pattern": "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}",
+                  "shape_name": "PersonId",
+                  "documentation": null
+                },
+                "ExternalPersonId": {
+                  "type": "string",
                   "pattern": "[a-zA-Z0-9_.\\-:]+",
                   "internalonly": true,
-                  "shape_name": "Identity",
+                  "shape_name": "ExternalPersonId",
                   "documentation": null,
                   "min_length": 1,
-                  "max_length": 128
+                  "max_length": 255
                 }
               },
               "zonbookDocumentation": "\n         <simpara>Provides person information to which the face matches. </simpara>\n      ",
@@ -3083,15 +3021,6 @@
             "shape_name": "Percent",
             "min_length": 0,
             "max_length": 100
-          },
-          "PersonId": {
-            "type": "string",
-            "pattern": "[a-zA-Z0-9_.\\-:]+",
-            "internalonly": true,
-            "shape_name": "Identity",
-            "documentation": null,
-            "min_length": 1,
-            "max_length": 128
           }
         },
         "shape_name": "SearchFacesRequest",
@@ -3188,34 +3117,6 @@
                       "shape_name": "Percent",
                       "min_length": 0,
                       "max_length": 100
-                    },
-                    "AssociationScore": {
-                      "type": "float",
-                      "shape_name": "Percent",
-                      "documentation": null,
-                      "min_length": 0,
-                      "max_length": 100
-                    },
-                    "AssociationMethod": {
-                      "type": "string",
-                      "enum": [
-                        "MANUAL",
-                        "AUTO_SEARCH",
-                        "AUTO_CLUSTER",
-                        "NOT_ASSOCIATED"
-                      ],
-                      "internalonly": true,
-                      "shape_name": "AssociationMethod",
-                      "documentation": null
-                    },
-                    "Identity": {
-                      "type": "string",
-                      "pattern": "[a-zA-Z0-9_.\\-:]+",
-                      "internalonly": true,
-                      "shape_name": "Identity",
-                      "documentation": null,
-                      "min_length": 1,
-                      "max_length": 128
                     }
                   },
                   "zonbookDocumentation": "\n         <simpara>Describes the face properties such as the bounding box, face ID, image ID of the source\n      image, and external image ID that you assigned.</simpara>\n      ",
@@ -3233,15 +3134,6 @@
             "zonbookDocumentation": "\n         <simpara>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</simpara>\n      ",
             "documentation": "\n         <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>\n      ",
             "shape_name": "String"
-          },
-          "PersonId": {
-            "type": "string",
-            "pattern": "[a-zA-Z0-9_.\\-:]+",
-            "internalonly": true,
-            "shape_name": "Identity",
-            "documentation": null,
-            "min_length": 1,
-            "max_length": 128
           }
         },
         "shape_name": "SearchFacesResponse",
@@ -3508,34 +3400,6 @@
                       "shape_name": "Percent",
                       "min_length": 0,
                       "max_length": 100
-                    },
-                    "AssociationScore": {
-                      "type": "float",
-                      "shape_name": "Percent",
-                      "documentation": null,
-                      "min_length": 0,
-                      "max_length": 100
-                    },
-                    "AssociationMethod": {
-                      "type": "string",
-                      "enum": [
-                        "MANUAL",
-                        "AUTO_SEARCH",
-                        "AUTO_CLUSTER",
-                        "NOT_ASSOCIATED"
-                      ],
-                      "internalonly": true,
-                      "shape_name": "AssociationMethod",
-                      "documentation": null
-                    },
-                    "Identity": {
-                      "type": "string",
-                      "pattern": "[a-zA-Z0-9_.\\-:]+",
-                      "internalonly": true,
-                      "shape_name": "Identity",
-                      "documentation": null,
-                      "min_length": 1,
-                      "max_length": 128
                     }
                   },
                   "zonbookDocumentation": "\n         <simpara>Describes the face properties such as the bounding box, face ID, image ID of the source\n      image, and external image ID that you assigned.</simpara>\n      ",
@@ -3803,34 +3667,6 @@
                       "shape_name": "Percent",
                       "min_length": 0,
                       "max_length": 100
-                    },
-                    "AssociationScore": {
-                      "type": "float",
-                      "shape_name": "Percent",
-                      "documentation": null,
-                      "min_length": 0,
-                      "max_length": 100
-                    },
-                    "AssociationMethod": {
-                      "type": "string",
-                      "enum": [
-                        "MANUAL",
-                        "AUTO_SEARCH",
-                        "AUTO_CLUSTER",
-                        "NOT_ASSOCIATED"
-                      ],
-                      "internalonly": true,
-                      "shape_name": "AssociationMethod",
-                      "documentation": null
-                    },
-                    "Identity": {
-                      "type": "string",
-                      "pattern": "[a-zA-Z0-9_.\\-:]+",
-                      "internalonly": true,
-                      "shape_name": "Identity",
-                      "documentation": null,
-                      "min_length": 1,
-                      "max_length": 128
                     }
                   },
                   "zonbookDocumentation": "\n         <simpara>Describes the face properties such as the bounding box, face ID, image ID of the input\n      image, and external image ID that you assigned. </simpara>\n      ",
@@ -4338,7 +4174,7 @@
           "shape_name": "InvalidImageFormatException"
         }
       ],
-      "documentation": "\n         <p>Detects faces in the input image and adds them to the specified collection. </p>\n\n         <p>Amazon Rekognition does not save the actual faces detected.\n      Instead, the underlying detection algorithm first detects the faces in the input image,\n      and for each face extracts facial features into a feature vector, and stores it\n       in the back-end database.\n       Amazon Rekognition uses feature vectors when performing face match and search\n       operations using the  and\n       operations.</p>\n         <p>If you are using version 1.0 of the face detection model, <code>IndexFaces</code> \n     indexes the 15 largest faces in the input image. Later versions of the face detection model index\n     the 100 largest faces in the input image. To determine which version of the model you are using, check the\n     the value of <code>FaceModelVersion</code> in the response from <code>IndexFaces</code>. </p>\n    \n         <p>For more information, see Model Versioning in the Amazon Rekognition Developer Guide.</p> \n    \n    \n         <p>If you provide the optional <code>ExternalImageID</code> for the\n      input image you provided, Amazon Rekognition associates this ID with all faces that it\n      detects. When you call the  operation, the response returns\n      the external ID. You can use this external image ID to create a\n      client-side index to associate the faces with each image. You can then use the index to\n      find all faces in an image.\n\n      </p>\n         <p>In response, the operation returns an array of metadata for all detected faces.\n      This includes, the bounding box of the detected face, confidence value\n      (indicating the bounding box contains a face),\n      a face ID assigned by the service for each face that is detected and stored,\n      and an image ID assigned by the service for the input image.\n\n      If you request all facial attributes (using the <code>detectionAttributes</code> parameter,\n      Amazon Rekognition returns detailed facial attributes such as facial landmarks\n      (for example, location of eye and mouth) and other facial attributes such gender.\n\n      If you provide the same image, specify the same collection, and use\n      the same external ID in the <code>IndexFaces</code> operation,\n      Amazon Rekognition doesn't save duplicate face metadata.</p>\n      \n\n    \n         <p>For more information, see Adding Faces to a Collection in the Amazon Rekognition Developer Guide.</p> \n\n    \n         <p>The input image is passed either as base64-encoded image bytes or as a reference\n      to an image in an Amazon S3 bucket. If you use the Amazon CLI to call Amazon Rekognition operations,\n      passing image bytes is not supported. The image must be either a PNG or JPEG formatted file.\n    </p>\n         <p>This operation requires permissions to perform the <code>rekognition:IndexFaces</code> action.</p>\n\n\n    \n      "
+      "documentation": "\n         <p>Detects faces in the input image and adds them to the specified collection. </p>\n\n         <p>Amazon Rekognition does not save the actual faces detected.\n      Instead, the underlying detection algorithm first detects the faces in the input image,\n      and for each face extracts facial features into a feature vector, and stores it\n       in the back-end database.\n       Amazon Rekognition uses feature vectors when performing face match and search\n       operations using the  and\n       operations.</p>\n         <p>To get the number of faces in a collection, call .\n      </p>\n         <p>If you are using version 1.0 of the face detection model, <code>IndexFaces</code> \n     indexes the 15 largest faces in the input image. Later versions of the face detection model index\n     the 100 largest faces in the input image. To determine which version of the model you are using, call\n      and supply the collection ID. You also get the model\n     version from the value of <code>FaceModelVersion</code> in the response from <code>IndexFaces</code>.\n     </p>\n    \n         <p>For more information, see Model Versioning in the Amazon Rekognition Developer Guide.</p> \n    \n    \n         <p>If you provide the optional <code>ExternalImageID</code> for the\n      input image you provided, Amazon Rekognition associates this ID with all faces that it\n      detects. When you call the  operation, the response returns\n      the external ID. You can use this external image ID to create a\n      client-side index to associate the faces with each image. You can then use the index to\n      find all faces in an image.\n\n      </p>\n         <p>In response, the operation returns an array of metadata for all detected faces.\n      This includes, the bounding box of the detected face, confidence value\n      (indicating the bounding box contains a face),\n      a face ID assigned by the service for each face that is detected and stored,\n      and an image ID assigned by the service for the input image.\n\n      If you request all facial attributes (using the <code>detectionAttributes</code> parameter,\n      Amazon Rekognition returns detailed facial attributes such as facial landmarks\n      (for example, location of eye and mouth) and other facial attributes such gender.\n\n      If you provide the same image, specify the same collection, and use\n      the same external ID in the <code>IndexFaces</code> operation,\n      Amazon Rekognition doesn't save duplicate face metadata.</p>\n      \n\n    \n         <p>For more information, see Adding Faces to a Collection in the Amazon Rekognition Developer Guide.</p> \n\n    \n         <p>The input image is passed either as base64-encoded image bytes or as a reference\n      to an image in an Amazon S3 bucket. If you use the Amazon CLI to call Amazon Rekognition operations,\n      passing image bytes is not supported. The image must be either a PNG or JPEG formatted file.\n    </p>\n         <p>This operation requires permissions to perform the <code>rekognition:IndexFaces</code> action.</p>\n\n\n    \n      "
     },
     "DetectModerationLabels": {
       "name": "DetectModerationLabels",
@@ -5133,562 +4969,6 @@
       ],
       "documentation": "\n         <p>Gets the name and additional information about a celebrity based on his or her Rekognition\n      ID. The additional information is returned as an array of URLs. If there is no additional\n      information about the celebrity, this list is empty.</p>\n    \n         <p>For more information, see Recognizing Celebrities in an Image in\n      the Amazon Rekognition Developer Guide.</p>\n         <p>This operation requires permissions to perform the\n        <code>rekognition:GetCelebrityInfo</code> action. </p>\n    \n      "
     },
-    "AssociateFaces": {
-      "name": "AssociateFaces",
-      "input": {
-        "type": "structure",
-        "members": {
-          "CollectionId": {
-            "type": "string",
-            "pattern": "[a-zA-Z0-9_.\\-]+",
-            "required": true,
-            "shape_name": "CollectionId",
-            "documentation": null,
-            "min_length": 1,
-            "max_length": 255
-          },
-          "Identity": {
-            "type": "string",
-            "pattern": "[a-zA-Z0-9_.\\-:]+",
-            "internalonly": true,
-            "required": true,
-            "shape_name": "Identity",
-            "documentation": null,
-            "min_length": 1,
-            "max_length": 128
-          },
-          "FaceIds": {
-            "type": "list",
-            "required": true,
-            "shape_name": "FaceIdList",
-            "documentation": null,
-            "min_length": 1,
-            "max_length": 4096,
-            "members": {
-              "type": "string",
-              "pattern": "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}",
-              "shape_name": "FaceId",
-              "documentation": null
-            }
-          }
-        },
-        "shape_name": "AssociateFacesRequest",
-        "documentation": null
-      },
-      "output": {
-        "type": "structure",
-        "members": {
-          "AssociatedFaceIds": {
-            "type": "list",
-            "internalonly": true,
-            "shape_name": "FaceAssociationList",
-            "documentation": null,
-            "members": {
-              "type": "structure",
-              "members": {
-                "FaceId": {
-                  "type": "string",
-                  "pattern": "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}",
-                  "shape_name": "FaceId",
-                  "documentation": null
-                },
-                "PreviousIdentity": {
-                  "type": "string",
-                  "pattern": "[a-zA-Z0-9_.\\-:]+",
-                  "internalonly": true,
-                  "shape_name": "Identity",
-                  "documentation": null,
-                  "min_length": 1,
-                  "max_length": 128
-                }
-              },
-              "internalonly": true,
-              "shape_name": "FaceAssociation",
-              "documentation": null
-            }
-          }
-        },
-        "shape_name": "AssociateFacesResponse",
-        "documentation": null
-      },
-      "errors": [
-        {
-          "type": "structure",
-          "members": {
-          },
-          "zonbookDocumentation": "\n         <simpara>Input parameter violated a constraint. Validate your parameter before calling the API\n      operation again.</simpara>\n      ",
-          "documentation": "\n         <p>Input parameter violated a constraint. Validate your parameter before calling the API\n      operation again.</p>\n      ",
-          "shape_name": "InvalidParameterException"
-        },
-        {
-          "type": "structure",
-          "members": {
-          },
-          "zonbookDocumentation": "\n         <simpara>You are not authorized to perform the action.</simpara>\n      ",
-          "documentation": "\n         <p>You are not authorized to perform the action.</p>\n      ",
-          "shape_name": "AccessDeniedException"
-        },
-        {
-          "type": "structure",
-          "members": {
-          },
-          "zonbookDocumentation": "\n         <simpara>Amazon Rekognition experienced a service issue. Try your call again.</simpara>\n      ",
-          "documentation": "\n         <p>Amazon Rekognition experienced a service issue. Try your call again.</p>\n      ",
-          "shape_name": "InternalServerError"
-        },
-        {
-          "type": "structure",
-          "members": {
-          },
-          "zonbookDocumentation": "\n         <simpara>Amazon Rekognition is temporarily unable to process the request. Try your call again.</simpara>\n      ",
-          "documentation": "\n         <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>\n      ",
-          "shape_name": "ThrottlingException"
-        },
-        {
-          "type": "structure",
-          "members": {
-          },
-          "zonbookDocumentation": "\n         <simpara>The number of requests exceeded your throughput limit. If you want to increase this\n      limit, contact Amazon Rekognition.</simpara>\n      ",
-          "documentation": "\n         <p>The number of requests exceeded your throughput limit. If you want to increase this\n      limit, contact Amazon Rekognition.</p>\n      ",
-          "shape_name": "ProvisionedThroughputExceededException"
-        },
-        {
-          "type": "structure",
-          "members": {
-          },
-          "zonbookDocumentation": "\n         <simpara>The collection specified in the request cannot be found.</simpara>\n      ",
-          "documentation": "\n         <p>The collection specified in the request cannot be found.</p>\n      ",
-          "shape_name": "ResourceNotFoundException"
-        }
-      ],
-      "documentation": null
-    },
-    "DisassociateFaces": {
-      "name": "DisassociateFaces",
-      "input": {
-        "type": "structure",
-        "members": {
-          "CollectionId": {
-            "type": "string",
-            "pattern": "[a-zA-Z0-9_.\\-]+",
-            "required": true,
-            "shape_name": "CollectionId",
-            "documentation": null,
-            "min_length": 1,
-            "max_length": 255
-          },
-          "Identity": {
-            "type": "string",
-            "pattern": "[a-zA-Z0-9_.\\-:]+",
-            "internalonly": true,
-            "required": true,
-            "shape_name": "Identity",
-            "documentation": null,
-            "min_length": 1,
-            "max_length": 128
-          },
-          "FaceIds": {
-            "type": "list",
-            "required": true,
-            "shape_name": "FaceIdList",
-            "documentation": null,
-            "min_length": 1,
-            "max_length": 4096,
-            "members": {
-              "type": "string",
-              "pattern": "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}",
-              "shape_name": "FaceId",
-              "documentation": null
-            }
-          }
-        },
-        "shape_name": "DisassociateFacesRequest",
-        "documentation": null
-      },
-      "output": {
-        "type": "structure",
-        "members": {
-          "DisassociatedFaceIds": {
-            "type": "list",
-            "shape_name": "FaceIdList",
-            "documentation": null,
-            "min_length": 1,
-            "max_length": 4096,
-            "members": {
-              "type": "string",
-              "pattern": "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}",
-              "shape_name": "FaceId",
-              "documentation": null
-            }
-          }
-        },
-        "shape_name": "DisassociateFacesResponse",
-        "documentation": null
-      },
-      "errors": [
-        {
-          "type": "structure",
-          "members": {
-          },
-          "zonbookDocumentation": "\n         <simpara>Input parameter violated a constraint. Validate your parameter before calling the API\n      operation again.</simpara>\n      ",
-          "documentation": "\n         <p>Input parameter violated a constraint. Validate your parameter before calling the API\n      operation again.</p>\n      ",
-          "shape_name": "InvalidParameterException"
-        },
-        {
-          "type": "structure",
-          "members": {
-          },
-          "zonbookDocumentation": "\n         <simpara>You are not authorized to perform the action.</simpara>\n      ",
-          "documentation": "\n         <p>You are not authorized to perform the action.</p>\n      ",
-          "shape_name": "AccessDeniedException"
-        },
-        {
-          "type": "structure",
-          "members": {
-          },
-          "zonbookDocumentation": "\n         <simpara>Amazon Rekognition experienced a service issue. Try your call again.</simpara>\n      ",
-          "documentation": "\n         <p>Amazon Rekognition experienced a service issue. Try your call again.</p>\n      ",
-          "shape_name": "InternalServerError"
-        },
-        {
-          "type": "structure",
-          "members": {
-          },
-          "zonbookDocumentation": "\n         <simpara>Amazon Rekognition is temporarily unable to process the request. Try your call again.</simpara>\n      ",
-          "documentation": "\n         <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>\n      ",
-          "shape_name": "ThrottlingException"
-        },
-        {
-          "type": "structure",
-          "members": {
-          },
-          "zonbookDocumentation": "\n         <simpara>The number of requests exceeded your throughput limit. If you want to increase this\n      limit, contact Amazon Rekognition.</simpara>\n      ",
-          "documentation": "\n         <p>The number of requests exceeded your throughput limit. If you want to increase this\n      limit, contact Amazon Rekognition.</p>\n      ",
-          "shape_name": "ProvisionedThroughputExceededException"
-        },
-        {
-          "type": "structure",
-          "members": {
-          },
-          "zonbookDocumentation": "\n         <simpara>The collection specified in the request cannot be found.</simpara>\n      ",
-          "documentation": "\n         <p>The collection specified in the request cannot be found.</p>\n      ",
-          "shape_name": "ResourceNotFoundException"
-        }
-      ],
-      "documentation": null
-    },
-    "CreateIdentity": {
-      "name": "CreateIdentity",
-      "input": {
-        "type": "structure",
-        "members": {
-          "CollectionId": {
-            "type": "string",
-            "pattern": "[a-zA-Z0-9_.\\-]+",
-            "required": true,
-            "shape_name": "CollectionId",
-            "documentation": null,
-            "min_length": 1,
-            "max_length": 255
-          },
-          "Identity": {
-            "type": "string",
-            "pattern": "[a-zA-Z0-9_.\\-:]+",
-            "internalonly": true,
-            "required": true,
-            "shape_name": "Identity",
-            "documentation": null,
-            "min_length": 1,
-            "max_length": 128
-          },
-          "AssociateFaceIds": {
-            "type": "list",
-            "shape_name": "FaceIdList",
-            "documentation": null,
-            "min_length": 1,
-            "max_length": 4096,
-            "members": {
-              "type": "string",
-              "pattern": "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}",
-              "shape_name": "FaceId",
-              "documentation": null
-            }
-          }
-        },
-        "shape_name": "CreateIdentityRequest",
-        "documentation": null
-      },
-      "output": null,
-      "errors": [
-        {
-          "type": "structure",
-          "members": {
-          },
-          "zonbookDocumentation": "\n         <simpara>Input parameter violated a constraint. Validate your parameter before calling the API\n      operation again.</simpara>\n      ",
-          "documentation": "\n         <p>Input parameter violated a constraint. Validate your parameter before calling the API\n      operation again.</p>\n      ",
-          "shape_name": "InvalidParameterException"
-        },
-        {
-          "type": "structure",
-          "members": {
-          },
-          "zonbookDocumentation": "\n         <simpara>You are not authorized to perform the action.</simpara>\n      ",
-          "documentation": "\n         <p>You are not authorized to perform the action.</p>\n      ",
-          "shape_name": "AccessDeniedException"
-        },
-        {
-          "type": "structure",
-          "members": {
-          },
-          "zonbookDocumentation": "\n         <simpara>Amazon Rekognition experienced a service issue. Try your call again.</simpara>\n      ",
-          "documentation": "\n         <p>Amazon Rekognition experienced a service issue. Try your call again.</p>\n      ",
-          "shape_name": "InternalServerError"
-        },
-        {
-          "type": "structure",
-          "members": {
-          },
-          "zonbookDocumentation": "\n         <simpara>Amazon Rekognition is temporarily unable to process the request. Try your call again.</simpara>\n      ",
-          "documentation": "\n         <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>\n      ",
-          "shape_name": "ThrottlingException"
-        },
-        {
-          "type": "structure",
-          "members": {
-          },
-          "zonbookDocumentation": "\n         <simpara>The number of requests exceeded your throughput limit. If you want to increase this\n      limit, contact Amazon Rekognition.</simpara>\n      ",
-          "documentation": "\n         <p>The number of requests exceeded your throughput limit. If you want to increase this\n      limit, contact Amazon Rekognition.</p>\n      ",
-          "shape_name": "ProvisionedThroughputExceededException"
-        },
-        {
-          "type": "structure",
-          "members": {
-          },
-          "zonbookDocumentation": "\n         <simpara>The collection specified in the request cannot be found.</simpara>\n      ",
-          "documentation": "\n         <p>The collection specified in the request cannot be found.</p>\n      ",
-          "shape_name": "ResourceNotFoundException"
-        },
-        {
-          "type": "structure",
-          "members": {
-          },
-          "zonbookDocumentation": "\n         <simpara>A collection with the specified ID already exists.</simpara>\n      ",
-          "documentation": "\n         <p>A collection with the specified ID already exists.</p>\n      ",
-          "shape_name": "ResourceAlreadyExistsException"
-        }
-      ],
-      "documentation": null
-    },
-    "UpdateIdentity": {
-      "name": "UpdateIdentity",
-      "input": {
-        "type": "structure",
-        "members": {
-          "CollectionId": {
-            "type": "string",
-            "pattern": "[a-zA-Z0-9_.\\-]+",
-            "required": true,
-            "shape_name": "CollectionId",
-            "documentation": null,
-            "min_length": 1,
-            "max_length": 255
-          },
-          "Identity": {
-            "type": "string",
-            "pattern": "[a-zA-Z0-9_.\\-:]+",
-            "internalonly": true,
-            "required": true,
-            "shape_name": "Identity",
-            "documentation": null,
-            "min_length": 1,
-            "max_length": 128
-          },
-          "NewIdentity": {
-            "type": "string",
-            "pattern": "[a-zA-Z0-9_.\\-:]+",
-            "internalonly": true,
-            "shape_name": "Identity",
-            "documentation": null,
-            "min_length": 1,
-            "max_length": 128
-          }
-        },
-        "shape_name": "UpdateIdentityRequest",
-        "documentation": null
-      },
-      "output": null,
-      "errors": [
-        {
-          "type": "structure",
-          "members": {
-          },
-          "zonbookDocumentation": "\n         <simpara>Input parameter violated a constraint. Validate your parameter before calling the API\n      operation again.</simpara>\n      ",
-          "documentation": "\n         <p>Input parameter violated a constraint. Validate your parameter before calling the API\n      operation again.</p>\n      ",
-          "shape_name": "InvalidParameterException"
-        },
-        {
-          "type": "structure",
-          "members": {
-          },
-          "zonbookDocumentation": "\n         <simpara>You are not authorized to perform the action.</simpara>\n      ",
-          "documentation": "\n         <p>You are not authorized to perform the action.</p>\n      ",
-          "shape_name": "AccessDeniedException"
-        },
-        {
-          "type": "structure",
-          "members": {
-          },
-          "zonbookDocumentation": "\n         <simpara>Amazon Rekognition experienced a service issue. Try your call again.</simpara>\n      ",
-          "documentation": "\n         <p>Amazon Rekognition experienced a service issue. Try your call again.</p>\n      ",
-          "shape_name": "InternalServerError"
-        },
-        {
-          "type": "structure",
-          "members": {
-          },
-          "zonbookDocumentation": "\n         <simpara>Amazon Rekognition is temporarily unable to process the request. Try your call again.</simpara>\n      ",
-          "documentation": "\n         <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>\n      ",
-          "shape_name": "ThrottlingException"
-        },
-        {
-          "type": "structure",
-          "members": {
-          },
-          "zonbookDocumentation": "\n         <simpara>The number of requests exceeded your throughput limit. If you want to increase this\n      limit, contact Amazon Rekognition.</simpara>\n      ",
-          "documentation": "\n         <p>The number of requests exceeded your throughput limit. If you want to increase this\n      limit, contact Amazon Rekognition.</p>\n      ",
-          "shape_name": "ProvisionedThroughputExceededException"
-        },
-        {
-          "type": "structure",
-          "members": {
-          },
-          "zonbookDocumentation": "\n         <simpara>The collection specified in the request cannot be found.</simpara>\n      ",
-          "documentation": "\n         <p>The collection specified in the request cannot be found.</p>\n      ",
-          "shape_name": "ResourceNotFoundException"
-        },
-        {
-          "type": "structure",
-          "members": {
-          },
-          "zonbookDocumentation": "\n         <simpara>A collection with the specified ID already exists.</simpara>\n      ",
-          "documentation": "\n         <p>A collection with the specified ID already exists.</p>\n      ",
-          "shape_name": "ResourceAlreadyExistsException"
-        }
-      ],
-      "documentation": null
-    },
-    "DeleteIdentities": {
-      "name": "DeleteIdentities",
-      "input": {
-        "type": "structure",
-        "members": {
-          "CollectionId": {
-            "type": "string",
-            "pattern": "[a-zA-Z0-9_.\\-]+",
-            "required": true,
-            "shape_name": "CollectionId",
-            "documentation": null,
-            "min_length": 1,
-            "max_length": 255
-          },
-          "Identities": {
-            "type": "list",
-            "internalonly": true,
-            "required": true,
-            "shape_name": "IdentityList",
-            "documentation": null,
-            "min_length": 1,
-            "max_length": 4096,
-            "members": {
-              "type": "string",
-              "pattern": "[a-zA-Z0-9_.\\-:]+",
-              "internalonly": true,
-              "shape_name": "Identity",
-              "documentation": null,
-              "min_length": 1,
-              "max_length": 128
-            }
-          }
-        },
-        "shape_name": "DeleteIdentitiesRequest",
-        "documentation": null
-      },
-      "output": {
-        "type": "structure",
-        "members": {
-          "DeletedIdentities": {
-            "type": "list",
-            "internalonly": true,
-            "shape_name": "IdentityList",
-            "documentation": null,
-            "min_length": 1,
-            "max_length": 4096,
-            "members": {
-              "type": "string",
-              "pattern": "[a-zA-Z0-9_.\\-:]+",
-              "internalonly": true,
-              "shape_name": "Identity",
-              "documentation": null,
-              "min_length": 1,
-              "max_length": 128
-            }
-          }
-        },
-        "shape_name": "DeleteIdentitiesResponse",
-        "documentation": null
-      },
-      "errors": [
-        {
-          "type": "structure",
-          "members": {
-          },
-          "zonbookDocumentation": "\n         <simpara>Input parameter violated a constraint. Validate your parameter before calling the API\n      operation again.</simpara>\n      ",
-          "documentation": "\n         <p>Input parameter violated a constraint. Validate your parameter before calling the API\n      operation again.</p>\n      ",
-          "shape_name": "InvalidParameterException"
-        },
-        {
-          "type": "structure",
-          "members": {
-          },
-          "zonbookDocumentation": "\n         <simpara>You are not authorized to perform the action.</simpara>\n      ",
-          "documentation": "\n         <p>You are not authorized to perform the action.</p>\n      ",
-          "shape_name": "AccessDeniedException"
-        },
-        {
-          "type": "structure",
-          "members": {
-          },
-          "zonbookDocumentation": "\n         <simpara>Amazon Rekognition experienced a service issue. Try your call again.</simpara>\n      ",
-          "documentation": "\n         <p>Amazon Rekognition experienced a service issue. Try your call again.</p>\n      ",
-          "shape_name": "InternalServerError"
-        },
-        {
-          "type": "structure",
-          "members": {
-          },
-          "zonbookDocumentation": "\n         <simpara>Amazon Rekognition is temporarily unable to process the request. Try your call again.</simpara>\n      ",
-          "documentation": "\n         <p>Amazon Rekognition is temporarily unable to process the request. Try your call again.</p>\n      ",
-          "shape_name": "ThrottlingException"
-        },
-        {
-          "type": "structure",
-          "members": {
-          },
-          "zonbookDocumentation": "\n         <simpara>The number of requests exceeded your throughput limit. If you want to increase this\n      limit, contact Amazon Rekognition.</simpara>\n      ",
-          "documentation": "\n         <p>The number of requests exceeded your throughput limit. If you want to increase this\n      limit, contact Amazon Rekognition.</p>\n      ",
-          "shape_name": "ProvisionedThroughputExceededException"
-        },
-        {
-          "type": "structure",
-          "members": {
-          },
-          "zonbookDocumentation": "\n         <simpara>The collection specified in the request cannot be found.</simpara>\n      ",
-          "documentation": "\n         <p>The collection specified in the request cannot be found.</p>\n      ",
-          "shape_name": "ResourceNotFoundException"
-        }
-      ],
-      "documentation": null
-    },
     "DetectText": {
       "name": "DetectText",
       "input": {
@@ -5939,7 +5219,7 @@
           "shape_name": "InvalidImageFormatException"
         }
       ],
-      "documentation": "\n    \n         <p>Detects text in the input image and converts it into machine-readable text.</p>\n         <p>Pass the input image as base64-encoded image bytes or as a reference to an image in an\n      Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition operations, you must pass it as a\n      reference to an image in an Amazon S3 bucket. For the AWS CLI, passing image bytes is not\n      supported. The image must be either a .png or .jpeg formatted file. </p>\n         <p>The <code>DetectText</code> operation returns text in an array of  elements, <code>TextDetections</code>. Each\n        <code>TextDetection</code> element provides information about a single word or line of text\n      that was detected in the image. </p>\n         <p>A word is one or more ISO basic latin script characters that are not separated by spaces.\n        <code>DetectText</code> can detect up to 50 words in an image.</p>\n         <p>A line is a string of equally spaced words. A line isn't necessarily a complete\n      sentence. For example, a driver's license number is detected as a line. A line ends when there\n      is no aligned text after it. Also, a line ends when there is a large gap between words,\n      relative to the length of the words. This means, depending on the gap between words, Amazon Rekognition\n      may detect multiple lines in text aligned in the same direction. Periods don't represent the\n      end of a line. If a sentence spans multiple lines, the <code>DetectText</code> operation\n      returns multiple lines.</p>\n         <p>To determine whether a <code>TextDetection</code> element is a line of text or a word,\n      use the <code>TextDetection</code> object <code>Type</code> field. </p>\n         <p>To be detected, text must be within +/- 30 degrees orientation of the horizontal\n      axis.</p>\n    \n         <p>For more information, see DetectText in the Amazon Rekognition Developer Guide.</p>\n      "
+      "documentation": "\n    \n         <p>Detects text in the input image and converts it into machine-readable text.</p>\n         <p>Pass the input image as base64-encoded image bytes or as a reference to an image in an\n      Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition operations, you must pass it as a\n      reference to an image in an Amazon S3 bucket. For the AWS CLI, passing image bytes is not\n      supported. The image must be either a .png or .jpeg formatted file. </p>\n         <p>The <code>DetectText</code> operation returns text in an array of  elements, <code>TextDetections</code>. Each\n        <code>TextDetection</code> element provides information about a single word or line of text\n      that was detected in the image. </p>\n         <p>A word is one or more ISO basic latin script characters that are not separated by spaces.\n        <code>DetectText</code> can detect up to 50 words in an image.</p>\n         <p>A line is a string of equally spaced words. A line isn't necessarily a complete\n      sentence. For example, a driver's license number is detected as a line. A line ends when there\n      is no aligned text after it. Also, a line ends when there is a large gap between words,\n      relative to the length of the words. This means, depending on the gap between words, Amazon Rekognition\n      may detect multiple lines in text aligned in the same direction. Periods don't represent the\n      end of a line. If a sentence spans multiple lines, the <code>DetectText</code> operation\n      returns multiple lines.</p>\n         <p>To determine whether a <code>TextDetection</code> element is a line of text or a word,\n      use the <code>TextDetection</code> object <code>Type</code> field. </p>\n         <p>To be detected, text must be within +/- 90 degrees orientation of the horizontal axis.</p>\n    \n         <p>For more information, see DetectText in the Amazon Rekognition Developer Guide.</p>\n      "
     },
     "StartLabelDetection": {
       "name": "StartLabelDetection",
@@ -6010,7 +5290,7 @@
             "members": {
               "SNSTopicArn": {
                 "type": "string",
-                "pattern": "(^arn:([a-z\\d-]+):sns:.*:\\w{12}:.+$)",
+                "pattern": "(^arn:aws:sns:.*:\\w{12}:.+$)",
                 "zonbookDocumentation": "\n        <simpara>The Amazon SNS topic to which Amazon Rekognition to posts the completion status.</simpara>\n      ",
                 "documentation": "\n        <p>The Amazon SNS topic to which Amazon Rekognition to posts the completion status.</p>\n      ",
                 "required": true,
@@ -6018,7 +5298,7 @@
               },
               "RoleArn": {
                 "type": "string",
-                "pattern": "arn:([a-z\\d-]+):iam::\\d{12}:role/?[a-zA-Z_0-9+=,.@\\-_/]+",
+                "pattern": "arn:aws:iam::\\d{12}:role/?[a-zA-Z_0-9+=,.@\\-_/]+",
                 "zonbookDocumentation": "\n        <para>The ARN of an IAM role that gives Amazon Rekognition publishing permissions to the Amazon SNS topic. </para>\n      ",
                 "documentation": "\n        <p>The ARN of an IAM role that gives Amazon Rekognition publishing permissions to the Amazon SNS topic. </p>\n      ",
                 "required": true,
@@ -6203,7 +5483,7 @@
             "members": {
               "SNSTopicArn": {
                 "type": "string",
-                "pattern": "(^arn:([a-z\\d-]+):sns:.*:\\w{12}:.+$)",
+                "pattern": "(^arn:aws:sns:.*:\\w{12}:.+$)",
                 "zonbookDocumentation": "\n        <simpara>The Amazon SNS topic to which Amazon Rekognition to posts the completion status.</simpara>\n      ",
                 "documentation": "\n        <p>The Amazon SNS topic to which Amazon Rekognition to posts the completion status.</p>\n      ",
                 "required": true,
@@ -6211,7 +5491,7 @@
               },
               "RoleArn": {
                 "type": "string",
-                "pattern": "arn:([a-z\\d-]+):iam::\\d{12}:role/?[a-zA-Z_0-9+=,.@\\-_/]+",
+                "pattern": "arn:aws:iam::\\d{12}:role/?[a-zA-Z_0-9+=,.@\\-_/]+",
                 "zonbookDocumentation": "\n        <para>The ARN of an IAM role that gives Amazon Rekognition publishing permissions to the Amazon SNS topic. </para>\n      ",
                 "documentation": "\n        <p>The ARN of an IAM role that gives Amazon Rekognition publishing permissions to the Amazon SNS topic. </p>\n      ",
                 "required": true,
@@ -6388,7 +5668,7 @@
             "members": {
               "SNSTopicArn": {
                 "type": "string",
-                "pattern": "(^arn:([a-z\\d-]+):sns:.*:\\w{12}:.+$)",
+                "pattern": "(^arn:aws:sns:.*:\\w{12}:.+$)",
                 "zonbookDocumentation": "\n        <simpara>The Amazon SNS topic to which Amazon Rekognition to posts the completion status.</simpara>\n      ",
                 "documentation": "\n        <p>The Amazon SNS topic to which Amazon Rekognition to posts the completion status.</p>\n      ",
                 "required": true,
@@ -6396,7 +5676,7 @@
               },
               "RoleArn": {
                 "type": "string",
-                "pattern": "arn:([a-z\\d-]+):iam::\\d{12}:role/?[a-zA-Z_0-9+=,.@\\-_/]+",
+                "pattern": "arn:aws:iam::\\d{12}:role/?[a-zA-Z_0-9+=,.@\\-_/]+",
                 "zonbookDocumentation": "\n        <para>The ARN of an IAM role that gives Amazon Rekognition publishing permissions to the Amazon SNS topic. </para>\n      ",
                 "documentation": "\n        <p>The ARN of an IAM role that gives Amazon Rekognition publishing permissions to the Amazon SNS topic. </p>\n      ",
                 "required": true,
@@ -6583,7 +5863,7 @@
             "members": {
               "SNSTopicArn": {
                 "type": "string",
-                "pattern": "(^arn:([a-z\\d-]+):sns:.*:\\w{12}:.+$)",
+                "pattern": "(^arn:aws:sns:.*:\\w{12}:.+$)",
                 "zonbookDocumentation": "\n        <simpara>The Amazon SNS topic to which Amazon Rekognition to posts the completion status.</simpara>\n      ",
                 "documentation": "\n        <p>The Amazon SNS topic to which Amazon Rekognition to posts the completion status.</p>\n      ",
                 "required": true,
@@ -6591,7 +5871,7 @@
               },
               "RoleArn": {
                 "type": "string",
-                "pattern": "arn:([a-z\\d-]+):iam::\\d{12}:role/?[a-zA-Z_0-9+=,.@\\-_/]+",
+                "pattern": "arn:aws:iam::\\d{12}:role/?[a-zA-Z_0-9+=,.@\\-_/]+",
                 "zonbookDocumentation": "\n        <para>The ARN of an IAM role that gives Amazon Rekognition publishing permissions to the Amazon SNS topic. </para>\n      ",
                 "documentation": "\n        <p>The ARN of an IAM role that gives Amazon Rekognition publishing permissions to the Amazon SNS topic. </p>\n      ",
                 "required": true,
@@ -6768,7 +6048,7 @@
             "members": {
               "SNSTopicArn": {
                 "type": "string",
-                "pattern": "(^arn:([a-z\\d-]+):sns:.*:\\w{12}:.+$)",
+                "pattern": "(^arn:aws:sns:.*:\\w{12}:.+$)",
                 "zonbookDocumentation": "\n        <simpara>The Amazon SNS topic to which Amazon Rekognition to posts the completion status.</simpara>\n      ",
                 "documentation": "\n        <p>The Amazon SNS topic to which Amazon Rekognition to posts the completion status.</p>\n      ",
                 "required": true,
@@ -6776,7 +6056,7 @@
               },
               "RoleArn": {
                 "type": "string",
-                "pattern": "arn:([a-z\\d-]+):iam::\\d{12}:role/?[a-zA-Z_0-9+=,.@\\-_/]+",
+                "pattern": "arn:aws:iam::\\d{12}:role/?[a-zA-Z_0-9+=,.@\\-_/]+",
                 "zonbookDocumentation": "\n        <para>The ARN of an IAM role that gives Amazon Rekognition publishing permissions to the Amazon SNS topic. </para>\n      ",
                 "documentation": "\n        <p>The ARN of an IAM role that gives Amazon Rekognition publishing permissions to the Amazon SNS topic. </p>\n      ",
                 "required": true,
@@ -6786,11 +6066,6 @@
             "zonbookDocumentation": "\n         <simpara>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the\n      celebrity recognition analysis to.</simpara>\n      ",
             "documentation": "\n         <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the\n      celebrity recognition analysis to.</p>\n      ",
             "shape_name": "NotificationChannel"
-          },
-          "EnablePersonTracking": {
-            "type": "boolean",
-            "shape_name": "NullableBoolean",
-            "documentation": null
           },
           "JobTag": {
             "type": "string",
@@ -6971,17 +6246,12 @@
             "min_length": 1,
             "max_length": 255
           },
-          "EnablePersonTracking": {
-            "type": "boolean",
-            "shape_name": "NullableBoolean",
-            "documentation": null
-          },
           "NotificationChannel": {
             "type": "structure",
             "members": {
               "SNSTopicArn": {
                 "type": "string",
-                "pattern": "(^arn:([a-z\\d-]+):sns:.*:\\w{12}:.+$)",
+                "pattern": "(^arn:aws:sns:.*:\\w{12}:.+$)",
                 "zonbookDocumentation": "\n        <simpara>The Amazon SNS topic to which Amazon Rekognition to posts the completion status.</simpara>\n      ",
                 "documentation": "\n        <p>The Amazon SNS topic to which Amazon Rekognition to posts the completion status.</p>\n      ",
                 "required": true,
@@ -6989,7 +6259,7 @@
               },
               "RoleArn": {
                 "type": "string",
-                "pattern": "arn:([a-z\\d-]+):iam::\\d{12}:role/?[a-zA-Z_0-9+=,.@\\-_/]+",
+                "pattern": "arn:aws:iam::\\d{12}:role/?[a-zA-Z_0-9+=,.@\\-_/]+",
                 "zonbookDocumentation": "\n        <para>The ARN of an IAM role that gives Amazon Rekognition publishing permissions to the Amazon SNS topic. </para>\n      ",
                 "documentation": "\n        <p>The ARN of an IAM role that gives Amazon Rekognition publishing permissions to the Amazon SNS topic. </p>\n      ",
                 "required": true,
@@ -7217,12 +6487,6 @@
                 "documentation": "\n        <p>Horizontal pixel dimension of the video.</p>\n      ",
                 "shape_name": "ULong",
                 "min_length": 0
-              },
-              "Rotation": {
-                "type": "integer",
-                "shape_name": "UInteger",
-                "documentation": null,
-                "min_length": 0
               }
             },
             "zonbookDocumentation": "\n         <simpara>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in\n       every page of paginated responses from a Amazon Rekognition video operation.</simpara>\n      ",
@@ -7276,61 +6540,6 @@
               "zonbookDocumentation": "\n        <simpara>Information about a label detected in a video analysis request and the time the label was detected in the video. </simpara>\n      ",
               "documentation": "\n        <p>Information about a label detected in a video analysis request and the time the label was detected in the video. </p>\n      ",
               "shape_name": "LabelDetection"
-            }
-          },
-          "BillableDurationSeconds": {
-            "type": "integer",
-            "shape_name": "UInteger",
-            "documentation": null,
-            "min_length": 0
-          },
-          "ErrorCode": {
-            "type": "string",
-            "shape_name": "ErrorCode",
-            "documentation": null
-          },
-          "Warnings": {
-            "type": "list",
-            "shape_name": "Warnings",
-            "documentation": null,
-            "members": {
-              "type": "structure",
-              "members": {
-                "ErrorCode": {
-                  "type": "string",
-                  "shape_name": "ErrorCode",
-                  "documentation": null
-                },
-                "Message": {
-                  "type": "string",
-                  "shape_name": "StatusMessage",
-                  "documentation": null
-                },
-                "Sections": {
-                  "type": "list",
-                  "shape_name": "Sections",
-                  "documentation": null,
-                  "members": {
-                    "type": "structure",
-                    "members": {
-                      "StartTimestamp": {
-                        "type": "long",
-                        "shape_name": "Timestamp",
-                        "documentation": null
-                      },
-                      "EndTimestamp": {
-                        "type": "long",
-                        "shape_name": "Timestamp",
-                        "documentation": null
-                      }
-                    },
-                    "shape_name": "Section",
-                    "documentation": null
-                  }
-                }
-              },
-              "shape_name": "Warning",
-              "documentation": null
             }
           }
         },
@@ -7501,12 +6710,6 @@
                 "documentation": "\n        <p>Horizontal pixel dimension of the video.</p>\n      ",
                 "shape_name": "ULong",
                 "min_length": 0
-              },
-              "Rotation": {
-                "type": "integer",
-                "shape_name": "UInteger",
-                "documentation": null,
-                "min_length": 0
               }
             },
             "zonbookDocumentation": "\n         <simpara>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code>\n     is returned in every page of paginated responses from <code>GetContentModeration</code>. </simpara>\n      ",
@@ -7567,61 +6770,6 @@
             "documentation": "\n         <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent\n     request to retrieve the next set of moderation labels. </p>\n      ",
             "shape_name": "PaginationToken",
             "max_length": 255
-          },
-          "BillableDurationSeconds": {
-            "type": "integer",
-            "shape_name": "UInteger",
-            "documentation": null,
-            "min_length": 0
-          },
-          "ErrorCode": {
-            "type": "string",
-            "shape_name": "ErrorCode",
-            "documentation": null
-          },
-          "Warnings": {
-            "type": "list",
-            "shape_name": "Warnings",
-            "documentation": null,
-            "members": {
-              "type": "structure",
-              "members": {
-                "ErrorCode": {
-                  "type": "string",
-                  "shape_name": "ErrorCode",
-                  "documentation": null
-                },
-                "Message": {
-                  "type": "string",
-                  "shape_name": "StatusMessage",
-                  "documentation": null
-                },
-                "Sections": {
-                  "type": "list",
-                  "shape_name": "Sections",
-                  "documentation": null,
-                  "members": {
-                    "type": "structure",
-                    "members": {
-                      "StartTimestamp": {
-                        "type": "long",
-                        "shape_name": "Timestamp",
-                        "documentation": null
-                      },
-                      "EndTimestamp": {
-                        "type": "long",
-                        "shape_name": "Timestamp",
-                        "documentation": null
-                      }
-                    },
-                    "shape_name": "Section",
-                    "documentation": null
-                  }
-                }
-              },
-              "shape_name": "Warning",
-              "documentation": null
-            }
           }
         },
         "shape_name": "GetContentModerationResponse",
@@ -7780,12 +6928,6 @@
                 "zonbookDocumentation": "\n        <simpara>Horizontal pixel dimension of the video.</simpara>\n      ",
                 "documentation": "\n        <p>Horizontal pixel dimension of the video.</p>\n      ",
                 "shape_name": "ULong",
-                "min_length": 0
-              },
-              "Rotation": {
-                "type": "integer",
-                "shape_name": "UInteger",
-                "documentation": null,
                 "min_length": 0
               }
             },
@@ -8218,61 +7360,6 @@
               "documentation": "\n        <p>Information about a face detected in a video analysis request and the time the face was detected in the video. </p>\n      ",
               "shape_name": "FaceDetection"
             }
-          },
-          "BillableDurationSeconds": {
-            "type": "integer",
-            "shape_name": "UInteger",
-            "documentation": null,
-            "min_length": 0
-          },
-          "ErrorCode": {
-            "type": "string",
-            "shape_name": "ErrorCode",
-            "documentation": null
-          },
-          "Warnings": {
-            "type": "list",
-            "shape_name": "Warnings",
-            "documentation": null,
-            "members": {
-              "type": "structure",
-              "members": {
-                "ErrorCode": {
-                  "type": "string",
-                  "shape_name": "ErrorCode",
-                  "documentation": null
-                },
-                "Message": {
-                  "type": "string",
-                  "shape_name": "StatusMessage",
-                  "documentation": null
-                },
-                "Sections": {
-                  "type": "list",
-                  "shape_name": "Sections",
-                  "documentation": null,
-                  "members": {
-                    "type": "structure",
-                    "members": {
-                      "StartTimestamp": {
-                        "type": "long",
-                        "shape_name": "Timestamp",
-                        "documentation": null
-                      },
-                      "EndTimestamp": {
-                        "type": "long",
-                        "shape_name": "Timestamp",
-                        "documentation": null
-                      }
-                    },
-                    "shape_name": "Section",
-                    "documentation": null
-                  }
-                }
-              },
-              "shape_name": "Warning",
-              "documentation": null
-            }
           }
         },
         "shape_name": "GetFaceDetectionResponse",
@@ -8441,12 +7528,6 @@
                 "zonbookDocumentation": "\n        <simpara>Horizontal pixel dimension of the video.</simpara>\n      ",
                 "documentation": "\n        <p>Horizontal pixel dimension of the video.</p>\n      ",
                 "shape_name": "ULong",
-                "min_length": 0
-              },
-              "Rotation": {
-                "type": "integer",
-                "shape_name": "UInteger",
-                "documentation": null,
                 "min_length": 0
               }
             },
@@ -8925,61 +8006,6 @@
               "documentation": "\n        <p>Details and tracking information for a single time a person is tracked in a video.\n            Amazon Rekognition operations that track persons return an array of <code>PersonDetection</code> objects\n            with elements for each time a person is tracked in a video. </p>\n      \n         <p>For more information, see API_GetPersonTracking in the Amazon Rekognition Developer Guide. </p>\n      ",
               "shape_name": "PersonDetection"
             }
-          },
-          "BillableDurationSeconds": {
-            "type": "integer",
-            "shape_name": "UInteger",
-            "documentation": null,
-            "min_length": 0
-          },
-          "ErrorCode": {
-            "type": "string",
-            "shape_name": "ErrorCode",
-            "documentation": null
-          },
-          "Warnings": {
-            "type": "list",
-            "shape_name": "Warnings",
-            "documentation": null,
-            "members": {
-              "type": "structure",
-              "members": {
-                "ErrorCode": {
-                  "type": "string",
-                  "shape_name": "ErrorCode",
-                  "documentation": null
-                },
-                "Message": {
-                  "type": "string",
-                  "shape_name": "StatusMessage",
-                  "documentation": null
-                },
-                "Sections": {
-                  "type": "list",
-                  "shape_name": "Sections",
-                  "documentation": null,
-                  "members": {
-                    "type": "structure",
-                    "members": {
-                      "StartTimestamp": {
-                        "type": "long",
-                        "shape_name": "Timestamp",
-                        "documentation": null
-                      },
-                      "EndTimestamp": {
-                        "type": "long",
-                        "shape_name": "Timestamp",
-                        "documentation": null
-                      }
-                    },
-                    "shape_name": "Section",
-                    "documentation": null
-                  }
-                }
-              },
-              "shape_name": "Warning",
-              "documentation": null
-            }
           }
         },
         "shape_name": "GetPersonTrackingResponse",
@@ -9148,12 +8174,6 @@
                 "zonbookDocumentation": "\n        <simpara>Horizontal pixel dimension of the video.</simpara>\n      ",
                 "documentation": "\n        <p>Horizontal pixel dimension of the video.</p>\n      ",
                 "shape_name": "ULong",
-                "min_length": 0
-              },
-              "Rotation": {
-                "type": "integer",
-                "shape_name": "UInteger",
-                "documentation": null,
                 "min_length": 0
               }
             },
@@ -9658,61 +8678,6 @@
               "documentation": "\n        \n         <p>Information about a detected celebrity and the time the celebrity was detected in a stored video.\n        For more information, see GetCelebrityRecognition in the Amazon Rekognition Developer Guide.</p>\n      ",
               "shape_name": "CelebrityRecognition"
             }
-          },
-          "BillableDurationSeconds": {
-            "type": "integer",
-            "shape_name": "UInteger",
-            "documentation": null,
-            "min_length": 0
-          },
-          "ErrorCode": {
-            "type": "string",
-            "shape_name": "ErrorCode",
-            "documentation": null
-          },
-          "Warnings": {
-            "type": "list",
-            "shape_name": "Warnings",
-            "documentation": null,
-            "members": {
-              "type": "structure",
-              "members": {
-                "ErrorCode": {
-                  "type": "string",
-                  "shape_name": "ErrorCode",
-                  "documentation": null
-                },
-                "Message": {
-                  "type": "string",
-                  "shape_name": "StatusMessage",
-                  "documentation": null
-                },
-                "Sections": {
-                  "type": "list",
-                  "shape_name": "Sections",
-                  "documentation": null,
-                  "members": {
-                    "type": "structure",
-                    "members": {
-                      "StartTimestamp": {
-                        "type": "long",
-                        "shape_name": "Timestamp",
-                        "documentation": null
-                      },
-                      "EndTimestamp": {
-                        "type": "long",
-                        "shape_name": "Timestamp",
-                        "documentation": null
-                      }
-                    },
-                    "shape_name": "Section",
-                    "documentation": null
-                  }
-                }
-              },
-              "shape_name": "Warning",
-              "documentation": null
-            }
           }
         },
         "shape_name": "GetCelebrityRecognitionResponse",
@@ -9888,12 +8853,6 @@
                 "zonbookDocumentation": "\n        <simpara>Horizontal pixel dimension of the video.</simpara>\n      ",
                 "documentation": "\n        <p>Horizontal pixel dimension of the video.</p>\n      ",
                 "shape_name": "ULong",
-                "min_length": 0
-              },
-              "Rotation": {
-                "type": "integer",
-                "shape_name": "UInteger",
-                "documentation": null,
                 "min_length": 0
               }
             },
@@ -10441,34 +9400,6 @@
                             "shape_name": "Percent",
                             "min_length": 0,
                             "max_length": 100
-                          },
-                          "AssociationScore": {
-                            "type": "float",
-                            "shape_name": "Percent",
-                            "documentation": null,
-                            "min_length": 0,
-                            "max_length": 100
-                          },
-                          "AssociationMethod": {
-                            "type": "string",
-                            "enum": [
-                              "MANUAL",
-                              "AUTO_SEARCH",
-                              "AUTO_CLUSTER",
-                              "NOT_ASSOCIATED"
-                            ],
-                            "internalonly": true,
-                            "shape_name": "AssociationMethod",
-                            "documentation": null
-                          },
-                          "Identity": {
-                            "type": "string",
-                            "pattern": "[a-zA-Z0-9_.\\-:]+",
-                            "internalonly": true,
-                            "shape_name": "Identity",
-                            "documentation": null,
-                            "min_length": 1,
-                            "max_length": 128
                           }
                         },
                         "zonbookDocumentation": "\n         <simpara>Describes the face properties such as the bounding box, face ID, image ID of the source\n      image, and external image ID that you assigned.</simpara>\n      ",
@@ -10485,61 +9416,6 @@
               "zonbookDocumentation": "\n         <simpara>Information about a person whose face matches a face(s) in a Amazon Rekognition collection. Includes information\n      about the faces in the Amazon Rekognition collection (<xref linkend=\"API_FaceMatch\"/>), information about the person (<xref linkend=\"PersonDetail\"/>)\n      and the timestamp for when the person was detected in a video. An array of  <code>PersonMatch</code> objects is returned by <xref linkend=\"API_GetFaceSearch\"/>.\n    </simpara>\n      ",
               "documentation": "\n         <p>Information about a person whose face matches a face(s) in a Amazon Rekognition collection. Includes information\n      about the faces in the Amazon Rekognition collection (), information about the person (<a>PersonDetail</a>)\n      and the timestamp for when the person was detected in a video. An array of  <code>PersonMatch</code> objects is returned by .\n    </p>\n      ",
               "shape_name": "PersonMatch"
-            }
-          },
-          "BillableDurationSeconds": {
-            "type": "integer",
-            "shape_name": "UInteger",
-            "documentation": null,
-            "min_length": 0
-          },
-          "ErrorCode": {
-            "type": "string",
-            "shape_name": "ErrorCode",
-            "documentation": null
-          },
-          "Warnings": {
-            "type": "list",
-            "shape_name": "Warnings",
-            "documentation": null,
-            "members": {
-              "type": "structure",
-              "members": {
-                "ErrorCode": {
-                  "type": "string",
-                  "shape_name": "ErrorCode",
-                  "documentation": null
-                },
-                "Message": {
-                  "type": "string",
-                  "shape_name": "StatusMessage",
-                  "documentation": null
-                },
-                "Sections": {
-                  "type": "list",
-                  "shape_name": "Sections",
-                  "documentation": null,
-                  "members": {
-                    "type": "structure",
-                    "members": {
-                      "StartTimestamp": {
-                        "type": "long",
-                        "shape_name": "Timestamp",
-                        "documentation": null
-                      },
-                      "EndTimestamp": {
-                        "type": "long",
-                        "shape_name": "Timestamp",
-                        "documentation": null
-                      }
-                    },
-                    "shape_name": "Section",
-                    "documentation": null
-                  }
-                }
-              },
-              "shape_name": "Warning",
-              "documentation": null
             }
           }
         },
@@ -10705,7 +9581,7 @@
           },
           "RoleArn": {
             "type": "string",
-            "pattern": "arn:([a-z\\d-]+):iam::\\d{12}:role/?[a-zA-Z_0-9+=,.@\\-_/]+",
+            "pattern": "arn:aws:iam::\\d{12}:role/?[a-zA-Z_0-9+=,.@\\-_/]+",
             "zonbookDocumentation": "\n        <simpara>ARN of the IAM role that allows access to the stream processor.</simpara>\n      ",
             "documentation": "\n        <p>ARN of the IAM role that allows access to the stream processor.</p>\n      ",
             "required": true,
@@ -11164,7 +10040,7 @@
           },
           "RoleArn": {
             "type": "string",
-            "pattern": "arn:([a-z\\d-]+):iam::\\d{12}:role/?[a-zA-Z_0-9+=,.@\\-_/]+",
+            "pattern": "arn:aws:iam::\\d{12}:role/?[a-zA-Z_0-9+=,.@\\-_/]+",
             "zonbookDocumentation": "\n        <simpara>ARN of the IAM role that allows access to the stream processor.</simpara>\n      ",
             "documentation": "\n        <p>ARN of the IAM role that allows access to the stream processor.</p>\n      ",
             "shape_name": "RoleArn"

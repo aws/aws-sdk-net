@@ -38,7 +38,10 @@ namespace Amazon.Rekognition.Model
         private string _faceModelVersion;
 
         /// <summary>
-        /// Gets and sets the property CollectionARN.
+        /// Gets and sets the property CollectionARN. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the collection.
+        /// </para>
         /// </summary>
         public string CollectionARN
         {
@@ -53,7 +56,12 @@ namespace Amazon.Rekognition.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreationTimestamp.
+        /// Gets and sets the property CreationTimestamp. 
+        /// <para>
+        /// The number of milliseconds since the Unix epoch time until the creation of the collection.
+        /// The Unix epoch time is 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January
+        /// 1970.
+        /// </para>
         /// </summary>
         public DateTime CreationTimestamp
         {
@@ -68,7 +76,11 @@ namespace Amazon.Rekognition.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FaceCount.
+        /// Gets and sets the property FaceCount. 
+        /// <para>
+        /// The number of faces that are indexed into the collection. To index faces into a collection,
+        /// use .
+        /// </para>
         /// </summary>
         public long FaceCount
         {
@@ -83,7 +95,14 @@ namespace Amazon.Rekognition.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FaceModelVersion.
+        /// Gets and sets the property FaceModelVersion. 
+        /// <para>
+        /// The version of the face model that's used by the collection for face detection.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see Model Versioning in the Amazon Rekognition Developer Guide.
+        /// </para>
         /// </summary>
         public string FaceModelVersion
         {

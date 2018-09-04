@@ -64,12 +64,6 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AssociationScore", targetDepth))
-                {
-                    var unmarshaller = FloatUnmarshaller.Instance;
-                    unmarshalledObject.AssociationScore = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("BoundingBox", targetDepth))
                 {
                     var unmarshaller = BoundingBoxUnmarshaller.Instance;

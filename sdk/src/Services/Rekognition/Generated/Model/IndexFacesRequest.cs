@@ -41,11 +41,16 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
+    /// To get the number of faces in a collection, call . 
+    /// </para>
+    ///  
+    /// <para>
     /// If you are using version 1.0 of the face detection model, <code>IndexFaces</code>
     /// indexes the 15 largest faces in the input image. Later versions of the face detection
     /// model index the 100 largest faces in the input image. To determine which version of
-    /// the model you are using, check the the value of <code>FaceModelVersion</code> in the
-    /// response from <code>IndexFaces</code>. 
+    /// the model you are using, call and supply the collection ID. You also get the model
+    /// version from the value of <code>FaceModelVersion</code> in the response from <code>IndexFaces</code>.
+    /// 
     /// </para>
     ///  
     /// <para>
