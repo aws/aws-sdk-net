@@ -67,6 +67,7 @@ namespace Amazon.AppStream.Model
         /// Deletes the storage connectors currently enabled for the stack.
         /// </para>
         /// </summary>
+        [Obsolete("This property is deprecated")]
         public bool DeleteStorageConnectors
         {
             get { return this._deleteStorageConnectors.GetValueOrDefault(); }

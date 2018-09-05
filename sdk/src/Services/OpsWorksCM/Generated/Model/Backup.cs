@@ -305,6 +305,7 @@ namespace Amazon.OpsWorksCM.Model
         ///  This field is deprecated and is no longer used. 
         /// </para>
         /// </summary>
+        [Obsolete("This field is deprecated and is no longer used")]
         public int S3DataSize
         {
             get { return this._s3DataSize.GetValueOrDefault(); }
@@ -323,6 +324,7 @@ namespace Amazon.OpsWorksCM.Model
         ///  This field is deprecated and is no longer used. 
         /// </para>
         /// </summary>
+        [Obsolete("This field is deprecated and is no longer used")]
         public string S3DataUrl
         {
             get { return this._s3DataUrl; }

@@ -49,6 +49,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [Obsolete("In releases prior to June 12, 2017, this parameter returned null by the API. It is now deprecated, and the API returns the nextPageToken parameter instead.")]
         public string NextPageCount
         {
             get { return this._nextPageCount; }

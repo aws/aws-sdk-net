@@ -199,6 +199,7 @@ namespace Amazon.KinesisFirehose.Model
         /// [Deprecated] Describes an update for a destination in Amazon S3.
         /// </para>
         /// </summary>
+        [Obsolete("This property is deprecated. Use ExtendedS3DestinationUpdate instead.")]
         public S3DestinationUpdate S3DestinationUpdate
         {
             get { return this._s3DestinationUpdate; }

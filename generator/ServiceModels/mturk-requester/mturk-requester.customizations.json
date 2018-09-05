@@ -1,0 +1,11 @@
+{
+    "shapeModifiers": {
+        "QualificationRequirement": {
+            "modify": [
+                {
+                    "RequiredToPreview": { "deprecatedMessage": "Use the ActionsGuarded field instead" }
+                }
+            ]
+        }
+    }
+}

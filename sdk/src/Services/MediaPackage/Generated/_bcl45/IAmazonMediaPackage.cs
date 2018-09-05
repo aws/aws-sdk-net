@@ -426,7 +426,7 @@ namespace Amazon.MediaPackage
         /// The parameters sent in the request are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/RotateChannelCredentials">REST API Reference for RotateChannelCredentials Operation</seealso>
-        [Obsolete("This API is deprecated. Please use RotateIngestEndpointCredentials instead.")]
+        [Obsolete("This API is deprecated. Please use RotateIngestEndpointCredentials instead")]
         RotateChannelCredentialsResponse RotateChannelCredentials(RotateChannelCredentialsRequest request);
 
 
@@ -440,7 +440,7 @@ namespace Amazon.MediaPackage
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/RotateChannelCredentials">REST API Reference for RotateChannelCredentials Operation</seealso>
-        [Obsolete("This API is deprecated. Please use RotateIngestEndpointCredentials instead.")]
+        [Obsolete("This API is deprecated. Please use RotateIngestEndpointCredentials instead")]
         Task<RotateChannelCredentialsResponse> RotateChannelCredentialsAsync(RotateChannelCredentialsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

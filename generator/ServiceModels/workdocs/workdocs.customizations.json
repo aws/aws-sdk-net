@@ -1,0 +1,11 @@
+{
+    "shapeModifiers": {
+        "DescribeUsersResponse": {
+            "modify": [
+                {
+                    "TotalNumberOfUsers": { "deprecatedMessage": "This property is deprecated" }
+                }
+            ]
+        }
+    }
+}

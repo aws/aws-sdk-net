@@ -3,5 +3,21 @@
         "SessionState": {
             "renameShape": "StreamSessionState"
         }
+    },
+    "shapeModifiers": {
+        "UpdateFleetRequest": {
+            "modify": [
+                {
+                    "DeleteVpcConfig": { "deprecatedMessage": "This property is deprecated" }
+                }
+            ]
+        },
+        "UpdateStackRequest": {
+            "modify": [
+                {
+                    "DeleteStorageConnectors": { "deprecatedMessage": "This property is deprecated" }
+                }
+            ]
+        }
     }
 }

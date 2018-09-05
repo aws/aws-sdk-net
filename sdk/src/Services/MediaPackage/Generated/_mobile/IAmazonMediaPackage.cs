@@ -185,7 +185,7 @@ namespace Amazon.MediaPackage
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/RotateChannelCredentials">REST API Reference for RotateChannelCredentials Operation</seealso>
-        [Obsolete("This API is deprecated. Please use RotateIngestEndpointCredentials instead.")]
+        [Obsolete("This API is deprecated. Please use RotateIngestEndpointCredentials instead")]
         Task<RotateChannelCredentialsResponse> RotateChannelCredentialsAsync(RotateChannelCredentialsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

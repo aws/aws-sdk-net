@@ -18,6 +18,8 @@ namespace ServiceClientGenerator
         public const string MemberKey = "member";
         public const string FlattenedKey = "flattened";
         public const string JsonValueKey = "jsonvalue";
+        public const string DeprecatedKey = "deprecated";
+        public const string DeprecatedMessageKey = "deprecatedMessage";
 
         private const string UnhandledTypeDecimalErrorMessage = "Unhandled type 'decimal' : using .net's decimal type for modeled decimal type may result in loss of data.  decimal type members should explicitly opt-in via shape customization.";
 
@@ -755,6 +757,36 @@ namespace ServiceClientGenerator
             get
             {
                 return this.Shape.IsStreaming;
+            }
+        }
+
+        /// <summary>
+        /// Determines if the member is deprecated
+        /// </summary>
+        public bool IsDeprecated
+        {
+            get
+            {
+                if (data[DeprecatedKey] != null && data[DeprecatedKey].IsBoolean)
+                    return (bool)data[DeprecatedKey];
+
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Returns the deprecation message specified in the model or in the customization file.
+        /// </summary>
+        public string DeprecationMessage
+        {
+            get
+            {
+                string message = this.model.Customizations.GetPropertyModifier(this.OwningShape.Name, this._name)?.DeprecationMessage ??
+                                 this.data[DeprecatedMessageKey].CastToString();
+                if (message == null)
+                    throw new Exception(string.Format("The 'message' property of the 'deprecated' trait is missing for member {0}.{1}.\nFor example: \"MemberName\":{{ ... \"deprecated\":true, \"deprecatedMessage\":\"This property is deprecated, use XXX instead.\"}}", this.OwningShape.Name, this._name));
+
+                return message;
             }
         }
 

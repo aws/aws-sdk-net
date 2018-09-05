@@ -1,6 +1,15 @@
 {
-  "noArgOverloads": [
-    "ListDomains",
-    "ListOperations"
-  ]
+    "noArgOverloads": [
+        "ListDomains",
+        "ListOperations"
+    ],
+    "shapeModifiers": {
+        "UpdateDomainNameserversRequest": {
+            "modify": [
+                {
+                    "FIAuthKey": { "deprecatedMessage": "This property is deprecated" }
+                }
+            ]
+        }
+    }
 }

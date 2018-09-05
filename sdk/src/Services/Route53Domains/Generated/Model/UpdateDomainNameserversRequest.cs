@@ -70,6 +70,7 @@ namespace Amazon.Route53Domains.Model
         /// The authorization key for .fi domains
         /// </para>
         /// </summary>
+        [Obsolete("This property is deprecated")]
         public string FIAuthKey
         {
             get { return this._fiAuthKey; }

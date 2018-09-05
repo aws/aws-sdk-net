@@ -41,6 +41,14 @@ namespace <#=this.Config.Namespace#>.Model
 	else
 	    this.FormatClassDocumentation(this.Structure);  
 #>
+<#		
+		if(this.Structure != null && this.Structure.IsDeprecated)
+		{
+#>
+    [Obsolete("<#=this.Structure.DeprecationMessage#>")]
+<#
+		}
+#>
 	public partial class <#=this.ClassName#><#=this.BaseClassString#>
 	{
 <#
@@ -75,6 +83,14 @@ namespace <#=this.Config.Namespace#>.Model
         /// <summary>
         /// Gets and sets the <#=this.Structure.Name#> property.
         /// </summary>
+<#		
+				if(this.Structure.IsDeprecated)
+				{
+#>
+		[Obsolete("<#=this.Structure.DeprecationMessage#>")]
+<#
+				}
+#>
         public <#=this.Structure.Name#> <#=this.Structure.Name#>
         {
             get { return this._response; }
@@ -91,6 +107,14 @@ namespace <#=this.Config.Namespace#>.Model
 						continue;
 #>
 <# this.FormatPropertyDocumentation(member); #>
+<#		
+					if(member.IsDeprecated)
+					{
+#>
+		[Obsolete("<#=member.DeprecationMessage#>")]
+<#
+					}
+#>
         <#=member.AccessModifier#> <#=member.DetermineType()#><#=member.UseNullable ? "?" : ""#> <#=member.PropertyName#>
         {
 <#
@@ -124,6 +148,14 @@ namespace <#=this.Config.Namespace#>.Model
         /// <returns>
         /// True if the related property was set or will be sent to a service; false otherwise.
         /// </returns>
+<#		
+						if(member.IsDeprecated)
+						{
+#>
+		[Obsolete("<#=member.DeprecationMessage#>")]
+<#
+						}
+#>
         public bool Is<#=member.PropertyName#>Set
         {
             get

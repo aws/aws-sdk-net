@@ -1,0 +1,29 @@
+{
+    "runtimePipelineOverride": {
+        "overrides": [
+            {
+                "operation": "addAfter",
+                "newType": "Amazon.Route53.Internal.AmazonRoute53PostMarshallHandler",
+                "targetType": "Amazon.Runtime.Internal.Marshaller"
+            },
+            {
+                "operation": "addAfter",
+                "newType": "Amazon.Route53.Internal.AmazonRoute53PreMarshallHandler",
+                "targetType": "Amazon.Runtime.Internal.ErrorCallbackHandler"
+            }
+        ]
+    },
+    "noArgOverloads": [
+        "ListHealthChecks",
+        "ListHostedZones",
+        "ListReusableDelegationSets",
+        "ListGeoLocations",
+        "GetHostedZoneCount"
+    ],
+    "retainOriginalMemberOrdering": true,
+    "shapeModifiers": {
+        "HealthCheckInUse": {
+            "deprecatedMessage": "This error code is not in use"
+        }
+    }
+}

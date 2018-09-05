@@ -97,6 +97,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [Obsolete("In releases prior to November 14, 2017, this parameter returned attached for system disks in the API response. It is now deprecated, but still included in the response. Use isAttached instead.")]
         public string AttachmentState
         {
             get { return this._attachmentState; }
@@ -139,6 +140,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [Obsolete("In releases prior to November 14, 2017, this parameter was not included in the API response. It is now deprecated.")]
         public int GbInUse
         {
             get { return this._gbInUse.GetValueOrDefault(); }

@@ -22,6 +22,9 @@
                     "AdjustmentType": { "emitPropertyName": "Type" }
                 }
             ]
+        },
+        "MinAdjustmentStep": {
+            "deprecatedMessage": "Available for backward compatibility. Use MinAdjustmentMagnitude instead."
         }
     }
 }

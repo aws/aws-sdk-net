@@ -1,13 +1,23 @@
 {
-  "shapeModifiers": {
-    "EndpointType": {
-      "modify": [
-        {
-          "EndpointType": { "emitPropertyName": "ReplicationEndpointType" }
+    "shapeModifiers": {
+        "EndpointType": {
+            "modify": [
+                {
+                    "EndpointType": { "emitPropertyName": "ReplicationEndpointType" }
+                }
+            ]
+        },
+        "ReplicationInstance": {
+            "modify": [
+                {
+                    "ReplicationInstancePublicIpAddress": { "deprecatedMessage": "This type is deprecated" }
+                },
+                {
+                    "ReplicationInstancePrivateIpAddress": { "deprecatedMessage": "This type is deprecated" }
+                }
+            ]
         }
-      ]
-    }
-  },
+    },
   "shapeSubstitutions": {
     "Event": {
       "renameShape" :  "DMSEvent"

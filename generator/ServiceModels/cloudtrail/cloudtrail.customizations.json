@@ -1,5 +1,31 @@
 {
-  "noArgOverloads": [
-    "DescribeTrails"
-  ]
+    "noArgOverloads": [
+        "DescribeTrails"
+    ],
+    "shapeModifiers": {
+        "CreateTrailResponse": {
+            "modify": [
+                {
+                    "SnsTopicName": { "deprecatedMessage": "This field is deprecated. Use SnsTopicARN." }
+                }
+            ]
+        },
+        "KmsKeyDisabledException": {
+            "deprecatedMessage": "This exception is deprecated."
+        },
+        "Trail": {
+            "modify": [
+                {
+                    "SnsTopicName": { "deprecatedMessage": "This field is deprecated. Use SnsTopicARN." }
+                }
+            ]
+        },
+        "UpdateTrailResponse": {
+            "modify": [
+                {
+                    "SnsTopicName": { "deprecatedMessage": "This field is deprecated. Use SnsTopicARN." }
+                }
+            ]
+        }
+    }
 }

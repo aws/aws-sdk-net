@@ -158,6 +158,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// object cannot be null.
         /// </para>
         /// </summary>
+        [Obsolete("This property is deprecated")]
         public List<Clip> Composition
         {
             get { return this._composition; }

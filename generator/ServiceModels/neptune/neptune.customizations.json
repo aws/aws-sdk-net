@@ -1,0 +1,25 @@
+{
+    "shapeModifiers": {
+        "CreateDBInstanceMessage": {
+            "modify": [
+                {
+                    "PubliclyAccessible": { "deprecatedMessage": "This parameter is not supported" }
+                }
+            ]
+        },
+        "DBInstance": {
+            "modify": [
+                {
+                    "PubliclyAccessible": { "deprecatedMessage": "This parameter is not supported" }
+                }
+            ]
+        },
+        "ModifyDBInstanceMessage": {
+            "modify": [
+                {
+                    "PubliclyAccessible": { "deprecatedMessage": "This parameter is not supported" }
+                }
+            ]
+        }
+    }
+}

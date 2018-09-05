@@ -1,78 +1,80 @@
 {
-  "shapeModifiers": {
-    "InvokeAsyncRequest": {
-      "modify": [
-        {
-          "InvokeArgs": { "emitPropertyName": "InvokeArgsStream" }
-        }
-      ]
-    },
-    "InvocationRequest": {
-      "modify": [
-        {
-          "Payload": { "emitPropertyName": "PayloadStream" }
+    "shapeModifiers": {
+        "InvokeAsyncRequest": {
+            "deprecatedMessage": "For .NET 3.5/4.5, API InvokeAsyncResponse InvokeAsync(InvokeAsyncRequest) is deprecated, use InvokeResponse Invoke(InvokeRequest), or Task<InvokeResponse> InvokeAsync(InvokeRequest, CancellationToken) instead. For .NET Core and PCL, Task<InvokeAsyncResponse> InvokeAsyncAsync(InvokeAsyncRequest, CancellationToken) is deprecated, use Task<InvokeResponse> InvokeAsync(InvokeRequest, CancellationToken) instead.",
+            "modify": [
+                {
+                    "InvokeArgs": { "emitPropertyName": "InvokeArgsStream" }
+                }
+            ]
         },
-        {
-          "ClientContext": { "emitPropertyName": "ClientContextBase64" }
+        "InvokeAsyncResponse": {
+            "deprecatedMessage": "For .NET 3.5/4.5, API InvokeAsyncResponse InvokeAsync(InvokeAsyncRequest) is deprecated, use InvokeResponse Invoke(InvokeRequest), or Task<InvokeResponse> InvokeAsync(InvokeRequest, CancellationToken) instead. For .NET Core and PCL, Task<InvokeAsyncResponse> InvokeAsyncAsync(InvokeAsyncRequest, CancellationToken) is deprecated, use Task<InvokeResponse> InvokeAsync(InvokeRequest, CancellationToken) instead."
+        },
+        "InvocationRequest": {
+            "modify": [
+                {
+                    "Payload": { "emitPropertyName": "PayloadStream" }
+                },
+                {
+                    "ClientContext": { "emitPropertyName": "ClientContextBase64" }
+                }
+            ]
         }
-      ]
+    },
+    "shapeSubstitutions": {
+        "VpcConfigResponse": {
+            "renameShape": "VpcConfigDetail"
+        }
+    },
+    "simpleMethods": {
+        "operations": {
+            "DeleteFunction": {
+                "methodForms": [
+                    [
+                        "FunctionName"
+                    ]
+                ]
+            },
+            "GetEventSource": {
+                "methodForms": [
+                    [
+                        "UUID"
+                    ]
+                ]
+            },
+            "GetFunction": {
+                "methodForms": [
+                    [
+                        "FunctionName"
+                    ]
+                ]
+            },
+            "GetFunctionConfiguration": {
+                "methodForms": [
+                    [
+                        "FunctionName"
+                    ]
+                ]
+            },
+            "ListFunctions": {
+                "methodForms": [
+                    [
+                    ]
+                ]
+            },
+            "RemoveEventSource": {
+                "methodForms": [
+                    [
+                        "UUID"
+                    ]
+                ]
+            }
+        }
+    },
+    "operationModifiers": {
+        "InvokeAsync": {
+            "deprecatedMessage": "For .NET 3.5/4.5, API InvokeAsyncResponse InvokeAsync(InvokeAsyncRequest) is deprecated, use InvokeResponse Invoke(InvokeRequest), or Task<InvokeResponse> InvokeAsync(InvokeRequest, CancellationToken) instead. For .NET Core and PCL, Task<InvokeAsyncResponse> InvokeAsyncAsync(InvokeAsyncRequest, CancellationToken) is deprecated, use Task<InvokeResponse> InvokeAsync(InvokeRequest, CancellationToken) instead."
+        }
     }
-  },
-  "shapeSubstitutions": {
-    "VpcConfigResponse": {
-      "renameShape": "VpcConfigDetail"
-    }
-  },
-  "simpleMethods": {
-    "operations": {
-      "DeleteFunction": {
-        "methodForms": [
-          [
-            "FunctionName"
-          ]
-        ]
-      },
-      "GetEventSource": {
-        "methodForms": [
-          [
-            "UUID"
-          ]
-        ]
-      },
-      "GetFunction": {
-        "methodForms": [
-          [
-            "FunctionName"
-          ]
-        ]
-      },
-      "GetFunctionConfiguration": {
-        "methodForms": [
-          [
-            "FunctionName"
-          ]
-        ]
-      },
-      "ListFunctions": {
-        "methodForms": [
-          [
-          ]
-        ]
-      },
-      "RemoveEventSource": {
-        "methodForms": [
-          [
-            "UUID"
-          ]
-        ]
-      }
-    }
-  },
-  "deprecatedOverrides": {
-    "operation": {
-      "InvokeAsync": {
-        "message": "This API is deprecated. We recommend that you use Invoke API instead."
-      }
-    }
-  }
 }

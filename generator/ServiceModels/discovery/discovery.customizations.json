@@ -1,12 +1,10 @@
 {
-  "deprecatedOverrides": {
-    "operation": {
-      "DescribeExportConfigurations": {
-        "message": "Deprecated in favor of DescribeExportTasks."
-      },
-      "ExportConfigurations":  { 
-        "message": "Deprecated in favor of StartExportTask."
-      }
+    "operationModifiers": {
+        "DescribeExportConfigurations": {
+            "deprecatedMessage": "Deprecated in favor of DescribeExportTasks."
+        },
+        "ExportConfigurations": {
+            "deprecatedMessage": "Deprecated in favor of StartExportTask."
+        }
     }
-  }
 }

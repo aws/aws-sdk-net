@@ -1,9 +1,17 @@
 {
-  "deprecatedOverrides": {
-    "operation": {
-      "RotateChannelCredentials": {
-        "message": "This API is deprecated. Please use RotateIngestEndpointCredentials instead."
-      }
+    "deprecatedOverrides": {
+        "operation": {
+            "RotateChannelCredentials": {
+                "message": "This API is deprecated. Please use RotateIngestEndpointCredentials instead."
+            }
+        }
+    },
+    "shapeModifiers": {
+        "RotateChannelCredentialsRequest": {
+            "deprecatedMessage": "This API is deprecated. Please use RotateIngestEndpointCredentials instead"
+        },
+        "RotateChannelCredentialsResponse": {
+            "deprecatedMessage": "This API is deprecated. Please use RotateIngestEndpointCredentials instead"
+        }
     }
-  }
 }

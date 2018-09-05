@@ -53,6 +53,13 @@
                 }
             ]
         },
+        "CloudFunctionConfiguration": {
+            "modify": [
+                {
+                    "Event": { "deprecatedMessage": "This property is deprecated. Use Events instead." }
+                }
+            ]
+        },
         "CompleteMultipartUploadRequest": {
             "exclude": [
                 "MultipartUpload"
@@ -116,6 +123,13 @@
                 }
             ]
         },
+        "LifecycleRule": {
+            "modify": [
+                {
+                    "Prefix": { "deprecatedMessage": "This property is deprecated. Use Filter instead." }
+                }
+            ]
+        },
         "PutBucketTaggingRequest": {
             "exclude": [ "Tagging" ],
             "inject": [
@@ -152,6 +166,13 @@
                 }
             ]
         },
+        "QueueConfigurationDeprecated": {
+            "modify": [
+                {
+                    "Event": { "deprecatedMessage": "This property is deprecated. Use Events instead." }
+                }
+            ]
+        },
         "RestoreObjectRequest": {
             "exclude": [ "RestoreRequest" ],
             "inject": [
@@ -159,6 +180,13 @@
                     "Days": {
                         "shape": "Days"
                     }
+                }
+            ]
+        },
+        "TopicConfigurationDeprecated": {
+            "modify": [
+                {
+                    "Event": { "deprecatedMessage": "This property is deprecated. Use Events instead." }
                 }
             ]
         },

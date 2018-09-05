@@ -1,0 +1,35 @@
+{
+    "shapeModifiers": {
+        "CreateInstancesRequest": {
+            "modify": [
+                {
+                    "customImageName": { "deprecatedMessage": "In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated." }
+                }
+            ]
+        },
+        "Disk": {
+            "modify": [
+                {
+                    "attachmentState": { "deprecatedMessage": "In releases prior to November 14, 2017, this parameter returned attached for system disks in the API response. It is now deprecated, but still included in the response. Use isAttached instead." }
+                },
+                {
+                    "gbInUse": { "deprecatedMessage": "In releases prior to November 14, 2017, this parameter was not included in the API response. It is now deprecated." }
+                }
+            ]
+        },
+        "DomainEntry": {
+            "modify": [
+                {
+                    "options": { "deprecatedMessage": "In releases prior to November 29, 2017, this parameter was not included in the API response. It is now deprecated." }
+                }
+            ]
+        },
+        "GetOperationsForResourceResult": {
+            "modify": [
+                {
+                    "nextPageCount": { "deprecatedMessage": "In releases prior to June 12, 2017, this parameter returned null by the API. It is now deprecated, and the API returns the nextPageToken parameter instead." }
+                }
+            ]
+        }
+    }
+}

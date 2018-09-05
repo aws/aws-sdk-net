@@ -48,6 +48,7 @@ namespace ServiceClientGenerator
         public const string ShapeKey = "shape";
         public const string IdempotencyTokenKey = "idempotencyToken";
         public const string DeprecatedKey = "deprecated";
+        public const string DeprecatedMessageKey = "deprecatedMessage";
         public const string WrapperKey = "wrapper";
         public const string LocationNameKey = "locationName";
         public const string XmlNamespaceUriKey = "uri";

@@ -1,9 +1,15 @@
 {
-  "deprecatedOverrides": {
-    "operation": {
-      "DeleteSubscription": {
-        "message": "Use UpdateSubscription operation to disable automatic subscription renewal instead."
-      }
+    "operationModifiers": {
+        "DeleteSubscription": {
+            "deprecatedMessage": "Use UpdateSubscription operation to disable automatic subscription renewal instead."
+        }
+    },
+    "shapeModifiers": {
+        "DeleteSubscriptionRequest": {
+            "deprecatedMessage": "DeleteSubscription is deprecated. Use UpdateSubscription instead."
+        },
+        "DeleteSubscriptionResponse": {
+            "deprecatedMessage": "DeleteSubscription is deprecated. Use UpdateSubscription instead."
+        }
     }
-  }
 }

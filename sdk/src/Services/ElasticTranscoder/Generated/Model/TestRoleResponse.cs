@@ -30,6 +30,7 @@ namespace Amazon.ElasticTranscoder.Model
     /// <summary>
     /// The <code>TestRoleResponse</code> structure.
     /// </summary>
+    [Obsolete("This type is deprecated")]
     public partial class TestRoleResponse : AmazonWebServiceResponse
     {
         private List<string> _messages = new List<string>();
