@@ -39,11 +39,18 @@ namespace Amazon.S3.Model
         /// </summary>
         public JSONInput JSON { get; set; }
 
+        /// <summary>
+        /// Specifies Parquet as object's input serialization format.
+        /// </summary>
+        public ParquetInput Parquet { get; set; }
+
         internal bool IsSetCSV() => CSV != null;
 
         internal bool IsSetCompressionType() => CompressionType != null;
 
         internal bool IsSetJSON() => JSON != null;
+
+        internal bool IsSetParquet() => Parquet != null;
 
         internal void Marshall(string memberName, XmlWriter xmlWriter)
         {
@@ -62,6 +69,11 @@ namespace Amazon.S3.Model
             if (IsSetJSON())
             {
                 JSON.Marshall("JSON", xmlWriter);
+            }
+
+            if (IsSetParquet())
+            {
+                Parquet.Marshall("Parquet", xmlWriter);
             }
 
             xmlWriter.WriteEndElement();
