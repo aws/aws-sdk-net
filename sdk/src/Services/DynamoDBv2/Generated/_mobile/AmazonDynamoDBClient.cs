@@ -1195,6 +1195,38 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  DescribeEndpoints
+
+        internal virtual DescribeEndpointsResponse DescribeEndpoints(DescribeEndpointsRequest request)
+        {
+            var marshaller = DescribeEndpointsRequestMarshaller.Instance;
+            var unmarshaller = DescribeEndpointsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEndpointsRequest,DescribeEndpointsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEndpoints operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeEndpoints">REST API Reference for DescribeEndpoints Operation</seealso>
+        public virtual Task<DescribeEndpointsResponse> DescribeEndpointsAsync(DescribeEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeEndpointsRequestMarshaller.Instance;
+            var unmarshaller = DescribeEndpointsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeEndpointsRequest,DescribeEndpointsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeGlobalTable
 
         internal virtual DescribeGlobalTableResponse DescribeGlobalTable(DescribeGlobalTableRequest request)

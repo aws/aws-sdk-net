@@ -2030,6 +2030,33 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  DescribeEndpoints
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEndpoints service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEndpoints service method, as returned by DynamoDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeEndpoints">REST API Reference for DescribeEndpoints Operation</seealso>
+        DescribeEndpointsResponse DescribeEndpoints(DescribeEndpointsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEndpoints operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeEndpoints">REST API Reference for DescribeEndpoints Operation</seealso>
+        Task<DescribeEndpointsResponse> DescribeEndpointsAsync(DescribeEndpointsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeGlobalTable
 
 

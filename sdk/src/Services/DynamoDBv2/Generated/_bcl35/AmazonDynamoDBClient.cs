@@ -1967,6 +1967,59 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  DescribeEndpoints
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEndpoints service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEndpoints service method, as returned by DynamoDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeEndpoints">REST API Reference for DescribeEndpoints Operation</seealso>
+        public virtual DescribeEndpointsResponse DescribeEndpoints(DescribeEndpointsRequest request)
+        {
+            var marshaller = DescribeEndpointsRequestMarshaller.Instance;
+            var unmarshaller = DescribeEndpointsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEndpointsRequest,DescribeEndpointsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEndpoints operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEndpoints
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeEndpoints">REST API Reference for DescribeEndpoints Operation</seealso>
+        public virtual IAsyncResult BeginDescribeEndpoints(DescribeEndpointsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DescribeEndpointsRequestMarshaller.Instance;
+            var unmarshaller = DescribeEndpointsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeEndpointsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEndpoints.</param>
+        /// 
+        /// <returns>Returns a  DescribeEndpointsResult from DynamoDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeEndpoints">REST API Reference for DescribeEndpoints Operation</seealso>
+        public virtual DescribeEndpointsResponse EndDescribeEndpoints(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeEndpointsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeGlobalTable
 
         /// <summary>

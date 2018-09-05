@@ -806,6 +806,23 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  DescribeEndpoints
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEndpoints operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeEndpoints">REST API Reference for DescribeEndpoints Operation</seealso>
+        void DescribeEndpointsAsync(DescribeEndpointsRequest request, AmazonServiceCallback<DescribeEndpointsRequest, DescribeEndpointsResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
         #region  DescribeGlobalTable
 
 
