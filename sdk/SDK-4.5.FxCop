@@ -366,7 +366,6 @@
         <Rule Name="DoNotDeclareVirtualMembersInSealedTypes" Enabled="True" />
         <Rule Name="DoNotDeclareVisibleInstanceFields" Enabled="True" />
         <Rule Name="DoNotHideBaseClassMethods" Enabled="True" />
-        <Rule Name="DoNotNestGenericTypesInMemberSignatures" Enabled="True" />
         <Rule Name="DoNotOverloadOperatorEqualsOnReferenceTypes" Enabled="True" />
         <Rule Name="DoNotPassTypesByReference" Enabled="True" />
         <Rule Name="DoNotRaiseExceptionsInUnexpectedLocations" Enabled="True" />
@@ -399,8 +398,6 @@
         <Rule Name="TypesShouldNotExtendCertainBaseTypes" Enabled="True" />
         <Rule Name="TypesThatOwnDisposableFieldsShouldBeDisposable" Enabled="True" />
         <Rule Name="TypesThatOwnNativeResourcesShouldBeDisposable" Enabled="True" />
-        <Rule Name="UriParametersShouldNotBeStrings" Enabled="False" />
-        <Rule Name="UriPropertiesShouldNotBeStrings" Enabled="False" />
         <Rule Name="UriReturnValuesShouldNotBeStrings" Enabled="False" />
         <Rule Name="UseEventsWhereAppropriate" Enabled="True" />
         <Rule Name="UseGenericEventHandlerInstances" Enabled="True" />
@@ -421,12 +418,10 @@
         <Rule Name="IdentifiersShouldHaveCorrectSuffix" Enabled="True" />
         <Rule Name="IdentifiersShouldNotContainTypeNames" Enabled="True" />
         <Rule Name="IdentifiersShouldNotHaveIncorrectPrefix" Enabled="True" />
-        <Rule Name="IdentifiersShouldNotMatchKeywords" Enabled="True" />
         <Rule Name="OnlyFlagsEnumsShouldHavePluralNames" Enabled="True" />
         <Rule Name="ParameterNamesShouldNotMatchMemberNames" Enabled="True" />
         <Rule Name="ResourceStringCompoundWordsShouldBeCasedCorrectly" Enabled="True" />
         <Rule Name="ResourceStringsShouldBeSpelledCorrectly" Enabled="True" />
-        <Rule Name="TypeNamesShouldNotMatchNamespaces" Enabled="True" />
       </RuleFile>
       <RuleFile Name="$(FxCopDir)\Rules\PerformanceRules.dll" Enabled="True" AllRulesEnabled="False">
         <Rule Name="AvoidExcessiveLocals" Enabled="True" />
@@ -501,7 +496,6 @@
         <Rule Name="PassSystemUriObjectsInsteadOfStrings" Enabled="True" />
         <Rule Name="ProvideDeserializationMethodsForOptionalFields" Enabled="True" />
         <Rule Name="RethrowToPreserveStackDetails" Enabled="True" />
-        <Rule Name="ReviewUnusedParameters" Enabled="True" />
         <Rule Name="TestForNaNCorrectly" Enabled="True" />
         <Rule Name="UseManagedEquivalentsOfWin32Api" Enabled="True" />
         <Rule Name="UseParamsForVariableArguments" Enabled="True" />
