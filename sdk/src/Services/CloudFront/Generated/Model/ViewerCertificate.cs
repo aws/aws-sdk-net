@@ -222,6 +222,7 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [Obsolete("This field has been deprecated. Use one of the following fields instead: ACMCertificateArn, IAMCertificateId or CloudFrontDefaultCertificate.")]
         public string Certificate
         {
             get { return this._certificate; }
@@ -253,6 +254,7 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [Obsolete("This field has been deprecated. Use one of the following fields instead: ACMCertificateArn, IAMCertificateId or CloudFrontDefaultCertificate.")]
         public CertificateSource CertificateSource
         {
             get { return this._certificateSource; }

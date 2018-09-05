@@ -528,7 +528,7 @@ namespace Amazon.MediaPackage
         /// The parameters sent in the request are not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/RotateChannelCredentials">REST API Reference for RotateChannelCredentials Operation</seealso>
-        [Obsolete("This API is deprecated. Please use RotateIngestEndpointCredentials instead.")]
+        [Obsolete("This API is deprecated. Please use RotateIngestEndpointCredentials instead")]
         RotateChannelCredentialsResponse RotateChannelCredentials(RotateChannelCredentialsRequest request);
 
         /// <summary>
@@ -543,7 +543,7 @@ namespace Amazon.MediaPackage
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRotateChannelCredentials
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/RotateChannelCredentials">REST API Reference for RotateChannelCredentials Operation</seealso>
-        [Obsolete("This API is deprecated. Please use RotateIngestEndpointCredentials instead.")]
+        [Obsolete("This API is deprecated. Please use RotateIngestEndpointCredentials instead")]
         IAsyncResult BeginRotateChannelCredentials(RotateChannelCredentialsRequest request, AsyncCallback callback, object state);
 
 
@@ -556,7 +556,7 @@ namespace Amazon.MediaPackage
         /// 
         /// <returns>Returns a  RotateChannelCredentialsResult from MediaPackage.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/RotateChannelCredentials">REST API Reference for RotateChannelCredentials Operation</seealso>
-        [Obsolete("This API is deprecated. Please use RotateIngestEndpointCredentials instead.")]
+        [Obsolete("This API is deprecated. Please use RotateIngestEndpointCredentials instead")]
         RotateChannelCredentialsResponse EndRotateChannelCredentials(IAsyncResult asyncResult);
 
         #endregion

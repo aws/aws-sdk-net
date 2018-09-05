@@ -30,6 +30,8 @@ namespace ServiceClientGenerator
         public const string ErrorKey = "error";
         public const string ErrorCodeKey = "code";
         public const string EventStreamKey = "eventstream";
+        public const string DeprecatedKey = "deprecated";
+        public const string DeprecatedMessageKey = "deprecatedMessage";
         public const string TimestampFormatKey = "timestampFormat";
 
         public static readonly HashSet<string> NullableTypes = new HashSet<string> {
@@ -668,6 +670,36 @@ namespace ServiceClientGenerator
                 req.AddRange(from object item in required select item.ToString());
                 req.Sort();
                 return req;
+            }
+        }
+
+        /// <summary>
+        /// Determines if the shape is Deprecated.
+        /// </summary>
+        public bool IsDeprecated
+        {
+            get
+            {
+                if (data[DeprecatedKey] != null && data[DeprecatedKey].IsBoolean)
+                    return (bool)data[DeprecatedKey];
+
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Returns the deprecation message specified in the model or in the customization file.
+        /// </summary>
+        public string DeprecationMessage
+        {
+            get
+            {
+                string message = this.model.Customizations.GetShapeModifier(this._name)?.DeprecationMessage ??
+                                 data[DeprecatedMessageKey].CastToString();
+                if (message == null)
+                    throw new Exception(string.Format("The 'message' property of the 'deprecated' trait is missing for shape {0}.\nFor example: \"ShapeName\":{{ ... \"members\":{{ ... }}, \"deprecated\":true, \"deprecatedMessage\":\"This type is deprecated\"}}", this._name));
+
+                return message;
             }
         }
 

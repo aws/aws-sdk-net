@@ -82,6 +82,7 @@ namespace Amazon.IoT.Model
         /// A boolean value that specifies if the CA certificate is set to active.
         /// </para>
         /// </summary>
+        [Obsolete("This property is deprecated")]
         public bool SetAsActive
         {
             get { return this._setAsActive.GetValueOrDefault(); }

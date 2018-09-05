@@ -423,7 +423,6 @@ namespace ServiceClientGenerator
         public const string SuppressSimpleMethodExceptionDocsKey = "suppressSimpleMethodExceptionDocs";
         public const string XHttpMethodOverrideKey = "xHttpMethodOverride";
         public const string XamarinSampleSolutionFileKey = "xamarinSamples";
-        public const string DeprecatedOverridesKey = "deprecatedOverrides";
         public const string DeprecationMessageKey = "message";
         public const string ExamplesKey = "examples";
         public const string GenerateUnmarshallerKey = "generateUnmarshaller";
@@ -741,20 +740,6 @@ namespace ServiceClientGenerator
             }
         }
 
-        public string GetDeprecationMessage(string operationName)
-        {
-            try
-            {
-                var data = _documentRoot[DeprecatedOverridesKey];
-                var operations = data[OperationKey];
-                var operation = operations[operationName];
-                return (string)operation[DeprecationMessageKey];
-            }
-            catch (NullReferenceException) { }
-
-            throw new Exception(string.Format(@"deprecatedOverrides entry not set for deprecated operation {0}", operationName));
-        }
-
         public bool GenerateCustomUnmarshaller
         {
             get
@@ -968,16 +953,36 @@ namespace ServiceClientGenerator
             public const string ModifyKey = "modify";
             public const string InjectKey = "inject";
             public const string CustomMarshallKey = "customMarshall";
+            public const string DeprecatedMessageKey = "deprecatedMessage";
 
-            private readonly HashSet<string> _excludedProperties = new HashSet<string>();
-            private readonly Dictionary<string, JsonData> _modifiedProperties = new Dictionary<string, JsonData>();
-            private readonly Dictionary<string, JsonData> _injectedProperties = new Dictionary<string, JsonData>();
+            private readonly HashSet<string> _excludedProperties;
+            private readonly Dictionary<string, JsonData> _modifiedProperties;
+            private readonly Dictionary<string, JsonData> _injectedProperties;
+
+            public string DeprecationMessage { get; private set; }
+
+            public ShapeModifier(JsonData data)
+            {
+                DeprecationMessage = data[DeprecatedMessageKey].CastToString();
+
+                _excludedProperties = ParseExclusions(data);
+                _modifiedProperties = ParseModifiers(data);
+                // Process additions after rename to allow for models where we
+                // add a 'convenience' member (for backwards compatibility) using
+                // the same name as an original (and now renamed) member.
+                _injectedProperties = ParseInjections(data);
+            }
 
             #region Property Exclusion
 
-            public void AddExclusion(string propertyName)
+            // Exclusion modifier is a simple array of property names.
+            //  "exclude": [ "propName1", "propName2" ]
+            private static HashSet<string> ParseExclusions(JsonData data)
             {
-                _excludedProperties.Add(propertyName);
+                var exclusions = data[ShapeModifier.ExcludeKey]
+                    ?.Cast<object>()
+                    .Select(exclusion => exclusion.ToString());
+                return new HashSet<string>(exclusions ?? new string[0]);
             }
 
             public bool IsExcludedProperty(string propertyName)
@@ -989,9 +994,26 @@ namespace ServiceClientGenerator
 
             #region Property Modifiers
 
-            public void AddModifier(string propertyName, JsonData modifierData)
+            // A modifier is an array of objects, each object being the original
+            // property name (key) and an object containing replacement name (value)
+            // along with any custom marshal naming to apply.
+            // "modify": [
+            //        { 
+            //           "modelPropertyName": { 
+            //               "emitPropertyName": "userVisibleName", 
+            //               "locationName": "customRequestMarshalName",
+            //               "emitFromMember": "subMember"
+            //           } 
+            //        }
+            // ]
+            private static Dictionary<string, JsonData> ParseModifiers(JsonData data)
             {
-                _modifiedProperties.Add(propertyName, modifierData);
+                var modifiers = data[ShapeModifier.ModifyKey]
+                   ?.Cast<JsonData>()
+                   .Select(modifier => modifier.Cast<KeyValuePair<string, JsonData>>().First());
+
+                return modifiers?.ToDictionary(modifier => modifier.Key, modifier => modifier.Value)
+                    ?? new Dictionary<string, JsonData>();
             }
 
             public bool IsModified(string propertyName)
@@ -1011,9 +1033,26 @@ namespace ServiceClientGenerator
 
             #region Property Injection
 
-            public void AddInjection(string propertyName, JsonData shapeData)
+            // Injection modifier is an array of objects, each object being the
+            // name of the member to add plus any needed shape/marshalling data.
+            //   "inject": [ 
+            //      { "propertyName": 
+            //          { "type": "list",
+            //             "member": { "shape": "String", "locationName": "item" }
+            //          }
+            //      }
+            //  ]
+            // Since we don't have access to the model at this point, we simply store
+            // the json data for the shape type to be used and 'hydrate' it when needed
+            // externally
+            private static Dictionary<string, JsonData> ParseInjections(JsonData data)
             {
-                _injectedProperties.Add(propertyName, shapeData);
+                var injections = data[ShapeModifier.InjectKey]
+                    ?.Cast<JsonData>()
+                    .Select(modifier => modifier.Cast<KeyValuePair<string, JsonData>>().First());
+
+                return injections?.ToDictionary(modifier => modifier.Key, modifier => modifier.Value)
+                    ?? new Dictionary<string, JsonData>();
             }
 
             public bool HasInjectedProperties
@@ -1167,75 +1206,18 @@ namespace ServiceClientGenerator
                 }
             }
 
+            public string DeprecationMessage
+            {
+                get
+                {
+                    return _modifierData[ShapeModifier.DeprecatedMessageKey].CastToString();
+                }
+            }
         }
 
         #endregion
 
         private Dictionary<string, ShapeModifier> _shapeModifiers = null;
-
-        // Exclusion modifier is a simple array of property names.
-        //  "exclude": [ "propName1", "propName2" ]
-        private static void ParseExclusions(ShapeModifier shapeModifier, JsonData data)
-        {
-            if (data == null)
-                return;
-
-            foreach (var exclusion in data)
-            {
-                shapeModifier.AddExclusion(exclusion.ToString());
-            }
-        }
-
-        // A modifier is an array of objects, each object being the original
-        // property name (key) and an object containing replacement name (value)
-        // along with any custom marshal naming to apply.
-        // "modify": [
-        //        { 
-        //           "modelPropertyName": { 
-        //               "emitPropertyName": "userVisibleName", 
-        //               "locationName": "customRequestMarshalName",
-        //               "emitFromMember": "subMember"
-        //           } 
-        //        }
-        // ]
-        private static void ParseModifiers(ShapeModifier shapeModifier, JsonData data)
-        {
-            if (data == null)
-                return;
-
-            foreach (var modifier in data)
-            {
-                var m = modifier as JsonData;
-                var key = m.PropertyNames.First();
-                shapeModifier.AddModifier(key, m[key]);
-            }
-        }
-
-        // Injection modifier is an array of objects, each object being the
-        // name of the member to add plus any needed shape/marshalling data.
-        //   "inject": [ 
-        //      { "propertyName": 
-        //          { "type": "list",
-        //             "member": { "shape": "String", "locationName": "item" }
-        //          }
-        //      }
-        //  ]
-        // Since we don't have access to the model at this point, we simply store
-        // the json data for the shape type to be used and 'hydrate' it when needed
-        // externally
-        private static void ParseInjections(ShapeModifier shapeModifier, JsonData data)
-        {
-            if (data == null)
-                return;
-
-            foreach (var injection in data)
-            {
-                var i = injection as JsonData;
-
-                var propertyName = i.PropertyNames.First();
-                shapeModifier.AddInjection(propertyName, i[propertyName]);
-            }
-        }
 
         /// <summary>
         /// A dictionary containing modifiers for each shape that is customized
@@ -1253,15 +1235,8 @@ namespace ServiceClientGenerator
                     {
                         foreach (var shapeName in data.PropertyNames)
                         {
-                            var shapeModifier = new ShapeModifier();
                             var modifierData = data[shapeName];
-
-                            ParseExclusions(shapeModifier, modifierData[ShapeModifier.ExcludeKey]);
-                            ParseModifiers(shapeModifier, modifierData[ShapeModifier.ModifyKey]);
-                            // Process additions after rename to allow for models where we
-                            // add a 'convenience' member (for backwards compatibility) using
-                            // the same name as an original (and now renamed) member.
-                            ParseInjections(shapeModifier, modifierData[ShapeModifier.InjectKey]);
+                            var shapeModifier = new ShapeModifier(modifierData);
 
                             _shapeModifiers.Add(shapeName, shapeModifier);
                         }
@@ -1331,6 +1306,8 @@ namespace ServiceClientGenerator
                 modifiers.WrappedResultMember = (string)operation[OperationModifiers.WrappedResultMemberKey];
             if (operation[OperationModifiers.DocumentationKey] != null && operation[OperationModifiers.DocumentationKey].IsString)
                 modifiers.Documentation = (string)operation[OperationModifiers.DocumentationKey];
+            if (operation[OperationModifiers.DeprecatedMessageKey] != null && operation[OperationModifiers.DeprecatedMessageKey].IsString)
+                modifiers.DeprecatedMessage = (string)operation[OperationModifiers.DeprecatedMessageKey];
 
             if (operation[OperationModifiers.MarshallNameOverrides] != null &&
                 operation[OperationModifiers.MarshallNameOverrides].IsArray)
@@ -1411,6 +1388,7 @@ namespace ServiceClientGenerator
             public const string WrappedResultMemberKey = "wrappedResultMember";
             public const string MarshallNameOverrides = "marshallNameOverrides";
             public const string DeprecatedKey = "deprecated";
+            public const string DeprecatedMessageKey = "deprecatedMessage";
             public const string DocumentationKey = "documentation";
 
             // within a marshal override for a shape; one or both may be present
@@ -1474,6 +1452,12 @@ namespace ServiceClientGenerator
             }
 
             public string Documentation
+            {
+                get;
+                set;
+            }
+
+            public string DeprecatedMessage
             {
                 get;
                 set;

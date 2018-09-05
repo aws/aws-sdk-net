@@ -28,6 +28,7 @@ namespace Amazon.Route53.Model
 #if !PCL && !CORECLR
     [Serializable]
 #endif
+    [Obsolete("This error code is not in use")]
     public class HealthCheckInUseException : AmazonRoute53Exception 
     {
         /// <summary>

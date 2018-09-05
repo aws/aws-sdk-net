@@ -44,6 +44,7 @@ namespace Amazon.Lambda.Model
     /// This operation requires permission for the <code>lambda:InvokeFunction</code> action.
     /// </para>
     /// </summary>
+    [Obsolete("For .NET 3.5/4.5, API InvokeAsyncResponse InvokeAsync(InvokeAsyncRequest) is deprecated, use InvokeResponse Invoke(InvokeRequest), or Task<InvokeResponse> InvokeAsync(InvokeRequest, CancellationToken) instead. For .NET Core and PCL, Task<InvokeAsyncResponse> InvokeAsyncAsync(InvokeAsyncRequest, CancellationToken) is deprecated, use Task<InvokeResponse> InvokeAsync(InvokeRequest, CancellationToken) instead.")]
     public partial class InvokeAsyncRequest : AmazonLambdaRequest
     {
         private string _functionName;

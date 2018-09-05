@@ -347,6 +347,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The private IP address of the replication instance.
         /// </para>
         /// </summary>
+        [Obsolete("This type is deprecated")]
         public string ReplicationInstancePrivateIpAddress
         {
             get { return this._replicationInstancePrivateIpAddress; }
@@ -383,6 +384,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The public IP address of the replication instance.
         /// </para>
         /// </summary>
+        [Obsolete("This type is deprecated")]
         public string ReplicationInstancePublicIpAddress
         {
             get { return this._replicationInstancePublicIpAddress; }

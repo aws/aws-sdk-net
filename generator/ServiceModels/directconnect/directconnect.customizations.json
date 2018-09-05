@@ -1,25 +1,49 @@
 {
-  "noArgOverloads": [
-    "DescribeConnections",
-	"DescribeInterconnects",
-	"DescribeLocations",
-    "DescribeVirtualGateways",
-    "DescribeVirtualInterfaces"
-  ],
-  "deprecatedOverrides": {
-    "operation": {
-      "AllocateConnectionOnInterconnect": {
-        "message": "Deprecated in favor of AllocateHostedConnection."
-      },
-      "DescribeConnectionLoa":  { 
-        "message": "Deprecated in favor of DescribeLoa."
-      },
-      "DescribeConnectionsOnInterconnect":{
-        "message": "Deprecated in favor of DescribeHostedConnections."
-      },
-      "DescribeInterconnectLoa": {
-        "message" : "Deprecated in favor of DescribeLoa."
-      }
+    "noArgOverloads": [
+        "DescribeConnections",
+        "DescribeInterconnects",
+        "DescribeLocations",
+        "DescribeVirtualGateways",
+        "DescribeVirtualInterfaces"
+    ],
+    "operationModifiers": {
+        "AllocateConnectionOnInterconnect": {
+            "deprecatedMessage": "Deprecated in favor of AllocateHostedConnection."
+        },
+        "DescribeConnectionLoa": {
+            "deprecatedMessage": "Deprecated in favor of DescribeLoa."
+        },
+        "DescribeConnectionsOnInterconnect": {
+            "deprecatedMessage": "Deprecated in favor of DescribeHostedConnections."
+        },
+        "DescribeInterconnectLoa": {
+            "deprecatedMessage": "Deprecated in favor of DescribeLoa."
+        }
+    },
+    "shapeModifiers": {
+        "AwsDevice": {
+            "deprecatedMessage": "Deprecated in favor of AwsDeviceV2."
+        },
+        "Connection": {
+            "modify": [
+                {
+                    "awsDevice": { "deprecatedMessage": "Deprecated in favor of AwsDeviceV2" }
+                }
+            ]
+        },
+        "Interconnect": {
+            "modify": [
+                {
+                    "awsDevice": { "deprecatedMessage": "Deprecated in favor of AwsDeviceV2" }
+                }
+            ]
+        },
+        "Lag": {
+            "modify": [
+                {
+                    "awsDevice": { "deprecatedMessage": "Deprecated in favor of AwsDeviceV2" }
+                }
+            ]
+        }
     }
-  }
 }

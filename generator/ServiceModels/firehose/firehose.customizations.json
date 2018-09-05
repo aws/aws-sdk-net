@@ -28,5 +28,21 @@
                 ]
             }
         }
+    },
+    "shapeModifiers": {
+        "CreateDeliveryStreamInput": {
+            "modify": [
+                {
+                    "S3DestinationConfiguration": { "deprecatedMessage": "This property is deprecated. Use ExtendedS3DestinationConfiguration instead." }
+                }
+            ]
+        },
+        "UpdateDestinationInput": {
+            "modify": [
+                {
+                    "S3DestinationUpdate": { "deprecatedMessage": "This property is deprecated. Use ExtendedS3DestinationUpdate instead." }
+                }
+            ]
+        }
     }
 }

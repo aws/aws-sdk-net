@@ -1,6 +1,18 @@
 {
-  "noArgOverloads": [
-    "ListApplications",
-    "ListDeploymentConfigs"
-  ]
+    "noArgOverloads": [
+        "ListApplications",
+        "ListDeploymentConfigs"
+    ],
+    "shapeModifiers": {
+        "UpdateFleetRequest": {
+            "modify": [
+                {
+                    "DeleteVpcConfig": { "deprecatedMessage": "This property is deprecated" }
+                }
+            ]
+        },
+        "AdditionalDeploymentStatusInfo": {
+            "deprecatedMessage": "This type is deprecated"
+        }
+    }
 }

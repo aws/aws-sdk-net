@@ -30,6 +30,7 @@ namespace Amazon.MediaPackage.Model
     /// <summary>
     /// This is the response object from the RotateChannelCredentials operation.
     /// </summary>
+    [Obsolete("This API is deprecated. Please use RotateIngestEndpointCredentials instead")]
     public partial class RotateChannelCredentialsResponse : AmazonWebServiceResponse
     {
         private string _arn;

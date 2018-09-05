@@ -33,6 +33,7 @@ namespace Amazon.Shield.Model
     /// subscription commitment. You cannot delete a subscription prior to the completion
     /// of that commitment.
     /// </summary>
+    [Obsolete("DeleteSubscription is deprecated. Use UpdateSubscription instead.")]
     public partial class DeleteSubscriptionRequest : AmazonShieldRequest
     {
 

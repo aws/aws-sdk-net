@@ -40,6 +40,7 @@ namespace Amazon.ElasticTranscoder.Model
     /// to Amazon SNS topics that you specify.
     /// </para>
     /// </summary>
+    [Obsolete("This type is deprecated")]
     public partial class TestRoleRequest : AmazonElasticTranscoderRequest
     {
         private string _inputBucket;

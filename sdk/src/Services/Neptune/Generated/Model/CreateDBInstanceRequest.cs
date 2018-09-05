@@ -919,6 +919,7 @@ namespace Amazon.Neptune.Model
         /// This parameter is not supported.
         /// </para>
         /// </summary>
+        [Obsolete("This parameter is not supported")]
         public bool PubliclyAccessible
         {
             get { return this._publiclyAccessible.GetValueOrDefault(); }

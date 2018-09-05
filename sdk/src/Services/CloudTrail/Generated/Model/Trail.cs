@@ -287,6 +287,7 @@ namespace Amazon.CloudTrail.Model
         /// This field is deprecated. Use SnsTopicARN.
         /// </para>
         /// </summary>
+        [Obsolete("This field is deprecated. Use SnsTopicARN.")]
         public string SnsTopicName
         {
             get { return this._snsTopicName; }

@@ -245,6 +245,7 @@ namespace Amazon.KinesisFirehose.Model
         /// [Deprecated] The destination in Amazon S3. You can specify only one destination.
         /// </para>
         /// </summary>
+        [Obsolete("This property is deprecated. Use ExtendedS3DestinationConfiguration instead.")]
         public S3DestinationConfiguration S3DestinationConfiguration
         {
             get { return this._s3DestinationConfiguration; }

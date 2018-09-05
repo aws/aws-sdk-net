@@ -30,6 +30,7 @@ namespace Amazon.Shield.Model
     /// <summary>
     /// This is the response object from the DeleteSubscription operation.
     /// </summary>
+    [Obsolete("DeleteSubscription is deprecated. Use UpdateSubscription instead.")]
     public partial class DeleteSubscriptionResponse : AmazonWebServiceResponse
     {
 

@@ -82,11 +82,19 @@ namespace ServiceClientGenerator
             }
         }
 
+        /// <summary>
+        /// Returns the deprecation message specified in the model or in the customization file.
+        /// </summary>
         public string DeprecationMessage
         {
             get
             {
-                return this.model.Customizations.GetDeprecationMessage(this.name);
+                string message = this.model.Customizations.GetOperationModifiers(this.name)?.DeprecatedMessage ??
+                                 data[ServiceModel.DeprecatedMessageKey].CastToString();
+                if (message == null)
+                    throw new Exception(string.Format("The 'message' property of the 'deprecated' trait is missing for operation {0}.\nFor example: \"OperationName\":{{\"name\":\"OperationName\", ... \"deprecated\":true, \"deprecatedMessage\":\"This operation is deprecated\"}}", this.name));          
+
+                return message;
             }
         }
 

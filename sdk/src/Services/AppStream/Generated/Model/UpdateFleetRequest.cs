@@ -98,6 +98,7 @@ namespace Amazon.AppStream.Model
         /// Deletes the VPC association for the specified fleet.
         /// </para>
         /// </summary>
+        [Obsolete("This property is deprecated")]
         public bool DeleteVpcConfig
         {
             get { return this._deleteVpcConfig.GetValueOrDefault(); }

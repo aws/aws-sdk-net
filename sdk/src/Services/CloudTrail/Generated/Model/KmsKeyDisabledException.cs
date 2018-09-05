@@ -28,6 +28,7 @@ namespace Amazon.CloudTrail.Model
 #if !PCL && !CORECLR
     [Serializable]
 #endif
+    [Obsolete("This exception is deprecated.")]
     public class KmsKeyDisabledException : AmazonCloudTrailException 
     {
         /// <summary>

@@ -107,6 +107,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [Obsolete("In releases prior to November 29, 2017, this parameter was not included in the API response. It is now deprecated.")]
         public Dictionary<string, string> Options
         {
             get { return this._options; }

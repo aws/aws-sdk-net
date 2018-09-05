@@ -47,6 +47,15 @@ namespace ServiceClientGenerator
             return data;
         }
 
+        public static string CastToString(this JsonData self)
+        {
+            //Casting a null JsonData reference to string result in an exception
+            if (self == null)
+                return null;
+
+            return (string)self;
+        }
+
         public static string NewProjectGuid
         {
             get

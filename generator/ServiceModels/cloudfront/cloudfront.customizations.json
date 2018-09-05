@@ -1,16 +1,28 @@
 {
-  "noArgOverloads": [
-    "ListDistributions",
-    "ListCloudFrontOriginAccessIdentities",
-    "DeleteCloudFrontOriginAccessIdentity",
-    "DeleteDistribution",
-    "DeleteStreamingDistribution",
-    "GetCloudFrontOriginAccessIdentity",
-    "GetCloudFrontOriginAccessIdentityConfig",
-    "GetDistribution",
-    "GetDistributionConfig",
-    "GetStreamingDistribution",
-    "GetStreamingDistributionConfig",
-    "ListStreamingDistributions"
-  ]
+    "noArgOverloads": [
+        "ListDistributions",
+        "ListCloudFrontOriginAccessIdentities",
+        "DeleteCloudFrontOriginAccessIdentity",
+        "DeleteDistribution",
+        "DeleteStreamingDistribution",
+        "GetCloudFrontOriginAccessIdentity",
+        "GetCloudFrontOriginAccessIdentityConfig",
+        "GetDistribution",
+        "GetDistributionConfig",
+        "GetStreamingDistribution",
+        "GetStreamingDistributionConfig",
+        "ListStreamingDistributions"
+    ],
+    "shapeModifiers": {
+        "ViewerCertificate": {
+            "modify": [
+                {
+                    "Certificate": { "deprecatedMessage": "This field has been deprecated. Use one of the following fields instead: ACMCertificateArn, IAMCertificateId or CloudFrontDefaultCertificate." }
+                },
+                {
+                    "CertificateSource": { "deprecatedMessage": "This field has been deprecated. Use one of the following fields instead: ACMCertificateArn, IAMCertificateId or CloudFrontDefaultCertificate." }
+                }
+            ]
+        }
+    }
 }

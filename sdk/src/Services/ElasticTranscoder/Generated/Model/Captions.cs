@@ -62,6 +62,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// omit all sidecar captions, leave <code>CaptionSources</code> blank.
         /// </para>
         /// </summary>
+        [Obsolete("This property is deprecated")]
         public List<CaptionSource> CaptionSources
         {
             get { return this._captionSources; }
@@ -105,6 +106,7 @@ namespace Amazon.ElasticTranscoder.Model
         ///  <code>MergePolicy</code> cannot be null.
         /// </para>
         /// </summary>
+        [Obsolete("This property is deprecated")]
         public string MergePolicy
         {
             get { return this._mergePolicy; }

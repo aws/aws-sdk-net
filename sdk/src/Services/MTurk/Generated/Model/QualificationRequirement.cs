@@ -176,6 +176,7 @@ namespace Amazon.MTurk.Model
         /// be used in combination with the <code>ActionsGuarded</code> field. 
         /// </para>
         /// </summary>
+        [Obsolete("Use the ActionsGuarded field instead")]
         public bool RequiredToPreview
         {
             get { return this._requiredToPreview.GetValueOrDefault(); }

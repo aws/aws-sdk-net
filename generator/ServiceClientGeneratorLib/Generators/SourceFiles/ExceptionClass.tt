@@ -18,6 +18,14 @@ namespace <#=this.Config.Namespace#>.Model
 #if !PCL && !CORECLR
     [Serializable]
 #endif
+<#		
+		if(this.Exception.Structure.IsDeprecated)
+		{
+#>
+	[Obsolete("<#=this.Exception.Structure.DeprecationMessage#>")]
+<#
+		}
+#>
     public class <#=this.Exception.Name#> : <#=BaseException#> 
     {
         /// <summary>
@@ -78,6 +86,14 @@ namespace <#=this.Config.Namespace#>.Model
         /// <summary>
         /// Gets and sets the <#=member.PropertyName#> property.
         /// </summary>
+<#		
+		if(member.IsDeprecated)
+		{
+#>
+		[Obsolete("<#=member.DeprecationMessage#>")]
+<#
+		}
+#>
 		public <#=member.DetermineType()#> <#=member.PropertyName#> { get; set; }
 
 <#

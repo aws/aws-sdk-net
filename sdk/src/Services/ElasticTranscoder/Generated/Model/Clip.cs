@@ -31,6 +31,7 @@ namespace Amazon.ElasticTranscoder.Model
     /// Settings for one clip in a composition. All jobs in a playlist must have the same
     /// clip settings.
     /// </summary>
+    [Obsolete("This type is deprecated")]
     public partial class Clip
     {
         private TimeSpan _timeSpan;

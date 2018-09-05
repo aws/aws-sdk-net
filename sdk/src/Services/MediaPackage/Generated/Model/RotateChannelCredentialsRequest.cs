@@ -32,6 +32,7 @@ namespace Amazon.MediaPackage.Model
     /// Changes the Channel's first IngestEndpoint's username and password. WARNING - This
     /// API is deprecated. Please use RotateIngestEndpointCredentials instead
     /// </summary>
+    [Obsolete("This API is deprecated. Please use RotateIngestEndpointCredentials instead")]
     public partial class RotateChannelCredentialsRequest : AmazonMediaPackageRequest
     {
         private string _id;
