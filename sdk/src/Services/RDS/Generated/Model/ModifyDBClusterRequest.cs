@@ -31,8 +31,8 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the ModifyDBCluster operation.
     /// Modify a setting for an Amazon Aurora DB cluster. You can change one or more database
     /// configuration parameters by specifying these parameters and the new values in the
-    /// request. For more information on Amazon Aurora, see the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-    /// <i>Amazon Aurora User Guide</i> </a>.
+    /// request. For more information on Amazon Aurora, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+    /// What Is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
     /// </summary>
     public partial class ModifyDBClusterRequest : AmazonRDSRequest
     {
