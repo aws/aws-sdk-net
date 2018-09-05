@@ -1,3 +1,53 @@
+### 3.3.354.0 (2018-09-05 18:30 UTC)
+* ApplicationDiscoveryService (3.3.5.0)
+	* Added Obsolete attribute for deprecated properties.
+* AppStream (3.3.17.0)
+	* Added Obsolete attribute for deprecated properties.
+* AutoScaling (3.3.6.0)
+	* Added Obsolete attribute for deprecated properties.
+* CloudFront (3.3.10.0)
+	* Added Obsolete attribute for deprecated properties.
+* CloudTrail (3.3.2.0)
+	* Added Obsolete attribute for deprecated properties.
+* CodeDeploy (3.3.11.0)
+	* Added Obsolete attribute for deprecated properties.
+* DatabaseMigrationService (3.3.9.0)
+	* Added Obsolete attribute for deprecated properties.
+* DirectConnect (3.3.7.0)
+	* Added Obsolete attribute for deprecated properties.
+* ElasticMapReduce (3.3.6.0)
+	* Added Obsolete attribute for deprecated properties.
+* ElasticTranscoder (3.3.2.0)
+	* Added Obsolete attribute for deprecated properties.
+* IoT (3.3.18.0)
+	* Added Obsolete attribute for deprecated properties.
+* KinesisFirehose (3.3.6.0)
+	* Added Obsolete attribute for deprecated properties.
+* Lambda (3.3.16.0)
+	* Added Obsolete attribute for deprecated properties.
+* Lightsail (3.3.6.0)
+	* Added Obsolete attribute for deprecated properties.
+* MediaLive (3.3.9.0)
+	* Added Obsolete attribute for deprecated properties.
+* MediaPackage (3.3.4.0)
+	* Added Obsolete attribute for deprecated properties.
+* MTurk (3.3.3.0)
+	* Added Obsolete attribute for deprecated properties.
+* Neptune (3.3.3.0)
+	* Added Obsolete attribute for deprecated properties.
+* OpsWorksCM (3.3.5.0)
+	* Added Obsolete attribute for deprecated properties.
+* Route53 (3.3.16.0)
+	* Added Obsolete attribute for deprecated properties.
+* Route53Domains (3.3.3.0)
+	* Added Obsolete attribute for deprecated properties.
+* S3 (3.3.22.0)
+	* Added Obsolete attribute for deprecated properties.
+* Shield (3.3.3.0)
+	* Added Obsolete attribute for deprecated properties.
+* WorkDocs (3.3.5.0)
+	* Added Obsolete attribute for deprecated properties.
+
 ### 3.3.353.0 (2018-09-04 21:04 UTC)
 * RDS (3.3.27.5)
 	* Updating cross references for the new Aurora User Guide.
