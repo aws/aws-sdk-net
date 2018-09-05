@@ -32,6 +32,7 @@ namespace Amazon.AppStream.Model
     /// </summary>
     public partial class Stack
     {
+        private ApplicationSettingsResponse _applicationSettings;
         private string _arn;
         private DateTime? _createdTime;
         private string _description;
@@ -42,6 +43,24 @@ namespace Amazon.AppStream.Model
         private List<StackError> _stackErrors = new List<StackError>();
         private List<StorageConnector> _storageConnectors = new List<StorageConnector>();
         private List<UserSetting> _userSettings = new List<UserSetting>();
+
+        /// <summary>
+        /// Gets and sets the property ApplicationSettings. 
+        /// <para>
+        /// The persistent application settings for users of the stack.
+        /// </para>
+        /// </summary>
+        public ApplicationSettingsResponse ApplicationSettings
+        {
+            get { return this._applicationSettings; }
+            set { this._applicationSettings = value; }
+        }
+
+        // Check to see if ApplicationSettings property is set
+        internal bool IsSetApplicationSettings()
+        {
+            return this._applicationSettings != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Arn. 

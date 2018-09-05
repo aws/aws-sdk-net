@@ -34,6 +34,7 @@ namespace Amazon.AppStream.Model
     /// </summary>
     public partial class CreateStackRequest : AmazonAppStreamRequest
     {
+        private ApplicationSettings _applicationSettings;
         private string _description;
         private string _displayName;
         private string _feedbackURL;
@@ -41,6 +42,26 @@ namespace Amazon.AppStream.Model
         private string _redirectURL;
         private List<StorageConnector> _storageConnectors = new List<StorageConnector>();
         private List<UserSetting> _userSettings = new List<UserSetting>();
+
+        /// <summary>
+        /// Gets and sets the property ApplicationSettings. 
+        /// <para>
+        /// The persistent application settings for users of a stack. When these settings are
+        /// enabled, changes that users make to applications and Windows settings are automatically
+        /// saved after each session and applied to the next session.
+        /// </para>
+        /// </summary>
+        public ApplicationSettings ApplicationSettings
+        {
+            get { return this._applicationSettings; }
+            set { this._applicationSettings = value; }
+        }
+
+        // Check to see if ApplicationSettings property is set
+        internal bool IsSetApplicationSettings()
+        {
+            return this._applicationSettings != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 

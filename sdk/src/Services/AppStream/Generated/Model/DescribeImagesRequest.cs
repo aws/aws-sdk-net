@@ -29,8 +29,8 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeImages operation.
-    /// Retrieves a list that describes one or more specified images, if the image names are
-    /// provided. Otherwise, all images in the account are described.
+    /// Retrieves a list that describes one or more specified images, if the image names or
+    /// image ARNs are provided. Otherwise, all images in the account are described.
     /// </summary>
     public partial class DescribeImagesRequest : AmazonAppStreamRequest
     {
@@ -79,7 +79,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Names. 
         /// <para>
-        /// The names of the images to describe.
+        /// The names of the public or private images to describe.
         /// </para>
         /// </summary>
         public List<string> Names

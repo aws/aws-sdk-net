@@ -67,6 +67,17 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetApplicationSettings())
+                {
+                    context.Writer.WritePropertyName("ApplicationSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ApplicationSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ApplicationSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetAttributesToDelete())
                 {
                     context.Writer.WritePropertyName("AttributesToDelete");

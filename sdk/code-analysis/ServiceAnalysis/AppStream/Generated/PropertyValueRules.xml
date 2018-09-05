@@ -389,6 +389,18 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppStream.Model.ApplicationSettings.SettingsGroup</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.ApplicationSettingsResponse.S3BucketName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.ApplicationSettingsResponse.SettingsGroup</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppStream.Model.DomainJoinInfo.OrganizationalUnitDistinguishedName</property>
     <max>2000</max>
   </property-value-rule>

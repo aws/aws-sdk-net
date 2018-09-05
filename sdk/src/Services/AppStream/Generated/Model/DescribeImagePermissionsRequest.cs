@@ -29,7 +29,8 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeImagePermissions operation.
-    /// Retrieves a list that describes the permissions for a private image that you own.
+    /// Retrieves a list that describes the permissions for shared AWS account IDs on a private
+    /// image that you own.
     /// </summary>
     public partial class DescribeImagePermissionsRequest : AmazonAppStreamRequest
     {

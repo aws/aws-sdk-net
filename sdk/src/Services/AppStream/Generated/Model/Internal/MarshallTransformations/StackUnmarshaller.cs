@@ -64,6 +64,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ApplicationSettings", targetDepth))
+                {
+                    var unmarshaller = ApplicationSettingsResponseUnmarshaller.Instance;
+                    unmarshalledObject.ApplicationSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
