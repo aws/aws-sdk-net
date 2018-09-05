@@ -34,7 +34,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <para>
     /// For information about the protocols and the ports supported by Elastic Load Balancing,
     /// see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
-    /// for Your Classic Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.
+    /// for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
     /// </para>
     /// </summary>
     public partial class Listener

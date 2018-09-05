@@ -446,7 +446,8 @@ namespace Amazon.ElasticLoadBalancing
         /// The specified load balancer does not exist.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.DependencyThrottleException">
-        /// 
+        /// A request made by Elastic Load Balancing to another service exceeds the maximum request
+        /// rate permitted for your account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancers">REST API Reference for DescribeLoadBalancers Operation</seealso>
         Task<DescribeLoadBalancersResponse> DescribeLoadBalancersAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));

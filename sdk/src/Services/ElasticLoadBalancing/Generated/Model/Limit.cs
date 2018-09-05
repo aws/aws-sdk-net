@@ -66,6 +66,10 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <para>
         /// classic-load-balancers
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// classic-registered-instances
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public string Name

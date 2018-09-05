@@ -82,7 +82,7 @@ namespace Amazon.ElasticLoadBalancing
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag
-        /// Your Classic Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.
+        /// Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddTags service method.</param>
@@ -140,7 +140,7 @@ namespace Amazon.ElasticLoadBalancing
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-security-groups.html#elb-vpc-security-groups">Security
-        /// Groups for Load Balancers in a VPC</a> in the <i>Classic Load Balancer Guide</i>.
+        /// Groups for Load Balancers in a VPC</a> in the <i>Classic Load Balancers Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ApplySecurityGroupsToLoadBalancer service method.</param>
@@ -196,7 +196,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <para>
         /// The load balancer evenly distributes requests across all registered subnets. For more
         /// information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-manage-subnets.html">Add
-        /// or Remove Subnets for Your Load Balancer in a VPC</a> in the <i>Classic Load Balancer
+        /// or Remove Subnets for Your Load Balancer in a VPC</a> in the <i>Classic Load Balancers
         /// Guide</i>.
         /// </para>
         /// </summary>
@@ -256,7 +256,7 @@ namespace Amazon.ElasticLoadBalancing
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-healthchecks.html">Configure
-        /// Health Checks for Your Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.
+        /// Health Checks for Your Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ConfigureHealthCheck service method.</param>
@@ -319,7 +319,7 @@ namespace Amazon.ElasticLoadBalancing
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-application">Application-Controlled
-        /// Session Stickiness</a> in the <i>Classic Load Balancer Guide</i>.
+        /// Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAppCookieStickinessPolicy service method.</param>
@@ -394,7 +394,7 @@ namespace Amazon.ElasticLoadBalancing
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-duration">Duration-Based
-        /// Session Stickiness</a> in the <i>Classic Load Balancer Guide</i>.
+        /// Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLBCookieStickinessPolicy service method.</param>
@@ -465,7 +465,7 @@ namespace Amazon.ElasticLoadBalancing
         /// You can create up to 20 load balancers per region per account. You can request an
         /// increase for the number of load balancers for your account. For more information,
         /// see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-limits.html">Limits
-        /// for Your Classic Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.
+        /// for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLoadBalancer service method.</param>
@@ -554,7 +554,7 @@ namespace Amazon.ElasticLoadBalancing
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
-        /// for Your Classic Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.
+        /// for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLoadBalancerListeners service method.</param>
@@ -829,7 +829,7 @@ namespace Amazon.ElasticLoadBalancing
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-deregister-register-instances.html">Register
-        /// or De-Register EC2 Instances</a> in the <i>Classic Load Balancer Guide</i>.
+        /// or De-Register EC2 Instances</a> in the <i>Classic Load Balancers Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterInstancesFromLoadBalancer service method.</param>
@@ -881,7 +881,7 @@ namespace Amazon.ElasticLoadBalancing
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-limits.html">Limits
-        /// for Your Classic Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.
+        /// for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountLimits service method.</param>
@@ -1187,7 +1187,8 @@ namespace Amazon.ElasticLoadBalancing
         /// The specified load balancer does not exist.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.DependencyThrottleException">
-        /// 
+        /// A request made by Elastic Load Balancing to another service exceeds the maximum request
+        /// rate permitted for your account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancers">REST API Reference for DescribeLoadBalancers Operation</seealso>
         DescribeLoadBalancersResponse DescribeLoadBalancers();
@@ -1203,7 +1204,8 @@ namespace Amazon.ElasticLoadBalancing
         /// The specified load balancer does not exist.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.DependencyThrottleException">
-        /// 
+        /// A request made by Elastic Load Balancing to another service exceeds the maximum request
+        /// rate permitted for your account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancers">REST API Reference for DescribeLoadBalancers Operation</seealso>
         DescribeLoadBalancersResponse DescribeLoadBalancers(DescribeLoadBalancersRequest request);
@@ -1337,8 +1339,12 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Removes the specified Availability Zones from the set of Availability Zones for the
-        /// specified load balancer.
+        /// specified load balancer in EC2-Classic or a default VPC.
         /// 
+        ///  
+        /// <para>
+        /// For load balancers in a non-default VPC, use <a>DetachLoadBalancerFromSubnets</a>.
+        /// </para>
         ///  
         /// <para>
         /// There must be at least one Availability Zone registered with a load balancer at all
@@ -1350,7 +1356,7 @@ namespace Amazon.ElasticLoadBalancing
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-az.html">Add
-        /// or Remove Availability Zones</a> in the <i>Classic Load Balancer Guide</i>.
+        /// or Remove Availability Zones</a> in the <i>Classic Load Balancers Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableAvailabilityZonesForLoadBalancer service method.</param>
@@ -1398,17 +1404,17 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Adds the specified Availability Zones to the set of Availability Zones for the specified
-        /// load balancer.
+        /// load balancer in EC2-Classic or a default VPC.
         /// 
         ///  
         /// <para>
-        /// The load balancer evenly distributes requests across all its registered Availability
-        /// Zones that contain instances.
+        /// For load balancers in a non-default VPC, use <a>AttachLoadBalancerToSubnets</a>.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-az.html">Add
-        /// or Remove Availability Zones</a> in the <i>Classic Load Balancer Guide</i>.
+        /// The load balancer evenly distributes requests across all its registered Availability
+        /// Zones that contain instances. For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-az.html">Add
+        /// or Remove Availability Zones</a> in the <i>Classic Load Balancers Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableAvailabilityZonesForLoadBalancer service method.</param>
@@ -1463,7 +1469,7 @@ namespace Amazon.ElasticLoadBalancing
         /// </para>
         ///  
         /// <para>
-        /// For more information, see the following in the <i>Classic Load Balancer Guide</i>:
+        /// For more information, see the following in the <i>Classic Load Balancers Guide</i>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1564,7 +1570,7 @@ namespace Amazon.ElasticLoadBalancing
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-deregister-register-instances.html">Register
-        /// or De-Register EC2 Instances</a> in the <i>Classic Load Balancer Guide</i>.
+        /// or De-Register EC2 Instances</a> in the <i>Classic Load Balancers Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterInstancesWithLoadBalancer service method.</param>
@@ -1661,7 +1667,7 @@ namespace Amazon.ElasticLoadBalancing
         ///  
         /// <para>
         /// For more information about updating your SSL certificate, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-update-ssl-cert.html">Replace
-        /// the SSL Certificate for Your Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.
+        /// the SSL Certificate for Your Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetLoadBalancerListenerSSLCertificate service method.</param>
@@ -1739,9 +1745,9 @@ namespace Amazon.ElasticLoadBalancing
         ///  
         /// <para>
         /// For more information about enabling back-end instance authentication, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-create-https-ssl-load-balancer.html#configure_backendauth_clt">Configure
-        /// Back-end Instance Authentication</a> in the <i>Classic Load Balancer Guide</i>. For
+        /// Back-end Instance Authentication</a> in the <i>Classic Load Balancers Guide</i>. For
         /// more information about Proxy Protocol, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-proxy-protocol.html">Configure
-        /// Proxy Protocol Support</a> in the <i>Classic Load Balancer Guide</i>.
+        /// Proxy Protocol Support</a> in the <i>Classic Load Balancers Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetLoadBalancerPoliciesForBackendServer service method.</param>
@@ -1803,7 +1809,7 @@ namespace Amazon.ElasticLoadBalancing
         /// For more information about setting policies, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/ssl-config-update.html">Update
         /// the SSL Negotiation Configuration</a>, <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-duration">Duration-Based
         /// Session Stickiness</a>, and <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-application">Application-Controlled
-        /// Session Stickiness</a> in the <i>Classic Load Balancer Guide</i>.
+        /// Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetLoadBalancerPoliciesOfListener service method.</param>

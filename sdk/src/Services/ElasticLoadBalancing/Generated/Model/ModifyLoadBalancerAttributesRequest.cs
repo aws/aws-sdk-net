@@ -40,7 +40,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see the following in the <i>Classic Load Balancer Guide</i>:
+    /// For more information, see the following in the <i>Classic Load Balancers Guide</i>:
     /// </para>
     ///  <ul> <li> 
     /// <para>
