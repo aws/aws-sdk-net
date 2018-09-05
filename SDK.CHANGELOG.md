@@ -1,3 +1,15 @@
+### 3.3.355.0 (2018-09-05 21:05 UTC)
+* AppStream (3.3.18.0)
+	* Added support for enabling persistent application settings for a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.
+* DynamoDBv2 (3.3.14.0)
+	* New feature for Amazon DynamoDB.
+* ElasticLoadBalancing (3.3.3.0)
+	* Documentation update for DescribeAccountLimits API to include classic-registered-instances.
+* RDS (3.3.27.6)
+	* Fix broken links in the RDS CLI Reference to the Aurora User Guide
+* S3 (3.3.23.0)
+	* Parquet input format support added for the SelectObjectContent API
+
 ### 3.3.354.0 (2018-09-05 18:30 UTC)
 * ApplicationDiscoveryService (3.3.5.0)
 	* Added Obsolete attribute for deprecated properties.
