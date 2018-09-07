@@ -47,6 +47,7 @@ namespace Amazon.CloudWatchLogs.Model
         private bool? _interleaved;
         private int? _limit;
         private string _logGroupName;
+        private string _logStreamNamePrefix;
         private List<string> _logStreamNames = new List<string>();
         private string _nextToken;
         private long? _startTime;
@@ -73,7 +74,12 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property FilterPattern. 
         /// <para>
-        /// The filter pattern to use. If not provided, all the events are matched.
+        /// The filter pattern to use. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter
+        /// and Pattern Syntax</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If not provided, all the events are matched.
         /// </para>
         /// </summary>
         public string FilterPattern
@@ -130,7 +136,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property LogGroupName. 
         /// <para>
-        /// The name of the log group.
+        /// The name of the log group to search.
         /// </para>
         /// </summary>
         public string LogGroupName
@@ -146,9 +152,42 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LogStreamNamePrefix. 
+        /// <para>
+        /// Filters the results to include only events from log streams that have names starting
+        /// with this prefix.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>,
+        /// but the value for <code>logStreamNamePrefix</code> does not match any log stream names
+        /// specified in <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code>
+        /// error.
+        /// </para>
+        /// </summary>
+        public string LogStreamNamePrefix
+        {
+            get { return this._logStreamNamePrefix; }
+            set { this._logStreamNamePrefix = value; }
+        }
+
+        // Check to see if LogStreamNamePrefix property is set
+        internal bool IsSetLogStreamNamePrefix()
+        {
+            return this._logStreamNamePrefix != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LogStreamNames. 
         /// <para>
-        /// Optional list of log stream names.
+        /// Filters the results to only logs from the log streams in this list.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>,
+        /// but the value for <code>logStreamNamePrefix</code> does not match any log stream names
+        /// specified in <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code>
+        /// error.
         /// </para>
         /// </summary>
         public List<string> LogStreamNames

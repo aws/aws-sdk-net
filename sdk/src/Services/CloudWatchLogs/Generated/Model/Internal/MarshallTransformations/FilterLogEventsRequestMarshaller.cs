@@ -97,6 +97,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.LogGroupName);
                 }
 
+                if(publicRequest.IsSetLogStreamNamePrefix())
+                {
+                    context.Writer.WritePropertyName("logStreamNamePrefix");
+                    context.Writer.Write(publicRequest.LogStreamNamePrefix);
+                }
+
                 if(publicRequest.IsSetLogStreamNames())
                 {
                     context.Writer.WritePropertyName("logStreamNames");

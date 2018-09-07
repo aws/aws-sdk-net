@@ -1105,8 +1105,8 @@
           "logGroupName": {
             "type": "string",
             "pattern": "[\\.\\-_/#A-Za-z0-9]+",
-            "zonbookDocumentation": "\n         <simpara>The name of the log group.</simpara>\n      ",
-            "documentation": "\n         <p>The name of the log group.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>The name of the log group to search.</simpara>\n      ",
+            "documentation": "\n         <p>The name of the log group to search.</p>\n      ",
             "required": true,
             "shape_name": "LogGroupName",
             "min_length": 1,
@@ -1114,8 +1114,8 @@
           },
           "logStreamNames": {
             "type": "list",
-            "zonbookDocumentation": "\n         <simpara>Optional list of log stream names.</simpara>\n      ",
-            "documentation": "\n         <p>Optional list of log stream names.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>Filters the results to only logs from the log streams in this list.</simpara>\n         <para>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the value for\n      <code>logStreamNamePrefix</code> does not match any log stream names specified in <code>logStreamNames</code>, the action\n      returns an <code>InvalidParameterException</code> error.</para>\n      ",
+            "documentation": "\n         <p>Filters the results to only logs from the log streams in this list.</p>\n         <p>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the value for\n      <code>logStreamNamePrefix</code> does not match any log stream names specified in <code>logStreamNames</code>, the action\n      returns an <code>InvalidParameterException</code> error.</p>\n      ",
             "shape_name": "InputLogStreamNames",
             "min_length": 1,
             "max_length": 100,
@@ -1127,6 +1127,15 @@
               "min_length": 1,
               "max_length": 512
             }
+          },
+          "logStreamNamePrefix": {
+            "type": "string",
+            "pattern": "[^:*]*",
+            "zonbookDocumentation": "\n         <para>Filters the results to include only events from log streams that have names starting with this prefix.</para>\n         <para>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the value for\n      <code>logStreamNamePrefix</code> does not match any log stream names specified in <code>logStreamNames</code>, the action\n    returns an <code>InvalidParameterException</code> error.</para>\n      ",
+            "documentation": "\n         <p>Filters the results to include only events from log streams that have names starting with this prefix.</p>\n         <p>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the value for\n      <code>logStreamNamePrefix</code> does not match any log stream names specified in <code>logStreamNames</code>, the action\n    returns an <code>InvalidParameterException</code> error.</p>\n      ",
+            "shape_name": "LogStreamName",
+            "min_length": 1,
+            "max_length": 512
           },
           "startTime": {
             "type": "long",
@@ -1144,8 +1153,8 @@
           },
           "filterPattern": {
             "type": "string",
-            "zonbookDocumentation": "\n         <simpara>The filter pattern to use. If not provided, all the events are matched.</simpara>\n      ",
-            "documentation": "\n         <p>The filter pattern to use. If not provided, all the events are matched.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>The filter pattern to use. For more information, see <ulink type=\"documentation\" url=\"AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html\">Filter and Pattern Syntax</ulink>.</simpara>\n         <para>If not provided, all the events are matched.</para>\n      ",
+            "documentation": "\n         <p>The filter pattern to use. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html\">Filter and Pattern Syntax</a>.</p>\n         <p>If not provided, all the events are matched.</p>\n      ",
             "shape_name": "FilterPattern",
             "min_length": 0,
             "max_length": 1024

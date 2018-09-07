@@ -307,6 +307,12 @@
     <pattern>[\.\-_/#A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.FilterLogEventsRequest.LogStreamNamePrefix</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[^:*]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.FilterLogEventsRequest.NextToken</property>
     <min>1</min>
   </property-value-rule>
