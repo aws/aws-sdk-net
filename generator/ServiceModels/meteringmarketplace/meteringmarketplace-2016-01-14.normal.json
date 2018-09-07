@@ -81,8 +81,8 @@
         "ProductCode":{
           "shape":"ProductCode",
           "documentation":"<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>"
-      }
-    },
+        }
+      },
       "documentation":"<p>A BatchMeterUsageRequest contains UsageRecords, which indicate quantities of usage within your application.</p>"
     },
     "BatchMeterUsageResult":{
@@ -95,8 +95,8 @@
         "UnprocessedRecords":{
           "shape":"UsageRecordList",
           "documentation":"<p>Contains all UsageRecords that were not processed by BatchMeterUsage. This is a list of UsageRecords. You can retry the failed request by making another BatchMeterUsage call with this list as input in the BatchMeterUsageRequest.</p>"
-      }
-    },
+        }
+      },
       "documentation":"<p>Contains the UsageRecords processed by BatchMeterUsage and any records that have failed due to transient error.</p>"
     },
     "Boolean":{"type":"boolean"},
@@ -223,8 +223,8 @@
         "RegistrationToken":{
           "shape":"NonEmptyString",
           "documentation":"<p>When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a CustomerIdentifier and product code.</p>"
-      }
-    },
+        }
+      },
       "documentation":"<p>Contains input to the ResolveCustomer operation.</p>"
     },
     "ResolveCustomerResult":{
@@ -237,8 +237,8 @@
         "ProductCode":{
           "shape":"ProductCode",
           "documentation":"<p>The product code is returned to confirm that the buyer is registering for your product. Subsequent BatchMeterUsage calls should be made using this product code.</p>"
-      }
-    },
+        }
+      },
       "documentation":"<p>The result of the ResolveCustomer operation. Contains the CustomerIdentifier and product code.</p>"
     },
     "String":{"type":"string"},
@@ -293,8 +293,8 @@
         "Quantity":{
           "shape":"UsageQuantity",
           "documentation":"<p>The quantity of usage consumed by the customer for the given dimension and time.</p>"
-      }
-    },
+        }
+      },
       "documentation":"<p>A UsageRecord indicates a quantity of usage for a given product, customer, dimension and time.</p> <p>Multiple requests with the same UsageRecords as input will be deduplicated to prevent double charges.</p>"
     },
     "UsageRecordList":{
@@ -317,8 +317,8 @@
         "Status":{
           "shape":"UsageRecordResultStatus",
           "documentation":"<p>The UsageRecordResult Status indicates the status of an individual UsageRecord processed by BatchMeterUsage.</p> <ul> <li> <p> <i>Success</i>- The UsageRecord was accepted and honored by BatchMeterUsage.</p> </li> <li> <p> <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is not subscribed to your product. The UsageRecord was not honored. Future UsageRecords for this customer will fail until the customer subscribes to your product.</p> </li> <li> <p> <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid and not honored. A previously metered UsageRecord had the same customer, dimension, and time, but a different quantity.</p> </li> </ul>"
-      }
-    },
+        }
+      },
       "documentation":"<p>A UsageRecordResult indicates the status of a given UsageRecord processed by BatchMeterUsage.</p>"
     },
     "UsageRecordResultList":{
