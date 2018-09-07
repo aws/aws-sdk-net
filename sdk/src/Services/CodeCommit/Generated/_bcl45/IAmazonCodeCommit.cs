@@ -2187,7 +2187,8 @@ namespace Amazon.CodeCommit
 
 
         /// <summary>
-        /// Adds or updates a file in an AWS CodeCommit repository.
+        /// Adds or updates a file in a branch in an AWS CodeCommit repository, and generates
+        /// a commit for the addition in the specified branch.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutFile service method.</param>
         /// 

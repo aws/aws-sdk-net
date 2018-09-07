@@ -34,6 +34,7 @@ namespace Amazon.CodeCommit.Model
     {
         private string _destinationCommit;
         private string _destinationReference;
+        private string _mergeBase;
         private MergeMetadata _mergeMetadata;
         private string _repositoryName;
         private string _sourceCommit;
@@ -75,6 +76,25 @@ namespace Amazon.CodeCommit.Model
         internal bool IsSetDestinationReference()
         {
             return this._destinationReference != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MergeBase. 
+        /// <para>
+        /// The commit ID of the most recent commit that the source branch and the destination
+        /// branch have in common.
+        /// </para>
+        /// </summary>
+        public string MergeBase
+        {
+            get { return this._mergeBase; }
+            set { this._mergeBase = value; }
+        }
+
+        // Check to see if MergeBase property is set
+        internal bool IsSetMergeBase()
+        {
+            return this._mergeBase != null;
         }
 
         /// <summary>

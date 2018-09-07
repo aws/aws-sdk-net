@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PullRequestSourceReferenceUpdatedEventMetadata Object
+    /// Response Unmarshaller for PullRequestCreatedEventMetadata Object
     /// </summary>  
-    public class PullRequestSourceReferenceUpdatedEventMetadataUnmarshaller : IUnmarshaller<PullRequestSourceReferenceUpdatedEventMetadata, XmlUnmarshallerContext>, IUnmarshaller<PullRequestSourceReferenceUpdatedEventMetadata, JsonUnmarshallerContext>
+    public class PullRequestCreatedEventMetadataUnmarshaller : IUnmarshaller<PullRequestCreatedEventMetadata, XmlUnmarshallerContext>, IUnmarshaller<PullRequestCreatedEventMetadata, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PullRequestSourceReferenceUpdatedEventMetadata IUnmarshaller<PullRequestSourceReferenceUpdatedEventMetadata, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PullRequestCreatedEventMetadata IUnmarshaller<PullRequestCreatedEventMetadata, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,21 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public PullRequestSourceReferenceUpdatedEventMetadata Unmarshall(JsonUnmarshallerContext context)
+        public PullRequestCreatedEventMetadata Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            PullRequestSourceReferenceUpdatedEventMetadata unmarshalledObject = new PullRequestSourceReferenceUpdatedEventMetadata();
+            PullRequestCreatedEventMetadata unmarshalledObject = new PullRequestCreatedEventMetadata();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("afterCommitId", targetDepth))
+                if (context.TestExpression("destinationCommitId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AfterCommitId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("beforeCommitId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BeforeCommitId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DestinationCommitId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("mergeBase", targetDepth))
@@ -88,18 +82,24 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
                     unmarshalledObject.RepositoryName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("sourceCommitId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SourceCommitId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;
         }
 
 
-        private static PullRequestSourceReferenceUpdatedEventMetadataUnmarshaller _instance = new PullRequestSourceReferenceUpdatedEventMetadataUnmarshaller();        
+        private static PullRequestCreatedEventMetadataUnmarshaller _instance = new PullRequestCreatedEventMetadataUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PullRequestSourceReferenceUpdatedEventMetadataUnmarshaller Instance
+        public static PullRequestCreatedEventMetadataUnmarshaller Instance
         {
             get
             {

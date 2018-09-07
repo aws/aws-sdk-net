@@ -28,51 +28,33 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
-    /// Information about an update to the source branch of a pull request.
+    /// Metadata about the pull request that is used when comparing the pull request source
+    /// with its destination.
     /// </summary>
-    public partial class PullRequestSourceReferenceUpdatedEventMetadata
+    public partial class PullRequestCreatedEventMetadata
     {
-        private string _afterCommitId;
-        private string _beforeCommitId;
+        private string _destinationCommitId;
         private string _mergeBase;
         private string _repositoryName;
+        private string _sourceCommitId;
 
         /// <summary>
-        /// Gets and sets the property AfterCommitId. 
+        /// Gets and sets the property DestinationCommitId. 
         /// <para>
-        /// The full commit ID of the commit in the source branch that was the tip of the branch
-        /// at the time the pull request was updated.
+        /// The commit ID of the tip of the branch specified as the destination branch when the
+        /// pull request was created.
         /// </para>
         /// </summary>
-        public string AfterCommitId
+        public string DestinationCommitId
         {
-            get { return this._afterCommitId; }
-            set { this._afterCommitId = value; }
+            get { return this._destinationCommitId; }
+            set { this._destinationCommitId = value; }
         }
 
-        // Check to see if AfterCommitId property is set
-        internal bool IsSetAfterCommitId()
+        // Check to see if DestinationCommitId property is set
+        internal bool IsSetDestinationCommitId()
         {
-            return this._afterCommitId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property BeforeCommitId. 
-        /// <para>
-        /// The full commit ID of the commit in the destination branch that was the tip of the
-        /// branch at the time the pull request was updated.
-        /// </para>
-        /// </summary>
-        public string BeforeCommitId
-        {
-            get { return this._beforeCommitId; }
-            set { this._beforeCommitId = value; }
-        }
-
-        // Check to see if BeforeCommitId property is set
-        internal bool IsSetBeforeCommitId()
-        {
-            return this._beforeCommitId != null;
+            return this._destinationCommitId != null;
         }
 
         /// <summary>
@@ -97,7 +79,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property RepositoryName. 
         /// <para>
-        /// The name of the repository where the pull request was updated.
+        /// The name of the repository where the pull request was created.
         /// </para>
         /// </summary>
         public string RepositoryName
@@ -110,6 +92,24 @@ namespace Amazon.CodeCommit.Model
         internal bool IsSetRepositoryName()
         {
             return this._repositoryName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceCommitId. 
+        /// <para>
+        /// The commit ID on the source branch used when the pull request was created.
+        /// </para>
+        /// </summary>
+        public string SourceCommitId
+        {
+            get { return this._sourceCommitId; }
+            set { this._sourceCommitId = value; }
+        }
+
+        // Check to see if SourceCommitId property is set
+        internal bool IsSetSourceCommitId()
+        {
+            return this._sourceCommitId != null;
         }
 
     }

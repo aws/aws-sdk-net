@@ -76,6 +76,12 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
                     unmarshalledObject.DestinationReference = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("mergeBase", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MergeBase = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("mergeMetadata", targetDepth))
                 {
                     var unmarshaller = MergeMetadataUnmarshaller.Instance;

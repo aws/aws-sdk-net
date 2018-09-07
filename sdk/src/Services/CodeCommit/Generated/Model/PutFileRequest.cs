@@ -29,7 +29,8 @@ namespace Amazon.CodeCommit.Model
 {
     /// <summary>
     /// Container for the parameters to the PutFile operation.
-    /// Adds or updates a file in an AWS CodeCommit repository.
+    /// Adds or updates a file in a branch in an AWS CodeCommit repository, and generates
+    /// a commit for the addition in the specified branch.
     /// </summary>
     public partial class PutFileRequest : AmazonCodeCommitRequest
     {
@@ -46,7 +47,8 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property BranchName. 
         /// <para>
-        /// The name of the branch where you want to add or update the file.
+        /// The name of the branch where you want to add or update the file. If this is an empty
+        /// repository, this branch will be created.
         /// </para>
         /// </summary>
         public string BranchName
@@ -182,8 +184,13 @@ namespace Amazon.CodeCommit.Model
         /// Gets and sets the property ParentCommitId. 
         /// <para>
         /// The full commit ID of the head commit in the branch where you want to add or update
-        /// the file. If the commit ID does not match the ID of the head commit at the time of
-        /// the operation, an error will occur, and the file will not be added or updated.
+        /// the file. If this is an empty repository, no commit ID is required. If this is not
+        /// an empty repository, a commit ID is required. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The commit ID must match the ID of the head commit at the time of the operation, or
+        /// an error will occur, and the file will not be added or updated.
         /// </para>
         /// </summary>
         public string ParentCommitId

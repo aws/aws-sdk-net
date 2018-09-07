@@ -241,6 +241,12 @@
     <max>150</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeCommit.Model.PullRequestCreatedEventMetadata.RepositoryName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\w\.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeCommit.Model.PullRequestMergedStateChangedEventMetadata.RepositoryName</property>
     <min>1</min>
     <max>100</max>

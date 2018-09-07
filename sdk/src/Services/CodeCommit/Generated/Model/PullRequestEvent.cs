@@ -34,6 +34,7 @@ namespace Amazon.CodeCommit.Model
     {
         private string _actorArn;
         private DateTime? _eventDate;
+        private PullRequestCreatedEventMetadata _pullRequestCreatedEventMetadata;
         private PullRequestEventType _pullRequestEventType;
         private string _pullRequestId;
         private PullRequestMergedStateChangedEventMetadata _pullRequestMergedStateChangedEventMetadata;
@@ -76,6 +77,24 @@ namespace Amazon.CodeCommit.Model
         internal bool IsSetEventDate()
         {
             return this._eventDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PullRequestCreatedEventMetadata. 
+        /// <para>
+        /// Information about the source and destination branches for the pull request.
+        /// </para>
+        /// </summary>
+        public PullRequestCreatedEventMetadata PullRequestCreatedEventMetadata
+        {
+            get { return this._pullRequestCreatedEventMetadata; }
+            set { this._pullRequestCreatedEventMetadata = value; }
+        }
+
+        // Check to see if PullRequestCreatedEventMetadata property is set
+        internal bool IsSetPullRequestCreatedEventMetadata()
+        {
+            return this._pullRequestCreatedEventMetadata != null;
         }
 
         /// <summary>

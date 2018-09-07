@@ -75,7 +75,8 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property TreeId. 
         /// <para>
-        /// Tree information for the commit that contains this file change.
+        /// The full SHA-1 pointer of the tree information for the commit that contains this file
+        /// change.
         /// </para>
         /// </summary>
         public string TreeId

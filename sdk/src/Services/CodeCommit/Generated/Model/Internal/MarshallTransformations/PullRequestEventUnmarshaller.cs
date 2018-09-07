@@ -76,6 +76,12 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
                     unmarshalledObject.EventDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("pullRequestCreatedEventMetadata", targetDepth))
+                {
+                    var unmarshaller = PullRequestCreatedEventMetadataUnmarshaller.Instance;
+                    unmarshalledObject.PullRequestCreatedEventMetadata = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("pullRequestEventType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
