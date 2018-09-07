@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Describes account specific API endpoint
+    /// Describes an account-specific API endpoint.
     /// </summary>
     public partial class Endpoint
     {

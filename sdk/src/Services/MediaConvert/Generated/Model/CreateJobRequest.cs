@@ -34,12 +34,28 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class CreateJobRequest : AmazonMediaConvertRequest
     {
+        private BillingTagsSource _billingTagsSource;
         private string _clientRequestToken;
         private string _jobTemplate;
         private string _queue;
         private string _role;
         private JobSettings _settings;
         private Dictionary<string, string> _userMetadata = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property BillingTagsSource.
+        /// </summary>
+        public BillingTagsSource BillingTagsSource
+        {
+            get { return this._billingTagsSource; }
+            set { this._billingTagsSource = value; }
+        }
+
+        // Check to see if BillingTagsSource property is set
+        internal bool IsSetBillingTagsSource()
+        {
+            return this._billingTagsSource != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. Idempotency token for CreateJob operation.

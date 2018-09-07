@@ -55,21 +55,19 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         public IRequest Marshall(UntagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MediaConvert");
-            request.HttpMethod = "DELETE";
+            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/2017-08-29/tags";
+            string uriResourcePath = "/2017-08-29/tags/{arn}";
+            if (!publicRequest.IsSetArn())
+                throw new AmazonMediaConvertException("Request object does not have required field Arn set");
+            uriResourcePath = uriResourcePath.Replace("{arn}", StringUtils.FromString(publicRequest.Arn));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetArn())
-                {
-                    context.Writer.WritePropertyName("arn");
-                    context.Writer.Write(publicRequest.Arn);
-                }
-
                 if(publicRequest.IsSetTagKeys())
                 {
                     context.Writer.WritePropertyName("tagKeys");

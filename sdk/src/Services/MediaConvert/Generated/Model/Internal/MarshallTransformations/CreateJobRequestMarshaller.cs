@@ -65,6 +65,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetBillingTagsSource())
+                {
+                    context.Writer.WritePropertyName("billingTagsSource");
+                    context.Writer.Write(publicRequest.BillingTagsSource);
+                }
+
                 if(publicRequest.IsSetClientRequestToken())
                 {
                     context.Writer.WritePropertyName("clientRequestToken");

@@ -34,6 +34,7 @@ namespace Amazon.MediaConvert.Model
     public partial class Job
     {
         private string _arn;
+        private BillingTagsSource _billingTagsSource;
         private DateTime? _createdAt;
         private int? _errorCode;
         private string _errorMessage;
@@ -61,6 +62,21 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BillingTagsSource.
+        /// </summary>
+        public BillingTagsSource BillingTagsSource
+        {
+            get { return this._billingTagsSource; }
+            set { this._billingTagsSource = value; }
+        }
+
+        // Check to see if BillingTagsSource property is set
+        internal bool IsSetBillingTagsSource()
+        {
+            return this._billingTagsSource != null;
         }
 
         /// <summary>

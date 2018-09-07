@@ -29,8 +29,8 @@ namespace Amazon.MediaConvert.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Tag a MediaConvert queue, preset, or job template. For information about these resource
-    /// types, see the User Guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+    /// Add tags to a MediaConvert queue, preset, or job template. For information about tagging,
+    /// see the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/tagging-resources.html
     /// </summary>
     public partial class TagResourceRequest : AmazonMediaConvertRequest
     {

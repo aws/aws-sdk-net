@@ -71,6 +71,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.MaxResults);
                 }
 
+                if(publicRequest.IsSetMode())
+                {
+                    context.Writer.WritePropertyName("mode");
+                    context.Writer.Write(publicRequest.Mode);
+                }
+
                 if(publicRequest.IsSetNextToken())
                 {
                     context.Writer.WritePropertyName("nextToken");

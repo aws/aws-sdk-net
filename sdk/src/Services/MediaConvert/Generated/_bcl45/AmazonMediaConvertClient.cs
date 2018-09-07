@@ -240,17 +240,17 @@ namespace Amazon.MediaConvert
         /// check your request form and syntax.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.ConflictException">
-        /// The service could not complete your request because there is a conflict with the current
+        /// The service couldn't complete your request because there is a conflict with the current
         /// state of the resource.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.ForbiddenException">
         /// You don't have permissions for this action with the credentials you sent.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.InternalServerErrorException">
-        /// The service encountered an unexpected condition and cannot fulfill your request.
+        /// The service encountered an unexpected condition and can't fulfill your request.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
-        /// The resource you requested does not exist.
+        /// The resource you requested doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
@@ -301,17 +301,17 @@ namespace Amazon.MediaConvert
         /// check your request form and syntax.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.ConflictException">
-        /// The service could not complete your request because there is a conflict with the current
+        /// The service couldn't complete your request because there is a conflict with the current
         /// state of the resource.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.ForbiddenException">
         /// You don't have permissions for this action with the credentials you sent.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.InternalServerErrorException">
-        /// The service encountered an unexpected condition and cannot fulfill your request.
+        /// The service encountered an unexpected condition and can't fulfill your request.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
-        /// The resource you requested does not exist.
+        /// The resource you requested doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
@@ -362,17 +362,17 @@ namespace Amazon.MediaConvert
         /// check your request form and syntax.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.ConflictException">
-        /// The service could not complete your request because there is a conflict with the current
+        /// The service couldn't complete your request because there is a conflict with the current
         /// state of the resource.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.ForbiddenException">
         /// You don't have permissions for this action with the credentials you sent.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.InternalServerErrorException">
-        /// The service encountered an unexpected condition and cannot fulfill your request.
+        /// The service encountered an unexpected condition and can't fulfill your request.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
-        /// The resource you requested does not exist.
+        /// The resource you requested doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
@@ -422,17 +422,17 @@ namespace Amazon.MediaConvert
         /// check your request form and syntax.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.ConflictException">
-        /// The service could not complete your request because there is a conflict with the current
+        /// The service couldn't complete your request because there is a conflict with the current
         /// state of the resource.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.ForbiddenException">
         /// You don't have permissions for this action with the credentials you sent.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.InternalServerErrorException">
-        /// The service encountered an unexpected condition and cannot fulfill your request.
+        /// The service encountered an unexpected condition and can't fulfill your request.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
-        /// The resource you requested does not exist.
+        /// The resource you requested doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
@@ -483,17 +483,17 @@ namespace Amazon.MediaConvert
         /// check your request form and syntax.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.ConflictException">
-        /// The service could not complete your request because there is a conflict with the current
+        /// The service couldn't complete your request because there is a conflict with the current
         /// state of the resource.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.ForbiddenException">
         /// You don't have permissions for this action with the credentials you sent.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.InternalServerErrorException">
-        /// The service encountered an unexpected condition and cannot fulfill your request.
+        /// The service encountered an unexpected condition and can't fulfill your request.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
-        /// The resource you requested does not exist.
+        /// The resource you requested doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
@@ -543,17 +543,17 @@ namespace Amazon.MediaConvert
         /// check your request form and syntax.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.ConflictException">
-        /// The service could not complete your request because there is a conflict with the current
+        /// The service couldn't complete your request because there is a conflict with the current
         /// state of the resource.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.ForbiddenException">
         /// You don't have permissions for this action with the credentials you sent.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.InternalServerErrorException">
-        /// The service encountered an unexpected condition and cannot fulfill your request.
+        /// The service encountered an unexpected condition and can't fulfill your request.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
-        /// The resource you requested does not exist.
+        /// The resource you requested doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
@@ -603,17 +603,17 @@ namespace Amazon.MediaConvert
         /// check your request form and syntax.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.ConflictException">
-        /// The service could not complete your request because there is a conflict with the current
+        /// The service couldn't complete your request because there is a conflict with the current
         /// state of the resource.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.ForbiddenException">
         /// You don't have permissions for this action with the credentials you sent.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.InternalServerErrorException">
-        /// The service encountered an unexpected condition and cannot fulfill your request.
+        /// The service encountered an unexpected condition and can't fulfill your request.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
-        /// The resource you requested does not exist.
+        /// The resource you requested doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
@@ -663,17 +663,17 @@ namespace Amazon.MediaConvert
         /// check your request form and syntax.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.ConflictException">
-        /// The service could not complete your request because there is a conflict with the current
+        /// The service couldn't complete your request because there is a conflict with the current
         /// state of the resource.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.ForbiddenException">
         /// You don't have permissions for this action with the credentials you sent.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.InternalServerErrorException">
-        /// The service encountered an unexpected condition and cannot fulfill your request.
+        /// The service encountered an unexpected condition and can't fulfill your request.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
-        /// The resource you requested does not exist.
+        /// The resource you requested doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
@@ -724,17 +724,17 @@ namespace Amazon.MediaConvert
         /// check your request form and syntax.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.ConflictException">
-        /// The service could not complete your request because there is a conflict with the current
+        /// The service couldn't complete your request because there is a conflict with the current
         /// state of the resource.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.ForbiddenException">
         /// You don't have permissions for this action with the credentials you sent.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.InternalServerErrorException">
-        /// The service encountered an unexpected condition and cannot fulfill your request.
+        /// The service encountered an unexpected condition and can't fulfill your request.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
-        /// The resource you requested does not exist.
+        /// The resource you requested doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
@@ -784,17 +784,17 @@ namespace Amazon.MediaConvert
         /// check your request form and syntax.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.ConflictException">
-        /// The service could not complete your request because there is a conflict with the current
+        /// The service couldn't complete your request because there is a conflict with the current
         /// state of the resource.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.ForbiddenException">
         /// You don't have permissions for this action with the credentials you sent.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.InternalServerErrorException">
-        /// The service encountered an unexpected condition and cannot fulfill your request.
+        /// The service encountered an unexpected condition and can't fulfill your request.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
-        /// The resource you requested does not exist.
+        /// The resource you requested doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
@@ -844,17 +844,17 @@ namespace Amazon.MediaConvert
         /// check your request form and syntax.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.ConflictException">
-        /// The service could not complete your request because there is a conflict with the current
+        /// The service couldn't complete your request because there is a conflict with the current
         /// state of the resource.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.ForbiddenException">
         /// You don't have permissions for this action with the credentials you sent.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.InternalServerErrorException">
-        /// The service encountered an unexpected condition and cannot fulfill your request.
+        /// The service encountered an unexpected condition and can't fulfill your request.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
-        /// The resource you requested does not exist.
+        /// The resource you requested doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
@@ -904,17 +904,17 @@ namespace Amazon.MediaConvert
         /// check your request form and syntax.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.ConflictException">
-        /// The service could not complete your request because there is a conflict with the current
+        /// The service couldn't complete your request because there is a conflict with the current
         /// state of the resource.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.ForbiddenException">
         /// You don't have permissions for this action with the credentials you sent.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.InternalServerErrorException">
-        /// The service encountered an unexpected condition and cannot fulfill your request.
+        /// The service encountered an unexpected condition and can't fulfill your request.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
-        /// The resource you requested does not exist.
+        /// The resource you requested doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
@@ -964,17 +964,17 @@ namespace Amazon.MediaConvert
         /// check your request form and syntax.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.ConflictException">
-        /// The service could not complete your request because there is a conflict with the current
+        /// The service couldn't complete your request because there is a conflict with the current
         /// state of the resource.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.ForbiddenException">
         /// You don't have permissions for this action with the credentials you sent.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.InternalServerErrorException">
-        /// The service encountered an unexpected condition and cannot fulfill your request.
+        /// The service encountered an unexpected condition and can't fulfill your request.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
-        /// The resource you requested does not exist.
+        /// The resource you requested doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
@@ -1027,17 +1027,17 @@ namespace Amazon.MediaConvert
         /// check your request form and syntax.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.ConflictException">
-        /// The service could not complete your request because there is a conflict with the current
+        /// The service couldn't complete your request because there is a conflict with the current
         /// state of the resource.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.ForbiddenException">
         /// You don't have permissions for this action with the credentials you sent.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.InternalServerErrorException">
-        /// The service encountered an unexpected condition and cannot fulfill your request.
+        /// The service encountered an unexpected condition and can't fulfill your request.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
-        /// The resource you requested does not exist.
+        /// The resource you requested doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
@@ -1089,17 +1089,17 @@ namespace Amazon.MediaConvert
         /// check your request form and syntax.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.ConflictException">
-        /// The service could not complete your request because there is a conflict with the current
+        /// The service couldn't complete your request because there is a conflict with the current
         /// state of the resource.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.ForbiddenException">
         /// You don't have permissions for this action with the credentials you sent.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.InternalServerErrorException">
-        /// The service encountered an unexpected condition and cannot fulfill your request.
+        /// The service encountered an unexpected condition and can't fulfill your request.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
-        /// The resource you requested does not exist.
+        /// The resource you requested doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
@@ -1151,17 +1151,17 @@ namespace Amazon.MediaConvert
         /// check your request form and syntax.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.ConflictException">
-        /// The service could not complete your request because there is a conflict with the current
+        /// The service couldn't complete your request because there is a conflict with the current
         /// state of the resource.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.ForbiddenException">
         /// You don't have permissions for this action with the credentials you sent.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.InternalServerErrorException">
-        /// The service encountered an unexpected condition and cannot fulfill your request.
+        /// The service encountered an unexpected condition and can't fulfill your request.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
-        /// The resource you requested does not exist.
+        /// The resource you requested doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
@@ -1213,17 +1213,17 @@ namespace Amazon.MediaConvert
         /// check your request form and syntax.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.ConflictException">
-        /// The service could not complete your request because there is a conflict with the current
+        /// The service couldn't complete your request because there is a conflict with the current
         /// state of the resource.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.ForbiddenException">
         /// You don't have permissions for this action with the credentials you sent.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.InternalServerErrorException">
-        /// The service encountered an unexpected condition and cannot fulfill your request.
+        /// The service encountered an unexpected condition and can't fulfill your request.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
-        /// The resource you requested does not exist.
+        /// The resource you requested doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
@@ -1273,17 +1273,17 @@ namespace Amazon.MediaConvert
         /// check your request form and syntax.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.ConflictException">
-        /// The service could not complete your request because there is a conflict with the current
+        /// The service couldn't complete your request because there is a conflict with the current
         /// state of the resource.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.ForbiddenException">
         /// You don't have permissions for this action with the credentials you sent.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.InternalServerErrorException">
-        /// The service encountered an unexpected condition and cannot fulfill your request.
+        /// The service encountered an unexpected condition and can't fulfill your request.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
-        /// The resource you requested does not exist.
+        /// The resource you requested doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
@@ -1323,8 +1323,8 @@ namespace Amazon.MediaConvert
 
 
         /// <summary>
-        /// Tag a MediaConvert queue, preset, or job template. For information about these resource
-        /// types, see the User Guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+        /// Add tags to a MediaConvert queue, preset, or job template. For information about tagging,
+        /// see the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/tagging-resources.html
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -1334,17 +1334,17 @@ namespace Amazon.MediaConvert
         /// check your request form and syntax.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.ConflictException">
-        /// The service could not complete your request because there is a conflict with the current
+        /// The service couldn't complete your request because there is a conflict with the current
         /// state of the resource.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.ForbiddenException">
         /// You don't have permissions for this action with the credentials you sent.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.InternalServerErrorException">
-        /// The service encountered an unexpected condition and cannot fulfill your request.
+        /// The service encountered an unexpected condition and can't fulfill your request.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
-        /// The resource you requested does not exist.
+        /// The resource you requested doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
@@ -1384,8 +1384,8 @@ namespace Amazon.MediaConvert
 
 
         /// <summary>
-        /// Untag a MediaConvert queue, preset, or job template. For information about these resource
-        /// types, see the User Guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+        /// Remove tags from a MediaConvert queue, preset, or job template. For information about
+        /// tagging, see the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/tagging-resources.html
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -1395,17 +1395,17 @@ namespace Amazon.MediaConvert
         /// check your request form and syntax.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.ConflictException">
-        /// The service could not complete your request because there is a conflict with the current
+        /// The service couldn't complete your request because there is a conflict with the current
         /// state of the resource.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.ForbiddenException">
         /// You don't have permissions for this action with the credentials you sent.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.InternalServerErrorException">
-        /// The service encountered an unexpected condition and cannot fulfill your request.
+        /// The service encountered an unexpected condition and can't fulfill your request.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
-        /// The resource you requested does not exist.
+        /// The resource you requested doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
@@ -1455,17 +1455,17 @@ namespace Amazon.MediaConvert
         /// check your request form and syntax.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.ConflictException">
-        /// The service could not complete your request because there is a conflict with the current
+        /// The service couldn't complete your request because there is a conflict with the current
         /// state of the resource.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.ForbiddenException">
         /// You don't have permissions for this action with the credentials you sent.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.InternalServerErrorException">
-        /// The service encountered an unexpected condition and cannot fulfill your request.
+        /// The service encountered an unexpected condition and can't fulfill your request.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
-        /// The resource you requested does not exist.
+        /// The resource you requested doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
@@ -1515,17 +1515,17 @@ namespace Amazon.MediaConvert
         /// check your request form and syntax.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.ConflictException">
-        /// The service could not complete your request because there is a conflict with the current
+        /// The service couldn't complete your request because there is a conflict with the current
         /// state of the resource.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.ForbiddenException">
         /// You don't have permissions for this action with the credentials you sent.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.InternalServerErrorException">
-        /// The service encountered an unexpected condition and cannot fulfill your request.
+        /// The service encountered an unexpected condition and can't fulfill your request.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
-        /// The resource you requested does not exist.
+        /// The resource you requested doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
@@ -1575,17 +1575,17 @@ namespace Amazon.MediaConvert
         /// check your request form and syntax.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.ConflictException">
-        /// The service could not complete your request because there is a conflict with the current
+        /// The service couldn't complete your request because there is a conflict with the current
         /// state of the resource.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.ForbiddenException">
         /// You don't have permissions for this action with the credentials you sent.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.InternalServerErrorException">
-        /// The service encountered an unexpected condition and cannot fulfill your request.
+        /// The service encountered an unexpected condition and can't fulfill your request.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.NotFoundException">
-        /// The resource you requested does not exist.
+        /// The resource you requested doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.MediaConvert.Model.TooManyRequestsException">
         /// Too many requests have been sent in too short of a time. The service limits the rate
