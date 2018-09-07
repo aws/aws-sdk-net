@@ -18,6 +18,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -39,9 +40,7 @@ namespace Amazon.Runtime
     public class HttpRequestMessageFactory : IHttpRequestFactory<HttpContent>
     {
         // This is the global cache of HttpClient for service clients that are using 
-        static readonly ReaderWriterLockSlim _httpClientCacheRWLock = new ReaderWriterLockSlim();
-        static readonly IDictionary<string, HttpClientCache> _httpClientCaches = new Dictionary<string, HttpClientCache>();
-
+        static readonly ConcurrentDictionary<string, HttpClientCache> _httpClientCaches = new ConcurrentDictionary<string, HttpClientCache>();
 
         private HttpClientCache _httpClientCache;
         private IClientConfig _clientConfig;
@@ -69,54 +68,17 @@ namespace Amazon.Runtime
                 {
                     if (!CanClientConfigBeSerialized(_clientConfig))
                     {
-                        _httpClientCacheRWLock.EnterWriteLock();
-                        try
-                        {
-                            if (_httpClientCache == null)
-                            {
-                                _httpClientCache = CreateHttpClientCache(_clientConfig);
-                            }
-                        }
-                        finally
-                        {
-                            _httpClientCacheRWLock.ExitWriteLock();
-                        }
+                        // atomic operation - if _httpClientCache still equals null, swap in the CreateHttpClientCache 
+                        Interlocked.CompareExchange(ref _httpClientCache, CreateHttpClientCache(_clientConfig), null);
                     }
                     else
                     {
                         // Check to see if an HttpClient was created by another service client with the 
                         // same settings on the ClientConfig.
                         var configUniqueString = CreateConfigUniqueString(_clientConfig);
-                        _httpClientCacheRWLock.EnterReadLock();
-                        try
-                        {
-                            _httpClientCaches.TryGetValue(configUniqueString, out _httpClientCache);
-                        }
-                        finally
-                        {
-                            _httpClientCacheRWLock.ExitReadLock();
-                        }
 
-                        // If a HttpClientCache is not found in the global cache then create one
-                        // for this and other service clients to use.
-                        if (_httpClientCache == null)
-                        {
-                            _httpClientCacheRWLock.EnterWriteLock();
-                            try
-                            {
-                                // Check if the HttpClientCache was created by some other thread 
-                                // while this thread was waiting for the lock.
-                                if (!_httpClientCaches.TryGetValue(configUniqueString, out _httpClientCache))
-                                {
-                                    _httpClientCache = CreateHttpClientCache(_clientConfig);
-                                    _httpClientCaches[configUniqueString] = _httpClientCache;
-                                }
-                            }
-                            finally
-                            {
-                                _httpClientCacheRWLock.ExitWriteLock();
-                            }
-                        }
+                        _httpClientCache = _httpClientCaches.GetOrAdd(configUniqueString,
+                            key => CreateHttpClientCache(_clientConfig));
                     }
                 }
 
