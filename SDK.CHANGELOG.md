@@ -1,3 +1,16 @@
+### 3.3.356.0 (2018-09-07 00:42 UTC)
+* APIGateway (3.3.20.0)
+	* Add support for Active X-Ray with API Gateway
+* CodeCommit (3.3.5.0)
+	* This release adds additional optional fields to the pull request APIs.
+* MediaConvert (3.3.8.0)
+	* This release adds support for Cost Allocation through tagging and also enables adding, editing, and removal of tags from the MediaConvert console.
+* Core 3.3.25.2
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.355.0 (2018-09-05 21:05 UTC)
 * AppStream (3.3.18.0)
 	* Added support for enabling persistent application settings for a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.
