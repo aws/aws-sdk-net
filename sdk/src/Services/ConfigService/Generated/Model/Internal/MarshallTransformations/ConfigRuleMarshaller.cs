@@ -69,6 +69,12 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ConfigRuleState);
             }
 
+            if(requestObject.IsSetCreatedBy())
+            {
+                context.Writer.WritePropertyName("CreatedBy");
+                context.Writer.Write(requestObject.CreatedBy);
+            }
+
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");

@@ -1994,8 +1994,15 @@ namespace Amazon.ConfigService
         /// You have provided a null or empty role ARN.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.LimitExceededException">
-        /// This exception is thrown if an evaluation is in progress or if you call the <a>StartConfigRulesEvaluation</a>
-        /// API more than once per minute.
+        /// For <code>StartConfigRulesEvaluation</code> API, this exception is thrown if an evaluation
+        /// is in progress or if you call the <a>StartConfigRulesEvaluation</a> API more than
+        /// once per minute.
+        /// 
+        ///  
+        /// <para>
+        /// For <code>PutConfigurationAggregator</code> API, this exception is thrown if the number
+        /// of accounts and aggregators exceeds the limit.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoAvailableOrganizationException">
         /// Organization does is no longer available.
@@ -2298,8 +2305,15 @@ namespace Amazon.ConfigService
         /// valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.LimitExceededException">
-        /// This exception is thrown if an evaluation is in progress or if you call the <a>StartConfigRulesEvaluation</a>
-        /// API more than once per minute.
+        /// For <code>StartConfigRulesEvaluation</code> API, this exception is thrown if an evaluation
+        /// is in progress or if you call the <a>StartConfigRulesEvaluation</a> API more than
+        /// once per minute.
+        /// 
+        ///  
+        /// <para>
+        /// For <code>PutConfigurationAggregator</code> API, this exception is thrown if the number
+        /// of accounts and aggregators exceeds the limit.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
         /// One or more AWS Config rules in the request are invalid. Verify that the rule names

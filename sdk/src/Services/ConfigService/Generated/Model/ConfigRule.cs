@@ -52,6 +52,7 @@ namespace Amazon.ConfigService.Model
         private string _configRuleId;
         private string _configRuleName;
         private ConfigRuleState _configRuleState;
+        private string _createdBy;
         private string _description;
         private string _inputParameters;
         private MaximumExecutionFrequency _maximumExecutionFrequency;
@@ -149,6 +150,30 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetConfigRuleState()
         {
             return this._configRuleState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatedBy. 
+        /// <para>
+        /// Service principal name of the service that created the rule.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The field is populated only if the service linked rule is created by a service. The
+        /// field is empty if you create your own rule.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string CreatedBy
+        {
+            get { return this._createdBy; }
+            set { this._createdBy = value; }
+        }
+
+        // Check to see if CreatedBy property is set
+        internal bool IsSetCreatedBy()
+        {
+            return this._createdBy != null;
         }
 
         /// <summary>
