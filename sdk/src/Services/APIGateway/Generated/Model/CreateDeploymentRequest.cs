@@ -41,6 +41,7 @@ namespace Amazon.APIGateway.Model
         private string _restApiId;
         private string _stageDescription;
         private string _stageName;
+        private bool? _tracingEnabled;
         private Dictionary<string, string> _variables = new Dictionary<string, string>();
 
         /// <summary>
@@ -170,6 +171,24 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetStageName()
         {
             return this._stageName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TracingEnabled. 
+        /// <para>
+        /// Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.
+        /// </para>
+        /// </summary>
+        public bool TracingEnabled
+        {
+            get { return this._tracingEnabled.GetValueOrDefault(); }
+            set { this._tracingEnabled = value; }
+        }
+
+        // Check to see if TracingEnabled property is set
+        internal bool IsSetTracingEnabled()
+        {
+            return this._tracingEnabled.HasValue; 
         }
 
         /// <summary>

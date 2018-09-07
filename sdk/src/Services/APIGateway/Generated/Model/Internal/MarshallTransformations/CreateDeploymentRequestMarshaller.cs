@@ -109,6 +109,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.StageName);
                 }
 
+                if(publicRequest.IsSetTracingEnabled())
+                {
+                    context.Writer.WritePropertyName("tracingEnabled");
+                    context.Writer.Write(publicRequest.TracingEnabled);
+                }
+
                 if(publicRequest.IsSetVariables())
                 {
                     context.Writer.WritePropertyName("variables");

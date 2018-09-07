@@ -105,7 +105,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property DataTraceEnabled. 
         /// <para>
-        /// Specifies whether data trace logging is enabled for this method, which effects the
+        /// Specifies whether data trace logging is enabled for this method, which affects the
         /// log entries pushed to Amazon CloudWatch Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/dataTrace</code>,
         /// and the value is a Boolean.
         /// </para>
@@ -125,7 +125,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property LoggingLevel. 
         /// <para>
-        /// Specifies the logging level for this method, which effects the log entries pushed
+        /// Specifies the logging level for this method, which affects the log entries pushed
         /// to Amazon CloudWatch Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/loglevel</code>,
         /// and the available levels are <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>.
         /// </para>
