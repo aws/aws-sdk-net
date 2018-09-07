@@ -1,3 +1,9 @@
+### 3.3.357.0 (2018-09-07 20:09 UTC)
+* CloudWatchLogs (3.3.6.0)
+	* * Adding a log prefix parameter for filter log events API and minor updates to the documentation
+* ConfigService (3.3.20.0)
+	* Adding a new field "createdBy" to the ConfigRule data model. The field is populated only if the rule is service linked i.e the rule is created by a service. The field is empty for normal rules created by customer.
+
 ### 3.3.356.0 (2018-09-07 00:42 UTC)
 * APIGateway (3.3.20.0)
 	* Add support for Active X-Ray with API Gateway
