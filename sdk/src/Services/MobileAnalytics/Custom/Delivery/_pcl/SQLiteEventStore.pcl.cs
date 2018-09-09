@@ -69,6 +69,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 TABLE_NAME, EVENT_COLUMN_NAME, EVENT_ID_COLUMN_NAME, MA_APP_ID_COLUMN_NAME, EVENT_DELIVERY_ATTEMPT_COUNT_COLUMN_NAME);
 
             var r = Sqlite3.sqlite3_open(this.DBfileFullPath, out Handle);
+            
 
             if (r != Sqlite3.SQLITE_OK)
             {
@@ -89,7 +90,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// <param name="eventString">Amazon Mobile Analytics event in string.</param>
         /// <param name="appID">Amazon Mobile Analytics App ID.</param>
         [System.Security.SecuritySafeCritical]
-        public void PutEvent(string eventString, string appID)
+        public virtual void PutEvent(string eventString, string appID)
         {
             long currentDatabaseSize = this.DatabaseSize;
 
@@ -117,7 +118,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// </summary>
         /// <param name="rowIds">List of row identifiers.</param>
         [System.Security.SecuritySafeCritical]
-        public void DeleteEvent(List<string> rowIds)
+        public virtual void DeleteEvent(List<string> rowIds)
         {
             string ids = string.Format(CultureInfo.InvariantCulture, "'{0}'", string.Join("', '", rowIds.ToArray()));
             string sqlCommand = string.Format(CultureInfo.InvariantCulture, "DELETE FROM {0} WHERE {1} IN ({2})", TABLE_NAME, EVENT_ID_COLUMN_NAME, ids);
@@ -171,7 +172,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// <param name="appID">Amazon Mobile Analytics App Identifier.</param>
         /// <returns>The number of events.</returns>
         [System.Security.SecuritySafeCritical]
-        public long NumberOfEvents(string appID)
+        public virtual long NumberOfEvents(string appID)
         {
             long count = 0;
 
@@ -199,7 +200,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// Gets the size of the database.
         /// </summary>
         /// <returns>The database size.</returns>
-        public long DatabaseSize
+        public virtual long DatabaseSize
         {
             get
             {

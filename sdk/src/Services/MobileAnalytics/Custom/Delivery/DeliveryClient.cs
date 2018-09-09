@@ -276,7 +276,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             }
 
             List<JsonData> allEventList = _eventStore.GetEvents(_appID, MAX_ALLOWED_SELECTS);
-            if (allEventList.Count == 0)
+            if (allEventList == null || allEventList.Count == 0)
             {
                 _logger.InfoFormat("No Events to deliver.");
                 lock (_deliveryLock)
