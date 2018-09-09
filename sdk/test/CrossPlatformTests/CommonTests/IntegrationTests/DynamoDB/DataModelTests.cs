@@ -306,14 +306,13 @@ namespace CommonTests.IntegrationTests.DynamoDB
             Assert.AreEqual(product.CompanyInfo.AllProducts.Count, retrieved.CompanyInfo.AllProducts.Count);
             Assert.AreEqual(product.CompanyInfo.AllProducts[0].Id, retrieved.CompanyInfo.AllProducts[0].Id);
             Assert.AreEqual(product.CompanyInfo.AllProducts[1].Id, retrieved.CompanyInfo.AllProducts[1].Id);
-            Assert.AreEqual(product.Map.Count, retrieved.Map.Count);
+            Assert.AreEqual(product.Map.Count, retrieved.Map.Count);        
             Assert.AreEqual(product.CompanyInfo.CompetitorProducts.Count, retrieved.CompanyInfo.CompetitorProducts.Count);
-            Assert.AreEqual(product.CompanyInfo.CompetitorProducts.ElementAt(0).Key, retrieved.CompanyInfo.CompetitorProducts.ElementAt(0).Key);
-            Assert.AreEqual(product.CompanyInfo.CompetitorProducts.ElementAt(0).Value.Count, retrieved.CompanyInfo.CompetitorProducts.ElementAt(0).Value.Count);
-            Assert.AreEqual(product.CompanyInfo.CompetitorProducts.ElementAt(1).Key, retrieved.CompanyInfo.CompetitorProducts.ElementAt(1).Key);
-            Assert.AreEqual(product.CompanyInfo.CompetitorProducts.ElementAt(1).Value.Count, retrieved.CompanyInfo.CompetitorProducts.ElementAt(1).Value.Count);
+            foreach (var itemkey in product.CompanyInfo.CompetitorProducts.Keys)
+            {
+                Assert.AreEqual(product.CompanyInfo.CompetitorProducts[itemkey].Count, retrieved.CompanyInfo.CompetitorProducts[itemkey].Count);
 
-
+            } 
             // Try saving circularly-referencing object
             product.CompanyInfo.AllProducts.Add(product);
             await AssertExtensions.ExpectExceptionAsync(Context.SaveAsync(product));
