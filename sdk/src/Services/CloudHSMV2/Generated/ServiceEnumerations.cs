@@ -85,6 +85,10 @@ namespace Amazon.CloudHSMV2
         /// </summary>
         public static readonly BackupState DELETED = new BackupState("DELETED");
         /// <summary>
+        /// Constant PENDING_DELETION for BackupState
+        /// </summary>
+        public static readonly BackupState PENDING_DELETION = new BackupState("PENDING_DELETION");
+        /// <summary>
         /// Constant READY for BackupState
         /// </summary>
         public static readonly BackupState READY = new BackupState("READY");

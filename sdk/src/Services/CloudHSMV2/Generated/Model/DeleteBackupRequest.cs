@@ -28,18 +28,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudHSMV2.Model
 {
     /// <summary>
-    /// Container for the parameters to the CopyBackupToRegion operation.
-    /// Copy an AWS CloudHSM cluster backup to a different region.
+    /// Container for the parameters to the DeleteBackup operation.
+    /// Deletes a specified AWS CloudHSM backup. A backup can be restored up to 7 days after
+    /// the DeleteBackup request. For more information on restoring a backup, see <a>RestoreBackup</a>
     /// </summary>
-    public partial class CopyBackupToRegionRequest : AmazonCloudHSMV2Request
+    public partial class DeleteBackupRequest : AmazonCloudHSMV2Request
     {
         private string _backupId;
-        private string _destinationRegion;
 
         /// <summary>
         /// Gets and sets the property BackupId. 
         /// <para>
-        /// The ID of the backup that will be copied to the destination region. 
+        /// The ID of the backup to be deleted. To find the ID of a backup, use the <a>DescribeBackups</a>
+        /// operation.
         /// </para>
         /// </summary>
         public string BackupId
@@ -52,24 +53,6 @@ namespace Amazon.CloudHSMV2.Model
         internal bool IsSetBackupId()
         {
             return this._backupId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property DestinationRegion. 
-        /// <para>
-        /// The AWS region that will contain your copied CloudHSM cluster backup.
-        /// </para>
-        /// </summary>
-        public string DestinationRegion
-        {
-            get { return this._destinationRegion; }
-            set { this._destinationRegion = value; }
-        }
-
-        // Check to see if DestinationRegion property is set
-        internal bool IsSetDestinationRegion()
-        {
-            return this._destinationRegion != null;
         }
 
     }

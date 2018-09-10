@@ -35,7 +35,18 @@ namespace Amazon.CloudHSMV2.Model
         private DestinationBackup _destinationBackup;
 
         /// <summary>
-        /// Gets and sets the property DestinationBackup.
+        /// Gets and sets the property DestinationBackup. 
+        /// <para>
+        /// Information on the backup that will be copied to the destination region, including
+        /// CreateTimestamp, SourceBackup, SourceCluster, and Source Region. CreateTimestamp of
+        /// the destination backup will be the same as that of the source backup.
+        /// </para>
+        ///  
+        /// <para>
+        /// You will need to use the <code>sourceBackupID</code> returned in this operation to
+        /// use the <a>DescribeBackups</a> operation on the backup that will be copied to the
+        /// destination region.
+        /// </para>
         /// </summary>
         public DestinationBackup DestinationBackup
         {

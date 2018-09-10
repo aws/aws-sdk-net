@@ -328,6 +328,38 @@ namespace Amazon.CloudHSMV2
 
         #endregion
         
+        #region  DeleteBackup
+
+        internal virtual DeleteBackupResponse DeleteBackup(DeleteBackupRequest request)
+        {
+            var marshaller = DeleteBackupRequestMarshaller.Instance;
+            var unmarshaller = DeleteBackupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBackupRequest,DeleteBackupResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBackup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBackup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DeleteBackup">REST API Reference for DeleteBackup Operation</seealso>
+        public virtual Task<DeleteBackupResponse> DeleteBackupAsync(DeleteBackupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteBackupRequestMarshaller.Instance;
+            var unmarshaller = DeleteBackupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteBackupRequest,DeleteBackupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteCluster
 
         internal virtual DeleteClusterResponse DeleteCluster(DeleteClusterRequest request)
@@ -515,6 +547,38 @@ namespace Amazon.CloudHSMV2
             var unmarshaller = ListTagsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTagsRequest,ListTagsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RestoreBackup
+
+        internal virtual RestoreBackupResponse RestoreBackup(RestoreBackupRequest request)
+        {
+            var marshaller = RestoreBackupRequestMarshaller.Instance;
+            var unmarshaller = RestoreBackupResponseUnmarshaller.Instance;
+
+            return Invoke<RestoreBackupRequest,RestoreBackupResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RestoreBackup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RestoreBackup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/RestoreBackup">REST API Reference for RestoreBackup Operation</seealso>
+        public virtual Task<RestoreBackupResponse> RestoreBackupAsync(RestoreBackupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = RestoreBackupRequestMarshaller.Instance;
+            var unmarshaller = RestoreBackupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RestoreBackupRequest,RestoreBackupResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

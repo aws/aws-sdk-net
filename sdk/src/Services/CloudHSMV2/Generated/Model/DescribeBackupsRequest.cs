@@ -59,6 +59,12 @@ namespace Amazon.CloudHSMV2.Model
         /// </para>
         ///  
         /// <para>
+        /// Use the <code>sourceBackupIds</code> filter to return only the backups created from
+        /// a source backup. The <code>sourceBackupID</code> of a source backup is returned by
+        /// the <a>CopyBackupToRegion</a> operation.
+        /// </para>
+        ///  
+        /// <para>
         /// Use the <code>clusterIds</code> filter to return only the backups for the specified
         /// clusters. Specify clusters by their cluster identifier (ID).
         /// </para>

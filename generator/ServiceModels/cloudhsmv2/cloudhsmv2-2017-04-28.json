@@ -369,16 +369,18 @@
           "DestinationRegion": {
             "type": "string",
             "pattern": "[a-z]{2}(-(gov))?-(east|west|north|south|central){1,2}-\\d",
+            "zonbookDocumentation": "\n         <simpara>The AWS region that will contain your copied CloudHSM cluster backup.</simpara>\n      ",
+            "documentation": "\n         <p>The AWS region that will contain your copied CloudHSM cluster backup.</p>\n      ",
             "required": true,
-            "shape_name": "Region",
-            "documentation": null
+            "shape_name": "Region"
           },
           "BackupId": {
             "type": "string",
             "pattern": "backup-[2-7a-zA-Z]{11,16}",
+            "zonbookDocumentation": "\n         <simpara>The ID of the backup that will be copied to the destination region. </simpara>\n      ",
+            "documentation": "\n         <p>The ID of the backup that will be copied to the destination region. </p>\n      ",
             "required": true,
-            "shape_name": "BackupId",
-            "documentation": null
+            "shape_name": "BackupId"
           }
         },
         "shape_name": "CopyBackupToRegionRequest",
@@ -414,8 +416,9 @@
                 "documentation": null
               }
             },
-            "shape_name": "DestinationBackup",
-            "documentation": null
+            "zonbookDocumentation": "\n         <simpara>Information on the backup that will be copied to the destination region, including\n      CreateTimestamp, SourceBackup, SourceCluster, and Source Region. CreateTimestamp of the\n      destination backup will be the same as that of the source backup.</simpara>\n         <simpara>You will need to use the <code>sourceBackupID</code> returned in this operation to use\n      the <xref linkend=\"DescribeBackups\"/> operation on the backup that will be copied to the\n      destination region.</simpara>\n      ",
+            "documentation": "\n         <p>Information on the backup that will be copied to the destination region, including\n      CreateTimestamp, SourceBackup, SourceCluster, and Source Region. CreateTimestamp of the\n      destination backup will be the same as that of the source backup.</p>\n         <p>You will need to use the <code>sourceBackupID</code> returned in this operation to use\n      the <a>DescribeBackups</a> operation on the backup that will be copied to the\n      destination region.</p>\n      ",
+            "shape_name": "DestinationBackup"
           }
         },
         "shape_name": "CopyBackupToRegionResponse",
@@ -488,7 +491,170 @@
           "shape_name": "CloudHsmAccessDeniedException"
         }
       ],
-      "documentation": null
+      "documentation": "\n         <p>Copy an AWS CloudHSM cluster backup to a different region.</p>\n      "
+    },
+    "DeleteBackup": {
+      "name": "DeleteBackup",
+      "input": {
+        "type": "structure",
+        "members": {
+          "BackupId": {
+            "type": "string",
+            "pattern": "backup-[2-7a-zA-Z]{11,16}",
+            "zonbookDocumentation": "\n        <para>The ID of the backup to be deleted. To find the ID of a backup, use the <xref linkend=\"DescribeBackups\"/> operation.</para>\n      ",
+            "documentation": "\n        <p>The ID of the backup to be deleted. To find the ID of a backup, use the <a>DescribeBackups</a> operation.</p>\n      ",
+            "required": true,
+            "shape_name": "BackupId"
+          }
+        },
+        "shape_name": "DeleteBackupRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "Backup": {
+            "type": "structure",
+            "members": {
+              "BackupId": {
+                "type": "string",
+                "pattern": "backup-[2-7a-zA-Z]{11,16}",
+                "zonbookDocumentation": "\n         <simpara>The identifier (ID) of the backup.</simpara>\n      ",
+                "documentation": "\n         <p>The identifier (ID) of the backup.</p>\n      ",
+                "required": true,
+                "shape_name": "BackupId"
+              },
+              "BackupState": {
+                "type": "string",
+                "enum": [
+                  "CREATE_IN_PROGRESS",
+                  "READY",
+                  "DELETED",
+                  "PENDING_DELETION"
+                ],
+                "zonbookDocumentation": "\n         <simpara>The state of the backup.</simpara>\n      ",
+                "documentation": "\n         <p>The state of the backup.</p>\n      ",
+                "shape_name": "BackupState"
+              },
+              "ClusterId": {
+                "type": "string",
+                "pattern": "cluster-[2-7a-zA-Z]{11,16}",
+                "zonbookDocumentation": "\n         <simpara>The identifier (ID) of the cluster that was backed up.</simpara>\n      ",
+                "documentation": "\n         <p>The identifier (ID) of the cluster that was backed up.</p>\n      ",
+                "shape_name": "ClusterId"
+              },
+              "CreateTimestamp": {
+                "type": "timestamp",
+                "zonbookDocumentation": "\n         <simpara>The date and time when the backup was created.</simpara>\n      ",
+                "documentation": "\n         <p>The date and time when the backup was created.</p>\n      ",
+                "shape_name": "Timestamp"
+              },
+              "CopyTimestamp": {
+                "type": "timestamp",
+                "shape_name": "Timestamp",
+                "documentation": null
+              },
+              "SourceRegion": {
+                "type": "string",
+                "pattern": "[a-z]{2}(-(gov))?-(east|west|north|south|central){1,2}-\\d",
+                "shape_name": "Region",
+                "documentation": null
+              },
+              "SourceBackup": {
+                "type": "string",
+                "pattern": "backup-[2-7a-zA-Z]{11,16}",
+                "shape_name": "BackupId",
+                "documentation": null
+              },
+              "SourceCluster": {
+                "type": "string",
+                "pattern": "cluster-[2-7a-zA-Z]{11,16}",
+                "shape_name": "ClusterId",
+                "documentation": null
+              },
+              "DeleteTimestamp": {
+                "type": "timestamp",
+                "zonbookDocumentation": "\n         <simpara>The date and time when the backup will be permanently deleted.</simpara>\n      ",
+                "documentation": "\n         <p>The date and time when the backup will be permanently deleted.</p>\n      ",
+                "shape_name": "Timestamp"
+              }
+            },
+            "zonbookDocumentation": "\n        <para>Information on the <code>Backup</code> object deleted.</para>\n      ",
+            "documentation": "\n        <p>Information on the <code>Backup</code> object deleted.</p>\n      ",
+            "shape_name": "Backup"
+          }
+        },
+        "shape_name": "DeleteBackupResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because of an AWS CloudHSM internal failure. The request can\n      be retried.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because of an AWS CloudHSM internal failure. The request can\n      be retried.</p>\n      ",
+          "shape_name": "CloudHsmInternalFailureException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because an error occurred.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because an error occurred.</p>\n      ",
+          "shape_name": "CloudHsmServiceException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because it refers to a resource that cannot be\n      found.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because it refers to a resource that cannot be\n      found.</p>\n      ",
+          "shape_name": "CloudHsmResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because it is not a valid request.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because it is not a valid request.</p>\n      ",
+          "shape_name": "CloudHsmInvalidRequestException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because the requester does not have permission to perform the\n      requested operation.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because the requester does not have permission to perform the\n      requested operation.</p>\n      ",
+          "shape_name": "CloudHsmAccessDeniedException"
+        }
+      ],
+      "documentation": "\n        <p>Deletes a specified AWS CloudHSM backup. A backup can be restored up to 7 days after the DeleteBackup request.\n            For more information on restoring a backup, see <a>RestoreBackup</a> \n         </p>\n      "
     },
     "DeleteCluster": {
       "name": "DeleteCluster",
@@ -1495,8 +1661,8 @@
           },
           "Filters": {
             "type": "map",
-            "zonbookDocumentation": "\n         <simpara>One or more filters to limit the items returned in the response.</simpara>\n         <simpara>Use the <code>backupIds</code> filter to return only the specified backups. Specify\n      backups by their backup identifier (ID).</simpara>\n         <simpara>Use the <code>clusterIds</code> filter to return only the backups for the specified\n      clusters. Specify clusters by their cluster identifier (ID).</simpara>\n         <simpara>Use the <code>states</code> filter to return only backups that match the specified\n      state.</simpara>\n      ",
-            "documentation": "\n         <p>One or more filters to limit the items returned in the response.</p>\n         <p>Use the <code>backupIds</code> filter to return only the specified backups. Specify\n      backups by their backup identifier (ID).</p>\n         <p>Use the <code>clusterIds</code> filter to return only the backups for the specified\n      clusters. Specify clusters by their cluster identifier (ID).</p>\n         <p>Use the <code>states</code> filter to return only backups that match the specified\n      state.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>One or more filters to limit the items returned in the response.</simpara>\n         <simpara>Use the <code>backupIds</code> filter to return only the specified backups. Specify\n      backups by their backup identifier (ID).</simpara>\n         <simpara>Use the <code>sourceBackupIds</code> filter to return only the backups created from a\n      source backup. The <code>sourceBackupID</code> of a source backup is returned by the <xref linkend=\"CopyBackupToRegion\"/> operation.</simpara>\n         <simpara>Use the <code>clusterIds</code> filter to return only the backups for the specified\n      clusters. Specify clusters by their cluster identifier (ID).</simpara>\n         <simpara>Use the <code>states</code> filter to return only backups that match the specified\n      state.</simpara>\n      ",
+            "documentation": "\n         <p>One or more filters to limit the items returned in the response.</p>\n         <p>Use the <code>backupIds</code> filter to return only the specified backups. Specify\n      backups by their backup identifier (ID).</p>\n         <p>Use the <code>sourceBackupIds</code> filter to return only the backups created from a\n      source backup. The <code>sourceBackupID</code> of a source backup is returned by the <a>CopyBackupToRegion</a> operation.</p>\n         <p>Use the <code>clusterIds</code> filter to return only the backups for the specified\n      clusters. Specify clusters by their cluster identifier (ID).</p>\n         <p>Use the <code>states</code> filter to return only backups that match the specified\n      state.</p>\n      ",
             "shape_name": "Filters",
             "keys": {
               "type": "string",
@@ -1548,7 +1714,8 @@
                   "enum": [
                     "CREATE_IN_PROGRESS",
                     "READY",
-                    "DELETED"
+                    "DELETED",
+                    "PENDING_DELETION"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The state of the backup.</simpara>\n      ",
                   "documentation": "\n         <p>The state of the backup.</p>\n      ",
@@ -1589,6 +1756,12 @@
                   "pattern": "cluster-[2-7a-zA-Z]{11,16}",
                   "shape_name": "ClusterId",
                   "documentation": null
+                },
+                "DeleteTimestamp": {
+                  "type": "timestamp",
+                  "zonbookDocumentation": "\n         <simpara>The date and time when the backup will be permanently deleted.</simpara>\n      ",
+                  "documentation": "\n         <p>The date and time when the backup will be permanently deleted.</p>\n      ",
+                  "shape_name": "Timestamp"
                 }
               },
               "zonbookDocumentation": "\n         <simpara>Contains information about a backup of an AWS CloudHSM cluster.</simpara>\n      ",
@@ -1675,7 +1848,7 @@
           "shape_name": "CloudHsmAccessDeniedException"
         }
       ],
-      "documentation": "\n         <p>Gets information about backups of AWS CloudHSM clusters.</p>\n         <p>This is a paginated operation, which means that each response might contain only a\n      subset of all the backups. When the response contains only a subset of backups, it includes a\n      <code>NextToken</code> value. Use this value in a subsequent <code>DescribeBackups</code>\n      request to get more backups. When you receive a response with no <code>NextToken</code> (or an\n      empty or null value), that means there are no more backups to get.</p>\n      "
+      "documentation": "\n         <p>Gets information about backups of AWS CloudHSM clusters.</p>\n         <p>This is a paginated operation, which means that each response might contain only a\n      subset of all the backups. When the response contains only a subset of backups, it includes a\n        <code>NextToken</code> value. Use this value in a subsequent <code>DescribeBackups</code>\n      request to get more backups. When you receive a response with no <code>NextToken</code> (or an\n      empty or null value), that means there are no more backups to get.</p>\n      "
     },
     "InitializeCluster": {
       "name": "InitializeCluster",
@@ -1966,6 +2139,169 @@
         }
       ],
       "documentation": "\n         <p>Gets a list of tags for the specified AWS CloudHSM cluster.</p>\n         <p>This is a paginated operation, which means that each response might contain only a\n      subset of all the tags. When the response contains only a subset of tags, it includes a\n      <code>NextToken</code> value. Use this value in a subsequent <code>ListTags</code> request to\n      get more tags. When you receive a response with no <code>NextToken</code> (or an empty or null\n      value), that means there are no more tags to get.</p>\n      "
+    },
+    "RestoreBackup": {
+      "name": "RestoreBackup",
+      "input": {
+        "type": "structure",
+        "members": {
+          "BackupId": {
+            "type": "string",
+            "pattern": "backup-[2-7a-zA-Z]{11,16}",
+            "zonbookDocumentation": "\n        <para>The ID of the backup to be restored. To find the ID of a backup, use the <xref linkend=\"DescribeBackups\"/> operation.</para>\n      ",
+            "documentation": "\n        <p>The ID of the backup to be restored. To find the ID of a backup, use the <a>DescribeBackups</a> operation.</p>\n      ",
+            "required": true,
+            "shape_name": "BackupId"
+          }
+        },
+        "shape_name": "RestoreBackupRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "Backup": {
+            "type": "structure",
+            "members": {
+              "BackupId": {
+                "type": "string",
+                "pattern": "backup-[2-7a-zA-Z]{11,16}",
+                "zonbookDocumentation": "\n         <simpara>The identifier (ID) of the backup.</simpara>\n      ",
+                "documentation": "\n         <p>The identifier (ID) of the backup.</p>\n      ",
+                "required": true,
+                "shape_name": "BackupId"
+              },
+              "BackupState": {
+                "type": "string",
+                "enum": [
+                  "CREATE_IN_PROGRESS",
+                  "READY",
+                  "DELETED",
+                  "PENDING_DELETION"
+                ],
+                "zonbookDocumentation": "\n         <simpara>The state of the backup.</simpara>\n      ",
+                "documentation": "\n         <p>The state of the backup.</p>\n      ",
+                "shape_name": "BackupState"
+              },
+              "ClusterId": {
+                "type": "string",
+                "pattern": "cluster-[2-7a-zA-Z]{11,16}",
+                "zonbookDocumentation": "\n         <simpara>The identifier (ID) of the cluster that was backed up.</simpara>\n      ",
+                "documentation": "\n         <p>The identifier (ID) of the cluster that was backed up.</p>\n      ",
+                "shape_name": "ClusterId"
+              },
+              "CreateTimestamp": {
+                "type": "timestamp",
+                "zonbookDocumentation": "\n         <simpara>The date and time when the backup was created.</simpara>\n      ",
+                "documentation": "\n         <p>The date and time when the backup was created.</p>\n      ",
+                "shape_name": "Timestamp"
+              },
+              "CopyTimestamp": {
+                "type": "timestamp",
+                "shape_name": "Timestamp",
+                "documentation": null
+              },
+              "SourceRegion": {
+                "type": "string",
+                "pattern": "[a-z]{2}(-(gov))?-(east|west|north|south|central){1,2}-\\d",
+                "shape_name": "Region",
+                "documentation": null
+              },
+              "SourceBackup": {
+                "type": "string",
+                "pattern": "backup-[2-7a-zA-Z]{11,16}",
+                "shape_name": "BackupId",
+                "documentation": null
+              },
+              "SourceCluster": {
+                "type": "string",
+                "pattern": "cluster-[2-7a-zA-Z]{11,16}",
+                "shape_name": "ClusterId",
+                "documentation": null
+              },
+              "DeleteTimestamp": {
+                "type": "timestamp",
+                "zonbookDocumentation": "\n         <simpara>The date and time when the backup will be permanently deleted.</simpara>\n      ",
+                "documentation": "\n         <p>The date and time when the backup will be permanently deleted.</p>\n      ",
+                "shape_name": "Timestamp"
+              }
+            },
+            "zonbookDocumentation": "\n        <para>Information on the <code>Backup</code> object created.</para>\n      ",
+            "documentation": "\n        <p>Information on the <code>Backup</code> object created.</p>\n      ",
+            "shape_name": "Backup"
+          }
+        },
+        "shape_name": "RestoreBackupResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because of an AWS CloudHSM internal failure. The request can\n      be retried.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because of an AWS CloudHSM internal failure. The request can\n      be retried.</p>\n      ",
+          "shape_name": "CloudHsmInternalFailureException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because an error occurred.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because an error occurred.</p>\n      ",
+          "shape_name": "CloudHsmServiceException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because it refers to a resource that cannot be\n      found.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because it refers to a resource that cannot be\n      found.</p>\n      ",
+          "shape_name": "CloudHsmResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because it is not a valid request.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because it is not a valid request.</p>\n      ",
+          "shape_name": "CloudHsmInvalidRequestException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because the requester does not have permission to perform the\n      requested operation.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because the requester does not have permission to perform the\n      requested operation.</p>\n      ",
+          "shape_name": "CloudHsmAccessDeniedException"
+        }
+      ],
+      "documentation": "\n        <p>Restores a specified AWS CloudHSM backup that is in the <code>PENDING_DELETION</code>\n            state. For more information on deleting a backup, see <a>DeleteBackup</a>.</p>\n      "
     },
     "TagResource": {
       "name": "TagResource",
@@ -2926,6 +3262,199 @@
       ],
       "documentation": null
     },
+    "DeleteBackupInternal": {
+      "name": "DeleteBackupInternal",
+      "input": {
+        "type": "structure",
+        "members": {
+          "InnerRequest": {
+            "type": "structure",
+            "members": {
+              "BackupId": {
+                "type": "string",
+                "pattern": "backup-[2-7a-zA-Z]{11,16}",
+                "zonbookDocumentation": "\n        <para>The ID of the backup to be deleted. To find the ID of a backup, use the <xref linkend=\"DescribeBackups\"/> operation.</para>\n      ",
+                "documentation": "\n        <p>The ID of the backup to be deleted. To find the ID of a backup, use the <a>DescribeBackups</a> operation.</p>\n      ",
+                "required": true,
+                "shape_name": "BackupId"
+              }
+            },
+            "required": true,
+            "shape_name": "DeleteBackupRequest",
+            "documentation": null
+          },
+          "Owner": {
+            "type": "string",
+            "pattern": "[0-9]{12}",
+            "required": true,
+            "shape_name": "AccountId",
+            "documentation": null
+          },
+          "Force": {
+            "type": "boolean",
+            "shape_name": "Boolean",
+            "documentation": null
+          }
+        },
+        "shape_name": "DeleteBackupInternalRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "BackupInternal": {
+            "type": "structure",
+            "members": {
+              "Owner": {
+                "type": "string",
+                "pattern": "[0-9]{12}",
+                "shape_name": "AccountId",
+                "documentation": null
+              },
+              "HsmId": {
+                "type": "string",
+                "pattern": "hsm-[2-7a-zA-Z]{11,16}",
+                "shape_name": "HsmId",
+                "documentation": null
+              },
+              "StateMessage": {
+                "type": "string",
+                "pattern": ".*",
+                "shape_name": "StateMessage",
+                "documentation": null,
+                "max_length": 300
+              },
+              "S3Bucket": {
+                "type": "string",
+                "shape_name": "S3BucketName",
+                "documentation": null,
+                "min_length": 3,
+                "max_length": 63
+              },
+              "S3Key": {
+                "type": "string",
+                "shape_name": "S3Key",
+                "documentation": null,
+                "min_length": 1,
+                "max_length": 1024
+              },
+              "Type": {
+                "type": "string",
+                "enum": [
+                  "MANUAL",
+                  "TRIGGERED",
+                  "SCHEDULED",
+                  "COPIED"
+                ],
+                "shape_name": "Type",
+                "documentation": null
+              },
+              "Pek": {
+                "type": "string",
+                "pattern": "[a-zA-Z0-9+/=\\s]*",
+                "shape_name": "Base64",
+                "documentation": null,
+                "max_length": 128
+              },
+              "Kek": {
+                "type": "string",
+                "pattern": "[a-zA-Z0-9+/=\\s]*",
+                "shape_name": "Base64",
+                "documentation": null,
+                "max_length": 128
+              },
+              "ClusterCertificate": {
+                "type": "string",
+                "pattern": "[a-zA-Z0-9+-/=\\s]*",
+                "shape_name": "Cert",
+                "documentation": null,
+                "max_length": 5000
+              },
+              "TrustAnchor": {
+                "type": "string",
+                "pattern": "[a-zA-Z0-9+-/=\\s]*",
+                "shape_name": "Cert",
+                "documentation": null,
+                "max_length": 5000
+              }
+            },
+            "internalonly": true,
+            "shape_name": "BackupInternal",
+            "documentation": null
+          }
+        },
+        "shape_name": "DeleteBackupInternalResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because of an AWS CloudHSM internal failure. The request can\n      be retried.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because of an AWS CloudHSM internal failure. The request can\n      be retried.</p>\n      ",
+          "shape_name": "CloudHsmInternalFailureException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because an error occurred.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because an error occurred.</p>\n      ",
+          "shape_name": "CloudHsmServiceException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because it refers to a resource that cannot be\n      found.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because it refers to a resource that cannot be\n      found.</p>\n      ",
+          "shape_name": "CloudHsmResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because it is not a valid request.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because it is not a valid request.</p>\n      ",
+          "shape_name": "CloudHsmInvalidRequestException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because the requester does not have permission to perform the\n      requested operation.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because the requester does not have permission to perform the\n      requested operation.</p>\n      ",
+          "shape_name": "CloudHsmAccessDeniedException"
+        }
+      ],
+      "documentation": null
+    },
     "DeleteClusterInternal": {
       "name": "DeleteClusterInternal",
       "input": {
@@ -3613,8 +4142,8 @@
               },
               "Filters": {
                 "type": "map",
-                "zonbookDocumentation": "\n         <simpara>One or more filters to limit the items returned in the response.</simpara>\n         <simpara>Use the <code>backupIds</code> filter to return only the specified backups. Specify\n      backups by their backup identifier (ID).</simpara>\n         <simpara>Use the <code>clusterIds</code> filter to return only the backups for the specified\n      clusters. Specify clusters by their cluster identifier (ID).</simpara>\n         <simpara>Use the <code>states</code> filter to return only backups that match the specified\n      state.</simpara>\n      ",
-                "documentation": "\n         <p>One or more filters to limit the items returned in the response.</p>\n         <p>Use the <code>backupIds</code> filter to return only the specified backups. Specify\n      backups by their backup identifier (ID).</p>\n         <p>Use the <code>clusterIds</code> filter to return only the backups for the specified\n      clusters. Specify clusters by their cluster identifier (ID).</p>\n         <p>Use the <code>states</code> filter to return only backups that match the specified\n      state.</p>\n      ",
+                "zonbookDocumentation": "\n         <simpara>One or more filters to limit the items returned in the response.</simpara>\n         <simpara>Use the <code>backupIds</code> filter to return only the specified backups. Specify\n      backups by their backup identifier (ID).</simpara>\n         <simpara>Use the <code>sourceBackupIds</code> filter to return only the backups created from a\n      source backup. The <code>sourceBackupID</code> of a source backup is returned by the <xref linkend=\"CopyBackupToRegion\"/> operation.</simpara>\n         <simpara>Use the <code>clusterIds</code> filter to return only the backups for the specified\n      clusters. Specify clusters by their cluster identifier (ID).</simpara>\n         <simpara>Use the <code>states</code> filter to return only backups that match the specified\n      state.</simpara>\n      ",
+                "documentation": "\n         <p>One or more filters to limit the items returned in the response.</p>\n         <p>Use the <code>backupIds</code> filter to return only the specified backups. Specify\n      backups by their backup identifier (ID).</p>\n         <p>Use the <code>sourceBackupIds</code> filter to return only the backups created from a\n      source backup. The <code>sourceBackupID</code> of a source backup is returned by the <a>CopyBackupToRegion</a> operation.</p>\n         <p>Use the <code>clusterIds</code> filter to return only the backups for the specified\n      clusters. Specify clusters by their cluster identifier (ID).</p>\n         <p>Use the <code>states</code> filter to return only backups that match the specified\n      state.</p>\n      ",
                 "shape_name": "Filters",
                 "keys": {
                   "type": "string",
@@ -4690,6 +5219,41 @@
                   "documentation": null,
                   "min_length": 1,
                   "max_length": 1
+                },
+                "AdmiralState": {
+                  "type": "string",
+                  "pattern": ".*",
+                  "shape_name": "AdmiralState",
+                  "documentation": null,
+                  "max_length": 300
+                },
+                "Rack": {
+                  "type": "string",
+                  "pattern": ".*",
+                  "shape_name": "Rack",
+                  "documentation": null,
+                  "max_length": 300
+                },
+                "RackSide": {
+                  "type": "string",
+                  "pattern": ".*",
+                  "shape_name": "RackSide",
+                  "documentation": null,
+                  "max_length": 300
+                },
+                "SerialNumber": {
+                  "type": "string",
+                  "pattern": ".*",
+                  "shape_name": "SerialNumber",
+                  "documentation": null,
+                  "max_length": 300
+                },
+                "AssetTag": {
+                  "type": "string",
+                  "pattern": ".*",
+                  "shape_name": "AssetTag",
+                  "documentation": null,
+                  "max_length": 300
                 }
               },
               "internalonly": true,
@@ -5912,6 +6476,690 @@
           "zonbookDocumentation": "\n         <simpara>The request was rejected because it is not a valid request.</simpara>\n      ",
           "documentation": "\n         <p>The request was rejected because it is not a valid request.</p>\n      ",
           "shape_name": "CloudHsmInvalidRequestException"
+        }
+      ],
+      "documentation": null
+    },
+    "ImportBackupInternal": {
+      "name": "ImportBackupInternal",
+      "input": {
+        "type": "structure",
+        "members": {
+          "BackupInternal": {
+            "type": "structure",
+            "members": {
+              "Owner": {
+                "type": "string",
+                "pattern": "[0-9]{12}",
+                "shape_name": "AccountId",
+                "documentation": null
+              },
+              "HsmId": {
+                "type": "string",
+                "pattern": "hsm-[2-7a-zA-Z]{11,16}",
+                "shape_name": "HsmId",
+                "documentation": null
+              },
+              "StateMessage": {
+                "type": "string",
+                "pattern": ".*",
+                "shape_name": "StateMessage",
+                "documentation": null,
+                "max_length": 300
+              },
+              "S3Bucket": {
+                "type": "string",
+                "shape_name": "S3BucketName",
+                "documentation": null,
+                "min_length": 3,
+                "max_length": 63
+              },
+              "S3Key": {
+                "type": "string",
+                "shape_name": "S3Key",
+                "documentation": null,
+                "min_length": 1,
+                "max_length": 1024
+              },
+              "Type": {
+                "type": "string",
+                "enum": [
+                  "MANUAL",
+                  "TRIGGERED",
+                  "SCHEDULED",
+                  "COPIED"
+                ],
+                "shape_name": "Type",
+                "documentation": null
+              },
+              "Pek": {
+                "type": "string",
+                "pattern": "[a-zA-Z0-9+/=\\s]*",
+                "shape_name": "Base64",
+                "documentation": null,
+                "max_length": 128
+              },
+              "Kek": {
+                "type": "string",
+                "pattern": "[a-zA-Z0-9+/=\\s]*",
+                "shape_name": "Base64",
+                "documentation": null,
+                "max_length": 128
+              },
+              "ClusterCertificate": {
+                "type": "string",
+                "pattern": "[a-zA-Z0-9+-/=\\s]*",
+                "shape_name": "Cert",
+                "documentation": null,
+                "max_length": 5000
+              },
+              "TrustAnchor": {
+                "type": "string",
+                "pattern": "[a-zA-Z0-9+-/=\\s]*",
+                "shape_name": "Cert",
+                "documentation": null,
+                "max_length": 5000
+              }
+            },
+            "internalonly": true,
+            "required": true,
+            "shape_name": "BackupInternal",
+            "documentation": null
+          },
+          "SourceRegion": {
+            "type": "string",
+            "pattern": "[a-z]{2}(-(gov))?-(east|west|north|south|central){1,2}-\\d",
+            "required": true,
+            "shape_name": "Region",
+            "documentation": null
+          },
+          "SourceS3Location": {
+            "type": "string",
+            "required": true,
+            "shape_name": "S3Location",
+            "documentation": null
+          }
+        },
+        "shape_name": "ImportBackupInternalRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "BackupInternal": {
+            "type": "structure",
+            "members": {
+              "Owner": {
+                "type": "string",
+                "pattern": "[0-9]{12}",
+                "shape_name": "AccountId",
+                "documentation": null
+              },
+              "HsmId": {
+                "type": "string",
+                "pattern": "hsm-[2-7a-zA-Z]{11,16}",
+                "shape_name": "HsmId",
+                "documentation": null
+              },
+              "StateMessage": {
+                "type": "string",
+                "pattern": ".*",
+                "shape_name": "StateMessage",
+                "documentation": null,
+                "max_length": 300
+              },
+              "S3Bucket": {
+                "type": "string",
+                "shape_name": "S3BucketName",
+                "documentation": null,
+                "min_length": 3,
+                "max_length": 63
+              },
+              "S3Key": {
+                "type": "string",
+                "shape_name": "S3Key",
+                "documentation": null,
+                "min_length": 1,
+                "max_length": 1024
+              },
+              "Type": {
+                "type": "string",
+                "enum": [
+                  "MANUAL",
+                  "TRIGGERED",
+                  "SCHEDULED",
+                  "COPIED"
+                ],
+                "shape_name": "Type",
+                "documentation": null
+              },
+              "Pek": {
+                "type": "string",
+                "pattern": "[a-zA-Z0-9+/=\\s]*",
+                "shape_name": "Base64",
+                "documentation": null,
+                "max_length": 128
+              },
+              "Kek": {
+                "type": "string",
+                "pattern": "[a-zA-Z0-9+/=\\s]*",
+                "shape_name": "Base64",
+                "documentation": null,
+                "max_length": 128
+              },
+              "ClusterCertificate": {
+                "type": "string",
+                "pattern": "[a-zA-Z0-9+-/=\\s]*",
+                "shape_name": "Cert",
+                "documentation": null,
+                "max_length": 5000
+              },
+              "TrustAnchor": {
+                "type": "string",
+                "pattern": "[a-zA-Z0-9+-/=\\s]*",
+                "shape_name": "Cert",
+                "documentation": null,
+                "max_length": 5000
+              }
+            },
+            "internalonly": true,
+            "shape_name": "BackupInternal",
+            "documentation": null
+          }
+        },
+        "shape_name": "ImportBackupInternalResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because of an AWS CloudHSM internal failure. The request can\n      be retried.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because of an AWS CloudHSM internal failure. The request can\n      be retried.</p>\n      ",
+          "shape_name": "CloudHsmInternalFailureException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because an error occurred.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because an error occurred.</p>\n      ",
+          "shape_name": "CloudHsmServiceException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because it is not a valid request.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because it is not a valid request.</p>\n      ",
+          "shape_name": "CloudHsmInvalidRequestException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because it refers to a resource that cannot be\n      found.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because it refers to a resource that cannot be\n      found.</p>\n      ",
+          "shape_name": "CloudHsmResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because the requester does not have permission to perform the\n      requested operation.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because the requester does not have permission to perform the\n      requested operation.</p>\n      ",
+          "shape_name": "CloudHsmAccessDeniedException"
+        }
+      ],
+      "documentation": null
+    },
+    "ImportBifrostAmiInternal": {
+      "name": "ImportBifrostAmiInternal",
+      "input": {
+        "type": "structure",
+        "members": {
+          "Zone": {
+            "type": "string",
+            "pattern": "[a-zA-Z]{3}[0-9]{1,2}",
+            "required": true,
+            "shape_name": "AvailabilityZone",
+            "documentation": null
+          },
+          "AmiVersion": {
+            "type": "string",
+            "required": true,
+            "shape_name": "Version",
+            "documentation": null,
+            "max_length": 72
+          },
+          "BaseVersion": {
+            "type": "string",
+            "shape_name": "Version",
+            "documentation": null,
+            "max_length": 72
+          },
+          "FwVersion": {
+            "type": "string",
+            "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
+            "required": true,
+            "shape_name": "CaviumVersion",
+            "documentation": null,
+            "min_length": 0,
+            "max_length": 64
+          },
+          "DriverVersion": {
+            "type": "string",
+            "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
+            "required": true,
+            "shape_name": "CaviumVersion",
+            "documentation": null,
+            "min_length": 0,
+            "max_length": 64
+          },
+          "OwnerAccount": {
+            "type": "string",
+            "pattern": "[0-9]{12}",
+            "required": true,
+            "shape_name": "AccountId",
+            "documentation": null
+          },
+          "AmiId": {
+            "type": "string",
+            "pattern": "ami-[0-9a-fA-F]{8,17}",
+            "required": true,
+            "shape_name": "AmiId",
+            "documentation": null
+          }
+        },
+        "shape_name": "ImportBifrostAmiInternalRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "BifrostAmiInternal": {
+            "type": "structure",
+            "members": {
+              "Zone": {
+                "type": "string",
+                "pattern": "[a-zA-Z]{3}[0-9]{1,2}",
+                "required": true,
+                "shape_name": "AvailabilityZone",
+                "documentation": null
+              },
+              "AmiVersion": {
+                "type": "string",
+                "required": true,
+                "shape_name": "Version",
+                "documentation": null,
+                "max_length": 72
+              },
+              "FwVersion": {
+                "type": "string",
+                "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
+                "shape_name": "CaviumVersion",
+                "documentation": null,
+                "min_length": 0,
+                "max_length": 64
+              },
+              "DriverVersion": {
+                "type": "string",
+                "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
+                "shape_name": "CaviumVersion",
+                "documentation": null,
+                "min_length": 0,
+                "max_length": 64
+              },
+              "BaseVersion": {
+                "type": "string",
+                "shape_name": "Version",
+                "documentation": null,
+                "max_length": 72
+              },
+              "ApprovedTimestamp": {
+                "type": "timestamp",
+                "shape_name": "Timestamp",
+                "documentation": null
+              },
+              "OwnerAccount": {
+                "type": "string",
+                "pattern": "[0-9]{12}",
+                "shape_name": "AccountId",
+                "documentation": null
+              },
+              "AmiId": {
+                "type": "string",
+                "pattern": "ami-[0-9a-fA-F]{8,17}",
+                "shape_name": "AmiId",
+                "documentation": null
+              }
+            },
+            "internalonly": true,
+            "shape_name": "BifrostAmiInternal",
+            "documentation": null
+          }
+        },
+        "shape_name": "ImportBifrostAmiInternalResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because of an AWS CloudHSM internal failure. The request can\n      be retried.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because of an AWS CloudHSM internal failure. The request can\n      be retried.</p>\n      ",
+          "shape_name": "CloudHsmInternalFailureException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because an error occurred.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because an error occurred.</p>\n      ",
+          "shape_name": "CloudHsmServiceException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because it is not a valid request.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because it is not a valid request.</p>\n      ",
+          "shape_name": "CloudHsmInvalidRequestException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because the requester does not have permission to perform the\n      requested operation.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because the requester does not have permission to perform the\n      requested operation.</p>\n      ",
+          "shape_name": "CloudHsmAccessDeniedException"
+        }
+      ],
+      "documentation": null
+    },
+    "ImportDropletInternal": {
+      "name": "ImportDropletInternal",
+      "input": {
+        "type": "structure",
+        "members": {
+          "IpAddress": {
+            "type": "string",
+            "pattern": "\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}",
+            "required": true,
+            "shape_name": "IpAddress",
+            "documentation": null
+          },
+          "DropletClass": {
+            "type": "string",
+            "enum": [
+              "HSM1"
+            ],
+            "internalonly": true,
+            "required": true,
+            "shape_name": "DropletClass",
+            "documentation": null
+          },
+          "HsmSize": {
+            "type": "string",
+            "enum": [
+              "SMALL",
+              "MEDIUM",
+              "LARGE"
+            ],
+            "internalonly": true,
+            "required": true,
+            "shape_name": "HsmSize",
+            "documentation": null
+          },
+          "AvailabilityZone": {
+            "type": "string",
+            "pattern": "[a-zA-Z]{3}[0-9]{1,2}",
+            "required": true,
+            "shape_name": "AvailabilityZone",
+            "documentation": null
+          },
+          "FirmwareName": {
+            "type": "string",
+            "pattern": "[-.a-zA-Z0-9]+",
+            "required": true,
+            "shape_name": "FirmwareName",
+            "documentation": null,
+            "max_length": 32
+          },
+          "HsmAuditLog": {
+            "type": "string",
+            "pattern": "[01]",
+            "shape_name": "HsmAuditLog",
+            "documentation": null,
+            "min_length": 1,
+            "max_length": 1
+          }
+        },
+        "shape_name": "ImportDropletInternalRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "WorkflowId": {
+            "type": "string",
+            "pattern": "[a-zA-Z0-9]+-\\d+-\\d+",
+            "shape_name": "WorkflowId",
+            "documentation": null
+          }
+        },
+        "shape_name": "ImportDropletInternalResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because of an AWS CloudHSM internal failure. The request can\n      be retried.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because of an AWS CloudHSM internal failure. The request can\n      be retried.</p>\n      ",
+          "shape_name": "CloudHsmInternalFailureException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because an error occurred.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because an error occurred.</p>\n      ",
+          "shape_name": "CloudHsmServiceException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because it refers to a resource that cannot be\n      found.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because it refers to a resource that cannot be\n      found.</p>\n      ",
+          "shape_name": "CloudHsmResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because it is not a valid request.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because it is not a valid request.</p>\n      ",
+          "shape_name": "CloudHsmInvalidRequestException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because the requester does not have permission to perform the\n      requested operation.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because the requester does not have permission to perform the\n      requested operation.</p>\n      ",
+          "shape_name": "CloudHsmAccessDeniedException"
+        }
+      ],
+      "documentation": null
+    },
+    "ImportManagementVpcInternal": {
+      "name": "ImportManagementVpcInternal",
+      "input": {
+        "type": "structure",
+        "members": {
+          "CloudFormationStackId": {
+            "type": "string",
+            "pattern": "arn:aws(-(us-gov))?:cloudformation:[a-z]{2}(-(gov|isob|iso))?-(east|west|north|south|central){1,2}-[0-9]{1}:[0-9]{12}:stack/[-_a-zA-Z0-9]{1,254}/[-a-z0-9]{1,254}",
+            "required": true,
+            "shape_name": "CloudFormationStackId",
+            "documentation": null
+          }
+        },
+        "shape_name": "ImportManagementVpcInternalRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "ImportSuccess": {
+            "type": "boolean",
+            "shape_name": "Boolean",
+            "documentation": null
+          }
+        },
+        "shape_name": "ImportManagementVpcInternalResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because of an AWS CloudHSM internal failure. The request can\n      be retried.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because of an AWS CloudHSM internal failure. The request can\n      be retried.</p>\n      ",
+          "shape_name": "CloudHsmInternalFailureException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because an error occurred.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because an error occurred.</p>\n      ",
+          "shape_name": "CloudHsmServiceException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because it refers to a resource that cannot be\n      found.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because it refers to a resource that cannot be\n      found.</p>\n      ",
+          "shape_name": "CloudHsmResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because it is not a valid request.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because it is not a valid request.</p>\n      ",
+          "shape_name": "CloudHsmInvalidRequestException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because the requester does not have permission to perform the\n      requested operation.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because the requester does not have permission to perform the\n      requested operation.</p>\n      ",
+          "shape_name": "CloudHsmAccessDeniedException"
         }
       ],
       "documentation": null
@@ -7668,6 +8916,41 @@
             "documentation": null,
             "min_length": 1,
             "max_length": 1
+          },
+          "AdmiralState": {
+            "type": "string",
+            "pattern": ".*",
+            "shape_name": "AdmiralState",
+            "documentation": null,
+            "max_length": 300
+          },
+          "Rack": {
+            "type": "string",
+            "pattern": ".*",
+            "shape_name": "Rack",
+            "documentation": null,
+            "max_length": 300
+          },
+          "RackSide": {
+            "type": "string",
+            "pattern": ".*",
+            "shape_name": "RackSide",
+            "documentation": null,
+            "max_length": 300
+          },
+          "SerialNumber": {
+            "type": "string",
+            "pattern": ".*",
+            "shape_name": "SerialNumber",
+            "documentation": null,
+            "max_length": 300
+          },
+          "AssetTag": {
+            "type": "string",
+            "pattern": ".*",
+            "shape_name": "AssetTag",
+            "documentation": null,
+            "max_length": 300
           }
         },
         "shape_name": "PutDropletInternalRequest",
@@ -7833,6 +9116,41 @@
                 "documentation": null,
                 "min_length": 1,
                 "max_length": 1
+              },
+              "AdmiralState": {
+                "type": "string",
+                "pattern": ".*",
+                "shape_name": "AdmiralState",
+                "documentation": null,
+                "max_length": 300
+              },
+              "Rack": {
+                "type": "string",
+                "pattern": ".*",
+                "shape_name": "Rack",
+                "documentation": null,
+                "max_length": 300
+              },
+              "RackSide": {
+                "type": "string",
+                "pattern": ".*",
+                "shape_name": "RackSide",
+                "documentation": null,
+                "max_length": 300
+              },
+              "SerialNumber": {
+                "type": "string",
+                "pattern": ".*",
+                "shape_name": "SerialNumber",
+                "documentation": null,
+                "max_length": 300
+              },
+              "AssetTag": {
+                "type": "string",
+                "pattern": ".*",
+                "shape_name": "AssetTag",
+                "documentation": null,
+                "max_length": 300
               }
             },
             "internalonly": true,
@@ -8463,768 +9781,6 @@
       ],
       "documentation": null
     },
-    "RevokePermissionInternal": {
-      "name": "RevokePermissionInternal",
-      "input": {
-        "type": "structure",
-        "members": {
-          "AccountId": {
-            "type": "string",
-            "pattern": "[0-9a-zA-Z\\.-]+",
-            "required": true,
-            "shape_name": "AuthEntityId",
-            "documentation": null
-          },
-          "Operation": {
-            "type": "string",
-            "required": true,
-            "shape_name": "Operation",
-            "documentation": null,
-            "max_length": 64
-          }
-        },
-        "shape_name": "RevokePermissionInternalRequest",
-        "documentation": null
-      },
-      "output": {
-        "type": "structure",
-        "members": {
-          "Success": {
-            "type": "boolean",
-            "shape_name": "Boolean",
-            "documentation": null
-          }
-        },
-        "shape_name": "RevokePermissionInternalResponse",
-        "documentation": null
-      },
-      "errors": [
-        {
-          "type": "structure",
-          "members": {
-            "Message": {
-              "type": "string",
-              "shape_name": "errorMessage",
-              "documentation": null
-            }
-          },
-          "zonbookDocumentation": "\n         <simpara>The request was rejected because of an AWS CloudHSM internal failure. The request can\n      be retried.</simpara>\n      ",
-          "documentation": "\n         <p>The request was rejected because of an AWS CloudHSM internal failure. The request can\n      be retried.</p>\n      ",
-          "shape_name": "CloudHsmInternalFailureException"
-        },
-        {
-          "type": "structure",
-          "members": {
-            "Message": {
-              "type": "string",
-              "shape_name": "errorMessage",
-              "documentation": null
-            }
-          },
-          "zonbookDocumentation": "\n         <simpara>The request was rejected because an error occurred.</simpara>\n      ",
-          "documentation": "\n         <p>The request was rejected because an error occurred.</p>\n      ",
-          "shape_name": "CloudHsmServiceException"
-        },
-        {
-          "type": "structure",
-          "members": {
-            "Message": {
-              "type": "string",
-              "shape_name": "errorMessage",
-              "documentation": null
-            }
-          },
-          "zonbookDocumentation": "\n         <simpara>The request was rejected because it is not a valid request.</simpara>\n      ",
-          "documentation": "\n         <p>The request was rejected because it is not a valid request.</p>\n      ",
-          "shape_name": "CloudHsmInvalidRequestException"
-        }
-      ],
-      "documentation": null
-    },
-    "ImportBackupInternal": {
-      "name": "ImportBackupInternal",
-      "input": {
-        "type": "structure",
-        "members": {
-          "BackupInternal": {
-            "type": "structure",
-            "members": {
-              "Owner": {
-                "type": "string",
-                "pattern": "[0-9]{12}",
-                "shape_name": "AccountId",
-                "documentation": null
-              },
-              "HsmId": {
-                "type": "string",
-                "pattern": "hsm-[2-7a-zA-Z]{11,16}",
-                "shape_name": "HsmId",
-                "documentation": null
-              },
-              "StateMessage": {
-                "type": "string",
-                "pattern": ".*",
-                "shape_name": "StateMessage",
-                "documentation": null,
-                "max_length": 300
-              },
-              "S3Bucket": {
-                "type": "string",
-                "shape_name": "S3BucketName",
-                "documentation": null,
-                "min_length": 3,
-                "max_length": 63
-              },
-              "S3Key": {
-                "type": "string",
-                "shape_name": "S3Key",
-                "documentation": null,
-                "min_length": 1,
-                "max_length": 1024
-              },
-              "Type": {
-                "type": "string",
-                "enum": [
-                  "MANUAL",
-                  "TRIGGERED",
-                  "SCHEDULED",
-                  "COPIED"
-                ],
-                "shape_name": "Type",
-                "documentation": null
-              },
-              "Pek": {
-                "type": "string",
-                "pattern": "[a-zA-Z0-9+/=\\s]*",
-                "shape_name": "Base64",
-                "documentation": null,
-                "max_length": 128
-              },
-              "Kek": {
-                "type": "string",
-                "pattern": "[a-zA-Z0-9+/=\\s]*",
-                "shape_name": "Base64",
-                "documentation": null,
-                "max_length": 128
-              },
-              "ClusterCertificate": {
-                "type": "string",
-                "pattern": "[a-zA-Z0-9+-/=\\s]*",
-                "shape_name": "Cert",
-                "documentation": null,
-                "max_length": 5000
-              },
-              "TrustAnchor": {
-                "type": "string",
-                "pattern": "[a-zA-Z0-9+-/=\\s]*",
-                "shape_name": "Cert",
-                "documentation": null,
-                "max_length": 5000
-              }
-            },
-            "internalonly": true,
-            "required": true,
-            "shape_name": "BackupInternal",
-            "documentation": null
-          },
-          "SourceRegion": {
-            "type": "string",
-            "pattern": "[a-z]{2}(-(gov))?-(east|west|north|south|central){1,2}-\\d",
-            "required": true,
-            "shape_name": "Region",
-            "documentation": null
-          },
-          "SourceS3Location": {
-            "type": "string",
-            "required": true,
-            "shape_name": "S3Location",
-            "documentation": null
-          }
-        },
-        "shape_name": "ImportBackupInternalRequest",
-        "documentation": null
-      },
-      "output": {
-        "type": "structure",
-        "members": {
-          "BackupInternal": {
-            "type": "structure",
-            "members": {
-              "Owner": {
-                "type": "string",
-                "pattern": "[0-9]{12}",
-                "shape_name": "AccountId",
-                "documentation": null
-              },
-              "HsmId": {
-                "type": "string",
-                "pattern": "hsm-[2-7a-zA-Z]{11,16}",
-                "shape_name": "HsmId",
-                "documentation": null
-              },
-              "StateMessage": {
-                "type": "string",
-                "pattern": ".*",
-                "shape_name": "StateMessage",
-                "documentation": null,
-                "max_length": 300
-              },
-              "S3Bucket": {
-                "type": "string",
-                "shape_name": "S3BucketName",
-                "documentation": null,
-                "min_length": 3,
-                "max_length": 63
-              },
-              "S3Key": {
-                "type": "string",
-                "shape_name": "S3Key",
-                "documentation": null,
-                "min_length": 1,
-                "max_length": 1024
-              },
-              "Type": {
-                "type": "string",
-                "enum": [
-                  "MANUAL",
-                  "TRIGGERED",
-                  "SCHEDULED",
-                  "COPIED"
-                ],
-                "shape_name": "Type",
-                "documentation": null
-              },
-              "Pek": {
-                "type": "string",
-                "pattern": "[a-zA-Z0-9+/=\\s]*",
-                "shape_name": "Base64",
-                "documentation": null,
-                "max_length": 128
-              },
-              "Kek": {
-                "type": "string",
-                "pattern": "[a-zA-Z0-9+/=\\s]*",
-                "shape_name": "Base64",
-                "documentation": null,
-                "max_length": 128
-              },
-              "ClusterCertificate": {
-                "type": "string",
-                "pattern": "[a-zA-Z0-9+-/=\\s]*",
-                "shape_name": "Cert",
-                "documentation": null,
-                "max_length": 5000
-              },
-              "TrustAnchor": {
-                "type": "string",
-                "pattern": "[a-zA-Z0-9+-/=\\s]*",
-                "shape_name": "Cert",
-                "documentation": null,
-                "max_length": 5000
-              }
-            },
-            "internalonly": true,
-            "shape_name": "BackupInternal",
-            "documentation": null
-          }
-        },
-        "shape_name": "ImportBackupInternalResponse",
-        "documentation": null
-      },
-      "errors": [
-        {
-          "type": "structure",
-          "members": {
-            "Message": {
-              "type": "string",
-              "shape_name": "errorMessage",
-              "documentation": null
-            }
-          },
-          "zonbookDocumentation": "\n         <simpara>The request was rejected because of an AWS CloudHSM internal failure. The request can\n      be retried.</simpara>\n      ",
-          "documentation": "\n         <p>The request was rejected because of an AWS CloudHSM internal failure. The request can\n      be retried.</p>\n      ",
-          "shape_name": "CloudHsmInternalFailureException"
-        },
-        {
-          "type": "structure",
-          "members": {
-            "Message": {
-              "type": "string",
-              "shape_name": "errorMessage",
-              "documentation": null
-            }
-          },
-          "zonbookDocumentation": "\n         <simpara>The request was rejected because an error occurred.</simpara>\n      ",
-          "documentation": "\n         <p>The request was rejected because an error occurred.</p>\n      ",
-          "shape_name": "CloudHsmServiceException"
-        },
-        {
-          "type": "structure",
-          "members": {
-            "Message": {
-              "type": "string",
-              "shape_name": "errorMessage",
-              "documentation": null
-            }
-          },
-          "zonbookDocumentation": "\n         <simpara>The request was rejected because it is not a valid request.</simpara>\n      ",
-          "documentation": "\n         <p>The request was rejected because it is not a valid request.</p>\n      ",
-          "shape_name": "CloudHsmInvalidRequestException"
-        },
-        {
-          "type": "structure",
-          "members": {
-            "Message": {
-              "type": "string",
-              "shape_name": "errorMessage",
-              "documentation": null
-            }
-          },
-          "zonbookDocumentation": "\n         <simpara>The request was rejected because it refers to a resource that cannot be\n      found.</simpara>\n      ",
-          "documentation": "\n         <p>The request was rejected because it refers to a resource that cannot be\n      found.</p>\n      ",
-          "shape_name": "CloudHsmResourceNotFoundException"
-        },
-        {
-          "type": "structure",
-          "members": {
-            "Message": {
-              "type": "string",
-              "shape_name": "errorMessage",
-              "documentation": null
-            }
-          },
-          "zonbookDocumentation": "\n         <simpara>The request was rejected because the requester does not have permission to perform the\n      requested operation.</simpara>\n      ",
-          "documentation": "\n         <p>The request was rejected because the requester does not have permission to perform the\n      requested operation.</p>\n      ",
-          "shape_name": "CloudHsmAccessDeniedException"
-        }
-      ],
-      "documentation": null
-    },
-    "ImportBifrostAmiInternal": {
-      "name": "ImportBifrostAmiInternal",
-      "input": {
-        "type": "structure",
-        "members": {
-          "Zone": {
-            "type": "string",
-            "pattern": "[a-zA-Z]{3}[0-9]{1,2}",
-            "required": true,
-            "shape_name": "AvailabilityZone",
-            "documentation": null
-          },
-          "AmiVersion": {
-            "type": "string",
-            "required": true,
-            "shape_name": "Version",
-            "documentation": null,
-            "max_length": 72
-          },
-          "BaseVersion": {
-            "type": "string",
-            "shape_name": "Version",
-            "documentation": null,
-            "max_length": 72
-          },
-          "FwVersion": {
-            "type": "string",
-            "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
-            "required": true,
-            "shape_name": "CaviumVersion",
-            "documentation": null,
-            "min_length": 0,
-            "max_length": 64
-          },
-          "DriverVersion": {
-            "type": "string",
-            "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
-            "required": true,
-            "shape_name": "CaviumVersion",
-            "documentation": null,
-            "min_length": 0,
-            "max_length": 64
-          },
-          "OwnerAccount": {
-            "type": "string",
-            "pattern": "[0-9]{12}",
-            "required": true,
-            "shape_name": "AccountId",
-            "documentation": null
-          },
-          "AmiId": {
-            "type": "string",
-            "pattern": "ami-[0-9a-fA-F]{8,17}",
-            "required": true,
-            "shape_name": "AmiId",
-            "documentation": null
-          }
-        },
-        "shape_name": "ImportBifrostAmiInternalRequest",
-        "documentation": null
-      },
-      "output": {
-        "type": "structure",
-        "members": {
-          "BifrostAmiInternal": {
-            "type": "structure",
-            "members": {
-              "Zone": {
-                "type": "string",
-                "pattern": "[a-zA-Z]{3}[0-9]{1,2}",
-                "required": true,
-                "shape_name": "AvailabilityZone",
-                "documentation": null
-              },
-              "AmiVersion": {
-                "type": "string",
-                "required": true,
-                "shape_name": "Version",
-                "documentation": null,
-                "max_length": 72
-              },
-              "FwVersion": {
-                "type": "string",
-                "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
-                "shape_name": "CaviumVersion",
-                "documentation": null,
-                "min_length": 0,
-                "max_length": 64
-              },
-              "DriverVersion": {
-                "type": "string",
-                "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
-                "shape_name": "CaviumVersion",
-                "documentation": null,
-                "min_length": 0,
-                "max_length": 64
-              },
-              "BaseVersion": {
-                "type": "string",
-                "shape_name": "Version",
-                "documentation": null,
-                "max_length": 72
-              },
-              "ApprovedTimestamp": {
-                "type": "timestamp",
-                "shape_name": "Timestamp",
-                "documentation": null
-              },
-              "OwnerAccount": {
-                "type": "string",
-                "pattern": "[0-9]{12}",
-                "shape_name": "AccountId",
-                "documentation": null
-              },
-              "AmiId": {
-                "type": "string",
-                "pattern": "ami-[0-9a-fA-F]{8,17}",
-                "shape_name": "AmiId",
-                "documentation": null
-              }
-            },
-            "internalonly": true,
-            "shape_name": "BifrostAmiInternal",
-            "documentation": null
-          }
-        },
-        "shape_name": "ImportBifrostAmiInternalResponse",
-        "documentation": null
-      },
-      "errors": [
-        {
-          "type": "structure",
-          "members": {
-            "Message": {
-              "type": "string",
-              "shape_name": "errorMessage",
-              "documentation": null
-            }
-          },
-          "zonbookDocumentation": "\n         <simpara>The request was rejected because of an AWS CloudHSM internal failure. The request can\n      be retried.</simpara>\n      ",
-          "documentation": "\n         <p>The request was rejected because of an AWS CloudHSM internal failure. The request can\n      be retried.</p>\n      ",
-          "shape_name": "CloudHsmInternalFailureException"
-        },
-        {
-          "type": "structure",
-          "members": {
-            "Message": {
-              "type": "string",
-              "shape_name": "errorMessage",
-              "documentation": null
-            }
-          },
-          "zonbookDocumentation": "\n         <simpara>The request was rejected because an error occurred.</simpara>\n      ",
-          "documentation": "\n         <p>The request was rejected because an error occurred.</p>\n      ",
-          "shape_name": "CloudHsmServiceException"
-        },
-        {
-          "type": "structure",
-          "members": {
-            "Message": {
-              "type": "string",
-              "shape_name": "errorMessage",
-              "documentation": null
-            }
-          },
-          "zonbookDocumentation": "\n         <simpara>The request was rejected because it is not a valid request.</simpara>\n      ",
-          "documentation": "\n         <p>The request was rejected because it is not a valid request.</p>\n      ",
-          "shape_name": "CloudHsmInvalidRequestException"
-        },
-        {
-          "type": "structure",
-          "members": {
-            "Message": {
-              "type": "string",
-              "shape_name": "errorMessage",
-              "documentation": null
-            }
-          },
-          "zonbookDocumentation": "\n         <simpara>The request was rejected because the requester does not have permission to perform the\n      requested operation.</simpara>\n      ",
-          "documentation": "\n         <p>The request was rejected because the requester does not have permission to perform the\n      requested operation.</p>\n      ",
-          "shape_name": "CloudHsmAccessDeniedException"
-        }
-      ],
-      "documentation": null
-    },
-    "ImportDropletInternal": {
-      "name": "ImportDropletInternal",
-      "input": {
-        "type": "structure",
-        "members": {
-          "IpAddress": {
-            "type": "string",
-            "pattern": "\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}",
-            "required": true,
-            "shape_name": "IpAddress",
-            "documentation": null
-          },
-          "DropletClass": {
-            "type": "string",
-            "enum": [
-              "HSM1"
-            ],
-            "internalonly": true,
-            "required": true,
-            "shape_name": "DropletClass",
-            "documentation": null
-          },
-          "HsmSize": {
-            "type": "string",
-            "enum": [
-              "SMALL",
-              "MEDIUM",
-              "LARGE"
-            ],
-            "internalonly": true,
-            "required": true,
-            "shape_name": "HsmSize",
-            "documentation": null
-          },
-          "AvailabilityZone": {
-            "type": "string",
-            "pattern": "[a-zA-Z]{3}[0-9]{1,2}",
-            "required": true,
-            "shape_name": "AvailabilityZone",
-            "documentation": null
-          },
-          "FirmwareName": {
-            "type": "string",
-            "pattern": "[-.a-zA-Z0-9]+",
-            "required": true,
-            "shape_name": "FirmwareName",
-            "documentation": null,
-            "max_length": 32
-          },
-          "HsmAuditLog": {
-            "type": "string",
-            "pattern": "[01]",
-            "shape_name": "HsmAuditLog",
-            "documentation": null,
-            "min_length": 1,
-            "max_length": 1
-          }
-        },
-        "shape_name": "ImportDropletInternalRequest",
-        "documentation": null
-      },
-      "output": {
-        "type": "structure",
-        "members": {
-          "WorkflowId": {
-            "type": "string",
-            "pattern": "[a-zA-Z0-9]+-\\d+-\\d+",
-            "shape_name": "WorkflowId",
-            "documentation": null
-          }
-        },
-        "shape_name": "ImportDropletInternalResponse",
-        "documentation": null
-      },
-      "errors": [
-        {
-          "type": "structure",
-          "members": {
-            "Message": {
-              "type": "string",
-              "shape_name": "errorMessage",
-              "documentation": null
-            }
-          },
-          "zonbookDocumentation": "\n         <simpara>The request was rejected because of an AWS CloudHSM internal failure. The request can\n      be retried.</simpara>\n      ",
-          "documentation": "\n         <p>The request was rejected because of an AWS CloudHSM internal failure. The request can\n      be retried.</p>\n      ",
-          "shape_name": "CloudHsmInternalFailureException"
-        },
-        {
-          "type": "structure",
-          "members": {
-            "Message": {
-              "type": "string",
-              "shape_name": "errorMessage",
-              "documentation": null
-            }
-          },
-          "zonbookDocumentation": "\n         <simpara>The request was rejected because an error occurred.</simpara>\n      ",
-          "documentation": "\n         <p>The request was rejected because an error occurred.</p>\n      ",
-          "shape_name": "CloudHsmServiceException"
-        },
-        {
-          "type": "structure",
-          "members": {
-            "Message": {
-              "type": "string",
-              "shape_name": "errorMessage",
-              "documentation": null
-            }
-          },
-          "zonbookDocumentation": "\n         <simpara>The request was rejected because it refers to a resource that cannot be\n      found.</simpara>\n      ",
-          "documentation": "\n         <p>The request was rejected because it refers to a resource that cannot be\n      found.</p>\n      ",
-          "shape_name": "CloudHsmResourceNotFoundException"
-        },
-        {
-          "type": "structure",
-          "members": {
-            "Message": {
-              "type": "string",
-              "shape_name": "errorMessage",
-              "documentation": null
-            }
-          },
-          "zonbookDocumentation": "\n         <simpara>The request was rejected because it is not a valid request.</simpara>\n      ",
-          "documentation": "\n         <p>The request was rejected because it is not a valid request.</p>\n      ",
-          "shape_name": "CloudHsmInvalidRequestException"
-        },
-        {
-          "type": "structure",
-          "members": {
-            "Message": {
-              "type": "string",
-              "shape_name": "errorMessage",
-              "documentation": null
-            }
-          },
-          "zonbookDocumentation": "\n         <simpara>The request was rejected because the requester does not have permission to perform the\n      requested operation.</simpara>\n      ",
-          "documentation": "\n         <p>The request was rejected because the requester does not have permission to perform the\n      requested operation.</p>\n      ",
-          "shape_name": "CloudHsmAccessDeniedException"
-        }
-      ],
-      "documentation": null
-    },
-    "ImportManagementVpcInternal": {
-      "name": "ImportManagementVpcInternal",
-      "input": {
-        "type": "structure",
-        "members": {
-          "CloudFormationStackId": {
-            "type": "string",
-            "pattern": "arn:aws(-(us-gov))?:cloudformation:[a-z]{2}(-(gov|isob|iso))?-(east|west|north|south|central){1,2}-[0-9]{1}:[0-9]{12}:stack/[-_a-zA-Z0-9]{1,254}/[-a-z0-9]{1,254}",
-            "required": true,
-            "shape_name": "CloudFormationStackId",
-            "documentation": null
-          }
-        },
-        "shape_name": "ImportManagementVpcInternalRequest",
-        "documentation": null
-      },
-      "output": {
-        "type": "structure",
-        "members": {
-          "ImportSuccess": {
-            "type": "boolean",
-            "shape_name": "Boolean",
-            "documentation": null
-          }
-        },
-        "shape_name": "ImportManagementVpcInternalResponse",
-        "documentation": null
-      },
-      "errors": [
-        {
-          "type": "structure",
-          "members": {
-            "Message": {
-              "type": "string",
-              "shape_name": "errorMessage",
-              "documentation": null
-            }
-          },
-          "zonbookDocumentation": "\n         <simpara>The request was rejected because of an AWS CloudHSM internal failure. The request can\n      be retried.</simpara>\n      ",
-          "documentation": "\n         <p>The request was rejected because of an AWS CloudHSM internal failure. The request can\n      be retried.</p>\n      ",
-          "shape_name": "CloudHsmInternalFailureException"
-        },
-        {
-          "type": "structure",
-          "members": {
-            "Message": {
-              "type": "string",
-              "shape_name": "errorMessage",
-              "documentation": null
-            }
-          },
-          "zonbookDocumentation": "\n         <simpara>The request was rejected because an error occurred.</simpara>\n      ",
-          "documentation": "\n         <p>The request was rejected because an error occurred.</p>\n      ",
-          "shape_name": "CloudHsmServiceException"
-        },
-        {
-          "type": "structure",
-          "members": {
-            "Message": {
-              "type": "string",
-              "shape_name": "errorMessage",
-              "documentation": null
-            }
-          },
-          "zonbookDocumentation": "\n         <simpara>The request was rejected because it refers to a resource that cannot be\n      found.</simpara>\n      ",
-          "documentation": "\n         <p>The request was rejected because it refers to a resource that cannot be\n      found.</p>\n      ",
-          "shape_name": "CloudHsmResourceNotFoundException"
-        },
-        {
-          "type": "structure",
-          "members": {
-            "Message": {
-              "type": "string",
-              "shape_name": "errorMessage",
-              "documentation": null
-            }
-          },
-          "zonbookDocumentation": "\n         <simpara>The request was rejected because it is not a valid request.</simpara>\n      ",
-          "documentation": "\n         <p>The request was rejected because it is not a valid request.</p>\n      ",
-          "shape_name": "CloudHsmInvalidRequestException"
-        },
-        {
-          "type": "structure",
-          "members": {
-            "Message": {
-              "type": "string",
-              "shape_name": "errorMessage",
-              "documentation": null
-            }
-          },
-          "zonbookDocumentation": "\n         <simpara>The request was rejected because the requester does not have permission to perform the\n      requested operation.</simpara>\n      ",
-          "documentation": "\n         <p>The request was rejected because the requester does not have permission to perform the\n      requested operation.</p>\n      ",
-          "shape_name": "CloudHsmAccessDeniedException"
-        }
-      ],
-      "documentation": null
-    },
     "ReplaceHsmInternal": {
       "name": "ReplaceHsmInternal",
       "input": {
@@ -9449,6 +10005,277 @@
       ],
       "documentation": null
     },
+    "RestoreBackupInternal": {
+      "name": "RestoreBackupInternal",
+      "input": {
+        "type": "structure",
+        "members": {
+          "InnerRequest": {
+            "type": "structure",
+            "members": {
+              "BackupId": {
+                "type": "string",
+                "pattern": "backup-[2-7a-zA-Z]{11,16}",
+                "zonbookDocumentation": "\n        <para>The ID of the backup to be restored. To find the ID of a backup, use the <xref linkend=\"DescribeBackups\"/> operation.</para>\n      ",
+                "documentation": "\n        <p>The ID of the backup to be restored. To find the ID of a backup, use the <a>DescribeBackups</a> operation.</p>\n      ",
+                "required": true,
+                "shape_name": "BackupId"
+              }
+            },
+            "required": true,
+            "shape_name": "RestoreBackupRequest",
+            "documentation": null
+          },
+          "Owner": {
+            "type": "string",
+            "pattern": "[0-9]{12}",
+            "required": true,
+            "shape_name": "AccountId",
+            "documentation": null
+          },
+          "Force": {
+            "type": "boolean",
+            "shape_name": "Boolean",
+            "documentation": null
+          }
+        },
+        "shape_name": "RestoreBackupInternalRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "BackupInternal": {
+            "type": "structure",
+            "members": {
+              "Owner": {
+                "type": "string",
+                "pattern": "[0-9]{12}",
+                "shape_name": "AccountId",
+                "documentation": null
+              },
+              "HsmId": {
+                "type": "string",
+                "pattern": "hsm-[2-7a-zA-Z]{11,16}",
+                "shape_name": "HsmId",
+                "documentation": null
+              },
+              "StateMessage": {
+                "type": "string",
+                "pattern": ".*",
+                "shape_name": "StateMessage",
+                "documentation": null,
+                "max_length": 300
+              },
+              "S3Bucket": {
+                "type": "string",
+                "shape_name": "S3BucketName",
+                "documentation": null,
+                "min_length": 3,
+                "max_length": 63
+              },
+              "S3Key": {
+                "type": "string",
+                "shape_name": "S3Key",
+                "documentation": null,
+                "min_length": 1,
+                "max_length": 1024
+              },
+              "Type": {
+                "type": "string",
+                "enum": [
+                  "MANUAL",
+                  "TRIGGERED",
+                  "SCHEDULED",
+                  "COPIED"
+                ],
+                "shape_name": "Type",
+                "documentation": null
+              },
+              "Pek": {
+                "type": "string",
+                "pattern": "[a-zA-Z0-9+/=\\s]*",
+                "shape_name": "Base64",
+                "documentation": null,
+                "max_length": 128
+              },
+              "Kek": {
+                "type": "string",
+                "pattern": "[a-zA-Z0-9+/=\\s]*",
+                "shape_name": "Base64",
+                "documentation": null,
+                "max_length": 128
+              },
+              "ClusterCertificate": {
+                "type": "string",
+                "pattern": "[a-zA-Z0-9+-/=\\s]*",
+                "shape_name": "Cert",
+                "documentation": null,
+                "max_length": 5000
+              },
+              "TrustAnchor": {
+                "type": "string",
+                "pattern": "[a-zA-Z0-9+-/=\\s]*",
+                "shape_name": "Cert",
+                "documentation": null,
+                "max_length": 5000
+              }
+            },
+            "internalonly": true,
+            "shape_name": "BackupInternal",
+            "documentation": null
+          }
+        },
+        "shape_name": "RestoreBackupInternalResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because of an AWS CloudHSM internal failure. The request can\n      be retried.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because of an AWS CloudHSM internal failure. The request can\n      be retried.</p>\n      ",
+          "shape_name": "CloudHsmInternalFailureException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because an error occurred.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because an error occurred.</p>\n      ",
+          "shape_name": "CloudHsmServiceException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because it refers to a resource that cannot be\n      found.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because it refers to a resource that cannot be\n      found.</p>\n      ",
+          "shape_name": "CloudHsmResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because it is not a valid request.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because it is not a valid request.</p>\n      ",
+          "shape_name": "CloudHsmInvalidRequestException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because the requester does not have permission to perform the\n      requested operation.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because the requester does not have permission to perform the\n      requested operation.</p>\n      ",
+          "shape_name": "CloudHsmAccessDeniedException"
+        }
+      ],
+      "documentation": null
+    },
+    "RevokePermissionInternal": {
+      "name": "RevokePermissionInternal",
+      "input": {
+        "type": "structure",
+        "members": {
+          "AccountId": {
+            "type": "string",
+            "pattern": "[0-9a-zA-Z\\.-]+",
+            "required": true,
+            "shape_name": "AuthEntityId",
+            "documentation": null
+          },
+          "Operation": {
+            "type": "string",
+            "required": true,
+            "shape_name": "Operation",
+            "documentation": null,
+            "max_length": 64
+          }
+        },
+        "shape_name": "RevokePermissionInternalRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "Success": {
+            "type": "boolean",
+            "shape_name": "Boolean",
+            "documentation": null
+          }
+        },
+        "shape_name": "RevokePermissionInternalResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because of an AWS CloudHSM internal failure. The request can\n      be retried.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because of an AWS CloudHSM internal failure. The request can\n      be retried.</p>\n      ",
+          "shape_name": "CloudHsmInternalFailureException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because an error occurred.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because an error occurred.</p>\n      ",
+          "shape_name": "CloudHsmServiceException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because it is not a valid request.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because it is not a valid request.</p>\n      ",
+          "shape_name": "CloudHsmInvalidRequestException"
+        }
+      ],
+      "documentation": null
+    },
     "RotateBifrostSshKeyInternal": {
       "name": "RotateBifrostSshKeyInternal",
       "input": {
@@ -9475,6 +10302,296 @@
           }
         },
         "shape_name": "RotateBifrostSshKeyInternalResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because of an AWS CloudHSM internal failure. The request can\n      be retried.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because of an AWS CloudHSM internal failure. The request can\n      be retried.</p>\n      ",
+          "shape_name": "CloudHsmInternalFailureException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because an error occurred.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because an error occurred.</p>\n      ",
+          "shape_name": "CloudHsmServiceException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because it refers to a resource that cannot be\n      found.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because it refers to a resource that cannot be\n      found.</p>\n      ",
+          "shape_name": "CloudHsmResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because it is not a valid request.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because it is not a valid request.</p>\n      ",
+          "shape_name": "CloudHsmInvalidRequestException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request was rejected because the requester does not have permission to perform the\n      requested operation.</simpara>\n      ",
+          "documentation": "\n         <p>The request was rejected because the requester does not have permission to perform the\n      requested operation.</p>\n      ",
+          "shape_name": "CloudHsmAccessDeniedException"
+        }
+      ],
+      "documentation": null
+    },
+    "SafeDrainDropletInternal": {
+      "name": "SafeDrainDropletInternal",
+      "input": {
+        "type": "structure",
+        "members": {
+          "IpAddress": {
+            "type": "string",
+            "pattern": "\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}",
+            "required": true,
+            "shape_name": "IpAddress",
+            "documentation": null
+          }
+        },
+        "shape_name": "SafeDrainDropletInternalRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "DropletInternal": {
+            "type": "structure",
+            "members": {
+              "DropletId": {
+                "type": "string",
+                "pattern": "\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}/.*",
+                "internalonly": true,
+                "shape_name": "DropletId",
+                "documentation": null
+              },
+              "IpAddress": {
+                "type": "string",
+                "pattern": "\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}",
+                "shape_name": "IpAddress",
+                "documentation": null
+              },
+              "CardSerial": {
+                "type": "string",
+                "pattern": "[a-zA-Z0-9\\-\\.]*",
+                "internalonly": true,
+                "shape_name": "CardSerial",
+                "documentation": null,
+                "max_length": 32
+              },
+              "DropletClass": {
+                "type": "string",
+                "enum": [
+                  "HSM1"
+                ],
+                "internalonly": true,
+                "shape_name": "DropletClass",
+                "documentation": null
+              },
+              "HsmSize": {
+                "type": "string",
+                "enum": [
+                  "SMALL",
+                  "MEDIUM",
+                  "LARGE"
+                ],
+                "internalonly": true,
+                "shape_name": "HsmSize",
+                "documentation": null
+              },
+              "AvailabilityZone": {
+                "type": "string",
+                "pattern": "[a-zA-Z]{3}[0-9]{1,2}",
+                "shape_name": "AvailabilityZone",
+                "documentation": null
+              },
+              "DropletState": {
+                "type": "string",
+                "enum": [
+                  "READY_FOR_IMPORT",
+                  "IMPORT_FAILED",
+                  "CLAIM_IN_PROGRESS",
+                  "CLAIM_FAILED",
+                  "PRODUCTION",
+                  "ISOLATED",
+                  "DRAIN",
+                  "DRAIN_IN_PROGRESS",
+                  "DRAINED",
+                  "DRAIN_FAILED",
+                  "DEGRADED",
+                  "BROKEN",
+                  "REBUILDING",
+                  "IMPORT_IN_PROGRESS",
+                  "RETIRED",
+                  "IMPORTED",
+                  "SPARE_CAPACITY"
+                ],
+                "internalonly": true,
+                "shape_name": "DropletState",
+                "documentation": null
+              },
+              "StateMessage": {
+                "type": "string",
+                "shape_name": "String",
+                "documentation": null
+              },
+              "HsmIds": {
+                "type": "list",
+                "shape_name": "HsmIds",
+                "documentation": null,
+                "members": {
+                  "type": "string",
+                  "pattern": "hsm-[2-7a-zA-Z]{11,16}",
+                  "shape_name": "HsmId",
+                  "documentation": null
+                }
+              },
+              "LaunchingEnabled": {
+                "type": "boolean",
+                "shape_name": "Boolean",
+                "documentation": null
+              },
+              "FwVersion": {
+                "type": "string",
+                "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
+                "shape_name": "CaviumVersion",
+                "documentation": null,
+                "min_length": 0,
+                "max_length": 64
+              },
+              "DriverVersion": {
+                "type": "string",
+                "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
+                "shape_name": "CaviumVersion",
+                "documentation": null,
+                "min_length": 0,
+                "max_length": 64
+              },
+              "ModelNumber": {
+                "type": "string",
+                "pattern": ".*",
+                "shape_name": "CaviumModelNumber",
+                "documentation": null
+              },
+              "FipsState": {
+                "type": "string",
+                "pattern": "[0123]",
+                "shape_name": "FipsState",
+                "documentation": null
+              },
+              "PartNumber": {
+                "type": "string",
+                "shape_name": "String",
+                "documentation": null
+              },
+              "ManufacturerHardwareCert": {
+                "type": "string",
+                "pattern": "[a-zA-Z0-9+-/=\\s]*",
+                "shape_name": "Cert",
+                "documentation": null,
+                "max_length": 5000
+              },
+              "AwsHardwareCert": {
+                "type": "string",
+                "pattern": "[a-zA-Z0-9+-/=\\s]*",
+                "shape_name": "Cert",
+                "documentation": null,
+                "max_length": 5000
+              },
+              "Pek": {
+                "type": "string",
+                "pattern": "[a-zA-Z0-9+/=\\s]*",
+                "shape_name": "Base64",
+                "documentation": null,
+                "max_length": 128
+              },
+              "HsmAuditLog": {
+                "type": "string",
+                "pattern": "[01]",
+                "shape_name": "HsmAuditLog",
+                "documentation": null,
+                "min_length": 1,
+                "max_length": 1
+              },
+              "AdmiralState": {
+                "type": "string",
+                "pattern": ".*",
+                "shape_name": "AdmiralState",
+                "documentation": null,
+                "max_length": 300
+              },
+              "Rack": {
+                "type": "string",
+                "pattern": ".*",
+                "shape_name": "Rack",
+                "documentation": null,
+                "max_length": 300
+              },
+              "RackSide": {
+                "type": "string",
+                "pattern": ".*",
+                "shape_name": "RackSide",
+                "documentation": null,
+                "max_length": 300
+              },
+              "SerialNumber": {
+                "type": "string",
+                "pattern": ".*",
+                "shape_name": "SerialNumber",
+                "documentation": null,
+                "max_length": 300
+              },
+              "AssetTag": {
+                "type": "string",
+                "pattern": ".*",
+                "shape_name": "AssetTag",
+                "documentation": null,
+                "max_length": 300
+              }
+            },
+            "internalonly": true,
+            "shape_name": "DropletInternal",
+            "documentation": null
+          }
+        },
+        "shape_name": "SafeDrainDropletInternalResponse",
         "documentation": null
       },
       "errors": [

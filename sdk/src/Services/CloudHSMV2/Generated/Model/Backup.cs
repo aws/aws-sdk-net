@@ -37,6 +37,7 @@ namespace Amazon.CloudHSMV2.Model
         private string _clusterId;
         private DateTime? _copyTimestamp;
         private DateTime? _createTimestamp;
+        private DateTime? _deleteTimestamp;
         private string _sourceBackup;
         private string _sourceCluster;
         private string _sourceRegion;
@@ -126,6 +127,24 @@ namespace Amazon.CloudHSMV2.Model
         internal bool IsSetCreateTimestamp()
         {
             return this._createTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeleteTimestamp. 
+        /// <para>
+        /// The date and time when the backup will be permanently deleted.
+        /// </para>
+        /// </summary>
+        public DateTime DeleteTimestamp
+        {
+            get { return this._deleteTimestamp.GetValueOrDefault(); }
+            set { this._deleteTimestamp = value; }
+        }
+
+        // Check to see if DeleteTimestamp property is set
+        internal bool IsSetDeleteTimestamp()
+        {
+            return this._deleteTimestamp.HasValue; 
         }
 
         /// <summary>

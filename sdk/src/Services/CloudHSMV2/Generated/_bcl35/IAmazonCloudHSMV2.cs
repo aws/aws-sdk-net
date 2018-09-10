@@ -41,7 +41,7 @@ namespace Amazon.CloudHSMV2
 
 
         /// <summary>
-        /// 
+        /// Copy an AWS CloudHSM cluster backup to a different region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyBackupToRegion service method.</param>
         /// 
@@ -205,6 +205,64 @@ namespace Amazon.CloudHSMV2
         /// <returns>Returns a  CreateHsmResult from CloudHSMV2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/CreateHsm">REST API Reference for CreateHsm Operation</seealso>
         CreateHsmResponse EndCreateHsm(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteBackup
+
+
+        /// <summary>
+        /// Deletes a specified AWS CloudHSM backup. A backup can be restored up to 7 days after
+        /// the DeleteBackup request. For more information on restoring a backup, see <a>RestoreBackup</a>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBackup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBackup service method, as returned by CloudHSMV2.</returns>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmAccessDeniedException">
+        /// The request was rejected because the requester does not have permission to perform
+        /// the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInternalFailureException">
+        /// The request was rejected because of an AWS CloudHSM internal failure. The request
+        /// can be retried.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInvalidRequestException">
+        /// The request was rejected because it is not a valid request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmResourceNotFoundException">
+        /// The request was rejected because it refers to a resource that cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmServiceException">
+        /// The request was rejected because an error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DeleteBackup">REST API Reference for DeleteBackup Operation</seealso>
+        DeleteBackupResponse DeleteBackup(DeleteBackupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBackup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBackup operation on AmazonCloudHSMV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBackup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DeleteBackup">REST API Reference for DeleteBackup Operation</seealso>
+        IAsyncResult BeginDeleteBackup(DeleteBackupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteBackup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBackup.</param>
+        /// 
+        /// <returns>Returns a  DeleteBackupResult from CloudHSMV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DeleteBackup">REST API Reference for DeleteBackup Operation</seealso>
+        DeleteBackupResponse EndDeleteBackup(IAsyncResult asyncResult);
 
         #endregion
         
@@ -578,6 +636,64 @@ namespace Amazon.CloudHSMV2
         /// <returns>Returns a  ListTagsResult from CloudHSMV2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/ListTags">REST API Reference for ListTags Operation</seealso>
         ListTagsResponse EndListTags(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  RestoreBackup
+
+
+        /// <summary>
+        /// Restores a specified AWS CloudHSM backup that is in the <code>PENDING_DELETION</code>
+        /// state. For more information on deleting a backup, see <a>DeleteBackup</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreBackup service method.</param>
+        /// 
+        /// <returns>The response from the RestoreBackup service method, as returned by CloudHSMV2.</returns>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmAccessDeniedException">
+        /// The request was rejected because the requester does not have permission to perform
+        /// the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInternalFailureException">
+        /// The request was rejected because of an AWS CloudHSM internal failure. The request
+        /// can be retried.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInvalidRequestException">
+        /// The request was rejected because it is not a valid request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmResourceNotFoundException">
+        /// The request was rejected because it refers to a resource that cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmServiceException">
+        /// The request was rejected because an error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/RestoreBackup">REST API Reference for RestoreBackup Operation</seealso>
+        RestoreBackupResponse RestoreBackup(RestoreBackupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RestoreBackup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RestoreBackup operation on AmazonCloudHSMV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRestoreBackup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/RestoreBackup">REST API Reference for RestoreBackup Operation</seealso>
+        IAsyncResult BeginRestoreBackup(RestoreBackupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RestoreBackup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRestoreBackup.</param>
+        /// 
+        /// <returns>Returns a  RestoreBackupResult from CloudHSMV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/RestoreBackup">REST API Reference for RestoreBackup Operation</seealso>
+        RestoreBackupResponse EndRestoreBackup(IAsyncResult asyncResult);
 
         #endregion
         
