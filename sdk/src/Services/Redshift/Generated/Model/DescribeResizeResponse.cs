@@ -43,6 +43,7 @@ namespace Amazon.Redshift.Model
         private string _resizeType;
         private string _status;
         private string _targetClusterType;
+        private string _targetEncryptionType;
         private string _targetNodeType;
         private int? _targetNumberOfNodes;
         private long? _totalResizeDataInMegaBytes;
@@ -276,6 +277,29 @@ namespace Amazon.Redshift.Model
         internal bool IsSetTargetClusterType()
         {
             return this._targetClusterType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetEncryptionType. 
+        /// <para>
+        /// The type of encryption for the cluster after the resize is complete.
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible values are <code>KMS</code> and <code>None</code>. In the China region possible
+        /// values are: <code>Legacy</code> and <code>None</code>.
+        /// </para>
+        /// </summary>
+        public string TargetEncryptionType
+        {
+            get { return this._targetEncryptionType; }
+            set { this._targetEncryptionType = value; }
+        }
+
+        // Check to see if TargetEncryptionType property is set
+        internal bool IsSetTargetEncryptionType()
+        {
+            return this._targetEncryptionType != null;
         }
 
         /// <summary>

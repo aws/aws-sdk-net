@@ -54,9 +54,11 @@ namespace Amazon.Redshift.Model
         private string _clusterType;
         private string _clusterVersion;
         private string _elasticIp;
+        private bool? _encrypted;
         private bool? _enhancedVpcRouting;
         private string _hsmClientCertificateIdentifier;
         private string _hsmConfigurationIdentifier;
+        private string _kmsKeyId;
         private string _maintenanceTrackName;
         private string _masterUserPassword;
         private string _newClusterIdentifier;
@@ -302,6 +304,28 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Encrypted. 
+        /// <para>
+        /// Indicates whether the cluster is encrypted. If the cluster is encrypted and you provide
+        /// a value for the <code>KmsKeyId</code> parameter, we will encrypt the cluster with
+        /// the provided <code>KmsKeyId</code>. If you don't provide a <code>KmsKeyId</code>,
+        /// we will encrypt with the default key. In the China region we will use legacy encryption
+        /// if you specify that the cluster is encrypted.
+        /// </para>
+        /// </summary>
+        public bool Encrypted
+        {
+            get { return this._encrypted.GetValueOrDefault(); }
+            set { this._encrypted = value; }
+        }
+
+        // Check to see if Encrypted property is set
+        internal bool IsSetEncrypted()
+        {
+            return this._encrypted.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property EnhancedVpcRouting. 
         /// <para>
         /// An option that specifies whether to create the cluster with enhanced VPC routing enabled.
@@ -366,6 +390,25 @@ namespace Amazon.Redshift.Model
         internal bool IsSetHsmConfigurationIdentifier()
         {
             return this._hsmConfigurationIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// The AWS Key Management Service (KMS) key ID of the encryption key that you want to
+        /// use to encrypt data in the cluster.
+        /// </para>
+        /// </summary>
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
         }
 
         /// <summary>

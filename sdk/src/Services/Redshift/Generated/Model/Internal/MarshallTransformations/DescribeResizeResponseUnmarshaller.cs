@@ -150,6 +150,12 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         response.TargetClusterType = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("TargetEncryptionType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.TargetEncryptionType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("TargetNodeType", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

@@ -777,156 +777,6 @@
       ],
       "documentation": "\n        <p>Authorizes the specified AWS customer account to restore the specified\n            snapshot.</p>\n        <p>\nFor more information about working with snapshots, go to \n<a href=\"http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html\">Amazon Redshift Snapshots</a> \nin the <i>Amazon Redshift Cluster Management Guide</i>.</p>\n      "
     },
-    "CancelResize": {
-      "name": "CancelResize",
-      "input": {
-        "type": "structure",
-        "members": {
-          "ClusterIdentifier": {
-            "type": "string",
-            "required": true,
-            "shape_name": "String",
-            "documentation": null
-          }
-        },
-        "shape_name": "CancelResizeMessage",
-        "documentation": null
-      },
-      "output": {
-        "type": "structure",
-        "members": {
-          "TargetNodeType": {
-            "type": "string",
-            "zonbookDocumentation": "\n        <simpara>The node type that the cluster will have after the resize operation is\n            complete.</simpara>\n      ",
-            "documentation": "\n        <p>The node type that the cluster will have after the resize operation is\n            complete.</p>\n      ",
-            "shape_name": "String"
-          },
-          "TargetNumberOfNodes": {
-            "type": "integer",
-            "zonbookDocumentation": "\n        <simpara>The number of nodes that the cluster will have after the resize operation is\n            complete.</simpara>\n      ",
-            "documentation": "\n        <p>The number of nodes that the cluster will have after the resize operation is\n            complete.</p>\n      ",
-            "shape_name": "IntegerOptional"
-          },
-          "TargetClusterType": {
-            "type": "string",
-            "zonbookDocumentation": "\n        <simpara>The cluster type after the resize operation is complete.</simpara>\n        <simpara>Valid Values: <code>multi-node</code> | <code>single-node</code>\n        </simpara>\n      ",
-            "documentation": "\n        <p>The cluster type after the resize operation is complete.</p>\n        <p>Valid Values: <code>multi-node</code> | <code>single-node</code>\n        </p>\n      ",
-            "shape_name": "String"
-          },
-          "Status": {
-            "type": "string",
-            "zonbookDocumentation": "\n        <simpara>The status of the resize operation.</simpara>\n        <simpara>Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> |\n                <code>SUCCEEDED</code>\n        </simpara>\n      ",
-            "documentation": "\n        <p>The status of the resize operation.</p>\n        <p>Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> |\n                <code>SUCCEEDED</code>\n        </p>\n      ",
-            "shape_name": "String"
-          },
-          "ImportTablesCompleted": {
-            "type": "list",
-            "zonbookDocumentation": "\n        <simpara>The names of tables that have been completely imported .</simpara>\n        <simpara>Valid Values: List of table names.</simpara>\n      ",
-            "documentation": "\n        <p>The names of tables that have been completely imported .</p>\n        <p>Valid Values: List of table names.</p>\n      ",
-            "shape_name": "ImportTablesCompleted",
-            "members": {
-              "type": "string",
-              "shape_name": "String",
-              "documentation": null
-            }
-          },
-          "ImportTablesInProgress": {
-            "type": "list",
-            "zonbookDocumentation": "\n        <simpara>The names of tables that are being currently imported.</simpara>\n        <simpara>Valid Values: List of table names.</simpara>\n      ",
-            "documentation": "\n        <p>The names of tables that are being currently imported.</p>\n        <p>Valid Values: List of table names.</p>\n      ",
-            "shape_name": "ImportTablesInProgress",
-            "members": {
-              "type": "string",
-              "shape_name": "String",
-              "documentation": null
-            }
-          },
-          "ImportTablesNotStarted": {
-            "type": "list",
-            "zonbookDocumentation": "\n        <simpara>The names of tables that have not been yet imported.</simpara>\n        <simpara>Valid Values: List of table names</simpara>\n      ",
-            "documentation": "\n        <p>The names of tables that have not been yet imported.</p>\n        <p>Valid Values: List of table names</p>\n      ",
-            "shape_name": "ImportTablesNotStarted",
-            "members": {
-              "type": "string",
-              "shape_name": "String",
-              "documentation": null
-            }
-          },
-          "AvgResizeRateInMegaBytesPerSecond": {
-            "type": "double",
-            "zonbookDocumentation": "\n        <simpara>The average rate of the resize operation over the last few minutes, measured in\n            megabytes per second. After the resize operation completes, this value shows the average\n            rate of the entire resize operation.</simpara>\n      ",
-            "documentation": "\n        <p>The average rate of the resize operation over the last few minutes, measured in\n            megabytes per second. After the resize operation completes, this value shows the average\n            rate of the entire resize operation.</p>\n      ",
-            "shape_name": "DoubleOptional"
-          },
-          "TotalResizeDataInMegaBytes": {
-            "type": "long",
-            "zonbookDocumentation": "\n        <simpara>The estimated total amount of data, in megabytes, on the cluster before the resize\n            operation began.</simpara>\n      ",
-            "documentation": "\n        <p>The estimated total amount of data, in megabytes, on the cluster before the resize\n            operation began.</p>\n      ",
-            "shape_name": "LongOptional"
-          },
-          "ProgressInMegaBytes": {
-            "type": "long",
-            "zonbookDocumentation": "\n        <simpara>While the resize operation is in progress, this value shows the current amount of\n            data, in megabytes, that has been processed so far. When the resize operation is\n            complete, this value shows the total amount of data, in megabytes, on the cluster, which\n            may be more or less than TotalResizeDataInMegaBytes (the estimated total amount of data\n            before resize).</simpara>\n      ",
-            "documentation": "\n        <p>While the resize operation is in progress, this value shows the current amount of\n            data, in megabytes, that has been processed so far. When the resize operation is\n            complete, this value shows the total amount of data, in megabytes, on the cluster, which\n            may be more or less than TotalResizeDataInMegaBytes (the estimated total amount of data\n            before resize).</p>\n      ",
-            "shape_name": "LongOptional"
-          },
-          "ElapsedTimeInSeconds": {
-            "type": "long",
-            "zonbookDocumentation": "\n        <simpara>The amount of seconds that have elapsed since the resize operation began. After the\n            resize operation completes, this value shows the total actual time, in seconds, for the\n            resize operation.</simpara>\n      ",
-            "documentation": "\n        <p>The amount of seconds that have elapsed since the resize operation began. After the\n            resize operation completes, this value shows the total actual time, in seconds, for the\n            resize operation.</p>\n      ",
-            "shape_name": "LongOptional"
-          },
-          "EstimatedTimeToCompletionInSeconds": {
-            "type": "long",
-            "zonbookDocumentation": "\n        <simpara>The estimated time remaining, in seconds, until the resize operation is complete.\n            This value is calculated based on the average resize rate and the estimated amount of\n            data remaining to be processed. Once the resize operation is complete, this value will\n            be 0.</simpara>\n      ",
-            "documentation": "\n        <p>The estimated time remaining, in seconds, until the resize operation is complete.\n            This value is calculated based on the average resize rate and the estimated amount of\n            data remaining to be processed. Once the resize operation is complete, this value will\n            be 0.</p>\n      ",
-            "shape_name": "LongOptional"
-          },
-          "ResizeType": {
-            "type": "string",
-            "zonbookDocumentation": "\n        <para>An enum with possible values of ClassicResize and ElasticResize. These values describe the type of resize operation being performed. </para>\n      ",
-            "documentation": "\n        <p>An enum with possible values of ClassicResize and ElasticResize. These values describe the type of resize operation being performed. </p>\n      ",
-            "shape_name": "String"
-          },
-          "Message": {
-            "type": "string",
-            "zonbookDocumentation": "\n        <para>An optional string to provide additional details about the resize action.</para>\n      ",
-            "documentation": "\n        <p>An optional string to provide additional details about the resize action.</p>\n      ",
-            "shape_name": "String"
-          }
-        },
-        "zonbookDocumentation": "\n        <simpara>Describes the result of a cluster resize operation.</simpara>\n      ",
-        "documentation": "\n        <p>Describes the result of a cluster resize operation.</p>\n      ",
-        "shape_name": "ResizeProgressMessage"
-      },
-      "errors": [
-        {
-          "type": "structure",
-          "members": {
-          },
-          "zonbookDocumentation": "\n        <simpara>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.\n        </simpara>\n      ",
-          "documentation": "\n        <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.\n        </p>\n      ",
-          "shape_name": "ClusterNotFoundFault"
-        },
-        {
-          "type": "structure",
-          "members": {
-          },
-          "zonbookDocumentation": "\n        <simpara>A resize operation for the specified cluster is not found.</simpara>\n      ",
-          "documentation": "\n        <p>A resize operation for the specified cluster is not found.</p>\n      ",
-          "shape_name": "ResizeNotFoundFault"
-        },
-        {
-          "type": "structure",
-          "members": {
-          },
-          "zonbookDocumentation": "\n        <simpara>The specified cluster is not in the <code>available</code> state. </simpara>\n      ",
-          "documentation": "\n        <p>The specified cluster is not in the <code>available</code> state. </p>\n      ",
-          "shape_name": "InvalidClusterStateFault"
-        }
-      ],
-      "documentation": null
-    },
     "CopyClusterSnapshot": {
       "name": "CopyClusterSnapshot",
       "input": {
@@ -1730,6 +1580,12 @@
                     "type": "string",
                     "zonbookDocumentation": "\n        <para>The name of the maintenance track that the cluster will change to during the next\n            maintenance window.</para>\n        \n      ",
                     "documentation": "\n        <p>The name of the maintenance track that the cluster will change to during the next\n            maintenance window.</p>\n        \n      ",
+                    "shape_name": "String"
+                  },
+                  "EncryptionType": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n        <para>The encryption type for a cluster. Possible values are: KMS and None. For the China region the possible values are None, and Legacy. </para>\n      ",
+                    "documentation": "\n        <p>The encryption type for a cluster. Possible values are: KMS and None. For the China region the possible values are None, and Legacy. </p>\n      ",
                     "shape_name": "String"
                   }
                 },
@@ -4350,6 +4206,12 @@
                     "zonbookDocumentation": "\n        <para>The name of the maintenance track that the cluster will change to during the next\n            maintenance window.</para>\n        \n      ",
                     "documentation": "\n        <p>The name of the maintenance track that the cluster will change to during the next\n            maintenance window.</p>\n        \n      ",
                     "shape_name": "String"
+                  },
+                  "EncryptionType": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n        <para>The encryption type for a cluster. Possible values are: KMS and None. For the China region the possible values are None, and Legacy. </para>\n      ",
+                    "documentation": "\n        <p>The encryption type for a cluster. Possible values are: KMS and None. For the China region the possible values are None, and Legacy. </p>\n      ",
+                    "shape_name": "String"
                   }
                 },
                 "zonbookDocumentation": "\n        <simpara>A value that, if present, indicates that changes to the cluster are pending.\n            Specific pending changes are identified by subelements.</simpara>\n      ",
@@ -5877,6 +5739,12 @@
                       "type": "string",
                       "zonbookDocumentation": "\n        <para>The name of the maintenance track that the cluster will change to during the next\n            maintenance window.</para>\n        \n      ",
                       "documentation": "\n        <p>The name of the maintenance track that the cluster will change to during the next\n            maintenance window.</p>\n        \n      ",
+                      "shape_name": "String"
+                    },
+                    "EncryptionType": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n        <para>The encryption type for a cluster. Possible values are: KMS and None. For the China region the possible values are None, and Legacy. </para>\n      ",
+                      "documentation": "\n        <p>The encryption type for a cluster. Possible values are: KMS and None. For the China region the possible values are None, and Legacy. </p>\n      ",
                       "shape_name": "String"
                     }
                   },
@@ -8811,6 +8679,12 @@
             "zonbookDocumentation": "\n        <para>An optional string to provide additional details about the resize action.</para>\n      ",
             "documentation": "\n        <p>An optional string to provide additional details about the resize action.</p>\n      ",
             "shape_name": "String"
+          },
+          "TargetEncryptionType": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <para>The type of encryption for the cluster after the resize is complete.</para>\n        <para>Possible values are <code>KMS</code> and <code>None</code>. In the China region possible values are: <code>Legacy</code> and <code>None</code>.</para>\n      ",
+            "documentation": "\n        <p>The type of encryption for the cluster after the resize is complete.</p>\n        <p>Possible values are <code>KMS</code> and <code>None</code>. In the China region possible values are: <code>Legacy</code> and <code>None</code>.</p>\n      ",
+            "shape_name": "String"
           }
         },
         "zonbookDocumentation": "\n        <simpara>Describes the result of a cluster resize operation.</simpara>\n      ",
@@ -9697,6 +9571,12 @@
                     "zonbookDocumentation": "\n        <para>The name of the maintenance track that the cluster will change to during the next\n            maintenance window.</para>\n        \n      ",
                     "documentation": "\n        <p>The name of the maintenance track that the cluster will change to during the next\n            maintenance window.</p>\n        \n      ",
                     "shape_name": "String"
+                  },
+                  "EncryptionType": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n        <para>The encryption type for a cluster. Possible values are: KMS and None. For the China region the possible values are None, and Legacy. </para>\n      ",
+                    "documentation": "\n        <p>The encryption type for a cluster. Possible values are: KMS and None. For the China region the possible values are None, and Legacy. </p>\n      ",
+                    "shape_name": "String"
                   }
                 },
                 "zonbookDocumentation": "\n        <simpara>A value that, if present, indicates that changes to the cluster are pending.\n            Specific pending changes are identified by subelements.</simpara>\n      ",
@@ -10408,6 +10288,12 @@
                     "type": "string",
                     "zonbookDocumentation": "\n        <para>The name of the maintenance track that the cluster will change to during the next\n            maintenance window.</para>\n        \n      ",
                     "documentation": "\n        <p>The name of the maintenance track that the cluster will change to during the next\n            maintenance window.</p>\n        \n      ",
+                    "shape_name": "String"
+                  },
+                  "EncryptionType": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n        <para>The encryption type for a cluster. Possible values are: KMS and None. For the China region the possible values are None, and Legacy. </para>\n      ",
+                    "documentation": "\n        <p>The encryption type for a cluster. Possible values are: KMS and None. For the China region the possible values are None, and Legacy. </p>\n      ",
                     "shape_name": "String"
                   }
                 },
@@ -11331,6 +11217,18 @@
             "zonbookDocumentation": "\n        <para>The name for the maintenance track that you want to assign for the cluster. This name\n            change is asynchronous. The new track name stays in the\n                <code>PendingModifiedValues</code> for the cluster until the next maintenance\n            window. When the maintenance track changes, the cluster is switched to the latest\n            cluster release available for the maintenance track. At this point, the maintenance track name is\n            applied.</para>\n        \n      ",
             "documentation": "\n        <p>The name for the maintenance track that you want to assign for the cluster. This name\n            change is asynchronous. The new track name stays in the\n                <code>PendingModifiedValues</code> for the cluster until the next maintenance\n            window. When the maintenance track changes, the cluster is switched to the latest\n            cluster release available for the maintenance track. At this point, the maintenance track name is\n            applied.</p>\n        \n      ",
             "shape_name": "String"
+          },
+          "Encrypted": {
+            "type": "boolean",
+            "zonbookDocumentation": "\n        <para>Indicates whether the cluster is encrypted. If the cluster is encrypted and you provide a value for the <code>KmsKeyId</code> parameter, we will encrypt the cluster with the provided <code>KmsKeyId</code>.\n        If you don't provide a <code>KmsKeyId</code>, we will encrypt with the default key. In the China region we will use legacy encryption if you specify that the cluster is encrypted.</para>\n      ",
+            "documentation": "\n        <p>Indicates whether the cluster is encrypted. If the cluster is encrypted and you provide a value for the <code>KmsKeyId</code> parameter, we will encrypt the cluster with the provided <code>KmsKeyId</code>.\n        If you don't provide a <code>KmsKeyId</code>, we will encrypt with the default key. In the China region we will use legacy encryption if you specify that the cluster is encrypted.</p>\n      ",
+            "shape_name": "BooleanOptional"
+          },
+          "KmsKeyId": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <para>The AWS Key Management Service (KMS) key ID of the encryption key that you want to\n            use to encrypt data in the cluster.</para>\n      ",
+            "documentation": "\n        <p>The AWS Key Management Service (KMS) key ID of the encryption key that you want to\n            use to encrypt data in the cluster.</p>\n      ",
+            "shape_name": "String"
           }
         },
         "zonbookDocumentation": "\n        <simpara/>\n      ",
@@ -11610,6 +11508,12 @@
                     "type": "string",
                     "zonbookDocumentation": "\n        <para>The name of the maintenance track that the cluster will change to during the next\n            maintenance window.</para>\n        \n      ",
                     "documentation": "\n        <p>The name of the maintenance track that the cluster will change to during the next\n            maintenance window.</p>\n        \n      ",
+                    "shape_name": "String"
+                  },
+                  "EncryptionType": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n        <para>The encryption type for a cluster. Possible values are: KMS and None. For the China region the possible values are None, and Legacy. </para>\n      ",
+                    "documentation": "\n        <p>The encryption type for a cluster. Possible values are: KMS and None. For the China region the possible values are None, and Legacy. </p>\n      ",
                     "shape_name": "String"
                   }
                 },
@@ -12355,6 +12259,12 @@
                     "zonbookDocumentation": "\n        <para>The name of the maintenance track that the cluster will change to during the next\n            maintenance window.</para>\n        \n      ",
                     "documentation": "\n        <p>The name of the maintenance track that the cluster will change to during the next\n            maintenance window.</p>\n        \n      ",
                     "shape_name": "String"
+                  },
+                  "EncryptionType": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n        <para>The encryption type for a cluster. Possible values are: KMS and None. For the China region the possible values are None, and Legacy. </para>\n      ",
+                    "documentation": "\n        <p>The encryption type for a cluster. Possible values are: KMS and None. For the China region the possible values are None, and Legacy. </p>\n      ",
+                    "shape_name": "String"
                   }
                 },
                 "zonbookDocumentation": "\n        <simpara>A value that, if present, indicates that changes to the cluster are pending.\n            Specific pending changes are identified by subelements.</simpara>\n      ",
@@ -12990,6 +12900,12 @@
                     "type": "string",
                     "zonbookDocumentation": "\n        <para>The name of the maintenance track that the cluster will change to during the next\n            maintenance window.</para>\n        \n      ",
                     "documentation": "\n        <p>The name of the maintenance track that the cluster will change to during the next\n            maintenance window.</p>\n        \n      ",
+                    "shape_name": "String"
+                  },
+                  "EncryptionType": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n        <para>The encryption type for a cluster. Possible values are: KMS and None. For the China region the possible values are None, and Legacy. </para>\n      ",
+                    "documentation": "\n        <p>The encryption type for a cluster. Possible values are: KMS and None. For the China region the possible values are None, and Legacy. </p>\n      ",
                     "shape_name": "String"
                   }
                 },
@@ -13948,6 +13864,12 @@
                     "type": "string",
                     "zonbookDocumentation": "\n        <para>The name of the maintenance track that the cluster will change to during the next\n            maintenance window.</para>\n        \n      ",
                     "documentation": "\n        <p>The name of the maintenance track that the cluster will change to during the next\n            maintenance window.</p>\n        \n      ",
+                    "shape_name": "String"
+                  },
+                  "EncryptionType": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n        <para>The encryption type for a cluster. Possible values are: KMS and None. For the China region the possible values are None, and Legacy. </para>\n      ",
+                    "documentation": "\n        <p>The encryption type for a cluster. Possible values are: KMS and None. For the China region the possible values are None, and Legacy. </p>\n      ",
                     "shape_name": "String"
                   }
                 },
@@ -15001,6 +14923,12 @@
                     "zonbookDocumentation": "\n        <para>The name of the maintenance track that the cluster will change to during the next\n            maintenance window.</para>\n        \n      ",
                     "documentation": "\n        <p>The name of the maintenance track that the cluster will change to during the next\n            maintenance window.</p>\n        \n      ",
                     "shape_name": "String"
+                  },
+                  "EncryptionType": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n        <para>The encryption type for a cluster. Possible values are: KMS and None. For the China region the possible values are None, and Legacy. </para>\n      ",
+                    "documentation": "\n        <p>The encryption type for a cluster. Possible values are: KMS and None. For the China region the possible values are None, and Legacy. </p>\n      ",
+                    "shape_name": "String"
                   }
                 },
                 "zonbookDocumentation": "\n        <simpara>A value that, if present, indicates that changes to the cluster are pending.\n            Specific pending changes are identified by subelements.</simpara>\n      ",
@@ -15628,6 +15556,12 @@
                     "type": "string",
                     "zonbookDocumentation": "\n        <para>The name of the maintenance track that the cluster will change to during the next\n            maintenance window.</para>\n        \n      ",
                     "documentation": "\n        <p>The name of the maintenance track that the cluster will change to during the next\n            maintenance window.</p>\n        \n      ",
+                    "shape_name": "String"
+                  },
+                  "EncryptionType": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n        <para>The encryption type for a cluster. Possible values are: KMS and None. For the China region the possible values are None, and Legacy. </para>\n      ",
+                    "documentation": "\n        <p>The encryption type for a cluster. Possible values are: KMS and None. For the China region the possible values are None, and Legacy. </p>\n      ",
                     "shape_name": "String"
                   }
                 },
@@ -16439,6 +16373,12 @@
                     "type": "string",
                     "zonbookDocumentation": "\n        <para>The name of the maintenance track that the cluster will change to during the next\n            maintenance window.</para>\n        \n      ",
                     "documentation": "\n        <p>The name of the maintenance track that the cluster will change to during the next\n            maintenance window.</p>\n        \n      ",
+                    "shape_name": "String"
+                  },
+                  "EncryptionType": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n        <para>The encryption type for a cluster. Possible values are: KMS and None. For the China region the possible values are None, and Legacy. </para>\n      ",
+                    "documentation": "\n        <p>The encryption type for a cluster. Possible values are: KMS and None. For the China region the possible values are None, and Legacy. </p>\n      ",
                     "shape_name": "String"
                   }
                 },
@@ -18100,6 +18040,12 @@
                     "type": "string",
                     "zonbookDocumentation": "\n        <para>The name of the maintenance track that the cluster will change to during the next\n            maintenance window.</para>\n        \n      ",
                     "documentation": "\n        <p>The name of the maintenance track that the cluster will change to during the next\n            maintenance window.</p>\n        \n      ",
+                    "shape_name": "String"
+                  },
+                  "EncryptionType": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n        <para>The encryption type for a cluster. Possible values are: KMS and None. For the China region the possible values are None, and Legacy. </para>\n      ",
+                    "documentation": "\n        <p>The encryption type for a cluster. Possible values are: KMS and None. For the China region the possible values are None, and Legacy. </p>\n      ",
                     "shape_name": "String"
                   }
                 },

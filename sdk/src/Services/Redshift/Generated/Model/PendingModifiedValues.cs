@@ -37,6 +37,7 @@ namespace Amazon.Redshift.Model
         private string _clusterIdentifier;
         private string _clusterType;
         private string _clusterVersion;
+        private string _encryptionType;
         private bool? _enhancedVpcRouting;
         private string _maintenanceTrackName;
         private string _masterUserPassword;
@@ -114,6 +115,25 @@ namespace Amazon.Redshift.Model
         internal bool IsSetClusterVersion()
         {
             return this._clusterVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionType. 
+        /// <para>
+        /// The encryption type for a cluster. Possible values are: KMS and None. For the China
+        /// region the possible values are None, and Legacy. 
+        /// </para>
+        /// </summary>
+        public string EncryptionType
+        {
+            get { return this._encryptionType; }
+            set { this._encryptionType = value; }
+        }
+
+        // Check to see if EncryptionType property is set
+        internal bool IsSetEncryptionType()
+        {
+            return this._encryptionType != null;
         }
 
         /// <summary>
