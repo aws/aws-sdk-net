@@ -38,14 +38,7 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// NextToken is a string that is returned in some command responses. It indicates that
-        /// not all entries have been returned, and that you must run at least one more request
-        /// to get remaining items. To get remaining results, call <code>DescribeServers</code>
-        /// again, and assign the token from the previous results as the value of the <code>nextToken</code>
-        /// parameter. If there are no more results, the response object's <code>nextToken</code>
-        /// parameter value is <code>null</code>. Setting a <code>nextToken</code> value that
-        /// was not returned in your previous results causes an <code>InvalidNextTokenException</code>
-        /// to occur. 
+        /// This is not currently implemented for <code>DescribeServers</code> requests. 
         /// </para>
         /// </summary>
         public string NextToken
