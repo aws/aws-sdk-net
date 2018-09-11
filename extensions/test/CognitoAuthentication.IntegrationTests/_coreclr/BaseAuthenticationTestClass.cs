@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,19 +29,22 @@ namespace Amazon.Extensions.CognitoAuthentication.IntegrationTests
     /// </summary>
     public partial class BaseAuthenticationTestClass : IDisposable
     {
-		protected RegionEndpoint clientRegion = FallbackRegionFactory.GetRegionEndpoint();
-		public AmazonCognitoIdentityProviderClient GetAmazonCognitoIdentityProviderClient()
-		{
-			return  new AmazonCognitoIdentityProviderClient();
-		}		
-		public AmazonCognitoIdentityClient GetAmazonCognitoIdentityClient()
-		{
-			return new AmazonCognitoIdentityClient();
-		}
-		
-		public AmazonIdentityManagementServiceClient GetAmazonIdentityManagementServiceClient()
-		{
-			return new AmazonIdentityManagementServiceClient();
-		}
+        protected RegionEndpoint clientRegion = FallbackRegionFactory.GetRegionEndpoint();
+        
+        public AmazonCognitoIdentityProviderClient GetAmazonCognitoIdentityProviderClient()
+        {
+            return  new AmazonCognitoIdentityProviderClient();
+        }    
+        
+        public AmazonCognitoIdentityClient GetAmazonCognitoIdentityClient()
+        {
+            return new AmazonCognitoIdentityClient();
+        }
+        
+        public AmazonIdentityManagementServiceClient GetAmazonIdentityManagementServiceClient()
+        {
+            return new AmazonIdentityManagementServiceClient();
+        }
+    
     }
 }

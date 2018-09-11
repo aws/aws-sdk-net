@@ -106,8 +106,7 @@ namespace Amazon.Extensions.CognitoAuthentication.IntegrationTests
             verifiedAttributes.Add(CognitoConstants.UserAttrPhoneNumber);
 
             //Create Role for MFA
-            using (var managementClient = GetAmazonIdentityManagementServiceClient() 
-                )
+            using ( var managementClient = GetAmazonIdentityManagementServiceClient() )
             {
                 CreateRoleResponse roleResponse = managementClient.CreateRoleAsync(new CreateRoleRequest()
                 {
