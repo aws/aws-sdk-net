@@ -3353,6 +3353,56 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  DescribeSessions
+
+
+        /// <summary>
+        /// Retrieves a list of all active sessions (both connected and disconnected) or terminated
+        /// sessions from the past 30 days.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSessions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSessions service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
+        /// The specified key is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeSessions">REST API Reference for DescribeSessions Operation</seealso>
+        DescribeSessionsResponse DescribeSessions(DescribeSessionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSessions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSessions operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSessions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeSessions">REST API Reference for DescribeSessions Operation</seealso>
+        IAsyncResult BeginDescribeSessions(DescribeSessionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeSessions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSessions.</param>
+        /// 
+        /// <returns>Returns a  DescribeSessionsResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeSessions">REST API Reference for DescribeSessions Operation</seealso>
+        DescribeSessionsResponse EndDescribeSessions(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetAutomationExecution
 
 
@@ -3474,6 +3524,50 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>Returns a  GetCommandInvocationResult from SimpleSystemsManagement.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCommandInvocation">REST API Reference for GetCommandInvocation Operation</seealso>
         GetCommandInvocationResponse EndGetCommandInvocation(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetConnectionStatus
+
+
+        /// <summary>
+        /// Retrieves the Session Manager connection status for an instance to determine whether
+        /// it is connected and ready to receive Session Manager connections.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectionStatus service method.</param>
+        /// 
+        /// <returns>The response from the GetConnectionStatus service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetConnectionStatus">REST API Reference for GetConnectionStatus Operation</seealso>
+        GetConnectionStatusResponse GetConnectionStatus(GetConnectionStatusRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetConnectionStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectionStatus operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetConnectionStatus
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetConnectionStatus">REST API Reference for GetConnectionStatus Operation</seealso>
+        IAsyncResult BeginGetConnectionStatus(GetConnectionStatusRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetConnectionStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetConnectionStatus.</param>
+        /// 
+        /// <returns>Returns a  GetConnectionStatusResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetConnectionStatus">REST API Reference for GetConnectionStatus Operation</seealso>
+        GetConnectionStatusResponse EndGetConnectionStatus(IAsyncResult asyncResult);
 
         #endregion
         
@@ -6046,6 +6140,67 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  ResumeSession
+
+
+        /// <summary>
+        /// Reconnects a session to an instance after it has been disconnected. Connections can
+        /// be resumed for disconnected sessions, but not terminated sessions.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This command is primarily for use by client machines to automatically reconnect during
+        /// intermittent network issues. It is not intended for any other use.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResumeSession service method.</param>
+        /// 
+        /// <returns>The response from the ResumeSession service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
+        /// Error returned when the ID specified for a resource, such as a Maintenance Window
+        /// or Patch baseline, doesn't exist.
+        /// 
+        ///  
+        /// <para>
+        /// For information about resource limits in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS
+        /// Systems Manager Limits</a>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResumeSession">REST API Reference for ResumeSession Operation</seealso>
+        ResumeSessionResponse ResumeSession(ResumeSessionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResumeSession operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResumeSession operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResumeSession
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResumeSession">REST API Reference for ResumeSession Operation</seealso>
+        IAsyncResult BeginResumeSession(ResumeSessionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ResumeSession operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginResumeSession.</param>
+        /// 
+        /// <returns>Returns a  ResumeSessionResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResumeSession">REST API Reference for ResumeSession Operation</seealso>
+        ResumeSessionResponse EndResumeSession(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  SendAutomationSignal
 
 
@@ -6384,6 +6539,69 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  StartSession
+
+
+        /// <summary>
+        /// Initiates a connection to a target (for example, an instance) for a Session Manager
+        /// session. Returns a URL and token that can be used to open a WebSocket connection for
+        /// sending input and receiving outputs.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// AWS CLI usage: <code>start-session</code> is an interactive command that requires
+        /// the Session Manager plugin to be installed on the client machine making the call.
+        /// For information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html">
+        /// Install the Session Manager Plugin for the AWS CLI</a> in the <i>AWS Systems Manager
+        /// User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSession service method.</param>
+        /// 
+        /// <returns>The response from the StartSession service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
+        /// The specified document does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.TargetNotConnectedException">
+        /// The specified target instance for the session is not fully configured for use with
+        /// Session Manager. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started.html">Getting
+        /// Started with Session Manager</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartSession">REST API Reference for StartSession Operation</seealso>
+        StartSessionResponse StartSession(StartSessionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartSession operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartSession operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartSession
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartSession">REST API Reference for StartSession Operation</seealso>
+        IAsyncResult BeginStartSession(StartSessionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartSession operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartSession.</param>
+        /// 
+        /// <returns>Returns a  StartSessionResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartSession">REST API Reference for StartSession Operation</seealso>
+        StartSessionResponse EndStartSession(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  StopAutomationExecution
 
 
@@ -6431,6 +6649,60 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>Returns a  StopAutomationExecutionResult from SimpleSystemsManagement.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StopAutomationExecution">REST API Reference for StopAutomationExecution Operation</seealso>
         StopAutomationExecutionResponse EndStopAutomationExecution(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  TerminateSession
+
+
+        /// <summary>
+        /// Permanently ends a session and closes the data connection between the Session Manager
+        /// client and SSM Agent on the instance. A terminated session cannot be resumed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TerminateSession service method.</param>
+        /// 
+        /// <returns>The response from the TerminateSession service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
+        /// Error returned when the ID specified for a resource, such as a Maintenance Window
+        /// or Patch baseline, doesn't exist.
+        /// 
+        ///  
+        /// <para>
+        /// For information about resource limits in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS
+        /// Systems Manager Limits</a>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/TerminateSession">REST API Reference for TerminateSession Operation</seealso>
+        TerminateSessionResponse TerminateSession(TerminateSessionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TerminateSession operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TerminateSession operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTerminateSession
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/TerminateSession">REST API Reference for TerminateSession Operation</seealso>
+        IAsyncResult BeginTerminateSession(TerminateSessionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TerminateSession operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTerminateSession.</param>
+        /// 
+        /// <returns>Returns a  TerminateSessionResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/TerminateSession">REST API Reference for TerminateSession Operation</seealso>
+        TerminateSessionResponse EndTerminateSession(IAsyncResult asyncResult);
 
         #endregion
         

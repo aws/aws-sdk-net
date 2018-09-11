@@ -28,7 +28,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Describes a filter for a specific list of instances.
+    /// Describes a filter for a specific list of instances. You can filter instances information
+    /// by using tags. You specify tags by using a key-value mapping.
+    /// 
+    ///  
+    /// <para>
+    /// Use this action instead of the <a>DescribeInstanceInformationRequest$InstanceInformationFilterList</a>
+    /// method. The <code>InstanceInformationFilterList</code> method is a legacy method and
+    /// does not support tags. 
+    /// </para>
     /// </summary>
     public partial class InstanceInformationFilter
     {

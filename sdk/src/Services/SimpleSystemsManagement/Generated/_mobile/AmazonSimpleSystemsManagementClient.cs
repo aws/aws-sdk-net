@@ -2323,6 +2323,38 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  DescribeSessions
+
+        internal virtual DescribeSessionsResponse DescribeSessions(DescribeSessionsRequest request)
+        {
+            var marshaller = DescribeSessionsRequestMarshaller.Instance;
+            var unmarshaller = DescribeSessionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeSessionsRequest,DescribeSessionsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSessions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSessions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeSessions">REST API Reference for DescribeSessions Operation</seealso>
+        public virtual Task<DescribeSessionsResponse> DescribeSessionsAsync(DescribeSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeSessionsRequestMarshaller.Instance;
+            var unmarshaller = DescribeSessionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeSessionsRequest,DescribeSessionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetAutomationExecution
 
         internal virtual GetAutomationExecutionResponse GetAutomationExecution(GetAutomationExecutionRequest request)
@@ -2382,6 +2414,38 @@ namespace Amazon.SimpleSystemsManagement
             var unmarshaller = GetCommandInvocationResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetCommandInvocationRequest,GetCommandInvocationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetConnectionStatus
+
+        internal virtual GetConnectionStatusResponse GetConnectionStatus(GetConnectionStatusRequest request)
+        {
+            var marshaller = GetConnectionStatusRequestMarshaller.Instance;
+            var unmarshaller = GetConnectionStatusResponseUnmarshaller.Instance;
+
+            return Invoke<GetConnectionStatusRequest,GetConnectionStatusResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetConnectionStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectionStatus operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetConnectionStatus">REST API Reference for GetConnectionStatus Operation</seealso>
+        public virtual Task<GetConnectionStatusResponse> GetConnectionStatusAsync(GetConnectionStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetConnectionStatusRequestMarshaller.Instance;
+            var unmarshaller = GetConnectionStatusResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetConnectionStatusRequest,GetConnectionStatusResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -3884,6 +3948,38 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  ResumeSession
+
+        internal virtual ResumeSessionResponse ResumeSession(ResumeSessionRequest request)
+        {
+            var marshaller = ResumeSessionRequestMarshaller.Instance;
+            var unmarshaller = ResumeSessionResponseUnmarshaller.Instance;
+
+            return Invoke<ResumeSessionRequest,ResumeSessionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResumeSession operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResumeSession operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResumeSession">REST API Reference for ResumeSession Operation</seealso>
+        public virtual Task<ResumeSessionResponse> ResumeSessionAsync(ResumeSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ResumeSessionRequestMarshaller.Instance;
+            var unmarshaller = ResumeSessionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ResumeSessionRequest,ResumeSessionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  SendAutomationSignal
 
         internal virtual SendAutomationSignalResponse SendAutomationSignal(SendAutomationSignalRequest request)
@@ -4092,6 +4188,38 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  StartSession
+
+        internal virtual StartSessionResponse StartSession(StartSessionRequest request)
+        {
+            var marshaller = StartSessionRequestMarshaller.Instance;
+            var unmarshaller = StartSessionResponseUnmarshaller.Instance;
+
+            return Invoke<StartSessionRequest,StartSessionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartSession operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartSession operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartSession">REST API Reference for StartSession Operation</seealso>
+        public virtual Task<StartSessionResponse> StartSessionAsync(StartSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = StartSessionRequestMarshaller.Instance;
+            var unmarshaller = StartSessionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartSessionRequest,StartSessionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StopAutomationExecution
 
         internal virtual StopAutomationExecutionResponse StopAutomationExecution(StopAutomationExecutionRequest request)
@@ -4119,6 +4247,38 @@ namespace Amazon.SimpleSystemsManagement
             var unmarshaller = StopAutomationExecutionResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopAutomationExecutionRequest,StopAutomationExecutionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TerminateSession
+
+        internal virtual TerminateSessionResponse TerminateSession(TerminateSessionRequest request)
+        {
+            var marshaller = TerminateSessionRequestMarshaller.Instance;
+            var unmarshaller = TerminateSessionResponseUnmarshaller.Instance;
+
+            return Invoke<TerminateSessionRequest,TerminateSessionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TerminateSession operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TerminateSession operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/TerminateSession">REST API Reference for TerminateSession Operation</seealso>
+        public virtual Task<TerminateSessionResponse> TerminateSessionAsync(TerminateSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = TerminateSessionRequestMarshaller.Instance;
+            var unmarshaller = TerminateSessionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TerminateSessionRequest,TerminateSessionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

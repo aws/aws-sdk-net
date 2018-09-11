@@ -3157,6 +3157,43 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  DescribeSessions
+
+
+        /// <summary>
+        /// Retrieves a list of all active sessions (both connected and disconnected) or terminated
+        /// sessions from the past 30 days.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSessions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSessions service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterKeyException">
+        /// The specified key is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeSessions">REST API Reference for DescribeSessions Operation</seealso>
+        DescribeSessionsResponse DescribeSessions(DescribeSessionsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSessions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSessions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeSessions">REST API Reference for DescribeSessions Operation</seealso>
+        Task<DescribeSessionsResponse> DescribeSessionsAsync(DescribeSessionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetAutomationExecution
 
 
@@ -3252,6 +3289,37 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCommandInvocation">REST API Reference for GetCommandInvocation Operation</seealso>
         Task<GetCommandInvocationResponse> GetCommandInvocationAsync(GetCommandInvocationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetConnectionStatus
+
+
+        /// <summary>
+        /// Retrieves the Session Manager connection status for an instance to determine whether
+        /// it is connected and ready to receive Session Manager connections.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectionStatus service method.</param>
+        /// 
+        /// <returns>The response from the GetConnectionStatus service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetConnectionStatus">REST API Reference for GetConnectionStatus Operation</seealso>
+        GetConnectionStatusResponse GetConnectionStatus(GetConnectionStatusRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetConnectionStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectionStatus operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetConnectionStatus">REST API Reference for GetConnectionStatus Operation</seealso>
+        Task<GetConnectionStatusResponse> GetConnectionStatusAsync(GetConnectionStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -5575,6 +5643,54 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  ResumeSession
+
+
+        /// <summary>
+        /// Reconnects a session to an instance after it has been disconnected. Connections can
+        /// be resumed for disconnected sessions, but not terminated sessions.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This command is primarily for use by client machines to automatically reconnect during
+        /// intermittent network issues. It is not intended for any other use.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResumeSession service method.</param>
+        /// 
+        /// <returns>The response from the ResumeSession service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
+        /// Error returned when the ID specified for a resource, such as a Maintenance Window
+        /// or Patch baseline, doesn't exist.
+        /// 
+        ///  
+        /// <para>
+        /// For information about resource limits in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS
+        /// Systems Manager Limits</a>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResumeSession">REST API Reference for ResumeSession Operation</seealso>
+        ResumeSessionResponse ResumeSession(ResumeSessionRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResumeSession operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResumeSession operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResumeSession">REST API Reference for ResumeSession Operation</seealso>
+        Task<ResumeSessionResponse> ResumeSessionAsync(ResumeSessionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  SendAutomationSignal
 
 
@@ -5934,6 +6050,56 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  StartSession
+
+
+        /// <summary>
+        /// Initiates a connection to a target (for example, an instance) for a Session Manager
+        /// session. Returns a URL and token that can be used to open a WebSocket connection for
+        /// sending input and receiving outputs.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// AWS CLI usage: <code>start-session</code> is an interactive command that requires
+        /// the Session Manager plugin to be installed on the client machine making the call.
+        /// For information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html">
+        /// Install the Session Manager Plugin for the AWS CLI</a> in the <i>AWS Systems Manager
+        /// User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSession service method.</param>
+        /// 
+        /// <returns>The response from the StartSession service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
+        /// The specified document does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.TargetNotConnectedException">
+        /// The specified target instance for the session is not fully configured for use with
+        /// Session Manager. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started.html">Getting
+        /// Started with Session Manager</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartSession">REST API Reference for StartSession Operation</seealso>
+        StartSessionResponse StartSession(StartSessionRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartSession operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartSession operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartSession">REST API Reference for StartSession Operation</seealso>
+        Task<StartSessionResponse> StartSessionAsync(StartSessionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  StopAutomationExecution
 
 
@@ -5968,6 +6134,47 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StopAutomationExecution">REST API Reference for StopAutomationExecution Operation</seealso>
         Task<StopAutomationExecutionResponse> StopAutomationExecutionAsync(StopAutomationExecutionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  TerminateSession
+
+
+        /// <summary>
+        /// Permanently ends a session and closes the data connection between the Session Manager
+        /// client and SSM Agent on the instance. A terminated session cannot be resumed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TerminateSession service method.</param>
+        /// 
+        /// <returns>The response from the TerminateSession service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
+        /// Error returned when the ID specified for a resource, such as a Maintenance Window
+        /// or Patch baseline, doesn't exist.
+        /// 
+        ///  
+        /// <para>
+        /// For information about resource limits in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS
+        /// Systems Manager Limits</a>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/TerminateSession">REST API Reference for TerminateSession Operation</seealso>
+        TerminateSessionResponse TerminateSession(TerminateSessionRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TerminateSession operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TerminateSession operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/TerminateSession">REST API Reference for TerminateSession Operation</seealso>
+        Task<TerminateSessionResponse> TerminateSessionAsync(TerminateSessionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

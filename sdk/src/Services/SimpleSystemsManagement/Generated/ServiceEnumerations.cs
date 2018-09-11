@@ -905,6 +905,56 @@ namespace Amazon.SimpleSystemsManagement
 
 
     /// <summary>
+    /// Constants used for properties of type ConnectionStatus.
+    /// </summary>
+    public class ConnectionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Connected for ConnectionStatus
+        /// </summary>
+        public static readonly ConnectionStatus Connected = new ConnectionStatus("Connected");
+        /// <summary>
+        /// Constant NotConnected for ConnectionStatus
+        /// </summary>
+        public static readonly ConnectionStatus NotConnected = new ConnectionStatus("NotConnected");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectionStatus FindValue(string value)
+        {
+            return FindValue<ConnectionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DescribeActivationsFilterKeys.
     /// </summary>
     public class DescribeActivationsFilterKeys : ConstantClass
@@ -1288,6 +1338,10 @@ namespace Amazon.SimpleSystemsManagement
         /// Constant Policy for DocumentType
         /// </summary>
         public static readonly DocumentType Policy = new DocumentType("Policy");
+        /// <summary>
+        /// Constant Session for DocumentType
+        /// </summary>
+        public static readonly DocumentType Session = new DocumentType("Session");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2868,6 +2922,184 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourceTypeForTagging(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SessionFilterKey.
+    /// </summary>
+    public class SessionFilterKey : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant InvokedAfter for SessionFilterKey
+        /// </summary>
+        public static readonly SessionFilterKey InvokedAfter = new SessionFilterKey("InvokedAfter");
+        /// <summary>
+        /// Constant InvokedBefore for SessionFilterKey
+        /// </summary>
+        public static readonly SessionFilterKey InvokedBefore = new SessionFilterKey("InvokedBefore");
+        /// <summary>
+        /// Constant Owner for SessionFilterKey
+        /// </summary>
+        public static readonly SessionFilterKey Owner = new SessionFilterKey("Owner");
+        /// <summary>
+        /// Constant Status for SessionFilterKey
+        /// </summary>
+        public static readonly SessionFilterKey Status = new SessionFilterKey("Status");
+        /// <summary>
+        /// Constant Target for SessionFilterKey
+        /// </summary>
+        public static readonly SessionFilterKey Target = new SessionFilterKey("Target");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SessionFilterKey(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SessionFilterKey FindValue(string value)
+        {
+            return FindValue<SessionFilterKey>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SessionFilterKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SessionState.
+    /// </summary>
+    public class SessionState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for SessionState
+        /// </summary>
+        public static readonly SessionState Active = new SessionState("Active");
+        /// <summary>
+        /// Constant History for SessionState
+        /// </summary>
+        public static readonly SessionState History = new SessionState("History");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SessionState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SessionState FindValue(string value)
+        {
+            return FindValue<SessionState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SessionState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SessionStatus.
+    /// </summary>
+    public class SessionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Connected for SessionStatus
+        /// </summary>
+        public static readonly SessionStatus Connected = new SessionStatus("Connected");
+        /// <summary>
+        /// Constant Connecting for SessionStatus
+        /// </summary>
+        public static readonly SessionStatus Connecting = new SessionStatus("Connecting");
+        /// <summary>
+        /// Constant Disconnected for SessionStatus
+        /// </summary>
+        public static readonly SessionStatus Disconnected = new SessionStatus("Disconnected");
+        /// <summary>
+        /// Constant Failed for SessionStatus
+        /// </summary>
+        public static readonly SessionStatus Failed = new SessionStatus("Failed");
+        /// <summary>
+        /// Constant Terminated for SessionStatus
+        /// </summary>
+        public static readonly SessionStatus Terminated = new SessionStatus("Terminated");
+        /// <summary>
+        /// Constant Terminating for SessionStatus
+        /// </summary>
+        public static readonly SessionStatus Terminating = new SessionStatus("Terminating");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SessionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SessionStatus FindValue(string value)
+        {
+            return FindValue<SessionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SessionStatus(string value)
         {
             return FindValue(value);
         }
