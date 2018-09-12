@@ -617,6 +617,38 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  UpdateContactAttributes
+
+        internal virtual UpdateContactAttributesResponse UpdateContactAttributes(UpdateContactAttributesRequest request)
+        {
+            var marshaller = UpdateContactAttributesRequestMarshaller.Instance;
+            var unmarshaller = UpdateContactAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateContactAttributesRequest,UpdateContactAttributesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateContactAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContactAttributes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactAttributes">REST API Reference for UpdateContactAttributes Operation</seealso>
+        public virtual Task<UpdateContactAttributesResponse> UpdateContactAttributesAsync(UpdateContactAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateContactAttributesRequestMarshaller.Instance;
+            var unmarshaller = UpdateContactAttributesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateContactAttributesRequest,UpdateContactAttributesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateUserHierarchy
 
         internal virtual UpdateUserHierarchyResponse UpdateUserHierarchy(UpdateUserHierarchyRequest request)

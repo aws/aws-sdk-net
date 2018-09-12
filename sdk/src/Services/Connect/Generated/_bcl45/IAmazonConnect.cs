@@ -62,7 +62,7 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.LimitExceededException">
-        /// The limit exceeded the maximum allowed active calls in a queue.
+        /// The allowed limit for the resource has been reached.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -511,7 +511,7 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.LimitExceededException">
-        /// The limit exceeded the maximum allowed active calls in a queue.
+        /// The allowed limit for the resource has been reached.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.OutboundContactNotPermittedException">
         /// The contact is not permitted.
@@ -582,6 +582,58 @@ namespace Amazon.Connect
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopContact">REST API Reference for StopContact Operation</seealso>
         Task<StopContactResponse> StopContactAsync(StopContactRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateContactAttributes
+
+
+        /// <summary>
+        /// The <code>UpdateContactAttributes</code> operation lets you programmatically create
+        /// new or update existing contact attributes associated with a contact. You can use the
+        /// operation to add or update attributes for both ongoing and completed contacts. For
+        /// example, you can update the customer's name or the reason the customer called while
+        /// the call is active, or add notes about steps that the agent took during the call that
+        /// are displayed to the next agent that takes the call. You can also use the <code>UpdateContactAttributes</code>
+        /// operation to update attributes for a contact using data from your CRM application
+        /// and save the data with the contact in Amazon Connect. You could also flag calls for
+        /// additional analysis, or flag abusive callers.
+        /// 
+        ///  
+        /// <para>
+        /// Contact attributes are available in Amazon Connect for 24 months, and are then deleted.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContactAttributes service method.</param>
+        /// 
+        /// <returns>The response from the UpdateContactAttributes service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactAttributes">REST API Reference for UpdateContactAttributes Operation</seealso>
+        UpdateContactAttributesResponse UpdateContactAttributes(UpdateContactAttributesRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateContactAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContactAttributes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactAttributes">REST API Reference for UpdateContactAttributes Operation</seealso>
+        Task<UpdateContactAttributesResponse> UpdateContactAttributesAsync(UpdateContactAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
