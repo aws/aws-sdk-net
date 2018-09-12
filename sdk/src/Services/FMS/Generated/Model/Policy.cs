@@ -32,7 +32,9 @@ namespace Amazon.FMS.Model
     /// </summary>
     public partial class Policy
     {
+        private Dictionary<string, List<string>> _excludeMap = new Dictionary<string, List<string>>();
         private bool? _excludeResourceTags;
+        private Dictionary<string, List<string>> _includeMap = new Dictionary<string, List<string>>();
         private string _policyId;
         private string _policyName;
         private string _policyUpdateToken;
@@ -40,6 +42,32 @@ namespace Amazon.FMS.Model
         private List<ResourceTag> _resourceTags = new List<ResourceTag>();
         private string _resourceType;
         private SecurityServicePolicyData _securityServicePolicyData;
+
+        /// <summary>
+        /// Gets and sets the property ExcludeMap. 
+        /// <para>
+        /// Specifies the AWS account IDs to exclude from the policy. The <code>IncludeMap</code>
+        /// values are evaluated first, with all of the appropriate account IDs added to the policy.
+        /// Then the accounts listed in <code>ExcludeMap</code> are removed, resulting in the
+        /// final list of accounts to add to the policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// The key to the map is <code>ACCOUNT</code>. For example, a valid <code>ExcludeMap</code>
+        /// would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, List<string>> ExcludeMap
+        {
+            get { return this._excludeMap; }
+            set { this._excludeMap = value; }
+        }
+
+        // Check to see if ExcludeMap property is set
+        internal bool IsSetExcludeMap()
+        {
+            return this._excludeMap != null && this._excludeMap.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property ExcludeResourceTags. 
@@ -60,6 +88,32 @@ namespace Amazon.FMS.Model
         internal bool IsSetExcludeResourceTags()
         {
             return this._excludeResourceTags.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeMap. 
+        /// <para>
+        /// Specifies the AWS account IDs to include in the policy. If <code>IncludeMap</code>
+        /// is null, all accounts in the AWS Organization are included in the policy. If <code>IncludeMap</code>
+        /// is not null, only values listed in <code>IncludeMap</code> will be included in the
+        /// policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// The key to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code>
+        /// would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, List<string>> IncludeMap
+        {
+            get { return this._includeMap; }
+            set { this._includeMap = value; }
+        }
+
+        // Check to see if IncludeMap property is set
+        internal bool IsSetIncludeMap()
+        {
+            return this._includeMap != null && this._includeMap.Count > 0; 
         }
 
         /// <summary>

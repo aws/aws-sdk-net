@@ -234,7 +234,7 @@ namespace Amazon.FMS
 
         /// <summary>
         /// Sets the AWS Firewall Manager administrator account. AWS Firewall Manager must be
-        /// associated with a master account in AWS Organizations or associated with a member
+        /// associated with the master account your AWS organization or associated with a member
         /// account that has the appropriate permissions. If the account ID that you submit is
         /// not an AWS Organizations master account, AWS Firewall Manager will set the appropriate
         /// permissions for the given member account.
@@ -242,7 +242,7 @@ namespace Amazon.FMS
         ///  
         /// <para>
         /// The account that you associate with AWS Firewall Manager is called the AWS Firewall
-        /// manager administrator account. 
+        /// Manager administrator account. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateAdminAccount service method.</param>
@@ -717,6 +717,9 @@ namespace Amazon.FMS
         /// submitted an <code>AssociateAdminAccount</code> request, but the account ID that you
         /// submitted was already set as the AWS Firewall Manager administrator.
         /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidTypeException">
+        /// The value of the <code>Type</code> parameter is invalid.
+        /// </exception>
         /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
@@ -823,6 +826,73 @@ namespace Amazon.FMS
         public virtual ListComplianceStatusResponse EndListComplianceStatus(IAsyncResult asyncResult)
         {
             return EndInvoke<ListComplianceStatusResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListMemberAccounts
+
+        /// <summary>
+        /// Returns a <code>MemberAccounts</code> object that lists the member accounts in the
+        /// administrator's AWS organization.
+        /// 
+        ///  
+        /// <para>
+        /// The <code>ListMemberAccounts</code> must be submitted by the account that is set as
+        /// the AWS Firewall Manager administrator.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMemberAccounts service method.</param>
+        /// 
+        /// <returns>The response from the ListMemberAccounts service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListMemberAccounts">REST API Reference for ListMemberAccounts Operation</seealso>
+        public virtual ListMemberAccountsResponse ListMemberAccounts(ListMemberAccountsRequest request)
+        {
+            var marshaller = ListMemberAccountsRequestMarshaller.Instance;
+            var unmarshaller = ListMemberAccountsResponseUnmarshaller.Instance;
+
+            return Invoke<ListMemberAccountsRequest,ListMemberAccountsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMemberAccounts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListMemberAccounts operation on AmazonFMSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMemberAccounts
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListMemberAccounts">REST API Reference for ListMemberAccounts Operation</seealso>
+        public virtual IAsyncResult BeginListMemberAccounts(ListMemberAccountsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ListMemberAccountsRequestMarshaller.Instance;
+            var unmarshaller = ListMemberAccountsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListMemberAccountsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListMemberAccounts operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMemberAccounts.</param>
+        /// 
+        /// <returns>Returns a  ListMemberAccountsResult from FMS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListMemberAccounts">REST API Reference for ListMemberAccounts Operation</seealso>
+        public virtual ListMemberAccountsResponse EndListMemberAccounts(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListMemberAccountsResponse>(asyncResult);
         }
 
         #endregion
@@ -982,6 +1052,14 @@ namespace Amazon.FMS
         /// The operation failed because there was nothing to do. For example, you might have
         /// submitted an <code>AssociateAdminAccount</code> request, but the account ID that you
         /// submitted was already set as the AWS Firewall Manager administrator.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidTypeException">
+        /// The value of the <code>Type</code> parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.LimitExceededException">
+        /// The operation exceeds a resource limit, for example, the maximum number of <code>policy</code>
+        /// objects that you can create for an AWS account. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall
+        /// Manager Limits</a> in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
         /// The specified resource was not found.

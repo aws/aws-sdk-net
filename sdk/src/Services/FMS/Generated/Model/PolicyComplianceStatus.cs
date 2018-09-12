@@ -34,6 +34,7 @@ namespace Amazon.FMS.Model
     public partial class PolicyComplianceStatus
     {
         private List<EvaluationResult> _evaluationResults = new List<EvaluationResult>();
+        private Dictionary<string, string> _issueInfoMap = new Dictionary<string, string>();
         private DateTime? _lastUpdated;
         private string _memberAccount;
         private string _policyId;
@@ -56,6 +57,26 @@ namespace Amazon.FMS.Model
         internal bool IsSetEvaluationResults()
         {
             return this._evaluationResults != null && this._evaluationResults.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IssueInfoMap. 
+        /// <para>
+        /// Details about problems with dependent services, such as AWS WAF or AWS Config, that
+        /// are causing a resource to be non-compliant. The details include the name of the dependent
+        /// service and the error message recieved indicating the problem with the service.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> IssueInfoMap
+        {
+            get { return this._issueInfoMap; }
+            set { this._issueInfoMap = value; }
+        }
+
+        // Check to see if IssueInfoMap property is set
+        internal bool IsSetIssueInfoMap()
+        {
+            return this._issueInfoMap != null && this._issueInfoMap.Count > 0; 
         }
 
         /// <summary>

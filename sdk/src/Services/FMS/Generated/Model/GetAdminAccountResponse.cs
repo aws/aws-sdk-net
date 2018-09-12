@@ -33,6 +33,7 @@ namespace Amazon.FMS.Model
     public partial class GetAdminAccountResponse : AmazonWebServiceResponse
     {
         private string _adminAccount;
+        private AccountRoleStatus _roleStatus;
 
         /// <summary>
         /// Gets and sets the property AdminAccount. 
@@ -50,6 +51,24 @@ namespace Amazon.FMS.Model
         internal bool IsSetAdminAccount()
         {
             return this._adminAccount != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoleStatus. 
+        /// <para>
+        /// The status of the AWS account that you set as the AWS Firewall Manager administrator.
+        /// </para>
+        /// </summary>
+        public AccountRoleStatus RoleStatus
+        {
+            get { return this._roleStatus; }
+            set { this._roleStatus = value; }
+        }
+
+        // Check to see if RoleStatus property is set
+        internal bool IsSetRoleStatus()
+        {
+            return this._roleStatus != null;
         }
 
     }

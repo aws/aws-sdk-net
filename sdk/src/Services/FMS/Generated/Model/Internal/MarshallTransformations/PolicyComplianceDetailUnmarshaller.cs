@@ -76,6 +76,12 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExpiredAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IssueInfoMap", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.IssueInfoMap = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MemberAccount", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

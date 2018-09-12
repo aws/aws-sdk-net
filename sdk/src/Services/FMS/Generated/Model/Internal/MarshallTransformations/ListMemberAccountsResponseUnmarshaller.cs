@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetAdminAccount operation
+    /// Response Unmarshaller for ListMemberAccounts operation
     /// </summary>  
-    public class GetAdminAccountResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListMemberAccountsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,22 +45,22 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetAdminAccountResponse response = new GetAdminAccountResponse();
+            ListMemberAccountsResponse response = new ListMemberAccountsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AdminAccount", targetDepth))
+                if (context.TestExpression("MemberAccounts", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.AdminAccount = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.MemberAccounts = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("RoleStatus", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.RoleStatus = unmarshaller.Unmarshall(context);
+                    response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,10 +82,6 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             {
                 return new InternalErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidOperationException"))
-            {
-                return new InvalidOperationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
             {
                 return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -93,9 +89,9 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             return new AmazonFMSException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static GetAdminAccountResponseUnmarshaller _instance = new GetAdminAccountResponseUnmarshaller();        
+        private static ListMemberAccountsResponseUnmarshaller _instance = new ListMemberAccountsResponseUnmarshaller();        
 
-        internal static GetAdminAccountResponseUnmarshaller GetInstance()
+        internal static ListMemberAccountsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -103,7 +99,7 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetAdminAccountResponseUnmarshaller Instance
+        public static ListMemberAccountsResponseUnmarshaller Instance
         {
             get
             {

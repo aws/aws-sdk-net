@@ -1,0 +1,1783 @@
+{
+  "version": "1.0",
+  "type": "json",
+  "json_version": 1.1,
+  "signature_version": "v4",
+  "service_full_name": "Firewall Management Service",
+  "service_abbreviation": "FMS",
+  "service_id": "FMS",
+  "uid": "fms-2018-01-01",
+  "endpoint_prefix": "fms",
+  "api_version": "2018-01-01",
+  "target_prefix": "AWSFMS_20180101",
+  "documentation": "\n         <fullname>AWS Firewall Manager</fullname>\n         <p>This is the <i>AWS Firewall Manager API Reference</i>. This guide is for developers who need detailed information about the AWS Firewall Manager API actions, \n      data types, and errors. For detailed information about AWS Firewall Manager features, see the \n      <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html\">AWS Firewall Manager Developer Guide</a>.</p>\n      ",
+  "operations": {
+    "PutPolicy": {
+      "name": "PutPolicy",
+      "input": {
+        "type": "structure",
+        "members": {
+          "Policy": {
+            "type": "structure",
+            "members": {
+              "PolicyId": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <para>The ID of the AWS Firewall Manager policy.</para>\n      ",
+                "documentation": "\n         <p>The ID of the AWS Firewall Manager policy.</p>\n      ",
+                "shape_name": "PolicyId",
+                "min_length": 36,
+                "max_length": 36
+              },
+              "PolicyName": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <para>The friendly name of the AWS Firewall Manager policy.</para>\n      ",
+                "documentation": "\n         <p>The friendly name of the AWS Firewall Manager policy.</p>\n      ",
+                "required": true,
+                "shape_name": "ResourceName",
+                "min_length": 1,
+                "max_length": 128
+              },
+              "PolicyUpdateToken": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <para>A unique identifier for each update to the policy. When issuing a <code>PutPolicy</code> request, the <code>PolicyUpdateToken</code> in the request must match the <code>PolicyUpdateToken</code> of the current policy version. To get the <code>PolicyUpdateToken</code> of the current policy version, use a <code>GetPolicy</code> request.</para>\n      ",
+                "documentation": "\n         <p>A unique identifier for each update to the policy. When issuing a <code>PutPolicy</code> request, the <code>PolicyUpdateToken</code> in the request must match the <code>PolicyUpdateToken</code> of the current policy version. To get the <code>PolicyUpdateToken</code> of the current policy version, use a <code>GetPolicy</code> request.</p>\n      ",
+                "shape_name": "PolicyUpdateToken",
+                "min_length": 1,
+                "max_length": 1024
+              },
+              "SecurityServicePolicyData": {
+                "type": "structure",
+                "members": {
+                  "Type": {
+                    "type": "string",
+                    "enum": [
+                      "WAF"
+                    ],
+                    "zonbookDocumentation": "\n         <para>The service that the policy is using to protect the resources. This value is\n        <code>WAF</code>.</para>\n      ",
+                    "documentation": "\n         <p>The service that the policy is using to protect the resources. This value is\n        <code>WAF</code>.</p>\n      ",
+                    "required": true,
+                    "shape_name": "SecurityServiceType"
+                  },
+                  "ManagedServiceData": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n         <para>Details about the service. This contains <code>WAF</code> data in JSON format, as shown in\n      the following example:</para>\n         <para>\n            <code>ManagedServiceData\": \"{\\\"type\\\": \\\"WAF\\\", \\\"ruleGroups\\\": [{\\\"id\\\":\n        \\\"12345678-1bcd-9012-efga-0987654321ab\\\", \\\"overrideAction\\\" : {\\\"type\\\": \\\"COUNT\\\"}}],\n        \\\"defaultAction\\\": {\\\"type\\\": \\\"BLOCK\\\"}}</code>\n         </para>\n      ",
+                    "documentation": "\n         <p>Details about the service. This contains <code>WAF</code> data in JSON format, as shown in\n      the following example:</p>\n         <p>\n            <code>ManagedServiceData\": \"{\\\"type\\\": \\\"WAF\\\", \\\"ruleGroups\\\": [{\\\"id\\\":\n        \\\"12345678-1bcd-9012-efga-0987654321ab\\\", \\\"overrideAction\\\" : {\\\"type\\\": \\\"COUNT\\\"}}],\n        \\\"defaultAction\\\": {\\\"type\\\": \\\"BLOCK\\\"}}</code>\n         </p>\n      ",
+                    "shape_name": "ManagedServiceData",
+                    "min_length": 1,
+                    "max_length": 1024
+                  }
+                },
+                "zonbookDocumentation": "\n         <para>Details about the security service that is being used to protect the resources.</para>\n      ",
+                "documentation": "\n         <p>Details about the security service that is being used to protect the resources.</p>\n      ",
+                "required": true,
+                "shape_name": "SecurityServicePolicyData"
+              },
+              "ResourceType": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <para>The type of resource to protect with the policy, either an Application Load Balancer or a\n      CloudFront distribution.  This is in the format shown in <ulink url=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</ulink>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or <code>AWS::CloudFront::Distribution</code>.</para>\n      ",
+                "documentation": "\n         <p>The type of resource to protect with the policy, either an Application Load Balancer or a\n      CloudFront distribution.  This is in the format shown in <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or <code>AWS::CloudFront::Distribution</code>.</p>\n      ",
+                "required": true,
+                "shape_name": "ResourceType",
+                "min_length": 1,
+                "max_length": 128
+              },
+              "ResourceTags": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <para>An array of <code>ResourceTag</code> objects.</para>\n      ",
+                "documentation": "\n         <p>An array of <code>ResourceTag</code> objects.</p>\n      ",
+                "shape_name": "ResourceTags",
+                "min_length": 0,
+                "max_length": 8,
+                "members": {
+                  "type": "structure",
+                  "members": {
+                    "Key": {
+                      "type": "string",
+                      "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
+                      "zonbookDocumentation": "\n         <para>The resource tag key.</para>\n      ",
+                      "documentation": "\n         <p>The resource tag key.</p>\n      ",
+                      "required": true,
+                      "shape_name": "TagKey",
+                      "min_length": 1,
+                      "max_length": 128
+                    },
+                    "Value": {
+                      "type": "string",
+                      "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
+                      "zonbookDocumentation": "\n         <para>The resource tag value.</para>\n      ",
+                      "documentation": "\n         <p>The resource tag value.</p>\n      ",
+                      "shape_name": "TagValue",
+                      "max_length": 256
+                    }
+                  },
+                  "zonbookDocumentation": "\n         <para>The resource tags that AWS Firewall Manager uses to determine if a particular resource\n      should be included or excluded from protection by the AWS Firewall Manager policy. Tags enable\n      you to categorize your AWS resources in different ways, for example, by purpose, owner, or\n      environment. Each tag consists of a key and an optional value, both of which you define. Tags are combined with an \"OR.\" That is, if you add more than one tag, if any of the tags matches, the resource is considered a match for the include or exclude.\n        <ulink url=\"https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html\">Working with Tag Editor</ulink>.</para>\n      ",
+                  "documentation": "\n         <p>The resource tags that AWS Firewall Manager uses to determine if a particular resource\n      should be included or excluded from protection by the AWS Firewall Manager policy. Tags enable\n      you to categorize your AWS resources in different ways, for example, by purpose, owner, or\n      environment. Each tag consists of a key and an optional value, both of which you define. Tags are combined with an \"OR.\" That is, if you add more than one tag, if any of the tags matches, the resource is considered a match for the include or exclude.\n        <a href=\"https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html\">Working with Tag Editor</a>.</p>\n      ",
+                  "shape_name": "ResourceTag"
+                }
+              },
+              "ExcludeResourceTags": {
+                "type": "boolean",
+                "zonbookDocumentation": "\n         <para>If set to <code>True</code>, resources with the tags that are specified in the\n        <code>ResourceTag</code> array are not protected by the policy. If set to\n      <code>False</code>, and the <code>ResourceTag</code> array is not null, only resources with\n      the specified tags are associated with the policy.</para>\n      ",
+                "documentation": "\n         <p>If set to <code>True</code>, resources with the tags that are specified in the\n        <code>ResourceTag</code> array are not protected by the policy. If set to\n      <code>False</code>, and the <code>ResourceTag</code> array is not null, only resources with\n      the specified tags are associated with the policy.</p>\n      ",
+                "required": true,
+                "shape_name": "Boolean"
+              },
+              "RemediationEnabled": {
+                "type": "boolean",
+                "zonbookDocumentation": "\n         <para>Indicates if the policy should be automatically applied to new resources.</para>\n      ",
+                "documentation": "\n         <p>Indicates if the policy should be automatically applied to new resources.</p>\n      ",
+                "required": true,
+                "shape_name": "Boolean"
+              },
+              "IncludeMap": {
+                "type": "map",
+                "zonbookDocumentation": "\n         <para>Specifies the AWS account IDs to include in the policy. If <code>IncludeMap</code> is null, all accounts in the AWS Organization are included in the policy. If <code>IncludeMap</code> is not null, only values listed in <code>IncludeMap</code> will be included in the policy.</para>\n         <para>The key to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</para>\n      ",
+                "documentation": "\n         <p>Specifies the AWS account IDs to include in the policy. If <code>IncludeMap</code> is null, all accounts in the AWS Organization are included in the policy. If <code>IncludeMap</code> is not null, only values listed in <code>IncludeMap</code> will be included in the policy.</p>\n         <p>The key to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p>\n      ",
+                "shape_name": "CustomerPolicyScopeMap",
+                "keys": {
+                  "type": "string",
+                  "enum": [
+                    "ACCOUNT"
+                  ],
+                  "shape_name": "CustomerPolicyScopeIdType",
+                  "documentation": null
+                },
+                "members": {
+                  "type": "list",
+                  "shape_name": "CustomerPolicyScopeIdList",
+                  "documentation": null,
+                  "members": {
+                    "type": "string",
+                    "shape_name": "CustomerPolicyScopeId",
+                    "documentation": null,
+                    "min_length": 1,
+                    "max_length": 1024
+                  }
+                }
+              },
+              "ExcludeMap": {
+                "type": "map",
+                "zonbookDocumentation": "\n         <para>Specifies the AWS account IDs to exclude from the policy. The <code>IncludeMap</code> values are evaluated first, with all of the appropriate account IDs added to the policy. Then the accounts listed in <code>ExcludeMap</code> are removed, resulting in the final list of accounts to add to the policy.</para>\n         <para>The key to the map is <code>ACCOUNT</code>. For example, a valid <code>ExcludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</para>\n      ",
+                "documentation": "\n         <p>Specifies the AWS account IDs to exclude from the policy. The <code>IncludeMap</code> values are evaluated first, with all of the appropriate account IDs added to the policy. Then the accounts listed in <code>ExcludeMap</code> are removed, resulting in the final list of accounts to add to the policy.</p>\n         <p>The key to the map is <code>ACCOUNT</code>. For example, a valid <code>ExcludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p>\n      ",
+                "shape_name": "CustomerPolicyScopeMap",
+                "keys": {
+                  "type": "string",
+                  "enum": [
+                    "ACCOUNT"
+                  ],
+                  "shape_name": "CustomerPolicyScopeIdType",
+                  "documentation": null
+                },
+                "members": {
+                  "type": "list",
+                  "shape_name": "CustomerPolicyScopeIdList",
+                  "documentation": null,
+                  "members": {
+                    "type": "string",
+                    "shape_name": "CustomerPolicyScopeId",
+                    "documentation": null,
+                    "min_length": 1,
+                    "max_length": 1024
+                  }
+                }
+              }
+            },
+            "zonbookDocumentation": "\n         <para>The details of the AWS Firewall Manager policy to be created.</para>\n      ",
+            "documentation": "\n         <p>The details of the AWS Firewall Manager policy to be created.</p>\n      ",
+            "required": true,
+            "shape_name": "Policy"
+          }
+        },
+        "shape_name": "PutPolicyRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "Policy": {
+            "type": "structure",
+            "members": {
+              "PolicyId": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <para>The ID of the AWS Firewall Manager policy.</para>\n      ",
+                "documentation": "\n         <p>The ID of the AWS Firewall Manager policy.</p>\n      ",
+                "shape_name": "PolicyId",
+                "min_length": 36,
+                "max_length": 36
+              },
+              "PolicyName": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <para>The friendly name of the AWS Firewall Manager policy.</para>\n      ",
+                "documentation": "\n         <p>The friendly name of the AWS Firewall Manager policy.</p>\n      ",
+                "required": true,
+                "shape_name": "ResourceName",
+                "min_length": 1,
+                "max_length": 128
+              },
+              "PolicyUpdateToken": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <para>A unique identifier for each update to the policy. When issuing a <code>PutPolicy</code> request, the <code>PolicyUpdateToken</code> in the request must match the <code>PolicyUpdateToken</code> of the current policy version. To get the <code>PolicyUpdateToken</code> of the current policy version, use a <code>GetPolicy</code> request.</para>\n      ",
+                "documentation": "\n         <p>A unique identifier for each update to the policy. When issuing a <code>PutPolicy</code> request, the <code>PolicyUpdateToken</code> in the request must match the <code>PolicyUpdateToken</code> of the current policy version. To get the <code>PolicyUpdateToken</code> of the current policy version, use a <code>GetPolicy</code> request.</p>\n      ",
+                "shape_name": "PolicyUpdateToken",
+                "min_length": 1,
+                "max_length": 1024
+              },
+              "SecurityServicePolicyData": {
+                "type": "structure",
+                "members": {
+                  "Type": {
+                    "type": "string",
+                    "enum": [
+                      "WAF"
+                    ],
+                    "zonbookDocumentation": "\n         <para>The service that the policy is using to protect the resources. This value is\n        <code>WAF</code>.</para>\n      ",
+                    "documentation": "\n         <p>The service that the policy is using to protect the resources. This value is\n        <code>WAF</code>.</p>\n      ",
+                    "required": true,
+                    "shape_name": "SecurityServiceType"
+                  },
+                  "ManagedServiceData": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n         <para>Details about the service. This contains <code>WAF</code> data in JSON format, as shown in\n      the following example:</para>\n         <para>\n            <code>ManagedServiceData\": \"{\\\"type\\\": \\\"WAF\\\", \\\"ruleGroups\\\": [{\\\"id\\\":\n        \\\"12345678-1bcd-9012-efga-0987654321ab\\\", \\\"overrideAction\\\" : {\\\"type\\\": \\\"COUNT\\\"}}],\n        \\\"defaultAction\\\": {\\\"type\\\": \\\"BLOCK\\\"}}</code>\n         </para>\n      ",
+                    "documentation": "\n         <p>Details about the service. This contains <code>WAF</code> data in JSON format, as shown in\n      the following example:</p>\n         <p>\n            <code>ManagedServiceData\": \"{\\\"type\\\": \\\"WAF\\\", \\\"ruleGroups\\\": [{\\\"id\\\":\n        \\\"12345678-1bcd-9012-efga-0987654321ab\\\", \\\"overrideAction\\\" : {\\\"type\\\": \\\"COUNT\\\"}}],\n        \\\"defaultAction\\\": {\\\"type\\\": \\\"BLOCK\\\"}}</code>\n         </p>\n      ",
+                    "shape_name": "ManagedServiceData",
+                    "min_length": 1,
+                    "max_length": 1024
+                  }
+                },
+                "zonbookDocumentation": "\n         <para>Details about the security service that is being used to protect the resources.</para>\n      ",
+                "documentation": "\n         <p>Details about the security service that is being used to protect the resources.</p>\n      ",
+                "required": true,
+                "shape_name": "SecurityServicePolicyData"
+              },
+              "ResourceType": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <para>The type of resource to protect with the policy, either an Application Load Balancer or a\n      CloudFront distribution.  This is in the format shown in <ulink url=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</ulink>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or <code>AWS::CloudFront::Distribution</code>.</para>\n      ",
+                "documentation": "\n         <p>The type of resource to protect with the policy, either an Application Load Balancer or a\n      CloudFront distribution.  This is in the format shown in <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or <code>AWS::CloudFront::Distribution</code>.</p>\n      ",
+                "required": true,
+                "shape_name": "ResourceType",
+                "min_length": 1,
+                "max_length": 128
+              },
+              "ResourceTags": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <para>An array of <code>ResourceTag</code> objects.</para>\n      ",
+                "documentation": "\n         <p>An array of <code>ResourceTag</code> objects.</p>\n      ",
+                "shape_name": "ResourceTags",
+                "min_length": 0,
+                "max_length": 8,
+                "members": {
+                  "type": "structure",
+                  "members": {
+                    "Key": {
+                      "type": "string",
+                      "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
+                      "zonbookDocumentation": "\n         <para>The resource tag key.</para>\n      ",
+                      "documentation": "\n         <p>The resource tag key.</p>\n      ",
+                      "required": true,
+                      "shape_name": "TagKey",
+                      "min_length": 1,
+                      "max_length": 128
+                    },
+                    "Value": {
+                      "type": "string",
+                      "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
+                      "zonbookDocumentation": "\n         <para>The resource tag value.</para>\n      ",
+                      "documentation": "\n         <p>The resource tag value.</p>\n      ",
+                      "shape_name": "TagValue",
+                      "max_length": 256
+                    }
+                  },
+                  "zonbookDocumentation": "\n         <para>The resource tags that AWS Firewall Manager uses to determine if a particular resource\n      should be included or excluded from protection by the AWS Firewall Manager policy. Tags enable\n      you to categorize your AWS resources in different ways, for example, by purpose, owner, or\n      environment. Each tag consists of a key and an optional value, both of which you define. Tags are combined with an \"OR.\" That is, if you add more than one tag, if any of the tags matches, the resource is considered a match for the include or exclude.\n        <ulink url=\"https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html\">Working with Tag Editor</ulink>.</para>\n      ",
+                  "documentation": "\n         <p>The resource tags that AWS Firewall Manager uses to determine if a particular resource\n      should be included or excluded from protection by the AWS Firewall Manager policy. Tags enable\n      you to categorize your AWS resources in different ways, for example, by purpose, owner, or\n      environment. Each tag consists of a key and an optional value, both of which you define. Tags are combined with an \"OR.\" That is, if you add more than one tag, if any of the tags matches, the resource is considered a match for the include or exclude.\n        <a href=\"https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html\">Working with Tag Editor</a>.</p>\n      ",
+                  "shape_name": "ResourceTag"
+                }
+              },
+              "ExcludeResourceTags": {
+                "type": "boolean",
+                "zonbookDocumentation": "\n         <para>If set to <code>True</code>, resources with the tags that are specified in the\n        <code>ResourceTag</code> array are not protected by the policy. If set to\n      <code>False</code>, and the <code>ResourceTag</code> array is not null, only resources with\n      the specified tags are associated with the policy.</para>\n      ",
+                "documentation": "\n         <p>If set to <code>True</code>, resources with the tags that are specified in the\n        <code>ResourceTag</code> array are not protected by the policy. If set to\n      <code>False</code>, and the <code>ResourceTag</code> array is not null, only resources with\n      the specified tags are associated with the policy.</p>\n      ",
+                "required": true,
+                "shape_name": "Boolean"
+              },
+              "RemediationEnabled": {
+                "type": "boolean",
+                "zonbookDocumentation": "\n         <para>Indicates if the policy should be automatically applied to new resources.</para>\n      ",
+                "documentation": "\n         <p>Indicates if the policy should be automatically applied to new resources.</p>\n      ",
+                "required": true,
+                "shape_name": "Boolean"
+              },
+              "IncludeMap": {
+                "type": "map",
+                "zonbookDocumentation": "\n         <para>Specifies the AWS account IDs to include in the policy. If <code>IncludeMap</code> is null, all accounts in the AWS Organization are included in the policy. If <code>IncludeMap</code> is not null, only values listed in <code>IncludeMap</code> will be included in the policy.</para>\n         <para>The key to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</para>\n      ",
+                "documentation": "\n         <p>Specifies the AWS account IDs to include in the policy. If <code>IncludeMap</code> is null, all accounts in the AWS Organization are included in the policy. If <code>IncludeMap</code> is not null, only values listed in <code>IncludeMap</code> will be included in the policy.</p>\n         <p>The key to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p>\n      ",
+                "shape_name": "CustomerPolicyScopeMap",
+                "keys": {
+                  "type": "string",
+                  "enum": [
+                    "ACCOUNT"
+                  ],
+                  "shape_name": "CustomerPolicyScopeIdType",
+                  "documentation": null
+                },
+                "members": {
+                  "type": "list",
+                  "shape_name": "CustomerPolicyScopeIdList",
+                  "documentation": null,
+                  "members": {
+                    "type": "string",
+                    "shape_name": "CustomerPolicyScopeId",
+                    "documentation": null,
+                    "min_length": 1,
+                    "max_length": 1024
+                  }
+                }
+              },
+              "ExcludeMap": {
+                "type": "map",
+                "zonbookDocumentation": "\n         <para>Specifies the AWS account IDs to exclude from the policy. The <code>IncludeMap</code> values are evaluated first, with all of the appropriate account IDs added to the policy. Then the accounts listed in <code>ExcludeMap</code> are removed, resulting in the final list of accounts to add to the policy.</para>\n         <para>The key to the map is <code>ACCOUNT</code>. For example, a valid <code>ExcludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</para>\n      ",
+                "documentation": "\n         <p>Specifies the AWS account IDs to exclude from the policy. The <code>IncludeMap</code> values are evaluated first, with all of the appropriate account IDs added to the policy. Then the accounts listed in <code>ExcludeMap</code> are removed, resulting in the final list of accounts to add to the policy.</p>\n         <p>The key to the map is <code>ACCOUNT</code>. For example, a valid <code>ExcludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p>\n      ",
+                "shape_name": "CustomerPolicyScopeMap",
+                "keys": {
+                  "type": "string",
+                  "enum": [
+                    "ACCOUNT"
+                  ],
+                  "shape_name": "CustomerPolicyScopeIdType",
+                  "documentation": null
+                },
+                "members": {
+                  "type": "list",
+                  "shape_name": "CustomerPolicyScopeIdList",
+                  "documentation": null,
+                  "members": {
+                    "type": "string",
+                    "shape_name": "CustomerPolicyScopeId",
+                    "documentation": null,
+                    "min_length": 1,
+                    "max_length": 1024
+                  }
+                }
+              }
+            },
+            "zonbookDocumentation": "\n         <para>The details of the AWS Firewall Manager policy that was created.</para>\n      ",
+            "documentation": "\n         <p>The details of the AWS Firewall Manager policy that was created.</p>\n      ",
+            "shape_name": "Policy"
+          },
+          "PolicyArn": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>The Amazon Resource Name (ARN) of the policy that was created.</para>\n      ",
+            "documentation": "\n         <p>The Amazon Resource Name (ARN) of the policy that was created.</p>\n      ",
+            "shape_name": "ResourceArn",
+            "min_length": 1,
+            "max_length": 1024
+          }
+        },
+        "shape_name": "PutPolicyResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The specified resource was not found.</para>\n      ",
+          "documentation": "\n         <p>The specified resource was not found.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The operation failed because there was nothing to do. For example, you might have\n      submitted an <code>AssociateAdminAccount</code> request, but the account ID that you submitted\n      was already set as the AWS Firewall Manager administrator.</para>\n      ",
+          "documentation": "\n         <p>The operation failed because there was nothing to do. For example, you might have\n      submitted an <code>AssociateAdminAccount</code> request, but the account ID that you submitted\n      was already set as the AWS Firewall Manager administrator.</p>\n      ",
+          "shape_name": "InvalidOperationException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The parameters of the request were invalid.</para>\n      ",
+          "documentation": "\n         <p>The parameters of the request were invalid.</p>\n      ",
+          "shape_name": "InvalidInputException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The operation exceeds a resource limit, for example, the maximum number of <code>policy</code> objects that you can create \n      for an AWS account. For more information, see \n      <ulink type=\"documentation\" url=\"waf/latest/developerguide/fms-limits.html\">Firewall Manager Limits</ulink> in the <emphasis>AWS WAF Developer Guide</emphasis>.</para>\n      ",
+          "documentation": "\n         <p>The operation exceeds a resource limit, for example, the maximum number of <code>policy</code> objects that you can create \n      for an AWS account. For more information, see \n      <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html\">Firewall Manager Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>\n      ",
+          "shape_name": "LimitExceededException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The operation failed because of a system problem, even though the request was valid. Retry your request.</para>\n      ",
+          "documentation": "\n         <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>\n      ",
+          "shape_name": "InternalErrorException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The value of the <code>Type</code> parameter is invalid.</para>\n      ",
+          "documentation": "\n         <p>The value of the <code>Type</code> parameter is invalid.</p>\n      ",
+          "shape_name": "InvalidTypeException"
+        }
+      ],
+      "documentation": "\n         <p>Creates an AWS Firewall Manager policy.</p>\n      "
+    },
+    "GetPolicy": {
+      "name": "GetPolicy",
+      "input": {
+        "type": "structure",
+        "members": {
+          "PolicyId": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>The ID of the AWS Firewall Manager policy that you want the details for.</para>\n      ",
+            "documentation": "\n         <p>The ID of the AWS Firewall Manager policy that you want the details for.</p>\n      ",
+            "required": true,
+            "shape_name": "PolicyId",
+            "min_length": 36,
+            "max_length": 36
+          }
+        },
+        "shape_name": "GetPolicyRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "Policy": {
+            "type": "structure",
+            "members": {
+              "PolicyId": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <para>The ID of the AWS Firewall Manager policy.</para>\n      ",
+                "documentation": "\n         <p>The ID of the AWS Firewall Manager policy.</p>\n      ",
+                "shape_name": "PolicyId",
+                "min_length": 36,
+                "max_length": 36
+              },
+              "PolicyName": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <para>The friendly name of the AWS Firewall Manager policy.</para>\n      ",
+                "documentation": "\n         <p>The friendly name of the AWS Firewall Manager policy.</p>\n      ",
+                "required": true,
+                "shape_name": "ResourceName",
+                "min_length": 1,
+                "max_length": 128
+              },
+              "PolicyUpdateToken": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <para>A unique identifier for each update to the policy. When issuing a <code>PutPolicy</code> request, the <code>PolicyUpdateToken</code> in the request must match the <code>PolicyUpdateToken</code> of the current policy version. To get the <code>PolicyUpdateToken</code> of the current policy version, use a <code>GetPolicy</code> request.</para>\n      ",
+                "documentation": "\n         <p>A unique identifier for each update to the policy. When issuing a <code>PutPolicy</code> request, the <code>PolicyUpdateToken</code> in the request must match the <code>PolicyUpdateToken</code> of the current policy version. To get the <code>PolicyUpdateToken</code> of the current policy version, use a <code>GetPolicy</code> request.</p>\n      ",
+                "shape_name": "PolicyUpdateToken",
+                "min_length": 1,
+                "max_length": 1024
+              },
+              "SecurityServicePolicyData": {
+                "type": "structure",
+                "members": {
+                  "Type": {
+                    "type": "string",
+                    "enum": [
+                      "WAF"
+                    ],
+                    "zonbookDocumentation": "\n         <para>The service that the policy is using to protect the resources. This value is\n        <code>WAF</code>.</para>\n      ",
+                    "documentation": "\n         <p>The service that the policy is using to protect the resources. This value is\n        <code>WAF</code>.</p>\n      ",
+                    "required": true,
+                    "shape_name": "SecurityServiceType"
+                  },
+                  "ManagedServiceData": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n         <para>Details about the service. This contains <code>WAF</code> data in JSON format, as shown in\n      the following example:</para>\n         <para>\n            <code>ManagedServiceData\": \"{\\\"type\\\": \\\"WAF\\\", \\\"ruleGroups\\\": [{\\\"id\\\":\n        \\\"12345678-1bcd-9012-efga-0987654321ab\\\", \\\"overrideAction\\\" : {\\\"type\\\": \\\"COUNT\\\"}}],\n        \\\"defaultAction\\\": {\\\"type\\\": \\\"BLOCK\\\"}}</code>\n         </para>\n      ",
+                    "documentation": "\n         <p>Details about the service. This contains <code>WAF</code> data in JSON format, as shown in\n      the following example:</p>\n         <p>\n            <code>ManagedServiceData\": \"{\\\"type\\\": \\\"WAF\\\", \\\"ruleGroups\\\": [{\\\"id\\\":\n        \\\"12345678-1bcd-9012-efga-0987654321ab\\\", \\\"overrideAction\\\" : {\\\"type\\\": \\\"COUNT\\\"}}],\n        \\\"defaultAction\\\": {\\\"type\\\": \\\"BLOCK\\\"}}</code>\n         </p>\n      ",
+                    "shape_name": "ManagedServiceData",
+                    "min_length": 1,
+                    "max_length": 1024
+                  }
+                },
+                "zonbookDocumentation": "\n         <para>Details about the security service that is being used to protect the resources.</para>\n      ",
+                "documentation": "\n         <p>Details about the security service that is being used to protect the resources.</p>\n      ",
+                "required": true,
+                "shape_name": "SecurityServicePolicyData"
+              },
+              "ResourceType": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <para>The type of resource to protect with the policy, either an Application Load Balancer or a\n      CloudFront distribution.  This is in the format shown in <ulink url=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</ulink>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or <code>AWS::CloudFront::Distribution</code>.</para>\n      ",
+                "documentation": "\n         <p>The type of resource to protect with the policy, either an Application Load Balancer or a\n      CloudFront distribution.  This is in the format shown in <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or <code>AWS::CloudFront::Distribution</code>.</p>\n      ",
+                "required": true,
+                "shape_name": "ResourceType",
+                "min_length": 1,
+                "max_length": 128
+              },
+              "ResourceTags": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <para>An array of <code>ResourceTag</code> objects.</para>\n      ",
+                "documentation": "\n         <p>An array of <code>ResourceTag</code> objects.</p>\n      ",
+                "shape_name": "ResourceTags",
+                "min_length": 0,
+                "max_length": 8,
+                "members": {
+                  "type": "structure",
+                  "members": {
+                    "Key": {
+                      "type": "string",
+                      "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
+                      "zonbookDocumentation": "\n         <para>The resource tag key.</para>\n      ",
+                      "documentation": "\n         <p>The resource tag key.</p>\n      ",
+                      "required": true,
+                      "shape_name": "TagKey",
+                      "min_length": 1,
+                      "max_length": 128
+                    },
+                    "Value": {
+                      "type": "string",
+                      "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
+                      "zonbookDocumentation": "\n         <para>The resource tag value.</para>\n      ",
+                      "documentation": "\n         <p>The resource tag value.</p>\n      ",
+                      "shape_name": "TagValue",
+                      "max_length": 256
+                    }
+                  },
+                  "zonbookDocumentation": "\n         <para>The resource tags that AWS Firewall Manager uses to determine if a particular resource\n      should be included or excluded from protection by the AWS Firewall Manager policy. Tags enable\n      you to categorize your AWS resources in different ways, for example, by purpose, owner, or\n      environment. Each tag consists of a key and an optional value, both of which you define. Tags are combined with an \"OR.\" That is, if you add more than one tag, if any of the tags matches, the resource is considered a match for the include or exclude.\n        <ulink url=\"https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html\">Working with Tag Editor</ulink>.</para>\n      ",
+                  "documentation": "\n         <p>The resource tags that AWS Firewall Manager uses to determine if a particular resource\n      should be included or excluded from protection by the AWS Firewall Manager policy. Tags enable\n      you to categorize your AWS resources in different ways, for example, by purpose, owner, or\n      environment. Each tag consists of a key and an optional value, both of which you define. Tags are combined with an \"OR.\" That is, if you add more than one tag, if any of the tags matches, the resource is considered a match for the include or exclude.\n        <a href=\"https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html\">Working with Tag Editor</a>.</p>\n      ",
+                  "shape_name": "ResourceTag"
+                }
+              },
+              "ExcludeResourceTags": {
+                "type": "boolean",
+                "zonbookDocumentation": "\n         <para>If set to <code>True</code>, resources with the tags that are specified in the\n        <code>ResourceTag</code> array are not protected by the policy. If set to\n      <code>False</code>, and the <code>ResourceTag</code> array is not null, only resources with\n      the specified tags are associated with the policy.</para>\n      ",
+                "documentation": "\n         <p>If set to <code>True</code>, resources with the tags that are specified in the\n        <code>ResourceTag</code> array are not protected by the policy. If set to\n      <code>False</code>, and the <code>ResourceTag</code> array is not null, only resources with\n      the specified tags are associated with the policy.</p>\n      ",
+                "required": true,
+                "shape_name": "Boolean"
+              },
+              "RemediationEnabled": {
+                "type": "boolean",
+                "zonbookDocumentation": "\n         <para>Indicates if the policy should be automatically applied to new resources.</para>\n      ",
+                "documentation": "\n         <p>Indicates if the policy should be automatically applied to new resources.</p>\n      ",
+                "required": true,
+                "shape_name": "Boolean"
+              },
+              "IncludeMap": {
+                "type": "map",
+                "zonbookDocumentation": "\n         <para>Specifies the AWS account IDs to include in the policy. If <code>IncludeMap</code> is null, all accounts in the AWS Organization are included in the policy. If <code>IncludeMap</code> is not null, only values listed in <code>IncludeMap</code> will be included in the policy.</para>\n         <para>The key to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</para>\n      ",
+                "documentation": "\n         <p>Specifies the AWS account IDs to include in the policy. If <code>IncludeMap</code> is null, all accounts in the AWS Organization are included in the policy. If <code>IncludeMap</code> is not null, only values listed in <code>IncludeMap</code> will be included in the policy.</p>\n         <p>The key to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p>\n      ",
+                "shape_name": "CustomerPolicyScopeMap",
+                "keys": {
+                  "type": "string",
+                  "enum": [
+                    "ACCOUNT"
+                  ],
+                  "shape_name": "CustomerPolicyScopeIdType",
+                  "documentation": null
+                },
+                "members": {
+                  "type": "list",
+                  "shape_name": "CustomerPolicyScopeIdList",
+                  "documentation": null,
+                  "members": {
+                    "type": "string",
+                    "shape_name": "CustomerPolicyScopeId",
+                    "documentation": null,
+                    "min_length": 1,
+                    "max_length": 1024
+                  }
+                }
+              },
+              "ExcludeMap": {
+                "type": "map",
+                "zonbookDocumentation": "\n         <para>Specifies the AWS account IDs to exclude from the policy. The <code>IncludeMap</code> values are evaluated first, with all of the appropriate account IDs added to the policy. Then the accounts listed in <code>ExcludeMap</code> are removed, resulting in the final list of accounts to add to the policy.</para>\n         <para>The key to the map is <code>ACCOUNT</code>. For example, a valid <code>ExcludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</para>\n      ",
+                "documentation": "\n         <p>Specifies the AWS account IDs to exclude from the policy. The <code>IncludeMap</code> values are evaluated first, with all of the appropriate account IDs added to the policy. Then the accounts listed in <code>ExcludeMap</code> are removed, resulting in the final list of accounts to add to the policy.</p>\n         <p>The key to the map is <code>ACCOUNT</code>. For example, a valid <code>ExcludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p>\n      ",
+                "shape_name": "CustomerPolicyScopeMap",
+                "keys": {
+                  "type": "string",
+                  "enum": [
+                    "ACCOUNT"
+                  ],
+                  "shape_name": "CustomerPolicyScopeIdType",
+                  "documentation": null
+                },
+                "members": {
+                  "type": "list",
+                  "shape_name": "CustomerPolicyScopeIdList",
+                  "documentation": null,
+                  "members": {
+                    "type": "string",
+                    "shape_name": "CustomerPolicyScopeId",
+                    "documentation": null,
+                    "min_length": 1,
+                    "max_length": 1024
+                  }
+                }
+              }
+            },
+            "zonbookDocumentation": "\n         <para>Information about the specified AWS Firewall Manager policy.</para>\n      ",
+            "documentation": "\n         <p>Information about the specified AWS Firewall Manager policy.</p>\n      ",
+            "shape_name": "Policy"
+          },
+          "PolicyArn": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>The Amazon Resource Name (ARN) of the specified policy.</para>\n      ",
+            "documentation": "\n         <p>The Amazon Resource Name (ARN) of the specified policy.</p>\n      ",
+            "shape_name": "ResourceArn",
+            "min_length": 1,
+            "max_length": 1024
+          }
+        },
+        "shape_name": "GetPolicyResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The specified resource was not found.</para>\n      ",
+          "documentation": "\n         <p>The specified resource was not found.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The operation failed because there was nothing to do. For example, you might have\n      submitted an <code>AssociateAdminAccount</code> request, but the account ID that you submitted\n      was already set as the AWS Firewall Manager administrator.</para>\n      ",
+          "documentation": "\n         <p>The operation failed because there was nothing to do. For example, you might have\n      submitted an <code>AssociateAdminAccount</code> request, but the account ID that you submitted\n      was already set as the AWS Firewall Manager administrator.</p>\n      ",
+          "shape_name": "InvalidOperationException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The operation failed because of a system problem, even though the request was valid. Retry your request.</para>\n      ",
+          "documentation": "\n         <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>\n      ",
+          "shape_name": "InternalErrorException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The value of the <code>Type</code> parameter is invalid.</para>\n      ",
+          "documentation": "\n         <p>The value of the <code>Type</code> parameter is invalid.</p>\n      ",
+          "shape_name": "InvalidTypeException"
+        }
+      ],
+      "documentation": "\n         <p>Returns information about the specified AWS Firewall Manager policy.</p>\n      "
+    },
+    "DeletePolicy": {
+      "name": "DeletePolicy",
+      "input": {
+        "type": "structure",
+        "members": {
+          "PolicyId": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>The ID of the policy that you want to delete. <code>PolicyId</code> is returned by\n        <code>PutPolicy</code> and by <code>ListPolicies</code>.</para>\n      ",
+            "documentation": "\n         <p>The ID of the policy that you want to delete. <code>PolicyId</code> is returned by\n        <code>PutPolicy</code> and by <code>ListPolicies</code>.</p>\n      ",
+            "required": true,
+            "shape_name": "PolicyId",
+            "min_length": 36,
+            "max_length": 36
+          }
+        },
+        "shape_name": "DeletePolicyRequest",
+        "documentation": null
+      },
+      "output": null,
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The specified resource was not found.</para>\n      ",
+          "documentation": "\n         <p>The specified resource was not found.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The operation failed because there was nothing to do. For example, you might have\n      submitted an <code>AssociateAdminAccount</code> request, but the account ID that you submitted\n      was already set as the AWS Firewall Manager administrator.</para>\n      ",
+          "documentation": "\n         <p>The operation failed because there was nothing to do. For example, you might have\n      submitted an <code>AssociateAdminAccount</code> request, but the account ID that you submitted\n      was already set as the AWS Firewall Manager administrator.</p>\n      ",
+          "shape_name": "InvalidOperationException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The operation failed because of a system problem, even though the request was valid. Retry your request.</para>\n      ",
+          "documentation": "\n         <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>\n      ",
+          "shape_name": "InternalErrorException"
+        }
+      ],
+      "documentation": "\n         <p>Permanently deletes an AWS Firewall Manager policy. </p>\n      "
+    },
+    "ListPolicies": {
+      "name": "ListPolicies",
+      "input": {
+        "type": "structure",
+        "members": {
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>If you specify a value for <code>MaxResults</code> and you have more <code>PolicySummary</code> objects than the number that you specify \n      for <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of \n      <code>PolicySummary</code> objects. For the second and subsequent <code>ListPolicies</code> requests, specify the value of <code>NextToken</code> \n      from the previous response to get information about another batch of <code>PolicySummary</code> objects.</para>\n      ",
+            "documentation": "\n         <p>If you specify a value for <code>MaxResults</code> and you have more <code>PolicySummary</code> objects than the number that you specify \n      for <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of \n      <code>PolicySummary</code> objects. For the second and subsequent <code>ListPolicies</code> requests, specify the value of <code>NextToken</code> \n      from the previous response to get information about another batch of <code>PolicySummary</code> objects.</p>\n      ",
+            "shape_name": "PaginationToken",
+            "min_length": 1
+          },
+          "MaxResults": {
+            "type": "integer",
+            "zonbookDocumentation": "\n         <para>Specifies the number of <code>PolicySummary</code> objects that you want AWS Firewall Manager to return for this request. If you have more \n      <code>PolicySummary</code> objects than the number that you specify for <code>MaxResults</code>, the response includes a \n      <code>NextToken</code> value that you can use to get another batch of <code>PolicySummary</code> objects.</para>\n      ",
+            "documentation": "\n         <p>Specifies the number of <code>PolicySummary</code> objects that you want AWS Firewall Manager to return for this request. If you have more \n      <code>PolicySummary</code> objects than the number that you specify for <code>MaxResults</code>, the response includes a \n      <code>NextToken</code> value that you can use to get another batch of <code>PolicySummary</code> objects.</p>\n      ",
+            "shape_name": "PaginationMaxResults",
+            "min_length": 1,
+            "max_length": 100
+          }
+        },
+        "shape_name": "ListPoliciesRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "PolicyList": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <para>An array of <code>PolicySummary</code> objects.</para>\n      ",
+            "documentation": "\n         <p>An array of <code>PolicySummary</code> objects.</p>\n      ",
+            "shape_name": "PolicySummaryList",
+            "members": {
+              "type": "structure",
+              "members": {
+                "PolicyArn": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <para>The Amazon Resource Name (ARN) of the specified policy.</para>\n      ",
+                  "documentation": "\n         <p>The Amazon Resource Name (ARN) of the specified policy.</p>\n      ",
+                  "shape_name": "ResourceArn",
+                  "min_length": 1,
+                  "max_length": 1024
+                },
+                "PolicyId": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <para>The ID of the specified policy.</para>\n      ",
+                  "documentation": "\n         <p>The ID of the specified policy.</p>\n      ",
+                  "shape_name": "PolicyId",
+                  "min_length": 36,
+                  "max_length": 36
+                },
+                "PolicyName": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <para>The friendly name of the specified policy.</para>\n      ",
+                  "documentation": "\n         <p>The friendly name of the specified policy.</p>\n      ",
+                  "shape_name": "ResourceName",
+                  "min_length": 1,
+                  "max_length": 128
+                },
+                "ResourceType": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <para>The type of resource to protect with the policy, either an Application Load Balancer or a\n      CloudFront distribution.  This is in the format shown in <ulink url=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</ulink>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or <code>AWS::CloudFront::Distribution</code>.</para>\n      ",
+                  "documentation": "\n         <p>The type of resource to protect with the policy, either an Application Load Balancer or a\n      CloudFront distribution.  This is in the format shown in <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or <code>AWS::CloudFront::Distribution</code>.</p>\n      ",
+                  "shape_name": "ResourceType",
+                  "min_length": 1,
+                  "max_length": 128
+                },
+                "SecurityServiceType": {
+                  "type": "string",
+                  "enum": [
+                    "WAF"
+                  ],
+                  "zonbookDocumentation": "\n         <para>The service that the policy is using to protect the resources. This value is\n        <code>WAF</code>.</para>\n      ",
+                  "documentation": "\n         <p>The service that the policy is using to protect the resources. This value is\n        <code>WAF</code>.</p>\n      ",
+                  "shape_name": "SecurityServiceType"
+                },
+                "RemediationEnabled": {
+                  "type": "boolean",
+                  "zonbookDocumentation": "\n         <para>Indicates if the policy should be automatically applied to new resources.</para>\n      ",
+                  "documentation": "\n         <p>Indicates if the policy should be automatically applied to new resources.</p>\n      ",
+                  "shape_name": "Boolean"
+                }
+              },
+              "zonbookDocumentation": "\n         <para>Details of the AWS Firewall Manager policy. </para>\n      ",
+              "documentation": "\n         <p>Details of the AWS Firewall Manager policy. </p>\n      ",
+              "shape_name": "PolicySummary"
+            }
+          },
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>If you have more <code>PolicySummary</code> objects than the number that you specified for <code>MaxResults</code> in the request, \n      the response includes a <code>NextToken</code> value. To list more <code>PolicySummary</code> objects, submit another \n      <code>ListPolicies</code> request, and specify the <code>NextToken</code> value from the response in the \n      <code>NextToken</code> value in the next request.</para>\n      ",
+            "documentation": "\n         <p>If you have more <code>PolicySummary</code> objects than the number that you specified for <code>MaxResults</code> in the request, \n      the response includes a <code>NextToken</code> value. To list more <code>PolicySummary</code> objects, submit another \n      <code>ListPolicies</code> request, and specify the <code>NextToken</code> value from the response in the \n      <code>NextToken</code> value in the next request.</p>\n      ",
+            "shape_name": "PaginationToken",
+            "min_length": 1
+          }
+        },
+        "shape_name": "ListPoliciesResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The specified resource was not found.</para>\n      ",
+          "documentation": "\n         <p>The specified resource was not found.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The operation failed because there was nothing to do. For example, you might have\n      submitted an <code>AssociateAdminAccount</code> request, but the account ID that you submitted\n      was already set as the AWS Firewall Manager administrator.</para>\n      ",
+          "documentation": "\n         <p>The operation failed because there was nothing to do. For example, you might have\n      submitted an <code>AssociateAdminAccount</code> request, but the account ID that you submitted\n      was already set as the AWS Firewall Manager administrator.</p>\n      ",
+          "shape_name": "InvalidOperationException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The operation exceeds a resource limit, for example, the maximum number of <code>policy</code> objects that you can create \n      for an AWS account. For more information, see \n      <ulink type=\"documentation\" url=\"waf/latest/developerguide/fms-limits.html\">Firewall Manager Limits</ulink> in the <emphasis>AWS WAF Developer Guide</emphasis>.</para>\n      ",
+          "documentation": "\n         <p>The operation exceeds a resource limit, for example, the maximum number of <code>policy</code> objects that you can create \n      for an AWS account. For more information, see \n      <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html\">Firewall Manager Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>\n      ",
+          "shape_name": "LimitExceededException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The operation failed because of a system problem, even though the request was valid. Retry your request.</para>\n      ",
+          "documentation": "\n         <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>\n      ",
+          "shape_name": "InternalErrorException"
+        }
+      ],
+      "documentation": "\n         <p>Returns an array of <code>PolicySummary</code> objects in the response.</p>\n      "
+    },
+    "AssociateAdminAccount": {
+      "name": "AssociateAdminAccount",
+      "input": {
+        "type": "structure",
+        "members": {
+          "AdminAccount": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>The AWS account ID to associate with AWS Firewall Manager as the AWS Firewall Manager administrator account. This can be an AWS Organizations master account or a member account. For more information\n      about AWS Organizations and master accounts, see <ulink url=\"https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html\">Managing the AWS Accounts in Your Organization</ulink>.</para>\n      ",
+            "documentation": "\n         <p>The AWS account ID to associate with AWS Firewall Manager as the AWS Firewall Manager administrator account. This can be an AWS Organizations master account or a member account. For more information\n      about AWS Organizations and master accounts, see <a href=\"https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html\">Managing the AWS Accounts in Your Organization</a>.</p>\n      ",
+            "required": true,
+            "shape_name": "AWSAccountId",
+            "min_length": 1,
+            "max_length": 1024
+          }
+        },
+        "shape_name": "AssociateAdminAccountRequest",
+        "documentation": null
+      },
+      "output": null,
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The operation failed because there was nothing to do. For example, you might have\n      submitted an <code>AssociateAdminAccount</code> request, but the account ID that you submitted\n      was already set as the AWS Firewall Manager administrator.</para>\n      ",
+          "documentation": "\n         <p>The operation failed because there was nothing to do. For example, you might have\n      submitted an <code>AssociateAdminAccount</code> request, but the account ID that you submitted\n      was already set as the AWS Firewall Manager administrator.</p>\n      ",
+          "shape_name": "InvalidOperationException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The parameters of the request were invalid.</para>\n      ",
+          "documentation": "\n         <p>The parameters of the request were invalid.</p>\n      ",
+          "shape_name": "InvalidInputException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The specified resource was not found.</para>\n      ",
+          "documentation": "\n         <p>The specified resource was not found.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The operation failed because of a system problem, even though the request was valid. Retry your request.</para>\n      ",
+          "documentation": "\n         <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>\n      ",
+          "shape_name": "InternalErrorException"
+        }
+      ],
+      "documentation": "\n         <p>Sets the AWS Firewall Manager administrator account. AWS Firewall Manager must be associated with the master account your AWS organization or associated with a member account that has the appropriate permissions.  If the account ID that you submit is not an AWS Organizations master account, AWS Firewall Manager will set the appropriate permissions for the given member account.</p>\n         <p>The account that you associate with AWS Firewall Manager is called the AWS Firewall Manager administrator account. </p>\n      "
+    },
+    "DisassociateAdminAccount": {
+      "name": "DisassociateAdminAccount",
+      "input": {
+        "type": "structure",
+        "members": {
+        },
+        "shape_name": "DisassociateAdminAccountRequest",
+        "documentation": null
+      },
+      "output": null,
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The operation failed because there was nothing to do. For example, you might have\n      submitted an <code>AssociateAdminAccount</code> request, but the account ID that you submitted\n      was already set as the AWS Firewall Manager administrator.</para>\n      ",
+          "documentation": "\n         <p>The operation failed because there was nothing to do. For example, you might have\n      submitted an <code>AssociateAdminAccount</code> request, but the account ID that you submitted\n      was already set as the AWS Firewall Manager administrator.</p>\n      ",
+          "shape_name": "InvalidOperationException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The specified resource was not found.</para>\n      ",
+          "documentation": "\n         <p>The specified resource was not found.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The operation failed because of a system problem, even though the request was valid. Retry your request.</para>\n      ",
+          "documentation": "\n         <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>\n      ",
+          "shape_name": "InternalErrorException"
+        }
+      ],
+      "documentation": "\n         <p>Disassociates the account that has been set as the AWS Firewall Manager administrator account. You will need to submit an <code>AssociateAdminAccount</code> request to set a new account as the AWS Firewall administrator.</p>\n      "
+    },
+    "GetAdminAccount": {
+      "name": "GetAdminAccount",
+      "input": {
+        "type": "structure",
+        "members": {
+        },
+        "shape_name": "GetAdminAccountRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "AdminAccount": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>The AWS account that is set as the AWS Firewall Manager administrator.</para>\n      ",
+            "documentation": "\n         <p>The AWS account that is set as the AWS Firewall Manager administrator.</p>\n      ",
+            "shape_name": "AWSAccountId",
+            "min_length": 1,
+            "max_length": 1024
+          },
+          "RoleStatus": {
+            "type": "string",
+            "enum": [
+              "READY",
+              "CREATING",
+              "PENDING_DELETION",
+              "DELETING",
+              "DELETED"
+            ],
+            "zonbookDocumentation": "\n         <para>The status of the AWS account that you set as the AWS Firewall Manager administrator.</para>\n      ",
+            "documentation": "\n         <p>The status of the AWS account that you set as the AWS Firewall Manager administrator.</p>\n      ",
+            "shape_name": "AccountRoleStatus"
+          }
+        },
+        "shape_name": "GetAdminAccountResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The operation failed because there was nothing to do. For example, you might have\n      submitted an <code>AssociateAdminAccount</code> request, but the account ID that you submitted\n      was already set as the AWS Firewall Manager administrator.</para>\n      ",
+          "documentation": "\n         <p>The operation failed because there was nothing to do. For example, you might have\n      submitted an <code>AssociateAdminAccount</code> request, but the account ID that you submitted\n      was already set as the AWS Firewall Manager administrator.</p>\n      ",
+          "shape_name": "InvalidOperationException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The specified resource was not found.</para>\n      ",
+          "documentation": "\n         <p>The specified resource was not found.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The operation failed because of a system problem, even though the request was valid. Retry your request.</para>\n      ",
+          "documentation": "\n         <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>\n      ",
+          "shape_name": "InternalErrorException"
+        }
+      ],
+      "documentation": "\n         <p>Returns the AWS Organizations master account that is associated with AWS Firewall Manager as the AWS Firewall Manager administrator.</p>\n      "
+    },
+    "PutNotificationChannel": {
+      "name": "PutNotificationChannel",
+      "input": {
+        "type": "structure",
+        "members": {
+          "SnsTopicArn": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>The Amazon Resource Name (ARN) of the SNS topic that collects notifications from AWS\n      Firewall Manager.</para>\n      ",
+            "documentation": "\n         <p>The Amazon Resource Name (ARN) of the SNS topic that collects notifications from AWS\n      Firewall Manager.</p>\n      ",
+            "required": true,
+            "shape_name": "ResourceArn",
+            "min_length": 1,
+            "max_length": 1024
+          },
+          "SnsRoleName": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record AWS Firewall Manager activity. </para>\n      ",
+            "documentation": "\n         <p>The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record AWS Firewall Manager activity. </p>\n      ",
+            "required": true,
+            "shape_name": "ResourceArn",
+            "min_length": 1,
+            "max_length": 1024
+          }
+        },
+        "shape_name": "PutNotificationChannelRequest",
+        "documentation": null
+      },
+      "output": null,
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The specified resource was not found.</para>\n      ",
+          "documentation": "\n         <p>The specified resource was not found.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The operation failed because there was nothing to do. For example, you might have\n      submitted an <code>AssociateAdminAccount</code> request, but the account ID that you submitted\n      was already set as the AWS Firewall Manager administrator.</para>\n      ",
+          "documentation": "\n         <p>The operation failed because there was nothing to do. For example, you might have\n      submitted an <code>AssociateAdminAccount</code> request, but the account ID that you submitted\n      was already set as the AWS Firewall Manager administrator.</p>\n      ",
+          "shape_name": "InvalidOperationException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The operation failed because of a system problem, even though the request was valid. Retry your request.</para>\n      ",
+          "documentation": "\n         <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>\n      ",
+          "shape_name": "InternalErrorException"
+        }
+      ],
+      "documentation": "\n         <p>Designates the IAM role and Amazon Simple Notification Service (SNS) topic that AWS\n      Firewall Manager uses to record SNS logs.</p>\n      "
+    },
+    "GetNotificationChannel": {
+      "name": "GetNotificationChannel",
+      "input": {
+        "type": "structure",
+        "members": {
+        },
+        "shape_name": "GetNotificationChannelRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "SnsTopicArn": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>The SNS topic that records AWS Firewall Manager activity. </para>\n      ",
+            "documentation": "\n         <p>The SNS topic that records AWS Firewall Manager activity. </p>\n      ",
+            "shape_name": "ResourceArn",
+            "min_length": 1,
+            "max_length": 1024
+          },
+          "SnsRoleName": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>The IAM role that is used by AWS Firewall Manager to record activity to SNS.</para>\n      ",
+            "documentation": "\n         <p>The IAM role that is used by AWS Firewall Manager to record activity to SNS.</p>\n      ",
+            "shape_name": "ResourceArn",
+            "min_length": 1,
+            "max_length": 1024
+          }
+        },
+        "shape_name": "GetNotificationChannelResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The specified resource was not found.</para>\n      ",
+          "documentation": "\n         <p>The specified resource was not found.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The operation failed because there was nothing to do. For example, you might have\n      submitted an <code>AssociateAdminAccount</code> request, but the account ID that you submitted\n      was already set as the AWS Firewall Manager administrator.</para>\n      ",
+          "documentation": "\n         <p>The operation failed because there was nothing to do. For example, you might have\n      submitted an <code>AssociateAdminAccount</code> request, but the account ID that you submitted\n      was already set as the AWS Firewall Manager administrator.</p>\n      ",
+          "shape_name": "InvalidOperationException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The operation failed because of a system problem, even though the request was valid. Retry your request.</para>\n      ",
+          "documentation": "\n         <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>\n      ",
+          "shape_name": "InternalErrorException"
+        }
+      ],
+      "documentation": "\n         <p>Returns information about the Amazon Simple Notification Service (SNS) topic that is used to record AWS Firewall Manager SNS logs.</p>\n      "
+    },
+    "DeleteNotificationChannel": {
+      "name": "DeleteNotificationChannel",
+      "input": {
+        "type": "structure",
+        "members": {
+        },
+        "shape_name": "DeleteNotificationChannelRequest",
+        "documentation": null
+      },
+      "output": null,
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The specified resource was not found.</para>\n      ",
+          "documentation": "\n         <p>The specified resource was not found.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The operation failed because there was nothing to do. For example, you might have\n      submitted an <code>AssociateAdminAccount</code> request, but the account ID that you submitted\n      was already set as the AWS Firewall Manager administrator.</para>\n      ",
+          "documentation": "\n         <p>The operation failed because there was nothing to do. For example, you might have\n      submitted an <code>AssociateAdminAccount</code> request, but the account ID that you submitted\n      was already set as the AWS Firewall Manager administrator.</p>\n      ",
+          "shape_name": "InvalidOperationException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The operation failed because of a system problem, even though the request was valid. Retry your request.</para>\n      ",
+          "documentation": "\n         <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>\n      ",
+          "shape_name": "InternalErrorException"
+        }
+      ],
+      "documentation": "\n         <p>Deletes an AWS Firewall Manager association with the IAM role and the Amazon Simple\n      Notification Service (SNS) topic that is used to record AWS Firewall Manager SNS logs.</p>\n      "
+    },
+    "ListMemberAccounts": {
+      "name": "ListMemberAccounts",
+      "input": {
+        "type": "structure",
+        "members": {
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>If you specify a value for <code>MaxResults</code> and you have more account IDs than the number that you specify \n      for <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of \n      IDs. For the second and subsequent <code>ListMemberAccountsRequest</code> requests, specify the value of <code>NextToken</code> \n      from the previous response to get information about another batch of member account IDs.</para>\n      ",
+            "documentation": "\n         <p>If you specify a value for <code>MaxResults</code> and you have more account IDs than the number that you specify \n      for <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of \n      IDs. For the second and subsequent <code>ListMemberAccountsRequest</code> requests, specify the value of <code>NextToken</code> \n      from the previous response to get information about another batch of member account IDs.</p>\n      ",
+            "shape_name": "PaginationToken",
+            "min_length": 1
+          },
+          "MaxResults": {
+            "type": "integer",
+            "zonbookDocumentation": "\n         <para>Specifies the number of member account IDs that you want AWS Firewall Manager to return for this request. If you have more \n      IDs than the number that you specify for <code>MaxResults</code>, the response includes a \n      <code>NextToken</code> value that you can use to get another batch of member account IDs. The maximum value for <code>MaxResults</code> is 100.</para>\n      ",
+            "documentation": "\n         <p>Specifies the number of member account IDs that you want AWS Firewall Manager to return for this request. If you have more \n      IDs than the number that you specify for <code>MaxResults</code>, the response includes a \n      <code>NextToken</code> value that you can use to get another batch of member account IDs. The maximum value for <code>MaxResults</code> is 100.</p>\n      ",
+            "shape_name": "PaginationMaxResults",
+            "min_length": 1,
+            "max_length": 100
+          }
+        },
+        "shape_name": "ListMemberAccountsRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "MemberAccounts": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <para>An array of account IDs.</para>\n      ",
+            "documentation": "\n         <p>An array of account IDs.</p>\n      ",
+            "shape_name": "MemberAccounts",
+            "members": {
+              "type": "string",
+              "shape_name": "AWSAccountId",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>If you have more member account IDs than the number that you specified for <code>MaxResults</code> in the request, \n      the response includes a <code>NextToken</code> value. To list more IDs, submit another \n      <code>ListMemberAccounts</code> request, and specify the <code>NextToken</code> value from the response in the \n      <code>NextToken</code> value in the next request.</para>\n      ",
+            "documentation": "\n         <p>If you have more member account IDs than the number that you specified for <code>MaxResults</code> in the request, \n      the response includes a <code>NextToken</code> value. To list more IDs, submit another \n      <code>ListMemberAccounts</code> request, and specify the <code>NextToken</code> value from the response in the \n      <code>NextToken</code> value in the next request.</p>\n      ",
+            "shape_name": "PaginationToken",
+            "min_length": 1
+          }
+        },
+        "shape_name": "ListMemberAccountsResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The specified resource was not found.</para>\n      ",
+          "documentation": "\n         <p>The specified resource was not found.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The operation failed because of a system problem, even though the request was valid. Retry your request.</para>\n      ",
+          "documentation": "\n         <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>\n      ",
+          "shape_name": "InternalErrorException"
+        }
+      ],
+      "documentation": "\n         <p>Returns a <code>MemberAccounts</code> object that lists the member accounts in the administrator's AWS organization.</p>\n\t        <p>The <code>ListMemberAccounts</code> must be submitted by the account that is set as the AWS Firewall Manager administrator.</p>\n      "
+    },
+    "ListComplianceStatus": {
+      "name": "ListComplianceStatus",
+      "input": {
+        "type": "structure",
+        "members": {
+          "PolicyId": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>The ID of the AWS Firewall Manager policy that you want the details for.</para>\n      ",
+            "documentation": "\n         <p>The ID of the AWS Firewall Manager policy that you want the details for.</p>\n      ",
+            "required": true,
+            "shape_name": "PolicyId",
+            "min_length": 36,
+            "max_length": 36
+          },
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>If you specify a value for <code>MaxResults</code> and you have more <code>PolicyComplianceStatus</code> objects than the number that you specify \n      for <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of \n      <code>PolicyComplianceStatus</code> objects. For the second and subsequent <code>ListComplianceStatus</code> requests, specify the value of <code>NextToken</code> \n      from the previous response to get information about another batch of <code>PolicyComplianceStatus</code> objects.</para>\n      ",
+            "documentation": "\n         <p>If you specify a value for <code>MaxResults</code> and you have more <code>PolicyComplianceStatus</code> objects than the number that you specify \n      for <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of \n      <code>PolicyComplianceStatus</code> objects. For the second and subsequent <code>ListComplianceStatus</code> requests, specify the value of <code>NextToken</code> \n      from the previous response to get information about another batch of <code>PolicyComplianceStatus</code> objects.</p>\n      ",
+            "shape_name": "PaginationToken",
+            "min_length": 1
+          },
+          "MaxResults": {
+            "type": "integer",
+            "zonbookDocumentation": "\n         <para>Specifies the number of <code>PolicyComplianceStatus</code> objects that you want AWS Firewall Manager to return for this request. If you have more \n      <code>PolicyComplianceStatus</code> objects than the number that you specify for <code>MaxResults</code>, the response includes a \n      <code>NextToken</code> value that you can use to get another batch of <code>PolicyComplianceStatus</code> objects.</para>\n      ",
+            "documentation": "\n         <p>Specifies the number of <code>PolicyComplianceStatus</code> objects that you want AWS Firewall Manager to return for this request. If you have more \n      <code>PolicyComplianceStatus</code> objects than the number that you specify for <code>MaxResults</code>, the response includes a \n      <code>NextToken</code> value that you can use to get another batch of <code>PolicyComplianceStatus</code> objects.</p>\n      ",
+            "shape_name": "PaginationMaxResults",
+            "min_length": 1,
+            "max_length": 100
+          }
+        },
+        "shape_name": "ListComplianceStatusRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "PolicyComplianceStatusList": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <para>An array of <code>PolicyComplianceStatus</code> objects.</para>\n      ",
+            "documentation": "\n         <p>An array of <code>PolicyComplianceStatus</code> objects.</p>\n      ",
+            "shape_name": "PolicyComplianceStatusList",
+            "members": {
+              "type": "structure",
+              "members": {
+                "PolicyOwner": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <para>The AWS account that created the AWS Firewall Manager policy.</para>\n      ",
+                  "documentation": "\n         <p>The AWS account that created the AWS Firewall Manager policy.</p>\n      ",
+                  "shape_name": "AWSAccountId",
+                  "min_length": 1,
+                  "max_length": 1024
+                },
+                "PolicyId": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <para>The ID of the AWS Firewall Manager policy.</para>\n      ",
+                  "documentation": "\n         <p>The ID of the AWS Firewall Manager policy.</p>\n      ",
+                  "shape_name": "PolicyId",
+                  "min_length": 36,
+                  "max_length": 36
+                },
+                "PolicyName": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <para>The friendly name of the AWS Firewall Manager policy.</para>\n      ",
+                  "documentation": "\n         <p>The friendly name of the AWS Firewall Manager policy.</p>\n      ",
+                  "shape_name": "ResourceName",
+                  "min_length": 1,
+                  "max_length": 128
+                },
+                "MemberAccount": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <para>The member account ID.</para>\n      ",
+                  "documentation": "\n         <p>The member account ID.</p>\n      ",
+                  "shape_name": "AWSAccountId",
+                  "min_length": 1,
+                  "max_length": 1024
+                },
+                "EvaluationResults": {
+                  "type": "list",
+                  "zonbookDocumentation": "\n         <para>An array of <code>EvaluationResult</code> objects.</para>\n      ",
+                  "documentation": "\n         <p>An array of <code>EvaluationResult</code> objects.</p>\n      ",
+                  "shape_name": "EvaluationResults",
+                  "members": {
+                    "type": "structure",
+                    "members": {
+                      "ComplianceStatus": {
+                        "type": "string",
+                        "enum": [
+                          "COMPLIANT",
+                          "NON_COMPLIANT"
+                        ],
+                        "zonbookDocumentation": "\n         <para>Describes an AWS account's compliance with the AWS Firewall Manager policy.</para>\n      ",
+                        "documentation": "\n         <p>Describes an AWS account's compliance with the AWS Firewall Manager policy.</p>\n      ",
+                        "shape_name": "PolicyComplianceStatusType"
+                      },
+                      "ViolatorCount": {
+                        "type": "long",
+                        "zonbookDocumentation": "\n         <para>Number of resources that are non-compliant with the specified policy. A resource is considered non-compliant if it is not associated with the specified policy.</para>\n      ",
+                        "documentation": "\n         <p>Number of resources that are non-compliant with the specified policy. A resource is considered non-compliant if it is not associated with the specified policy.</p>\n      ",
+                        "shape_name": "ResourceCount",
+                        "min_length": 0
+                      },
+                      "EvaluationLimitExceeded": {
+                        "type": "boolean",
+                        "zonbookDocumentation": "\n         <para>Indicates that over 100 resources are non-compliant with the AWS Firewall Manager\n      policy.</para>\n      ",
+                        "documentation": "\n         <p>Indicates that over 100 resources are non-compliant with the AWS Firewall Manager\n      policy.</p>\n      ",
+                        "shape_name": "Boolean"
+                      }
+                    },
+                    "zonbookDocumentation": "\n         <para>Describes the compliance status for the account. An account is considered non-compliant if\n      it includes resources that are not protected by the specified policy.</para>\n      ",
+                    "documentation": "\n         <p>Describes the compliance status for the account. An account is considered non-compliant if\n      it includes resources that are not protected by the specified policy.</p>\n      ",
+                    "shape_name": "EvaluationResult"
+                  }
+                },
+                "LastUpdated": {
+                  "type": "timestamp",
+                  "zonbookDocumentation": "\n         <para>Time stamp of the last update to the <code>EvaluationResult</code> objects.</para>\n      ",
+                  "documentation": "\n         <p>Time stamp of the last update to the <code>EvaluationResult</code> objects.</p>\n      ",
+                  "shape_name": "TimeStamp"
+                },
+                "IssueInfoMap": {
+                  "type": "map",
+                  "zonbookDocumentation": "\n         <para>Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a resource to be non-compliant. The details include the name of the dependent service and the error message recieved indicating the problem with the service.</para>\n      ",
+                  "documentation": "\n         <p>Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a resource to be non-compliant. The details include the name of the dependent service and the error message recieved indicating the problem with the service.</p>\n      ",
+                  "shape_name": "IssueInfoMap",
+                  "keys": {
+                    "type": "string",
+                    "enum": [
+                      "AWSCONFIG",
+                      "AWSWAF"
+                    ],
+                    "shape_name": "DependentServiceName",
+                    "documentation": null
+                  },
+                  "members": {
+                    "type": "string",
+                    "shape_name": "DetailedInfo",
+                    "documentation": null,
+                    "min_length": 1,
+                    "max_length": 1024
+                  }
+                }
+              },
+              "zonbookDocumentation": "\n         <para>Indicates whether the account is compliant with the specified policy. An account is\n      considered non-compliant if it includes resources that are not protected by the policy.</para>\n      ",
+              "documentation": "\n         <p>Indicates whether the account is compliant with the specified policy. An account is\n      considered non-compliant if it includes resources that are not protected by the policy.</p>\n      ",
+              "shape_name": "PolicyComplianceStatus"
+            }
+          },
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>If you have more <code>PolicyComplianceStatus</code> objects than the number that you specified for <code>MaxResults</code> in the request, \n      the response includes a <code>NextToken</code> value. To list more <code>PolicyComplianceStatus</code> objects, submit another \n      <code>ListComplianceStatus</code> request, and specify the <code>NextToken</code> value from the response in the \n      <code>NextToken</code> value in the next request.</para>\n      ",
+            "documentation": "\n         <p>If you have more <code>PolicyComplianceStatus</code> objects than the number that you specified for <code>MaxResults</code> in the request, \n      the response includes a <code>NextToken</code> value. To list more <code>PolicyComplianceStatus</code> objects, submit another \n      <code>ListComplianceStatus</code> request, and specify the <code>NextToken</code> value from the response in the \n      <code>NextToken</code> value in the next request.</p>\n      ",
+            "shape_name": "PaginationToken",
+            "min_length": 1
+          }
+        },
+        "shape_name": "ListComplianceStatusResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The specified resource was not found.</para>\n      ",
+          "documentation": "\n         <p>The specified resource was not found.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The operation failed because of a system problem, even though the request was valid. Retry your request.</para>\n      ",
+          "documentation": "\n         <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>\n      ",
+          "shape_name": "InternalErrorException"
+        }
+      ],
+      "documentation": "\n         <p>Returns an array of <code>PolicyComplianceStatus</code> objects in the response. Use <code>PolicyComplianceStatus</code> to get a summary of which member accounts are protected by the specified policy. </p>\n      "
+    },
+    "GetComplianceDetail": {
+      "name": "GetComplianceDetail",
+      "input": {
+        "type": "structure",
+        "members": {
+          "PolicyId": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>The ID of the policy that you want to get the details for. <code>PolicyId</code> is\n      returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.</para>\n      ",
+            "documentation": "\n         <p>The ID of the policy that you want to get the details for. <code>PolicyId</code> is\n      returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.</p>\n      ",
+            "required": true,
+            "shape_name": "PolicyId",
+            "min_length": 36,
+            "max_length": 36
+          },
+          "MemberAccount": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>The AWS account that owns the resources that you want to get the details for.</para>\n      ",
+            "documentation": "\n         <p>The AWS account that owns the resources that you want to get the details for.</p>\n      ",
+            "required": true,
+            "shape_name": "AWSAccountId",
+            "min_length": 1,
+            "max_length": 1024
+          }
+        },
+        "shape_name": "GetComplianceDetailRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "PolicyComplianceDetail": {
+            "type": "structure",
+            "members": {
+              "PolicyOwner": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <para>The AWS account that created the AWS Firewall Manager policy.</para>\n      ",
+                "documentation": "\n         <p>The AWS account that created the AWS Firewall Manager policy.</p>\n      ",
+                "shape_name": "AWSAccountId",
+                "min_length": 1,
+                "max_length": 1024
+              },
+              "PolicyId": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <para>The ID of the AWS Firewall Manager policy.</para>\n      ",
+                "documentation": "\n         <p>The ID of the AWS Firewall Manager policy.</p>\n      ",
+                "shape_name": "PolicyId",
+                "min_length": 36,
+                "max_length": 36
+              },
+              "MemberAccount": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <para>The AWS account ID.</para>\n      ",
+                "documentation": "\n         <p>The AWS account ID.</p>\n      ",
+                "shape_name": "AWSAccountId",
+                "min_length": 1,
+                "max_length": 1024
+              },
+              "Violators": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <para>An array of resources that are not protected by the policy.</para>\n      ",
+                "documentation": "\n         <p>An array of resources that are not protected by the policy.</p>\n      ",
+                "shape_name": "ComplianceViolators",
+                "members": {
+                  "type": "structure",
+                  "members": {
+                    "ResourceId": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n         <para>The resource ID.</para>\n      ",
+                      "documentation": "\n         <p>The resource ID.</p>\n      ",
+                      "shape_name": "ResourceId",
+                      "min_length": 1,
+                      "max_length": 1024
+                    },
+                    "ViolationReason": {
+                      "type": "string",
+                      "enum": [
+                        "WEB_ACL_MISSING_RULE_GROUP",
+                        "RESOURCE_MISSING_WEB_ACL",
+                        "RESOURCE_INCORRECT_WEB_ACL"
+                      ],
+                      "zonbookDocumentation": "\n         <para>The reason that the resource is not protected by the policy.</para>\n      ",
+                      "documentation": "\n         <p>The reason that the resource is not protected by the policy.</p>\n      ",
+                      "shape_name": "ViolationReason"
+                    },
+                    "ResourceType": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n         <para>The resource type. This is in the format shown in <ulink url=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</ulink>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or <code>AWS::CloudFront::Distribution</code>.</para>\n      ",
+                      "documentation": "\n         <p>The resource type. This is in the format shown in <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or <code>AWS::CloudFront::Distribution</code>.</p>\n      ",
+                      "shape_name": "ResourceType",
+                      "min_length": 1,
+                      "max_length": 128
+                    }
+                  },
+                  "zonbookDocumentation": "\n         <para>Details of the resource that is not protected by the policy.</para>\n      ",
+                  "documentation": "\n         <p>Details of the resource that is not protected by the policy.</p>\n      ",
+                  "shape_name": "ComplianceViolator"
+                }
+              },
+              "EvaluationLimitExceeded": {
+                "type": "boolean",
+                "zonbookDocumentation": "\n         <para>Indicates if over 100 resources are non-compliant with the AWS Firewall Manager\n      policy.</para>\n      ",
+                "documentation": "\n         <p>Indicates if over 100 resources are non-compliant with the AWS Firewall Manager\n      policy.</p>\n      ",
+                "shape_name": "Boolean"
+              },
+              "ExpiredAt": {
+                "type": "timestamp",
+                "zonbookDocumentation": "\n         <para>A time stamp that indicates when the returned information should be considered\n      out-of-date.</para>\n      ",
+                "documentation": "\n         <p>A time stamp that indicates when the returned information should be considered\n      out-of-date.</p>\n      ",
+                "shape_name": "TimeStamp"
+              },
+              "IssueInfoMap": {
+                "type": "map",
+                "zonbookDocumentation": "\n         <para>Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a resource to be non-compliant. The details include the name of the dependent service and the error message recieved indicating the problem with the service.</para>\n      ",
+                "documentation": "\n         <p>Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a resource to be non-compliant. The details include the name of the dependent service and the error message recieved indicating the problem with the service.</p>\n      ",
+                "shape_name": "IssueInfoMap",
+                "keys": {
+                  "type": "string",
+                  "enum": [
+                    "AWSCONFIG",
+                    "AWSWAF"
+                  ],
+                  "shape_name": "DependentServiceName",
+                  "documentation": null
+                },
+                "members": {
+                  "type": "string",
+                  "shape_name": "DetailedInfo",
+                  "documentation": null,
+                  "min_length": 1,
+                  "max_length": 1024
+                }
+              }
+            },
+            "zonbookDocumentation": "\n         <para>Information about the resources and the policy that you specified in the <code>GetComplianceDetail</code> request.</para>\n      ",
+            "documentation": "\n         <p>Information about the resources and the policy that you specified in the <code>GetComplianceDetail</code> request.</p>\n      ",
+            "shape_name": "PolicyComplianceDetail"
+          }
+        },
+        "shape_name": "GetComplianceDetailResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The specified resource was not found.</para>\n      ",
+          "documentation": "\n         <p>The specified resource was not found.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The operation failed because of a system problem, even though the request was valid. Retry your request.</para>\n      ",
+          "documentation": "\n         <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>\n      ",
+          "shape_name": "InternalErrorException"
+        }
+      ],
+      "documentation": "\n         <p>Returns detailed compliance information about the specified member account. Details\n      include resources that are in and out of compliance with the specified policy. Resources are\n      considered non-compliant if the specified policy has not been applied to them.</p>\n      "
+    }
+  }
+}

@@ -70,6 +70,12 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
                     unmarshalledObject.EvaluationResults = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IssueInfoMap", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.IssueInfoMap = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastUpdated", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
