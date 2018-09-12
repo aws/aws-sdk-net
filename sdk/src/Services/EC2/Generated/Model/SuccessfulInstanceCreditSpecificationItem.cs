@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the T2 instance whose credit option for CPU usage was successfully modified.
+    /// Describes the T2 or T3 instance whose credit option for CPU usage was successfully
+    /// modified.
     /// </summary>
     public partial class SuccessfulInstanceCreditSpecificationItem
     {

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the credit option for CPU usage of a T2 instance.
+    /// Describes the credit option for CPU usage of a T2 or T3 instance.
     /// </summary>
     public partial class InstanceCreditSpecification
     {

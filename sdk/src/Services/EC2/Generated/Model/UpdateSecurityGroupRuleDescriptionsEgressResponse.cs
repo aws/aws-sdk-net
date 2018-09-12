@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Contains the output of UpdateSecurityGroupRuleDescriptionsEgress.
+    /// This is the response object from the UpdateSecurityGroupRuleDescriptionsEgress operation.
     /// </summary>
     public partial class UpdateSecurityGroupRuleDescriptionsEgressResponse : AmazonWebServiceResponse
     {

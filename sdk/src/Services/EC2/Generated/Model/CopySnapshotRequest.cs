@@ -40,7 +40,7 @@ namespace Amazon.EC2.Model
     /// remain unencrypted, unless the <code>Encrypted</code> flag is specified during the
     /// snapshot copy operation. By default, encrypted snapshot copies use the default AWS
     /// Key Management Service (AWS KMS) customer master key (CMK); however, you can specify
-    /// a non-default CMK with the <code>KmsKeyId</code> parameter. 
+    /// a non-default CMK with the <code>KmsKeyId</code> parameter.
     /// </para>
     ///  
     /// <para>
@@ -117,10 +117,10 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Encrypted. 
         /// <para>
         /// Specifies whether the destination snapshot should be encrypted. You can encrypt a
-        /// copy of an unencrypted snapshot using this flag, but you cannot use it to create an
-        /// unencrypted copy from an encrypted snapshot. Your default CMK for EBS is used unless
-        /// a non-default AWS Key Management Service (AWS KMS) CMK is specified with <code>KmsKeyId</code>.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+        /// copy of an unencrypted snapshot, but you cannot use it to create an unencrypted copy
+        /// of an encrypted snapshot. Your default CMK for EBS is used unless you specify a non-default
+        /// AWS Key Management Service (AWS KMS) CMK using <code>KmsKeyId</code>. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
         /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>

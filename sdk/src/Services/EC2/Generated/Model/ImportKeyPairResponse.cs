@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Contains the output of ImportKeyPair.
+    /// This is the response object from the ImportKeyPair operation.
     /// </summary>
     public partial class ImportKeyPairResponse : AmazonWebServiceResponse
     {

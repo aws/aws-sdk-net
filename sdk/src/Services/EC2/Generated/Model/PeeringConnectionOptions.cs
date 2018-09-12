@@ -59,7 +59,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property AllowEgressFromLocalClassicLinkToRemoteVpc. 
         /// <para>
         /// If true, enables outbound communication from an EC2-Classic instance that's linked
-        /// to a local VPC via ClassicLink to instances in a peer VPC.
+        /// to a local VPC using ClassicLink to instances in a peer VPC.
         /// </para>
         /// </summary>
         public bool AllowEgressFromLocalClassicLinkToRemoteVpc
@@ -78,7 +78,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property AllowEgressFromLocalVpcToRemoteClassicLink. 
         /// <para>
         /// If true, enables outbound communication from instances in a local VPC to an EC2-Classic
-        /// instance that's linked to a peer VPC via ClassicLink.
+        /// instance that's linked to a peer VPC using ClassicLink.
         /// </para>
         /// </summary>
         public bool AllowEgressFromLocalVpcToRemoteClassicLink

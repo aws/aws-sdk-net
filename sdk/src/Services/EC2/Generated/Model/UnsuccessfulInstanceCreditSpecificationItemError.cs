@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Information about the error for the T2 instance whose credit option for CPU usage
-    /// was not modified.
+    /// Information about the error for the T2 or T3 instance whose credit option for CPU
+    /// usage was not modified.
     /// </summary>
     public partial class UnsuccessfulInstanceCreditSpecificationItemError
     {

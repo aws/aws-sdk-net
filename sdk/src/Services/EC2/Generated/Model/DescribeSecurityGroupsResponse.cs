@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Contains the output of DescribeSecurityGroups.
+    /// This is the response object from the DescribeSecurityGroups operation.
     /// </summary>
     public partial class DescribeSecurityGroupsResponse : AmazonWebServiceResponse
     {

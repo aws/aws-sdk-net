@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the T2 instance whose credit option for CPU usage was not modified.
+    /// Describes the T2 or T3 instance whose credit option for CPU usage was not modified.
     /// </summary>
     public partial class UnsuccessfulInstanceCreditSpecificationItem
     {
@@ -38,8 +38,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Error. 
         /// <para>
-        /// The applicable error for the T2 instance whose credit option for CPU usage was not
-        /// modified.
+        /// The applicable error for the T2 or T3 instance whose credit option for CPU usage was
+        /// not modified.
         /// </para>
         /// </summary>
         public UnsuccessfulInstanceCreditSpecificationItemError Error

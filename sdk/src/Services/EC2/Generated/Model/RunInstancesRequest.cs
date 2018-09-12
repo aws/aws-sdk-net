@@ -248,12 +248,12 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The credit option for CPU usage of the instance. Valid values are <code>standard</code>
         /// and <code>unlimited</code>. To change this attribute after launch, use <a>ModifyInstanceCreditSpecification</a>.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
-        /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+        /// Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>standard</code> 
+        /// Default: <code>standard</code> (T2 instances) or <code>unlimited</code> (T3 instances)
         /// </para>
         /// </summary>
         public CreditSpecificationRequest CreditSpecification

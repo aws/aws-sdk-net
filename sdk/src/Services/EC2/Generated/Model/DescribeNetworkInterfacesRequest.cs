@@ -34,7 +34,9 @@ namespace Amazon.EC2.Model
     public partial class DescribeNetworkInterfacesRequest : AmazonEC2Request
     {
         private List<Filter> _filters = new List<Filter>();
+        private int? _maxResults;
         private List<string> _networkInterfaceIds = new List<string>();
+        private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property Filters. 
@@ -229,6 +231,25 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of items to return for this request. The request returns a token
+        /// that you can specify in a subsequent call to get the next set of results.
+        /// </para>
+        /// </summary>
+        public int MaxResults
+        {
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property NetworkInterfaceIds. 
         /// <para>
         /// One or more network interface IDs.
@@ -248,6 +269,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetNetworkInterfaceIds()
         {
             return this._networkInterfaceIds != null && this._networkInterfaceIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token to retrieve the next page of results.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
     }

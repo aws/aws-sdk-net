@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Contains the output of DescribeFlowLogs.
+    /// This is the response object from the DescribeFlowLogs operation.
     /// </summary>
     public partial class DescribeFlowLogsResponse : AmazonWebServiceResponse
     {

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Contains the output of DeleteNatGateway.
+    /// This is the response object from the DeleteNatGateway operation.
     /// </summary>
     public partial class DeleteNatGatewayResponse : AmazonWebServiceResponse
     {

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Contains the output of DescribeKeyPairs.
+    /// This is the response object from the DescribeKeyPairs operation.
     /// </summary>
     public partial class DescribeKeyPairsResponse : AmazonWebServiceResponse
     {

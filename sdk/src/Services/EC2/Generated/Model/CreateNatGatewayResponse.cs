@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Contains the output of CreateNatGateway.
+    /// This is the response object from the CreateNatGateway operation.
     /// </summary>
     public partial class CreateNatGatewayResponse : AmazonWebServiceResponse
     {

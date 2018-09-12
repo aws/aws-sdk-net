@@ -71,10 +71,6 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>entry.egress</code> - Indicates whether the entry applies to egress traffic.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>entry.icmp.code</code> - The ICMP code specified in the entry, if any.
         /// </para>
         ///  </li> <li> 
@@ -108,7 +104,7 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>entry.rule-number</code> - The number of an entry (in other words, rule) in
-        /// the ACL's set of entries.
+        /// the set of ACL entries.
         /// </para>
         ///  </li> <li> 
         /// <para>

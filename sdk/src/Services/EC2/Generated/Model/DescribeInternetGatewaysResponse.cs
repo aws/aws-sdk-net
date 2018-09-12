@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Contains the output of DescribeInternetGateways.
+    /// This is the response object from the DescribeInternetGateways operation.
     /// </summary>
     public partial class DescribeInternetGatewaysResponse : AmazonWebServiceResponse
     {

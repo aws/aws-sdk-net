@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Contains the output of CreateRoute.
+    /// This is the response object from the CreateRoute operation.
     /// </summary>
     public partial class CreateRouteResponse : AmazonWebServiceResponse
     {

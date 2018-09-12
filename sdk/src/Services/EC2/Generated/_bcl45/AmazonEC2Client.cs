@@ -1797,6 +1797,13 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
+        /// Copies of encrypted backing snapshots for the AMI are encrypted. Copies of unencrypted
+        /// backing snapshots remain unencrypted, unless you set <code>Encrypted</code> during
+        /// the copy operation. You cannot create an unencrypted copy of an encrypted backing
+        /// snapshot.
+        /// </para>
+        ///  
+        /// <para>
         /// For more information about the prerequisites and limits when copying an AMI, see <a
         /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copying
         /// an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -1850,7 +1857,7 @@ namespace Amazon.EC2
         /// remain unencrypted, unless the <code>Encrypted</code> flag is specified during the
         /// snapshot copy operation. By default, encrypted snapshot copies use the default AWS
         /// Key Management Service (AWS KMS) customer master key (CMK); however, you can specify
-        /// a non-default CMK with the <code>KmsKeyId</code> parameter. 
+        /// a non-default CMK with the <code>KmsKeyId</code> parameter.
         /// </para>
         ///  
         /// <para>
@@ -2026,8 +2033,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// iIf you deleted your previous default VPC, you can create a default VPC. You cannot
-        /// have more than one default VPC per Region. 
+        /// If you deleted your previous default VPC, you can create a default VPC. You cannot
+        /// have more than one default VPC per Region.
         /// </para>
         ///  
         /// <para>
@@ -6608,7 +6615,7 @@ namespace Amazon.EC2
         /// The results describe all the Dedicated Host reservation offerings, including offerings
         /// that may not match the instance family and region of your Dedicated Hosts. When purchasing
         /// an offering, ensure that the instance family and Region of the offering matches that
-        /// of the Dedicated Hosts with which it is to be associated . For more information about
+        /// of the Dedicated Hosts with which it is to be associated. For more information about
         /// supported instance types, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated
         /// Hosts Overview</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. 
         /// </para>
@@ -7159,16 +7166,22 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the credit option for CPU usage of one or more of your T2 instances. The
-        /// credit options are <code>standard</code> and <code>unlimited</code>.
+        /// Describes the credit option for CPU usage of one or more of your T2 or T3 instances.
+        /// The credit options are <code>standard</code> and <code>unlimited</code>.
         /// 
         ///  
         /// <para>
-        /// If you do not specify an instance ID, Amazon EC2 returns only the T2 instances with
-        /// the <code>unlimited</code> credit option. If you specify one or more instance IDs,
-        /// Amazon EC2 returns the credit option (<code>standard</code> or <code>unlimited</code>)
-        /// of those instances. If you specify an instance ID that is not valid, such as an instance
-        /// that is not a T2 instance, an error is returned.
+        /// If you do not specify an instance ID, Amazon EC2 returns T2 and T3 instances with
+        /// the <code>unlimited</code> credit option, as well as instances that were previously
+        /// configured as T2 or T3 with the <code>unlimited</code> credit option. For example,
+        /// if you resize a T2 instance, while it is configured as <code>unlimited</code>, to
+        /// an M4 instance, Amazon EC2 returns the M4 instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify one or more instance IDs, Amazon EC2 returns the credit option (<code>standard</code>
+        /// or <code>unlimited</code>) of those instances. If you specify an instance ID that
+        /// is not valid, such as an instance that is not a T2 or T3 instance, an error is returned.
         /// </para>
         ///  
         /// <para>
@@ -7183,8 +7196,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
-        /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+        /// Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceCreditSpecifications service method.</param>
@@ -12374,7 +12387,7 @@ namespace Amazon.EC2
         /// Modify the auto-placement setting of a Dedicated Host. When auto-placement is enabled,
         /// any instances that you launch with a tenancy of <code>host</code> but without a specific
         /// host ID are placed onto any available Dedicated Host in your account that has auto-placement
-        /// enabled. When auto-placement is disabled, you need to provide a host ID ito have the
+        /// enabled. When auto-placement is disabled, you need to provide a host ID to have the
         /// instance launch onto a specific host. If no host ID is provided, the instance is launched
         /// onto a suitable host with auto-placement enabled.
         /// </summary>
@@ -12666,13 +12679,13 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Modifies the credit option for CPU usage on a running or stopped T2 instance. The
-        /// credit options are <code>standard</code> and <code>unlimited</code>.
+        /// Modifies the credit option for CPU usage on a running or stopped T2 or T3 instance.
+        /// The credit options are <code>standard</code> and <code>unlimited</code>.
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
-        /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+        /// Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceCreditSpecification service method.</param>
@@ -14059,8 +14072,8 @@ namespace Amazon.EC2
         /// When you no longer want to use an On-Demand Dedicated Host it can be released. On-Demand
         /// billing is stopped and the host goes into <code>released</code> state. The host ID
         /// of Dedicated Hosts that have been released can no longer be specified in another request,
-        /// for example, ModifyHosts. You must stop or terminate all instances on a host before
-        /// it can be released.
+        /// for example, to modify the host. You must stop or terminate all instances on a host
+        /// before it can be released.
         /// 
         ///  
         /// <para>

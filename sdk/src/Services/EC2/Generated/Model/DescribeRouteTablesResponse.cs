@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Contains the output of DescribeRouteTables.
+    /// This is the response object from the DescribeRouteTables operation.
     /// </summary>
     public partial class DescribeRouteTablesResponse : AmazonWebServiceResponse
     {

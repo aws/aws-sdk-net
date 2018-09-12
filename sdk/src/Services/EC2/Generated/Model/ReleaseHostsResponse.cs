@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Contains the output of ReleaseHosts.
+    /// This is the response object from the ReleaseHosts operation.
     /// </summary>
     public partial class ReleaseHostsResponse : AmazonWebServiceResponse
     {

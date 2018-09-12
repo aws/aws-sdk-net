@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Contains the output of DescribeNetworkAcls.
+    /// This is the response object from the DescribeNetworkAcls operation.
     /// </summary>
     public partial class DescribeNetworkAclsResponse : AmazonWebServiceResponse
     {

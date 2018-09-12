@@ -37,8 +37,8 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// iIf you deleted your previous default VPC, you can create a default VPC. You cannot
-    /// have more than one default VPC per Region. 
+    /// If you deleted your previous default VPC, you can create a default VPC. You cannot
+    /// have more than one default VPC per Region.
     /// </para>
     ///  
     /// <para>

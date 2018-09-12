@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Contains the output of DescribeHosts.
+    /// This is the response object from the DescribeHosts operation.
     /// </summary>
     public partial class DescribeHostsResponse : AmazonWebServiceResponse
     {

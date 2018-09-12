@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Contains the output of DisableVpcClassicLink.
+    /// This is the response object from the DisableVpcClassicLink operation.
     /// </summary>
     public partial class DisableVpcClassicLinkResponse : AmazonWebServiceResponse
     {

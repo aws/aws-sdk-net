@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Contains the output of EnableVpcClassicLinkDnsSupport.
+    /// This is the response object from the EnableVpcClassicLinkDnsSupport operation.
     /// </summary>
     public partial class EnableVpcClassicLinkDnsSupportResponse : AmazonWebServiceResponse
     {

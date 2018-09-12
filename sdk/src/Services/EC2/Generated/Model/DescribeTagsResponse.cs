@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Contains the output of DescribeTags.
+    /// This is the response object from the DescribeTags operation.
     /// </summary>
     public partial class DescribeTagsResponse : AmazonWebServiceResponse
     {
@@ -57,7 +57,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of tags.
+        /// The tags.
         /// </para>
         /// </summary>
         public List<TagDescription> Tags

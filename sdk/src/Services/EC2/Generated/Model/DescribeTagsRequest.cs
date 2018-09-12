@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates DescribeTagsRequest with the parameterized properties
         /// </summary>
-        /// <param name="filters">One or more filters. <ul> <li>  <code>key</code> - The tag key. </li> <li>  <code>resource-id</code> - The resource ID. </li> <li>  <code>resource-type</code> - The resource type (<code>customer-gateway</code> | <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> | <code>fpga-image</code> | <code>image</code> | <code>instance</code> | <code>internet-gateway</code> | <code>launch-template</code> | <code>natgateway</code> | <code>network-acl</code> | <code>network-interface</code> | <code>reserved-instances</code> | <code>route-table</code> | <code>security-group</code> | <code>snapshot</code> | <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code> | <code>vpc</code> | <code>vpc-peering-connection</code> | <code>vpn-connection</code> | <code>vpn-gateway</code>). </li> <li>  <code>value</code> - The tag value. </li> </ul></param>
+        /// <param name="filters">One or more filters. <ul> <li>  <code>key</code> - The tag key. </li> <li>  <code>resource-id</code> - The ID of the resource. </li> <li>  <code>resource-type</code> - The resource type (<code>customer-gateway</code> | <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> | <code>fpga-image</code> | <code>image</code> | <code>instance</code> | <code>internet-gateway</code> | <code>launch-template</code> | <code>natgateway</code> | <code>network-acl</code> | <code>network-interface</code> | <code>reserved-instances</code> | <code>route-table</code> | <code>security-group</code> | <code>snapshot</code> | <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code> | <code>vpc</code> | <code>vpc-peering-connection</code> | <code>vpn-connection</code> | <code>vpn-gateway</code>). </li> <li>  <code>tag</code>:&lt;key&gt; - The key/value combination of the tag. For example, specify "tag:Owner" for the filter name and "TeamA" for the filter value to find resources with the tag "Owner=TeamA". </li> <li>  <code>value</code> - The tag value. </li> </ul></param>
         public DescribeTagsRequest(List<Filter> filters)
         {
             _filters = filters;
@@ -68,7 +68,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>resource-id</code> - The resource ID.
+        ///  <code>resource-id</code> - The ID of the resource.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -80,6 +80,12 @@ namespace Amazon.EC2.Model
         /// | <code>snapshot</code> | <code>spot-instances-request</code> | <code>subnet</code>
         /// | <code>volume</code> | <code>vpc</code> | <code>vpc-peering-connection</code> | <code>vpn-connection</code>
         /// | <code>vpn-gateway</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>tag</code>:&lt;key&gt; - The key/value combination of the tag. For example,
+        /// specify "tag:Owner" for the filter name and "TeamA" for the filter value to find resources
+        /// with the tag "Owner=TeamA".
         /// </para>
         ///  </li> <li> 
         /// <para>
