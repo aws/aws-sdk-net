@@ -48,7 +48,7 @@ namespace Amazon.SimpleEmail.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The total size of the message, including attachments, must be smaller than 10 MB.
+    /// The maximum message size is 10 MB.
     /// </para>
     ///  </li> <li> 
     /// <para>
