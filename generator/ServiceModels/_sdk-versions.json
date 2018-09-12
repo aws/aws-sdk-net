@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.359.0",
+    "ProductVersion" : "3.3.360.0",
     "CoreVersion"    : "3.3.25.3",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -151,7 +151,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.3.59.3",
+            "Version" : "3.3.60.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.25.3"
@@ -337,7 +337,7 @@
             "InPreview"               : false
         },
         "SimpleEmail"          : {
-            "Version" : "3.3.6.19",
+            "Version" : "3.3.6.20",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.25.3"
@@ -1057,7 +1057,7 @@
             "InPreview"               : false
         },
         "Connect"                         : {
-            "Version" : "3.3.1.7",
+            "Version" : "3.3.2.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.25.3"
@@ -1065,7 +1065,7 @@
             "InPreview"               : false
         },
         "FMS"                             : {
-            "Version" : "3.3.0.14",
+            "Version" : "3.3.1.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.25.3"

@@ -1,3 +1,13 @@
+### 3.3.360.0 (2018-09-12 20:09 UTC)
+* Connect (3.3.2.0)
+	* This update adds the Amazon Connect Update Contact Attributes API, which lets you update contact attributes for contacts in your Amazon Connect instance.
+* EC2 (3.3.60.0)
+	* Pagination Support for DescribeNetworkInterfaces API
+* FMS (3.3.1.0)
+	* This update of Amazon Fire Wall Manager adds the ability to scope down the policy as well as to get all the member accounts belonging to a certain Fire Wall Manager admin account.
+* SimpleEmail (3.3.6.20)
+	* Documentation updates for Amazon Simple Email Service
+
 ### 3.3.359.0 (2018-09-11 18:10 UTC)
 * OpsWorksCM (3.3.5.3)
 	* Documentation updates for opsworkscm
