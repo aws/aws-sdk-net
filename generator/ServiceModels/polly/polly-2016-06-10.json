@@ -42,8 +42,8 @@
               "ogg_vorbis",
               "pcm"
             ],
-            "zonbookDocumentation": "\n         <simpara>\n      The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. \n      For speech marks, this will be json.\n    </simpara>\n      ",
-            "documentation": "\n         <p>\n      The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. \n      For speech marks, this will be json.\n    </p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>\n      The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. \n      For speech marks, this will be json.  </simpara>\n         <simpara>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </simpara>\n      \n      \n   \n      ",
+            "documentation": "\n         <p>\n      The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. \n      For speech marks, this will be json.  </p>\n         <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p>\n      \n      \n   \n      ",
             "required": true,
             "shape_name": "OutputFormat"
           },
@@ -143,7 +143,8 @@
               "Vicki",
               "Takumi",
               "Seoyeon",
-              "Aditi"
+              "Aditi",
+              "Zhiyu"
             ],
             "zonbookDocumentation": "\n         <simpara>\n      Voice ID to use for the synthesis. You can get a list of \n      available voice IDs by calling the <ulink url=\"http://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html\">DescribeVoices</ulink> operation.\n    </simpara>\n      ",
             "documentation": "\n         <p>\n      Voice ID to use for the synthesis. You can get a list of \n      available voice IDs by calling the <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html\">DescribeVoices</a> operation.\n    </p>\n      ",
@@ -153,6 +154,7 @@
           "LanguageCode": {
             "type": "string",
             "enum": [
+              "cmn-CN",
               "cy-GB",
               "da-DK",
               "de-DE",
@@ -442,7 +444,8 @@
               "Vicki",
               "Takumi",
               "Seoyeon",
-              "Aditi"
+              "Aditi",
+              "Zhiyu"
             ],
             "required": true,
             "location": "uri",
@@ -470,6 +473,7 @@
           "LanguageCode": {
             "type": "string",
             "enum": [
+              "cmn-CN",
               "cy-GB",
               "da-DK",
               "de-DE",
@@ -799,7 +803,8 @@
               "Vicki",
               "Takumi",
               "Seoyeon",
-              "Aditi"
+              "Aditi",
+              "Zhiyu"
             ],
             "zonbookDocumentation": "\n         <para>Voice ID to use for the synthesis. </para>\n      ",
             "documentation": "\n         <p>Voice ID to use for the synthesis. </p>\n      ",
@@ -809,6 +814,7 @@
           "LanguageCode": {
             "type": "string",
             "enum": [
+              "cmn-CN",
               "cy-GB",
               "da-DK",
               "de-DE",
@@ -1016,7 +1022,8 @@
                   "Vicki",
                   "Takumi",
                   "Seoyeon",
-                  "Aditi"
+                  "Aditi",
+                  "Zhiyu"
                 ],
                 "zonbookDocumentation": "\n         <para>Voice ID to use for the synthesis. </para>\n      ",
                 "documentation": "\n         <p>Voice ID to use for the synthesis. </p>\n      ",
@@ -1025,6 +1032,7 @@
               "LanguageCode": {
                 "type": "string",
                 "enum": [
+                  "cmn-CN",
                   "cy-GB",
                   "da-DK",
                   "de-DE",
@@ -1408,7 +1416,8 @@
                   "Vicki",
                   "Takumi",
                   "Seoyeon",
-                  "Aditi"
+                  "Aditi",
+                  "Zhiyu"
                 ],
                 "zonbookDocumentation": "\n         <para>Voice ID to use for the synthesis. </para>\n      ",
                 "documentation": "\n         <p>Voice ID to use for the synthesis. </p>\n      ",
@@ -1417,6 +1426,7 @@
               "LanguageCode": {
                 "type": "string",
                 "enum": [
+                  "cmn-CN",
                   "cy-GB",
                   "da-DK",
                   "de-DE",
@@ -1726,7 +1736,8 @@
                     "Vicki",
                     "Takumi",
                     "Seoyeon",
-                    "Aditi"
+                    "Aditi",
+                    "Zhiyu"
                   ],
                   "zonbookDocumentation": "\n         <para>Voice ID to use for the synthesis. </para>\n      ",
                   "documentation": "\n         <p>Voice ID to use for the synthesis. </p>\n      ",
@@ -1735,6 +1746,7 @@
                 "LanguageCode": {
                   "type": "string",
                   "enum": [
+                    "cmn-CN",
                     "cy-GB",
                     "da-DK",
                     "de-DE",
@@ -1819,6 +1831,7 @@
           "LanguageCode": {
             "type": "string",
             "enum": [
+              "cmn-CN",
               "cy-GB",
               "da-DK",
               "de-DE",
@@ -1945,7 +1958,8 @@
                     "Vicki",
                     "Takumi",
                     "Seoyeon",
-                    "Aditi"
+                    "Aditi",
+                    "Zhiyu"
                   ],
                   "zonbookDocumentation": "\n         <simpara>Amazon Polly assigned voice ID. This is the ID that you specify \n    when calling the <code>SynthesizeSpeech</code> operation.</simpara>\n      ",
                   "documentation": "\n         <p>Amazon Polly assigned voice ID. This is the ID that you specify \n    when calling the <code>SynthesizeSpeech</code> operation.</p>\n      ",
@@ -1954,6 +1968,7 @@
                 "LanguageCode": {
                   "type": "string",
                   "enum": [
+                    "cmn-CN",
                     "cy-GB",
                     "da-DK",
                     "de-DE",
@@ -2005,6 +2020,7 @@
                   "members": {
                     "type": "string",
                     "enum": [
+                      "cmn-CN",
                       "cy-GB",
                       "da-DK",
                       "de-DE",
@@ -2204,6 +2220,7 @@
               "LanguageCode": {
                 "type": "string",
                 "enum": [
+                  "cmn-CN",
                   "cy-GB",
                   "da-DK",
                   "de-DE",
@@ -2350,6 +2367,7 @@
                     "LanguageCode": {
                       "type": "string",
                       "enum": [
+                        "cmn-CN",
                         "cy-GB",
                         "da-DK",
                         "de-DE",
@@ -2995,7 +3013,8 @@
               "Vicki",
               "Takumi",
               "Seoyeon",
-              "Aditi"
+              "Aditi",
+              "Zhiyu"
             ],
             "required": true,
             "shape_name": "VoiceId",
@@ -3004,6 +3023,7 @@
           "LanguageCode": {
             "type": "string",
             "enum": [
+              "cmn-CN",
               "cy-GB",
               "da-DK",
               "de-DE",

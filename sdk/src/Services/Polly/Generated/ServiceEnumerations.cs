@@ -81,6 +81,10 @@ namespace Amazon.Polly
     {
 
         /// <summary>
+        /// Constant CmnCN for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode CmnCN = new LanguageCode("cmn-CN");
+        /// <summary>
         /// Constant CyGB for LanguageCode
         /// </summary>
         public static readonly LanguageCode CyGB = new LanguageCode("cy-GB");
@@ -662,6 +666,10 @@ namespace Amazon.Polly
         /// Constant Vitoria for VoiceId
         /// </summary>
         public static readonly VoiceId Vitoria = new VoiceId("Vitoria");
+        /// <summary>
+        /// Constant Zhiyu for VoiceId
+        /// </summary>
+        public static readonly VoiceId Zhiyu = new VoiceId("Zhiyu");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
