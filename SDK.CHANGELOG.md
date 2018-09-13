@@ -1,3 +1,7 @@
+### 3.3.361.0 (2018-09-13 18:37 UTC)
+* Polly (3.3.8.0)
+	* Amazon Polly adds Mandarin Chinese language support with new female voice - "Zhiyu"
+
 ### 3.3.360.0 (2018-09-12 20:09 UTC)
 * Connect (3.3.2.0)
 	* This update adds the Amazon Connect Update Contact Attributes API, which lets you update contact attributes for contacts in your Amazon Connect instance.
