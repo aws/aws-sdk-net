@@ -33,7 +33,7 @@ namespace Amazon.ElasticTranscoder.Model
     /// 
     ///  
     /// <para>
-    /// PlayReady DRM encrypts your media files using <code>AES-CTR</code> encryption.
+    /// PlayReady DRM encrypts your media files using <code>aes-ctr</code> encryption.
     /// </para>
     ///  
     /// <para>

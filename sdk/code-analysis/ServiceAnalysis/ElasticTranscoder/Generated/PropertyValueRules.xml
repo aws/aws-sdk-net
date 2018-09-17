@@ -37,7 +37,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticTranscoder.Model.CreatePresetRequest.Container</property>
-    <pattern>(^mp4$)|(^ts$)|(^webm$)|(^mp3$)|(^flac$)|(^oga$)|(^ogg$)|(^fmp4$)|(^mpg$)|(^flv$)|(^gif$)|(^mxf$)|(^wav$)</pattern>
+    <pattern>(^mp4$)|(^ts$)|(^webm$)|(^mp3$)|(^flac$)|(^oga$)|(^ogg$)|(^fmp4$)|(^mpg$)|(^flv$)|(^gif$)|(^mxf$)|(^wav$)|(^mp2$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticTranscoder.Model.CreatePresetRequest.Description</property>
@@ -549,7 +549,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticTranscoder.Model.Preset.Container</property>
-    <pattern>(^mp4$)|(^ts$)|(^webm$)|(^mp3$)|(^flac$)|(^oga$)|(^ogg$)|(^fmp4$)|(^mpg$)|(^flv$)|(^gif$)|(^mxf$)|(^wav$)</pattern>
+    <pattern>(^mp4$)|(^ts$)|(^webm$)|(^mp3$)|(^flac$)|(^oga$)|(^ogg$)|(^fmp4$)|(^mpg$)|(^flv$)|(^gif$)|(^mxf$)|(^wav$)|(^mp2$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticTranscoder.Model.Preset.Description</property>
