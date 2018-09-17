@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the AllocateHosts operation.
+    /// Contains the output of AllocateHosts.
     /// </summary>
     public partial class AllocateHostsResponse : AmazonWebServiceResponse
     {

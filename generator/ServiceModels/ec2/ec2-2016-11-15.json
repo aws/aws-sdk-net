@@ -5450,6 +5450,7 @@
                   "type": "string",
                   "enum": [
                     "customer-gateway",
+                    "dedicated-host",
                     "dhcp-options",
                     "image",
                     "instance",
@@ -5467,8 +5468,8 @@
                     "vpn-connection",
                     "vpn-gateway"
                   ],
-                  "zonbookDocumentation": "\n        <para>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>instance</code>, <code>snapshot</code>, and\n\t\t\t\t<code>volume</code>. To tag a resource after it has been created, see <xref linkend=\"CreateTags\"/>.</para>\n      ",
-                  "documentation": "\n        <p>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>instance</code>, <code>snapshot</code>, and\n\t\t\t\t<code>volume</code>. To tag a resource after it has been created, see <a>CreateTags</a>.</p>\n      ",
+                  "zonbookDocumentation": "\n        <simpara>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t\t<code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\tcreated, see <xref linkend=\"CreateTags\"/>.</simpara>\n      ",
+                  "documentation": "\n        <p>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t\t<code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\tcreated, see <a>CreateTags</a>.</p>\n      ",
                   "shape_name": "ResourceType"
                 },
                 "Tags": {
@@ -6998,7 +6999,7 @@
           },
           "AvailabilityZone": {
             "type": "string",
-            "zonbookDocumentation": "\n        <para>The Availability Zone for the Dedicated Hosts.</para>\n      ",
+            "zonbookDocumentation": "\n        <simpara>The Availability Zone for the Dedicated Hosts.</simpara>\n      ",
             "documentation": "\n        <p>The Availability Zone for the Dedicated Hosts.</p>\n      ",
             "required": true,
             "shape_name": "String"
@@ -7022,6 +7023,76 @@
             "documentation": "\n        <p>The number of Dedicated Hosts to allocate to your account with these\n\t\t\tparameters.</p>\n      ",
             "required": true,
             "shape_name": "Integer"
+          },
+          "TagSpecifications": {
+            "type": "list",
+            "zonbookDocumentation": "\n\t\t       <simpara>The tags to apply to the Dedicated Host during creation.</simpara>\n\t     ",
+            "documentation": "\n\t\t       <p>The tags to apply to the Dedicated Host during creation.</p>\n\t     ",
+            "shape_name": "TagSpecificationList",
+            "members": {
+              "type": "structure",
+              "members": {
+                "ResourceType": {
+                  "type": "string",
+                  "enum": [
+                    "customer-gateway",
+                    "dedicated-host",
+                    "dhcp-options",
+                    "image",
+                    "instance",
+                    "internet-gateway",
+                    "network-acl",
+                    "network-interface",
+                    "reserved-instances",
+                    "route-table",
+                    "snapshot",
+                    "spot-instances-request",
+                    "subnet",
+                    "security-group",
+                    "volume",
+                    "vpc",
+                    "vpn-connection",
+                    "vpn-gateway"
+                  ],
+                  "zonbookDocumentation": "\n        <simpara>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t\t<code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\tcreated, see <xref linkend=\"CreateTags\"/>.</simpara>\n      ",
+                  "documentation": "\n        <p>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t\t<code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\tcreated, see <a>CreateTags</a>.</p>\n      ",
+                  "shape_name": "ResourceType"
+                },
+                "Tags": {
+                  "type": "list",
+                  "zonbookDocumentation": "\n        <para>The tags to apply to the resource.</para>\n      ",
+                  "documentation": "\n        <p>The tags to apply to the resource.</p>\n      ",
+                  "shape_name": "TagList",
+                  "members": {
+                    "type": "structure",
+                    "members": {
+                      "Key": {
+                        "type": "string",
+                        "zonbookDocumentation": "\n         <para>The key of the tag.</para>\n         <para>Constraints: Tag keys are case-sensitive and accept a maximum of 127 Unicode characters. \n         May not begin with <code>aws:</code>.</para>\n      ",
+                        "documentation": "\n         <p>The key of the tag.</p>\n         <p>Constraints: Tag keys are case-sensitive and accept a maximum of 127 Unicode characters. \n         May not begin with <code>aws:</code>.</p>\n      ",
+                        "shape_name": "String"
+                      },
+                      "Value": {
+                        "type": "string",
+                        "zonbookDocumentation": "\n         <para>The value of the tag.</para>\n         <para>Constraints: Tag values are case-sensitive and accept a maximum of 255 Unicode characters.</para>\n      ",
+                        "documentation": "\n         <p>The value of the tag.</p>\n         <p>Constraints: Tag values are case-sensitive and accept a maximum of 255 Unicode characters.</p>\n      ",
+                        "shape_name": "String"
+                      }
+                    },
+                    "zonbookDocumentation": "\n         <para>Describes a tag.</para>\n      ",
+                    "documentation": "\n         <p>Describes a tag.</p>\n      ",
+                    "shape_name": "Tag",
+                    "xmlname": "Tag"
+                  },
+                  "flattened": true
+                }
+              },
+              "zonbookDocumentation": "\n        <para>The tags to apply to a resource when the resource is being created.</para>\n      ",
+              "documentation": "\n        <p>The tags to apply to a resource when the resource is being created.</p>\n      ",
+              "shape_name": "TagSpecification",
+              "xmlname": "TagSpecification"
+            },
+            "flattened": true
           }
         },
         "shape_name": "AllocateHostsRequest",
@@ -7044,8 +7115,9 @@
             }
           }
         },
-        "shape_name": "AllocateHostsResult",
-        "documentation": null
+        "zonbookDocumentation": "\n        <simpara>Contains the output of AllocateHosts.</simpara>\n      ",
+        "documentation": "\n        <p>Contains the output of AllocateHosts.</p>\n      ",
+        "shape_name": "AllocateHostsResult"
       },
       "errors": [
 
@@ -15649,6 +15721,7 @@
                   "type": "string",
                   "enum": [
                     "customer-gateway",
+                    "dedicated-host",
                     "dhcp-options",
                     "image",
                     "instance",
@@ -15666,8 +15739,8 @@
                     "vpn-connection",
                     "vpn-gateway"
                   ],
-                  "zonbookDocumentation": "\n        <para>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>instance</code>, <code>snapshot</code>, and\n\t\t\t\t<code>volume</code>. To tag a resource after it has been created, see <xref linkend=\"CreateTags\"/>.</para>\n      ",
-                  "documentation": "\n        <p>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>instance</code>, <code>snapshot</code>, and\n\t\t\t\t<code>volume</code>. To tag a resource after it has been created, see <a>CreateTags</a>.</p>\n      ",
+                  "zonbookDocumentation": "\n        <simpara>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t\t<code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\tcreated, see <xref linkend=\"CreateTags\"/>.</simpara>\n      ",
+                  "documentation": "\n        <p>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t\t<code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\tcreated, see <a>CreateTags</a>.</p>\n      ",
                   "shape_name": "ResourceType"
                 },
                 "Tags": {
@@ -18623,6 +18696,7 @@
                       "type": "string",
                       "enum": [
                         "customer-gateway",
+                        "dedicated-host",
                         "dhcp-options",
                         "image",
                         "instance",
@@ -19508,6 +19582,7 @@
                       "type": "string",
                       "enum": [
                         "customer-gateway",
+                        "dedicated-host",
                         "dhcp-options",
                         "image",
                         "instance",
@@ -20358,6 +20433,7 @@
                           "type": "string",
                           "enum": [
                             "customer-gateway",
+                            "dedicated-host",
                             "dhcp-options",
                             "image",
                             "instance",
@@ -21681,6 +21757,7 @@
                             "type": "string",
                             "enum": [
                               "customer-gateway",
+                              "dedicated-host",
                               "dhcp-options",
                               "image",
                               "instance",
@@ -22817,6 +22894,7 @@
                       "type": "string",
                       "enum": [
                         "customer-gateway",
+                        "dedicated-host",
                         "dhcp-options",
                         "image",
                         "instance",
@@ -34625,6 +34703,7 @@
                   "type": "string",
                   "enum": [
                     "customer-gateway",
+                    "dedicated-host",
                     "dhcp-options",
                     "image",
                     "instance",
@@ -34642,8 +34721,8 @@
                     "vpn-connection",
                     "vpn-gateway"
                   ],
-                  "zonbookDocumentation": "\n        <para>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>instance</code>, <code>snapshot</code>, and\n\t\t\t\t<code>volume</code>. To tag a resource after it has been created, see <xref linkend=\"CreateTags\"/>.</para>\n      ",
-                  "documentation": "\n        <p>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>instance</code>, <code>snapshot</code>, and\n\t\t\t\t<code>volume</code>. To tag a resource after it has been created, see <a>CreateTags</a>.</p>\n      ",
+                  "zonbookDocumentation": "\n        <simpara>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t\t<code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\tcreated, see <xref linkend=\"CreateTags\"/>.</simpara>\n      ",
+                  "documentation": "\n        <p>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t\t<code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\tcreated, see <a>CreateTags</a>.</p>\n      ",
                   "shape_name": "ResourceType"
                 },
                 "Tags": {
@@ -37249,6 +37328,7 @@
                                   "type": "string",
                                   "enum": [
                                     "customer-gateway",
+                                    "dedicated-host",
                                     "dhcp-options",
                                     "image",
                                     "instance",
@@ -38460,6 +38540,7 @@
                             "type": "string",
                             "enum": [
                               "customer-gateway",
+                              "dedicated-host",
                               "dhcp-options",
                               "image",
                               "instance",
@@ -42878,8 +42959,8 @@
           },
           "Filters": {
             "type": "list",
-            "zonbookDocumentation": "\n         <para>One or more filters.</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>key</code> - The tag key.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>resource-id</code> - The ID of the resource.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>resource-type</code> - The resource type (<code>customer-gateway</code> |\n            \t   <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> |\n                  <code>fpga-image</code> | <code>image</code> | <code>instance</code> |\n                  <code>internet-gateway</code> | <code>launch-template</code> |\n                  <code>natgateway</code> | <code>network-acl</code> |\n                  <code>network-interface</code> | <code>reserved-instances</code> |\n                  <code>route-table</code> | <code>security-group</code> |\n                  <code>snapshot</code> | <code>spot-instances-request</code> |\n                  <code>subnet</code> | <code>volume</code> | <code>vpc</code> |\n                  <code>vpc-peering-connection</code> | <code>vpn-connection</code> |\n                  <code>vpn-gateway</code>).</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>tag</code>:&lt;key&gt; - The key/value combination of the tag. For example,\n                specify \"tag:Owner\" for the filter name and \"TeamA\" for the filter value to find\n                resources with the tag \"Owner=TeamA\".</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>value</code> - The tag value.</para>\n            </listitem>\n         </itemizedlist>\n      ",
-            "documentation": "\n         <p>One or more filters.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>key</code> - The tag key.</p>\n            </li>\n            <li>\n               <p>\n                  <code>resource-id</code> - The ID of the resource.</p>\n            </li>\n            <li>\n               <p>\n                  <code>resource-type</code> - The resource type (<code>customer-gateway</code> |\n            \t   <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> |\n                  <code>fpga-image</code> | <code>image</code> | <code>instance</code> |\n                  <code>internet-gateway</code> | <code>launch-template</code> |\n                  <code>natgateway</code> | <code>network-acl</code> |\n                  <code>network-interface</code> | <code>reserved-instances</code> |\n                  <code>route-table</code> | <code>security-group</code> |\n                  <code>snapshot</code> | <code>spot-instances-request</code> |\n                  <code>subnet</code> | <code>volume</code> | <code>vpc</code> |\n                  <code>vpc-peering-connection</code> | <code>vpn-connection</code> |\n                  <code>vpn-gateway</code>).</p>\n            </li>\n            <li>\n               <p>\n                  <code>tag</code>:&lt;key&gt; - The key/value combination of the tag. For example,\n                specify \"tag:Owner\" for the filter name and \"TeamA\" for the filter value to find\n                resources with the tag \"Owner=TeamA\".</p>\n            </li>\n            <li>\n               <p>\n                  <code>value</code> - The tag value.</p>\n            </li>\n         </ul>\n      ",
+            "zonbookDocumentation": "\n         <para>One or more filters.</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>key</code> - The tag key.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>resource-id</code> - The ID of the resource.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>resource-type</code> - The resource type (<code>customer-gateway</code> |\n            \t  <code>dedicated-host</code> | <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> |\n                  <code>fpga-image</code> | <code>image</code> | <code>instance</code> |\n                  <code>internet-gateway</code> | <code>launch-template</code> |\n                  <code>natgateway</code> | <code>network-acl</code> |\n                  <code>network-interface</code> | <code>reserved-instances</code> |\n                  <code>route-table</code> | <code>security-group</code> |\n                  <code>snapshot</code> | <code>spot-instances-request</code> |\n                  <code>subnet</code> | <code>volume</code> | <code>vpc</code> |\n                  <code>vpc-peering-connection</code> | <code>vpn-connection</code> |\n                  <code>vpn-gateway</code>).</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>tag</code>:&lt;key&gt; - The key/value combination of the tag. For example,\n                specify \"tag:Owner\" for the filter name and \"TeamA\" for the filter value to find\n                resources with the tag \"Owner=TeamA\".</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>value</code> - The tag value.</para>\n            </listitem>\n         </itemizedlist>\n      ",
+            "documentation": "\n         <p>One or more filters.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>key</code> - The tag key.</p>\n            </li>\n            <li>\n               <p>\n                  <code>resource-id</code> - The ID of the resource.</p>\n            </li>\n            <li>\n               <p>\n                  <code>resource-type</code> - The resource type (<code>customer-gateway</code> |\n            \t  <code>dedicated-host</code> | <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> |\n                  <code>fpga-image</code> | <code>image</code> | <code>instance</code> |\n                  <code>internet-gateway</code> | <code>launch-template</code> |\n                  <code>natgateway</code> | <code>network-acl</code> |\n                  <code>network-interface</code> | <code>reserved-instances</code> |\n                  <code>route-table</code> | <code>security-group</code> |\n                  <code>snapshot</code> | <code>spot-instances-request</code> |\n                  <code>subnet</code> | <code>volume</code> | <code>vpc</code> |\n                  <code>vpc-peering-connection</code> | <code>vpn-connection</code> |\n                  <code>vpn-gateway</code>).</p>\n            </li>\n            <li>\n               <p>\n                  <code>tag</code>:&lt;key&gt; - The key/value combination of the tag. For example,\n                specify \"tag:Owner\" for the filter name and \"TeamA\" for the filter value to find\n                resources with the tag \"Owner=TeamA\".</p>\n            </li>\n            <li>\n               <p>\n                  <code>value</code> - The tag value.</p>\n            </li>\n         </ul>\n      ",
             "shape_name": "FilterList",
             "members": {
               "type": "structure",
@@ -42964,6 +43045,7 @@
                   "type": "string",
                   "enum": [
                     "customer-gateway",
+                    "dedicated-host",
                     "dhcp-options",
                     "image",
                     "instance",
@@ -43752,6 +43834,7 @@
                   "type": "string",
                   "enum": [
                     "customer-gateway",
+                    "dedicated-host",
                     "dhcp-options",
                     "image",
                     "instance",
@@ -43769,8 +43852,8 @@
                     "vpn-connection",
                     "vpn-gateway"
                   ],
-                  "zonbookDocumentation": "\n        <para>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>instance</code>, <code>snapshot</code>, and\n\t\t\t\t<code>volume</code>. To tag a resource after it has been created, see <xref linkend=\"CreateTags\"/>.</para>\n      ",
-                  "documentation": "\n        <p>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>instance</code>, <code>snapshot</code>, and\n\t\t\t\t<code>volume</code>. To tag a resource after it has been created, see <a>CreateTags</a>.</p>\n      ",
+                  "zonbookDocumentation": "\n        <simpara>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t\t<code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\tcreated, see <xref linkend=\"CreateTags\"/>.</simpara>\n      ",
+                  "documentation": "\n        <p>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t\t<code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\tcreated, see <a>CreateTags</a>.</p>\n      ",
                   "shape_name": "ResourceType"
                 },
                 "Tags": {

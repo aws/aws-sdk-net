@@ -39,6 +39,7 @@ namespace Amazon.EC2.Model
         private string _clientToken;
         private string _instanceType;
         private int? _quantity;
+        private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
 
         /// <summary>
         /// Gets and sets the property AutoPlacement. 
@@ -137,6 +138,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetQuantity()
         {
             return this._quantity.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagSpecifications. 
+        /// <para>
+        /// The tags to apply to the Dedicated Host during creation.
+        /// </para>
+        /// </summary>
+        public List<TagSpecification> TagSpecifications
+        {
+            get { return this._tagSpecifications; }
+            set { this._tagSpecifications = value; }
+        }
+
+        // Check to see if TagSpecifications property is set
+        internal bool IsSetTagSpecifications()
+        {
+            return this._tagSpecifications != null && this._tagSpecifications.Count > 0; 
         }
 
     }

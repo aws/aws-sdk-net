@@ -5263,6 +5263,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly ResourceType CustomerGateway = new ResourceType("customer-gateway");
         /// <summary>
+        /// Constant DedicatedHost for ResourceType
+        /// </summary>
+        public static readonly ResourceType DedicatedHost = new ResourceType("dedicated-host");
+        /// <summary>
         /// Constant DhcpOptions for ResourceType
         /// </summary>
         public static readonly ResourceType DhcpOptions = new ResourceType("dhcp-options");
