@@ -39,7 +39,7 @@ namespace Amazon.ElastiCache.Model
     /// report as a comma-separated value (CSV) file with your usage and costs aggregated
     /// by your tags. You can apply tags that represent business categories (such as cost
     /// centers, application names, or owners) to organize your costs across multiple services.
-    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Tagging.html">Using
+    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Tagging.html">Using
     /// Cost Allocation Tags in Amazon ElastiCache</a> in the <i>ElastiCache User Guide</i>.
     /// </para>
     /// </summary>

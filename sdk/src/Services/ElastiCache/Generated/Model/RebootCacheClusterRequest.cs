@@ -51,7 +51,7 @@ namespace Amazon.ElastiCache.Model
     ///  
     /// <para>
     /// If you make changes to parameters that require a Redis (cluster mode enabled) cluster
-    /// reboot for the changes to be applied, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.htm">Rebooting
+    /// reboot for the changes to be applied, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting
     /// a Cluster</a> for an alternate process.
     /// </para>
     /// </summary>

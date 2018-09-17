@@ -260,6 +260,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("ElastiCache")]
+        public void DecreaseReplicaCountMarshallTest()
+        {
+            var operation = service_model.FindOperation("DecreaseReplicaCount");
+
+            var request = InstantiateClassGenerator.Execute<DecreaseReplicaCountRequest>();
+            var marshaller = new DecreaseReplicaCountRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DecreaseReplicaCountResponseUnmarshaller.Instance.Unmarshall(context)
+                as DecreaseReplicaCountResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElastiCache")]
         public void DeleteCacheClusterMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteCacheCluster");
@@ -668,6 +692,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = DescribeSnapshotsResponseUnmarshaller.Instance.Unmarshall(context)
                 as DescribeSnapshotsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElastiCache")]
+        public void IncreaseReplicaCountMarshallTest()
+        {
+            var operation = service_model.FindOperation("IncreaseReplicaCount");
+
+            var request = InstantiateClassGenerator.Execute<IncreaseReplicaCountRequest>();
+            var marshaller = new IncreaseReplicaCountRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = IncreaseReplicaCountResponseUnmarshaller.Instance.Unmarshall(context)
+                as IncreaseReplicaCountResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

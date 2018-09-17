@@ -535,6 +535,38 @@ namespace Amazon.ElastiCache
 
         #endregion
         
+        #region  DecreaseReplicaCount
+
+        internal virtual DecreaseReplicaCountResponse DecreaseReplicaCount(DecreaseReplicaCountRequest request)
+        {
+            var marshaller = DecreaseReplicaCountRequestMarshaller.Instance;
+            var unmarshaller = DecreaseReplicaCountResponseUnmarshaller.Instance;
+
+            return Invoke<DecreaseReplicaCountRequest,DecreaseReplicaCountResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DecreaseReplicaCount operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DecreaseReplicaCount operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DecreaseReplicaCount">REST API Reference for DecreaseReplicaCount Operation</seealso>
+        public virtual Task<DecreaseReplicaCountResponse> DecreaseReplicaCountAsync(DecreaseReplicaCountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DecreaseReplicaCountRequestMarshaller.Instance;
+            var unmarshaller = DecreaseReplicaCountResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DecreaseReplicaCountRequest,DecreaseReplicaCountResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteCacheCluster
 
         internal virtual DeleteCacheClusterResponse DeleteCacheCluster(DeleteCacheClusterRequest request)
@@ -1431,6 +1463,38 @@ namespace Amazon.ElastiCache
             var unmarshaller = DescribeSnapshotsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeSnapshotsRequest,DescribeSnapshotsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  IncreaseReplicaCount
+
+        internal virtual IncreaseReplicaCountResponse IncreaseReplicaCount(IncreaseReplicaCountRequest request)
+        {
+            var marshaller = IncreaseReplicaCountRequestMarshaller.Instance;
+            var unmarshaller = IncreaseReplicaCountResponseUnmarshaller.Instance;
+
+            return Invoke<IncreaseReplicaCountRequest,IncreaseReplicaCountResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the IncreaseReplicaCount operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the IncreaseReplicaCount operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/IncreaseReplicaCount">REST API Reference for IncreaseReplicaCount Operation</seealso>
+        public virtual Task<IncreaseReplicaCountResponse> IncreaseReplicaCountAsync(IncreaseReplicaCountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = IncreaseReplicaCountRequestMarshaller.Instance;
+            var unmarshaller = IncreaseReplicaCountResponseUnmarshaller.Instance;
+
+            return InvokeAsync<IncreaseReplicaCountRequest,IncreaseReplicaCountResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

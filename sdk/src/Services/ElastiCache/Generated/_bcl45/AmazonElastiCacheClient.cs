@@ -256,7 +256,7 @@ namespace Amazon.ElastiCache
         /// report as a comma-separated value (CSV) file with your usage and costs aggregated
         /// by your tags. You can apply tags that represent business categories (such as cost
         /// centers, application names, or owners) to organize your costs across multiple services.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Tagging.html">Using
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Tagging.html">Using
         /// Cost Allocation Tags in Amazon ElastiCache</a> in the <i>ElastiCache User Guide</i>.
         /// </para>
         /// </summary>
@@ -388,8 +388,8 @@ namespace Amazon.ElastiCache
         /// can create their own Amazon S3 buckets and copy snapshots to it. To control access
         /// to your snapshots, use an IAM policy to control who has the ability to use the <code>CopySnapshot</code>
         /// operation. For more information about using IAM to control the use of ElastiCache
-        /// operations, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html">Exporting
-        /// Snapshots</a> and <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/IAM.html">Authentication
+        /// operations, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html">Exporting
+        /// Snapshots</a> and <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.html">Authentication
         /// &amp; Access Control</a>.
         /// </para>
         ///  </important> 
@@ -405,7 +405,7 @@ namespace Amazon.ElastiCache
         ///  
         /// <para>
         ///  <b>Solution:</b> Create an Amazon S3 bucket in the same region as your snapshot.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html#Snapshots.Exporting.CreateBucket">Step
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html#Snapshots.Exporting.CreateBucket">Step
         /// 1: Create an Amazon S3 Bucket</a> in the ElastiCache User Guide.
         /// </para>
         ///  </li> <li> 
@@ -415,7 +415,7 @@ namespace Amazon.ElastiCache
         ///  
         /// <para>
         ///  <b>Solution:</b> Create an Amazon S3 bucket in the same region as your snapshot.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html#Snapshots.Exporting.CreateBucket">Step
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html#Snapshots.Exporting.CreateBucket">Step
         /// 1: Create an Amazon S3 Bucket</a> in the ElastiCache User Guide.
         /// </para>
         ///  </li> <li> 
@@ -425,7 +425,7 @@ namespace Amazon.ElastiCache
         ///  
         /// <para>
         ///  <b>Solution:</b> Create an Amazon S3 bucket in the same region as your snapshot.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html#Snapshots.Exporting.CreateBucket">Step
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html#Snapshots.Exporting.CreateBucket">Step
         /// 1: Create an Amazon S3 Bucket</a> in the ElastiCache User Guide.
         /// </para>
         ///  </li> <li> 
@@ -455,7 +455,7 @@ namespace Amazon.ElastiCache
         ///  
         /// <para>
         ///  <b>Solution:</b> Add List and Read permissions on the bucket. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess">Step
+        /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess">Step
         /// 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User Guide.
         /// </para>
         ///  </li> <li> 
@@ -466,7 +466,7 @@ namespace Amazon.ElastiCache
         ///  
         /// <para>
         ///  <b>Solution:</b> Add Upload/Delete permissions on the bucket. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess">Step
+        /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess">Step
         /// 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User Guide.
         /// </para>
         ///  </li> <li> 
@@ -477,7 +477,7 @@ namespace Amazon.ElastiCache
         ///  
         /// <para>
         ///  <b>Solution:</b> Add View Permissions on the bucket. For more information, see <a
-        /// href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess">Step
+        /// href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess">Step
         /// 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User Guide.
         /// </para>
         ///  </li> </ul>
@@ -540,12 +540,10 @@ namespace Amazon.ElastiCache
         /// Creates a cluster. All nodes in the cluster run the same protocol-compliant cache
         /// engine software, either Memcached or Redis.
         /// 
-        ///  <important> 
+        ///  
         /// <para>
-        /// Due to current limitations on Redis (cluster mode disabled), this operation or parameter
-        /// is not supported on Redis (cluster mode enabled) replication groups.
+        /// This operation is not supported for Redis (cluster mode enabled) clusters.
         /// </para>
-        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCacheCluster service method.</param>
         /// 
@@ -650,7 +648,7 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/ParameterGroups.html">Parameters
+        ///  <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.html">Parameters
         /// and Parameter Groups</a> in the ElastiCache User Guide.
         /// </para>
         ///  </li> </ul>
@@ -853,7 +851,7 @@ namespace Amazon.ElastiCache
         /// cannot alter a Redis (cluster mode enabled) replication group after it has been created.
         /// However, if you need to increase or decrease the number of node groups (console: shards),
         /// you can avail yourself of ElastiCache for Redis' enhanced backup and restore. For
-        /// more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/backups-restoring.html">Restoring
+        /// more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-restoring.html">Restoring
         /// From a Backup with Cluster Resizing</a> in the <i>ElastiCache User Guide</i>.
         /// </para>
         ///  <note> 
@@ -1034,6 +1032,87 @@ namespace Amazon.ElastiCache
 
         #endregion
         
+        #region  DecreaseReplicaCount
+
+
+        /// <summary>
+        /// Dynamically decreases the number of replics in a Redis (cluster mode disabled) replication
+        /// group or the number of replica nodes in one or more node groups (shards) of a Redis
+        /// (cluster mode enabled) replication group. This operation is performed with no cluster
+        /// down time.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DecreaseReplicaCount service method.</param>
+        /// 
+        /// <returns>The response from the DecreaseReplicaCount service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.ClusterQuotaForCustomerExceededException">
+        /// The request cannot be processed because it would exceed the allowed number of clusters
+        /// per customer.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InsufficientCacheClusterCapacityException">
+        /// The requested cache node type is not available in the specified Availability Zone.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
+        /// The requested cluster is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
+        /// The requested replication group is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidVPCNetworkStateException">
+        /// The VPC network is in an invalid state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.NodeGroupsPerReplicationGroupQuotaExceededException">
+        /// The request cannot be processed because it would exceed the maximum allowed number
+        /// of node groups (shards) in a single replication group. The default maximum is 15
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.NodeQuotaForCustomerExceededException">
+        /// The request cannot be processed because it would exceed the allowed number of cache
+        /// nodes per customer.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.NoOperationException">
+        /// The operation was not performed because no changes were required.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotFoundException">
+        /// The specified replication group does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ServiceLinkedRoleNotFoundException">
+        /// The specified service linked role (SLR) was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DecreaseReplicaCount">REST API Reference for DecreaseReplicaCount Operation</seealso>
+        public virtual DecreaseReplicaCountResponse DecreaseReplicaCount(DecreaseReplicaCountRequest request)
+        {
+            var marshaller = DecreaseReplicaCountRequestMarshaller.Instance;
+            var unmarshaller = DecreaseReplicaCountResponseUnmarshaller.Instance;
+
+            return Invoke<DecreaseReplicaCountRequest,DecreaseReplicaCountResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DecreaseReplicaCount operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DecreaseReplicaCount operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DecreaseReplicaCount">REST API Reference for DecreaseReplicaCount Operation</seealso>
+        public virtual Task<DecreaseReplicaCountResponse> DecreaseReplicaCountAsync(DecreaseReplicaCountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DecreaseReplicaCountRequestMarshaller.Instance;
+            var unmarshaller = DecreaseReplicaCountResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DecreaseReplicaCountRequest,DecreaseReplicaCountResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteCacheCluster
 
 
@@ -1049,12 +1128,10 @@ namespace Amazon.ElastiCache
         /// a replication group or node group (shard) that has Multi-AZ mode enabled or a cluster
         /// from a Redis (cluster mode enabled) replication group.
         /// </para>
-        ///  <important> 
+        ///  
         /// <para>
-        /// Due to current limitations on Redis (cluster mode disabled), this operation or parameter
-        /// is not supported on Redis (cluster mode enabled) replication groups.
+        /// This operation is not valid for Redis (cluster mode enabled) clusters.
         /// </para>
-        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCacheCluster service method.</param>
         /// 
@@ -2584,6 +2661,84 @@ namespace Amazon.ElastiCache
 
         #endregion
         
+        #region  IncreaseReplicaCount
+
+
+        /// <summary>
+        /// Dynamically increases the number of replics in a Redis (cluster mode disabled) replication
+        /// group or the number of replica nodes in one or more node groups (shards) of a Redis
+        /// (cluster mode enabled) replication group. This operation is performed with no cluster
+        /// down time.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the IncreaseReplicaCount service method.</param>
+        /// 
+        /// <returns>The response from the IncreaseReplicaCount service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.ClusterQuotaForCustomerExceededException">
+        /// The request cannot be processed because it would exceed the allowed number of clusters
+        /// per customer.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InsufficientCacheClusterCapacityException">
+        /// The requested cache node type is not available in the specified Availability Zone.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
+        /// The requested cluster is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
+        /// The requested replication group is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidVPCNetworkStateException">
+        /// The VPC network is in an invalid state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.NodeGroupsPerReplicationGroupQuotaExceededException">
+        /// The request cannot be processed because it would exceed the maximum allowed number
+        /// of node groups (shards) in a single replication group. The default maximum is 15
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.NodeQuotaForCustomerExceededException">
+        /// The request cannot be processed because it would exceed the allowed number of cache
+        /// nodes per customer.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.NoOperationException">
+        /// The operation was not performed because no changes were required.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotFoundException">
+        /// The specified replication group does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/IncreaseReplicaCount">REST API Reference for IncreaseReplicaCount Operation</seealso>
+        public virtual IncreaseReplicaCountResponse IncreaseReplicaCount(IncreaseReplicaCountRequest request)
+        {
+            var marshaller = IncreaseReplicaCountRequestMarshaller.Instance;
+            var unmarshaller = IncreaseReplicaCountResponseUnmarshaller.Instance;
+
+            return Invoke<IncreaseReplicaCountRequest,IncreaseReplicaCountResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the IncreaseReplicaCount operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the IncreaseReplicaCount operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/IncreaseReplicaCount">REST API Reference for IncreaseReplicaCount Operation</seealso>
+        public virtual Task<IncreaseReplicaCountResponse> IncreaseReplicaCountAsync(IncreaseReplicaCountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = IncreaseReplicaCountRequestMarshaller.Instance;
+            var unmarshaller = IncreaseReplicaCountResponseUnmarshaller.Instance;
+
+            return InvokeAsync<IncreaseReplicaCountRequest,IncreaseReplicaCountResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListAllowedNodeTypeModifications
 
 
@@ -2653,9 +2808,14 @@ namespace Amazon.ElastiCache
         /// 
         ///  
         /// <para>
+        /// If the cluster is not in the <i>available</i> state, <code>ListTagsForResource</code>
+        /// returns an error.
+        /// </para>
+        ///  
+        /// <para>
         /// You can have a maximum of 50 cost allocation tags on an ElastiCache resource. For
-        /// more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/BestPractices.html">Using
-        /// Cost Allocation Tags in Amazon ElastiCache</a>.
+        /// more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Tagging.html">Monitoring
+        /// Costs with Tags</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
@@ -2889,12 +3049,23 @@ namespace Amazon.ElastiCache
         /// <summary>
         /// Modifies the settings for a replication group.
         /// 
-        ///  <important> 
+        ///  
         /// <para>
-        /// Due to current limitations on Redis (cluster mode disabled), this operation or parameter
-        /// is not supported on Redis (cluster mode enabled) replication groups.
+        /// For Redis (cluster mode enabled) clusters, this operation cannot be used to change
+        /// a cluster's node type or engine version. For more information, see:
         /// </para>
-        ///  </important> <note> 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/scaling-redis-cluster-mode-enabled.html">Scaling
+        /// for Amazon ElastiCache for Redis—Redis (cluster mode enabled)</a> in the ElastiCache
+        /// User Guide
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyReplicationGroupShardConfiguration.html">ModifyReplicationGroupShardConfiguration</a>
+        /// in the ElastiCache API Reference
+        /// </para>
+        ///  </li> </ul> <note> 
         /// <para>
         /// This operation is valid for Redis only.
         /// </para>
@@ -2980,16 +3151,8 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Performs horizontal scaling on a Redis (cluster mode enabled) cluster with no downtime.
-        /// Requires Redis engine version 3.2.10 or newer. For information on upgrading your engine
-        /// to a newer version, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/VersionManagement.html">Upgrading
-        /// Engine Versions</a> in the Amazon ElastiCache User Guide.
-        /// 
-        ///  
-        /// <para>
-        /// For more information on ElastiCache for Redis online horizontal scaling, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/redis-cluster-resharding-online.html">ElastiCache
-        /// for Redis Horizontal Scaling</a> 
-        /// </para>
+        /// Modifies a replication group's shards (node groups) by allowing you to add shards,
+        /// remove shards, or rebalance the keyspaces among exisiting shards.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyReplicationGroupShardConfiguration service method.</param>
         /// 
@@ -3133,7 +3296,7 @@ namespace Amazon.ElastiCache
         ///  
         /// <para>
         /// If you make changes to parameters that require a Redis (cluster mode enabled) cluster
-        /// reboot for the changes to be applied, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.htm">Rebooting
+        /// reboot for the changes to be applied, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting
         /// a Cluster</a> for an alternate process.
         /// </para>
         /// </summary>
@@ -3406,7 +3569,7 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/ECEvents.Viewing.html">Viewing
+        ///  <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ECEvents.Viewing.html">Viewing
         /// ElastiCache Events</a> in the <i>ElastiCache User Guide</i> 
         /// </para>
         ///  </li> <li> 
@@ -3416,7 +3579,7 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
-        /// Also see, <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/AutoFailover.html#auto-failover-test">Testing
+        /// Also see, <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html#auto-failover-test">Testing
         /// Multi-AZ with Automatic Failover</a> in the <i>ElastiCache User Guide</i>.
         /// </para>
         /// </summary>
@@ -3447,7 +3610,7 @@ namespace Amazon.ElastiCache
         /// The specified replication group does not exist.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.TestFailoverNotAvailableException">
-        /// 
+        /// The <code>TestFailover</code> action is not available.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/TestFailover">REST API Reference for TestFailover Operation</seealso>
         public virtual TestFailoverResponse TestFailover(TestFailoverRequest request)

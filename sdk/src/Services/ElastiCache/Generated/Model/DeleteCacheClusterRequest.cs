@@ -40,12 +40,10 @@ namespace Amazon.ElastiCache.Model
     /// a replication group or node group (shard) that has Multi-AZ mode enabled or a cluster
     /// from a Redis (cluster mode enabled) replication group.
     /// </para>
-    ///  <important> 
+    ///  
     /// <para>
-    /// Due to current limitations on Redis (cluster mode disabled), this operation or parameter
-    /// is not supported on Redis (cluster mode enabled) replication groups.
+    /// This operation is not valid for Redis (cluster mode enabled) clusters.
     /// </para>
-    ///  </important>
     /// </summary>
     public partial class DeleteCacheClusterRequest : AmazonElastiCacheRequest
     {

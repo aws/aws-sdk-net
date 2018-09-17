@@ -39,6 +39,7 @@ namespace Amazon.ElastiCache.Model
         private string _offeringType;
         private string _productDescription;
         private List<RecurringCharge> _recurringCharges = new List<RecurringCharge>();
+        private string _reservationARN;
         private string _reservedCacheNodeId;
         private string _reservedCacheNodesOfferingId;
         private DateTime? _startTime;
@@ -137,6 +138,12 @@ namespace Amazon.ElastiCache.Model
         /// <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
         /// 
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>R4 node types;</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
+        /// <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>, <code>cache.r4.8xlarge</code>,
+        /// <code>cache.r4.16xlarge</code> 
+        /// </para>
         ///  </li> <li> 
         /// <para>
         /// Previous generation: (not recommended)
@@ -169,11 +176,24 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For a complete listing of node types and specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
-        /// ElastiCache Product Features and Details</a> and either <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
-        /// Node Type-Specific Parameters for Memcached</a> or <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
-        /// Node Type-Specific Parameters for Redis</a>.
+        /// For a complete listing of node types and specifications, see:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features
+        /// and Details</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/ParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
+        /// Node Type-Specific Parameters for Memcached</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
+        /// Node Type-Specific Parameters for Redis</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string CacheNodeType
         {
@@ -275,6 +295,29 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetRecurringCharges()
         {
             return this._recurringCharges != null && this._recurringCharges.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReservationARN. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the reserved cache node.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>arn:aws:elasticache:us-east-1:123456789012:reserved-instance:ri-2017-03-27-08-33-25-582</code>
+        /// 
+        /// </para>
+        /// </summary>
+        public string ReservationARN
+        {
+            get { return this._reservationARN; }
+            set { this._reservationARN = value; }
+        }
+
+        // Check to see if ReservationARN property is set
+        internal bool IsSetReservationARN()
+        {
+            return this._reservationARN != null;
         }
 
         /// <summary>

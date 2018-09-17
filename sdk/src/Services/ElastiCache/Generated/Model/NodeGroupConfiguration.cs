@@ -34,10 +34,29 @@ namespace Amazon.ElastiCache.Model
     /// </summary>
     public partial class NodeGroupConfiguration
     {
+        private string _nodeGroupId;
         private string _primaryAvailabilityZone;
         private List<string> _replicaAvailabilityZones = new List<string>();
         private int? _replicaCount;
         private string _slots;
+
+        /// <summary>
+        /// Gets and sets the property NodeGroupId. 
+        /// <para>
+        /// The 4-digit id for the node group these configuration values apply to.
+        /// </para>
+        /// </summary>
+        public string NodeGroupId
+        {
+            get { return this._nodeGroupId; }
+            set { this._nodeGroupId = value; }
+        }
+
+        // Check to see if NodeGroupId property is set
+        internal bool IsSetNodeGroupId()
+        {
+            return this._nodeGroupId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property PrimaryAvailabilityZone. 

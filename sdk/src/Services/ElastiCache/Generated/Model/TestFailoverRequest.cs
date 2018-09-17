@@ -91,7 +91,7 @@ namespace Amazon.ElastiCache.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/ECEvents.Viewing.html">Viewing
+    ///  <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ECEvents.Viewing.html">Viewing
     /// ElastiCache Events</a> in the <i>ElastiCache User Guide</i> 
     /// </para>
     ///  </li> <li> 
@@ -101,7 +101,7 @@ namespace Amazon.ElastiCache.Model
     /// </para>
     ///  </li> </ul> </li> </ul> 
     /// <para>
-    /// Also see, <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/AutoFailover.html#auto-failover-test">Testing
+    /// Also see, <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html#auto-failover-test">Testing
     /// Multi-AZ with Automatic Failover</a> in the <i>ElastiCache User Guide</i>.
     /// </para>
     /// </summary>

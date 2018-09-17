@@ -79,6 +79,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property CurrentRole. 
         /// <para>
         /// The role that is currently assigned to the node - <code>primary</code> or <code>replica</code>.
+        /// This member is only applicable for Redis (cluster mode disabled) replication groups.
         /// </para>
         /// </summary>
         public string CurrentRole
@@ -112,7 +113,11 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReadEndpoint.
+        /// Gets and sets the property ReadEndpoint. 
+        /// <para>
+        /// The information required for client programs to connect to a node for read operations.
+        /// The read endpoint is only applicable on Redis (cluster mode disabled) clusters.
+        /// </para>
         /// </summary>
         public Endpoint ReadEndpoint
         {

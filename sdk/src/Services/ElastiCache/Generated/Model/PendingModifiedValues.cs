@@ -47,7 +47,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property CacheNodeIdsToRemove. 
         /// <para>
         /// A list of cache node IDs that are being removed (or will be removed) from the cluster.
-        /// A node ID is a numeric identifier (0001, 0002, etc.).
+        /// A node ID is a 4-digit numeric identifier (0001, 0002, etc.).
         /// </para>
         /// </summary>
         public List<string> CacheNodeIdsToRemove

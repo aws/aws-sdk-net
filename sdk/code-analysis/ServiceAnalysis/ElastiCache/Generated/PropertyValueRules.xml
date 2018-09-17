@@ -1,2 +1,27 @@
 <?xml version="1.0" encoding="utf-16"?>
-<property-value-rules />
+<property-value-rules>
+  <property-value-rule>
+    <property>Amazon.ElastiCache.Model.TestFailoverRequest.NodeGroupId</property>
+    <min>1</min>
+    <max>4</max>
+    <pattern>\d+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElastiCache.Model.ConfigureShard.NodeGroupId</property>
+    <min>1</min>
+    <max>4</max>
+    <pattern>\d+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElastiCache.Model.NodeGroupConfiguration.NodeGroupId</property>
+    <min>1</min>
+    <max>4</max>
+    <pattern>\d+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElastiCache.Model.ReshardingConfiguration.NodeGroupId</property>
+    <min>1</min>
+    <max>4</max>
+    <pattern>\d+</pattern>
+  </property-value-rule>
+</property-value-rules>

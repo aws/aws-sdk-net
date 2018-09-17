@@ -31,9 +31,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ModifyReplicationGroupShardConfiguration Request Marshaller
+    /// IncreaseReplicaCount Request Marshaller
     /// </summary>       
-    public class ModifyReplicationGroupShardConfigurationRequestMarshaller : IMarshaller<IRequest, ModifyReplicationGroupShardConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class IncreaseReplicaCountRequestMarshaller : IMarshaller<IRequest, IncreaseReplicaCountRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -42,7 +42,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ModifyReplicationGroupShardConfigurationRequest)input);
+            return this.Marshall((IncreaseReplicaCountRequest)input);
         }
     
         /// <summary>
@@ -50,10 +50,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ModifyReplicationGroupShardConfigurationRequest publicRequest)
+        public IRequest Marshall(IncreaseReplicaCountRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ElastiCache");
-            request.Parameters.Add("Action", "ModifyReplicationGroupShardConfiguration");
+            request.Parameters.Add("Action", "IncreaseReplicaCount");
             request.Parameters.Add("Version", "2015-02-02");
 
             if(publicRequest != null)
@@ -62,25 +62,32 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ApplyImmediately", StringUtils.FromBool(publicRequest.ApplyImmediately));
                 }
-                if(publicRequest.IsSetNodeGroupCount())
+                if(publicRequest.IsSetNewReplicaCount())
                 {
-                    request.Parameters.Add("NodeGroupCount", StringUtils.FromInt(publicRequest.NodeGroupCount));
+                    request.Parameters.Add("NewReplicaCount", StringUtils.FromInt(publicRequest.NewReplicaCount));
                 }
-                if(publicRequest.IsSetNodeGroupsToRemove())
+                if(publicRequest.IsSetReplicaConfiguration())
                 {
                     int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.NodeGroupsToRemove)
+                    foreach(var publicRequestlistValue in publicRequest.ReplicaConfiguration)
                     {
-                        request.Parameters.Add("NodeGroupsToRemove" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
-                    }
-                }
-                if(publicRequest.IsSetNodeGroupsToRetain())
-                {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.NodeGroupsToRetain)
-                    {
-                        request.Parameters.Add("NodeGroupsToRetain" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        if(publicRequestlistValue.IsSetNewReplicaCount())
+                        {
+                            request.Parameters.Add("ReplicaConfiguration" + "." + "member" + "." + publicRequestlistValueIndex + "." + "NewReplicaCount", StringUtils.FromInt(publicRequestlistValue.NewReplicaCount));
+                        }
+                        if(publicRequestlistValue.IsSetNodeGroupId())
+                        {
+                            request.Parameters.Add("ReplicaConfiguration" + "." + "member" + "." + publicRequestlistValueIndex + "." + "NodeGroupId", StringUtils.FromString(publicRequestlistValue.NodeGroupId));
+                        }
+                        if(publicRequestlistValue.IsSetPreferredAvailabilityZones())
+                        {
+                            int publicRequestlistValuelistValueIndex = 1;
+                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.PreferredAvailabilityZones)
+                            {
+                                request.Parameters.Add("ReplicaConfiguration" + "." + "member" + "." + publicRequestlistValueIndex + "." + "PreferredAvailabilityZones" + "." + "member" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                publicRequestlistValuelistValueIndex++;
+                            }
+                        }
                         publicRequestlistValueIndex++;
                     }
                 }
@@ -88,33 +95,12 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ReplicationGroupId", StringUtils.FromString(publicRequest.ReplicationGroupId));
                 }
-                if(publicRequest.IsSetReshardingConfiguration())
-                {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ReshardingConfiguration)
-                    {
-                        if(publicRequestlistValue.IsSetNodeGroupId())
-                        {
-                            request.Parameters.Add("ReshardingConfiguration" + "." + "member" + "." + publicRequestlistValueIndex + "." + "NodeGroupId", StringUtils.FromString(publicRequestlistValue.NodeGroupId));
-                        }
-                        if(publicRequestlistValue.IsSetPreferredAvailabilityZones())
-                        {
-                            int publicRequestlistValuelistValueIndex = 1;
-                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.PreferredAvailabilityZones)
-                            {
-                                request.Parameters.Add("ReshardingConfiguration" + "." + "member" + "." + publicRequestlistValueIndex + "." + "PreferredAvailabilityZones" + "." + "member" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
-                                publicRequestlistValuelistValueIndex++;
-                            }
-                        }
-                        publicRequestlistValueIndex++;
-                    }
-                }
             }
             return request;
         }
-                    private static ModifyReplicationGroupShardConfigurationRequestMarshaller _instance = new ModifyReplicationGroupShardConfigurationRequestMarshaller();        
+                    private static IncreaseReplicaCountRequestMarshaller _instance = new IncreaseReplicaCountRequestMarshaller();        
 
-        internal static ModifyReplicationGroupShardConfigurationRequestMarshaller GetInstance()
+        internal static IncreaseReplicaCountRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -122,7 +108,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ModifyReplicationGroupShardConfigurationRequestMarshaller Instance
+        public static IncreaseReplicaCountRequestMarshaller Instance
         {
             get
             {

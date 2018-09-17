@@ -29,22 +29,15 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyReplicationGroupShardConfiguration operation.
-    /// Performs horizontal scaling on a Redis (cluster mode enabled) cluster with no downtime.
-    /// Requires Redis engine version 3.2.10 or newer. For information on upgrading your engine
-    /// to a newer version, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/VersionManagement.html">Upgrading
-    /// Engine Versions</a> in the Amazon ElastiCache User Guide.
-    /// 
-    ///  
-    /// <para>
-    /// For more information on ElastiCache for Redis online horizontal scaling, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/redis-cluster-resharding-online.html">ElastiCache
-    /// for Redis Horizontal Scaling</a> 
-    /// </para>
+    /// Modifies a replication group's shards (node groups) by allowing you to add shards,
+    /// remove shards, or rebalance the keyspaces among exisiting shards.
     /// </summary>
     public partial class ModifyReplicationGroupShardConfigurationRequest : AmazonElastiCacheRequest
     {
         private bool? _applyImmediately;
         private int? _nodeGroupCount;
         private List<string> _nodeGroupsToRemove = new List<string>();
+        private List<string> _nodeGroupsToRetain = new List<string>();
         private string _replicationGroupId;
         private List<ReshardingConfiguration> _reshardingConfiguration = new List<ReshardingConfiguration>();
 
@@ -94,8 +87,13 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property NodeGroupsToRemove. 
         /// <para>
         /// If the value of <code>NodeGroupCount</code> is less than the current number of node
-        /// groups (shards), <code>NodeGroupsToRemove</code> is a required list of node group
-        /// ids to remove from the cluster.
+        /// groups (shards), the <code>NodeGroupsToRemove</code> or <code>NodeGroupsToRetain</code>
+        /// is a required list of node group ids to remove from or retain in the cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// ElastiCache for Redis will attempt to remove all node groups listed by <code>NodeGroupsToRemove</code>
+        /// from the cluster.
         /// </para>
         /// </summary>
         public List<string> NodeGroupsToRemove
@@ -108,6 +106,31 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetNodeGroupsToRemove()
         {
             return this._nodeGroupsToRemove != null && this._nodeGroupsToRemove.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NodeGroupsToRetain. 
+        /// <para>
+        /// If the value of <code>NodeGroupCount</code> is less than the current number of node
+        /// groups (shards), the <code>NodeGroupsToRemove</code> or <code>NodeGroupsToRetain</code>
+        /// is a required list of node group ids to remove from or retain in the cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// ElastiCache for Redis will attempt to remove all node groups except those listed by
+        /// <code>NodeGroupsToRetain</code> from the cluster.
+        /// </para>
+        /// </summary>
+        public List<string> NodeGroupsToRetain
+        {
+            get { return this._nodeGroupsToRetain; }
+            set { this._nodeGroupsToRetain = value; }
+        }
+
+        // Check to see if NodeGroupsToRetain property is set
+        internal bool IsSetNodeGroupsToRetain()
+        {
+            return this._nodeGroupsToRetain != null && this._nodeGroupsToRetain.Count > 0; 
         }
 
         /// <summary>

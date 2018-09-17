@@ -33,7 +33,26 @@ namespace Amazon.ElastiCache.Model
     /// </summary>
     public partial class ReshardingConfiguration
     {
+        private string _nodeGroupId;
         private List<string> _preferredAvailabilityZones = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property NodeGroupId. 
+        /// <para>
+        /// The 4-digit id for the node group these configuration values apply to.
+        /// </para>
+        /// </summary>
+        public string NodeGroupId
+        {
+            get { return this._nodeGroupId; }
+            set { this._nodeGroupId = value; }
+        }
+
+        // Check to see if NodeGroupId property is set
+        internal bool IsSetNodeGroupId()
+        {
+            return this._nodeGroupId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property PreferredAvailabilityZones. 

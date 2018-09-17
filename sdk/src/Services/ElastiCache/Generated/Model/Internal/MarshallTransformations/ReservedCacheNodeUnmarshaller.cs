@@ -97,6 +97,12 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         unmarshalledObject.RecurringCharges.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("ReservationARN", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ReservationARN = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ReservedCacheNodeId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

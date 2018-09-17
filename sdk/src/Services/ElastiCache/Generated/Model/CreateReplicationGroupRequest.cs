@@ -53,7 +53,7 @@ namespace Amazon.ElastiCache.Model
     /// cannot alter a Redis (cluster mode enabled) replication group after it has been created.
     /// However, if you need to increase or decrease the number of node groups (console: shards),
     /// you can avail yourself of ElastiCache for Redis' enhanced backup and restore. For
-    /// more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/backups-restoring.html">Restoring
+    /// more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-restoring.html">Restoring
     /// From a Backup with Cluster Resizing</a> in the <i>ElastiCache User Guide</i>.
     /// </para>
     ///  <note> 
@@ -105,12 +105,12 @@ namespace Amazon.ElastiCache.Model
         /// <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create the replication
         /// group. 
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
-        /// This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code>
-        /// and the cluster is being created in an Amazon VPC.
+        ///  <b>Required:</b> Only available when creating a replication group in an Amazon VPC
+        /// using redis version <code>3.2.6</code> or <code>4.x</code>.
         /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// Default: <code>false</code> 
         /// </para>
@@ -134,18 +134,15 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter is valid only if:
+        ///  <code>AuthToken</code> can be specified only on replication groups where <code>TransitEncryptionEnabled</code>
+        /// is <code>true</code>.
         /// </para>
-        ///  <ul> <li> 
+        ///  <important> 
         /// <para>
-        /// The parameter <code>TransitEncryptionEnabled</code> was set to <code>true</code> when
-        /// the cluster was created.
+        /// For HIPAA compliance, you must specify <code>TransitEncryptionEnabled</code> as <code>true</code>,
+        /// an <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The line <code>requirepass</code> was added to the database configuration file.
-        /// </para>
-        ///  </li> </ul> 
+        ///  </important> 
         /// <para>
         /// Password constraints:
         /// </para>
@@ -321,6 +318,12 @@ namespace Amazon.ElastiCache.Model
         /// <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
         /// 
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>R4 node types;</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
+        /// <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>, <code>cache.r4.8xlarge</code>,
+        /// <code>cache.r4.16xlarge</code> 
+        /// </para>
         ///  </li> <li> 
         /// <para>
         /// Previous generation: (not recommended)
@@ -353,11 +356,24 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For a complete listing of node types and specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
-        /// ElastiCache Product Features and Details</a> and either <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
-        /// Node Type-Specific Parameters for Memcached</a> or <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
-        /// Node Type-Specific Parameters for Redis</a>.
+        /// For a complete listing of node types and specifications, see:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features
+        /// and Details</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/ParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
+        /// Node Type-Specific Parameters for Memcached</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
+        /// Node Type-Specific Parameters for Redis</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string CacheNodeType
         {
@@ -432,7 +448,7 @@ namespace Amazon.ElastiCache.Model
         ///  <important> 
         /// <para>
         /// If you're going to launch your cluster in an Amazon VPC, you need to create a subnet
-        /// group before you start creating a cluster. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SubnetGroups.html">Subnets
+        /// group before you start creating a cluster. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets
         /// and Subnet Groups</a>.
         /// </para>
         ///  </important>
@@ -476,7 +492,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Important:</b> You can upgrade to a newer engine version (see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+        ///  <b>Important:</b> You can upgrade to a newer engine version (see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
         /// a Cache Engine and Version</a>) in the <i>ElastiCache User Guide</i>, but you cannot
         /// downgrade to an earlier engine version. If you want to use an earlier engine version,
         /// you must delete the existing cluster or replication group and create it anew with
@@ -499,13 +515,16 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property NodeGroupConfiguration. 
         /// <para>
         /// A list of node group (shard) configuration options. Each node group (shard) configuration
-        /// has the following: Slots, PrimaryAvailabilityZone, ReplicaAvailabilityZones, ReplicaCount.
+        /// has the following members: <code>PrimaryAvailabilityZone</code>, <code>ReplicaAvailabilityZones</code>,
+        /// <code>ReplicaCount</code>, and <code>Slots</code>.
         /// </para>
         ///  
         /// <para>
         /// If you're creating a Redis (cluster mode disabled) or a Redis (cluster mode enabled)
         /// replication group, you can use this parameter to individually configure each node
-        /// group (shard), or you can omit this parameter.
+        /// group (shard), or you can omit this parameter. However, when seeding a Redis (cluster
+        /// mode enabled) cluster from a S3 rdb file, you must configure each node group (shard)
+        /// using this parameter because you must specify the slots for each node group.
         /// </para>
         /// </summary>
         public List<NodeGroupConfiguration> NodeGroupConfiguration
@@ -563,8 +582,8 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// The maximum permitted value for <code>NumCacheClusters</code> is 6 (primary plus 5
-        /// replicas).
+        /// The maximum permitted value for <code>NumCacheClusters</code> is 6 (1 primary plus
+        /// 5 replicas).
         /// </para>
         /// </summary>
         public int NumCacheClusters
@@ -945,7 +964,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// A list of cost allocation tags to be added to this resource. A tag is a key-value
-        /// pair. A tag key does not have to be accompanied by a tag value.
+        /// pair.
         /// </para>
         /// </summary>
         public List<Tag> Tags
@@ -974,8 +993,8 @@ namespace Amazon.ElastiCache.Model
         ///  
         /// <para>
         /// This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code>,
-        /// the <code>EngineVersion</code> parameter is <code>3.2.4</code> or later, and the cluster
-        /// is being created in an Amazon VPC.
+        /// the <code>EngineVersion</code> parameter is <code>3.2.6</code> or <code>4.x</code>,
+        /// and the cluster is being created in an Amazon VPC.
         /// </para>
         ///  
         /// <para>
@@ -983,8 +1002,19 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
+        ///  <b>Required:</b> Only available when creating a replication group in an Amazon VPC
+        /// using redis version <code>3.2.6</code> or <code>4.x</code>.
+        /// </para>
+        ///  
+        /// <para>
         /// Default: <code>false</code> 
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// For HIPAA compliance, you must specify <code>TransitEncryptionEnabled</code> as <code>true</code>,
+        /// an <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.
+        /// </para>
+        ///  </important>
         /// </summary>
         public bool TransitEncryptionEnabled
         {

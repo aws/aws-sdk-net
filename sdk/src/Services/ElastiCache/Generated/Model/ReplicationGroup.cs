@@ -62,6 +62,11 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
+        ///  <b>Required:</b> Only available when creating a replication group in an Amazon VPC
+        /// using redis version <code>3.2.6</code> or <code>4.x</code>.
+        /// </para>
+        ///  
+        /// <para>
         /// Default: <code>false</code> 
         /// </para>
         /// </summary>
@@ -218,7 +223,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property MemberClusters. 
         /// <para>
-        /// The identifiers of all the nodes that are part of this replication group.
+        /// The names of all the cache clusters that are part of this replication group.
         /// </para>
         /// </summary>
         public List<string> MemberClusters
@@ -396,6 +401,11 @@ namespace Amazon.ElastiCache.Model
         /// You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster
         /// is created. To enable in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code>
         /// to <code>true</code> when you create a cluster.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Required:</b> Only available when creating a replication group in an Amazon VPC
+        /// using redis version <code>3.2.6</code> or <code>4.x</code>.
         /// </para>
         ///  
         /// <para>
