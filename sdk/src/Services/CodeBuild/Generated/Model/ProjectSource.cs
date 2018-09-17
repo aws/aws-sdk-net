@@ -250,6 +250,10 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>NO_SOURCE</code>: The project does not have input source code.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3)
         /// input bucket.
         /// </para>

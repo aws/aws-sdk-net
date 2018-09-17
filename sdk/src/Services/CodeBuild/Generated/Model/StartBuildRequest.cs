@@ -44,6 +44,7 @@ namespace Amazon.CodeBuild.Model
         private string _idempotencyToken;
         private string _imageOverride;
         private bool? _insecureSslOverride;
+        private LogsConfig _logsConfigOverride;
         private bool? _privilegedModeOverride;
         private string _projectName;
         private bool? _reportBuildStatusOverride;
@@ -270,6 +271,25 @@ namespace Amazon.CodeBuild.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LogsConfigOverride. 
+        /// <para>
+        ///  Log settings for this build that override the log settings defined in the build project.
+        /// 
+        /// </para>
+        /// </summary>
+        public LogsConfig LogsConfigOverride
+        {
+            get { return this._logsConfigOverride; }
+            set { this._logsConfigOverride = value; }
+        }
+
+        // Check to see if LogsConfigOverride property is set
+        internal bool IsSetLogsConfigOverride()
+        {
+            return this._logsConfigOverride != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PrivilegedModeOverride. 
         /// <para>
         /// Enable this flag to override privileged mode in the build project.
@@ -441,7 +461,7 @@ namespace Amazon.CodeBuild.Model
         /// Gets and sets the property SourceTypeOverride. 
         /// <para>
         /// A source input type for this build that overrides the source input defined in the
-        /// build project
+        /// build project.
         /// </para>
         /// </summary>
         public SourceType SourceTypeOverride

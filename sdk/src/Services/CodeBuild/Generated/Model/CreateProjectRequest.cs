@@ -39,6 +39,7 @@ namespace Amazon.CodeBuild.Model
         private string _description;
         private string _encryptionKey;
         private ProjectEnvironment _environment;
+        private LogsConfig _logsConfig;
         private string _name;
         private List<ProjectArtifacts> _secondaryArtifacts = new List<ProjectArtifacts>();
         private List<ProjectSource> _secondarySources = new List<ProjectSource>();
@@ -160,6 +161,25 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetEnvironment()
         {
             return this._environment != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogsConfig. 
+        /// <para>
+        ///  Information about logs for the build project. Logs can be Amazon CloudWatch Logs,
+        /// uploaded to a specified S3 bucket, or both. 
+        /// </para>
+        /// </summary>
+        public LogsConfig LogsConfig
+        {
+            get { return this._logsConfig; }
+            set { this._logsConfig = value; }
+        }
+
+        // Check to see if LogsConfig property is set
+        internal bool IsSetLogsConfig()
+        {
+            return this._logsConfig != null;
         }
 
         /// <summary>

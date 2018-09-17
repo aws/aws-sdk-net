@@ -153,6 +153,17 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.InsecureSslOverride);
                 }
 
+                if(publicRequest.IsSetLogsConfigOverride())
+                {
+                    context.Writer.WritePropertyName("logsConfigOverride");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = LogsConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.LogsConfigOverride, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetPrivilegedModeOverride())
                 {
                     context.Writer.WritePropertyName("privilegedModeOverride");

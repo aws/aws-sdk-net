@@ -118,6 +118,17 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetLogsConfig())
+                {
+                    context.Writer.WritePropertyName("logsConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = LogsConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.LogsConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");

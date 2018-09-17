@@ -163,8 +163,8 @@
                   "GITHUB_ENTERPRISE",
                   "NO_SOURCE"
                 ],
-                "zonbookDocumentation": "\n         <para>The type of repository that contains the source code to be built. Valid values\n         include:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</para>\n            </listitem>\n         </itemizedlist>\n      ",
-                "documentation": "\n         <p>The type of repository that contains the source code to be built. Valid values\n         include:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</p>\n            </li>\n            <li>\n               <p>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</p>\n            </li>\n         </ul>\n      ",
+                "zonbookDocumentation": "\n         <para>The type of repository that contains the source code to be built. Valid values\n         include:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>NO_SOURCE</code>: The project does not have input source code.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</para>\n            </listitem>\n         </itemizedlist>\n      ",
+                "documentation": "\n         <p>The type of repository that contains the source code to be built. Valid values\n         include:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</p>\n            </li>\n            <li>\n               <p>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>NO_SOURCE</code>: The project does not have input source code.</p>\n            </li>\n            <li>\n               <p>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</p>\n            </li>\n         </ul>\n      ",
                 "required": true,
                 "shape_name": "SourceType"
               },
@@ -256,8 +256,8 @@
                     "GITHUB_ENTERPRISE",
                     "NO_SOURCE"
                   ],
-                  "zonbookDocumentation": "\n         <para>The type of repository that contains the source code to be built. Valid values\n         include:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</para>\n            </listitem>\n         </itemizedlist>\n      ",
-                  "documentation": "\n         <p>The type of repository that contains the source code to be built. Valid values\n         include:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</p>\n            </li>\n            <li>\n               <p>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</p>\n            </li>\n         </ul>\n      ",
+                  "zonbookDocumentation": "\n         <para>The type of repository that contains the source code to be built. Valid values\n         include:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>NO_SOURCE</code>: The project does not have input source code.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</para>\n            </listitem>\n         </itemizedlist>\n      ",
+                  "documentation": "\n         <p>The type of repository that contains the source code to be built. Valid values\n         include:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</p>\n            </li>\n            <li>\n               <p>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>NO_SOURCE</code>: The project does not have input source code.</p>\n            </li>\n            <li>\n               <p>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</p>\n            </li>\n         </ul>\n      ",
                   "required": true,
                   "shape_name": "SourceType"
                 },
@@ -708,6 +708,70 @@
             "zonbookDocumentation": "\n         <para>Set this to true to generate a publicly-accessible URL for your project's build badge.</para>\n      ",
             "documentation": "\n         <p>Set this to true to generate a publicly-accessible URL for your project's build badge.</p>\n      ",
             "shape_name": "WrapperBoolean"
+          },
+          "logsConfig": {
+            "type": "structure",
+            "members": {
+              "cloudWatchLogs": {
+                "type": "structure",
+                "members": {
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "ENABLED",
+                      "DISABLED"
+                    ],
+                    "zonbookDocumentation": "   \n         <para>The current status of the Amazon CloudWatch Logs for a build project. Valid values are:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>ENABLED</code>: Amazon CloudWatch Logs are enabled for this build project.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>DISABLED</code>: Amazon CloudWatch Logs are not enabled for this build project.</para>\n            </listitem>\n         </itemizedlist>\n      ",
+                    "documentation": "   \n         <p>The current status of the Amazon CloudWatch Logs for a build project. Valid values are:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>ENABLED</code>: Amazon CloudWatch Logs are enabled for this build project.</p>\n            </li>\n            <li>\n               <p>\n                  <code>DISABLED</code>: Amazon CloudWatch Logs are not enabled for this build project.</p>\n            </li>\n         </ul>\n      ",
+                    "required": true,
+                    "shape_name": "LogsConfigStatusType"
+                  },
+                  "groupName": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n         <para>\n         The group name of the Amazon CloudWatch Logs. For more information, see <ulink type=\"documentation\" url=\"AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html\">Working \n            with Log Groups and Log Streams</ulink>\n         </para>\n      ",
+                    "documentation": "\n         <p>\n         The group name of the Amazon CloudWatch Logs. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html\">Working \n            with Log Groups and Log Streams</a>\n         </p>\n      ",
+                    "shape_name": "String"
+                  },
+                  "streamName": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n         <para>\n         The prefix of the stream name of the Amazon CloudWatch Logs. For more information, see <ulink type=\"documentation\" url=\"AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html\">Working \n            with Log Groups and Log Streams</ulink>\n         </para>\n      ",
+                    "documentation": "\n         <p>\n         The prefix of the stream name of the Amazon CloudWatch Logs. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html\">Working \n            with Log Groups and Log Streams</a>\n         </p>\n      ",
+                    "shape_name": "String"
+                  }
+                },
+                "zonbookDocumentation": "\n         <para>\n         Information about Amazon CloudWatch Logs for a build project. Amazon CloudWatch Logs are enabled by default.\n      </para>\n      ",
+                "documentation": "\n         <p>\n         Information about Amazon CloudWatch Logs for a build project. Amazon CloudWatch Logs are enabled by default.\n      </p>\n      ",
+                "shape_name": "CloudWatchLogsConfig"
+              },
+              "s3Logs": {
+                "type": "structure",
+                "members": {
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "ENABLED",
+                      "DISABLED"
+                    ],
+                    "zonbookDocumentation": "      \n         <para>The current status of the S3 build logs. Valid values are:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>ENABLED</code>: S3 build logs are enabled for this build project.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>DISABLED</code>: S3 build logs are not enabled for this build project.</para>\n            </listitem>\n         </itemizedlist>\n      ",
+                    "documentation": "      \n         <p>The current status of the S3 build logs. Valid values are:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>ENABLED</code>: S3 build logs are enabled for this build project.</p>\n            </li>\n            <li>\n               <p>\n                  <code>DISABLED</code>: S3 build logs are not enabled for this build project.</p>\n            </li>\n         </ul>\n      ",
+                    "required": true,
+                    "shape_name": "LogsConfigStatusType"
+                  },
+                  "location": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n         <para>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>aws:s3:::my-bucket/build-log</code>.\n      </para>\n      ",
+                    "documentation": "\n         <p>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>aws:s3:::my-bucket/build-log</code>.\n      </p>\n      ",
+                    "shape_name": "String"
+                  }
+                },
+                "zonbookDocumentation": "\n         <para>\n         Information about logs built to an S3 bucket for a build project. S3 logs are not enabled by default. \n      </para>\n      ",
+                "documentation": "\n         <p>\n         Information about logs built to an S3 bucket for a build project. S3 logs are not enabled by default. \n      </p>\n      ",
+                "shape_name": "S3LogsConfig"
+              }
+            },
+            "zonbookDocumentation": "\n         <para>\n         Information about logs for the build project. Logs can be Amazon CloudWatch Logs, uploaded to \n         a specified S3 bucket, or both.\n      </para>\n      ",
+            "documentation": "\n         <p>\n         Information about logs for the build project. Logs can be Amazon CloudWatch Logs, uploaded to \n         a specified S3 bucket, or both.\n      </p>\n      ",
+            "shape_name": "LogsConfig"
           }
         },
         "shape_name": "CreateProjectInput",
@@ -756,8 +820,8 @@
                       "GITHUB_ENTERPRISE",
                       "NO_SOURCE"
                     ],
-                    "zonbookDocumentation": "\n         <para>The type of repository that contains the source code to be built. Valid values\n         include:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</para>\n            </listitem>\n         </itemizedlist>\n      ",
-                    "documentation": "\n         <p>The type of repository that contains the source code to be built. Valid values\n         include:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</p>\n            </li>\n            <li>\n               <p>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</p>\n            </li>\n         </ul>\n      ",
+                    "zonbookDocumentation": "\n         <para>The type of repository that contains the source code to be built. Valid values\n         include:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>NO_SOURCE</code>: The project does not have input source code.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</para>\n            </listitem>\n         </itemizedlist>\n      ",
+                    "documentation": "\n         <p>The type of repository that contains the source code to be built. Valid values\n         include:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</p>\n            </li>\n            <li>\n               <p>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>NO_SOURCE</code>: The project does not have input source code.</p>\n            </li>\n            <li>\n               <p>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</p>\n            </li>\n         </ul>\n      ",
                     "required": true,
                     "shape_name": "SourceType"
                   },
@@ -848,8 +912,8 @@
                         "GITHUB_ENTERPRISE",
                         "NO_SOURCE"
                       ],
-                      "zonbookDocumentation": "\n         <para>The type of repository that contains the source code to be built. Valid values\n         include:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</para>\n            </listitem>\n         </itemizedlist>\n      ",
-                      "documentation": "\n         <p>The type of repository that contains the source code to be built. Valid values\n         include:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</p>\n            </li>\n            <li>\n               <p>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</p>\n            </li>\n         </ul>\n      ",
+                      "zonbookDocumentation": "\n         <para>The type of repository that contains the source code to be built. Valid values\n         include:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>NO_SOURCE</code>: The project does not have input source code.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</para>\n            </listitem>\n         </itemizedlist>\n      ",
+                      "documentation": "\n         <p>The type of repository that contains the source code to be built. Valid values\n         include:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</p>\n            </li>\n            <li>\n               <p>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>NO_SOURCE</code>: The project does not have input source code.</p>\n            </li>\n            <li>\n               <p>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</p>\n            </li>\n         </ul>\n      ",
                       "required": true,
                       "shape_name": "SourceType"
                     },
@@ -1364,6 +1428,70 @@
                 "zonbookDocumentation": "\n         <para>Information about the build badge for the build project.</para>\n      ",
                 "documentation": "\n         <p>Information about the build badge for the build project.</p>\n      ",
                 "shape_name": "ProjectBadge"
+              },
+              "logsConfig": {
+                "type": "structure",
+                "members": {
+                  "cloudWatchLogs": {
+                    "type": "structure",
+                    "members": {
+                      "status": {
+                        "type": "string",
+                        "enum": [
+                          "ENABLED",
+                          "DISABLED"
+                        ],
+                        "zonbookDocumentation": "   \n         <para>The current status of the Amazon CloudWatch Logs for a build project. Valid values are:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>ENABLED</code>: Amazon CloudWatch Logs are enabled for this build project.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>DISABLED</code>: Amazon CloudWatch Logs are not enabled for this build project.</para>\n            </listitem>\n         </itemizedlist>\n      ",
+                        "documentation": "   \n         <p>The current status of the Amazon CloudWatch Logs for a build project. Valid values are:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>ENABLED</code>: Amazon CloudWatch Logs are enabled for this build project.</p>\n            </li>\n            <li>\n               <p>\n                  <code>DISABLED</code>: Amazon CloudWatch Logs are not enabled for this build project.</p>\n            </li>\n         </ul>\n      ",
+                        "required": true,
+                        "shape_name": "LogsConfigStatusType"
+                      },
+                      "groupName": {
+                        "type": "string",
+                        "zonbookDocumentation": "\n         <para>\n         The group name of the Amazon CloudWatch Logs. For more information, see <ulink type=\"documentation\" url=\"AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html\">Working \n            with Log Groups and Log Streams</ulink>\n         </para>\n      ",
+                        "documentation": "\n         <p>\n         The group name of the Amazon CloudWatch Logs. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html\">Working \n            with Log Groups and Log Streams</a>\n         </p>\n      ",
+                        "shape_name": "String"
+                      },
+                      "streamName": {
+                        "type": "string",
+                        "zonbookDocumentation": "\n         <para>\n         The prefix of the stream name of the Amazon CloudWatch Logs. For more information, see <ulink type=\"documentation\" url=\"AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html\">Working \n            with Log Groups and Log Streams</ulink>\n         </para>\n      ",
+                        "documentation": "\n         <p>\n         The prefix of the stream name of the Amazon CloudWatch Logs. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html\">Working \n            with Log Groups and Log Streams</a>\n         </p>\n      ",
+                        "shape_name": "String"
+                      }
+                    },
+                    "zonbookDocumentation": "\n         <para>\n         Information about Amazon CloudWatch Logs for a build project. Amazon CloudWatch Logs are enabled by default.\n      </para>\n      ",
+                    "documentation": "\n         <p>\n         Information about Amazon CloudWatch Logs for a build project. Amazon CloudWatch Logs are enabled by default.\n      </p>\n      ",
+                    "shape_name": "CloudWatchLogsConfig"
+                  },
+                  "s3Logs": {
+                    "type": "structure",
+                    "members": {
+                      "status": {
+                        "type": "string",
+                        "enum": [
+                          "ENABLED",
+                          "DISABLED"
+                        ],
+                        "zonbookDocumentation": "      \n         <para>The current status of the S3 build logs. Valid values are:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>ENABLED</code>: S3 build logs are enabled for this build project.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>DISABLED</code>: S3 build logs are not enabled for this build project.</para>\n            </listitem>\n         </itemizedlist>\n      ",
+                        "documentation": "      \n         <p>The current status of the S3 build logs. Valid values are:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>ENABLED</code>: S3 build logs are enabled for this build project.</p>\n            </li>\n            <li>\n               <p>\n                  <code>DISABLED</code>: S3 build logs are not enabled for this build project.</p>\n            </li>\n         </ul>\n      ",
+                        "required": true,
+                        "shape_name": "LogsConfigStatusType"
+                      },
+                      "location": {
+                        "type": "string",
+                        "zonbookDocumentation": "\n         <para>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>aws:s3:::my-bucket/build-log</code>.\n      </para>\n      ",
+                        "documentation": "\n         <p>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>aws:s3:::my-bucket/build-log</code>.\n      </p>\n      ",
+                        "shape_name": "String"
+                      }
+                    },
+                    "zonbookDocumentation": "\n         <para>\n         Information about logs built to an S3 bucket for a build project. S3 logs are not enabled by default. \n      </para>\n      ",
+                    "documentation": "\n         <p>\n         Information about logs built to an S3 bucket for a build project. S3 logs are not enabled by default. \n      </p>\n      ",
+                    "shape_name": "S3LogsConfig"
+                  }
+                },
+                "zonbookDocumentation": "\n         <para>\n         Information about logs for the build project. A project can create Amazon CloudWatch Logs, logs in an S3 bucket, or both.         \n      </para>\n      ",
+                "documentation": "\n         <p>\n         Information about logs for the build project. A project can create Amazon CloudWatch Logs, logs in an S3 bucket, or both.         \n      </p>\n      ",
+                "shape_name": "LogsConfig"
               }
             },
             "zonbookDocumentation": "\n         <para>Information about the build project that was created.</para>\n      ",
@@ -1437,8 +1565,8 @@
                   "GITHUB_ENTERPRISE",
                   "NO_SOURCE"
                 ],
-                "zonbookDocumentation": "\n         <para>The type of repository that contains the source code to be built. Valid values\n         include:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</para>\n            </listitem>\n         </itemizedlist>\n      ",
-                "documentation": "\n         <p>The type of repository that contains the source code to be built. Valid values\n         include:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</p>\n            </li>\n            <li>\n               <p>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</p>\n            </li>\n         </ul>\n      ",
+                "zonbookDocumentation": "\n         <para>The type of repository that contains the source code to be built. Valid values\n         include:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>NO_SOURCE</code>: The project does not have input source code.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</para>\n            </listitem>\n         </itemizedlist>\n      ",
+                "documentation": "\n         <p>The type of repository that contains the source code to be built. Valid values\n         include:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</p>\n            </li>\n            <li>\n               <p>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>NO_SOURCE</code>: The project does not have input source code.</p>\n            </li>\n            <li>\n               <p>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</p>\n            </li>\n         </ul>\n      ",
                 "required": true,
                 "shape_name": "SourceType"
               },
@@ -1529,8 +1657,8 @@
                     "GITHUB_ENTERPRISE",
                     "NO_SOURCE"
                   ],
-                  "zonbookDocumentation": "\n         <para>The type of repository that contains the source code to be built. Valid values\n         include:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</para>\n            </listitem>\n         </itemizedlist>\n      ",
-                  "documentation": "\n         <p>The type of repository that contains the source code to be built. Valid values\n         include:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</p>\n            </li>\n            <li>\n               <p>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</p>\n            </li>\n         </ul>\n      ",
+                  "zonbookDocumentation": "\n         <para>The type of repository that contains the source code to be built. Valid values\n         include:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>NO_SOURCE</code>: The project does not have input source code.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</para>\n            </listitem>\n         </itemizedlist>\n      ",
+                  "documentation": "\n         <p>The type of repository that contains the source code to be built. Valid values\n         include:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</p>\n            </li>\n            <li>\n               <p>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>NO_SOURCE</code>: The project does not have input source code.</p>\n            </li>\n            <li>\n               <p>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</p>\n            </li>\n         </ul>\n      ",
                   "required": true,
                   "shape_name": "SourceType"
                 },
@@ -1978,6 +2106,70 @@
             "zonbookDocumentation": "\n         <para>Set this to true to generate a publicly-accessible URL for your project's build badge.</para>\n      ",
             "documentation": "\n         <p>Set this to true to generate a publicly-accessible URL for your project's build badge.</p>\n      ",
             "shape_name": "WrapperBoolean"
+          },
+          "logsConfig": {
+            "type": "structure",
+            "members": {
+              "cloudWatchLogs": {
+                "type": "structure",
+                "members": {
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "ENABLED",
+                      "DISABLED"
+                    ],
+                    "zonbookDocumentation": "   \n         <para>The current status of the Amazon CloudWatch Logs for a build project. Valid values are:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>ENABLED</code>: Amazon CloudWatch Logs are enabled for this build project.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>DISABLED</code>: Amazon CloudWatch Logs are not enabled for this build project.</para>\n            </listitem>\n         </itemizedlist>\n      ",
+                    "documentation": "   \n         <p>The current status of the Amazon CloudWatch Logs for a build project. Valid values are:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>ENABLED</code>: Amazon CloudWatch Logs are enabled for this build project.</p>\n            </li>\n            <li>\n               <p>\n                  <code>DISABLED</code>: Amazon CloudWatch Logs are not enabled for this build project.</p>\n            </li>\n         </ul>\n      ",
+                    "required": true,
+                    "shape_name": "LogsConfigStatusType"
+                  },
+                  "groupName": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n         <para>\n         The group name of the Amazon CloudWatch Logs. For more information, see <ulink type=\"documentation\" url=\"AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html\">Working \n            with Log Groups and Log Streams</ulink>\n         </para>\n      ",
+                    "documentation": "\n         <p>\n         The group name of the Amazon CloudWatch Logs. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html\">Working \n            with Log Groups and Log Streams</a>\n         </p>\n      ",
+                    "shape_name": "String"
+                  },
+                  "streamName": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n         <para>\n         The prefix of the stream name of the Amazon CloudWatch Logs. For more information, see <ulink type=\"documentation\" url=\"AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html\">Working \n            with Log Groups and Log Streams</ulink>\n         </para>\n      ",
+                    "documentation": "\n         <p>\n         The prefix of the stream name of the Amazon CloudWatch Logs. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html\">Working \n            with Log Groups and Log Streams</a>\n         </p>\n      ",
+                    "shape_name": "String"
+                  }
+                },
+                "zonbookDocumentation": "\n         <para>\n         Information about Amazon CloudWatch Logs for a build project. Amazon CloudWatch Logs are enabled by default.\n      </para>\n      ",
+                "documentation": "\n         <p>\n         Information about Amazon CloudWatch Logs for a build project. Amazon CloudWatch Logs are enabled by default.\n      </p>\n      ",
+                "shape_name": "CloudWatchLogsConfig"
+              },
+              "s3Logs": {
+                "type": "structure",
+                "members": {
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "ENABLED",
+                      "DISABLED"
+                    ],
+                    "zonbookDocumentation": "      \n         <para>The current status of the S3 build logs. Valid values are:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>ENABLED</code>: S3 build logs are enabled for this build project.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>DISABLED</code>: S3 build logs are not enabled for this build project.</para>\n            </listitem>\n         </itemizedlist>\n      ",
+                    "documentation": "      \n         <p>The current status of the S3 build logs. Valid values are:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>ENABLED</code>: S3 build logs are enabled for this build project.</p>\n            </li>\n            <li>\n               <p>\n                  <code>DISABLED</code>: S3 build logs are not enabled for this build project.</p>\n            </li>\n         </ul>\n      ",
+                    "required": true,
+                    "shape_name": "LogsConfigStatusType"
+                  },
+                  "location": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n         <para>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>aws:s3:::my-bucket/build-log</code>.\n      </para>\n      ",
+                    "documentation": "\n         <p>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>aws:s3:::my-bucket/build-log</code>.\n      </p>\n      ",
+                    "shape_name": "String"
+                  }
+                },
+                "zonbookDocumentation": "\n         <para>\n         Information about logs built to an S3 bucket for a build project. S3 logs are not enabled by default. \n      </para>\n      ",
+                "documentation": "\n         <p>\n         Information about logs built to an S3 bucket for a build project. S3 logs are not enabled by default. \n      </p>\n      ",
+                "shape_name": "S3LogsConfig"
+              }
+            },
+            "zonbookDocumentation": "\n         <para>\n         Information about logs for the build project. A project can create Amazon CloudWatch Logs, logs in an S3 bucket, or both.\n      </para>\n      ",
+            "documentation": "\n         <p>\n         Information about logs for the build project. A project can create Amazon CloudWatch Logs, logs in an S3 bucket, or both.\n      </p>\n      ",
+            "shape_name": "LogsConfig"
           }
         },
         "shape_name": "UpdateProjectInput",
@@ -2026,8 +2218,8 @@
                       "GITHUB_ENTERPRISE",
                       "NO_SOURCE"
                     ],
-                    "zonbookDocumentation": "\n         <para>The type of repository that contains the source code to be built. Valid values\n         include:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</para>\n            </listitem>\n         </itemizedlist>\n      ",
-                    "documentation": "\n         <p>The type of repository that contains the source code to be built. Valid values\n         include:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</p>\n            </li>\n            <li>\n               <p>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</p>\n            </li>\n         </ul>\n      ",
+                    "zonbookDocumentation": "\n         <para>The type of repository that contains the source code to be built. Valid values\n         include:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>NO_SOURCE</code>: The project does not have input source code.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</para>\n            </listitem>\n         </itemizedlist>\n      ",
+                    "documentation": "\n         <p>The type of repository that contains the source code to be built. Valid values\n         include:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</p>\n            </li>\n            <li>\n               <p>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>NO_SOURCE</code>: The project does not have input source code.</p>\n            </li>\n            <li>\n               <p>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</p>\n            </li>\n         </ul>\n      ",
                     "required": true,
                     "shape_name": "SourceType"
                   },
@@ -2118,8 +2310,8 @@
                         "GITHUB_ENTERPRISE",
                         "NO_SOURCE"
                       ],
-                      "zonbookDocumentation": "\n         <para>The type of repository that contains the source code to be built. Valid values\n         include:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</para>\n            </listitem>\n         </itemizedlist>\n      ",
-                      "documentation": "\n         <p>The type of repository that contains the source code to be built. Valid values\n         include:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</p>\n            </li>\n            <li>\n               <p>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</p>\n            </li>\n         </ul>\n      ",
+                      "zonbookDocumentation": "\n         <para>The type of repository that contains the source code to be built. Valid values\n         include:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>NO_SOURCE</code>: The project does not have input source code.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</para>\n            </listitem>\n         </itemizedlist>\n      ",
+                      "documentation": "\n         <p>The type of repository that contains the source code to be built. Valid values\n         include:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</p>\n            </li>\n            <li>\n               <p>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>NO_SOURCE</code>: The project does not have input source code.</p>\n            </li>\n            <li>\n               <p>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</p>\n            </li>\n         </ul>\n      ",
                       "required": true,
                       "shape_name": "SourceType"
                     },
@@ -2634,6 +2826,70 @@
                 "zonbookDocumentation": "\n         <para>Information about the build badge for the build project.</para>\n      ",
                 "documentation": "\n         <p>Information about the build badge for the build project.</p>\n      ",
                 "shape_name": "ProjectBadge"
+              },
+              "logsConfig": {
+                "type": "structure",
+                "members": {
+                  "cloudWatchLogs": {
+                    "type": "structure",
+                    "members": {
+                      "status": {
+                        "type": "string",
+                        "enum": [
+                          "ENABLED",
+                          "DISABLED"
+                        ],
+                        "zonbookDocumentation": "   \n         <para>The current status of the Amazon CloudWatch Logs for a build project. Valid values are:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>ENABLED</code>: Amazon CloudWatch Logs are enabled for this build project.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>DISABLED</code>: Amazon CloudWatch Logs are not enabled for this build project.</para>\n            </listitem>\n         </itemizedlist>\n      ",
+                        "documentation": "   \n         <p>The current status of the Amazon CloudWatch Logs for a build project. Valid values are:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>ENABLED</code>: Amazon CloudWatch Logs are enabled for this build project.</p>\n            </li>\n            <li>\n               <p>\n                  <code>DISABLED</code>: Amazon CloudWatch Logs are not enabled for this build project.</p>\n            </li>\n         </ul>\n      ",
+                        "required": true,
+                        "shape_name": "LogsConfigStatusType"
+                      },
+                      "groupName": {
+                        "type": "string",
+                        "zonbookDocumentation": "\n         <para>\n         The group name of the Amazon CloudWatch Logs. For more information, see <ulink type=\"documentation\" url=\"AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html\">Working \n            with Log Groups and Log Streams</ulink>\n         </para>\n      ",
+                        "documentation": "\n         <p>\n         The group name of the Amazon CloudWatch Logs. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html\">Working \n            with Log Groups and Log Streams</a>\n         </p>\n      ",
+                        "shape_name": "String"
+                      },
+                      "streamName": {
+                        "type": "string",
+                        "zonbookDocumentation": "\n         <para>\n         The prefix of the stream name of the Amazon CloudWatch Logs. For more information, see <ulink type=\"documentation\" url=\"AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html\">Working \n            with Log Groups and Log Streams</ulink>\n         </para>\n      ",
+                        "documentation": "\n         <p>\n         The prefix of the stream name of the Amazon CloudWatch Logs. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html\">Working \n            with Log Groups and Log Streams</a>\n         </p>\n      ",
+                        "shape_name": "String"
+                      }
+                    },
+                    "zonbookDocumentation": "\n         <para>\n         Information about Amazon CloudWatch Logs for a build project. Amazon CloudWatch Logs are enabled by default.\n      </para>\n      ",
+                    "documentation": "\n         <p>\n         Information about Amazon CloudWatch Logs for a build project. Amazon CloudWatch Logs are enabled by default.\n      </p>\n      ",
+                    "shape_name": "CloudWatchLogsConfig"
+                  },
+                  "s3Logs": {
+                    "type": "structure",
+                    "members": {
+                      "status": {
+                        "type": "string",
+                        "enum": [
+                          "ENABLED",
+                          "DISABLED"
+                        ],
+                        "zonbookDocumentation": "      \n         <para>The current status of the S3 build logs. Valid values are:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>ENABLED</code>: S3 build logs are enabled for this build project.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>DISABLED</code>: S3 build logs are not enabled for this build project.</para>\n            </listitem>\n         </itemizedlist>\n      ",
+                        "documentation": "      \n         <p>The current status of the S3 build logs. Valid values are:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>ENABLED</code>: S3 build logs are enabled for this build project.</p>\n            </li>\n            <li>\n               <p>\n                  <code>DISABLED</code>: S3 build logs are not enabled for this build project.</p>\n            </li>\n         </ul>\n      ",
+                        "required": true,
+                        "shape_name": "LogsConfigStatusType"
+                      },
+                      "location": {
+                        "type": "string",
+                        "zonbookDocumentation": "\n         <para>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>aws:s3:::my-bucket/build-log</code>.\n      </para>\n      ",
+                        "documentation": "\n         <p>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>aws:s3:::my-bucket/build-log</code>.\n      </p>\n      ",
+                        "shape_name": "String"
+                      }
+                    },
+                    "zonbookDocumentation": "\n         <para>\n         Information about logs built to an S3 bucket for a build project. S3 logs are not enabled by default. \n      </para>\n      ",
+                    "documentation": "\n         <p>\n         Information about logs built to an S3 bucket for a build project. S3 logs are not enabled by default. \n      </p>\n      ",
+                    "shape_name": "S3LogsConfig"
+                  }
+                },
+                "zonbookDocumentation": "\n         <para>\n         Information about logs for the build project. A project can create Amazon CloudWatch Logs, logs in an S3 bucket, or both.         \n      </para>\n      ",
+                "documentation": "\n         <p>\n         Information about logs for the build project. A project can create Amazon CloudWatch Logs, logs in an S3 bucket, or both.         \n      </p>\n      ",
+                "shape_name": "LogsConfig"
               }
             },
             "zonbookDocumentation": "\n         <para>Information about the build project that was changed.</para>\n      ",
@@ -2736,8 +2992,8 @@
                         "GITHUB_ENTERPRISE",
                         "NO_SOURCE"
                       ],
-                      "zonbookDocumentation": "\n         <para>The type of repository that contains the source code to be built. Valid values\n         include:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</para>\n            </listitem>\n         </itemizedlist>\n      ",
-                      "documentation": "\n         <p>The type of repository that contains the source code to be built. Valid values\n         include:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</p>\n            </li>\n            <li>\n               <p>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</p>\n            </li>\n         </ul>\n      ",
+                      "zonbookDocumentation": "\n         <para>The type of repository that contains the source code to be built. Valid values\n         include:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>NO_SOURCE</code>: The project does not have input source code.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</para>\n            </listitem>\n         </itemizedlist>\n      ",
+                      "documentation": "\n         <p>The type of repository that contains the source code to be built. Valid values\n         include:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</p>\n            </li>\n            <li>\n               <p>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>NO_SOURCE</code>: The project does not have input source code.</p>\n            </li>\n            <li>\n               <p>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</p>\n            </li>\n         </ul>\n      ",
                       "required": true,
                       "shape_name": "SourceType"
                     },
@@ -2828,8 +3084,8 @@
                           "GITHUB_ENTERPRISE",
                           "NO_SOURCE"
                         ],
-                        "zonbookDocumentation": "\n         <para>The type of repository that contains the source code to be built. Valid values\n         include:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</para>\n            </listitem>\n         </itemizedlist>\n      ",
-                        "documentation": "\n         <p>The type of repository that contains the source code to be built. Valid values\n         include:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</p>\n            </li>\n            <li>\n               <p>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</p>\n            </li>\n         </ul>\n      ",
+                        "zonbookDocumentation": "\n         <para>The type of repository that contains the source code to be built. Valid values\n         include:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>NO_SOURCE</code>: The project does not have input source code.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</para>\n            </listitem>\n         </itemizedlist>\n      ",
+                        "documentation": "\n         <p>The type of repository that contains the source code to be built. Valid values\n         include:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</p>\n            </li>\n            <li>\n               <p>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>NO_SOURCE</code>: The project does not have input source code.</p>\n            </li>\n            <li>\n               <p>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</p>\n            </li>\n         </ul>\n      ",
                         "required": true,
                         "shape_name": "SourceType"
                       },
@@ -3344,6 +3600,70 @@
                   "zonbookDocumentation": "\n         <para>Information about the build badge for the build project.</para>\n      ",
                   "documentation": "\n         <p>Information about the build badge for the build project.</p>\n      ",
                   "shape_name": "ProjectBadge"
+                },
+                "logsConfig": {
+                  "type": "structure",
+                  "members": {
+                    "cloudWatchLogs": {
+                      "type": "structure",
+                      "members": {
+                        "status": {
+                          "type": "string",
+                          "enum": [
+                            "ENABLED",
+                            "DISABLED"
+                          ],
+                          "zonbookDocumentation": "   \n         <para>The current status of the Amazon CloudWatch Logs for a build project. Valid values are:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>ENABLED</code>: Amazon CloudWatch Logs are enabled for this build project.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>DISABLED</code>: Amazon CloudWatch Logs are not enabled for this build project.</para>\n            </listitem>\n         </itemizedlist>\n      ",
+                          "documentation": "   \n         <p>The current status of the Amazon CloudWatch Logs for a build project. Valid values are:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>ENABLED</code>: Amazon CloudWatch Logs are enabled for this build project.</p>\n            </li>\n            <li>\n               <p>\n                  <code>DISABLED</code>: Amazon CloudWatch Logs are not enabled for this build project.</p>\n            </li>\n         </ul>\n      ",
+                          "required": true,
+                          "shape_name": "LogsConfigStatusType"
+                        },
+                        "groupName": {
+                          "type": "string",
+                          "zonbookDocumentation": "\n         <para>\n         The group name of the Amazon CloudWatch Logs. For more information, see <ulink type=\"documentation\" url=\"AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html\">Working \n            with Log Groups and Log Streams</ulink>\n         </para>\n      ",
+                          "documentation": "\n         <p>\n         The group name of the Amazon CloudWatch Logs. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html\">Working \n            with Log Groups and Log Streams</a>\n         </p>\n      ",
+                          "shape_name": "String"
+                        },
+                        "streamName": {
+                          "type": "string",
+                          "zonbookDocumentation": "\n         <para>\n         The prefix of the stream name of the Amazon CloudWatch Logs. For more information, see <ulink type=\"documentation\" url=\"AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html\">Working \n            with Log Groups and Log Streams</ulink>\n         </para>\n      ",
+                          "documentation": "\n         <p>\n         The prefix of the stream name of the Amazon CloudWatch Logs. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html\">Working \n            with Log Groups and Log Streams</a>\n         </p>\n      ",
+                          "shape_name": "String"
+                        }
+                      },
+                      "zonbookDocumentation": "\n         <para>\n         Information about Amazon CloudWatch Logs for a build project. Amazon CloudWatch Logs are enabled by default.\n      </para>\n      ",
+                      "documentation": "\n         <p>\n         Information about Amazon CloudWatch Logs for a build project. Amazon CloudWatch Logs are enabled by default.\n      </p>\n      ",
+                      "shape_name": "CloudWatchLogsConfig"
+                    },
+                    "s3Logs": {
+                      "type": "structure",
+                      "members": {
+                        "status": {
+                          "type": "string",
+                          "enum": [
+                            "ENABLED",
+                            "DISABLED"
+                          ],
+                          "zonbookDocumentation": "      \n         <para>The current status of the S3 build logs. Valid values are:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>ENABLED</code>: S3 build logs are enabled for this build project.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>DISABLED</code>: S3 build logs are not enabled for this build project.</para>\n            </listitem>\n         </itemizedlist>\n      ",
+                          "documentation": "      \n         <p>The current status of the S3 build logs. Valid values are:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>ENABLED</code>: S3 build logs are enabled for this build project.</p>\n            </li>\n            <li>\n               <p>\n                  <code>DISABLED</code>: S3 build logs are not enabled for this build project.</p>\n            </li>\n         </ul>\n      ",
+                          "required": true,
+                          "shape_name": "LogsConfigStatusType"
+                        },
+                        "location": {
+                          "type": "string",
+                          "zonbookDocumentation": "\n         <para>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>aws:s3:::my-bucket/build-log</code>.\n      </para>\n      ",
+                          "documentation": "\n         <p>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>aws:s3:::my-bucket/build-log</code>.\n      </p>\n      ",
+                          "shape_name": "String"
+                        }
+                      },
+                      "zonbookDocumentation": "\n         <para>\n         Information about logs built to an S3 bucket for a build project. S3 logs are not enabled by default. \n      </para>\n      ",
+                      "documentation": "\n         <p>\n         Information about logs built to an S3 bucket for a build project. S3 logs are not enabled by default. \n      </p>\n      ",
+                      "shape_name": "S3LogsConfig"
+                    }
+                  },
+                  "zonbookDocumentation": "\n         <para>\n         Information about logs for the build project. A project can create Amazon CloudWatch Logs, logs in an S3 bucket, or both.         \n      </para>\n      ",
+                  "documentation": "\n         <p>\n         Information about logs for the build project. A project can create Amazon CloudWatch Logs, logs in an S3 bucket, or both.         \n      </p>\n      ",
+                  "shape_name": "LogsConfig"
                 }
               },
               "zonbookDocumentation": "\n         <para>Information about a build project.</para>\n      ",
@@ -3841,8 +4161,8 @@
                     "GITHUB_ENTERPRISE",
                     "NO_SOURCE"
                   ],
-                  "zonbookDocumentation": "\n         <para>The type of repository that contains the source code to be built. Valid values\n         include:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</para>\n            </listitem>\n         </itemizedlist>\n      ",
-                  "documentation": "\n         <p>The type of repository that contains the source code to be built. Valid values\n         include:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</p>\n            </li>\n            <li>\n               <p>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</p>\n            </li>\n         </ul>\n      ",
+                  "zonbookDocumentation": "\n         <para>The type of repository that contains the source code to be built. Valid values\n         include:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>NO_SOURCE</code>: The project does not have input source code.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</para>\n            </listitem>\n         </itemizedlist>\n      ",
+                  "documentation": "\n         <p>The type of repository that contains the source code to be built. Valid values\n         include:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</p>\n            </li>\n            <li>\n               <p>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>NO_SOURCE</code>: The project does not have input source code.</p>\n            </li>\n            <li>\n               <p>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</p>\n            </li>\n         </ul>\n      ",
                   "required": true,
                   "shape_name": "SourceType"
                 },
@@ -4159,8 +4479,8 @@
               "GITHUB_ENTERPRISE",
               "NO_SOURCE"
             ],
-            "zonbookDocumentation": "\n         <para>A source input type for this build that overrides the \n         source input defined in the build project</para>\n      ",
-            "documentation": "\n         <p>A source input type for this build that overrides the \n         source input defined in the build project</p>\n      ",
+            "zonbookDocumentation": "\n         <para>A source input type for this build that overrides the \n         source input defined in the build project.</para>\n      ",
+            "documentation": "\n         <p>A source input type for this build that overrides the \n         source input defined in the build project.</p>\n      ",
             "shape_name": "SourceType"
           },
           "sourceLocationOverride": {
@@ -4303,6 +4623,70 @@
             "zonbookDocumentation": "\n         <para>A unique, case sensitive identifier you provide to ensure the idempotency \n         of the StartBuild request. The token is included in the StartBuild request and is \n         valid for 12 hours. If you repeat the StartBuild request with the same token, \n         but change a parameter, AWS CodeBuild returns a parameter mismatch error.        \n      </para>\n      ",
             "documentation": "\n         <p>A unique, case sensitive identifier you provide to ensure the idempotency \n         of the StartBuild request. The token is included in the StartBuild request and is \n         valid for 12 hours. If you repeat the StartBuild request with the same token, \n         but change a parameter, AWS CodeBuild returns a parameter mismatch error.        \n      </p>\n      ",
             "shape_name": "String"
+          },
+          "logsConfigOverride": {
+            "type": "structure",
+            "members": {
+              "cloudWatchLogs": {
+                "type": "structure",
+                "members": {
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "ENABLED",
+                      "DISABLED"
+                    ],
+                    "zonbookDocumentation": "   \n         <para>The current status of the Amazon CloudWatch Logs for a build project. Valid values are:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>ENABLED</code>: Amazon CloudWatch Logs are enabled for this build project.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>DISABLED</code>: Amazon CloudWatch Logs are not enabled for this build project.</para>\n            </listitem>\n         </itemizedlist>\n      ",
+                    "documentation": "   \n         <p>The current status of the Amazon CloudWatch Logs for a build project. Valid values are:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>ENABLED</code>: Amazon CloudWatch Logs are enabled for this build project.</p>\n            </li>\n            <li>\n               <p>\n                  <code>DISABLED</code>: Amazon CloudWatch Logs are not enabled for this build project.</p>\n            </li>\n         </ul>\n      ",
+                    "required": true,
+                    "shape_name": "LogsConfigStatusType"
+                  },
+                  "groupName": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n         <para>\n         The group name of the Amazon CloudWatch Logs. For more information, see <ulink type=\"documentation\" url=\"AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html\">Working \n            with Log Groups and Log Streams</ulink>\n         </para>\n      ",
+                    "documentation": "\n         <p>\n         The group name of the Amazon CloudWatch Logs. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html\">Working \n            with Log Groups and Log Streams</a>\n         </p>\n      ",
+                    "shape_name": "String"
+                  },
+                  "streamName": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n         <para>\n         The prefix of the stream name of the Amazon CloudWatch Logs. For more information, see <ulink type=\"documentation\" url=\"AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html\">Working \n            with Log Groups and Log Streams</ulink>\n         </para>\n      ",
+                    "documentation": "\n         <p>\n         The prefix of the stream name of the Amazon CloudWatch Logs. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html\">Working \n            with Log Groups and Log Streams</a>\n         </p>\n      ",
+                    "shape_name": "String"
+                  }
+                },
+                "zonbookDocumentation": "\n         <para>\n         Information about Amazon CloudWatch Logs for a build project. Amazon CloudWatch Logs are enabled by default.\n      </para>\n      ",
+                "documentation": "\n         <p>\n         Information about Amazon CloudWatch Logs for a build project. Amazon CloudWatch Logs are enabled by default.\n      </p>\n      ",
+                "shape_name": "CloudWatchLogsConfig"
+              },
+              "s3Logs": {
+                "type": "structure",
+                "members": {
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "ENABLED",
+                      "DISABLED"
+                    ],
+                    "zonbookDocumentation": "      \n         <para>The current status of the S3 build logs. Valid values are:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>ENABLED</code>: S3 build logs are enabled for this build project.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>DISABLED</code>: S3 build logs are not enabled for this build project.</para>\n            </listitem>\n         </itemizedlist>\n      ",
+                    "documentation": "      \n         <p>The current status of the S3 build logs. Valid values are:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>ENABLED</code>: S3 build logs are enabled for this build project.</p>\n            </li>\n            <li>\n               <p>\n                  <code>DISABLED</code>: S3 build logs are not enabled for this build project.</p>\n            </li>\n         </ul>\n      ",
+                    "required": true,
+                    "shape_name": "LogsConfigStatusType"
+                  },
+                  "location": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n         <para>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>aws:s3:::my-bucket/build-log</code>.\n      </para>\n      ",
+                    "documentation": "\n         <p>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>aws:s3:::my-bucket/build-log</code>.\n      </p>\n      ",
+                    "shape_name": "String"
+                  }
+                },
+                "zonbookDocumentation": "\n         <para>\n         Information about logs built to an S3 bucket for a build project. S3 logs are not enabled by default. \n      </para>\n      ",
+                "documentation": "\n         <p>\n         Information about logs built to an S3 bucket for a build project. S3 logs are not enabled by default. \n      </p>\n      ",
+                "shape_name": "S3LogsConfig"
+              }
+            },
+            "zonbookDocumentation": "\n         <para>\n         Log settings for this build that override the log settings defined in the build project.\n      </para>\n      ",
+            "documentation": "\n         <p>\n         Log settings for this build that override the log settings defined in the build project.\n      </p>\n      ",
+            "shape_name": "LogsConfig"
           }
         },
         "shape_name": "StartBuildInput",
@@ -4478,8 +4862,8 @@
                       "GITHUB_ENTERPRISE",
                       "NO_SOURCE"
                     ],
-                    "zonbookDocumentation": "\n         <para>The type of repository that contains the source code to be built. Valid values\n         include:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</para>\n            </listitem>\n         </itemizedlist>\n      ",
-                    "documentation": "\n         <p>The type of repository that contains the source code to be built. Valid values\n         include:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</p>\n            </li>\n            <li>\n               <p>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</p>\n            </li>\n         </ul>\n      ",
+                    "zonbookDocumentation": "\n         <para>The type of repository that contains the source code to be built. Valid values\n         include:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>NO_SOURCE</code>: The project does not have input source code.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</para>\n            </listitem>\n         </itemizedlist>\n      ",
+                    "documentation": "\n         <p>The type of repository that contains the source code to be built. Valid values\n         include:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</p>\n            </li>\n            <li>\n               <p>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>NO_SOURCE</code>: The project does not have input source code.</p>\n            </li>\n            <li>\n               <p>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</p>\n            </li>\n         </ul>\n      ",
                     "required": true,
                     "shape_name": "SourceType"
                   },
@@ -4570,8 +4954,8 @@
                         "GITHUB_ENTERPRISE",
                         "NO_SOURCE"
                       ],
-                      "zonbookDocumentation": "\n         <para>The type of repository that contains the source code to be built. Valid values\n         include:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</para>\n            </listitem>\n         </itemizedlist>\n      ",
-                      "documentation": "\n         <p>The type of repository that contains the source code to be built. Valid values\n         include:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</p>\n            </li>\n            <li>\n               <p>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</p>\n            </li>\n         </ul>\n      ",
+                      "zonbookDocumentation": "\n         <para>The type of repository that contains the source code to be built. Valid values\n         include:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>NO_SOURCE</code>: The project does not have input source code.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</para>\n            </listitem>\n         </itemizedlist>\n      ",
+                      "documentation": "\n         <p>The type of repository that contains the source code to be built. Valid values\n         include:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</p>\n            </li>\n            <li>\n               <p>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>NO_SOURCE</code>: The project does not have input source code.</p>\n            </li>\n            <li>\n               <p>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</p>\n            </li>\n         </ul>\n      ",
                       "required": true,
                       "shape_name": "SourceType"
                     },
@@ -4910,6 +5294,68 @@
                     "zonbookDocumentation": "\n         <para>The URL to an individual build log in Amazon CloudWatch Logs.</para>\n      ",
                     "documentation": "\n         <p>The URL to an individual build log in Amazon CloudWatch Logs.</p>\n      ",
                     "shape_name": "String"
+                  },
+                  "s3DeepLink": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n         <para>\n         The URL to an individual build log in an S3 bucket.\n      </para>\n      ",
+                    "documentation": "\n         <p>\n         The URL to an individual build log in an S3 bucket.\n      </p>\n      ",
+                    "shape_name": "String"
+                  },
+                  "cloudWatchLogs": {
+                    "type": "structure",
+                    "members": {
+                      "status": {
+                        "type": "string",
+                        "enum": [
+                          "ENABLED",
+                          "DISABLED"
+                        ],
+                        "zonbookDocumentation": "   \n         <para>The current status of the Amazon CloudWatch Logs for a build project. Valid values are:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>ENABLED</code>: Amazon CloudWatch Logs are enabled for this build project.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>DISABLED</code>: Amazon CloudWatch Logs are not enabled for this build project.</para>\n            </listitem>\n         </itemizedlist>\n      ",
+                        "documentation": "   \n         <p>The current status of the Amazon CloudWatch Logs for a build project. Valid values are:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>ENABLED</code>: Amazon CloudWatch Logs are enabled for this build project.</p>\n            </li>\n            <li>\n               <p>\n                  <code>DISABLED</code>: Amazon CloudWatch Logs are not enabled for this build project.</p>\n            </li>\n         </ul>\n      ",
+                        "required": true,
+                        "shape_name": "LogsConfigStatusType"
+                      },
+                      "groupName": {
+                        "type": "string",
+                        "zonbookDocumentation": "\n         <para>\n         The group name of the Amazon CloudWatch Logs. For more information, see <ulink type=\"documentation\" url=\"AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html\">Working \n            with Log Groups and Log Streams</ulink>\n         </para>\n      ",
+                        "documentation": "\n         <p>\n         The group name of the Amazon CloudWatch Logs. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html\">Working \n            with Log Groups and Log Streams</a>\n         </p>\n      ",
+                        "shape_name": "String"
+                      },
+                      "streamName": {
+                        "type": "string",
+                        "zonbookDocumentation": "\n         <para>\n         The prefix of the stream name of the Amazon CloudWatch Logs. For more information, see <ulink type=\"documentation\" url=\"AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html\">Working \n            with Log Groups and Log Streams</ulink>\n         </para>\n      ",
+                        "documentation": "\n         <p>\n         The prefix of the stream name of the Amazon CloudWatch Logs. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html\">Working \n            with Log Groups and Log Streams</a>\n         </p>\n      ",
+                        "shape_name": "String"
+                      }
+                    },
+                    "zonbookDocumentation": "\n         <para>\n         Information about Amazon CloudWatch Logs for a build project.\n      </para>\n      ",
+                    "documentation": "\n         <p>\n         Information about Amazon CloudWatch Logs for a build project.\n      </p>\n      ",
+                    "shape_name": "CloudWatchLogsConfig"
+                  },
+                  "s3Logs": {
+                    "type": "structure",
+                    "members": {
+                      "status": {
+                        "type": "string",
+                        "enum": [
+                          "ENABLED",
+                          "DISABLED"
+                        ],
+                        "zonbookDocumentation": "      \n         <para>The current status of the S3 build logs. Valid values are:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>ENABLED</code>: S3 build logs are enabled for this build project.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>DISABLED</code>: S3 build logs are not enabled for this build project.</para>\n            </listitem>\n         </itemizedlist>\n      ",
+                        "documentation": "      \n         <p>The current status of the S3 build logs. Valid values are:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>ENABLED</code>: S3 build logs are enabled for this build project.</p>\n            </li>\n            <li>\n               <p>\n                  <code>DISABLED</code>: S3 build logs are not enabled for this build project.</p>\n            </li>\n         </ul>\n      ",
+                        "required": true,
+                        "shape_name": "LogsConfigStatusType"
+                      },
+                      "location": {
+                        "type": "string",
+                        "zonbookDocumentation": "\n         <para>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>aws:s3:::my-bucket/build-log</code>.\n      </para>\n      ",
+                        "documentation": "\n         <p>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>aws:s3:::my-bucket/build-log</code>.\n      </p>\n      ",
+                        "shape_name": "String"
+                      }
+                    },
+                    "zonbookDocumentation": "\n         <para>\n         Information about S3 logs for a build project.\n      </para>\n      ",
+                    "documentation": "\n         <p>\n         Information about S3 logs for a build project.\n      </p>\n      ",
+                    "shape_name": "S3LogsConfig"
                   }
                 },
                 "zonbookDocumentation": "\n         <para>Information about the build's logs in Amazon CloudWatch Logs.</para>\n      ",
@@ -5228,8 +5674,8 @@
                       "GITHUB_ENTERPRISE",
                       "NO_SOURCE"
                     ],
-                    "zonbookDocumentation": "\n         <para>The type of repository that contains the source code to be built. Valid values\n         include:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</para>\n            </listitem>\n         </itemizedlist>\n      ",
-                    "documentation": "\n         <p>The type of repository that contains the source code to be built. Valid values\n         include:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</p>\n            </li>\n            <li>\n               <p>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</p>\n            </li>\n         </ul>\n      ",
+                    "zonbookDocumentation": "\n         <para>The type of repository that contains the source code to be built. Valid values\n         include:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>NO_SOURCE</code>: The project does not have input source code.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</para>\n            </listitem>\n         </itemizedlist>\n      ",
+                    "documentation": "\n         <p>The type of repository that contains the source code to be built. Valid values\n         include:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</p>\n            </li>\n            <li>\n               <p>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>NO_SOURCE</code>: The project does not have input source code.</p>\n            </li>\n            <li>\n               <p>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</p>\n            </li>\n         </ul>\n      ",
                     "required": true,
                     "shape_name": "SourceType"
                   },
@@ -5320,8 +5766,8 @@
                         "GITHUB_ENTERPRISE",
                         "NO_SOURCE"
                       ],
-                      "zonbookDocumentation": "\n         <para>The type of repository that contains the source code to be built. Valid values\n         include:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</para>\n            </listitem>\n         </itemizedlist>\n      ",
-                      "documentation": "\n         <p>The type of repository that contains the source code to be built. Valid values\n         include:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</p>\n            </li>\n            <li>\n               <p>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</p>\n            </li>\n         </ul>\n      ",
+                      "zonbookDocumentation": "\n         <para>The type of repository that contains the source code to be built. Valid values\n         include:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>NO_SOURCE</code>: The project does not have input source code.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</para>\n            </listitem>\n         </itemizedlist>\n      ",
+                      "documentation": "\n         <p>The type of repository that contains the source code to be built. Valid values\n         include:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</p>\n            </li>\n            <li>\n               <p>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>NO_SOURCE</code>: The project does not have input source code.</p>\n            </li>\n            <li>\n               <p>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</p>\n            </li>\n         </ul>\n      ",
                       "required": true,
                       "shape_name": "SourceType"
                     },
@@ -5660,6 +6106,68 @@
                     "zonbookDocumentation": "\n         <para>The URL to an individual build log in Amazon CloudWatch Logs.</para>\n      ",
                     "documentation": "\n         <p>The URL to an individual build log in Amazon CloudWatch Logs.</p>\n      ",
                     "shape_name": "String"
+                  },
+                  "s3DeepLink": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n         <para>\n         The URL to an individual build log in an S3 bucket.\n      </para>\n      ",
+                    "documentation": "\n         <p>\n         The URL to an individual build log in an S3 bucket.\n      </p>\n      ",
+                    "shape_name": "String"
+                  },
+                  "cloudWatchLogs": {
+                    "type": "structure",
+                    "members": {
+                      "status": {
+                        "type": "string",
+                        "enum": [
+                          "ENABLED",
+                          "DISABLED"
+                        ],
+                        "zonbookDocumentation": "   \n         <para>The current status of the Amazon CloudWatch Logs for a build project. Valid values are:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>ENABLED</code>: Amazon CloudWatch Logs are enabled for this build project.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>DISABLED</code>: Amazon CloudWatch Logs are not enabled for this build project.</para>\n            </listitem>\n         </itemizedlist>\n      ",
+                        "documentation": "   \n         <p>The current status of the Amazon CloudWatch Logs for a build project. Valid values are:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>ENABLED</code>: Amazon CloudWatch Logs are enabled for this build project.</p>\n            </li>\n            <li>\n               <p>\n                  <code>DISABLED</code>: Amazon CloudWatch Logs are not enabled for this build project.</p>\n            </li>\n         </ul>\n      ",
+                        "required": true,
+                        "shape_name": "LogsConfigStatusType"
+                      },
+                      "groupName": {
+                        "type": "string",
+                        "zonbookDocumentation": "\n         <para>\n         The group name of the Amazon CloudWatch Logs. For more information, see <ulink type=\"documentation\" url=\"AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html\">Working \n            with Log Groups and Log Streams</ulink>\n         </para>\n      ",
+                        "documentation": "\n         <p>\n         The group name of the Amazon CloudWatch Logs. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html\">Working \n            with Log Groups and Log Streams</a>\n         </p>\n      ",
+                        "shape_name": "String"
+                      },
+                      "streamName": {
+                        "type": "string",
+                        "zonbookDocumentation": "\n         <para>\n         The prefix of the stream name of the Amazon CloudWatch Logs. For more information, see <ulink type=\"documentation\" url=\"AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html\">Working \n            with Log Groups and Log Streams</ulink>\n         </para>\n      ",
+                        "documentation": "\n         <p>\n         The prefix of the stream name of the Amazon CloudWatch Logs. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html\">Working \n            with Log Groups and Log Streams</a>\n         </p>\n      ",
+                        "shape_name": "String"
+                      }
+                    },
+                    "zonbookDocumentation": "\n         <para>\n         Information about Amazon CloudWatch Logs for a build project.\n      </para>\n      ",
+                    "documentation": "\n         <p>\n         Information about Amazon CloudWatch Logs for a build project.\n      </p>\n      ",
+                    "shape_name": "CloudWatchLogsConfig"
+                  },
+                  "s3Logs": {
+                    "type": "structure",
+                    "members": {
+                      "status": {
+                        "type": "string",
+                        "enum": [
+                          "ENABLED",
+                          "DISABLED"
+                        ],
+                        "zonbookDocumentation": "      \n         <para>The current status of the S3 build logs. Valid values are:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>ENABLED</code>: S3 build logs are enabled for this build project.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>DISABLED</code>: S3 build logs are not enabled for this build project.</para>\n            </listitem>\n         </itemizedlist>\n      ",
+                        "documentation": "      \n         <p>The current status of the S3 build logs. Valid values are:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>ENABLED</code>: S3 build logs are enabled for this build project.</p>\n            </li>\n            <li>\n               <p>\n                  <code>DISABLED</code>: S3 build logs are not enabled for this build project.</p>\n            </li>\n         </ul>\n      ",
+                        "required": true,
+                        "shape_name": "LogsConfigStatusType"
+                      },
+                      "location": {
+                        "type": "string",
+                        "zonbookDocumentation": "\n         <para>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>aws:s3:::my-bucket/build-log</code>.\n      </para>\n      ",
+                        "documentation": "\n         <p>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>aws:s3:::my-bucket/build-log</code>.\n      </p>\n      ",
+                        "shape_name": "String"
+                      }
+                    },
+                    "zonbookDocumentation": "\n         <para>\n         Information about S3 logs for a build project.\n      </para>\n      ",
+                    "documentation": "\n         <p>\n         Information about S3 logs for a build project.\n      </p>\n      ",
+                    "shape_name": "S3LogsConfig"
                   }
                 },
                 "zonbookDocumentation": "\n         <para>Information about the build's logs in Amazon CloudWatch Logs.</para>\n      ",
@@ -6126,8 +6634,8 @@
                         "GITHUB_ENTERPRISE",
                         "NO_SOURCE"
                       ],
-                      "zonbookDocumentation": "\n         <para>The type of repository that contains the source code to be built. Valid values\n         include:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</para>\n            </listitem>\n         </itemizedlist>\n      ",
-                      "documentation": "\n         <p>The type of repository that contains the source code to be built. Valid values\n         include:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</p>\n            </li>\n            <li>\n               <p>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</p>\n            </li>\n         </ul>\n      ",
+                      "zonbookDocumentation": "\n         <para>The type of repository that contains the source code to be built. Valid values\n         include:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>NO_SOURCE</code>: The project does not have input source code.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</para>\n            </listitem>\n         </itemizedlist>\n      ",
+                      "documentation": "\n         <p>The type of repository that contains the source code to be built. Valid values\n         include:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</p>\n            </li>\n            <li>\n               <p>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>NO_SOURCE</code>: The project does not have input source code.</p>\n            </li>\n            <li>\n               <p>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</p>\n            </li>\n         </ul>\n      ",
                       "required": true,
                       "shape_name": "SourceType"
                     },
@@ -6218,8 +6726,8 @@
                           "GITHUB_ENTERPRISE",
                           "NO_SOURCE"
                         ],
-                        "zonbookDocumentation": "\n         <para>The type of repository that contains the source code to be built. Valid values\n         include:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</para>\n            </listitem>\n         </itemizedlist>\n      ",
-                        "documentation": "\n         <p>The type of repository that contains the source code to be built. Valid values\n         include:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</p>\n            </li>\n            <li>\n               <p>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</p>\n            </li>\n         </ul>\n      ",
+                        "zonbookDocumentation": "\n         <para>The type of repository that contains the source code to be built. Valid values\n         include:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>NO_SOURCE</code>: The project does not have input source code.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</para>\n            </listitem>\n         </itemizedlist>\n      ",
+                        "documentation": "\n         <p>The type of repository that contains the source code to be built. Valid values\n         include:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODECOMMIT</code>: The source code is in an AWS CodeCommit repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>CODEPIPELINE</code>: The source code settings are specified in the source\n               action of a pipeline in AWS CodePipeline.</p>\n            </li>\n            <li>\n               <p>\n                  <code>GITHUB</code>: The source code is in a GitHub repository.</p>\n            </li>\n            <li>\n               <p>\n                  <code>NO_SOURCE</code>: The project does not have input source code.</p>\n            </li>\n            <li>\n               <p>\n                  <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</p>\n            </li>\n         </ul>\n      ",
                         "required": true,
                         "shape_name": "SourceType"
                       },
@@ -6558,6 +7066,68 @@
                       "zonbookDocumentation": "\n         <para>The URL to an individual build log in Amazon CloudWatch Logs.</para>\n      ",
                       "documentation": "\n         <p>The URL to an individual build log in Amazon CloudWatch Logs.</p>\n      ",
                       "shape_name": "String"
+                    },
+                    "s3DeepLink": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n         <para>\n         The URL to an individual build log in an S3 bucket.\n      </para>\n      ",
+                      "documentation": "\n         <p>\n         The URL to an individual build log in an S3 bucket.\n      </p>\n      ",
+                      "shape_name": "String"
+                    },
+                    "cloudWatchLogs": {
+                      "type": "structure",
+                      "members": {
+                        "status": {
+                          "type": "string",
+                          "enum": [
+                            "ENABLED",
+                            "DISABLED"
+                          ],
+                          "zonbookDocumentation": "   \n         <para>The current status of the Amazon CloudWatch Logs for a build project. Valid values are:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>ENABLED</code>: Amazon CloudWatch Logs are enabled for this build project.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>DISABLED</code>: Amazon CloudWatch Logs are not enabled for this build project.</para>\n            </listitem>\n         </itemizedlist>\n      ",
+                          "documentation": "   \n         <p>The current status of the Amazon CloudWatch Logs for a build project. Valid values are:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>ENABLED</code>: Amazon CloudWatch Logs are enabled for this build project.</p>\n            </li>\n            <li>\n               <p>\n                  <code>DISABLED</code>: Amazon CloudWatch Logs are not enabled for this build project.</p>\n            </li>\n         </ul>\n      ",
+                          "required": true,
+                          "shape_name": "LogsConfigStatusType"
+                        },
+                        "groupName": {
+                          "type": "string",
+                          "zonbookDocumentation": "\n         <para>\n         The group name of the Amazon CloudWatch Logs. For more information, see <ulink type=\"documentation\" url=\"AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html\">Working \n            with Log Groups and Log Streams</ulink>\n         </para>\n      ",
+                          "documentation": "\n         <p>\n         The group name of the Amazon CloudWatch Logs. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html\">Working \n            with Log Groups and Log Streams</a>\n         </p>\n      ",
+                          "shape_name": "String"
+                        },
+                        "streamName": {
+                          "type": "string",
+                          "zonbookDocumentation": "\n         <para>\n         The prefix of the stream name of the Amazon CloudWatch Logs. For more information, see <ulink type=\"documentation\" url=\"AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html\">Working \n            with Log Groups and Log Streams</ulink>\n         </para>\n      ",
+                          "documentation": "\n         <p>\n         The prefix of the stream name of the Amazon CloudWatch Logs. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html\">Working \n            with Log Groups and Log Streams</a>\n         </p>\n      ",
+                          "shape_name": "String"
+                        }
+                      },
+                      "zonbookDocumentation": "\n         <para>\n         Information about Amazon CloudWatch Logs for a build project.\n      </para>\n      ",
+                      "documentation": "\n         <p>\n         Information about Amazon CloudWatch Logs for a build project.\n      </p>\n      ",
+                      "shape_name": "CloudWatchLogsConfig"
+                    },
+                    "s3Logs": {
+                      "type": "structure",
+                      "members": {
+                        "status": {
+                          "type": "string",
+                          "enum": [
+                            "ENABLED",
+                            "DISABLED"
+                          ],
+                          "zonbookDocumentation": "      \n         <para>The current status of the S3 build logs. Valid values are:</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>ENABLED</code>: S3 build logs are enabled for this build project.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>DISABLED</code>: S3 build logs are not enabled for this build project.</para>\n            </listitem>\n         </itemizedlist>\n      ",
+                          "documentation": "      \n         <p>The current status of the S3 build logs. Valid values are:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>ENABLED</code>: S3 build logs are enabled for this build project.</p>\n            </li>\n            <li>\n               <p>\n                  <code>DISABLED</code>: S3 build logs are not enabled for this build project.</p>\n            </li>\n         </ul>\n      ",
+                          "required": true,
+                          "shape_name": "LogsConfigStatusType"
+                        },
+                        "location": {
+                          "type": "string",
+                          "zonbookDocumentation": "\n         <para>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>aws:s3:::my-bucket/build-log</code>.\n      </para>\n      ",
+                          "documentation": "\n         <p>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>aws:s3:::my-bucket/build-log</code>.\n      </p>\n      ",
+                          "shape_name": "String"
+                        }
+                      },
+                      "zonbookDocumentation": "\n         <para>\n         Information about S3 logs for a build project.\n      </para>\n      ",
+                      "documentation": "\n         <p>\n         Information about S3 logs for a build project.\n      </p>\n      ",
+                      "shape_name": "S3LogsConfig"
                     }
                   },
                   "zonbookDocumentation": "\n         <para>Information about the build's logs in Amazon CloudWatch Logs.</para>\n      ",

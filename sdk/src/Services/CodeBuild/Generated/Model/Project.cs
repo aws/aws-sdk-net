@@ -41,6 +41,7 @@ namespace Amazon.CodeBuild.Model
         private string _encryptionKey;
         private ProjectEnvironment _environment;
         private DateTime? _lastModified;
+        private LogsConfig _logsConfig;
         private string _name;
         private List<ProjectArtifacts> _secondaryArtifacts = new List<ProjectArtifacts>();
         private List<ProjectSource> _secondarySources = new List<ProjectSource>();
@@ -217,6 +218,25 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetLastModified()
         {
             return this._lastModified.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogsConfig. 
+        /// <para>
+        ///  Information about logs for the build project. A project can create Amazon CloudWatch
+        /// Logs, logs in an S3 bucket, or both. 
+        /// </para>
+        /// </summary>
+        public LogsConfig LogsConfig
+        {
+            get { return this._logsConfig; }
+            set { this._logsConfig = value; }
+        }
+
+        // Check to see if LogsConfig property is set
+        internal bool IsSetLogsConfig()
+        {
+            return this._logsConfig != null;
         }
 
         /// <summary>

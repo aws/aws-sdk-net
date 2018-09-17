@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LogsLocation Object
+    /// Response Unmarshaller for LogsConfig Object
     /// </summary>  
-    public class LogsLocationUnmarshaller : IUnmarshaller<LogsLocation, XmlUnmarshallerContext>, IUnmarshaller<LogsLocation, JsonUnmarshallerContext>
+    public class LogsConfigUnmarshaller : IUnmarshaller<LogsConfig, XmlUnmarshallerContext>, IUnmarshaller<LogsConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        LogsLocation IUnmarshaller<LogsLocation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        LogsConfig IUnmarshaller<LogsConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,13 +53,13 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public LogsLocation Unmarshall(JsonUnmarshallerContext context)
+        public LogsConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            LogsLocation unmarshalledObject = new LogsLocation();
+            LogsConfig unmarshalledObject = new LogsConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
@@ -70,34 +70,10 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     unmarshalledObject.CloudWatchLogs = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("deepLink", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeepLink = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("groupName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GroupName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("s3DeepLink", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.S3DeepLink = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("s3Logs", targetDepth))
                 {
                     var unmarshaller = S3LogsConfigUnmarshaller.Instance;
                     unmarshalledObject.S3Logs = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("streamName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StreamName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +82,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         }
 
 
-        private static LogsLocationUnmarshaller _instance = new LogsLocationUnmarshaller();        
+        private static LogsConfigUnmarshaller _instance = new LogsConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LogsLocationUnmarshaller Instance
+        public static LogsConfigUnmarshaller Instance
         {
             get
             {
