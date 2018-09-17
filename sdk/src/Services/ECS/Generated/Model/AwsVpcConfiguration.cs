@@ -83,7 +83,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Subnets. 
         /// <para>
-        /// The subnets associated with the task or service. There is a limit of 10 subnets able
+        /// The subnets associated with the task or service. There is a limit of 16 subnets able
         /// to be specified per <code>AwsVpcConfiguration</code>.
         /// </para>
         ///  <note> 

@@ -148,6 +148,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Image = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("interactive", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Interactive = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("links", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
@@ -202,6 +208,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Privileged = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("pseudoTerminal", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.PseudoTerminal = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("readonlyRootFilesystem", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
@@ -212,6 +224,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = RepositoryCredentialsUnmarshaller.Instance;
                     unmarshalledObject.RepositoryCredentials = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("systemControls", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<SystemControl, SystemControlUnmarshaller>(SystemControlUnmarshaller.Instance);
+                    unmarshalledObject.SystemControls = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ulimits", targetDepth))

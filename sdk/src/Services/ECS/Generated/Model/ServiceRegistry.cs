@@ -89,7 +89,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Port. 
         /// <para>
         /// The port value used if your service discovery service specified an SRV record. This
-        /// field is required if both the <code>awsvpc</code> network mode and SRV records are
+        /// field may be used if both the <code>awsvpc</code> network mode and SRV records are
         /// used.
         /// </para>
         /// </summary>

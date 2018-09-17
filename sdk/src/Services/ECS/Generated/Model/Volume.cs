@@ -43,8 +43,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property DockerVolumeConfiguration. 
         /// <para>
-        /// The configuration for the Docker volume. This parameter is specified when using Docker
-        /// volumes.
+        /// This parameter is specified when using Docker volumes. Docker volumes are only supported
+        /// when using the EC2 launch type. Windows containers only support the use of the <code>local</code>
+        /// driver. To use bind mounts, specify a <code>host</code> instead.
         /// </para>
         /// </summary>
         public DockerVolumeConfiguration DockerVolumeConfiguration

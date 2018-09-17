@@ -187,6 +187,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Image);
             }
 
+            if(requestObject.IsSetInteractive())
+            {
+                context.Writer.WritePropertyName("interactive");
+                context.Writer.Write(requestObject.Interactive);
+            }
+
             if(requestObject.IsSetLinks())
             {
                 context.Writer.WritePropertyName("links");
@@ -276,6 +282,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Privileged);
             }
 
+            if(requestObject.IsSetPseudoTerminal())
+            {
+                context.Writer.WritePropertyName("pseudoTerminal");
+                context.Writer.Write(requestObject.PseudoTerminal);
+            }
+
             if(requestObject.IsSetReadonlyRootFilesystem())
             {
                 context.Writer.WritePropertyName("readonlyRootFilesystem");
@@ -291,6 +303,22 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.RepositoryCredentials, context);
 
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetSystemControls())
+            {
+                context.Writer.WritePropertyName("systemControls");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectSystemControlsListValue in requestObject.SystemControls)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SystemControlMarshaller.Instance;
+                    marshaller.Marshall(requestObjectSystemControlsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
             if(requestObject.IsSetUlimits())
