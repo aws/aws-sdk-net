@@ -35,8 +35,8 @@ namespace Amazon.CloudWatch.Model
     /// 
     ///  
     /// <para>
-    /// You can have up to 500 dashboards per account. All dashboards in your account are
-    /// global, not region-specific.
+    /// There is no limit to the number of dashboards in your account. All dashboards in your
+    /// account are global, not region-specific.
     /// </para>
     ///  
     /// <para>

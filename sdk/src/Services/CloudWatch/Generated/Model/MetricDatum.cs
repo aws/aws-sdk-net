@@ -33,6 +33,7 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     public partial class MetricDatum
     {
+        private List<double> _counts = new List<double>();
         private List<Dimension> _dimensions = new List<Dimension>();
         private string _metricName;
         private StatisticSet _statisticValues;
@@ -40,6 +41,33 @@ namespace Amazon.CloudWatch.Model
         private DateTime? _timestamp;
         private StandardUnit _unit;
         private double? _value;
+        private List<double> _values = new List<double>();
+
+        /// <summary>
+        /// Gets and sets the property Counts. 
+        /// <para>
+        /// Array of numbers that is used along with the <code>Values</code> array. Each number
+        /// in the <code>Count</code> array is the number of times the corresponding value in
+        /// the <code>Values</code> array occurred during the period. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you omit the <code>Counts</code> array, the default of 1 is used as the value for
+        /// each count. If you include a <code>Counts</code> array, it must include the same amount
+        /// of values as the <code>Values</code> array.
+        /// </para>
+        /// </summary>
+        public List<double> Counts
+        {
+            get { return this._counts; }
+            set { this._counts = value; }
+        }
+
+        // Check to see if Counts property is set
+        internal bool IsSetCounts()
+        {
+            return this._counts != null && this._counts.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Dimensions. 
@@ -183,6 +211,35 @@ namespace Amazon.CloudWatch.Model
         internal bool IsSetValue()
         {
             return this._value.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Values. 
+        /// <para>
+        /// Array of numbers representing the values for the metric during the period. Each unique
+        /// value is listed just once in this array, and the corresponding number in the <code>Counts</code>
+        /// array specifies the number of times that value occurred during the period. You can
+        /// include up to 150 unique values in each <code>PutMetricData</code> action that specifies
+        /// a <code>Values</code> array.
+        /// </para>
+        ///  
+        /// <para>
+        /// Although the <code>Values</code> array accepts numbers of type <code>Double</code>,
+        /// CloudWatch rejects values that are either too small or too large. Values must be in
+        /// the range of 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2).
+        /// In addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.
+        /// </para>
+        /// </summary>
+        public List<double> Values
+        {
+            get { return this._values; }
+            set { this._values = value; }
+        }
+
+        // Check to see if Values property is set
+        internal bool IsSetValues()
+        {
+            return this._values != null && this._values.Count > 0; 
         }
 
     }

@@ -63,6 +63,11 @@ namespace Amazon.CloudWatch.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
+    /// Percentile statistics are not available for metrics when any of the metric values
+    /// are negative numbers.
+    /// </para>
+    ///  
+    /// <para>
     /// Amazon CloudWatch retains metric data as follows:
     /// </para>
     ///  <ul> <li> 
@@ -169,7 +174,8 @@ namespace Amazon.CloudWatch.Model
         /// <para>
         /// The percentile statistics. Specify values between p0.0 and p100. When calling <code>GetMetricStatistics</code>,
         /// you must specify either <code>Statistics</code> or <code>ExtendedStatistics</code>,
-        /// but not both.
+        /// but not both. Percentile statistics are not available for metrics when any of the
+        /// metric values are negative numbers.
         /// </para>
         /// </summary>
         public List<string> ExtendedStatistics

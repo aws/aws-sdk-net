@@ -468,6 +468,38 @@ namespace Amazon.CloudWatch
         /// calls to <code>GetMetricStatistics</code>. For more information about pricing, see
         /// <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// Amazon CloudWatch retains metric data as follows:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Data points with a period of less than 60 seconds are available for 3 hours. These
+        /// data points are high-resolution metrics and are available only for custom metrics
+        /// that have been defined with a <code>StorageResolution</code> of 1.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Data points with a period of 60 seconds (1-minute) are available for 15 days.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Data points with a period of 300 seconds (5-minute) are available for 63 days.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Data points with a period of 3600 seconds (1 hour) are available for 455 days (15
+        /// months).
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Data points that are initially published with a shorter period are aggregated together
+        /// for long-term storage. For example, if you collect data using a period of 1 minute,
+        /// the data remains available for 15 days with 1-minute resolution. After 15 days, this
+        /// data is still available, but is aggregated and retrievable only with a resolution
+        /// of 5 minutes. After 63 days, the data is further aggregated and is available with
+        /// a resolution of 1 hour.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMetricData service method.</param>
         /// 
@@ -543,6 +575,11 @@ namespace Amazon.CloudWatch
         /// The Min and the Max values of the statistic set are equal.
         /// </para>
         ///  </li> </ul> 
+        /// <para>
+        /// Percentile statistics are not available for metrics when any of the metric values
+        /// are negative numbers.
+        /// </para>
+        ///  
         /// <para>
         /// Amazon CloudWatch retains metric data as follows:
         /// </para>
@@ -637,7 +674,15 @@ namespace Amazon.CloudWatch
         /// <summary>
         /// Returns a list of the dashboards for your account. If you include <code>DashboardNamePrefix</code>,
         /// only those dashboards with names starting with the prefix are listed. Otherwise, all
-        /// dashboards in your account are listed.
+        /// dashboards in your account are listed. 
+        /// 
+        ///  
+        /// <para>
+        ///  <code>ListDashboards</code> returns up to 1000 results on one page. If there are
+        /// more than 1000 dashboards, you can call <code>ListDashboards</code> again and include
+        /// the value you received for <code>NextToken</code> in the first call, to receive the
+        /// next 1000 results.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDashboards service method.</param>
         /// 
@@ -683,8 +728,8 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// List the specified metrics. You can use the returned metrics with <a>GetMetricStatistics</a>
-        /// to obtain statistical data.
+        /// List the specified metrics. You can use the returned metrics with <a>GetMetricData</a>
+        /// or <a>GetMetricStatistics</a> to obtain statistical data.
         /// 
         ///  
         /// <para>
@@ -694,7 +739,8 @@ namespace Amazon.CloudWatch
         ///  
         /// <para>
         /// After you create a metric, allow up to fifteen minutes before the metric appears.
-        /// Statistics about the metric, however, are available sooner using <a>GetMetricStatistics</a>.
+        /// Statistics about the metric, however, are available sooner using <a>GetMetricData</a>
+        /// or <a>GetMetricStatistics</a>.
         /// </para>
         /// </summary>
         /// 
@@ -709,8 +755,8 @@ namespace Amazon.CloudWatch
         ListMetricsResponse ListMetrics();
 
         /// <summary>
-        /// List the specified metrics. You can use the returned metrics with <a>GetMetricStatistics</a>
-        /// to obtain statistical data.
+        /// List the specified metrics. You can use the returned metrics with <a>GetMetricData</a>
+        /// or <a>GetMetricStatistics</a> to obtain statistical data.
         /// 
         ///  
         /// <para>
@@ -720,7 +766,8 @@ namespace Amazon.CloudWatch
         ///  
         /// <para>
         /// After you create a metric, allow up to fifteen minutes before the metric appears.
-        /// Statistics about the metric, however, are available sooner using <a>GetMetricStatistics</a>.
+        /// Statistics about the metric, however, are available sooner using <a>GetMetricData</a>
+        /// or <a>GetMetricStatistics</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMetrics service method.</param>
@@ -773,8 +820,8 @@ namespace Amazon.CloudWatch
         /// 
         ///  
         /// <para>
-        /// You can have up to 500 dashboards per account. All dashboards in your account are
-        /// global, not region-specific.
+        /// There is no limit to the number of dashboards in your account. All dashboards in your
+        /// account are global, not region-specific.
         /// </para>
         ///  
         /// <para>
@@ -899,10 +946,11 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  
         /// <para>
-        /// You must create at least one stop, terminate, or reboot alarm using either the Amazon
-        /// EC2 or CloudWatch consoles to create the <b>EC2ActionsAccess</b> IAM role. After this
-        /// IAM role is created, you can create stop, terminate, or reboot alarms using a command-line
-        /// interface or API.
+        /// The first time you create an alarm in the AWS Management Console, the CLI, or by using
+        /// the PutMetricAlarm API, CloudWatch creates the necessary service-linked role for you.
+        /// The service-linked role is called <code>AWSServiceRoleForCloudWatchEvents</code>.
+        /// For more information about service-linked roles, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">AWS
+        /// service-linked role</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutMetricAlarm service method.</param>
@@ -946,15 +994,25 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// Publishes metric data points to Amazon CloudWatch. CloudWatch associates the data
-        /// points with the specified metric. If the specified metric does not exist, CloudWatch
-        /// creates the metric. When CloudWatch creates a metric, it can take up to fifteen minutes
-        /// for the metric to appear in calls to <a>ListMetrics</a>.
+        /// Publishes metric data to Amazon CloudWatch. CloudWatch associates the data with the
+        /// specified metric. If the specified metric does not exist, CloudWatch creates the metric.
+        /// When CloudWatch creates a metric, it can take up to fifteen minutes for the metric
+        /// to appear in calls to <a>ListMetrics</a>.
         /// 
         ///  
         /// <para>
+        /// You can publish either individual data points in the <code>Value</code> field, or
+        /// arrays of values and the number of times each value occurred during the period by
+        /// using the <code>Values</code> and <code>Counts</code> fields in the <code>MetricDatum</code>
+        /// structure. Using the <code>Values</code> and <code>Counts</code> method enables you
+        /// to publish up to 150 values per metric with one <code>PutMetricData</code> request,
+        /// and supports retrieving percentile statistics on this data.
+        /// </para>
+        ///  
+        /// <para>
         /// Each <code>PutMetricData</code> request is limited to 40 KB in size for HTTP POST
-        /// requests.
+        /// requests. You can send a payload compressed by gzip. Each request is also limited
+        /// to no more than 20 different metrics.
         /// </para>
         ///  
         /// <para>
@@ -972,21 +1030,26 @@ namespace Amazon.CloudWatch
         ///  
         /// <para>
         /// Data points with time stamps from 24 hours ago or longer can take at least 48 hours
-        /// to become available for <a>GetMetricStatistics</a> from the time they are submitted.
+        /// to become available for <a>GetMetricData</a> or <a>GetMetricStatistics</a> from the
+        /// time they are submitted.
         /// </para>
         ///  
         /// <para>
-        /// CloudWatch needs raw data points to calculate percentile statistics. If you publish
-        /// data using a statistic set instead, you can only retrieve percentile statistics for
-        /// this data if one of the following conditions is true:
+        /// CloudWatch needs raw data points to calculate percentile statistics. These raw data
+        /// points could be published individually or as part of <code>Values</code> and <code>Counts</code>
+        /// arrays. If you publish data using statistic sets in the <code>StatisticValues</code>
+        /// field instead, you can only retrieve percentile statistics for this data if one of
+        /// the following conditions is true:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The SampleCount value of the statistic set is 1
+        /// The <code>SampleCount</code> value of the statistic set is 1 and <code>Min</code>,
+        /// <code>Max</code>, and <code>Sum</code> are all equal.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The Min and the Max values of the statistic set are equal
+        /// The <code>Min</code> and <code>Max</code> are equal, and <code>Sum</code> is equal
+        /// to <code>Min</code> multiplied by <code>SampleCount</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

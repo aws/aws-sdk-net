@@ -668,8 +668,8 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// List the specified metrics. You can use the returned metrics with <a>GetMetricStatistics</a>
-        /// to obtain statistical data.
+        /// List the specified metrics. You can use the returned metrics with <a>GetMetricData</a>
+        /// or <a>GetMetricStatistics</a> to obtain statistical data.
         /// 
         ///  
         /// <para>
@@ -679,7 +679,8 @@ namespace Amazon.CloudWatch
         ///  
         /// <para>
         /// After you create a metric, allow up to fifteen minutes before the metric appears.
-        /// Statistics about the metric, however, are available sooner using <a>GetMetricStatistics</a>.
+        /// Statistics about the metric, however, are available sooner using <a>GetMetricData</a>
+        /// or <a>GetMetricStatistics</a>.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">

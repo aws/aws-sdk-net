@@ -63,6 +63,15 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     int publicRequestlistValueIndex = 1;
                     foreach(var publicRequestlistValue in publicRequest.MetricData)
                     {
+                        if(publicRequestlistValue.IsSetCounts())
+                        {
+                            int publicRequestlistValuelistValueIndex = 1;
+                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Counts)
+                            {
+                                request.Parameters.Add("MetricData" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Counts" + "." + "member" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromDouble(publicRequestlistValuelistValue));
+                                publicRequestlistValuelistValueIndex++;
+                            }
+                        }
                         if(publicRequestlistValue.IsSetDimensions())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
@@ -117,6 +126,15 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         if(publicRequestlistValue.IsSetValue())
                         {
                             request.Parameters.Add("MetricData" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromDouble(publicRequestlistValue.Value));
+                        }
+                        if(publicRequestlistValue.IsSetValues())
+                        {
+                            int publicRequestlistValuelistValueIndex = 1;
+                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Values)
+                            {
+                                request.Parameters.Add("MetricData" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Values" + "." + "member" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromDouble(publicRequestlistValuelistValue));
+                                publicRequestlistValuelistValueIndex++;
+                            }
                         }
                         publicRequestlistValueIndex++;
                     }
