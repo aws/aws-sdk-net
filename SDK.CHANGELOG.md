@@ -1,3 +1,19 @@
+### 3.3.362.0 (2018-09-17 21:41 UTC)
+* CloudWatch (3.3.7.0)
+	* Amazon CloudWatch adds the ability to publish values and counts using PutMetricData
+* CodeBuild (3.3.16.0)
+	* Support build logs configuration.
+* EC2 (3.3.61.0)
+	* Added support for customers to tag EC2 Dedicated Hosts on creation.
+* ECS (3.3.18.0)
+	* This release of Amazon Elastic Container Service (Amazon ECS) introduces support for additional Docker flags as Task Definition parameters. Customers can now configure their ECS Tasks to use systemControls (sysctl), pseudoTerminal (tty), and interactive (i) Docker flags.
+* ElastiCache (3.3.6.0)
+	* ElastiCache for Redis added support for adding and removing read-replicas from any cluster with no cluster downtime, Shard naming: ElastiCache for Redis customers have the option of allowing ElastiCache to create names for their node groups (shards) or generating their own node group names. For more information, see https:// docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_NodeGroupConfiguration.html, ShardsToRetain: When reducing the number of node groups (shards) in an ElastiCache for Redis (cluster mode enabled) you have the option of specifying which node groups to retain or which node groups to remove. For more information, see https:// docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyReplicationGroupShardConfiguration.html, ReservationARN: ReservedNode includes an ARN, ReservationARN, member which identifies the reserved node. For more information, see https:// docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ReservedCacheNode.html
+* ElasticTranscoder (3.3.3.0)
+	* Added support for MP2 container
+* SecretsManager (3.3.2.7)
+	* Documentation updates for secretsmanager
+
 ### 3.3.361.0 (2018-09-13 18:37 UTC)
 * Polly (3.3.8.0)
 	* Amazon Polly adds Mandarin Chinese language support with new female voice - "Zhiyu"
