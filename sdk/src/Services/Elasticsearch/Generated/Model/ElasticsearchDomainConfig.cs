@@ -40,6 +40,7 @@ namespace Amazon.Elasticsearch.Model
         private ElasticsearchVersionStatus _elasticsearchVersion;
         private EncryptionAtRestOptionsStatus _encryptionAtRestOptions;
         private LogPublishingOptionsStatus _logPublishingOptions;
+        private NodeToNodeEncryptionOptionsStatus _nodeToNodeEncryptionOptions;
         private SnapshotOptionsStatus _snapshotOptions;
         private VPCDerivedInfoStatus _vpcOptions;
 
@@ -188,6 +189,24 @@ namespace Amazon.Elasticsearch.Model
         internal bool IsSetLogPublishingOptions()
         {
             return this._logPublishingOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NodeToNodeEncryptionOptions. 
+        /// <para>
+        /// Specifies the <code>NodeToNodeEncryptionOptions</code> for the Elasticsearch domain.
+        /// </para>
+        /// </summary>
+        public NodeToNodeEncryptionOptionsStatus NodeToNodeEncryptionOptions
+        {
+            get { return this._nodeToNodeEncryptionOptions; }
+            set { this._nodeToNodeEncryptionOptions = value; }
+        }
+
+        // Check to see if NodeToNodeEncryptionOptions property is set
+        internal bool IsSetNodeToNodeEncryptionOptions()
+        {
+            return this._nodeToNodeEncryptionOptions != null;
         }
 
         /// <summary>

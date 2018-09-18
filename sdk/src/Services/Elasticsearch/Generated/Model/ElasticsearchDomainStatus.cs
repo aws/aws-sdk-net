@@ -47,6 +47,7 @@ namespace Amazon.Elasticsearch.Model
         private string _endpoint;
         private Dictionary<string, string> _endpoints = new Dictionary<string, string>();
         private Dictionary<string, LogPublishingOption> _logPublishingOptions = new Dictionary<string, LogPublishingOption>();
+        private NodeToNodeEncryptionOptions _nodeToNodeEncryptionOptions;
         private bool? _processing;
         private SnapshotOptions _snapshotOptions;
         private bool? _upgradeProcessing;
@@ -329,6 +330,24 @@ namespace Amazon.Elasticsearch.Model
         internal bool IsSetLogPublishingOptions()
         {
             return this._logPublishingOptions != null && this._logPublishingOptions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NodeToNodeEncryptionOptions. 
+        /// <para>
+        /// Specifies the status of the <code>NodeToNodeEncryptionOptions</code>.
+        /// </para>
+        /// </summary>
+        public NodeToNodeEncryptionOptions NodeToNodeEncryptionOptions
+        {
+            get { return this._nodeToNodeEncryptionOptions; }
+            set { this._nodeToNodeEncryptionOptions = value; }
+        }
+
+        // Check to see if NodeToNodeEncryptionOptions property is set
+        internal bool IsSetNodeToNodeEncryptionOptions()
+        {
+            return this._nodeToNodeEncryptionOptions != null;
         }
 
         /// <summary>

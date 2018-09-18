@@ -160,6 +160,17 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetNodeToNodeEncryptionOptions())
+                {
+                    context.Writer.WritePropertyName("NodeToNodeEncryptionOptions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = NodeToNodeEncryptionOptionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.NodeToNodeEncryptionOptions, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSnapshotOptions())
                 {
                     context.Writer.WritePropertyName("SnapshotOptions");

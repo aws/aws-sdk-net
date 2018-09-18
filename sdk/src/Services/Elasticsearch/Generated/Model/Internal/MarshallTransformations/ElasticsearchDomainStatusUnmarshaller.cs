@@ -154,6 +154,12 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                     unmarshalledObject.LogPublishingOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NodeToNodeEncryptionOptions", targetDepth))
+                {
+                    var unmarshaller = NodeToNodeEncryptionOptionsUnmarshaller.Instance;
+                    unmarshalledObject.NodeToNodeEncryptionOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Processing", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

@@ -285,6 +285,18 @@
             "documentation": "\n      <p>Specifies the Encryption At Rest Options.</p>\n   ",
             "shape_name": "EncryptionAtRestOptions"
           },
+          "NodeToNodeEncryptionOptions": {
+            "type": "structure",
+            "members": {
+              "Enabled": {
+                "type": "boolean",
+                "documentation": "\n       <p>Specify true to enable node-to-node encryption.</p>\n   ",
+                "shape_name": "Boolean"
+              }
+            },
+            "documentation": "\n      <p>Specifies the NodeToNodeEncryptionOptions.</p>\n   ",
+            "shape_name": "NodeToNodeEncryptionOptions"
+          },
           "AdvancedOptions": {
             "type": "map",
             "documentation": "\n      <p> Option to allow references to indices in an HTTP request body.  Must be <code>false</code> when configuring access to individual sub-resources.  By default, the value is <code>true</code>.\n          See <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options\" target=\"_blank\">Configuration Advanced Options</a> for more information.</p>\n   ",
@@ -676,6 +688,18 @@
                 },
                 "documentation": "\n       <p> Specifies the status of the <code>EncryptionAtRestOptions</code>.</p>\n   ",
                 "shape_name": "EncryptionAtRestOptions"
+              },
+              "NodeToNodeEncryptionOptions": {
+                "type": "structure",
+                "members": {
+                  "Enabled": {
+                    "type": "boolean",
+                    "documentation": "\n       <p>Specify true to enable node-to-node encryption.</p>\n   ",
+                    "shape_name": "Boolean"
+                  }
+                },
+                "documentation": "\n       <p>Specifies the status of the <code>NodeToNodeEncryptionOptions</code>.</p>\n   ",
+                "shape_name": "NodeToNodeEncryptionOptions"
               },
               "AdvancedOptions": {
                 "type": "map",
@@ -1154,6 +1178,18 @@
                 "documentation": "\n       <p> Specifies the status of the <code>EncryptionAtRestOptions</code>.</p>\n   ",
                 "shape_name": "EncryptionAtRestOptions"
               },
+              "NodeToNodeEncryptionOptions": {
+                "type": "structure",
+                "members": {
+                  "Enabled": {
+                    "type": "boolean",
+                    "documentation": "\n       <p>Specify true to enable node-to-node encryption.</p>\n   ",
+                    "shape_name": "Boolean"
+                  }
+                },
+                "documentation": "\n       <p>Specifies the status of the <code>NodeToNodeEncryptionOptions</code>.</p>\n   ",
+                "shape_name": "NodeToNodeEncryptionOptions"
+              },
               "AdvancedOptions": {
                 "type": "map",
                 "documentation": "\n       <p>Specifies the status of the <code>AdvancedOptions</code></p>\n   ",
@@ -1619,6 +1655,18 @@
                   },
                   "documentation": "\n       <p> Specifies the status of the <code>EncryptionAtRestOptions</code>.</p>\n   ",
                   "shape_name": "EncryptionAtRestOptions"
+                },
+                "NodeToNodeEncryptionOptions": {
+                  "type": "structure",
+                  "members": {
+                    "Enabled": {
+                      "type": "boolean",
+                      "documentation": "\n       <p>Specify true to enable node-to-node encryption.</p>\n   ",
+                      "shape_name": "Boolean"
+                    }
+                  },
+                  "documentation": "\n       <p>Specifies the status of the <code>NodeToNodeEncryptionOptions</code>.</p>\n   ",
+                  "shape_name": "NodeToNodeEncryptionOptions"
                 },
                 "AdvancedOptions": {
                   "type": "map",
@@ -2405,6 +2453,68 @@
                 },
                 "documentation": "\n       <p>Specifies the <code>EncryptionAtRestOptions</code> for the Elasticsearch domain.</p>\n   ",
                 "shape_name": "EncryptionAtRestOptionsStatus"
+              },
+              "NodeToNodeEncryptionOptions": {
+                "type": "structure",
+                "members": {
+                  "Options": {
+                    "type": "structure",
+                    "members": {
+                      "Enabled": {
+                        "type": "boolean",
+                        "documentation": "\n       <p>Specify true to enable node-to-node encryption.</p>\n   ",
+                        "shape_name": "Boolean"
+                      }
+                    },
+                    "documentation": "\n       <p>Specifies the node-to-node encryption options for the specified Elasticsearch domain.</p>\n   ",
+                    "required": true,
+                    "shape_name": "NodeToNodeEncryptionOptions"
+                  },
+                  "Status": {
+                    "type": "structure",
+                    "members": {
+                      "CreationDate": {
+                        "type": "timestamp",
+                        "documentation": "\n       <p>Timestamp which tells the creation date for the entity.</p>\n   ",
+                        "required": true,
+                        "shape_name": "UpdateTimestamp"
+                      },
+                      "UpdateDate": {
+                        "type": "timestamp",
+                        "documentation": "\n       <p>Timestamp which tells the last updated time for the entity.</p>\n   ",
+                        "required": true,
+                        "shape_name": "UpdateTimestamp"
+                      },
+                      "UpdateVersion": {
+                        "type": "integer",
+                        "documentation": "\n       <p>Specifies the latest version for the entity.</p>\n   ",
+                        "shape_name": "UIntValue",
+                        "min_length": 0
+                      },
+                      "State": {
+                        "type": "string",
+                        "documentation": "\n       <p>Provides the <code>OptionState</code> for the Elasticsearch domain.</p>\n   ",
+                        "enum": [
+                          "RequiresIndexDocuments",
+                          "Processing",
+                          "Active"
+                        ],
+                        "required": true,
+                        "shape_name": "OptionState"
+                      },
+                      "PendingDeletion": {
+                        "type": "boolean",
+                        "documentation": "\n       <p>Indicates whether the Elasticsearch domain is being deleted.</p>\n   ",
+                        "shape_name": "Boolean"
+                      }
+                    },
+                    "documentation": "\n       <p>Specifies the status of the node-to-node encryption options for the specified Elasticsearch domain.</p>\n   ",
+                    "required": true,
+                    "shape_name": "OptionStatus"
+                  }
+                },
+                "documentation": "\n       <p>Specifies the <code>NodeToNodeEncryptionOptions</code> for the Elasticsearch domain.</p>\n   ",
+                "shape_name": "NodeToNodeEncryptionOptionsStatus"
               },
               "AdvancedOptions": {
                 "type": "structure",
@@ -3576,6 +3686,68 @@
                 "documentation": "\n       <p>Specifies the <code>EncryptionAtRestOptions</code> for the Elasticsearch domain.</p>\n   ",
                 "shape_name": "EncryptionAtRestOptionsStatus"
               },
+              "NodeToNodeEncryptionOptions": {
+                "type": "structure",
+                "members": {
+                  "Options": {
+                    "type": "structure",
+                    "members": {
+                      "Enabled": {
+                        "type": "boolean",
+                        "documentation": "\n       <p>Specify true to enable node-to-node encryption.</p>\n   ",
+                        "shape_name": "Boolean"
+                      }
+                    },
+                    "documentation": "\n       <p>Specifies the node-to-node encryption options for the specified Elasticsearch domain.</p>\n   ",
+                    "required": true,
+                    "shape_name": "NodeToNodeEncryptionOptions"
+                  },
+                  "Status": {
+                    "type": "structure",
+                    "members": {
+                      "CreationDate": {
+                        "type": "timestamp",
+                        "documentation": "\n       <p>Timestamp which tells the creation date for the entity.</p>\n   ",
+                        "required": true,
+                        "shape_name": "UpdateTimestamp"
+                      },
+                      "UpdateDate": {
+                        "type": "timestamp",
+                        "documentation": "\n       <p>Timestamp which tells the last updated time for the entity.</p>\n   ",
+                        "required": true,
+                        "shape_name": "UpdateTimestamp"
+                      },
+                      "UpdateVersion": {
+                        "type": "integer",
+                        "documentation": "\n       <p>Specifies the latest version for the entity.</p>\n   ",
+                        "shape_name": "UIntValue",
+                        "min_length": 0
+                      },
+                      "State": {
+                        "type": "string",
+                        "documentation": "\n       <p>Provides the <code>OptionState</code> for the Elasticsearch domain.</p>\n   ",
+                        "enum": [
+                          "RequiresIndexDocuments",
+                          "Processing",
+                          "Active"
+                        ],
+                        "required": true,
+                        "shape_name": "OptionState"
+                      },
+                      "PendingDeletion": {
+                        "type": "boolean",
+                        "documentation": "\n       <p>Indicates whether the Elasticsearch domain is being deleted.</p>\n   ",
+                        "shape_name": "Boolean"
+                      }
+                    },
+                    "documentation": "\n       <p>Specifies the status of the node-to-node encryption options for the specified Elasticsearch domain.</p>\n   ",
+                    "required": true,
+                    "shape_name": "OptionStatus"
+                  }
+                },
+                "documentation": "\n       <p>Specifies the <code>NodeToNodeEncryptionOptions</code> for the Elasticsearch domain.</p>\n   ",
+                "shape_name": "NodeToNodeEncryptionOptionsStatus"
+              },
               "AdvancedOptions": {
                 "type": "structure",
                 "members": {
@@ -4144,6 +4316,18 @@
                 },
                 "documentation": "\n       <p> Specifies the status of the <code>EncryptionAtRestOptions</code>.</p>\n   ",
                 "shape_name": "EncryptionAtRestOptions"
+              },
+              "NodeToNodeEncryptionOptions": {
+                "type": "structure",
+                "members": {
+                  "Enabled": {
+                    "type": "boolean",
+                    "documentation": "\n       <p>Specify true to enable node-to-node encryption.</p>\n   ",
+                    "shape_name": "Boolean"
+                  }
+                },
+                "documentation": "\n       <p>Specifies the status of the <code>NodeToNodeEncryptionOptions</code>.</p>\n   ",
+                "shape_name": "NodeToNodeEncryptionOptions"
               },
               "AdvancedOptions": {
                 "type": "map",
