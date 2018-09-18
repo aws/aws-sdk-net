@@ -62,15 +62,46 @@ namespace Amazon.Rekognition.Model
     /// Amazon Rekognition associates this ID with all faces that it detects. When you call
     /// the operation, the response returns the external ID. You can use this external image
     /// ID to create a client-side index to associate the faces with each image. You can then
-    /// use the index to find all faces in an image. 
+    /// use the index to find all faces in an image.
     /// </para>
     ///  
     /// <para>
-    /// In response, the operation returns an array of metadata for all detected faces. This
-    /// includes, the bounding box of the detected face, confidence value (indicating the
-    /// bounding box contains a face), a face ID assigned by the service for each face that
-    /// is detected and stored, and an image ID assigned by the service for the input image.
-    /// If you request all facial attributes (using the <code>detectionAttributes</code> parameter,
+    /// You can specify the maximum number of faces to index with the <code>MaxFaces</code>
+    /// input parameter. This is useful when you want to index the largest faces in an image,
+    /// and you don't want to index other faces detected in the image.
+    /// </para>
+    ///  
+    /// <para>
+    /// The <code>QualityFilter</code> input parameter allows you to filter out detected faces
+    /// that don’t meet the required quality bar chosen by Amazon Rekognition. The quality
+    /// bar is based on a variety of common use cases.
+    /// </para>
+    ///  
+    /// <para>
+    /// In response, the operation returns an array of metadata for all detected faces, <code>FaceRecords</code>.
+    /// This includes: 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// The bounding box, <code>BoundingBox</code>, of the detected face. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// A confidence value, <code>Confidence</code>, indicating the confidence that the bounding
+    /// box contains a face.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// A face ID, <code>faceId</code>, assigned by the service for each face that is detected
+    /// and stored.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// An image ID, <code>ImageId</code>, assigned by the service for the input image.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// If you request all facial attributes (using the <code>detectionAttributes</code> parameter),
     /// Amazon Rekognition returns detailed facial attributes such as facial landmarks (for
     /// example, location of eye and mouth) and other facial attributes such gender. If you
     /// provide the same image, specify the same collection, and use the same external ID
@@ -78,6 +109,32 @@ namespace Amazon.Rekognition.Model
     /// face metadata.
     /// </para>
     ///  
+    /// <para>
+    /// Information about faces detected in an image, but not indexed, is returned in an array
+    /// of objects, <code>UnindexedFaces</code>. Faces are not indexed for reasons such as:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// The face is too blurry.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The image is too dark.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The face has an extreme pose.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The face is too small.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The number of faces detected exceeds the value of the <code>MaxFaces</code> request
+    /// parameter.
+    /// </para>
+    ///  </li> </ul>  
     /// <para>
     /// For more information, see Adding Faces to a Collection in the Amazon Rekognition Developer
     /// Guide.
@@ -101,6 +158,8 @@ namespace Amazon.Rekognition.Model
         private List<string> _detectionAttributes = new List<string>();
         private string _externalImageId;
         private Image _image;
+        private int? _maxFaces;
+        private QualityFilter _qualityFilter;
 
         /// <summary>
         /// Gets and sets the property CollectionId. 
@@ -185,6 +244,65 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetImage()
         {
             return this._image != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxFaces. 
+        /// <para>
+        /// The maximum number of faces to index. The value of <code>MaxFaces</code> must be greater
+        /// than or equal to 1. <code>IndexFaces</code> returns no more that 100 detected faces
+        /// in an image, even if you specify a larger value for <code>MaxFaces</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>IndexFaces</code> detects more faces than the value of <code>MaxFaces</code>,
+        /// the faces with the lowest quality are filtered out first. If there are still more
+        /// faces than the value of <code>MaxFaces</code>, the faces with the smallest bounding
+        /// boxes are filtered out (up to the number needed to satisfy the value of <code>MaxFaces</code>).
+        /// Information about the unindexed faces is available in the <code>UnindexedFaces</code>
+        /// array. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The faces returned by <code>IndexFaces</code> are sorted, in descending order, by
+        /// the largest face bounding box size, to the smallest.
+        /// </para>
+        /// </summary>
+        public int MaxFaces
+        {
+            get { return this._maxFaces.GetValueOrDefault(); }
+            set { this._maxFaces = value; }
+        }
+
+        // Check to see if MaxFaces property is set
+        internal bool IsSetMaxFaces()
+        {
+            return this._maxFaces.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property QualityFilter. 
+        /// <para>
+        /// Specifies how much filtering is done to identify faces detected with low quality.
+        /// Filtered faces are not indexed. If you specify <code>AUTO</code>, filtering prioritizes
+        /// the identification of faces that don’t meet the required quality bar chosen by Amazon
+        /// Rekognition. The quality bar is based on a variety of common use cases. Low quality
+        /// detections can arise for a number of reasons. For example, an object misidentified
+        /// as a face, a face that is too blurry, or a face with a pose that is too extreme to
+        /// use. If you specify <code>NONE</code>, no filtering is performed. The default value
+        /// is NONE.
+        /// </para>
+        /// </summary>
+        public QualityFilter QualityFilter
+        {
+            get { return this._qualityFilter; }
+            set { this._qualityFilter = value; }
+        }
+
+        // Check to see if QualityFilter property is set
+        internal bool IsSetQualityFilter()
+        {
+            return this._qualityFilter != null;
         }
 
     }

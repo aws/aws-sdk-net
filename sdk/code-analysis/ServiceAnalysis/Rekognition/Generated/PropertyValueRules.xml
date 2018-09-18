@@ -220,6 +220,10 @@
     <pattern>[a-zA-Z0-9_.\-:]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Rekognition.Model.IndexFacesRequest.MaxFaces</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Rekognition.Model.ListCollectionsRequest.MaxResults</property>
     <min>0</min>
     <max>4096</max>

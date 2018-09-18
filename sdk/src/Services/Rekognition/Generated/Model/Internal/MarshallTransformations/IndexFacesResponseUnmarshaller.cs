@@ -69,6 +69,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     response.OrientationCorrection = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("UnindexedFaces", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<UnindexedFace, UnindexedFaceUnmarshaller>(UnindexedFaceUnmarshaller.Instance);
+                    response.UnindexedFaces = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

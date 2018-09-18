@@ -699,6 +699,122 @@ namespace Amazon.Rekognition
 
 
     /// <summary>
+    /// Constants used for properties of type QualityFilter.
+    /// </summary>
+    public class QualityFilter : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTO for QualityFilter
+        /// </summary>
+        public static readonly QualityFilter AUTO = new QualityFilter("AUTO");
+        /// <summary>
+        /// Constant NONE for QualityFilter
+        /// </summary>
+        public static readonly QualityFilter NONE = new QualityFilter("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public QualityFilter(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QualityFilter FindValue(string value)
+        {
+            return FindValue<QualityFilter>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QualityFilter(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Reason.
+    /// </summary>
+    public class Reason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXCEEDS_MAX_FACES for Reason
+        /// </summary>
+        public static readonly Reason EXCEEDS_MAX_FACES = new Reason("EXCEEDS_MAX_FACES");
+        /// <summary>
+        /// Constant EXTREME_POSE for Reason
+        /// </summary>
+        public static readonly Reason EXTREME_POSE = new Reason("EXTREME_POSE");
+        /// <summary>
+        /// Constant LOW_BRIGHTNESS for Reason
+        /// </summary>
+        public static readonly Reason LOW_BRIGHTNESS = new Reason("LOW_BRIGHTNESS");
+        /// <summary>
+        /// Constant LOW_CONFIDENCE for Reason
+        /// </summary>
+        public static readonly Reason LOW_CONFIDENCE = new Reason("LOW_CONFIDENCE");
+        /// <summary>
+        /// Constant LOW_SHARPNESS for Reason
+        /// </summary>
+        public static readonly Reason LOW_SHARPNESS = new Reason("LOW_SHARPNESS");
+        /// <summary>
+        /// Constant SMALL_BOUNDING_BOX for Reason
+        /// </summary>
+        public static readonly Reason SMALL_BOUNDING_BOX = new Reason("SMALL_BOUNDING_BOX");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Reason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Reason FindValue(string value)
+        {
+            return FindValue<Reason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Reason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type StreamProcessorStatus.
     /// </summary>
     public class StreamProcessorStatus : ConstantClass

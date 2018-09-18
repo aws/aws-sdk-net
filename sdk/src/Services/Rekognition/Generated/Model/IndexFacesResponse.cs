@@ -35,6 +35,7 @@ namespace Amazon.Rekognition.Model
         private string _faceModelVersion;
         private List<FaceRecord> _faceRecords = new List<FaceRecord>();
         private OrientationCorrection _orientationCorrection;
+        private List<UnindexedFace> _unindexedFaces = new List<UnindexedFace>();
 
         /// <summary>
         /// Gets and sets the property FaceModelVersion. 
@@ -101,6 +102,27 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetOrientationCorrection()
         {
             return this._orientationCorrection != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UnindexedFaces. 
+        /// <para>
+        /// An array of faces that detected in the image but not indexed either because the quality
+        /// filter deemed them to be of low-quality or the <code>MaxFaces</code> request parameter
+        /// filtered them out. To use the quality filter, you specify the <code>QualityFilter</code>
+        /// request parameter.
+        /// </para>
+        /// </summary>
+        public List<UnindexedFace> UnindexedFaces
+        {
+            get { return this._unindexedFaces; }
+            set { this._unindexedFaces = value; }
+        }
+
+        // Check to see if UnindexedFaces property is set
+        internal bool IsSetUnindexedFaces()
+        {
+            return this._unindexedFaces != null && this._unindexedFaces.Count > 0; 
         }
 
     }
