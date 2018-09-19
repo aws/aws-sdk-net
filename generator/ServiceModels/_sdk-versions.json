@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.363.0",
+    "ProductVersion" : "3.3.364.0",
     "CoreVersion"    : "3.3.25.3",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -77,7 +77,7 @@
             "InPreview"               : false
         },
         "CloudWatch"        : {
-            "Version" : "3.3.7.0",
+            "Version" : "3.3.8.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.25.3"
@@ -313,7 +313,7 @@
             "InPreview"               : false
         },
         "S3"                   : {
-            "Version" : "3.3.23.2",
+            "Version" : "3.3.24.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.25.3"
@@ -745,7 +745,7 @@
             "InPreview"               : false
         },
         "Organizations"                   : {
-            "Version" : "3.3.8.16",
+            "Version" : "3.3.9.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.25.3"

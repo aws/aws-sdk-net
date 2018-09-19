@@ -1,3 +1,11 @@
+### 3.3.364.0 (2018-09-19 18:33 UTC)
+* CloudWatch (3.3.8.0)
+	* Amazon CloudWatch adds the ability to request png image snapshots of metric widgets using the GetMetricWidgetImage API.
+* Organizations (3.3.9.0)
+	* Introducing a new exception - AccountOwnerNotVerifiedException which will be returned for InviteAccountToOrganization call for unverified accounts.
+* S3 (3.3.24.0)
+	* S3 Cross Region Replication now allows customers to use S3 object tags to filter the scope of replication. By using S3 object tags, customers can identify individual objects for replication across AWS Regions for compliance and data protection. Cross Region Replication for S3 enables automatic and asynchronous replication of objects to another AWS Region, and with this release customers can replicate at a bucket level, prefix level or by using object tags.
+
 ### 3.3.363.0 (2018-09-18 21:35 UTC)
 * Elasticsearch (3.3.9.0)
 	* Amazon Elasticsearch Service adds support for node-to-node encryption for new domains running Elasticsearch version 6.0 and above
