@@ -2117,14 +2117,16 @@
         "members": {
           "MetricWidget": {
             "type": "string",
+            "zonbookDocumentation": "\n\t\t       <simpara>A JSON string that defines the bitmap graph to be retrieved. The string includes the \n\t\t\tmetrics to include in the graph, statistics, annotations, title, axis limits, and so on. \n\t\t\tYou can include only one <code>MetricWidget</code> parameter in each <code>GetMetricWidgetImage</code> call.</simpara>\n\t\t       <para>For more information about the syntax of <code>MetricWidget</code> see <xref linkend=\"CloudWatch-Metric-Widget-Structure\"/>.</para>\n\t\t\n\t\t       <para>If any metric on the graph could not load all the requested data points, an orange triangle with an exclamation\n\t\t\tpoint appears next to the graph legend.</para>\n\t\t\n\t     ",
+            "documentation": "\n\t\t       <p>A JSON string that defines the bitmap graph to be retrieved. The string includes the \n\t\t\tmetrics to include in the graph, statistics, annotations, title, axis limits, and so on. \n\t\t\tYou can include only one <code>MetricWidget</code> parameter in each <code>GetMetricWidgetImage</code> call.</p>\n\t\t       <p>For more information about the syntax of <code>MetricWidget</code> see <a>CloudWatch-Metric-Widget-Structure</a>.</p>\n\t\t\n\t\t       <p>If any metric on the graph could not load all the requested data points, an orange triangle with an exclamation\n\t\t\tpoint appears next to the graph legend.</p>\n\t\t\n\t     ",
             "required": true,
-            "shape_name": "MetricWidget",
-            "documentation": null
+            "shape_name": "MetricWidget"
           },
           "OutputFormat": {
             "type": "string",
-            "shape_name": "OutputFormat",
-            "documentation": null
+            "zonbookDocumentation": "\n\t\t       <simpara>The format of the resulting image. Only PNG images are supported.</simpara>\n\n\t\t       <simpara>The default is <code>png</code>. If you specify <code>png</code>, the API returns an HTTP response with the \n\t\t\tcontent-type set to <code>text/xml</code>. The image data is in a <code>MetricWidgetImage</code> \n\t\t\tfield. For example:</simpara>\n\t\t\n\t\t       <para>\n            <code>\n\t\t\t&lt;GetMetricWidgetImageResponse xmlns=\"http://monitoring.amazonaws.com/doc/2010-08-01/\"&gt;</code>\n         </para>\n\t\t       <para>\n            <code>  &lt;GetMetricWidgetImageResult&gt;</code>\n         </para>\n\t\t       <para>\n            <code>    &lt;MetricWidgetImage&gt;</code>\n         </para>\n\t\t       <para>\n            <code>       iVBORw0KGgoAAAANSUhEUgAAAlgAAAGQEAYAAAAip...</code>\n         </para>\n\t\t       <para>\n            <code>    &lt;/MetricWidgetImage&gt;</code>\n         </para>\n\t\t       <para>\n            <code>  &lt;/GetMetricWidgetImageResult&gt;</code>\n         </para>\n\t\t       <para>\n            <code>  &lt;ResponseMetadata&gt;</code>\n         </para>\n\t\t       <para>\n            <code>    &lt;RequestId&gt;6f0d4192-4d42-11e8-82c1-f539a07e0e3b&lt;/RequestId&gt;</code>\n         </para>\n\t\t       <para>\n            <code>  &lt;/ResponseMetadata&gt;</code>\n         </para>\n\t\t       <para>\n            <code>&lt;/GetMetricWidgetImageResponse&gt;</code>\n         </para>\n\t\t\n\t\t       <simpara>The <code>image/png</code> setting is intended only for custom HTTP requests. For most\n\t\t\tuse cases, and all actions using an AWS SDK, you should use <code>png</code>. If you specify \n\t\t\t<code>image/png</code>, the HTTP response has a content-type set to <code>image/png</code>, \n\t\t\tand the body of the response is a PNG image. </simpara>\n\n\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t     ",
+            "documentation": "\n\t\t       <p>The format of the resulting image. Only PNG images are supported.</p>\n\n\t\t       <p>The default is <code>png</code>. If you specify <code>png</code>, the API returns an HTTP response with the \n\t\t\tcontent-type set to <code>text/xml</code>. The image data is in a <code>MetricWidgetImage</code> \n\t\t\tfield. For example:</p>\n\t\t\n\t\t       <p>\n            <code>\n\t\t\t&lt;GetMetricWidgetImageResponse xmlns=\"http://monitoring.amazonaws.com/doc/2010-08-01/\"&gt;</code>\n         </p>\n\t\t       <p>\n            <code>  &lt;GetMetricWidgetImageResult&gt;</code>\n         </p>\n\t\t       <p>\n            <code>    &lt;MetricWidgetImage&gt;</code>\n         </p>\n\t\t       <p>\n            <code>       iVBORw0KGgoAAAANSUhEUgAAAlgAAAGQEAYAAAAip...</code>\n         </p>\n\t\t       <p>\n            <code>    &lt;/MetricWidgetImage&gt;</code>\n         </p>\n\t\t       <p>\n            <code>  &lt;/GetMetricWidgetImageResult&gt;</code>\n         </p>\n\t\t       <p>\n            <code>  &lt;ResponseMetadata&gt;</code>\n         </p>\n\t\t       <p>\n            <code>    &lt;RequestId&gt;6f0d4192-4d42-11e8-82c1-f539a07e0e3b&lt;/RequestId&gt;</code>\n         </p>\n\t\t       <p>\n            <code>  &lt;/ResponseMetadata&gt;</code>\n         </p>\n\t\t       <p>\n            <code>&lt;/GetMetricWidgetImageResponse&gt;</code>\n         </p>\n\t\t\n\t\t       <p>The <code>image/png</code> setting is intended only for custom HTTP requests. For most\n\t\t\tuse cases, and all actions using an AWS SDK, you should use <code>png</code>. If you specify \n\t\t\t<code>image/png</code>, the HTTP response has a content-type set to <code>image/png</code>, \n\t\t\tand the body of the response is a PNG image. </p>\n\n\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t     ",
+            "shape_name": "OutputFormat"
           }
         },
         "shape_name": "GetMetricWidgetImageInput",
@@ -2135,8 +2137,9 @@
         "members": {
           "MetricWidgetImage": {
             "type": "blob",
-            "shape_name": "MetricWidgetImage",
-            "documentation": null
+            "zonbookDocumentation": "\n\t\t       <para>The image of the graph, in the output format specified.</para>\n\t     ",
+            "documentation": "\n\t\t       <p>The image of the graph, in the output format specified.</p>\n\t     ",
+            "shape_name": "MetricWidgetImage"
           }
         },
         "shape_name": "GetMetricWidgetImageOutput",
@@ -2145,7 +2148,7 @@
       "errors": [
 
       ],
-      "documentation": null
+      "documentation": "\n\t\t       <p>You can use the <code>GetMetricWidgetImage</code> API to retrieve a snapshot graph of \n\t\t\tone or more Amazon CloudWatch metrics as a bitmap image. You can then embed this \n\t\t\timage into your services and products, such as wiki pages, reports, and documents. \n\t\t\tYou could also retrieve images regularly, such as every minute, and create your own \n\t\t\tcustom live dashboard.</p>\n\t\t\n\t\t       <p>The graph you retrieve can include all CloudWatch metric graph features, including metric math\n\t\tand horizontal and vertical annotations.</p>\n\t\t\n\t\t       <p>There is a limit of 20 transactions per second for this API. Each <code>GetMetricWidgetImage</code> action has the following limits:</p>\n\t\t       <ul>\n            <li>\n\t\t\t\t           <p>As many as 100 metrics in the graph.</p>\n\t\t\t         </li>\n            <li>\n\t\t\t\t           <p>Up to 100 KB uncompressed payload.</p>\n\t\t\t         </li>\n         </ul>\n\t\t\n\t\t\n\t     "
     },
     "PutMetricDataBatch": {
       "name": "PutMetricDataBatch",

@@ -992,6 +992,83 @@ namespace Amazon.CloudWatch
 
         #endregion
         
+        #region  GetMetricWidgetImage
+
+        /// <summary>
+        /// You can use the <code>GetMetricWidgetImage</code> API to retrieve a snapshot graph
+        /// of one or more Amazon CloudWatch metrics as a bitmap image. You can then embed this
+        /// image into your services and products, such as wiki pages, reports, and documents.
+        /// You could also retrieve images regularly, such as every minute, and create your own
+        /// custom live dashboard.
+        /// 
+        ///  
+        /// <para>
+        /// The graph you retrieve can include all CloudWatch metric graph features, including
+        /// metric math and horizontal and vertical annotations.
+        /// </para>
+        ///  
+        /// <para>
+        /// There is a limit of 20 transactions per second for this API. Each <code>GetMetricWidgetImage</code>
+        /// action has the following limits:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// As many as 100 metrics in the graph.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Up to 100 KB uncompressed payload.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMetricWidgetImage service method.</param>
+        /// 
+        /// <returns>The response from the GetMetricWidgetImage service method, as returned by CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricWidgetImage">REST API Reference for GetMetricWidgetImage Operation</seealso>
+        public virtual GetMetricWidgetImageResponse GetMetricWidgetImage(GetMetricWidgetImageRequest request)
+        {
+            var marshaller = GetMetricWidgetImageRequestMarshaller.Instance;
+            var unmarshaller = GetMetricWidgetImageResponseUnmarshaller.Instance;
+
+            return Invoke<GetMetricWidgetImageRequest,GetMetricWidgetImageResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMetricWidgetImage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMetricWidgetImage operation on AmazonCloudWatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMetricWidgetImage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricWidgetImage">REST API Reference for GetMetricWidgetImage Operation</seealso>
+        public virtual IAsyncResult BeginGetMetricWidgetImage(GetMetricWidgetImageRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = GetMetricWidgetImageRequestMarshaller.Instance;
+            var unmarshaller = GetMetricWidgetImageResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetMetricWidgetImageRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMetricWidgetImage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMetricWidgetImage.</param>
+        /// 
+        /// <returns>Returns a  GetMetricWidgetImageResult from CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricWidgetImage">REST API Reference for GetMetricWidgetImage Operation</seealso>
+        public virtual GetMetricWidgetImageResponse EndGetMetricWidgetImage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetMetricWidgetImageResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListDashboards
 
         /// <summary>

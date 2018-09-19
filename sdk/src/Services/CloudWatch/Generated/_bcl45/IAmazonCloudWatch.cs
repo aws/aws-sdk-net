@@ -581,6 +581,57 @@ namespace Amazon.CloudWatch
 
         #endregion
         
+        #region  GetMetricWidgetImage
+
+
+        /// <summary>
+        /// You can use the <code>GetMetricWidgetImage</code> API to retrieve a snapshot graph
+        /// of one or more Amazon CloudWatch metrics as a bitmap image. You can then embed this
+        /// image into your services and products, such as wiki pages, reports, and documents.
+        /// You could also retrieve images regularly, such as every minute, and create your own
+        /// custom live dashboard.
+        /// 
+        ///  
+        /// <para>
+        /// The graph you retrieve can include all CloudWatch metric graph features, including
+        /// metric math and horizontal and vertical annotations.
+        /// </para>
+        ///  
+        /// <para>
+        /// There is a limit of 20 transactions per second for this API. Each <code>GetMetricWidgetImage</code>
+        /// action has the following limits:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// As many as 100 metrics in the graph.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Up to 100 KB uncompressed payload.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMetricWidgetImage service method.</param>
+        /// 
+        /// <returns>The response from the GetMetricWidgetImage service method, as returned by CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricWidgetImage">REST API Reference for GetMetricWidgetImage Operation</seealso>
+        GetMetricWidgetImageResponse GetMetricWidgetImage(GetMetricWidgetImageRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMetricWidgetImage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMetricWidgetImage operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricWidgetImage">REST API Reference for GetMetricWidgetImage Operation</seealso>
+        Task<GetMetricWidgetImageResponse> GetMetricWidgetImageAsync(GetMetricWidgetImageRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListDashboards
 
 
