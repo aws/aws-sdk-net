@@ -39,9 +39,11 @@ namespace Amazon.Organizations.Model
         /// <para>
         /// A structure that contains details about the request to create an account. This response
         /// structure might not be fully populated when you first receive it because account creation
-        /// is an asynchronous process. You can pass the returned CreateAccountStatus ID as a
-        /// parameter to <code> <a>DescribeCreateAccountStatus</a> </code> to get status about
-        /// the progress of the request at later times. 
+        /// is an asynchronous process. You can pass the returned <code>CreateAccountStatus</code>
+        /// ID as a parameter to <a>DescribeCreateAccountStatus</a> to get status about the progress
+        /// of the request at later times. You can also check the AWS CloudTrail log for the <code>CreateAccountResult</code>
+        /// event. For more information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring
+        /// the Activity in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
         /// </para>
         /// </summary>
         public CreateAccountStatus CreateAccountStatus

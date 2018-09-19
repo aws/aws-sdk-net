@@ -47,7 +47,7 @@ namespace Amazon.Organizations.Model
     /// The user who calls the API for an invitation to join must have the <code>organizations:AcceptHandshake</code>
     /// permission. If you enabled all features in the organization, then the user must also
     /// have the <code>iam:CreateServiceLinkedRole</code> permission so that Organizations
-    /// can create the required service-linked role named <i>OrgsServiceLinkedRoleName</i>.
+    /// can create the required service-linked role named <i>AWSServiceRoleForOrganizations</i>.
     /// For more information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integration_services.html#orgs_integration_service-linked-roles">AWS
     /// Organizations and Service-Linked Roles</a> in the <i>AWS Organizations User Guide</i>.
     /// </para>

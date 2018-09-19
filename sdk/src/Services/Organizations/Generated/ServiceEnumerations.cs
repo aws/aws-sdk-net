@@ -305,6 +305,10 @@ namespace Amazon.Organizations
         /// </summary>
         public static readonly ConstraintViolationExceptionReason ACCOUNT_NUMBER_LIMIT_EXCEEDED = new ConstraintViolationExceptionReason("ACCOUNT_NUMBER_LIMIT_EXCEEDED");
         /// <summary>
+        /// Constant EMAIL_VERIFICATION_CODE_EXPIRED for ConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly ConstraintViolationExceptionReason EMAIL_VERIFICATION_CODE_EXPIRED = new ConstraintViolationExceptionReason("EMAIL_VERIFICATION_CODE_EXPIRED");
+        /// <summary>
         /// Constant HANDSHAKE_RATE_LIMIT_EXCEEDED for ConstraintViolationExceptionReason
         /// </summary>
         public static readonly ConstraintViolationExceptionReason HANDSHAKE_RATE_LIMIT_EXCEEDED = new ConstraintViolationExceptionReason("HANDSHAKE_RATE_LIMIT_EXCEEDED");
@@ -348,6 +352,10 @@ namespace Amazon.Organizations
         /// Constant POLICY_NUMBER_LIMIT_EXCEEDED for ConstraintViolationExceptionReason
         /// </summary>
         public static readonly ConstraintViolationExceptionReason POLICY_NUMBER_LIMIT_EXCEEDED = new ConstraintViolationExceptionReason("POLICY_NUMBER_LIMIT_EXCEEDED");
+        /// <summary>
+        /// Constant WAIT_PERIOD_ACTIVE for ConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly ConstraintViolationExceptionReason WAIT_PERIOD_ACTIVE = new ConstraintViolationExceptionReason("WAIT_PERIOD_ACTIVE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

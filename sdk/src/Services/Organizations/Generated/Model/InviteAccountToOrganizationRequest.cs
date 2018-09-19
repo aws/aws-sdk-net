@@ -107,7 +107,7 @@ namespace Amazon.Organizations.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>--target Id=bill@example.com,Type=EMAIL</code> 
+        ///  <code>--target Id=diego@example.com,Type=EMAIL</code> 
         /// </para>
         /// </summary>
         public HandshakeParty Target

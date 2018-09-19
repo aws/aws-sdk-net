@@ -30,8 +30,7 @@ namespace Amazon.Organizations.Model
     /// <summary>
     /// Container for the parameters to the DeleteOrganization operation.
     /// Deletes the organization. You can delete an organization only by using credentials
-    /// from the master account. The organization must be empty of member accounts, organizational
-    /// units (OUs), and policies.
+    /// from the master account. The organization must be empty of member accounts.
     /// </summary>
     public partial class DeleteOrganizationRequest : AmazonOrganizationsRequest
     {

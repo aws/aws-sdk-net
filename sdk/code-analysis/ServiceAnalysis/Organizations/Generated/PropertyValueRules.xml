@@ -20,6 +20,7 @@
     <property>Amazon.Organizations.Model.CreateAccountRequest.AccountName</property>
     <min>1</min>
     <max>50</max>
+    <pattern>[\u0020-\u007E]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.CreateAccountRequest.Email</property>
@@ -268,6 +269,7 @@
     <property>Amazon.Organizations.Model.Account.Name</property>
     <min>1</min>
     <max>50</max>
+    <pattern>[\u0020-\u007E]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.Child.Id</property>
@@ -281,6 +283,7 @@
     <property>Amazon.Organizations.Model.CreateAccountStatus.AccountName</property>
     <min>1</min>
     <max>50</max>
+    <pattern>[\u0020-\u007E]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.CreateAccountStatus.Id</property>
