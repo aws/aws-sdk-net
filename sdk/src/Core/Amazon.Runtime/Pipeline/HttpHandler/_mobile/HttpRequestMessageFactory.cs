@@ -40,10 +40,10 @@ namespace Amazon.Runtime
     public class HttpRequestMessageFactory : IHttpRequestFactory<HttpContent>
     {
         // This is the global cache of HttpClient for service clients that are using 
-        static readonly ConcurrentDictionary<string, HttpClientCache> _httpClientCaches = new ConcurrentDictionary<string, HttpClientCache>();
+        static readonly ConcurrentDictionary<string, Lazy<HttpClientCache>> _httpClientCaches = new ConcurrentDictionary<string, Lazy<HttpClientCache>>();
 
-        private HttpClientCache _httpClientCache;
-        private IClientConfig _clientConfig;
+        private readonly Lazy<HttpClientCache> _httpClientCache;
+        private readonly IClientConfig _clientConfig;
 
         /// <summary>
         /// The constructor for HttpRequestMessageFactory.
@@ -52,6 +52,20 @@ namespace Amazon.Runtime
         public HttpRequestMessageFactory(IClientConfig clientConfig)
         {
             _clientConfig = clientConfig;
+
+            if (!CanClientConfigBeSerialized(_clientConfig))
+            {
+                _httpClientCache = new Lazy<HttpClientCache>(() => CreateHttpClientCache(_clientConfig));
+            }
+            else
+            {
+                // Check to see if an HttpClient was created by another service client with the 
+                // same settings on the ClientConfig.
+                var configUniqueString = CreateConfigUniqueString(_clientConfig);
+
+                _httpClientCache = _httpClientCaches.GetOrAdd(configUniqueString,
+                    _ => new Lazy<HttpClientCache>(() => CreateHttpClientCache(_clientConfig)));
+            }
         }
 
         /// <summary>
@@ -61,36 +75,9 @@ namespace Amazon.Runtime
         /// <returns>An HTTP request.</returns>
         public IHttpRequest<HttpContent> CreateHttpRequest(Uri requestUri)
         {
-            HttpClient httpClient = null;
-            if(_clientConfig.CacheHttpClient)
-            {
-                if(_httpClientCache == null)
-                {
-                    if (!CanClientConfigBeSerialized(_clientConfig))
-                    {
-                        // atomic operation - if _httpClientCache still equals null, swap in the CreateHttpClientCache 
-                        Interlocked.CompareExchange(ref _httpClientCache, CreateHttpClientCache(_clientConfig), null);
-                    }
-                    else
-                    {
-                        // Check to see if an HttpClient was created by another service client with the 
-                        // same settings on the ClientConfig.
-                        var configUniqueString = CreateConfigUniqueString(_clientConfig);
-
-                        _httpClientCache = _httpClientCaches.GetOrAdd(configUniqueString,
-                            key => CreateHttpClientCache(_clientConfig));
-                    }
-                }
-
-                // Now that we have a HttpClientCache from either the global cache or just created a new HttpClientCache
-                // get the next HttpClient to be used for making a web request.
-                httpClient = _httpClientCache.GetNextClient();
-            }
-            else
-            {
-                httpClient = CreateHttpClient(_clientConfig);
-            }
-
+            var httpClient = _clientConfig.CacheHttpClient
+                ? _httpClientCache.Value.GetNextClient()
+                : CreateHttpClient(_clientConfig);
 
             return new HttpWebRequestMessage(httpClient, requestUri, _clientConfig);
         }
