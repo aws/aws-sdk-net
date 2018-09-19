@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,7 +32,14 @@ namespace Amazon.S3.Model
         private string bucketName;
 
         /// <summary>
-        /// The bucket on which the replication is to be deleted.
+        /// Gets and sets the property BucketName.
+        /// <p>Deletes the replication subresource associated with the specified
+        /// bucket.</p> <note> <p>There is usually some time lag before
+        /// replication configuration deletion is fully propagated to all the
+        /// Amazon S3 systems.</p> </note> <p> For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">
+        /// Cross-Region Replication (CRR)</a> in the Amazon S3 Developer
+        /// Guide. </p>
         /// </summary>
         public string BucketName
         {

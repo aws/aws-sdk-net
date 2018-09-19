@@ -62,11 +62,11 @@ namespace Amazon.S3.Model.Internal
         public void Visit(LifecycleTagPredicate lifecycleTagPredicate)
         {
             xmlWriter.WriteStartElement("Tag", "");
-                if (lifecycleTagPredicate.IsSetTag())
-                {
-                    xmlWriter.WriteElementString("Key", "", S3Transforms.ToXmlStringValue(lifecycleTagPredicate.Tag.Key));
-                    xmlWriter.WriteElementString("Value", "", S3Transforms.ToXmlStringValue(lifecycleTagPredicate.Tag.Value));
-                }
+            if (lifecycleTagPredicate.IsSetTag())
+            {
+                xmlWriter.WriteElementString("Key", "", S3Transforms.ToXmlStringValue(lifecycleTagPredicate.Tag.Key));
+                xmlWriter.WriteElementString("Value", "", S3Transforms.ToXmlStringValue(lifecycleTagPredicate.Tag.Value));
+            }
             xmlWriter.WriteEndElement();
         }
 

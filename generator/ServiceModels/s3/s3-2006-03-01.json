@@ -1366,10 +1366,11 @@
         "members": {
           "Bucket": {
             "type": "string",
+            "zonbookDocumentation": "\n         <para>Deletes the replication subresource associated with the specified bucket.</para>\n         <note>\n            <para>There is usually some time lag before replication configuration deletion is fully propagated to all the Amazon S3 systems.</para>\n         </note>\n         <para>\n      For more information, see \n      <ulink url=\" https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html\">Cross-Region Replication (CRR)</ulink> in the Amazon S3 Developer Guide.\n    </para>\n      ",
+            "documentation": "\n         <p>Deletes the replication subresource associated with the specified bucket.</p>\n         <note>\n            <p>There is usually some time lag before replication configuration deletion is fully propagated to all the Amazon S3 systems.</p>\n         </note>\n         <p>\n      For more information, see \n      <a href=\" https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html\">Cross-Region Replication (CRR)</a> in the Amazon S3 Developer Guide.\n    </p>\n      ",
             "required": true,
             "location": "uri",
-            "shape_name": "BucketName",
-            "documentation": null
+            "shape_name": "BucketName"
           }
         },
         "shape_name": "DeleteBucketReplicationRequest",
@@ -3856,8 +3857,8 @@
               "Rules": {
                 "type": "list",
                 "flattened": true,
-                "zonbookDocumentation": "\n         <para>Container for information about a particular replication rule. Replication configuration must have at least one rule and can contain up to 1,000 rules.</para>\n      ",
-                "documentation": "\n         <p>Container for information about a particular replication rule. Replication configuration must have at least one rule and can contain up to 1,000 rules.</p>\n      ",
+                "zonbookDocumentation": "\n         <para>Container for one or more replication rules. \n      Replication configuration must have at least \n      one rule and can contain up to 1,000 rules.\n    </para>\n \n      ",
+                "documentation": "\n         <p>Container for one or more replication rules. \n      Replication configuration must have at least \n      one rule and can contain up to 1,000 rules.\n    </p>\n \n      ",
                 "required": true,
                 "shape_name": "ReplicationRules",
                 "xmlname": "Rule",
@@ -3870,12 +3871,98 @@
                       "documentation": "\n         <p>Unique identifier for the rule. The value cannot be longer than 255 characters.</p>\n      ",
                       "shape_name": "ID"
                     },
+                    "Priority": {
+                      "type": "integer",
+                      "zonbookDocumentation": "\n         <para>The priority associated with the rule. \n      \n      If you specify multiple rules in a replication configuration, then Amazon S3 applies rule priority in the event there are conflicts \n    (two or more rules identify the same object based on filter specified). The rule with higher priority takes precedence. For example,</para>\n         <itemizedlist>\n            <listitem>\n               <para>Same object quality prefix based filter criteria If prefixes you specified in multiple rules overlap. </para>\n            </listitem>\n            <listitem>\n               <para>Same object qualify tag based filter criteria specified in multiple rules</para>\n            </listitem>\n         </itemizedlist>\n         <para>For more information, see \n      <ulink url=\" https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html\">Cross-Region Replication (CRR)</ulink> in the Amazon S3 Developer Guide.</para>\n      ",
+                      "documentation": "\n         <p>The priority associated with the rule. \n      \n      If you specify multiple rules in a replication configuration, then Amazon S3 applies rule priority in the event there are conflicts \n    (two or more rules identify the same object based on filter specified). The rule with higher priority takes precedence. For example,</p>\n         <ul>\n            <li>\n               <p>Same object quality prefix based filter criteria If prefixes you specified in multiple rules overlap. </p>\n            </li>\n            <li>\n               <p>Same object qualify tag based filter criteria specified in multiple rules</p>\n            </li>\n         </ul>\n         <p>For more information, see \n      <a href=\" https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html\">Cross-Region Replication (CRR)</a> in the Amazon S3 Developer Guide.</p>\n      ",
+                      "shape_name": "Priority"
+                    },
                     "Prefix": {
                       "type": "string",
-                      "zonbookDocumentation": "\n         <para>Object keyname prefix identifying one or more objects to which the rule applies. Maximum prefix length can be up to 1,024 characters. Overlapping prefixes are not supported.</para>\n      ",
-                      "documentation": "\n         <p>Object keyname prefix identifying one or more objects to which the rule applies. Maximum prefix length can be up to 1,024 characters. Overlapping prefixes are not supported.</p>\n      ",
-                      "required": true,
+                      "zonbookDocumentation": "\n         <para>Object keyname prefix identifying one or more objects to which the rule applies. \n      Maximum prefix length can be up to 1,024 characters. \n      </para>\n      ",
+                      "documentation": "\n         <p>Object keyname prefix identifying one or more objects to which the rule applies. \n      Maximum prefix length can be up to 1,024 characters. \n      </p>\n      ",
+                      "deprecated": true,
                       "shape_name": "Prefix"
+                    },
+                    "Filter": {
+                      "type": "structure",
+                      "members": {
+                        "Prefix": {
+                          "type": "string",
+                          "zonbookDocumentation": "\n         <para>Object keyname prefix that identifies subset of objects to which the rule applies.</para>\n      ",
+                          "documentation": "\n         <p>Object keyname prefix that identifies subset of objects to which the rule applies.</p>\n      ",
+                          "shape_name": "Prefix"
+                        },
+                        "Tag": {
+                          "type": "structure",
+                          "members": {
+                            "Key": {
+                              "type": "string",
+                              "zonbookDocumentation": "\n         <para>Name of the tag.</para>\n      ",
+                              "documentation": "\n         <p>Name of the tag.</p>\n      ",
+                              "required": true,
+                              "shape_name": "ObjectKey",
+                              "min_length": 1
+                            },
+                            "Value": {
+                              "type": "string",
+                              "zonbookDocumentation": "\n         <para>Value of the tag.</para>\n      ",
+                              "documentation": "\n         <p>Value of the tag.</p>\n      ",
+                              "required": true,
+                              "shape_name": "Value"
+                            }
+                          },
+                          "zonbookDocumentation": "\n         <para>Container for specifying a tag key and value. </para>\n         <para>The rule applies only to objects having the tag in its tagset.</para>\n      ",
+                          "documentation": "\n         <p>Container for specifying a tag key and value. </p>\n         <p>The rule applies only to objects having the tag in its tagset.</p>\n      ",
+                          "shape_name": "Tag"
+                        },
+                        "And": {
+                          "type": "structure",
+                          "members": {
+                            "Prefix": {
+                              "type": "string",
+                              "shape_name": "Prefix",
+                              "documentation": null
+                            },
+                            "Tags": {
+                              "type": "list",
+                              "flattened": true,
+                              "shape_name": "TagSet",
+                              "documentation": null,
+                              "xmlname": "Tag",
+                              "members": {
+                                "type": "structure",
+                                "members": {
+                                  "Key": {
+                                    "type": "string",
+                                    "zonbookDocumentation": "\n         <para>Name of the tag.</para>\n      ",
+                                    "documentation": "\n         <p>Name of the tag.</p>\n      ",
+                                    "required": true,
+                                    "shape_name": "ObjectKey",
+                                    "min_length": 1
+                                  },
+                                  "Value": {
+                                    "type": "string",
+                                    "zonbookDocumentation": "\n         <para>Value of the tag.</para>\n      ",
+                                    "documentation": "\n         <p>Value of the tag.</p>\n      ",
+                                    "required": true,
+                                    "shape_name": "Value"
+                                  }
+                                },
+                                "shape_name": "Tag",
+                                "documentation": null,
+                                "xmlname": "Tag"
+                              }
+                            }
+                          },
+                          "zonbookDocumentation": "\n         <para>Container for specifying rule filters. These filters determine the subset of objects to which the rule applies. \n    The element is required only if you specify more than one filter. For example:\n    </para>\n         <itemizedlist>\n            <listitem>\n               <para>You specify both a <code>Prefix</code> and a <code>Tag</code> filters. Then you wrap these in an <code>And</code> tag.</para>\n            </listitem>\n            <listitem>\n               <para>You specify filter based on multiple tags. Then you wrap the <code>Tag</code> elements in an <code>And</code> tag.</para>\n            </listitem>\n      \n         </itemizedlist>\n      ",
+                          "documentation": "\n         <p>Container for specifying rule filters. These filters determine the subset of objects to which the rule applies. \n    The element is required only if you specify more than one filter. For example:\n    </p>\n         <ul>\n            <li>\n               <p>You specify both a <code>Prefix</code> and a <code>Tag</code> filters. Then you wrap these in an <code>And</code> tag.</p>\n            </li>\n            <li>\n               <p>You specify filter based on multiple tags. Then you wrap the <code>Tag</code> elements in an <code>And</code> tag.</p>\n            </li>\n         </ul>\n      ",
+                          "shape_name": "ReplicationRuleAndOperator"
+                        }
+                      },
+                      "zonbookDocumentation": "\n         <para>Filter that identifies subset of objects to which the replication rule applies. A <code>Filter</code> must specify exactly one\n      <code>Prefix</code>, <code>Tag</code>, or an <code>And</code> child element.</para>\n      ",
+                      "documentation": "\n         <p>Filter that identifies subset of objects to which the replication rule applies. A <code>Filter</code> must specify exactly one\n      <code>Prefix</code>, <code>Tag</code>, or an <code>And</code> child element.</p>\n      ",
+                      "shape_name": "ReplicationRuleFilter"
                     },
                     "Status": {
                       "type": "string",
@@ -3906,13 +3993,13 @@
                               "shape_name": "SseKmsEncryptedObjectsStatus"
                             }
                           },
-                          "zonbookDocumentation": "\n         <para>Container for filter information of selection of KMS Encrypted S3 objects.</para>\n      ",
-                          "documentation": "\n         <p>Container for filter information of selection of KMS Encrypted S3 objects.</p>\n      ",
+                          "zonbookDocumentation": "\n         <para>\n      Container for filter information of selection of KMS Encrypted S3 objects.\n      The element is required if you include <code>SourceSelectionCriteria</code> \n      in the replication configuration.\n    </para>\n      ",
+                          "documentation": "\n         <p>\n      Container for filter information of selection of KMS Encrypted S3 objects.\n      The element is required if you include <code>SourceSelectionCriteria</code> \n      in the replication configuration.\n    </p>\n      ",
                           "shape_name": "SseKmsEncryptedObjects"
                         }
                       },
-                      "zonbookDocumentation": "\n         <para>Container for filters that define which source objects should be replicated.</para>\n      ",
-                      "documentation": "\n         <p>Container for filters that define which source objects should be replicated.</p>\n      ",
+                      "zonbookDocumentation": "\n    \n         <para>\n      Container that describes additional filters in identifying source objects that you want to replicate.\n      Currently, Amazon S3 supports only the filter that you can specify for objects \n      created with server-side encryption using an AWS KMS-managed key. \n      You can choose to enable or disable replication of these objects.\n    </para>\n         <para>\n      if you want Amazon S3 to replicate objects created with server-side encryption using \n      AWS KMS-managed keys.\n    </para>\n      ",
+                      "documentation": "\n    \n         <p>\n      Container that describes additional filters in identifying source objects that you want to replicate.\n      Currently, Amazon S3 supports only the filter that you can specify for objects \n      created with server-side encryption using an AWS KMS-managed key. \n      You can choose to enable or disable replication of these objects.\n    </p>\n         <p>\n      if you want Amazon S3 to replicate objects created with server-side encryption using \n      AWS KMS-managed keys.\n    </p>\n      ",
                       "shape_name": "SourceSelectionCriteria"
                     },
                     "Destination": {
@@ -3920,15 +4007,15 @@
                       "members": {
                         "Bucket": {
                           "type": "string",
-                          "zonbookDocumentation": "\n         <para>Amazon resource name (ARN) of the bucket where you want Amazon S3 to store replicas of the object identified by the rule.</para>\n      ",
-                          "documentation": "\n         <p>Amazon resource name (ARN) of the bucket where you want Amazon S3 to store replicas of the object identified by the rule.</p>\n      ",
+                          "zonbookDocumentation": "\n         <para>\n      Amazon resource name (ARN) of the bucket where you want Amazon S3 to store \n      replicas of the object identified by the rule.\n    </para>\n         <para>\n      If you have multiple rules in your replication configuration, \n      all rules must specify the same bucket as the destination. \n      A replication configuration can replicate objects only to one destination bucket.\n    </para>\n  \n      ",
+                          "documentation": "\n         <p>\n      Amazon resource name (ARN) of the bucket where you want Amazon S3 to store \n      replicas of the object identified by the rule.\n    </p>\n         <p>\n      If you have multiple rules in your replication configuration, \n      all rules must specify the same bucket as the destination. \n      A replication configuration can replicate objects only to one destination bucket.\n    </p>\n  \n      ",
                           "required": true,
                           "shape_name": "BucketName"
                         },
                         "Account": {
                           "type": "string",
-                          "zonbookDocumentation": "\n         <para>Account ID of the destination bucket. Currently this is only being verified if Access Control Translation is enabled</para>\n      ",
-                          "documentation": "\n         <p>Account ID of the destination bucket. Currently this is only being verified if Access Control Translation is enabled</p>\n      ",
+                          "zonbookDocumentation": "\n         <para>\n      Account ID of the destination bucket. Currently \n      Amazon S3 verifies this value only if Access Control Translation is enabled.\n    </para>\n         <para>\n      In a cross-account scenario, if you tell Amazon S3 to change replica ownership \n      to the AWS account that owns the destination bucket \n      by adding the <code>AccessControlTranslation</code> element, \n      this is the account ID of the destination bucket owner. \n    </para>\n      ",
+                          "documentation": "\n         <p>\n      Account ID of the destination bucket. Currently \n      Amazon S3 verifies this value only if Access Control Translation is enabled.\n    </p>\n         <p>\n      In a cross-account scenario, if you tell Amazon S3 to change replica ownership \n      to the AWS account that owns the destination bucket \n      by adding the <code>AccessControlTranslation</code> element, \n      this is the account ID of the destination bucket owner. \n    </p>\n      ",
                           "shape_name": "AccountId"
                         },
                         "StorageClass": {
@@ -3957,8 +4044,8 @@
                               "shape_name": "OwnerOverride"
                             }
                           },
-                          "zonbookDocumentation": "\n         <para>Container for information regarding the access control for replicas.</para>\n      ",
-                          "documentation": "\n         <p>Container for information regarding the access control for replicas.</p>\n      ",
+                          "zonbookDocumentation": "\n         <para>\n      Container for information regarding the access control for replicas.\n    </para>\n         <para>\n      Use only in a cross-account scenario, where source and destination bucket owners \n      are not the same, when you want to change replica ownership to the AWS account \n      that owns the destination bucket. If you don't add this element to the replication \n      configuration, the replicas are owned by same AWS account that owns the source object.\n    </para>\n      ",
+                          "documentation": "\n         <p>\n      Container for information regarding the access control for replicas.\n    </p>\n         <p>\n      Use only in a cross-account scenario, where source and destination bucket owners \n      are not the same, when you want to change replica ownership to the AWS account \n      that owns the destination bucket. If you don't add this element to the replication \n      configuration, the replicas are owned by same AWS account that owns the source object.\n    </p>\n      ",
                           "shape_name": "AccessControlTranslation"
                         },
                         "EncryptionConfiguration": {
@@ -3966,13 +4053,13 @@
                           "members": {
                             "ReplicaKmsKeyID": {
                               "type": "string",
-                              "zonbookDocumentation": "\n         <para>The id of the KMS key used to encrypt the replica object.</para>\n      ",
-                              "documentation": "\n         <p>The id of the KMS key used to encrypt the replica object.</p>\n      ",
+                              "zonbookDocumentation": "\n         <para>\n      The ID of the AWS KMS key for the region where the destination bucket resides. \n      Amazon S3 uses this key to encrypt the replica object.\n    </para>\n      ",
+                              "documentation": "\n         <p>\n      The ID of the AWS KMS key for the region where the destination bucket resides. \n      Amazon S3 uses this key to encrypt the replica object.\n    </p>\n      ",
                               "shape_name": "ReplicaKmsKeyID"
                             }
                           },
-                          "zonbookDocumentation": "\n         <para>Container for information regarding encryption based configuration for replicas.</para>\n      ",
-                          "documentation": "\n         <p>Container for information regarding encryption based configuration for replicas.</p>\n      ",
+                          "zonbookDocumentation": "\n         <para>\n      Container that provides encryption-related information. You must specify this element \n      if the <code>SourceSelectionCriteria</code> is specified.\n    </para>\n      ",
+                          "documentation": "\n         <p>\n      Container that provides encryption-related information. You must specify this element \n      if the <code>SourceSelectionCriteria</code> is specified.\n    </p>\n      ",
                           "shape_name": "EncryptionConfiguration"
                         }
                       },
@@ -3980,6 +4067,24 @@
                       "documentation": "\n         <p>Container for replication destination information.</p>\n      ",
                       "required": true,
                       "shape_name": "Destination"
+                    },
+                    "DeleteMarkerReplication": {
+                      "type": "structure",
+                      "members": {
+                        "Status": {
+                          "type": "string",
+                          "enum": [
+                            "Enabled",
+                            "Disabled"
+                          ],
+                          "zonbookDocumentation": "\n         <para>The status of the delete marker replication.</para>\n         <note>\n            <para>\n      In the current implementation, Amazon S3 does not replicate the delete markers.\n      Therefore, the status must be <code>Disabled</code>. \n    </para>\n         </note>\n      ",
+                          "documentation": "\n         <p>The status of the delete marker replication.</p>\n         <note>\n            <p>\n      In the current implementation, Amazon S3 does not replicate the delete markers.\n      Therefore, the status must be <code>Disabled</code>. \n    </p>\n         </note>\n      ",
+                          "shape_name": "DeleteMarkerReplicationStatus"
+                        }
+                      },
+                      "zonbookDocumentation": "\n         <para>Specifies whether Amazon S3 should replicate delete makers.</para>\n      ",
+                      "documentation": "\n         <p>Specifies whether Amazon S3 should replicate delete makers.</p>\n      ",
+                      "shape_name": "DeleteMarkerReplication"
                     }
                   },
                   "zonbookDocumentation": "\n         <para>Container for information about a particular replication rule.</para>\n      ",
@@ -9639,8 +9744,8 @@
               "Rules": {
                 "type": "list",
                 "flattened": true,
-                "zonbookDocumentation": "\n         <para>Container for information about a particular replication rule. Replication configuration must have at least one rule and can contain up to 1,000 rules.</para>\n      ",
-                "documentation": "\n         <p>Container for information about a particular replication rule. Replication configuration must have at least one rule and can contain up to 1,000 rules.</p>\n      ",
+                "zonbookDocumentation": "\n         <para>Container for one or more replication rules. \n      Replication configuration must have at least \n      one rule and can contain up to 1,000 rules.\n    </para>\n \n      ",
+                "documentation": "\n         <p>Container for one or more replication rules. \n      Replication configuration must have at least \n      one rule and can contain up to 1,000 rules.\n    </p>\n \n      ",
                 "required": true,
                 "shape_name": "ReplicationRules",
                 "xmlname": "Rule",
@@ -9653,12 +9758,98 @@
                       "documentation": "\n         <p>Unique identifier for the rule. The value cannot be longer than 255 characters.</p>\n      ",
                       "shape_name": "ID"
                     },
+                    "Priority": {
+                      "type": "integer",
+                      "zonbookDocumentation": "\n         <para>The priority associated with the rule. \n      \n      If you specify multiple rules in a replication configuration, then Amazon S3 applies rule priority in the event there are conflicts \n    (two or more rules identify the same object based on filter specified). The rule with higher priority takes precedence. For example,</para>\n         <itemizedlist>\n            <listitem>\n               <para>Same object quality prefix based filter criteria If prefixes you specified in multiple rules overlap. </para>\n            </listitem>\n            <listitem>\n               <para>Same object qualify tag based filter criteria specified in multiple rules</para>\n            </listitem>\n         </itemizedlist>\n         <para>For more information, see \n      <ulink url=\" https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html\">Cross-Region Replication (CRR)</ulink> in the Amazon S3 Developer Guide.</para>\n      ",
+                      "documentation": "\n         <p>The priority associated with the rule. \n      \n      If you specify multiple rules in a replication configuration, then Amazon S3 applies rule priority in the event there are conflicts \n    (two or more rules identify the same object based on filter specified). The rule with higher priority takes precedence. For example,</p>\n         <ul>\n            <li>\n               <p>Same object quality prefix based filter criteria If prefixes you specified in multiple rules overlap. </p>\n            </li>\n            <li>\n               <p>Same object qualify tag based filter criteria specified in multiple rules</p>\n            </li>\n         </ul>\n         <p>For more information, see \n      <a href=\" https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html\">Cross-Region Replication (CRR)</a> in the Amazon S3 Developer Guide.</p>\n      ",
+                      "shape_name": "Priority"
+                    },
                     "Prefix": {
                       "type": "string",
-                      "zonbookDocumentation": "\n         <para>Object keyname prefix identifying one or more objects to which the rule applies. Maximum prefix length can be up to 1,024 characters. Overlapping prefixes are not supported.</para>\n      ",
-                      "documentation": "\n         <p>Object keyname prefix identifying one or more objects to which the rule applies. Maximum prefix length can be up to 1,024 characters. Overlapping prefixes are not supported.</p>\n      ",
-                      "required": true,
+                      "zonbookDocumentation": "\n         <para>Object keyname prefix identifying one or more objects to which the rule applies. \n      Maximum prefix length can be up to 1,024 characters. \n      </para>\n      ",
+                      "documentation": "\n         <p>Object keyname prefix identifying one or more objects to which the rule applies. \n      Maximum prefix length can be up to 1,024 characters. \n      </p>\n      ",
+                      "deprecated": true,
                       "shape_name": "Prefix"
+                    },
+                    "Filter": {
+                      "type": "structure",
+                      "members": {
+                        "Prefix": {
+                          "type": "string",
+                          "zonbookDocumentation": "\n         <para>Object keyname prefix that identifies subset of objects to which the rule applies.</para>\n      ",
+                          "documentation": "\n         <p>Object keyname prefix that identifies subset of objects to which the rule applies.</p>\n      ",
+                          "shape_name": "Prefix"
+                        },
+                        "Tag": {
+                          "type": "structure",
+                          "members": {
+                            "Key": {
+                              "type": "string",
+                              "zonbookDocumentation": "\n         <para>Name of the tag.</para>\n      ",
+                              "documentation": "\n         <p>Name of the tag.</p>\n      ",
+                              "required": true,
+                              "shape_name": "ObjectKey",
+                              "min_length": 1
+                            },
+                            "Value": {
+                              "type": "string",
+                              "zonbookDocumentation": "\n         <para>Value of the tag.</para>\n      ",
+                              "documentation": "\n         <p>Value of the tag.</p>\n      ",
+                              "required": true,
+                              "shape_name": "Value"
+                            }
+                          },
+                          "zonbookDocumentation": "\n         <para>Container for specifying a tag key and value. </para>\n         <para>The rule applies only to objects having the tag in its tagset.</para>\n      ",
+                          "documentation": "\n         <p>Container for specifying a tag key and value. </p>\n         <p>The rule applies only to objects having the tag in its tagset.</p>\n      ",
+                          "shape_name": "Tag"
+                        },
+                        "And": {
+                          "type": "structure",
+                          "members": {
+                            "Prefix": {
+                              "type": "string",
+                              "shape_name": "Prefix",
+                              "documentation": null
+                            },
+                            "Tags": {
+                              "type": "list",
+                              "flattened": true,
+                              "shape_name": "TagSet",
+                              "documentation": null,
+                              "xmlname": "Tag",
+                              "members": {
+                                "type": "structure",
+                                "members": {
+                                  "Key": {
+                                    "type": "string",
+                                    "zonbookDocumentation": "\n         <para>Name of the tag.</para>\n      ",
+                                    "documentation": "\n         <p>Name of the tag.</p>\n      ",
+                                    "required": true,
+                                    "shape_name": "ObjectKey",
+                                    "min_length": 1
+                                  },
+                                  "Value": {
+                                    "type": "string",
+                                    "zonbookDocumentation": "\n         <para>Value of the tag.</para>\n      ",
+                                    "documentation": "\n         <p>Value of the tag.</p>\n      ",
+                                    "required": true,
+                                    "shape_name": "Value"
+                                  }
+                                },
+                                "shape_name": "Tag",
+                                "documentation": null,
+                                "xmlname": "Tag"
+                              }
+                            }
+                          },
+                          "zonbookDocumentation": "\n         <para>Container for specifying rule filters. These filters determine the subset of objects to which the rule applies. \n    The element is required only if you specify more than one filter. For example:\n    </para>\n         <itemizedlist>\n            <listitem>\n               <para>You specify both a <code>Prefix</code> and a <code>Tag</code> filters. Then you wrap these in an <code>And</code> tag.</para>\n            </listitem>\n            <listitem>\n               <para>You specify filter based on multiple tags. Then you wrap the <code>Tag</code> elements in an <code>And</code> tag.</para>\n            </listitem>\n      \n         </itemizedlist>\n      ",
+                          "documentation": "\n         <p>Container for specifying rule filters. These filters determine the subset of objects to which the rule applies. \n    The element is required only if you specify more than one filter. For example:\n    </p>\n         <ul>\n            <li>\n               <p>You specify both a <code>Prefix</code> and a <code>Tag</code> filters. Then you wrap these in an <code>And</code> tag.</p>\n            </li>\n            <li>\n               <p>You specify filter based on multiple tags. Then you wrap the <code>Tag</code> elements in an <code>And</code> tag.</p>\n            </li>\n         </ul>\n      ",
+                          "shape_name": "ReplicationRuleAndOperator"
+                        }
+                      },
+                      "zonbookDocumentation": "\n         <para>Filter that identifies subset of objects to which the replication rule applies. A <code>Filter</code> must specify exactly one\n      <code>Prefix</code>, <code>Tag</code>, or an <code>And</code> child element.</para>\n      ",
+                      "documentation": "\n         <p>Filter that identifies subset of objects to which the replication rule applies. A <code>Filter</code> must specify exactly one\n      <code>Prefix</code>, <code>Tag</code>, or an <code>And</code> child element.</p>\n      ",
+                      "shape_name": "ReplicationRuleFilter"
                     },
                     "Status": {
                       "type": "string",
@@ -9689,13 +9880,13 @@
                               "shape_name": "SseKmsEncryptedObjectsStatus"
                             }
                           },
-                          "zonbookDocumentation": "\n         <para>Container for filter information of selection of KMS Encrypted S3 objects.</para>\n      ",
-                          "documentation": "\n         <p>Container for filter information of selection of KMS Encrypted S3 objects.</p>\n      ",
+                          "zonbookDocumentation": "\n         <para>\n      Container for filter information of selection of KMS Encrypted S3 objects.\n      The element is required if you include <code>SourceSelectionCriteria</code> \n      in the replication configuration.\n    </para>\n      ",
+                          "documentation": "\n         <p>\n      Container for filter information of selection of KMS Encrypted S3 objects.\n      The element is required if you include <code>SourceSelectionCriteria</code> \n      in the replication configuration.\n    </p>\n      ",
                           "shape_name": "SseKmsEncryptedObjects"
                         }
                       },
-                      "zonbookDocumentation": "\n         <para>Container for filters that define which source objects should be replicated.</para>\n      ",
-                      "documentation": "\n         <p>Container for filters that define which source objects should be replicated.</p>\n      ",
+                      "zonbookDocumentation": "\n    \n         <para>\n      Container that describes additional filters in identifying source objects that you want to replicate.\n      Currently, Amazon S3 supports only the filter that you can specify for objects \n      created with server-side encryption using an AWS KMS-managed key. \n      You can choose to enable or disable replication of these objects.\n    </para>\n         <para>\n      if you want Amazon S3 to replicate objects created with server-side encryption using \n      AWS KMS-managed keys.\n    </para>\n      ",
+                      "documentation": "\n    \n         <p>\n      Container that describes additional filters in identifying source objects that you want to replicate.\n      Currently, Amazon S3 supports only the filter that you can specify for objects \n      created with server-side encryption using an AWS KMS-managed key. \n      You can choose to enable or disable replication of these objects.\n    </p>\n         <p>\n      if you want Amazon S3 to replicate objects created with server-side encryption using \n      AWS KMS-managed keys.\n    </p>\n      ",
                       "shape_name": "SourceSelectionCriteria"
                     },
                     "Destination": {
@@ -9703,15 +9894,15 @@
                       "members": {
                         "Bucket": {
                           "type": "string",
-                          "zonbookDocumentation": "\n         <para>Amazon resource name (ARN) of the bucket where you want Amazon S3 to store replicas of the object identified by the rule.</para>\n      ",
-                          "documentation": "\n         <p>Amazon resource name (ARN) of the bucket where you want Amazon S3 to store replicas of the object identified by the rule.</p>\n      ",
+                          "zonbookDocumentation": "\n         <para>\n      Amazon resource name (ARN) of the bucket where you want Amazon S3 to store \n      replicas of the object identified by the rule.\n    </para>\n         <para>\n      If you have multiple rules in your replication configuration, \n      all rules must specify the same bucket as the destination. \n      A replication configuration can replicate objects only to one destination bucket.\n    </para>\n  \n      ",
+                          "documentation": "\n         <p>\n      Amazon resource name (ARN) of the bucket where you want Amazon S3 to store \n      replicas of the object identified by the rule.\n    </p>\n         <p>\n      If you have multiple rules in your replication configuration, \n      all rules must specify the same bucket as the destination. \n      A replication configuration can replicate objects only to one destination bucket.\n    </p>\n  \n      ",
                           "required": true,
                           "shape_name": "BucketName"
                         },
                         "Account": {
                           "type": "string",
-                          "zonbookDocumentation": "\n         <para>Account ID of the destination bucket. Currently this is only being verified if Access Control Translation is enabled</para>\n      ",
-                          "documentation": "\n         <p>Account ID of the destination bucket. Currently this is only being verified if Access Control Translation is enabled</p>\n      ",
+                          "zonbookDocumentation": "\n         <para>\n      Account ID of the destination bucket. Currently \n      Amazon S3 verifies this value only if Access Control Translation is enabled.\n    </para>\n         <para>\n      In a cross-account scenario, if you tell Amazon S3 to change replica ownership \n      to the AWS account that owns the destination bucket \n      by adding the <code>AccessControlTranslation</code> element, \n      this is the account ID of the destination bucket owner. \n    </para>\n      ",
+                          "documentation": "\n         <p>\n      Account ID of the destination bucket. Currently \n      Amazon S3 verifies this value only if Access Control Translation is enabled.\n    </p>\n         <p>\n      In a cross-account scenario, if you tell Amazon S3 to change replica ownership \n      to the AWS account that owns the destination bucket \n      by adding the <code>AccessControlTranslation</code> element, \n      this is the account ID of the destination bucket owner. \n    </p>\n      ",
                           "shape_name": "AccountId"
                         },
                         "StorageClass": {
@@ -9740,8 +9931,8 @@
                               "shape_name": "OwnerOverride"
                             }
                           },
-                          "zonbookDocumentation": "\n         <para>Container for information regarding the access control for replicas.</para>\n      ",
-                          "documentation": "\n         <p>Container for information regarding the access control for replicas.</p>\n      ",
+                          "zonbookDocumentation": "\n         <para>\n      Container for information regarding the access control for replicas.\n    </para>\n         <para>\n      Use only in a cross-account scenario, where source and destination bucket owners \n      are not the same, when you want to change replica ownership to the AWS account \n      that owns the destination bucket. If you don't add this element to the replication \n      configuration, the replicas are owned by same AWS account that owns the source object.\n    </para>\n      ",
+                          "documentation": "\n         <p>\n      Container for information regarding the access control for replicas.\n    </p>\n         <p>\n      Use only in a cross-account scenario, where source and destination bucket owners \n      are not the same, when you want to change replica ownership to the AWS account \n      that owns the destination bucket. If you don't add this element to the replication \n      configuration, the replicas are owned by same AWS account that owns the source object.\n    </p>\n      ",
                           "shape_name": "AccessControlTranslation"
                         },
                         "EncryptionConfiguration": {
@@ -9749,13 +9940,13 @@
                           "members": {
                             "ReplicaKmsKeyID": {
                               "type": "string",
-                              "zonbookDocumentation": "\n         <para>The id of the KMS key used to encrypt the replica object.</para>\n      ",
-                              "documentation": "\n         <p>The id of the KMS key used to encrypt the replica object.</p>\n      ",
+                              "zonbookDocumentation": "\n         <para>\n      The ID of the AWS KMS key for the region where the destination bucket resides. \n      Amazon S3 uses this key to encrypt the replica object.\n    </para>\n      ",
+                              "documentation": "\n         <p>\n      The ID of the AWS KMS key for the region where the destination bucket resides. \n      Amazon S3 uses this key to encrypt the replica object.\n    </p>\n      ",
                               "shape_name": "ReplicaKmsKeyID"
                             }
                           },
-                          "zonbookDocumentation": "\n         <para>Container for information regarding encryption based configuration for replicas.</para>\n      ",
-                          "documentation": "\n         <p>Container for information regarding encryption based configuration for replicas.</p>\n      ",
+                          "zonbookDocumentation": "\n         <para>\n      Container that provides encryption-related information. You must specify this element \n      if the <code>SourceSelectionCriteria</code> is specified.\n    </para>\n      ",
+                          "documentation": "\n         <p>\n      Container that provides encryption-related information. You must specify this element \n      if the <code>SourceSelectionCriteria</code> is specified.\n    </p>\n      ",
                           "shape_name": "EncryptionConfiguration"
                         }
                       },
@@ -9763,6 +9954,24 @@
                       "documentation": "\n         <p>Container for replication destination information.</p>\n      ",
                       "required": true,
                       "shape_name": "Destination"
+                    },
+                    "DeleteMarkerReplication": {
+                      "type": "structure",
+                      "members": {
+                        "Status": {
+                          "type": "string",
+                          "enum": [
+                            "Enabled",
+                            "Disabled"
+                          ],
+                          "zonbookDocumentation": "\n         <para>The status of the delete marker replication.</para>\n         <note>\n            <para>\n      In the current implementation, Amazon S3 does not replicate the delete markers.\n      Therefore, the status must be <code>Disabled</code>. \n    </para>\n         </note>\n      ",
+                          "documentation": "\n         <p>The status of the delete marker replication.</p>\n         <note>\n            <p>\n      In the current implementation, Amazon S3 does not replicate the delete markers.\n      Therefore, the status must be <code>Disabled</code>. \n    </p>\n         </note>\n      ",
+                          "shape_name": "DeleteMarkerReplicationStatus"
+                        }
+                      },
+                      "zonbookDocumentation": "\n         <para>Specifies whether Amazon S3 should replicate delete makers.</para>\n      ",
+                      "documentation": "\n         <p>Specifies whether Amazon S3 should replicate delete makers.</p>\n      ",
+                      "shape_name": "DeleteMarkerReplication"
                     }
                   },
                   "zonbookDocumentation": "\n         <para>Container for information about a particular replication rule.</para>\n      ",
@@ -9785,7 +9994,7 @@
       "errors": [
 
       ],
-      "documentation": "\n         <p>Creates a new replication configuration (or replaces an existing one, if present).</p>\n      "
+      "documentation": "\n         <p>\n      Creates a new replication configuration (or replaces an existing one, if present). For more information, see \n      <a href=\" https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html\">Cross-Region Replication (CRR)</a> in the Amazon S3 Developer Guide.\n  \n  </p>\n      "
     },
     "PutBucketRequestPayment": {
       "name": "PutBucketRequestPayment",

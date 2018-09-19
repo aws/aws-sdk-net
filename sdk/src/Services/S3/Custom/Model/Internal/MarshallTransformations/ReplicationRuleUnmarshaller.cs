@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -40,9 +40,21 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
                         continue;
                     }
+                    if (context.TestExpression("Priority", targetDepth))
+                    {
+                        rule.Priority = IntUnmarshaller.GetInstance().Unmarshall(context);
+
+                        continue;
+                    }
                     if (context.TestExpression("Prefix", targetDepth))
                     {
                         rule.Prefix = StringUnmarshaller.GetInstance().Unmarshall(context);
+
+                        continue;
+                    }
+                    if (context.TestExpression("Filter", targetDepth))
+                    {
+                        rule.Filter = ReplicationRuleFilterUnmarshaller.Instance.Unmarshall(context);
 
                         continue;
                     }
@@ -61,6 +73,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     if (context.TestExpression("SourceSelectionCriteria", targetDepth))
                     {
                         rule.SourceSelectionCriteria = SourceSelectionCriteriaUnmarshaller.Instance.Unmarshall(context);
+
+                        continue;
+                    }
+                    if (context.TestExpression("DeleteMarkerReplication", targetDepth))
+                    {
+                        rule.DeleteMarkerReplication = DeleteMarkerReplicationUnmarshaller.Instance.Unmarshall(context);
 
                         continue;
                     }

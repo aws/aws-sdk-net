@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,7 +29,8 @@ namespace Amazon.S3.Model
         private string replicaKmsKeyID;
 
         /// <summary>
-        /// The id of the KMS key used to encrypt the replica object.
+        /// The ID of the AWS KMS key for the region where the destination bucket
+        /// resides. Amazon S3 uses this key to encrypt the replica object.
         /// </summary>
         public string ReplicaKmsKeyID
         {

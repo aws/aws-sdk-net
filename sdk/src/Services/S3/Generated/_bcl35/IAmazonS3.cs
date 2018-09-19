@@ -2649,6 +2649,8 @@ namespace Amazon.S3
 
         /// <summary>
         /// Creates a new replication configuration (or replaces an existing one, if present).
+        /// For more information, see <a href=" https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
+        /// Replication (CRR)</a> in the Amazon S3 Developer Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketReplication service method.</param>
         /// 

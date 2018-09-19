@@ -1,5 +1,5 @@
 /*******************************************************************************
- *  Copyright 2008-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  Copyright 2008-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
  *
@@ -109,6 +109,51 @@ namespace Amazon.S3
         /// <param name="value"></param>
         /// <returns></returns>
         public static implicit operator BucketAccelerateStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// The status of the delete marker replication.
+    /// </summary>
+    public sealed class DeleteMarkerReplicationStatus : ConstantClass
+    {
+        /// <summary>
+        /// Delete marker replication is enabled.
+        /// </summary>
+        public static readonly DeleteMarkerReplicationStatus Enabled = new DeleteMarkerReplicationStatus("Enabled");
+
+        /// <summary>
+        /// Delete marker replication is disabled.
+        /// </summary>
+        public static readonly DeleteMarkerReplicationStatus Disabled = new DeleteMarkerReplicationStatus("Disabled");
+
+        /// <summary>
+        /// Construct instance of DeleteMarkerReplicationStatus. It is not intended for this constructor to be called. Instead users should call the FindValue.
+        /// </summary>
+        /// <param name="value"></param>
+        public DeleteMarkerReplicationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static DeleteMarkerReplicationStatus FindValue(string value)
+        {
+            return FindValue<DeleteMarkerReplicationStatus>(value);
+        }
+
+        /// <summary>
+        /// Converts the string to a DeleteMarkerReplicationStatus
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static implicit operator DeleteMarkerReplicationStatus(string value)
         {
             return FindValue(value);
         }

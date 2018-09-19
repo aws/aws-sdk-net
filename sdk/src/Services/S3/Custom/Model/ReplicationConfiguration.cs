@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -46,7 +46,8 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Replication rules
+        /// Container for information about a particular replication rule.
+        /// Replication configuration must have at least one rule and can contain up to 1,000 rules.
         /// </summary>
         public List<ReplicationRule> Rules
         {

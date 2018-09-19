@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -27,10 +27,13 @@ namespace Amazon.S3.Model
     public class ReplicationRule
     {
         private string id;
+        private int? priority;
         private string prefix;
+        private ReplicationRuleFilter filter;
         private ReplicationRuleStatus status;
         private ReplicationDestination destination;
         private SourceSelectionCriteria sourceSelectionCriteria;
+        private DeleteMarkerReplication deleteMarkerReplication;
 
         /// <summary>
         /// Unique identifier for the rule. The value cannot be longer than 255 characters.
@@ -51,8 +54,37 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Prefix for the keys to be replicated.
+        /// <p>The priority associated with the rule. If you specify multiple rules in a
+        /// replication configuration, then Amazon S3 applies rule priority in the event
+        /// there are conflicts (two or more rules identify the same object based on
+        /// filter specified). The rule with higher priority takes precedence. For
+        /// example,</p> <ul> <li> <p>Same object quality prefix based filter criteria
+        /// If prefixes you specified in multiple rules overlap. </p> </li> <li> <p>Same
+        /// object qualify tag based filter criteria specified in multiple rules</p> </li>
+        /// </ul> <p>For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">
+        /// Cross-Region Replication (CRR)</a> in the Amazon S3 Developer Guide.</p>
         /// </summary>
+        public int Priority
+        {
+            get { return this.priority.GetValueOrDefault(); }
+            set { this.priority = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if Priority property is set.
+        /// </summary>
+        /// <returns>true if Priority property is set.</returns>
+        internal bool IsSetPriority()
+        {
+            return this.priority.HasValue;
+        }
+
+        /// <summary>
+        /// Object keyname prefix identifying one or more objects to which the
+        /// rule applies. Maximum prefix length can be up to 1,024 characters.
+        /// </summary>
+        [Obsolete("This property is deprecated. Use Filter instead.")]
         public string Prefix
         {
             get { return this.prefix; }
@@ -66,6 +98,24 @@ namespace Amazon.S3.Model
         internal bool IsSetPrefix()
         {
             return !System.String.IsNullOrEmpty(this.prefix);
+        }
+
+        /// <summary>
+        /// Gets and sets the property Filter.
+        /// </summary>
+        public ReplicationRuleFilter Filter
+        {
+            get { return this.filter; }
+            set { this.filter = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if Filter property is set.
+        /// </summary>
+        /// <returns>true if Filter property is set.</returns>
+        internal bool IsSetFilter()
+        {
+            return this.filter != null;
         }
 
         /// <summary>
@@ -87,7 +137,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Container for destination information.
+        /// Container for replication destination information.
         /// </summary>
         public ReplicationDestination Destination
         {
@@ -105,7 +155,12 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Container for filters that define which source objects should be replicated.
+        /// <p> Container that describes additional filters in identifying source objects that
+        /// you want to replicate. Currently, Amazon S3 supports only the filter that you can
+        /// specify for objects created with server-side encryption using an AWS KMS-managed
+        /// key. You can choose to enable or disable replication of these objects. </p> <p> if
+        /// you want Amazon S3 to replicate objects created with server-side encryption using
+        /// AWS KMS-managed keys. </p>
         /// </summary>
         public SourceSelectionCriteria SourceSelectionCriteria
         {
@@ -116,6 +171,24 @@ namespace Amazon.S3.Model
         internal bool IsSetSourceSelectionCriteria()
         {
             return this.sourceSelectionCriteria != null;
+        }
+
+        /// <summary>
+        /// Specifies whether Amazon S3 should replicate delete makers.
+        /// </summary>
+        public DeleteMarkerReplication DeleteMarkerReplication
+        {
+            get { return this.deleteMarkerReplication; }
+            set { this.deleteMarkerReplication = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if DeleteMarkerReplication property is set.
+        /// </summary>
+        /// <returns>true if DeleteMarkerReplication property is set.</returns>
+        internal bool IsSetDeleteMarkerReplication()
+        {
+            return this.deleteMarkerReplication != null;
         }
     }
 }

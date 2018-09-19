@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -53,87 +53,126 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
                 if (replicationConfiguration != null)
                 {
-                xmlWriter.WriteStartElement("ReplicationConfiguration", "");
-                if (replicationConfiguration.Role != null)
-                {
-                    xmlWriter.WriteElementString("Role", "", S3Transforms.ToXmlStringValue(replicationConfiguration.Role));
-                }
-                if (replicationConfiguration.Rules != null)
-                {
-                    foreach (var rule in replicationConfiguration.Rules)
+                    xmlWriter.WriteStartElement("ReplicationConfiguration", "");
+                    if (replicationConfiguration.Role != null)
                     {
-                        xmlWriter.WriteStartElement("Rule");
-                        if (rule.IsSetId())
-                        {
-                            xmlWriter.WriteElementString("ID", "", S3Transforms.ToXmlStringValue(rule.Id));
-                        }
-                        if (rule.IsSetPrefix())
-                        {
-                            xmlWriter.WriteElementString("Prefix", "", S3Transforms.ToXmlStringValue(rule.Prefix));
-                        }
-                        else // Write an empty Prefix tag
-                        {
-                            xmlWriter.WriteElementString("Prefix", "", S3Transforms.ToXmlStringValue(""));
-                        }
-
-                        if (rule.IsSetStatus())
-                        {
-                            xmlWriter.WriteElementString("Status", "", S3Transforms.ToXmlStringValue(rule.Status.ToString()));
-                        }
-                        if (rule.IsSetSourceSelectionCriteria())
-                        {
-                            xmlWriter.WriteStartElement("SourceSelectionCriteria");
-                            if (rule.SourceSelectionCriteria.IsSetSseKmsEncryptedObjects())
-                            {
-                                xmlWriter.WriteStartElement("SseKmsEncryptedObjects");
-                                if (rule.SourceSelectionCriteria.SseKmsEncryptedObjects.IsSetSseKmsEncryptedObjectsStatus())
-                                {
-                                    xmlWriter.WriteElementString("Status", "", rule.SourceSelectionCriteria.SseKmsEncryptedObjects.SseKmsEncryptedObjectsStatus);
-                                }
-                                xmlWriter.WriteEndElement();
-                            }
-                            xmlWriter.WriteEndElement();
-                        }
-                        if (rule.IsSetDestination())
-                        {
-                            xmlWriter.WriteStartElement("Destination", "");
-                            if (rule.Destination.IsSetBucketArn())
-                            {
-                                xmlWriter.WriteElementString("Bucket", "", rule.Destination.BucketArn);
-                            }
-                            if (rule.Destination.IsSetStorageClass())
-                            {
-                                xmlWriter.WriteElementString("StorageClass", "", rule.Destination.StorageClass);
-                            }
-                            if (rule.Destination.IsSetAccountId())
-                            {
-                                xmlWriter.WriteElementString("Account", "", S3Transforms.ToXmlStringValue(rule.Destination.AccountId));
-                            }
-                            if (rule.Destination.IsSetEncryptionConfiguration())
-                            {
-                                xmlWriter.WriteStartElement("EncryptionConfiguration");
-                                if (rule.Destination.EncryptionConfiguration.isSetReplicaKmsKeyID())
-                                {
-                                    xmlWriter.WriteElementString("ReplicaKmsKeyID", "", S3Transforms.ToXmlStringValue(rule.Destination.EncryptionConfiguration.ReplicaKmsKeyID));
-                                }
-                                xmlWriter.WriteEndElement();
-                            }
-                            if (rule.Destination.IsSetAccessControlTranslation())
-                            {
-                                xmlWriter.WriteStartElement("AccessControlTranslation");
-                                if (rule.Destination.AccessControlTranslation.IsSetOwner())
-                                {
-                                    xmlWriter.WriteElementString("Owner", "", S3Transforms.ToXmlStringValue(rule.Destination.AccessControlTranslation.Owner));
-                                }
-                                xmlWriter.WriteEndElement();
-                            }
-                            xmlWriter.WriteEndElement();
-                        }
-                        xmlWriter.WriteEndElement();
+                        xmlWriter.WriteElementString("Role", "", S3Transforms.ToXmlStringValue(replicationConfiguration.Role));
                     }
-                }
+                    if (replicationConfiguration.Rules != null)
+                    {
+                        foreach (var rule in replicationConfiguration.Rules)
+                        {
+                            xmlWriter.WriteStartElement("Rule");
+                            if (rule.IsSetId())
+                            {
+                                xmlWriter.WriteElementString("ID", "", S3Transforms.ToXmlStringValue(rule.Id));
+                            }
+                            if (rule.IsSetPriority())
+                            {
+                                xmlWriter.WriteElementString("Priority", "", S3Transforms.ToXmlStringValue(rule.Priority));
+                            }
+                            if (rule.IsSetPrefix())
+                            {
+                                xmlWriter.WriteElementString("Prefix", "", S3Transforms.ToXmlStringValue(rule.Prefix));
+                            }
+
+                            if (rule.IsSetFilter())
+                            {
+                                xmlWriter.WriteStartElement("Filter", "");
+                                if (rule.Filter.IsSetPrefix())
+                                {
+                                    xmlWriter.WriteElementString("Prefix", "", S3Transforms.ToXmlStringValue(rule.Filter.Prefix));
+                                }
+                                if (rule.Filter.IsSetTag())
+                                {
+                                    rule.Filter.Tag.Marshall("Tag", xmlWriter);
+                                }
+                                if (rule.Filter.IsSetAnd())
+                                {
+                                    xmlWriter.WriteStartElement("And");
+                                    if (rule.Filter.And.IsSetPrefix())
+                                    {
+                                        xmlWriter.WriteElementString("Prefix", "", S3Transforms.ToXmlStringValue(rule.Filter.And.Prefix));
+                                    }
+                                    if (rule.Filter.And.IsSetTags())
+                                    {
+                                        foreach (var tag in rule.Filter.And.Tags)
+                                        {
+                                            tag.Marshall("Tag", xmlWriter);
+                                        }
+                                    }
+                                    xmlWriter.WriteEndElement();
+                                }
+                                xmlWriter.WriteEndElement();
+                            }
+
+                            if (rule.IsSetStatus())
+                            {
+                                xmlWriter.WriteElementString("Status", "", S3Transforms.ToXmlStringValue(rule.Status.ToString()));
+                            }
+                            if (rule.IsSetSourceSelectionCriteria())
+                            {
+                                xmlWriter.WriteStartElement("SourceSelectionCriteria");
+                                if (rule.SourceSelectionCriteria.IsSetSseKmsEncryptedObjects())
+                                {
+                                    xmlWriter.WriteStartElement("SseKmsEncryptedObjects");
+                                    if (rule.SourceSelectionCriteria.SseKmsEncryptedObjects.IsSetSseKmsEncryptedObjectsStatus())
+                                    {
+                                        xmlWriter.WriteElementString("Status", "", rule.SourceSelectionCriteria.SseKmsEncryptedObjects.SseKmsEncryptedObjectsStatus);
+                                    }
+                                    xmlWriter.WriteEndElement();
+                                }
+                                xmlWriter.WriteEndElement();
+                            }
+                            if (rule.IsSetDeleteMarkerReplication())
+                            {
+                                xmlWriter.WriteStartElement("DeleteMarkerReplication");
+                                if (rule.DeleteMarkerReplication.IsSetStatus())
+                                {
+                                    xmlWriter.WriteElementString("Status", "", rule.DeleteMarkerReplication.Status);
+                                }
+                                xmlWriter.WriteEndElement();
+                            }
+                            if (rule.IsSetDestination())
+                            {
+                                xmlWriter.WriteStartElement("Destination", "");
+                                if (rule.Destination.IsSetBucketArn())
+                                {
+                                    xmlWriter.WriteElementString("Bucket", "", rule.Destination.BucketArn);
+                                }
+                                if (rule.Destination.IsSetStorageClass())
+                                {
+                                    xmlWriter.WriteElementString("StorageClass", "", rule.Destination.StorageClass);
+                                }
+                                if (rule.Destination.IsSetAccountId())
+                                {
+                                    xmlWriter.WriteElementString("Account", "", S3Transforms.ToXmlStringValue(rule.Destination.AccountId));
+                                }
+                                if (rule.Destination.IsSetEncryptionConfiguration())
+                                {
+                                    xmlWriter.WriteStartElement("EncryptionConfiguration");
+                                    if (rule.Destination.EncryptionConfiguration.isSetReplicaKmsKeyID())
+                                    {
+                                        xmlWriter.WriteElementString("ReplicaKmsKeyID", "", S3Transforms.ToXmlStringValue(rule.Destination.EncryptionConfiguration.ReplicaKmsKeyID));
+                                    }
+                                    xmlWriter.WriteEndElement();
+                                }
+                                if (rule.Destination.IsSetAccessControlTranslation())
+                                {
+                                    xmlWriter.WriteStartElement("AccessControlTranslation");
+                                    if (rule.Destination.AccessControlTranslation.IsSetOwner())
+                                    {
+                                        xmlWriter.WriteElementString("Owner", "", S3Transforms.ToXmlStringValue(rule.Destination.AccessControlTranslation.Owner));
+                                    }
+                                    xmlWriter.WriteEndElement();
+                                }
+                                xmlWriter.WriteEndElement();
+                            }
+                            xmlWriter.WriteEndElement();
+                        }
+                    }
                
-                xmlWriter.WriteEndElement();
+                    xmlWriter.WriteEndElement();
                 }
             }
 

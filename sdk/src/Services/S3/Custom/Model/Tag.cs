@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -60,8 +60,14 @@ namespace Amazon.S3.Model
         {
             xmlWriter.WriteStartElement(memberName);
             {
-                xmlWriter.WriteElementString("Key", S3Transforms.ToXmlStringValue(key));
-                xmlWriter.WriteElementString("Value", S3Transforms.ToXmlStringValue(key));
+                if (IsSetKey())
+                {
+                    xmlWriter.WriteElementString("Key", S3Transforms.ToXmlStringValue(key));
+                }
+                if (IsSetValue())
+                {
+                    xmlWriter.WriteElementString("Value", S3Transforms.ToXmlStringValue(key));
+                }
             }
             xmlWriter.WriteEndElement();
         }
