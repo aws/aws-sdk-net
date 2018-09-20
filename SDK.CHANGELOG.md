@@ -91,6 +91,8 @@
 	* Documentation updates for AWS Alexa For Business
 
 ### 3.3.330.0 (2018-08-02 20:22 UTC)
+* Kinesis (3.3.6.0)
+	* This version adds the foundation for future support of HTTP2-based event stream operations for Kinesis. The following operations have been added: DeregisterStreamConsumer, DescribeStreamConsumer, ListStreamConsumers, and RegisterStreamConsumer. The SubscribeToShard operation is not included in this release.
 * Polly (3.3.7.0)
 	* Amazon Polly enables female voice Aditi to speak Hindi language
 * ResourceGroups (3.3.1.0)
