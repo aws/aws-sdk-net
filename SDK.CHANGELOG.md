@@ -327,7 +327,7 @@
 
 ### 3.3.330.0 (2018-08-02 20:22 UTC)
 * Kinesis (3.3.6.0)
-	* This update introduces SubscribeToShard and RegisterStreamConsumer APIs which allows for retrieving records on a data stream over HTTP2 with enhanced fan-out capabilities. With this new feature the Java SDK now supports event streaming natively which will allow you to define payload and exception structures on the client over a persistent connection. For more information, see Developing Consumers with Enhanced Fan-Out in the Kinesis Developer Guide.
+	* This version adds the foundation for future support of HTTP2-based event stream operations for Kinesis. The following operations have been added: DeregisterStreamConsumer, DescribeStreamConsumer, ListStreamConsumers, and RegisterStreamConsumer. The SubscribeToShard operation is not included in this release.
 * Polly (3.3.7.0)
 	* Amazon Polly enables female voice Aditi to speak Hindi language
 * ResourceGroups (3.3.1.0)
