@@ -509,6 +509,12 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the ApplyPendingMaintenanceAction service method.</param>
         /// 
         /// <returns>The response from the ApplyPendingMaintenanceAction service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The DB cluster isn't in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The DB instance isn't in a valid state.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.ResourceNotFoundException">
         /// The specified resource ID was not found.
         /// </exception>
@@ -1187,7 +1193,7 @@ namespace Amazon.RDS
         /// The DB cluster isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
-        /// The specified DB instance isn't in the <i>available</i> state.
+        /// The DB instance isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBSubnetGroupStateException">
         /// The DB subnet group cannot be deleted because it's in use.
@@ -1595,7 +1601,7 @@ namespace Amazon.RDS
         /// The specified DB instance class isn't available in the specified Availability Zone.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
-        /// The specified DB instance isn't in the <i>available</i> state.
+        /// The DB instance isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBSubnetGroupException">
         /// The DBSubnetGroup doesn't belong to the same VPC as that of an existing cross-region
@@ -1839,7 +1845,7 @@ namespace Amazon.RDS
         /// <i>DBSnapshotIdentifier</i> is already used by an existing snapshot.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
-        /// The specified DB instance isn't in the <i>available</i> state.
+        /// The DB instance isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.SnapshotQuotaExceededException">
         /// The request would result in the user exceeding the allowed number of DB snapshots.
@@ -2384,7 +2390,7 @@ namespace Amazon.RDS
         /// The DB cluster isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
-        /// The specified DB instance isn't in the <i>available</i> state.
+        /// The DB instance isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.SnapshotQuotaExceededException">
         /// The request would result in the user exceeding the allowed number of DB snapshots.
@@ -4735,7 +4741,7 @@ namespace Amazon.RDS
         /// <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
-        /// The specified DB instance isn't in the <i>available</i> state.
+        /// The DB instance isn't in a valid state.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeValidDBInstanceModifications">REST API Reference for DescribeValidDBInstanceModifications Operation</seealso>
         public virtual DescribeValidDBInstanceModificationsResponse DescribeValidDBInstanceModifications(DescribeValidDBInstanceModificationsRequest request)
@@ -4875,7 +4881,7 @@ namespace Amazon.RDS
         /// The DB cluster isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
-        /// The specified DB instance isn't in the <i>available</i> state.
+        /// The DB instance isn't in a valid state.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/FailoverDBCluster">REST API Reference for FailoverDBCluster Operation</seealso>
         public virtual FailoverDBClusterResponse FailoverDBCluster(FailoverDBClusterRequest request)
@@ -5109,7 +5115,7 @@ namespace Amazon.RDS
         /// The DB cluster isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
-        /// The specified DB instance isn't in the <i>available</i> state.
+        /// The DB instance isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBSecurityGroupStateException">
         /// The state of the DB security group doesn't allow deletion.
@@ -5395,7 +5401,7 @@ namespace Amazon.RDS
         /// The specified DB instance class isn't available in the specified Availability Zone.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
-        /// The specified DB instance isn't in the <i>available</i> state.
+        /// The DB instance isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBSecurityGroupStateException">
         /// The state of the DB security group doesn't allow deletion.
@@ -5930,7 +5936,7 @@ namespace Amazon.RDS
         /// <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
-        /// The specified DB instance isn't in the <i>available</i> state.
+        /// The DB instance isn't in a valid state.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PromoteReadReplica">REST API Reference for PromoteReadReplica Operation</seealso>
         public virtual PromoteReadReplicaResponse PromoteReadReplica(PromoteReadReplicaRequest request)
@@ -6125,7 +6131,7 @@ namespace Amazon.RDS
         /// <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
-        /// The specified DB instance isn't in the <i>available</i> state.
+        /// The DB instance isn't in a valid state.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RebootDBInstance">REST API Reference for RebootDBInstance Operation</seealso>
         public virtual RebootDBInstanceResponse RebootDBInstance(RebootDBInstanceRequest request)
@@ -7214,7 +7220,7 @@ namespace Amazon.RDS
         /// The specified DB instance class isn't available in the specified Availability Zone.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
-        /// The specified DB instance isn't in the <i>available</i> state.
+        /// The DB instance isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidRestoreException">
         /// Cannot restore from VPC backup to non-VPC DB instance.
@@ -7362,16 +7368,85 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  StartDBCluster
+
+        /// <summary>
+        /// Starts an Amazon Aurora DB cluster that was stopped using the AWS console, the stop-db-cluster
+        /// AWS CLI command, or the StopDBCluster action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartDBCluster service method.</param>
+        /// 
+        /// <returns>The response from the StartDBCluster service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The DB cluster isn't in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The DB instance isn't in a valid state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBCluster">REST API Reference for StartDBCluster Operation</seealso>
+        public virtual StartDBClusterResponse StartDBCluster(StartDBClusterRequest request)
+        {
+            var marshaller = StartDBClusterRequestMarshaller.Instance;
+            var unmarshaller = StartDBClusterResponseUnmarshaller.Instance;
+
+            return Invoke<StartDBClusterRequest,StartDBClusterResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartDBCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartDBCluster operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartDBCluster
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBCluster">REST API Reference for StartDBCluster Operation</seealso>
+        public virtual IAsyncResult BeginStartDBCluster(StartDBClusterRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = StartDBClusterRequestMarshaller.Instance;
+            var unmarshaller = StartDBClusterResponseUnmarshaller.Instance;
+
+            return BeginInvoke<StartDBClusterRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartDBCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartDBCluster.</param>
+        /// 
+        /// <returns>Returns a  StartDBClusterResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBCluster">REST API Reference for StartDBCluster Operation</seealso>
+        public virtual StartDBClusterResponse EndStartDBCluster(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartDBClusterResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StartDBInstance
 
         /// <summary>
-        /// Starts a DB instance that was stopped using the AWS console, the stop-db-instance
-        /// AWS CLI command, or the StopDBInstance action. For more information, see Stopping
-        /// and Starting a DB instance in the AWS RDS user guide. 
+        /// Starts an Amazon RDS DB instance that was stopped using the AWS console, the stop-db-instance
+        /// AWS CLI command, or the StopDBInstance action. 
         /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_StartInstance.html">
+        /// Starting an Amazon RDS DB Instance That Was Previously Stopped</a> in the <i>Amazon
+        /// RDS User Guide.</i> 
+        /// </para>
         ///  <note> 
         /// <para>
-        /// This command doesn't apply to Aurora MySQL and Aurora PostgreSQL.
+        ///  This command doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora DB clusters,
+        /// use <a>StartDBCluster</a> instead. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -7407,7 +7482,7 @@ namespace Amazon.RDS
         /// The DB cluster isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
-        /// The specified DB instance isn't in the <i>available</i> state.
+        /// The DB instance isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidSubnetException">
         /// The requested subnet is invalid, or multiple subnets were requested that are not all
@@ -7465,18 +7540,88 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  StopDBCluster
+
+        /// <summary>
+        /// Stops an Amazon Aurora DB cluster. When you stop a DB cluster, Aurora retains the
+        /// DB cluster's metadata, including its endpoints and DB parameter groups. Aurora also
+        /// retains the transaction logs so you can do a point-in-time restore if necessary.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopDBCluster service method.</param>
+        /// 
+        /// <returns>The response from the StopDBCluster service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The DB cluster isn't in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The DB instance isn't in a valid state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StopDBCluster">REST API Reference for StopDBCluster Operation</seealso>
+        public virtual StopDBClusterResponse StopDBCluster(StopDBClusterRequest request)
+        {
+            var marshaller = StopDBClusterRequestMarshaller.Instance;
+            var unmarshaller = StopDBClusterResponseUnmarshaller.Instance;
+
+            return Invoke<StopDBClusterRequest,StopDBClusterResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopDBCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopDBCluster operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopDBCluster
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StopDBCluster">REST API Reference for StopDBCluster Operation</seealso>
+        public virtual IAsyncResult BeginStopDBCluster(StopDBClusterRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = StopDBClusterRequestMarshaller.Instance;
+            var unmarshaller = StopDBClusterResponseUnmarshaller.Instance;
+
+            return BeginInvoke<StopDBClusterRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopDBCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopDBCluster.</param>
+        /// 
+        /// <returns>Returns a  StopDBClusterResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StopDBCluster">REST API Reference for StopDBCluster Operation</seealso>
+        public virtual StopDBClusterResponse EndStopDBCluster(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopDBClusterResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StopDBInstance
 
         /// <summary>
-        /// Stops a DB instance. When you stop a DB instance, Amazon RDS retains the DB instance's
-        /// metadata, including its endpoint, DB parameter group, and option group membership.
-        /// Amazon RDS also retains the transaction logs so you can do a point-in-time restore
-        /// if necessary. For more information, see Stopping and Starting a DB instance in the
-        /// AWS RDS user guide. 
+        /// Stops an Amazon RDS DB instance. When you stop a DB instance, Amazon RDS retains
+        /// the DB instance's metadata, including its endpoint, DB parameter group, and option
+        /// group membership. Amazon RDS also retains the transaction logs so you can do a point-in-time
+        /// restore if necessary. 
         /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_StopInstance.html">
+        /// Stopping an Amazon RDS DB Instance Temporarily</a> in the <i>Amazon RDS User Guide.</i>
+        /// 
+        /// </para>
         ///  <note> 
         /// <para>
-        /// This command doesn't apply to Aurora MySQL and Aurora PostgreSQL.
+        ///  This command doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora clusters,
+        /// use <a>StopDBCluster</a> instead. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -7493,7 +7638,7 @@ namespace Amazon.RDS
         /// The DB cluster isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
-        /// The specified DB instance isn't in the <i>available</i> state.
+        /// The DB instance isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.SnapshotQuotaExceededException">
         /// The request would result in the user exceeding the allowed number of DB snapshots.

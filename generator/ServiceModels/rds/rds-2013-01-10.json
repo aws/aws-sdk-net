@@ -1578,8 +1578,8 @@
           "type": "structure",
           "members": {
           },
-          "zonbookDocumentation": "\n        <simpara>\n        The specified DB instance isn't in the <emphasis>available</emphasis> state.\n        </simpara>\n      ",
-          "documentation": "\n        <p>\n        The specified DB instance isn't in the <i>available</i> state.\n        </p>\n      ",
+          "zonbookDocumentation": "\n        <simpara>The DB instance isn't in a valid state.</simpara>\n      ",
+          "documentation": "\n        <p>The DB instance isn't in a valid state.</p>\n      ",
           "shape_name": "InvalidDBInstanceStateFault"
         },
         {
@@ -1971,8 +1971,8 @@
           "type": "structure",
           "members": {
           },
-          "zonbookDocumentation": "\n        <simpara>\n        The specified DB instance isn't in the <emphasis>available</emphasis> state.\n        </simpara>\n      ",
-          "documentation": "\n        <p>\n        The specified DB instance isn't in the <i>available</i> state.\n        </p>\n      ",
+          "zonbookDocumentation": "\n        <simpara>The DB instance isn't in a valid state.</simpara>\n      ",
+          "documentation": "\n        <p>The DB instance isn't in a valid state.</p>\n      ",
           "shape_name": "InvalidDBInstanceStateFault"
         },
         {
@@ -2903,8 +2903,8 @@
           "type": "structure",
           "members": {
           },
-          "zonbookDocumentation": "\n        <simpara>\n        The specified DB instance isn't in the <emphasis>available</emphasis> state.\n        </simpara>\n      ",
-          "documentation": "\n        <p>\n        The specified DB instance isn't in the <i>available</i> state.\n        </p>\n      ",
+          "zonbookDocumentation": "\n        <simpara>The DB instance isn't in a valid state.</simpara>\n      ",
+          "documentation": "\n        <p>The DB instance isn't in a valid state.</p>\n      ",
           "shape_name": "InvalidDBInstanceStateFault"
         },
         {
@@ -6189,8 +6189,8 @@
           "type": "structure",
           "members": {
           },
-          "zonbookDocumentation": "\n        <simpara>\n        The specified DB instance isn't in the <emphasis>available</emphasis> state.\n        </simpara>\n      ",
-          "documentation": "\n        <p>\n        The specified DB instance isn't in the <i>available</i> state.\n        </p>\n      ",
+          "zonbookDocumentation": "\n        <simpara>The DB instance isn't in a valid state.</simpara>\n      ",
+          "documentation": "\n        <p>The DB instance isn't in a valid state.</p>\n      ",
           "shape_name": "InvalidDBInstanceStateFault"
         },
         {
@@ -7322,8 +7322,8 @@
           "type": "structure",
           "members": {
           },
-          "zonbookDocumentation": "\n        <simpara>\n        The specified DB instance isn't in the <emphasis>available</emphasis> state.\n        </simpara>\n      ",
-          "documentation": "\n        <p>\n        The specified DB instance isn't in the <i>available</i> state.\n        </p>\n      ",
+          "zonbookDocumentation": "\n        <simpara>The DB instance isn't in a valid state.</simpara>\n      ",
+          "documentation": "\n        <p>The DB instance isn't in a valid state.</p>\n      ",
           "shape_name": "InvalidDBInstanceStateFault"
         },
         {
@@ -7877,8 +7877,8 @@
           "type": "structure",
           "members": {
           },
-          "zonbookDocumentation": "\n        <simpara>\n        The specified DB instance isn't in the <emphasis>available</emphasis> state.\n        </simpara>\n      ",
-          "documentation": "\n        <p>\n        The specified DB instance isn't in the <i>available</i> state.\n        </p>\n      ",
+          "zonbookDocumentation": "\n        <simpara>The DB instance isn't in a valid state.</simpara>\n      ",
+          "documentation": "\n        <p>The DB instance isn't in a valid state.</p>\n      ",
           "shape_name": "InvalidDBInstanceStateFault"
         },
         {
@@ -9091,8 +9091,8 @@
           "type": "structure",
           "members": {
           },
-          "zonbookDocumentation": "\n        <simpara>\n        The specified DB instance isn't in the <emphasis>available</emphasis> state.\n        </simpara>\n      ",
-          "documentation": "\n        <p>\n        The specified DB instance isn't in the <i>available</i> state.\n        </p>\n      ",
+          "zonbookDocumentation": "\n        <simpara>The DB instance isn't in a valid state.</simpara>\n      ",
+          "documentation": "\n        <p>The DB instance isn't in a valid state.</p>\n      ",
           "shape_name": "InvalidDBInstanceStateFault"
         },
         {

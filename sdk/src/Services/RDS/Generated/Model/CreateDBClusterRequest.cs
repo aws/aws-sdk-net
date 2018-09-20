@@ -357,7 +357,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineMode. 
         /// <para>
-        /// The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.
+        /// The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
+        /// or <code>parallelquery</code>.
         /// </para>
         /// </summary>
         public string EngineMode

@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ApplyPendingMaintenanceAction operation
+    /// Response Unmarshaller for StopDBCluster operation
     /// </summary>  
-    public class ApplyPendingMaintenanceActionResponseUnmarshaller : XmlResponseUnmarshaller
+    public class StopDBClusterResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            ApplyPendingMaintenanceActionResponse response = new ApplyPendingMaintenanceActionResponse();
+            StopDBClusterResponse response = new StopDBClusterResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -51,7 +51,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement)
                 {                    
-                    if(context.TestExpression("ApplyPendingMaintenanceActionResult", 2))
+                    if(context.TestExpression("StopDBClusterResult", 2))
                     {
                         UnmarshallResult(context, response);                        
                         continue;
@@ -67,7 +67,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             return response;
         }
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context, ApplyPendingMaintenanceActionResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context, StopDBClusterResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -81,10 +81,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if (context.TestExpression("ResourcePendingMaintenanceActions", targetDepth))
+                    if (context.TestExpression("DBCluster", targetDepth))
                     {
-                        var unmarshaller = ResourcePendingMaintenanceActionsUnmarshaller.Instance;
-                        response.ResourcePendingMaintenanceActions = unmarshaller.Unmarshall(context);
+                        var unmarshaller = DBClusterUnmarshaller.Instance;
+                        response.DBCluster = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 } 
@@ -104,6 +104,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            if (errorResponse.Code != null && errorResponse.Code.Equals("DBClusterNotFoundFault"))
+            {
+                return new DBClusterNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDBClusterStateFault"))
             {
                 return new InvalidDBClusterStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -112,15 +116,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 return new InvalidDBInstanceStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundFault"))
-            {
-                return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             return new AmazonRDSException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static ApplyPendingMaintenanceActionResponseUnmarshaller _instance = new ApplyPendingMaintenanceActionResponseUnmarshaller();        
+        private static StopDBClusterResponseUnmarshaller _instance = new StopDBClusterResponseUnmarshaller();        
 
-        internal static ApplyPendingMaintenanceActionResponseUnmarshaller GetInstance()
+        internal static StopDBClusterResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -128,7 +128,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ApplyPendingMaintenanceActionResponseUnmarshaller Instance
+        public static StopDBClusterResponseUnmarshaller Instance
         {
             get
             {

@@ -3560,6 +3560,38 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  StartDBCluster
+
+        internal virtual StartDBClusterResponse StartDBCluster(StartDBClusterRequest request)
+        {
+            var marshaller = StartDBClusterRequestMarshaller.Instance;
+            var unmarshaller = StartDBClusterResponseUnmarshaller.Instance;
+
+            return Invoke<StartDBClusterRequest,StartDBClusterResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartDBCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartDBCluster operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBCluster">REST API Reference for StartDBCluster Operation</seealso>
+        public virtual Task<StartDBClusterResponse> StartDBClusterAsync(StartDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = StartDBClusterRequestMarshaller.Instance;
+            var unmarshaller = StartDBClusterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartDBClusterRequest,StartDBClusterResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartDBInstance
 
         internal virtual StartDBInstanceResponse StartDBInstance(StartDBInstanceRequest request)
@@ -3587,6 +3619,38 @@ namespace Amazon.RDS
             var unmarshaller = StartDBInstanceResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartDBInstanceRequest,StartDBInstanceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopDBCluster
+
+        internal virtual StopDBClusterResponse StopDBCluster(StopDBClusterRequest request)
+        {
+            var marshaller = StopDBClusterRequestMarshaller.Instance;
+            var unmarshaller = StopDBClusterResponseUnmarshaller.Instance;
+
+            return Invoke<StopDBClusterRequest,StopDBClusterResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopDBCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopDBCluster operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StopDBCluster">REST API Reference for StopDBCluster Operation</seealso>
+        public virtual Task<StopDBClusterResponse> StopDBClusterAsync(StopDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = StopDBClusterRequestMarshaller.Instance;
+            var unmarshaller = StopDBClusterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopDBClusterRequest,StopDBClusterResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

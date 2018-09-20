@@ -2207,6 +2207,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void StartDBClusterMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartDBCluster");
+
+            var request = InstantiateClassGenerator.Execute<StartDBClusterRequest>();
+            var marshaller = new StartDBClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = StartDBClusterResponseUnmarshaller.Instance.Unmarshall(context)
+                as StartDBClusterResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void StartDBInstanceMarshallTest()
         {
             var operation = service_model.FindOperation("StartDBInstance");
@@ -2222,6 +2246,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = StartDBInstanceResponseUnmarshaller.Instance.Unmarshall(context)
                 as StartDBInstanceResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void StopDBClusterMarshallTest()
+        {
+            var operation = service_model.FindOperation("StopDBCluster");
+
+            var request = InstantiateClassGenerator.Execute<StopDBClusterRequest>();
+            var marshaller = new StopDBClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = StopDBClusterResponseUnmarshaller.Instance.Unmarshall(context)
+                as StopDBClusterResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

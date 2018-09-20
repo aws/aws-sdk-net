@@ -28,12 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the details of an Amazon RDS DB cluster. 
+    /// Contains the details of an Amazon Aurora DB cluster. 
     /// 
     ///  
     /// <para>
-    /// This data type is used as a response element in the <a>DescribeDBClusters</a> action.
-    /// 
+    /// This data type is used as a response element in the <a>DescribeDBClusters</a>, <a>StopDBCluster</a>,
+    /// and <a>StartDBCluster</a> actions. 
     /// </para>
     /// </summary>
     public partial class DBCluster
@@ -516,7 +516,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineMode. 
         /// <para>
-        /// The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.
+        /// The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
+        /// or <code>parallelquery</code>.
         /// </para>
         /// </summary>
         public string EngineMode
