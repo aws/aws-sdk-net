@@ -841,6 +841,78 @@ namespace Amazon.DirectoryService
 
         #endregion
         
+        #region  CreateLogSubscription
+
+        /// <summary>
+        /// Creates a subscription to forward real time Directory Service domain controller security
+        /// logs to the specified CloudWatch log group in your AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLogSubscription service method.</param>
+        /// 
+        /// <returns>The response from the CreateLogSubscription service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityAlreadyExistsException">
+        /// The specified entity already exists.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InsufficientPermissionsException">
+        /// The account does not have sufficient permission to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateLogSubscription">REST API Reference for CreateLogSubscription Operation</seealso>
+        public virtual CreateLogSubscriptionResponse CreateLogSubscription(CreateLogSubscriptionRequest request)
+        {
+            var marshaller = CreateLogSubscriptionRequestMarshaller.Instance;
+            var unmarshaller = CreateLogSubscriptionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLogSubscriptionRequest,CreateLogSubscriptionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateLogSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateLogSubscription operation on AmazonDirectoryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLogSubscription
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateLogSubscription">REST API Reference for CreateLogSubscription Operation</seealso>
+        public virtual IAsyncResult BeginCreateLogSubscription(CreateLogSubscriptionRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = CreateLogSubscriptionRequestMarshaller.Instance;
+            var unmarshaller = CreateLogSubscriptionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateLogSubscriptionRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateLogSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLogSubscription.</param>
+        /// 
+        /// <returns>Returns a  CreateLogSubscriptionResult from DirectoryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateLogSubscription">REST API Reference for CreateLogSubscription Operation</seealso>
+        public virtual CreateLogSubscriptionResponse EndCreateLogSubscription(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateLogSubscriptionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateMicrosoftAD
 
         /// <summary>
@@ -1212,6 +1284,71 @@ namespace Amazon.DirectoryService
         public virtual DeleteDirectoryResponse EndDeleteDirectory(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteDirectoryResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteLogSubscription
+
+        /// <summary>
+        /// Deletes the specified log subscription.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLogSubscription service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLogSubscription service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteLogSubscription">REST API Reference for DeleteLogSubscription Operation</seealso>
+        public virtual DeleteLogSubscriptionResponse DeleteLogSubscription(DeleteLogSubscriptionRequest request)
+        {
+            var marshaller = DeleteLogSubscriptionRequestMarshaller.Instance;
+            var unmarshaller = DeleteLogSubscriptionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLogSubscriptionRequest,DeleteLogSubscriptionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteLogSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLogSubscription operation on AmazonDirectoryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLogSubscription
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteLogSubscription">REST API Reference for DeleteLogSubscription Operation</seealso>
+        public virtual IAsyncResult BeginDeleteLogSubscription(DeleteLogSubscriptionRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DeleteLogSubscriptionRequestMarshaller.Instance;
+            var unmarshaller = DeleteLogSubscriptionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteLogSubscriptionRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteLogSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLogSubscription.</param>
+        /// 
+        /// <returns>Returns a  DeleteLogSubscriptionResult from DirectoryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteLogSubscription">REST API Reference for DeleteLogSubscription Operation</seealso>
+        public virtual DeleteLogSubscriptionResponse EndDeleteLogSubscription(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteLogSubscriptionResponse>(asyncResult);
         }
 
         #endregion
@@ -2398,6 +2535,71 @@ namespace Amazon.DirectoryService
         public virtual ListIpRoutesResponse EndListIpRoutes(IAsyncResult asyncResult)
         {
             return EndInvoke<ListIpRoutesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListLogSubscriptions
+
+        /// <summary>
+        /// Lists the active log subscriptions for the AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLogSubscriptions service method.</param>
+        /// 
+        /// <returns>The response from the ListLogSubscriptions service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
+        /// The <i>NextToken</i> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListLogSubscriptions">REST API Reference for ListLogSubscriptions Operation</seealso>
+        public virtual ListLogSubscriptionsResponse ListLogSubscriptions(ListLogSubscriptionsRequest request)
+        {
+            var marshaller = ListLogSubscriptionsRequestMarshaller.Instance;
+            var unmarshaller = ListLogSubscriptionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListLogSubscriptionsRequest,ListLogSubscriptionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListLogSubscriptions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListLogSubscriptions operation on AmazonDirectoryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListLogSubscriptions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListLogSubscriptions">REST API Reference for ListLogSubscriptions Operation</seealso>
+        public virtual IAsyncResult BeginListLogSubscriptions(ListLogSubscriptionsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ListLogSubscriptionsRequestMarshaller.Instance;
+            var unmarshaller = ListLogSubscriptionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListLogSubscriptionsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListLogSubscriptions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListLogSubscriptions.</param>
+        /// 
+        /// <returns>Returns a  ListLogSubscriptionsResult from DirectoryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListLogSubscriptions">REST API Reference for ListLogSubscriptions Operation</seealso>
+        public virtual ListLogSubscriptionsResponse EndListLogSubscriptions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListLogSubscriptionsResponse>(asyncResult);
         }
 
         #endregion

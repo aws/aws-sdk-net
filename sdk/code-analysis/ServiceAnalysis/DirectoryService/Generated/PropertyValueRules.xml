@@ -110,6 +110,16 @@
     <pattern>^d-[0-9a-f]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DirectoryService.Model.CreateLogSubscriptionRequest.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.CreateLogSubscriptionRequest.LogGroupName</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[-._/#A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DirectoryService.Model.CreateMicrosoftADRequest.Description</property>
     <min>0</min>
     <max>128</max>
@@ -176,6 +186,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.DeleteDirectoryResponse.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.DeleteLogSubscriptionRequest.DirectoryId</property>
     <pattern>^d-[0-9a-f]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -286,6 +300,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.ListIpRoutesRequest.Limit</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.ListLogSubscriptionsRequest.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.ListLogSubscriptionsRequest.Limit</property>
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
@@ -599,6 +621,16 @@
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.IpRouteLimitExceededException.RequestId</property>
     <pattern>^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.LogSubscription.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.LogSubscription.LogGroupName</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[-._/#A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.RadiusSettings.DisplayLabel</property>

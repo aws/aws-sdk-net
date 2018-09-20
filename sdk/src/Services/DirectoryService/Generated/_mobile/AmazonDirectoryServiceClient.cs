@@ -504,6 +504,38 @@ namespace Amazon.DirectoryService
 
         #endregion
         
+        #region  CreateLogSubscription
+
+        internal virtual CreateLogSubscriptionResponse CreateLogSubscription(CreateLogSubscriptionRequest request)
+        {
+            var marshaller = CreateLogSubscriptionRequestMarshaller.Instance;
+            var unmarshaller = CreateLogSubscriptionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLogSubscriptionRequest,CreateLogSubscriptionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateLogSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateLogSubscription operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateLogSubscription">REST API Reference for CreateLogSubscription Operation</seealso>
+        public virtual Task<CreateLogSubscriptionResponse> CreateLogSubscriptionAsync(CreateLogSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateLogSubscriptionRequestMarshaller.Instance;
+            var unmarshaller = CreateLogSubscriptionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateLogSubscriptionRequest,CreateLogSubscriptionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateMicrosoftAD
 
         internal virtual CreateMicrosoftADResponse CreateMicrosoftAD(CreateMicrosoftADRequest request)
@@ -659,6 +691,38 @@ namespace Amazon.DirectoryService
             var unmarshaller = DeleteDirectoryResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteDirectoryRequest,DeleteDirectoryResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteLogSubscription
+
+        internal virtual DeleteLogSubscriptionResponse DeleteLogSubscription(DeleteLogSubscriptionRequest request)
+        {
+            var marshaller = DeleteLogSubscriptionRequestMarshaller.Instance;
+            var unmarshaller = DeleteLogSubscriptionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLogSubscriptionRequest,DeleteLogSubscriptionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteLogSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLogSubscription operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteLogSubscription">REST API Reference for DeleteLogSubscription Operation</seealso>
+        public virtual Task<DeleteLogSubscriptionResponse> DeleteLogSubscriptionAsync(DeleteLogSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteLogSubscriptionRequestMarshaller.Instance;
+            var unmarshaller = DeleteLogSubscriptionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteLogSubscriptionRequest,DeleteLogSubscriptionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1251,6 +1315,38 @@ namespace Amazon.DirectoryService
             var unmarshaller = ListIpRoutesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListIpRoutesRequest,ListIpRoutesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListLogSubscriptions
+
+        internal virtual ListLogSubscriptionsResponse ListLogSubscriptions(ListLogSubscriptionsRequest request)
+        {
+            var marshaller = ListLogSubscriptionsRequestMarshaller.Instance;
+            var unmarshaller = ListLogSubscriptionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListLogSubscriptionsRequest,ListLogSubscriptionsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListLogSubscriptions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListLogSubscriptions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListLogSubscriptions">REST API Reference for ListLogSubscriptions Operation</seealso>
+        public virtual Task<ListLogSubscriptionsResponse> ListLogSubscriptionsAsync(ListLogSubscriptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListLogSubscriptionsRequestMarshaller.Instance;
+            var unmarshaller = ListLogSubscriptionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListLogSubscriptionsRequest,ListLogSubscriptionsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
