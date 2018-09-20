@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.364.0",
+    "ProductVersion" : "3.3.365.0",
     "CoreVersion"    : "3.3.25.3",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -151,7 +151,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.3.61.0",
+            "Version" : "3.3.62.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.25.3"
@@ -281,7 +281,7 @@
             "InPreview"               : false
         },
         "RDS"                  : {
-            "Version" : "3.3.27.8",
+            "Version" : "3.3.28.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.25.3"
@@ -393,7 +393,7 @@
             "InPreview"               : false
         },
         "DirectoryService"          : {
-            "Version" : "3.3.5.11",
+            "Version" : "3.3.6.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.25.3"
