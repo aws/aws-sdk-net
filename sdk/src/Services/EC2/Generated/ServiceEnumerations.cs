@@ -3063,6 +3063,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType F12xlarge = new InstanceType("f1.2xlarge");
         /// <summary>
+        /// Constant F14xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType F14xlarge = new InstanceType("f1.4xlarge");
+        /// <summary>
         /// Constant G22xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType G22xlarge = new InstanceType("g2.2xlarge");
