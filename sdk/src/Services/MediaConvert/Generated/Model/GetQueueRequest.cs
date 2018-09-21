@@ -36,7 +36,7 @@ namespace Amazon.MediaConvert.Model
         private string _name;
 
         /// <summary>
-        /// Gets and sets the property Name. The name of the queue.
+        /// Gets and sets the property Name. The name of the queue that you want information about.
         /// </summary>
         public string Name
         {

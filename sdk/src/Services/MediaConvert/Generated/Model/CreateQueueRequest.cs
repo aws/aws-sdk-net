@@ -36,11 +36,13 @@ namespace Amazon.MediaConvert.Model
     {
         private string _description;
         private string _name;
+        private PricingPlan _pricingPlan;
+        private ReservationPlanSettings _reservationPlanSettings;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property Description. Optional. A description of the queue you are
-        /// creating.
+        /// Gets and sets the property Description. Optional. A description of the queue that
+        /// you are creating.
         /// </summary>
         public string Description
         {
@@ -55,7 +57,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. The name of the queue you are creating.
+        /// Gets and sets the property Name. The name of the queue that you are creating.
         /// </summary>
         public string Name
         {
@@ -67,6 +69,42 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PricingPlan. Optional; default is on-demand. Specifies
+        /// whether the pricing plan for the queue is on-demand or reserved. The pricing plan
+        /// for the queue determines whether you pay on-demand or reserved pricing for the transcoding
+        /// jobs you run through the queue. For reserved queue pricing, you must set up a contract.
+        /// You can create a reserved queue contract through the AWS Elemental MediaConvert console.
+        /// </summary>
+        public PricingPlan PricingPlan
+        {
+            get { return this._pricingPlan; }
+            set { this._pricingPlan = value; }
+        }
+
+        // Check to see if PricingPlan property is set
+        internal bool IsSetPricingPlan()
+        {
+            return this._pricingPlan != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReservationPlanSettings. Details about the pricing plan
+        /// for your reserved queue. Required for reserved queues and not applicable to on-demand
+        /// queues.
+        /// </summary>
+        public ReservationPlanSettings ReservationPlanSettings
+        {
+            get { return this._reservationPlanSettings; }
+            set { this._reservationPlanSettings = value; }
+        }
+
+        // Check to see if ReservationPlanSettings property is set
+        internal bool IsSetReservationPlanSettings()
+        {
+            return this._reservationPlanSettings != null;
         }
 
         /// <summary>

@@ -35,6 +35,7 @@ namespace Amazon.MediaConvert.Model
     {
         private string _description;
         private string _name;
+        private ReservationPlanSettings _reservationPlanSettings;
         private QueueStatus _status;
 
         /// <summary>
@@ -54,7 +55,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. The name of the queue you are modifying.
+        /// Gets and sets the property Name. The name of the queue that you are modifying.
         /// </summary>
         public string Name
         {
@@ -69,7 +70,27 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status.
+        /// Gets and sets the property ReservationPlanSettings. Details about the pricing plan
+        /// for your reserved queue. Required for reserved queues and not applicable to on-demand
+        /// queues.
+        /// </summary>
+        public ReservationPlanSettings ReservationPlanSettings
+        {
+            get { return this._reservationPlanSettings; }
+            set { this._reservationPlanSettings = value; }
+        }
+
+        // Check to see if ReservationPlanSettings property is set
+        internal bool IsSetReservationPlanSettings()
+        {
+            return this._reservationPlanSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. Pause or activate a queue by changing its status
+        /// between ACTIVE and PAUSED. If you pause a queue, jobs in that queue won't begin. Jobs
+        /// that are running when you pause the queue continue to run until they finish or result
+        /// in an error.
         /// </summary>
         public QueueStatus Status
         {

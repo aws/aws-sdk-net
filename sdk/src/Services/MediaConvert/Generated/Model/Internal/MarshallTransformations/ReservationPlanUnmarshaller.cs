@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Queue Object
+    /// Response Unmarshaller for ReservationPlan Object
     /// </summary>  
-    public class QueueUnmarshaller : IUnmarshaller<Queue, XmlUnmarshallerContext>, IUnmarshaller<Queue, JsonUnmarshallerContext>
+    public class ReservationPlanUnmarshaller : IUnmarshaller<ReservationPlan, XmlUnmarshallerContext>, IUnmarshaller<ReservationPlan, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Queue IUnmarshaller<Queue, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ReservationPlan IUnmarshaller<ReservationPlan, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,63 +53,45 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Queue Unmarshall(JsonUnmarshallerContext context)
+        public ReservationPlan Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Queue unmarshalledObject = new Queue();
+            ReservationPlan unmarshalledObject = new ReservationPlan();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("commitment", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Commitment = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("createdAt", targetDepth))
+                if (context.TestExpression("expiresAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExpiresAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("description", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("lastUpdated", targetDepth))
+                if (context.TestExpression("purchasedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastUpdated = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PurchasedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("renewalType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RenewalType = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("pricingPlan", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PricingPlan = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("progressingJobsCount", targetDepth))
+                if (context.TestExpression("reservedSlots", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.ProgressingJobsCount = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("reservationPlan", targetDepth))
-                {
-                    var unmarshaller = ReservationPlanUnmarshaller.Instance;
-                    unmarshalledObject.ReservationPlan = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReservedSlots = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))
@@ -118,30 +100,18 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("submittedJobsCount", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.SubmittedJobsCount = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("type", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
           
             return unmarshalledObject;
         }
 
 
-        private static QueueUnmarshaller _instance = new QueueUnmarshaller();        
+        private static ReservationPlanUnmarshaller _instance = new ReservationPlanUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static QueueUnmarshaller Instance
+        public static ReservationPlanUnmarshaller Instance
         {
             get
             {

@@ -2571,6 +2571,52 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type Commitment.
+    /// </summary>
+    public class Commitment : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ONE_YEAR for Commitment
+        /// </summary>
+        public static readonly Commitment ONE_YEAR = new Commitment("ONE_YEAR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Commitment(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Commitment FindValue(string value)
+        {
+            return FindValue<Commitment>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Commitment(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ContainerType.
     /// </summary>
     public class ContainerType : ConstantClass
@@ -11405,6 +11451,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type PricingPlan.
+    /// </summary>
+    public class PricingPlan : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ON_DEMAND for PricingPlan
+        /// </summary>
+        public static readonly PricingPlan ON_DEMAND = new PricingPlan("ON_DEMAND");
+        /// <summary>
+        /// Constant RESERVED for PricingPlan
+        /// </summary>
+        public static readonly PricingPlan RESERVED = new PricingPlan("RESERVED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PricingPlan(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PricingPlan FindValue(string value)
+        {
+            return FindValue<PricingPlan>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PricingPlan(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ProresCodecProfile.
     /// </summary>
     public class ProresCodecProfile : ConstantClass
@@ -11868,6 +11964,106 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator QueueStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RenewalType.
+    /// </summary>
+    public class RenewalType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTO_RENEW for RenewalType
+        /// </summary>
+        public static readonly RenewalType AUTO_RENEW = new RenewalType("AUTO_RENEW");
+        /// <summary>
+        /// Constant EXPIRE for RenewalType
+        /// </summary>
+        public static readonly RenewalType EXPIRE = new RenewalType("EXPIRE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RenewalType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RenewalType FindValue(string value)
+        {
+            return FindValue<RenewalType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RenewalType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReservationPlanStatus.
+    /// </summary>
+    public class ReservationPlanStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ReservationPlanStatus
+        /// </summary>
+        public static readonly ReservationPlanStatus ACTIVE = new ReservationPlanStatus("ACTIVE");
+        /// <summary>
+        /// Constant EXPIRED for ReservationPlanStatus
+        /// </summary>
+        public static readonly ReservationPlanStatus EXPIRED = new ReservationPlanStatus("EXPIRED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReservationPlanStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReservationPlanStatus FindValue(string value)
+        {
+            return FindValue<ReservationPlanStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReservationPlanStatus(string value)
         {
             return FindValue(value);
         }

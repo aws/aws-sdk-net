@@ -52,7 +52,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Queues. List of queues
+        /// Gets and sets the property Queues. List of queues.
         /// </summary>
         public List<Queue> Queues
         {

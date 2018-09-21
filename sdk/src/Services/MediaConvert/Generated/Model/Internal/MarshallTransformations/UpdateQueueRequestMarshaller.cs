@@ -74,6 +74,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetReservationPlanSettings())
+                {
+                    context.Writer.WritePropertyName("reservationPlanSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ReservationPlanSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ReservationPlanSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetStatus())
                 {
                     context.Writer.WritePropertyName("status");
