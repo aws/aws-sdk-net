@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.365.0",
+    "ProductVersion" : "3.3.366.0",
     "CoreVersion"    : "3.3.25.3",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -897,7 +897,7 @@
             "InPreview"               : false
         },
         "MediaConvert"                    : {
-            "Version" : "3.3.8.1",
+            "Version" : "3.3.9.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.25.3"

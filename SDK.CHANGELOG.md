@@ -1,3 +1,7 @@
+### 3.3.366.0 (2018-09-21 20:31 UTC)
+* MediaConvert (3.3.9.0)
+	* To offer lower prices for predictable, non-urgent workloads, we propose the concept of Reserved Transcode pricing. Reserved Transcode pricing Reserved Transcoding pricing would offer the customer access to a fixed parallel processing capacity for a fixed monthly rate. This capacity would be stated in terms of number of Reserved Transcode Slots (RTSs). One RTS would be able to process one job at a time for a fixed monthly fee.
+
 ### 3.3.365.0 (2018-09-20 21:23 UTC)
 * DirectoryService (3.3.6.0)
 	* Added CreateLogSubscription, DeleteLogSubscription, and ListLogSubscriptions APIs for Microsoft AD. Customers can now opt in to have Windows security event logs from the domain controllers forwarded to a log group in their account.
