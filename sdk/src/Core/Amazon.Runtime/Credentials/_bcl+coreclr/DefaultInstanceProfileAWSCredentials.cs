@@ -24,9 +24,8 @@ using System.Threading.Tasks;
 namespace Amazon.Runtime
 {
     /// <summary>
-    /// This class is exclusively used by FallbackCredentialsFactory.  InstanceProfileAWSCredentials allows 
-    /// configuring Roles and every instance hits IMDS individually.  This class has a singleton timer task
-    /// that caches instance profile credentials every 2 minutes.
+    /// InstanceProfileAWSCredentials allows configuring Roles and every instance hits IMDS individually.  
+    /// This class has a singleton timer task that caches instance profile credentials every 2 minutes.
     /// </summary>
     internal class DefaultInstanceProfileAWSCredentials : AWSCredentials, IDisposable
     {

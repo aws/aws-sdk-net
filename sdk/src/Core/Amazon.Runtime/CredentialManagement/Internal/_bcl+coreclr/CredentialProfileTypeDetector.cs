@@ -21,6 +21,7 @@ namespace Amazon.Runtime.CredentialManagement.Internal
     public enum CredentialProfileType
     {
         AssumeRole,
+        AssumeRoleCredentialSource,
         AssumeRoleExternal,
         AssumeRoleExternalMFA,
         AssumeRoleMFA,
@@ -32,6 +33,13 @@ namespace Amazon.Runtime.CredentialManagement.Internal
         Session,
     }
 
+    public enum CredentialSourceType
+    {
+        Ec2InstanceMetadata,
+        Environment,
+        EcsContainer
+    }
+
     public static class CredentialProfileTypeDetector
     {
         private const string BasicCredentials = "Basic";
@@ -40,12 +48,13 @@ namespace Amazon.Runtime.CredentialManagement.Internal
         private const string SAMLCredentials = "SAML";
 
         private const string AccessKey = "AccessKey";
+        private const string CredentialSource = "CredentialSource";
         private const string EndpointName = "EndpointName";
         private const string ExternalID = "ExternalID";
         private const string MfaSerial = "MfaSerial";
         private const string RoleArn = "RoleArn";
         private const string SecretKey = "SecretKey";
-        private const string SourceProfile = "SourceProfile";
+        private const string SourceProfile = "SourceProfile";        
         private const string Token = "Token";
         private const string UserIdentity = "UserIdentity";
 
@@ -57,6 +66,13 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                     {
                         RoleArn,
                         SourceProfile,
+                    }
+                },
+                {
+                    CredentialProfileType.AssumeRoleCredentialSource, new HashSet<string>()
+                    {
+                        RoleArn,
+                        CredentialSource,
                     }
                 },
                 {

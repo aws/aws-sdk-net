@@ -58,6 +58,7 @@ namespace Amazon.Runtime.CredentialManagement
             new HashSet<CredentialProfileType>()
             {
                 CredentialProfileType.AssumeRole,
+                CredentialProfileType.AssumeRoleCredentialSource,
                 CredentialProfileType.AssumeRoleExternal,
                 CredentialProfileType.AssumeRoleExternalMFA,
                 CredentialProfileType.AssumeRoleMFA,
@@ -70,6 +71,7 @@ namespace Amazon.Runtime.CredentialManagement
                 new Dictionary<string, string>()
                 {
                     { "AccessKey", "aws_access_key_id" },
+                    { "CredentialSource", "credential_source" },
 #if BCL
                     { "EndpointName", null },
 #endif

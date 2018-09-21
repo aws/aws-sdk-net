@@ -14,9 +14,11 @@
  */
 using Amazon.Runtime;
 using Amazon.Runtime.CredentialManagement;
+using Amazon.Runtime.CredentialManagement.Internal;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Settings;
 using Amazon.Util;
+using AWSSDK_DotNet.CommonTest.Utils;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
@@ -32,7 +34,7 @@ namespace AWSSDK.UnitTests
         private const string SourceNotBasicOrSessionFormat = "Source profile [{0}] is not a basic or a session profile.";
         private const string SourceNotFoundFormat = "Source profile [{0}] was not found.";
 
-        private const string InvalidErrorFormat = "Credential profile [{0}] is not valid.  Please ensure the profile contains a valid combination of properties.";
+        private const string InvalidErrorFormat = "Credential profile [{0}] is not valid.  Please ensure the profile contains a valid combination of properties.";        
         private const string SourceErrorFormat = "Error reading source profile [{0}] for profile [{1}].";
         private const string MfaCallbackErrorFormat = "The profile [{0}] is an assume role profile that requires an MFA.  This type of profile is not allowed here.  " +
             "Please use an assume role profile that doesn't require an MFA, or a different type of profile.";
@@ -45,6 +47,10 @@ namespace AWSSDK.UnitTests
             "Please use credential options for AssumeRoleAWSCredentials that don't require an MFA, or a different type of credentials.";
         private const string UserIdentityCallbackErrorAnonymous = "The credential options represent FederatedAWSCredentials that specify a user identity.  This is not allowed here.  " +
             "Please use credential options for FederatedAWSCredentials without an explicit user identity, or a different type of credentials.";
+        private const string CredentialSourceErrorFormat = "Error reading credential source [{0}] for profile [{1}].";
+        private const string InvalidCredentialSourceErrorFormat = "Credential source [{0}] is invalid.";
+        private const string IMDSNotEnabledError = "Unable to retrieve credentials.";
+        private const string CredentialSourceContainerNotSetErrorFormat = "Container environment variable {0} is not set.";
 
         private static readonly MemoryCredentialProfileSource ProfileStore = new MemoryCredentialProfileSource();
 
@@ -137,6 +143,34 @@ namespace AWSSDK.UnitTests
                 SourceProfile = "invalid_profile"
             });
 
+        private static readonly CredentialProfile AssumeRoleCredentialSourceEnvironment =
+            new CredentialProfile("assume_role_credential_source_environment", new CredentialProfileOptions
+            {
+                RoleArn = "role_arn",
+                CredentialSource = "Environment"
+            });
+
+        private static readonly CredentialProfile AssumeRoleCredentialSourceEc2InstanceMetadata =
+            new CredentialProfile("assume_role_credential_source_ec2_instance_metadata", new CredentialProfileOptions
+            {
+                RoleArn = "role_arn",
+                CredentialSource = "Ec2InstanceMetadata"
+            });
+
+        private static readonly CredentialProfile AssumeRoleCredentialSourceEcsContainer=
+            new CredentialProfile("assume_role_credential_source_ecs_container", new CredentialProfileOptions
+            {
+                RoleArn = "role_arn",
+                CredentialSource = "EcsContainer"
+            });
+
+        private static readonly CredentialProfile AssumeRoleCredentialSourceInvalid =
+            new CredentialProfile("assume_role_credential_source_invalid", new CredentialProfileOptions
+            {
+                RoleArn = "role_arn",
+                CredentialSource = "InvalidSource"
+            });
+
         static AWSCredentialsFactoryTest()
         {
             ProfileStore.Profiles.Add(InvalidProfile.Name, InvalidProfile);
@@ -151,6 +185,10 @@ namespace AWSSDK.UnitTests
             ProfileStore.Profiles.Add(AssumeRoleProfileInvalidSource.Name, AssumeRoleProfileInvalidSource);
             ProfileStore.Profiles.Add(SAMLRoleProfile.Name, SAMLRoleProfile);
             ProfileStore.Profiles.Add(SAMLRoleUserIdentityProfile.Name, SAMLRoleUserIdentityProfile);
+            ProfileStore.Profiles.Add(AssumeRoleCredentialSourceEnvironment.Name, AssumeRoleCredentialSourceEnvironment);
+            ProfileStore.Profiles.Add(AssumeRoleCredentialSourceEc2InstanceMetadata.Name, AssumeRoleCredentialSourceEc2InstanceMetadata);
+            ProfileStore.Profiles.Add(AssumeRoleCredentialSourceEcsContainer.Name, AssumeRoleCredentialSourceEcsContainer);
+            ProfileStore.Profiles.Add(AssumeRoleCredentialSourceInvalid.Name, AssumeRoleCredentialSourceInvalid);
         }
 
         private static readonly BasicAWSCredentials BasicCredentials =
@@ -194,6 +232,9 @@ namespace AWSSDK.UnitTests
             {
                 UserIdentity = "user_identity"
             });
+
+        private static readonly ECSTaskCredentials ContainerCredentials =
+            new ECSTaskCredentials(null);            
 
         [TestMethod]
         public void TryGetInvalidCredentials()
@@ -474,6 +515,86 @@ namespace AWSSDK.UnitTests
             }, typeof(InvalidOperationException), UserIdentityCallbackErrorAnonymous);
         }
 
+        [TestMethod]
+        public void GetAssumeRoleCredentialSourceEnvironment()
+        {
+            using (new AWSCredentialsFactoryTestCredentialSourceFixture(AssumeRoleCredentialSourceEnvironment.Options, SessionCredentials))
+            {
+                AWSCredentials credentials;
+                Assert.IsTrue(AWSCredentialsFactory.TryGetAWSCredentials(AssumeRoleCredentialSourceEnvironment.Options, ProfileStore, out credentials));                
+                Assert.IsNotNull(credentials);
+                Assert.AreEqual(typeof(EnvironmentVariablesAWSCredentials), ReflectionHelpers.Invoke(credentials, "SourceCredentials").GetType());
+            }                
+        }
+
+        [TestMethod]
+        public void GetAssumeRoleCredentialSourceEc2InstanceMetadata()
+        {
+            using (new AWSCredentialsFactoryTestCredentialSourceFixture(AssumeRoleCredentialSourceEc2InstanceMetadata.Options, null))
+            {
+                AWSCredentials credentials;
+                Assert.IsTrue(AWSCredentialsFactory.TryGetAWSCredentials(AssumeRoleCredentialSourceEc2InstanceMetadata.Options, ProfileStore, out credentials));
+                Assert.IsNotNull(credentials);                
+                Assert.AreEqual("Amazon.Runtime.DefaultInstanceProfileAWSCredentials", ReflectionHelpers.Invoke(credentials, "SourceCredentials").GetType().ToString());
+            }
+        }
+
+        [TestMethod]
+        public void GetAssumeRoleCredentialSourceEcContainer()
+        {
+            using (new AWSCredentialsFactoryTestCredentialSourceFixture(AssumeRoleCredentialSourceEcsContainer.Options, null))
+            {
+                AWSCredentials credentials;
+                Assert.IsTrue(AWSCredentialsFactory.TryGetAWSCredentials(AssumeRoleCredentialSourceEcsContainer.Options, ProfileStore, out credentials));                                
+                Assert.IsNotNull(credentials);
+                Assert.AreEqual(typeof(ECSTaskCredentials), ReflectionHelpers.Invoke(credentials, "SourceCredentials").GetType());
+            }
+        }
+
+        [TestMethod]
+        public void GetAssumeRoleCredentialSourceInvalid()
+        {
+            AssertExtensions.ExpectException(() =>
+            {
+                throw AssertExtensions.ExpectException(() =>
+                {
+                    AWSCredentialsFactory.GetAWSCredentials(AssumeRoleCredentialSourceInvalid, ProfileStore);
+
+                }, typeof(InvalidDataException), string.Format(CredentialSourceErrorFormat, AssumeRoleCredentialSourceInvalid.Options.CredentialSource,
+                AssumeRoleCredentialSourceInvalid.Name)).InnerException;
+            }
+            , typeof(InvalidDataException), string.Format(InvalidCredentialSourceErrorFormat, AssumeRoleCredentialSourceInvalid.Options.CredentialSource));            
+        }
+
+        [TestMethod]
+        public void GetAssumeRoleCredentialSourceIDMSNotEnabled()
+        {            
+            AssertExtensions.ExpectException(() =>
+            {
+                using (new AWSCredentialsFactoryTestCredentialSourceFixture(AssumeRoleCredentialSourceEc2InstanceMetadata.Options, null, true))
+                {
+                    AWSCredentialsFactory.GetAWSCredentials(AssumeRoleCredentialSourceEc2InstanceMetadata, ProfileStore);
+                }                            
+            }, typeof(AmazonServiceException), IMDSNotEnabledError);
+        }
+                
+        [TestMethod]
+        public void GetAssumeRoleCredentialSourceEcContainerNotSet()
+        {
+            AssertExtensions.ExpectException(() =>
+            {
+                throw AssertExtensions.ExpectException(() =>
+                {
+                    using (new AWSCredentialsFactoryTestCredentialSourceFixture(AssumeRoleCredentialSourceEcsContainer.Options, null, true))
+                    {
+                        AWSCredentialsFactory.GetAWSCredentials(AssumeRoleCredentialSourceEcsContainer, ProfileStore);
+                    }
+                }, typeof(InvalidDataException), string.Format(CredentialSourceErrorFormat, AssumeRoleCredentialSourceEcsContainer.Options.CredentialSource,
+                AssumeRoleCredentialSourceEcsContainer.Name)).InnerException;
+            }
+            , typeof(InvalidDataException), string.Format(CredentialSourceContainerNotSetErrorFormat, ECSTaskCredentials.ContainerCredentialsURIEnvVariable));
+        }
+
         private void AssertAssumeRoleCredentialsAreEqual(AssumeRoleAWSCredentials expected, AWSCredentials actualAWSCredentials)
         {
             var actual = actualAWSCredentials as AssumeRoleAWSCredentials;
@@ -500,6 +621,8 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(expected.Options.UserIdentity, actual.Options.UserIdentity);
         }
 
+
+
         private class MemoryCredentialProfileSource : ICredentialProfileSource
         {
             public Dictionary<string, CredentialProfile> Profiles { get; private set; }
@@ -513,6 +636,68 @@ namespace AWSSDK.UnitTests
             {
                 return Profiles.TryGetValue(profileName, out profile);
             }
+        }
+
+        public class AWSCredentialsFactoryTestCredentialSourceFixture : IDisposable
+        {
+            private const string AWS_ACCESS_KEY_ID_ENVIRONMENT_VARIABLE = "AWS_ACCESS_KEY_ID";
+            private const string AWS_SECRET_ACCESS_KEY_ENVIRONMENT_VARIABLE = "AWS_SECRET_ACCESS_KEY";
+            private const string AWS_SESSION_TOKEN_ENVIRONMENT_VARIABLE = "AWS_SESSION_TOKEN";
+            private const string MOCK_ECSContainer_URIEnvVariableValue = "/EcContainer/v0/credentials?id=test";
+
+
+            private string originalAWSAccessKeyIdValue;
+            private string originalAWSSecretAccessKeyValue;
+            private string originalAWSSessionTokenValue;
+            private string originalAWSMetadataDisabled;
+            private string originalContainerURIEnvVariableValue;
+            private CredentialSourceType credentialSourceType;
+
+            public AWSCredentialsFactoryTestCredentialSourceFixture(CredentialProfileOptions options, SessionAWSCredentials sessionCredentials, bool disable = false)
+            {
+                credentialSourceType = (CredentialSourceType)Enum.Parse(typeof(CredentialSourceType), options.CredentialSource, true);
+                switch (credentialSourceType)
+                {
+                    case CredentialSourceType.Environment:
+                        ImmutableCredentials credentials = sessionCredentials.GetCredentials();
+                        originalAWSAccessKeyIdValue = SetEnvironmentVariable(AWS_ACCESS_KEY_ID_ENVIRONMENT_VARIABLE, credentials.AccessKey);
+                        originalAWSSecretAccessKeyValue = SetEnvironmentVariable(AWS_SECRET_ACCESS_KEY_ENVIRONMENT_VARIABLE, credentials.SecretKey);
+                        originalAWSSessionTokenValue = SetEnvironmentVariable(AWS_SESSION_TOKEN_ENVIRONMENT_VARIABLE, credentials.Token);
+                        break;
+                    case CredentialSourceType.Ec2InstanceMetadata:
+                        originalAWSMetadataDisabled = SetEnvironmentVariable(EC2InstanceMetadata.AWS_EC2_METADATA_DISABLED, disable ? "true" : "false");
+                        break;
+                    case CredentialSourceType.EcsContainer:
+                        originalContainerURIEnvVariableValue = SetEnvironmentVariable(ECSTaskCredentials.ContainerCredentialsURIEnvVariable, disable ? null : MOCK_ECSContainer_URIEnvVariableValue);
+                        break;
+                }                                
+            }
+
+            public void Dispose()
+            {
+                switch (credentialSourceType)
+                {
+                    case CredentialSourceType.Environment:
+                        Environment.SetEnvironmentVariable(AWS_ACCESS_KEY_ID_ENVIRONMENT_VARIABLE, originalAWSAccessKeyIdValue);
+                        Environment.SetEnvironmentVariable(AWS_SECRET_ACCESS_KEY_ENVIRONMENT_VARIABLE, originalAWSSecretAccessKeyValue);
+                        Environment.SetEnvironmentVariable(AWS_SESSION_TOKEN_ENVIRONMENT_VARIABLE, originalAWSSessionTokenValue);
+                        break;
+                    case CredentialSourceType.Ec2InstanceMetadata:
+                        Environment.SetEnvironmentVariable(EC2InstanceMetadata.AWS_EC2_METADATA_DISABLED, originalAWSMetadataDisabled);
+                        break;
+                    case CredentialSourceType.EcsContainer:
+                        Environment.SetEnvironmentVariable(ECSTaskCredentials.ContainerCredentialsURIEnvVariable, originalContainerURIEnvVariableValue);
+                        break;
+                }
+            }
+
+            private string SetEnvironmentVariable(string name, string value)
+            {
+                string originalValue = Environment.GetEnvironmentVariable(name);
+                Environment.SetEnvironmentVariable(name, value);
+                return originalValue;
+            }
+            
         }
     }
 }

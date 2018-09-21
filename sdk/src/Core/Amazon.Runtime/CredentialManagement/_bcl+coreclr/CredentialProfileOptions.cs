@@ -49,6 +49,11 @@ namespace Amazon.Runtime.CredentialManagement
         /// The access key to be used in the AWSCredentials.
         /// </summary>
         public string AccessKey { get; set; }
+
+        /// <summary>
+        /// The source of credentials to be used to obtain AWSCredentials.
+        /// </summary>
+        public string CredentialSource { get; set; }
 #if BCL
         /// <summary>
         /// The endpoint name to be used for federated AWSCredentials.
