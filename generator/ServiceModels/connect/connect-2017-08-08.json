@@ -10,7 +10,7 @@
   "api_version": "2017-08-08",
   "endpoint_prefix": "connect",
   "uid": "connect-2017-08-08",
-  "documentation": "\n         <p>The Amazon Connect API Reference provides descriptions, syntax, and usage examples for each of the\n   Amazon Connect actions, data types, parameters, and errors. Amazon Connect is a cloud-based contact center solution\n   that makes it easy to set up and manage a customer contact center and provide reliable customer\n   engagement at any scale.</p>\n      ",
+  "documentation": "\n         <p>The Amazon Connect API Reference provides descriptions, syntax, and usage examples for each of the\n   Amazon Connect actions, data types, parameters, and errors. Amazon Connect is a cloud-based contact center solution\n   that makes it easy to set up and manage a customer contact center and provide reliable customer\n   engagement at any scale.</p>\n         <p>There is a throttling limit placed on usage of the Amazon Connect operations that includes a RateLimit of 2 per\n   second, and a BurstLimit of 5 per second.</p>\n      ",
   "operations": {
     "StartOutboundVoiceContact": {
       "name": "StartOutboundVoiceContact",
@@ -23,23 +23,23 @@
         "members": {
           "DestinationPhoneNumber": {
             "type": "string",
-            "documentation": "\n         <p>The phone number of the customer in E.164 format.</p>\n      ",
             "zonbookDocumentation": "\n         <para>The phone number of the customer in E.164 format.</para>\n      ",
+            "documentation": "\n         <p>The phone number of the customer in E.164 format.</p>\n      ",
             "required": true,
             "shape_name": "PhoneNumber"
           },
           "ContactFlowId": {
             "type": "string",
-            "documentation": "\n         <p>The identifier for the contact flow to connect the outbound call to.</p>\n         <p>To find the <code>ContactFlowId</code>, open the contact flow you want to use in the Amazon Connect\n   contact flow editor. The ID for the contact flow is displayed in the address bar as part of the\n   URL. For example, the contact flow ID is the set of characters at the end of the URL, after\n   'contact-flow/' such as <code>78ea8fd5-2659-4f2b-b528-699760ccfc1b</code>.</p>\n      ",
             "zonbookDocumentation": "\n         <para>The identifier for the contact flow to connect the outbound call to.</para>\n         <para>To find the <code>ContactFlowId</code>, open the contact flow you want to use in the Amazon Connect\n   contact flow editor. The ID for the contact flow is displayed in the address bar as part of the\n   URL. For example, the contact flow ID is the set of characters at the end of the URL, after\n   'contact-flow/' such as <code>78ea8fd5-2659-4f2b-b528-699760ccfc1b</code>.</para>\n      ",
+            "documentation": "\n         <p>The identifier for the contact flow to connect the outbound call to.</p>\n         <p>To find the <code>ContactFlowId</code>, open the contact flow you want to use in the Amazon Connect\n   contact flow editor. The ID for the contact flow is displayed in the address bar as part of the\n   URL. For example, the contact flow ID is the set of characters at the end of the URL, after\n   'contact-flow/' such as <code>78ea8fd5-2659-4f2b-b528-699760ccfc1b</code>.</p>\n      ",
             "required": true,
             "shape_name": "ContactFlowId",
             "max_length": 500
           },
           "InstanceId": {
             "type": "string",
-            "documentation": "\n\n         <p>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>\n      ",
             "zonbookDocumentation": "\n\n         <para>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</para>\n      ",
+            "documentation": "\n\n         <p>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>\n      ",
             "required": true,
             "shape_name": "InstanceId",
             "min_length": 1,
@@ -47,40 +47,40 @@
           },
           "ClientToken": {
             "type": "string",
-            "documentation": "\n         <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the\n   request. The token is valid for 7 days after creation. If a contact is already started, the\n   contact ID is returned. If the contact is disconnected, a new contact is started.</p>\n      ",
             "zonbookDocumentation": "\n         <para>A unique, case-sensitive identifier that you provide to ensure the idempotency of the\n   request. The token is valid for 7 days after creation. If a contact is already started, the\n   contact ID is returned. If the contact is disconnected, a new contact is started.</para>\n      ",
+            "documentation": "\n         <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the\n   request. The token is valid for 7 days after creation. If a contact is already started, the\n   contact ID is returned. If the contact is disconnected, a new contact is started.</p>\n      ",
             "idempotencyToken": true,
             "shape_name": "ClientToken",
             "max_length": 500
           },
           "SourcePhoneNumber": {
             "type": "string",
-            "documentation": "\n         <p>The phone number, in E.164 format, associated with your Amazon Connect instance to use for\n   the outbound call.</p>\n      ",
             "zonbookDocumentation": "\n         <para>The phone number, in E.164 format, associated with your Amazon Connect instance to use for\n   the outbound call.</para>\n      ",
+            "documentation": "\n         <p>The phone number, in E.164 format, associated with your Amazon Connect instance to use for\n   the outbound call.</p>\n      ",
             "shape_name": "PhoneNumber"
           },
           "QueueId": {
             "type": "string",
-            "documentation": "\n         <p>The queue to add the call to. If you specify a queue, the phone displayed for caller ID is\n   the phone number specified in the queue. If you do not specify a queue, the queue used will be\n   the queue defined in the contact flow.</p>\n         <p>To find the <code>QueueId</code>, open the queue you want to use in the Amazon Connect Queue editor.\n   The ID for the queue is displayed in the address bar as part of the URL. For example, the queue\n   ID is the set of characters at the end of the URL, after 'queue/' such as\n    <code>queue/aeg40574-2d01-51c3-73d6-bf8624d2168c</code>.</p>\n\n\n      ",
             "zonbookDocumentation": "\n         <para>The queue to add the call to. If you specify a queue, the phone displayed for caller ID is\n   the phone number specified in the queue. If you do not specify a queue, the queue used will be\n   the queue defined in the contact flow.</para>\n         <para>To find the <code>QueueId</code>, open the queue you want to use in the Amazon Connect Queue editor.\n   The ID for the queue is displayed in the address bar as part of the URL. For example, the queue\n   ID is the set of characters at the end of the URL, after 'queue/' such as\n    <code>queue/aeg40574-2d01-51c3-73d6-bf8624d2168c</code>.</para>\n\n\n      ",
+            "documentation": "\n         <p>The queue to add the call to. If you specify a queue, the phone displayed for caller ID is\n   the phone number specified in the queue. If you do not specify a queue, the queue used will be\n   the queue defined in the contact flow.</p>\n         <p>To find the <code>QueueId</code>, open the queue you want to use in the Amazon Connect Queue editor.\n   The ID for the queue is displayed in the address bar as part of the URL. For example, the queue\n   ID is the set of characters at the end of the URL, after 'queue/' such as\n    <code>queue/aeg40574-2d01-51c3-73d6-bf8624d2168c</code>.</p>\n\n\n      ",
             "shape_name": "QueueId"
           },
           "Attributes": {
             "type": "map",
-            "documentation": "\n         <p>Specify a custom key-value pair using an attribute map. The attributes are standard Amazon Connect\n   attributes, and can be accessed in contact flows just like any other contact attributes.</p>\n         <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs. Attribute keys can include\n   only alphanumeric, dash, and underscore characters.</p>\n         <p>For example, if you want play a greeting when the customer answers the call, you can pass\n   the customer name in attributes similar to the following:</p>\n  \n      ",
             "zonbookDocumentation": "\n         <para>Specify a custom key-value pair using an attribute map. The attributes are standard Amazon Connect\n   attributes, and can be accessed in contact flows just like any other contact attributes.</para>\n         <para>There can be up to 32,768 UTF-8 bytes across all key-value pairs. Attribute keys can include\n   only alphanumeric, dash, and underscore characters.</para>\n         <para>For example, if you want play a greeting when the customer answers the call, you can pass\n   the customer name in attributes similar to the following:</para>\n         <examples>\n            <example>\n               <programlisting>Attributes:[\n{ \"customerName\" : \"John Stiles\" },\n]</programlisting>\n            </example>\n         </examples>\n      ",
+            "documentation": "\n         <p>Specify a custom key-value pair using an attribute map. The attributes are standard Amazon Connect\n   attributes, and can be accessed in contact flows just like any other contact attributes.</p>\n         <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs. Attribute keys can include\n   only alphanumeric, dash, and underscore characters.</p>\n         <p>For example, if you want play a greeting when the customer answers the call, you can pass\n   the customer name in attributes similar to the following:</p>\n  \n      ",
             "shape_name": "Attributes",
             "keys": {
               "type": "string",
-              "documentation": "\n        Key for the key value pair to be used for additional attributes.\n    ",
               "shape_name": "AttributeName",
+              "documentation": null,
               "min_length": 1,
               "max_length": 32767
             },
             "members": {
               "type": "string",
-              "documentation": "\n        Value for the key value pair to be used for additional attributes.\n    ",
               "shape_name": "AttributeValue",
+              "documentation": null,
               "min_length": 0,
               "max_length": 32767
             }
@@ -94,8 +94,8 @@
         "members": {
           "ContactId": {
             "type": "string",
-            "documentation": "\n         <p>The unique identifier of this contact within your Amazon Connect instance.</p>\n      ",
             "zonbookDocumentation": "\n         <para>The unique identifier of this contact within your Amazon Connect instance.</para>\n      ",
+            "documentation": "\n         <p>The unique identifier of this contact within your Amazon Connect instance.</p>\n      ",
             "shape_name": "ContactId",
             "min_length": 1,
             "max_length": 256
@@ -204,7 +204,7 @@
           "shape_name": "OutboundContactNotPermittedException"
         }
       ],
-      "documentation": "\n         <p>The <code>StartOutboundVoiceContact</code> operation initiates a contact flow to place an\n   outbound call to a customer.</p>\n         <p>There is a throttling limit placed on usage of the API that includes a RateLimit of 2 per\n   second, and a BurstLimit of 5 per second.</p>\n         <p>If you are using an IAM account, it must have permission to the\n    <code>connect:StartOutboundVoiceContact</code> action.</p>\n  \n      "
+      "documentation": "\n         <p>The <code>StartOutboundVoiceContact</code> operation initiates a contact flow to place an\n   outbound call to a customer.</p>\n  \n         <p>If you are using an IAM account, it must have permission to the\n    <code>connect:StartOutboundVoiceContact</code> action.</p>\n  \n      "
     },
     "StopContact": {
       "name": "StopContact",
@@ -217,8 +217,8 @@
         "members": {
           "ContactId": {
             "type": "string",
-            "documentation": "\n         <p>The unique identifier of the contact to end.</p>\n      ",
             "zonbookDocumentation": "\n         <para>The unique identifier of the contact to end.</para>\n      ",
+            "documentation": "\n         <p>The unique identifier of the contact to end.</p>\n      ",
             "required": true,
             "shape_name": "ContactId",
             "min_length": 1,
@@ -226,8 +226,8 @@
           },
           "InstanceId": {
             "type": "string",
-            "documentation": "\n         <p>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>\n      ",
             "zonbookDocumentation": "\n         <para>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</para>\n      ",
+            "documentation": "\n         <p>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>\n      ",
             "required": true,
             "shape_name": "InstanceId",
             "min_length": 1,
@@ -329,8 +329,8 @@
         "members": {
           "InstanceId": {
             "type": "string",
-            "documentation": "\n         <p>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>\n      ",
             "zonbookDocumentation": "\n         <para>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</para>\n      ",
+            "documentation": "\n         <p>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>\n      ",
             "required": true,
             "location": "uri",
             "shape_name": "InstanceId",
@@ -461,8 +461,8 @@
               "documentation": null
             }
           },
-          "zonbookDocumentation": "\n         <para>A resource with that name already exisits.</para>\n      ",
-          "documentation": "\n         <p>A resource with that name already exisits.</p>\n      ",
+          "zonbookDocumentation": "\n         <para>A resource with that name already exists.</para>\n      ",
+          "documentation": "\n         <p>A resource with that name already exists.</p>\n      ",
           "shape_name": "DuplicateResourceException"
         }
       ],
@@ -480,8 +480,8 @@
           "Username": {
             "type": "string",
             "pattern": "[a-zA-Z0-9\\_\\-\\.]+",
-            "zonbookDocumentation": "\n         <para>The user name in Amazon Connect for the user to create.</para>\n      ",
-            "documentation": "\n         <p>The user name in Amazon Connect for the user to create.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The user name in Amazon Connect for the account to create.</para>\n      ",
+            "documentation": "\n         <p>The user name in Amazon Connect for the account to create.</p>\n      ",
             "required": true,
             "shape_name": "AgentUsername",
             "min_length": 1,
@@ -489,7 +489,7 @@
           },
           "Password": {
             "type": "string",
-            "pattern": "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d\\S]{8,}$/",
+            "pattern": "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d\\S]{8,64}$/",
             "zonbookDocumentation": "\n         <para>The password for the user account to create. This is required if you are using Amazon Connect for\n   identity management. If you are using SAML for identity management and include this parameter, an\n    <code>InvalidRequestException</code> is returned.</para>\n      ",
             "documentation": "\n         <p>The password for the user account to create. This is required if you are using Amazon Connect for\n   identity management. If you are using SAML for identity management and include this parameter, an\n    <code>InvalidRequestException</code> is returned.</p>\n      ",
             "shape_name": "Password"
@@ -553,8 +553,8 @@
               },
               "DeskPhoneNumber": {
                 "type": "string",
-                "documentation": "\n         <p>The phone number for the user's desk phone.</p>\n      ",
                 "zonbookDocumentation": "\n         <para>The phone number for the user's desk phone.</para>\n      ",
+                "documentation": "\n         <p>The phone number for the user's desk phone.</p>\n      ",
                 "shape_name": "PhoneNumber"
               }
             },
@@ -598,8 +598,8 @@
           },
           "InstanceId": {
             "type": "string",
-            "documentation": "\n         <p>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>\n      ",
             "zonbookDocumentation": "\n         <para>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</para>\n      ",
+            "documentation": "\n         <p>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>\n      ",
             "required": true,
             "location": "uri",
             "shape_name": "InstanceId",
@@ -681,8 +681,8 @@
               "documentation": null
             }
           },
-          "zonbookDocumentation": "\n         <para>A resource with that name already exisits.</para>\n      ",
-          "documentation": "\n         <p>A resource with that name already exisits.</p>\n      ",
+          "zonbookDocumentation": "\n         <para>A resource with that name already exists.</para>\n      ",
+          "documentation": "\n         <p>A resource with that name already exists.</p>\n      ",
           "shape_name": "DuplicateResourceException"
         },
         {
@@ -740,8 +740,8 @@
         "members": {
           "InstanceId": {
             "type": "string",
-            "documentation": "\n         <p>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>\n      ",
             "zonbookDocumentation": "\n         <para>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</para>\n      ",
+            "documentation": "\n         <p>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>\n      ",
             "required": true,
             "location": "uri",
             "shape_name": "InstanceId",
@@ -750,8 +750,8 @@
           },
           "NextToken": {
             "type": "string",
-            "zonbookDocumentation": "\n         <para>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</para>\n      ",
-            "documentation": "\n         <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The token for the next set of results. Use the value returned in the previous \nresponse in the next request to retrieve the next set of results.</para>\n      ",
+            "documentation": "\n         <p>The token for the next set of results. Use the value returned in the previous \nresponse in the next request to retrieve the next set of results.</p>\n      ",
             "location": "uri",
             "shape_name": "NextToken"
           },
@@ -809,8 +809,8 @@
           },
           "NextToken": {
             "type": "string",
-            "zonbookDocumentation": "\n         <para>A string returned in the response. Use the value returned in the response as the value of the NextToken in a subsequent request to retrieve the next set of results.</para>\n      ",
-            "documentation": "\n         <p>A string returned in the response. Use the value returned in the response as the value of the NextToken in a subsequent request to retrieve the next set of results.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>A string returned in the response. Use the value returned in the response as \nthe value of the NextToken in a subsequent request to retrieve the next set of results.</para>\n      ",
+            "documentation": "\n         <p>A string returned in the response. Use the value returned in the response as \nthe value of the NextToken in a subsequent request to retrieve the next set of results.</p>\n      ",
             "shape_name": "NextToken"
           }
         },
@@ -909,8 +909,8 @@
           },
           "InstanceId": {
             "type": "string",
-            "documentation": "\n         <p>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>\n      ",
             "zonbookDocumentation": "\n         <para>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</para>\n      ",
+            "documentation": "\n         <p>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>\n      ",
             "required": true,
             "location": "uri",
             "shape_name": "InstanceId",
@@ -1007,8 +1007,8 @@
                   },
                   "DeskPhoneNumber": {
                     "type": "string",
-                    "documentation": "\n         <p>The phone number for the user's desk phone.</p>\n      ",
                     "zonbookDocumentation": "\n         <para>The phone number for the user's desk phone.</para>\n      ",
+                    "documentation": "\n         <p>The phone number for the user's desk phone.</p>\n      ",
                     "shape_name": "PhoneNumber"
                   }
                 },
@@ -1167,8 +1167,8 @@
               },
               "DeskPhoneNumber": {
                 "type": "string",
-                "documentation": "\n         <p>The phone number for the user's desk phone.</p>\n      ",
                 "zonbookDocumentation": "\n         <para>The phone number for the user's desk phone.</para>\n      ",
+                "documentation": "\n         <p>The phone number for the user's desk phone.</p>\n      ",
                 "shape_name": "PhoneNumber"
               }
             },
@@ -1187,8 +1187,8 @@
           },
           "InstanceId": {
             "type": "string",
-            "documentation": "\n         <p>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>\n      ",
             "zonbookDocumentation": "\n         <para>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</para>\n      ",
+            "documentation": "\n         <p>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>\n      ",
             "required": true,
             "location": "uri",
             "shape_name": "InstanceId",
@@ -1323,8 +1323,8 @@
           },
           "InstanceId": {
             "type": "string",
-            "documentation": "\n         <p>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>\n      ",
             "zonbookDocumentation": "\n         <para>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</para>\n      ",
+            "documentation": "\n         <p>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>\n      ",
             "required": true,
             "location": "uri",
             "shape_name": "InstanceId",
@@ -1442,8 +1442,8 @@
           },
           "InstanceId": {
             "type": "string",
-            "documentation": "\n         <p>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>\n      ",
             "zonbookDocumentation": "\n         <para>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</para>\n      ",
+            "documentation": "\n         <p>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>\n      ",
             "required": true,
             "location": "uri",
             "shape_name": "InstanceId",
@@ -1526,7 +1526,7 @@
           "shape_name": "InternalServiceException"
         }
       ],
-      "documentation": "\n         <p>Update the security profiles assigned to the user.</p>\n      "
+      "documentation": "\n         <p>Updates the security profiles assigned to the user.</p>\n      "
     },
     "UpdateUserRoutingProfile": {
       "name": "UpdateUserRoutingProfile",
@@ -1554,8 +1554,8 @@
           },
           "InstanceId": {
             "type": "string",
-            "documentation": "\n         <p>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>\n      ",
             "zonbookDocumentation": "\n         <para>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</para>\n      ",
+            "documentation": "\n         <p>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>\n      ",
             "required": true,
             "location": "uri",
             "shape_name": "InstanceId",
@@ -1665,8 +1665,8 @@
           },
           "InstanceId": {
             "type": "string",
-            "documentation": "\n         <p>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>\n      ",
             "zonbookDocumentation": "\n         <para>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</para>\n      ",
+            "documentation": "\n         <p>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>\n      ",
             "required": true,
             "location": "uri",
             "shape_name": "InstanceId",
@@ -1762,8 +1762,8 @@
         "members": {
           "InstanceId": {
             "type": "string",
-            "documentation": "\n         <p>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>\n      ",
             "zonbookDocumentation": "\n         <para>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</para>\n      ",
+            "documentation": "\n         <p>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>\n      ",
             "required": true,
             "location": "uri",
             "shape_name": "InstanceId",
@@ -1867,8 +1867,8 @@
         "members": {
           "InstanceId": {
             "type": "string",
-            "documentation": "\n         <p>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>\n      ",
             "zonbookDocumentation": "\n         <para>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</para>\n      ",
+            "documentation": "\n         <p>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>\n      ",
             "required": true,
             "location": "uri",
             "shape_name": "InstanceId",
@@ -1877,8 +1877,8 @@
           },
           "NextToken": {
             "type": "string",
-            "zonbookDocumentation": "\n         <para>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</para>\n      ",
-            "documentation": "\n         <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The token for the next set of results. Use the value returned in the previous \nresponse in the next request to retrieve the next set of results.</para>\n      ",
+            "documentation": "\n         <p>The token for the next set of results. Use the value returned in the previous \nresponse in the next request to retrieve the next set of results.</p>\n      ",
             "location": "uri",
             "shape_name": "NextToken"
           },
@@ -1935,8 +1935,8 @@
           },
           "NextToken": {
             "type": "string",
-            "zonbookDocumentation": "\n         <para>A string returned in the response. Use the value returned in the response as the value of the NextToken in a subsequent request to retrieve the next set of results.</para>\n      ",
-            "documentation": "\n         <p>A string returned in the response. Use the value returned in the response as the value of the NextToken in a subsequent request to retrieve the next set of results.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>A string returned in the response. Use the value returned in the response as \nthe value of the NextToken in a subsequent request to retrieve the next set of results.</para>\n      ",
+            "documentation": "\n         <p>A string returned in the response. Use the value returned in the response as \nthe value of the NextToken in a subsequent request to retrieve the next set of results.</p>\n      ",
             "shape_name": "NextToken"
           }
         },
@@ -2027,8 +2027,8 @@
         "members": {
           "InstanceId": {
             "type": "string",
-            "documentation": "\n         <p>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>\n      ",
             "zonbookDocumentation": "\n         <para>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</para>\n      ",
+            "documentation": "\n         <p>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>\n      ",
             "required": true,
             "location": "uri",
             "shape_name": "InstanceId",
@@ -2037,8 +2037,8 @@
           },
           "NextToken": {
             "type": "string",
-            "zonbookDocumentation": "\n         <para>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</para>\n      ",
-            "documentation": "\n         <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The token for the next set of results. Use the value returned in the previous \nresponse in the next request to retrieve the next set of results.</para>\n      ",
+            "documentation": "\n         <p>The token for the next set of results. Use the value returned in the previous \nresponse in the next request to retrieve the next set of results.</p>\n      ",
             "location": "uri",
             "shape_name": "NextToken"
           },
@@ -2093,8 +2093,8 @@
           },
           "NextToken": {
             "type": "string",
-            "zonbookDocumentation": "\n         <para>A string returned in the response. Use the value returned in the response as the value of the NextToken in a subsequent request to retrieve the next set of results.</para>\n      ",
-            "documentation": "\n         <p>A string returned in the response. Use the value returned in the response as the value of the NextToken in a subsequent request to retrieve the next set of results.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>A string returned in the response. Use the value returned in the response as \nthe value of the NextToken in a subsequent request to retrieve the next set of results.</para>\n      ",
+            "documentation": "\n         <p>A string returned in the response. Use the value returned in the response as \nthe value of the NextToken in a subsequent request to retrieve the next set of results.</p>\n      ",
             "shape_name": "NextToken"
           }
         },
@@ -2185,8 +2185,8 @@
         "members": {
           "InstanceId": {
             "type": "string",
-            "documentation": "\n         <p>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>\n      ",
             "zonbookDocumentation": "\n         <para>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</para>\n      ",
+            "documentation": "\n         <p>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>\n      ",
             "required": true,
             "location": "uri",
             "shape_name": "InstanceId",
@@ -2426,8 +2426,8 @@
         "members": {
           "InstanceId": {
             "type": "string",
-            "documentation": "\n         <p>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>\n      ",
             "zonbookDocumentation": "\n         <para>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</para>\n      ",
+            "documentation": "\n         <p>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>\n      ",
             "required": true,
             "location": "uri",
             "shape_name": "InstanceId",
@@ -2436,8 +2436,8 @@
           },
           "NextToken": {
             "type": "string",
-            "zonbookDocumentation": "\n         <para>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</para>\n      ",
-            "documentation": "\n         <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The token for the next set of results. Use the value returned in the previous \nresponse in the next request to retrieve the next set of results.</para>\n      ",
+            "documentation": "\n         <p>The token for the next set of results. Use the value returned in the previous \nresponse in the next request to retrieve the next set of results.</p>\n      ",
             "location": "uri",
             "shape_name": "NextToken"
           },
@@ -2492,8 +2492,8 @@
           },
           "NextToken": {
             "type": "string",
-            "zonbookDocumentation": "\n         <para>A string returned in the response. Use the value returned in the response as the value of the NextToken in a subsequent request to retrieve the next set of results.</para>\n      ",
-            "documentation": "\n         <p>A string returned in the response. Use the value returned in the response as the value of the NextToken in a subsequent request to retrieve the next set of results.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>A string returned in the response. Use the value returned in the response as \nthe value of the NextToken in a subsequent request to retrieve the next set of results.</para>\n      ",
+            "documentation": "\n         <p>A string returned in the response. Use the value returned in the response as \nthe value of the NextToken in a subsequent request to retrieve the next set of results.</p>\n      ",
             "shape_name": "NextToken"
           }
         },
@@ -2592,8 +2592,8 @@
           },
           "InstanceId": {
             "type": "string",
-            "documentation": "\n         <p>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>\n      ",
             "zonbookDocumentation": "\n         <para>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</para>\n      ",
+            "documentation": "\n         <p>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>\n      ",
             "required": true,
             "location": "uri",
             "shape_name": "InstanceId",
@@ -2865,8 +2865,8 @@
         "members": {
           "InitialContactId": {
             "type": "string",
-            "documentation": "\n         <p>The unique identifier of the contact for which to update attributes. This is the identifier\n   for the contact associated with the first interaction with the contact center.</p>\n      ",
             "zonbookDocumentation": "\n         <para>The unique identifier of the contact for which to update attributes. This is the identifier\n   for the contact associated with the first interaction with the contact center.</para>\n      ",
+            "documentation": "\n         <p>The unique identifier of the contact for which to update attributes. This is the identifier\n   for the contact associated with the first interaction with the contact center.</p>\n      ",
             "required": true,
             "shape_name": "ContactId",
             "min_length": 1,
@@ -2874,8 +2874,8 @@
           },
           "InstanceId": {
             "type": "string",
-            "documentation": "\n         <p>The identifier for your Amazon Connect instance. To find the ID of your Amazon Connect instance, open the AWS\n   console and select Amazon Connect. Select the instance alias of the instance. The instance ID is displayed\n   in the Overview section of your instance settings. For example, the instance ID is the set of\n   characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>\n      ",
-            "zonbookDocumentation": "\n         <para>The identifier for your Amazon Connect instance. To find the ID of your Amazon Connect instance, open the AWS\n   console and select Amazon Connect. Select the instance alias of the instance. The instance ID is displayed\n   in the Overview section of your instance settings. For example, the instance ID is the set of\n   characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</para>\n      ",
+            "zonbookDocumentation": "\n         <para>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</para>\n      ",
+            "documentation": "\n         <p>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>\n      ",
             "required": true,
             "shape_name": "InstanceId",
             "min_length": 1,
@@ -2883,21 +2883,21 @@
           },
           "Attributes": {
             "type": "map",
-            "documentation": "\n         <p>The key-value pairs for the attribute to update.</p>\n      ",
             "zonbookDocumentation": "\n         <para>The key-value pairs for the attribute to update.</para>\n      ",
+            "documentation": "\n         <p>The key-value pairs for the attribute to update.</p>\n      ",
             "required": true,
             "shape_name": "Attributes",
             "keys": {
               "type": "string",
-              "documentation": "\n        Key for the key value pair to be used for additional attributes.\n    ",
               "shape_name": "AttributeName",
+              "documentation": null,
               "min_length": 1,
               "max_length": 32767
             },
             "members": {
               "type": "string",
-              "documentation": "\n        Value for the key value pair to be used for additional attributes.\n    ",
               "shape_name": "AttributeValue",
+              "documentation": null,
               "min_length": 0,
               "max_length": 32767
             }
@@ -2971,7 +2971,789 @@
           "shape_name": "InternalServiceException"
         }
       ],
-      "documentation": "\n         <p>The <code>UpdateContactAttributes</code> operation lets you programmatically create new or\n   update existing contact attributes associated with a contact. You can use the operation to add or\n   update attributes for both ongoing and completed contacts. For example, you can update the\n   customer's name or the reason the customer called while the call is active, or add notes about\n   steps that the agent took during the call that are displayed to the next agent that takes the\n   call. You can also use the <code>UpdateContactAttributes</code> operation to update attributes\n   for a contact using data from your CRM application and save the data with the contact in Amazon Connect.\n   You could also flag calls for additional analysis, or flag abusive callers.</p>\n         <p>Contact attributes are available in Amazon Connect for 24 months, and are then deleted.</p>\n      "
+      "documentation": "\n         <p>The <code>UpdateContactAttributes</code> operation lets you programmatically create new, or\n   update existing, contact attributes associated with a contact. You can use the operation to add\n   or update attributes for both ongoing and completed contacts. For example, you can update the\n   customer's name or the reason the customer called while the call is active, or add notes about\n   steps that the agent took during the call that are displayed to the next agent that takes the\n   call. You can also use the <code>UpdateContactAttributes</code> operation to update attributes\n   for a contact using data from your CRM application and save the data with the contact in Amazon Connect.\n   You could also flag calls for additional analysis, such as legal review or identifying abusive\n   callers.</p>\n         <p>Contact attributes are available in Amazon Connect for 24 months, and are then deleted.</p>\n         <p>\n            <i>Important:</i>\n         </p>\n  \n         <p>You cannot use the operation to update attributes for contacts that occurred prior to the\n   release of the API, September 12, 2018. You can update attributes only for contacts that started\n   after the release of the API. If you attempt to update attributes for a contact that occurred\n   prior to the release of the API, a 400 error is returned. This applies also to queued callbacks\n   that were initiated prior to the release of the API but are still active in your instance.</p>\n      "
+    },
+    "GetCurrentMetricData": {
+      "name": "GetCurrentMetricData",
+      "http": {
+        "method": "POST",
+        "uri": "/metrics/current/{InstanceId}"
+      },
+      "input": {
+        "type": "structure",
+        "members": {
+          "InstanceId": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</para>\n      ",
+            "documentation": "\n         <p>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>\n      ",
+            "required": true,
+            "location": "uri",
+            "shape_name": "InstanceId",
+            "min_length": 1,
+            "max_length": 100
+          },
+          "Filters": {
+            "type": "structure",
+            "members": {
+              "Queues": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <para>A list of up to 100 queue IDs or queue ARNs to use to filter the metrics retrieved. You can include both IDs and ARNs in a request.</para>\n      ",
+                "documentation": "\n         <p>A list of up to 100 queue IDs or queue ARNs to use to filter the metrics retrieved. You can include both IDs and ARNs in a request.</p>\n      ",
+                "shape_name": "Queues",
+                "min_length": 1,
+                "max_length": 100,
+                "members": {
+                  "type": "string",
+                  "shape_name": "QueueId",
+                  "documentation": null
+                }
+              },
+              "Channels": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <para>The Channel to use as a filter for the metrics returned. Only VOICE is supported.</para>\n      ",
+                "documentation": "\n         <p>The Channel to use as a filter for the metrics returned. Only VOICE is supported.</p>\n      ",
+                "shape_name": "Channels",
+                "max_length": 1,
+                "members": {
+                  "type": "string",
+                  "enum": [
+                    "VOICE"
+                  ],
+                  "shape_name": "Channel",
+                  "documentation": null
+                }
+              }
+            },
+            "zonbookDocumentation": "\n         <para>A <code>Filters</code> object that contains a list of queue IDs or queue ARNs, up to 100, or list of Channels to use to filter\n   the metrics returned in the response. Metric data is retrieved only for the resources associated\n   with the queue IDs, ARNs, or Channels included in the filter. You can include both IDs and ARNs in the same request. To retrieve metrics for all queues, add the queue ID or ARN \n   for each queue in your instance. Only VOICE is supported for Channels.</para>\n\n         <para>To find the ARN for a queue, open the queue you want to use in the Amazon Connect Queue editor. The ARN for\n   the queue is displayed in the address bar as part of the URL. For example, the queue ARN is\n   the set of characters at the end of the URL, after 'id=' such as\n   <code>arn:aws:connect:us-east-1:270923740243:instance/78fb859d-1b7d-44b1-8aa3-12f0835c5855/queue/1d1a4575-9618-40ab-bbeb-81e45795fe61</code>. \n   The queue ID is also included in the URL, and is the string after 'queue/'.</para>\n      ",
+            "documentation": "\n         <p>A <code>Filters</code> object that contains a list of queue IDs or queue ARNs, up to 100, or list of Channels to use to filter\n   the metrics returned in the response. Metric data is retrieved only for the resources associated\n   with the queue IDs, ARNs, or Channels included in the filter. You can include both IDs and ARNs in the same request. To retrieve metrics for all queues, add the queue ID or ARN \n   for each queue in your instance. Only VOICE is supported for Channels.</p>\n\n         <p>To find the ARN for a queue, open the queue you want to use in the Amazon Connect Queue editor. The ARN for\n   the queue is displayed in the address bar as part of the URL. For example, the queue ARN is\n   the set of characters at the end of the URL, after 'id=' such as\n   <code>arn:aws:connect:us-east-1:270923740243:instance/78fb859d-1b7d-44b1-8aa3-12f0835c5855/queue/1d1a4575-9618-40ab-bbeb-81e45795fe61</code>. \n   The queue ID is also included in the URL, and is the string after 'queue/'.</p>\n      ",
+            "required": true,
+            "shape_name": "Filters"
+          },
+          "Groupings": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <para>The grouping applied to the metrics returned. For example, when grouped by QUEUE, the\n   metrics returned apply to each queue rather than aggregated for all queues. If you group by\n   CHANNEL, you should include a Channels filter. The only supported channel is VOICE.</para>\n         <para>If no <code>Grouping</code> is included in the request, a summary of\n    <code>CurrentMetrics</code> is returned. </para>\n      ",
+            "documentation": "\n         <p>The grouping applied to the metrics returned. For example, when grouped by QUEUE, the\n   metrics returned apply to each queue rather than aggregated for all queues. If you group by\n   CHANNEL, you should include a Channels filter. The only supported channel is VOICE.</p>\n         <p>If no <code>Grouping</code> is included in the request, a summary of\n    <code>CurrentMetrics</code> is returned. </p>\n      ",
+            "shape_name": "Groupings",
+            "max_length": 2,
+            "members": {
+              "type": "string",
+              "enum": [
+                "QUEUE",
+                "CHANNEL"
+              ],
+              "shape_name": "Grouping",
+              "documentation": null
+            }
+          },
+          "CurrentMetrics": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <para>A list of <code>CurrentMetric</code> objects for the metrics to retrieve. Each\n    <code>CurrentMetric</code> includes a name of a metric to retrieve and the unit to use for\n   it.</para>\n         <para>The following metrics are available:</para>\n         <variablelist>\n            <varlistentry>\n               <term>AGENTS_AVAILABLE</term>\n               <listitem>\n                  <para>Unit: COUNT</para>\n               </listitem>\n            </varlistentry>\n            <varlistentry>\n               <term>AGENTS_ONLINE</term>\n               <listitem>\n                  <para>Unit: COUNT</para>\n               </listitem>\n            </varlistentry>\n            <varlistentry>\n               <term>AGENTS_ON_CALL</term>\n               <listitem>\n                  <para>Unit: COUNT</para>\n               </listitem>\n            </varlistentry>\n            <varlistentry>\n               <term>AGENTS_STAFFED</term>\n               <listitem>\n                  <para>Unit: COUNT</para>\n               </listitem>\n            </varlistentry>\n            <varlistentry>\n               <term>AGENTS_AFTER_CONTACT_WORK</term>\n               <listitem>\n                  <para>Unit: COUNT</para>\n               </listitem>\n            </varlistentry>\n            <varlistentry>\n               <term>AGENTS_NON_PRODUCTIVE</term>\n               <listitem>\n                  <para>Unit: COUNT</para>\n               </listitem>\n            </varlistentry>\n            <varlistentry>\n               <term>AGENTS_ERROR</term>\n               <listitem>\n                  <para>Unit: COUNT</para>\n               </listitem>\n            </varlistentry>\n            <varlistentry>\n               <term>CONTACTS_IN_QUEUE</term>\n               <listitem>\n                  <para>Unit: COUNT</para>\n               </listitem>\n            </varlistentry>\n            <varlistentry>\n               <term>OLDEST_CONTACT_AGE</term>\n               <listitem>\n                  <para>Unit: SECONDS</para>\n               </listitem>\n            </varlistentry>\n            <varlistentry>\n               <term>CONTACTS_SCHEDULED</term>\n               <listitem>\n                  <para>Unit: COUNT</para>\n               </listitem>\n            </varlistentry>\n         </variablelist>\n\n      ",
+            "documentation": "\n         <p>A list of <code>CurrentMetric</code> objects for the metrics to retrieve. Each\n    <code>CurrentMetric</code> includes a name of a metric to retrieve and the unit to use for\n   it.</p>\n         <p>The following metrics are available:</p>\n         <dl>\n            <dt>AGENTS_AVAILABLE</dt>\n            <dd>\n               <p>Unit: COUNT</p>\n            </dd>\n            <dt>AGENTS_ONLINE</dt>\n            <dd>\n               <p>Unit: COUNT</p>\n            </dd>\n            <dt>AGENTS_ON_CALL</dt>\n            <dd>\n               <p>Unit: COUNT</p>\n            </dd>\n            <dt>AGENTS_STAFFED</dt>\n            <dd>\n               <p>Unit: COUNT</p>\n            </dd>\n            <dt>AGENTS_AFTER_CONTACT_WORK</dt>\n            <dd>\n               <p>Unit: COUNT</p>\n            </dd>\n            <dt>AGENTS_NON_PRODUCTIVE</dt>\n            <dd>\n               <p>Unit: COUNT</p>\n            </dd>\n            <dt>AGENTS_ERROR</dt>\n            <dd>\n               <p>Unit: COUNT</p>\n            </dd>\n            <dt>CONTACTS_IN_QUEUE</dt>\n            <dd>\n               <p>Unit: COUNT</p>\n            </dd>\n            <dt>OLDEST_CONTACT_AGE</dt>\n            <dd>\n               <p>Unit: SECONDS</p>\n            </dd>\n            <dt>CONTACTS_SCHEDULED</dt>\n            <dd>\n               <p>Unit: COUNT</p>\n            </dd>\n         </dl>\n\n      ",
+            "required": true,
+            "shape_name": "CurrentMetrics",
+            "members": {
+              "type": "structure",
+              "members": {
+                "Name": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <para>The name of the metric.</para>\n      ",
+                  "documentation": "\n         <p>The name of the metric.</p>\n      ",
+                  "enum": [
+                    "AGENTS_ONLINE",
+                    "AGENTS_AVAILABLE",
+                    "AGENTS_ON_CALL",
+                    "AGENTS_NON_PRODUCTIVE",
+                    "AGENTS_AFTER_CONTACT_WORK",
+                    "AGENTS_ERROR",
+                    "AGENTS_STAFFED",
+                    "CONTACTS_IN_QUEUE",
+                    "OLDEST_CONTACT_AGE",
+                    "CONTACTS_SCHEDULED"
+                  ],
+                  "shape_name": "CurrentMetricName"
+                },
+                "Unit": {
+                  "type": "string",
+                  "enum": [
+                    "SECONDS",
+                    "COUNT",
+                    "PERCENT"
+                  ],
+                  "zonbookDocumentation": "\n         <para>The unit for the metric.</para>\n      ",
+                  "documentation": "\n         <p>The unit for the metric.</p>\n      ",
+                  "shape_name": "Unit"
+                }
+              },
+              "zonbookDocumentation": "\n         <para>A <code>CurrentMetric</code> object that contains the Name and Unit for the metric.</para>\n      ",
+              "documentation": "\n         <p>A <code>CurrentMetric</code> object that contains the Name and Unit for the metric.</p>\n      ",
+              "shape_name": "CurrentMetric"
+            }
+          },
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>The token for the next set of results. Use the value returned in the previous \nresponse in the next request to retrieve the next set of results.</para>\n         <para>The token expires after 5 minutes from the time it is created. Subsequent requests that use\n   the <ulink url=\"\">NextToken</ulink> must use the same request parameters as the request that\n   generated the token.</para>\n      ",
+            "documentation": "\n         <p>The token for the next set of results. Use the value returned in the previous \nresponse in the next request to retrieve the next set of results.</p>\n         <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use\n   the <a href=\"\">NextToken</a> must use the same request parameters as the request that\n   generated the token.</p>\n      ",
+            "shape_name": "NextToken"
+          },
+          "MaxResults": {
+            "type": "integer",
+            "zonbookDocumentation": "\n         <para>\n            <code>MaxResults</code> indicates the maximum number of results to return per page in the\n   response, between 1 and 100.</para>\n      ",
+            "documentation": "\n         <p>\n            <code>MaxResults</code> indicates the maximum number of results to return per page in the\n   response, between 1 and 100.</p>\n      ",
+            "box": true,
+            "shape_name": "MaxResult100",
+            "min_length": 1,
+            "max_length": 100
+          }
+        },
+        "shape_name": "GetCurrentMetricDataRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>A string returned in the response. Use the value returned in the response as \nthe value of the NextToken in a subsequent request to retrieve the next set of results.</para>\n\n         <para>The token expires after 5 minutes from the time it is created. Subsequent requests that use\n   the NextToken must use the same request parameters as the request that generated the token.\n  </para>\n      ",
+            "documentation": "\n         <p>A string returned in the response. Use the value returned in the response as \nthe value of the NextToken in a subsequent request to retrieve the next set of results.</p>\n\n         <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use\n   the NextToken must use the same request parameters as the request that generated the token.\n  </p>\n      ",
+            "shape_name": "NextToken"
+          },
+          "MetricResults": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <para>A list of <code>CurrentMetricResult</code> objects organized by <code>Dimensions</code>\n   combining with <code>CurrentMetricDataCollections</code>.</para>\n         <para>\n            <code>Dimensions</code> is the resourceId specified in the <code>Filters</code> of the\n   request. </para>\n         <para>\n            <code>Collections</code> is a list of <code>CurrentMetricData</code> objects with\n   corresponding values to the <code>CurrentMetrics</code> specified in the request.</para>\n         <para>If no <code>Grouping</code> is specified in the request, <code>Collections</code> is a\n   summary for the <code>CurrentMetric</code> returned.</para>\n      ",
+            "documentation": "\n         <p>A list of <code>CurrentMetricResult</code> objects organized by <code>Dimensions</code>\n   combining with <code>CurrentMetricDataCollections</code>.</p>\n         <p>\n            <code>Dimensions</code> is the resourceId specified in the <code>Filters</code> of the\n   request. </p>\n         <p>\n            <code>Collections</code> is a list of <code>CurrentMetricData</code> objects with\n   corresponding values to the <code>CurrentMetrics</code> specified in the request.</p>\n         <p>If no <code>Grouping</code> is specified in the request, <code>Collections</code> is a\n   summary for the <code>CurrentMetric</code> returned.</p>\n      ",
+            "shape_name": "CurrentMetricResults",
+            "members": {
+              "type": "structure",
+              "members": {
+                "Dimensions": {
+                  "type": "structure",
+                  "members": {
+                    "Queue": {
+                      "type": "structure",
+                      "members": {
+                        "Id": {
+                          "type": "string",
+                          "zonbookDocumentation": "\n         <para>The ID of the queue associated with the metrics returned.</para>\n      ",
+                          "documentation": "\n         <p>The ID of the queue associated with the metrics returned.</p>\n      ",
+                          "shape_name": "QueueId"
+                        },
+                        "Arn": {
+                          "type": "string",
+                          "zonbookDocumentation": "\n         <para>The Amazon Resource Name (ARN) of queue.</para>\n      ",
+                          "documentation": "\n         <p>The Amazon Resource Name (ARN) of queue.</p>\n      ",
+                          "shape_name": "ARN"
+                        }
+                      },
+                      "zonbookDocumentation": "\n         <para>A <code>QueueReference</code> object used as one part of dimension for the metrics results.</para>\n      ",
+                      "documentation": "\n         <p>A <code>QueueReference</code> object used as one part of dimension for the metrics results.</p>\n      ",
+                      "shape_name": "QueueReference"
+                    },
+                    "Channel": {
+                      "type": "string",
+                      "enum": [
+                        "VOICE"
+                      ],
+                      "zonbookDocumentation": "\n         <para>The channel used for grouping and filters. Only VOICE is supported.</para>\n      ",
+                      "documentation": "\n         <p>The channel used for grouping and filters. Only VOICE is supported.</p>\n      ",
+                      "shape_name": "Channel"
+                    }
+                  },
+                  "zonbookDocumentation": "\n         <para>The <code>Dimensions</code> for the <code>CurrentMetricResult</code> object.</para>\n      ",
+                  "documentation": "\n         <p>The <code>Dimensions</code> for the <code>CurrentMetricResult</code> object.</p>\n      ",
+                  "shape_name": "Dimensions"
+                },
+                "Collections": {
+                  "type": "list",
+                  "zonbookDocumentation": "\n         <para>The <code>Collections</code> for the <code>CurrentMetricResult</code> object.</para>\n      ",
+                  "documentation": "\n         <p>The <code>Collections</code> for the <code>CurrentMetricResult</code> object.</p>\n      ",
+                  "shape_name": "CurrentMetricDataCollections",
+                  "members": {
+                    "type": "structure",
+                    "members": {
+                      "Metric": {
+                        "type": "structure",
+                        "members": {
+                          "Name": {
+                            "type": "string",
+                            "zonbookDocumentation": "\n         <para>The name of the metric.</para>\n      ",
+                            "documentation": "\n         <p>The name of the metric.</p>\n      ",
+                            "enum": [
+                              "AGENTS_ONLINE",
+                              "AGENTS_AVAILABLE",
+                              "AGENTS_ON_CALL",
+                              "AGENTS_NON_PRODUCTIVE",
+                              "AGENTS_AFTER_CONTACT_WORK",
+                              "AGENTS_ERROR",
+                              "AGENTS_STAFFED",
+                              "CONTACTS_IN_QUEUE",
+                              "OLDEST_CONTACT_AGE",
+                              "CONTACTS_SCHEDULED"
+                            ],
+                            "shape_name": "CurrentMetricName"
+                          },
+                          "Unit": {
+                            "type": "string",
+                            "enum": [
+                              "SECONDS",
+                              "COUNT",
+                              "PERCENT"
+                            ],
+                            "zonbookDocumentation": "\n         <para>The unit for the metric.</para>\n      ",
+                            "documentation": "\n         <p>The unit for the metric.</p>\n      ",
+                            "shape_name": "Unit"
+                          }
+                        },
+                        "zonbookDocumentation": "\n         <para>The metric in a <code>CurrentMetricData</code> object.</para>\n      ",
+                        "documentation": "\n         <p>The metric in a <code>CurrentMetricData</code> object.</p>\n      ",
+                        "shape_name": "CurrentMetric"
+                      },
+                      "Value": {
+                        "type": "double",
+                        "zonbookDocumentation": "\n         <para>The value of the metric in the CurrentMetricData object.</para>\n      ",
+                        "documentation": "\n         <p>The value of the metric in the CurrentMetricData object.</p>\n      ",
+                        "box": true,
+                        "shape_name": "Value"
+                      }
+                    },
+                    "zonbookDocumentation": "\n         <para>A <code>CurrentMetricData</code> object.</para>\n      ",
+                    "documentation": "\n         <p>A <code>CurrentMetricData</code> object.</p>\n      ",
+                    "shape_name": "CurrentMetricData"
+                  }
+                }
+              },
+              "zonbookDocumentation": "\n         <para>A <code>CurrentMetricResult</code> object.</para>\n      ",
+              "documentation": "\n         <p>A <code>CurrentMetricResult</code> object.</p>\n      ",
+              "shape_name": "CurrentMetricResult"
+            }
+          },
+          "DataSnapshotTime": {
+            "type": "timestamp",
+            "zonbookDocumentation": "\n\n         <para>The time at which <code>CurrentMetricData</code> was retrieved and cached for\n   pagination.</para>\n      ",
+            "documentation": "\n\n         <p>The time at which <code>CurrentMetricData</code> was retrieved and cached for\n   pagination.</p>\n      ",
+            "shape_name": "timestamp"
+          }
+        },
+        "shape_name": "GetCurrentMetricDataResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <para>The message.</para>\n      ",
+              "documentation": "\n         <p>The message.</p>\n      ",
+              "shape_name": "Message"
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The request is not valid.</para>\n      ",
+          "documentation": "\n         <p>The request is not valid.</p>\n      ",
+          "shape_name": "InvalidRequestException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <para>The message.</para>\n      ",
+              "documentation": "\n         <p>The message.</p>\n      ",
+              "shape_name": "Message"
+            }
+          },
+          "zonbookDocumentation": "\n         <para>One or more of the parameters provided to the operation are not valid.</para>\n      ",
+          "documentation": "\n         <p>One or more of the parameters provided to the operation are not valid.</p>\n      ",
+          "shape_name": "InvalidParameterException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <para>The message.</para>\n      ",
+              "documentation": "\n         <p>The message.</p>\n      ",
+              "shape_name": "Message"
+            }
+          },
+          "zonbookDocumentation": "\n         <para>Request processing failed due to an error or failure with the service.</para>\n      ",
+          "documentation": "\n         <p>Request processing failed due to an error or failure with the service.</p>\n      ",
+          "shape_name": "InternalServiceException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "Message",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The throttling limit has been exceeded.</para>\n      ",
+          "documentation": "\n         <p>The throttling limit has been exceeded.</p>\n      ",
+          "shape_name": "ThrottlingException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <para>The message.</para>\n      ",
+              "documentation": "\n         <p>The message.</p>\n      ",
+              "shape_name": "Message"
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The specified resource was not found.</para>\n      ",
+          "documentation": "\n         <p>The specified resource was not found.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        }
+      ],
+      "documentation": "\n         <p>The <code>GetCurrentMetricData</code> operation retrieves current metric data from your\n   Amazon Connect instance.</p>\n         <p>If you are using an IAM account, it must have permission to the\n    <code>connect:GetCurrentMetricData</code> action.</p>\n  \n      "
+    },
+    "GetMetricData": {
+      "name": "GetMetricData",
+      "http": {
+        "method": "POST",
+        "uri": "/metrics/historical/{InstanceId}"
+      },
+      "input": {
+        "type": "structure",
+        "members": {
+          "InstanceId": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</para>\n      ",
+            "documentation": "\n         <p>The identifier for your Amazon Connect instance. To find the ID of your \n   instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column.\n   The instance ID is displayed in the Overview section of your instance settings. For example, the\n   instance ID is the set of characters at the end of the instance ARN, after instance/, such as\n   10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>\n      ",
+            "required": true,
+            "location": "uri",
+            "shape_name": "InstanceId",
+            "min_length": 1,
+            "max_length": 100
+          },
+          "StartTime": {
+            "type": "timestamp",
+            "zonbookDocumentation": "\n\n         <para>The timestamp, in UNIX Epoch time format, at which to start the reporting interval for the\n   retrieval of historical metrics data. The time must be specified using a multiple of 5 minutes,\n   such as 10:05, 10:10, 10:15.</para>\n         <para>\n            <code>StartTime</code> cannot be earlier than 24 hours before the time of the request.\n   Historical metrics are available in Amazon Connect only for 24 hours.</para>\n      ",
+            "documentation": "\n\n         <p>The timestamp, in UNIX Epoch time format, at which to start the reporting interval for the\n   retrieval of historical metrics data. The time must be specified using a multiple of 5 minutes,\n   such as 10:05, 10:10, 10:15.</p>\n         <p>\n            <code>StartTime</code> cannot be earlier than 24 hours before the time of the request.\n   Historical metrics are available in Amazon Connect only for 24 hours.</p>\n      ",
+            "required": true,
+            "shape_name": "timestamp"
+          },
+          "EndTime": {
+            "type": "timestamp",
+            "zonbookDocumentation": "\n\n         <para>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the\n   retrieval of historical metrics data. The time must be specified using an interval of 5 minutes, such as 11:00, 11:05, 11:10, \n   and must be later than the <code>StartTime</code> timestamp.</para>\n         <para>The time range between <code>StartTime</code> and <code>EndTime</code> must be less than 24\n   hours.</para>\n      ",
+            "documentation": "\n\n         <p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the\n   retrieval of historical metrics data. The time must be specified using an interval of 5 minutes, such as 11:00, 11:05, 11:10, \n   and must be later than the <code>StartTime</code> timestamp.</p>\n         <p>The time range between <code>StartTime</code> and <code>EndTime</code> must be less than 24\n   hours.</p>\n      ",
+            "required": true,
+            "shape_name": "timestamp"
+          },
+          "Filters": {
+            "type": "structure",
+            "members": {
+              "Queues": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <para>A list of up to 100 queue IDs or queue ARNs to use to filter the metrics retrieved. You can include both IDs and ARNs in a request.</para>\n      ",
+                "documentation": "\n         <p>A list of up to 100 queue IDs or queue ARNs to use to filter the metrics retrieved. You can include both IDs and ARNs in a request.</p>\n      ",
+                "shape_name": "Queues",
+                "min_length": 1,
+                "max_length": 100,
+                "members": {
+                  "type": "string",
+                  "shape_name": "QueueId",
+                  "documentation": null
+                }
+              },
+              "Channels": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <para>The Channel to use as a filter for the metrics returned. Only VOICE is supported.</para>\n      ",
+                "documentation": "\n         <p>The Channel to use as a filter for the metrics returned. Only VOICE is supported.</p>\n      ",
+                "shape_name": "Channels",
+                "max_length": 1,
+                "members": {
+                  "type": "string",
+                  "enum": [
+                    "VOICE"
+                  ],
+                  "shape_name": "Channel",
+                  "documentation": null
+                }
+              }
+            },
+            "zonbookDocumentation": "\n         <para>A <code>Filters</code> object that contains a list of queue IDs or queue ARNs, up to 100, or a list of Channels to use to filter the metrics\n   returned in the response. Metric data is retrieved only for the resources associated with the IDs, ARNs, or Channels\n   included in the filter. You can use both IDs and ARNs together in a request. Only VOICE is supported for Channel.</para>\n         <para>To find the ARN for a queue, open the queue you want to use in the Amazon Connect Queue editor. The ARN for\n   the queue is displayed in the address bar as part of the URL. For example, the queue ARN is\n   the set of characters at the end of the URL, after 'id=' such as\n   <code>arn:aws:connect:us-east-1:270923740243:instance/78fb859d-1b7d-44b1-8aa3-12f0835c5855/queue/1d1a4575-9618-40ab-bbeb-81e45795fe61</code>. \n   The queue ID is also included in the URL, and is the string after 'queue/'.</para>\n      ",
+            "documentation": "\n         <p>A <code>Filters</code> object that contains a list of queue IDs or queue ARNs, up to 100, or a list of Channels to use to filter the metrics\n   returned in the response. Metric data is retrieved only for the resources associated with the IDs, ARNs, or Channels\n   included in the filter. You can use both IDs and ARNs together in a request. Only VOICE is supported for Channel.</p>\n         <p>To find the ARN for a queue, open the queue you want to use in the Amazon Connect Queue editor. The ARN for\n   the queue is displayed in the address bar as part of the URL. For example, the queue ARN is\n   the set of characters at the end of the URL, after 'id=' such as\n   <code>arn:aws:connect:us-east-1:270923740243:instance/78fb859d-1b7d-44b1-8aa3-12f0835c5855/queue/1d1a4575-9618-40ab-bbeb-81e45795fe61</code>. \n   The queue ID is also included in the URL, and is the string after 'queue/'.</p>\n      ",
+            "required": true,
+            "shape_name": "Filters"
+          },
+          "Groupings": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <para>The grouping applied to the metrics returned. For example, when results are grouped by\n   queueId, the metrics returned are grouped by queue. The values returned apply to the metrics for\n   each queue rather than aggregated for all queues.</para>\n         <para>The current version supports grouping by Queue</para>\n         <para>If no <code>Grouping</code> is included in the request, a summary of\n    <code>HistoricalMetrics</code> for all queues is returned.</para>\n      ",
+            "documentation": "\n         <p>The grouping applied to the metrics returned. For example, when results are grouped by\n   queueId, the metrics returned are grouped by queue. The values returned apply to the metrics for\n   each queue rather than aggregated for all queues.</p>\n         <p>The current version supports grouping by Queue</p>\n         <p>If no <code>Grouping</code> is included in the request, a summary of\n    <code>HistoricalMetrics</code> for all queues is returned.</p>\n      ",
+            "shape_name": "Groupings",
+            "max_length": 2,
+            "members": {
+              "type": "string",
+              "enum": [
+                "QUEUE",
+                "CHANNEL"
+              ],
+              "shape_name": "Grouping",
+              "documentation": null
+            }
+          },
+          "HistoricalMetrics": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <para>A list of <code>HistoricalMetric</code> objects that contain the metrics to retrieve with\n   the request.</para>\n         <para>A <code>HistoricalMetric</code> object contains: <code>HistoricalMetricName</code>,\n    <code>Statistic</code>, <code>Threshold</code>, and <code>Unit</code>.</para>\n  \n         <para>For each historical metric you include in the request, you must include a <code>Unit</code>\n   and a <code>Statistic</code>. </para>\n         <para>The following historical metrics are available:</para>\n         <variablelist>\n            <varlistentry>\n               <term>CONTACTS_QUEUED</term>\n               <listitem>\n                  <para>Unit: COUNT</para>\n                  <para>Statistic: SUM</para>\n               </listitem>\n            </varlistentry>\n\n            <varlistentry>\n               <term>CONTACTS_HANDLED</term>\n               <listitem>\n                  <para>Unit: COUNT</para>\n                  <para>Statistics: SUM</para>\n               </listitem>\n            </varlistentry>\n\n            <varlistentry>\n               <term>CONTACTS_ABANDONED</term>\n               <listitem>\n                  <para>Unit: COUNT</para>\n                  <para>Statistics: SUM</para>\n               </listitem>\n            </varlistentry>\n\n            <varlistentry>\n               <term>CONTACTS_CONSULTED</term>\n               <listitem>\n                  <para>Unit: COUNT</para>\n                  <para>Statistics: SUM</para>\n               </listitem>\n            </varlistentry>\n\n            <varlistentry>\n               <term>CONTACTS_AGENT_HUNG_UP_FIRST</term>\n               <listitem>\n                  <para>Unit: COUNT</para>\n                  <para>Statistics: SUM</para>\n               </listitem>\n            </varlistentry>\n\n            <varlistentry>\n               <term>CONTACTS_HANDLED_INCOMING</term>\n               <listitem>\n                  <para>Unit: COUNT</para>\n                  <para>Statistics: SUM</para>\n               </listitem>\n            </varlistentry>\n\n            <varlistentry>\n               <term>CONTACTS_HANDLED_OUTBOUND</term>\n               <listitem>\n                  <para>Unit: COUNT</para>\n                  <para>Statistics: SUM</para>\n               </listitem>\n            </varlistentry>\n\n            <varlistentry>\n               <term>CONTACTS_HOLD_ABANDONS</term>\n               <listitem>\n                  <para>Unit: COUNT</para>\n                  <para>Statistics: SUM</para>\n               </listitem>\n            </varlistentry>\n\n            <varlistentry>\n               <term>CONTACTS_TRANSFERRED_IN</term>\n               <listitem>\n                  <para>Unit: COUNT</para>\n                  <para>Statistics: SUM</para>\n               </listitem>\n            </varlistentry>\n\n            <varlistentry>\n               <term>CONTACTS_TRANSFERRED_OUT</term>\n               <listitem>\n                  <para>Unit: COUNT</para>\n                  <para>Statistics: SUM</para>\n               </listitem>\n            </varlistentry>\n\n            <varlistentry>\n               <term>CONTACTS_TRANSFERRED_IN_FROM_QUEUE</term>\n               <listitem>\n                  <para>Unit: COUNT</para>\n                  <para>Statistics: SUM</para>\n               </listitem>\n            </varlistentry>\n\n            <varlistentry>\n               <term>CONTACTS_TRANSFERRED_OUT_FROM_QUEUE</term>\n               <listitem>\n                  <para>Unit: COUNT</para>\n                  <para>Statistics: SUM</para>\n               </listitem>\n            </varlistentry>\n\n            <varlistentry>\n               <term>CALLBACK_CONTACTS_HANDLED</term>\n               <listitem>\n                  <para>Unit: COUNT</para>\n                  <para>Statistics: SUM</para>\n               </listitem>\n            </varlistentry>\n\n            <varlistentry>\n               <term>CALLBACK_CONTACTS_HANDLED</term>\n               <listitem>\n                  <para>Unit: COUNT</para>\n                  <para>Statistics: SUM</para>\n               </listitem>\n            </varlistentry>\n\n            <varlistentry>\n               <term>API_CONTACTS_HANDLED</term>\n               <listitem>\n                  <para>Unit: COUNT</para>\n                  <para>Statistics: SUM</para>\n               </listitem>\n            </varlistentry>\n\n            <varlistentry>\n               <term>CONTACTS_MISSED</term>\n               <listitem>\n                  <para>Unit: COUNT</para>\n                  <para>Statistics: SUM</para>\n               </listitem>\n            </varlistentry>\n\n            <varlistentry>\n               <term>OCCUPANCY</term>\n               <listitem>\n                  <para>Unit: PERCENT</para>\n                  <para>Statistics: AVG</para>\n               </listitem>\n            </varlistentry>\n\n            <varlistentry>\n               <term>HANDLE_TIME</term>\n               <listitem>\n                  <para>Unit: SECONDS</para>\n                  <para>Statistics: AVG</para>\n               </listitem>\n            </varlistentry>\n\n            <varlistentry>\n               <term>AFTER_CONTACT_WORK_TIME</term>\n               <listitem>\n                  <para>Unit: SECONDS</para>\n                  <para>Statistics: AVG</para>\n               </listitem>\n            </varlistentry>\n\n            <varlistentry>\n               <term>QUEUED_TIME</term>\n               <listitem>\n                  <para>Unit: SECONDS</para>\n                  <para>Statistics: MAX</para>\n               </listitem>\n            </varlistentry>\n\n            <varlistentry>\n               <term>ABANDON_TIME</term>\n               <listitem>\n                  <para>Unit: COUNT</para>\n                  <para>Statistics: SUM</para>\n               </listitem>\n            </varlistentry>\n\n            <varlistentry>\n               <term>QUEUE_ANSWER_TIME</term>\n               <listitem>\n                  <para>Unit: SECONDS</para>\n                  <para>Statistics: AVG</para>\n               </listitem>\n            </varlistentry>\n\n            <varlistentry>\n               <term>HOLD_TIME</term>\n               <listitem>\n                  <para>Unit: SECONDS</para>\n                  <para>Statistics: AVG</para>\n               </listitem>\n            </varlistentry>\n\n            <varlistentry>\n               <term>INTERACTION_TIME</term>\n               <listitem>\n                  <para>Unit: SECONDS</para>\n                  <para>Statistics: AVG</para>\n               </listitem>\n            </varlistentry>\n\n            <varlistentry>\n               <term>INTERACTION_AND_HOLD_TIME</term>\n               <listitem>\n                  <para>Unit: SECONDS</para>\n                  <para>Statistics: AVG</para>\n               </listitem>\n            </varlistentry>\n\n            <varlistentry>\n               <term>SERVICE_LEVEL</term>\n               <listitem>\n                  <para>Unit: PERCENT</para>\n                  <para>Statistics: AVG</para>\n                  <para>Threshold: Only \"Less than\" comparisons are supported, with the following service level\n      thresholds: 15, 20, 25, 30, 45, 60, 90, 120, 180, 240, 300, 600</para>\n               </listitem>\n            </varlistentry>\n         </variablelist>\n\n      ",
+            "documentation": "\n         <p>A list of <code>HistoricalMetric</code> objects that contain the metrics to retrieve with\n   the request.</p>\n         <p>A <code>HistoricalMetric</code> object contains: <code>HistoricalMetricName</code>,\n    <code>Statistic</code>, <code>Threshold</code>, and <code>Unit</code>.</p>\n  \n         <p>For each historical metric you include in the request, you must include a <code>Unit</code>\n   and a <code>Statistic</code>. </p>\n         <p>The following historical metrics are available:</p>\n         <dl>\n            <dt>CONTACTS_QUEUED</dt>\n            <dd>\n               <p>Unit: COUNT</p>\n               <p>Statistic: SUM</p>\n            </dd>\n            <dt>CONTACTS_HANDLED</dt>\n            <dd>\n               <p>Unit: COUNT</p>\n               <p>Statistics: SUM</p>\n            </dd>\n            <dt>CONTACTS_ABANDONED</dt>\n            <dd>\n               <p>Unit: COUNT</p>\n               <p>Statistics: SUM</p>\n            </dd>\n            <dt>CONTACTS_CONSULTED</dt>\n            <dd>\n               <p>Unit: COUNT</p>\n               <p>Statistics: SUM</p>\n            </dd>\n            <dt>CONTACTS_AGENT_HUNG_UP_FIRST</dt>\n            <dd>\n               <p>Unit: COUNT</p>\n               <p>Statistics: SUM</p>\n            </dd>\n            <dt>CONTACTS_HANDLED_INCOMING</dt>\n            <dd>\n               <p>Unit: COUNT</p>\n               <p>Statistics: SUM</p>\n            </dd>\n            <dt>CONTACTS_HANDLED_OUTBOUND</dt>\n            <dd>\n               <p>Unit: COUNT</p>\n               <p>Statistics: SUM</p>\n            </dd>\n            <dt>CONTACTS_HOLD_ABANDONS</dt>\n            <dd>\n               <p>Unit: COUNT</p>\n               <p>Statistics: SUM</p>\n            </dd>\n            <dt>CONTACTS_TRANSFERRED_IN</dt>\n            <dd>\n               <p>Unit: COUNT</p>\n               <p>Statistics: SUM</p>\n            </dd>\n            <dt>CONTACTS_TRANSFERRED_OUT</dt>\n            <dd>\n               <p>Unit: COUNT</p>\n               <p>Statistics: SUM</p>\n            </dd>\n            <dt>CONTACTS_TRANSFERRED_IN_FROM_QUEUE</dt>\n            <dd>\n               <p>Unit: COUNT</p>\n               <p>Statistics: SUM</p>\n            </dd>\n            <dt>CONTACTS_TRANSFERRED_OUT_FROM_QUEUE</dt>\n            <dd>\n               <p>Unit: COUNT</p>\n               <p>Statistics: SUM</p>\n            </dd>\n            <dt>CALLBACK_CONTACTS_HANDLED</dt>\n            <dd>\n               <p>Unit: COUNT</p>\n               <p>Statistics: SUM</p>\n            </dd>\n            <dt>CALLBACK_CONTACTS_HANDLED</dt>\n            <dd>\n               <p>Unit: COUNT</p>\n               <p>Statistics: SUM</p>\n            </dd>\n            <dt>API_CONTACTS_HANDLED</dt>\n            <dd>\n               <p>Unit: COUNT</p>\n               <p>Statistics: SUM</p>\n            </dd>\n            <dt>CONTACTS_MISSED</dt>\n            <dd>\n               <p>Unit: COUNT</p>\n               <p>Statistics: SUM</p>\n            </dd>\n            <dt>OCCUPANCY</dt>\n            <dd>\n               <p>Unit: PERCENT</p>\n               <p>Statistics: AVG</p>\n            </dd>\n            <dt>HANDLE_TIME</dt>\n            <dd>\n               <p>Unit: SECONDS</p>\n               <p>Statistics: AVG</p>\n            </dd>\n            <dt>AFTER_CONTACT_WORK_TIME</dt>\n            <dd>\n               <p>Unit: SECONDS</p>\n               <p>Statistics: AVG</p>\n            </dd>\n            <dt>QUEUED_TIME</dt>\n            <dd>\n               <p>Unit: SECONDS</p>\n               <p>Statistics: MAX</p>\n            </dd>\n            <dt>ABANDON_TIME</dt>\n            <dd>\n               <p>Unit: COUNT</p>\n               <p>Statistics: SUM</p>\n            </dd>\n            <dt>QUEUE_ANSWER_TIME</dt>\n            <dd>\n               <p>Unit: SECONDS</p>\n               <p>Statistics: AVG</p>\n            </dd>\n            <dt>HOLD_TIME</dt>\n            <dd>\n               <p>Unit: SECONDS</p>\n               <p>Statistics: AVG</p>\n            </dd>\n            <dt>INTERACTION_TIME</dt>\n            <dd>\n               <p>Unit: SECONDS</p>\n               <p>Statistics: AVG</p>\n            </dd>\n            <dt>INTERACTION_AND_HOLD_TIME</dt>\n            <dd>\n               <p>Unit: SECONDS</p>\n               <p>Statistics: AVG</p>\n            </dd>\n            <dt>SERVICE_LEVEL</dt>\n            <dd>\n               <p>Unit: PERCENT</p>\n               <p>Statistics: AVG</p>\n               <p>Threshold: Only \"Less than\" comparisons are supported, with the following service level\n      thresholds: 15, 20, 25, 30, 45, 60, 90, 120, 180, 240, 300, 600</p>\n            </dd>\n         </dl>\n\n      ",
+            "required": true,
+            "shape_name": "HistoricalMetrics",
+            "members": {
+              "type": "structure",
+              "members": {
+                "Name": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <para>The name of the historical metric.</para>\n      ",
+                  "documentation": "\n         <p>The name of the historical metric.</p>\n      ",
+                  "enum": [
+                    "CONTACTS_QUEUED",
+                    "CONTACTS_HANDLED",
+                    "CONTACTS_ABANDONED",
+                    "CONTACTS_CONSULTED",
+                    "CONTACTS_AGENT_HUNG_UP_FIRST",
+                    "CONTACTS_HANDLED_INCOMING",
+                    "CONTACTS_HANDLED_OUTBOUND",
+                    "CONTACTS_HOLD_ABANDONS",
+                    "CONTACTS_TRANSFERRED_IN",
+                    "CONTACTS_TRANSFERRED_OUT",
+                    "CONTACTS_TRANSFERRED_IN_FROM_QUEUE",
+                    "CONTACTS_TRANSFERRED_OUT_FROM_QUEUE",
+                    "CONTACTS_MISSED",
+                    "CALLBACK_CONTACTS_HANDLED",
+                    "API_CONTACTS_HANDLED",
+                    "OCCUPANCY",
+                    "HANDLE_TIME",
+                    "AFTER_CONTACT_WORK_TIME",
+                    "QUEUED_TIME",
+                    "ABANDON_TIME",
+                    "QUEUE_ANSWER_TIME",
+                    "HOLD_TIME",
+                    "INTERACTION_TIME",
+                    "INTERACTION_AND_HOLD_TIME",
+                    "SERVICE_LEVEL"
+                  ],
+                  "shape_name": "HistoricalMetricName"
+                },
+                "Threshold": {
+                  "type": "structure",
+                  "members": {
+                    "Comparison": {
+                      "type": "string",
+                      "enum": [
+                        "LT"
+                      ],
+                      "zonbookDocumentation": "\n         <para>The Threshold to use to compare service level metrics to. Only \"Less than\" (LT) comparisons\n   are supported.</para>\n      ",
+                      "documentation": "\n         <p>The Threshold to use to compare service level metrics to. Only \"Less than\" (LT) comparisons\n   are supported.</p>\n      ",
+                      "shape_name": "Comparison"
+                    },
+                    "ThresholdValue": {
+                      "type": "double",
+                      "zonbookDocumentation": "\n         <para>The value of the threshold to compare the metric to. Only \"Less than\" (LT) comparisons are\n   supported.</para>\n      ",
+                      "documentation": "\n         <p>The value of the threshold to compare the metric to. Only \"Less than\" (LT) comparisons are\n   supported.</p>\n      ",
+                      "box": true,
+                      "shape_name": "ThresholdValue"
+                    }
+                  },
+                  "zonbookDocumentation": "\n         <para>The threshold for the metric, used with service level metrics.</para>\n      ",
+                  "documentation": "\n         <p>The threshold for the metric, used with service level metrics.</p>\n      ",
+                  "box": true,
+                  "shape_name": "Threshold"
+                },
+                "Statistic": {
+                  "type": "string",
+                  "enum": [
+                    "SUM",
+                    "MAX",
+                    "AVG"
+                  ],
+                  "zonbookDocumentation": "\n         <para>The statistic for the metric: SUM, MAX, or SUM.</para>\n      ",
+                  "documentation": "\n         <p>The statistic for the metric: SUM, MAX, or SUM.</p>\n      ",
+                  "shape_name": "Statistic"
+                },
+                "Unit": {
+                  "type": "string",
+                  "enum": [
+                    "SECONDS",
+                    "COUNT",
+                    "PERCENT"
+                  ],
+                  "zonbookDocumentation": "\n         <para>The unit for the metric: COUNT, PERCENT, or SECONDS.</para>\n      ",
+                  "documentation": "\n         <p>The unit for the metric: COUNT, PERCENT, or SECONDS.</p>\n      ",
+                  "shape_name": "Unit"
+                }
+              },
+              "zonbookDocumentation": "\n         <para>A <code>HistoricalMetric</code> object that contains the Name, Unit, Statistic, and\n   Threshold for the metric.</para>\n      ",
+              "documentation": "\n         <p>A <code>HistoricalMetric</code> object that contains the Name, Unit, Statistic, and\n   Threshold for the metric.</p>\n      ",
+              "shape_name": "HistoricalMetric"
+            }
+          },
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>The token for the next set of results. Use the value returned in the previous \nresponse in the next request to retrieve the next set of results.</para>\n      ",
+            "documentation": "\n         <p>The token for the next set of results. Use the value returned in the previous \nresponse in the next request to retrieve the next set of results.</p>\n      ",
+            "shape_name": "NextToken"
+          },
+          "MaxResults": {
+            "type": "integer",
+            "zonbookDocumentation": "\n         <para>Indicates the maximum number of results to return per page in the response, between 1-100.</para>\n      ",
+            "documentation": "\n         <p>Indicates the maximum number of results to return per page in the response, between 1-100.</p>\n      ",
+            "box": true,
+            "shape_name": "MaxResult100",
+            "min_length": 1,
+            "max_length": 100
+          }
+        },
+        "shape_name": "GetMetricDataRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>A string returned in the response. Use the value returned in the response as \nthe value of the NextToken in a subsequent request to retrieve the next set of results.</para>\n         <para>The token expires after 5 minutes from the time it is created. Subsequent requests that use\n   the NextToken must use the same request parameters as the request that generated the token.\n  </para>\n      ",
+            "documentation": "\n         <p>A string returned in the response. Use the value returned in the response as \nthe value of the NextToken in a subsequent request to retrieve the next set of results.</p>\n         <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use\n   the NextToken must use the same request parameters as the request that generated the token.\n  </p>\n      ",
+            "shape_name": "NextToken"
+          },
+          "MetricResults": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <para>A list of <code>HistoricalMetricResult</code> objects, organized by <code>Dimensions</code>,\n   which is the ID of the resource specified in the <code>Filters</code> used for the request. The\n   metrics are combined with the metrics included in <code>Collections</code>, which is a list of\n    <code>HisotricalMetricData</code> objects.</para>\n\n         <para>If no <code>Grouping</code> is specified in the request, <code>Collections</code> includes\n   summary data for the <code>HistoricalMetrics</code>.</para>\n      ",
+            "documentation": "\n         <p>A list of <code>HistoricalMetricResult</code> objects, organized by <code>Dimensions</code>,\n   which is the ID of the resource specified in the <code>Filters</code> used for the request. The\n   metrics are combined with the metrics included in <code>Collections</code>, which is a list of\n    <code>HisotricalMetricData</code> objects.</p>\n\n         <p>If no <code>Grouping</code> is specified in the request, <code>Collections</code> includes\n   summary data for the <code>HistoricalMetrics</code>.</p>\n      ",
+            "shape_name": "HistoricalMetricResults",
+            "members": {
+              "type": "structure",
+              "members": {
+                "Dimensions": {
+                  "type": "structure",
+                  "members": {
+                    "Queue": {
+                      "type": "structure",
+                      "members": {
+                        "Id": {
+                          "type": "string",
+                          "zonbookDocumentation": "\n         <para>The ID of the queue associated with the metrics returned.</para>\n      ",
+                          "documentation": "\n         <p>The ID of the queue associated with the metrics returned.</p>\n      ",
+                          "shape_name": "QueueId"
+                        },
+                        "Arn": {
+                          "type": "string",
+                          "zonbookDocumentation": "\n         <para>The Amazon Resource Name (ARN) of queue.</para>\n      ",
+                          "documentation": "\n         <p>The Amazon Resource Name (ARN) of queue.</p>\n      ",
+                          "shape_name": "ARN"
+                        }
+                      },
+                      "zonbookDocumentation": "\n         <para>A <code>QueueReference</code> object used as one part of dimension for the metrics results.</para>\n      ",
+                      "documentation": "\n         <p>A <code>QueueReference</code> object used as one part of dimension for the metrics results.</p>\n      ",
+                      "shape_name": "QueueReference"
+                    },
+                    "Channel": {
+                      "type": "string",
+                      "enum": [
+                        "VOICE"
+                      ],
+                      "zonbookDocumentation": "\n         <para>The channel used for grouping and filters. Only VOICE is supported.</para>\n      ",
+                      "documentation": "\n         <p>The channel used for grouping and filters. Only VOICE is supported.</p>\n      ",
+                      "shape_name": "Channel"
+                    }
+                  },
+                  "zonbookDocumentation": "\n         <para>The <code>Dimensions</code> for the metrics.</para>\n      ",
+                  "documentation": "\n         <p>The <code>Dimensions</code> for the metrics.</p>\n      ",
+                  "shape_name": "Dimensions"
+                },
+                "Collections": {
+                  "type": "list",
+                  "zonbookDocumentation": "\n         <para>A list of <code>HistoricalMetricData</code> objects.</para>\n      ",
+                  "documentation": "\n         <p>A list of <code>HistoricalMetricData</code> objects.</p>\n      ",
+                  "shape_name": "HistoricalMetricDataCollections",
+                  "members": {
+                    "type": "structure",
+                    "members": {
+                      "Metric": {
+                        "type": "structure",
+                        "members": {
+                          "Name": {
+                            "type": "string",
+                            "zonbookDocumentation": "\n         <para>The name of the historical metric.</para>\n      ",
+                            "documentation": "\n         <p>The name of the historical metric.</p>\n      ",
+                            "enum": [
+                              "CONTACTS_QUEUED",
+                              "CONTACTS_HANDLED",
+                              "CONTACTS_ABANDONED",
+                              "CONTACTS_CONSULTED",
+                              "CONTACTS_AGENT_HUNG_UP_FIRST",
+                              "CONTACTS_HANDLED_INCOMING",
+                              "CONTACTS_HANDLED_OUTBOUND",
+                              "CONTACTS_HOLD_ABANDONS",
+                              "CONTACTS_TRANSFERRED_IN",
+                              "CONTACTS_TRANSFERRED_OUT",
+                              "CONTACTS_TRANSFERRED_IN_FROM_QUEUE",
+                              "CONTACTS_TRANSFERRED_OUT_FROM_QUEUE",
+                              "CONTACTS_MISSED",
+                              "CALLBACK_CONTACTS_HANDLED",
+                              "API_CONTACTS_HANDLED",
+                              "OCCUPANCY",
+                              "HANDLE_TIME",
+                              "AFTER_CONTACT_WORK_TIME",
+                              "QUEUED_TIME",
+                              "ABANDON_TIME",
+                              "QUEUE_ANSWER_TIME",
+                              "HOLD_TIME",
+                              "INTERACTION_TIME",
+                              "INTERACTION_AND_HOLD_TIME",
+                              "SERVICE_LEVEL"
+                            ],
+                            "shape_name": "HistoricalMetricName"
+                          },
+                          "Threshold": {
+                            "type": "structure",
+                            "members": {
+                              "Comparison": {
+                                "type": "string",
+                                "enum": [
+                                  "LT"
+                                ],
+                                "zonbookDocumentation": "\n         <para>The Threshold to use to compare service level metrics to. Only \"Less than\" (LT) comparisons\n   are supported.</para>\n      ",
+                                "documentation": "\n         <p>The Threshold to use to compare service level metrics to. Only \"Less than\" (LT) comparisons\n   are supported.</p>\n      ",
+                                "shape_name": "Comparison"
+                              },
+                              "ThresholdValue": {
+                                "type": "double",
+                                "zonbookDocumentation": "\n         <para>The value of the threshold to compare the metric to. Only \"Less than\" (LT) comparisons are\n   supported.</para>\n      ",
+                                "documentation": "\n         <p>The value of the threshold to compare the metric to. Only \"Less than\" (LT) comparisons are\n   supported.</p>\n      ",
+                                "box": true,
+                                "shape_name": "ThresholdValue"
+                              }
+                            },
+                            "zonbookDocumentation": "\n         <para>The threshold for the metric, used with service level metrics.</para>\n      ",
+                            "documentation": "\n         <p>The threshold for the metric, used with service level metrics.</p>\n      ",
+                            "box": true,
+                            "shape_name": "Threshold"
+                          },
+                          "Statistic": {
+                            "type": "string",
+                            "enum": [
+                              "SUM",
+                              "MAX",
+                              "AVG"
+                            ],
+                            "zonbookDocumentation": "\n         <para>The statistic for the metric: SUM, MAX, or SUM.</para>\n      ",
+                            "documentation": "\n         <p>The statistic for the metric: SUM, MAX, or SUM.</p>\n      ",
+                            "shape_name": "Statistic"
+                          },
+                          "Unit": {
+                            "type": "string",
+                            "enum": [
+                              "SECONDS",
+                              "COUNT",
+                              "PERCENT"
+                            ],
+                            "zonbookDocumentation": "\n         <para>The unit for the metric: COUNT, PERCENT, or SECONDS.</para>\n      ",
+                            "documentation": "\n         <p>The unit for the metric: COUNT, PERCENT, or SECONDS.</p>\n      ",
+                            "shape_name": "Unit"
+                          }
+                        },
+                        "zonbookDocumentation": "\n         <para>A <code>HistoricalMetric</code> object.</para>\n      ",
+                        "documentation": "\n         <p>A <code>HistoricalMetric</code> object.</p>\n      ",
+                        "shape_name": "HistoricalMetric"
+                      },
+                      "Value": {
+                        "type": "double",
+                        "zonbookDocumentation": "\n         <para>The <code>Value</code> of the metric.</para>\n      ",
+                        "documentation": "\n         <p>The <code>Value</code> of the metric.</p>\n      ",
+                        "box": true,
+                        "shape_name": "Value"
+                      }
+                    },
+                    "zonbookDocumentation": "\n         <para>A <code>HistoricalMetricData</code> object than contains a <code>Metric</code> and a\n   <code>Value</code>.</para>\n      ",
+                    "documentation": "\n         <p>A <code>HistoricalMetricData</code> object than contains a <code>Metric</code> and a\n   <code>Value</code>.</p>\n      ",
+                    "shape_name": "HistoricalMetricData"
+                  }
+                }
+              },
+              "zonbookDocumentation": "\n         <para>The metrics data returned from a <code>GetMetricData</code> operation.</para>\n      ",
+              "documentation": "\n         <p>The metrics data returned from a <code>GetMetricData</code> operation.</p>\n      ",
+              "shape_name": "HistoricalMetricResult"
+            }
+          }
+        },
+        "shape_name": "GetMetricDataResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <para>The message.</para>\n      ",
+              "documentation": "\n         <p>The message.</p>\n      ",
+              "shape_name": "Message"
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The request is not valid.</para>\n      ",
+          "documentation": "\n         <p>The request is not valid.</p>\n      ",
+          "shape_name": "InvalidRequestException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <para>The message.</para>\n      ",
+              "documentation": "\n         <p>The message.</p>\n      ",
+              "shape_name": "Message"
+            }
+          },
+          "zonbookDocumentation": "\n         <para>One or more of the parameters provided to the operation are not valid.</para>\n      ",
+          "documentation": "\n         <p>One or more of the parameters provided to the operation are not valid.</p>\n      ",
+          "shape_name": "InvalidParameterException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <para>The message.</para>\n      ",
+              "documentation": "\n         <p>The message.</p>\n      ",
+              "shape_name": "Message"
+            }
+          },
+          "zonbookDocumentation": "\n         <para>Request processing failed due to an error or failure with the service.</para>\n      ",
+          "documentation": "\n         <p>Request processing failed due to an error or failure with the service.</p>\n      ",
+          "shape_name": "InternalServiceException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "Message",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The throttling limit has been exceeded.</para>\n      ",
+          "documentation": "\n         <p>The throttling limit has been exceeded.</p>\n      ",
+          "shape_name": "ThrottlingException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <para>The message.</para>\n      ",
+              "documentation": "\n         <p>The message.</p>\n      ",
+              "shape_name": "Message"
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The specified resource was not found.</para>\n      ",
+          "documentation": "\n         <p>The specified resource was not found.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        }
+      ],
+      "documentation": "\n         <p>The <code>GetMetricData</code> operation retrieves historical metrics data from your Amazon Connect\n   instance.</p>\n         <p>If you are using an IAM account, it must have permission to the\n    <code>connect:GetMetricData</code> action.</p>\n  \n      "
     }
   }
 }

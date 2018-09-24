@@ -34,11 +34,6 @@ namespace Amazon.Connect.Model
     /// 
     ///  
     /// <para>
-    /// There is a throttling limit placed on usage of the API that includes a RateLimit of
-    /// 2 per second, and a BurstLimit of 5 per second.
-    /// </para>
-    ///  
-    /// <para>
     /// If you are using an IAM account, it must have permission to the <code>connect:StartOutboundVoiceContact</code>
     /// action.
     /// </para>

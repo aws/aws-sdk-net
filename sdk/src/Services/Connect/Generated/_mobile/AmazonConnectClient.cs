@@ -40,6 +40,12 @@ namespace Amazon.Connect
     /// for each of the Amazon Connect actions, data types, parameters, and errors. Amazon
     /// Connect is a cloud-based contact center solution that makes it easy to set up and
     /// manage a customer contact center and provide reliable customer engagement at any scale.
+    /// 
+    ///  
+    /// <para>
+    /// There is a throttling limit placed on usage of the Amazon Connect operations that
+    /// includes a RateLimit of 2 per second, and a BurstLimit of 5 per second.
+    /// </para>
     /// </summary>
     public partial class AmazonConnectClient : AmazonServiceClient, IAmazonConnect
     {
@@ -393,6 +399,38 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  GetCurrentMetricData
+
+        internal virtual GetCurrentMetricDataResponse GetCurrentMetricData(GetCurrentMetricDataRequest request)
+        {
+            var marshaller = GetCurrentMetricDataRequestMarshaller.Instance;
+            var unmarshaller = GetCurrentMetricDataResponseUnmarshaller.Instance;
+
+            return Invoke<GetCurrentMetricDataRequest,GetCurrentMetricDataResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCurrentMetricData operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCurrentMetricData operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetCurrentMetricData">REST API Reference for GetCurrentMetricData Operation</seealso>
+        public virtual Task<GetCurrentMetricDataResponse> GetCurrentMetricDataAsync(GetCurrentMetricDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetCurrentMetricDataRequestMarshaller.Instance;
+            var unmarshaller = GetCurrentMetricDataResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCurrentMetricDataRequest,GetCurrentMetricDataResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetFederationToken
 
         internal virtual GetFederationTokenResponse GetFederationToken(GetFederationTokenRequest request)
@@ -420,6 +458,38 @@ namespace Amazon.Connect
             var unmarshaller = GetFederationTokenResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetFederationTokenRequest,GetFederationTokenResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetMetricData
+
+        internal virtual GetMetricDataResponse GetMetricData(GetMetricDataRequest request)
+        {
+            var marshaller = GetMetricDataRequestMarshaller.Instance;
+            var unmarshaller = GetMetricDataResponseUnmarshaller.Instance;
+
+            return Invoke<GetMetricDataRequest,GetMetricDataResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMetricData operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMetricData operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetMetricData">REST API Reference for GetMetricData Operation</seealso>
+        public virtual Task<GetMetricDataResponse> GetMetricDataAsync(GetMetricDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetMetricDataRequestMarshaller.Instance;
+            var unmarshaller = GetMetricDataResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetMetricDataRequest,GetMetricDataResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

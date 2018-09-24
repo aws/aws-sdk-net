@@ -209,7 +209,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Username. 
         /// <para>
-        /// The user name in Amazon Connect for the user to create.
+        /// The user name in Amazon Connect for the account to create.
         /// </para>
         /// </summary>
         public string Username

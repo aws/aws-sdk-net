@@ -40,6 +40,12 @@ namespace Amazon.Connect
     /// for each of the Amazon Connect actions, data types, parameters, and errors. Amazon
     /// Connect is a cloud-based contact center solution that makes it easy to set up and
     /// manage a customer contact center and provide reliable customer engagement at any scale.
+    /// 
+    ///  
+    /// <para>
+    /// There is a throttling limit placed on usage of the Amazon Connect operations that
+    /// includes a RateLimit of 2 per second, and a BurstLimit of 5 per second.
+    /// </para>
     /// </summary>
     public partial class AmazonConnectClient : AmazonServiceClient, IAmazonConnect
     {
@@ -238,7 +244,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the CreateUser service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
-        /// A resource with that name already exisits.
+        /// A resource with that name already exists.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed due to an error or failure with the service.
@@ -507,6 +513,67 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  GetCurrentMetricData
+
+
+        /// <summary>
+        /// The <code>GetCurrentMetricData</code> operation retrieves current metric data from
+        /// your Amazon Connect instance.
+        /// 
+        ///  
+        /// <para>
+        /// If you are using an IAM account, it must have permission to the <code>connect:GetCurrentMetricData</code>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCurrentMetricData service method.</param>
+        /// 
+        /// <returns>The response from the GetCurrentMetricData service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetCurrentMetricData">REST API Reference for GetCurrentMetricData Operation</seealso>
+        public virtual GetCurrentMetricDataResponse GetCurrentMetricData(GetCurrentMetricDataRequest request)
+        {
+            var marshaller = GetCurrentMetricDataRequestMarshaller.Instance;
+            var unmarshaller = GetCurrentMetricDataResponseUnmarshaller.Instance;
+
+            return Invoke<GetCurrentMetricDataRequest,GetCurrentMetricDataResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCurrentMetricData operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCurrentMetricData operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetCurrentMetricData">REST API Reference for GetCurrentMetricData Operation</seealso>
+        public virtual Task<GetCurrentMetricDataResponse> GetCurrentMetricDataAsync(GetCurrentMetricDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetCurrentMetricDataRequestMarshaller.Instance;
+            var unmarshaller = GetCurrentMetricDataResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCurrentMetricDataRequest,GetCurrentMetricDataResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetFederationToken
 
 
@@ -517,7 +584,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the GetFederationToken service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
-        /// A resource with that name already exisits.
+        /// A resource with that name already exists.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed due to an error or failure with the service.
@@ -559,6 +626,67 @@ namespace Amazon.Connect
             var unmarshaller = GetFederationTokenResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetFederationTokenRequest,GetFederationTokenResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetMetricData
+
+
+        /// <summary>
+        /// The <code>GetMetricData</code> operation retrieves historical metrics data from your
+        /// Amazon Connect instance.
+        /// 
+        ///  
+        /// <para>
+        /// If you are using an IAM account, it must have permission to the <code>connect:GetMetricData</code>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMetricData service method.</param>
+        /// 
+        /// <returns>The response from the GetMetricData service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetMetricData">REST API Reference for GetMetricData Operation</seealso>
+        public virtual GetMetricDataResponse GetMetricData(GetMetricDataRequest request)
+        {
+            var marshaller = GetMetricDataRequestMarshaller.Instance;
+            var unmarshaller = GetMetricDataResponseUnmarshaller.Instance;
+
+            return Invoke<GetMetricDataRequest,GetMetricDataResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMetricData operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMetricData operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetMetricData">REST API Reference for GetMetricData Operation</seealso>
+        public virtual Task<GetMetricDataResponse> GetMetricDataAsync(GetMetricDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetMetricDataRequestMarshaller.Instance;
+            var unmarshaller = GetMetricDataResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetMetricDataRequest,GetMetricDataResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -794,11 +922,6 @@ namespace Amazon.Connect
         /// 
         ///  
         /// <para>
-        /// There is a throttling limit placed on usage of the API that includes a RateLimit of
-        /// 2 per second, and a BurstLimit of 5 per second.
-        /// </para>
-        ///  
-        /// <para>
         /// If you are using an IAM account, it must have permission to the <code>connect:StartOutboundVoiceContact</code>
         /// action.
         /// </para>
@@ -922,18 +1045,32 @@ namespace Amazon.Connect
 
         /// <summary>
         /// The <code>UpdateContactAttributes</code> operation lets you programmatically create
-        /// new or update existing contact attributes associated with a contact. You can use the
-        /// operation to add or update attributes for both ongoing and completed contacts. For
-        /// example, you can update the customer's name or the reason the customer called while
-        /// the call is active, or add notes about steps that the agent took during the call that
-        /// are displayed to the next agent that takes the call. You can also use the <code>UpdateContactAttributes</code>
-        /// operation to update attributes for a contact using data from your CRM application
-        /// and save the data with the contact in Amazon Connect. You could also flag calls for
-        /// additional analysis, or flag abusive callers.
+        /// new, or update existing, contact attributes associated with a contact. You can use
+        /// the operation to add or update attributes for both ongoing and completed contacts.
+        /// For example, you can update the customer's name or the reason the customer called
+        /// while the call is active, or add notes about steps that the agent took during the
+        /// call that are displayed to the next agent that takes the call. You can also use the
+        /// <code>UpdateContactAttributes</code> operation to update attributes for a contact
+        /// using data from your CRM application and save the data with the contact in Amazon
+        /// Connect. You could also flag calls for additional analysis, such as legal review or
+        /// identifying abusive callers.
         /// 
         ///  
         /// <para>
         /// Contact attributes are available in Amazon Connect for 24 months, and are then deleted.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <i>Important:</i> 
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot use the operation to update attributes for contacts that occurred prior
+        /// to the release of the API, September 12, 2018. You can update attributes only for
+        /// contacts that started after the release of the API. If you attempt to update attributes
+        /// for a contact that occurred prior to the release of the API, a 400 error is returned.
+        /// This applies also to queued callbacks that were initiated prior to the release of
+        /// the API but are still active in your instance.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateContactAttributes service method.</param>
@@ -1203,7 +1340,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Update the security profiles assigned to the user.
+        /// Updates the security profiles assigned to the user.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateUserSecurityProfiles service method.</param>
         /// 

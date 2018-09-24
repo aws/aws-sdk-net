@@ -29,7 +29,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateUserSecurityProfiles operation.
-    /// Update the security profiles assigned to the user.
+    /// Updates the security profiles assigned to the user.
     /// </summary>
     public partial class UpdateUserSecurityProfilesRequest : AmazonConnectRequest
     {
