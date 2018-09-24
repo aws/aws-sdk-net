@@ -15194,31 +15194,34 @@
                       },
                       "IsRequired": {
                         "type": "boolean",
-                        "internalonly": true,
-                        "shape_name": "Boolean",
-                        "documentation": null
+                        "zonbookDocumentation": "\n        <simpara>Boolean value where true indicates that a value must be specified for this option setting of the option group option.</simpara>\n      ",
+                        "documentation": "\n        <p>Boolean value where true indicates that a value must be specified for this option setting of the option group option.</p>\n      ",
+                        "shape_name": "Boolean"
                       },
                       "MinimumEngineVersionPerAllowedValue": {
                         "type": "list",
-                        "internalonly": true,
+                        "zonbookDocumentation": "\n        <simpara>The minimum DB engine version required for the corresponding allowed value for this option setting.</simpara>\n      ",
+                        "documentation": "\n        <p>The minimum DB engine version required for the corresponding allowed value for this option setting.</p>\n      ",
                         "shape_name": "MinimumEngineVersionPerAllowedValueList",
-                        "documentation": null,
                         "members": {
                           "type": "structure",
                           "members": {
                             "AllowedValue": {
                               "type": "string",
-                              "shape_name": "String",
-                              "documentation": null
+                              "zonbookDocumentation": "\n         <para>The allowed value for an option setting.</para>\n      ",
+                              "documentation": "\n         <p>The allowed value for an option setting.</p>\n      ",
+                              "shape_name": "String"
                             },
                             "MinimumEngineVersion": {
                               "type": "string",
-                              "shape_name": "String",
-                              "documentation": null
+                              "zonbookDocumentation": "\n         <para>The minimum DB engine version required for the allowed value.</para>\n      ",
+                              "documentation": "\n         <p>The minimum DB engine version required for the allowed value.</p>\n      ",
+                              "shape_name": "String"
                             }
                           },
+                          "zonbookDocumentation": "\n         <para>The minimum DB engine version required for each corresponding allowed value for an option setting.</para>\n      ",
+                          "documentation": "\n         <p>The minimum DB engine version required for each corresponding allowed value for an option setting.</p>\n      ",
                           "shape_name": "MinimumEngineVersionPerAllowedValue",
-                          "documentation": null,
                           "xmlname": "MinimumEngineVersionPerAllowedValue"
                         }
                       }

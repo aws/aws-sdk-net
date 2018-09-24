@@ -78,6 +78,19 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.IsModifiable = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("IsRequired", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.IsRequired = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("MinimumEngineVersionPerAllowedValue/MinimumEngineVersionPerAllowedValue", targetDepth))
+                    {
+                        var unmarshaller = MinimumEngineVersionPerAllowedValueUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.MinimumEngineVersionPerAllowedValue.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("SettingDescription", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

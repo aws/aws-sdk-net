@@ -38,6 +38,8 @@ namespace Amazon.RDS.Model
         private string _applyType;
         private string _defaultValue;
         private bool? _isModifiable;
+        private bool? _isRequired;
+        private List<MinimumEngineVersionPerAllowedValue> _minimumEngineVersionPerAllowedValue = new List<MinimumEngineVersionPerAllowedValue>();
         private string _settingDescription;
         private string _settingName;
 
@@ -112,6 +114,44 @@ namespace Amazon.RDS.Model
         internal bool IsSetIsModifiable()
         {
             return this._isModifiable.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsRequired. 
+        /// <para>
+        /// Boolean value where true indicates that a value must be specified for this option
+        /// setting of the option group option.
+        /// </para>
+        /// </summary>
+        public bool IsRequired
+        {
+            get { return this._isRequired.GetValueOrDefault(); }
+            set { this._isRequired = value; }
+        }
+
+        // Check to see if IsRequired property is set
+        internal bool IsSetIsRequired()
+        {
+            return this._isRequired.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MinimumEngineVersionPerAllowedValue. 
+        /// <para>
+        /// The minimum DB engine version required for the corresponding allowed value for this
+        /// option setting.
+        /// </para>
+        /// </summary>
+        public List<MinimumEngineVersionPerAllowedValue> MinimumEngineVersionPerAllowedValue
+        {
+            get { return this._minimumEngineVersionPerAllowedValue; }
+            set { this._minimumEngineVersionPerAllowedValue = value; }
+        }
+
+        // Check to see if MinimumEngineVersionPerAllowedValue property is set
+        internal bool IsSetMinimumEngineVersionPerAllowedValue()
+        {
+            return this._minimumEngineVersionPerAllowedValue != null && this._minimumEngineVersionPerAllowedValue.Count > 0; 
         }
 
         /// <summary>
