@@ -40,7 +40,7 @@ namespace AWSSDK_DotNet35.UnitTests
                 @"MsnnA3H4SQJI4Pe9AXjJwARrbFegGmCLoMmun2FxbOZqo2zb1ltBMOx7HtXBF5lQVkdukQsam4B6g3Mm9ec_&Key-Pair-Id=amazingKeyPairId";
 
             string signedURL = AmazonCloudFrontUrlSigner.SignUrlCanned("http://awesome.dot.com/amazing/uri/",
-                "amazingKeyPairId", privateRSAKeyStreamReader, new DateTime(2017, 4, 14));
+                "amazingKeyPairId", privateRSAKeyStreamReader, new DateTime(2017, 4, 14, 7, 0, 0, DateTimeKind.Utc));
 
             Assert.AreEqual(expectedSignedURL, signedURL);
         }
