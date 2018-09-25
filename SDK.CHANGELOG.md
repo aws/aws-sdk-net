@@ -1,3 +1,11 @@
+### 3.3.368.0 (2018-09-25 20:16 UTC)
+* CloudFront (3.3.10.3)
+	* Documentation updates for cloudfront
+* DirectoryService (3.3.7.0)
+	* API changes related to launch of cross account for Directory Service.
+* EC2 (3.3.63.0)
+	* Add pagination support for ec2.describe-route-tables API. 
+
 ### 3.3.367.0 (2018-09-24 21:20 UTC)
 * Connect (3.3.3.0)
 	* This update adds the Amazon Connect Metrics API, which lets you get current metric data and historical metric data within 24 hours for the queues in your Amazon Connect instance.
