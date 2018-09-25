@@ -31,8 +31,8 @@ namespace Amazon.Runtime
         /// in the context of ECS container and, especially, AWS_CONTAINER_CREDENTIALS_RELATIVE_URI
         /// environment variable should not be overriden by the client code.
         /// </summary>
-        public const string ContainerCredentialsURIEnvVariable = "AWS_CONTAINER_CREDENTIALS_RELATIVE_URI";
-        public static readonly string EndpointAddress = "http://169.254.170.2";
+        public const string ContainerCredentialsURIEnvVariable = "AWS_CONTAINER_CREDENTIALS_RELATIVE_URI";        
+        public const string EndpointAddress = "http://169.254.170.2";
 
         private string Uri = null;
         private string Server = null;

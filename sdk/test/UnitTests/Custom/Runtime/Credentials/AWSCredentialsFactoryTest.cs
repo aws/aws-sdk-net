@@ -232,10 +232,7 @@ namespace AWSSDK.UnitTests
             {
                 UserIdentity = "user_identity"
             });
-
-        private static readonly ECSTaskCredentials ContainerCredentials =
-            new ECSTaskCredentials(null);            
-
+                
         [TestMethod]
         public void TryGetInvalidCredentials()
         {
