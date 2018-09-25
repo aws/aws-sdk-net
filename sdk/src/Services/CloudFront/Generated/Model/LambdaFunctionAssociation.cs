@@ -94,8 +94,9 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property IncludeBody. 
         /// <para>
         /// A flag that allows a Lambda function to have read access to the body content. For
-        /// more information, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/">Accessing
-        /// Body Content</a> in the Amazon CloudFront Developer Guide.
+        /// more information, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html">Accessing
+        /// the Request Body by Choosing the Include Body Option</a> in the Amazon CloudFront
+        /// Developer Guide.
         /// </para>
         /// </summary>
         public bool IncludeBody

@@ -29,8 +29,26 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDistribution operation.
-    /// Creates a new web distribution. Send a <code>POST</code> request to the <code>/<i>CloudFront
+    /// Creates a new web distribution. You create a CloudFront distribution to tell CloudFront
+    /// where you want content to be delivered from, and the details about how to track and
+    /// manage content delivery. Send a <code>POST</code> request to the <code>/<i>CloudFront
     /// API version</i>/distribution</code>/<code>distribution ID</code> resource.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// When you update a distribution, there are more required fields than when you create
+    /// a distribution. When you update your distribution by using <a>UpdateDistribution</a>,
+    /// follow the steps included in the documentation to get the current configuration and
+    /// then make your updates. This helps to make sure that you include all of the required
+    /// fields. To view a summary, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-overview-required-fields.html">Required
+    /// Fields for Create Distribution and Update Distribution</a> in the <i>Amazon CloudFront
+    /// Developer Guide</i>.
+    /// </para>
+    ///  </important> 
+    /// <para>
+    /// If you are using Adobe Flash Media Server's RTMP protocol, you set up a different
+    /// kind of CloudFront distribution. For more information, see <a>CreateStreamingDistribution</a>.
+    /// </para>
     /// </summary>
     public partial class CreateDistributionRequest : AmazonCloudFrontRequest
     {
