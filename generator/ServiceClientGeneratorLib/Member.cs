@@ -23,6 +23,8 @@ namespace ServiceClientGenerator
 
         private const string UnhandledTypeDecimalErrorMessage = "Unhandled type 'decimal' : using .net's decimal type for modeled decimal type may result in loss of data.  decimal type members should explicitly opt-in via shape customization.";
 
+        private const string BackwardsCompatibleDateTimePropertySuffix = "Utc";
+
         private readonly string _name;
         private string _newType;
         readonly string _defaultMarshallName;
@@ -79,9 +81,37 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
-        /// The name of the member with the first character lower and begins with an underscore: _nameHere
+        /// The name of the member with the first character lower and begins with an underscore: _nameHere.
+        /// It includes the backward compatibility suffix if required.
         /// </summary>
         public string VariableName
+        {
+            get
+            {
+                if (IsBackwardsCompatibleDateTimeProperty)
+                    return BaseVariableName + BackwardsCompatibleDateTimePropertySuffix;
+                return BaseVariableName;
+            }
+        }
+
+        /// <summary>
+        /// The name of the property's backing to be used in backwards compatibility property names
+        /// </summary>
+        public string BackwardCompatibilityVariableName
+        {
+            get
+            {
+                if (IsBackwardsCompatibleDateTimeProperty)
+                    return BaseVariableName;
+                throw new Exception("Property " + BasePropertyName + " is not marked as requiring backward compatibility");
+            }
+        }
+
+        /// <summary>
+        /// The name of the member with the first character lower and begins with an underscore: _nameHere.
+        /// This doesn't include the backward compatibility suffix.
+        /// </summary>
+        private string BaseVariableName
         {
             get
             {
@@ -155,9 +185,38 @@ namespace ServiceClientGenerator
 
         /// <summary>
         /// The name of the member as the first character upper: NameHere
-        /// Uses the custom name instead if it exists
+        /// Uses the custom name instead if it exists.
+        /// It includes the backward compatibility suffix if required.
         /// </summary>
         public string PropertyName
+        {
+            get
+            {
+                if (IsBackwardsCompatibleDateTimeProperty)
+                    return BasePropertyName + BackwardsCompatibleDateTimePropertySuffix;
+                return BasePropertyName;
+            }
+        }
+
+        /// <summary>
+        /// The name of the member to be used in backwards compatibility property names
+        /// </summary>
+        public string BackwardCompatibilityPropertyName
+        {
+            get
+            {
+                if (IsBackwardsCompatibleDateTimeProperty)
+                    return BasePropertyName;
+                throw new Exception("Property " + BasePropertyName + " is not marked as requiring backward compatibility");
+            }
+        }
+
+        /// <summary>
+        /// The name of the member as the first character upper: NameHere
+        /// Uses the custom name instead if it exists.
+        /// This doesn't include the backwards compatibility suffix.
+        /// </summary>
+        public string BasePropertyName
         {
             get
             {
@@ -792,9 +851,13 @@ namespace ServiceClientGenerator
 
         public bool IsExcluded
         {
-            get { return this.model.Customizations.IsExcludedProperty(this.PropertyName, this.OwningShape.Name); }
+            get { return this.model.Customizations.IsExcludedProperty(this.BasePropertyName, this.OwningShape.Name); }
         }
 
+        public bool IsBackwardsCompatibleDateTimeProperty
+        {
+            get { return this.model.Customizations.IsBackwardsCompatibleDateTimeProperty(this.BasePropertyName, this.OwningShape.Name); }
+        }
 
         /// <summary>
         /// Determines if the member is a type that needs to be instantiated, such as a list or map
@@ -905,15 +968,6 @@ namespace ServiceClientGenerator
             {
                 if (this.IsDateTime)
                 {
-                    var isDefaultTimestampFormat =
-                        this.TimestampFormat == GetDefaultTimestampFormat(this.MarshallLocation, this.model.Type);
-
-                    if (this.TimestampFormat == TimestampFormat.ISO8601 && isDefaultTimestampFormat)
-                    {
-                        // For cases where the members is marshalled as ISO8601 by default (based on protocol/location),
-                        // use existing method in the SDK that does ISO8601 marshalling for backward compatibility.
-                        return "StringUtils.FromDateTime";
-                    }
                     return "StringUtils.FromDateTimeTo" + this.TimestampFormat;
                 }
                 else

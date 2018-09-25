@@ -183,9 +183,17 @@
     }
 
     // Adds documentation to the members of a structure
-    public void FormatPropertyDocumentation(Member member)
+    public void FormatPropertyDocumentation(Member member, string documentationPreface = "")
     {
-        var documentation = CleanupDocumentation(string.Format("Gets and sets the property {0}. {1}", member.PropertyName, member.Documentation));
+        if (documentationPreface != null && documentationPreface != "")
+        {
+            if (!documentationPreface.EndsWith("."))
+            {
+                documentationPreface += ".";
+            }
+            documentationPreface = "<p>" + documentationPreface  + "</p> ";
+        }
+        var documentation = CleanupDocumentation(string.Format("Gets and sets the property {0}. {1}{2}", member.PropertyName, documentationPreface, member.Documentation));
 
 #>
         /// <summary>

@@ -71,9 +71,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                     if (expiration != null)
                                     {
                                         xmlWriter.WriteStartElement("Expiration", "");
-                                        if (expiration.IsSetDate())
+                                        if (expiration.IsSetDateUtc())
                                         {
-                                            xmlWriter.WriteElementString("Date", "", S3Transforms.ToXmlStringValue(expiration.Date));
+                                            xmlWriter.WriteElementString("Date", "", S3Transforms.ToXmlStringValue(expiration.DateUtc));
                                         }
                                         if (expiration.IsSetDays())
                                         {
@@ -94,9 +94,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                             if (transition != null)
                                             {
                                                 xmlWriter.WriteStartElement("Transition", "");
-                                                if (transition.IsSetDate())
+                                                if (transition.IsSetDateUtc())
                                                 {
-                                                    xmlWriter.WriteElementString("Date", "", S3Transforms.ToXmlStringValue(transition.Date));
+                                                    xmlWriter.WriteElementString("Date", "", S3Transforms.ToXmlStringValue(transition.DateUtc));
                                                 }
                                                 if (transition.IsSetDays())
                                                 {

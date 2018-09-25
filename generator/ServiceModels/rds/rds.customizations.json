@@ -1,22 +1,50 @@
 {
-  "noArgOverloads": [
-    "DescribeDBEngineVersions",
-    "DescribeDBInstances",
-    "DescribeDBParameterGroups",
-    "DescribeDBSecurityGroups",
-    "DescribeDBSnapshots",
-    "DescribeDBSubnetGroups",
-    "DescribeEventCategories",
-    "DescribeEventSubscriptions",
-    "DescribeEvents",
-    "DescribeOptionGroups",
-    "DescribeReservedDBInstances",
-    "DescribeReservedDBInstancesOfferings",
-    "DescribeAccountAttributes"
-  ],
-  "runtimePipelineOverride": {
-    "overrides":[
-      {"operation":"addBefore", "newType":"Amazon.RDS.Internal.PreSignedUrlRequestHandler", "targetType":"Amazon.Runtime.Internal.Marshaller", "constructorInput": "this.Credentials"}
-    ]
-  }
+    "noArgOverloads": [
+        "DescribeDBEngineVersions",
+        "DescribeDBInstances",
+        "DescribeDBParameterGroups",
+        "DescribeDBSecurityGroups",
+        "DescribeDBSnapshots",
+        "DescribeDBSubnetGroups",
+        "DescribeEventCategories",
+        "DescribeEventSubscriptions",
+        "DescribeEvents",
+        "DescribeOptionGroups",
+        "DescribeReservedDBInstances",
+        "DescribeReservedDBInstancesOfferings",
+        "DescribeAccountAttributes"
+    ],
+    "runtimePipelineOverride": {
+        "overrides": [
+            {
+                "operation": "addBefore",
+                "newType": "Amazon.RDS.Internal.PreSignedUrlRequestHandler",
+                "targetType": "Amazon.Runtime.Internal.Marshaller",
+                "constructorInput": "this.Credentials"
+            }
+        ]
+    },
+    "shapeModifiers": {
+        "BacktrackDBClusterMessage": {
+            "backwardsCompatibleDateTimeProperties": [
+                "BacktrackTo"
+            ]
+        },
+        "DescribeEventsMessage": {
+            "backwardsCompatibleDateTimeProperties": [
+                "StartTime",
+                "EndTime"
+            ]
+        },
+        "RestoreDBClusterToPointInTimeMessage": {
+            "backwardsCompatibleDateTimeProperties": [
+                "RestoreToTime"
+            ]
+        },
+        "RestoreDBInstanceToPointInTimeMessage": {
+            "backwardsCompatibleDateTimeProperties": [
+                "RestoreTime"
+            ]
+        }
+    }
 }

@@ -43,7 +43,7 @@ namespace Amazon.SimpleEmail.Model
         private string _diagnosticCode;
         private List<ExtensionField> _extensionFields = new List<ExtensionField>();
         private string _finalRecipient;
-        private DateTime? _lastAttemptDate;
+        private DateTime? _lastAttemptDateUtc;
         private string _remoteMta;
         private string _status;
 
@@ -134,22 +134,22 @@ namespace Amazon.SimpleEmail.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastAttemptDate. 
+        /// Gets and sets the property LastAttemptDateUtc. 
         /// <para>
         /// The time the final delivery attempt was made, in <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC
         /// 822</a> date-time format.
         /// </para>
         /// </summary>
-        public DateTime LastAttemptDate
+        public DateTime LastAttemptDateUtc
         {
-            get { return this._lastAttemptDate.GetValueOrDefault(); }
-            set { this._lastAttemptDate = value; }
+            get { return this._lastAttemptDateUtc.GetValueOrDefault(); }
+            set { this._lastAttemptDate = this._lastAttemptDateUtc = value; }
         }
 
-        // Check to see if LastAttemptDate property is set
-        internal bool IsSetLastAttemptDate()
+        // Check to see if LastAttemptDateUtc property is set
+        internal bool IsSetLastAttemptDateUtc()
         {
-            return this._lastAttemptDate.HasValue; 
+            return this._lastAttemptDateUtc.HasValue; 
         }
 
         /// <summary>
@@ -192,5 +192,40 @@ namespace Amazon.SimpleEmail.Model
             return this._status != null;
         }
 
+#region Backwards compatible properties
+        private DateTime? _lastAttemptDate;
+
+        /// <summary>
+        /// Gets and sets the property LastAttemptDateUtc. 
+        /// <para>
+        /// This property is deprecated. Setting this property results in non-UTC DateTimes not
+        /// being marshalled correctly. Use LastAttemptDateUtc instead. Setting either LastAttemptDate
+        /// or LastAttemptDateUtc results in both LastAttemptDate and LastAttemptDateUtc being
+        /// assigned, the latest assignment to either one of the two property is reflected in
+        /// the value of both. LastAttemptDate is provided for backwards compatibility only and
+        /// assigning a non-Utc DateTime to it results in the wrong timestamp being passed to
+        /// the service.
+        /// </para>
+        ///  
+        /// <para>
+        /// The time the final delivery attempt was made, in <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC
+        /// 822</a> date-time format.
+        /// </para>
+        /// </summary>
+        [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
+            "Use LastAttemptDateUtc instead. Setting either LastAttemptDate or LastAttemptDateUtc results in both LastAttemptDate and " +
+            "LastAttemptDateUtc being assigned, the latest assignment to either one of the two property is " + 
+            "reflected in the value of both. LastAttemptDate is provided for backwards compatibility only and " +
+            "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
+        public DateTime LastAttemptDate
+        {
+            get { return this._lastAttemptDate.GetValueOrDefault(); }
+            set
+            {
+                this._lastAttemptDate = value;
+                this._lastAttemptDateUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+            }
+        }
+#endregion
     }
 }

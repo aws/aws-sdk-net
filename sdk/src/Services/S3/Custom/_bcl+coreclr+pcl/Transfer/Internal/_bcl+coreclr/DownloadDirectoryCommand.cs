@@ -151,12 +151,20 @@ namespace Amazon.S3.Transfer.Internal
 
         private bool ShouldDownload(S3Object s3o)
         {
+            // skip objects based on ModifiedSinceDateUtc
+            if (this._request.IsSetModifiedSinceDateUtc() && s3o.LastModified.ToUniversalTime() <= this._request.ModifiedSinceDateUtc.ToUniversalTime())
+                return false;
+            // skip objects based on UnmodifiedSinceDateUtc
+            if (this._request.IsSetUnmodifiedSinceDateUtc() && s3o.LastModified.ToUniversalTime() > this._request.UnmodifiedSinceDateUtc.ToUniversalTime())
+                return false;
+#pragma warning disable CS0618 //A class member was marked with the Obsolete attribute
             // skip objects based on ModifiedSinceDate
             if (this._request.IsSetModifiedSinceDate() && s3o.LastModified <= this._request.ModifiedSinceDate)
                 return false;
             // skip objects based on UnmodifiedSinceDate
             if (this._request.IsSetUnmodifiedSinceDate() && s3o.LastModified > this._request.UnmodifiedSinceDate)
                 return false;
+#pragma warning restore CS0618 //A class member was marked with the Obsolete attribute
             // skip objects which are instruction files and we're using encryption client
             if (IsInstructionFile(s3o.Key))
                 return false;

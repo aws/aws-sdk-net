@@ -148,10 +148,11 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                     ValidateListMember(item, member.Shape, marshalledListData);                        
                     if (member.Shape.ListShape.IsStructure)
                     {
-                        // It's a list of complex type                        
-                        foreach (var property in item.GetType().GetProperties(BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance))
+                        // It's a list of complex type       
+                        var properties = item.GetType().GetProperties(BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance);
+                        foreach (var childMember in member.Shape.ListShape.Members)
                         {
-                            var childMember = member.Shape.ListShape.Members.Single(m => m.PropertyName == property.Name);
+                            var property = properties.Single(p => childMember.PropertyName == p.Name);
                             var childValue = property.GetValue(item);
                             var childMarshalledData = GetMarshalledProperty(marshalledListData, childMember.MarshallName);
                             Visit(childValue, childMember, childMarshalledData);
@@ -177,9 +178,10 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                     {
                         // Map's value is of complex type
                         ValidateMapValue(mapValue, member, marshalledValue);
-                        foreach (var property in mapValue.GetType().GetProperties(BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance))
+                        var properties = mapValue.GetType().GetProperties(BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance);
+                        foreach(var childMember in member.Shape.ValueShape.Members)
                         {
-                            var childMember = member.Shape.ValueShape.Members.Single(m => m.PropertyName == property.Name);
+                            var property = properties.Single(p => childMember.PropertyName == p.Name);
                             var childValue = property.GetValue(mapValue);
                             var childMarshalledData = GetMarshalledProperty(marshalledValue, childMember.MarshallName);
                             Visit(childValue, childMember, childMarshalledData);
@@ -194,9 +196,10 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
             else
             {
                 // It's a complex type
-                foreach (var property in type.GetProperties(BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance))
+                var properties = type.GetProperties(BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance);
+                foreach (var childMember in member.Shape.Members)
                 {
-                    var childMember = member.Shape.Members.Single(m => m.PropertyName == property.Name);
+                    var property = properties.Single(p => childMember.PropertyName == p.Name);
                     var childValue = property.GetValue(value);
                     var childMarshalledData = GetMarshalledProperty(marshalledData, childMember.MarshallName);
                     Visit(childValue, childMember, childMarshalledData);

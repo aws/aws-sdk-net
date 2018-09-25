@@ -20,41 +20,29 @@
         },
 	},
 	"dataTypeSwap" : {
-		"GlacierJobDescription" : {
-		  "CreationDate" : {
-		    "Type" : "DateTime",
-			"Marshaller" : "Amazon.Runtime.Internal.Util.StringUtils.FromDateTime",
-			"Unmarshaller" : "Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller"
-		  },
-		  "CompletionDate" : {
-		    "Type" : "DateTime",
-			"Marshaller" : "Amazon.Runtime.Internal.Util.StringUtils.FromDateTime",
-			"Unmarshaller" : "Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller"
-		  }
-		},
 		"DescribeVaultOutput" : {
-		  "CreationDate" : {
-		    "Type" : "DateTime",
-			"Marshaller" : "Amazon.Runtime.Internal.Util.StringUtils.FromDateTime",
-			"Unmarshaller" : "Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller"
-		  },
-		  "LastInventoryDate" : {
-		    "Type" : "DateTime",
-			"Marshaller" : "Amazon.Runtime.Internal.Util.StringUtils.FromDateTime",
-			"Unmarshaller" : "Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller"
-		  }
+            "CreationDate": {
+                "Type": "DateTime",
+                "Marshaller": "Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601",
+                "Unmarshaller": "Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller"
+            },
+            "LastInventoryDate": {
+                "Type": "DateTime",
+                "Marshaller": "Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601",
+                "Unmarshaller": "Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller"
+            }
 		},
 		"GlacierJobDescription" : {
-		  "CreationDate" : {
-		    "Type" : "DateTime",
-			"Marshaller" : "Amazon.Runtime.Internal.Util.StringUtils.FromDateTime",
-			"Unmarshaller" : "Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller"
-		  },
-		  "CompletionDate" : {
-		    "Type" : "DateTime",
-			"Marshaller" : "Amazon.Runtime.Internal.Util.StringUtils.FromDateTime",
-			"Unmarshaller" : "Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller"
-		  }
+            "CreationDate": {
+                "Type": "DateTime",
+                "Marshaller": "Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601",
+                "Unmarshaller": "Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller"
+            },
+            "CompletionDate": {
+                "Type": "DateTime",
+                "Marshaller": "Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601",
+                "Unmarshaller": "Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller"
+            }
 		},
 	    "InitiateMultipartUploadInput" : {
 		  "partSize" : {
@@ -90,16 +78,16 @@
 		  }
 		},
 		"ListPartsOutput" : {
-		  "CreationDate" : {
-		    "Type" : "DateTime",
-			"Marshaller" : "Amazon.Runtime.Internal.Util.StringUtils.FromDateTime",
-			"Unmarshaller" : "Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller"
-		  },
-		  "CompletionDate" : {
-		    "Type" : "DateTime",
-			"Marshaller" : "Amazon.Runtime.Internal.Util.StringUtils.FromDateTime",
-			"Unmarshaller" : "Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller"
-		  }
+            "CreationDate": {
+                "Type": "DateTime",
+                "Marshaller": "Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601",
+                "Unmarshaller": "Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller"
+            },
+            "CompletionDate": {
+                "Type": "DateTime",
+                "Marshaller": "Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601",
+                "Unmarshaller": "Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller"
+            }
 		},
 		"ListVaultsInput" : {
 		  "limit" : {
@@ -109,11 +97,11 @@
 		  }
 		},
 		"UploadListElement" : {
-		  "CreationDate" : {
-		    "Type" : "DateTime",
-			"Marshaller" : "Amazon.Runtime.Internal.Util.StringUtils.FromDateTime",
-			"Unmarshaller" : "Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller"
-		  },
+            "CreationDate": {
+                "Type": "DateTime",
+                "Marshaller": "Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601",
+                "Unmarshaller": "Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller"
+            }
 		}
 	},
 	"generateComplexException" : true

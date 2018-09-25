@@ -23,8 +23,27 @@
                 }
             ]
         },
+        "DescribeScheduledActionsType": {
+            "backwardsCompatibleDateTimeProperties": [
+                "EndTime",
+                "StartTime"
+            ]
+        },
         "MinAdjustmentStep": {
             "deprecatedMessage": "Available for backward compatibility. Use MinAdjustmentMagnitude instead."
+        },
+        "PutScheduledUpdateGroupActionType": {
+            "backwardsCompatibleDateTimeProperties": [
+                "EndTime",
+                "StartTime",
+                "Time"
+            ]
+        },
+        "ScheduledUpdateGroupActionRequest": {
+            "backwardsCompatibleDateTimeProperties": [
+                "EndTime",
+                "StartTime"
+            ]
         }
     }
 }

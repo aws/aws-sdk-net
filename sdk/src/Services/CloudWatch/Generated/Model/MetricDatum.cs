@@ -38,7 +38,7 @@ namespace Amazon.CloudWatch.Model
         private string _metricName;
         private StatisticSet _statisticValues;
         private int? _storageResolution;
-        private DateTime? _timestamp;
+        private DateTime? _timestampUtc;
         private StandardUnit _unit;
         private double? _value;
         private List<double> _values = new List<double>();
@@ -152,22 +152,22 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Timestamp. 
+        /// Gets and sets the property TimestampUtc. 
         /// <para>
         /// The time the metric data was received, expressed as the number of milliseconds since
         /// Jan 1, 1970 00:00:00 UTC.
         /// </para>
         /// </summary>
-        public DateTime Timestamp
+        public DateTime TimestampUtc
         {
-            get { return this._timestamp.GetValueOrDefault(); }
-            set { this._timestamp = value; }
+            get { return this._timestampUtc.GetValueOrDefault(); }
+            set { this._timestamp = this._timestampUtc = value; }
         }
 
-        // Check to see if Timestamp property is set
-        internal bool IsSetTimestamp()
+        // Check to see if TimestampUtc property is set
+        internal bool IsSetTimestampUtc()
         {
-            return this._timestamp.HasValue; 
+            return this._timestampUtc.HasValue; 
         }
 
         /// <summary>
@@ -242,5 +242,39 @@ namespace Amazon.CloudWatch.Model
             return this._values != null && this._values.Count > 0; 
         }
 
+#region Backwards compatible properties
+        private DateTime? _timestamp;
+
+        /// <summary>
+        /// Gets and sets the property TimestampUtc. 
+        /// <para>
+        /// This property is deprecated. Setting this property results in non-UTC DateTimes not
+        /// being marshalled correctly. Use TimestampUtc instead. Setting either Timestamp or
+        /// TimestampUtc results in both Timestamp and TimestampUtc being assigned, the latest
+        /// assignment to either one of the two property is reflected in the value of both. Timestamp
+        /// is provided for backwards compatibility only and assigning a non-Utc DateTime to it
+        /// results in the wrong timestamp being passed to the service.
+        /// </para>
+        ///  
+        /// <para>
+        /// The time the metric data was received, expressed as the number of milliseconds since
+        /// Jan 1, 1970 00:00:00 UTC.
+        /// </para>
+        /// </summary>
+        [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
+            "Use TimestampUtc instead. Setting either Timestamp or TimestampUtc results in both Timestamp and " +
+            "TimestampUtc being assigned, the latest assignment to either one of the two property is " + 
+            "reflected in the value of both. Timestamp is provided for backwards compatibility only and " +
+            "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
+        public DateTime Timestamp
+        {
+            get { return this._timestamp.GetValueOrDefault(); }
+            set
+            {
+                this._timestamp = value;
+                this._timestampUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+            }
+        }
+#endregion
     }
 }

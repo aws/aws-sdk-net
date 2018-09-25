@@ -71,9 +71,9 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("ScheduledUpdateGroupActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "DesiredCapacity", StringUtils.FromInt(publicRequestlistValue.DesiredCapacity));
                         }
-                        if(publicRequestlistValue.IsSetEndTime())
+                        if(publicRequestlistValue.IsSetEndTimeUtc())
                         {
-                            request.Parameters.Add("ScheduledUpdateGroupActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "EndTime", StringUtils.FromDateTime(publicRequestlistValue.EndTime));
+                            request.Parameters.Add("ScheduledUpdateGroupActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "EndTime", StringUtils.FromDateTimeToISO8601(publicRequestlistValue.EndTimeUtc));
                         }
                         if(publicRequestlistValue.IsSetMaxSize())
                         {
@@ -91,9 +91,9 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("ScheduledUpdateGroupActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ScheduledActionName", StringUtils.FromString(publicRequestlistValue.ScheduledActionName));
                         }
-                        if(publicRequestlistValue.IsSetStartTime())
+                        if(publicRequestlistValue.IsSetStartTimeUtc())
                         {
-                            request.Parameters.Add("ScheduledUpdateGroupActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "StartTime", StringUtils.FromDateTime(publicRequestlistValue.StartTime));
+                            request.Parameters.Add("ScheduledUpdateGroupActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "StartTime", StringUtils.FromDateTimeToISO8601(publicRequestlistValue.StartTimeUtc));
                         }
                         publicRequestlistValueIndex++;
                     }

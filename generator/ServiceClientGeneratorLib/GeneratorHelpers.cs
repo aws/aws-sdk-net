@@ -37,11 +37,11 @@ namespace ServiceClientGenerator
             return Convert.ToInt32(ts.TotalSeconds);
         }
 
-        public static double ConvertToUnixEpochMilliSeconds(DateTime dateTime)
+        public static double ConvertToUnixEpochSecondsDouble(DateTime dateTime)
         {
             TimeSpan ts = new TimeSpan(dateTime.ToUniversalTime().Ticks - EPOCH_START.Ticks);
-            double milli = Math.Round(ts.TotalMilliseconds, 0) / 1000.0;
-            return milli;
+            double seconds = Math.Round(ts.TotalMilliseconds, 0) / 1000.0;
+            return seconds;
         }
 
         // List members in EC2 are always considered flattened, so we drop the 'member' prefix
@@ -132,7 +132,7 @@ namespace ServiceClientGenerator
             var marshallName = new StringBuilder();
             if (modifiers != null)
             {
-                var marshallOverride = modifiers.GetMarshallNameOverrides(member.OwningShape.Name, member.PropertyName);
+                var marshallOverride = modifiers.GetMarshallNameOverrides(member.OwningShape.Name, member.BasePropertyName);
                 if (marshallOverride != null)
                 {
                     var marshallOverrideName = !isEC2Protocol

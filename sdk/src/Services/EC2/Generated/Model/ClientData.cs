@@ -33,9 +33,9 @@ namespace Amazon.EC2.Model
     public partial class ClientData
     {
         private string _comment;
-        private DateTime? _uploadEnd;
+        private DateTime? _uploadEndUtc;
         private double? _uploadSize;
-        private DateTime? _uploadStart;
+        private DateTime? _uploadStartUtc;
 
         /// <summary>
         /// Gets and sets the property Comment. 
@@ -56,21 +56,21 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UploadEnd. 
+        /// Gets and sets the property UploadEndUtc. 
         /// <para>
         /// The time that the disk upload ends.
         /// </para>
         /// </summary>
-        public DateTime UploadEnd
+        public DateTime UploadEndUtc
         {
-            get { return this._uploadEnd.GetValueOrDefault(); }
-            set { this._uploadEnd = value; }
+            get { return this._uploadEndUtc.GetValueOrDefault(); }
+            set { this._uploadEnd = this._uploadEndUtc = value; }
         }
 
-        // Check to see if UploadEnd property is set
-        internal bool IsSetUploadEnd()
+        // Check to see if UploadEndUtc property is set
+        internal bool IsSetUploadEndUtc()
         {
-            return this._uploadEnd.HasValue; 
+            return this._uploadEndUtc.HasValue; 
         }
 
         /// <summary>
@@ -92,22 +92,85 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UploadStart. 
+        /// Gets and sets the property UploadStartUtc. 
         /// <para>
         /// The time that the disk upload starts.
         /// </para>
         /// </summary>
+        public DateTime UploadStartUtc
+        {
+            get { return this._uploadStartUtc.GetValueOrDefault(); }
+            set { this._uploadStart = this._uploadStartUtc = value; }
+        }
+
+        // Check to see if UploadStartUtc property is set
+        internal bool IsSetUploadStartUtc()
+        {
+            return this._uploadStartUtc.HasValue; 
+        }
+
+#region Backwards compatible properties
+        private DateTime? _uploadEnd;
+        private DateTime? _uploadStart;
+
+        /// <summary>
+        /// Gets and sets the property UploadEndUtc. 
+        /// <para>
+        /// This property is deprecated. Setting this property results in non-UTC DateTimes not
+        /// being marshalled correctly. Use UploadEndUtc instead. Setting either UploadEnd or
+        /// UploadEndUtc results in both UploadEnd and UploadEndUtc being assigned, the latest
+        /// assignment to either one of the two property is reflected in the value of both. UploadEnd
+        /// is provided for backwards compatibility only and assigning a non-Utc DateTime to it
+        /// results in the wrong timestamp being passed to the service.
+        /// </para>
+        ///  
+        /// <para>
+        /// The time that the disk upload ends.
+        /// </para>
+        /// </summary>
+        [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
+            "Use UploadEndUtc instead. Setting either UploadEnd or UploadEndUtc results in both UploadEnd and " +
+            "UploadEndUtc being assigned, the latest assignment to either one of the two property is " + 
+            "reflected in the value of both. UploadEnd is provided for backwards compatibility only and " +
+            "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
+        public DateTime UploadEnd
+        {
+            get { return this._uploadEnd.GetValueOrDefault(); }
+            set
+            {
+                this._uploadEnd = value;
+                this._uploadEndUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+            }
+        }
+        /// <summary>
+        /// Gets and sets the property UploadStartUtc. 
+        /// <para>
+        /// This property is deprecated. Setting this property results in non-UTC DateTimes not
+        /// being marshalled correctly. Use UploadStartUtc instead. Setting either UploadStart
+        /// or UploadStartUtc results in both UploadStart and UploadStartUtc being assigned, the
+        /// latest assignment to either one of the two property is reflected in the value of both.
+        /// UploadStart is provided for backwards compatibility only and assigning a non-Utc DateTime
+        /// to it results in the wrong timestamp being passed to the service.
+        /// </para>
+        ///  
+        /// <para>
+        /// The time that the disk upload starts.
+        /// </para>
+        /// </summary>
+        [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
+            "Use UploadStartUtc instead. Setting either UploadStart or UploadStartUtc results in both UploadStart and " +
+            "UploadStartUtc being assigned, the latest assignment to either one of the two property is " + 
+            "reflected in the value of both. UploadStart is provided for backwards compatibility only and " +
+            "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
         public DateTime UploadStart
         {
             get { return this._uploadStart.GetValueOrDefault(); }
-            set { this._uploadStart = value; }
+            set
+            {
+                this._uploadStart = value;
+                this._uploadStartUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+            }
         }
-
-        // Check to see if UploadStart property is set
-        internal bool IsSetUploadStart()
-        {
-            return this._uploadStart.HasValue; 
-        }
-
+#endregion
     }
 }

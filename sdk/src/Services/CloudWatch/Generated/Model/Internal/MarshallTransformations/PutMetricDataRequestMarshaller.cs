@@ -115,9 +115,9 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("MetricData" + "." + "member" + "." + publicRequestlistValueIndex + "." + "StorageResolution", StringUtils.FromInt(publicRequestlistValue.StorageResolution));
                         }
-                        if(publicRequestlistValue.IsSetTimestamp())
+                        if(publicRequestlistValue.IsSetTimestampUtc())
                         {
-                            request.Parameters.Add("MetricData" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Timestamp", StringUtils.FromDateTime(publicRequestlistValue.Timestamp));
+                            request.Parameters.Add("MetricData" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Timestamp", StringUtils.FromDateTimeToISO8601(publicRequestlistValue.TimestampUtc));
                         }
                         if(publicRequestlistValue.IsSetUnit())
                         {

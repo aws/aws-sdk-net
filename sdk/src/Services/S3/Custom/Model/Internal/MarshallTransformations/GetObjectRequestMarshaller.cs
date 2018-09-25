@@ -45,14 +45,14 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (getObjectRequest.IsSetEtagToMatch())
                 request.Headers.Add(HeaderKeys.IfMatchHeader, S3Transforms.ToStringValue(getObjectRequest.EtagToMatch));
 
-            if (getObjectRequest.IsSetModifiedSinceDate())
-                request.Headers.Add(HeaderKeys.IfModifiedSinceHeader, S3Transforms.ToStringValue(getObjectRequest.ModifiedSinceDate));
+            if (getObjectRequest.IsSetModifiedSinceDateUtc())
+                request.Headers.Add(HeaderKeys.IfModifiedSinceHeader, S3Transforms.ToStringValue(getObjectRequest.ModifiedSinceDateUtc));
 
             if (getObjectRequest.IsSetEtagToNotMatch())
                 request.Headers.Add(HeaderKeys.IfNoneMatchHeader, S3Transforms.ToStringValue(getObjectRequest.EtagToNotMatch));
             
-            if(getObjectRequest.IsSetUnmodifiedSinceDate())
-                request.Headers.Add(HeaderKeys.IfUnmodifiedSinceHeader, S3Transforms.ToStringValue(getObjectRequest.UnmodifiedSinceDate));
+            if(getObjectRequest.IsSetUnmodifiedSinceDateUtc())
+                request.Headers.Add(HeaderKeys.IfUnmodifiedSinceHeader, S3Transforms.ToStringValue(getObjectRequest.UnmodifiedSinceDateUtc));
             
             if(getObjectRequest.IsSetByteRange())
                 request.Headers.Add(HeaderKeys.RangeHeader, getObjectRequest.ByteRange.FormattedByteRange);
@@ -90,8 +90,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Parameters.Add("response-content-language", S3Transforms.ToStringValue(headerOverrides.ContentLanguage));
             if (headerOverrides.ContentType != null)
                 request.Parameters.Add("response-content-type", S3Transforms.ToStringValue(headerOverrides.ContentType));
-            if (getObjectRequest.IsSetResponseExpires())
-                request.Parameters.Add("response-expires", S3Transforms.ToStringValue(getObjectRequest.ResponseExpires));
+            if (getObjectRequest.IsSetResponseExpiresUtc())
+                request.Parameters.Add("response-expires", S3Transforms.ToStringValue(getObjectRequest.ResponseExpiresUtc));
             if (getObjectRequest.IsSetVersionId())
                 request.AddSubResource("versionId", S3Transforms.ToStringValue(getObjectRequest.VersionId));
             if (getObjectRequest.IsSetPartNumber())

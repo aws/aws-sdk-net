@@ -32,15 +32,27 @@ namespace Amazon.S3.Model
     public class Expiration
     {
         private DateTime expiryDate;
+        private DateTime expiryDateUtc;
         private string ruleId;
 
         /// <summary>
+        /// This property is deprecated. This property exposes a DateTime of kind Unspecified. Use ExpiryDateUtc instead.
         /// The date and time for expiry.
         /// </summary>
+        [Obsolete("This property returns a DateTime of kind Unspecified. Use ExpiryDateUtc instead.", false)]
         public DateTime ExpiryDate
         {
             get { return this.expiryDate; }
             set { this.expiryDate = value; }
+        }
+
+        /// <summary>
+        /// The date and time for expiry.
+        /// </summary>
+        public DateTime ExpiryDateUtc
+        {
+            get { return this.expiryDateUtc; }
+            set { this.expiryDateUtc = value; }
         }
 
         /// <summary>
@@ -75,16 +87,14 @@ namespace Amazon.S3.Model
             if (!expiryMatches.Success || !expiryMatches.Groups[1].Success)
                 throw new InvalidOperationException("No Expiry Date match");
             string expiryDateValue = expiryMatches.Groups[1].Value;
-            DateTime expiryDate = DateTime.ParseExact(expiryDateValue, Amazon.Util.AWSSDKUtils.RFC822DateFormat, CultureInfo.InvariantCulture);
+            this.expiryDateUtc = DateTime.ParseExact(expiryDateValue, Amazon.Util.AWSSDKUtils.RFC822DateFormat, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal);
+            this.expiryDate = new DateTime(this.expiryDateUtc.Ticks, DateTimeKind.Unspecified);
 
             var ruleMatches = ruleRegex.Match(headerValue);
             if (!ruleMatches.Success || !ruleMatches.Groups[1].Success)
                 throw new InvalidOperationException("No Rule Id match");
             string ruleIdValue = ruleMatches.Groups[1].Value;
-            string ruleId = UrlDecode(ruleIdValue);
-
-            this.expiryDate = expiryDate;
-            this.ruleId = ruleId;
+            this.ruleId = UrlDecode(ruleIdValue);
         }
 
         private static string UrlDecode(string url)

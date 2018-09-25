@@ -318,14 +318,14 @@ namespace ServiceClientGenerator
                     DateTime parsedDateTime;
                     if (DateTime.TryParse(textValue, out parsedDateTime))
                     {
-                        exampleValue = string.Format("new DateTime({0})",
+                        exampleValue = string.Format("new DateTime({0}, DateTimeKind.Utc)",
                             parsedDateTime.ToString("yyyy, M, d, h, m, s"));
                     }
                 }
 
                 if (string.IsNullOrEmpty(exampleValue))
                 {
-                    exampleValue = "DateTime.Now";
+                    exampleValue = "DateTime.UtcNow";
                 }
 
                 cb.Append(exampleValue);

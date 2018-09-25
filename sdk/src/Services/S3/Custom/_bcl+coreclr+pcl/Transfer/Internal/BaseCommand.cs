@@ -50,13 +50,13 @@ namespace Amazon.S3.Transfer.Internal
             };
             ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)getRequest).AddBeforeRequestHandler(this.RequestEventHandler);
 
-            if (request.IsSetModifiedSinceDate())
+            if (request.IsSetModifiedSinceDateUtc())
             {
-                getRequest.ModifiedSinceDate = request.ModifiedSinceDate;
+                getRequest.ModifiedSinceDateUtc = request.ModifiedSinceDateUtc;
             }
-            if (request.IsSetUnmodifiedSinceDate())
+            if (request.IsSetUnmodifiedSinceDateUtc())
             {
-                getRequest.UnmodifiedSinceDate = request.UnmodifiedSinceDate;
+                getRequest.UnmodifiedSinceDateUtc = request.UnmodifiedSinceDateUtc;
             }
 
             getRequest.ServerSideEncryptionCustomerMethod = request.ServerSideEncryptionCustomerMethod;

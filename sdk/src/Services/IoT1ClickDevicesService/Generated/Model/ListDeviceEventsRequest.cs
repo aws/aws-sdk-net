@@ -35,10 +35,10 @@ namespace Amazon.IoT1ClickDevicesService.Model
     public partial class ListDeviceEventsRequest : AmazonIoT1ClickDevicesServiceRequest
     {
         private string _deviceId;
-        private DateTime? _fromTimeStamp;
+        private DateTime? _fromTimeStampUtc;
         private int? _maxResults;
         private string _nextToken;
-        private DateTime? _toTimeStamp;
+        private DateTime? _toTimeStampUtc;
 
         /// <summary>
         /// Gets and sets the property DeviceId. 
@@ -59,22 +59,22 @@ namespace Amazon.IoT1ClickDevicesService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FromTimeStamp. 
+        /// Gets and sets the property FromTimeStampUtc. 
         /// <para>
         /// The start date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z
         /// 
         /// </para>
         /// </summary>
-        public DateTime FromTimeStamp
+        public DateTime FromTimeStampUtc
         {
-            get { return this._fromTimeStamp.GetValueOrDefault(); }
-            set { this._fromTimeStamp = value; }
+            get { return this._fromTimeStampUtc.GetValueOrDefault(); }
+            set { this._fromTimeStamp = this._fromTimeStampUtc = value; }
         }
 
-        // Check to see if FromTimeStamp property is set
-        internal bool IsSetFromTimeStamp()
+        // Check to see if FromTimeStampUtc property is set
+        internal bool IsSetFromTimeStampUtc()
         {
-            return this._fromTimeStamp.HasValue; 
+            return this._fromTimeStampUtc.HasValue; 
         }
 
         /// <summary>
@@ -115,23 +115,88 @@ namespace Amazon.IoT1ClickDevicesService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ToTimeStamp. 
+        /// Gets and sets the property ToTimeStampUtc. 
         /// <para>
         /// The end date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z
         /// 
         /// </para>
         /// </summary>
+        public DateTime ToTimeStampUtc
+        {
+            get { return this._toTimeStampUtc.GetValueOrDefault(); }
+            set { this._toTimeStamp = this._toTimeStampUtc = value; }
+        }
+
+        // Check to see if ToTimeStampUtc property is set
+        internal bool IsSetToTimeStampUtc()
+        {
+            return this._toTimeStampUtc.HasValue; 
+        }
+
+#region Backwards compatible properties
+        private DateTime? _fromTimeStamp;
+        private DateTime? _toTimeStamp;
+
+        /// <summary>
+        /// Gets and sets the property FromTimeStampUtc. 
+        /// <para>
+        /// This property is deprecated. Setting this property results in non-UTC DateTimes not
+        /// being marshalled correctly. Use FromTimeStampUtc instead. Setting either FromTimeStamp
+        /// or FromTimeStampUtc results in both FromTimeStamp and FromTimeStampUtc being assigned,
+        /// the latest assignment to either one of the two property is reflected in the value
+        /// of both. FromTimeStamp is provided for backwards compatibility only and assigning
+        /// a non-Utc DateTime to it results in the wrong timestamp being passed to the service.
+        /// </para>
+        ///  
+        /// <para>
+        /// The start date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z
+        /// 
+        /// </para>
+        /// </summary>
+        [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
+            "Use FromTimeStampUtc instead. Setting either FromTimeStamp or FromTimeStampUtc results in both FromTimeStamp and " +
+            "FromTimeStampUtc being assigned, the latest assignment to either one of the two property is " + 
+            "reflected in the value of both. FromTimeStamp is provided for backwards compatibility only and " +
+            "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
+        public DateTime FromTimeStamp
+        {
+            get { return this._fromTimeStamp.GetValueOrDefault(); }
+            set
+            {
+                this._fromTimeStamp = value;
+                this._fromTimeStampUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+            }
+        }
+        /// <summary>
+        /// Gets and sets the property ToTimeStampUtc. 
+        /// <para>
+        /// This property is deprecated. Setting this property results in non-UTC DateTimes not
+        /// being marshalled correctly. Use ToTimeStampUtc instead. Setting either ToTimeStamp
+        /// or ToTimeStampUtc results in both ToTimeStamp and ToTimeStampUtc being assigned, the
+        /// latest assignment to either one of the two property is reflected in the value of both.
+        /// ToTimeStamp is provided for backwards compatibility only and assigning a non-Utc DateTime
+        /// to it results in the wrong timestamp being passed to the service.
+        /// </para>
+        ///  
+        /// <para>
+        /// The end date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z
+        /// 
+        /// </para>
+        /// </summary>
+        [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
+            "Use ToTimeStampUtc instead. Setting either ToTimeStamp or ToTimeStampUtc results in both ToTimeStamp and " +
+            "ToTimeStampUtc being assigned, the latest assignment to either one of the two property is " + 
+            "reflected in the value of both. ToTimeStamp is provided for backwards compatibility only and " +
+            "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
         public DateTime ToTimeStamp
         {
             get { return this._toTimeStamp.GetValueOrDefault(); }
-            set { this._toTimeStamp = value; }
+            set
+            {
+                this._toTimeStamp = value;
+                this._toTimeStampUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+            }
         }
-
-        // Check to see if ToTimeStamp property is set
-        internal bool IsSetToTimeStamp()
-        {
-            return this._toTimeStamp.HasValue; 
-        }
-
+#endregion
     }
 }

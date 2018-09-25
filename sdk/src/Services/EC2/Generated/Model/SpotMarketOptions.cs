@@ -36,7 +36,7 @@ namespace Amazon.EC2.Model
         private InstanceInterruptionBehavior _instanceInterruptionBehavior;
         private string _maxPrice;
         private SpotInstanceType _spotInstanceType;
-        private DateTime? _validUntil;
+        private DateTime? _validUntilUtc;
 
         /// <summary>
         /// Gets and sets the property BlockDurationMinutes. 
@@ -115,7 +115,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ValidUntil. 
+        /// Gets and sets the property ValidUntilUtc. 
         /// <para>
         /// The end date of the request. For a one-time request, the request remains active until
         /// all instances launch, the request is canceled, or this date is reached. If the request
@@ -123,17 +123,53 @@ namespace Amazon.EC2.Model
         /// The default end date is 7 days from the current date.
         /// </para>
         /// </summary>
+        public DateTime ValidUntilUtc
+        {
+            get { return this._validUntilUtc.GetValueOrDefault(); }
+            set { this._validUntil = this._validUntilUtc = value; }
+        }
+
+        // Check to see if ValidUntilUtc property is set
+        internal bool IsSetValidUntilUtc()
+        {
+            return this._validUntilUtc.HasValue; 
+        }
+
+#region Backwards compatible properties
+        private DateTime? _validUntil;
+
+        /// <summary>
+        /// Gets and sets the property ValidUntilUtc. 
+        /// <para>
+        /// This property is deprecated. Setting this property results in non-UTC DateTimes not
+        /// being marshalled correctly. Use ValidUntilUtc instead. Setting either ValidUntil or
+        /// ValidUntilUtc results in both ValidUntil and ValidUntilUtc being assigned, the latest
+        /// assignment to either one of the two property is reflected in the value of both. ValidUntil
+        /// is provided for backwards compatibility only and assigning a non-Utc DateTime to it
+        /// results in the wrong timestamp being passed to the service.
+        /// </para>
+        ///  
+        /// <para>
+        /// The end date of the request. For a one-time request, the request remains active until
+        /// all instances launch, the request is canceled, or this date is reached. If the request
+        /// is persistent, it remains active until it is canceled or this date and time is reached.
+        /// The default end date is 7 days from the current date.
+        /// </para>
+        /// </summary>
+        [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
+            "Use ValidUntilUtc instead. Setting either ValidUntil or ValidUntilUtc results in both ValidUntil and " +
+            "ValidUntilUtc being assigned, the latest assignment to either one of the two property is " + 
+            "reflected in the value of both. ValidUntil is provided for backwards compatibility only and " +
+            "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
         public DateTime ValidUntil
         {
             get { return this._validUntil.GetValueOrDefault(); }
-            set { this._validUntil = value; }
+            set
+            {
+                this._validUntil = value;
+                this._validUntilUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+            }
         }
-
-        // Check to see if ValidUntil property is set
-        internal bool IsSetValidUntil()
-        {
-            return this._validUntil.HasValue; 
-        }
-
+#endregion
     }
 }

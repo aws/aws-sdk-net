@@ -54,14 +54,14 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (copyObjectRequest.IsSetETagToMatch())
                 request.Headers.Add(HeaderKeys.XAmzCopySourceIfMatchHeader, S3Transforms.ToStringValue(copyObjectRequest.ETagToMatch));
 
-            if (copyObjectRequest.IsSetModifiedSinceDate())
-                request.Headers.Add(HeaderKeys.XAmzCopySourceIfModifiedSinceHeader, S3Transforms.ToStringValue(copyObjectRequest.ModifiedSinceDate));
+            if (copyObjectRequest.IsSetModifiedSinceDateUtc())
+                request.Headers.Add(HeaderKeys.XAmzCopySourceIfModifiedSinceHeader, S3Transforms.ToStringValue(copyObjectRequest.ModifiedSinceDateUtc));
 
             if (copyObjectRequest.IsSetETagToNotMatch())
                 request.Headers.Add(HeaderKeys.XAmzCopySourceIfNoneMatchHeader, S3Transforms.ToStringValue(copyObjectRequest.ETagToNotMatch));
 
-            if (copyObjectRequest.IsSetUnmodifiedSinceDate())
-                request.Headers.Add(HeaderKeys.XAmzCopySourceIfUnmodifiedSinceHeader, S3Transforms.ToStringValue(copyObjectRequest.UnmodifiedSinceDate));
+            if (copyObjectRequest.IsSetUnmodifiedSinceDateUtc())
+                request.Headers.Add(HeaderKeys.XAmzCopySourceIfUnmodifiedSinceHeader, S3Transforms.ToStringValue(copyObjectRequest.UnmodifiedSinceDateUtc));
 
             if (copyObjectRequest.IsSetTagSet())
             {

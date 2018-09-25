@@ -90,10 +90,10 @@ namespace Amazon.MobileAnalytics.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetTimestamp())
+            if(requestObject.IsSetTimestampUtc())
             {
                 context.Writer.WritePropertyName("timestamp");
-                context.Writer.Write(Amazon.Runtime.Internal.Util.StringUtils.FromDateTime(requestObject.Timestamp));
+                context.Writer.Write(Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601(requestObject.TimestampUtc));
             }
 
             if(requestObject.IsSetVersion())

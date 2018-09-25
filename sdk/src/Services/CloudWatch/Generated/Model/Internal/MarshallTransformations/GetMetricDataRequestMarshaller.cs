@@ -58,9 +58,9 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
-                if(publicRequest.IsSetEndTime())
+                if(publicRequest.IsSetEndTimeUtc())
                 {
-                    request.Parameters.Add("EndTime", StringUtils.FromDateTime(publicRequest.EndTime));
+                    request.Parameters.Add("EndTime", StringUtils.FromDateTimeToISO8601(publicRequest.EndTimeUtc));
                 }
                 if(publicRequest.IsSetMaxDatapoints())
                 {
@@ -140,9 +140,9 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ScanBy", StringUtils.FromString(publicRequest.ScanBy));
                 }
-                if(publicRequest.IsSetStartTime())
+                if(publicRequest.IsSetStartTimeUtc())
                 {
-                    request.Parameters.Add("StartTime", StringUtils.FromDateTime(publicRequest.StartTime));
+                    request.Parameters.Add("StartTime", StringUtils.FromDateTimeToISO8601(publicRequest.StartTimeUtc));
                 }
             }
             return request;

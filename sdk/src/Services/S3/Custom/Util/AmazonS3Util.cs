@@ -529,7 +529,8 @@ namespace Amazon.S3.Util
 
                 string value = header.Substring(startPos, endPos - startPos);
                 DateTime parseDate;
-                if (DateTime.TryParseExact(value, Amazon.Util.AWSSDKUtils.RFC822DateFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, out parseDate))
+                if (DateTime.TryParseExact(value, Amazon.Util.AWSSDKUtils.RFC822DateFormat, CultureInfo.InvariantCulture,
+                        DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal, out parseDate))
                     restoreExpiration = parseDate;
             }
         }

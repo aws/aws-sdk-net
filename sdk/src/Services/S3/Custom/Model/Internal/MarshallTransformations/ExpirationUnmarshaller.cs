@@ -39,7 +39,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Date", targetDepth))
                     {
-                        expiration.Date = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
+                        expiration.DateUtc = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
                     }

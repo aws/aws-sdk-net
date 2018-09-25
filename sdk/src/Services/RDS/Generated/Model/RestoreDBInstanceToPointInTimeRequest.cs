@@ -71,7 +71,7 @@ namespace Amazon.RDS.Model
         private int? _port;
         private List<ProcessorFeature> _processorFeatures = new List<ProcessorFeature>();
         private bool? _publiclyAccessible;
-        private DateTime? _restoreTime;
+        private DateTime? _restoreTimeUtc;
         private string _sourceDBInstanceIdentifier;
         private string _storageType;
         private List<Tag> _tags = new List<Tag>();
@@ -642,7 +642,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RestoreTime. 
+        /// Gets and sets the property RestoreTimeUtc. 
         /// <para>
         /// The date and time to restore from.
         /// </para>
@@ -667,16 +667,16 @@ namespace Amazon.RDS.Model
         /// Example: <code>2009-09-07T23:45:00Z</code> 
         /// </para>
         /// </summary>
-        public DateTime RestoreTime
+        public DateTime RestoreTimeUtc
         {
-            get { return this._restoreTime.GetValueOrDefault(); }
-            set { this._restoreTime = value; }
+            get { return this._restoreTimeUtc.GetValueOrDefault(); }
+            set { this._restoreTime = this._restoreTimeUtc = value; }
         }
 
-        // Check to see if RestoreTime property is set
-        internal bool IsSetRestoreTime()
+        // Check to see if RestoreTimeUtc property is set
+        internal bool IsSetRestoreTimeUtc()
         {
-            return this._restoreTime.HasValue; 
+            return this._restoreTimeUtc.HasValue; 
         }
 
         /// <summary>
@@ -870,5 +870,58 @@ namespace Amazon.RDS.Model
             return this._useLatestRestorableTime.HasValue; 
         }
 
+#region Backwards compatible properties
+        private DateTime? _restoreTime;
+
+        /// <summary>
+        /// Gets and sets the property RestoreTimeUtc. 
+        /// <para>
+        /// This property is deprecated. Setting this property results in non-UTC DateTimes not
+        /// being marshalled correctly. Use RestoreTimeUtc instead. Setting either RestoreTime
+        /// or RestoreTimeUtc results in both RestoreTime and RestoreTimeUtc being assigned, the
+        /// latest assignment to either one of the two property is reflected in the value of both.
+        /// RestoreTime is provided for backwards compatibility only and assigning a non-Utc DateTime
+        /// to it results in the wrong timestamp being passed to the service.
+        /// </para>
+        ///  
+        /// <para>
+        /// The date and time to restore from.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: Value must be a time in Universal Coordinated Time (UTC) format
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be before the latest restorable time for the DB instance
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can't be specified if UseLatestRestorableTime parameter is true
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Example: <code>2009-09-07T23:45:00Z</code> 
+        /// </para>
+        /// </summary>
+        [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
+            "Use RestoreTimeUtc instead. Setting either RestoreTime or RestoreTimeUtc results in both RestoreTime and " +
+            "RestoreTimeUtc being assigned, the latest assignment to either one of the two property is " + 
+            "reflected in the value of both. RestoreTime is provided for backwards compatibility only and " +
+            "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
+        public DateTime RestoreTime
+        {
+            get { return this._restoreTime.GetValueOrDefault(); }
+            set
+            {
+                this._restoreTime = value;
+                this._restoreTimeUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+            }
+        }
+#endregion
     }
 }

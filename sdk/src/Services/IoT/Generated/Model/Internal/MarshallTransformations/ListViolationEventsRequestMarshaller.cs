@@ -59,8 +59,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
             string uriResourcePath = "/violation-events";
             
-            if (publicRequest.IsSetEndTime())
-                request.Parameters.Add("endTime", StringUtils.FromDateTime(publicRequest.EndTime));
+            if (publicRequest.IsSetEndTimeUtc())
+                request.Parameters.Add("endTime", StringUtils.FromDateTimeToISO8601(publicRequest.EndTimeUtc));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
@@ -71,8 +71,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetSecurityProfileName())
                 request.Parameters.Add("securityProfileName", StringUtils.FromString(publicRequest.SecurityProfileName));
             
-            if (publicRequest.IsSetStartTime())
-                request.Parameters.Add("startTime", StringUtils.FromDateTime(publicRequest.StartTime));
+            if (publicRequest.IsSetStartTimeUtc())
+                request.Parameters.Add("startTime", StringUtils.FromDateTimeToISO8601(publicRequest.StartTimeUtc));
             
             if (publicRequest.IsSetThingName())
                 request.Parameters.Add("thingName", StringUtils.FromString(publicRequest.ThingName));

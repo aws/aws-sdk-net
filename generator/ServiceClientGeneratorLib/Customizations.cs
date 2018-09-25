@@ -954,8 +954,10 @@ namespace ServiceClientGenerator
             public const string InjectKey = "inject";
             public const string CustomMarshallKey = "customMarshall";
             public const string DeprecatedMessageKey = "deprecatedMessage";
+            public const string BackwardsCompatibleDateTimeKey = "backwardsCompatibleDateTimeProperties";
 
             private readonly HashSet<string> _excludedProperties;
+            private readonly HashSet<string> _backwardsCompatibleDateTimeProperties;
             private readonly Dictionary<string, JsonData> _modifiedProperties;
             private readonly Dictionary<string, JsonData> _injectedProperties;
 
@@ -966,6 +968,7 @@ namespace ServiceClientGenerator
                 DeprecationMessage = data[DeprecatedMessageKey].CastToString();
 
                 _excludedProperties = ParseExclusions(data);
+                _backwardsCompatibleDateTimeProperties = ParseBackwardsCompatibleDateTimeProperties(data);
                 _modifiedProperties = ParseModifiers(data);
                 // Process additions after rename to allow for models where we
                 // add a 'convenience' member (for backwards compatibility) using
@@ -988,6 +991,25 @@ namespace ServiceClientGenerator
             public bool IsExcludedProperty(string propertyName)
             {
                 return _excludedProperties.Contains(propertyName);
+            }
+
+            #endregion
+
+            #region Backwards Compatible DateTime Properties
+
+            // Backwards Compatible DateTime Properties modifier is a simple array of property names.
+            //  "backwardsCompatibleDateTimeProperties": [ "propName1", "propName2" ]
+            private static HashSet<string> ParseBackwardsCompatibleDateTimeProperties(JsonData data)
+            {
+                var exclusions = data[ShapeModifier.BackwardsCompatibleDateTimeKey]
+                    ?.Cast<object>()
+                    .Select(exclusion => exclusion.ToString());
+                return new HashSet<string>(exclusions ?? new string[0]);
+            }
+
+            public bool IsBackwardsCompatibleDateTimeProperty(string propertyName)
+            {
+                return _backwardsCompatibleDateTimeProperties.Contains(propertyName);
             }
 
             #endregion
@@ -1207,21 +1229,21 @@ namespace ServiceClientGenerator
             }
 
             public string DeprecationMessage
-            {
+        {
                 get
-                {
+            {
                     return _modifierData[ShapeModifier.DeprecatedMessageKey].CastToString();
-                }
             }
         }
+            }
 
         #endregion
-
+        // Injection modifier is an array of objects, each object being the
         private Dictionary<string, ShapeModifier> _shapeModifiers = null;
-
-        /// <summary>
-        /// A dictionary containing modifiers for each shape that is customized
-        /// </summary>
+        // name of the member to add plus any needed shape/marshalling data.
+        //   "inject": [ 
+        //      { "propertyName": 
+        //          { "type": "list",
         public Dictionary<string, ShapeModifier> ShapeModifiers
         {
             get
@@ -1274,6 +1296,25 @@ namespace ServiceClientGenerator
                 var shapeModifier = GetShapeModifier(shapeName);
                 if (shapeModifier != null)
                     return shapeModifier.IsExcludedProperty(propertyName);
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Returns true if the specified property name is marked as requiring backwards compatible handling
+        /// of DateTime values at global or per-shape scope.
+        /// </summary>
+        /// <param name="propertyName"></param>
+        /// <param name="shapeName"></param>
+        /// <returns></returns>
+        public bool IsBackwardsCompatibleDateTimeProperty(string propertyName, string shapeName = null)
+        {
+            if (shapeName != null)
+            {
+                var shapeModifier = GetShapeModifier(shapeName);
+                if (shapeModifier != null)
+                    return shapeModifier.IsBackwardsCompatibleDateTimeProperty(propertyName);
             }
 
             return false;

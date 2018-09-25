@@ -390,7 +390,7 @@ namespace Json.LitJson
             PutNewline();
 
 
-            Put(ServiceClientGenerator.GeneratorHelpers.ConvertToUnixEpochMilliSeconds(date).ToString(CultureInfo.InvariantCulture));
+            Put(ServiceClientGenerator.GeneratorHelpers.ConvertToUnixEpochSecondsDouble(date).ToString(CultureInfo.InvariantCulture));
 
             context.ExpectingValue = false;
         }

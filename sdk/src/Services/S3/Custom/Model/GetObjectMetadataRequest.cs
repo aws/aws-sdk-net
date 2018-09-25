@@ -33,6 +33,8 @@ namespace Amazon.S3.Model
         private string bucketName;
         DateTime? modifiedSinceDate;
         DateTime? unmodifiedSinceDate;
+        DateTime? modifiedSinceDateUtc;
+        DateTime? unmodifiedSinceDateUtc;
         string etagToMatch;
         string etagToNotMatch;
         private string key;
@@ -76,19 +78,50 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
+        /// <para>
+        /// This property is deprecated. Setting this property results in non-UTC DateTimes not
+        /// being marshalled correctly. Use ModifiedSinceDateUtc instead. Setting either ModifiedSinceDate or
+        /// ModifiedSinceDateUtc results in both ModifiedSinceDate and ModifiedSinceDateUtc being assigned,
+        /// the latest assignment to either one of the two property is reflected in the value of both.
+        /// ModifiedSinceDate is provided for backwards compatibility only and assigning a non-Utc DateTime
+        /// to it results in the wrong timestamp being passed to the service.
+        /// </para>
         /// Returns the object only if it has been modified since the specified time, 
         /// otherwise returns a PreconditionFailed.
         /// </summary>
+        [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
+            "Use ModifiedSinceDateUtc instead. Setting either ModifiedSinceDate or ModifiedSinceDateUtc results in both ModifiedSinceDate and " +
+            "ModifiedSinceDateUtc being assigned, the latest assignment to either one of the two property is " +
+            "reflected in the value of both. ModifiedSinceDate is provided for backwards compatibility only and " +
+            "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
         public DateTime ModifiedSinceDate
         {
-            get { return this.modifiedSinceDate ?? default(DateTime); }
-            set { this.modifiedSinceDate = value; }
+            get { return this.modifiedSinceDate.GetValueOrDefault(); }
+            set
+            {
+                this.modifiedSinceDate = value;
+                this.modifiedSinceDateUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+            }
         }
 
-        // Check to see if ModifiedSinceDate property is set
-        internal bool IsSetModifiedSinceDate()
+        /// <summary>
+        /// Returns the object only if it has been modified since the specified time, 
+        /// otherwise returns a PreconditionFailed.
+        /// </summary>
+        public DateTime ModifiedSinceDateUtc
         {
-            return this.modifiedSinceDate.HasValue;
+            get { return this.modifiedSinceDateUtc.GetValueOrDefault(); }
+            set
+            {
+                this.modifiedSinceDateUtc = value;
+                this.modifiedSinceDate = value;
+            }
+        }
+
+        // Check to see if ModifiedSinceDateUtc property is set
+        internal bool IsSetModifiedSinceDateUtc()
+        {
+            return this.modifiedSinceDateUtc.HasValue;
         }
 
         /// <summary>
@@ -108,19 +141,50 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
+        /// <para>
+        /// This property is deprecated. Setting this property results in non-UTC DateTimes not
+        /// being marshalled correctly. Use UnmodifiedSinceDateUtc instead. Setting either UnmodifiedSinceDate or
+        /// UnmodifiedSinceDateUtc results in both UnmodifiedSinceDate and UnmodifiedSinceDateUtc being assigned,
+        /// the latest assignment to either one of the two property is reflected in the value of both.
+        /// UnmodifiedSinceDate is provided for backwards compatibility only and assigning a non-Utc DateTime
+        /// to it results in the wrong timestamp being passed to the service.
+        /// </para>
         /// Returns the object only if it has not been modified since the specified time, 
         /// otherwise returns a PreconditionFailed.
         /// </summary>
+        [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
+            "Use UnmodifiedSinceDateUtc instead. Setting either UnmodifiedSinceDate or UnmodifiedSinceDateUtc results in both UnmodifiedSinceDate and " +
+            "UnmodifiedSinceDateUtc being assigned, the latest assignment to either one of the two property is " +
+            "reflected in the value of both. UnmodifiedSinceDate is provided for backwards compatibility only and " +
+            "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
         public DateTime UnmodifiedSinceDate
         {
-            get { return this.unmodifiedSinceDate ?? default(DateTime); }
-            set { this.unmodifiedSinceDate = value; }
+            get { return this.unmodifiedSinceDate.GetValueOrDefault(); }
+            set
+            {
+                this.unmodifiedSinceDate = value;
+                this.unmodifiedSinceDateUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+            }
         }
 
-        // Check to see if IfUnmodifiedSince property is set
-        internal bool IsSetUnmodifiedSinceDate()
+        /// <summary>
+        /// Returns the object only if it has not been modified since the specified time, 
+        /// otherwise returns a PreconditionFailed.
+        /// </summary>
+        public DateTime UnmodifiedSinceDateUtc
         {
-            return this.unmodifiedSinceDate.HasValue;
+            get { return this.unmodifiedSinceDateUtc ?? default(DateTime); }
+            set
+            {
+                this.unmodifiedSinceDateUtc = value;
+                this.unmodifiedSinceDate = value;
+            }
+        }
+
+        // Check to see if IfUnmodifiedSinceUtc property is set
+        internal bool IsSetUnmodifiedSinceDateUtc()
+        {
+            return this.unmodifiedSinceDateUtc.HasValue;
         }
 
         /// <summary>

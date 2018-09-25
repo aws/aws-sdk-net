@@ -213,7 +213,7 @@ namespace Amazon.Runtime.Internal.Auth
             }
 
             var dt = requestDateTime;
-            headers[HeaderKeys.XAmzDateHeader] = dt.ToString(AWSSDKUtils.ISO8601BasicDateTimeFormat, CultureInfo.InvariantCulture);
+            headers[HeaderKeys.XAmzDateHeader] = dt.ToUniversalTime().ToString(AWSSDKUtils.ISO8601BasicDateTimeFormat, CultureInfo.InvariantCulture);
 
             return dt;
         }
@@ -335,7 +335,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// <returns>The UTC date/time in the requested format</returns>
         public static string FormatDateTime(DateTime dt, string formatString)
         {
-            return dt.ToString(formatString, CultureInfo.InvariantCulture);
+            return dt.ToUniversalTime().ToString(formatString, CultureInfo.InvariantCulture);
         }
 
         /// <summary>

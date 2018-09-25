@@ -24,14 +24,20 @@ namespace Amazon.EC2.Internal
     /// </summary>
     public static class CustomMarshallTransformations
     {
+        [Obsolete("This method doesn't handle correctly non-UTC DateTimes. Use ConvertDateTimeISOWithoutMillisecondsUtc instead.", false)]
+        public static String ConvertDateTimeISOWithoutMilliseconds(DateTime dateTime)
+        {
+            return dateTime.ToString(AWSSDKUtils.ISO8601DateFormatNoMS, DateTimeFormatInfo.InvariantInfo);
+        }
+
         /// <summary>
         /// Custom DateTime serializer for EC2.
         /// </summary>
         /// <param name="dateTime">The DateTime to serialize</param>
         /// <returns>ISO formatted string with no miliseconds</returns>
-        public static String ConvertDateTimeISOWithoutMilliseconds(DateTime dateTime)
+        public static String ConvertDateTimeISOWithoutMillisecondsUtc(DateTime dateTime)
         {
-            return dateTime.ToString(AWSSDKUtils.ISO8601DateFormatNoMS, DateTimeFormatInfo.InvariantInfo);
+            return dateTime.ToUniversalTime().ToString(AWSSDKUtils.ISO8601DateFormatNoMS, DateTimeFormatInfo.InvariantInfo);
         }
     }
 }

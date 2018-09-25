@@ -198,9 +198,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("InstanceMarketOptions" + "." + "SpotOptions" + "." + "SpotInstanceType", StringUtils.FromString(publicRequest.InstanceMarketOptions.SpotOptions.SpotInstanceType));
                         }
-                        if(publicRequest.InstanceMarketOptions.SpotOptions.IsSetValidUntil())
+                        if(publicRequest.InstanceMarketOptions.SpotOptions.IsSetValidUntilUtc())
                         {
-                            request.Parameters.Add("InstanceMarketOptions" + "." + "SpotOptions" + "." + "ValidUntil", StringUtils.FromDateTime(publicRequest.InstanceMarketOptions.SpotOptions.ValidUntil));
+                            request.Parameters.Add("InstanceMarketOptions" + "." + "SpotOptions" + "." + "ValidUntil", StringUtils.FromDateTimeToISO8601(publicRequest.InstanceMarketOptions.SpotOptions.ValidUntilUtc));
                         }
                     }
                 }

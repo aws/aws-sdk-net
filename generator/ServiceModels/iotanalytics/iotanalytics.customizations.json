@@ -1,0 +1,10 @@
+{
+    "shapeModifiers": {
+        "SampleChannelDataRequest": {
+            "backwardsCompatibleDateTimeProperties": [
+                "StartTime",
+                "EndTime"
+            ]
+        }
+    }
+}

@@ -94,22 +94,22 @@
         }
     },
 	"dataTypeSwap" : {
-		"SpotFleetRequestConfigData" : {
-		  "ValidFrom" : {
-			"Type" : "DateTime",
-			"Marshaller" : "Amazon.EC2.Internal.CustomMarshallTransformations.ConvertDateTimeISOWithoutMilliseconds"
-		  },
-		  "ValidUntil" : {
-			"Type" : "DateTime",
-			"Marshaller" : "Amazon.EC2.Internal.CustomMarshallTransformations.ConvertDateTimeISOWithoutMilliseconds"
-		  }
-		},
-		"DescribeSpotFleetRequestHistoryRequest" : {
-		  "StartTime" : {
-			"Type" : "DateTime",
-			"Marshaller" : "Amazon.EC2.Internal.CustomMarshallTransformations.ConvertDateTimeISOWithoutMilliseconds"
-		  }
-		}
+        "SpotFleetRequestConfigData": {
+            "ValidFrom": {
+                "Type": "DateTime",
+                "Marshaller": "Amazon.EC2.Internal.CustomMarshallTransformations.ConvertDateTimeISOWithoutMillisecondsUtc"
+            },
+            "ValidUntil": {
+                "Type": "DateTime",
+                "Marshaller": "Amazon.EC2.Internal.CustomMarshallTransformations.ConvertDateTimeISOWithoutMillisecondsUtc"
+            }
+        },
+        "DescribeSpotFleetRequestHistoryRequest": {
+            "StartTime": {
+                "Type": "DateTime",
+                "Marshaller": "Amazon.EC2.Internal.CustomMarshallTransformations.ConvertDateTimeISOWithoutMillisecondsUtc"
+            }
+        }
 	},
     "shapeModifiers": {
         "*": {
@@ -144,15 +144,50 @@
                 "CidrIp"
             ]
         },
-        "CopySnapshotRequest": { 
+        "CidrBlock": {
+            "modify": [
+                {
+                    "CidrBlock": { "emitPropertyName": "Cidr" }
+                }
+            ]
+        },
+        "ClientData": {
+            "backwardsCompatibleDateTimeProperties": [
+                "UploadEnd",
+                "UploadStart"
+            ]
+        },
+        "CopySnapshotRequest": {
             "modify": [
                 {
                     "PresignedUrl": { "accessModifier": "internal" }
                 }
             ]
         },
+        "CreateFleetRequest": {
+            "backwardsCompatibleDateTimeProperties": [
+                "ValidFrom",
+                "ValidUntil"
+            ]
+        },
         "DeleteVpcPeeringConnectionResponse": {
             "exclude": [ "Return" ]
+        },
+        "DescribeFleetHistoryRequest": {
+            "backwardsCompatibleDateTimeProperties": [
+                "StartTime"
+            ]
+        },
+        "DescribeSpotFleetRequestHistoryRequest": {
+            "backwardsCompatibleDateTimeProperties": [
+                "StartTime"
+            ]
+        },
+        "DescribeSpotPriceHistoryRequest": {
+            "backwardsCompatibleDateTimeProperties": [
+                "EndTime",
+                "StartTime"
+            ]
         },
         "DetachVolumeResponse": {
             "modify": [
@@ -168,12 +203,13 @@
                 }
             ]
         },
-		"ImportInstanceLaunchSpecification": {
+        "ImportInstanceLaunchSpecification": {
             "modify": [
-				{
+                {
                     "Monitoring": { "locationName": "Monitoring.Enabled" }
-                }            ]
-		},
+                }
+            ]
+        },
         "InstanceStatus": {
             "modify": [
                 {
@@ -213,15 +249,26 @@
                     }
                 }
             ]
-        },		
-		"ModifyVpcEndpointResult": {
+        },
+        "LaunchTemplateSpotMarketOptionsRequest": {
+            "backwardsCompatibleDateTimeProperties": [
+                "ValidUntil"
+            ]
+        },
+        "ModifyVpcEndpointResult": {
             "exclude": [ "Return" ]
         },
-		"PrefixListId": {
+        "PrefixListId": {
             "modify": [
                 {
                     "PrefixListId": { "emitPropertyName": "Id" }
                 }
+            ]
+        },
+        "RequestSpotInstancesRequest": {
+            "backwardsCompatibleDateTimeProperties": [
+                "ValidFrom",
+                "ValidUntil"
             ]
         },
         "RequestSpotLaunchSpecification": {
@@ -267,6 +314,12 @@
                 }
             ]
         },
+        "ReportInstanceStatusRequest": {
+            "backwardsCompatibleDateTimeProperties": [
+                "EndTime",
+                "StartTime"
+            ]
+        },
         "RevokeSecurityGroupEgressRequest": {
             "exclude": [
                 "SourceSecurityGroupName",
@@ -275,6 +328,12 @@
                 "FromPort",
                 "ToPort",
                 "CidrIp"
+            ]
+        },
+        "SpotFleetRequestConfigData": {
+            "backwardsCompatibleDateTimeProperties": [
+                "ValidFrom",
+                "ValidUntil"
             ]
         },
         "SpotPrice": {
@@ -294,6 +353,18 @@
                 "CidrIp"
             ]
         },
+        "SlotDateTimeRangeRequest": {
+            "backwardsCompatibleDateTimeProperties": [
+                "EarliestTime",
+                "LatestTime"
+            ]
+        },
+        "SlotStartTimeRangeRequest": {
+            "backwardsCompatibleDateTimeProperties": [
+                "EarliestTime",
+                "LatestTime"
+            ]
+        },
         "SpotFleetRequestConfig": {
             "modify": [
                 {
@@ -301,11 +372,9 @@
                 }
             ]
         },
-        "CidrBlock":{
-            "modify": [
-                {
-                    "CidrBlock": { "emitPropertyName": "Cidr" }
-                }
+        "SpotMarketOptions": {
+            "backwardsCompatibleDateTimeProperties": [
+                "ValidUntil"
             ]
         }
     },

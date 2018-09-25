@@ -291,13 +291,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Type", StringUtils.FromString(publicRequest.Type));
                 }
-                if(publicRequest.IsSetValidFrom())
+                if(publicRequest.IsSetValidFromUtc())
                 {
-                    request.Parameters.Add("ValidFrom", StringUtils.FromDateTime(publicRequest.ValidFrom));
+                    request.Parameters.Add("ValidFrom", StringUtils.FromDateTimeToISO8601(publicRequest.ValidFromUtc));
                 }
-                if(publicRequest.IsSetValidUntil())
+                if(publicRequest.IsSetValidUntilUtc())
                 {
-                    request.Parameters.Add("ValidUntil", StringUtils.FromDateTime(publicRequest.ValidUntil));
+                    request.Parameters.Add("ValidUntil", StringUtils.FromDateTimeToISO8601(publicRequest.ValidUntilUtc));
                 }
             }
             return request;

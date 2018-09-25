@@ -105,9 +105,9 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("BouncedRecipientInfoList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RecipientDsnFields" + "." + "FinalRecipient", StringUtils.FromString(publicRequestlistValue.RecipientDsnFields.FinalRecipient));
                             }
-                            if(publicRequestlistValue.RecipientDsnFields.IsSetLastAttemptDate())
+                            if(publicRequestlistValue.RecipientDsnFields.IsSetLastAttemptDateUtc())
                             {
-                                request.Parameters.Add("BouncedRecipientInfoList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RecipientDsnFields" + "." + "LastAttemptDate", StringUtils.FromDateTime(publicRequestlistValue.RecipientDsnFields.LastAttemptDate));
+                                request.Parameters.Add("BouncedRecipientInfoList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RecipientDsnFields" + "." + "LastAttemptDate", StringUtils.FromDateTimeToISO8601(publicRequestlistValue.RecipientDsnFields.LastAttemptDateUtc));
                             }
                             if(publicRequestlistValue.RecipientDsnFields.IsSetRemoteMta())
                             {
@@ -135,9 +135,9 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetMessageDsn())
                 {
-                    if(publicRequest.MessageDsn.IsSetArrivalDate())
+                    if(publicRequest.MessageDsn.IsSetArrivalDateUtc())
                     {
-                        request.Parameters.Add("MessageDsn" + "." + "ArrivalDate", StringUtils.FromDateTime(publicRequest.MessageDsn.ArrivalDate));
+                        request.Parameters.Add("MessageDsn" + "." + "ArrivalDate", StringUtils.FromDateTimeToISO8601(publicRequest.MessageDsn.ArrivalDateUtc));
                     }
                     if(publicRequest.MessageDsn.IsSetExtensionFields())
                     {

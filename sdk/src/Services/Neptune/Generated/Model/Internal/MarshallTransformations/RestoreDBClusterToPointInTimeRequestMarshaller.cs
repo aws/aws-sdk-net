@@ -82,9 +82,9 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Port", StringUtils.FromInt(publicRequest.Port));
                 }
-                if(publicRequest.IsSetRestoreToTime())
+                if(publicRequest.IsSetRestoreToTimeUtc())
                 {
-                    request.Parameters.Add("RestoreToTime", StringUtils.FromDateTime(publicRequest.RestoreToTime));
+                    request.Parameters.Add("RestoreToTime", StringUtils.FromDateTimeToISO8601(publicRequest.RestoreToTimeUtc));
                 }
                 if(publicRequest.IsSetRestoreType())
                 {

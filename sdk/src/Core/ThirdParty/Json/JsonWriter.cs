@@ -416,7 +416,7 @@ namespace ThirdParty.Json.LitJson
             PutNewline();
 
             
-            Put(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochMilliSeconds(date).ToString(CultureInfo.InvariantCulture));
+            Put(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDouble(date).ToString(CultureInfo.InvariantCulture));
 
             context.ExpectingValue = false;
         }

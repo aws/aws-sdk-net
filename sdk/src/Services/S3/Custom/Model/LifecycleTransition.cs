@@ -25,25 +25,37 @@ namespace Amazon.S3.Model
     /// </summary>
     public class LifecycleTransition
     {
-        
+
         private DateTime? date;
+        private DateTime? dateUtc;
         private int? days;
         private S3StorageClass storageClass;
+
+        [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. Use DateUtc instead.", false)]
+        public DateTime Date
+        {
+            get { return this.date ?? default(DateTime); }
+            set
+            {
+                this.date = value;
+                this.dateUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+            }
+        }
 
         /// <summary>
         /// Indicates at what date the object is to be moved or deleted. Should be in GMT ISO 8601 Format.
         ///  
         /// </summary>
-        public DateTime Date
+        public DateTime DateUtc
         {
-            get { return this.date ?? default(DateTime); }
-            set { this.date = value; }
+            get { return this.dateUtc ?? default(DateTime); }
+            set { this.dateUtc = this.date = value; }
         }
 
-        // Check to see if Date property is set
-        internal bool IsSetDate()
+        // Check to see if DateUtc property is set
+        internal bool IsSetDateUtc()
         {
-            return this.date.HasValue;
+            return this.dateUtc.HasValue;
         }
 
         /// <summary>

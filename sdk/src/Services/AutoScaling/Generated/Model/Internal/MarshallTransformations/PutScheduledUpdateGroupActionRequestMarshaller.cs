@@ -66,9 +66,9 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DesiredCapacity", StringUtils.FromInt(publicRequest.DesiredCapacity));
                 }
-                if(publicRequest.IsSetEndTime())
+                if(publicRequest.IsSetEndTimeUtc())
                 {
-                    request.Parameters.Add("EndTime", StringUtils.FromDateTime(publicRequest.EndTime));
+                    request.Parameters.Add("EndTime", StringUtils.FromDateTimeToISO8601(publicRequest.EndTimeUtc));
                 }
                 if(publicRequest.IsSetMaxSize())
                 {
@@ -86,13 +86,13 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ScheduledActionName", StringUtils.FromString(publicRequest.ScheduledActionName));
                 }
-                if(publicRequest.IsSetStartTime())
+                if(publicRequest.IsSetStartTimeUtc())
                 {
-                    request.Parameters.Add("StartTime", StringUtils.FromDateTime(publicRequest.StartTime));
+                    request.Parameters.Add("StartTime", StringUtils.FromDateTimeToISO8601(publicRequest.StartTimeUtc));
                 }
-                if(publicRequest.IsSetTime())
+                if(publicRequest.IsSetTimeUtc())
                 {
-                    request.Parameters.Add("Time", StringUtils.FromDateTime(publicRequest.Time));
+                    request.Parameters.Add("Time", StringUtils.FromDateTimeToISO8601(publicRequest.TimeUtc));
                 }
             }
             return request;

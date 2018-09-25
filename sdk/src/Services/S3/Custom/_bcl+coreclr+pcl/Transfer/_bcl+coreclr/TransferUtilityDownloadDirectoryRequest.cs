@@ -43,6 +43,8 @@ namespace Amazon.S3.Transfer
         private bool downloadFilesConcurrently = false;
         private DateTime? modifiedSinceDate;
         private DateTime? unmodifiedSinceDate;
+        private DateTime? modifiedSinceDateUtc;
+        private DateTime? unmodifiedSinceDateUtc;
 
         /// <summary>
         /// 	Gets or sets the name of the bucket.
@@ -119,13 +121,18 @@ namespace Amazon.S3.Transfer
         }
 
         /// <summary>
+        /// <para>
+        /// This property is deprecated. This property doesn't honor the DateTimeKind, please
+        /// use ModifiedSinceDateUtc instead.
+        /// </para>
         /// 	Gets or sets the <c>ModifiedSinceDate</c> property.  
-				/// 	Only objects that have been modified since this date will be
+        /// 	Only objects that have been modified since this date will be
         /// 	downloaded.
         /// </summary>
         /// <value>
         /// 	The <c>ModifiedSinceDate</c> property. 
         /// </value>
+        [Obsolete("This property doesn't honor the DateTimeKind, please use ModifiedSinceDateUtc instead.", false)]
         public DateTime ModifiedSinceDate
         {
             get { return this.modifiedSinceDate.GetValueOrDefault(); }
@@ -142,18 +149,77 @@ namespace Amazon.S3.Transfer
             return modifiedSinceDate.HasValue;
         }
 
+        /// <summary>
+        /// 	Gets or sets the <c>ModifiedSinceDateUtc</c> property.  
+        /// 	Only objects that have been modified since this date will be
+        /// 	downloaded.
+        /// </summary>
+        /// <value>
+        /// 	The <c>ModifiedSinceDateUtc</c> property. 
+        /// </value>
+        public DateTime ModifiedSinceDateUtc
+        {
+            get { return this.modifiedSinceDateUtc.GetValueOrDefault(); }
+            set { this.modifiedSinceDateUtc = value; }
+        }
 
         /// <summary>
+        /// Checks if ModifiedSinceDateUtc property is set.
+        /// </summary>
+        /// <returns>A value of <c>true</c> if ModifiedSinceDateUtc property is set.
+        /// 	Otherwise, returns <c>false</c>.</returns>
+        internal bool IsSetModifiedSinceDateUtc()
+        {
+            return modifiedSinceDateUtc.HasValue;
+        }
+
+        /// <summary>
+        /// <para>
+        /// This property is deprecated. This property doesn't honor the DateTimeKind, please
+        /// use UnmodifiedSinceDateUtc instead.
+        /// </para>
         /// 	Gets or sets the <c>UnmodifiedSinceDate</c> property.  
-				/// 	Only objects that have not been modified since this date will be downloaded.
+        /// 	Only objects that have not been modified since this date will be downloaded.
         /// </summary>
         /// <value>
         /// 	The <c>UnmodifiedSinceDate</c> property.
         /// </value>
+        [Obsolete("This property doesn't honor the DateTimeKind, please use UnmodifiedSinceDateUtc instead.", false)]
         public DateTime UnmodifiedSinceDate
         {
             get { return this.unmodifiedSinceDate.GetValueOrDefault(); }
             set { this.unmodifiedSinceDate = value; }
+        }
+
+        /// <summary>
+        /// Checks if UnmodifiedSinceDate property is set.
+        /// </summary>
+        /// <returns>true if UnmodifiedSinceDate property is set.</returns>
+        internal bool IsSetUnmodifiedSinceDate()
+        {
+            return unmodifiedSinceDate.HasValue;
+        }
+
+        /// <summary>
+        /// 	Gets or sets the <c>UnmodifiedSinceDateUtc</c> property.  
+        /// 	Only objects that have not been modified since this date will be downloaded.
+        /// </summary>
+        /// <value>
+        /// 	The <c>UnmodifiedSinceDateUtc</c> property.
+        /// </value>
+        public DateTime UnmodifiedSinceDateUtc
+        {
+            get { return this.unmodifiedSinceDateUtc.GetValueOrDefault(); }
+            set { this.unmodifiedSinceDateUtc = value; }
+        }
+
+        /// <summary>
+        /// Checks if UnmodifiedSinceDateUtc property is set.
+        /// </summary>
+        /// <returns>true if UnmodifiedSinceDateUtc property is set.</returns>
+        internal bool IsSetUnmodifiedSinceDateUtc()
+        {
+            return unmodifiedSinceDateUtc.HasValue;
         }
 
         /// <summary>
@@ -171,15 +237,6 @@ namespace Amazon.S3.Transfer
         {
             get { return this.downloadFilesConcurrently; }
             set { this.downloadFilesConcurrently = value; }
-        }
-
-        /// <summary>
-        /// Checks if UnmodifiedSinceDate property is set.
-        /// </summary>
-        /// <returns>true if UnmodifiedSinceDate property is set.</returns>
-        internal bool IsSetUnmodifiedSinceDate()
-        {
-            return unmodifiedSinceDate.HasValue;
         }
 
         /// <summary>

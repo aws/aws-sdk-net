@@ -59,7 +59,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         }
         internal static string ToStringValue(DateTime value)
         {
-            return value.ToString(AWSSDKUtils.RFC822DateFormat, CultureInfo.InvariantCulture);
+            return value.ToUniversalTime().ToString(AWSSDKUtils.RFC822DateFormat, CultureInfo.InvariantCulture);
         }
 
         internal static string ToXmlStringValue(string value)
@@ -68,7 +68,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         }
         internal static string ToXmlStringValue(DateTime value)
         {
-            return value.ToString(AWSSDKUtils.ISO8601DateFormat, CultureInfo.InvariantCulture);
+            return value.ToUniversalTime().ToString(AWSSDKUtils.ISO8601DateFormat, CultureInfo.InvariantCulture);
         }
         internal static string ToXmlStringValue(int value)
         {

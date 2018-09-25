@@ -1,8 +1,20 @@
 {
-  "noArgOverloads": [
-    "GetSendQuota",
-    "GetSendStatistics",
-    "ListIdentities",
-    "ListVerifiedEmailAddresses"
-  ]
+    "noArgOverloads": [
+        "GetSendQuota",
+        "GetSendStatistics",
+        "ListIdentities",
+        "ListVerifiedEmailAddresses"
+    ],
+    "shapeModifiers": {
+        "MessageDsn": {
+            "backwardsCompatibleDateTimeProperties": [
+                "ArrivalDate"
+            ]
+        },
+        "RecipientDsnFields": {
+            "backwardsCompatibleDateTimeProperties": [
+                "LastAttemptDate"
+            ]
+        }
+    }
 }

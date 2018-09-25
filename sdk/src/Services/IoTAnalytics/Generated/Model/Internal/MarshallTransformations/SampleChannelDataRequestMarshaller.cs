@@ -62,14 +62,14 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
                 throw new AmazonIoTAnalyticsException("Request object does not have required field ChannelName set");
             uriResourcePath = uriResourcePath.Replace("{channelName}", StringUtils.FromString(publicRequest.ChannelName));
             
-            if (publicRequest.IsSetEndTime())
-                request.Parameters.Add("endTime", StringUtils.FromDateTime(publicRequest.EndTime));
+            if (publicRequest.IsSetEndTimeUtc())
+                request.Parameters.Add("endTime", StringUtils.FromDateTimeToISO8601(publicRequest.EndTimeUtc));
             
             if (publicRequest.IsSetMaxMessages())
                 request.Parameters.Add("maxMessages", StringUtils.FromInt(publicRequest.MaxMessages));
             
-            if (publicRequest.IsSetStartTime())
-                request.Parameters.Add("startTime", StringUtils.FromDateTime(publicRequest.StartTime));
+            if (publicRequest.IsSetStartTimeUtc())
+                request.Parameters.Add("startTime", StringUtils.FromDateTimeToISO8601(publicRequest.StartTimeUtc));
             request.ResourcePath = uriResourcePath;
             request.UseQueryString = true;
 

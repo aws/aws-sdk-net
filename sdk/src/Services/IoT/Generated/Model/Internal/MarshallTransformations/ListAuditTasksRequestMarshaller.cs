@@ -59,8 +59,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
             string uriResourcePath = "/audit/tasks";
             
-            if (publicRequest.IsSetEndTime())
-                request.Parameters.Add("endTime", StringUtils.FromDateTime(publicRequest.EndTime));
+            if (publicRequest.IsSetEndTimeUtc())
+                request.Parameters.Add("endTime", StringUtils.FromDateTimeToISO8601(publicRequest.EndTimeUtc));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
@@ -68,8 +68,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             
-            if (publicRequest.IsSetStartTime())
-                request.Parameters.Add("startTime", StringUtils.FromDateTime(publicRequest.StartTime));
+            if (publicRequest.IsSetStartTimeUtc())
+                request.Parameters.Add("startTime", StringUtils.FromDateTimeToISO8601(publicRequest.StartTimeUtc));
             
             if (publicRequest.IsSetTaskStatus())
                 request.Parameters.Add("taskStatus", StringUtils.FromString(publicRequest.TaskStatus));

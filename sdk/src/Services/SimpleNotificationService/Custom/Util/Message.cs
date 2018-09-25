@@ -158,7 +158,7 @@ namespace Amazon.SimpleNotificationService.Util
                 if (string.IsNullOrEmpty(this.TimestampString))
                     return DateTime.MinValue;
 
-                return DateTime.ParseExact(this.TimestampString, AWSSDKUtils.ISO8601DateFormat, System.Globalization.CultureInfo.InvariantCulture);
+                return DateTime.ParseExact(this.TimestampString, AWSSDKUtils.ISO8601DateFormat, System.Globalization.CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal);
             }
         }
 

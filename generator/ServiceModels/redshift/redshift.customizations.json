@@ -22,6 +22,18 @@
                     "ClusterVersion": { "emitPropertyName": "Version" }
                 }
             ]
+        },
+        "DescribeClusterSnapshotsMessage": {
+            "backwardsCompatibleDateTimeProperties": [
+                "StartTime",
+                "EndTime"
+            ]
+        },
+        "DescribeEventsMessage": {
+            "backwardsCompatibleDateTimeProperties": [
+                "StartTime",
+                "EndTime"
+            ]
         }
     }
 }

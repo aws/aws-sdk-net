@@ -256,7 +256,7 @@ namespace Amazon.Runtime.Internal.Util
                                 continue;
 
                             writer.Write("{0} - {1} - ",
-                                error.Time.ToString(AWSSDKUtils.ISO8601DateFormat, CultureInfo.InvariantCulture),
+                                error.Time.ToUniversalTime().ToString(AWSSDKUtils.ISO8601DateFormat, CultureInfo.InvariantCulture),
                                 error.Metric);
                             if (!string.IsNullOrEmpty(error.Message))
                             {
@@ -535,7 +535,7 @@ namespace Amazon.Runtime.Internal.Util
         public MetricError(Metric metric, Exception exception, string messageFormat, params object[] args)
         {
 #pragma warning disable CS0612 // Type or member is obsolete
-            Time = AWSSDKUtils.CorrectedUtcNow.ToLocalTime();
+            Time = AWSSDKUtils.CorrectedUtcNow;
 #pragma warning restore CS0612 // Type or member is obsolete
             try
             {

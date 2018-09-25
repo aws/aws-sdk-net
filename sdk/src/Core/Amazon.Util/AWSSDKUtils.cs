@@ -478,7 +478,13 @@ namespace Amazon.Util
             return Convert.ToInt64(GetTimeSpanInTicks(dateTime).TotalSeconds).ToString(CultureInfo.InvariantCulture);
         }
 
+        [Obsolete("This method isn't named correctly: it returns seconds instead of milliseconds. Use ConvertToUnixEpochSecondsDouble instead.", false)]
         public static double ConvertToUnixEpochMilliSeconds(DateTime dateTime)
+        {
+            return ConvertToUnixEpochSecondsDouble(dateTime);
+        }
+
+        public static double ConvertToUnixEpochSecondsDouble(DateTime dateTime)
         {
             return Math.Round(GetTimeSpanInTicks(dateTime).TotalMilliseconds, 0) / 1000.0;
         }
@@ -691,20 +697,7 @@ namespace Amazon.Util
 #pragma warning disable CS0618 // Type or member is obsolete
                 DateTime dateTime = AWSSDKUtils.CorrectedUtcNow;
 #pragma warning restore CS0618 // Type or member is obsolete
-                DateTime formatted = new DateTime(
-                    dateTime.Year,
-                    dateTime.Month,
-                    dateTime.Day,
-                    dateTime.Hour,
-                    dateTime.Minute,
-                    dateTime.Second,
-                    dateTime.Millisecond,
-                    DateTimeKind.Local
-                    );
-                return formatted.ToString(
-                    GMTDateFormat,
-                    CultureInfo.InvariantCulture
-                    );
+                return dateTime.ToString(GMTDateFormat, CultureInfo.InvariantCulture);
             }
         }
 
@@ -787,20 +780,7 @@ namespace Amazon.Util
 #pragma warning disable CS0612 // Type or member is obsolete
             DateTime dateTime = AWSSDKUtils.CorrectedUtcNow.AddMinutes(minutesFromNow);
 #pragma warning restore CS0612 // Type or member is obsolete
-            DateTime formatted = new DateTime(
-                dateTime.Year,
-                dateTime.Month,
-                dateTime.Day,
-                dateTime.Hour,
-                dateTime.Minute,
-                dateTime.Second,
-                dateTime.Millisecond,
-                DateTimeKind.Local
-                );
-            return formatted.ToString(
-                AWSSDKUtils.RFC822DateFormat,
-                CultureInfo.InvariantCulture
-                );
+            return dateTime.ToString(AWSSDKUtils.RFC822DateFormat, CultureInfo.InvariantCulture);
         }
 
 

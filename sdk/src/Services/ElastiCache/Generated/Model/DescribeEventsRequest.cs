@@ -42,12 +42,12 @@ namespace Amazon.ElastiCache.Model
     public partial class DescribeEventsRequest : AmazonElastiCacheRequest
     {
         private int? _duration;
-        private DateTime? _endTime;
+        private DateTime? _endTimeUtc;
         private string _marker;
         private int? _maxRecords;
         private string _sourceIdentifier;
         private SourceType _sourceType;
-        private DateTime? _startTime;
+        private DateTime? _startTimeUtc;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -73,7 +73,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EndTime. 
+        /// Gets and sets the property EndTimeUtc. 
         /// <para>
         /// The end of the time interval for which to retrieve events, specified in ISO 8601 format.
         /// </para>
@@ -82,16 +82,16 @@ namespace Amazon.ElastiCache.Model
         ///  <b>Example:</b> 2017-03-30T07:03:49.555Z
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime EndTimeUtc
         {
-            get { return this._endTime.GetValueOrDefault(); }
-            set { this._endTime = value; }
+            get { return this._endTimeUtc.GetValueOrDefault(); }
+            set { this._endTime = this._endTimeUtc = value; }
         }
 
-        // Check to see if EndTime property is set
-        internal bool IsSetEndTime()
+        // Check to see if EndTimeUtc property is set
+        internal bool IsSetEndTimeUtc()
         {
-            return this._endTime.HasValue; 
+            return this._endTimeUtc.HasValue; 
         }
 
         /// <summary>
@@ -181,7 +181,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StartTime. 
+        /// Gets and sets the property StartTimeUtc. 
         /// <para>
         /// The beginning of the time interval to retrieve events for, specified in ISO 8601 format.
         /// </para>
@@ -190,17 +190,88 @@ namespace Amazon.ElastiCache.Model
         ///  <b>Example:</b> 2017-03-30T07:03:49.555Z
         /// </para>
         /// </summary>
+        public DateTime StartTimeUtc
+        {
+            get { return this._startTimeUtc.GetValueOrDefault(); }
+            set { this._startTime = this._startTimeUtc = value; }
+        }
+
+        // Check to see if StartTimeUtc property is set
+        internal bool IsSetStartTimeUtc()
+        {
+            return this._startTimeUtc.HasValue; 
+        }
+
+#region Backwards compatible properties
+        private DateTime? _endTime;
+        private DateTime? _startTime;
+
+        /// <summary>
+        /// Gets and sets the property EndTimeUtc. 
+        /// <para>
+        /// This property is deprecated. Setting this property results in non-UTC DateTimes not
+        /// being marshalled correctly. Use EndTimeUtc instead. Setting either EndTime or EndTimeUtc
+        /// results in both EndTime and EndTimeUtc being assigned, the latest assignment to either
+        /// one of the two property is reflected in the value of both. EndTime is provided for
+        /// backwards compatibility only and assigning a non-Utc DateTime to it results in the
+        /// wrong timestamp being passed to the service.
+        /// </para>
+        ///  
+        /// <para>
+        /// The end of the time interval for which to retrieve events, specified in ISO 8601 format.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Example:</b> 2017-03-30T07:03:49.555Z
+        /// </para>
+        /// </summary>
+        [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
+            "Use EndTimeUtc instead. Setting either EndTime or EndTimeUtc results in both EndTime and " +
+            "EndTimeUtc being assigned, the latest assignment to either one of the two property is " + 
+            "reflected in the value of both. EndTime is provided for backwards compatibility only and " +
+            "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
+        public DateTime EndTime
+        {
+            get { return this._endTime.GetValueOrDefault(); }
+            set
+            {
+                this._endTime = value;
+                this._endTimeUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+            }
+        }
+        /// <summary>
+        /// Gets and sets the property StartTimeUtc. 
+        /// <para>
+        /// This property is deprecated. Setting this property results in non-UTC DateTimes not
+        /// being marshalled correctly. Use StartTimeUtc instead. Setting either StartTime or
+        /// StartTimeUtc results in both StartTime and StartTimeUtc being assigned, the latest
+        /// assignment to either one of the two property is reflected in the value of both. StartTime
+        /// is provided for backwards compatibility only and assigning a non-Utc DateTime to it
+        /// results in the wrong timestamp being passed to the service.
+        /// </para>
+        ///  
+        /// <para>
+        /// The beginning of the time interval to retrieve events for, specified in ISO 8601 format.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Example:</b> 2017-03-30T07:03:49.555Z
+        /// </para>
+        /// </summary>
+        [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
+            "Use StartTimeUtc instead. Setting either StartTime or StartTimeUtc results in both StartTime and " +
+            "StartTimeUtc being assigned, the latest assignment to either one of the two property is " + 
+            "reflected in the value of both. StartTime is provided for backwards compatibility only and " +
+            "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
         public DateTime StartTime
         {
             get { return this._startTime.GetValueOrDefault(); }
-            set { this._startTime = value; }
+            set
+            {
+                this._startTime = value;
+                this._startTimeUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+            }
         }
-
-        // Check to see if StartTime property is set
-        internal bool IsSetStartTime()
-        {
-            return this._startTime.HasValue; 
-        }
-
+#endregion
     }
 }

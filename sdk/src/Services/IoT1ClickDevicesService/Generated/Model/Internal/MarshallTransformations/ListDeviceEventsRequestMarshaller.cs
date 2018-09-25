@@ -62,8 +62,8 @@ namespace Amazon.IoT1ClickDevicesService.Model.Internal.MarshallTransformations
                 throw new AmazonIoT1ClickDevicesServiceException("Request object does not have required field DeviceId set");
             uriResourcePath = uriResourcePath.Replace("{deviceId}", StringUtils.FromString(publicRequest.DeviceId));
             
-            if (publicRequest.IsSetFromTimeStamp())
-                request.Parameters.Add("fromTimeStamp", StringUtils.FromDateTime(publicRequest.FromTimeStamp));
+            if (publicRequest.IsSetFromTimeStampUtc())
+                request.Parameters.Add("fromTimeStamp", StringUtils.FromDateTimeToISO8601(publicRequest.FromTimeStampUtc));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
@@ -71,8 +71,8 @@ namespace Amazon.IoT1ClickDevicesService.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             
-            if (publicRequest.IsSetToTimeStamp())
-                request.Parameters.Add("toTimeStamp", StringUtils.FromDateTime(publicRequest.ToTimeStamp));
+            if (publicRequest.IsSetToTimeStampUtc())
+                request.Parameters.Add("toTimeStamp", StringUtils.FromDateTimeToISO8601(publicRequest.ToTimeStampUtc));
             request.ResourcePath = uriResourcePath;
             request.UseQueryString = true;
 

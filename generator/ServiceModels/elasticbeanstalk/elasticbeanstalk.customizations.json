@@ -1,11 +1,24 @@
 {
-  "noArgOverloads": [
-    "CreateStorageLocation",
-    "DescribeApplicationVersions",
-    "DescribeApplications",
-    "DescribeConfigurationOptions",
-    "DescribeEnvironments",
-    "DescribeEvents",
-    "ListAvailableSolutionStacks"
-  ]
+    "noArgOverloads": [
+        "CreateStorageLocation",
+        "DescribeApplicationVersions",
+        "DescribeApplications",
+        "DescribeConfigurationOptions",
+        "DescribeEnvironments",
+        "DescribeEvents",
+        "ListAvailableSolutionStacks"
+    ],
+    "shapeModifiers": {
+        "DescribeEnvironmentsMessage": {
+            "backwardsCompatibleDateTimeProperties": [
+                "IncludedDeletedBackTo"
+            ]
+        },
+        "DescribeEventsMessage": {
+            "backwardsCompatibleDateTimeProperties": [
+                "StartTime",
+                "EndTime"
+            ]
+        }
+    }
 }

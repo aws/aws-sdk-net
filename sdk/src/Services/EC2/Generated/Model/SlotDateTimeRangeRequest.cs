@@ -33,45 +33,109 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class SlotDateTimeRangeRequest
     {
-        private DateTime? _earliestTime;
-        private DateTime? _latestTime;
+        private DateTime? _earliestTimeUtc;
+        private DateTime? _latestTimeUtc;
 
         /// <summary>
-        /// Gets and sets the property EarliestTime. 
+        /// Gets and sets the property EarliestTimeUtc. 
         /// <para>
         /// The earliest date and time, in UTC, for the Scheduled Instance to start.
         /// </para>
         /// </summary>
-        public DateTime EarliestTime
+        public DateTime EarliestTimeUtc
         {
-            get { return this._earliestTime.GetValueOrDefault(); }
-            set { this._earliestTime = value; }
+            get { return this._earliestTimeUtc.GetValueOrDefault(); }
+            set { this._earliestTime = this._earliestTimeUtc = value; }
         }
 
-        // Check to see if EarliestTime property is set
-        internal bool IsSetEarliestTime()
+        // Check to see if EarliestTimeUtc property is set
+        internal bool IsSetEarliestTimeUtc()
         {
-            return this._earliestTime.HasValue; 
+            return this._earliestTimeUtc.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property LatestTime. 
+        /// Gets and sets the property LatestTimeUtc. 
         /// <para>
         /// The latest date and time, in UTC, for the Scheduled Instance to start. This value
         /// must be later than or equal to the earliest date and at most three months in the future.
         /// </para>
         /// </summary>
+        public DateTime LatestTimeUtc
+        {
+            get { return this._latestTimeUtc.GetValueOrDefault(); }
+            set { this._latestTime = this._latestTimeUtc = value; }
+        }
+
+        // Check to see if LatestTimeUtc property is set
+        internal bool IsSetLatestTimeUtc()
+        {
+            return this._latestTimeUtc.HasValue; 
+        }
+
+#region Backwards compatible properties
+        private DateTime? _earliestTime;
+        private DateTime? _latestTime;
+
+        /// <summary>
+        /// Gets and sets the property EarliestTimeUtc. 
+        /// <para>
+        /// This property is deprecated. Setting this property results in non-UTC DateTimes not
+        /// being marshalled correctly. Use EarliestTimeUtc instead. Setting either EarliestTime
+        /// or EarliestTimeUtc results in both EarliestTime and EarliestTimeUtc being assigned,
+        /// the latest assignment to either one of the two property is reflected in the value
+        /// of both. EarliestTime is provided for backwards compatibility only and assigning a
+        /// non-Utc DateTime to it results in the wrong timestamp being passed to the service.
+        /// </para>
+        ///  
+        /// <para>
+        /// The earliest date and time, in UTC, for the Scheduled Instance to start.
+        /// </para>
+        /// </summary>
+        [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
+            "Use EarliestTimeUtc instead. Setting either EarliestTime or EarliestTimeUtc results in both EarliestTime and " +
+            "EarliestTimeUtc being assigned, the latest assignment to either one of the two property is " + 
+            "reflected in the value of both. EarliestTime is provided for backwards compatibility only and " +
+            "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
+        public DateTime EarliestTime
+        {
+            get { return this._earliestTime.GetValueOrDefault(); }
+            set
+            {
+                this._earliestTime = value;
+                this._earliestTimeUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+            }
+        }
+        /// <summary>
+        /// Gets and sets the property LatestTimeUtc. 
+        /// <para>
+        /// This property is deprecated. Setting this property results in non-UTC DateTimes not
+        /// being marshalled correctly. Use LatestTimeUtc instead. Setting either LatestTime or
+        /// LatestTimeUtc results in both LatestTime and LatestTimeUtc being assigned, the latest
+        /// assignment to either one of the two property is reflected in the value of both. LatestTime
+        /// is provided for backwards compatibility only and assigning a non-Utc DateTime to it
+        /// results in the wrong timestamp being passed to the service.
+        /// </para>
+        ///  
+        /// <para>
+        /// The latest date and time, in UTC, for the Scheduled Instance to start. This value
+        /// must be later than or equal to the earliest date and at most three months in the future.
+        /// </para>
+        /// </summary>
+        [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
+            "Use LatestTimeUtc instead. Setting either LatestTime or LatestTimeUtc results in both LatestTime and " +
+            "LatestTimeUtc being assigned, the latest assignment to either one of the two property is " + 
+            "reflected in the value of both. LatestTime is provided for backwards compatibility only and " +
+            "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
         public DateTime LatestTime
         {
             get { return this._latestTime.GetValueOrDefault(); }
-            set { this._latestTime = value; }
+            set
+            {
+                this._latestTime = value;
+                this._latestTimeUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+            }
         }
-
-        // Check to see if LatestTime property is set
-        internal bool IsSetLatestTime()
-        {
-            return this._latestTime.HasValue; 
-        }
-
+#endregion
     }
 }

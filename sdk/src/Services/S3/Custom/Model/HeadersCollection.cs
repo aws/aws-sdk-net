@@ -147,22 +147,30 @@ namespace Amazon.S3.Model
         /// The date and time at which the object is no longer cacheable.
         ///  
         /// </summary>
-        public DateTime? Expires
+        /// 
+        public DateTime? ExpiresUtc
         {
             get 
             {
                 if (this["Expires"] == null)
                     return null;
 
-                return DateTime.Parse(this["Expires"], CultureInfo.InvariantCulture); 
+                return DateTime.Parse(this["Expires"], CultureInfo.InvariantCulture, DateTimeStyles.AdjustToUniversal); 
             }
             set 
             {
                 if (value == null)
                     this["Expires"] = null;
 
-                this["Expires"] = value.GetValueOrDefault().ToString(Amazon.Util.AWSSDKUtils.RFC822DateFormat, CultureInfo.InvariantCulture); 
+                this["Expires"] = value.GetValueOrDefault().ToUniversalTime().ToString(Amazon.Util.AWSSDKUtils.RFC822DateFormat, CultureInfo.InvariantCulture); 
             }
+        }
+
+        [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. Use ExpiresUtc instead.", false)]
+        public DateTime? Expires
+        {
+            get { return ExpiresUtc?.ToLocalTime(); }
+            set { ExpiresUtc = value == null ? (DateTime?)null : new DateTime(value.Value.Ticks, DateTimeKind.Utc); }
         }
     }
 }
