@@ -28,19 +28,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateRadius operation.
-    /// Updates the Remote Authentication Dial In User Service (RADIUS) server information
-    /// for an AD Connector or Microsoft AD directory.
+    /// Container for the parameters to the UnshareDirectory operation.
+    /// Stops the directory sharing between the directory owner and consumer accounts.
     /// </summary>
-    public partial class UpdateRadiusRequest : AmazonDirectoryServiceRequest
+    public partial class UnshareDirectoryRequest : AmazonDirectoryServiceRequest
     {
         private string _directoryId;
-        private RadiusSettings _radiusSettings;
+        private UnshareTarget _unshareTarget;
 
         /// <summary>
         /// Gets and sets the property DirectoryId. 
         /// <para>
-        /// The identifier of the directory for which to update the RADIUS server information.
+        /// The identifier of the AWS Managed Microsoft AD directory that you want to stop sharing.
         /// </para>
         /// </summary>
         public string DirectoryId
@@ -56,21 +55,21 @@ namespace Amazon.DirectoryService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RadiusSettings. 
+        /// Gets and sets the property UnshareTarget. 
         /// <para>
-        /// A <a>RadiusSettings</a> object that contains information about the RADIUS server.
+        /// Identifier for the directory consumer account with whom the directory has to be unshared.
         /// </para>
         /// </summary>
-        public RadiusSettings RadiusSettings
+        public UnshareTarget UnshareTarget
         {
-            get { return this._radiusSettings; }
-            set { this._radiusSettings = value; }
+            get { return this._unshareTarget; }
+            set { this._unshareTarget = value; }
         }
 
-        // Check to see if RadiusSettings property is set
-        internal bool IsSetRadiusSettings()
+        // Check to see if UnshareTarget property is set
+        internal bool IsSetUnshareTarget()
         {
-            return this._radiusSettings != null;
+            return this._unshareTarget != null;
         }
 
     }

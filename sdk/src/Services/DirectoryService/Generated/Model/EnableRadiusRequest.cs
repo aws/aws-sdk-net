@@ -30,7 +30,7 @@ namespace Amazon.DirectoryService.Model
     /// <summary>
     /// Container for the parameters to the EnableRadius operation.
     /// Enables multi-factor authentication (MFA) with the Remote Authentication Dial In User
-    /// Service (RADIUS) server for an AD Connector directory.
+    /// Service (RADIUS) server for an AD Connector or Microsoft AD directory.
     /// </summary>
     public partial class EnableRadiusRequest : AmazonDirectoryServiceRequest
     {

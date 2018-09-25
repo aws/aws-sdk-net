@@ -33,9 +33,9 @@ namespace Amazon.DirectoryService.Model
     /// 
     ///  
     /// <para>
-    /// Before you call <i>ConnectDirectory</i>, ensure that all of the required permissions
+    /// Before you call <code>ConnectDirectory</code>, ensure that all of the required permissions
     /// have been explicitly granted through a policy. For details about what permissions
-    /// are required to run the <i>ConnectDirectory</i> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
+    /// are required to run the <code>ConnectDirectory</code> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
     /// Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
     /// </para>
     /// </summary>
@@ -88,7 +88,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The fully-qualified name of the on-premises directory, such as <code>corp.example.com</code>.
+        /// The fully qualified name of the on-premises directory, such as <code>corp.example.com</code>.
         /// </para>
         /// </summary>
         public string Name

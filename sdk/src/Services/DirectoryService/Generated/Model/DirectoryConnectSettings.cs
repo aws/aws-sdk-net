@@ -60,8 +60,8 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property CustomerUserName. 
         /// <para>
-        /// The username of an account in the on-premises directory that is used to connect to
-        /// the directory. This account must have the following privileges:
+        /// The user name of an account in the on-premises directory that is used to connect to
+        /// the directory. This account must have the following permissions:
         /// </para>
         ///  <ul> <li> 
         /// <para>

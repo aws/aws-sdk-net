@@ -401,8 +401,8 @@
           "Name": {
             "type": "string",
             "pattern": "^([a-zA-Z0-9]+[\\\\.-])+([a-zA-Z0-9])+$",
-            "zonbookDocumentation": "\n         <simpara>The fully-qualified name of the on-premises directory, such as\n            <code>corp.example.com</code>.</simpara>\n      ",
-            "documentation": "\n         <p>The fully-qualified name of the on-premises directory, such as\n            <code>corp.example.com</code>.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>The fully qualified name of the on-premises directory, such as\n        <code>corp.example.com</code>.</simpara>\n      ",
+            "documentation": "\n         <p>The fully qualified name of the on-premises directory, such as\n        <code>corp.example.com</code>.</p>\n      ",
             "required": true,
             "shape_name": "DirectoryName"
           },
@@ -483,8 +483,8 @@
               "CustomerUserName": {
                 "type": "string",
                 "pattern": "[a-zA-Z0-9._-]+",
-                "zonbookDocumentation": "\n         <simpara>The username of an account in the on-premises directory that is used to connect to the directory. This account must have the following privileges:</simpara>\n         <itemizedlist>\n            <listitem>\n               <simpara>Read users and groups</simpara>\n            </listitem>\n            <listitem>\n               <simpara>Create computer objects</simpara>\n            </listitem>\n            <listitem>\n               <simpara>Join computers to the domain</simpara>\n            </listitem>\n         </itemizedlist>\n      ",
-                "documentation": "\n         <p>The username of an account in the on-premises directory that is used to connect to the directory. This account must have the following privileges:</p>\n         <ul>\n            <li>\n               <p>Read users and groups</p>\n            </li>\n            <li>\n               <p>Create computer objects</p>\n            </li>\n            <li>\n               <p>Join computers to the domain</p>\n            </li>\n         </ul>\n      ",
+                "zonbookDocumentation": "\n         <simpara>The user name of an account in the on-premises directory that is used to connect to\n      the directory. This account must have the following permissions:</simpara>\n         <itemizedlist>\n            <listitem>\n               <simpara>Read users and groups</simpara>\n            </listitem>\n            <listitem>\n               <simpara>Create computer objects</simpara>\n            </listitem>\n            <listitem>\n               <simpara>Join computers to the domain</simpara>\n            </listitem>\n         </itemizedlist>\n      ",
+                "documentation": "\n         <p>The user name of an account in the on-premises directory that is used to connect to\n      the directory. This account must have the following permissions:</p>\n         <ul>\n            <li>\n               <p>Read users and groups</p>\n            </li>\n            <li>\n               <p>Create computer objects</p>\n            </li>\n            <li>\n               <p>Join computers to the domain</p>\n            </li>\n         </ul>\n      ",
                 "required": true,
                 "shape_name": "UserName",
                 "min_length": 1
@@ -601,7 +601,7 @@
           "shape_name": "ServiceException"
         }
       ],
-      "documentation": "\n         <p>Creates an AD Connector to connect to an on-premises directory.</p>\n         <p>Before you call <i>ConnectDirectory</i>, ensure that all of the required permissions have been explicitly granted through a policy. For details about what permissions are required to run the <i>ConnectDirectory</i> operation, see <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html\">AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.</p>\n     \n      "
+      "documentation": "\n         <p>Creates an AD Connector to connect to an on-premises directory.</p>\n         <p>Before you call <code>ConnectDirectory</code>, ensure that all of the required permissions have been explicitly granted through a policy. For details about what permissions are required to run the <code>ConnectDirectory</code> operation, see <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html\">AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.</p>\n     \n      "
     },
     "CreateAlias": {
       "name": "CreateAlias",
@@ -1093,8 +1093,8 @@
             "type": "string",
             "pattern": "(?=^.{8,64}$)((?=.*\\d)(?=.*[A-Z])(?=.*[a-z])|(?=.*\\d)(?=.*[^A-Za-z0-9\\s])(?=.*[a-z])|(?=.*[^A-Za-z0-9\\s])(?=.*[A-Z])(?=.*[a-z])|(?=.*\\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\\s]))^.*",
             "sensitive": true,
-            "zonbookDocumentation": "\n         <simpara>The password for the directory administrator. The directory creation process creates a\n         directory administrator account with the username <code>Administrator</code> and this\n         password.</simpara>\n      ",
-            "documentation": "\n         <p>The password for the directory administrator. The directory creation process creates a\n         directory administrator account with the username <code>Administrator</code> and this\n         password.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>The password for the directory administrator. The directory creation process creates\n      a directory administrator account with the user name <code>Administrator</code> and this\n      password.</simpara>\n      ",
+            "documentation": "\n         <p>The password for the directory administrator. The directory creation process creates\n      a directory administrator account with the user name <code>Administrator</code> and this\n      password.</p>\n      ",
             "required": true,
             "shape_name": "Password"
           },
@@ -1253,7 +1253,7 @@
           "shape_name": "ServiceException"
         }
       ],
-      "documentation": "\n         <p>Creates a Simple AD directory.</p>\n         <p>Before you call <i>CreateDirectory</i>, ensure that all of the required permissions have been explicitly granted through a policy. For details about what permissions are required to run the <i>CreateDirectory</i> operation, see <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html\">AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.</p>\n     \n      "
+      "documentation": "\n         <p>Creates a Simple AD directory.</p>\n         <p>Before you call <code>CreateDirectory</code>, ensure that all of the required permissions have been explicitly granted through a policy. For details about what permissions are required to run the <code>CreateDirectory</code> operation, see <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html\">AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.</p>\n     \n      "
     },
     "CreateMicrosoftAD": {
       "name": "CreateMicrosoftAD",
@@ -1564,8 +1564,8 @@
               "shape_name": "RequestId"
             }
           },
-          "zonbookDocumentation": "\n        <simpara>The maximum number of manual snapshots for the directory has been reached. You can use the\n            <xref linkend=\"GetSnapshotLimits\"/> operation to determine the snapshot limits for a directory.</simpara>\n      ",
-          "documentation": "\n        <p>The maximum number of manual snapshots for the directory has been reached. You can use the\n            <a>GetSnapshotLimits</a> operation to determine the snapshot limits for a directory.</p>\n      ",
+          "zonbookDocumentation": "\n        <simpara>The maximum number of manual snapshots for the directory has been reached. You can\n      use the <xref linkend=\"GetSnapshotLimits\"/> operation to determine the snapshot limits for a\n      directory.</simpara>\n      ",
+          "documentation": "\n        <p>The maximum number of manual snapshots for the directory has been reached. You can\n      use the <a>GetSnapshotLimits</a> operation to determine the snapshot limits for a\n      directory.</p>\n      ",
           "shape_name": "SnapshotLimitExceededException"
         },
         {
@@ -1711,7 +1711,7 @@
           "shape_name": "ServiceException"
         }
       ],
-      "documentation": "\n         <p>Deletes an AWS Directory Service directory.</p>\n         <p>Before you call <i>DeleteDirectory</i>, ensure that all of the required permissions have been explicitly granted through a policy. For details about what permissions are required to run the <i>DeleteDirectory</i> operation, see <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html\">AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.</p>\n     \n      "
+      "documentation": "\n         <p>Deletes an AWS Directory Service directory.</p>\n         <p>Before you call <code>DeleteDirectory</code>, ensure that all of the required permissions have been explicitly granted through a policy. For details about what permissions are required to run the <code>DeleteDirectory</code> operation, see <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html\">AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.</p>\n     \n      "
     },
     "DeleteSnapshot": {
       "name": "DeleteSnapshot",
@@ -1853,8 +1853,8 @@
           },
           "NextToken": {
             "type": "string",
-            "zonbookDocumentation": "\n         <simpara>The <emphasis>DescribeDirectoriesResult.NextToken</emphasis> value from a previous call to\n            <xref linkend=\"DescribeDirectories\"/>. Pass null if this is the first call.</simpara>\n      ",
-            "documentation": "\n         <p>The <i>DescribeDirectoriesResult.NextToken</i> value from a previous call to\n            <a>DescribeDirectories</a>. Pass null if this is the first call.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>The <code>DescribeDirectoriesResult.NextToken</code> value from a previous call to\n            <xref linkend=\"DescribeDirectories\"/>. Pass null if this is the first call.</simpara>\n      ",
+            "documentation": "\n         <p>The <code>DescribeDirectoriesResult.NextToken</code> value from a previous call to\n            <a>DescribeDirectories</a>. Pass null if this is the first call.</p>\n      ",
             "shape_name": "NextToken"
           },
           "Limit": {
@@ -1874,8 +1874,8 @@
         "members": {
           "DirectoryDescriptions": {
             "type": "list",
-            "zonbookDocumentation": "\n         <simpara>The list of <xref linkend=\"DirectoryDescription\"/> objects that were retrieved.</simpara>\n         <simpara>It is possible that this list contains less than the number of items specified in the\n            <emphasis>Limit</emphasis> member of the request. This occurs if there are less than the requested\n         number of items left to retrieve, or if the limitations of the operation have been\n         exceeded.</simpara>\n      ",
-            "documentation": "\n         <p>The list of <a>DirectoryDescription</a> objects that were retrieved.</p>\n         <p>It is possible that this list contains less than the number of items specified in the\n            <i>Limit</i> member of the request. This occurs if there are less than the requested\n         number of items left to retrieve, or if the limitations of the operation have been\n         exceeded.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>The list of <xref linkend=\"DirectoryDescription\"/> objects that were retrieved.</simpara>\n         <simpara>It is possible that this list contains less than the number of items specified in the\n            <code>Limit</code> member of the request. This occurs if there are less than the requested\n         number of items left to retrieve, or if the limitations of the operation have been\n         exceeded.</simpara>\n      ",
+            "documentation": "\n         <p>The list of <a>DirectoryDescription</a> objects that were retrieved.</p>\n         <p>It is possible that this list contains less than the number of items specified in the\n            <code>Limit</code> member of the request. This occurs if there are less than the requested\n         number of items left to retrieve, or if the limitations of the operation have been\n         exceeded.</p>\n      ",
             "shape_name": "DirectoryDescriptions",
             "members": {
               "type": "structure",
@@ -1890,8 +1890,8 @@
                 "Name": {
                   "type": "string",
                   "pattern": "^([a-zA-Z0-9]+[\\\\.-])+([a-zA-Z0-9])+$",
-                  "zonbookDocumentation": "\n         <simpara>The fully-qualified name of the directory.</simpara>\n      ",
-                  "documentation": "\n         <p>The fully-qualified name of the directory.</p>\n      ",
+                  "zonbookDocumentation": "\n         <simpara>The fully qualified name of the directory.</simpara>\n      ",
+                  "documentation": "\n         <p>The fully qualified name of the directory.</p>\n      ",
                   "shape_name": "DirectoryName"
                 },
                 "ShortName": {
@@ -1978,6 +1978,41 @@
                   "documentation": "\n         <p>The current stage of the directory.</p>\n      ",
                   "shape_name": "DirectoryStage"
                 },
+                "ShareStatus": {
+                  "type": "string",
+                  "enum": [
+                    "Shared",
+                    "PendingAcceptance",
+                    "Rejected",
+                    "Rejecting",
+                    "RejectFailed",
+                    "Sharing",
+                    "ShareFailed",
+                    "Deleted",
+                    "Deleting"
+                  ],
+                  "zonbookDocumentation": "\n         <para>Current directory status of the shared AWS Managed Microsoft AD directory.</para>\n      ",
+                  "documentation": "\n         <p>Current directory status of the shared AWS Managed Microsoft AD directory.</p>\n      ",
+                  "shape_name": "ShareStatus"
+                },
+                "ShareMethod": {
+                  "type": "string",
+                  "enum": [
+                    "ORGANIZATIONS",
+                    "HANDSHAKE"
+                  ],
+                  "zonbookDocumentation": "\n         <para>The method used when sharing a directory to determine whether the directory should be\n      shared within your AWS organization (<code>ORGANIZATIONS</code>) or with any AWS account by\n      sending a shared directory request (<code>HANDSHAKE</code>).</para>\n      ",
+                  "documentation": "\n         <p>The method used when sharing a directory to determine whether the directory should be\n      shared within your AWS organization (<code>ORGANIZATIONS</code>) or with any AWS account by\n      sending a shared directory request (<code>HANDSHAKE</code>).</p>\n      ",
+                  "shape_name": "ShareMethod"
+                },
+                "ShareNotes": {
+                  "type": "string",
+                  "sensitive": true,
+                  "zonbookDocumentation": "\n         <para>A directory share request that is sent by the directory owner to the directory consumer.\n      The request includes a typed message to help the directory consumer administrator determine\n      whether to approve or reject the share invitation.</para>\n      ",
+                  "documentation": "\n         <p>A directory share request that is sent by the directory owner to the directory consumer.\n      The request includes a typed message to help the directory consumer administrator determine\n      whether to approve or reject the share invitation.</p>\n      ",
+                  "shape_name": "Notes",
+                  "max_length": 1024
+                },
                 "LaunchTime": {
                   "type": "timestamp",
                   "zonbookDocumentation": "\n         <simpara>Specifies when the directory was created.</simpara>\n      ",
@@ -1995,7 +2030,8 @@
                   "enum": [
                     "SimpleAD",
                     "ADConnector",
-                    "MicrosoftAD"
+                    "MicrosoftAD",
+                    "SharedMicrosoftAD"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The directory size.</simpara>\n      ",
                   "documentation": "\n         <p>The directory size.</p>\n      ",
@@ -2071,8 +2107,8 @@
                     "CustomerUserName": {
                       "type": "string",
                       "pattern": "[a-zA-Z0-9._-]+",
-                      "zonbookDocumentation": "\n         <simpara>The username of the service account in the on-premises directory.</simpara>\n      ",
-                      "documentation": "\n         <p>The username of the service account in the on-premises directory.</p>\n      ",
+                      "zonbookDocumentation": "\n         <simpara>The user name of the service account in the on-premises directory.</simpara>\n      ",
+                      "documentation": "\n         <p>The user name of the service account in the on-premises directory.</p>\n      ",
                       "shape_name": "UserName",
                       "min_length": 1
                     },
@@ -2154,8 +2190,8 @@
                     "SharedSecret": {
                       "type": "string",
                       "sensitive": true,
-                      "zonbookDocumentation": "\n         <simpara>Not currently used.</simpara>\n      ",
-                      "documentation": "\n         <p>Not currently used.</p>\n      ",
+                      "zonbookDocumentation": "\n         <simpara>Required for enabling RADIUS on the directory.</simpara>\n      ",
+                      "documentation": "\n         <p>Required for enabling RADIUS on the directory.</p>\n      ",
                       "shape_name": "RadiusSharedSecret",
                       "min_length": 8,
                       "max_length": 512
@@ -2210,8 +2246,8 @@
                 },
                 "SsoEnabled": {
                   "type": "boolean",
-                  "zonbookDocumentation": "\n         <simpara>Indicates if single-sign on is enabled for the directory. For more information, see\n            <xref linkend=\"EnableSso\"/> and <xref linkend=\"DisableSso\"/>.</simpara>\n      ",
-                  "documentation": "\n         <p>Indicates if single-sign on is enabled for the directory. For more information, see\n            <a>EnableSso</a> and <a>DisableSso</a>.</p>\n      ",
+                  "zonbookDocumentation": "\n         <simpara>Indicates if single sign-on is enabled for the directory. For more information, see\n        <xref linkend=\"EnableSso\"/> and <xref linkend=\"DisableSso\"/>.</simpara>\n      ",
+                  "documentation": "\n         <p>Indicates if single sign-on is enabled for the directory. For more information, see\n        <a>EnableSso</a> and <a>DisableSso</a>.</p>\n      ",
                   "shape_name": "SsoEnabled"
                 },
                 "DesiredNumberOfDomainControllers": {
@@ -2220,6 +2256,176 @@
                   "documentation": "\n         <p>The desired number of domain controllers in the directory if the directory is Microsoft AD.</p>\n      ",
                   "shape_name": "DesiredNumberOfDomainControllers",
                   "min_length": 2
+                },
+                "OwnerDirectoryDescription": {
+                  "type": "structure",
+                  "members": {
+                    "DirectoryId": {
+                      "type": "string",
+                      "pattern": "^d-[0-9a-f]{10}$",
+                      "zonbookDocumentation": "\n         <para>Identifier of the AWS Managed Microsoft AD directory in the directory owner account.</para>\n      ",
+                      "documentation": "\n         <p>Identifier of the AWS Managed Microsoft AD directory in the directory owner account.</p>\n      ",
+                      "shape_name": "DirectoryId"
+                    },
+                    "AccountId": {
+                      "type": "string",
+                      "pattern": "^(\\d{12})$",
+                      "zonbookDocumentation": "\n         <para>Identifier of the directory owner account.</para>\n      ",
+                      "documentation": "\n         <p>Identifier of the directory owner account.</p>\n      ",
+                      "shape_name": "CustomerId"
+                    },
+                    "DnsIpAddrs": {
+                      "type": "list",
+                      "zonbookDocumentation": "\n         <para>IP address of the directory’s domain controllers.</para>\n      ",
+                      "documentation": "\n         <p>IP address of the directory’s domain controllers.</p>\n      ",
+                      "shape_name": "DnsIpAddrs",
+                      "members": {
+                        "type": "string",
+                        "pattern": "^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$",
+                        "shape_name": "IpAddr",
+                        "documentation": null
+                      }
+                    },
+                    "VpcSettings": {
+                      "type": "structure",
+                      "members": {
+                        "VpcId": {
+                          "type": "string",
+                          "pattern": "^(vpc-[0-9a-f]{8}|vpc-[0-9a-f]{17})$",
+                          "zonbookDocumentation": "\n         <simpara>The identifier of the VPC that the directory is in.</simpara>\n      ",
+                          "documentation": "\n         <p>The identifier of the VPC that the directory is in.</p>\n      ",
+                          "shape_name": "VpcId"
+                        },
+                        "SubnetIds": {
+                          "type": "list",
+                          "zonbookDocumentation": "\n         <simpara>The identifiers of the subnets for the directory servers.</simpara>\n      ",
+                          "documentation": "\n         <p>The identifiers of the subnets for the directory servers.</p>\n      ",
+                          "shape_name": "SubnetIds",
+                          "members": {
+                            "type": "string",
+                            "pattern": "^(subnet-[0-9a-f]{8}|subnet-[0-9a-f]{17})$",
+                            "shape_name": "SubnetId",
+                            "documentation": null
+                          }
+                        },
+                        "SecurityGroupId": {
+                          "type": "string",
+                          "pattern": "^(sg-[0-9a-f]{8}|sg-[0-9a-f]{17})$",
+                          "zonbookDocumentation": "\n         <simpara>The domain controller security group identifier for the directory.</simpara>\n      ",
+                          "documentation": "\n         <p>The domain controller security group identifier for the directory.</p>\n      ",
+                          "shape_name": "SecurityGroupId"
+                        },
+                        "AvailabilityZones": {
+                          "type": "list",
+                          "zonbookDocumentation": "\n         <simpara>The list of Availability Zones that the directory is in.</simpara>\n      ",
+                          "documentation": "\n         <p>The list of Availability Zones that the directory is in.</p>\n      ",
+                          "shape_name": "AvailabilityZones",
+                          "members": {
+                            "type": "string",
+                            "shape_name": "AvailabilityZone",
+                            "documentation": null
+                          }
+                        }
+                      },
+                      "zonbookDocumentation": "\n         <para>Information about the VPC settings for the directory.</para>\n      ",
+                      "documentation": "\n         <p>Information about the VPC settings for the directory.</p>\n      ",
+                      "shape_name": "DirectoryVpcSettingsDescription"
+                    },
+                    "RadiusSettings": {
+                      "type": "structure",
+                      "members": {
+                        "RadiusServers": {
+                          "type": "list",
+                          "zonbookDocumentation": "\n         <simpara>An array of strings that contains the IP addresses of the RADIUS server endpoints, or the IP addresses of your RADIUS server load balancer.</simpara>\n      ",
+                          "documentation": "\n         <p>An array of strings that contains the IP addresses of the RADIUS server endpoints, or the IP addresses of your RADIUS server load balancer.</p>\n      ",
+                          "shape_name": "Servers",
+                          "members": {
+                            "type": "string",
+                            "shape_name": "Server",
+                            "documentation": null,
+                            "min_length": 1,
+                            "max_length": 256
+                          }
+                        },
+                        "RadiusPort": {
+                          "type": "integer",
+                          "zonbookDocumentation": "\n         <simpara>The port that your RADIUS server is using for communications. Your on-premises network must allow inbound traffic over this port from the AWS Directory Service servers.</simpara>\n      ",
+                          "documentation": "\n         <p>The port that your RADIUS server is using for communications. Your on-premises network must allow inbound traffic over this port from the AWS Directory Service servers.</p>\n      ",
+                          "shape_name": "PortNumber",
+                          "min_length": 1025,
+                          "max_length": 65535
+                        },
+                        "RadiusTimeout": {
+                          "type": "integer",
+                          "zonbookDocumentation": "\n         <simpara>The amount of time, in seconds, to wait for the RADIUS server to respond.</simpara>\n      ",
+                          "documentation": "\n         <p>The amount of time, in seconds, to wait for the RADIUS server to respond.</p>\n      ",
+                          "shape_name": "RadiusTimeout",
+                          "min_length": 1,
+                          "max_length": 20
+                        },
+                        "RadiusRetries": {
+                          "type": "integer",
+                          "zonbookDocumentation": "\n         <simpara>The maximum number of times that communication with the RADIUS server is attempted.</simpara>\n      ",
+                          "documentation": "\n         <p>The maximum number of times that communication with the RADIUS server is attempted.</p>\n      ",
+                          "shape_name": "RadiusRetries",
+                          "min_length": 0,
+                          "max_length": 10
+                        },
+                        "SharedSecret": {
+                          "type": "string",
+                          "sensitive": true,
+                          "zonbookDocumentation": "\n         <simpara>Required for enabling RADIUS on the directory.</simpara>\n      ",
+                          "documentation": "\n         <p>Required for enabling RADIUS on the directory.</p>\n      ",
+                          "shape_name": "RadiusSharedSecret",
+                          "min_length": 8,
+                          "max_length": 512
+                        },
+                        "AuthenticationProtocol": {
+                          "type": "string",
+                          "enum": [
+                            "PAP",
+                            "CHAP",
+                            "MS-CHAPv1",
+                            "MS-CHAPv2"
+                          ],
+                          "zonbookDocumentation": "\n         <simpara>The protocol specified for your RADIUS endpoints.</simpara>\n      ",
+                          "documentation": "\n         <p>The protocol specified for your RADIUS endpoints.</p>\n      ",
+                          "shape_name": "RadiusAuthenticationProtocol"
+                        },
+                        "DisplayLabel": {
+                          "type": "string",
+                          "zonbookDocumentation": "\n         <simpara>Not currently used.</simpara>\n      ",
+                          "documentation": "\n         <p>Not currently used.</p>\n      ",
+                          "shape_name": "RadiusDisplayLabel",
+                          "min_length": 1,
+                          "max_length": 64
+                        },
+                        "UseSameUsername": {
+                          "type": "boolean",
+                          "zonbookDocumentation": "\n         <simpara>Not currently used.</simpara>\n      ",
+                          "documentation": "\n         <p>Not currently used.</p>\n      ",
+                          "shape_name": "UseSameUsername"
+                        }
+                      },
+                      "zonbookDocumentation": "\n         <para>A <xref linkend=\"RadiusSettings\"/> object that contains information about the RADIUS server.</para>\n      ",
+                      "documentation": "\n         <p>A <a>RadiusSettings</a> object that contains information about the RADIUS server.</p>\n      ",
+                      "shape_name": "RadiusSettings"
+                    },
+                    "RadiusStatus": {
+                      "type": "string",
+                      "enum": [
+                        "Creating",
+                        "Completed",
+                        "Failed"
+                      ],
+                      "zonbookDocumentation": "\n         <para>Information about the status of the RADIUS server.</para>\n      ",
+                      "documentation": "\n         <p>Information about the status of the RADIUS server.</p>\n      ",
+                      "shape_name": "RadiusStatus"
+                    }
+                  },
+                  "zonbookDocumentation": "\n         <para>Describes the AWS Managed Microsoft AD directory in the directory owner account.</para>\n      ",
+                  "documentation": "\n         <p>Describes the AWS Managed Microsoft AD directory in the directory owner account.</p>\n      ",
+                  "shape_name": "OwnerDirectoryDescription"
                 }
               },
               "zonbookDocumentation": "\n         <simpara>Contains information about an AWS Directory Service directory.</simpara>\n      ",
@@ -2229,8 +2435,8 @@
           },
           "NextToken": {
             "type": "string",
-            "zonbookDocumentation": "\n         <simpara>If not null, more results are available. Pass this value for the <emphasis>NextToken</emphasis> parameter\n         in a subsequent call to <xref linkend=\"DescribeDirectories\"/> to retrieve the next set of items.</simpara>\n      ",
-            "documentation": "\n         <p>If not null, more results are available. Pass this value for the <i>NextToken</i> parameter\n         in a subsequent call to <a>DescribeDirectories</a> to retrieve the next set of items.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter\n         in a subsequent call to <xref linkend=\"DescribeDirectories\"/> to retrieve the next set of items.</simpara>\n      ",
+            "documentation": "\n         <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter\n         in a subsequent call to <a>DescribeDirectories</a> to retrieve the next set of items.</p>\n      ",
             "shape_name": "NextToken"
           }
         },
@@ -2298,8 +2504,8 @@
               "shape_name": "RequestId"
             }
           },
-          "zonbookDocumentation": "\n        <simpara>The <emphasis>NextToken</emphasis> value is not valid.</simpara>\n      ",
-          "documentation": "\n        <p>The <i>NextToken</i> value is not valid.</p>\n      ",
+          "zonbookDocumentation": "\n        <simpara>The <code>NextToken</code> value is not valid.</simpara>\n      ",
+          "documentation": "\n        <p>The <code>NextToken</code> value is not valid.</p>\n      ",
           "shape_name": "InvalidNextTokenException"
         },
         {
@@ -2345,7 +2551,7 @@
           "shape_name": "ServiceException"
         }
       ],
-      "documentation": "\n         <p>Obtains information about the directories that belong to this account.</p>\n         <p>You can retrieve information about specific directories by passing the directory\n         identifiers in the <i>DirectoryIds</i> parameter. Otherwise, all directories that belong to\n         the current account are returned.</p>\n         <p>This operation supports pagination with the use of the <i>NextToken</i> request and\n         response parameters. If more results are available, the\n            <i>DescribeDirectoriesResult.NextToken</i> member contains a token that you pass in the\n         next call to <a>DescribeDirectories</a> to retrieve the next set of items.</p>\n         <p>You can also specify a maximum number of return results with the <i>Limit</i>\n         parameter.</p>\n     \n      "
+      "documentation": "\n         <p>Obtains information about the directories that belong to this account.</p>\n         <p>You can retrieve information about specific directories by passing the directory\n         identifiers in the <code>DirectoryIds</code> parameter. Otherwise, all directories that belong to\n         the current account are returned.</p>\n         <p>This operation supports pagination with the use of the <code>NextToken</code> request and\n         response parameters. If more results are available, the\n            <code>DescribeDirectoriesResult.NextToken</code> member contains a token that you pass in the\n         next call to <a>DescribeDirectories</a> to retrieve the next set of items.</p>\n         <p>You can also specify a maximum number of return results with the <code>Limit</code>\n         parameter.</p>\n     \n      "
     },
     "DescribeSnapshots": {
       "name": "DescribeSnapshots",
@@ -2527,8 +2733,8 @@
               "shape_name": "RequestId"
             }
           },
-          "zonbookDocumentation": "\n        <simpara>The <emphasis>NextToken</emphasis> value is not valid.</simpara>\n      ",
-          "documentation": "\n        <p>The <i>NextToken</i> value is not valid.</p>\n      ",
+          "zonbookDocumentation": "\n        <simpara>The <code>NextToken</code> value is not valid.</simpara>\n      ",
+          "documentation": "\n        <p>The <code>NextToken</code> value is not valid.</p>\n      ",
           "shape_name": "InvalidNextTokenException"
         },
         {
@@ -2667,7 +2873,7 @@
           "shape_name": "ServiceException"
         }
       ],
-      "documentation": "\n         <p>Disables multi-factor authentication (MFA) with the Remote Authentication Dial In User Service (RADIUS) server for an AD Connector directory.</p>\n     \n      "
+      "documentation": "\n         <p>Disables multi-factor authentication (MFA) with the Remote Authentication Dial In User Service (RADIUS) server for an AD Connector or Microsoft AD directory.</p>\n     \n      "
     },
     "DisableSso": {
       "name": "DisableSso",
@@ -2877,8 +3083,8 @@
               "SharedSecret": {
                 "type": "string",
                 "sensitive": true,
-                "zonbookDocumentation": "\n         <simpara>Not currently used.</simpara>\n      ",
-                "documentation": "\n         <p>Not currently used.</p>\n      ",
+                "zonbookDocumentation": "\n         <simpara>Required for enabling RADIUS on the directory.</simpara>\n      ",
+                "documentation": "\n         <p>Required for enabling RADIUS on the directory.</p>\n      ",
                 "shape_name": "RadiusSharedSecret",
                 "min_length": 8,
                 "max_length": 512
@@ -3035,7 +3241,7 @@
           "shape_name": "ServiceException"
         }
       ],
-      "documentation": "\n         <p>Enables multi-factor authentication (MFA) with the Remote Authentication Dial In User Service (RADIUS) server for an AD Connector directory.</p>\n     \n      "
+      "documentation": "\n         <p>Enables multi-factor authentication (MFA) with the Remote Authentication Dial In User Service (RADIUS) server for an AD Connector or Microsoft AD directory.</p>\n     \n      "
     },
     "EnableSso": {
       "name": "EnableSso",
@@ -3608,8 +3814,8 @@
               "shape_name": "RequestId"
             }
           },
-          "zonbookDocumentation": "\n        <simpara>The <emphasis>NextToken</emphasis> value is not valid.</simpara>\n      ",
-          "documentation": "\n        <p>The <i>NextToken</i> value is not valid.</p>\n      ",
+          "zonbookDocumentation": "\n        <simpara>The <code>NextToken</code> value is not valid.</simpara>\n      ",
+          "documentation": "\n        <p>The <code>NextToken</code> value is not valid.</p>\n      ",
           "shape_name": "InvalidNextTokenException"
         },
         {
@@ -3794,8 +4000,8 @@
               "shape_name": "RequestId"
             }
           },
-          "zonbookDocumentation": "\n        <simpara>The <emphasis>NextToken</emphasis> value is not valid.</simpara>\n      ",
-          "documentation": "\n        <p>The <i>NextToken</i> value is not valid.</p>\n      ",
+          "zonbookDocumentation": "\n        <simpara>The <code>NextToken</code> value is not valid.</simpara>\n      ",
+          "documentation": "\n        <p>The <code>NextToken</code> value is not valid.</p>\n      ",
           "shape_name": "InvalidNextTokenException"
         },
         {
@@ -4307,8 +4513,8 @@
               "SharedSecret": {
                 "type": "string",
                 "sensitive": true,
-                "zonbookDocumentation": "\n         <simpara>Not currently used.</simpara>\n      ",
-                "documentation": "\n         <p>Not currently used.</p>\n      ",
+                "zonbookDocumentation": "\n         <simpara>Required for enabling RADIUS on the directory.</simpara>\n      ",
+                "documentation": "\n         <p>Required for enabling RADIUS on the directory.</p>\n      ",
                 "shape_name": "RadiusSharedSecret",
                 "min_length": 8,
                 "max_length": 512
@@ -4444,7 +4650,7 @@
           "shape_name": "ServiceException"
         }
       ],
-      "documentation": "\n         <p>Updates the Remote Authentication Dial In User Service (RADIUS) server information for an AD Connector directory.</p>\n     \n      "
+      "documentation": "\n         <p>Updates the Remote Authentication Dial In User Service (RADIUS) server information for an AD Connector or Microsoft AD directory.</p>\n     \n      "
     },
     "CreateTrust": {
       "name": "CreateTrust",
@@ -4850,8 +5056,8 @@
               "shape_name": "RequestId"
             }
           },
-          "zonbookDocumentation": "\n        <simpara>The <emphasis>NextToken</emphasis> value is not valid.</simpara>\n      ",
-          "documentation": "\n        <p>The <i>NextToken</i> value is not valid.</p>\n      ",
+          "zonbookDocumentation": "\n        <simpara>The <code>NextToken</code> value is not valid.</simpara>\n      ",
+          "documentation": "\n        <p>The <code>NextToken</code> value is not valid.</p>\n      ",
           "shape_name": "InvalidNextTokenException"
         },
         {
@@ -6118,8 +6324,8 @@
               "shape_name": "RequestId"
             }
           },
-          "zonbookDocumentation": "\n        <simpara>The maximum number of manual snapshots for the directory has been reached. You can use the\n            <xref linkend=\"GetSnapshotLimits\"/> operation to determine the snapshot limits for a directory.</simpara>\n      ",
-          "documentation": "\n        <p>The maximum number of manual snapshots for the directory has been reached. You can use the\n            <a>GetSnapshotLimits</a> operation to determine the snapshot limits for a directory.</p>\n      ",
+          "zonbookDocumentation": "\n        <simpara>The maximum number of manual snapshots for the directory has been reached. You can\n      use the <xref linkend=\"GetSnapshotLimits\"/> operation to determine the snapshot limits for a\n      directory.</simpara>\n      ",
+          "documentation": "\n        <p>The maximum number of manual snapshots for the directory has been reached. You can\n      use the <a>GetSnapshotLimits</a> operation to determine the snapshot limits for a\n      directory.</p>\n      ",
           "shape_name": "SnapshotLimitExceededException"
         },
         {
@@ -6300,8 +6506,8 @@
               "shape_name": "RequestId"
             }
           },
-          "zonbookDocumentation": "\n        <simpara>The <emphasis>NextToken</emphasis> value is not valid.</simpara>\n      ",
-          "documentation": "\n        <p>The <i>NextToken</i> value is not valid.</p>\n      ",
+          "zonbookDocumentation": "\n        <simpara>The <code>NextToken</code> value is not valid.</simpara>\n      ",
+          "documentation": "\n        <p>The <code>NextToken</code> value is not valid.</p>\n      ",
           "shape_name": "InvalidNextTokenException"
         },
         {
@@ -6835,8 +7041,8 @@
               "shape_name": "RequestId"
             }
           },
-          "zonbookDocumentation": "\n        <simpara>The <emphasis>NextToken</emphasis> value is not valid.</simpara>\n      ",
-          "documentation": "\n        <p>The <i>NextToken</i> value is not valid.</p>\n      ",
+          "zonbookDocumentation": "\n        <simpara>The <code>NextToken</code> value is not valid.</simpara>\n      ",
+          "documentation": "\n        <p>The <code>NextToken</code> value is not valid.</p>\n      ",
           "shape_name": "InvalidNextTokenException"
         },
         {
@@ -6942,8 +7148,8 @@
           "UserName": {
             "type": "string",
             "pattern": "^(?!.*\\\\|.*\"|.*\\/|.*\\[|.*\\]|.*:|.*;|.*\\||.*=|.*,|.*\\+|.*\\*|.*\\?|.*<|.*>|.*@).*$",
-            "zonbookDocumentation": "\n         <para>The username of the user whose password will be reset.</para>\n      ",
-            "documentation": "\n         <p>The username of the user whose password will be reset.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The user name of the user whose password will be reset.</para>\n      ",
+            "documentation": "\n         <p>The user name of the user whose password will be reset.</p>\n      ",
             "required": true,
             "shape_name": "CustomerUserName",
             "min_length": 1,
@@ -7129,16 +7335,16 @@
           "DirectoryId": {
             "type": "string",
             "pattern": "^d-[0-9a-f]{10}$",
-            "zonbookDocumentation": "\n         <para>Identifier (ID) of the directory to which you want to subscribe and receive real-time logs to your specified CloudWatch log group.</para>\n      ",
-            "documentation": "\n         <p>Identifier (ID) of the directory to which you want to subscribe and receive real-time logs to your specified CloudWatch log group.</p>\n      ",
+            "zonbookDocumentation": "\n        <para>Identifier (ID) of the directory to which you want to subscribe and receive real-time logs to your specified CloudWatch log group.</para>\n      ",
+            "documentation": "\n        <p>Identifier (ID) of the directory to which you want to subscribe and receive real-time logs to your specified CloudWatch log group.</p>\n      ",
             "required": true,
             "shape_name": "DirectoryId"
           },
           "LogGroupName": {
             "type": "string",
             "pattern": "[-._/#A-Za-z0-9]+",
-            "zonbookDocumentation": "\n         <para>The name of the CloudWatch log group where the real-time domain controller logs are forwarded.</para>\n      ",
-            "documentation": "\n         <p>The name of the CloudWatch log group where the real-time domain controller logs are forwarded.</p>\n      ",
+            "zonbookDocumentation": "\n        <para>The name of the CloudWatch log group where the real-time domain controller logs are forwarded.</para>\n      ",
+            "documentation": "\n        <p>The name of the CloudWatch log group where the real-time domain controller logs are forwarded.</p>\n      ",
             "required": true,
             "shape_name": "LogGroupName",
             "min_length": 1,
@@ -7283,7 +7489,7 @@
           "shape_name": "ServiceException"
         }
       ],
-      "documentation": "\n         <p>Creates a subscription to forward real time Directory Service domain controller security logs to the specified CloudWatch log group in your AWS account.</p>\n      "
+      "documentation": "\n        <p>Creates a subscription to forward real time Directory Service domain controller security logs to the specified CloudWatch log group in your AWS account.</p>\n      "
     },
     "DeleteLogSubscription": {
       "name": "DeleteLogSubscription",
@@ -7293,8 +7499,8 @@
           "DirectoryId": {
             "type": "string",
             "pattern": "^d-[0-9a-f]{10}$",
-            "zonbookDocumentation": "\n         <para>Identifier (ID) of the directory whose log subscription you want to delete.</para>\n      ",
-            "documentation": "\n         <p>Identifier (ID) of the directory whose log subscription you want to delete.</p>\n      ",
+            "zonbookDocumentation": "\n        <para>Identifier (ID) of the directory whose log subscription you want to delete.</para>\n      ",
+            "documentation": "\n        <p>Identifier (ID) of the directory whose log subscription you want to delete.</p>\n      ",
             "required": true,
             "shape_name": "DirectoryId"
           }
@@ -7395,7 +7601,7 @@
           "shape_name": "ServiceException"
         }
       ],
-      "documentation": "\n         <p>Deletes the specified log subscription.</p>\n      "
+      "documentation": "\n        <p>Deletes the specified log subscription.</p>\n      "
     },
     "ListLogSubscriptions": {
       "name": "ListLogSubscriptions",
@@ -7405,20 +7611,20 @@
           "DirectoryId": {
             "type": "string",
             "pattern": "^d-[0-9a-f]{10}$",
-            "zonbookDocumentation": "\n         <para>If a <emphasis>DirectoryID</emphasis> is provided, lists only the log subscription associated with that directory. If no <emphasis>DirectoryId</emphasis> is provided, lists all log subscriptions associated with your AWS account. If there are no log subscriptions for the AWS account or the directory, an empty list will be returned.</para>\n      ",
-            "documentation": "\n         <p>If a <i>DirectoryID</i> is provided, lists only the log subscription associated with that directory. If no <i>DirectoryId</i> is provided, lists all log subscriptions associated with your AWS account. If there are no log subscriptions for the AWS account or the directory, an empty list will be returned.</p>\n      ",
+            "zonbookDocumentation": "\n        <para>If a <emphasis>DirectoryID</emphasis> is provided, lists only the log subscription associated with that directory. If no <emphasis>DirectoryId</emphasis> is provided, lists all log subscriptions associated with your AWS account. If there are no log subscriptions for the AWS account or the directory, an empty list will be returned.</para>\n      ",
+            "documentation": "\n        <p>If a <i>DirectoryID</i> is provided, lists only the log subscription associated with that directory. If no <i>DirectoryId</i> is provided, lists all log subscriptions associated with your AWS account. If there are no log subscriptions for the AWS account or the directory, an empty list will be returned.</p>\n      ",
             "shape_name": "DirectoryId"
           },
           "NextToken": {
             "type": "string",
-            "zonbookDocumentation": "\n         <para>The token for the next set of items to return.</para>\n      ",
-            "documentation": "\n         <p>The token for the next set of items to return.</p>\n      ",
+            "zonbookDocumentation": "\n        <para>The token for the next set of items to return.</para>\n      ",
+            "documentation": "\n        <p>The token for the next set of items to return.</p>\n      ",
             "shape_name": "NextToken"
           },
           "Limit": {
             "type": "integer",
-            "zonbookDocumentation": "\n         <para>The maximum number of items returned.</para>\n      ",
-            "documentation": "\n         <p>The maximum number of items returned.</p>\n      ",
+            "zonbookDocumentation": "\n        <para>The maximum number of items returned.</para>\n      ",
+            "documentation": "\n        <p>The maximum number of items returned.</p>\n      ",
             "shape_name": "Limit",
             "min_length": 0
           }
@@ -7431,8 +7637,8 @@
         "members": {
           "LogSubscriptions": {
             "type": "list",
-            "zonbookDocumentation": "\n         <para>A list of active <xref linkend=\"LogSubscription\"/> objects for calling the AWS account.</para>\n      ",
-            "documentation": "\n         <p>A list of active <a>LogSubscription</a> objects for calling the AWS account.</p>\n      ",
+            "zonbookDocumentation": "\n        <para>A list of active <xref linkend=\"LogSubscription\"/> objects for calling the AWS account.</para>\n      ",
+            "documentation": "\n        <p>A list of active <a>LogSubscription</a> objects for calling the AWS account.</p>\n      ",
             "shape_name": "LogSubscriptions",
             "members": {
               "type": "structure",
@@ -7440,35 +7646,35 @@
                 "DirectoryId": {
                   "type": "string",
                   "pattern": "^d-[0-9a-f]{10}$",
-                  "zonbookDocumentation": "\n         <para>Identifier (ID) of the directory that you want to associate with the log subscription.</para>\n      ",
-                  "documentation": "\n         <p>Identifier (ID) of the directory that you want to associate with the log subscription.</p>\n      ",
+                  "zonbookDocumentation": "\n        <para>Identifier (ID) of the directory that you want to associate with the log subscription.</para>\n      ",
+                  "documentation": "\n        <p>Identifier (ID) of the directory that you want to associate with the log subscription.</p>\n      ",
                   "shape_name": "DirectoryId"
                 },
                 "LogGroupName": {
                   "type": "string",
                   "pattern": "[-._/#A-Za-z0-9]+",
-                  "zonbookDocumentation": "\n         <para>The name of the log group.</para>\n      ",
-                  "documentation": "\n         <p>The name of the log group.</p>\n      ",
+                  "zonbookDocumentation": "\n        <para>The name of the log group.</para>\n      ",
+                  "documentation": "\n        <p>The name of the log group.</p>\n      ",
                   "shape_name": "LogGroupName",
                   "min_length": 1,
                   "max_length": 512
                 },
                 "SubscriptionCreatedDateTime": {
                   "type": "timestamp",
-                  "zonbookDocumentation": "\n         <para>The date and time that the log subscription was created.</para>\n      ",
-                  "documentation": "\n         <p>The date and time that the log subscription was created.</p>\n      ",
+                  "zonbookDocumentation": "\n        <para>The date and time that the log subscription was created.</para>\n      ",
+                  "documentation": "\n        <p>The date and time that the log subscription was created.</p>\n      ",
                   "shape_name": "SubscriptionCreatedDateTime"
                 }
               },
-              "zonbookDocumentation": "\n         <para>Represents a log subscription, which tracks real-time data from a chosen log group to a specified destination.</para>\n      ",
-              "documentation": "\n         <p>Represents a log subscription, which tracks real-time data from a chosen log group to a specified destination.</p>\n      ",
+              "zonbookDocumentation": "\n        <para>Represents a log subscription, which tracks real-time data from a chosen log group to a specified destination.</para>\n      ",
+              "documentation": "\n        <p>Represents a log subscription, which tracks real-time data from a chosen log group to a specified destination.</p>\n      ",
               "shape_name": "LogSubscription"
             }
           },
           "NextToken": {
             "type": "string",
-            "zonbookDocumentation": "\n         <para>The token for the next set of items to return.</para>\n      ",
-            "documentation": "\n         <p>The token for the next set of items to return.</p>\n      ",
+            "zonbookDocumentation": "\n        <para>The token for the next set of items to return.</para>\n      ",
+            "documentation": "\n        <p>The token for the next set of items to return.</p>\n      ",
             "shape_name": "NextToken"
           }
         },
@@ -7514,8 +7720,8 @@
               "shape_name": "RequestId"
             }
           },
-          "zonbookDocumentation": "\n        <simpara>The <emphasis>NextToken</emphasis> value is not valid.</simpara>\n      ",
-          "documentation": "\n        <p>The <i>NextToken</i> value is not valid.</p>\n      ",
+          "zonbookDocumentation": "\n        <simpara>The <code>NextToken</code> value is not valid.</simpara>\n      ",
+          "documentation": "\n        <p>The <code>NextToken</code> value is not valid.</p>\n      ",
           "shape_name": "InvalidNextTokenException"
         },
         {
@@ -7561,7 +7767,1097 @@
           "shape_name": "ServiceException"
         }
       ],
-      "documentation": "\n         <p>Lists the active log subscriptions for the AWS account.</p>\n      "
+      "documentation": "\n        <p>Lists the active log subscriptions for the AWS account.</p>\n      "
+    },
+    "ShareDirectory": {
+      "name": "ShareDirectory",
+      "input": {
+        "type": "structure",
+        "members": {
+          "DirectoryId": {
+            "type": "string",
+            "pattern": "^d-[0-9a-f]{10}$",
+            "zonbookDocumentation": "\n         <para>Identifier of the AWS Managed Microsoft AD directory that you want to share with other AWS accounts.</para>\n      ",
+            "documentation": "\n         <p>Identifier of the AWS Managed Microsoft AD directory that you want to share with other AWS accounts.</p>\n      ",
+            "required": true,
+            "shape_name": "DirectoryId"
+          },
+          "ShareNotes": {
+            "type": "string",
+            "sensitive": true,
+            "zonbookDocumentation": "\n         <para>A directory share request that is sent by the directory owner to the directory consumer.\n      The request includes a typed message to help the directory consumer administrator determine\n      whether to approve or reject the share invitation.</para>\n      ",
+            "documentation": "\n         <p>A directory share request that is sent by the directory owner to the directory consumer.\n      The request includes a typed message to help the directory consumer administrator determine\n      whether to approve or reject the share invitation.</p>\n      ",
+            "shape_name": "Notes",
+            "max_length": 1024
+          },
+          "ShareTarget": {
+            "type": "structure",
+            "members": {
+              "Id": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <para>Identifier of the directory consumer account.</para>\n      ",
+                "documentation": "\n         <p>Identifier of the directory consumer account.</p>\n      ",
+                "required": true,
+                "shape_name": "TargetId",
+                "min_length": 1,
+                "max_length": 64
+              },
+              "Type": {
+                "type": "string",
+                "enum": [
+                  "ACCOUNT"
+                ],
+                "zonbookDocumentation": "\n         <para>Type of identifier to be used in the <code>Id</code> field.</para>\n      ",
+                "documentation": "\n         <p>Type of identifier to be used in the <code>Id</code> field.</p>\n      ",
+                "required": true,
+                "shape_name": "TargetType"
+              }
+            },
+            "zonbookDocumentation": "\n         <para>Identifier for the directory consumer account with whom the directory is to be shared.</para>\n      ",
+            "documentation": "\n         <p>Identifier for the directory consumer account with whom the directory is to be shared.</p>\n      ",
+            "required": true,
+            "shape_name": "ShareTarget"
+          },
+          "ShareMethod": {
+            "type": "string",
+            "enum": [
+              "ORGANIZATIONS",
+              "HANDSHAKE"
+            ],
+            "zonbookDocumentation": "\n         <para>The method used when sharing a directory to determine whether the directory should be\n      shared within your AWS organization (<code>ORGANIZATIONS</code>) or with any AWS account by\n      sending a directory sharing request (<code>HANDSHAKE</code>).</para>\n      ",
+            "documentation": "\n         <p>The method used when sharing a directory to determine whether the directory should be\n      shared within your AWS organization (<code>ORGANIZATIONS</code>) or with any AWS account by\n      sending a directory sharing request (<code>HANDSHAKE</code>).</p>\n      ",
+            "required": true,
+            "shape_name": "ShareMethod"
+          }
+        },
+        "shape_name": "ShareDirectoryRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "SharedDirectoryId": {
+            "type": "string",
+            "pattern": "^d-[0-9a-f]{10}$",
+            "zonbookDocumentation": "\n         <para>Identifier of the directory that is stored in the directory consumer account that is\n      shared from the specified directory (<code>DirectoryId</code>).</para> \n      ",
+            "documentation": "\n         <p>Identifier of the directory that is stored in the directory consumer account that is\n      shared from the specified directory (<code>DirectoryId</code>).</p> \n      ",
+            "shape_name": "DirectoryId"
+          }
+        },
+        "shape_name": "ShareDirectoryResult",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The descriptive message for the exception.</simpara>\n      ",
+              "documentation": "\n        <p>The descriptive message for the exception.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "RequestId": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The AWS request identifier.</simpara>\n      ",
+              "documentation": "\n        <p>The AWS request identifier.</p>\n      ",
+              "pattern": "^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$",
+              "shape_name": "RequestId"
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The specified directory has already been shared with this AWS account.</para>\n      ",
+          "documentation": "\n         <p>The specified directory has already been shared with this AWS account.</p>\n      ",
+          "shape_name": "DirectoryAlreadySharedException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The descriptive message for the exception.</simpara>\n      ",
+              "documentation": "\n        <p>The descriptive message for the exception.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "RequestId": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The AWS request identifier.</simpara>\n      ",
+              "documentation": "\n        <p>The AWS request identifier.</p>\n      ",
+              "pattern": "^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$",
+              "shape_name": "RequestId"
+            }
+          },
+          "zonbookDocumentation": "\n        <simpara>The specified entity could not be found.</simpara>\n      ",
+          "documentation": "\n        <p>The specified entity could not be found.</p>\n      ",
+          "shape_name": "EntityDoesNotExistException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The descriptive message for the exception.</simpara>\n      ",
+              "documentation": "\n        <p>The descriptive message for the exception.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "RequestId": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The AWS request identifier.</simpara>\n      ",
+              "documentation": "\n        <p>The AWS request identifier.</p>\n      ",
+              "pattern": "^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$",
+              "shape_name": "RequestId"
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The specified shared target is not valid.</para>\n      ",
+          "documentation": "\n         <p>The specified shared target is not valid.</p>\n      ",
+          "shape_name": "InvalidTargetException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The descriptive message for the exception.</simpara>\n      ",
+              "documentation": "\n        <p>The descriptive message for the exception.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "RequestId": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The AWS request identifier.</simpara>\n      ",
+              "documentation": "\n        <p>The AWS request identifier.</p>\n      ",
+              "pattern": "^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$",
+              "shape_name": "RequestId"
+            }
+          },
+          "zonbookDocumentation": "\n        <simpara>One or more parameters are not valid.</simpara>\n      ",
+          "documentation": "\n        <p>One or more parameters are not valid.</p>\n      ",
+          "shape_name": "InvalidParameterException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The descriptive message for the exception.</simpara>\n      ",
+              "documentation": "\n        <p>The descriptive message for the exception.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "RequestId": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The AWS request identifier.</simpara>\n      ",
+              "documentation": "\n        <p>The AWS request identifier.</p>\n      ",
+              "pattern": "^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$",
+              "shape_name": "RequestId"
+            }
+          },
+          "zonbookDocumentation": "\n        <simpara>A client exception has occurred.</simpara>\n      ",
+          "documentation": "\n        <p>A client exception has occurred.</p>\n      ",
+          "shape_name": "ClientException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The descriptive message for the exception.</simpara>\n      ",
+              "documentation": "\n        <p>The descriptive message for the exception.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "RequestId": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The AWS request identifier.</simpara>\n      ",
+              "documentation": "\n        <p>The AWS request identifier.</p>\n      ",
+              "pattern": "^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$",
+              "shape_name": "RequestId"
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The maximum number of AWS accounts that you can share with this directory has been reached.</para>\n      ",
+          "documentation": "\n         <p>The maximum number of AWS accounts that you can share with this directory has been reached.</p>\n      ",
+          "shape_name": "ShareLimitExceededException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The descriptive message for the exception.</simpara>\n      ",
+              "documentation": "\n        <p>The descriptive message for the exception.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "RequestId": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The AWS request identifier.</simpara>\n      ",
+              "documentation": "\n        <p>The AWS request identifier.</p>\n      ",
+              "pattern": "^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$",
+              "shape_name": "RequestId"
+            }
+          },
+          "zonbookDocumentation": "\n         <para>Exception encountered while trying to access your AWS organization.</para>\n      ",
+          "documentation": "\n         <p>Exception encountered while trying to access your AWS organization.</p>\n      ",
+          "shape_name": "OrganizationsException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The descriptive message for the exception.</simpara>\n      ",
+              "documentation": "\n        <p>The descriptive message for the exception.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "RequestId": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The AWS request identifier.</simpara>\n      ",
+              "documentation": "\n        <p>The AWS request identifier.</p>\n      ",
+              "pattern": "^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$",
+              "shape_name": "RequestId"
+            }
+          },
+          "zonbookDocumentation": "\n         <para>You do not have sufficient access to perform this action.</para>\n      ",
+          "documentation": "\n         <p>You do not have sufficient access to perform this action.</p>\n      ",
+          "shape_name": "AccessDeniedException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The descriptive message for the exception.</simpara>\n      ",
+              "documentation": "\n        <p>The descriptive message for the exception.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "RequestId": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The AWS request identifier.</simpara>\n      ",
+              "documentation": "\n        <p>The AWS request identifier.</p>\n      ",
+              "pattern": "^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$",
+              "shape_name": "RequestId"
+            }
+          },
+          "zonbookDocumentation": "\n        <simpara>The operation is not supported.</simpara>\n      ",
+          "documentation": "\n        <p>The operation is not supported.</p>\n      ",
+          "shape_name": "UnsupportedOperationException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The descriptive message for the exception.</simpara>\n      ",
+              "documentation": "\n        <p>The descriptive message for the exception.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "RequestId": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The AWS request identifier.</simpara>\n      ",
+              "documentation": "\n        <p>The AWS request identifier.</p>\n      ",
+              "pattern": "^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$",
+              "shape_name": "RequestId"
+            }
+          },
+          "zonbookDocumentation": "\n        <simpara>An exception has occurred in AWS Directory Service.</simpara>\n      ",
+          "documentation": "\n        <p>An exception has occurred in AWS Directory Service.</p>\n      ",
+          "shape_name": "ServiceException"
+        }
+      ],
+      "documentation": "\n         <p>Shares a specified directory (<code>DirectoryId</code>) in your AWS account (directory\n      owner) with another AWS account (directory consumer). With this operation you can use your\n      directory from any AWS account and from any Amazon VPC within an AWS Region.</p>\n         <p>When you share your AWS Managed Microsoft AD directory, AWS Directory Service creates a\n      shared directory in the directory consumer account. This shared directory contains the\n      metadata to provide access to the directory within the directory owner account. The shared\n      directory is visible in all VPCs in the directory consumer account.</p>\n         <p>The <code>ShareMethod</code> parameter determines whether the specified directory can be\n      shared between AWS accounts inside the same AWS organization (<code>ORGANIZATIONS</code>). It\n      also determines whether you can share the directory with any other AWS account either inside\n      or outside of the organization (<code>HANDSHAKE</code>).</p>\n         <p>The <code>ShareNotes</code> parameter is only used when <code>HANDSHAKE</code> is called,\n      which sends a directory sharing request to the directory consumer. </p>\n      "
+    },
+    "AcceptSharedDirectory": {
+      "name": "AcceptSharedDirectory",
+      "input": {
+        "type": "structure",
+        "members": {
+          "SharedDirectoryId": {
+            "type": "string",
+            "pattern": "^d-[0-9a-f]{10}$",
+            "zonbookDocumentation": "\n         <para>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account. </para>\n      ",
+            "documentation": "\n         <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account. </p>\n      ",
+            "required": true,
+            "shape_name": "DirectoryId"
+          }
+        },
+        "shape_name": "AcceptSharedDirectoryRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "SharedDirectory": {
+            "type": "structure",
+            "members": {
+              "OwnerAccountId": {
+                "type": "string",
+                "pattern": "^(\\d{12})$",
+                "zonbookDocumentation": "\n         <para>Identifier of the directory owner account, which contains the directory that has been\n      shared to the consumer account.</para> \n      ",
+                "documentation": "\n         <p>Identifier of the directory owner account, which contains the directory that has been\n      shared to the consumer account.</p> \n      ",
+                "shape_name": "CustomerId"
+              },
+              "OwnerDirectoryId": {
+                "type": "string",
+                "pattern": "^d-[0-9a-f]{10}$",
+                "zonbookDocumentation": "\n         <para>Identifier of the directory in the directory owner account. </para>\n      ",
+                "documentation": "\n         <p>Identifier of the directory in the directory owner account. </p>\n      ",
+                "shape_name": "DirectoryId"
+              },
+              "ShareMethod": {
+                "type": "string",
+                "enum": [
+                  "ORGANIZATIONS",
+                  "HANDSHAKE"
+                ],
+                "zonbookDocumentation": " \n         <para>The method used when sharing a directory to determine whether the directory should be\n      shared within your AWS organization (<code>ORGANIZATIONS</code>) or with any AWS account by\n      sending a shared directory request (<code>HANDSHAKE</code>).</para>\n      ",
+                "documentation": " \n         <p>The method used when sharing a directory to determine whether the directory should be\n      shared within your AWS organization (<code>ORGANIZATIONS</code>) or with any AWS account by\n      sending a shared directory request (<code>HANDSHAKE</code>).</p>\n      ",
+                "shape_name": "ShareMethod"
+              },
+              "SharedAccountId": {
+                "type": "string",
+                "pattern": "^(\\d{12})$",
+                "zonbookDocumentation": "\n         <para>Identifier of the directory consumer account that has access to the shared directory (<code>OwnerDirectoryId</code>) in the directory owner account.</para>\n      ",
+                "documentation": "\n         <p>Identifier of the directory consumer account that has access to the shared directory (<code>OwnerDirectoryId</code>) in the directory owner account.</p>\n      ",
+                "shape_name": "CustomerId"
+              },
+              "SharedDirectoryId": {
+                "type": "string",
+                "pattern": "^d-[0-9a-f]{10}$",
+                "zonbookDocumentation": "\n         <para>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account.</para>\n      ",
+                "documentation": "\n         <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account.</p>\n      ",
+                "shape_name": "DirectoryId"
+              },
+              "ShareStatus": {
+                "type": "string",
+                "enum": [
+                  "Shared",
+                  "PendingAcceptance",
+                  "Rejected",
+                  "Rejecting",
+                  "RejectFailed",
+                  "Sharing",
+                  "ShareFailed",
+                  "Deleted",
+                  "Deleting"
+                ],
+                "zonbookDocumentation": "\n         <para>Current directory status of the shared AWS Managed Microsoft AD directory.</para>\n      ",
+                "documentation": "\n         <p>Current directory status of the shared AWS Managed Microsoft AD directory.</p>\n      ",
+                "shape_name": "ShareStatus"
+              },
+              "ShareNotes": {
+                "type": "string",
+                "sensitive": true,
+                "zonbookDocumentation": "\n         <para>A directory share request that is sent by the directory owner to the directory consumer.\n      The request includes a typed message to help the directory consumer administrator determine\n      whether to approve or reject the share invitation.</para>\n      ",
+                "documentation": "\n         <p>A directory share request that is sent by the directory owner to the directory consumer.\n      The request includes a typed message to help the directory consumer administrator determine\n      whether to approve or reject the share invitation.</p>\n      ",
+                "shape_name": "Notes",
+                "max_length": 1024
+              },
+              "CreatedDateTime": {
+                "type": "timestamp",
+                "zonbookDocumentation": "\n         <para>The date and time that the shared directory was created.</para>\n      ",
+                "documentation": "\n         <p>The date and time that the shared directory was created.</p>\n      ",
+                "shape_name": "CreatedDateTime"
+              },
+              "LastUpdatedDateTime": {
+                "type": "timestamp",
+                "zonbookDocumentation": "\n         <para>The date and time that the shared directory was last updated.</para>\n      ",
+                "documentation": "\n         <p>The date and time that the shared directory was last updated.</p>\n      ",
+                "shape_name": "LastUpdatedDateTime"
+              }
+            },
+            "zonbookDocumentation": "\n         <para>The shared directory in the directory consumer account.</para>\n      ",
+            "documentation": "\n         <p>The shared directory in the directory consumer account.</p>\n      ",
+            "shape_name": "SharedDirectory"
+          }
+        },
+        "shape_name": "AcceptSharedDirectoryResult",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The descriptive message for the exception.</simpara>\n      ",
+              "documentation": "\n        <p>The descriptive message for the exception.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "RequestId": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The AWS request identifier.</simpara>\n      ",
+              "documentation": "\n        <p>The AWS request identifier.</p>\n      ",
+              "pattern": "^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$",
+              "shape_name": "RequestId"
+            }
+          },
+          "zonbookDocumentation": "\n        <simpara>One or more parameters are not valid.</simpara>\n      ",
+          "documentation": "\n        <p>One or more parameters are not valid.</p>\n      ",
+          "shape_name": "InvalidParameterException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The descriptive message for the exception.</simpara>\n      ",
+              "documentation": "\n        <p>The descriptive message for the exception.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "RequestId": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The AWS request identifier.</simpara>\n      ",
+              "documentation": "\n        <p>The AWS request identifier.</p>\n      ",
+              "pattern": "^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$",
+              "shape_name": "RequestId"
+            }
+          },
+          "zonbookDocumentation": "\n        <simpara>The specified entity could not be found.</simpara>\n      ",
+          "documentation": "\n        <p>The specified entity could not be found.</p>\n      ",
+          "shape_name": "EntityDoesNotExistException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The descriptive message for the exception.</simpara>\n      ",
+              "documentation": "\n        <p>The descriptive message for the exception.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "RequestId": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The AWS request identifier.</simpara>\n      ",
+              "documentation": "\n        <p>The AWS request identifier.</p>\n      ",
+              "pattern": "^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$",
+              "shape_name": "RequestId"
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The specified directory has already been shared with this AWS account.</para>\n      ",
+          "documentation": "\n         <p>The specified directory has already been shared with this AWS account.</p>\n      ",
+          "shape_name": "DirectoryAlreadySharedException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The descriptive message for the exception.</simpara>\n      ",
+              "documentation": "\n        <p>The descriptive message for the exception.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "RequestId": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The AWS request identifier.</simpara>\n      ",
+              "documentation": "\n        <p>The AWS request identifier.</p>\n      ",
+              "pattern": "^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$",
+              "shape_name": "RequestId"
+            }
+          },
+          "zonbookDocumentation": "\n        <simpara>A client exception has occurred.</simpara>\n      ",
+          "documentation": "\n        <p>A client exception has occurred.</p>\n      ",
+          "shape_name": "ClientException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The descriptive message for the exception.</simpara>\n      ",
+              "documentation": "\n        <p>The descriptive message for the exception.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "RequestId": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The AWS request identifier.</simpara>\n      ",
+              "documentation": "\n        <p>The AWS request identifier.</p>\n      ",
+              "pattern": "^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$",
+              "shape_name": "RequestId"
+            }
+          },
+          "zonbookDocumentation": "\n        <simpara>An exception has occurred in AWS Directory Service.</simpara>\n      ",
+          "documentation": "\n        <p>An exception has occurred in AWS Directory Service.</p>\n      ",
+          "shape_name": "ServiceException"
+        }
+      ],
+      "documentation": "\n         <p>Accepts a directory sharing request that was sent from the directory owner account.</p>\n      "
+    },
+    "DescribeSharedDirectories": {
+      "name": "DescribeSharedDirectories",
+      "input": {
+        "type": "structure",
+        "members": {
+          "OwnerDirectoryId": {
+            "type": "string",
+            "pattern": "^d-[0-9a-f]{10}$",
+            "zonbookDocumentation": "\n         <para>Returns the identifier of the directory in the directory owner account. </para>\n      ",
+            "documentation": "\n         <p>Returns the identifier of the directory in the directory owner account. </p>\n      ",
+            "required": true,
+            "shape_name": "DirectoryId"
+          },
+          "SharedDirectoryIds": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <para>A list of identifiers of all shared directories in your account. </para>\n      ",
+            "documentation": "\n         <p>A list of identifiers of all shared directories in your account. </p>\n      ",
+            "shape_name": "DirectoryIds",
+            "members": {
+              "type": "string",
+              "pattern": "^d-[0-9a-f]{10}$",
+              "shape_name": "DirectoryId",
+              "documentation": null
+            }
+          },
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>The <code>DescribeSharedDirectoriesResult.NextToken</code> value from a previous call to\n      <xref linkend=\"DescribeSharedDirectories\"/>. Pass null if this is the first call.\n    </para>\n      ",
+            "documentation": "\n         <p>The <code>DescribeSharedDirectoriesResult.NextToken</code> value from a previous call to\n      <a>DescribeSharedDirectories</a>. Pass null if this is the first call.\n    </p>\n      ",
+            "shape_name": "NextToken"
+          },
+          "Limit": {
+            "type": "integer",
+            "zonbookDocumentation": "\n         <para>The number of shared directories to return in the response object.</para>\n      ",
+            "documentation": "\n         <p>The number of shared directories to return in the response object.</p>\n      ",
+            "shape_name": "Limit",
+            "min_length": 0
+          }
+        },
+        "shape_name": "DescribeSharedDirectoriesRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "SharedDirectories": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <para>A list of all shared directories in your account.</para>\n      ",
+            "documentation": "\n         <p>A list of all shared directories in your account.</p>\n      ",
+            "shape_name": "SharedDirectories",
+            "members": {
+              "type": "structure",
+              "members": {
+                "OwnerAccountId": {
+                  "type": "string",
+                  "pattern": "^(\\d{12})$",
+                  "zonbookDocumentation": "\n         <para>Identifier of the directory owner account, which contains the directory that has been\n      shared to the consumer account.</para> \n      ",
+                  "documentation": "\n         <p>Identifier of the directory owner account, which contains the directory that has been\n      shared to the consumer account.</p> \n      ",
+                  "shape_name": "CustomerId"
+                },
+                "OwnerDirectoryId": {
+                  "type": "string",
+                  "pattern": "^d-[0-9a-f]{10}$",
+                  "zonbookDocumentation": "\n         <para>Identifier of the directory in the directory owner account. </para>\n      ",
+                  "documentation": "\n         <p>Identifier of the directory in the directory owner account. </p>\n      ",
+                  "shape_name": "DirectoryId"
+                },
+                "ShareMethod": {
+                  "type": "string",
+                  "enum": [
+                    "ORGANIZATIONS",
+                    "HANDSHAKE"
+                  ],
+                  "zonbookDocumentation": " \n         <para>The method used when sharing a directory to determine whether the directory should be\n      shared within your AWS organization (<code>ORGANIZATIONS</code>) or with any AWS account by\n      sending a shared directory request (<code>HANDSHAKE</code>).</para>\n      ",
+                  "documentation": " \n         <p>The method used when sharing a directory to determine whether the directory should be\n      shared within your AWS organization (<code>ORGANIZATIONS</code>) or with any AWS account by\n      sending a shared directory request (<code>HANDSHAKE</code>).</p>\n      ",
+                  "shape_name": "ShareMethod"
+                },
+                "SharedAccountId": {
+                  "type": "string",
+                  "pattern": "^(\\d{12})$",
+                  "zonbookDocumentation": "\n         <para>Identifier of the directory consumer account that has access to the shared directory (<code>OwnerDirectoryId</code>) in the directory owner account.</para>\n      ",
+                  "documentation": "\n         <p>Identifier of the directory consumer account that has access to the shared directory (<code>OwnerDirectoryId</code>) in the directory owner account.</p>\n      ",
+                  "shape_name": "CustomerId"
+                },
+                "SharedDirectoryId": {
+                  "type": "string",
+                  "pattern": "^d-[0-9a-f]{10}$",
+                  "zonbookDocumentation": "\n         <para>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account.</para>\n      ",
+                  "documentation": "\n         <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account.</p>\n      ",
+                  "shape_name": "DirectoryId"
+                },
+                "ShareStatus": {
+                  "type": "string",
+                  "enum": [
+                    "Shared",
+                    "PendingAcceptance",
+                    "Rejected",
+                    "Rejecting",
+                    "RejectFailed",
+                    "Sharing",
+                    "ShareFailed",
+                    "Deleted",
+                    "Deleting"
+                  ],
+                  "zonbookDocumentation": "\n         <para>Current directory status of the shared AWS Managed Microsoft AD directory.</para>\n      ",
+                  "documentation": "\n         <p>Current directory status of the shared AWS Managed Microsoft AD directory.</p>\n      ",
+                  "shape_name": "ShareStatus"
+                },
+                "ShareNotes": {
+                  "type": "string",
+                  "sensitive": true,
+                  "zonbookDocumentation": "\n         <para>A directory share request that is sent by the directory owner to the directory consumer.\n      The request includes a typed message to help the directory consumer administrator determine\n      whether to approve or reject the share invitation.</para>\n      ",
+                  "documentation": "\n         <p>A directory share request that is sent by the directory owner to the directory consumer.\n      The request includes a typed message to help the directory consumer administrator determine\n      whether to approve or reject the share invitation.</p>\n      ",
+                  "shape_name": "Notes",
+                  "max_length": 1024
+                },
+                "CreatedDateTime": {
+                  "type": "timestamp",
+                  "zonbookDocumentation": "\n         <para>The date and time that the shared directory was created.</para>\n      ",
+                  "documentation": "\n         <p>The date and time that the shared directory was created.</p>\n      ",
+                  "shape_name": "CreatedDateTime"
+                },
+                "LastUpdatedDateTime": {
+                  "type": "timestamp",
+                  "zonbookDocumentation": "\n         <para>The date and time that the shared directory was last updated.</para>\n      ",
+                  "documentation": "\n         <p>The date and time that the shared directory was last updated.</p>\n      ",
+                  "shape_name": "LastUpdatedDateTime"
+                }
+              },
+              "zonbookDocumentation": "\n         <para>Details about the shared directory in the directory owner account for which the share request in the directory consumer account has been accepted.</para>\n      ",
+              "documentation": "\n         <p>Details about the shared directory in the directory owner account for which the share request in the directory consumer account has been accepted.</p>\n      ",
+              "shape_name": "SharedDirectory"
+            }
+          },
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>If not null, token that indicates that more results are available. Pass this value for the <code>NextToken</code> parameter\n      in a subsequent call to <xref linkend=\"DescribeSharedDirectories\"/> to retrieve the next set of items.</para>\n      ",
+            "documentation": "\n         <p>If not null, token that indicates that more results are available. Pass this value for the <code>NextToken</code> parameter\n      in a subsequent call to <a>DescribeSharedDirectories</a> to retrieve the next set of items.</p>\n      ",
+            "shape_name": "NextToken"
+          }
+        },
+        "shape_name": "DescribeSharedDirectoriesResult",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The descriptive message for the exception.</simpara>\n      ",
+              "documentation": "\n        <p>The descriptive message for the exception.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "RequestId": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The AWS request identifier.</simpara>\n      ",
+              "documentation": "\n        <p>The AWS request identifier.</p>\n      ",
+              "pattern": "^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$",
+              "shape_name": "RequestId"
+            }
+          },
+          "zonbookDocumentation": "\n        <simpara>The specified entity could not be found.</simpara>\n      ",
+          "documentation": "\n        <p>The specified entity could not be found.</p>\n      ",
+          "shape_name": "EntityDoesNotExistException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The descriptive message for the exception.</simpara>\n      ",
+              "documentation": "\n        <p>The descriptive message for the exception.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "RequestId": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The AWS request identifier.</simpara>\n      ",
+              "documentation": "\n        <p>The AWS request identifier.</p>\n      ",
+              "pattern": "^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$",
+              "shape_name": "RequestId"
+            }
+          },
+          "zonbookDocumentation": "\n        <simpara>The <code>NextToken</code> value is not valid.</simpara>\n      ",
+          "documentation": "\n        <p>The <code>NextToken</code> value is not valid.</p>\n      ",
+          "shape_name": "InvalidNextTokenException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The descriptive message for the exception.</simpara>\n      ",
+              "documentation": "\n        <p>The descriptive message for the exception.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "RequestId": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The AWS request identifier.</simpara>\n      ",
+              "documentation": "\n        <p>The AWS request identifier.</p>\n      ",
+              "pattern": "^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$",
+              "shape_name": "RequestId"
+            }
+          },
+          "zonbookDocumentation": "\n        <simpara>One or more parameters are not valid.</simpara>\n      ",
+          "documentation": "\n        <p>One or more parameters are not valid.</p>\n      ",
+          "shape_name": "InvalidParameterException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The descriptive message for the exception.</simpara>\n      ",
+              "documentation": "\n        <p>The descriptive message for the exception.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "RequestId": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The AWS request identifier.</simpara>\n      ",
+              "documentation": "\n        <p>The AWS request identifier.</p>\n      ",
+              "pattern": "^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$",
+              "shape_name": "RequestId"
+            }
+          },
+          "zonbookDocumentation": "\n        <simpara>The operation is not supported.</simpara>\n      ",
+          "documentation": "\n        <p>The operation is not supported.</p>\n      ",
+          "shape_name": "UnsupportedOperationException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The descriptive message for the exception.</simpara>\n      ",
+              "documentation": "\n        <p>The descriptive message for the exception.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "RequestId": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The AWS request identifier.</simpara>\n      ",
+              "documentation": "\n        <p>The AWS request identifier.</p>\n      ",
+              "pattern": "^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$",
+              "shape_name": "RequestId"
+            }
+          },
+          "zonbookDocumentation": "\n        <simpara>A client exception has occurred.</simpara>\n      ",
+          "documentation": "\n        <p>A client exception has occurred.</p>\n      ",
+          "shape_name": "ClientException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The descriptive message for the exception.</simpara>\n      ",
+              "documentation": "\n        <p>The descriptive message for the exception.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "RequestId": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The AWS request identifier.</simpara>\n      ",
+              "documentation": "\n        <p>The AWS request identifier.</p>\n      ",
+              "pattern": "^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$",
+              "shape_name": "RequestId"
+            }
+          },
+          "zonbookDocumentation": "\n        <simpara>An exception has occurred in AWS Directory Service.</simpara>\n      ",
+          "documentation": "\n        <p>An exception has occurred in AWS Directory Service.</p>\n      ",
+          "shape_name": "ServiceException"
+        }
+      ],
+      "documentation": "\n         <p>Returns the shared directories in your account. </p>\n      "
+    },
+    "UnshareDirectory": {
+      "name": "UnshareDirectory",
+      "input": {
+        "type": "structure",
+        "members": {
+          "DirectoryId": {
+            "type": "string",
+            "pattern": "^d-[0-9a-f]{10}$",
+            "zonbookDocumentation": "\n         <para>The identifier of the AWS Managed Microsoft AD directory that you want to stop sharing.</para>\n      ",
+            "documentation": "\n         <p>The identifier of the AWS Managed Microsoft AD directory that you want to stop sharing.</p>\n      ",
+            "required": true,
+            "shape_name": "DirectoryId"
+          },
+          "UnshareTarget": {
+            "type": "structure",
+            "members": {
+              "Id": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <para>Identifier of the directory consumer account.</para>\n      ",
+                "documentation": "\n         <p>Identifier of the directory consumer account.</p>\n      ",
+                "required": true,
+                "shape_name": "TargetId",
+                "min_length": 1,
+                "max_length": 64
+              },
+              "Type": {
+                "type": "string",
+                "enum": [
+                  "ACCOUNT"
+                ],
+                "zonbookDocumentation": "\n         <para>Type of identifier to be used in the <emphasis>Id</emphasis> field.</para>\n      ",
+                "documentation": "\n         <p>Type of identifier to be used in the <i>Id</i> field.</p>\n      ",
+                "required": true,
+                "shape_name": "TargetType"
+              }
+            },
+            "zonbookDocumentation": "\n         <para>Identifier for the directory consumer account with whom the directory has to be unshared.</para>\n      ",
+            "documentation": "\n         <p>Identifier for the directory consumer account with whom the directory has to be unshared.</p>\n      ",
+            "required": true,
+            "shape_name": "UnshareTarget"
+          }
+        },
+        "shape_name": "UnshareDirectoryRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "SharedDirectoryId": {
+            "type": "string",
+            "pattern": "^d-[0-9a-f]{10}$",
+            "zonbookDocumentation": "\n         <para>Identifier of the directory stored in the directory consumer account that is to be unshared from the specified directory (<code>DirectoryId</code>).</para>\n      ",
+            "documentation": "\n         <p>Identifier of the directory stored in the directory consumer account that is to be unshared from the specified directory (<code>DirectoryId</code>).</p>\n      ",
+            "shape_name": "DirectoryId"
+          }
+        },
+        "shape_name": "UnshareDirectoryResult",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The descriptive message for the exception.</simpara>\n      ",
+              "documentation": "\n        <p>The descriptive message for the exception.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "RequestId": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The AWS request identifier.</simpara>\n      ",
+              "documentation": "\n        <p>The AWS request identifier.</p>\n      ",
+              "pattern": "^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$",
+              "shape_name": "RequestId"
+            }
+          },
+          "zonbookDocumentation": "\n        <simpara>The specified entity could not be found.</simpara>\n      ",
+          "documentation": "\n        <p>The specified entity could not be found.</p>\n      ",
+          "shape_name": "EntityDoesNotExistException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The descriptive message for the exception.</simpara>\n      ",
+              "documentation": "\n        <p>The descriptive message for the exception.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "RequestId": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The AWS request identifier.</simpara>\n      ",
+              "documentation": "\n        <p>The AWS request identifier.</p>\n      ",
+              "pattern": "^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$",
+              "shape_name": "RequestId"
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The specified shared target is not valid.</para>\n      ",
+          "documentation": "\n         <p>The specified shared target is not valid.</p>\n      ",
+          "shape_name": "InvalidTargetException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The descriptive message for the exception.</simpara>\n      ",
+              "documentation": "\n        <p>The descriptive message for the exception.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "RequestId": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The AWS request identifier.</simpara>\n      ",
+              "documentation": "\n        <p>The AWS request identifier.</p>\n      ",
+              "pattern": "^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$",
+              "shape_name": "RequestId"
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The specified directory has not been shared with this AWS account.</para>\n      ",
+          "documentation": "\n         <p>The specified directory has not been shared with this AWS account.</p>\n      ",
+          "shape_name": "DirectoryNotSharedException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The descriptive message for the exception.</simpara>\n      ",
+              "documentation": "\n        <p>The descriptive message for the exception.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "RequestId": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The AWS request identifier.</simpara>\n      ",
+              "documentation": "\n        <p>The AWS request identifier.</p>\n      ",
+              "pattern": "^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$",
+              "shape_name": "RequestId"
+            }
+          },
+          "zonbookDocumentation": "\n        <simpara>A client exception has occurred.</simpara>\n      ",
+          "documentation": "\n        <p>A client exception has occurred.</p>\n      ",
+          "shape_name": "ClientException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The descriptive message for the exception.</simpara>\n      ",
+              "documentation": "\n        <p>The descriptive message for the exception.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "RequestId": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The AWS request identifier.</simpara>\n      ",
+              "documentation": "\n        <p>The AWS request identifier.</p>\n      ",
+              "pattern": "^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$",
+              "shape_name": "RequestId"
+            }
+          },
+          "zonbookDocumentation": "\n        <simpara>An exception has occurred in AWS Directory Service.</simpara>\n      ",
+          "documentation": "\n        <p>An exception has occurred in AWS Directory Service.</p>\n      ",
+          "shape_name": "ServiceException"
+        }
+      ],
+      "documentation": "\n         <p>Stops the directory sharing between the directory owner and consumer accounts. </p>\n      "
+    },
+    "RejectSharedDirectory": {
+      "name": "RejectSharedDirectory",
+      "input": {
+        "type": "structure",
+        "members": {
+          "SharedDirectoryId": {
+            "type": "string",
+            "pattern": "^d-[0-9a-f]{10}$",
+            "zonbookDocumentation": "\n         <para>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account.</para>\n      ",
+            "documentation": "\n         <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account.</p>\n      ",
+            "required": true,
+            "shape_name": "DirectoryId"
+          }
+        },
+        "shape_name": "RejectSharedDirectoryRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "SharedDirectoryId": {
+            "type": "string",
+            "pattern": "^d-[0-9a-f]{10}$",
+            "zonbookDocumentation": "\n         <para>Identifier of the shared directory in the directory consumer account.</para>\n      ",
+            "documentation": "\n         <p>Identifier of the shared directory in the directory consumer account.</p>\n      ",
+            "shape_name": "DirectoryId"
+          }
+        },
+        "shape_name": "RejectSharedDirectoryResult",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The descriptive message for the exception.</simpara>\n      ",
+              "documentation": "\n        <p>The descriptive message for the exception.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "RequestId": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The AWS request identifier.</simpara>\n      ",
+              "documentation": "\n        <p>The AWS request identifier.</p>\n      ",
+              "pattern": "^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$",
+              "shape_name": "RequestId"
+            }
+          },
+          "zonbookDocumentation": "\n        <simpara>One or more parameters are not valid.</simpara>\n      ",
+          "documentation": "\n        <p>One or more parameters are not valid.</p>\n      ",
+          "shape_name": "InvalidParameterException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The descriptive message for the exception.</simpara>\n      ",
+              "documentation": "\n        <p>The descriptive message for the exception.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "RequestId": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The AWS request identifier.</simpara>\n      ",
+              "documentation": "\n        <p>The AWS request identifier.</p>\n      ",
+              "pattern": "^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$",
+              "shape_name": "RequestId"
+            }
+          },
+          "zonbookDocumentation": "\n        <simpara>The specified entity could not be found.</simpara>\n      ",
+          "documentation": "\n        <p>The specified entity could not be found.</p>\n      ",
+          "shape_name": "EntityDoesNotExistException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The descriptive message for the exception.</simpara>\n      ",
+              "documentation": "\n        <p>The descriptive message for the exception.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "RequestId": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The AWS request identifier.</simpara>\n      ",
+              "documentation": "\n        <p>The AWS request identifier.</p>\n      ",
+              "pattern": "^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$",
+              "shape_name": "RequestId"
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The specified directory has already been shared with this AWS account.</para>\n      ",
+          "documentation": "\n         <p>The specified directory has already been shared with this AWS account.</p>\n      ",
+          "shape_name": "DirectoryAlreadySharedException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The descriptive message for the exception.</simpara>\n      ",
+              "documentation": "\n        <p>The descriptive message for the exception.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "RequestId": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The AWS request identifier.</simpara>\n      ",
+              "documentation": "\n        <p>The AWS request identifier.</p>\n      ",
+              "pattern": "^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$",
+              "shape_name": "RequestId"
+            }
+          },
+          "zonbookDocumentation": "\n        <simpara>A client exception has occurred.</simpara>\n      ",
+          "documentation": "\n        <p>A client exception has occurred.</p>\n      ",
+          "shape_name": "ClientException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The descriptive message for the exception.</simpara>\n      ",
+              "documentation": "\n        <p>The descriptive message for the exception.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "RequestId": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The AWS request identifier.</simpara>\n      ",
+              "documentation": "\n        <p>The AWS request identifier.</p>\n      ",
+              "pattern": "^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$",
+              "shape_name": "RequestId"
+            }
+          },
+          "zonbookDocumentation": "\n        <simpara>An exception has occurred in AWS Directory Service.</simpara>\n      ",
+          "documentation": "\n        <p>An exception has occurred in AWS Directory Service.</p>\n      ",
+          "shape_name": "ServiceException"
+        }
+      ],
+      "documentation": "\n         <p>Rejects a directory sharing request that was sent from the directory owner account.</p>\n      "
     },
     "RegisterEventTopic": {
       "name": "RegisterEventTopic",

@@ -77,7 +77,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// The username of the user whose password will be reset.
+        /// The user name of the user whose password will be reset.
         /// </para>
         /// </summary>
         public string UserName

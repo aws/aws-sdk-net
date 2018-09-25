@@ -28,30 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// Container for the parameters to the DisableRadius operation.
-    /// Disables multi-factor authentication (MFA) with the Remote Authentication Dial In
-    /// User Service (RADIUS) server for an AD Connector or Microsoft AD directory.
+    /// This is the response object from the ShareDirectory operation.
     /// </summary>
-    public partial class DisableRadiusRequest : AmazonDirectoryServiceRequest
+    public partial class ShareDirectoryResponse : AmazonWebServiceResponse
     {
-        private string _directoryId;
+        private string _sharedDirectoryId;
 
         /// <summary>
-        /// Gets and sets the property DirectoryId. 
+        /// Gets and sets the property SharedDirectoryId. 
         /// <para>
-        /// The identifier of the directory for which to disable MFA.
+        /// Identifier of the directory that is stored in the directory consumer account that
+        /// is shared from the specified directory (<code>DirectoryId</code>).
         /// </para>
         /// </summary>
-        public string DirectoryId
+        public string SharedDirectoryId
         {
-            get { return this._directoryId; }
-            set { this._directoryId = value; }
+            get { return this._sharedDirectoryId; }
+            set { this._sharedDirectoryId = value; }
         }
 
-        // Check to see if DirectoryId property is set
-        internal bool IsSetDirectoryId()
+        // Check to see if SharedDirectoryId property is set
+        internal bool IsSetSharedDirectoryId()
         {
-            return this._directoryId != null;
+            return this._sharedDirectoryId != null;
         }
 
     }

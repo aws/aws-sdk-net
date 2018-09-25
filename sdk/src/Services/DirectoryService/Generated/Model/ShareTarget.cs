@@ -28,30 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// Container for the parameters to the DisableRadius operation.
-    /// Disables multi-factor authentication (MFA) with the Remote Authentication Dial In
-    /// User Service (RADIUS) server for an AD Connector or Microsoft AD directory.
+    /// Identifier that contains details about the directory consumer account.
     /// </summary>
-    public partial class DisableRadiusRequest : AmazonDirectoryServiceRequest
+    public partial class ShareTarget
     {
-        private string _directoryId;
+        private string _id;
+        private TargetType _type;
 
         /// <summary>
-        /// Gets and sets the property DirectoryId. 
+        /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of the directory for which to disable MFA.
+        /// Identifier of the directory consumer account.
         /// </para>
         /// </summary>
-        public string DirectoryId
+        public string Id
         {
-            get { return this._directoryId; }
-            set { this._directoryId = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
 
-        // Check to see if DirectoryId property is set
-        internal bool IsSetDirectoryId()
+        // Check to see if Id property is set
+        internal bool IsSetId()
         {
-            return this._directoryId != null;
+            return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// Type of identifier to be used in the <code>Id</code> field.
+        /// </para>
+        /// </summary>
+        public TargetType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

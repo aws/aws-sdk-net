@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.DirectoryService.Model.AcceptSharedDirectoryRequest.SharedDirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DirectoryService.Model.AddIpRoutesRequest.DirectoryId</property>
     <pattern>^d-[0-9a-f]{10}$</pattern>
   </property-value-rule>
@@ -239,6 +243,14 @@
     <pattern>^d-[0-9a-f]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DirectoryService.Model.DescribeSharedDirectoriesRequest.Limit</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.DescribeSharedDirectoriesRequest.OwnerDirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DirectoryService.Model.DescribeSnapshotsRequest.DirectoryId</property>
     <pattern>^d-[0-9a-f]{10}$</pattern>
   </property-value-rule>
@@ -337,6 +349,14 @@
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DirectoryService.Model.RejectSharedDirectoryRequest.SharedDirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.RejectSharedDirectoryResponse.SharedDirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DirectoryService.Model.RemoveIpRoutesRequest.DirectoryId</property>
     <pattern>^d-[0-9a-f]{10}$</pattern>
   </property-value-rule>
@@ -364,6 +384,18 @@
     <pattern>^s-[0-9a-f]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DirectoryService.Model.ShareDirectoryRequest.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.ShareDirectoryRequest.ShareNotes</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.ShareDirectoryResponse.SharedDirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DirectoryService.Model.StartSchemaExtensionRequest.Description</property>
     <min>0</min>
     <max>128</max>
@@ -381,6 +413,14 @@
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.StartSchemaExtensionResponse.SchemaExtensionId</property>
     <pattern>^e-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.UnshareDirectoryRequest.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.UnshareDirectoryResponse.SharedDirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.UpdateConditionalForwarderRequest.DirectoryId</property>
@@ -411,6 +451,10 @@
     <pattern>^t-[0-9a-f]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DirectoryService.Model.AccessDeniedException.RequestId</property>
+    <pattern>^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DirectoryService.Model.Attribute.Name</property>
     <min>1</min>
   </property-value-rule>
@@ -436,6 +480,10 @@
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.ConditionalForwarder.RemoteDomainName</property>
     <pattern>^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+[.]?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.DirectoryAlreadySharedException.RequestId</property>
+    <pattern>^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.DirectoryConnectSettings.CustomerUserName</property>
@@ -489,6 +537,10 @@
     <pattern>^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DirectoryService.Model.DirectoryDescription.ShareNotes</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DirectoryService.Model.DirectoryDescription.ShortName</property>
     <pattern>^[^\\/:*?\"\&lt;\&gt;|.]+[^\\/:*?\"&lt;&gt;|]*$</pattern>
   </property-value-rule>
@@ -519,6 +571,10 @@
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.DirectoryLimits.ConnectedDirectoriesLimit</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.DirectoryNotSharedException.RequestId</property>
+    <pattern>^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.DirectoryUnavailableException.RequestId</property>
@@ -595,6 +651,10 @@
     <pattern>^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DirectoryService.Model.InvalidTargetException.RequestId</property>
+    <pattern>^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DirectoryService.Model.IpRoute.CidrIp</property>
     <pattern>^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\/([1-9]|[1-2][0-9]|3[0-2]))$</pattern>
   </property-value-rule>
@@ -631,6 +691,18 @@
     <min>1</min>
     <max>512</max>
     <pattern>[-._/#A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.OrganizationsException.RequestId</property>
+    <pattern>^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.OwnerDirectoryDescription.AccountId</property>
+    <pattern>^(\d{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.OwnerDirectoryDescription.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.RadiusSettings.DisplayLabel</property>
@@ -674,6 +746,35 @@
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.ServiceException.RequestId</property>
     <pattern>^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.SharedDirectory.OwnerAccountId</property>
+    <pattern>^(\d{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.SharedDirectory.OwnerDirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.SharedDirectory.SharedAccountId</property>
+    <pattern>^(\d{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.SharedDirectory.SharedDirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.SharedDirectory.ShareNotes</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.ShareLimitExceededException.RequestId</property>
+    <pattern>^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.ShareTarget.Id</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.Snapshot.DirectoryId</property>
@@ -728,6 +829,11 @@
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.Trust.TrustId</property>
     <pattern>^t-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.UnshareTarget.Id</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.UnsupportedOperationException.RequestId</property>

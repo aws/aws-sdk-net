@@ -124,6 +124,12 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OwnerDirectoryDescription", targetDepth))
+                {
+                    var unmarshaller = OwnerDirectoryDescriptionUnmarshaller.Instance;
+                    unmarshalledObject.OwnerDirectoryDescription = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RadiusSettings", targetDepth))
                 {
                     var unmarshaller = RadiusSettingsUnmarshaller.Instance;
@@ -134,6 +140,24 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RadiusStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ShareMethod", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ShareMethod = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ShareNotes", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ShareNotes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ShareStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ShareStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ShortName", targetDepth))

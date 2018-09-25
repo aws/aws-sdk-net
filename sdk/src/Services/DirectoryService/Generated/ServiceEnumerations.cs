@@ -225,6 +225,10 @@ namespace Amazon.DirectoryService
         /// </summary>
         public static readonly DirectoryType MicrosoftAD = new DirectoryType("MicrosoftAD");
         /// <summary>
+        /// Constant SharedMicrosoftAD for DirectoryType
+        /// </summary>
+        public static readonly DirectoryType SharedMicrosoftAD = new DirectoryType("SharedMicrosoftAD");
+        /// <summary>
         /// Constant SimpleAD for DirectoryType
         /// </summary>
         public static readonly DirectoryType SimpleAD = new DirectoryType("SimpleAD");
@@ -637,6 +641,134 @@ namespace Amazon.DirectoryService
 
 
     /// <summary>
+    /// Constants used for properties of type ShareMethod.
+    /// </summary>
+    public class ShareMethod : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HANDSHAKE for ShareMethod
+        /// </summary>
+        public static readonly ShareMethod HANDSHAKE = new ShareMethod("HANDSHAKE");
+        /// <summary>
+        /// Constant ORGANIZATIONS for ShareMethod
+        /// </summary>
+        public static readonly ShareMethod ORGANIZATIONS = new ShareMethod("ORGANIZATIONS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ShareMethod(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ShareMethod FindValue(string value)
+        {
+            return FindValue<ShareMethod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ShareMethod(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ShareStatus.
+    /// </summary>
+    public class ShareStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Deleted for ShareStatus
+        /// </summary>
+        public static readonly ShareStatus Deleted = new ShareStatus("Deleted");
+        /// <summary>
+        /// Constant Deleting for ShareStatus
+        /// </summary>
+        public static readonly ShareStatus Deleting = new ShareStatus("Deleting");
+        /// <summary>
+        /// Constant PendingAcceptance for ShareStatus
+        /// </summary>
+        public static readonly ShareStatus PendingAcceptance = new ShareStatus("PendingAcceptance");
+        /// <summary>
+        /// Constant Rejected for ShareStatus
+        /// </summary>
+        public static readonly ShareStatus Rejected = new ShareStatus("Rejected");
+        /// <summary>
+        /// Constant RejectFailed for ShareStatus
+        /// </summary>
+        public static readonly ShareStatus RejectFailed = new ShareStatus("RejectFailed");
+        /// <summary>
+        /// Constant Rejecting for ShareStatus
+        /// </summary>
+        public static readonly ShareStatus Rejecting = new ShareStatus("Rejecting");
+        /// <summary>
+        /// Constant Shared for ShareStatus
+        /// </summary>
+        public static readonly ShareStatus Shared = new ShareStatus("Shared");
+        /// <summary>
+        /// Constant ShareFailed for ShareStatus
+        /// </summary>
+        public static readonly ShareStatus ShareFailed = new ShareStatus("ShareFailed");
+        /// <summary>
+        /// Constant Sharing for ShareStatus
+        /// </summary>
+        public static readonly ShareStatus Sharing = new ShareStatus("Sharing");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ShareStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ShareStatus FindValue(string value)
+        {
+            return FindValue<ShareStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ShareStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SnapshotStatus.
     /// </summary>
     public class SnapshotStatus : ConstantClass
@@ -734,6 +866,52 @@ namespace Amazon.DirectoryService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SnapshotType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TargetType.
+    /// </summary>
+    public class TargetType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCOUNT for TargetType
+        /// </summary>
+        public static readonly TargetType ACCOUNT = new TargetType("ACCOUNT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TargetType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TargetType FindValue(string value)
+        {
+            return FindValue<TargetType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TargetType(string value)
         {
             return FindValue(value);
         }

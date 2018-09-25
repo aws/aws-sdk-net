@@ -42,8 +42,12 @@ namespace Amazon.DirectoryService.Model
         private DirectoryEdition _edition;
         private DateTime? _launchTime;
         private string _name;
+        private OwnerDirectoryDescription _ownerDirectoryDescription;
         private RadiusSettings _radiusSettings;
         private RadiusStatus _radiusStatus;
+        private ShareMethod _shareMethod;
+        private string _shareNotes;
+        private ShareStatus _shareStatus;
         private string _shortName;
         private DirectorySize _size;
         private bool? _ssoEnabled;
@@ -227,7 +231,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The fully-qualified name of the directory.
+        /// The fully qualified name of the directory.
         /// </para>
         /// </summary>
         public string Name
@@ -240,6 +244,24 @@ namespace Amazon.DirectoryService.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwnerDirectoryDescription. 
+        /// <para>
+        /// Describes the AWS Managed Microsoft AD directory in the directory owner account.
+        /// </para>
+        /// </summary>
+        public OwnerDirectoryDescription OwnerDirectoryDescription
+        {
+            get { return this._ownerDirectoryDescription; }
+            set { this._ownerDirectoryDescription = value; }
+        }
+
+        // Check to see if OwnerDirectoryDescription property is set
+        internal bool IsSetOwnerDirectoryDescription()
+        {
+            return this._ownerDirectoryDescription != null;
         }
 
         /// <summary>
@@ -277,6 +299,64 @@ namespace Amazon.DirectoryService.Model
         internal bool IsSetRadiusStatus()
         {
             return this._radiusStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShareMethod. 
+        /// <para>
+        /// The method used when sharing a directory to determine whether the directory should
+        /// be shared within your AWS organization (<code>ORGANIZATIONS</code>) or with any AWS
+        /// account by sending a shared directory request (<code>HANDSHAKE</code>).
+        /// </para>
+        /// </summary>
+        public ShareMethod ShareMethod
+        {
+            get { return this._shareMethod; }
+            set { this._shareMethod = value; }
+        }
+
+        // Check to see if ShareMethod property is set
+        internal bool IsSetShareMethod()
+        {
+            return this._shareMethod != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShareNotes. 
+        /// <para>
+        /// A directory share request that is sent by the directory owner to the directory consumer.
+        /// The request includes a typed message to help the directory consumer administrator
+        /// determine whether to approve or reject the share invitation.
+        /// </para>
+        /// </summary>
+        public string ShareNotes
+        {
+            get { return this._shareNotes; }
+            set { this._shareNotes = value; }
+        }
+
+        // Check to see if ShareNotes property is set
+        internal bool IsSetShareNotes()
+        {
+            return this._shareNotes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShareStatus. 
+        /// <para>
+        /// Current directory status of the shared AWS Managed Microsoft AD directory.
+        /// </para>
+        /// </summary>
+        public ShareStatus ShareStatus
+        {
+            get { return this._shareStatus; }
+            set { this._shareStatus = value; }
+        }
+
+        // Check to see if ShareStatus property is set
+        internal bool IsSetShareStatus()
+        {
+            return this._shareStatus != null;
         }
 
         /// <summary>
@@ -318,7 +398,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property SsoEnabled. 
         /// <para>
-        /// Indicates if single-sign on is enabled for the directory. For more information, see
+        /// Indicates if single sign-on is enabled for the directory. For more information, see
         /// <a>EnableSso</a> and <a>DisableSso</a>.
         /// </para>
         /// </summary>
