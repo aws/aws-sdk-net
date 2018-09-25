@@ -62,9 +62,15 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Encrypted. 
         /// <para>
         /// Indicates whether the EBS volume is encrypted. Encrypted volumes can only be attached
-        /// to instances that support Amazon EBS encryption. If you are creating a volume from
-        /// a snapshot, you can't specify an encryption value. This is because only blank volumes
-        /// can be encrypted on creation.
+        /// to instances that support Amazon EBS encryption. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are creating a volume from a snapshot, you cannot specify an encryption value.
+        /// This is because only blank volumes can be encrypted on creation. If you are creating
+        /// a snapshot from an existing EBS volume, you cannot specify an encryption value that
+        /// differs from that of the EBS volume. We recommend that you omit the encryption value
+        /// from the block device mappings when creating an image from an instance.
         /// </para>
         /// </summary>
         public bool Encrypted

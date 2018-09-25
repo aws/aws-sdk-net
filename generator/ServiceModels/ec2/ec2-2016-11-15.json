@@ -5470,8 +5470,8 @@
                     "vpn-connection",
                     "vpn-gateway"
                   ],
-                  "zonbookDocumentation": "\n        <simpara>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t\t<code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\tcreated, see <xref linkend=\"CreateTags\"/>.</simpara>\n      ",
-                  "documentation": "\n        <p>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t\t<code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\tcreated, see <a>CreateTags</a>.</p>\n      ",
+                  "zonbookDocumentation": "\n\n        <simpara>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t\t<code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\tcreated, see <xref linkend=\"CreateTags\"/>.</simpara>\n\n      ",
+                  "documentation": "\n\n        <p>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t\t<code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\tcreated, see <a>CreateTags</a>.</p>\n\n      ",
                   "shape_name": "ResourceType"
                 },
                 "Tags": {
@@ -5612,8 +5612,8 @@
           },
           "LogDestination": {
             "type": "string",
-            "zonbookDocumentation": "\n\t\t       <para>Specifies the destination to which the flow log data is to be published. Flow log data can be published \n\t\t\tto an CloudWatch Logs log group or an Amazon S3 bucket. The value specified for this parameter depends on the value specified\n\t\t\tfor LogDestinationType.</para>\n\t\t       <para>If LogDestinationType is not specified or <code>cloud-watch-logs</code>, specify the Amazon Resource Name \n\t\t\t(ARN) of the CloudWatch Logs log group.</para> \n\t\t       <para>If LogDestinationType is <code>s3</code>, specify the ARN of the Amazon S3 bucket. You can also specify a \n\t\t\tsubfolder in the bucket. To specify a subfolder in the bucket, use the following  ARN format: \n\t\t\t<code>bucket_ARN/subfolder_name/</code>. For example, to specify a subfolder named <code>my-logs</code> in a \n\t\t\tbucket named <code>my-bucket</code>, use the following ARN: <code>arn:aws:s3:::my-bucket/my-logs/</code>.</para>\n      ",
-            "documentation": "\n\t\t       <p>Specifies the destination to which the flow log data is to be published. Flow log data can be published \n\t\t\tto an CloudWatch Logs log group or an Amazon S3 bucket. The value specified for this parameter depends on the value specified\n\t\t\tfor LogDestinationType.</p>\n\t\t       <p>If LogDestinationType is not specified or <code>cloud-watch-logs</code>, specify the Amazon Resource Name \n\t\t\t(ARN) of the CloudWatch Logs log group.</p> \n\t\t       <p>If LogDestinationType is <code>s3</code>, specify the ARN of the Amazon S3 bucket. You can also specify a \n\t\t\tsubfolder in the bucket. To specify a subfolder in the bucket, use the following  ARN format: \n\t\t\t<code>bucket_ARN/subfolder_name/</code>. For example, to specify a subfolder named <code>my-logs</code> in a \n\t\t\tbucket named <code>my-bucket</code>, use the following ARN: <code>arn:aws:s3:::my-bucket/my-logs/</code>.</p>\n      ",
+            "zonbookDocumentation": "\n\t\t       <para>Specifies the destination to which the flow log data is to be published. Flow log data can be published \n\t\t\tto an CloudWatch Logs log group or an Amazon S3 bucket. The value specified for this parameter depends on the value specified\n\t\t\tfor LogDestinationType.</para>\n\t\t       <para>If LogDestinationType is not specified or <code>cloud-watch-logs</code>, specify the Amazon Resource Name \n\t\t\t(ARN) of the CloudWatch Logs log group.</para> \n\t\t       <para>If LogDestinationType is <code>s3</code>, specify the ARN of the Amazon S3 bucket. You can also specify a \n\t\t\tsubfolder in the bucket. To specify a subfolder in the bucket, use the following  ARN format: \n\t\t\t<code>bucket_ARN/subfolder_name/</code>. For example, to specify a subfolder named <code>my-logs</code> in a \n\t\t\tbucket named <code>my-bucket</code>, use the following ARN: <code>arn:aws:s3:::my-bucket/my-logs/</code>. You \n\t\t\tcannot use <code>AWSLogs</code> as a subfolder name. This is a reserved term.</para>\n      ",
+            "documentation": "\n\t\t       <p>Specifies the destination to which the flow log data is to be published. Flow log data can be published \n\t\t\tto an CloudWatch Logs log group or an Amazon S3 bucket. The value specified for this parameter depends on the value specified\n\t\t\tfor LogDestinationType.</p>\n\t\t       <p>If LogDestinationType is not specified or <code>cloud-watch-logs</code>, specify the Amazon Resource Name \n\t\t\t(ARN) of the CloudWatch Logs log group.</p> \n\t\t       <p>If LogDestinationType is <code>s3</code>, specify the ARN of the Amazon S3 bucket. You can also specify a \n\t\t\tsubfolder in the bucket. To specify a subfolder in the bucket, use the following  ARN format: \n\t\t\t<code>bucket_ARN/subfolder_name/</code>. For example, to specify a subfolder named <code>my-logs</code> in a \n\t\t\tbucket named <code>my-bucket</code>, use the following ARN: <code>arn:aws:s3:::my-bucket/my-logs/</code>. You \n\t\t\tcannot use <code>AWSLogs</code> as a subfolder name. This is a reserved term.</p>\n      ",
             "shape_name": "String"
           }
         },
@@ -7001,8 +7001,8 @@
           },
           "AvailabilityZone": {
             "type": "string",
-            "zonbookDocumentation": "\n        <simpara>The Availability Zone for the Dedicated Hosts.</simpara>\n      ",
-            "documentation": "\n        <p>The Availability Zone for the Dedicated Hosts.</p>\n      ",
+            "zonbookDocumentation": "\n\n        <simpara>The Availability Zone for the Dedicated Hosts.</simpara>\n      ",
+            "documentation": "\n\n        <p>The Availability Zone for the Dedicated Hosts.</p>\n      ",
             "required": true,
             "shape_name": "String"
           },
@@ -7056,8 +7056,8 @@
                     "vpn-connection",
                     "vpn-gateway"
                   ],
-                  "zonbookDocumentation": "\n        <simpara>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t\t<code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\tcreated, see <xref linkend=\"CreateTags\"/>.</simpara>\n      ",
-                  "documentation": "\n        <p>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t\t<code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\tcreated, see <a>CreateTags</a>.</p>\n      ",
+                  "zonbookDocumentation": "\n\n        <simpara>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t\t<code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\tcreated, see <xref linkend=\"CreateTags\"/>.</simpara>\n\n      ",
+                  "documentation": "\n\n        <p>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t\t<code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\tcreated, see <a>CreateTags</a>.</p>\n\n      ",
                   "shape_name": "ResourceType"
                 },
                 "Tags": {
@@ -7117,8 +7117,8 @@
             }
           }
         },
-        "zonbookDocumentation": "\n        <simpara>Contains the output of AllocateHosts.</simpara>\n      ",
-        "documentation": "\n        <p>Contains the output of AllocateHosts.</p>\n      ",
+        "zonbookDocumentation": "\n        <simpara>Contains the output of AllocateHosts.</simpara>\n\n      ",
+        "documentation": "\n        <p>Contains the output of AllocateHosts.</p>\n\n      ",
         "shape_name": "AllocateHostsResult"
       },
       "errors": [
@@ -9334,8 +9334,8 @@
         "members": {
           "BlockDeviceMappings": {
             "type": "list",
-            "zonbookDocumentation": "\n         <simpara>Information about one or more block device mappings.</simpara>\n      ",
-            "documentation": "\n         <p>Information about one or more block device mappings.</p>\n      ",
+            "zonbookDocumentation": "\n   \t     <simpara>Information about one or more block device mappings. This parameter cannot be used to modify the encryption status of existing volumes or snapshots. To create an AMI with encrypted snapshots, use the <xref linkend=\"CopyImage\"/> action.</simpara>\n      ",
+            "documentation": "\n   \t     <p>Information about one or more block device mappings. This parameter cannot be used to modify the encryption status of existing volumes or snapshots. To create an AMI with encrypted snapshots, use the <a>CopyImage</a> action.</p>\n      ",
             "shape_name": "BlockDeviceMappingRequestList",
             "members": {
               "type": "structure",
@@ -9394,8 +9394,8 @@
                     },
                     "Encrypted": {
                       "type": "boolean",
-                      "zonbookDocumentation": "\n        <simpara>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be\n            attached to instances that support Amazon EBS encryption. If you are creating a volume\n            from a snapshot, you can't specify an encryption value. This is because only blank\n            volumes can be encrypted on creation.</simpara>\n      ",
-                      "documentation": "\n        <p>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be\n            attached to instances that support Amazon EBS encryption. If you are creating a volume\n            from a snapshot, you can't specify an encryption value. This is because only blank\n            volumes can be encrypted on creation.</p>\n      ",
+                      "zonbookDocumentation": "\n        <simpara>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be\n        \tattached to instances that support Amazon EBS encryption. </simpara>\n    \t    <simpara>If you are creating a volume from a snapshot, you cannot specify an encryption value. This is because only blank volumes can be encrypted on creation. If you are creating a snapshot from an existing EBS volume, you cannot specify an encryption value that differs from that of the EBS volume. We recommend that you omit the encryption value from the block device mappings when creating an image from an instance.</simpara>\n      ",
+                      "documentation": "\n        <p>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be\n        \tattached to instances that support Amazon EBS encryption. </p>\n    \t    <p>If you are creating a volume from a snapshot, you cannot specify an encryption value. This is because only blank volumes can be encrypted on creation. If you are creating a snapshot from an existing EBS volume, you cannot specify an encryption value that differs from that of the EBS volume. We recommend that you omit the encryption value from the block device mappings when creating an image from an instance.</p>\n      ",
                       "shape_name": "Boolean"
                     },
                     "KmsKeyId": {
@@ -9621,8 +9621,8 @@
                     },
                     "Encrypted": {
                       "type": "boolean",
-                      "zonbookDocumentation": "\n        <simpara>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be\n            attached to instances that support Amazon EBS encryption. If you are creating a volume\n            from a snapshot, you can't specify an encryption value. This is because only blank\n            volumes can be encrypted on creation.</simpara>\n      ",
-                      "documentation": "\n        <p>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be\n            attached to instances that support Amazon EBS encryption. If you are creating a volume\n            from a snapshot, you can't specify an encryption value. This is because only blank\n            volumes can be encrypted on creation.</p>\n      ",
+                      "zonbookDocumentation": "\n        <simpara>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be\n        \tattached to instances that support Amazon EBS encryption. </simpara>\n    \t    <simpara>If you are creating a volume from a snapshot, you cannot specify an encryption value. This is because only blank volumes can be encrypted on creation. If you are creating a snapshot from an existing EBS volume, you cannot specify an encryption value that differs from that of the EBS volume. We recommend that you omit the encryption value from the block device mappings when creating an image from an instance.</simpara>\n      ",
+                      "documentation": "\n        <p>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be\n        \tattached to instances that support Amazon EBS encryption. </p>\n    \t    <p>If you are creating a volume from a snapshot, you cannot specify an encryption value. This is because only blank volumes can be encrypted on creation. If you are creating a snapshot from an existing EBS volume, you cannot specify an encryption value that differs from that of the EBS volume. We recommend that you omit the encryption value from the block device mappings when creating an image from an instance.</p>\n      ",
                       "shape_name": "Boolean",
                       "xmlname": "encrypted"
                     },
@@ -10105,8 +10105,8 @@
                           },
                           "Encrypted": {
                             "type": "boolean",
-                            "zonbookDocumentation": "\n        <simpara>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be\n            attached to instances that support Amazon EBS encryption. If you are creating a volume\n            from a snapshot, you can't specify an encryption value. This is because only blank\n            volumes can be encrypted on creation.</simpara>\n      ",
-                            "documentation": "\n        <p>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be\n            attached to instances that support Amazon EBS encryption. If you are creating a volume\n            from a snapshot, you can't specify an encryption value. This is because only blank\n            volumes can be encrypted on creation.</p>\n      ",
+                            "zonbookDocumentation": "\n        <simpara>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be\n        \tattached to instances that support Amazon EBS encryption. </simpara>\n    \t    <simpara>If you are creating a volume from a snapshot, you cannot specify an encryption value. This is because only blank volumes can be encrypted on creation. If you are creating a snapshot from an existing EBS volume, you cannot specify an encryption value that differs from that of the EBS volume. We recommend that you omit the encryption value from the block device mappings when creating an image from an instance.</simpara>\n      ",
+                            "documentation": "\n        <p>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be\n        \tattached to instances that support Amazon EBS encryption. </p>\n    \t    <p>If you are creating a volume from a snapshot, you cannot specify an encryption value. This is because only blank volumes can be encrypted on creation. If you are creating a snapshot from an existing EBS volume, you cannot specify an encryption value that differs from that of the EBS volume. We recommend that you omit the encryption value from the block device mappings when creating an image from an instance.</p>\n      ",
                             "shape_name": "Boolean",
                             "xmlname": "encrypted"
                           },
@@ -10877,8 +10877,8 @@
                     },
                     "Encrypted": {
                       "type": "boolean",
-                      "zonbookDocumentation": "\n        <simpara>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be\n            attached to instances that support Amazon EBS encryption. If you are creating a volume\n            from a snapshot, you can't specify an encryption value. This is because only blank\n            volumes can be encrypted on creation.</simpara>\n      ",
-                      "documentation": "\n        <p>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be\n            attached to instances that support Amazon EBS encryption. If you are creating a volume\n            from a snapshot, you can't specify an encryption value. This is because only blank\n            volumes can be encrypted on creation.</p>\n      ",
+                      "zonbookDocumentation": "\n        <simpara>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be\n        \tattached to instances that support Amazon EBS encryption. </simpara>\n    \t    <simpara>If you are creating a volume from a snapshot, you cannot specify an encryption value. This is because only blank volumes can be encrypted on creation. If you are creating a snapshot from an existing EBS volume, you cannot specify an encryption value that differs from that of the EBS volume. We recommend that you omit the encryption value from the block device mappings when creating an image from an instance.</simpara>\n      ",
+                      "documentation": "\n        <p>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be\n        \tattached to instances that support Amazon EBS encryption. </p>\n    \t    <p>If you are creating a volume from a snapshot, you cannot specify an encryption value. This is because only blank volumes can be encrypted on creation. If you are creating a snapshot from an existing EBS volume, you cannot specify an encryption value that differs from that of the EBS volume. We recommend that you omit the encryption value from the block device mappings when creating an image from an instance.</p>\n      ",
                       "shape_name": "Boolean"
                     },
                     "KmsKeyId": {
@@ -15139,8 +15139,8 @@
                     },
                     "Encrypted": {
                       "type": "boolean",
-                      "zonbookDocumentation": "\n        <simpara>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be\n            attached to instances that support Amazon EBS encryption. If you are creating a volume\n            from a snapshot, you can't specify an encryption value. This is because only blank\n            volumes can be encrypted on creation.</simpara>\n      ",
-                      "documentation": "\n        <p>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be\n            attached to instances that support Amazon EBS encryption. If you are creating a volume\n            from a snapshot, you can't specify an encryption value. This is because only blank\n            volumes can be encrypted on creation.</p>\n      ",
+                      "zonbookDocumentation": "\n        <simpara>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be\n        \tattached to instances that support Amazon EBS encryption. </simpara>\n    \t    <simpara>If you are creating a volume from a snapshot, you cannot specify an encryption value. This is because only blank volumes can be encrypted on creation. If you are creating a snapshot from an existing EBS volume, you cannot specify an encryption value that differs from that of the EBS volume. We recommend that you omit the encryption value from the block device mappings when creating an image from an instance.</simpara>\n      ",
+                      "documentation": "\n        <p>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be\n        \tattached to instances that support Amazon EBS encryption. </p>\n    \t    <p>If you are creating a volume from a snapshot, you cannot specify an encryption value. This is because only blank volumes can be encrypted on creation. If you are creating a snapshot from an existing EBS volume, you cannot specify an encryption value that differs from that of the EBS volume. We recommend that you omit the encryption value from the block device mappings when creating an image from an instance.</p>\n      ",
                       "shape_name": "Boolean"
                     },
                     "KmsKeyId": {
@@ -15744,8 +15744,8 @@
                     "vpn-connection",
                     "vpn-gateway"
                   ],
-                  "zonbookDocumentation": "\n        <simpara>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t\t<code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\tcreated, see <xref linkend=\"CreateTags\"/>.</simpara>\n      ",
-                  "documentation": "\n        <p>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t\t<code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\tcreated, see <a>CreateTags</a>.</p>\n      ",
+                  "zonbookDocumentation": "\n\n        <simpara>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t\t<code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\tcreated, see <xref linkend=\"CreateTags\"/>.</simpara>\n\n      ",
+                  "documentation": "\n\n        <p>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t\t<code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\tcreated, see <a>CreateTags</a>.</p>\n\n      ",
                   "shape_name": "ResourceType"
                 },
                 "Tags": {
@@ -30567,6 +30567,18 @@
               "xmlname": "RouteTableId"
             },
             "flattened": true
+          },
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n\t\t       <para>The token to retrieve the next page of results.</para>\n\t     ",
+            "documentation": "\n\t\t       <p>The token to retrieve the next page of results.</p>\n\t     ",
+            "shape_name": "String"
+          },
+          "MaxResults": {
+            "type": "integer",
+            "zonbookDocumentation": "\n\t\t       <para>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <emphasis role=\"bold\">NextToken</emphasis> value. This value can be between 5 and 100.</para>\n\t     ",
+            "documentation": "\n\t\t       <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <b>NextToken</b> value. This value can be between 5 and 100.</p>\n\t     ",
+            "shape_name": "Integer"
           }
         },
         "shape_name": "DescribeRouteTablesRequest",
@@ -30810,10 +30822,18 @@
               "shape_name": "RouteTable",
               "xmlname": "item"
             }
+          },
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n\t\t       <para>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</para>\n\t     ",
+            "documentation": "\n\t\t       <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>\n\t     ",
+            "shape_name": "String",
+            "xmlname": "nextToken"
           }
         },
-        "shape_name": "DescribeRouteTablesResult",
-        "documentation": null
+        "zonbookDocumentation": "\n         <simpara>Contains the output of DescribeRouteTables.</simpara>\n      ",
+        "documentation": "\n         <p>Contains the output of DescribeRouteTables.</p>\n      ",
+        "shape_name": "DescribeRouteTablesResult"
       },
       "errors": [
 
@@ -34737,8 +34757,8 @@
                     "vpn-connection",
                     "vpn-gateway"
                   ],
-                  "zonbookDocumentation": "\n        <simpara>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t\t<code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\tcreated, see <xref linkend=\"CreateTags\"/>.</simpara>\n      ",
-                  "documentation": "\n        <p>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t\t<code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\tcreated, see <a>CreateTags</a>.</p>\n      ",
+                  "zonbookDocumentation": "\n\n        <simpara>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t\t<code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\tcreated, see <xref linkend=\"CreateTags\"/>.</simpara>\n\n      ",
+                  "documentation": "\n\n        <p>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t\t<code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\tcreated, see <a>CreateTags</a>.</p>\n\n      ",
                   "shape_name": "ResourceType"
                 },
                 "Tags": {
@@ -36860,8 +36880,8 @@
                                     },
                                     "Encrypted": {
                                       "type": "boolean",
-                                      "zonbookDocumentation": "\n        <simpara>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be\n            attached to instances that support Amazon EBS encryption. If you are creating a volume\n            from a snapshot, you can't specify an encryption value. This is because only blank\n            volumes can be encrypted on creation.</simpara>\n      ",
-                                      "documentation": "\n        <p>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be\n            attached to instances that support Amazon EBS encryption. If you are creating a volume\n            from a snapshot, you can't specify an encryption value. This is because only blank\n            volumes can be encrypted on creation.</p>\n      ",
+                                      "zonbookDocumentation": "\n        <simpara>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be\n        \tattached to instances that support Amazon EBS encryption. </simpara>\n    \t    <simpara>If you are creating a volume from a snapshot, you cannot specify an encryption value. This is because only blank volumes can be encrypted on creation. If you are creating a snapshot from an existing EBS volume, you cannot specify an encryption value that differs from that of the EBS volume. We recommend that you omit the encryption value from the block device mappings when creating an image from an instance.</simpara>\n      ",
+                                      "documentation": "\n        <p>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be\n        \tattached to instances that support Amazon EBS encryption. </p>\n    \t    <p>If you are creating a volume from a snapshot, you cannot specify an encryption value. This is because only blank volumes can be encrypted on creation. If you are creating a snapshot from an existing EBS volume, you cannot specify an encryption value that differs from that of the EBS volume. We recommend that you omit the encryption value from the block device mappings when creating an image from an instance.</p>\n      ",
                                       "shape_name": "Boolean",
                                       "xmlname": "encrypted"
                                     },
@@ -38108,8 +38128,8 @@
                               },
                               "Encrypted": {
                                 "type": "boolean",
-                                "zonbookDocumentation": "\n        <simpara>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be\n            attached to instances that support Amazon EBS encryption. If you are creating a volume\n            from a snapshot, you can't specify an encryption value. This is because only blank\n            volumes can be encrypted on creation.</simpara>\n      ",
-                                "documentation": "\n        <p>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be\n            attached to instances that support Amazon EBS encryption. If you are creating a volume\n            from a snapshot, you can't specify an encryption value. This is because only blank\n            volumes can be encrypted on creation.</p>\n      ",
+                                "zonbookDocumentation": "\n        <simpara>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be\n        \tattached to instances that support Amazon EBS encryption. </simpara>\n    \t    <simpara>If you are creating a volume from a snapshot, you cannot specify an encryption value. This is because only blank volumes can be encrypted on creation. If you are creating a snapshot from an existing EBS volume, you cannot specify an encryption value that differs from that of the EBS volume. We recommend that you omit the encryption value from the block device mappings when creating an image from an instance.</simpara>\n      ",
+                                "documentation": "\n        <p>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be\n        \tattached to instances that support Amazon EBS encryption. </p>\n    \t    <p>If you are creating a volume from a snapshot, you cannot specify an encryption value. This is because only blank volumes can be encrypted on creation. If you are creating a snapshot from an existing EBS volume, you cannot specify an encryption value that differs from that of the EBS volume. We recommend that you omit the encryption value from the block device mappings when creating an image from an instance.</p>\n      ",
                                 "shape_name": "Boolean"
                               },
                               "KmsKeyId": {
@@ -39873,8 +39893,8 @@
                               },
                               "Encrypted": {
                                 "type": "boolean",
-                                "zonbookDocumentation": "\n        <simpara>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be\n            attached to instances that support Amazon EBS encryption. If you are creating a volume\n            from a snapshot, you can't specify an encryption value. This is because only blank\n            volumes can be encrypted on creation.</simpara>\n      ",
-                                "documentation": "\n        <p>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be\n            attached to instances that support Amazon EBS encryption. If you are creating a volume\n            from a snapshot, you can't specify an encryption value. This is because only blank\n            volumes can be encrypted on creation.</p>\n      ",
+                                "zonbookDocumentation": "\n        <simpara>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be\n        \tattached to instances that support Amazon EBS encryption. </simpara>\n    \t    <simpara>If you are creating a volume from a snapshot, you cannot specify an encryption value. This is because only blank volumes can be encrypted on creation. If you are creating a snapshot from an existing EBS volume, you cannot specify an encryption value that differs from that of the EBS volume. We recommend that you omit the encryption value from the block device mappings when creating an image from an instance.</simpara>\n      ",
+                                "documentation": "\n        <p>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be\n        \tattached to instances that support Amazon EBS encryption. </p>\n    \t    <p>If you are creating a volume from a snapshot, you cannot specify an encryption value. This is because only blank volumes can be encrypted on creation. If you are creating a snapshot from an existing EBS volume, you cannot specify an encryption value that differs from that of the EBS volume. We recommend that you omit the encryption value from the block device mappings when creating an image from an instance.</p>\n      ",
                                 "shape_name": "Boolean",
                                 "xmlname": "encrypted"
                               },
@@ -40613,8 +40633,8 @@
                         },
                         "Encrypted": {
                           "type": "boolean",
-                          "zonbookDocumentation": "\n        <simpara>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be\n            attached to instances that support Amazon EBS encryption. If you are creating a volume\n            from a snapshot, you can't specify an encryption value. This is because only blank\n            volumes can be encrypted on creation.</simpara>\n      ",
-                          "documentation": "\n        <p>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be\n            attached to instances that support Amazon EBS encryption. If you are creating a volume\n            from a snapshot, you can't specify an encryption value. This is because only blank\n            volumes can be encrypted on creation.</p>\n      ",
+                          "zonbookDocumentation": "\n        <simpara>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be\n        \tattached to instances that support Amazon EBS encryption. </simpara>\n    \t    <simpara>If you are creating a volume from a snapshot, you cannot specify an encryption value. This is because only blank volumes can be encrypted on creation. If you are creating a snapshot from an existing EBS volume, you cannot specify an encryption value that differs from that of the EBS volume. We recommend that you omit the encryption value from the block device mappings when creating an image from an instance.</simpara>\n      ",
+                          "documentation": "\n        <p>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be\n        \tattached to instances that support Amazon EBS encryption. </p>\n    \t    <p>If you are creating a volume from a snapshot, you cannot specify an encryption value. This is because only blank volumes can be encrypted on creation. If you are creating a snapshot from an existing EBS volume, you cannot specify an encryption value that differs from that of the EBS volume. We recommend that you omit the encryption value from the block device mappings when creating an image from an instance.</p>\n      ",
                           "shape_name": "Boolean"
                         },
                         "KmsKeyId": {
@@ -41291,8 +41311,8 @@
                               },
                               "Encrypted": {
                                 "type": "boolean",
-                                "zonbookDocumentation": "\n        <simpara>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be\n            attached to instances that support Amazon EBS encryption. If you are creating a volume\n            from a snapshot, you can't specify an encryption value. This is because only blank\n            volumes can be encrypted on creation.</simpara>\n      ",
-                                "documentation": "\n        <p>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be\n            attached to instances that support Amazon EBS encryption. If you are creating a volume\n            from a snapshot, you can't specify an encryption value. This is because only blank\n            volumes can be encrypted on creation.</p>\n      ",
+                                "zonbookDocumentation": "\n        <simpara>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be\n        \tattached to instances that support Amazon EBS encryption. </simpara>\n    \t    <simpara>If you are creating a volume from a snapshot, you cannot specify an encryption value. This is because only blank volumes can be encrypted on creation. If you are creating a snapshot from an existing EBS volume, you cannot specify an encryption value that differs from that of the EBS volume. We recommend that you omit the encryption value from the block device mappings when creating an image from an instance.</simpara>\n      ",
+                                "documentation": "\n        <p>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be\n        \tattached to instances that support Amazon EBS encryption. </p>\n    \t    <p>If you are creating a volume from a snapshot, you cannot specify an encryption value. This is because only blank volumes can be encrypted on creation. If you are creating a snapshot from an existing EBS volume, you cannot specify an encryption value that differs from that of the EBS volume. We recommend that you omit the encryption value from the block device mappings when creating an image from an instance.</p>\n      ",
                                 "shape_name": "Boolean",
                                 "xmlname": "encrypted"
                               },
@@ -42984,8 +43004,8 @@
           },
           "Filters": {
             "type": "list",
-            "zonbookDocumentation": "\n         <para>One or more filters.</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>key</code> - The tag key.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>resource-id</code> - The ID of the resource.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>resource-type</code> - The resource type (<code>customer-gateway</code> |\n            \t  <code>dedicated-host</code> | <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> |\n                  <code>fpga-image</code> | <code>image</code> | <code>instance</code> |\n                  <code>internet-gateway</code> | <code>launch-template</code> |\n                  <code>natgateway</code> | <code>network-acl</code> |\n                  <code>network-interface</code> | <code>reserved-instances</code> |\n                  <code>route-table</code> | <code>security-group</code> |\n                  <code>snapshot</code> | <code>spot-instances-request</code> |\n                  <code>subnet</code> | <code>volume</code> | <code>vpc</code> |\n                  <code>vpc-peering-connection</code> | <code>vpn-connection</code> |\n                  <code>vpn-gateway</code>).</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>tag</code>:&lt;key&gt; - The key/value combination of the tag. For example,\n                specify \"tag:Owner\" for the filter name and \"TeamA\" for the filter value to find\n                resources with the tag \"Owner=TeamA\".</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>value</code> - The tag value.</para>\n            </listitem>\n         </itemizedlist>\n      ",
-            "documentation": "\n         <p>One or more filters.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>key</code> - The tag key.</p>\n            </li>\n            <li>\n               <p>\n                  <code>resource-id</code> - The ID of the resource.</p>\n            </li>\n            <li>\n               <p>\n                  <code>resource-type</code> - The resource type (<code>customer-gateway</code> |\n            \t  <code>dedicated-host</code> | <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> |\n                  <code>fpga-image</code> | <code>image</code> | <code>instance</code> |\n                  <code>internet-gateway</code> | <code>launch-template</code> |\n                  <code>natgateway</code> | <code>network-acl</code> |\n                  <code>network-interface</code> | <code>reserved-instances</code> |\n                  <code>route-table</code> | <code>security-group</code> |\n                  <code>snapshot</code> | <code>spot-instances-request</code> |\n                  <code>subnet</code> | <code>volume</code> | <code>vpc</code> |\n                  <code>vpc-peering-connection</code> | <code>vpn-connection</code> |\n                  <code>vpn-gateway</code>).</p>\n            </li>\n            <li>\n               <p>\n                  <code>tag</code>:&lt;key&gt; - The key/value combination of the tag. For example,\n                specify \"tag:Owner\" for the filter name and \"TeamA\" for the filter value to find\n                resources with the tag \"Owner=TeamA\".</p>\n            </li>\n            <li>\n               <p>\n                  <code>value</code> - The tag value.</p>\n            </li>\n         </ul>\n      ",
+            "zonbookDocumentation": "\n         <para>One or more filters.</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>key</code> - The tag key.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>resource-id</code> - The ID of the resource.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>resource-type</code> - The resource type (<code>customer-gateway</code> |\n\n            \t  <code>dedicated-host</code> | <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> |\n\n                  <code>fpga-image</code> | <code>image</code> | <code>instance</code> |\n                  <code>internet-gateway</code> | <code>launch-template</code> |\n                  <code>natgateway</code> | <code>network-acl</code> |\n                  <code>network-interface</code> | <code>reserved-instances</code> |\n                  <code>route-table</code> | <code>security-group</code> |\n                  <code>snapshot</code> | <code>spot-instances-request</code> |\n                  <code>subnet</code> | <code>volume</code> | <code>vpc</code> |\n                  <code>vpc-peering-connection</code> | <code>vpn-connection</code> |\n                  <code>vpn-gateway</code>).</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>tag</code>:&lt;key&gt; - The key/value combination of the tag. For example,\n                specify \"tag:Owner\" for the filter name and \"TeamA\" for the filter value to find\n                resources with the tag \"Owner=TeamA\".</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>value</code> - The tag value.</para>\n            </listitem>\n         </itemizedlist>\n      ",
+            "documentation": "\n         <p>One or more filters.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>key</code> - The tag key.</p>\n            </li>\n            <li>\n               <p>\n                  <code>resource-id</code> - The ID of the resource.</p>\n            </li>\n            <li>\n               <p>\n                  <code>resource-type</code> - The resource type (<code>customer-gateway</code> |\n\n            \t  <code>dedicated-host</code> | <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> |\n\n                  <code>fpga-image</code> | <code>image</code> | <code>instance</code> |\n                  <code>internet-gateway</code> | <code>launch-template</code> |\n                  <code>natgateway</code> | <code>network-acl</code> |\n                  <code>network-interface</code> | <code>reserved-instances</code> |\n                  <code>route-table</code> | <code>security-group</code> |\n                  <code>snapshot</code> | <code>spot-instances-request</code> |\n                  <code>subnet</code> | <code>volume</code> | <code>vpc</code> |\n                  <code>vpc-peering-connection</code> | <code>vpn-connection</code> |\n                  <code>vpn-gateway</code>).</p>\n            </li>\n            <li>\n               <p>\n                  <code>tag</code>:&lt;key&gt; - The key/value combination of the tag. For example,\n                specify \"tag:Owner\" for the filter name and \"TeamA\" for the filter value to find\n                resources with the tag \"Owner=TeamA\".</p>\n            </li>\n            <li>\n               <p>\n                  <code>value</code> - The tag value.</p>\n            </li>\n         </ul>\n      ",
             "shape_name": "FilterList",
             "members": {
               "type": "structure",
@@ -43877,8 +43897,8 @@
                     "vpn-connection",
                     "vpn-gateway"
                   ],
-                  "zonbookDocumentation": "\n        <simpara>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t\t<code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\tcreated, see <xref linkend=\"CreateTags\"/>.</simpara>\n      ",
-                  "documentation": "\n        <p>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t\t<code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\tcreated, see <a>CreateTags</a>.</p>\n      ",
+                  "zonbookDocumentation": "\n\n        <simpara>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t\t<code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\tcreated, see <xref linkend=\"CreateTags\"/>.</simpara>\n\n      ",
+                  "documentation": "\n\n        <p>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t\t<code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\tcreated, see <a>CreateTags</a>.</p>\n\n      ",
                   "shape_name": "ResourceType"
                 },
                 "Tags": {

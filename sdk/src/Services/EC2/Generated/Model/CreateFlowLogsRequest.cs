@@ -119,7 +119,8 @@ namespace Amazon.EC2.Model
         /// You can also specify a subfolder in the bucket. To specify a subfolder in the bucket,
         /// use the following ARN format: <code>bucket_ARN/subfolder_name/</code>. For example,
         /// to specify a subfolder named <code>my-logs</code> in a bucket named <code>my-bucket</code>,
-        /// use the following ARN: <code>arn:aws:s3:::my-bucket/my-logs/</code>.
+        /// use the following ARN: <code>arn:aws:s3:::my-bucket/my-logs/</code>. You cannot use
+        /// <code>AWSLogs</code> as a subfolder name. This is a reserved term.
         /// </para>
         /// </summary>
         public string LogDestination

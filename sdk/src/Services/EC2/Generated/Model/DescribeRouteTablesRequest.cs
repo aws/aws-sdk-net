@@ -46,6 +46,8 @@ namespace Amazon.EC2.Model
     public partial class DescribeRouteTablesRequest : AmazonEC2Request
     {
         private List<Filter> _filters = new List<Filter>();
+        private int? _maxResults;
+        private string _nextToken;
         private List<string> _routeTableIds = new List<string>();
 
         /// <summary>
@@ -159,6 +161,44 @@ namespace Amazon.EC2.Model
         internal bool IsSetFilters()
         {
             return this._filters != null && this._filters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to return in a single call. To retrieve the remaining
+        /// results, make another call with the returned <b>NextToken</b> value. This value can
+        /// be between 5 and 100.
+        /// </para>
+        /// </summary>
+        public int MaxResults
+        {
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token to retrieve the next page of results.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
         /// <summary>
