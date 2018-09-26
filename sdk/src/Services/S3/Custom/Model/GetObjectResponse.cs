@@ -56,24 +56,13 @@ namespace Amazon.S3.Model
 
         private string bucketName;
         private string key;
-        private long bytesTransferred = 0;
-
+                
         /// <summary>
         /// Flag which returns true if the Expires property has been unmarshalled
         /// from the raw value or set by user code.
         /// </summary>
         private bool isExpiresUnmarshalled;
         internal string RawExpires { get; set; }
-
-        /// <summary>
-        /// Gets and sets the TransferredAlreaddy property. 
-        /// TransferredAlreaddy is the the total number of bytes to be transferred before this retry
-        /// </summary>
-        public long BytesTransferred
-        {
-            get { return this.bytesTransferred; }
-            set { this.bytesTransferred = value; }
-        }
 
         /// <summary>
         /// Gets and sets the BucketName property.
@@ -539,11 +528,6 @@ namespace Amazon.S3.Model
         /// <param name="completed">True if transfer is complete</param>
         internal void OnRaiseProgressEvent(string file, long incrementTransferred, long transferred, long total, bool completed)
         {
-            //transferred is the number of bytes transferred since last retry
-            //total is the total number of left bytes since last retry
-            //we need add the number of bytes already transfeered after last retry 
-            transferred += this.BytesTransferred;
-            total += this.BytesTransferred;
             AWSSDKUtils.InvokeInBackground(WriteObjectProgressEvent, new WriteObjectProgressArgs(this.BucketName, this.Key, file, this.VersionId, incrementTransferred, transferred, total, completed), this);
         }
 

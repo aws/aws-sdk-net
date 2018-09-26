@@ -425,17 +425,8 @@ namespace Amazon.Runtime
         {
             try
             {
-                HttpResponseMessage responseMessage; 
-                try
-                {
-                    responseMessage = await _httpClient.SendAsync(_request, HttpCompletionOption.ResponseHeadersRead, cancellationToken)
-                        .ConfigureAwait(continueOnCapturedContext: false);
-                }
-                catch(ObjectDisposedException e)
-                {
-                    throw new System.IO.IOException("HttpClient.SendAsync throws ObjectDisposedException exception due to network connectivity failure.", e);
-                }
-
+                var responseMessage = await _httpClient.SendAsync(_request, HttpCompletionOption.ResponseHeadersRead, cancellationToken)
+                    .ConfigureAwait(continueOnCapturedContext: false);
 
                 bool disposeClient = !_clientConfig.CacheHttpClient;
                 // If AllowAutoRedirect is set to false, HTTP 3xx responses are returned back as response.

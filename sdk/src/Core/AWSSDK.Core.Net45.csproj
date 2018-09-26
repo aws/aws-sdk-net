@@ -47,6 +47,7 @@
     <Compile Remove="**/_winPhone81/**" />
     <Compile Remove="**/_winPhoneSilverlight8/**" />
     <Compile Remove="**/_winstorage/**" />
+    <Compile Remove="**/_winsub/**" />
   </ItemGroup>
 
   <ItemGroup>

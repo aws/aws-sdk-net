@@ -106,8 +106,6 @@ namespace Amazon.S3.Transfer.Internal
                         }
                         else
                         {
-                            if (getRequest.ByteRange != null)
-                                response.BytesTransferred = getRequest.ByteRange.Start;
                             response.WriteObjectProgressEvent += OnWriteObjectProgressEvent;
                             await response.WriteResponseStreamToFileAsync(this._request.FilePath, true, cancellationToken)
                                 .ConfigureAwait(continueOnCapturedContext: false);

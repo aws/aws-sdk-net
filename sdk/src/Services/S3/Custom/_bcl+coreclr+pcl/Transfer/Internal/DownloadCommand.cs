@@ -55,8 +55,6 @@ namespace Amazon.S3.Transfer.Internal
             (WebExceptionStatus)12,
             (WebExceptionStatus)1,
             (WebExceptionStatus)3,
-            (WebExceptionStatus)14, //timeout
-            
 #endif
         };
 #endif
@@ -104,11 +102,7 @@ namespace Amazon.S3.Transfer.Internal
         private static bool HandleException(Exception exception, int retries, int maxRetries)
         {
             var canRetry = true;
-            if (exception is IOException
-#if PCL
-                || exception is StreamSizeMismatchException
-#endif
-                )
+            if (exception is IOException)
             {
 #if !PCL && !CORECLR
                 while (exception.InnerException != null)
@@ -159,9 +153,7 @@ namespace Amazon.S3.Transfer.Internal
 
         static void WaitBeforeRetry(int retries)
         {
-            int delay;
-            if (retries < 12) delay = Convert.ToInt32(Math.Pow(4, retries) * 100.0);
-            else delay = Int32.MaxValue;
+            int delay = (int)(Math.Pow(4, retries) * 100);
             delay = Math.Min(delay, MAX_BACKOFF_IN_MILLISECONDS);
             AWSSDKUtils.Sleep(delay);
         }

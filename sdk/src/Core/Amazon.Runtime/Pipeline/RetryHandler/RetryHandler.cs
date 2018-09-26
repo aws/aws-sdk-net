@@ -234,7 +234,7 @@ namespace Amazon.Runtime.Internal
             var webException = exception as WebException;
             if (webException != null)
             {
-                Logger.InfoFormat("WebException ({0}) making request {1} to {2}. Attempting retry {3} of {4}.",
+                Logger.InfoFormat("WebException ({1}) making request {2} to {3}. Attempting retry {4} of {5}.",
                           webException.Status,
                           requestContext.RequestName,
                           requestContext.Request.Endpoint.ToString(),

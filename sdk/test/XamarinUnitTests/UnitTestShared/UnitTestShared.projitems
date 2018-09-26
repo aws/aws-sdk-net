@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>2ffac853-48d3-4a5b-9846-2992f93a144c</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>UnitTestShared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)PipPoint\MobileAnalyticsManager.Internal.Test.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PipPoint\MobileAnalyticsManager.Test.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PipPoint\Model.Test.cs" />
+  </ItemGroup>
+</Project>
