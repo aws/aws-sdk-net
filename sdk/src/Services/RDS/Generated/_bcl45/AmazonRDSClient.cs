@@ -6343,6 +6343,13 @@ namespace Amazon.RDS
         /// <summary>
         /// Starts an Amazon Aurora DB cluster that was stopped using the AWS console, the stop-db-cluster
         /// AWS CLI command, or the StopDBCluster action.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-cluster-stop-start.html">
+        /// Stopping and Starting an Aurora Cluster</a> in the <i>Amazon Aurora User Guide.</i>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartDBCluster service method.</param>
         /// 
@@ -6487,7 +6494,14 @@ namespace Amazon.RDS
         /// <summary>
         /// Stops an Amazon Aurora DB cluster. When you stop a DB cluster, Aurora retains the
         /// DB cluster's metadata, including its endpoints and DB parameter groups. Aurora also
-        /// retains the transaction logs so you can do a point-in-time restore if necessary.
+        /// retains the transaction logs so you can do a point-in-time restore if necessary. 
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-cluster-stop-start.html">
+        /// Stopping and Starting an Aurora Cluster</a> in the <i>Amazon Aurora User Guide.</i>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopDBCluster service method.</param>
         /// 

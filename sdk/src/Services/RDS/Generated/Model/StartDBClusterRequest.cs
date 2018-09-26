@@ -31,6 +31,13 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the StartDBCluster operation.
     /// Starts an Amazon Aurora DB cluster that was stopped using the AWS console, the stop-db-cluster
     /// AWS CLI command, or the StopDBCluster action.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-cluster-stop-start.html">
+    /// Stopping and Starting an Aurora Cluster</a> in the <i>Amazon Aurora User Guide.</i>
+    /// 
+    /// </para>
     /// </summary>
     public partial class StartDBClusterRequest : AmazonRDSRequest
     {

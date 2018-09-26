@@ -56,6 +56,7 @@ namespace Amazon.RDS.Model
         private string _dbClusterParameterGroup;
         private string _dbClusterResourceId;
         private string _dbSubnetGroup;
+        private bool? _deletionProtection;
         private DateTime? _earliestBacktrackTime;
         private DateTime? _earliestRestorableTime;
         private List<string> _enabledCloudwatchLogsExports = new List<string>();
@@ -415,6 +416,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBSubnetGroup()
         {
             return this._dbSubnetGroup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeletionProtection. 
+        /// <para>
+        /// Indicates if the DB cluster has deletion protection enabled. The database can't be
+        /// deleted when this value is set to true. 
+        /// </para>
+        /// </summary>
+        public bool DeletionProtection
+        {
+            get { return this._deletionProtection.GetValueOrDefault(); }
+            set { this._deletionProtection = value; }
+        }
+
+        // Check to see if DeletionProtection property is set
+        internal bool IsSetDeletionProtection()
+        {
+            return this._deletionProtection.HasValue; 
         }
 
         /// <summary>

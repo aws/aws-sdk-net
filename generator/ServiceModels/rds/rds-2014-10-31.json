@@ -2127,9 +2127,9 @@
           },
           "DeletionProtection": {
             "type": "boolean",
-            "internalonly": true,
-            "shape_name": "BooleanOptional",
-            "documentation": null
+            "zonbookDocumentation": "\n        <para>Indicates if the DB cluster should have deletion protection enabled.\n            The database can't be deleted when this value is set to true. The default is false.\n        </para>\n      ",
+            "documentation": "\n        <p>Indicates if the DB cluster should have deletion protection enabled.\n            The database can't be deleted when this value is set to true. The default is false.\n        </p>\n      ",
+            "shape_name": "BooleanOptional"
           }
         },
         "zonbookDocumentation": "\n         <simpara/>\n      ",
@@ -2591,9 +2591,9 @@
               },
               "DeletionProtection": {
                 "type": "boolean",
-                "internalonly": true,
-                "shape_name": "Boolean",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </para>\n      ",
+                "documentation": "\n        <p>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </p>\n      ",
+                "shape_name": "Boolean"
               }
             },
             "zonbookDocumentation": "\n         <para>Contains the details of an Amazon Aurora DB cluster.\n      </para>\n         <para>This data type is used as a response element in the <xref linkend=\"DescribeDBClusters\"/>,\n        <xref linkend=\"StopDBCluster\"/>, and <xref linkend=\"StartDBCluster\"/> actions.\n      </para>\n      ",
@@ -3413,9 +3413,9 @@
           },
           "DeletionProtection": {
             "type": "boolean",
-            "internalonly": true,
-            "shape_name": "BooleanOptional",
-            "documentation": null
+            "zonbookDocumentation": "\n        <para>Indicates if the DB instance should have deletion protection enabled.\n            The database can't be deleted when this value is set to true. The default is false.\n            For more information, see \n            <ulink type=\"documentation\" url=\"AmazonRDS/latest/UserGuide/USER_DeleteInstance.html\">\n                Deleting a DB Instance</ulink>.\n        </para>\n      ",
+            "documentation": "\n        <p>Indicates if the DB instance should have deletion protection enabled.\n            The database can't be deleted when this value is set to true. The default is false.\n            For more information, see \n            <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html\">\n                Deleting a DB Instance</a>.\n        </p>\n      ",
+            "shape_name": "BooleanOptional"
           },
           "BackupPolicyName": {
             "type": "string",
@@ -4181,9 +4181,9 @@
               },
               "DeletionProtection": {
                 "type": "boolean",
-                "internalonly": true,
-                "shape_name": "Boolean",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>Indicates if the DB instance has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n            For more information, see \n            <ulink type=\"documentation\" url=\"AmazonRDS/latest/UserGuide/USER_DeleteInstance.html\">\n                Deleting a DB Instance</ulink>.\n        </para>\n      ",
+                "documentation": "\n        <p>Indicates if the DB instance has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n            For more information, see \n            <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html\">\n                Deleting a DB Instance</a>.\n        </p>\n      ",
+                "shape_name": "Boolean"
               },
               "AssociatedRoles": {
                 "type": "list",
@@ -4616,9 +4616,9 @@
           },
           "DeletionProtection": {
             "type": "boolean",
-            "internalonly": true,
-            "shape_name": "BooleanOptional",
-            "documentation": null
+            "zonbookDocumentation": "\n        <para>Indicates if the DB instance should have deletion protection enabled.\n            The database can't be deleted when this value is set to true. The default is false.\n            For more information, see \n            <ulink type=\"documentation\" url=\"AmazonRDS/latest/UserGuide/USER_DeleteInstance.html\">\n                Deleting a DB Instance</ulink>.\n        </para>\n      ",
+            "documentation": "\n        <p>Indicates if the DB instance should have deletion protection enabled.\n            The database can't be deleted when this value is set to true. The default is false.\n            For more information, see \n            <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html\">\n                Deleting a DB Instance</a>.\n        </p>\n      ",
+            "shape_name": "BooleanOptional"
           }
         },
         "shape_name": "CreateDBInstanceReadReplicaMessage",
@@ -5377,9 +5377,9 @@
               },
               "DeletionProtection": {
                 "type": "boolean",
-                "internalonly": true,
-                "shape_name": "Boolean",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>Indicates if the DB instance has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n            For more information, see \n            <ulink type=\"documentation\" url=\"AmazonRDS/latest/UserGuide/USER_DeleteInstance.html\">\n                Deleting a DB Instance</ulink>.\n        </para>\n      ",
+                "documentation": "\n        <p>Indicates if the DB instance has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n            For more information, see \n            <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html\">\n                Deleting a DB Instance</a>.\n        </p>\n      ",
+                "shape_name": "Boolean"
               },
               "AssociatedRoles": {
                 "type": "list",
@@ -7484,9 +7484,9 @@
               },
               "DeletionProtection": {
                 "type": "boolean",
-                "internalonly": true,
-                "shape_name": "Boolean",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </para>\n      ",
+                "documentation": "\n        <p>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </p>\n      ",
+                "shape_name": "Boolean"
               }
             },
             "zonbookDocumentation": "\n         <para>Contains the details of an Amazon Aurora DB cluster.\n      </para>\n         <para>This data type is used as a response element in the <xref linkend=\"DescribeDBClusters\"/>,\n        <xref linkend=\"StopDBCluster\"/>, and <xref linkend=\"StartDBCluster\"/> actions.\n      </para>\n      ",
@@ -8544,9 +8544,9 @@
               },
               "DeletionProtection": {
                 "type": "boolean",
-                "internalonly": true,
-                "shape_name": "Boolean",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>Indicates if the DB instance has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n            For more information, see \n            <ulink type=\"documentation\" url=\"AmazonRDS/latest/UserGuide/USER_DeleteInstance.html\">\n                Deleting a DB Instance</ulink>.\n        </para>\n      ",
+                "documentation": "\n        <p>Indicates if the DB instance has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n            For more information, see \n            <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html\">\n                Deleting a DB Instance</a>.\n        </p>\n      ",
+                "shape_name": "Boolean"
               },
               "AssociatedRoles": {
                 "type": "list",
@@ -10199,9 +10199,9 @@
                 },
                 "DeletionProtection": {
                   "type": "boolean",
-                  "internalonly": true,
-                  "shape_name": "Boolean",
-                  "documentation": null
+                  "zonbookDocumentation": "\n        <para>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </para>\n      ",
+                  "documentation": "\n        <p>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </p>\n      ",
+                  "shape_name": "Boolean"
                 }
               },
               "zonbookDocumentation": "\n         <para>Contains the details of an Amazon Aurora DB cluster.\n      </para>\n         <para>This data type is used as a response element in the <xref linkend=\"DescribeDBClusters\"/>,\n        <xref linkend=\"StopDBCluster\"/>, and <xref linkend=\"StartDBCluster\"/> actions.\n      </para>\n      ",
@@ -12151,9 +12151,9 @@
                 },
                 "DeletionProtection": {
                   "type": "boolean",
-                  "internalonly": true,
-                  "shape_name": "Boolean",
-                  "documentation": null
+                  "zonbookDocumentation": "\n        <para>Indicates if the DB instance has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n            For more information, see \n            <ulink type=\"documentation\" url=\"AmazonRDS/latest/UserGuide/USER_DeleteInstance.html\">\n                Deleting a DB Instance</ulink>.\n        </para>\n      ",
+                  "documentation": "\n        <p>Indicates if the DB instance has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n            For more information, see \n            <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html\">\n                Deleting a DB Instance</a>.\n        </p>\n      ",
+                  "shape_name": "Boolean"
                 },
                 "AssociatedRoles": {
                   "type": "list",
@@ -17096,9 +17096,9 @@
               },
               "DeletionProtection": {
                 "type": "boolean",
-                "internalonly": true,
-                "shape_name": "Boolean",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </para>\n      ",
+                "documentation": "\n        <p>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </p>\n      ",
+                "shape_name": "Boolean"
               }
             },
             "zonbookDocumentation": "\n         <para>Contains the details of an Amazon Aurora DB cluster.\n      </para>\n         <para>This data type is used as a response element in the <xref linkend=\"DescribeDBClusters\"/>,\n        <xref linkend=\"StopDBCluster\"/>, and <xref linkend=\"StartDBCluster\"/> actions.\n      </para>\n      ",
@@ -17823,9 +17823,9 @@
           },
           "DeletionProtection": {
             "type": "boolean",
-            "internalonly": true,
-            "shape_name": "BooleanOptional",
-            "documentation": null
+            "zonbookDocumentation": "\n        <para>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </para>\n      ",
+            "documentation": "\n        <p>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </p>\n      ",
+            "shape_name": "BooleanOptional"
           }
         },
         "zonbookDocumentation": "\n         <simpara/>\n      ",
@@ -18287,9 +18287,9 @@
               },
               "DeletionProtection": {
                 "type": "boolean",
-                "internalonly": true,
-                "shape_name": "Boolean",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </para>\n      ",
+                "documentation": "\n        <p>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </p>\n      ",
+                "shape_name": "Boolean"
               }
             },
             "zonbookDocumentation": "\n         <para>Contains the details of an Amazon Aurora DB cluster.\n      </para>\n         <para>This data type is used as a response element in the <xref linkend=\"DescribeDBClusters\"/>,\n        <xref linkend=\"StopDBCluster\"/>, and <xref linkend=\"StartDBCluster\"/> actions.\n      </para>\n      ",
@@ -18931,9 +18931,9 @@
           },
           "DeletionProtection": {
             "type": "boolean",
-            "internalonly": true,
-            "shape_name": "BooleanOptional",
-            "documentation": null
+            "zonbookDocumentation": "\n        <para>Indicates if the DB instance has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n            For more information, see \n            <ulink type=\"documentation\" url=\"AmazonRDS/latest/UserGuide/USER_DeleteInstance.html\">\n                Deleting a DB Instance</ulink>.\n        </para>\n      ",
+            "documentation": "\n        <p>Indicates if the DB instance has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n            For more information, see \n            <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html\">\n                Deleting a DB Instance</a>.\n        </p>\n      ",
+            "shape_name": "BooleanOptional"
           },
           "BackupPolicyName": {
             "type": "string",
@@ -19705,9 +19705,9 @@
               },
               "DeletionProtection": {
                 "type": "boolean",
-                "internalonly": true,
-                "shape_name": "Boolean",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>Indicates if the DB instance has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n            For more information, see \n            <ulink type=\"documentation\" url=\"AmazonRDS/latest/UserGuide/USER_DeleteInstance.html\">\n                Deleting a DB Instance</ulink>.\n        </para>\n      ",
+                "documentation": "\n        <p>Indicates if the DB instance has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n            For more information, see \n            <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html\">\n                Deleting a DB Instance</a>.\n        </p>\n      ",
+                "shape_name": "Boolean"
               },
               "AssociatedRoles": {
                 "type": "list",
@@ -22246,9 +22246,9 @@
               },
               "DeletionProtection": {
                 "type": "boolean",
-                "internalonly": true,
-                "shape_name": "Boolean",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>Indicates if the DB instance has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n            For more information, see \n            <ulink type=\"documentation\" url=\"AmazonRDS/latest/UserGuide/USER_DeleteInstance.html\">\n                Deleting a DB Instance</ulink>.\n        </para>\n      ",
+                "documentation": "\n        <p>Indicates if the DB instance has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n            For more information, see \n            <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html\">\n                Deleting a DB Instance</a>.\n        </p>\n      ",
+                "shape_name": "Boolean"
               },
               "AssociatedRoles": {
                 "type": "list",
@@ -22812,9 +22812,9 @@
               },
               "DeletionProtection": {
                 "type": "boolean",
-                "internalonly": true,
-                "shape_name": "Boolean",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </para>\n      ",
+                "documentation": "\n        <p>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </p>\n      ",
+                "shape_name": "Boolean"
               }
             },
             "zonbookDocumentation": "\n         <para>Contains the details of an Amazon Aurora DB cluster.\n      </para>\n         <para>This data type is used as a response element in the <xref linkend=\"DescribeDBClusters\"/>,\n        <xref linkend=\"StopDBCluster\"/>, and <xref linkend=\"StartDBCluster\"/> actions.\n      </para>\n      ",
@@ -23831,9 +23831,9 @@
               },
               "DeletionProtection": {
                 "type": "boolean",
-                "internalonly": true,
-                "shape_name": "Boolean",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>Indicates if the DB instance has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n            For more information, see \n            <ulink type=\"documentation\" url=\"AmazonRDS/latest/UserGuide/USER_DeleteInstance.html\">\n                Deleting a DB Instance</ulink>.\n        </para>\n      ",
+                "documentation": "\n        <p>Indicates if the DB instance has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n            For more information, see \n            <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html\">\n                Deleting a DB Instance</a>.\n        </p>\n      ",
+                "shape_name": "Boolean"
               },
               "AssociatedRoles": {
                 "type": "list",
@@ -24736,9 +24736,9 @@
           },
           "DeletionProtection": {
             "type": "boolean",
-            "internalonly": true,
-            "shape_name": "BooleanOptional",
-            "documentation": null
+            "zonbookDocumentation": "\n        <para>Indicates if the DB cluster should have deletion protection enabled.\n            The database can't be deleted when this value is set to true. The default is false.\n        </para>\n      ",
+            "documentation": "\n        <p>Indicates if the DB cluster should have deletion protection enabled.\n            The database can't be deleted when this value is set to true. The default is false.\n        </p>\n      ",
+            "shape_name": "BooleanOptional"
           }
         },
         "shape_name": "RestoreDBClusterFromS3Message",
@@ -25199,9 +25199,9 @@
               },
               "DeletionProtection": {
                 "type": "boolean",
-                "internalonly": true,
-                "shape_name": "Boolean",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </para>\n      ",
+                "documentation": "\n        <p>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </p>\n      ",
+                "shape_name": "Boolean"
               }
             },
             "zonbookDocumentation": "\n         <para>Contains the details of an Amazon Aurora DB cluster.\n      </para>\n         <para>This data type is used as a response element in the <xref linkend=\"DescribeDBClusters\"/>,\n        <xref linkend=\"StopDBCluster\"/>, and <xref linkend=\"StartDBCluster\"/> actions.\n      </para>\n      ",
@@ -25501,9 +25501,9 @@
           },
           "DeletionProtection": {
             "type": "boolean",
-            "internalonly": true,
-            "shape_name": "BooleanOptional",
-            "documentation": null
+            "zonbookDocumentation": "\n        <para>Indicates if the DB cluster should have deletion protection enabled.\n            The database can't be deleted when this value is set to true. The default is false.\n        </para>\n      ",
+            "documentation": "\n        <p>Indicates if the DB cluster should have deletion protection enabled.\n            The database can't be deleted when this value is set to true. The default is false.\n        </p>\n      ",
+            "shape_name": "BooleanOptional"
           }
         },
         "zonbookDocumentation": "\n         <simpara/>\n      ",
@@ -25965,9 +25965,9 @@
               },
               "DeletionProtection": {
                 "type": "boolean",
-                "internalonly": true,
-                "shape_name": "Boolean",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </para>\n      ",
+                "documentation": "\n        <p>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </p>\n      ",
+                "shape_name": "Boolean"
               }
             },
             "zonbookDocumentation": "\n         <para>Contains the details of an Amazon Aurora DB cluster.\n      </para>\n         <para>This data type is used as a response element in the <xref linkend=\"DescribeDBClusters\"/>,\n        <xref linkend=\"StopDBCluster\"/>, and <xref linkend=\"StartDBCluster\"/> actions.\n      </para>\n      ",
@@ -26289,9 +26289,9 @@
           },
           "DeletionProtection": {
             "type": "boolean",
-            "internalonly": true,
-            "shape_name": "BooleanOptional",
-            "documentation": null
+            "zonbookDocumentation": "\n        <para>Indicates if the DB cluster should have deletion protection enabled.\n            The database can't be deleted when this value is set to true. The default is false.\n        </para>\n      ",
+            "documentation": "\n        <p>Indicates if the DB cluster should have deletion protection enabled.\n            The database can't be deleted when this value is set to true. The default is false.\n        </p>\n      ",
+            "shape_name": "BooleanOptional"
           }
         },
         "zonbookDocumentation": "\n         <simpara/>\n      ",
@@ -26753,9 +26753,9 @@
               },
               "DeletionProtection": {
                 "type": "boolean",
-                "internalonly": true,
-                "shape_name": "Boolean",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </para>\n      ",
+                "documentation": "\n        <p>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </p>\n      ",
+                "shape_name": "Boolean"
               }
             },
             "zonbookDocumentation": "\n         <para>Contains the details of an Amazon Aurora DB cluster.\n      </para>\n         <para>This data type is used as a response element in the <xref linkend=\"DescribeDBClusters\"/>,\n        <xref linkend=\"StopDBCluster\"/>, and <xref linkend=\"StartDBCluster\"/> actions.\n      </para>\n      ",
@@ -27141,9 +27141,9 @@
           },
           "DeletionProtection": {
             "type": "boolean",
-            "internalonly": true,
-            "shape_name": "BooleanOptional",
-            "documentation": null
+            "zonbookDocumentation": "\n        <para>Indicates if the DB instance should have deletion protection enabled.\n            The database can't be deleted when this value is set to true. The default is false.\n            For more information, see \n            <ulink type=\"documentation\" url=\"AmazonRDS/latest/UserGuide/USER_DeleteInstance.html\">\n                Deleting a DB Instance</ulink>.\n        </para>\n      ",
+            "documentation": "\n        <p>Indicates if the DB instance should have deletion protection enabled.\n            The database can't be deleted when this value is set to true. The default is false.\n            For more information, see \n            <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html\">\n                Deleting a DB Instance</a>.\n        </p>\n      ",
+            "shape_name": "BooleanOptional"
           },
           "BackupPolicyName": {
             "type": "string",
@@ -27909,9 +27909,9 @@
               },
               "DeletionProtection": {
                 "type": "boolean",
-                "internalonly": true,
-                "shape_name": "Boolean",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>Indicates if the DB instance has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n            For more information, see \n            <ulink type=\"documentation\" url=\"AmazonRDS/latest/UserGuide/USER_DeleteInstance.html\">\n                Deleting a DB Instance</ulink>.\n        </para>\n      ",
+                "documentation": "\n        <p>Indicates if the DB instance has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n            For more information, see \n            <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html\">\n                Deleting a DB Instance</a>.\n        </p>\n      ",
+                "shape_name": "Boolean"
               },
               "AssociatedRoles": {
                 "type": "list",
@@ -28471,9 +28471,9 @@
           },
           "DeletionProtection": {
             "type": "boolean",
-            "internalonly": true,
-            "shape_name": "BooleanOptional",
-            "documentation": null
+            "zonbookDocumentation": "\n        <para>Indicates if the DB instance should have deletion protection enabled.\n            The database can't be deleted when this value is set to true. The default is false.\n            For more information, see \n            <ulink type=\"documentation\" url=\"AmazonRDS/latest/UserGuide/USER_DeleteInstance.html\">\n                Deleting a DB Instance</ulink>.\n        </para>\n      ",
+            "documentation": "\n        <p>Indicates if the DB instance should have deletion protection enabled.\n            The database can't be deleted when this value is set to true. The default is false.\n            For more information, see \n            <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html\">\n                Deleting a DB Instance</a>.\n        </p>\n      ",
+            "shape_name": "BooleanOptional"
           },
           "BackupPolicyName": {
             "type": "string",
@@ -29238,9 +29238,9 @@
               },
               "DeletionProtection": {
                 "type": "boolean",
-                "internalonly": true,
-                "shape_name": "Boolean",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>Indicates if the DB instance has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n            For more information, see \n            <ulink type=\"documentation\" url=\"AmazonRDS/latest/UserGuide/USER_DeleteInstance.html\">\n                Deleting a DB Instance</ulink>.\n        </para>\n      ",
+                "documentation": "\n        <p>Indicates if the DB instance has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n            For more information, see \n            <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html\">\n                Deleting a DB Instance</a>.\n        </p>\n      ",
+                "shape_name": "Boolean"
               },
               "AssociatedRoles": {
                 "type": "list",
@@ -29699,9 +29699,9 @@
           },
           "DeletionProtection": {
             "type": "boolean",
-            "internalonly": true,
-            "shape_name": "BooleanOptional",
-            "documentation": null
+            "zonbookDocumentation": "\n        <para>Indicates if the DB instance should have deletion protection enabled.\n            The database can't be deleted when this value is set to true. The default is false.\n            For more information, see \n            <ulink type=\"documentation\" url=\"AmazonRDS/latest/UserGuide/USER_DeleteInstance.html\">\n                Deleting a DB Instance</ulink>.\n        </para>\n      ",
+            "documentation": "\n        <p>Indicates if the DB instance should have deletion protection enabled.\n            The database can't be deleted when this value is set to true. The default is false.\n            For more information, see \n            <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html\">\n                Deleting a DB Instance</a>.\n        </p>\n      ",
+            "shape_name": "BooleanOptional"
           },
           "SourceDbiResourceId": {
             "type": "string",
@@ -30473,9 +30473,9 @@
               },
               "DeletionProtection": {
                 "type": "boolean",
-                "internalonly": true,
-                "shape_name": "Boolean",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>Indicates if the DB instance has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n            For more information, see \n            <ulink type=\"documentation\" url=\"AmazonRDS/latest/UserGuide/USER_DeleteInstance.html\">\n                Deleting a DB Instance</ulink>.\n        </para>\n      ",
+                "documentation": "\n        <p>Indicates if the DB instance has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n            For more information, see \n            <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html\">\n                Deleting a DB Instance</a>.\n        </p>\n      ",
+                "shape_name": "Boolean"
               },
               "AssociatedRoles": {
                 "type": "list",
@@ -31369,9 +31369,9 @@
               },
               "DeletionProtection": {
                 "type": "boolean",
-                "internalonly": true,
-                "shape_name": "Boolean",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </para>\n      ",
+                "documentation": "\n        <p>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </p>\n      ",
+                "shape_name": "Boolean"
               }
             },
             "zonbookDocumentation": "\n         <para>Contains the details of an Amazon Aurora DB cluster.\n      </para>\n         <para>This data type is used as a response element in the <xref linkend=\"DescribeDBClusters\"/>,\n        <xref linkend=\"StopDBCluster\"/>, and <xref linkend=\"StartDBCluster\"/> actions.\n      </para>\n      ",
@@ -31407,7 +31407,7 @@
           "shape_name": "InvalidDBInstanceStateFault"
         }
       ],
-      "documentation": "\n         <p>\n       Stops an Amazon Aurora DB cluster. When you stop a DB cluster, Aurora retains the DB cluster's\n       metadata, including its endpoints and DB parameter groups. Aurora also\n       retains the transaction logs so you can do a point-in-time restore if necessary.\n     </p>\n       \n       \n       \n       \n      "
+      "documentation": "\n         <p>\n       Stops an Amazon Aurora DB cluster. When you stop a DB cluster, Aurora retains the DB cluster's\n       metadata, including its endpoints and DB parameter groups. Aurora also\n       retains the transaction logs so you can do a point-in-time restore if necessary.\n     </p>\n       \n         <p>For more information, see  \n           <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-cluster-stop-start.html\">\n               Stopping and Starting an Aurora Cluster</a> in the <i>Amazon Aurora User Guide.</i>\n         </p>\n       \n       \n      "
     },
     "StopDBInstance": {
       "name": "StopDBInstance",
@@ -32184,9 +32184,9 @@
               },
               "DeletionProtection": {
                 "type": "boolean",
-                "internalonly": true,
-                "shape_name": "Boolean",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>Indicates if the DB instance has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n            For more information, see \n            <ulink type=\"documentation\" url=\"AmazonRDS/latest/UserGuide/USER_DeleteInstance.html\">\n                Deleting a DB Instance</ulink>.\n        </para>\n      ",
+                "documentation": "\n        <p>Indicates if the DB instance has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n            For more information, see \n            <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html\">\n                Deleting a DB Instance</a>.\n        </p>\n      ",
+                "shape_name": "Boolean"
               },
               "AssociatedRoles": {
                 "type": "list",
@@ -32773,9 +32773,9 @@
               },
               "DeletionProtection": {
                 "type": "boolean",
-                "internalonly": true,
-                "shape_name": "Boolean",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </para>\n      ",
+                "documentation": "\n        <p>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </p>\n      ",
+                "shape_name": "Boolean"
               }
             },
             "zonbookDocumentation": "\n         <para>Contains the details of an Amazon Aurora DB cluster.\n      </para>\n         <para>This data type is used as a response element in the <xref linkend=\"DescribeDBClusters\"/>,\n        <xref linkend=\"StopDBCluster\"/>, and <xref linkend=\"StartDBCluster\"/> actions.\n      </para>\n      ",
@@ -32811,7 +32811,7 @@
           "shape_name": "InvalidDBInstanceStateFault"
         }
       ],
-      "documentation": "\n         <p>Starts an Amazon Aurora DB cluster that was stopped using the AWS console, the stop-db-cluster\n       AWS CLI command, or the StopDBCluster action.</p>\n       \n       \n    \n    \n\n       \n      "
+      "documentation": "\n         <p>Starts an Amazon Aurora DB cluster that was stopped using the AWS console, the stop-db-cluster\n       AWS CLI command, or the StopDBCluster action.</p>\n       \n         <p>For more information, see  \n           <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-cluster-stop-start.html\">\n               Stopping and Starting an Aurora Cluster</a> in the <i>Amazon Aurora User Guide.</i>\n         </p>\n    \n    \n\n       \n      "
     },
     "StartDBInstance": {
       "name": "StartDBInstance",
@@ -33582,9 +33582,9 @@
               },
               "DeletionProtection": {
                 "type": "boolean",
-                "internalonly": true,
-                "shape_name": "Boolean",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>Indicates if the DB instance has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n            For more information, see \n            <ulink type=\"documentation\" url=\"AmazonRDS/latest/UserGuide/USER_DeleteInstance.html\">\n                Deleting a DB Instance</ulink>.\n        </para>\n      ",
+                "documentation": "\n        <p>Indicates if the DB instance has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n            For more information, see \n            <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html\">\n                Deleting a DB Instance</a>.\n        </p>\n      ",
+                "shape_name": "Boolean"
               },
               "AssociatedRoles": {
                 "type": "list",
