@@ -1436,6 +1436,142 @@
       ],
       "documentation": "\n         <p>\n      Updates engine-specific attributes on a specified server. The server\n      enters the <code>MODIFYING</code> state when this operation\n      is in progress. Only one update can occur at a time.\n      You can use this command to reset a Chef server's private key (<code>CHEF_PIVOTAL_KEY</code>), \n      a Chef server's admin password (<code>CHEF_DELIVERY_ADMIN_PASSWORD</code>), or a Puppet server's \n      admin password (<code>PUPPET_ADMIN_PASSWORD</code>).\n    </p>\n         <p>\n      This operation is asynchronous.\n    </p>\n         <p>\n      This operation can only be called for servers in <code>HEALTHY</code> or <code>UNHEALTHY</code> states. Otherwise, an <code>InvalidStateException</code> is raised.\n      A <code>ResourceNotFoundException</code> is thrown when the server does not exist. A <code>ValidationException</code> is raised when parameters of the request are not valid.\n    </p>\n      "
     },
+    "ExportServerEngineAttribute": {
+      "name": "ExportServerEngineAttribute",
+      "input": {
+        "type": "structure",
+        "members": {
+          "ExportAttributeName": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>The name of the export attribute. Currently supported export attribute is \"Userdata\" which exports a\n      userdata script filled out with parameters provided in the <code>InputAttributes</code> list.</simpara>\n      ",
+            "documentation": "\n         <p>The name of the export attribute. Currently supported export attribute is \"Userdata\" which exports a\n      userdata script filled out with parameters provided in the <code>InputAttributes</code> list.</p>\n      ",
+            "required": true,
+            "shape_name": "String"
+          },
+          "ServerName": {
+            "type": "string",
+            "pattern": "[a-zA-Z][a-zA-Z0-9\\-]*",
+            "zonbookDocumentation": "\n         <simpara>The name of the Server to which the attribute is being exported from </simpara>\n      ",
+            "documentation": "\n         <p>The name of the Server to which the attribute is being exported from </p>\n      ",
+            "required": true,
+            "shape_name": "ServerName",
+            "min_length": 1,
+            "max_length": 40
+          },
+          "InputAttributes": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>The list of engine attributes. The list type is <code>EngineAttribute</code>. <code>EngineAttribute</code>\n      is a pair of attribute name and value.\n      For <code>ExportAttributeName</code> \"Userdata\", currently supported input attribute names are:\n      - \"RunList\": For Chef, an ordered list of roles and/or recipes that are run in the exact order. For Puppet, this\n      parameter is ignored.\n      - \"OrganizationName\": For Chef, an organization name. AWS OpsWorks for Chef Server always creates the organization\n      \"default\". For Puppet, this parameter is ignored.\n      - \"NodeEnvironment\": For Chef, a node environment (eg. development, staging, onebox). For Puppet, this parameter\n      is ignored.\n      - \"NodeClientVersion\": For Chef, version of Chef Engine (3 numbers separated by dots, eg. \"13.8.5\"). If empty, it\n      uses the latest one. For Puppet, this parameter is ignored.\n    </simpara>\n      ",
+            "documentation": "\n         <p>The list of engine attributes. The list type is <code>EngineAttribute</code>. <code>EngineAttribute</code>\n      is a pair of attribute name and value.\n      For <code>ExportAttributeName</code> \"Userdata\", currently supported input attribute names are:\n      - \"RunList\": For Chef, an ordered list of roles and/or recipes that are run in the exact order. For Puppet, this\n      parameter is ignored.\n      - \"OrganizationName\": For Chef, an organization name. AWS OpsWorks for Chef Server always creates the organization\n      \"default\". For Puppet, this parameter is ignored.\n      - \"NodeEnvironment\": For Chef, a node environment (eg. development, staging, onebox). For Puppet, this parameter\n      is ignored.\n      - \"NodeClientVersion\": For Chef, version of Chef Engine (3 numbers separated by dots, eg. \"13.8.5\"). If empty, it\n      uses the latest one. For Puppet, this parameter is ignored.\n    </p>\n      ",
+            "shape_name": "EngineAttributes",
+            "members": {
+              "type": "structure",
+              "members": {
+                "Name": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The name of the engine attribute.\n    </simpara>\n      ",
+                  "documentation": "\n         <p>The name of the engine attribute.\n    </p>\n      ",
+                  "shape_name": "EngineAttributeName"
+                },
+                "Value": {
+                  "type": "string",
+                  "sensitive": true,
+                  "zonbookDocumentation": "\n         <simpara>The value of the engine attribute.\n    </simpara>\n      ",
+                  "documentation": "\n         <p>The value of the engine attribute.\n    </p>\n      ",
+                  "shape_name": "EngineAttributeValue"
+                }
+              },
+              "zonbookDocumentation": "\n         <simpara>A name and value pair that is specific to the engine of the server.\n    </simpara>\n      ",
+              "documentation": "\n         <p>A name and value pair that is specific to the engine of the server.\n    </p>\n      ",
+              "shape_name": "EngineAttribute"
+            }
+          }
+        },
+        "shape_name": "ExportServerEngineAttributeRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "EngineAttribute": {
+            "type": "structure",
+            "members": {
+              "Name": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <simpara>The name of the engine attribute.\n    </simpara>\n      ",
+                "documentation": "\n         <p>The name of the engine attribute.\n    </p>\n      ",
+                "shape_name": "EngineAttributeName"
+              },
+              "Value": {
+                "type": "string",
+                "sensitive": true,
+                "zonbookDocumentation": "\n         <simpara>The value of the engine attribute.\n    </simpara>\n      ",
+                "documentation": "\n         <p>The value of the engine attribute.\n    </p>\n      ",
+                "shape_name": "EngineAttributeValue"
+              }
+            },
+            "zonbookDocumentation": "\n         <simpara>The requested engine attribute pair with attribute name and value.\n    </simpara>\n      ",
+            "documentation": "\n         <p>The requested engine attribute pair with attribute name and value.\n    </p>\n      ",
+            "shape_name": "EngineAttribute"
+          },
+          "ServerName": {
+            "type": "string",
+            "pattern": "[a-zA-Z][a-zA-Z0-9\\-]*",
+            "zonbookDocumentation": "\n         <simpara>The requested ServerName.\n    </simpara>\n      ",
+            "documentation": "\n         <p>The requested ServerName.\n    </p>\n      ",
+            "shape_name": "ServerName",
+            "min_length": 1,
+            "max_length": 40
+          }
+        },
+        "shape_name": "ExportServerEngineAttributeResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>Error or informational message that can contain more detail about a validation failure.\n    </simpara>\n      ",
+              "documentation": "\n         <p>Error or informational message that can contain more detail about a validation failure.\n    </p>\n      ",
+              "shape_name": "String"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>One or more of the provided request parameters are not valid.\n    </simpara>\n      ",
+          "documentation": "\n         <p>One or more of the provided request parameters are not valid.\n    </p>\n      ",
+          "shape_name": "ValidationException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>Error or informational message that can contain more detail about problems locating or accessing a resource.\n    </simpara>\n      ",
+              "documentation": "\n         <p>Error or informational message that can contain more detail about problems locating or accessing a resource.\n    </p>\n      ",
+              "shape_name": "String"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The requested resource does not exist, or access was denied.\n    </simpara>\n      ",
+          "documentation": "\n         <p>The requested resource does not exist, or access was denied.\n    </p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>Error or informational message that provides more detail if a resource is\n      in a state that is not valid for performing a specified action.\n    </simpara>\n      ",
+              "documentation": "\n         <p>Error or informational message that provides more detail if a resource is\n      in a state that is not valid for performing a specified action.\n    </p>\n      ",
+              "shape_name": "String"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The resource is in a state that does not allow you to perform a specified action.\n    </simpara>\n      ",
+          "documentation": "\n         <p>The resource is in a state that does not allow you to perform a specified action.\n    </p>\n      ",
+          "shape_name": "InvalidStateException"
+        }
+      ],
+      "documentation": "\n         <p>\n      Exports a specified server engine attribute as a base64-encoded string.\n      For example, you can export user data that you can use in EC2 to associate nodes with a server.\n    </p>\n         <p>\n      This operation is synchronous.\n    </p>\n         <p>\n      A <code>ValidationException</code> is raised when parameters of the request are not valid.\n      A <code>ResourceNotFoundException</code> is thrown when the server does not exist.\n      An <code>InvalidStateException</code> is thrown when the server is in any of the following states: CREATING, TERMINATED,\n      FAILED or DELETING.\n    </p>\n      "
+    },
     "CreateBackup": {
       "name": "CreateBackup",
       "input": {

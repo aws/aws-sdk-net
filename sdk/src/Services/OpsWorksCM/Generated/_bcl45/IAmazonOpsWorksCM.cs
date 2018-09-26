@@ -710,6 +710,56 @@ namespace Amazon.OpsWorksCM
 
         #endregion
         
+        #region  ExportServerEngineAttribute
+
+
+        /// <summary>
+        /// Exports a specified server engine attribute as a base64-encoded string. For example,
+        /// you can export user data that you can use in EC2 to associate nodes with a server.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        ///  This operation is synchronous. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  A <code>ValidationException</code> is raised when parameters of the request are not
+        /// valid. A <code>ResourceNotFoundException</code> is thrown when the server does not
+        /// exist. An <code>InvalidStateException</code> is thrown when the server is in any of
+        /// the following states: CREATING, TERMINATED, FAILED or DELETING. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportServerEngineAttribute service method.</param>
+        /// 
+        /// <returns>The response from the ExportServerEngineAttribute service method, as returned by OpsWorksCM.</returns>
+        /// <exception cref="Amazon.OpsWorksCM.Model.InvalidStateException">
+        /// The resource is in a state that does not allow you to perform a specified action.
+        /// </exception>
+        /// <exception cref="Amazon.OpsWorksCM.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.OpsWorksCM.Model.ValidationException">
+        /// One or more of the provided request parameters are not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/ExportServerEngineAttribute">REST API Reference for ExportServerEngineAttribute Operation</seealso>
+        ExportServerEngineAttributeResponse ExportServerEngineAttribute(ExportServerEngineAttributeRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ExportServerEngineAttribute operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ExportServerEngineAttribute operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/ExportServerEngineAttribute">REST API Reference for ExportServerEngineAttribute Operation</seealso>
+        Task<ExportServerEngineAttributeResponse> ExportServerEngineAttributeAsync(ExportServerEngineAttributeRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  RestoreServer
 
 
