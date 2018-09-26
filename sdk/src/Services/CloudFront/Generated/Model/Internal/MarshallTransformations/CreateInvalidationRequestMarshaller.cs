@@ -65,33 +65,36 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             var stringWriter = new StringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true }))
             {   
-                xmlWriter.WriteStartElement("InvalidationBatch", "http://cloudfront.amazonaws.com/doc/2018-06-18/");                                
-                if(publicRequest.InvalidationBatch.IsSetCallerReference())
-                    xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2018-06-18/", StringUtils.FromString(publicRequest.InvalidationBatch.CallerReference));                    
-
-                
-                if (publicRequest.InvalidationBatch.Paths != null) 
+                if (publicRequest.IsSetInvalidationBatch())
                 {
-                    xmlWriter.WriteStartElement("Paths", "http://cloudfront.amazonaws.com/doc/2018-06-18/");            
-                    var publicRequestInvalidationBatchPathsItems = publicRequest.InvalidationBatch.Paths.Items;
-                    if (publicRequestInvalidationBatchPathsItems != null && publicRequestInvalidationBatchPathsItems.Count > 0) 
-                    {                        
-                        xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2018-06-18/");
-                        foreach (var publicRequestInvalidationBatchPathsItemsValue in publicRequestInvalidationBatchPathsItems) 
-                        {
-                            xmlWriter.WriteStartElement("Path", "http://cloudfront.amazonaws.com/doc/2018-06-18/");
-                            xmlWriter.WriteValue(publicRequestInvalidationBatchPathsItemsValue);
-                            xmlWriter.WriteEndElement();
-                        }            
-                        xmlWriter.WriteEndElement();            
+                    xmlWriter.WriteStartElement("InvalidationBatch", "http://cloudfront.amazonaws.com/doc/2018-06-18/");
+                    if(publicRequest.InvalidationBatch.IsSetCallerReference())
+                        xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2018-06-18/", StringUtils.FromString(publicRequest.InvalidationBatch.CallerReference));                    
+    
+                    
+                    if (publicRequest.InvalidationBatch.Paths != null) 
+                    {
+                        xmlWriter.WriteStartElement("Paths", "http://cloudfront.amazonaws.com/doc/2018-06-18/");            
+                        var publicRequestInvalidationBatchPathsItems = publicRequest.InvalidationBatch.Paths.Items;
+                        if (publicRequestInvalidationBatchPathsItems != null && publicRequestInvalidationBatchPathsItems.Count > 0) 
+                        {                        
+                            xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2018-06-18/");
+                            foreach (var publicRequestInvalidationBatchPathsItemsValue in publicRequestInvalidationBatchPathsItems) 
+                            {
+                                xmlWriter.WriteStartElement("Path", "http://cloudfront.amazonaws.com/doc/2018-06-18/");
+                                xmlWriter.WriteValue(publicRequestInvalidationBatchPathsItemsValue);
+                                xmlWriter.WriteEndElement();
+                            }            
+                            xmlWriter.WriteEndElement();            
+                        }
+                        if(publicRequest.InvalidationBatch.Paths.IsSetQuantity())
+                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2018-06-18/", StringUtils.FromInt(publicRequest.InvalidationBatch.Paths.Quantity));                 
+        
+                        xmlWriter.WriteEndElement();
                     }
-                    if(publicRequest.InvalidationBatch.Paths.IsSetQuantity())
-                        xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2018-06-18/", StringUtils.FromInt(publicRequest.InvalidationBatch.Paths.Quantity));                 
     
                     xmlWriter.WriteEndElement();
                 }
-
-                xmlWriter.WriteEndElement();
             }
             try 
             {

@@ -68,21 +68,24 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             var stringWriter = new StringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true }))
             {   
-                xmlWriter.WriteStartElement("PublicKeyConfig", "http://cloudfront.amazonaws.com/doc/2018-06-18/");                                
-                if(publicRequest.PublicKeyConfig.IsSetCallerReference())
-                    xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2018-06-18/", StringUtils.FromString(publicRequest.PublicKeyConfig.CallerReference));                    
-
-                if(publicRequest.PublicKeyConfig.IsSetComment())
-                    xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2018-06-18/", StringUtils.FromString(publicRequest.PublicKeyConfig.Comment));                    
-
-                if(publicRequest.PublicKeyConfig.IsSetEncodedKey())
-                    xmlWriter.WriteElementString("EncodedKey", "http://cloudfront.amazonaws.com/doc/2018-06-18/", StringUtils.FromString(publicRequest.PublicKeyConfig.EncodedKey));                    
-
-                if(publicRequest.PublicKeyConfig.IsSetName())
-                    xmlWriter.WriteElementString("Name", "http://cloudfront.amazonaws.com/doc/2018-06-18/", StringUtils.FromString(publicRequest.PublicKeyConfig.Name));                    
-
-
-                xmlWriter.WriteEndElement();
+                if (publicRequest.IsSetPublicKeyConfig())
+                {
+                    xmlWriter.WriteStartElement("PublicKeyConfig", "http://cloudfront.amazonaws.com/doc/2018-06-18/");
+                    if(publicRequest.PublicKeyConfig.IsSetCallerReference())
+                        xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2018-06-18/", StringUtils.FromString(publicRequest.PublicKeyConfig.CallerReference));                    
+    
+                    if(publicRequest.PublicKeyConfig.IsSetComment())
+                        xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2018-06-18/", StringUtils.FromString(publicRequest.PublicKeyConfig.Comment));                    
+    
+                    if(publicRequest.PublicKeyConfig.IsSetEncodedKey())
+                        xmlWriter.WriteElementString("EncodedKey", "http://cloudfront.amazonaws.com/doc/2018-06-18/", StringUtils.FromString(publicRequest.PublicKeyConfig.EncodedKey));                    
+    
+                    if(publicRequest.PublicKeyConfig.IsSetName())
+                        xmlWriter.WriteElementString("Name", "http://cloudfront.amazonaws.com/doc/2018-06-18/", StringUtils.FromString(publicRequest.PublicKeyConfig.Name));                    
+    
+    
+                    xmlWriter.WriteEndElement();
+                }
             }
             try 
             {

@@ -66,21 +66,24 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             var stringWriter = new StringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true }))
             {   
-                xmlWriter.WriteStartElement("TagKeys", "http://cloudfront.amazonaws.com/doc/2018-06-18/");                                
-                var publicRequestTagKeysItems = publicRequest.TagKeys.Items;
-                if (publicRequestTagKeysItems != null && publicRequestTagKeysItems.Count > 0) 
-                {                        
-                    xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2018-06-18/");
-                    foreach (var publicRequestTagKeysItemsValue in publicRequestTagKeysItems) 
-                    {
-                        xmlWriter.WriteStartElement("Key", "http://cloudfront.amazonaws.com/doc/2018-06-18/");
-                        xmlWriter.WriteValue(publicRequestTagKeysItemsValue);
-                        xmlWriter.WriteEndElement();
-                    }            
-                    xmlWriter.WriteEndElement();            
+                if (publicRequest.IsSetTagKeys())
+                {
+                    xmlWriter.WriteStartElement("TagKeys", "http://cloudfront.amazonaws.com/doc/2018-06-18/");
+                    var publicRequestTagKeysItems = publicRequest.TagKeys.Items;
+                    if (publicRequestTagKeysItems != null && publicRequestTagKeysItems.Count > 0) 
+                    {                        
+                        xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2018-06-18/");
+                        foreach (var publicRequestTagKeysItemsValue in publicRequestTagKeysItems) 
+                        {
+                            xmlWriter.WriteStartElement("Key", "http://cloudfront.amazonaws.com/doc/2018-06-18/");
+                            xmlWriter.WriteValue(publicRequestTagKeysItemsValue);
+                            xmlWriter.WriteEndElement();
+                        }            
+                        xmlWriter.WriteEndElement();            
+                    }
+    
+                    xmlWriter.WriteEndElement();
                 }
-
-                xmlWriter.WriteEndElement();
             }
             try 
             {
