@@ -67,7 +67,7 @@ namespace Amazon.SQS.Model
     /// If you don't specify the <code>DelaySeconds</code> parameter for an entry, Amazon
     /// SQS uses the default value for the queue.
     /// </para>
-    ///  <note> 
+    ///  
     /// <para>
     /// Some actions take lists of parameters. These lists are specified using the <code>param.n</code>
     /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
@@ -75,13 +75,12 @@ namespace Amazon.SQS.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>&amp;Attribute.1=this</code> 
+    ///  <code>&amp;Attribute.1=first</code> 
     /// </para>
     ///  
     /// <para>
-    ///  <code>&amp;Attribute.2=that</code> 
+    ///  <code>&amp;Attribute.2=second</code> 
     /// </para>
-    ///  </note>
     /// </summary>
     public partial class SendMessageBatchRequest : AmazonSQSRequest
     {
@@ -96,7 +95,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Instantiates SendMessageBatchRequest with the parameterized properties
         /// </summary>
-        /// <param name="queueUrl">The URL of the Amazon SQS queue to which batched messages are sent. Queue URLs are case-sensitive.</param>
+        /// <param name="queueUrl">The URL of the Amazon SQS queue to which batched messages are sent. Queue URLs and names are case-sensitive.</param>
         /// <param name="entries">A list of <code> <a>SendMessageBatchRequestEntry</a> </code> items.</param>
         public SendMessageBatchRequest(string queueUrl, List<SendMessageBatchRequestEntry> entries)
         {
@@ -129,7 +128,7 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  
         /// <para>
-        /// Queue URLs are case-sensitive.
+        /// Queue URLs and names are case-sensitive.
         /// </para>
         /// </summary>
         public string QueueUrl

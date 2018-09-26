@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// This is used in the responses of batch API to give a detailed description of the result
-    /// of an action on each entry in the request.
+    /// Gives a detailed description of the result of an action on each entry in the request.
     /// </summary>
     public partial class BatchResultErrorEntry
     {
@@ -95,7 +94,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property SenderFault. 
         /// <para>
-        /// Specifies whether the error happened due to the sender's fault.
+        /// Specifies whether the error happened due to the producer.
         /// </para>
         /// </summary>
         public bool SenderFault

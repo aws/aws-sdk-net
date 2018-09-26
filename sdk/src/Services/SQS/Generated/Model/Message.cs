@@ -48,10 +48,42 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        ///  <code>SenderId</code>, <code>SentTimestamp</code>, <code>ApproximateReceiveCount</code>,
-        /// and/or <code>ApproximateFirstReceiveTimestamp</code>. <code>SentTimestamp</code> and
-        /// <code>ApproximateFirstReceiveTimestamp</code> are each returned as an integer representing
-        /// the <a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds.
+        /// A map of the attributes requested in <code> <a>ReceiveMessage</a> </code> to their
+        /// respective values. Supported attributes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ApproximateReceiveCount</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ApproximateFirstReceiveTimestamp</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>MessageDeduplicationId</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>MessageGroupId</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SenderId</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SentTimestamp</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SequenceNumber</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <code>ApproximateFirstReceiveTimestamp</code> and <code>SentTimestamp</code> are
+        /// each returned as an integer representing the <a href="http://en.wikipedia.org/wiki/Unix_time">epoch
+        /// time</a> in milliseconds.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Attributes
@@ -126,9 +158,8 @@ namespace Amazon.SQS.Model
         /// Gets and sets the property MessageAttributes. 
         /// <para>
         /// Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
-        /// Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service Developer
-        /// Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+        /// SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public Dictionary<string, MessageAttributeValue> MessageAttributes

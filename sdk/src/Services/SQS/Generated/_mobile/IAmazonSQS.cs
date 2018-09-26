@@ -79,20 +79,25 @@ namespace Amazon.SQS
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/MakingRequestsArticle.html">Making
+    ///  <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-making-api-requests.html">Making
     /// API Requests</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Using
-    /// Amazon SQS Message Attributes</a> 
+    ///  <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+    /// SQS Message Attributes</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
-    /// Amazon SQS Dead-Letter Queues</a> 
+    ///  <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Amazon
+    /// SQS Dead-Letter Queues</a> 
     /// </para>
     ///  </li> </ul> </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/cli/latest/reference/sqs/index.html">Amazon SQS
+    /// in the <i>AWS CLI Command Reference</i> </a> 
+    /// </para>
+    ///  </li> <li> 
     /// <para>
     ///  <i>Amazon Web Services General Reference</i> 
     /// </para>
@@ -117,17 +122,23 @@ namespace Amazon.SQS
         /// <para>
         /// When you create a queue, you have full control access rights for the queue. Only you,
         /// the owner of the queue, can grant or deny permissions to the queue. For more information
-        /// about these permissions, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html">Shared
-        /// Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+        /// about these permissions, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-writing-an-sqs-policy.html#write-messages-to-shared-queue">Allow
+        /// Developers to Write Messages to a Shared Queue</a> in the <i>Amazon Simple Queue Service
+        /// Developer Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
         ///  <code>AddPermission</code> writes an Amazon-SQS-generated policy. If you want to
         /// write your own policy, use <code> <a>SetQueueAttributes</a> </code> to upload your
-        /// policy. For more information about writing your own policy, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AccessPolicyLanguage.html">Using
-        /// The Access Policy Language</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+        /// policy. For more information about writing your own policy, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-creating-custom-policies.html">Using
+        /// Custom Policies with the Amazon SQS Access Policy Language</a> in the <i>Amazon Simple
+        /// Queue Service Developer Guide</i>.
         /// </para>
         ///  
+        /// <para>
+        /// An Amazon SQS policy can have a maximum of 7 actions.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Some actions take lists of parameters. These lists are specified using the <code>param.n</code>
         /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
@@ -135,27 +146,34 @@ namespace Amazon.SQS
         /// </para>
         ///  
         /// <para>
-        ///  <code>&amp;Attribute.1=this</code> 
+        ///  <code>&amp;Attribute.1=first</code> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>&amp;Attribute.2=that</code> 
+        ///  <code>&amp;Attribute.2=second</code> 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Cross-account permissions don't apply to this action. For more information, see see
+        /// <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
+        /// Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple Queue
+        /// Service Developer Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
-        /// <param name="queueUrl">The URL of the Amazon SQS queue to which permissions are added. Queue URLs are case-sensitive.</param>
+        /// <param name="queueUrl">The URL of the Amazon SQS queue to which permissions are added. Queue URLs and names are case-sensitive.</param>
         /// <param name="label">The unique identification of the permission you're setting (for example, <code>AliceSendMessage</code>). Maximum 80 characters. Allowed characters include alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>).</param>
-        /// <param name="awsAccountIds">The AWS account number of the <a href="http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principal</a> who is given permission. The principal must have an AWS account, but does not need to be signed up for Amazon SQS. For information about locating the AWS account identification, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AWSCredentials.html">Your AWS Identifiers</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</param>
-        /// <param name="actions">The action the client wants to allow for the specified principal. The following values are valid: <ul> <li>  <code>*</code>  </li> <li>  <code>ChangeMessageVisibility</code>  </li> <li>  <code>DeleteMessage</code>  </li> <li>  <code>GetQueueAttributes</code>  </li> <li>  <code>GetQueueUrl</code>  </li> <li>  <code>ReceiveMessage</code>  </li> <li>  <code>SendMessage</code>  </li> </ul> For more information about these actions, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html#PermissionTypes">Understanding Permissions</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or <code>ChangeMessageVisibility</code> for <code>ActionName.n</code> also grants permissions for the corresponding batch versions of those actions: <code>SendMessageBatch</code>, <code>DeleteMessageBatch</code>, and <code>ChangeMessageVisibilityBatch</code>.</param>
+        /// <param name="awsAccountIds">The AWS account number of the <a href="http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principal</a> who is given permission. The principal must have an AWS account, but does not need to be signed up for Amazon SQS. For information about locating the AWS account identification, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-making-api-requests.html#sqs-api-request-authentication">Your AWS Identifiers</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</param>
+        /// <param name="actions">The action the client wants to allow for the specified principal. Valid values: the name of any action or <code>*</code>. For more information about these actions, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-overview-of-managing-access.html">Overview of Managing Access Permissions to Your Amazon Simple Queue Service Resource</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or <code>ChangeMessageVisibility</code> for <code>ActionName.n</code> also grants permissions for the corresponding batch versions of those actions: <code>SendMessageBatch</code>, <code>DeleteMessageBatch</code>, and <code>ChangeMessageVisibilityBatch</code>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
         /// <returns>The response from the AddPermission service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.OverLimitException">
-        /// The action that you requested would violate a limit. For example, <code>ReceiveMessage</code>
-        /// returns this error if the maximum number of inflight messages is reached. <code> <a>AddPermission</a>
-        /// </code> returns this error if the maximum number of permissions for the queue is reached.
+        /// The specified action violates a limit. For example, <code>ReceiveMessage</code> returns
+        /// this error if the maximum number of inflight messages is reached and <code>AddPermission</code>
+        /// returns this error if the maximum number of permissions for the queue is reached.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/AddPermission">REST API Reference for AddPermission Operation</seealso>
         Task<AddPermissionResponse> AddPermissionAsync(string queueUrl, string label, List<string> awsAccountIds, List<string> actions, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -179,20 +197,16 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Changes the visibility timeout of a specified message in a queue to a new value. The
-        /// maximum allowed timeout value is 12 hours. Thus, you can't extend the timeout of a
-        /// message in an existing queue to more than a total visibility timeout of 12 hours.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
+        /// maximum allowed timeout value is 12 hours. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
         /// Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
         /// 
         ///  
         /// <para>
         /// For example, you have a message with a visibility timeout of 5 minutes. After 3 minutes,
-        /// you call <code>ChangeMessageVisiblity</code> with a timeout of 10 minutes. At that
-        /// time, the timeout for the message is extended by 10 minutes beyond the time of the
-        /// <code>ChangeMessageVisibility</code> action. This results in a total visibility timeout
-        /// of 13 minutes. You can continue to call the <code>ChangeMessageVisibility</code> to
-        /// extend the visibility timeout to a maximum of 12 hours. If you try to extend the visibility
-        /// timeout beyond 12 hours, your request is rejected.
+        /// you call <code>ChangeMessageVisibility</code> with a timeout of 10 minutes. You can
+        /// continue to call <code>ChangeMessageVisibility</code> to extend the visibility timeout
+        /// to a maximum of 12 hours. If you try to extend the visibility timeout beyond 12 hours,
+        /// your request is rejected.
         /// </para>
         ///  
         /// <para>
@@ -227,7 +241,7 @@ namespace Amazon.SQS
         /// </para>
         ///  </important>
         /// </summary>
-        /// <param name="queueUrl">The URL of the Amazon SQS queue whose message's visibility is changed. Queue URLs are case-sensitive.</param>
+        /// <param name="queueUrl">The URL of the Amazon SQS queue whose message's visibility is changed. Queue URLs and names are case-sensitive.</param>
         /// <param name="receiptHandle">The receipt handle associated with the message whose visibility timeout is changed. This parameter is returned by the <code> <a>ReceiveMessage</a> </code> action.</param>
         /// <param name="visibilityTimeout">The new value for the message's visibility timeout (in seconds). Values values: <code>0</code> to <code>43200</code>. Maximum: 12 hours.</param>
         /// <param name="cancellationToken">
@@ -236,10 +250,10 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the ChangeMessageVisibility service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.MessageNotInflightException">
-        /// The message referred to isn't in flight.
+        /// The specified message isn't in flight.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.ReceiptHandleIsInvalidException">
-        /// The receipt handle provided isn't valid.
+        /// The specified receipt handle isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibility">REST API Reference for ChangeMessageVisibility Operation</seealso>
         Task<ChangeMessageVisibilityResponse> ChangeMessageVisibilityAsync(string queueUrl, string receiptHandle, int visibilityTimeout, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -273,7 +287,7 @@ namespace Amazon.SQS
         /// actions, you should check for batch errors even when the call returns an HTTP status
         /// code of <code>200</code>.
         /// </para>
-        ///  </important> <note> 
+        ///  </important> 
         /// <para>
         /// Some actions take lists of parameters. These lists are specified using the <code>param.n</code>
         /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
@@ -281,15 +295,14 @@ namespace Amazon.SQS
         /// </para>
         ///  
         /// <para>
-        ///  <code>&amp;Attribute.1=this</code> 
+        ///  <code>&amp;Attribute.1=first</code> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>&amp;Attribute.2=that</code> 
+        ///  <code>&amp;Attribute.2=second</code> 
         /// </para>
-        ///  </note>
         /// </summary>
-        /// <param name="queueUrl">The URL of the Amazon SQS queue whose messages' visibility is changed. Queue URLs are case-sensitive.</param>
+        /// <param name="queueUrl">The URL of the Amazon SQS queue whose messages' visibility is changed. Queue URLs and names are case-sensitive.</param>
         /// <param name="entries">A list of receipt handles of the messages for which the visibility timeout must be changed.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -342,9 +355,9 @@ namespace Amazon.SQS
         ///  You can't change the queue type after you create it and you can't convert an existing
         /// standard queue into a FIFO queue. You must either create a new FIFO queue for your
         /// application or delete your existing standard queue and recreate it as a FIFO queue.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-moving">
-        /// Moving From a Standard Queue to a FIFO Queue</a> in the <i>Amazon Simple Queue Service
-        /// Developer Guide</i>. 
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-moving">Moving
+        /// From a Standard Queue to a FIFO Queue</a> in the <i>Amazon Simple Queue Service Developer
+        /// Guide</i>. 
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
@@ -379,7 +392,7 @@ namespace Amazon.SQS
         /// If the queue name, attribute names, or attribute values don't match an existing queue,
         /// <code>CreateQueue</code> returns an error.
         /// </para>
-        ///  </li> </ul> <note> 
+        ///  </li> </ul> 
         /// <para>
         /// Some actions take lists of parameters. These lists are specified using the <code>param.n</code>
         /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
@@ -387,26 +400,33 @@ namespace Amazon.SQS
         /// </para>
         ///  
         /// <para>
-        ///  <code>&amp;Attribute.1=this</code> 
+        ///  <code>&amp;Attribute.1=first</code> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>&amp;Attribute.2=that</code> 
+        ///  <code>&amp;Attribute.2=second</code> 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Cross-account permissions don't apply to this action. For more information, see see
+        /// <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
+        /// Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple Queue
+        /// Service Developer Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
-        /// <param name="queueName">The name of the new queue. The following limits apply to this name: <ul> <li> A queue name can have up to 80 characters. </li> <li> Valid values: alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>). </li> <li> A FIFO queue name must end with the <code>.fifo</code> suffix. </li> </ul> Queue names are case-sensitive.</param>
+        /// <param name="queueName">The name of the new queue. The following limits apply to this name: <ul> <li> A queue name can have up to 80 characters. </li> <li> Valid values: alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>). </li> <li> A FIFO queue name must end with the <code>.fifo</code> suffix. </li> </ul> Queue URLs and names are case-sensitive.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
         /// <returns>The response from the CreateQueue service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.QueueDeletedRecentlyException">
-        /// You must wait 60 seconds after deleting a queue before you can create another one
+        /// You must wait 60 seconds after deleting a queue before you can create another queue
         /// with the same name.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.QueueNameExistsException">
-        /// A queue already exists with this name. Amazon SQS returns this error only if the request
+        /// A queue with this name already exists. Amazon SQS returns this error only if the request
         /// includes attributes whose values differ from those of the existing queue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CreateQueue">REST API Reference for CreateQueue Operation</seealso>
@@ -430,33 +450,33 @@ namespace Amazon.SQS
 
 
         /// <summary>
-        /// Deletes the specified message from the specified queue. You specify the message by
-        /// using the message's <i>receipt handle</i> and not the <i>MessageId</i> you receive
-        /// when you send the message. Even if the message is locked by another reader due to
-        /// the visibility timeout setting, it is still deleted from the queue. If you leave a
-        /// message in the queue for longer than the queue's configured retention period, Amazon
-        /// SQS automatically deletes the message. 
+        /// Deletes the specified message from the specified queue. To select the message to delete,
+        /// use the <code>ReceiptHandle</code> of the message (<i>not</i> the <code>MessageId</code>
+        /// which you receive when you send the message). Amazon SQS can delete a message from
+        /// a queue even if a visibility timeout setting causes the message to be locked by another
+        /// consumer. Amazon SQS automatically deletes messages left in a queue longer than the
+        /// retention period configured for the queue. 
         /// 
         ///  <note> 
         /// <para>
-        ///  The receipt handle is associated with a specific instance of receiving the message.
-        /// If you receive a message more than once, the receipt handle you get each time you
-        /// receive the message is different. If you don't provide the most recently received
-        /// receipt handle for the message when you use the <code>DeleteMessage</code> action,
-        /// the request succeeds, but the message might not be deleted.
+        /// The <code>ReceiptHandle</code> is associated with a <i>specific instance</i> of receiving
+        /// a message. If you receive a message more than once, the <code>ReceiptHandle</code>
+        /// is different each time you receive a message. When you use the <code>DeleteMessage</code>
+        /// action, you must provide the most recently received <code>ReceiptHandle</code> for
+        /// the message (otherwise, the request succeeds, but the message might not be deleted).
         /// </para>
         ///  
         /// <para>
         /// For standard queues, it is possible to receive a message even after you delete it.
-        /// This might happen on rare occasions if one of the servers storing a copy of the message
-        /// is unavailable when you send the request to delete the message. The copy remains on
-        /// the server and might be returned to you on a subsequent receive request. You should
-        /// ensure that your application is idempotent, so that receiving a message more than
-        /// once does not cause issues.
+        /// This might happen on rare occasions if one of the servers which stores a copy of the
+        /// message is unavailable when you send the request to delete the message. The copy remains
+        /// on the server and might be returned to you during a subsequent receive request. You
+        /// should ensure that your application is idempotent, so that receiving a message more
+        /// than once does not cause issues.
         /// </para>
         ///  </note>
         /// </summary>
-        /// <param name="queueUrl">The URL of the Amazon SQS queue from which messages are deleted. Queue URLs are case-sensitive.</param>
+        /// <param name="queueUrl">The URL of the Amazon SQS queue from which messages are deleted. Queue URLs and names are case-sensitive.</param>
         /// <param name="receiptHandle">The receipt handle associated with the message to delete.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -464,10 +484,10 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the DeleteMessage service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidIdFormatException">
-        /// The receipt handle isn't valid for the current version.
+        /// The specified receipt handle isn't valid for the current version.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.ReceiptHandleIsInvalidException">
-        /// The receipt handle provided isn't valid.
+        /// The specified receipt handle isn't valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessage">REST API Reference for DeleteMessage Operation</seealso>
         Task<DeleteMessageResponse> DeleteMessageAsync(string queueUrl, string receiptHandle, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -500,7 +520,7 @@ namespace Amazon.SQS
         /// actions, you should check for batch errors even when the call returns an HTTP status
         /// code of <code>200</code>.
         /// </para>
-        ///  </important> <note> 
+        ///  </important> 
         /// <para>
         /// Some actions take lists of parameters. These lists are specified using the <code>param.n</code>
         /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
@@ -508,15 +528,14 @@ namespace Amazon.SQS
         /// </para>
         ///  
         /// <para>
-        ///  <code>&amp;Attribute.1=this</code> 
+        ///  <code>&amp;Attribute.1=first</code> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>&amp;Attribute.2=that</code> 
+        ///  <code>&amp;Attribute.2=second</code> 
         /// </para>
-        ///  </note>
         /// </summary>
-        /// <param name="queueUrl">The URL of the Amazon SQS queue from which messages are deleted. Queue URLs are case-sensitive.</param>
+        /// <param name="queueUrl">The URL of the Amazon SQS queue from which messages are deleted. Queue URLs and names are case-sensitive.</param>
         /// <param name="entries">A list of receipt handles for the messages to be deleted.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -574,10 +593,18 @@ namespace Amazon.SQS
         ///  
         /// <para>
         /// When you delete a queue, you must wait at least 60 seconds before creating a queue
-        /// with the same name. 
+        /// with the same name.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Cross-account permissions don't apply to this action. For more information, see see
+        /// <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
+        /// Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple Queue
+        /// Service Developer Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
-        /// <param name="queueUrl">The URL of the Amazon SQS queue to delete. Queue URLs are case-sensitive.</param>
+        /// <param name="queueUrl">The URL of the Amazon SQS queue to delete. Queue URLs and names are case-sensitive.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -611,7 +638,7 @@ namespace Amazon.SQS
         /// To determine whether a queue is <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO</a>,
         /// you can check whether <code>QueueName</code> ends with the <code>.fifo</code> suffix.
         /// </para>
-        ///  </note> <note> 
+        ///  </note> 
         /// <para>
         /// Some actions take lists of parameters. These lists are specified using the <code>param.n</code>
         /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
@@ -619,23 +646,22 @@ namespace Amazon.SQS
         /// </para>
         ///  
         /// <para>
-        ///  <code>&amp;Attribute.1=this</code> 
+        ///  <code>&amp;Attribute.1=first</code> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>&amp;Attribute.2=that</code> 
+        ///  <code>&amp;Attribute.2=second</code> 
         /// </para>
-        ///  </note>
         /// </summary>
-        /// <param name="queueUrl">The URL of the Amazon SQS queue whose attribute information is retrieved. Queue URLs are case-sensitive.</param>
-        /// <param name="attributeNames">A list of attributes for which to retrieve information. <note> In the future, new attributes might be added. If you write code that calls this action, we recommend that you structure your code so that it can handle new attributes gracefully. </note> The following attributes are supported: <ul> <li>  <code>All</code> - Returns all values.  </li> <li>  <code>ApproximateNumberOfMessages</code> - Returns the approximate number of visible messages in a queue. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html">Resources Required to Process Messages</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.  </li> <li>  <code>ApproximateNumberOfMessagesDelayed</code> - Returns the approximate number of messages that are waiting to be added to the queue.  </li> <li>  <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate number of messages that have not timed-out and aren't deleted. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html">Resources Required to Process Messages</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.  </li> <li>  <code>CreatedTimestamp</code> - Returns the time when the queue was created in seconds (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>). </li> <li>  <code>DelaySeconds</code> - Returns the default delay on the queue in seconds. </li> <li>  <code>LastModifiedTimestamp</code> - Returns the time when the queue was last changed in seconds (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>). </li> <li>  <code>MaximumMessageSize</code> - Returns the limit of how many bytes a message can contain before Amazon SQS rejects it. </li> <li>  <code>MessageRetentionPeriod</code> - Returns the length of time, in seconds, for which Amazon SQS retains a message. </li> <li>  <code>Policy</code> - Returns the policy of the queue. </li> <li>  <code>QueueArn</code> - Returns the Amazon resource name (ARN) of the queue. </li> <li>  <code>ReceiveMessageWaitTimeSeconds</code> - Returns the length of time, in seconds, for which the <code>ReceiveMessage</code> action waits for a message to arrive.  </li> <li>  <code>RedrivePolicy</code> - Returns the string that includes the parameters for dead-letter queue functionality of the source queue. For more information about the redrive policy and dead-letter queues, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.  <ul> <li>  <code>deadLetterTargetArn</code> - The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded. </li> <li>  <code>maxReceiveCount</code> - The number of times a message is delivered to the source queue before being moved to the dead-letter queue. </li> </ul> </li> <li>  <code>VisibilityTimeout</code> - Returns the visibility timeout for the queue. For more information about the visibility timeout, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.  </li> </ul> The following attributes apply only to <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>: <ul> <li>  <code>KmsMasterKeyId</code> - Returns the ID of an AWS-managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key Terms</a>.  </li> <li>  <code>KmsDataKeyReusePeriodSeconds</code> - Returns the length of time, in seconds, for which Amazon SQS can reuse a data key to encrypt or decrypt messages before calling AWS KMS again. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How Does the Data Key Reuse Period Work?</a>.  </li> </ul> The following attributes apply only to <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO (first-in-first-out) queues</a>: <ul> <li>  <code>FifoQueue</code> - Returns whether the queue is FIFO. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic">FIFO Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. <note> To determine whether a queue is <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO</a>, you can check whether <code>QueueName</code> ends with the <code>.fifo</code> suffix. </note> </li> <li>  <code>ContentBasedDeduplication</code> - Returns whether content-based deduplication is enabled for the queue. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.  </li> </ul></param>
+        /// <param name="queueUrl">The URL of the Amazon SQS queue whose attribute information is retrieved. Queue URLs and names are case-sensitive.</param>
+        /// <param name="attributeNames">A list of attributes for which to retrieve information. <note> In the future, new attributes might be added. If you write code that calls this action, we recommend that you structure your code so that it can handle new attributes gracefully. </note> The following attributes are supported: <ul> <li>  <code>All</code> - Returns all values.  </li> <li>  <code>ApproximateNumberOfMessages</code> - Returns the approximate number of messages available for retrieval from the queue. </li> <li>  <code>ApproximateNumberOfMessagesDelayed</code> - Returns the approximate number of messages in the queue that are delayed and not available for reading immediately. This can happen when the queue is configured as a delay queue or when a message has been sent with a delay parameter. </li> <li>  <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate number of messages that are in flight. Messages are considered to be <i>in flight</i> if they have been sent to a client but have not yet been deleted or have not yet reached the end of their visibility window.  </li> <li>  <code>CreatedTimestamp</code> - Returns the time when the queue was created in seconds (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>). </li> <li>  <code>DelaySeconds</code> - Returns the default delay on the queue in seconds. </li> <li>  <code>LastModifiedTimestamp</code> - Returns the time when the queue was last changed in seconds (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>). </li> <li>  <code>MaximumMessageSize</code> - Returns the limit of how many bytes a message can contain before Amazon SQS rejects it. </li> <li>  <code>MessageRetentionPeriod</code> - Returns the length of time, in seconds, for which Amazon SQS retains a message. </li> <li>  <code>Policy</code> - Returns the policy of the queue. </li> <li>  <code>QueueArn</code> - Returns the Amazon resource name (ARN) of the queue. </li> <li>  <code>ReceiveMessageWaitTimeSeconds</code> - Returns the length of time, in seconds, for which the <code>ReceiveMessage</code> action waits for a message to arrive.  </li> <li>  <code>RedrivePolicy</code> - Returns the string that includes the parameters for dead-letter queue functionality of the source queue. For more information about the redrive policy and dead-letter queues, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.  <ul> <li>  <code>deadLetterTargetArn</code> - The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded. </li> <li>  <code>maxReceiveCount</code> - The number of times a message is delivered to the source queue before being moved to the dead-letter queue. When the <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the dead-letter-queue. </li> </ul> </li> <li>  <code>VisibilityTimeout</code> - Returns the visibility timeout for the queue. For more information about the visibility timeout, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.  </li> </ul> The following attributes apply only to <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>: <ul> <li>  <code>KmsMasterKeyId</code> - Returns the ID of an AWS-managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key Terms</a>.  </li> <li>  <code>KmsDataKeyReusePeriodSeconds</code> - Returns the length of time, in seconds, for which Amazon SQS can reuse a data key to encrypt or decrypt messages before calling AWS KMS again. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How Does the Data Key Reuse Period Work?</a>.  </li> </ul> The following attributes apply only to <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO (first-in-first-out) queues</a>: <ul> <li>  <code>FifoQueue</code> - Returns whether the queue is FIFO. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic">FIFO Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. <note> To determine whether a queue is <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO</a>, you can check whether <code>QueueName</code> ends with the <code>.fifo</code> suffix. </note> </li> <li>  <code>ContentBasedDeduplication</code> - Returns whether content-based deduplication is enabled for the queue. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.  </li> </ul></param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
         /// <returns>The response from the GetQueueAttributes service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAttributeNameException">
-        /// The attribute referred to doesn't exist.
+        /// The specified attribute doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueAttributes">REST API Reference for GetQueueAttributes Operation</seealso>
         Task<GetQueueAttributesResponse> GetQueueAttributesAsync(string queueUrl, List<string> attributeNames, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -658,26 +684,26 @@ namespace Amazon.SQS
 
 
         /// <summary>
-        /// Returns the URL of an existing queue. This action provides a simple way to retrieve
-        /// the URL of an Amazon SQS queue.
+        /// Returns the URL of an existing Amazon SQS queue.
         /// 
         ///  
         /// <para>
         /// To access a queue that belongs to another AWS account, use the <code>QueueOwnerAWSAccountId</code>
         /// parameter to specify the account ID of the queue's owner. The queue's owner must grant
         /// you permission to access the queue. For more information about shared queue access,
-        /// see <code> <a>AddPermission</a> </code> or see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html">Shared
-        /// Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. 
+        /// see <code> <a>AddPermission</a> </code> or see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-writing-an-sqs-policy.html#write-messages-to-shared-queue">Allow
+        /// Developers to Write Messages to a Shared Queue</a> in the <i>Amazon Simple Queue Service
+        /// Developer Guide</i>. 
         /// </para>
         /// </summary>
-        /// <param name="queueName">The name of the queue whose URL must be fetched. Maximum 80 characters. Valid values: alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>). Queue names are case-sensitive.</param>
+        /// <param name="queueName">The name of the queue whose URL must be fetched. Maximum 80 characters. Valid values: alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>). Queue URLs and names are case-sensitive.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
         /// <returns>The response from the GetQueueUrl service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The queue referred to doesn't exist.
+        /// The specified queue doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueUrl">REST API Reference for GetQueueUrl Operation</seealso>
         Task<GetQueueUrlResponse> GetQueueUrlAsync(string queueName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -720,8 +746,17 @@ namespace Amazon.SQS
         /// Returns a list of your queues. The maximum number of queues that can be returned is
         /// 1,000. If you specify a value for the optional <code>QueueNamePrefix</code> parameter,
         /// only queues with a name that begins with the specified value are returned.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Cross-account permissions don't apply to this action. For more information, see see
+        /// <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
+        /// Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple Queue
+        /// Service Developer Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
-        /// <param name="queueNamePrefix">A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned. Queue names are case-sensitive.</param>
+        /// <param name="queueNamePrefix">A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned. Queue URLs and names are case-sensitive.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -769,19 +804,26 @@ namespace Amazon.SQS
         /// 
         ///  <important> 
         /// <para>
-        /// When you use the <code>PurgeQueue</code> action, you can't retrieve a message deleted
+        /// When you use the <code>PurgeQueue</code> action, you can't retrieve any messages deleted
         /// from a queue.
+        /// </para>
+        ///  
+        /// <para>
+        /// The message deletion process takes up to 60 seconds. We recommend waiting for 60 seconds
+        /// regardless of your queue's size. 
         /// </para>
         ///  </important> 
         /// <para>
-        /// When you purge a queue, the message deletion process takes up to 60 seconds. All messages
-        /// sent to the queue before calling the <code>PurgeQueue</code> action are deleted. Messages
-        /// sent to the queue while it is being purged might be deleted. While the queue is being
-        /// purged, messages sent to the queue before <code>PurgeQueue</code> is called might
-        /// be received, but are deleted within the next minute.
+        /// Messages sent to the queue <i>before</i> you call <code>PurgeQueue</code> might be
+        /// received but are deleted within the next minute.
+        /// </para>
+        ///  
+        /// <para>
+        /// Messages sent to the queue <i>after</i> you call <code>PurgeQueue</code> might be
+        /// deleted while the queue is being purged.
         /// </para>
         /// </summary>
-        /// <param name="queueUrl">The URL of the queue from which the <code>PurgeQueue</code> action deletes messages. Queue URLs are case-sensitive.</param>
+        /// <param name="queueUrl">The URL of the queue from which the <code>PurgeQueue</code> action deletes messages. Queue URLs and names are case-sensitive.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -792,7 +834,7 @@ namespace Amazon.SQS
         /// within the last 60 seconds (the time it can take to delete the messages in the queue).
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The queue referred to doesn't exist.
+        /// The specified queue doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/PurgeQueue">REST API Reference for PurgeQueue Operation</seealso>
         Task<PurgeQueueResponse> PurgeQueueAsync(string queueUrl, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -884,16 +926,16 @@ namespace Amazon.SQS
         /// </para>
         ///  </note>
         /// </summary>
-        /// <param name="queueUrl">The URL of the Amazon SQS queue from which messages are received. Queue URLs are case-sensitive.</param>
+        /// <param name="queueUrl">The URL of the Amazon SQS queue from which messages are received. Queue URLs and names are case-sensitive.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
         /// <returns>The response from the ReceiveMessage service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.OverLimitException">
-        /// The action that you requested would violate a limit. For example, <code>ReceiveMessage</code>
-        /// returns this error if the maximum number of inflight messages is reached. <code> <a>AddPermission</a>
-        /// </code> returns this error if the maximum number of permissions for the queue is reached.
+        /// The specified action violates a limit. For example, <code>ReceiveMessage</code> returns
+        /// this error if the maximum number of inflight messages is reached and <code>AddPermission</code>
+        /// returns this error if the maximum number of permissions for the queue is reached.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ReceiveMessage">REST API Reference for ReceiveMessage Operation</seealso>
         Task<ReceiveMessageResponse> ReceiveMessageAsync(string queueUrl, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -917,9 +959,22 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Revokes any permissions in the queue policy that matches the specified <code>Label</code>
-        /// parameter. Only the owner of the queue can remove permissions.
+        /// parameter.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Only the owner of a queue can remove permissions from it.
+        /// </para>
+        ///  
+        /// <para>
+        /// Cross-account permissions don't apply to this action. For more information, see see
+        /// <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
+        /// Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple Queue
+        /// Service Developer Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
-        /// <param name="queueUrl">The URL of the Amazon SQS queue from which permissions are removed. Queue URLs are case-sensitive.</param>
+        /// <param name="queueUrl">The URL of the Amazon SQS queue from which permissions are removed. Queue URLs and names are case-sensitive.</param>
         /// <param name="label">The identification of the permission to remove. This is the label added using the <code> <a>AddPermission</a> </code> action.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -967,7 +1022,7 @@ namespace Amazon.SQS
         /// </para>
         ///  </important>
         /// </summary>
-        /// <param name="queueUrl">The URL of the Amazon SQS queue to which a message is sent. Queue URLs are case-sensitive.</param>
+        /// <param name="queueUrl">The URL of the Amazon SQS queue to which a message is sent. Queue URLs and names are case-sensitive.</param>
         /// <param name="messageBody">The message to send. The maximum string size is 256 KB. <important> A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:  <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> | <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code>  Any characters not included in this list will be rejected. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>. </important></param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1039,7 +1094,7 @@ namespace Amazon.SQS
         /// If you don't specify the <code>DelaySeconds</code> parameter for an entry, Amazon
         /// SQS uses the default value for the queue.
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
         /// Some actions take lists of parameters. These lists are specified using the <code>param.n</code>
         /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
@@ -1047,15 +1102,14 @@ namespace Amazon.SQS
         /// </para>
         ///  
         /// <para>
-        ///  <code>&amp;Attribute.1=this</code> 
+        ///  <code>&amp;Attribute.1=first</code> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>&amp;Attribute.2=that</code> 
+        ///  <code>&amp;Attribute.2=second</code> 
         /// </para>
-        ///  </note>
         /// </summary>
-        /// <param name="queueUrl">The URL of the Amazon SQS queue to which batched messages are sent. Queue URLs are case-sensitive.</param>
+        /// <param name="queueUrl">The URL of the Amazon SQS queue to which batched messages are sent. Queue URLs and names are case-sensitive.</param>
         /// <param name="entries">A list of <code> <a>SendMessageBatchRequestEntry</a> </code> items.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1111,17 +1165,24 @@ namespace Amazon.SQS
         /// In the future, new attributes might be added. If you write code that calls this action,
         /// we recommend that you structure your code so that it can handle new attributes gracefully.
         /// </para>
+        ///  
+        /// <para>
+        /// Cross-account permissions don't apply to this action. For more information, see see
+        /// <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
+        /// Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple Queue
+        /// Service Developer Guide</i>.
+        /// </para>
         ///  </note>
         /// </summary>
-        /// <param name="queueUrl">The URL of the Amazon SQS queue whose attributes are set. Queue URLs are case-sensitive.</param>
-        /// <param name="attributes">A map of attributes to set. The following lists the names, descriptions, and values of the special request parameters that the <code>SetQueueAttributes</code> action uses: <ul> <li>  <code>DelaySeconds</code> - The length of time, in seconds, for which the delivery of all messages in the queue is delayed. Valid values: An integer from 0 to 900 (15 minutes). The default is 0 (zero).  </li> <li>  <code>MaximumMessageSize</code> - The limit of how many bytes a message can contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes (1 KiB) up to 262,144 bytes (256 KiB). The default is 262,144 (256 KiB).  </li> <li>  <code>MessageRetentionPeriod</code> - The length of time, in seconds, for which Amazon SQS retains a message. Valid values: An integer representing seconds, from 60 (1 minute) to 1,209,600 (14 days). The default is 345,600 (4 days).  </li> <li>  <code>Policy</code> - The queue's policy. A valid AWS policy. For more information about policy structure, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview of AWS IAM Policies</a> in the <i>Amazon IAM User Guide</i>.  </li> <li>  <code>ReceiveMessageWaitTimeSeconds</code> - The length of time, in seconds, for which a <code> <a>ReceiveMessage</a> </code> action waits for a message to arrive. Valid values: an integer from 0 to 20 (seconds). The default is 0.  </li> <li>  <code>RedrivePolicy</code> - The string that includes the parameters for the dead-letter queue functionality of the source queue. For more information about the redrive policy and dead-letter queues, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.  <ul> <li>  <code>deadLetterTargetArn</code> - The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded. </li> <li>  <code>maxReceiveCount</code> - The number of times a message is delivered to the source queue before being moved to the dead-letter queue. </li> </ul> <note> The dead-letter queue of a FIFO queue must also be a FIFO queue. Similarly, the dead-letter queue of a standard queue must also be a standard queue. </note> </li> <li>  <code>VisibilityTimeout</code> - The visibility timeout for the queue. Valid values: an integer from 0 to 43,200 (12 hours). The default is 30. For more information about the visibility timeout, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </li> </ul> The following attributes apply only to <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>: <ul> <li>  <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key Terms</a>. While the alias of the AWS-managed CMK for Amazon SQS is always <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be <code>alias/<i>MyAlias</i> </code>. For more examples, see <a href="http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>AWS Key Management Service API Reference</i>.  </li> <li>  <code>KmsDataKeyReusePeriodSeconds</code> - The length of time, in seconds, for which Amazon SQS can reuse a <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data key</a> to encrypt or decrypt messages before calling AWS KMS again. An integer representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24 hours). The default is 300 (5 minutes). A shorter time period provides better security but results in more calls to KMS which might incur charges after Free Tier. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How Does the Data Key Reuse Period Work?</a>.  </li> </ul> The following attribute applies only to <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO (first-in-first-out) queues</a>: <ul> <li>  <code>ContentBasedDeduplication</code> - Enables content-based deduplication. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.  <ul> <li> Every message must have a unique <code>MessageDeduplicationId</code>, <ul> <li> You may provide a <code>MessageDeduplicationId</code> explicitly. </li> <li> If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your queue, Amazon SQS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).  </li> <li> If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have <code>ContentBasedDeduplication</code> set, the action fails with an error. </li> <li> If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one. </li> </ul> </li> <li> When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates and only one copy of the message is delivered. </li> <li> If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a <code>MessageDeduplicationId</code> that is the same as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered.  </li> </ul> </li> </ul> Any other valid special request parameters (such as the following) are ignored: <ul> <li>  <code>ApproximateNumberOfMessages</code>  </li> <li>  <code>ApproximateNumberOfMessagesDelayed</code>  </li> <li>  <code>ApproximateNumberOfMessagesNotVisible</code>  </li> <li>  <code>CreatedTimestamp</code>  </li> <li>  <code>LastModifiedTimestamp</code>  </li> <li>  <code>QueueArn</code>  </li> </ul></param>
+        /// <param name="queueUrl">The URL of the Amazon SQS queue whose attributes are set. Queue URLs and names are case-sensitive.</param>
+        /// <param name="attributes">A map of attributes to set. The following lists the names, descriptions, and values of the special request parameters that the <code>SetQueueAttributes</code> action uses: <ul> <li>  <code>DelaySeconds</code> - The length of time, in seconds, for which the delivery of all messages in the queue is delayed. Valid values: An integer from 0 to 900 (15 minutes). Default: 0.  </li> <li>  <code>MaximumMessageSize</code> - The limit of how many bytes a message can contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes (1 KiB) up to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB).  </li> <li>  <code>MessageRetentionPeriod</code> - The length of time, in seconds, for which Amazon SQS retains a message. Valid values: An integer representing seconds, from 60 (1 minute) to 1,209,600 (14 days). Default: 345,600 (4 days).  </li> <li>  <code>Policy</code> - The queue's policy. A valid AWS policy. For more information about policy structure, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview of AWS IAM Policies</a> in the <i>Amazon IAM User Guide</i>.  </li> <li>  <code>ReceiveMessageWaitTimeSeconds</code> - The length of time, in seconds, for which a <code> <a>ReceiveMessage</a> </code> action waits for a message to arrive. Valid values: an integer from 0 to 20 (seconds). Default: 0.  </li> <li>  <code>RedrivePolicy</code> - The string that includes the parameters for the dead-letter queue functionality of the source queue. For more information about the redrive policy and dead-letter queues, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.  <ul> <li>  <code>deadLetterTargetArn</code> - The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded. </li> <li>  <code>maxReceiveCount</code> - The number of times a message is delivered to the source queue before being moved to the dead-letter queue. When the <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the dead-letter-queue. </li> </ul> <note> The dead-letter queue of a FIFO queue must also be a FIFO queue. Similarly, the dead-letter queue of a standard queue must also be a standard queue. </note> </li> <li>  <code>VisibilityTimeout</code> - The visibility timeout for the queue, in seconds. Valid values: an integer from 0 to 43,200 (12 hours). Default: 30. For more information about the visibility timeout, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </li> </ul> The following attributes apply only to <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>: <ul> <li>  <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key Terms</a>. While the alias of the AWS-managed CMK for Amazon SQS is always <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be <code>alias/<i>MyAlias</i> </code>. For more examples, see <a href="http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>AWS Key Management Service API Reference</i>.  </li> <li>  <code>KmsDataKeyReusePeriodSeconds</code> - The length of time, in seconds, for which Amazon SQS can reuse a <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data key</a> to encrypt or decrypt messages before calling AWS KMS again. An integer representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24 hours). Default: 300 (5 minutes). A shorter time period provides better security but results in more calls to KMS which might incur charges after Free Tier. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How Does the Data Key Reuse Period Work?</a>.  </li> </ul> The following attribute applies only to <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO (first-in-first-out) queues</a>: <ul> <li>  <code>ContentBasedDeduplication</code> - Enables content-based deduplication. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.  <ul> <li> Every message must have a unique <code>MessageDeduplicationId</code>, <ul> <li> You may provide a <code>MessageDeduplicationId</code> explicitly. </li> <li> If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your queue, Amazon SQS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).  </li> <li> If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have <code>ContentBasedDeduplication</code> set, the action fails with an error. </li> <li> If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one. </li> </ul> </li> <li> When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates and only one copy of the message is delivered. </li> <li> If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a <code>MessageDeduplicationId</code> that is the same as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered.  </li> </ul> </li> </ul></param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
         /// <returns>The response from the SetQueueAttributes service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAttributeNameException">
-        /// The attribute referred to doesn't exist.
+        /// The specified attribute doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SetQueueAttributes">REST API Reference for SetQueueAttributes Operation</seealso>
         Task<SetQueueAttributesResponse> SetQueueAttributesAsync(string queueUrl, Dictionary<string, string> attributes, System.Threading.CancellationToken cancellationToken = default(CancellationToken));

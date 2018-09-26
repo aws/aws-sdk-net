@@ -42,9 +42,9 @@ namespace Amazon.SQS.Model
     ///  You can't change the queue type after you create it and you can't convert an existing
     /// standard queue into a FIFO queue. You must either create a new FIFO queue for your
     /// application or delete your existing standard queue and recreate it as a FIFO queue.
-    /// For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-moving">
-    /// Moving From a Standard Queue to a FIFO Queue</a> in the <i>Amazon Simple Queue Service
-    /// Developer Guide</i>. 
+    /// For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-moving">Moving
+    /// From a Standard Queue to a FIFO Queue</a> in the <i>Amazon Simple Queue Service Developer
+    /// Guide</i>. 
     /// </para>
     ///  </note> </li> <li> 
     /// <para>
@@ -79,7 +79,7 @@ namespace Amazon.SQS.Model
     /// If the queue name, attribute names, or attribute values don't match an existing queue,
     /// <code>CreateQueue</code> returns an error.
     /// </para>
-    ///  </li> </ul> <note> 
+    ///  </li> </ul> 
     /// <para>
     /// Some actions take lists of parameters. These lists are specified using the <code>param.n</code>
     /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
@@ -87,11 +87,18 @@ namespace Amazon.SQS.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>&amp;Attribute.1=this</code> 
+    ///  <code>&amp;Attribute.1=first</code> 
     /// </para>
     ///  
     /// <para>
-    ///  <code>&amp;Attribute.2=that</code> 
+    ///  <code>&amp;Attribute.2=second</code> 
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// Cross-account permissions don't apply to this action. For more information, see see
+    /// <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
+    /// Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple Queue
+    /// Service Developer Guide</i>.
     /// </para>
     ///  </note>
     /// </summary>
@@ -108,7 +115,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Instantiates CreateQueueRequest with the parameterized properties
         /// </summary>
-        /// <param name="queueName">The name of the new queue. The following limits apply to this name: <ul> <li> A queue name can have up to 80 characters. </li> <li> Valid values: alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>). </li> <li> A FIFO queue name must end with the <code>.fifo</code> suffix. </li> </ul> Queue names are case-sensitive.</param>
+        /// <param name="queueName">The name of the new queue. The following limits apply to this name: <ul> <li> A queue name can have up to 80 characters. </li> <li> Valid values: alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>). </li> <li> A FIFO queue name must end with the <code>.fifo</code> suffix. </li> </ul> Queue URLs and names are case-sensitive.</param>
         public CreateQueueRequest(string queueName)
         {
             _queueName = queueName;
@@ -128,19 +135,19 @@ namespace Amazon.SQS.Model
         /// <para>
         ///  <code>DelaySeconds</code> - The length of time, in seconds, for which the delivery
         /// of all messages in the queue is delayed. Valid values: An integer from 0 to 900 seconds
-        /// (15 minutes). The default is 0 (zero). 
+        /// (15 minutes). Default: 0. 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>MaximumMessageSize</code> - The limit of how many bytes a message can contain
         /// before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes (1 KiB) to
-        /// 262,144 bytes (256 KiB). The default is 262,144 (256 KiB). 
+        /// 262,144 bytes (256 KiB). Default: 262,144 (256 KiB). 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>MessageRetentionPeriod</code> - The length of time, in seconds, for which Amazon
         /// SQS retains a message. Valid values: An integer from 60 seconds (1 minute) to 1,209,600
-        /// seconds (14 days). The default is 345,600 (4 days). 
+        /// seconds (14 days). Default: 345,600 (4 days). 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -152,7 +159,7 @@ namespace Amazon.SQS.Model
         /// <para>
         ///  <code>ReceiveMessageWaitTimeSeconds</code> - The length of time, in seconds, for
         /// which a <code> <a>ReceiveMessage</a> </code> action waits for a message to arrive.
-        /// Valid values: An integer from 0 to 20 (seconds). The default is 0 (zero). 
+        /// Valid values: An integer from 0 to 20 (seconds). Default: 0. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -171,7 +178,9 @@ namespace Amazon.SQS.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>maxReceiveCount</code> - The number of times a message is delivered to the
-        /// source queue before being moved to the dead-letter queue.
+        /// source queue before being moved to the dead-letter queue. When the <code>ReceiveCount</code>
+        /// for a message exceeds the <code>maxReceiveCount</code> for a queue, Amazon SQS moves
+        /// the message to the dead-letter-queue.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -180,9 +189,9 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
-        ///  <code>VisibilityTimeout</code> - The visibility timeout for the queue. Valid values:
-        /// An integer from 0 to 43,200 (12 hours). The default is 30. For more information about
-        /// the visibility timeout, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
+        ///  <code>VisibilityTimeout</code> - The visibility timeout for the queue, in seconds.
+        /// Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For more information
+        /// about the visibility timeout, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
         /// Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
         /// </para>
         ///  </li> </ul> 
@@ -203,10 +212,9 @@ namespace Amazon.SQS.Model
         ///  <code>KmsDataKeyReusePeriodSeconds</code> - The length of time, in seconds, for which
         /// Amazon SQS can reuse a <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
         /// key</a> to encrypt or decrypt messages before calling AWS KMS again. An integer representing
-        /// seconds, between 60 seconds (1 minute) and 86,400 seconds (24 hours). The default
-        /// is 300 (5 minutes). A shorter time period provides better security but results in
-        /// more calls to KMS which might incur charges after Free Tier. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
+        /// seconds, between 60 seconds (1 minute) and 86,400 seconds (24 hours). Default: 300
+        /// (5 minutes). A shorter time period provides better security but results in more calls
+        /// to KMS which might incur charges after Free Tier. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
         /// Does the Data Key Reuse Period Work?</a>. 
         /// </para>
         ///  </li> </ul> 
@@ -270,35 +278,7 @@ namespace Amazon.SQS.Model
         /// one generated for the first <code>MessageDeduplicationId</code>, the two messages
         /// are treated as duplicates and only one copy of the message is delivered. 
         /// </para>
-        ///  </li> </ul> </li> </ul> 
-        /// <para>
-        /// Any other valid special request parameters (such as the following) are ignored:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>ApproximateNumberOfMessages</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>ApproximateNumberOfMessagesDelayed</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>ApproximateNumberOfMessagesNotVisible</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>CreatedTimestamp</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>LastModifiedTimestamp</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>QueueArn</code> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         public Dictionary<string, string> Attributes
         {
@@ -331,7 +311,7 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Queue names are case-sensitive.
+        /// Queue URLs and names are case-sensitive.
         /// </para>
         /// </summary>
         public string QueueName

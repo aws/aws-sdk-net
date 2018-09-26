@@ -50,7 +50,7 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  
         /// <para>
-        /// Queue URLs are case-sensitive.
+        /// Queue URLs and names are case-sensitive.
         /// </para>
         /// </summary>
         public string QueueUrl

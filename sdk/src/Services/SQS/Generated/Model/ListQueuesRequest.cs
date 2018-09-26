@@ -32,6 +32,15 @@ namespace Amazon.SQS.Model
     /// Returns a list of your queues. The maximum number of queues that can be returned is
     /// 1,000. If you specify a value for the optional <code>QueueNamePrefix</code> parameter,
     /// only queues with a name that begins with the specified value are returned.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Cross-account permissions don't apply to this action. For more information, see see
+    /// <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
+    /// Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple Queue
+    /// Service Developer Guide</i>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListQueuesRequest : AmazonSQSRequest
     {
@@ -45,7 +54,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Instantiates ListQueuesRequest with the parameterized properties
         /// </summary>
-        /// <param name="queueNamePrefix">A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned. Queue names are case-sensitive.</param>
+        /// <param name="queueNamePrefix">A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned. Queue URLs and names are case-sensitive.</param>
         public ListQueuesRequest(string queueNamePrefix)
         {
             _queueNamePrefix = queueNamePrefix;
@@ -59,7 +68,7 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  
         /// <para>
-        /// Queue names are case-sensitive.
+        /// Queue URLs and names are case-sensitive.
         /// </para>
         /// </summary>
         public string QueueNamePrefix

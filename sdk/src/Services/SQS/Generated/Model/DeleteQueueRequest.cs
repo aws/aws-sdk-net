@@ -47,8 +47,16 @@ namespace Amazon.SQS.Model
     ///  
     /// <para>
     /// When you delete a queue, you must wait at least 60 seconds before creating a queue
-    /// with the same name. 
+    /// with the same name.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// Cross-account permissions don't apply to this action. For more information, see see
+    /// <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
+    /// Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple Queue
+    /// Service Developer Guide</i>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DeleteQueueRequest : AmazonSQSRequest
     {
@@ -62,7 +70,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Instantiates DeleteQueueRequest with the parameterized properties
         /// </summary>
-        /// <param name="queueUrl">The URL of the Amazon SQS queue to delete. Queue URLs are case-sensitive.</param>
+        /// <param name="queueUrl">The URL of the Amazon SQS queue to delete. Queue URLs and names are case-sensitive.</param>
         public DeleteQueueRequest(string queueUrl)
         {
             _queueUrl = queueUrl;
@@ -75,7 +83,7 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  
         /// <para>
-        /// Queue URLs are case-sensitive.
+        /// Queue URLs and names are case-sensitive.
         /// </para>
         /// </summary>
         public string QueueUrl

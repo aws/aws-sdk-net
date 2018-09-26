@@ -30,20 +30,16 @@ namespace Amazon.SQS.Model
     /// <summary>
     /// Container for the parameters to the ChangeMessageVisibility operation.
     /// Changes the visibility timeout of a specified message in a queue to a new value. The
-    /// maximum allowed timeout value is 12 hours. Thus, you can't extend the timeout of a
-    /// message in an existing queue to more than a total visibility timeout of 12 hours.
-    /// For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
+    /// maximum allowed timeout value is 12 hours. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
     /// Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
     /// 
     ///  
     /// <para>
     /// For example, you have a message with a visibility timeout of 5 minutes. After 3 minutes,
-    /// you call <code>ChangeMessageVisiblity</code> with a timeout of 10 minutes. At that
-    /// time, the timeout for the message is extended by 10 minutes beyond the time of the
-    /// <code>ChangeMessageVisibility</code> action. This results in a total visibility timeout
-    /// of 13 minutes. You can continue to call the <code>ChangeMessageVisibility</code> to
-    /// extend the visibility timeout to a maximum of 12 hours. If you try to extend the visibility
-    /// timeout beyond 12 hours, your request is rejected.
+    /// you call <code>ChangeMessageVisibility</code> with a timeout of 10 minutes. You can
+    /// continue to call <code>ChangeMessageVisibility</code> to extend the visibility timeout
+    /// to a maximum of 12 hours. If you try to extend the visibility timeout beyond 12 hours,
+    /// your request is rejected.
     /// </para>
     ///  
     /// <para>
@@ -92,7 +88,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Instantiates ChangeMessageVisibilityRequest with the parameterized properties
         /// </summary>
-        /// <param name="queueUrl">The URL of the Amazon SQS queue whose message's visibility is changed. Queue URLs are case-sensitive.</param>
+        /// <param name="queueUrl">The URL of the Amazon SQS queue whose message's visibility is changed. Queue URLs and names are case-sensitive.</param>
         /// <param name="receiptHandle">The receipt handle associated with the message whose visibility timeout is changed. This parameter is returned by the <code> <a>ReceiveMessage</a> </code> action.</param>
         /// <param name="visibilityTimeout">The new value for the message's visibility timeout (in seconds). Values values: <code>0</code> to <code>43200</code>. Maximum: 12 hours.</param>
         public ChangeMessageVisibilityRequest(string queueUrl, string receiptHandle, int visibilityTimeout)
@@ -109,7 +105,7 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  
         /// <para>
-        /// Queue URLs are case-sensitive.
+        /// Queue URLs and names are case-sensitive.
         /// </para>
         /// </summary>
         public string QueueUrl

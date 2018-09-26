@@ -33,16 +33,23 @@ namespace Amazon.SQS.Model
     /// 
     ///  <important> 
     /// <para>
-    /// When you use the <code>PurgeQueue</code> action, you can't retrieve a message deleted
+    /// When you use the <code>PurgeQueue</code> action, you can't retrieve any messages deleted
     /// from a queue.
+    /// </para>
+    ///  
+    /// <para>
+    /// The message deletion process takes up to 60 seconds. We recommend waiting for 60 seconds
+    /// regardless of your queue's size. 
     /// </para>
     ///  </important> 
     /// <para>
-    /// When you purge a queue, the message deletion process takes up to 60 seconds. All messages
-    /// sent to the queue before calling the <code>PurgeQueue</code> action are deleted. Messages
-    /// sent to the queue while it is being purged might be deleted. While the queue is being
-    /// purged, messages sent to the queue before <code>PurgeQueue</code> is called might
-    /// be received, but are deleted within the next minute.
+    /// Messages sent to the queue <i>before</i> you call <code>PurgeQueue</code> might be
+    /// received but are deleted within the next minute.
+    /// </para>
+    ///  
+    /// <para>
+    /// Messages sent to the queue <i>after</i> you call <code>PurgeQueue</code> might be
+    /// deleted while the queue is being purged.
     /// </para>
     /// </summary>
     public partial class PurgeQueueRequest : AmazonSQSRequest
@@ -56,7 +63,7 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  
         /// <para>
-        /// Queue URLs are case-sensitive.
+        /// Queue URLs and names are case-sensitive.
         /// </para>
         /// </summary>
         public string QueueUrl

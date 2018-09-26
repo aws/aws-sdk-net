@@ -30,7 +30,20 @@ namespace Amazon.SQS.Model
     /// <summary>
     /// Container for the parameters to the RemovePermission operation.
     /// Revokes any permissions in the queue policy that matches the specified <code>Label</code>
-    /// parameter. Only the owner of the queue can remove permissions.
+    /// parameter.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Only the owner of a queue can remove permissions from it.
+    /// </para>
+    ///  
+    /// <para>
+    /// Cross-account permissions don't apply to this action. For more information, see see
+    /// <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
+    /// Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple Queue
+    /// Service Developer Guide</i>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class RemovePermissionRequest : AmazonSQSRequest
     {
@@ -45,7 +58,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Instantiates RemovePermissionRequest with the parameterized properties
         /// </summary>
-        /// <param name="queueUrl">The URL of the Amazon SQS queue from which permissions are removed. Queue URLs are case-sensitive.</param>
+        /// <param name="queueUrl">The URL of the Amazon SQS queue from which permissions are removed. Queue URLs and names are case-sensitive.</param>
         /// <param name="label">The identification of the permission to remove. This is the label added using the <code> <a>AddPermission</a> </code> action.</param>
         public RemovePermissionRequest(string queueUrl, string label)
         {
@@ -79,7 +92,7 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  
         /// <para>
-        /// Queue URLs are case-sensitive.
+        /// Queue URLs and names are case-sensitive.
         /// </para>
         /// </summary>
         public string QueueUrl

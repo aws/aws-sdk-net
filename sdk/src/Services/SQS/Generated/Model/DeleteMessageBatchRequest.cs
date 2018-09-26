@@ -39,7 +39,7 @@ namespace Amazon.SQS.Model
     /// actions, you should check for batch errors even when the call returns an HTTP status
     /// code of <code>200</code>.
     /// </para>
-    ///  </important> <note> 
+    ///  </important> 
     /// <para>
     /// Some actions take lists of parameters. These lists are specified using the <code>param.n</code>
     /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
@@ -47,13 +47,12 @@ namespace Amazon.SQS.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>&amp;Attribute.1=this</code> 
+    ///  <code>&amp;Attribute.1=first</code> 
     /// </para>
     ///  
     /// <para>
-    ///  <code>&amp;Attribute.2=that</code> 
+    ///  <code>&amp;Attribute.2=second</code> 
     /// </para>
-    ///  </note>
     /// </summary>
     public partial class DeleteMessageBatchRequest : AmazonSQSRequest
     {
@@ -68,7 +67,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Instantiates DeleteMessageBatchRequest with the parameterized properties
         /// </summary>
-        /// <param name="queueUrl">The URL of the Amazon SQS queue from which messages are deleted. Queue URLs are case-sensitive.</param>
+        /// <param name="queueUrl">The URL of the Amazon SQS queue from which messages are deleted. Queue URLs and names are case-sensitive.</param>
         /// <param name="entries">A list of receipt handles for the messages to be deleted.</param>
         public DeleteMessageBatchRequest(string queueUrl, List<DeleteMessageBatchRequestEntry> entries)
         {
@@ -101,7 +100,7 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  
         /// <para>
-        /// Queue URLs are case-sensitive.
+        /// Queue URLs and names are case-sensitive.
         /// </para>
         /// </summary>
         public string QueueUrl
