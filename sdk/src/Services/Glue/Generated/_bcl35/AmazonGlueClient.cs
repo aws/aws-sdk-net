@@ -2950,6 +2950,68 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  GetDataCatalogEncryptionSettings
+
+        /// <summary>
+        /// Retrieves the security configuration for a specified catalog.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataCatalogEncryptionSettings service method.</param>
+        /// 
+        /// <returns>The response from the GetDataCatalogEncryptionSettings service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataCatalogEncryptionSettings">REST API Reference for GetDataCatalogEncryptionSettings Operation</seealso>
+        public virtual GetDataCatalogEncryptionSettingsResponse GetDataCatalogEncryptionSettings(GetDataCatalogEncryptionSettingsRequest request)
+        {
+            var marshaller = GetDataCatalogEncryptionSettingsRequestMarshaller.Instance;
+            var unmarshaller = GetDataCatalogEncryptionSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<GetDataCatalogEncryptionSettingsRequest,GetDataCatalogEncryptionSettingsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDataCatalogEncryptionSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDataCatalogEncryptionSettings operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDataCatalogEncryptionSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataCatalogEncryptionSettings">REST API Reference for GetDataCatalogEncryptionSettings Operation</seealso>
+        public virtual IAsyncResult BeginGetDataCatalogEncryptionSettings(GetDataCatalogEncryptionSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = GetDataCatalogEncryptionSettingsRequestMarshaller.Instance;
+            var unmarshaller = GetDataCatalogEncryptionSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetDataCatalogEncryptionSettingsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDataCatalogEncryptionSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDataCatalogEncryptionSettings.</param>
+        /// 
+        /// <returns>Returns a  GetDataCatalogEncryptionSettingsResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataCatalogEncryptionSettings">REST API Reference for GetDataCatalogEncryptionSettings Operation</seealso>
+        public virtual GetDataCatalogEncryptionSettingsResponse EndGetDataCatalogEncryptionSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetDataCatalogEncryptionSettingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetDataflowGraph
 
         /// <summary>

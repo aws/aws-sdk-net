@@ -2378,6 +2378,54 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  GetDataCatalogEncryptionSettings
+
+
+        /// <summary>
+        /// Retrieves the security configuration for a specified catalog.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataCatalogEncryptionSettings service method.</param>
+        /// 
+        /// <returns>The response from the GetDataCatalogEncryptionSettings service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataCatalogEncryptionSettings">REST API Reference for GetDataCatalogEncryptionSettings Operation</seealso>
+        public virtual GetDataCatalogEncryptionSettingsResponse GetDataCatalogEncryptionSettings(GetDataCatalogEncryptionSettingsRequest request)
+        {
+            var marshaller = GetDataCatalogEncryptionSettingsRequestMarshaller.Instance;
+            var unmarshaller = GetDataCatalogEncryptionSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<GetDataCatalogEncryptionSettingsRequest,GetDataCatalogEncryptionSettingsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDataCatalogEncryptionSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDataCatalogEncryptionSettings operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataCatalogEncryptionSettings">REST API Reference for GetDataCatalogEncryptionSettings Operation</seealso>
+        public virtual Task<GetDataCatalogEncryptionSettingsResponse> GetDataCatalogEncryptionSettingsAsync(GetDataCatalogEncryptionSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetDataCatalogEncryptionSettingsRequestMarshaller.Instance;
+            var unmarshaller = GetDataCatalogEncryptionSettingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDataCatalogEncryptionSettingsRequest,GetDataCatalogEncryptionSettingsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetDataflowGraph
 
 
