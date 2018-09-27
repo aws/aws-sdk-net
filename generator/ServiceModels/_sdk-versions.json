@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.369.0",
+    "ProductVersion" : "3.3.370.0",
     "CoreVersion"    : "3.3.25.4",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -409,7 +409,7 @@
             "InPreview"               : false
         },
         "CodeCommit"                : {
-            "Version" : "3.3.5.2",
+            "Version" : "3.3.6.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.25.4"
@@ -481,7 +481,7 @@
             "InPreview"               : false
         },
         "APIGateway"                      : {
-            "Version" : "3.3.20.2",
+            "Version" : "3.3.21.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.25.4"
@@ -905,7 +905,7 @@
             "InPreview"               : false
         },
         "MQ"                              : {
-            "Version" : "3.3.1.8",
+            "Version" : "3.3.2.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.25.4"
