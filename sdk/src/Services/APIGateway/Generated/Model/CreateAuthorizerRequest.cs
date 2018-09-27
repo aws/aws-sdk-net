@@ -31,7 +31,7 @@ namespace Amazon.APIGateway.Model
     /// Container for the parameters to the CreateAuthorizer operation.
     /// Adds a new <a>Authorizer</a> resource to an existing <a>RestApi</a> resource.
     /// 
-    ///  <div class="seeAlso"><a href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/create-authorizer.html">AWS
+    ///  <div class="seeAlso"><a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/create-authorizer.html">AWS
     /// CLI</a></div>
     /// </summary>
     public partial class CreateAuthorizerRequest : AmazonAPIGatewayRequest
@@ -116,7 +116,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property AuthType. 
         /// <para>
-        /// Optional customer-defined field, used in Swagger imports and exports without functional
+        /// Optional customer-defined field, used in OpenAPI imports and exports without functional
         /// impact.
         /// </para>
         /// </summary>

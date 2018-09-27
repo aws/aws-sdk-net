@@ -42,7 +42,7 @@ namespace Amazon.APIGateway.Model
     /// A model is used for generating an API's SDK, validating the input request body, and
     /// creating a skeletal mapping template.
     /// </para>
-    ///  </div> <div class="seeAlso"> <a>Method</a>, <a>MethodResponse</a>, <a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/models-mappings.html">Models
+    ///  </div> <div class="seeAlso"> <a>Method</a>, <a>MethodResponse</a>, <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/models-mappings.html">Models
     /// and Mappings</a> </div>
     /// </summary>
     public partial class UpdateModelResponse : AmazonWebServiceResponse

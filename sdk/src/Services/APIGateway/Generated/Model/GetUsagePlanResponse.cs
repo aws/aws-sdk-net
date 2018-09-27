@@ -36,7 +36,7 @@ namespace Amazon.APIGateway.Model
     /// In a usage plan, you associate an API by specifying the API's Id and a stage name
     /// of the specified API. You add plan customers by adding API keys to the plan. 
     /// </para>
-    ///  </div> <div class="seeAlso"> <a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html">Create
+    ///  </div> <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html">Create
     /// and Use Usage Plans</a> </div>
     /// </summary>
     public partial class GetUsagePlanResponse : AmazonWebServiceResponse

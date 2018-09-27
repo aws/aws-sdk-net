@@ -53,10 +53,10 @@ namespace Amazon.APIGateway.Model
     /// The successful response returns a <code>200 OK</code> status code and a payload similar
     /// to the following:
     /// </para>
-    ///  <pre><code>{ "_links": { "curies": [ { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
-    /// "name": "integration", "templated": true }, { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
-    /// "name": "integrationresponse", "templated": true }, { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-{rel}.html",
-    /// "name": "method", "templated": true }, { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html",
+    ///  <pre><code>{ "_links": { "curies": [ { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
+    /// "name": "integration", "templated": true }, { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+    /// "name": "integrationresponse", "templated": true }, { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-{rel}.html",
+    /// "name": "method", "templated": true }, { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html",
     /// "name": "methodresponse", "templated": true } ], "self": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET",
     /// "name": "GET", "title": "GET" }, "integration:put": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration"
     /// }, "method:delete": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET"
@@ -90,11 +90,11 @@ namespace Amazon.APIGateway.Model
     /// In the example above, the response template for the <code>200 OK</code> response maps
     /// the JSON output from the <code>ListStreams</code> action in the back end to an XML
     /// output. The mapping template is URL-encoded as <code>%3CkinesisStreams%3E%23foreach(%24stream%20in%20%24input.path(%27%24.StreamNames%27))%3Cstream%3E%3Cname%3E%24stream%3C%2Fname%3E%3C%2Fstream%3E%23end%3C%2FkinesisStreams%3E</code>
-    /// and the output is decoded using the <a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html#util-templat-reference">$util.urlDecode()</a>
+    /// and the output is decoded using the <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html#util-templat-reference">$util.urlDecode()</a>
     /// helper function.
     /// </para>
     ///  </div> <div class="seeAlso"> <a>MethodResponse</a>, <a>Integration</a>, <a>IntegrationResponse</a>,
-    /// <a>Resource</a>, <a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-method-settings.html">Set
+    /// <a>Resource</a>, <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-method-settings.html">Set
     /// up an API's method</a> </div>
     /// </summary>
     public partial class Method
@@ -227,8 +227,8 @@ namespace Amazon.APIGateway.Model
         /// The successful response returns a <code>200 OK</code> status code and a payload similar
         /// to the following:
         /// </para>
-        ///  <pre><code>{ "_links": { "curies": [ { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
-        /// "name": "integration", "templated": true }, { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+        ///  <pre><code>{ "_links": { "curies": [ { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
+        /// "name": "integration", "templated": true }, { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
         /// "name": "integrationresponse", "templated": true } ], "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration"
         /// }, "integration:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration"
         /// }, "integration:responses": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200",
@@ -248,7 +248,7 @@ namespace Amazon.APIGateway.Model
         /// = $input.path('$'))\n{\n \"result\": \"$res.a, $res.b, $res.op => $res.c\",\n \"a\"
         /// : \"$res.a\",\n \"b\" : \"$res.b\",\n \"op\" : \"$res.op\",\n \"c\" : \"$res.c\"\n}"
         /// }, "selectionPattern": "", "statusCode": "200" } } }</code></pre>  </div> <div class="seeAlso">
-        /// <a href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-integration.html">AWS
+        /// <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-integration.html">AWS
         /// CLI</a> </div>
         /// </summary>
         public Integration MethodIntegration
@@ -285,13 +285,13 @@ namespace Amazon.APIGateway.Model
         /// The successful response returns a <code>200 OK</code> status code and a payload similar
         /// to the following:
         /// </para>
-        ///  <pre><code>{ "_links": { "curies": { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html",
+        ///  <pre><code>{ "_links": { "curies": { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html",
         /// "name": "methodresponse", "templated": true }, "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200",
         /// "title": "200" }, "methodresponse:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200"
         /// }, "methodresponse:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200"
         /// } }, "responseModels": { "application/json": "Empty" }, "responseParameters": { "method.response.header.operator":
         /// false, "method.response.header.operand_2": false, "method.response.header.operand_1":
-        /// false }, "statusCode": "200" }</code></pre>  </div> <div class="seeAlso"> <a href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html">AWS
+        /// false }, "statusCode": "200" }</code></pre>  </div> <div class="seeAlso"> <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html">AWS
         /// CLI</a> </div>
         /// </summary>
         public Dictionary<string, MethodResponse> MethodResponses
@@ -311,7 +311,7 @@ namespace Amazon.APIGateway.Model
         /// <para>
         /// A human-friendly operation identifier for the method. For example, you can assign
         /// the <code>operationName</code> of <code>ListPets</code> for the <code>GET /pets</code>
-        /// method in <a href="http://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a>
+        /// method in <a href="https://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a>
         /// example.
         /// </para>
         /// </summary>

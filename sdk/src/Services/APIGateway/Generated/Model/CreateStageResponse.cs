@@ -31,7 +31,7 @@ namespace Amazon.APIGateway.Model
     /// Represents a unique identifier for a version of a deployed <a>RestApi</a> that is
     /// callable by users.
     /// 
-    ///  <div class="seeAlso"> <a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-deploy-api.html">Deploy
+    ///  <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-deploy-api.html">Deploy
     /// an API</a> </div>
     /// </summary>
     public partial class CreateStageResponse : AmazonWebServiceResponse

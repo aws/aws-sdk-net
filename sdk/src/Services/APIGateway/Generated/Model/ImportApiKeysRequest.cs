@@ -41,7 +41,7 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property Body. 
         /// <para>
         /// The payload of the POST request to import API keys. For the payload format, see <a
-        /// href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API
+        /// href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API
         /// Key File Format</a>.
         /// </para>
         /// </summary>

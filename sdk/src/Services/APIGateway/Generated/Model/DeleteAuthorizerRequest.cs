@@ -31,7 +31,7 @@ namespace Amazon.APIGateway.Model
     /// Container for the parameters to the DeleteAuthorizer operation.
     /// Deletes an existing <a>Authorizer</a> resource.
     /// 
-    ///  <div class="seeAlso"><a href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/delete-authorizer.html">AWS
+    ///  <div class="seeAlso"><a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/delete-authorizer.html">AWS
     /// CLI</a></div>
     /// </summary>
     public partial class DeleteAuthorizerRequest : AmazonAPIGatewayRequest

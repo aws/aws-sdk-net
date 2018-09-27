@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
     /// <summary>
     /// Represents the response of the test invoke request in the HTTP method.
     /// 
-    ///  <div class="seeAlso"> <a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-test-method.html#how-to-test-method-console">Test
+    ///  <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-test-method.html#how-to-test-method-console">Test
     /// API using the API Gateway console</a> </div>
     /// </summary>
     public partial class TestInvokeMethodResponse : AmazonWebServiceResponse

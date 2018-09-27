@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
     /// <summary>
     /// The collection of documentation parts of an API.
     /// 
-    ///  <div class="remarks"/> <div class="seeAlso"> <a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api.html">Documenting
+    ///  <div class="remarks"/> <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api.html">Documenting
     /// an API</a>, <a>DocumentationPart</a> </div>
     /// </summary>
     public partial class GetDocumentationPartsResponse : AmazonWebServiceResponse
