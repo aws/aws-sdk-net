@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PutFile operation
+    /// Response Unmarshaller for GetFile operation
     /// </summary>  
-    public class PutFileResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetFileResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            PutFileResponse response = new PutFileResponse();
+            GetFileResponse response = new GetFileResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -63,10 +63,28 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
                     response.CommitId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("treeId", targetDepth))
+                if (context.TestExpression("fileContent", targetDepth))
+                {
+                    var unmarshaller = MemoryStreamUnmarshaller.Instance;
+                    response.FileContent = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("fileMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.TreeId = unmarshaller.Unmarshall(context);
+                    response.FileMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("filePath", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.FilePath = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("fileSize", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    response.FileSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -84,25 +102,9 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("BranchDoesNotExistException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("CommitDoesNotExistException"))
             {
-                return new BranchDoesNotExistException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("BranchNameIsTagNameException"))
-            {
-                return new BranchNameIsTagNameException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("BranchNameRequiredException"))
-            {
-                return new BranchNameRequiredException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("CommitMessageLengthExceededException"))
-            {
-                return new CommitMessageLengthExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("DirectoryNameConflictsWithFileNameException"))
-            {
-                return new DirectoryNameConflictsWithFileNameException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new CommitDoesNotExistException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("EncryptionIntegrityChecksFailedException"))
             {
@@ -124,37 +126,17 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             {
                 return new EncryptionKeyUnavailableException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("FileContentRequiredException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("FileDoesNotExistException"))
             {
-                return new FileContentRequiredException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new FileDoesNotExistException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("FileContentSizeLimitExceededException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("FileTooLargeException"))
             {
-                return new FileContentSizeLimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new FileTooLargeException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("FileNameConflictsWithDirectoryNameException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidCommitException"))
             {
-                return new FileNameConflictsWithDirectoryNameException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidBranchNameException"))
-            {
-                return new InvalidBranchNameException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDeletionParameterException"))
-            {
-                return new InvalidDeletionParameterException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidEmailException"))
-            {
-                return new InvalidEmailException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidFileModeException"))
-            {
-                return new InvalidFileModeException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParentCommitIdException"))
-            {
-                return new InvalidParentCommitIdException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new InvalidCommitException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidPathException"))
             {
@@ -163,22 +145,6 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRepositoryNameException"))
             {
                 return new InvalidRepositoryNameException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("NameLengthExceededException"))
-            {
-                return new NameLengthExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ParentCommitDoesNotExistException"))
-            {
-                return new ParentCommitDoesNotExistException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ParentCommitIdOutdatedException"))
-            {
-                return new ParentCommitIdOutdatedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ParentCommitIdRequiredException"))
-            {
-                return new ParentCommitIdRequiredException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("PathRequiredException"))
             {
@@ -192,16 +158,12 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             {
                 return new RepositoryNameRequiredException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("SameFileContentException"))
-            {
-                return new SameFileContentException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             return new AmazonCodeCommitException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static PutFileResponseUnmarshaller _instance = new PutFileResponseUnmarshaller();        
+        private static GetFileResponseUnmarshaller _instance = new GetFileResponseUnmarshaller();        
 
-        internal static PutFileResponseUnmarshaller GetInstance()
+        internal static GetFileResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -209,7 +171,7 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PutFileResponseUnmarshaller Instance
+        public static GetFileResponseUnmarshaller Instance
         {
             get
             {

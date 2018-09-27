@@ -108,6 +108,19 @@ namespace Amazon.CodeCommit
     /// </para>
     ///  <ul> <li> 
     /// <para>
+    ///  <a>DeleteFile</a>, which deletes the content of a specified file from a specified
+    /// branch.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetFile</a>, which returns the base-64 encoded content of a specified file.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetFolder</a>, which returns the contents of a specified folder or directory.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a>PutFile</a>, which adds or modifies a file in a specified repository and branch.
     /// </para>
     ///  </li> </ul> 
@@ -345,6 +358,23 @@ namespace Amazon.CodeCommit
 
         #endregion
                 
+        #region  DeleteFile
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteFile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFile operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteFile">REST API Reference for DeleteFile Operation</seealso>
+        Task<DeleteFileResponse> DeleteFileAsync(DeleteFileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteRepository
 
 
@@ -495,6 +525,40 @@ namespace Amazon.CodeCommit
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetDifferences">REST API Reference for GetDifferences Operation</seealso>
         Task<GetDifferencesResponse> GetDifferencesAsync(GetDifferencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetFile
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFile operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetFile">REST API Reference for GetFile Operation</seealso>
+        Task<GetFileResponse> GetFileAsync(GetFileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetFolder
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFolder operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFolder operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetFolder">REST API Reference for GetFolder Operation</seealso>
+        Task<GetFolderResponse> GetFolderAsync(GetFolderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

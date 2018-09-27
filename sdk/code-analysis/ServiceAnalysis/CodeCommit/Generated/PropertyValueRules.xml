@@ -41,6 +41,17 @@
     <pattern>[\w\.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeCommit.Model.DeleteFileRequest.BranchName</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCommit.Model.DeleteFileRequest.RepositoryName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\w\.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeCommit.Model.DeleteRepositoryRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
@@ -83,6 +94,22 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeCommit.Model.GetDifferencesRequest.RepositoryName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\w\.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCommit.Model.GetFileRequest.RepositoryName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\w\.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCommit.Model.GetFileResponse.FileContent</property>
+    <max>6291456</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeCommit.Model.GetFolderRequest.RepositoryName</property>
     <min>1</min>
     <max>100</max>
     <pattern>[\w\.-]+</pattern>

@@ -113,6 +113,19 @@ namespace Amazon.CodeCommit
     /// </para>
     ///  <ul> <li> 
     /// <para>
+    ///  <a>DeleteFile</a>, which deletes the content of a specified file from a specified
+    /// branch.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetFile</a>, which returns the base-64 encoded content of a specified file.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetFolder</a>, which returns the contents of a specified folder or directory.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a>PutFile</a>, which adds or modifies a file in a specified repository and branch.
     /// </para>
     ///  </li> </ul> 
@@ -964,6 +977,131 @@ namespace Amazon.CodeCommit
 
         #endregion
         
+        #region  DeleteFile
+
+
+        /// <summary>
+        /// Deletes a specified file from a specified branch. A commit is created on the branch
+        /// that contains the revision. The file will still exist in the commits prior to the
+        /// commit that contains the deletion.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFile service method.</param>
+        /// 
+        /// <returns>The response from the DeleteFile service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.BranchDoesNotExistException">
+        /// The specified branch does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.BranchNameIsTagNameException">
+        /// The specified branch name is not valid because it is a tag name. Type the name of
+        /// a current branch in the repository. For a list of valid branch names, use <a>ListBranches</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.BranchNameRequiredException">
+        /// A branch name is required but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitMessageLengthExceededException">
+        /// The commit message is too long. Provide a shorter string.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.FileDoesNotExistException">
+        /// The specified file does not exist. Verify that you have provided the correct name
+        /// of the file, including its full path and extension.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidBranchNameException">
+        /// The specified reference name is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidEmailException">
+        /// The specified email address either contains one or more characters that are not allowed,
+        /// or it exceeds the maximum number of characters allowed for an email address.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidParentCommitIdException">
+        /// The parent commit ID is not valid. The commit ID cannot be empty, and must match the
+        /// head commit ID for the branch of the repository where you want to add or update a
+        /// file.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidPathException">
+        /// The specified path is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
+        /// At least one specified repository name is not valid.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.NameLengthExceededException">
+        /// The user name is not valid because it has exceeded the character limit for file names.
+        /// File names, including the path to the file, cannot exceed the character limit.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ParentCommitDoesNotExistException">
+        /// The parent commit ID is not valid because it does not exist. The specified parent
+        /// commit ID does not exist in the specified branch of the repository.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ParentCommitIdOutdatedException">
+        /// The file could not be added because the provided parent commit ID is not the current
+        /// tip of the specified branch. To view the full commit ID of the current head of the
+        /// branch, use <a>GetBranch</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ParentCommitIdRequiredException">
+        /// A parent commit ID is required. To view the full commit ID of a branch in a repository,
+        /// use <a>GetBranch</a> or a Git command (for example, git pull or git log).
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PathRequiredException">
+        /// The folderPath for a location cannot be null.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
+        /// The specified repository does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
+        /// A repository name is required but was not specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteFile">REST API Reference for DeleteFile Operation</seealso>
+        public virtual DeleteFileResponse DeleteFile(DeleteFileRequest request)
+        {
+            var marshaller = DeleteFileRequestMarshaller.Instance;
+            var unmarshaller = DeleteFileResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteFileRequest,DeleteFileResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteFile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFile operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteFile">REST API Reference for DeleteFile Operation</seealso>
+        public virtual Task<DeleteFileResponse> DeleteFileAsync(DeleteFileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteFileRequestMarshaller.Instance;
+            var unmarshaller = DeleteFileResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteFileRequest,DeleteFileResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteRepository
 
 
@@ -1708,6 +1846,187 @@ namespace Amazon.CodeCommit
 
         #endregion
         
+        #region  GetFile
+
+
+        /// <summary>
+        /// Returns the base-64 encoded contents of a specified file and its metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFile service method.</param>
+        /// 
+        /// <returns>The response from the GetFile service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitDoesNotExistException">
+        /// The specified commit does not exist or no commit was specified, and the specified
+        /// repository has no default branch.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.FileDoesNotExistException">
+        /// The specified file does not exist. Verify that you have provided the correct name
+        /// of the file, including its full path and extension.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.FileTooLargeException">
+        /// The specified file exceeds the file size limit for AWS CodeCommit. For more information
+        /// about limits in AWS CodeCommit, see <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
+        /// CodeCommit User Guide</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidCommitException">
+        /// The specified commit is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidPathException">
+        /// The specified path is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
+        /// At least one specified repository name is not valid.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PathRequiredException">
+        /// The folderPath for a location cannot be null.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
+        /// The specified repository does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
+        /// A repository name is required but was not specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetFile">REST API Reference for GetFile Operation</seealso>
+        public virtual GetFileResponse GetFile(GetFileRequest request)
+        {
+            var marshaller = GetFileRequestMarshaller.Instance;
+            var unmarshaller = GetFileResponseUnmarshaller.Instance;
+
+            return Invoke<GetFileRequest,GetFileResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFile operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetFile">REST API Reference for GetFile Operation</seealso>
+        public virtual Task<GetFileResponse> GetFileAsync(GetFileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetFileRequestMarshaller.Instance;
+            var unmarshaller = GetFileResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetFileRequest,GetFileResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetFolder
+
+
+        /// <summary>
+        /// Returns the contents of a specified folder in a repository.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFolder service method.</param>
+        /// 
+        /// <returns>The response from the GetFolder service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.CommitDoesNotExistException">
+        /// The specified commit does not exist or no commit was specified, and the specified
+        /// repository has no default branch.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.FolderDoesNotExistException">
+        /// The specified folder does not exist. Either the folder name is not correct, or you
+        /// did not provide the full path to the folder.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidCommitException">
+        /// The specified commit is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidPathException">
+        /// The specified path is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
+        /// At least one specified repository name is not valid.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This exception only occurs when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.PathRequiredException">
+        /// The folderPath for a location cannot be null.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
+        /// The specified repository does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
+        /// A repository name is required but was not specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetFolder">REST API Reference for GetFolder Operation</seealso>
+        public virtual GetFolderResponse GetFolder(GetFolderRequest request)
+        {
+            var marshaller = GetFolderRequestMarshaller.Instance;
+            var unmarshaller = GetFolderResponseUnmarshaller.Instance;
+
+            return Invoke<GetFolderRequest,GetFolderResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFolder operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFolder operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetFolder">REST API Reference for GetFolder Operation</seealso>
+        public virtual Task<GetFolderResponse> GetFolderAsync(GetFolderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetFolderRequestMarshaller.Instance;
+            var unmarshaller = GetFolderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetFolderRequest,GetFolderResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetMergeConflicts
 
 
@@ -2428,7 +2747,7 @@ namespace Amazon.CodeCommit
         /// The specified path does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.PathRequiredException">
-        /// The filePath for a location cannot be empty or null.
+        /// The folderPath for a location cannot be null.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
         /// The specified repository does not exist.
@@ -2559,10 +2878,10 @@ namespace Amazon.CodeCommit
         /// The specified path does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.PathRequiredException">
-        /// The filePath for a location cannot be empty or null.
+        /// The folderPath for a location cannot be null.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.PathRequiredException">
-        /// The filePath for a location cannot be empty or null.
+        /// The folderPath for a location cannot be null.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.PullRequestDoesNotExistException">
         /// The pull request ID could not be found. Make sure that you have specified the correct
@@ -2743,6 +3062,9 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.InvalidBranchNameException">
         /// The specified reference name is not valid.
         /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidDeletionParameterException">
+        /// The specified deletion parameter is not valid.
+        /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidEmailException">
         /// The specified email address either contains one or more characters that are not allowed,
         /// or it exceeds the maximum number of characters allowed for an email address.
@@ -2771,12 +3093,12 @@ namespace Amazon.CodeCommit
         ///  </note>
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.NameLengthExceededException">
-        /// The file name is not valid because it has exceeded the character limit for file names.
+        /// The user name is not valid because it has exceeded the character limit for file names.
         /// File names, including the path to the file, cannot exceed the character limit.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ParentCommitDoesNotExistException">
-        /// The parent commit ID is not valid. The specified parent commit ID does not exist in
-        /// the specified branch of the repository.
+        /// The parent commit ID is not valid because it does not exist. The specified parent
+        /// commit ID does not exist in the specified branch of the repository.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.ParentCommitIdOutdatedException">
         /// The file could not be added because the provided parent commit ID is not the current
@@ -2788,7 +3110,7 @@ namespace Amazon.CodeCommit
         /// use <a>GetBranch</a> or a Git command (for example, git pull or git log).
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.PathRequiredException">
-        /// The filePath for a location cannot be empty or null.
+        /// The folderPath for a location cannot be null.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
         /// The specified repository does not exist.
