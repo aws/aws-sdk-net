@@ -68,6 +68,12 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAutoMinorVersionUpgrade())
+                {
+                    context.Writer.WritePropertyName("autoMinorVersionUpgrade");
+                    context.Writer.Write(publicRequest.AutoMinorVersionUpgrade);
+                }
+
                 if(publicRequest.IsSetConfiguration())
                 {
                     context.Writer.WritePropertyName("configuration");
@@ -77,6 +83,12 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.Configuration, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetEngineVersion())
+                {
+                    context.Writer.WritePropertyName("engineVersion");
+                    context.Writer.Write(publicRequest.EngineVersion);
                 }
 
                 if(publicRequest.IsSetLogs())

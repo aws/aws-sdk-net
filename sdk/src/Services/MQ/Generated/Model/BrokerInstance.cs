@@ -67,7 +67,8 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IpAddress. The IP address of the ENI attached to the broker.
+        /// Gets and sets the property IpAddress. The IP address of the Elastic Network Interface
+        /// (ENI) attached to the broker.
         /// </summary>
         public string IpAddress
         {

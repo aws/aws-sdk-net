@@ -135,6 +135,12 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                     response.MaintenanceWindowStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("pendingEngineVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.PendingEngineVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("publiclyAccessible", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

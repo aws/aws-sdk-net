@@ -56,8 +56,8 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AuditLogGroup. Location of CloudWatch Log group where audit
-        /// logs will be sent.
+        /// Gets and sets the property AuditLogGroup. The location of the CloudWatch Logs log
+        /// group where audit logs are sent.
         /// </summary>
         public string AuditLogGroup
         {
@@ -87,8 +87,8 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GeneralLogGroup. Location of CloudWatch Log group where
-        /// general logs will be sent.
+        /// Gets and sets the property GeneralLogGroup. The location of the CloudWatch Logs log
+        /// group where general logs are sent.
         /// </summary>
         public string GeneralLogGroup
         {

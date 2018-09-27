@@ -51,6 +51,12 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("autoMinorVersionUpgrade", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.AutoMinorVersionUpgrade = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("brokerId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -61,6 +67,12 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ConfigurationIdUnmarshaller.Instance;
                     response.Configuration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("engineVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.EngineVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("logs", targetDepth))
@@ -87,6 +99,10 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
             if (errorResponse.Code != null && errorResponse.Code.Equals("BadRequestException"))
             {
                 return new BadRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+            {
+                return new ConflictException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ForbiddenException"))
             {

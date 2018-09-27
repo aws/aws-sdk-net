@@ -33,9 +33,28 @@ namespace Amazon.MQ.Model
     /// </summary>
     public partial class UpdateBrokerRequest : AmazonMQRequest
     {
+        private bool? _autoMinorVersionUpgrade;
         private string _brokerId;
         private ConfigurationId _configuration;
+        private string _engineVersion;
         private Logs _logs;
+
+        /// <summary>
+        /// Gets and sets the property AutoMinorVersionUpgrade. Enables automatic upgrades to
+        /// new minor versions for brokers, as Apache releases the versions. The automatic upgrades
+        /// occur during the maintenance window of the broker or after a manual broker reboot.
+        /// </summary>
+        public bool AutoMinorVersionUpgrade
+        {
+            get { return this._autoMinorVersionUpgrade.GetValueOrDefault(); }
+            set { this._autoMinorVersionUpgrade = value; }
+        }
+
+        // Check to see if AutoMinorVersionUpgrade property is set
+        internal bool IsSetAutoMinorVersionUpgrade()
+        {
+            return this._autoMinorVersionUpgrade.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property BrokerId. The name of the broker. This value must be unique
@@ -68,6 +87,22 @@ namespace Amazon.MQ.Model
         internal bool IsSetConfiguration()
         {
             return this._configuration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EngineVersion. The version of the broker engine. Note:
+        /// Currently, Amazon MQ supports only 5.15.6 and 5.15.0.
+        /// </summary>
+        public string EngineVersion
+        {
+            get { return this._engineVersion; }
+            set { this._engineVersion = value; }
+        }
+
+        // Check to see if EngineVersion property is set
+        internal bool IsSetEngineVersion()
+        {
+            return this._engineVersion != null;
         }
 
         /// <summary>

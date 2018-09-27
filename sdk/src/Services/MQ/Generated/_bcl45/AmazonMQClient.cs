@@ -955,6 +955,9 @@ namespace Amazon.MQ
         /// <exception cref="Amazon.MQ.Model.BadRequestException">
         /// Returns information about an error.
         /// </exception>
+        /// <exception cref="Amazon.MQ.Model.ConflictException">
+        /// Returns information about an error.
+        /// </exception>
         /// <exception cref="Amazon.MQ.Model.ForbiddenException">
         /// Returns information about an error.
         /// </exception>

@@ -46,6 +46,7 @@ namespace Amazon.MQ.Model
         private string _hostInstanceType;
         private LogsSummary _logs;
         private WeeklyStartTime _maintenanceWindowStartTime;
+        private string _pendingEngineVersion;
         private bool? _publiclyAccessible;
         private List<string> _securityGroups = new List<string>();
         private List<string> _subnetIds = new List<string>();
@@ -213,7 +214,7 @@ namespace Amazon.MQ.Model
 
         /// <summary>
         /// Gets and sets the property EngineVersion. The version of the broker engine. Note:
-        /// Currently, Amazon MQ supports only 5.15.0.
+        /// Currently, Amazon MQ supports only 5.15.6 and 5.15.0.
         /// </summary>
         public string EngineVersion
         {
@@ -272,6 +273,22 @@ namespace Amazon.MQ.Model
         internal bool IsSetMaintenanceWindowStartTime()
         {
             return this._maintenanceWindowStartTime != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PendingEngineVersion. The version of the broker engine
+        /// to upgrade to.
+        /// </summary>
+        public string PendingEngineVersion
+        {
+            get { return this._pendingEngineVersion; }
+            set { this._pendingEngineVersion = value; }
+        }
+
+        // Check to see if PendingEngineVersion property is set
+        internal bool IsSetPendingEngineVersion()
+        {
+            return this._pendingEngineVersion != null;
         }
 
         /// <summary>

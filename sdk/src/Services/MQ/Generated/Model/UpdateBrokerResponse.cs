@@ -32,9 +32,27 @@ namespace Amazon.MQ.Model
     /// </summary>
     public partial class UpdateBrokerResponse : AmazonWebServiceResponse
     {
+        private bool? _autoMinorVersionUpgrade;
         private string _brokerId;
         private ConfigurationId _configuration;
+        private string _engineVersion;
         private Logs _logs;
+
+        /// <summary>
+        /// Gets and sets the property AutoMinorVersionUpgrade. The new value of automatic upgrades
+        /// to new minor version for brokers.
+        /// </summary>
+        public bool AutoMinorVersionUpgrade
+        {
+            get { return this._autoMinorVersionUpgrade.GetValueOrDefault(); }
+            set { this._autoMinorVersionUpgrade = value; }
+        }
+
+        // Check to see if AutoMinorVersionUpgrade property is set
+        internal bool IsSetAutoMinorVersionUpgrade()
+        {
+            return this._autoMinorVersionUpgrade.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property BrokerId. Required. The unique ID that Amazon MQ generates
@@ -65,6 +83,22 @@ namespace Amazon.MQ.Model
         internal bool IsSetConfiguration()
         {
             return this._configuration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EngineVersion. The version of the broker engine to upgrade
+        /// to.
+        /// </summary>
+        public string EngineVersion
+        {
+            get { return this._engineVersion; }
+            set { this._engineVersion = value; }
+        }
+
+        // Check to see if EngineVersion property is set
+        internal bool IsSetEngineVersion()
+        {
+            return this._engineVersion != null;
         }
 
         /// <summary>
