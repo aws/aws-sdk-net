@@ -31,7 +31,7 @@ namespace Amazon.WAFRegional
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonWAFRegionalException : AmazonServiceException
+    public partial class AmazonWAFRegionalException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonWAFRegionalException

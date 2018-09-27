@@ -31,7 +31,7 @@ namespace Amazon.Rekognition
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonRekognitionException : AmazonServiceException
+    public partial class AmazonRekognitionException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonRekognitionException

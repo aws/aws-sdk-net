@@ -31,7 +31,7 @@ namespace Amazon.MQ
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonMQException : AmazonServiceException
+    public partial class AmazonMQException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonMQException

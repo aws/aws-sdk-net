@@ -31,7 +31,7 @@ namespace Amazon.DeviceFarm
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonDeviceFarmException : AmazonServiceException
+    public partial class AmazonDeviceFarmException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonDeviceFarmException

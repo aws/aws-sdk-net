@@ -31,7 +31,7 @@ namespace Amazon.CodeDeploy
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonCodeDeployException : AmazonServiceException
+    public partial class AmazonCodeDeployException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonCodeDeployException

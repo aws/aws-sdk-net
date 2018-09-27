@@ -31,7 +31,7 @@ namespace Amazon.WorkMail
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonWorkMailException : AmazonServiceException
+    public partial class AmazonWorkMailException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonWorkMailException

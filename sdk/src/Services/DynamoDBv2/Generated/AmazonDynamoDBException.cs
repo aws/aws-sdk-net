@@ -31,7 +31,7 @@ namespace Amazon.DynamoDBv2
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonDynamoDBException : AmazonServiceException
+    public partial class AmazonDynamoDBException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonDynamoDBException

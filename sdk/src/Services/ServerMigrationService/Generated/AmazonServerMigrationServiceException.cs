@@ -31,7 +31,7 @@ namespace Amazon.ServerMigrationService
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonServerMigrationServiceException : AmazonServiceException
+    public partial class AmazonServerMigrationServiceException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonServerMigrationServiceException

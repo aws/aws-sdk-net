@@ -31,7 +31,7 @@ namespace Amazon.MarketplaceEntitlementService
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonMarketplaceEntitlementServiceException : AmazonServiceException
+    public partial class AmazonMarketplaceEntitlementServiceException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonMarketplaceEntitlementServiceException

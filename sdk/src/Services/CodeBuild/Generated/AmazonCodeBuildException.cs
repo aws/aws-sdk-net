@@ -31,7 +31,7 @@ namespace Amazon.CodeBuild
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonCodeBuildException : AmazonServiceException
+    public partial class AmazonCodeBuildException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonCodeBuildException

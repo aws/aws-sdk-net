@@ -31,7 +31,7 @@ namespace Amazon.CostAndUsageReport
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonCostAndUsageReportException : AmazonServiceException
+    public partial class AmazonCostAndUsageReportException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonCostAndUsageReportException

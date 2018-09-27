@@ -31,7 +31,7 @@ namespace Amazon.ECR
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonECRException : AmazonServiceException
+    public partial class AmazonECRException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonECRException

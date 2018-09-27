@@ -31,7 +31,7 @@ namespace Amazon.CertificateManager
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonCertificateManagerException : AmazonServiceException
+    public partial class AmazonCertificateManagerException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonCertificateManagerException

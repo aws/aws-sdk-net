@@ -31,7 +31,7 @@ namespace Amazon.RDS
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonRDSException : AmazonServiceException
+    public partial class AmazonRDSException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonRDSException

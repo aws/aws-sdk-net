@@ -31,7 +31,7 @@ namespace Amazon.AppSync
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonAppSyncException : AmazonServiceException
+    public partial class AmazonAppSyncException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonAppSyncException

@@ -31,7 +31,7 @@ namespace Amazon.MigrationHub
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonMigrationHubException : AmazonServiceException
+    public partial class AmazonMigrationHubException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonMigrationHubException

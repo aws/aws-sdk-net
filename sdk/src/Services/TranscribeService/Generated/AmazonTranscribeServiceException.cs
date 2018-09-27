@@ -31,7 +31,7 @@ namespace Amazon.TranscribeService
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonTranscribeServiceException : AmazonServiceException
+    public partial class AmazonTranscribeServiceException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonTranscribeServiceException

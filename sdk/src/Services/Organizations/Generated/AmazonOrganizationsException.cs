@@ -31,7 +31,7 @@ namespace Amazon.Organizations
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonOrganizationsException : AmazonServiceException
+    public partial class AmazonOrganizationsException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonOrganizationsException

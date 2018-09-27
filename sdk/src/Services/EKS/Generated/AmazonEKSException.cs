@@ -31,7 +31,7 @@ namespace Amazon.EKS
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonEKSException : AmazonServiceException
+    public partial class AmazonEKSException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonEKSException

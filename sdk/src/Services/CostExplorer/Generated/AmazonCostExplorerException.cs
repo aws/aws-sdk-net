@@ -31,7 +31,7 @@ namespace Amazon.CostExplorer
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonCostExplorerException : AmazonServiceException
+    public partial class AmazonCostExplorerException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonCostExplorerException

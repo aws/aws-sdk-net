@@ -31,7 +31,7 @@ namespace Amazon.SimpleWorkflow
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonSimpleWorkflowException : AmazonServiceException
+    public partial class AmazonSimpleWorkflowException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonSimpleWorkflowException

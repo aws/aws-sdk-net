@@ -31,7 +31,7 @@ namespace Amazon.Macie
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonMacieException : AmazonServiceException
+    public partial class AmazonMacieException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonMacieException

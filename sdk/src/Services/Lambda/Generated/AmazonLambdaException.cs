@@ -31,7 +31,7 @@ namespace Amazon.Lambda
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonLambdaException : AmazonServiceException
+    public partial class AmazonLambdaException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonLambdaException

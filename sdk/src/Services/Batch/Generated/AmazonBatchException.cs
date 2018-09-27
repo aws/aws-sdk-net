@@ -31,7 +31,7 @@ namespace Amazon.Batch
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonBatchException : AmazonServiceException
+    public partial class AmazonBatchException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonBatchException

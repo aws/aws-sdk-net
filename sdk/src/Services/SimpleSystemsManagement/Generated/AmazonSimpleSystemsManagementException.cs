@@ -31,7 +31,7 @@ namespace Amazon.SimpleSystemsManagement
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonSimpleSystemsManagementException : AmazonServiceException
+    public partial class AmazonSimpleSystemsManagementException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonSimpleSystemsManagementException

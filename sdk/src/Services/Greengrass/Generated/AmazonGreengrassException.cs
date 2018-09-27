@@ -31,7 +31,7 @@ namespace Amazon.Greengrass
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonGreengrassException : AmazonServiceException
+    public partial class AmazonGreengrassException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonGreengrassException

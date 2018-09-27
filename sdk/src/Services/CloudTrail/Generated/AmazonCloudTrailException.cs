@@ -31,7 +31,7 @@ namespace Amazon.CloudTrail
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonCloudTrailException : AmazonServiceException
+    public partial class AmazonCloudTrailException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonCloudTrailException

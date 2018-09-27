@@ -31,7 +31,7 @@ namespace Amazon.Snowball
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonSnowballException : AmazonServiceException
+    public partial class AmazonSnowballException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonSnowballException

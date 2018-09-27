@@ -31,7 +31,7 @@ namespace Amazon.DLM
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonDLMException : AmazonServiceException
+    public partial class AmazonDLMException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonDLMException

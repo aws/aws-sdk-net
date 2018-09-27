@@ -31,7 +31,7 @@ namespace Amazon.MediaTailor
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonMediaTailorException : AmazonServiceException
+    public partial class AmazonMediaTailorException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonMediaTailorException

@@ -31,7 +31,7 @@ namespace Amazon.ElastiCache
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonElastiCacheException : AmazonServiceException
+    public partial class AmazonElastiCacheException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonElastiCacheException

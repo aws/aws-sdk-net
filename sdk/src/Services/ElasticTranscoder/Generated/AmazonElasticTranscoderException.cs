@@ -31,7 +31,7 @@ namespace Amazon.ElasticTranscoder
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonElasticTranscoderException : AmazonServiceException
+    public partial class AmazonElasticTranscoderException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonElasticTranscoderException

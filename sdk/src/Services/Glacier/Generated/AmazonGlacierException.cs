@@ -31,7 +31,7 @@ namespace Amazon.Glacier
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonGlacierException : AmazonServiceException
+    public partial class AmazonGlacierException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonGlacierException

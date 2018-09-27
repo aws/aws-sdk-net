@@ -31,7 +31,7 @@ namespace Amazon.AWSSupport
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonAWSSupportException : AmazonServiceException
+    public partial class AmazonAWSSupportException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonAWSSupportException

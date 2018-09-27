@@ -31,7 +31,7 @@ namespace Amazon.KinesisAnalytics
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonKinesisAnalyticsException : AmazonServiceException
+    public partial class AmazonKinesisAnalyticsException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonKinesisAnalyticsException

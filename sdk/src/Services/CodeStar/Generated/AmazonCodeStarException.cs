@@ -31,7 +31,7 @@ namespace Amazon.CodeStar
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonCodeStarException : AmazonServiceException
+    public partial class AmazonCodeStarException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonCodeStarException

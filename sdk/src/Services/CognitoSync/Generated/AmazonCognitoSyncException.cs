@@ -31,7 +31,7 @@ namespace Amazon.CognitoSync
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonCognitoSyncException : AmazonServiceException
+    public partial class AmazonCognitoSyncException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonCognitoSyncException

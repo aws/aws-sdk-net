@@ -31,7 +31,7 @@ namespace Amazon.Budgets
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonBudgetsException : AmazonServiceException
+    public partial class AmazonBudgetsException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonBudgetsException

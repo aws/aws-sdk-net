@@ -31,7 +31,7 @@ namespace Amazon.Neptune
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonNeptuneException : AmazonServiceException
+    public partial class AmazonNeptuneException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonNeptuneException

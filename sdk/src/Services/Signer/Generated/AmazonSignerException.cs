@@ -31,7 +31,7 @@ namespace Amazon.Signer
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonSignerException : AmazonServiceException
+    public partial class AmazonSignerException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonSignerException

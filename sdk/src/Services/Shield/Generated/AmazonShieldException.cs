@@ -31,7 +31,7 @@ namespace Amazon.Shield
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonShieldException : AmazonServiceException
+    public partial class AmazonShieldException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonShieldException

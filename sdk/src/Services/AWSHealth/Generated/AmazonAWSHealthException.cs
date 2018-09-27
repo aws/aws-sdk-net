@@ -31,7 +31,7 @@ namespace Amazon.AWSHealth
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonAWSHealthException : AmazonServiceException
+    public partial class AmazonAWSHealthException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonAWSHealthException

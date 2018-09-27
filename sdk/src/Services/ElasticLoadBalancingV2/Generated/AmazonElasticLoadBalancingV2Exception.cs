@@ -31,7 +31,7 @@ namespace Amazon.ElasticLoadBalancingV2
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonElasticLoadBalancingV2Exception : AmazonServiceException
+    public partial class AmazonElasticLoadBalancingV2Exception : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonElasticLoadBalancingV2Exception

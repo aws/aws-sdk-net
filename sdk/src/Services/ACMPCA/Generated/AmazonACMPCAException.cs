@@ -31,7 +31,7 @@ namespace Amazon.ACMPCA
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonACMPCAException : AmazonServiceException
+    public partial class AmazonACMPCAException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonACMPCAException

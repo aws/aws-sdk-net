@@ -31,7 +31,7 @@ namespace Amazon.KinesisFirehose
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonKinesisFirehoseException : AmazonServiceException
+    public partial class AmazonKinesisFirehoseException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonKinesisFirehoseException

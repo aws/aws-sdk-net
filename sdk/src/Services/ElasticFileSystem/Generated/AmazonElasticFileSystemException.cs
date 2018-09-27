@@ -31,7 +31,7 @@ namespace Amazon.ElasticFileSystem
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonElasticFileSystemException : AmazonServiceException
+    public partial class AmazonElasticFileSystemException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonElasticFileSystemException

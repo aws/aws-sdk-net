@@ -31,7 +31,7 @@ namespace Amazon.ServiceCatalog
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonServiceCatalogException : AmazonServiceException
+    public partial class AmazonServiceCatalogException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonServiceCatalogException

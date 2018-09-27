@@ -31,7 +31,7 @@ namespace Amazon.CloudHSMV2
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonCloudHSMV2Exception : AmazonServiceException
+    public partial class AmazonCloudHSMV2Exception : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonCloudHSMV2Exception

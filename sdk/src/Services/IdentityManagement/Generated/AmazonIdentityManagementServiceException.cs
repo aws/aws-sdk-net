@@ -31,7 +31,7 @@ namespace Amazon.IdentityManagement
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonIdentityManagementServiceException : AmazonServiceException
+    public partial class AmazonIdentityManagementServiceException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonIdentityManagementServiceException

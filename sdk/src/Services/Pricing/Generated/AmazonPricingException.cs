@@ -31,7 +31,7 @@ namespace Amazon.Pricing
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonPricingException : AmazonServiceException
+    public partial class AmazonPricingException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonPricingException

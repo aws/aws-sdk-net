@@ -31,7 +31,7 @@ namespace Amazon.AppStream
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonAppStreamException : AmazonServiceException
+    public partial class AmazonAppStreamException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonAppStreamException

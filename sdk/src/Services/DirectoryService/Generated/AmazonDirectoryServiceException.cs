@@ -31,7 +31,7 @@ namespace Amazon.DirectoryService
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonDirectoryServiceException : AmazonServiceException
+    public partial class AmazonDirectoryServiceException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonDirectoryServiceException

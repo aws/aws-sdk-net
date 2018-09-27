@@ -31,7 +31,7 @@ namespace Amazon.AlexaForBusiness
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonAlexaForBusinessException : AmazonServiceException
+    public partial class AmazonAlexaForBusinessException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonAlexaForBusinessException

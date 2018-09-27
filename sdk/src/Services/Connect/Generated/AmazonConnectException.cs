@@ -31,7 +31,7 @@ namespace Amazon.Connect
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonConnectException : AmazonServiceException
+    public partial class AmazonConnectException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonConnectException

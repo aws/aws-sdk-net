@@ -31,7 +31,7 @@ namespace Amazon.Elasticsearch
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonElasticsearchException : AmazonServiceException
+    public partial class AmazonElasticsearchException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonElasticsearchException

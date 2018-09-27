@@ -31,7 +31,7 @@ namespace Amazon.MachineLearning
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonMachineLearningException : AmazonServiceException
+    public partial class AmazonMachineLearningException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonMachineLearningException

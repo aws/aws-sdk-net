@@ -21,7 +21,7 @@ namespace <#=this.Config.Namespace#>
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class Amazon<#=this.Config.ClassName#>Exception : AmazonServiceException
+    public partial class Amazon<#=this.Config.ClassName#>Exception : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of Amazon<#=this.Config.ClassName#>Exception

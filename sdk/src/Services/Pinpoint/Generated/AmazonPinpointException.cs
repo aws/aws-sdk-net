@@ -31,7 +31,7 @@ namespace Amazon.Pinpoint
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonPinpointException : AmazonServiceException
+    public partial class AmazonPinpointException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonPinpointException

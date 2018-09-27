@@ -31,7 +31,7 @@ namespace Amazon.KinesisVideo
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonKinesisVideoException : AmazonServiceException
+    public partial class AmazonKinesisVideoException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonKinesisVideoException
