@@ -3471,6 +3471,18 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType T3Xlarge = new InstanceType("t3.xlarge");
         /// <summary>
+        /// Constant U12tb1Metal for InstanceType
+        /// </summary>
+        public static readonly InstanceType U12tb1Metal = new InstanceType("u-12tb1.metal");
+        /// <summary>
+        /// Constant U6tb1Metal for InstanceType
+        /// </summary>
+        public static readonly InstanceType U6tb1Metal = new InstanceType("u-6tb1.metal");
+        /// <summary>
+        /// Constant U9tb1Metal for InstanceType
+        /// </summary>
+        public static readonly InstanceType U9tb1Metal = new InstanceType("u-9tb1.metal");
+        /// <summary>
         /// Constant X116xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType X116xlarge = new InstanceType("x1.16xlarge");
