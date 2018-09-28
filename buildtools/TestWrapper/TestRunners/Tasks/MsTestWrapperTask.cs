@@ -22,6 +22,7 @@ namespace TestWrapper
             msTestRunner.Configuration = Configuration == null ?
                 TestRunner.TestConfiguration.Release :
                 (TestRunner.TestConfiguration)Enum.Parse(typeof(TestRunner.TestConfiguration), Configuration.ItemSpec);
+            msTestRunner.TestExecutionProfile = TestExecutionProfile.ItemSpec;
             Runner = msTestRunner;
         }
     }
