@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.370.0",
+    "ProductVersion" : "3.3.371.0",
     "CoreVersion"    : "3.3.25.4",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -151,7 +151,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.3.63.1",
+            "Version" : "3.3.64.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.25.4"
@@ -769,7 +769,7 @@
             "InPreview"               : false
         },
         "CodeStar"                        : {
-            "Version" : "3.3.1.21",
+            "Version" : "3.3.2.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.25.4"
