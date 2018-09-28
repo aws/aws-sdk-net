@@ -40,6 +40,7 @@ namespace Amazon.CodeStar.Model
         private string _name;
         private string _projectTemplateId;
         private string _stackId;
+        private ProjectStatus _status;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -185,6 +186,24 @@ namespace Amazon.CodeStar.Model
         internal bool IsSetStackId()
         {
             return this._stackId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The project creation or deletion status.
+        /// </para>
+        /// </summary>
+        public ProjectStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
     }

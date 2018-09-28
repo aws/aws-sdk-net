@@ -99,6 +99,12 @@ namespace Amazon.CodeStar.Model.Internal.MarshallTransformations
                     response.StackId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("status", targetDepth))
+                {
+                    var unmarshaller = ProjectStatusUnmarshaller.Instance;
+                    response.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

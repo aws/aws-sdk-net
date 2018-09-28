@@ -70,7 +70,7 @@
   <property-value-rule>
     <property>Amazon.CodeStar.Model.CreateProjectResponse.ProjectTemplateId</property>
     <min>1</min>
-    <pattern>^arn:aws[^:\s]{0,5}:codestar:[^:\s]+::project-template\/[a-z0-9-]+$</pattern>
+    <pattern>^arn:aws[^:\s]{0,5}:codestar:[^:\s]+::project-template(\/(github|codecommit))?\/[a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStar.Model.CreateUserProfileRequest.DisplayName</property>
@@ -186,7 +186,7 @@
   <property-value-rule>
     <property>Amazon.CodeStar.Model.DescribeProjectResponse.ProjectTemplateId</property>
     <min>1</min>
-    <pattern>^arn:aws[^:\s]{0,5}:codestar:[^:\s]+::project-template\/[a-z0-9-]+$</pattern>
+    <pattern>^arn:aws[^:\s]{0,5}:codestar:[^:\s]+::project-template(\/(github|codecommit))?\/[a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStar.Model.DescribeProjectResponse.StackId</property>
@@ -436,6 +436,15 @@
     <min>32</min>
     <max>95</max>
     <pattern>^arn:aws:iam::\d{12}:user(?:(\u002F)|(\u002F[\u0021-\u007E]+\u002F))[\w+=,.@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeStar.Model.ProjectStatus.Reason</property>
+    <max>1024</max>
+    <pattern>^$|^\S(.*\S)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeStar.Model.ProjectStatus.State</property>
+    <pattern>^(CreateInProgress|CreateComplete|CreateFailed|DeleteComplete|DeleteFailed|DeleteInProgress|UpdateComplete|UpdateInProgress|UpdateFailed|Unknown)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStar.Model.ProjectSummary.ProjectArn</property>
