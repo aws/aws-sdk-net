@@ -50,6 +50,7 @@ namespace Amazon.Runtime.Internal.Settings
         public const string Region = "Region";
         public const string AuthenticationTypeField = "AuthenticationType";
         public const string SourceProfileField = "SourceProfile";
+        public const string CredentialSourceField = "CredentialSource";
 
         // present in endpoint definitions in SAMLEndpoints.json file
         public const string EndpointField = "Endpoint";
