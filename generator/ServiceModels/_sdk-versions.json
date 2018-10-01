@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.371.0",
+    "ProductVersion" : "3.3.372.0",
     "CoreVersion"    : "3.3.25.4",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -609,7 +609,7 @@
             "InPreview"               : false
         },
         "Rekognition"                     : {
-            "Version" : "3.3.11.1",
+            "Version" : "3.3.11.2",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.25.4"
@@ -913,7 +913,7 @@
             "InPreview"               : false
         },
         "GuardDuty"                       : {
-            "Version" : "3.3.4.13",
+            "Version" : "3.3.5.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.25.4"

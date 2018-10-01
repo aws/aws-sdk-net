@@ -1,3 +1,9 @@
+### 3.3.372.0 (2018-10-01 22:10 UTC)
+* GuardDuty (3.3.5.0)
+	* Support optional FindingPublishingFrequency parameter in CreateDetector and UpdateDetector operations, and ClientToken on Create* operations
+* Rekognition (3.3.11.2)
+	* Documentation updates for Amazon Rekognition
+
 ### 3.3.371.0 (2018-09-28 18:48 UTC)
 * CodeStar (3.3.2.0)
 	* This release enables tagging CodeStar Projects at creation. The CreateProject API now includes optional tags parameter.
