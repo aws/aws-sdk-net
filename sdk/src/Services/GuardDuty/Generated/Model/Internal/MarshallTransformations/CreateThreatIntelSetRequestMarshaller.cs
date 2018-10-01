@@ -74,6 +74,17 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Activate);
                 }
 
+                if(publicRequest.IsSetClientToken())
+                {
+                    context.Writer.WritePropertyName("clientToken");
+                    context.Writer.Write(publicRequest.ClientToken);
+                }
+
+                else if(!(publicRequest.IsSetClientToken()))
+                {
+                    context.Writer.WritePropertyName("clientToken");
+                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                }
                 if(publicRequest.IsSetFormat())
                 {
                     context.Writer.WritePropertyName("format");

@@ -33,6 +33,7 @@ namespace Amazon.GuardDuty.Model
     public partial class GetDetectorResponse : AmazonWebServiceResponse
     {
         private string _createdAt;
+        private FindingPublishingFrequency _findingPublishingFrequency;
         private string _serviceRole;
         private DetectorStatus _status;
         private string _updatedAt;
@@ -50,6 +51,21 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FindingPublishingFrequency.
+        /// </summary>
+        public FindingPublishingFrequency FindingPublishingFrequency
+        {
+            get { return this._findingPublishingFrequency; }
+            set { this._findingPublishingFrequency = value; }
+        }
+
+        // Check to see if FindingPublishingFrequency property is set
+        internal bool IsSetFindingPublishingFrequency()
+        {
+            return this._findingPublishingFrequency != null;
         }
 
         /// <summary>

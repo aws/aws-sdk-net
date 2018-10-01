@@ -35,7 +35,24 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class CreateDetectorRequest : AmazonGuardDutyRequest
     {
+        private string _clientToken;
         private bool? _enable;
+        private FindingPublishingFrequency _findingPublishingFrequency;
+
+        /// <summary>
+        /// Gets and sets the property ClientToken. The idempotency token for the create request.
+        /// </summary>
+        public string ClientToken
+        {
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
+        }
+
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
+        {
+            return this._clientToken != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Enable. A boolean value that specifies whether the detector
@@ -51,6 +68,22 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetEnable()
         {
             return this._enable.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FindingPublishingFrequency. A enum value that specifies
+        /// how frequently customer got Finding updates published.
+        /// </summary>
+        public FindingPublishingFrequency FindingPublishingFrequency
+        {
+            get { return this._findingPublishingFrequency; }
+            set { this._findingPublishingFrequency = value; }
+        }
+
+        // Check to see if FindingPublishingFrequency property is set
+        internal bool IsSetFindingPublishingFrequency()
+        {
+            return this._findingPublishingFrequency != null;
         }
 
     }

@@ -35,6 +35,7 @@ namespace Amazon.GuardDuty.Model
     {
         private string _detectorId;
         private bool? _enable;
+        private FindingPublishingFrequency _findingPublishingFrequency;
 
         /// <summary>
         /// Gets and sets the property DetectorId. The unique ID of the detector that you want
@@ -66,6 +67,22 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetEnable()
         {
             return this._enable.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FindingPublishingFrequency. A enum value that specifies
+        /// how frequently customer got Finding updates published.
+        /// </summary>
+        public FindingPublishingFrequency FindingPublishingFrequency
+        {
+            get { return this._findingPublishingFrequency; }
+            set { this._findingPublishingFrequency = value; }
+        }
+
+        // Check to see if FindingPublishingFrequency property is set
+        internal bool IsSetFindingPublishingFrequency()
+        {
+            return this._findingPublishingFrequency != null;
         }
 
     }

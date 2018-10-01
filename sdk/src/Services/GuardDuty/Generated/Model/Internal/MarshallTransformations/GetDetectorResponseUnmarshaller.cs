@@ -57,6 +57,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     response.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("findingPublishingFrequency", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.FindingPublishingFrequency = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("serviceRole", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

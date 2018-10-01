@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.CreateDetectorRequest.ClientToken</property>
+    <min>0</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.CreateFilterRequest.ClientToken</property>
+    <min>0</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.CreateIPSetRequest.ClientToken</property>
+    <min>0</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.CreateThreatIntelSetRequest.ClientToken</property>
     <min>0</min>
     <max>64</max>
   </property-value-rule>

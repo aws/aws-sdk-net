@@ -74,6 +74,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Enable);
                 }
 
+                if(publicRequest.IsSetFindingPublishingFrequency())
+                {
+                    context.Writer.WritePropertyName("findingPublishingFrequency");
+                    context.Writer.Write(publicRequest.FindingPublishingFrequency);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

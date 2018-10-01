@@ -35,6 +35,7 @@ namespace Amazon.GuardDuty.Model
     public partial class CreateThreatIntelSetRequest : AmazonGuardDutyRequest
     {
         private bool? _activate;
+        private string _clientToken;
         private string _detectorId;
         private ThreatIntelSetFormat _format;
         private string _location;
@@ -54,6 +55,21 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetActivate()
         {
             return this._activate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClientToken. The idempotency token for the create request.
+        /// </summary>
+        public string ClientToken
+        {
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
+        }
+
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
+        {
+            return this._clientToken != null;
         }
 
         /// <summary>

@@ -175,6 +175,60 @@ namespace Amazon.GuardDuty
 
 
     /// <summary>
+    /// Constants used for properties of type FindingPublishingFrequency.
+    /// </summary>
+    public class FindingPublishingFrequency : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FIFTEEN_MINUTES for FindingPublishingFrequency
+        /// </summary>
+        public static readonly FindingPublishingFrequency FIFTEEN_MINUTES = new FindingPublishingFrequency("FIFTEEN_MINUTES");
+        /// <summary>
+        /// Constant ONE_HOUR for FindingPublishingFrequency
+        /// </summary>
+        public static readonly FindingPublishingFrequency ONE_HOUR = new FindingPublishingFrequency("ONE_HOUR");
+        /// <summary>
+        /// Constant SIX_HOURS for FindingPublishingFrequency
+        /// </summary>
+        public static readonly FindingPublishingFrequency SIX_HOURS = new FindingPublishingFrequency("SIX_HOURS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FindingPublishingFrequency(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FindingPublishingFrequency FindValue(string value)
+        {
+            return FindValue<FindingPublishingFrequency>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FindingPublishingFrequency(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FindingStatisticType.
     /// </summary>
     public class FindingStatisticType : ConstantClass
