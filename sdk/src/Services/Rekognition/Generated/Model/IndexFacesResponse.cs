@@ -40,7 +40,8 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property FaceModelVersion. 
         /// <para>
-        /// Version number of the face detection model associated with the input collection (<code>CollectionId</code>).
+        /// The version number of the face detection model that's associated with the input collection
+        /// (<code>CollectionId</code>).
         /// </para>
         /// </summary>
         public string FaceModelVersion
@@ -86,9 +87,9 @@ namespace Amazon.Rekognition.Model
         /// <para>
         /// If the input image is in jpeg format, it might contain exchangeable image (Exif) metadata.
         /// If so, and the Exif metadata populates the orientation field, the value of <code>OrientationCorrection</code>
-        /// is null and the bounding box coordinates in <code>FaceRecords</code> represent face
-        /// locations after Exif metadata is used to correct the image orientation. Images in
-        /// .png format don't contain Exif metadata.
+        /// is null. The bounding box coordinates in <code>FaceRecords</code> represent face locations
+        /// after Exif metadata is used to correct the image orientation. Images in .png format
+        /// don't contain Exif metadata.
         /// </para>
         ///  </note>
         /// </summary>
@@ -107,9 +108,9 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property UnindexedFaces. 
         /// <para>
-        /// An array of faces that detected in the image but not indexed either because the quality
-        /// filter deemed them to be of low-quality or the <code>MaxFaces</code> request parameter
-        /// filtered them out. To use the quality filter, you specify the <code>QualityFilter</code>
+        /// An array of faces that were detected in the image but weren't indexed. They weren't
+        /// indexed because the quality filter identified them as low quality, or the <code>MaxFaces</code>
+        /// request parameter filtered them out. To use the quality filter, you specify the <code>QualityFilter</code>
         /// request parameter.
         /// </para>
         /// </summary>

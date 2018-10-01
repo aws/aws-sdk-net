@@ -32,11 +32,11 @@ namespace Amazon.Rekognition.Model
     /// 
     ///  
     /// <para>
-    /// You pass image bytes to a Rekognition API operation by using the <code>Bytes</code>
+    /// You pass image bytes to an Amazon Rekognition API operation by using the <code>Bytes</code>
     /// property. For example, you would use the <code>Bytes</code> property to pass an image
     /// loaded from a local file system. Image bytes passed by using the <code>Bytes</code>
     /// property must be base64-encoded. Your code may not need to encode image bytes if you
-    /// are using an AWS SDK to call Rekognition API operations. 
+    /// are using an AWS SDK to call Amazon Rekognition API operations. 
     /// </para>
     ///  
     /// <para>
@@ -45,8 +45,9 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
-    ///  You pass images stored in an S3 bucket to a Rekognition API operation by using the
-    /// <code>S3Object</code> property. Images stored in an S3 bucket do not need to be base64-encoded.
+    ///  You pass images stored in an S3 bucket to an Amazon Rekognition API operation by
+    /// using the <code>S3Object</code> property. Images stored in an S3 bucket do not need
+    /// to be base64-encoded.
     /// </para>
     ///  
     /// <para>
@@ -55,7 +56,7 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
-    /// If you use the Amazon CLI to call Amazon Rekognition operations, passing image bytes
+    /// If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes
     /// using the Bytes property is not supported. You must first upload the image to an Amazon
     /// S3 bucket and then call the operation using the S3Object property.
     /// </para>

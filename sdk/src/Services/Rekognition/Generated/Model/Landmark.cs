@@ -39,7 +39,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Type of the landmark.
+        /// Type of landmark.
         /// </para>
         /// </summary>
         public LandmarkType Type
@@ -57,8 +57,8 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property X. 
         /// <para>
-        /// x-coordinate from the top left of the landmark expressed as the ratio of the width
-        /// of the image. For example, if the images is 700x200 and the x-coordinate of the landmark
+        /// The x-coordinate from the top left of the landmark expressed as the ratio of the width
+        /// of the image. For example, if the image is 700 x 200 and the x-coordinate of the landmark
         /// is at 350 pixels, this value is 0.5. 
         /// </para>
         /// </summary>
@@ -77,8 +77,8 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property Y. 
         /// <para>
-        /// y-coordinate from the top left of the landmark expressed as the ratio of the height
-        /// of the image. For example, if the images is 700x200 and the y-coordinate of the landmark
+        /// The y-coordinate from the top left of the landmark expressed as the ratio of the height
+        /// of the image. For example, if the image is 700 x 200 and the y-coordinate of the landmark
         /// is at 100 pixels, this value is 0.5.
         /// </para>
         /// </summary>

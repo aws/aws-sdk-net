@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// A face detected by but not indexed. Use the <code>Reasons</code> response attribute
-    /// to determine why a face is not indexed.
+    /// A face that detected, but didn't index. Use the <code>Reasons</code> response attribute
+    /// to determine why a face wasn't indexed.
     /// </summary>
     public partial class UnindexedFace
     {
@@ -39,8 +39,8 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property FaceDetail. 
         /// <para>
-        /// Structure containing attributes of a face that was detected, but not indexed, by <code>IndexFaces</code>.
-        /// 
+        /// The structure that contains attributes of a face that <code>IndexFaces</code>detected,
+        /// but didn't index. 
         /// </para>
         /// </summary>
         public FaceDetail FaceDetail
@@ -58,7 +58,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property Reasons. 
         /// <para>
-        /// An array of reasons specifying why a face was not indexed. 
+        /// An array of reasons that specify why a face wasn't indexed. 
         /// </para>
         ///  <ul> <li> 
         /// <para>

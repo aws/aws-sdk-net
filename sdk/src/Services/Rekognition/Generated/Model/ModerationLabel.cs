@@ -84,7 +84,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property ParentName. 
         /// <para>
-        /// The name for the parent label. Labels at the top-level of the hierarchy have the parent
+        /// The name for the parent label. Labels at the top level of the hierarchy have the parent
         /// label <code>""</code>.
         /// </para>
         /// </summary>

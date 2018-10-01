@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// Object containing both the face metadata (stored in the back-end database) and facial
+    /// Object containing both the face metadata (stored in the backend database), and facial
     /// attributes that are detected but aren't stored in the database.
     /// </summary>
     public partial class FaceRecord

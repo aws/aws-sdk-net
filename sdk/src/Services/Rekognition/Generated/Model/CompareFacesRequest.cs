@@ -39,10 +39,10 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// You pass the input and target images either as base64-encoded image bytes or as a
-    /// references to images in an Amazon S3 bucket. If you use the Amazon CLI to call Amazon
-    /// Rekognition operations, passing image bytes is not supported. The image must be either
-    /// a PNG or JPEG formatted file. 
+    /// You pass the input and target images either as base64-encoded image bytes or as references
+    /// to images in an Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition
+    /// operations, passing image bytes isn't supported. The image must be formatted as a
+    /// PNG or JPEG file. 
     /// </para>
     ///  
     /// <para>

@@ -77,8 +77,8 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property MatchConfidence. 
         /// <para>
-        /// The confidence, in percentage, that Rekognition has that the recognized face is the
-        /// celebrity.
+        /// The confidence, in percentage, that Amazon Rekognition has that the recognized face
+        /// is the celebrity.
         /// </para>
         /// </summary>
         public float MatchConfidence

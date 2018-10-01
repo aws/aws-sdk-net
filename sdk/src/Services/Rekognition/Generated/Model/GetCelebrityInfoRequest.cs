@@ -29,9 +29,9 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// Container for the parameters to the GetCelebrityInfo operation.
-    /// Gets the name and additional information about a celebrity based on his or her Rekognition
-    /// ID. The additional information is returned as an array of URLs. If there is no additional
-    /// information about the celebrity, this list is empty.
+    /// Gets the name and additional information about a celebrity based on his or her Amazon
+    /// Rekognition ID. The additional information is returned as an array of URLs. If there
+    /// is no additional information about the celebrity, this list is empty.
     /// 
     ///  
     /// <para>
