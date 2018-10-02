@@ -32,26 +32,26 @@ namespace Amazon.Extensions.CognitoAuthentication.IntegrationTests
         protected RegionEndpoint clientRegion = Settings.RegionEndpoint; 
 
         public AmazonCognitoIdentityProviderClient GetAmazonCognitoIdentityProviderClient()
-		{
+        {
             try
             {
-			    return new AmazonCognitoIdentityProviderClient(Settings.storedSettings.AccessKeyId,Settings.storedSettings.SecretAccessKey, Settings.RegionEndpoint);
+                return new AmazonCognitoIdentityProviderClient(Settings.storedSettings.AccessKeyId,Settings.storedSettings.SecretAccessKey, Settings.RegionEndpoint);
             }
             catch(Exception e)
             {
                 throw; 
             }
-		}	
-		
-		public AmazonCognitoIdentityClient GetAmazonCognitoIdentityClient()
-		{
-			return new AmazonCognitoIdentityClient(Settings.storedSettings.AccessKeyId, Settings.storedSettings.SecretAccessKey, Settings.RegionEndpoint);
-		}
-		
-		public AmazonIdentityManagementServiceClient GetAmazonIdentityManagementServiceClient()
-		{
-			return new AmazonIdentityManagementServiceClient(Settings.storedSettings.AccessKeyId, Settings.storedSettings.SecretAccessKey, Settings.RegionEndpoint);
-		}
-		
+        }    
+        
+        public AmazonCognitoIdentityClient GetAmazonCognitoIdentityClient()
+        {
+            return new AmazonCognitoIdentityClient(Settings.storedSettings.AccessKeyId, Settings.storedSettings.SecretAccessKey, Settings.RegionEndpoint);
+        }
+        
+        public AmazonIdentityManagementServiceClient GetAmazonIdentityManagementServiceClient()
+        {
+            return new AmazonIdentityManagementServiceClient(Settings.storedSettings.AccessKeyId, Settings.storedSettings.SecretAccessKey, Settings.RegionEndpoint);
+        }
+        
     }
 }

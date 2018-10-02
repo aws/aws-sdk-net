@@ -26,6 +26,7 @@ namespace Amazon.Extensions.CognitoAuthentication.IntegrationTests
         {
             RegionEndpoint = Amazon.RegionEndpoint.GetBySystemName(DefaultRegion);
         }
+
         private static void LoadSettings(string settingsResourcePartialName = "settings.json")
         {
             SetDefaults();
@@ -46,6 +47,7 @@ namespace Amazon.Extensions.CognitoAuthentication.IntegrationTests
                 RegionEndpoint = Amazon.RegionEndpoint.GetBySystemName(DefaultRegion);
             }
         }
+
         public static Stream GetResourceStream(string resourceName)
         {
             Assembly assembly = typeof(Settings).GetTypeInfo().Assembly;
@@ -69,6 +71,7 @@ namespace Amazon.Extensions.CognitoAuthentication.IntegrationTests
                     yield return resource;
             }
         }
+
         private static StoredSettings GetStoredSettings(string settingsResourcePartialName)
         {
             StoredSettings storedSettings;
@@ -80,16 +83,21 @@ namespace Amazon.Extensions.CognitoAuthentication.IntegrationTests
                 {
                     json = reader.ReadToEnd();
                 }
+
                 storedSettings = JsonMapper.ToObject<StoredSettings>(json);
             }
-            catch(Exception e)
+            catch (JsonException e)
+            {
+                Console.WriteLine("Unable to load settings file. JsonException: {0}", e.ToString());
+                storedSettings = null;
+            }
+            catch (Exception e)
             {
                 Console.WriteLine("Unable to load settings file. Exception: {0}", e.ToString());
                 storedSettings = null;
             }
             return storedSettings;
         }
-
 
         public class StoredSettings
         {

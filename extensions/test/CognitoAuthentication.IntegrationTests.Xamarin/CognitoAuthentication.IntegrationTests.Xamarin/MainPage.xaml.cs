@@ -7,11 +7,11 @@ using Xamarin.Forms;
 
 namespace CognitoAuthentication.IntegrationTests.Xamarin
 {
-	public partial class MainPage : ContentPage
-	{
-		public MainPage()
-		{
-			InitializeComponent();
-		}
-	}
+    public partial class MainPage : ContentPage
+    {
+        public MainPage()
+        {
+            InitializeComponent();
+        }
+    }
 }
