@@ -271,6 +271,14 @@ namespace Amazon.SecretsManager.Model
         /// <para>
         /// The secret name must be ASCII letters, digits, or the following characters : /_+=.@-
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Don't end your secret name with a hyphen followed by six characters. If you do so,
+        /// you risk confusion and unexpected results when searching for a secret by partial ARN.
+        /// This is because Secrets Manager automatically adds a hyphen and six random characters
+        /// at the end of the ARN.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string Name
         {
