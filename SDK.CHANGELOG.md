@@ -1,3 +1,9 @@
+### 3.3.373.0 (2018-10-02 21:12 UTC)
+* SageMaker (3.3.13.0)
+	* Waiter for SageMaker Batch Transform Jobs.
+* SecretsManager (3.3.2.9)
+	* Documentation updates for secretsmanager
+
 ### 3.3.372.0 (2018-10-01 22:10 UTC)
 * GuardDuty (3.3.5.0)
 	* Support optional FindingPublishingFrequency parameter in CreateDetector and UpdateDetector operations, and ClientToken on Create* operations

@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.372.0",
+    "ProductVersion" : "3.3.373.0",
     "CoreVersion"    : "3.3.25.4",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -945,7 +945,7 @@
             "InPreview"               : false
         },
         "SageMaker"                       : {
-            "Version" : "3.3.12.3",
+            "Version" : "3.3.13.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.25.4"
@@ -1073,7 +1073,7 @@
             "InPreview"               : false
         },
         "SecretsManager"                  : {
-            "Version" : "3.3.2.8",
+            "Version" : "3.3.2.9",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.25.4"
