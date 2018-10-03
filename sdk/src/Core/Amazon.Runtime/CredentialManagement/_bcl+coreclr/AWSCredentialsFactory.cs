@@ -22,7 +22,7 @@ using System.IO;
 using Amazon.Runtime.Internal.Settings;
 
 namespace Amazon.Runtime.CredentialManagement
-{
+{        
     /// <summary>
     /// Factory to construct different types of AWSCredentials based on a profile.
     /// </summary>
@@ -38,7 +38,7 @@ namespace Amazon.Runtime.CredentialManagement
             };
 
         private const string RoleSessionNamePrefix = "aws-dotnet-sdk-session-";
-
+        
         /// <summary>
         /// Gets the AWSCredentials for this profile if CanCreateAWSCredentials is true
         /// and AWSCredentials can be created.  Throws an exception otherwise.
@@ -209,6 +209,27 @@ namespace Amazon.Runtime.CredentialManagement
                             ExternalId = options.ExternalID,
                             MfaSerialNumber = options.MfaSerial
                         };
+                        return new AssumeRoleAWSCredentials(sourceCredentials, options.RoleArn, roleSessionName, assumeRoleOptions);                    
+                    case CredentialProfileType.AssumeRoleCredentialSource:                                                                        
+                        // get credentials specified by credentialSource
+                        try
+                        {
+                            sourceCredentials = GetCredentialSourceAWSCredentials(options.CredentialSource, throwIfInvalid);                            
+                        }
+                        catch (InvalidDataException e)
+                        {
+                            var sourceMessage = profileName == null
+                               ? string.Format(CultureInfo.InvariantCulture,
+                                   "Error reading credential source [{0}] for the credential options provided.", options.CredentialSource)
+                               : string.Format(CultureInfo.InvariantCulture,
+                                   "Error reading credential source [{0}] for profile [{1}].", options.CredentialSource, profileName);
+                            return ThrowOrReturnNull(sourceMessage, e, throwIfInvalid);
+                        }
+
+#pragma warning disable CS0612 // Type or member is obsolete
+                        roleSessionName = RoleSessionNamePrefix + AWSSDKUtils.CorrectedUtcNow.Ticks;
+#pragma warning restore CS0612 // Type or member is obsolete
+                        assumeRoleOptions = new AssumeRoleAWSCredentialsOptions();
                         return new AssumeRoleAWSCredentials(sourceCredentials, options.RoleArn, roleSessionName, assumeRoleOptions);
 #if BCL
                     case CredentialProfileType.SAMLRole:
@@ -244,7 +265,48 @@ namespace Amazon.Runtime.CredentialManagement
                 return ThrowInvalidOrReturnNull(profileName, throwIfInvalid);
             }
         }
+                
+        private static AWSCredentials GetCredentialSourceAWSCredentials(string credentialSourceType, bool throwIfInvalid)
+        {
+            
+            AWSCredentials credentials;
+            CredentialSourceType type;
+            try
+            {
+                type = (CredentialSourceType)Enum.Parse(typeof(CredentialSourceType), credentialSourceType, true);
+            }
+            catch
+            {
+                return ThrowOrReturnNull(string.Format(CultureInfo.InvariantCulture,
+                            "Credential source [{0}] is invalid.", credentialSourceType), null, throwIfInvalid);
+            }
 
+            switch (type)
+            {
+                case CredentialSourceType.Ec2InstanceMetadata:
+                    credentials = DefaultInstanceProfileAWSCredentials.Instance;
+                    break;
+                case CredentialSourceType.Environment:
+                    credentials = new EnvironmentVariablesAWSCredentials();
+                    break;
+                case CredentialSourceType.EcsContainer:
+                    string uri = Environment.GetEnvironmentVariable(ECSTaskCredentials.ContainerCredentialsURIEnvVariable);
+                    if (string.IsNullOrEmpty(uri))
+                    {
+                        return ThrowOrReturnNull(string.Format(CultureInfo.InvariantCulture,
+                            "Container environment variable {0} is not set.", ECSTaskCredentials.ContainerCredentialsURIEnvVariable), null, throwIfInvalid);
+                    }
+
+                    credentials = new ECSTaskCredentials(null);
+                    break;
+                default:
+                    return ThrowOrReturnNull(string.Format(CultureInfo.InvariantCulture,
+                            "Credential source [{0}] is not implemented.", credentialSourceType), null, throwIfInvalid);
+            }
+
+            return credentials;
+        }
+        
         private static AWSCredentials GetSourceAWSCredentials(string sourceProfileName,
             ICredentialProfileSource profileSource, bool throwIfInvalid)
         {

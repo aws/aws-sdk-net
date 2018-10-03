@@ -58,6 +58,7 @@ namespace Amazon.Runtime.CredentialManagement
                 new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
                 {
                     { "AccessKey", SettingsConstants.AccessKeyField },
+                    { "CredentialSource", SettingsConstants.CredentialSourceField },
 #if BCL
                     { "EndpointName", SettingsConstants.EndpointNameField },
 #endif
