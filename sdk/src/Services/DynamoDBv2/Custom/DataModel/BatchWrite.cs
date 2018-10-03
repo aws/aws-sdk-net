@@ -244,10 +244,10 @@ namespace Amazon.DynamoDBv2.DataModel
         #region Constructor
 
         /// <summary>
-        /// Constructs a MultiTableBatchGet object from a number of
-        /// BatchGet objects
+        /// Constructs a MultiTableBatchWrite object from a number of
+        /// BatchWrite objects
         /// </summary>
-        /// <param name="batches">Collection of BatchGet objects</param>
+        /// <param name="batches">Collection of BatchWrite objects</param>
         public MultiTableBatchWrite(params BatchWrite[] batches)
         {
             allBatches = new List<BatchWrite>(batches);
