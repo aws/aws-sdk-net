@@ -96,8 +96,11 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 		else
 		{
 #>
-				xmlWriter.WriteStartElement("<#=operation.RequestPayloadMember.MarshallName#>", "<#=operation.XmlNamespace#>");								
+				if (<#=variableName + ".IsSet" + operation.RequestPayloadMember.PropertyName#>())
+				{
+					xmlWriter.WriteStartElement("<#=operation.RequestPayloadMember.MarshallName#>", "<#=operation.XmlNamespace#>");
 <#+
+			PushIndent("	");
 		}
 		var childmembers = operation.RequestPayloadMember == null ? operation.RequestBodyMembers : operation.RequestPayloadMember.Shape.Members;
 		variableName = operation.RequestPayloadMember == null ? variableName : variableName + "." + operation.RequestPayloadMember.PropertyName;
@@ -132,6 +135,15 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 #>
 
 				xmlWriter.WriteEndElement();
+<#+
+		if(operation.RequestPayloadMember!=null)
+		{
+#>
+			}
+<#+
+			PopIndent();
+		}
+#>
 			}
 			try 
 			{

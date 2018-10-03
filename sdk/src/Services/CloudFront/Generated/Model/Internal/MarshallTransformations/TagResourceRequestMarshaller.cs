@@ -66,30 +66,33 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             var stringWriter = new StringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true }))
             {   
-                xmlWriter.WriteStartElement("Tags", "http://cloudfront.amazonaws.com/doc/2018-06-18/");                                
-                var publicRequestTagsItems = publicRequest.Tags.Items;
-                if (publicRequestTagsItems != null && publicRequestTagsItems.Count > 0) 
-                {                        
-                    xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2018-06-18/");
-                    foreach (var publicRequestTagsItemsValue in publicRequestTagsItems) 
-                    {
-                    
-                    if (publicRequestTagsItemsValue != null) 
-                    {
-                        xmlWriter.WriteStartElement("Tag", "http://cloudfront.amazonaws.com/doc/2018-06-18/");            
-                        if(publicRequestTagsItemsValue.IsSetKey())
-                            xmlWriter.WriteElementString("Key", "http://cloudfront.amazonaws.com/doc/2018-06-18/", StringUtils.FromString(publicRequestTagsItemsValue.Key));                 
-        
-                        if(publicRequestTagsItemsValue.IsSetValue())
-                            xmlWriter.WriteElementString("Value", "http://cloudfront.amazonaws.com/doc/2018-06-18/", StringUtils.FromString(publicRequestTagsItemsValue.Value));                 
-        
-                        xmlWriter.WriteEndElement();
+                if (publicRequest.IsSetTags())
+                {
+                    xmlWriter.WriteStartElement("Tags", "http://cloudfront.amazonaws.com/doc/2018-06-18/");
+                    var publicRequestTagsItems = publicRequest.Tags.Items;
+                    if (publicRequestTagsItems != null && publicRequestTagsItems.Count > 0) 
+                    {                        
+                        xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2018-06-18/");
+                        foreach (var publicRequestTagsItemsValue in publicRequestTagsItems) 
+                        {
+                        
+                        if (publicRequestTagsItemsValue != null) 
+                        {
+                            xmlWriter.WriteStartElement("Tag", "http://cloudfront.amazonaws.com/doc/2018-06-18/");            
+                            if(publicRequestTagsItemsValue.IsSetKey())
+                                xmlWriter.WriteElementString("Key", "http://cloudfront.amazonaws.com/doc/2018-06-18/", StringUtils.FromString(publicRequestTagsItemsValue.Key));                 
+            
+                            if(publicRequestTagsItemsValue.IsSetValue())
+                                xmlWriter.WriteElementString("Value", "http://cloudfront.amazonaws.com/doc/2018-06-18/", StringUtils.FromString(publicRequestTagsItemsValue.Value));                 
+            
+                            xmlWriter.WriteEndElement();
+                        }
+                        }            
+                        xmlWriter.WriteEndElement();            
                     }
-                    }            
-                    xmlWriter.WriteEndElement();            
+    
+                    xmlWriter.WriteEndElement();
                 }
-
-                xmlWriter.WriteEndElement();
             }
             try 
             {

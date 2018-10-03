@@ -62,15 +62,18 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             var stringWriter = new StringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true }))
             {   
-                xmlWriter.WriteStartElement("CloudFrontOriginAccessIdentityConfig", "http://cloudfront.amazonaws.com/doc/2018-06-18/");                                
-                if(publicRequest.CloudFrontOriginAccessIdentityConfig.IsSetCallerReference())
-                    xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2018-06-18/", StringUtils.FromString(publicRequest.CloudFrontOriginAccessIdentityConfig.CallerReference));                    
-
-                if(publicRequest.CloudFrontOriginAccessIdentityConfig.IsSetComment())
-                    xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2018-06-18/", StringUtils.FromString(publicRequest.CloudFrontOriginAccessIdentityConfig.Comment));                    
-
-
-                xmlWriter.WriteEndElement();
+                if (publicRequest.IsSetCloudFrontOriginAccessIdentityConfig())
+                {
+                    xmlWriter.WriteStartElement("CloudFrontOriginAccessIdentityConfig", "http://cloudfront.amazonaws.com/doc/2018-06-18/");
+                    if(publicRequest.CloudFrontOriginAccessIdentityConfig.IsSetCallerReference())
+                        xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2018-06-18/", StringUtils.FromString(publicRequest.CloudFrontOriginAccessIdentityConfig.CallerReference));                    
+    
+                    if(publicRequest.CloudFrontOriginAccessIdentityConfig.IsSetComment())
+                        xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2018-06-18/", StringUtils.FromString(publicRequest.CloudFrontOriginAccessIdentityConfig.Comment));                    
+    
+    
+                    xmlWriter.WriteEndElement();
+                }
             }
             try 
             {
