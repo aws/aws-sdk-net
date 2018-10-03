@@ -23,6 +23,7 @@ using System.Collections.Generic;
 
 using Amazon.SQS.Model;
 using Amazon.SQS.Model.Internal.MarshallTransformations;
+using Amazon.SQS.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -112,6 +113,7 @@ namespace Amazon.SQS
     /// </summary>
     public partial class AmazonSQSClient : AmazonServiceClient, IAmazonSQS
     {
+        private static IServiceMetadata serviceMetadata = new AmazonSQSMetadata();
         #region Constructors
 
         /// <summary>
@@ -291,6 +293,16 @@ namespace Amazon.SQS
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new Amazon.SQS.Internal.ProcessRequestHandler());
             pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Unmarshaller>(new Amazon.SQS.Internal.ValidationResponseHandler());
         }    
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

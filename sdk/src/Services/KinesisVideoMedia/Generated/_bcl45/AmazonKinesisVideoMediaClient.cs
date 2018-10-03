@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.KinesisVideoMedia.Model;
 using Amazon.KinesisVideoMedia.Model.Internal.MarshallTransformations;
+using Amazon.KinesisVideoMedia.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -40,6 +41,7 @@ namespace Amazon.KinesisVideoMedia
     /// </summary>
     public partial class AmazonKinesisVideoMediaClient : AmazonServiceClient, IAmazonKinesisVideoMedia
     {
+        private static IServiceMetadata serviceMetadata = new AmazonKinesisVideoMediaMetadata();
 
         #region Overrides
 
@@ -51,6 +53,16 @@ namespace Amazon.KinesisVideoMedia
             return new AWS4Signer();
         }    
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

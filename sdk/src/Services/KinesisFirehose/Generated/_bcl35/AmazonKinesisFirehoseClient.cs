@@ -23,6 +23,7 @@ using System.Collections.Generic;
 
 using Amazon.KinesisFirehose.Model;
 using Amazon.KinesisFirehose.Model.Internal.MarshallTransformations;
+using Amazon.KinesisFirehose.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -42,6 +43,7 @@ namespace Amazon.KinesisFirehose
     /// </summary>
     public partial class AmazonKinesisFirehoseClient : AmazonServiceClient, IAmazonKinesisFirehose
     {
+        private static IServiceMetadata serviceMetadata = new AmazonKinesisFirehoseMetadata();
         #region Constructors
 
         /// <summary>
@@ -212,6 +214,16 @@ namespace Amazon.KinesisFirehose
             return new AWS4Signer();
         }
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

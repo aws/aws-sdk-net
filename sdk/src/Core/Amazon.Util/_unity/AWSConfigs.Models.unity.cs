@@ -35,6 +35,17 @@ namespace Amazon.Util
     }
 
     /// <summary>
+    /// CSM configuration is not implemented in Unity SDK.
+    /// </summary>
+    public partial class CSMConfig
+    {
+        internal void Configure(CSMSection section)
+        {
+
+        }
+    }
+
+    /// <summary>
     /// Settings for logging in the SDK.
     /// </summary>
     public partial class LoggingConfig

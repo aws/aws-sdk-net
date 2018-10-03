@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.ECR.Model;
 using Amazon.ECR.Model.Internal.MarshallTransformations;
+using Amazon.ECR.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -45,6 +46,7 @@ namespace Amazon.ECR
     /// </summary>
     public partial class AmazonECRClient : AmazonServiceClient, IAmazonECR
     {
+        private static IServiceMetadata serviceMetadata = new AmazonECRMetadata();
         
         #region Constructors
 
@@ -219,6 +221,16 @@ namespace Amazon.ECR
             return new AWS4Signer();
         } 
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

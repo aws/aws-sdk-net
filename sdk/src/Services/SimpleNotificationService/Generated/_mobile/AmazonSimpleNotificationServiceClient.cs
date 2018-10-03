@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.SimpleNotificationService.Model;
 using Amazon.SimpleNotificationService.Model.Internal.MarshallTransformations;
+using Amazon.SimpleNotificationService.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -57,6 +58,7 @@ namespace Amazon.SimpleNotificationService
     /// </summary>
     public partial class AmazonSimpleNotificationServiceClient : AmazonServiceClient, IAmazonSimpleNotificationService
     {
+        private static IServiceMetadata serviceMetadata = new AmazonSimpleNotificationServiceMetadata();
         
         #region Constructors
 
@@ -231,6 +233,16 @@ namespace Amazon.SimpleNotificationService
             return new AWS4Signer();
         } 
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

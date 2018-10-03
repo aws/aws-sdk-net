@@ -41,7 +41,18 @@ namespace Amazon.Runtime.Internal
             }
             finally
             {
-                executionContext.RequestContext.Metrics.StopEvent(Metric.ClientExecuteTime);
+                var latency = AWSSDKUtils.ConvertTimeSpanToMilliseconds(executionContext.RequestContext.Metrics
+                    .StopEvent(Metric.ClientExecuteTime)
+                    .ElapsedTime);
+
+#if BCL || CORECLR
+                // capture the latency for the entire SDK call if CSM is enabled
+                if (DeterminedCSMConfiguration.Instance.CSMConfiguration.Enabled)
+                {
+                    executionContext.RequestContext.CSMCallEvent.Latency = latency;
+                    CSMUtilities.SerializetoJsonAndPostOverUDP(executionContext.RequestContext.CSMCallEvent);
+                }
+#endif
                 this.LogMetrics(executionContext);
             }
         }
@@ -67,9 +78,20 @@ namespace Amazon.Runtime.Internal
             }
             finally
             {
-                executionContext.RequestContext.Metrics.StopEvent(Metric.ClientExecuteTime);
+                var latency = AWSSDKUtils.ConvertTimeSpanToMilliseconds(executionContext.RequestContext.Metrics
+                    .StopEvent(Metric.ClientExecuteTime)
+                    .ElapsedTime);
+
+#if BCL || CORECLR
+                // capture the latency for the entire SDK call if CSM is enabled
+                if (DeterminedCSMConfiguration.Instance.CSMConfiguration.Enabled)
+                {
+                    executionContext.RequestContext.CSMCallEvent.Latency = latency;
+                    CSMUtilities.SerializetoJsonAndPostOverUDPAsync(executionContext.RequestContext.CSMCallEvent).ConfigureAwait(false);
+                }
+#endif
                 this.LogMetrics(executionContext);
-            }            
+            }
         }
 
 #elif AWS_APM_API
@@ -94,7 +116,17 @@ namespace Amazon.Runtime.Internal
         /// request and response context.</param>
         protected override void InvokeAsyncCallback(IAsyncExecutionContext executionContext)
         {
-            executionContext.RequestContext.Metrics.StopEvent(Metric.ClientExecuteTime);
+            var latency = AWSSDKUtils.ConvertTimeSpanToMilliseconds(executionContext.RequestContext.Metrics
+                    .StopEvent(Metric.ClientExecuteTime)
+                    .ElapsedTime);
+#if BCL
+            // capture the latency for the entire SDK call if CSM is enabled
+            if (DeterminedCSMConfiguration.Instance.CSMConfiguration.Enabled)
+            {
+                executionContext.RequestContext.CSMCallEvent.Latency = latency;
+                CSMUtilities.BeginSerializetoJsonAndPostOverUDP(executionContext.RequestContext.CSMCallEvent);
+            }
+#endif
             this.LogMetrics(ExecutionContext.CreateFromAsyncContext(executionContext));
             base.InvokeAsyncCallback(executionContext);
         }

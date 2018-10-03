@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.ServerMigrationService.Model;
 using Amazon.ServerMigrationService.Model.Internal.MarshallTransformations;
+using Amazon.ServerMigrationService.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -40,6 +41,7 @@ namespace Amazon.ServerMigrationService
     /// </summary>
     public partial class AmazonServerMigrationServiceClient : AmazonServiceClient, IAmazonServerMigrationService
     {
+        private static IServiceMetadata serviceMetadata = new AmazonServerMigrationServiceMetadata();
         #region Constructors
 
         /// <summary>
@@ -209,6 +211,16 @@ namespace Amazon.ServerMigrationService
             return new AWS4Signer();
         }    
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

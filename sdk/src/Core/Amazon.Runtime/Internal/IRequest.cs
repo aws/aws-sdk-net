@@ -133,6 +133,11 @@ namespace Amazon.Runtime.Internal
         }
 
         /// <summary>
+        /// Gets the header value from the request.
+        /// </summary>
+        string GetHeaderValue(string headerName);
+
+        /// <summary>
         /// Flag that signals that Content was and should be set
         /// from the Parameters collection.
         /// </summary>
@@ -247,6 +252,11 @@ namespace Amazon.Runtime.Internal
         /// Set from Config.AuthenticationRegion.
         /// </summary>
         string AuthenticationRegion { get; set; }
+
+        /// <summary>
+        /// The region in which the service request was signed.
+        /// </summary>
+        string DeterminedSigningRegion { get; set; }
 
         /// <summary>
         /// Checks if the request stream can be rewinded.

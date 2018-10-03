@@ -36,11 +36,15 @@ namespace Amazon.Runtime.Internal
             var responseContext = executionContext.ResponseContext;
             var httpErrorResponse = exception.Response as HttpWebResponse;
 
-            if (httpErrorResponse != null)
-                requestContext.Metrics.AddProperty(Metric.StatusCode, httpErrorResponse.StatusCode);
 
             var message = string.Format(CultureInfo.InvariantCulture,
                     "A WebException with status {0} was thrown.", exception.Status);
+
+            if (httpErrorResponse != null)
+            {
+                requestContext.Metrics.AddProperty(Metric.StatusCode, httpErrorResponse.StatusCode);
+                throw new AmazonServiceException(message, exception, httpErrorResponse.StatusCode);
+            }
             throw new AmazonServiceException(message, exception);
         }
     }

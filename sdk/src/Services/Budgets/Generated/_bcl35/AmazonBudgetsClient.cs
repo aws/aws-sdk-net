@@ -23,6 +23,7 @@ using System.Collections.Generic;
 
 using Amazon.Budgets.Model;
 using Amazon.Budgets.Model.Internal.MarshallTransformations;
+using Amazon.Budgets.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -86,6 +87,7 @@ namespace Amazon.Budgets
     /// </summary>
     public partial class AmazonBudgetsClient : AmazonServiceClient, IAmazonBudgets
     {
+        private static IServiceMetadata serviceMetadata = new AmazonBudgetsMetadata();
         #region Constructors
 
         /// <summary>
@@ -256,6 +258,16 @@ namespace Amazon.Budgets
             return new AWS4Signer();
         }
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.DeviceFarm.Model;
 using Amazon.DeviceFarm.Model.Internal.MarshallTransformations;
+using Amazon.DeviceFarm.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -41,6 +42,7 @@ namespace Amazon.DeviceFarm
     /// </summary>
     public partial class AmazonDeviceFarmClient : AmazonServiceClient, IAmazonDeviceFarm
     {
+        private static IServiceMetadata serviceMetadata = new AmazonDeviceFarmMetadata();
         #region Constructors
 
         /// <summary>
@@ -210,6 +212,16 @@ namespace Amazon.DeviceFarm
             return new AWS4Signer();
         }    
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

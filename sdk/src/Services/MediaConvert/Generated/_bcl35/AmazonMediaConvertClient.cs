@@ -23,6 +23,7 @@ using System.Collections.Generic;
 
 using Amazon.MediaConvert.Model;
 using Amazon.MediaConvert.Model.Internal.MarshallTransformations;
+using Amazon.MediaConvert.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -37,6 +38,7 @@ namespace Amazon.MediaConvert
     /// </summary>
     public partial class AmazonMediaConvertClient : AmazonServiceClient, IAmazonMediaConvert
     {
+        private static IServiceMetadata serviceMetadata = new AmazonMediaConvertMetadata();
         #region Constructors
 
         /// <summary>
@@ -207,6 +209,16 @@ namespace Amazon.MediaConvert
             return new AWS4Signer();
         }
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

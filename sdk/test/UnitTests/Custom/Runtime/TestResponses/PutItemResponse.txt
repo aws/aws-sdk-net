@@ -1,0 +1,10 @@
+HTTP/1.1 200 OK
+Server: Server
+Date: Tue, 12 Jun 2018 22:37:50 GMT
+Content-Type: application/x-amz-json-1.0
+Content-Length: 2
+Connection: keep-alive
+x-amzn-RequestId: MO4IJCGU5RO3P908E5D4CFB4FFVV4KQNSO5AEMVJF66Q9ASUAAJG
+x-amz-crc32: 2745614147
+
+{}

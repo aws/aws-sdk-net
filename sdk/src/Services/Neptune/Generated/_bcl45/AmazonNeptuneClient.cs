@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.Neptune.Model;
 using Amazon.Neptune.Model.Internal.MarshallTransformations;
+using Amazon.Neptune.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -69,6 +70,7 @@ namespace Amazon.Neptune
     /// </summary>
     public partial class AmazonNeptuneClient : AmazonServiceClient, IAmazonNeptune
     {
+        private static IServiceMetadata serviceMetadata = new AmazonNeptuneMetadata();
         #region Constructors
 
         /// <summary>
@@ -238,6 +240,16 @@ namespace Amazon.Neptune
             return new AWS4Signer();
         }    
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

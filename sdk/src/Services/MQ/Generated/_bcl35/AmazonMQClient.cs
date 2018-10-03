@@ -23,6 +23,7 @@ using System.Collections.Generic;
 
 using Amazon.MQ.Model;
 using Amazon.MQ.Model.Internal.MarshallTransformations;
+using Amazon.MQ.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -40,6 +41,7 @@ namespace Amazon.MQ
     /// </summary>
     public partial class AmazonMQClient : AmazonServiceClient, IAmazonMQ
     {
+        private static IServiceMetadata serviceMetadata = new AmazonMQMetadata();
         #region Constructors
 
         /// <summary>
@@ -210,6 +212,16 @@ namespace Amazon.MQ
             return new AWS4Signer();
         }
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

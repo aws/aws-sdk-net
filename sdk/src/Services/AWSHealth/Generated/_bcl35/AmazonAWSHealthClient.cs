@@ -23,6 +23,7 @@ using System.Collections.Generic;
 
 using Amazon.AWSHealth.Model;
 using Amazon.AWSHealth.Model.Internal.MarshallTransformations;
+using Amazon.AWSHealth.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -104,6 +105,7 @@ namespace Amazon.AWSHealth
     /// </summary>
     public partial class AmazonAWSHealthClient : AmazonServiceClient, IAmazonAWSHealth
     {
+        private static IServiceMetadata serviceMetadata = new AmazonAWSHealthMetadata();
         #region Constructors
 
         /// <summary>
@@ -274,6 +276,16 @@ namespace Amazon.AWSHealth
             return new AWS4Signer();
         }
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.IoTAnalytics.Model;
 using Amazon.IoTAnalytics.Model.Internal.MarshallTransformations;
+using Amazon.IoTAnalytics.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -66,6 +67,7 @@ namespace Amazon.IoTAnalytics
     /// </summary>
     public partial class AmazonIoTAnalyticsClient : AmazonServiceClient, IAmazonIoTAnalytics
     {
+        private static IServiceMetadata serviceMetadata = new AmazonIoTAnalyticsMetadata();
         
         #region Constructors
 
@@ -240,6 +242,16 @@ namespace Amazon.IoTAnalytics
             return new AWS4Signer();
         } 
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

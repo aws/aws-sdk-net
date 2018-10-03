@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.AWSMarketplaceCommerceAnalytics.Model;
 using Amazon.AWSMarketplaceCommerceAnalytics.Model.Internal.MarshallTransformations;
+using Amazon.AWSMarketplaceCommerceAnalytics.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -40,6 +41,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
     /// </summary>
     public partial class AmazonAWSMarketplaceCommerceAnalyticsClient : AmazonServiceClient, IAmazonAWSMarketplaceCommerceAnalytics
     {
+        private static IServiceMetadata serviceMetadata = new AmazonAWSMarketplaceCommerceAnalyticsMetadata();
         
         #region Constructors
 
@@ -214,6 +216,16 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
             return new AWS4Signer();
         } 
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

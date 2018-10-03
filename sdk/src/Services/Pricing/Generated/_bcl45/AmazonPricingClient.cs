@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.Pricing.Model;
 using Amazon.Pricing.Model.Internal.MarshallTransformations;
+using Amazon.Pricing.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -75,6 +76,7 @@ namespace Amazon.Pricing
     /// </summary>
     public partial class AmazonPricingClient : AmazonServiceClient, IAmazonPricing
     {
+        private static IServiceMetadata serviceMetadata = new AmazonPricingMetadata();
         #region Constructors
 
         /// <summary>
@@ -244,6 +246,16 @@ namespace Amazon.Pricing
             return new AWS4Signer();
         }    
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

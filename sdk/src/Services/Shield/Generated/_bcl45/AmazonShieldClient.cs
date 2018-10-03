@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.Shield.Model;
 using Amazon.Shield.Model.Internal.MarshallTransformations;
+using Amazon.Shield.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -48,6 +49,7 @@ namespace Amazon.Shield
     /// </summary>
     public partial class AmazonShieldClient : AmazonServiceClient, IAmazonShield
     {
+        private static IServiceMetadata serviceMetadata = new AmazonShieldMetadata();
         #region Constructors
 
         /// <summary>
@@ -217,6 +219,16 @@ namespace Amazon.Shield
             return new AWS4Signer();
         }    
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

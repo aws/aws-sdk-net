@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.OpsWorksCM.Model;
 using Amazon.OpsWorksCM.Model.Internal.MarshallTransformations;
+using Amazon.OpsWorksCM.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -139,6 +140,7 @@ namespace Amazon.OpsWorksCM
     /// </summary>
     public partial class AmazonOpsWorksCMClient : AmazonServiceClient, IAmazonOpsWorksCM
     {
+        private static IServiceMetadata serviceMetadata = new AmazonOpsWorksCMMetadata();
         #region Constructors
 
         /// <summary>
@@ -308,6 +310,16 @@ namespace Amazon.OpsWorksCM
             return new AWS4Signer();
         }    
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

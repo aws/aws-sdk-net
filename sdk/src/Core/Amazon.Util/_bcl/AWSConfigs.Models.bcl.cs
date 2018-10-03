@@ -70,6 +70,25 @@ namespace Amazon.Util
             }
         }
     }
+    /// <summary>
+    /// Settings for configuring CSM in the SDK.
+    /// </summary>
+    public partial class CSMConfig
+    {
+        internal void Configure(CSMSection section)
+        {
+            if (section.ElementInformation.IsPresent)
+            {
+                CSMEnabled = section.CSMEnabled;
+                CSMClientId = section.CSMClientId;
+                if (section.CSMPort.HasValue)
+                {
+                    CSMPort = section.CSMPort.GetValueOrDefault();
+                }
+            }
+        }
+    }
+
 
     #endregion
 

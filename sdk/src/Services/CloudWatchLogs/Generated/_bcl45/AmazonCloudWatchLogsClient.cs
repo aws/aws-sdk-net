@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.CloudWatchLogs.Model;
 using Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations;
+using Amazon.CloudWatchLogs.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -75,6 +76,7 @@ namespace Amazon.CloudWatchLogs
     /// </summary>
     public partial class AmazonCloudWatchLogsClient : AmazonServiceClient, IAmazonCloudWatchLogs
     {
+        private static IServiceMetadata serviceMetadata = new AmazonCloudWatchLogsMetadata();
         #region Constructors
 
         /// <summary>
@@ -244,6 +246,16 @@ namespace Amazon.CloudWatchLogs
             return new AWS4Signer();
         }    
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

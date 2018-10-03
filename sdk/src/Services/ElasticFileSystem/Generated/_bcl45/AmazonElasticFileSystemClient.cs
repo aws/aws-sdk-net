@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.ElasticFileSystem.Model;
 using Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations;
+using Amazon.ElasticFileSystem.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -48,6 +49,7 @@ namespace Amazon.ElasticFileSystem
     /// </summary>
     public partial class AmazonElasticFileSystemClient : AmazonServiceClient, IAmazonElasticFileSystem
     {
+        private static IServiceMetadata serviceMetadata = new AmazonElasticFileSystemMetadata();
         #region Constructors
 
         /// <summary>
@@ -225,6 +227,16 @@ namespace Amazon.ElasticFileSystem
         {
             pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Marshaller>(new Amazon.ElasticFileSystem.Internal.IdempotencyHandler());
         }    
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

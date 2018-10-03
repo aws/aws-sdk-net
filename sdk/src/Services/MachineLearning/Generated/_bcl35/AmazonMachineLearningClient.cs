@@ -23,6 +23,7 @@ using System.Collections.Generic;
 
 using Amazon.MachineLearning.Model;
 using Amazon.MachineLearning.Model.Internal.MarshallTransformations;
+using Amazon.MachineLearning.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -37,6 +38,7 @@ namespace Amazon.MachineLearning
     /// </summary>
     public partial class AmazonMachineLearningClient : AmazonServiceClient, IAmazonMachineLearning
     {
+        private static IServiceMetadata serviceMetadata = new AmazonMachineLearningMetadata();
         #region Constructors
 
         /// <summary>
@@ -216,6 +218,16 @@ namespace Amazon.MachineLearning
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new Amazon.MachineLearning.Internal.ProcessRequestHandler());
             pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Marshaller>(new Amazon.MachineLearning.Internal.IdempotencyHandler());
         }    
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

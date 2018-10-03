@@ -23,6 +23,7 @@ using System.Collections.Generic;
 
 using Amazon.Lightsail.Model;
 using Amazon.Lightsail.Model.Internal.MarshallTransformations;
+using Amazon.Lightsail.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -54,6 +55,7 @@ namespace Amazon.Lightsail
     /// </summary>
     public partial class AmazonLightsailClient : AmazonServiceClient, IAmazonLightsail
     {
+        private static IServiceMetadata serviceMetadata = new AmazonLightsailMetadata();
         #region Constructors
 
         /// <summary>
@@ -224,6 +226,16 @@ namespace Amazon.Lightsail
             return new AWS4Signer();
         }
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

@@ -23,6 +23,7 @@ using System.Collections.Generic;
 
 using Amazon.CloudDirectory.Model;
 using Amazon.CloudDirectory.Model.Internal.MarshallTransformations;
+using Amazon.CloudDirectory.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -46,6 +47,7 @@ namespace Amazon.CloudDirectory
     /// </summary>
     public partial class AmazonCloudDirectoryClient : AmazonServiceClient, IAmazonCloudDirectory
     {
+        private static IServiceMetadata serviceMetadata = new AmazonCloudDirectoryMetadata();
         #region Constructors
 
         /// <summary>
@@ -216,6 +218,16 @@ namespace Amazon.CloudDirectory
             return new AWS4Signer();
         }
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

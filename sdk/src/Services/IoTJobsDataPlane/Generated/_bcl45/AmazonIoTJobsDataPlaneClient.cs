@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.IoTJobsDataPlane.Model;
 using Amazon.IoTJobsDataPlane.Model.Internal.MarshallTransformations;
+using Amazon.IoTJobsDataPlane.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -59,6 +60,7 @@ namespace Amazon.IoTJobsDataPlane
     /// </summary>
     public partial class AmazonIoTJobsDataPlaneClient : AmazonServiceClient, IAmazonIoTJobsDataPlane
     {
+        private static IServiceMetadata serviceMetadata = new AmazonIoTJobsDataPlaneMetadata();
 
         #region Overrides
 
@@ -70,6 +72,16 @@ namespace Amazon.IoTJobsDataPlane
             return new AWS4Signer();
         }    
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

@@ -23,6 +23,7 @@ using System.Collections.Generic;
 
 using Amazon.GameLift.Model;
 using Amazon.GameLift.Model.Internal.MarshallTransformations;
+using Amazon.GameLift.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -519,6 +520,7 @@ namespace Amazon.GameLift
     /// </summary>
     public partial class AmazonGameLiftClient : AmazonServiceClient, IAmazonGameLift
     {
+        private static IServiceMetadata serviceMetadata = new AmazonGameLiftMetadata();
         #region Constructors
 
         /// <summary>
@@ -689,6 +691,16 @@ namespace Amazon.GameLift
             return new AWS4Signer();
         }
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

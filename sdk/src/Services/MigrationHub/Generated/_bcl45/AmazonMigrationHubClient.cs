@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.MigrationHub.Model;
 using Amazon.MigrationHub.Model.Internal.MarshallTransformations;
+using Amazon.MigrationHub.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -42,6 +43,7 @@ namespace Amazon.MigrationHub
     /// </summary>
     public partial class AmazonMigrationHubClient : AmazonServiceClient, IAmazonMigrationHub
     {
+        private static IServiceMetadata serviceMetadata = new AmazonMigrationHubMetadata();
         #region Constructors
 
         /// <summary>
@@ -211,6 +213,16 @@ namespace Amazon.MigrationHub
             return new AWS4Signer();
         }    
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

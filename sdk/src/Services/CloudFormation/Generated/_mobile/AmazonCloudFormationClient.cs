@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.CloudFormation.Model;
 using Amazon.CloudFormation.Model.Internal.MarshallTransformations;
+using Amazon.CloudFormation.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -66,6 +67,7 @@ namespace Amazon.CloudFormation
     /// </summary>
     public partial class AmazonCloudFormationClient : AmazonServiceClient, IAmazonCloudFormation
     {
+        private static IServiceMetadata serviceMetadata = new AmazonCloudFormationMetadata();
         
         #region Constructors
 
@@ -247,6 +249,16 @@ namespace Amazon.CloudFormation
         protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
         {
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new Amazon.CloudFormation.Internal.ProcessRequestHandler());
+        }
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
         }
 
         #endregion

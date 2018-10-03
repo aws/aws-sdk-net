@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.KeyManagementService.Model;
 using Amazon.KeyManagementService.Model.Internal.MarshallTransformations;
+using Amazon.KeyManagementService.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -151,6 +152,7 @@ namespace Amazon.KeyManagementService
     /// </summary>
     public partial class AmazonKeyManagementServiceClient : AmazonServiceClient, IAmazonKeyManagementService
     {
+        private static IServiceMetadata serviceMetadata = new AmazonKeyManagementServiceMetadata();
         #region Constructors
 
         /// <summary>
@@ -320,6 +322,16 @@ namespace Amazon.KeyManagementService
             return new AWS4Signer();
         }    
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

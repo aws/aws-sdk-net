@@ -23,6 +23,7 @@ using System.Collections.Generic;
 
 using Amazon.EKS.Model;
 using Amazon.EKS.Model.Internal.MarshallTransformations;
+using Amazon.EKS.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -51,6 +52,7 @@ namespace Amazon.EKS
     /// </summary>
     public partial class AmazonEKSClient : AmazonServiceClient, IAmazonEKS
     {
+        private static IServiceMetadata serviceMetadata = new AmazonEKSMetadata();
         #region Constructors
 
         /// <summary>
@@ -221,6 +223,16 @@ namespace Amazon.EKS
             return new AWS4Signer();
         }
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

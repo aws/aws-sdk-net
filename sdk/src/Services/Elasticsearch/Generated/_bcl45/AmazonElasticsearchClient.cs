@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.Elasticsearch.Model;
 using Amazon.Elasticsearch.Model.Internal.MarshallTransformations;
+using Amazon.Elasticsearch.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -51,6 +52,7 @@ namespace Amazon.Elasticsearch
     /// </summary>
     public partial class AmazonElasticsearchClient : AmazonServiceClient, IAmazonElasticsearch
     {
+        private static IServiceMetadata serviceMetadata = new AmazonElasticsearchMetadata();
         #region Constructors
 
         /// <summary>
@@ -220,6 +222,16 @@ namespace Amazon.Elasticsearch
             return new AWS4Signer();
         }    
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

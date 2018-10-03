@@ -117,6 +117,8 @@ namespace AWSSDK.UnitTests
                 .With(context => context.CancellationToken, cancellationToken)
 #endif
                 .With(context => context.ClientConfig, _fixture.Create<AmazonS3Config>())
+                .Without(context => context.CSMCallAttempt)
+                .Without(context => context.CSMCallEvent)
             );
 
             var requestContext = _fixture.Create<RequestContext>();

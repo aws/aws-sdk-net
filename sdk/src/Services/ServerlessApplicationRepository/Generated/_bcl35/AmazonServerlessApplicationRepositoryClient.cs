@@ -23,6 +23,7 @@ using System.Collections.Generic;
 
 using Amazon.ServerlessApplicationRepository.Model;
 using Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransformations;
+using Amazon.ServerlessApplicationRepository.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -78,6 +79,7 @@ namespace Amazon.ServerlessApplicationRepository
     /// </summary>
     public partial class AmazonServerlessApplicationRepositoryClient : AmazonServiceClient, IAmazonServerlessApplicationRepository
     {
+        private static IServiceMetadata serviceMetadata = new AmazonServerlessApplicationRepositoryMetadata();
         #region Constructors
 
         /// <summary>
@@ -248,6 +250,16 @@ namespace Amazon.ServerlessApplicationRepository
             return new AWS4Signer();
         }
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

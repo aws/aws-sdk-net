@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.EC2.Model;
 using Amazon.EC2.Model.Internal.MarshallTransformations;
+using Amazon.EC2.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -70,6 +71,7 @@ namespace Amazon.EC2
     /// </summary>
     public partial class AmazonEC2Client : AmazonServiceClient, IAmazonEC2
     {
+        private static IServiceMetadata serviceMetadata = new AmazonEC2Metadata();
         
         #region Constructors
 
@@ -253,6 +255,16 @@ namespace Amazon.EC2
             pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Marshaller>(new Amazon.EC2.Internal.AmazonEC2PreMarshallHandler(this.Credentials));
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new Amazon.EC2.Internal.AmazonEC2PostMarshallHandler());
             pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Unmarshaller>(new Amazon.EC2.Internal.AmazonEC2ResponseHandler());
+        }
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
         }
 
         #endregion

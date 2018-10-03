@@ -23,6 +23,7 @@ using System.Collections.Generic;
 
 using Amazon.Pinpoint.Model;
 using Amazon.Pinpoint.Model.Internal.MarshallTransformations;
+using Amazon.Pinpoint.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -37,6 +38,7 @@ namespace Amazon.Pinpoint
     /// </summary>
     public partial class AmazonPinpointClient : AmazonServiceClient, IAmazonPinpoint
     {
+        private static IServiceMetadata serviceMetadata = new AmazonPinpointMetadata();
         #region Constructors
 
         /// <summary>
@@ -207,6 +209,16 @@ namespace Amazon.Pinpoint
             return new AWS4Signer();
         }
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

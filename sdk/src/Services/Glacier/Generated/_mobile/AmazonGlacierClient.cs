@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.Glacier.Model;
 using Amazon.Glacier.Model.Internal.MarshallTransformations;
+using Amazon.Glacier.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -82,6 +83,7 @@ namespace Amazon.Glacier
     /// </summary>
     public partial class AmazonGlacierClient : AmazonServiceClient, IAmazonGlacier
     {
+        private static IServiceMetadata serviceMetadata = new AmazonGlacierMetadata();
         
         #region Constructors
 
@@ -263,6 +265,16 @@ namespace Amazon.Glacier
         protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
         {
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new Amazon.Glacier.Internal.ProcessRequestHandler());
+        }
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
         }
 
         #endregion

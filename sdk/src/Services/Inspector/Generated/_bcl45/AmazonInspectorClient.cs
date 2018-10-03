@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.Inspector.Model;
 using Amazon.Inspector.Model.Internal.MarshallTransformations;
+using Amazon.Inspector.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -45,6 +46,7 @@ namespace Amazon.Inspector
     /// </summary>
     public partial class AmazonInspectorClient : AmazonServiceClient, IAmazonInspector
     {
+        private static IServiceMetadata serviceMetadata = new AmazonInspectorMetadata();
         #region Constructors
 
         /// <summary>
@@ -214,6 +216,16 @@ namespace Amazon.Inspector
             return new AWS4Signer();
         }    
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

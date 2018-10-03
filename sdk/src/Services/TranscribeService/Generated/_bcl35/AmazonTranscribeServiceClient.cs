@@ -23,6 +23,7 @@ using System.Collections.Generic;
 
 using Amazon.TranscribeService.Model;
 using Amazon.TranscribeService.Model.Internal.MarshallTransformations;
+using Amazon.TranscribeService.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -37,6 +38,7 @@ namespace Amazon.TranscribeService
     /// </summary>
     public partial class AmazonTranscribeServiceClient : AmazonServiceClient, IAmazonTranscribeService
     {
+        private static IServiceMetadata serviceMetadata = new AmazonTranscribeServiceMetadata();
         #region Constructors
 
         /// <summary>
@@ -207,6 +209,16 @@ namespace Amazon.TranscribeService
             return new AWS4Signer();
         }
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

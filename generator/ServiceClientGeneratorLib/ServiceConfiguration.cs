@@ -217,6 +217,7 @@ namespace ServiceClientGenerator
 
         public bool HasOverrideNamespace { get { return !string.IsNullOrEmpty(this._namespace); } }
         public string RegionLookupName { get { return this.ServiceModel.EndpointPrefix; } }
+        public string ServiceId { get { return this.ServiceModel.ServiceId; } }
         public string AuthenticationServiceName { get { return this.ServiceModel.SigningName != null ? this.ServiceModel.SigningName : this.ServiceModel.EndpointPrefix; } }
         public int? OverrideMaxRetries { get; set; }
         public string DefaultRegion { get; set; }

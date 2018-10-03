@@ -168,6 +168,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Update="Generators\SourceFiles\ServiceMetadata.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ServiceMetadata.tt</DependentUpon>
+    </Compile>
     <Compile Update="Generators\TestFiles\AWSQueryEC2MarshallingTests.cs">
       <DependentUpon>AWSQueryEC2MarshallingTests.tt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -424,6 +429,10 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>AssemblyInfo.cs</LastGenOutput>
     </None>
+    <None Update="Generators\SourceFiles\ServiceMetadata.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ServiceMetadata.cs</LastGenOutput>
+    </None>
     <None Update="Generators\TestFiles\AWSQueryEC2MarshallingTests.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>AWSQueryEC2MarshallingTests.cs</LastGenOutput>
@@ -653,5 +662,8 @@
     <PackageReference Include="HtmlAgilityPack" Version="1.4.9" />
     <PackageReference Include="Microsoft.CSharp" Version="4.4.1" />
     <PackageReference Include="ReverseMarkdown" Version="0.1.12" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
   </ItemGroup>
 </Project>

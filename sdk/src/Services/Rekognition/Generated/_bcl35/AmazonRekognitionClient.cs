@@ -23,6 +23,7 @@ using System.Collections.Generic;
 
 using Amazon.Rekognition.Model;
 using Amazon.Rekognition.Model.Internal.MarshallTransformations;
+using Amazon.Rekognition.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -37,6 +38,7 @@ namespace Amazon.Rekognition
     /// </summary>
     public partial class AmazonRekognitionClient : AmazonServiceClient, IAmazonRekognition
     {
+        private static IServiceMetadata serviceMetadata = new AmazonRekognitionMetadata();
         #region Constructors
 
         /// <summary>
@@ -207,6 +209,16 @@ namespace Amazon.Rekognition
             return new AWS4Signer();
         }
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

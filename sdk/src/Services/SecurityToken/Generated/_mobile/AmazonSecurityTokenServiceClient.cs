@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.SecurityToken.Model;
 using Amazon.SecurityToken.Model.Internal.MarshallTransformations;
+using Amazon.SecurityToken.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -102,6 +103,7 @@ namespace Amazon.SecurityToken
     /// </summary>
     public partial class AmazonSecurityTokenServiceClient : AmazonServiceClient, IAmazonSecurityTokenService
     {
+        private static IServiceMetadata serviceMetadata = new AmazonSecurityTokenServiceMetadata();
         
         #region Constructors
 
@@ -276,6 +278,16 @@ namespace Amazon.SecurityToken
             return new AWS4Signer();
         } 
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

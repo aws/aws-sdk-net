@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.Snowball.Model;
 using Amazon.Snowball.Model.Internal.MarshallTransformations;
+using Amazon.Snowball.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -47,6 +48,7 @@ namespace Amazon.Snowball
     /// </summary>
     public partial class AmazonSnowballClient : AmazonServiceClient, IAmazonSnowball
     {
+        private static IServiceMetadata serviceMetadata = new AmazonSnowballMetadata();
         #region Constructors
 
         /// <summary>
@@ -216,6 +218,16 @@ namespace Amazon.Snowball
             return new AWS4Signer();
         }    
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

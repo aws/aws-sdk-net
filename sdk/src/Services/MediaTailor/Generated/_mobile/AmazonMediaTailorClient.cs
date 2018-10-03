@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.MediaTailor.Model;
 using Amazon.MediaTailor.Model.Internal.MarshallTransformations;
+using Amazon.MediaTailor.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -48,6 +49,7 @@ namespace Amazon.MediaTailor
     /// </summary>
     public partial class AmazonMediaTailorClient : AmazonServiceClient, IAmazonMediaTailor
     {
+        private static IServiceMetadata serviceMetadata = new AmazonMediaTailorMetadata();
         
         #region Constructors
 
@@ -222,6 +224,16 @@ namespace Amazon.MediaTailor
             return new AWS4Signer();
         } 
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

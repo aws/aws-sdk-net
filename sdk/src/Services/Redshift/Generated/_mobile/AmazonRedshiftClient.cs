@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.Redshift.Model;
 using Amazon.Redshift.Model.Internal.MarshallTransformations;
+using Amazon.Redshift.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -74,6 +75,7 @@ namespace Amazon.Redshift
     /// </summary>
     public partial class AmazonRedshiftClient : AmazonServiceClient, IAmazonRedshift
     {
+        private static IServiceMetadata serviceMetadata = new AmazonRedshiftMetadata();
         
         #region Constructors
 
@@ -248,6 +250,16 @@ namespace Amazon.Redshift
             return new AWS4Signer();
         } 
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.MediaStore.Model;
 using Amazon.MediaStore.Model.Internal.MarshallTransformations;
+using Amazon.MediaStore.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -41,6 +42,7 @@ namespace Amazon.MediaStore
     /// </summary>
     public partial class AmazonMediaStoreClient : AmazonServiceClient, IAmazonMediaStore
     {
+        private static IServiceMetadata serviceMetadata = new AmazonMediaStoreMetadata();
         #region Constructors
 
         /// <summary>
@@ -210,6 +212,16 @@ namespace Amazon.MediaStore
             return new AWS4Signer();
         }    
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

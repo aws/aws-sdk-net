@@ -31,6 +31,7 @@ namespace ServiceClientGenerator
         public const string UidKey = "uid";
         public const string ServiceAbbreviationKey = "serviceAbbreviation";
         public const string SigningNameKey = "signingName";
+        public const string ServiceIdKey = "serviceId";
 
         // operations
         public const string OperationsKey = "operations";
@@ -143,7 +144,7 @@ namespace ServiceClientGenerator
         /// <summary>
         /// Unique Service ID.  For models without this entry, this may return null;
         /// </summary>
-        public string ServiceId
+        public string ServiceUid
         {
             get
             {
@@ -258,6 +259,14 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
+        /// Returns the Service Id of a service
+        /// </summary>
+        public string ServiceId
+        {
+            get { return Utils.JsonDataToString(this._metadata[ServiceIdKey]); }
+        }
+
+        /// <summary>
         /// Gets the operation information based on the name of the operation
         /// </summary>
         /// <param name="name">The name of the operation that information is needed for</param>
@@ -294,6 +303,23 @@ namespace ServiceClientGenerator
                     }
                 }
                 return list.OrderBy(x => x.Name).ToList();
+            }
+        }
+
+        public IDictionary<string, string> OperationsNameMapping
+        {
+            get
+            {
+                var mapping = new Dictionary<string, string>();
+                foreach (KeyValuePair<string, JsonData> kvp in DocumentRoot[OperationsKey])
+                {
+                    var operation = new Operation(this, kvp.Key, kvp.Value);
+                    if (operation.ShapeName != operation.Name)
+                    {
+                        mapping.Add(operation.Name, operation.ShapeName);
+                    }
+                }
+                return mapping;
             }
         }
 

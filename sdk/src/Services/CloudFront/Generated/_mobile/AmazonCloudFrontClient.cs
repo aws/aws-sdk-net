@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.CloudFront.Model;
 using Amazon.CloudFront.Model.Internal.MarshallTransformations;
+using Amazon.CloudFront.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -46,6 +47,7 @@ namespace Amazon.CloudFront
     /// </summary>
     public partial class AmazonCloudFrontClient : AmazonServiceClient, IAmazonCloudFront
     {
+        private static IServiceMetadata serviceMetadata = new AmazonCloudFrontMetadata();
         
         #region Constructors
 
@@ -220,6 +222,16 @@ namespace Amazon.CloudFront
             return new AWS4Signer();
         } 
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

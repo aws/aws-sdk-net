@@ -23,6 +23,7 @@ using System.Collections.Generic;
 
 using Amazon.AppStream.Model;
 using Amazon.AppStream.Model.Internal.MarshallTransformations;
+using Amazon.AppStream.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -41,6 +42,7 @@ namespace Amazon.AppStream
     /// </summary>
     public partial class AmazonAppStreamClient : AmazonServiceClient, IAmazonAppStream
     {
+        private static IServiceMetadata serviceMetadata = new AmazonAppStreamMetadata();
         #region Constructors
 
         /// <summary>
@@ -211,6 +213,16 @@ namespace Amazon.AppStream
             return new AWS4Signer();
         }
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

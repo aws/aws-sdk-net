@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.SimpleEmail.Model;
 using Amazon.SimpleEmail.Model.Internal.MarshallTransformations;
+using Amazon.SimpleEmail.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -53,6 +54,7 @@ namespace Amazon.SimpleEmail
     /// </summary>
     public partial class AmazonSimpleEmailServiceClient : AmazonServiceClient, IAmazonSimpleEmailService
     {
+        private static IServiceMetadata serviceMetadata = new AmazonSimpleEmailServiceMetadata();
         #region Constructors
 
         /// <summary>
@@ -222,6 +224,16 @@ namespace Amazon.SimpleEmail
             return new AWS4Signer();
         }    
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

@@ -23,6 +23,7 @@ using System.Collections.Generic;
 
 using Amazon.WAFRegional.Model;
 using Amazon.WAFRegional.Model.Internal.MarshallTransformations;
+using Amazon.WAFRegional.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -44,6 +45,7 @@ namespace Amazon.WAFRegional
     /// </summary>
     public partial class AmazonWAFRegionalClient : AmazonServiceClient, IAmazonWAFRegional
     {
+        private static IServiceMetadata serviceMetadata = new AmazonWAFRegionalMetadata();
         #region Constructors
 
         /// <summary>
@@ -214,6 +216,16 @@ namespace Amazon.WAFRegional
             return new AWS4Signer();
         }
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

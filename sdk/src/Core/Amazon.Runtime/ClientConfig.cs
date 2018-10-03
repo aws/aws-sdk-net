@@ -65,7 +65,6 @@ namespace Amazon.Runtime
         private bool allowAutoRedirect = true;
         private bool useDualstackEndpoint = false;
         private TimeSpan? readWriteTimeout = null;
-
         /// <summary>
         /// Gets Service Version
         /// </summary>

@@ -664,7 +664,7 @@ namespace ServiceClientGenerator
         public string RestAPIDocUrl
         {
             get {
-                string serviceId = this.model.ServiceId;
+                string serviceId = this.model.ServiceUid;
                 if (!string.IsNullOrEmpty(serviceId) && !IsExcludedServiceId(serviceId))
                 {
                     return string.Format(@"http://docs.aws.amazon.com/goto/WebAPI/{0}/{1}", serviceId, ShapeName);

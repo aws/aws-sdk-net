@@ -23,6 +23,7 @@ using System.Collections.Generic;
 
 using Amazon.RDS.Model;
 using Amazon.RDS.Model.Internal.MarshallTransformations;
+using Amazon.RDS.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -108,6 +109,7 @@ namespace Amazon.RDS
     /// </summary>
     public partial class AmazonRDSClient : AmazonServiceClient, IAmazonRDS
     {
+        private static IServiceMetadata serviceMetadata = new AmazonRDSMetadata();
         #region Constructors
 
         /// <summary>
@@ -286,6 +288,16 @@ namespace Amazon.RDS
         {
             pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Marshaller>(new Amazon.RDS.Internal.PreSignedUrlRequestHandler(this.Credentials));
         }    
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

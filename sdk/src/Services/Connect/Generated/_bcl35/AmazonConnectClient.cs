@@ -23,6 +23,7 @@ using System.Collections.Generic;
 
 using Amazon.Connect.Model;
 using Amazon.Connect.Model.Internal.MarshallTransformations;
+using Amazon.Connect.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -46,6 +47,7 @@ namespace Amazon.Connect
     /// </summary>
     public partial class AmazonConnectClient : AmazonServiceClient, IAmazonConnect
     {
+        private static IServiceMetadata serviceMetadata = new AmazonConnectMetadata();
         #region Constructors
 
         /// <summary>
@@ -216,6 +218,16 @@ namespace Amazon.Connect
             return new AWS4Signer();
         }
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

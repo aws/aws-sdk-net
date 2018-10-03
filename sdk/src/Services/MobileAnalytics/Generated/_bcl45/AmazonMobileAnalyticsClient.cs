@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.MobileAnalytics.Model;
 using Amazon.MobileAnalytics.Model.Internal.MarshallTransformations;
+using Amazon.MobileAnalytics.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -41,6 +42,7 @@ namespace Amazon.MobileAnalytics
     /// </summary>
     public partial class AmazonMobileAnalyticsClient : AmazonServiceClient, IAmazonMobileAnalytics
     {
+        private static IServiceMetadata serviceMetadata = new AmazonMobileAnalyticsMetadata();
         #region Constructors
 
         /// <summary>
@@ -210,6 +212,16 @@ namespace Amazon.MobileAnalytics
             return new AWS4Signer();
         }    
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

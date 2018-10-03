@@ -34,6 +34,11 @@ namespace Amazon
             get;
             set;
         }
+        public CSMSection CSMConfig
+        {
+            get;
+            set;
+        }
 
         public string EndpointDefinition
         {
@@ -192,6 +197,34 @@ namespace Amazon
 
 
         public Type LogMetricsCustomFormatter
+        {
+            get;
+            set;
+        }
+    }
+
+    /// <summary>
+    /// CSM section
+    /// </summary>
+    internal class CSMSection
+    {
+        public const string csmEnabledKey = "csmEnabled";
+        public const string csmClientIdKey = "csmClientId";
+        public const string csmPortKey = "csmPort";
+
+        public bool? CSMEnabled
+        {
+            get;
+            set;
+        }
+
+        public int? CSMPort
+        {
+            get;
+            set;
+        }
+
+        public string CSMClientId
         {
             get;
             set;

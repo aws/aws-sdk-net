@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.DynamoDBv2.Model;
 using Amazon.DynamoDBv2.Model.Internal.MarshallTransformations;
+using Amazon.DynamoDBv2.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -45,6 +46,7 @@ namespace Amazon.DynamoDBv2
     /// </summary>
     public partial class AmazonDynamoDBStreamsClient : AmazonServiceClient, IAmazonDynamoDBStreams
     {
+        private static IServiceMetadata serviceMetadata = new AmazonDynamoDBStreamsMetadata();
         
         #region Constructors
 
@@ -226,6 +228,16 @@ namespace Amazon.DynamoDBv2
         protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
         {
             pipeline.ReplaceHandler<Amazon.Runtime.Internal.RetryHandler>(new Amazon.Runtime.Internal.RetryHandler(new Amazon.DynamoDBv2.Internal.DynamoDBRetryPolicy(this.Config)));
+        }
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
         }
 
         #endregion

@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.ConfigService.Model;
 using Amazon.ConfigService.Model.Internal.MarshallTransformations;
+using Amazon.ConfigService.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -63,6 +64,7 @@ namespace Amazon.ConfigService
     /// </summary>
     public partial class AmazonConfigServiceClient : AmazonServiceClient, IAmazonConfigService
     {
+        private static IServiceMetadata serviceMetadata = new AmazonConfigServiceMetadata();
         
         #region Constructors
 
@@ -237,6 +239,16 @@ namespace Amazon.ConfigService
             return new AWS4Signer();
         } 
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

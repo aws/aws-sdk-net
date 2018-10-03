@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.Macie.Model;
 using Amazon.Macie.Model.Internal.MarshallTransformations;
+using Amazon.Macie.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -48,6 +49,7 @@ namespace Amazon.Macie
     /// </summary>
     public partial class AmazonMacieClient : AmazonServiceClient, IAmazonMacie
     {
+        private static IServiceMetadata serviceMetadata = new AmazonMacieMetadata();
         
         #region Constructors
 
@@ -222,6 +224,16 @@ namespace Amazon.Macie
             return new AWS4Signer();
         } 
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

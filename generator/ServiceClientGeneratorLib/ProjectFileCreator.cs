@@ -414,7 +414,8 @@ namespace ServiceClientGenerator
             // Start with the standard generated code folders for the platform
             var sourceCodeFolders = new List<string>
             {
-                "Generated", 
+                "Generated",
+                @"Generated\Internal",
                 @"Generated\Model", 
                 @"Generated\Model\Internal", 
                 @"Generated\Model\Internal\MarshallTransformations"

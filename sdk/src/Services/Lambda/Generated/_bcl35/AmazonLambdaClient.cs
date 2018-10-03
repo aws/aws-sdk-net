@@ -23,6 +23,7 @@ using System.Collections.Generic;
 
 using Amazon.Lambda.Model;
 using Amazon.Lambda.Model.Internal.MarshallTransformations;
+using Amazon.Lambda.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -47,6 +48,7 @@ namespace Amazon.Lambda
     /// </summary>
     public partial class AmazonLambdaClient : AmazonServiceClient, IAmazonLambda
     {
+        private static IServiceMetadata serviceMetadata = new AmazonLambdaMetadata();
         #region Constructors
 
         /// <summary>
@@ -217,6 +219,16 @@ namespace Amazon.Lambda
             return new AWS4Signer();
         }
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.XRay.Model;
 using Amazon.XRay.Model.Internal.MarshallTransformations;
+using Amazon.XRay.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -41,6 +42,7 @@ namespace Amazon.XRay
     /// </summary>
     public partial class AmazonXRayClient : AmazonServiceClient, IAmazonXRay
     {
+        private static IServiceMetadata serviceMetadata = new AmazonXRayMetadata();
         
         #region Constructors
 
@@ -215,6 +217,16 @@ namespace Amazon.XRay
             return new AWS4Signer();
         } 
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

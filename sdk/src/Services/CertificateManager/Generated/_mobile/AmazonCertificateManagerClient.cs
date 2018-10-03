@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.CertificateManager.Model;
 using Amazon.CertificateManager.Model.Internal.MarshallTransformations;
+using Amazon.CertificateManager.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -49,6 +50,7 @@ namespace Amazon.CertificateManager
     /// </summary>
     public partial class AmazonCertificateManagerClient : AmazonServiceClient, IAmazonCertificateManager
     {
+        private static IServiceMetadata serviceMetadata = new AmazonCertificateManagerMetadata();
         
         #region Constructors
 
@@ -223,6 +225,16 @@ namespace Amazon.CertificateManager
             return new AWS4Signer();
         } 
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

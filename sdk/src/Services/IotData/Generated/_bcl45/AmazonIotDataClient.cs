@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.IotData.Model;
 using Amazon.IotData.Model.Internal.MarshallTransformations;
+using Amazon.IotData.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -47,6 +48,7 @@ namespace Amazon.IotData
     /// </summary>
     public partial class AmazonIotDataClient : AmazonServiceClient, IAmazonIotData
     {
+        private static IServiceMetadata serviceMetadata = new AmazonIotDataMetadata();
 
         #region Overrides
 
@@ -58,6 +60,16 @@ namespace Amazon.IotData
             return new AWS4Signer();
         }    
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

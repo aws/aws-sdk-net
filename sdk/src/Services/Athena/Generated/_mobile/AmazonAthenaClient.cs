@@ -26,6 +26,7 @@ using System.Collections.Generic;
 
 using Amazon.Athena.Model;
 using Amazon.Athena.Model.Internal.MarshallTransformations;
+using Amazon.Athena.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -52,6 +53,7 @@ namespace Amazon.Athena
     /// </summary>
     public partial class AmazonAthenaClient : AmazonServiceClient, IAmazonAthena
     {
+        private static IServiceMetadata serviceMetadata = new AmazonAthenaMetadata();
         
         #region Constructors
 
@@ -226,6 +228,16 @@ namespace Amazon.Athena
             return new AWS4Signer();
         } 
 
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
 
         #endregion
 

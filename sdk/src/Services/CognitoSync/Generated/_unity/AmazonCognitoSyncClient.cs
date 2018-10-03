@@ -23,6 +23,7 @@ using System.Collections.Generic;
 
 using Amazon.CognitoSync.Model;
 using Amazon.CognitoSync.Model.Internal.MarshallTransformations;
+using Amazon.CognitoSync.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -61,6 +62,7 @@ namespace Amazon.CognitoSync
     /// </summary>
     public partial class AmazonCognitoSyncClient : AmazonServiceClient, IAmazonCognitoSync
     {
+        private static IServiceMetadata serviceMetadata = new AmazonCognitoSyncMetadata();
         #region Constructors
 
         /// <summary>
@@ -185,6 +187,17 @@ namespace Amazon.CognitoSync
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new Amazon.CognitoSync.Internal.AmazonCognitoSyncPostMarshallHandler());
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Signer>(new Amazon.CognitoSync.Internal.AmazonCognitoSyncPostSignHandler());
         }    
+        /// <summary>
+        /// Capture metadata for the service.
+        /// </summary>
+        protected override IServiceMetadata ServiceMetadata
+        {
+            get
+            {
+                return serviceMetadata;
+            }
+        }
+
         #endregion
 
         #region Dispose
