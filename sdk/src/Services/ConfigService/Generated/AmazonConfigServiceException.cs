@@ -31,7 +31,7 @@ namespace Amazon.ConfigService
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonConfigServiceException : AmazonServiceException
+    public partial class AmazonConfigServiceException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonConfigServiceException

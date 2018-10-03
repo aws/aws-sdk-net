@@ -31,7 +31,7 @@ namespace Amazon.ApplicationAutoScaling
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonApplicationAutoScalingException : AmazonServiceException
+    public partial class AmazonApplicationAutoScalingException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonApplicationAutoScalingException

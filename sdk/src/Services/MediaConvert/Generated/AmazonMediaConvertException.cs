@@ -31,7 +31,7 @@ namespace Amazon.MediaConvert
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonMediaConvertException : AmazonServiceException
+    public partial class AmazonMediaConvertException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonMediaConvertException

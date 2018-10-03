@@ -31,7 +31,7 @@ namespace Amazon.PI
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonPIException : AmazonServiceException
+    public partial class AmazonPIException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonPIException

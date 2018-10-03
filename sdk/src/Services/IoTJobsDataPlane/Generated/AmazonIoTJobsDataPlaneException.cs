@@ -31,7 +31,7 @@ namespace Amazon.IoTJobsDataPlane
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonIoTJobsDataPlaneException : AmazonServiceException
+    public partial class AmazonIoTJobsDataPlaneException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonIoTJobsDataPlaneException

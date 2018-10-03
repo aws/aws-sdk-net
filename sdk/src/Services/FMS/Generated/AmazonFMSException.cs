@@ -31,7 +31,7 @@ namespace Amazon.FMS
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonFMSException : AmazonServiceException
+    public partial class AmazonFMSException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonFMSException

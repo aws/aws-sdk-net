@@ -31,7 +31,7 @@ namespace Amazon.ResourceGroups
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonResourceGroupsException : AmazonServiceException
+    public partial class AmazonResourceGroupsException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonResourceGroupsException

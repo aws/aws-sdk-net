@@ -31,7 +31,7 @@ namespace Amazon.ECS
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonECSException : AmazonServiceException
+    public partial class AmazonECSException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonECSException

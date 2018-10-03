@@ -31,7 +31,7 @@ namespace Amazon.Polly
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonPollyException : AmazonServiceException
+    public partial class AmazonPollyException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonPollyException

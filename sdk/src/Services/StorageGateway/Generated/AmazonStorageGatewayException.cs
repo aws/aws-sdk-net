@@ -31,7 +31,7 @@ namespace Amazon.StorageGateway
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonStorageGatewayException : AmazonServiceException
+    public partial class AmazonStorageGatewayException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonStorageGatewayException

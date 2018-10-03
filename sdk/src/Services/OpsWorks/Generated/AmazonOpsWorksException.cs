@@ -31,7 +31,7 @@ namespace Amazon.OpsWorks
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonOpsWorksException : AmazonServiceException
+    public partial class AmazonOpsWorksException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonOpsWorksException

@@ -31,7 +31,7 @@ namespace Amazon.CodePipeline
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonCodePipelineException : AmazonServiceException
+    public partial class AmazonCodePipelineException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonCodePipelineException

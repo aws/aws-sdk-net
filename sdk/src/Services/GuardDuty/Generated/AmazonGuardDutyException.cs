@@ -31,7 +31,7 @@ namespace Amazon.GuardDuty
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonGuardDutyException : AmazonServiceException
+    public partial class AmazonGuardDutyException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonGuardDutyException

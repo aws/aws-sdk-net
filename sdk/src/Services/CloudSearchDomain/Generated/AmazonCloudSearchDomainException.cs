@@ -31,7 +31,7 @@ namespace Amazon.CloudSearchDomain
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonCloudSearchDomainException : AmazonServiceException
+    public partial class AmazonCloudSearchDomainException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonCloudSearchDomainException

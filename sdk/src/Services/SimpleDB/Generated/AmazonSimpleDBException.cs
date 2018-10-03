@@ -31,7 +31,7 @@ namespace Amazon.SimpleDB
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonSimpleDBException : AmazonServiceException
+    public partial class AmazonSimpleDBException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonSimpleDBException

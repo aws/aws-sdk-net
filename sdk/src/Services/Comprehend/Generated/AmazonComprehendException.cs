@@ -31,7 +31,7 @@ namespace Amazon.Comprehend
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonComprehendException : AmazonServiceException
+    public partial class AmazonComprehendException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonComprehendException

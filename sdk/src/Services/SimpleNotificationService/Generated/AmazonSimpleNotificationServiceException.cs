@@ -31,7 +31,7 @@ namespace Amazon.SimpleNotificationService
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonSimpleNotificationServiceException : AmazonServiceException
+    public partial class AmazonSimpleNotificationServiceException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonSimpleNotificationServiceException

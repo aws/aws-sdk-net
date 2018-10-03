@@ -31,7 +31,7 @@ namespace Amazon.Redshift
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonRedshiftException : AmazonServiceException
+    public partial class AmazonRedshiftException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonRedshiftException

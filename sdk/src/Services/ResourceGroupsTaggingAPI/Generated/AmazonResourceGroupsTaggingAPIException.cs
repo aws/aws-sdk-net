@@ -31,7 +31,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonResourceGroupsTaggingAPIException : AmazonServiceException
+    public partial class AmazonResourceGroupsTaggingAPIException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonResourceGroupsTaggingAPIException

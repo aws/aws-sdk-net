@@ -31,7 +31,7 @@ namespace Amazon.DAX
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonDAXException : AmazonServiceException
+    public partial class AmazonDAXException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonDAXException

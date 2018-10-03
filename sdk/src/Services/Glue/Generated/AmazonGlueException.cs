@@ -31,7 +31,7 @@ namespace Amazon.Glue
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonGlueException : AmazonServiceException
+    public partial class AmazonGlueException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonGlueException

@@ -31,7 +31,7 @@ namespace Amazon.SimpleEmail
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonSimpleEmailServiceException : AmazonServiceException
+    public partial class AmazonSimpleEmailServiceException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonSimpleEmailServiceException

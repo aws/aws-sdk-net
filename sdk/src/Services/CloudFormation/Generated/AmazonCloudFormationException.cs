@@ -31,7 +31,7 @@ namespace Amazon.CloudFormation
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonCloudFormationException : AmazonServiceException
+    public partial class AmazonCloudFormationException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonCloudFormationException

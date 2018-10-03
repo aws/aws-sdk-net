@@ -31,7 +31,7 @@ namespace Amazon.SQS
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonSQSException : AmazonServiceException
+    public partial class AmazonSQSException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonSQSException

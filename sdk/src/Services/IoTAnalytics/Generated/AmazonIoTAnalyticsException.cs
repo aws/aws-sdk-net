@@ -31,7 +31,7 @@ namespace Amazon.IoTAnalytics
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonIoTAnalyticsException : AmazonServiceException
+    public partial class AmazonIoTAnalyticsException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonIoTAnalyticsException

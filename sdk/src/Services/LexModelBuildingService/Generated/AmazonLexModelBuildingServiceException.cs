@@ -31,7 +31,7 @@ namespace Amazon.LexModelBuildingService
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonLexModelBuildingServiceException : AmazonServiceException
+    public partial class AmazonLexModelBuildingServiceException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonLexModelBuildingServiceException

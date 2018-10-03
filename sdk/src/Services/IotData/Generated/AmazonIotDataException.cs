@@ -31,7 +31,7 @@ namespace Amazon.IotData
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonIotDataException : AmazonServiceException
+    public partial class AmazonIotDataException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonIotDataException

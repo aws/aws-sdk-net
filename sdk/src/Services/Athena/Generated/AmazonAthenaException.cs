@@ -31,7 +31,7 @@ namespace Amazon.Athena
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonAthenaException : AmazonServiceException
+    public partial class AmazonAthenaException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonAthenaException

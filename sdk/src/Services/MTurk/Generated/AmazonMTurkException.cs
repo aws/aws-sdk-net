@@ -31,7 +31,7 @@ namespace Amazon.MTurk
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonMTurkException : AmazonServiceException
+    public partial class AmazonMTurkException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonMTurkException

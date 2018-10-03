@@ -31,7 +31,7 @@ namespace Amazon.ApplicationDiscoveryService
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonApplicationDiscoveryServiceException : AmazonServiceException
+    public partial class AmazonApplicationDiscoveryServiceException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonApplicationDiscoveryServiceException

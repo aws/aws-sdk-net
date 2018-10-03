@@ -31,7 +31,7 @@ namespace Amazon.SecurityToken
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonSecurityTokenServiceException : AmazonServiceException
+    public partial class AmazonSecurityTokenServiceException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonSecurityTokenServiceException

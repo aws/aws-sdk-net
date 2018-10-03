@@ -31,7 +31,7 @@ namespace Amazon.WAF
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonWAFException : AmazonServiceException
+    public partial class AmazonWAFException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonWAFException

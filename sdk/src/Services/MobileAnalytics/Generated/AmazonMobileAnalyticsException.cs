@@ -31,7 +31,7 @@ namespace Amazon.MobileAnalytics
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonMobileAnalyticsException : AmazonServiceException
+    public partial class AmazonMobileAnalyticsException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonMobileAnalyticsException

@@ -31,7 +31,7 @@ namespace Amazon.Route53
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonRoute53Exception : AmazonServiceException
+    public partial class AmazonRoute53Exception : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonRoute53Exception

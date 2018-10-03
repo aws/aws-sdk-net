@@ -31,7 +31,7 @@ namespace Amazon.KeyManagementService
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonKeyManagementServiceException : AmazonServiceException
+    public partial class AmazonKeyManagementServiceException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonKeyManagementServiceException

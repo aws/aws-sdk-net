@@ -31,7 +31,7 @@ namespace Amazon.WorkSpaces
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonWorkSpacesException : AmazonServiceException
+    public partial class AmazonWorkSpacesException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonWorkSpacesException

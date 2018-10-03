@@ -31,7 +31,7 @@ namespace Amazon.ServerlessApplicationRepository
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonServerlessApplicationRepositoryException : AmazonServiceException
+    public partial class AmazonServerlessApplicationRepositoryException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonServerlessApplicationRepositoryException

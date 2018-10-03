@@ -31,7 +31,7 @@ namespace Amazon.XRay
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonXRayException : AmazonServiceException
+    public partial class AmazonXRayException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonXRayException

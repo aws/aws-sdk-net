@@ -31,7 +31,7 @@ namespace Amazon.CodeCommit
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonCodeCommitException : AmazonServiceException
+    public partial class AmazonCodeCommitException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonCodeCommitException

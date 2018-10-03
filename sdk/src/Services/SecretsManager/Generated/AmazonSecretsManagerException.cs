@@ -31,7 +31,7 @@ namespace Amazon.SecretsManager
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonSecretsManagerException : AmazonServiceException
+    public partial class AmazonSecretsManagerException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonSecretsManagerException

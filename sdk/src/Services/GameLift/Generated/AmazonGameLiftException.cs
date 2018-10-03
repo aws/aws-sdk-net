@@ -31,7 +31,7 @@ namespace Amazon.GameLift
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonGameLiftException : AmazonServiceException
+    public partial class AmazonGameLiftException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonGameLiftException

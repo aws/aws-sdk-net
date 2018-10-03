@@ -31,7 +31,7 @@ namespace Amazon.CognitoIdentity
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonCognitoIdentityException : AmazonServiceException
+    public partial class AmazonCognitoIdentityException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonCognitoIdentityException

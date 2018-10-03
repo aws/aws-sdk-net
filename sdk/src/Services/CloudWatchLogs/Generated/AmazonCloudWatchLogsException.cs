@@ -31,7 +31,7 @@ namespace Amazon.CloudWatchLogs
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonCloudWatchLogsException : AmazonServiceException
+    public partial class AmazonCloudWatchLogsException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonCloudWatchLogsException

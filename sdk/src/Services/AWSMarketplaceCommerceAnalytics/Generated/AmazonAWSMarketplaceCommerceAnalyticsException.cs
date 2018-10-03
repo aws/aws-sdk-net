@@ -31,7 +31,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonAWSMarketplaceCommerceAnalyticsException : AmazonServiceException
+    public partial class AmazonAWSMarketplaceCommerceAnalyticsException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonAWSMarketplaceCommerceAnalyticsException

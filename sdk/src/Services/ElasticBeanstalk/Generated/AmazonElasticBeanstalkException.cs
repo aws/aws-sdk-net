@@ -31,7 +31,7 @@ namespace Amazon.ElasticBeanstalk
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonElasticBeanstalkException : AmazonServiceException
+    public partial class AmazonElasticBeanstalkException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonElasticBeanstalkException

@@ -31,7 +31,7 @@ namespace Amazon.MediaPackage
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonMediaPackageException : AmazonServiceException
+    public partial class AmazonMediaPackageException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonMediaPackageException

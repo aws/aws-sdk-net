@@ -31,7 +31,7 @@ namespace Amazon.AWSMarketplaceMetering
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonAWSMarketplaceMeteringException : AmazonServiceException
+    public partial class AmazonAWSMarketplaceMeteringException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonAWSMarketplaceMeteringException

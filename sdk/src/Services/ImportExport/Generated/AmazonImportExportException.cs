@@ -31,7 +31,7 @@ namespace Amazon.ImportExport
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonImportExportException : AmazonServiceException
+    public partial class AmazonImportExportException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonImportExportException

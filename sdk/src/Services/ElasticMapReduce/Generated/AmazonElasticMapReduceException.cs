@@ -31,7 +31,7 @@ namespace Amazon.ElasticMapReduce
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonElasticMapReduceException : AmazonServiceException
+    public partial class AmazonElasticMapReduceException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonElasticMapReduceException

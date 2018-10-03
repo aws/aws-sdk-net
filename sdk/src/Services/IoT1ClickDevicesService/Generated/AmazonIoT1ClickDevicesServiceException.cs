@@ -31,7 +31,7 @@ namespace Amazon.IoT1ClickDevicesService
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonIoT1ClickDevicesServiceException : AmazonServiceException
+    public partial class AmazonIoT1ClickDevicesServiceException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonIoT1ClickDevicesServiceException

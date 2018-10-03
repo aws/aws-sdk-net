@@ -31,7 +31,7 @@ namespace Amazon.WorkDocs
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonWorkDocsException : AmazonServiceException
+    public partial class AmazonWorkDocsException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonWorkDocsException

@@ -31,7 +31,7 @@ namespace Amazon.APIGateway
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonAPIGatewayException : AmazonServiceException
+    public partial class AmazonAPIGatewayException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonAPIGatewayException

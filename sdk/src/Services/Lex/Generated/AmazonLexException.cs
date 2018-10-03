@@ -31,7 +31,7 @@ namespace Amazon.Lex
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonLexException : AmazonServiceException
+    public partial class AmazonLexException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonLexException

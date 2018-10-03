@@ -31,7 +31,7 @@ namespace Amazon.Inspector
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonInspectorException : AmazonServiceException
+    public partial class AmazonInspectorException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonInspectorException

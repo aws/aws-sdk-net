@@ -31,7 +31,7 @@ namespace Amazon.DirectConnect
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonDirectConnectException : AmazonServiceException
+    public partial class AmazonDirectConnectException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonDirectConnectException

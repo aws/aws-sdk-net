@@ -31,7 +31,7 @@ namespace Amazon.SageMaker
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonSageMakerException : AmazonServiceException
+    public partial class AmazonSageMakerException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonSageMakerException

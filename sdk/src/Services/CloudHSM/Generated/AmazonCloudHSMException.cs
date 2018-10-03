@@ -31,7 +31,7 @@ namespace Amazon.CloudHSM
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonCloudHSMException : AmazonServiceException
+    public partial class AmazonCloudHSMException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonCloudHSMException

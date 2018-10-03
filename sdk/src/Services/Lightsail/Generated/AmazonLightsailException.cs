@@ -31,7 +31,7 @@ namespace Amazon.Lightsail
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonLightsailException : AmazonServiceException
+    public partial class AmazonLightsailException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonLightsailException

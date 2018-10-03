@@ -31,7 +31,7 @@ namespace Amazon.Cloud9
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonCloud9Exception : AmazonServiceException
+    public partial class AmazonCloud9Exception : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonCloud9Exception

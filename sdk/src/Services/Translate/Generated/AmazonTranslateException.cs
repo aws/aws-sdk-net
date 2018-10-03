@@ -31,7 +31,7 @@ namespace Amazon.Translate
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonTranslateException : AmazonServiceException
+    public partial class AmazonTranslateException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonTranslateException

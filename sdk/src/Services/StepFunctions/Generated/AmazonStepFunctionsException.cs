@@ -31,7 +31,7 @@ namespace Amazon.StepFunctions
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonStepFunctionsException : AmazonServiceException
+    public partial class AmazonStepFunctionsException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonStepFunctionsException

@@ -31,7 +31,7 @@ namespace Amazon.EC2
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonEC2Exception : AmazonServiceException
+    public partial class AmazonEC2Exception : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonEC2Exception

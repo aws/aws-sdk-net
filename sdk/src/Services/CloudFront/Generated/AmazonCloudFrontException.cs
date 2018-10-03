@@ -31,7 +31,7 @@ namespace Amazon.CloudFront
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonCloudFrontException : AmazonServiceException
+    public partial class AmazonCloudFrontException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonCloudFrontException

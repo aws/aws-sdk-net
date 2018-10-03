@@ -31,7 +31,7 @@ namespace Amazon.MediaLive
 #if !PCL && !CORECLR
     [Serializable]
 #endif
-    public class AmazonMediaLiveException : AmazonServiceException
+    public partial class AmazonMediaLiveException : AmazonServiceException
     {
         /// <summary>
         /// Construct instance of AmazonMediaLiveException
