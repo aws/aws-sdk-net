@@ -73,6 +73,23 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.FileShareARN);
                 }
 
+                if(publicRequest.IsSetFolderList())
+                {
+                    context.Writer.WritePropertyName("FolderList");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestFolderListListValue in publicRequest.FolderList)
+                    {
+                            context.Writer.Write(publicRequestFolderListListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetRecursive())
+                {
+                    context.Writer.WritePropertyName("Recursive");
+                    context.Writer.Write(publicRequest.Recursive);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

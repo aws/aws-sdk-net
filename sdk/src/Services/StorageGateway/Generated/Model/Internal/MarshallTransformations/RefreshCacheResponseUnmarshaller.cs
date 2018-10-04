@@ -57,6 +57,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     response.FileShareARN = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NotificationId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NotificationId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

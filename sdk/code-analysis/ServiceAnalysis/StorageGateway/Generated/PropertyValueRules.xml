@@ -901,6 +901,11 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.RefreshCacheResponse.NotificationId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.RemoveTagsFromResourceRequest.ResourceARN</property>
     <min>50</min>
     <max>500</max>

@@ -32,11 +32,15 @@ namespace Amazon.StorageGateway.Model
     /// Refreshes the cache for the specified file share. This operation finds objects in
     /// the Amazon S3 bucket that were added, removed or replaced since the gateway last listed
     /// the bucket's contents and cached the results. This operation is only supported in
-    /// the file gateway type.
+    /// the file gateway type. You can subscribe to be notified through an Amazon CloudWatch
+    /// event when your RefreshCache operation completes. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
+    /// Notified About File Operations</a>.
     /// </summary>
     public partial class RefreshCacheRequest : AmazonStorageGatewayRequest
     {
         private string _fileShareARN;
+        private List<string> _folderList = new List<string>();
+        private bool? _recursive;
 
         /// <summary>
         /// Gets and sets the property FileShareARN.
@@ -51,6 +55,44 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetFileShareARN()
         {
             return this._fileShareARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FolderList.
+        /// </summary>
+        public List<string> FolderList
+        {
+            get { return this._folderList; }
+            set { this._folderList = value; }
+        }
+
+        // Check to see if FolderList property is set
+        internal bool IsSetFolderList()
+        {
+            return this._folderList != null && this._folderList.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Recursive. 
+        /// <para>
+        /// A value that specifies whether to recursively refresh folders in the cache. The refresh
+        /// includes folders that were in the cache the last time the gateway listed the folder's
+        /// contents. If this value set to "true", each folder that is listed in <code>FolderList</code>
+        /// is recursively updated. Otherwise, subfolders listed in <code>FolderList</code> are
+        /// not refreshed. Only objects that are in folders listed directly under <code>FolderList</code>
+        /// are found and used for the update. The default is "true".
+        /// </para>
+        /// </summary>
+        public bool Recursive
+        {
+            get { return this._recursive.GetValueOrDefault(); }
+            set { this._recursive = value; }
+        }
+
+        // Check to see if Recursive property is set
+        internal bool IsSetRecursive()
+        {
+            return this._recursive.HasValue; 
         }
 
     }

@@ -28,11 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// This is the response object from the RefreshCache operation.
+    /// RefreshCacheOutput
     /// </summary>
     public partial class RefreshCacheResponse : AmazonWebServiceResponse
     {
         private string _fileShareARN;
+        private string _notificationId;
 
         /// <summary>
         /// Gets and sets the property FileShareARN.
@@ -47,6 +48,21 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetFileShareARN()
         {
             return this._fileShareARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NotificationId.
+        /// </summary>
+        public string NotificationId
+        {
+            get { return this._notificationId; }
+            set { this._notificationId = value; }
+        }
+
+        // Check to see if NotificationId property is set
+        internal bool IsSetNotificationId()
+        {
+            return this._notificationId != null;
         }
 
     }
