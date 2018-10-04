@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
     /// <summary>
     /// Represents a REST API.
     /// 
-    ///  <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Create
+    ///  <div class="seeAlso"> <a href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/how-to-create-api.html">Create
     /// an API</a> </div>
     /// </summary>
     public partial class CreateRestApiResponse : AmazonWebServiceResponse

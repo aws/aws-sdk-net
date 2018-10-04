@@ -42,7 +42,7 @@ namespace Amazon.APIGateway.Model
     /// </ul> 
     /// <para>
     /// For detailed error code information, including the corresponding HTTP Status Codes,
-    /// see <a href="https://docs.aws.amazon.com/apigateway/api-reference/handling-errors/#api-error-codes">API
+    /// see <a href="[[AwsDocsUrlPrefix]]/apigateway/api-reference/handling-errors/#api-error-codes">API
     /// Gateway Error Codes</a>
     /// </para>
     ///  <h4>Example: Get the information about an account.</h4> <h5>Request</h5> <pre><code>GET
@@ -54,7 +54,7 @@ namespace Amazon.APIGateway.Model
     /// The successful response returns a <code>200 OK</code> status code and a payload similar
     /// to the following:
     /// </para>
-    ///  <pre><code>{ "_links": { "curies": { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/account-apigateway-{rel}.html",
+    ///  <pre><code>{ "_links": { "curies": { "href": "[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/account-apigateway-{rel}.html",
     /// "name": "account", "templated": true }, "self": { "href": "/account" }, "account:update":
     /// { "href": "/account" } }, "cloudwatchRoleArn": "arn:aws:iam::123456789012:role/apigAwsProxyRole",
     /// "throttleSettings": { "rateLimit": 500, "burstLimit": 1000 } } </code></pre> 
@@ -62,9 +62,9 @@ namespace Amazon.APIGateway.Model
     /// In addition to making the REST API call directly, you can use the AWS CLI and an AWS
     /// SDK to access this resource.
     /// </para>
-    ///  </div> <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-limits.html">API
-    /// Gateway Limits</a> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html">Developer
-    /// Guide</a>, <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-account.html">AWS
+    ///  </div> <div class="seeAlso"> <a href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/api-gateway-limits.html">API
+    /// Gateway Limits</a> <a href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/welcome.html">Developer
+    /// Guide</a>, <a href="[[AwsDocsUrlPrefix]]/cli/latest/reference/apigateway/get-account.html">AWS
     /// CLI</a> </div>
     /// </summary>
     public partial class UpdateAccountResponse : AmazonWebServiceResponse

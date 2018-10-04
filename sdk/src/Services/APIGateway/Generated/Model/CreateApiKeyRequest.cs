@@ -31,7 +31,7 @@ namespace Amazon.APIGateway.Model
     /// Container for the parameters to the CreateApiKey operation.
     /// Create an <a>ApiKey</a> resource. 
     /// 
-    ///  <div class="seeAlso"><a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/create-api-key.html">AWS
+    ///  <div class="seeAlso"><a href="[[AwsDocsUrlPrefix]]/cli/latest/reference/apigateway/create-api-key.html">AWS
     /// CLI</a></div>
     /// </summary>
     public partial class CreateApiKeyRequest : AmazonAPIGatewayRequest

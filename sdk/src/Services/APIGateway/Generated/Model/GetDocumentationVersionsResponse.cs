@@ -35,7 +35,7 @@ namespace Amazon.APIGateway.Model
     /// Use the <a>DocumentationVersions</a> to manage documentation snapshots associated
     /// with various API stages.
     /// </para>
-    /// </div> <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api.html">Documenting
+    /// </div> <div class="seeAlso"> <a href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/api-gateway-documenting-api.html">Documenting
     /// an API</a>, <a>DocumentationPart</a>, <a>DocumentationVersion</a> </div>
     /// </summary>
     public partial class GetDocumentationVersionsResponse : AmazonWebServiceResponse

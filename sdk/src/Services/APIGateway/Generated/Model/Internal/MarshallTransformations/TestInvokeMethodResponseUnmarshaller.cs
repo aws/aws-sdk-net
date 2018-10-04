@@ -75,6 +75,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     response.Log = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("multiValueHeaders", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, List<string>, StringUnmarshaller, ListUnmarshaller<string, StringUnmarshaller>>(StringUnmarshaller.Instance, new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));
+                    response.MultiValueHeaders = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

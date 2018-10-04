@@ -45,7 +45,7 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property Body. 
         /// <para>
         /// [Required] The PUT request body containing external API definitions. Currently, only
-        /// OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition
+        /// Swagger definition JSON files are supported. The maximum size of the API definition
         /// file is 2MB.
         /// </para>
         /// </summary>

@@ -31,7 +31,7 @@ namespace Amazon.APIGateway.Model
     /// Contains references to your APIs and links that guide you in how to interact with
     /// your collection. A collection offers a paginated view of your APIs.
     /// 
-    ///  <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Create
+    ///  <div class="seeAlso"> <a href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/how-to-create-api.html">Create
     /// an API</a> </div>
     /// </summary>
     public partial class GetRestApisResponse : AmazonWebServiceResponse

@@ -38,6 +38,7 @@ namespace Amazon.APIGateway.Model
         private string _clientCertificateId;
         private Dictionary<string, string> _headers = new Dictionary<string, string>();
         private string _httpMethod;
+        private Dictionary<string, List<string>> _multiValueHeaders = new Dictionary<string, List<string>>();
         private string _pathWithQueryString;
         private string _resourceId;
         private string _restApiId;
@@ -114,6 +115,25 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetHttpMethod()
         {
             return this._httpMethod != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiValueHeaders. 
+        /// <para>
+        /// The headers as a map from string to list of values to simulate an incoming invocation
+        /// request.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, List<string>> MultiValueHeaders
+        {
+            get { return this._multiValueHeaders; }
+            set { this._multiValueHeaders = value; }
+        }
+
+        // Check to see if MultiValueHeaders property is set
+        internal bool IsSetMultiValueHeaders()
+        {
+            return this._multiValueHeaders != null && this._multiValueHeaders.Count > 0; 
         }
 
         /// <summary>

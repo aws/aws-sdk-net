@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
     /// <summary>
     /// Represents the response of the test invoke request in the HTTP method.
     /// 
-    ///  <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-test-method.html#how-to-test-method-console">Test
+    ///  <div class="seeAlso"> <a href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/how-to-test-method.html#how-to-test-method-console">Test
     /// API using the API Gateway console</a> </div>
     /// </summary>
     public partial class TestInvokeMethodResponse : AmazonWebServiceResponse
@@ -39,6 +39,7 @@ namespace Amazon.APIGateway.Model
         private Dictionary<string, string> _headers = new Dictionary<string, string>();
         private long? _latency;
         private string _log;
+        private Dictionary<string, List<string>> _multiValueHeaders = new Dictionary<string, List<string>>();
         private int? _status;
 
         /// <summary>
@@ -111,6 +112,24 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetLog()
         {
             return this._log != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiValueHeaders. 
+        /// <para>
+        /// The headers of the HTTP response as a map from string to list of values.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, List<string>> MultiValueHeaders
+        {
+            get { return this._multiValueHeaders; }
+            set { this._multiValueHeaders = value; }
+        }
+
+        // Check to see if MultiValueHeaders property is set
+        internal bool IsSetMultiValueHeaders()
+        {
+            return this._multiValueHeaders != null && this._multiValueHeaders.Count > 0; 
         }
 
         /// <summary>

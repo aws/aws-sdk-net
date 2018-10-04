@@ -105,6 +105,25 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetMultiValueHeaders())
+                {
+                    context.Writer.WritePropertyName("multiValueHeaders");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestMultiValueHeadersKvp in publicRequest.MultiValueHeaders)
+                    {
+                        context.Writer.WritePropertyName(publicRequestMultiValueHeadersKvp.Key);
+                        var publicRequestMultiValueHeadersValue = publicRequestMultiValueHeadersKvp.Value;
+
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestMultiValueHeadersValueListValue in publicRequestMultiValueHeadersValue)
+                        {
+                                context.Writer.Write(publicRequestMultiValueHeadersValueListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetPathWithQueryString())
                 {
                     context.Writer.WritePropertyName("pathWithQueryString");

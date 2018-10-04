@@ -56,7 +56,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Format. 
         /// <para>
-        /// A single line format of the access logs of data, as specified by selected <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html#context-variable-reference">$context
+        /// A single line format of the access logs of data, as specified by selected <a href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html#context-variable-reference">$context
         /// variables</a>. The format must include at least <code>$context.requestId</code>.
         /// </para>
         /// </summary>

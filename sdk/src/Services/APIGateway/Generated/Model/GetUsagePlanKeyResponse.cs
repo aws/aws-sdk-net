@@ -35,7 +35,7 @@ namespace Amazon.APIGateway.Model
     /// To associate an API stage with a selected API key in a usage plan, you must create
     /// a UsagePlanKey resource to represent the selected <a>ApiKey</a>.
     /// </para>
-    ///  </div>" <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html">Create
+    ///  </div>" <div class="seeAlso"> <a href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/api-gateway-api-usage-plans.html">Create
     /// and Use Usage Plans</a> </div>
     /// </summary>
     public partial class GetUsagePlanKeyResponse : AmazonWebServiceResponse

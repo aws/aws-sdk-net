@@ -35,8 +35,8 @@ namespace Amazon.APIGateway.Model
     ///  <div class="remarks">To create a deployment, call <code>POST</code> on the <a>Deployments</a>
     /// resource of a <a>RestApi</a>. To view, update, or delete a deployment, call <code>GET</code>,
     /// <code>PATCH</code>, or <code>DELETE</code> on the specified deployment resource (<code>/restapis/{restapi_id}/deployments/{deployment_id}</code>).</div>
-    /// <div class="seeAlso"><a>RestApi</a>, <a>Deployments</a>, <a>Stage</a>, <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-deployment.html">AWS
-    /// CLI</a>, <a href="https://aws.amazon.com/tools/">AWS SDKs</a> </div>
+    /// <div class="seeAlso"><a>RestApi</a>, <a>Deployments</a>, <a>Stage</a>, <a href="[[AwsDocsUrlPrefix]]/cli/latest/reference/apigateway/get-deployment.html">AWS
+    /// CLI</a>, <a href="[[AwsAmazonUrlPrefix]]/tools/">AWS SDKs</a> </div>
     /// </summary>
     public partial class CreateDeploymentResponse : AmazonWebServiceResponse
     {

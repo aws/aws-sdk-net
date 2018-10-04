@@ -86,7 +86,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Path. 
         /// <para>
-        /// The <code>op</code> operation's target, as identified by a <a href="https://tools.ietf.org/html/draft-ietf-appsawg-json-pointer-08">JSON
+        /// The <code>op</code> operation's target, as identified by a <a href="[[JsonPointerRefUrl]]">JSON
         /// Pointer</a> value that references a location within the targeted resource. For example,
         /// if the target resource has an updateable property of <code>{"name":"value"}</code>,
         /// the path for this property is <code>/name</code>. If the <code>name</code> property
@@ -115,7 +115,7 @@ namespace Amazon.APIGateway.Model
         /// The new target value of the update operation. It is applicable for the <code>add</code>
         /// or <code>replace</code> operation. When using AWS CLI to update a property of a JSON
         /// value, enclose the JSON object with a pair of single quotes in a Linux shell, e.g.,
-        /// '{"a": ...}'. In a Windows shell, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+        /// '{"a": ...}'. In a Windows shell, see <a href="[[AwsDocsUrlPrefix]]/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
         /// JSON for Parameters</a>.
         /// </para>
         /// </summary>

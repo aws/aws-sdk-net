@@ -254,7 +254,7 @@ namespace Amazon.APIGateway
         /// <summary>
         /// Create an <a>ApiKey</a> resource. 
         /// 
-        ///  <div class="seeAlso"><a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/create-api-key.html">AWS
+        ///  <div class="seeAlso"><a href="[[AwsDocsUrlPrefix]]/cli/latest/reference/apigateway/create-api-key.html">AWS
         /// CLI</a></div>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateApiKey service method.</param>
@@ -326,7 +326,7 @@ namespace Amazon.APIGateway
         /// <summary>
         /// Adds a new <a>Authorizer</a> resource to an existing <a>RestApi</a> resource.
         /// 
-        ///  <div class="seeAlso"><a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/create-authorizer.html">AWS
+        ///  <div class="seeAlso"><a href="[[AwsDocsUrlPrefix]]/cli/latest/reference/apigateway/create-authorizer.html">AWS
         /// CLI</a></div>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAuthorizer service method.</param>
@@ -1330,7 +1330,7 @@ namespace Amazon.APIGateway
         /// <summary>
         /// Deletes an existing <a>Authorizer</a> resource.
         /// 
-        ///  <div class="seeAlso"><a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/delete-authorizer.html">AWS
+        ///  <div class="seeAlso"><a href="[[AwsDocsUrlPrefix]]/cli/latest/reference/apigateway/delete-authorizer.html">AWS
         /// CLI</a></div>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAuthorizer service method.</param>
@@ -2986,7 +2986,7 @@ namespace Amazon.APIGateway
         /// <summary>
         /// Describe an existing <a>Authorizer</a> resource.
         /// 
-        ///  <div class="seeAlso"><a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizer.html">AWS
+        ///  <div class="seeAlso"><a href="[[AwsDocsUrlPrefix]]/cli/latest/reference/apigateway/get-authorizer.html">AWS
         /// CLI</a></div>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAuthorizer service method.</param>
@@ -3048,7 +3048,7 @@ namespace Amazon.APIGateway
         /// <summary>
         /// Describe an existing <a>Authorizers</a> resource.
         /// 
-        ///  <div class="seeAlso"><a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizers.html">AWS
+        ///  <div class="seeAlso"><a href="[[AwsDocsUrlPrefix]]/cli/latest/reference/apigateway/get-authorizers.html">AWS
         /// CLI</a></div>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAuthorizers service method.</param>
@@ -6308,7 +6308,7 @@ namespace Amazon.APIGateway
         /// Simulate the execution of an <a>Authorizer</a> in your <a>RestApi</a> with headers,
         /// parameters, and an incoming request body.
         /// 
-        ///  <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/use-custom-authorizer.html">Enable
+        ///  <div class="seeAlso"> <a href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/use-custom-authorizer.html">Enable
         /// custom authorizers</a> </div>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TestInvokeAuthorizer service method.</param>
@@ -6633,7 +6633,7 @@ namespace Amazon.APIGateway
         /// <summary>
         /// Updates an existing <a>Authorizer</a> resource.
         /// 
-        ///  <div class="seeAlso"><a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/update-authorizer.html">AWS
+        ///  <div class="seeAlso"><a href="[[AwsDocsUrlPrefix]]/cli/latest/reference/apigateway/update-authorizer.html">AWS
         /// CLI</a></div>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAuthorizer service method.</param>

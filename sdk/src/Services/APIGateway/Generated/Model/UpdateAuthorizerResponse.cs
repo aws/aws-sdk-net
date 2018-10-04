@@ -31,7 +31,7 @@ namespace Amazon.APIGateway.Model
     /// Represents an authorization layer for methods. If enabled on a method, API Gateway
     /// will activate the authorizer when a client calls the method.
     /// 
-    ///  <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/use-custom-authorizer.html">Enable
+    ///  <div class="seeAlso"> <a href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/use-custom-authorizer.html">Enable
     /// custom authorization</a> </div>
     /// </summary>
     public partial class UpdateAuthorizerResponse : AmazonWebServiceResponse
@@ -116,7 +116,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property AuthType. 
         /// <para>
-        /// Optional customer-defined field, used in OpenAPI imports and exports without functional
+        /// Optional customer-defined field, used in Swagger imports and exports without functional
         /// impact.
         /// </para>
         /// </summary>

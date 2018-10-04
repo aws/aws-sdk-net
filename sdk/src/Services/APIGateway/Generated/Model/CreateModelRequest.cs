@@ -115,8 +115,7 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property Schema. 
         /// <para>
         /// The schema for the model. For <code>application/json</code> models, this should be
-        /// <a href="https://tools.ietf.org/html/draft-zyp-json-schema-04" target="_blank">JSON
-        /// schema draft 4</a> model.
+        /// <a href="[[JsonSchemaUrl]]" target="_blank">JSON schema draft 4</a> model.
         /// </para>
         /// </summary>
         public string Schema
