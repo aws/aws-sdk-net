@@ -47,6 +47,7 @@ namespace Amazon.CodeBuild.Model
         private NetworkInterface _networkInterface;
         private List<BuildPhase> _phases = new List<BuildPhase>();
         private string _projectName;
+        private string _resolvedSourceVersion;
         private List<BuildArtifacts> _secondaryArtifacts = new List<BuildArtifacts>();
         private List<ProjectSource> _secondarySources = new List<ProjectSource>();
         private List<ProjectSourceVersion> _secondarySourceVersions = new List<ProjectSourceVersion>();
@@ -371,6 +372,37 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetProjectName()
         {
             return this._projectName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResolvedSourceVersion. 
+        /// <para>
+        ///  An identifier for the version of this build's source code. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  For AWS CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  For AWS CodePipeline, the source revision provided by AWS CodePipeline. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  For Amazon Simple Storage Service (Amazon S3), this does not apply. 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string ResolvedSourceVersion
+        {
+            get { return this._resolvedSourceVersion; }
+            set { this._resolvedSourceVersion = value; }
+        }
+
+        // Check to see if ResolvedSourceVersion property is set
+        internal bool IsSetResolvedSourceVersion()
+        {
+            return this._resolvedSourceVersion != null;
         }
 
         /// <summary>

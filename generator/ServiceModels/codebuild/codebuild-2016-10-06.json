@@ -759,8 +759,8 @@
                   },
                   "location": {
                     "type": "string",
-                    "zonbookDocumentation": "\n         <para>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>aws:s3:::my-bucket/build-log</code>.\n      </para>\n      ",
-                    "documentation": "\n         <p>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>aws:s3:::my-bucket/build-log</code>.\n      </p>\n      ",
+                    "zonbookDocumentation": "\n         <para>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>arn:aws:s3:::my-bucket/build-log</code>.\n      </para>\n      ",
+                    "documentation": "\n         <p>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>arn:aws:s3:::my-bucket/build-log</code>.\n      </p>\n      ",
                     "shape_name": "String"
                   }
                 },
@@ -1479,8 +1479,8 @@
                       },
                       "location": {
                         "type": "string",
-                        "zonbookDocumentation": "\n         <para>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>aws:s3:::my-bucket/build-log</code>.\n      </para>\n      ",
-                        "documentation": "\n         <p>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>aws:s3:::my-bucket/build-log</code>.\n      </p>\n      ",
+                        "zonbookDocumentation": "\n         <para>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>arn:aws:s3:::my-bucket/build-log</code>.\n      </para>\n      ",
+                        "documentation": "\n         <p>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>arn:aws:s3:::my-bucket/build-log</code>.\n      </p>\n      ",
                         "shape_name": "String"
                       }
                     },
@@ -2157,8 +2157,8 @@
                   },
                   "location": {
                     "type": "string",
-                    "zonbookDocumentation": "\n         <para>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>aws:s3:::my-bucket/build-log</code>.\n      </para>\n      ",
-                    "documentation": "\n         <p>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>aws:s3:::my-bucket/build-log</code>.\n      </p>\n      ",
+                    "zonbookDocumentation": "\n         <para>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>arn:aws:s3:::my-bucket/build-log</code>.\n      </para>\n      ",
+                    "documentation": "\n         <p>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>arn:aws:s3:::my-bucket/build-log</code>.\n      </p>\n      ",
                     "shape_name": "String"
                   }
                 },
@@ -2877,8 +2877,8 @@
                       },
                       "location": {
                         "type": "string",
-                        "zonbookDocumentation": "\n         <para>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>aws:s3:::my-bucket/build-log</code>.\n      </para>\n      ",
-                        "documentation": "\n         <p>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>aws:s3:::my-bucket/build-log</code>.\n      </p>\n      ",
+                        "zonbookDocumentation": "\n         <para>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>arn:aws:s3:::my-bucket/build-log</code>.\n      </para>\n      ",
+                        "documentation": "\n         <p>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>arn:aws:s3:::my-bucket/build-log</code>.\n      </p>\n      ",
                         "shape_name": "String"
                       }
                     },
@@ -3651,8 +3651,8 @@
                         },
                         "location": {
                           "type": "string",
-                          "zonbookDocumentation": "\n         <para>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>aws:s3:::my-bucket/build-log</code>.\n      </para>\n      ",
-                          "documentation": "\n         <p>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>aws:s3:::my-bucket/build-log</code>.\n      </p>\n      ",
+                          "zonbookDocumentation": "\n         <para>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>arn:aws:s3:::my-bucket/build-log</code>.\n      </para>\n      ",
+                          "documentation": "\n         <p>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>arn:aws:s3:::my-bucket/build-log</code>.\n      </p>\n      ",
                           "shape_name": "String"
                         }
                       },
@@ -4674,8 +4674,8 @@
                   },
                   "location": {
                     "type": "string",
-                    "zonbookDocumentation": "\n         <para>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>aws:s3:::my-bucket/build-log</code>.\n      </para>\n      ",
-                    "documentation": "\n         <p>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>aws:s3:::my-bucket/build-log</code>.\n      </p>\n      ",
+                    "zonbookDocumentation": "\n         <para>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>arn:aws:s3:::my-bucket/build-log</code>.\n      </para>\n      ",
+                    "documentation": "\n         <p>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>arn:aws:s3:::my-bucket/build-log</code>.\n      </p>\n      ",
                     "shape_name": "String"
                   }
                 },
@@ -4748,6 +4748,13 @@
                 "type": "string",
                 "zonbookDocumentation": "\n         <para>Any version identifier for the version of the source code to be built.</para>\n      ",
                 "documentation": "\n         <p>Any version identifier for the version of the source code to be built.</p>\n      ",
+                "shape_name": "NonEmptyString",
+                "min_length": 1
+              },
+              "resolvedSourceVersion": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <para>\n         An identifier for the version of this build's source code.\n      </para>\n         <itemizedlist>\n            <listitem>\n               <para>\n               For AWS CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID.\n            </para>\n            </listitem>\n            <listitem>\n               <para>\n               For AWS CodePipeline, the source revision provided by AWS CodePipeline.\n            </para>\n            </listitem>\n            <listitem>\n               <para>\n               For Amazon Simple Storage Service (Amazon S3), this does not apply.\n            </para>\n            </listitem>\n         </itemizedlist>\n      ",
+                "documentation": "\n         <p>\n         An identifier for the version of this build's source code.\n      </p>\n         <ul>\n            <li>\n               <p>\n               For AWS CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID.\n            </p>\n            </li>\n            <li>\n               <p>\n               For AWS CodePipeline, the source revision provided by AWS CodePipeline.\n            </p>\n            </li>\n            <li>\n               <p>\n               For Amazon Simple Storage Service (Amazon S3), this does not apply.\n            </p>\n            </li>\n         </ul>\n      ",
                 "shape_name": "NonEmptyString",
                 "min_length": 1
               },
@@ -5348,8 +5355,8 @@
                       },
                       "location": {
                         "type": "string",
-                        "zonbookDocumentation": "\n         <para>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>aws:s3:::my-bucket/build-log</code>.\n      </para>\n      ",
-                        "documentation": "\n         <p>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>aws:s3:::my-bucket/build-log</code>.\n      </p>\n      ",
+                        "zonbookDocumentation": "\n         <para>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>arn:aws:s3:::my-bucket/build-log</code>.\n      </para>\n      ",
+                        "documentation": "\n         <p>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>arn:aws:s3:::my-bucket/build-log</code>.\n      </p>\n      ",
                         "shape_name": "String"
                       }
                     },
@@ -5563,6 +5570,13 @@
                 "shape_name": "NonEmptyString",
                 "min_length": 1
               },
+              "resolvedSourceVersion": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <para>\n         An identifier for the version of this build's source code.\n      </para>\n         <itemizedlist>\n            <listitem>\n               <para>\n               For AWS CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID.\n            </para>\n            </listitem>\n            <listitem>\n               <para>\n               For AWS CodePipeline, the source revision provided by AWS CodePipeline.\n            </para>\n            </listitem>\n            <listitem>\n               <para>\n               For Amazon Simple Storage Service (Amazon S3), this does not apply.\n            </para>\n            </listitem>\n         </itemizedlist>\n      ",
+                "documentation": "\n         <p>\n         An identifier for the version of this build's source code.\n      </p>\n         <ul>\n            <li>\n               <p>\n               For AWS CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID.\n            </p>\n            </li>\n            <li>\n               <p>\n               For AWS CodePipeline, the source revision provided by AWS CodePipeline.\n            </p>\n            </li>\n            <li>\n               <p>\n               For Amazon Simple Storage Service (Amazon S3), this does not apply.\n            </p>\n            </li>\n         </ul>\n      ",
+                "shape_name": "NonEmptyString",
+                "min_length": 1
+              },
               "projectName": {
                 "type": "string",
                 "zonbookDocumentation": "\n         <para>The name of the AWS CodeBuild project.</para>\n      ",
@@ -6160,8 +6174,8 @@
                       },
                       "location": {
                         "type": "string",
-                        "zonbookDocumentation": "\n         <para>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>aws:s3:::my-bucket/build-log</code>.\n      </para>\n      ",
-                        "documentation": "\n         <p>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>aws:s3:::my-bucket/build-log</code>.\n      </p>\n      ",
+                        "zonbookDocumentation": "\n         <para>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>arn:aws:s3:::my-bucket/build-log</code>.\n      </para>\n      ",
+                        "documentation": "\n         <p>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>arn:aws:s3:::my-bucket/build-log</code>.\n      </p>\n      ",
                         "shape_name": "String"
                       }
                     },
@@ -6520,6 +6534,13 @@
                   "type": "string",
                   "zonbookDocumentation": "\n         <para>Any version identifier for the version of the source code to be built.</para>\n      ",
                   "documentation": "\n         <p>Any version identifier for the version of the source code to be built.</p>\n      ",
+                  "shape_name": "NonEmptyString",
+                  "min_length": 1
+                },
+                "resolvedSourceVersion": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <para>\n         An identifier for the version of this build's source code.\n      </para>\n         <itemizedlist>\n            <listitem>\n               <para>\n               For AWS CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID.\n            </para>\n            </listitem>\n            <listitem>\n               <para>\n               For AWS CodePipeline, the source revision provided by AWS CodePipeline.\n            </para>\n            </listitem>\n            <listitem>\n               <para>\n               For Amazon Simple Storage Service (Amazon S3), this does not apply.\n            </para>\n            </listitem>\n         </itemizedlist>\n      ",
+                  "documentation": "\n         <p>\n         An identifier for the version of this build's source code.\n      </p>\n         <ul>\n            <li>\n               <p>\n               For AWS CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID.\n            </p>\n            </li>\n            <li>\n               <p>\n               For AWS CodePipeline, the source revision provided by AWS CodePipeline.\n            </p>\n            </li>\n            <li>\n               <p>\n               For Amazon Simple Storage Service (Amazon S3), this does not apply.\n            </p>\n            </li>\n         </ul>\n      ",
                   "shape_name": "NonEmptyString",
                   "min_length": 1
                 },
@@ -7120,8 +7141,8 @@
                         },
                         "location": {
                           "type": "string",
-                          "zonbookDocumentation": "\n         <para>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>aws:s3:::my-bucket/build-log</code>.\n      </para>\n      ",
-                          "documentation": "\n         <p>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>aws:s3:::my-bucket/build-log</code>.\n      </p>\n      ",
+                          "zonbookDocumentation": "\n         <para>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>arn:aws:s3:::my-bucket/build-log</code>.\n      </para>\n      ",
+                          "documentation": "\n         <p>\n         The ARN of an S3 bucket and the path prefix for S3 logs. If your\n         Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, \n         then acceptable formats are <code>my-bucket/build-log</code> or <code>arn:aws:s3:::my-bucket/build-log</code>.\n      </p>\n      ",
                           "shape_name": "String"
                         }
                       },

@@ -122,6 +122,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeBuild.Model.Build.ResolvedSourceVersion</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeBuild.Model.Build.ServiceRole</property>
     <min>1</min>
   </property-value-rule>
