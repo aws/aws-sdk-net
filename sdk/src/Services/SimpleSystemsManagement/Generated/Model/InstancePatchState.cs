@@ -38,6 +38,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         private int? _failedCount;
         private int? _installedCount;
         private int? _installedOtherCount;
+        private int? _installedRejectedCount;
+        private string _installOverrideList;
         private string _instanceId;
         private int? _missingCount;
         private int? _notApplicableCount;
@@ -120,6 +122,59 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetInstalledOtherCount()
         {
             return this._installedOtherCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstalledRejectedCount. 
+        /// <para>
+        /// The number of instances with patches installed that are specified in a RejectedPatches
+        /// list. Patches with a status of <i>InstalledRejected</i> were typically installed before
+        /// they were added to a RejectedPatches list.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the value
+        /// of InstalledRejectedCount will always be 0 (zero).
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public int InstalledRejectedCount
+        {
+            get { return this._installedRejectedCount.GetValueOrDefault(); }
+            set { this._installedRejectedCount = value; }
+        }
+
+        // Check to see if InstalledRejectedCount property is set
+        internal bool IsSetInstalledRejectedCount()
+        {
+            return this._installedRejectedCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstallOverrideList. 
+        /// <para>
+        /// An https URL or an Amazon S3 path-style URL to a list of patches to be installed.
+        /// This patch installation list, which you maintain in an Amazon S3 bucket in YAML format
+        /// and specify in the SSM document <code>AWS-RunPatchBaseline</code>, overrides the patches
+        /// specified by the default patch baseline.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about the <code>InstallOverrideList</code> parameter, see <a
+        /// href="http://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
+        /// the SSM Document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string InstallOverrideList
+        {
+            get { return this._installOverrideList; }
+            set { this._installOverrideList = value; }
+        }
+
+        // Check to see if InstallOverrideList property is set
+        internal bool IsSetInstallOverrideList()
+        {
+            return this._installOverrideList != null;
         }
 
         /// <summary>

@@ -88,6 +88,18 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.InstalledOtherCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InstalledRejectedCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.InstalledRejectedCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("InstallOverrideList", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InstallOverrideList = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("InstanceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

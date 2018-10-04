@@ -45,6 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private OperatingSystem _operatingSystem;
         private List<string> _patchGroups = new List<string>();
         private List<string> _rejectedPatches = new List<string>();
+        private PatchAction _rejectedPatchesAction;
         private List<PatchSource> _sources = new List<PatchSource>();
 
         /// <summary>
@@ -282,6 +283,26 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetRejectedPatches()
         {
             return this._rejectedPatches != null && this._rejectedPatches.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RejectedPatchesAction. 
+        /// <para>
+        /// The action specified to take on patches included in the RejectedPatches list. A patch
+        /// can be allowed only if it is a dependency of another package, or blocked entirely
+        /// along with packages that include it as a dependency.
+        /// </para>
+        /// </summary>
+        public PatchAction RejectedPatchesAction
+        {
+            get { return this._rejectedPatchesAction; }
+            set { this._rejectedPatchesAction = value; }
+        }
+
+        // Check to see if RejectedPatchesAction property is set
+        internal bool IsSetRejectedPatchesAction()
+        {
+            return this._rejectedPatchesAction != null;
         }
 
         /// <summary>

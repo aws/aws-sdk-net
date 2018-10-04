@@ -75,6 +75,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     response.InstancesWithInstalledPatches = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InstancesWithInstalledRejectedPatches", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.InstancesWithInstalledRejectedPatches = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("InstancesWithMissingPatches", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

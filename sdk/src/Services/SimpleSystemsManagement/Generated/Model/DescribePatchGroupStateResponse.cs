@@ -36,6 +36,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private int? _instancesWithFailedPatches;
         private int? _instancesWithInstalledOtherPatches;
         private int? _instancesWithInstalledPatches;
+        private int? _instancesWithInstalledRejectedPatches;
         private int? _instancesWithMissingPatches;
         private int? _instancesWithNotApplicablePatches;
 
@@ -109,6 +110,32 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetInstancesWithInstalledPatches()
         {
             return this._instancesWithInstalledPatches.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstancesWithInstalledRejectedPatches. 
+        /// <para>
+        /// The number of instances with patches installed that are specified in a RejectedPatches
+        /// list. Patches with a status of <i>InstalledRejected</i> were typically installed before
+        /// they were added to a RejectedPatches list.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the value
+        /// of InstancesWithInstalledRejectedPatches will always be 0 (zero).
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public int InstancesWithInstalledRejectedPatches
+        {
+            get { return this._instancesWithInstalledRejectedPatches.GetValueOrDefault(); }
+            set { this._instancesWithInstalledRejectedPatches = value; }
+        }
+
+        // Check to see if InstancesWithInstalledRejectedPatches property is set
+        internal bool IsSetInstancesWithInstalledRejectedPatches()
+        {
+            return this._instancesWithInstalledRejectedPatches.HasValue; 
         }
 
         /// <summary>

@@ -2245,6 +2245,12 @@
     <pattern>^[a-zA-Z0-9_\-:/]{20,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InstancePatchState.InstallOverrideList</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^https://.+$|^s3://([^/]+)/(.*?([^/]+))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.InstancePatchState.InstanceId</property>
     <pattern>(^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)</pattern>
   </property-value-rule>

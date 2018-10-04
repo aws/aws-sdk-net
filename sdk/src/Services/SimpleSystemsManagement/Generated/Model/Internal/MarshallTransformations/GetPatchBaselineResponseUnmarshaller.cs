@@ -129,6 +129,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     response.RejectedPatches = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RejectedPatchesAction", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.RejectedPatchesAction = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Sources", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<PatchSource, PatchSourceUnmarshaller>(PatchSourceUnmarshaller.Instance);

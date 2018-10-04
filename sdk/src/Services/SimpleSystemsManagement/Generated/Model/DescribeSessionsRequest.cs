@@ -98,7 +98,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The session status to retrieve a list of sessions for. For example, "active".
+        /// The session status to retrieve a list of sessions for. For example, "Active".
         /// </para>
         /// </summary>
         public SessionState State

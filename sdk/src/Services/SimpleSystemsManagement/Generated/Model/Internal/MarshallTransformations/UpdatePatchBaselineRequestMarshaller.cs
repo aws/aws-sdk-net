@@ -141,6 +141,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetRejectedPatchesAction())
+                {
+                    context.Writer.WritePropertyName("RejectedPatchesAction");
+                    context.Writer.Write(publicRequest.RejectedPatchesAction);
+                }
+
                 if(publicRequest.IsSetReplace())
                 {
                     context.Writer.WritePropertyName("Replace");

@@ -50,6 +50,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _name;
         private OperatingSystem _operatingSystem;
         private List<string> _rejectedPatches = new List<string>();
+        private PatchAction _rejectedPatchesAction;
         private List<PatchSource> _sources = new List<PatchSource>();
 
         /// <summary>
@@ -248,6 +249,39 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetRejectedPatches()
         {
             return this._rejectedPatches != null && this._rejectedPatches.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RejectedPatchesAction. 
+        /// <para>
+        /// The action for Patch Manager to take on patches included in the RejectedPackages list.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>ALLOW_AS_DEPENDENCY</b>: A package in the Rejected patches list is installed only
+        /// if it is a dependency of another package. It is considered compliant with the patch
+        /// baseline, and its status is reported as <i>InstalledOther</i>. This is the default
+        /// action if no option is specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>BLOCK</b>: Packages in the RejectedPatches list, and packages that include them
+        /// as dependencies, are not installed under any circumstances. If a package was installed
+        /// before it was added to the Rejected patches list, it is considered non-compliant with
+        /// the patch baseline, and its status is reported as <i>InstalledRejected</i>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public PatchAction RejectedPatchesAction
+        {
+            get { return this._rejectedPatchesAction; }
+            set { this._rejectedPatchesAction = value; }
+        }
+
+        // Check to see if RejectedPatchesAction property is set
+        internal bool IsSetRejectedPatchesAction()
+        {
+            return this._rejectedPatchesAction != null;
         }
 
         /// <summary>
