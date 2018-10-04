@@ -1,3 +1,12 @@
+### 3.3.374.0 (2018-10-03 23:53 UTC)
+* CloudFront (3.3.10.5)
+	* Fixed client throwing NullReferenceException instead of AmazonCloudFrontException when requests are performed without specifying certain missing required properties.
+* Core 3.3.26.0
+	* Code for future SDK instrumentation and telemetry
+Add credential_source parameter in the shared credentials file
+Correct Metric.ProxyHost setup
+	* All services packages updated to require new Core
+
 ### 3.3.373.0 (2018-10-02 21:12 UTC)
 * SageMaker (3.3.13.0)
 	* Waiter for SageMaker Batch Transform Jobs.
