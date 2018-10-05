@@ -36,7 +36,7 @@ namespace Amazon.Runtime
         protected RuntimePipeline RuntimePipeline { get; set; }
         protected internal AWSCredentials Credentials { get; private set; }
         public IClientConfig Config { get; private set; }
-        protected abstract IServiceMetadata ServiceMetadata { get; }
+        protected virtual IServiceMetadata ServiceMetadata { get; } = new ServiceMetadata();
         protected virtual bool SupportResponseLogging
         {
             get { return true; }
@@ -368,7 +368,7 @@ namespace Amazon.Runtime
 
 #endregion
 
-#region Dispose methods
+        #region Dispose methods
 
         public void Dispose()
         {
@@ -460,7 +460,7 @@ namespace Amazon.Runtime
             );
 
 #if BCL || CORECLR
-            if (DeterminedCSMConfiguration.Instance.CSMConfiguration.Enabled)
+            if (DeterminedCSMConfiguration.Instance.CSMConfiguration.Enabled && !string.IsNullOrEmpty(ServiceMetadata.ServiceId))
             {
                 this.RuntimePipeline.AddHandlerBefore<ErrorHandler>(new CSMHandler());
             }
@@ -613,7 +613,7 @@ namespace Amazon.Runtime
         private static void SetupCSMHandler(IRequestContext requestContext)
         {
 #if BCL || CORECLR
-            if (DeterminedCSMConfiguration.Instance.CSMConfiguration.Enabled)
+            if (requestContext.CSMEnabled)
             {
                 requestContext.CSMCallEvent = new MonitoringAPICallEvent(requestContext);
             }

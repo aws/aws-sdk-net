@@ -47,7 +47,7 @@ namespace Amazon.Runtime.Internal
 
 #if BCL || CORECLR
                 // capture the latency for the entire SDK call if CSM is enabled
-                if (DeterminedCSMConfiguration.Instance.CSMConfiguration.Enabled)
+                if (executionContext.RequestContext.CSMEnabled)
                 {
                     executionContext.RequestContext.CSMCallEvent.Latency = latency;
                     CSMUtilities.SerializetoJsonAndPostOverUDP(executionContext.RequestContext.CSMCallEvent);
@@ -84,7 +84,7 @@ namespace Amazon.Runtime.Internal
 
 #if BCL || CORECLR
                 // capture the latency for the entire SDK call if CSM is enabled
-                if (DeterminedCSMConfiguration.Instance.CSMConfiguration.Enabled)
+                if (executionContext.RequestContext.CSMEnabled)
                 {
                     executionContext.RequestContext.CSMCallEvent.Latency = latency;
                     CSMUtilities.SerializetoJsonAndPostOverUDPAsync(executionContext.RequestContext.CSMCallEvent).ConfigureAwait(false);
@@ -121,7 +121,7 @@ namespace Amazon.Runtime.Internal
                     .ElapsedTime);
 #if BCL
             // capture the latency for the entire SDK call if CSM is enabled
-            if (DeterminedCSMConfiguration.Instance.CSMConfiguration.Enabled)
+            if (executionContext.RequestContext.CSMEnabled)
             {
                 executionContext.RequestContext.CSMCallEvent.Latency = latency;
                 CSMUtilities.BeginSerializetoJsonAndPostOverUDP(executionContext.RequestContext.CSMCallEvent);

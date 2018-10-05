@@ -48,6 +48,8 @@ namespace Amazon.Runtime
         MonitoringAPICallEvent CSMCallEvent { get; set; }
 #endif
         IServiceMetadata ServiceMetaData { get; }
+
+        bool CSMEnabled { get; }
     }
 
     public interface IResponseContext
@@ -94,6 +96,7 @@ namespace Amazon.Runtime.Internal
 {
     public class RequestContext : IRequestContext
     {
+        private IServiceMetadata _serviceMetadata;
         AbstractAWSSigner clientSigner;
 
         public RequestContext(bool enableMetrics, AbstractAWSSigner clientSigner)
@@ -141,7 +144,26 @@ namespace Amazon.Runtime.Internal
 
         public MonitoringAPICallEvent CSMCallEvent { get; set; }
 #endif
-        public IServiceMetadata ServiceMetaData { get; internal set; }
+        public IServiceMetadata ServiceMetaData
+        {
+            get
+            {
+                return _serviceMetadata;
+            }
+            internal set
+            {
+                _serviceMetadata = value;
+                // The CSMEnabled flag is referred in the runtime pipeline before capturing any CSM data.
+                // Along with the customer set CSMEnabled flag, the ServiceMetadata.ServiceId needs to be set
+                // to capture client side metrics. Older service nuget packages might not have a ServiceMetadata
+                // implementation and in such cases client side metrics will not be captured.
+#if BCL || CORECLR
+                CSMEnabled = DeterminedCSMConfiguration.Instance.CSMConfiguration.Enabled && !string.IsNullOrEmpty(_serviceMetadata.ServiceId);
+#endif
+            }
+        }
+
+        public bool CSMEnabled { get; private set; }
     }
 
     public class AsyncRequestContext : RequestContext, IAsyncRequestContext

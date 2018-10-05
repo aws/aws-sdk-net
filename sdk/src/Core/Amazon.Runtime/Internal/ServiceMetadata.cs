@@ -13,18 +13,26 @@
  * permissions and limitations under the License.
  */
 
+using System.Collections.Generic;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.Runtime.Internal
 {
-    public interface IServiceMetadata
+    /// <summary>
+    /// Default ServiceMetadata implementation.
+    /// This implementation will be used if the service doesn't have a
+    /// IServiceMetadata implementation.
+    /// </summary>
+    internal class ServiceMetadata : IServiceMetadata
     {
         /// <summary>
         /// Gets the value of the Service Id.
         /// </summary>
-        string ServiceId { get; }
+        public string ServiceId { get; }
 
         /// <summary>
         /// Gets the dictionary that gives mapping of renamed operations
         /// </summary>
-        System.Collections.Generic.IDictionary<string, string> OperationNameMapping { get; }
+        public IDictionary<string, string> OperationNameMapping { get; } = new Dictionary<string, string>();
     }
 }
