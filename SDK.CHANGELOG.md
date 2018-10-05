@@ -1,3 +1,13 @@
+### 3.3.375.0 (2018-10-04 22:55 UTC)
+* APIGateway (3.3.22.0)
+	* Adding support for multi-value parameters in TestInvokeMethod and TestInvokeAuthorizer.
+* CodeBuild (3.3.17.0)
+	* Add resolved source version field in build output
+* SimpleSystemsManagement (3.3.32.0)
+	*  Adds RejectedPatchesAction to baseline to enable stricted validation of the rejected Patches List ; Add InstalledRejected and InstallOverrideList to compliance reporting
+* StorageGateway (3.3.11.0)
+	* AWS Storage Gateway now enables you to specify folders and subfolders when you update your file gateway's view of your S3 objects using the Refresh Cache API.
+
 ### 3.3.374.0 (2018-10-03 23:53 UTC)
 * CloudFront (3.3.10.5)
 	* Fixed client throwing NullReferenceException instead of AmazonCloudFrontException when requests are performed without specifying certain missing required properties.
