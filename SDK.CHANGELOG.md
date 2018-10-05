@@ -1,3 +1,7 @@
+### 3.3.376.0 (2018-10-05 21:07 UTC)
+* DirectoryService (3.3.8.0)
+	* SDK changes to create a new type of trust for active directory
+
 ### 3.3.375.0 (2018-10-04 22:55 UTC)
 * APIGateway (3.3.22.0)
 	* Adding support for multi-value parameters in TestInvokeMethod and TestInvokeAuthorizer.
