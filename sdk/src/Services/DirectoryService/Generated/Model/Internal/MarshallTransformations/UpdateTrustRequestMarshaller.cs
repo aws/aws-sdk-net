@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateTrust Request Marshaller
+    /// UpdateTrust Request Marshaller
     /// </summary>       
-    public class CreateTrustRequestMarshaller : IMarshaller<IRequest, CreateTrustRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateTrustRequestMarshaller : IMarshaller<IRequest, UpdateTrustRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateTrustRequest)input);
+            return this.Marshall((UpdateTrustRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateTrustRequest publicRequest)
+        public IRequest Marshall(UpdateTrustRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.DirectoryService");
-            string target = "DirectoryService_20150416.CreateTrust";
+            string target = "DirectoryService_20150416.UpdateTrust";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -67,51 +67,16 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConditionalForwarderIpAddrs())
-                {
-                    context.Writer.WritePropertyName("ConditionalForwarderIpAddrs");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestConditionalForwarderIpAddrsListValue in publicRequest.ConditionalForwarderIpAddrs)
-                    {
-                            context.Writer.Write(publicRequestConditionalForwarderIpAddrsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetDirectoryId())
-                {
-                    context.Writer.WritePropertyName("DirectoryId");
-                    context.Writer.Write(publicRequest.DirectoryId);
-                }
-
-                if(publicRequest.IsSetRemoteDomainName())
-                {
-                    context.Writer.WritePropertyName("RemoteDomainName");
-                    context.Writer.Write(publicRequest.RemoteDomainName);
-                }
-
                 if(publicRequest.IsSetSelectiveAuth())
                 {
                     context.Writer.WritePropertyName("SelectiveAuth");
                     context.Writer.Write(publicRequest.SelectiveAuth);
                 }
 
-                if(publicRequest.IsSetTrustDirection())
+                if(publicRequest.IsSetTrustId())
                 {
-                    context.Writer.WritePropertyName("TrustDirection");
-                    context.Writer.Write(publicRequest.TrustDirection);
-                }
-
-                if(publicRequest.IsSetTrustPassword())
-                {
-                    context.Writer.WritePropertyName("TrustPassword");
-                    context.Writer.Write(publicRequest.TrustPassword);
-                }
-
-                if(publicRequest.IsSetTrustType())
-                {
-                    context.Writer.WritePropertyName("TrustType");
-                    context.Writer.Write(publicRequest.TrustType);
+                    context.Writer.WritePropertyName("TrustId");
+                    context.Writer.Write(publicRequest.TrustId);
                 }
 
         
@@ -123,9 +88,9 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateTrustRequestMarshaller _instance = new CreateTrustRequestMarshaller();        
+        private static UpdateTrustRequestMarshaller _instance = new UpdateTrustRequestMarshaller();        
 
-        internal static CreateTrustRequestMarshaller GetInstance()
+        internal static UpdateTrustRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -133,7 +98,7 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateTrustRequestMarshaller Instance
+        public static UpdateTrustRequestMarshaller Instance
         {
             get
             {

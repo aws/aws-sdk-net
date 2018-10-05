@@ -28,24 +28,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// Container for the parameters to the VerifyTrust operation.
-    /// AWS Directory Service for Microsoft Active Directory allows you to configure and verify
-    /// trust relationships.
-    /// 
-    ///  
-    /// <para>
-    /// This action verifies a trust relationship between your AWS Managed Microsoft AD directory
-    /// and an external domain.
-    /// </para>
+    /// This is the response object from the UpdateTrust operation.
     /// </summary>
-    public partial class VerifyTrustRequest : AmazonDirectoryServiceRequest
+    public partial class UpdateTrustResponse : AmazonWebServiceResponse
     {
+        private string _requestId;
         private string _trustId;
+
+        /// <summary>
+        /// Gets and sets the property RequestId.
+        /// </summary>
+        public string RequestId
+        {
+            get { return this._requestId; }
+            set { this._requestId = value; }
+        }
+
+        // Check to see if RequestId property is set
+        internal bool IsSetRequestId()
+        {
+            return this._requestId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property TrustId. 
         /// <para>
-        /// The unique Trust ID of the trust relationship to verify.
+        /// Identifier of the trust relationship.
         /// </para>
         /// </summary>
         public string TrustId

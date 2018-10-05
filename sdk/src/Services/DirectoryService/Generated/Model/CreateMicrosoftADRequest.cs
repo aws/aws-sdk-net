@@ -29,7 +29,7 @@ namespace Amazon.DirectoryService.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateMicrosoftAD operation.
-    /// Creates a Microsoft AD in the AWS cloud.
+    /// Creates an AWS Managed Microsoft AD directory.
     /// 
     ///  
     /// <para>
@@ -70,7 +70,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property Edition. 
         /// <para>
-        /// AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise
+        /// AWS Managed Microsoft AD is available in two editions: Standard and Enterprise. Enterprise
         /// is the default.
         /// </para>
         /// </summary>

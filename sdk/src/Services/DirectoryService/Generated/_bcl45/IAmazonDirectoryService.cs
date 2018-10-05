@@ -539,7 +539,7 @@ namespace Amazon.DirectoryService
 
 
         /// <summary>
-        /// Creates a Microsoft AD in the AWS cloud.
+        /// Creates an AWS Managed Microsoft AD directory.
         /// 
         ///  
         /// <para>
@@ -641,15 +641,16 @@ namespace Amazon.DirectoryService
 
         /// <summary>
         /// AWS Directory Service for Microsoft Active Directory allows you to configure trust
-        /// relationships. For example, you can establish a trust between your Microsoft AD in
-        /// the AWS cloud, and your existing on-premises Microsoft Active Directory. This would
+        /// relationships. For example, you can establish a trust between your AWS Managed Microsoft
+        /// AD directory, and your existing on-premises Microsoft Active Directory. This would
         /// allow you to provide users and groups access to resources in either domain, with a
         /// single set of credentials.
         /// 
         ///  
         /// <para>
         /// This action initiates the creation of the AWS side of a trust relationship between
-        /// a Microsoft AD in the AWS cloud and an external domain.
+        /// an AWS Managed Microsoft AD directory and an external domain. You can create either
+        /// a forest trust or an external trust.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTrust service method.</param>
@@ -862,7 +863,7 @@ namespace Amazon.DirectoryService
 
 
         /// <summary>
-        /// Deletes an existing trust relationship between your Microsoft AD in the AWS cloud
+        /// Deletes an existing trust relationship between your AWS Managed Microsoft AD directory
         /// and an external domain.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTrust service method.</param>
@@ -2393,6 +2394,46 @@ namespace Amazon.DirectoryService
 
         #endregion
         
+        #region  UpdateTrust
+
+
+        /// <summary>
+        /// Updates the trust that has been set up between your AWS Managed Microsoft AD directory
+        /// and an on-premises Active Directory.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTrust service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTrust service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateTrust">REST API Reference for UpdateTrust Operation</seealso>
+        UpdateTrustResponse UpdateTrust(UpdateTrustRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTrust operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTrust operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateTrust">REST API Reference for UpdateTrust Operation</seealso>
+        Task<UpdateTrustResponse> UpdateTrustAsync(UpdateTrustRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  VerifyTrust
 
 
@@ -2402,7 +2443,7 @@ namespace Amazon.DirectoryService
         /// 
         ///  
         /// <para>
-        /// This action verifies a trust relationship between your Microsoft AD in the AWS cloud
+        /// This action verifies a trust relationship between your AWS Managed Microsoft AD directory
         /// and an external domain.
         /// </para>
         /// </summary>

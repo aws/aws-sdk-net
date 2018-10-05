@@ -88,6 +88,12 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
                     unmarshalledObject.RemoteDomainName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SelectiveAuth", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SelectiveAuth = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("StateLastUpdatedDateTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

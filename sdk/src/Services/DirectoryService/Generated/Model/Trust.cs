@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// Describes a trust relationship between an Microsoft AD in the AWS cloud and an external
-    /// domain.
+    /// Describes a trust relationship between an AWS Managed Microsoft AD directory and an
+    /// external domain.
     /// </summary>
     public partial class Trust
     {
@@ -37,6 +37,7 @@ namespace Amazon.DirectoryService.Model
         private string _directoryId;
         private DateTime? _lastUpdatedDateTime;
         private string _remoteDomainName;
+        private SelectiveAuth _selectiveAuth;
         private DateTime? _stateLastUpdatedDateTime;
         private TrustDirection _trustDirection;
         private string _trustId;
@@ -115,6 +116,24 @@ namespace Amazon.DirectoryService.Model
         internal bool IsSetRemoteDomainName()
         {
             return this._remoteDomainName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SelectiveAuth. 
+        /// <para>
+        /// Current state of selective authentication for the trust.
+        /// </para>
+        /// </summary>
+        public SelectiveAuth SelectiveAuth
+        {
+            get { return this._selectiveAuth; }
+            set { this._selectiveAuth = value; }
+        }
+
+        // Check to see if SelectiveAuth property is set
+        internal bool IsSetSelectiveAuth()
+        {
+            return this._selectiveAuth != null;
         }
 
         /// <summary>
@@ -210,7 +229,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property TrustType. 
         /// <para>
-        /// The trust relationship type.
+        /// The trust relationship type. <code>Forest</code> is the default.
         /// </para>
         /// </summary>
         public TrustType TrustType

@@ -996,7 +996,7 @@ namespace Amazon.DirectoryService
         #region  CreateMicrosoftAD
 
         /// <summary>
-        /// Creates a Microsoft AD in the AWS cloud.
+        /// Creates an AWS Managed Microsoft AD directory.
         /// 
         ///  
         /// <para>
@@ -1150,15 +1150,16 @@ namespace Amazon.DirectoryService
 
         /// <summary>
         /// AWS Directory Service for Microsoft Active Directory allows you to configure trust
-        /// relationships. For example, you can establish a trust between your Microsoft AD in
-        /// the AWS cloud, and your existing on-premises Microsoft Active Directory. This would
+        /// relationships. For example, you can establish a trust between your AWS Managed Microsoft
+        /// AD directory, and your existing on-premises Microsoft Active Directory. This would
         /// allow you to provide users and groups access to resources in either domain, with a
         /// single set of credentials.
         /// 
         ///  
         /// <para>
         /// This action initiates the creation of the AWS side of a trust relationship between
-        /// a Microsoft AD in the AWS cloud and an external domain.
+        /// an AWS Managed Microsoft AD directory and an external domain. You can create either
+        /// a forest trust or an external trust.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTrust service method.</param>
@@ -1501,7 +1502,7 @@ namespace Amazon.DirectoryService
         #region  DeleteTrust
 
         /// <summary>
-        /// Deletes an existing trust relationship between your Microsoft AD in the AWS cloud
+        /// Deletes an existing trust relationship between your AWS Managed Microsoft AD directory
         /// and an external domain.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTrust service method.</param>
@@ -3776,6 +3777,72 @@ namespace Amazon.DirectoryService
 
         #endregion
         
+        #region  UpdateTrust
+
+        /// <summary>
+        /// Updates the trust that has been set up between your AWS Managed Microsoft AD directory
+        /// and an on-premises Active Directory.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTrust service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTrust service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateTrust">REST API Reference for UpdateTrust Operation</seealso>
+        public virtual UpdateTrustResponse UpdateTrust(UpdateTrustRequest request)
+        {
+            var marshaller = UpdateTrustRequestMarshaller.Instance;
+            var unmarshaller = UpdateTrustResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateTrustRequest,UpdateTrustResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTrust operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTrust operation on AmazonDirectoryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTrust
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateTrust">REST API Reference for UpdateTrust Operation</seealso>
+        public virtual IAsyncResult BeginUpdateTrust(UpdateTrustRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = UpdateTrustRequestMarshaller.Instance;
+            var unmarshaller = UpdateTrustResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateTrustRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateTrust operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateTrust.</param>
+        /// 
+        /// <returns>Returns a  UpdateTrustResult from DirectoryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateTrust">REST API Reference for UpdateTrust Operation</seealso>
+        public virtual UpdateTrustResponse EndUpdateTrust(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateTrustResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  VerifyTrust
 
         /// <summary>
@@ -3784,7 +3851,7 @@ namespace Amazon.DirectoryService
         /// 
         ///  
         /// <para>
-        /// This action verifies a trust relationship between your Microsoft AD in the AWS cloud
+        /// This action verifies a trust relationship between your AWS Managed Microsoft AD directory
         /// and an external domain.
         /// </para>
         /// </summary>

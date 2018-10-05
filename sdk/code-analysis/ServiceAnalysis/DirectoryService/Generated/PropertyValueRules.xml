@@ -171,6 +171,7 @@
     <property>Amazon.DirectoryService.Model.CreateTrustRequest.TrustPassword</property>
     <min>1</min>
     <max>128</max>
+    <pattern>(.|\s)*\S(.|\s)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.CreateTrustResponse.TrustId</property>
@@ -441,6 +442,18 @@
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.UpdateRadiusRequest.DirectoryId</property>
     <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.UpdateTrustRequest.TrustId</property>
+    <pattern>^t-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.UpdateTrustResponse.RequestId</property>
+    <pattern>^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.UpdateTrustResponse.TrustId</property>
+    <pattern>^t-[0-9a-f]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.VerifyTrustRequest.TrustId</property>

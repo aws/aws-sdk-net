@@ -641,6 +641,56 @@ namespace Amazon.DirectoryService
 
 
     /// <summary>
+    /// Constants used for properties of type SelectiveAuth.
+    /// </summary>
+    public class SelectiveAuth : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for SelectiveAuth
+        /// </summary>
+        public static readonly SelectiveAuth Disabled = new SelectiveAuth("Disabled");
+        /// <summary>
+        /// Constant Enabled for SelectiveAuth
+        /// </summary>
+        public static readonly SelectiveAuth Enabled = new SelectiveAuth("Enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SelectiveAuth(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SelectiveAuth FindValue(string value)
+        {
+            return FindValue<SelectiveAuth>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SelectiveAuth(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ShareMethod.
     /// </summary>
     public class ShareMethod : ConstantClass
@@ -1057,6 +1107,18 @@ namespace Amazon.DirectoryService
         /// </summary>
         public static readonly TrustState Failed = new TrustState("Failed");
         /// <summary>
+        /// Constant Updated for TrustState
+        /// </summary>
+        public static readonly TrustState Updated = new TrustState("Updated");
+        /// <summary>
+        /// Constant UpdateFailed for TrustState
+        /// </summary>
+        public static readonly TrustState UpdateFailed = new TrustState("UpdateFailed");
+        /// <summary>
+        /// Constant Updating for TrustState
+        /// </summary>
+        public static readonly TrustState Updating = new TrustState("Updating");
+        /// <summary>
         /// Constant Verified for TrustState
         /// </summary>
         public static readonly TrustState Verified = new TrustState("Verified");
@@ -1110,6 +1172,10 @@ namespace Amazon.DirectoryService
     public class TrustType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant External for TrustType
+        /// </summary>
+        public static readonly TrustType External = new TrustType("External");
         /// <summary>
         /// Constant Forest for TrustType
         /// </summary>

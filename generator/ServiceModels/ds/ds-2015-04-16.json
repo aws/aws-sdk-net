@@ -1329,13 +1329,13 @@
               "Enterprise",
               "Standard"
             ],
-            "zonbookDocumentation": "\n         <para>AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.</para>\n      ",
-            "documentation": "\n         <p>AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>AWS Managed Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.</para>\n      ",
+            "documentation": "\n         <p>AWS Managed Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.</p>\n      ",
             "shape_name": "DirectoryEdition"
           }
         },
-        "zonbookDocumentation": "\n         <simpara>Creates a Microsoft AD in the AWS cloud.</simpara>\n      ",
-        "documentation": "\n         <p>Creates a Microsoft AD in the AWS cloud.</p>\n      ",
+        "zonbookDocumentation": "\n         <simpara>Creates an AWS Managed Microsoft AD directory.</simpara>\n      ",
+        "documentation": "\n         <p>Creates an AWS Managed Microsoft AD directory.</p>\n      ",
         "shape_name": "CreateMicrosoftADRequest"
       },
       "output": {
@@ -1460,7 +1460,7 @@
           "shape_name": "UnsupportedOperationException"
         }
       ],
-      "documentation": "\n         <p>Creates a Microsoft AD in the AWS cloud.</p>\n         <p>Before you call <i>CreateMicrosoftAD</i>, ensure that all of the required permissions have been explicitly granted through a policy. For details about what permissions are required to run the <i>CreateMicrosoftAD</i> operation, see <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html\">AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.</p>\n     \n      "
+      "documentation": "\n         <p>Creates an AWS Managed Microsoft AD directory.</p>\n         <p>Before you call <i>CreateMicrosoftAD</i>, ensure that all of the required permissions have been explicitly granted through a policy. For details about what permissions are required to run the <i>CreateMicrosoftAD</i> operation, see <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html\">AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.</p>\n     \n      "
     },
     "CreateSnapshot": {
       "name": "CreateSnapshot",
@@ -3433,22 +3433,22 @@
               },
               "CloudOnlyMicrosoftADLimit": {
                 "type": "integer",
-                "zonbookDocumentation": "\n         <simpara>The maximum number of Microsoft AD directories allowed in the region.</simpara>\n      ",
-                "documentation": "\n         <p>The maximum number of Microsoft AD directories allowed in the region.</p>\n      ",
+                "zonbookDocumentation": "\n         <simpara>The maximum number of AWS Managed Microsoft AD directories allowed in the region.</simpara>\n      ",
+                "documentation": "\n         <p>The maximum number of AWS Managed Microsoft AD directories allowed in the region.</p>\n      ",
                 "shape_name": "Limit",
                 "min_length": 0
               },
               "CloudOnlyMicrosoftADCurrentCount": {
                 "type": "integer",
-                "zonbookDocumentation": "\n         <simpara>The current number of Microsoft AD directories in the region.</simpara>\n      ",
-                "documentation": "\n         <p>The current number of Microsoft AD directories in the region.</p>\n      ",
+                "zonbookDocumentation": "\n         <simpara>The current number of AWS Managed Microsoft AD directories in the region.</simpara>\n      ",
+                "documentation": "\n         <p>The current number of AWS Managed Microsoft AD directories in the region.</p>\n      ",
                 "shape_name": "Limit",
                 "min_length": 0
               },
               "CloudOnlyMicrosoftADLimitReached": {
                 "type": "boolean",
-                "zonbookDocumentation": "\n         <simpara>Indicates if the Microsoft AD directory limit has been reached.</simpara>\n      ",
-                "documentation": "\n         <p>Indicates if the Microsoft AD directory limit has been reached.</p>\n      ",
+                "zonbookDocumentation": "\n         <simpara>Indicates if the AWS Managed Microsoft AD directory limit has been reached.</simpara>\n      ",
+                "documentation": "\n         <p>Indicates if the AWS Managed Microsoft AD directory limit has been reached.</p>\n      ",
                 "shape_name": "CloudOnlyDirectoriesLimitReached"
               },
               "ConnectedDirectoriesLimit": {
@@ -4660,8 +4660,8 @@
           "DirectoryId": {
             "type": "string",
             "pattern": "^d-[0-9a-f]{10}$",
-            "zonbookDocumentation": "\n         <simpara>The Directory ID of the Microsoft AD in the AWS cloud for which to establish the trust relationship.</simpara>\n      ",
-            "documentation": "\n         <p>The Directory ID of the Microsoft AD in the AWS cloud for which to establish the trust relationship.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>The Directory ID of the AWS Managed Microsoft AD directory for which to establish the trust relationship.</simpara>\n      ",
+            "documentation": "\n         <p>The Directory ID of the AWS Managed Microsoft AD directory for which to establish the trust relationship.</p>\n      ",
             "required": true,
             "shape_name": "DirectoryId"
           },
@@ -4676,6 +4676,7 @@
           "TrustPassword": {
             "type": "string",
             "sensitive": true,
+            "pattern": "(.|\\s)*\\S(.|\\s)*",
             "zonbookDocumentation": "\n         <simpara>The trust password. The must be the same password that was used when creating the trust relationship on the external domain.</simpara>\n      ",
             "documentation": "\n         <p>The trust password. The must be the same password that was used when creating the trust relationship on the external domain.</p>\n      ",
             "required": true,
@@ -4698,10 +4699,11 @@
           "TrustType": {
             "type": "string",
             "enum": [
-              "Forest"
+              "Forest",
+              "External"
             ],
-            "zonbookDocumentation": "\n         <simpara>The trust relationship type.</simpara>\n      ",
-            "documentation": "\n         <p>The trust relationship type.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>The trust relationship type. <code>Forest</code> is the default.</simpara>\n      ",
+            "documentation": "\n         <p>The trust relationship type. <code>Forest</code> is the default.</p>\n      ",
             "shape_name": "TrustType"
           },
           "ConditionalForwarderIpAddrs": {
@@ -4715,10 +4717,20 @@
               "shape_name": "IpAddr",
               "documentation": null
             }
+          },
+          "SelectiveAuth": {
+            "type": "string",
+            "enum": [
+              "Enabled",
+              "Disabled"
+            ],
+            "zonbookDocumentation": "\n         <para>Optional parameter to enable selective authentication for the trust.</para>\n      ",
+            "documentation": "\n         <p>Optional parameter to enable selective authentication for the trust.</p>\n      ",
+            "shape_name": "SelectiveAuth"
           }
         },
-        "zonbookDocumentation": "\n         <simpara>AWS Directory Service for Microsoft Active Directory allows you to configure trust relationships. For example, you can establish a trust between your Microsoft AD in the AWS cloud, and your existing on-premises Microsoft Active Directory. This would allow you to provide users and groups access to resources in either domain, with a single set of credentials.</simpara>\n         <simpara>This action initiates the creation of the AWS side of a trust relationship between a Microsoft AD in the AWS cloud and an external domain.</simpara>\n\n      ",
-        "documentation": "\n         <p>AWS Directory Service for Microsoft Active Directory allows you to configure trust relationships. For example, you can establish a trust between your Microsoft AD in the AWS cloud, and your existing on-premises Microsoft Active Directory. This would allow you to provide users and groups access to resources in either domain, with a single set of credentials.</p>\n         <p>This action initiates the creation of the AWS side of a trust relationship between a Microsoft AD in the AWS cloud and an external domain.</p>\n\n      ",
+        "zonbookDocumentation": "\n         <simpara>AWS Directory Service for Microsoft Active Directory allows you to configure trust relationships. For example, you can establish a trust between your AWS Managed Microsoft AD directory, and your existing on-premises Microsoft Active Directory. This would allow you to provide users and groups access to resources in either domain, with a single set of credentials.</simpara>\n         <simpara>This action initiates the creation of the AWS side of a trust relationship between an AWS Managed Microsoft AD directory and an external domain.</simpara>\n\n      ",
+        "documentation": "\n         <p>AWS Directory Service for Microsoft Active Directory allows you to configure trust relationships. For example, you can establish a trust between your AWS Managed Microsoft AD directory, and your existing on-premises Microsoft Active Directory. This would allow you to provide users and groups access to resources in either domain, with a single set of credentials.</p>\n         <p>This action initiates the creation of the AWS side of a trust relationship between an AWS Managed Microsoft AD directory and an external domain.</p>\n\n      ",
         "shape_name": "CreateTrustRequest"
       },
       "output": {
@@ -4864,7 +4876,143 @@
           "shape_name": "UnsupportedOperationException"
         }
       ],
-      "documentation": "\n         <p>AWS Directory Service for Microsoft Active Directory allows you to configure trust relationships. For example, you can establish a trust between your Microsoft AD in the AWS cloud, and your existing on-premises Microsoft Active Directory. This would allow you to provide users and groups access to resources in either domain, with a single set of credentials.</p>\n         <p>This action initiates the creation of the AWS side of a trust relationship between a Microsoft AD in the AWS cloud and an external domain.</p>\n     \n      "
+      "documentation": "\n         <p>AWS Directory Service for Microsoft Active Directory allows you to configure trust relationships. For example, you can establish a trust between your AWS Managed Microsoft AD directory, and your existing on-premises Microsoft Active Directory. This would allow you to provide users and groups access to resources in either domain, with a single set of credentials.</p>\n         <p>This action initiates the creation of the AWS side of a trust relationship between an AWS Managed Microsoft AD directory and an external domain. You can create either a forest trust or an external trust.</p>\n     \n      "
+    },
+    "UpdateTrust": {
+      "name": "UpdateTrust",
+      "input": {
+        "type": "structure",
+        "members": {
+          "TrustId": {
+            "type": "string",
+            "pattern": "^t-[0-9a-f]{10}$",
+            "zonbookDocumentation": "\n         <para>Identifier of the trust relationship.</para>\n      ",
+            "documentation": "\n         <p>Identifier of the trust relationship.</p>\n      ",
+            "required": true,
+            "shape_name": "TrustId"
+          },
+          "SelectiveAuth": {
+            "type": "string",
+            "enum": [
+              "Enabled",
+              "Disabled"
+            ],
+            "zonbookDocumentation": "\n         <para>Updates selective authentication for the trust.</para>\n      ",
+            "documentation": "\n         <p>Updates selective authentication for the trust.</p>\n      ",
+            "shape_name": "SelectiveAuth"
+          }
+        },
+        "shape_name": "UpdateTrustRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "RequestId": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <simpara>The AWS request identifier.</simpara>\n      ",
+            "documentation": "\n        <p>The AWS request identifier.</p>\n      ",
+            "pattern": "^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$",
+            "shape_name": "RequestId"
+          },
+          "TrustId": {
+            "type": "string",
+            "pattern": "^t-[0-9a-f]{10}$",
+            "zonbookDocumentation": "\n         <para>Identifier of the trust relationship.</para>\n      ",
+            "documentation": "\n         <p>Identifier of the trust relationship.</p>\n      ",
+            "shape_name": "TrustId"
+          }
+        },
+        "shape_name": "UpdateTrustResult",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The descriptive message for the exception.</simpara>\n      ",
+              "documentation": "\n        <p>The descriptive message for the exception.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "RequestId": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The AWS request identifier.</simpara>\n      ",
+              "documentation": "\n        <p>The AWS request identifier.</p>\n      ",
+              "pattern": "^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$",
+              "shape_name": "RequestId"
+            }
+          },
+          "zonbookDocumentation": "\n        <simpara>The specified entity could not be found.</simpara>\n      ",
+          "documentation": "\n        <p>The specified entity could not be found.</p>\n      ",
+          "shape_name": "EntityDoesNotExistException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The descriptive message for the exception.</simpara>\n      ",
+              "documentation": "\n        <p>The descriptive message for the exception.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "RequestId": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The AWS request identifier.</simpara>\n      ",
+              "documentation": "\n        <p>The AWS request identifier.</p>\n      ",
+              "pattern": "^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$",
+              "shape_name": "RequestId"
+            }
+          },
+          "zonbookDocumentation": "\n        <simpara>One or more parameters are not valid.</simpara>\n      ",
+          "documentation": "\n        <p>One or more parameters are not valid.</p>\n      ",
+          "shape_name": "InvalidParameterException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The descriptive message for the exception.</simpara>\n      ",
+              "documentation": "\n        <p>The descriptive message for the exception.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "RequestId": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The AWS request identifier.</simpara>\n      ",
+              "documentation": "\n        <p>The AWS request identifier.</p>\n      ",
+              "pattern": "^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$",
+              "shape_name": "RequestId"
+            }
+          },
+          "zonbookDocumentation": "\n        <simpara>A client exception has occurred.</simpara>\n      ",
+          "documentation": "\n        <p>A client exception has occurred.</p>\n      ",
+          "shape_name": "ClientException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The descriptive message for the exception.</simpara>\n      ",
+              "documentation": "\n        <p>The descriptive message for the exception.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "RequestId": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The AWS request identifier.</simpara>\n      ",
+              "documentation": "\n        <p>The AWS request identifier.</p>\n      ",
+              "pattern": "^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$",
+              "shape_name": "RequestId"
+            }
+          },
+          "zonbookDocumentation": "\n        <simpara>An exception has occurred in AWS Directory Service.</simpara>\n      ",
+          "documentation": "\n        <p>An exception has occurred in AWS Directory Service.</p>\n      ",
+          "shape_name": "ServiceException"
+        }
+      ],
+      "documentation": "\n         <p>Updates the trust that has been set up between your AWS Managed Microsoft AD directory and an on-premises Active Directory.</p>\n      "
     },
     "DescribeTrusts": {
       "name": "DescribeTrusts",
@@ -4904,8 +5052,8 @@
             "min_length": 0
           }
         },
-        "zonbookDocumentation": "\n         <simpara>Describes the trust relationships for a particular Microsoft AD in the AWS cloud. If no input parameters are are provided, such as directory ID or trust ID, this request describes all the trust relationships.</simpara>\n\n      ",
-        "documentation": "\n         <p>Describes the trust relationships for a particular Microsoft AD in the AWS cloud. If no input parameters are are provided, such as directory ID or trust ID, this request describes all the trust relationships.</p>\n\n      ",
+        "zonbookDocumentation": "\n         <simpara>Describes the trust relationships for a particular AWS Managed Microsoft AD directory. If no input parameters are are provided, such as directory ID or trust ID, this request describes all the trust relationships.</simpara>\n\n      ",
+        "documentation": "\n         <p>Describes the trust relationships for a particular AWS Managed Microsoft AD directory. If no input parameters are are provided, such as directory ID or trust ID, this request describes all the trust relationships.</p>\n\n      ",
         "shape_name": "DescribeTrustsRequest"
       },
       "output": {
@@ -4943,10 +5091,11 @@
                 "TrustType": {
                   "type": "string",
                   "enum": [
-                    "Forest"
+                    "Forest",
+                    "External"
                   ],
-                  "zonbookDocumentation": "\n         <simpara>The trust relationship type.</simpara>\n      ",
-                  "documentation": "\n         <p>The trust relationship type.</p>\n      ",
+                  "zonbookDocumentation": "\n         <simpara>The trust relationship type. <code>Forest</code> is the default.</simpara>\n      ",
+                  "documentation": "\n         <p>The trust relationship type. <code>Forest</code> is the default.</p>\n      ",
                   "shape_name": "TrustType"
                 },
                 "TrustDirection": {
@@ -4968,6 +5117,9 @@
                     "Verifying",
                     "VerifyFailed",
                     "Verified",
+                    "Updating",
+                    "UpdateFailed",
+                    "Updated",
                     "Deleting",
                     "Deleted",
                     "Failed"
@@ -4999,10 +5151,20 @@
                   "zonbookDocumentation": "\n         <simpara>The reason for the TrustState.</simpara>\n      ",
                   "documentation": "\n         <p>The reason for the TrustState.</p>\n      ",
                   "shape_name": "TrustStateReason"
+                },
+                "SelectiveAuth": {
+                  "type": "string",
+                  "enum": [
+                    "Enabled",
+                    "Disabled"
+                  ],
+                  "zonbookDocumentation": "\n         <para>Current state of selective authentication for the trust.</para>\n      ",
+                  "documentation": "\n         <p>Current state of selective authentication for the trust.</p>\n      ",
+                  "shape_name": "SelectiveAuth"
                 }
               },
-              "zonbookDocumentation": "\n         <simpara>Describes a trust relationship between an Microsoft AD in the AWS cloud and an external domain.</simpara>\n      ",
-              "documentation": "\n         <p>Describes a trust relationship between an Microsoft AD in the AWS cloud and an external domain.</p>\n      ",
+              "zonbookDocumentation": "\n         <simpara>Describes a trust relationship between an AWS Managed Microsoft AD directory and an external domain.</simpara>\n      ",
+              "documentation": "\n         <p>Describes a trust relationship between an AWS Managed Microsoft AD directory and an external domain.</p>\n      ",
               "shape_name": "Trust"
             }
           },
@@ -5161,8 +5323,8 @@
             "shape_name": "TrustId"
           }
         },
-        "zonbookDocumentation": "\n         <simpara>Initiates the verification of an existing trust relationship between a Microsoft AD in the AWS cloud and an external domain.</simpara>\n\n      ",
-        "documentation": "\n         <p>Initiates the verification of an existing trust relationship between a Microsoft AD in the AWS cloud and an external domain.</p>\n\n      ",
+        "zonbookDocumentation": "\n         <simpara>Initiates the verification of an existing trust relationship between an AWS Managed Microsoft AD directory and an external domain.</simpara>\n\n      ",
+        "documentation": "\n         <p>Initiates the verification of an existing trust relationship between an AWS Managed Microsoft AD directory and an external domain.</p>\n\n      ",
         "shape_name": "VerifyTrustRequest"
       },
       "output": {
@@ -5287,7 +5449,7 @@
           "shape_name": "UnsupportedOperationException"
         }
       ],
-      "documentation": "\n         <p>AWS Directory Service for Microsoft Active Directory allows you to configure and verify trust relationships.</p>\n         <p>This action verifies a trust relationship between your Microsoft AD in the AWS cloud and an external domain.</p>\n     \n      "
+      "documentation": "\n         <p>AWS Directory Service for Microsoft Active Directory allows you to configure and verify trust relationships.</p>\n         <p>This action verifies a trust relationship between your AWS Managed Microsoft AD directory and an external domain.</p>\n     \n      "
     },
     "DeleteTrust": {
       "name": "DeleteTrust",
@@ -5309,8 +5471,8 @@
             "shape_name": "DeleteAssociatedConditionalForwarder"
           }
         },
-        "zonbookDocumentation": "\n         <simpara>Deletes the local side of an existing trust relationship between the Microsoft AD in the AWS cloud and the external domain.</simpara>\n\n      ",
-        "documentation": "\n         <p>Deletes the local side of an existing trust relationship between the Microsoft AD in the AWS cloud and the external domain.</p>\n\n      ",
+        "zonbookDocumentation": "\n         <simpara>Deletes the local side of an existing trust relationship between the AWS Managed Microsoft AD directory and the external domain.</simpara>\n\n      ",
+        "documentation": "\n         <p>Deletes the local side of an existing trust relationship between the AWS Managed Microsoft AD directory and the external domain.</p>\n\n      ",
         "shape_name": "DeleteTrustRequest"
       },
       "output": {
@@ -5435,7 +5597,7 @@
           "shape_name": "UnsupportedOperationException"
         }
       ],
-      "documentation": "\n         <p>Deletes an existing trust relationship between your Microsoft AD in the AWS cloud and an external domain.</p>\n     \n      "
+      "documentation": "\n         <p>Deletes an existing trust relationship between your AWS Managed Microsoft AD directory and an external domain.</p>\n     \n      "
     },
     "CreateConditionalForwarder": {
       "name": "CreateConditionalForwarder",
