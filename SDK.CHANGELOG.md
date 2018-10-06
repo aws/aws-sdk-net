@@ -1,3 +1,8 @@
+### 3.3.377.0 (2018-10-06 01:28 UTC)
+* Core 3.3.27.0
+	* Fix to rectify breaking change that was introduced in v3.3.26 of AWSSDK.Core nuget package. Customer should update to this version of the AWSSDK.Core nuget package.
+	* All services packages updated to require new Core
+
 ### 3.3.376.0 (2018-10-05 21:07 UTC)
 * DirectoryService (3.3.8.0)
 	* SDK changes to create a new type of trust for active directory
