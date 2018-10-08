@@ -125,6 +125,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.TargetSelection);
                 }
 
+                if(publicRequest.IsSetTimeoutConfig())
+                {
+                    context.Writer.WritePropertyName("timeoutConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TimeoutConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TimeoutConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

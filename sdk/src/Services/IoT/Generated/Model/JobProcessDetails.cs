@@ -39,6 +39,7 @@ namespace Amazon.IoT.Model
         private int? _numberOfRejectedThings;
         private int? _numberOfRemovedThings;
         private int? _numberOfSucceededThings;
+        private int? _numberOfTimedOutThings;
         private List<string> _processingTargets = new List<string>();
 
         /// <summary>
@@ -166,6 +167,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetNumberOfSucceededThings()
         {
             return this._numberOfSucceededThings.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NumberOfTimedOutThings. 
+        /// <para>
+        /// The number of things whose job execution status is <code>TIMED_OUT</code>.
+        /// </para>
+        /// </summary>
+        public int NumberOfTimedOutThings
+        {
+            get { return this._numberOfTimedOutThings.GetValueOrDefault(); }
+            set { this._numberOfTimedOutThings = value; }
+        }
+
+        // Check to see if NumberOfTimedOutThings property is set
+        internal bool IsSetNumberOfTimedOutThings()
+        {
+            return this._numberOfTimedOutThings.HasValue; 
         }
 
         /// <summary>

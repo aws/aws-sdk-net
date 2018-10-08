@@ -13610,8 +13610,8 @@
         "members": {
           "endpointType": {
             "type": "string",
-            "zonbookDocumentation": "\n         <simpara>The endpoint type (such as <code>iot:Data</code>,\n        <code>iot:CredentialProvider</code> and <code>iot:Jobs</code>). </simpara>\n      ",
-            "documentation": "\n         <p>The endpoint type (such as <code>iot:Data</code>,\n        <code>iot:CredentialProvider</code> and <code>iot:Jobs</code>). </p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>The endpoint type. Valid endpoint types include:</simpara>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>iot:Data</code> - Returns a VeriSign signed data endpoint.</para>\n            </listitem>\n         </itemizedlist>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>iot:Data-ATS</code> - Returns an ATS signed data endpoint.</para>\n            </listitem>\n         </itemizedlist>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>iot:CredentialProvider</code> - Returns an AWS IoT credentials provider API endpoint.</para>\n            </listitem>\n         </itemizedlist>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>iot:Jobs</code> - Returns an AWS IoT device management Jobs API endpoint.</para>\n            </listitem>\n         </itemizedlist>\n      ",
+            "documentation": "\n         <p>The endpoint type. Valid endpoint types include:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p>\n            </li>\n         </ul>\n         <ul>\n            <li>\n               <p>\n                  <code>iot:Data-ATS</code> - Returns an ATS signed data endpoint.</p>\n            </li>\n         </ul>\n         <ul>\n            <li>\n               <p>\n                  <code>iot:CredentialProvider</code> - Returns an AWS IoT credentials provider API endpoint.</p>\n            </li>\n         </ul>\n         <ul>\n            <li>\n               <p>\n                  <code>iot:Jobs</code> - Returns an AWS IoT device management Jobs API endpoint.</p>\n            </li>\n         </ul>\n      ",
             "location": "uri",
             "shape_name": "EndpointType"
           }
@@ -17732,6 +17732,20 @@
             "zonbookDocumentation": "\n        <simpara>Allows you to create a staged rollout of the job.</simpara>\n      ",
             "documentation": "\n        <p>Allows you to create a staged rollout of the job.</p>\n      ",
             "shape_name": "JobExecutionsRolloutConfig"
+          },
+          "timeoutConfig": {
+            "type": "structure",
+            "members": {
+              "inProgressTimeoutInMinutes": {
+                "type": "long",
+                "zonbookDocumentation": "\n         <para>Specifies the amount of time, in minutes, this device has to finish execution of this job.  \n           A timer is started, or restarted, whenever this job's execution status is specified as \n           <code>IN_PROGRESS</code> with this field populated. If the job execution status is not set \n           to a terminal state before the timer expires, or before another job execution status update \n           is sent with this field populated, the status will be automatically set to <code>TIMED_OUT</code>. \n           Note that setting/resetting this timer has no effect on the job execution timeout timer which \n           may have been specified when the job was created (<code>CreateJobExecution</code> using the \n           field <code>timeoutConfig</code>).</para>\n      ",
+                "documentation": "\n         <p>Specifies the amount of time, in minutes, this device has to finish execution of this job.  \n           A timer is started, or restarted, whenever this job's execution status is specified as \n           <code>IN_PROGRESS</code> with this field populated. If the job execution status is not set \n           to a terminal state before the timer expires, or before another job execution status update \n           is sent with this field populated, the status will be automatically set to <code>TIMED_OUT</code>. \n           Note that setting/resetting this timer has no effect on the job execution timeout timer which \n           may have been specified when the job was created (<code>CreateJobExecution</code> using the \n           field <code>timeoutConfig</code>).</p>\n      ",
+                "shape_name": "InProgressTimeoutInMinutes"
+              }
+            },
+            "zonbookDocumentation": "\n         <para>Specifies the amount of time each device has to finish its execution of the job. The timer \n           is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job \n           execution status is not set to another terminal state before the time expires, it will be \n           automatically set to <code>TIMED_OUT</code>.</para>\n      ",
+            "documentation": "\n         <p>Specifies the amount of time each device has to finish its execution of the job. The timer \n           is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job \n           execution status is not set to another terminal state before the time expires, it will be \n           automatically set to <code>TIMED_OUT</code>.</p>\n      ",
+            "shape_name": "TimeoutConfig"
           }
         },
         "shape_name": "CreateJobRequest",
@@ -18281,8 +18295,8 @@
                   "COMPLETED",
                   "DELETION_IN_PROGRESS"
                 ],
-                "zonbookDocumentation": "\n        <simpara>The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>, or\n                <code>COMPLETED</code>. </simpara>\n      ",
-                "documentation": "\n        <p>The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>, or\n                <code>COMPLETED</code>. </p>\n      ",
+                "zonbookDocumentation": "\n        <simpara>The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>, \n            <code>DELETION_IN_PROGRESS</code> or <code>COMPLETED</code>. </simpara>\n      ",
+                "documentation": "\n        <p>The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>, \n            <code>DELETION_IN_PROGRESS</code> or <code>COMPLETED</code>. </p>\n      ",
                 "shape_name": "JobStatus"
               },
               "forceCanceled": {
@@ -18432,11 +18446,31 @@
                     "zonbookDocumentation": "\n        <simpara>The number of things that are no longer scheduled to execute the job because they have been deleted or\n            have been removed from the group that was a target of the job.</simpara>\n      ",
                     "documentation": "\n        <p>The number of things that are no longer scheduled to execute the job because they have been deleted or\n            have been removed from the group that was a target of the job.</p>\n      ",
                     "shape_name": "RemovedThings"
+                  },
+                  "numberOfTimedOutThings": {
+                    "type": "integer",
+                    "zonbookDocumentation": "\n         <para>The number of things whose job execution status is <code>TIMED_OUT</code>.</para>\n      ",
+                    "documentation": "\n         <p>The number of things whose job execution status is <code>TIMED_OUT</code>.</p>\n      ",
+                    "shape_name": "TimedOutThings"
                   }
                 },
                 "zonbookDocumentation": "\n        <simpara>Details about the job process.</simpara>\n      ",
                 "documentation": "\n        <p>Details about the job process.</p>\n      ",
                 "shape_name": "JobProcessDetails"
+              },
+              "timeoutConfig": {
+                "type": "structure",
+                "members": {
+                  "inProgressTimeoutInMinutes": {
+                    "type": "long",
+                    "zonbookDocumentation": "\n         <para>Specifies the amount of time, in minutes, this device has to finish execution of this job.  \n           A timer is started, or restarted, whenever this job's execution status is specified as \n           <code>IN_PROGRESS</code> with this field populated. If the job execution status is not set \n           to a terminal state before the timer expires, or before another job execution status update \n           is sent with this field populated, the status will be automatically set to <code>TIMED_OUT</code>. \n           Note that setting/resetting this timer has no effect on the job execution timeout timer which \n           may have been specified when the job was created (<code>CreateJobExecution</code> using the \n           field <code>timeoutConfig</code>).</para>\n      ",
+                    "documentation": "\n         <p>Specifies the amount of time, in minutes, this device has to finish execution of this job.  \n           A timer is started, or restarted, whenever this job's execution status is specified as \n           <code>IN_PROGRESS</code> with this field populated. If the job execution status is not set \n           to a terminal state before the timer expires, or before another job execution status update \n           is sent with this field populated, the status will be automatically set to <code>TIMED_OUT</code>. \n           Note that setting/resetting this timer has no effect on the job execution timeout timer which \n           may have been specified when the job was created (<code>CreateJobExecution</code> using the \n           field <code>timeoutConfig</code>).</p>\n      ",
+                    "shape_name": "InProgressTimeoutInMinutes"
+                  }
+                },
+                "zonbookDocumentation": "\n         <para>Specifies the amount of time each device has to finish its execution of the job.  A timer \n           is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job \n           execution status is not set to another terminal state before the timer expires, it will\n           be automatically set to <code>TIMED_OUT</code>.</para>\n      ",
+                "documentation": "\n         <p>Specifies the amount of time each device has to finish its execution of the job.  A timer \n           is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job \n           execution status is not set to another terminal state before the timer expires, it will\n           be automatically set to <code>TIMED_OUT</code>.</p>\n      ",
+                "shape_name": "TimeoutConfig"
               }
             },
             "zonbookDocumentation": "\n        <simpara>Information about the job.</simpara>\n      ",
@@ -19046,6 +19080,7 @@
               "IN_PROGRESS",
               "SUCCEEDED",
               "FAILED",
+              "TIMED_OUT",
               "REJECTED",
               "REMOVED",
               "CANCELED"
@@ -19102,6 +19137,7 @@
                         "IN_PROGRESS",
                         "SUCCEEDED",
                         "FAILED",
+                        "TIMED_OUT",
                         "REJECTED",
                         "REMOVED",
                         "CANCELED"
@@ -19242,6 +19278,7 @@
               "IN_PROGRESS",
               "SUCCEEDED",
               "FAILED",
+              "TIMED_OUT",
               "REJECTED",
               "REMOVED",
               "CANCELED"
@@ -19301,6 +19338,7 @@
                         "IN_PROGRESS",
                         "SUCCEEDED",
                         "FAILED",
+                        "TIMED_OUT",
                         "REJECTED",
                         "REMOVED",
                         "CANCELED"
@@ -19478,12 +19516,13 @@
                   "IN_PROGRESS",
                   "SUCCEEDED",
                   "FAILED",
+                  "TIMED_OUT",
                   "REJECTED",
                   "REMOVED",
                   "CANCELED"
                 ],
-                "zonbookDocumentation": "\n        <simpara>The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCESS, CANCELED, or\n            REJECTED).</simpara>\n      ",
-                "documentation": "\n        <p>The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCESS, CANCELED, or\n            REJECTED).</p>\n      ",
+                "zonbookDocumentation": "\n        <simpara>The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCEEDED, TIMED_OUT, \n            CANCELED, or REJECTED).</simpara>\n      ",
+                "documentation": "\n        <p>The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCEEDED, TIMED_OUT, \n            CANCELED, or REJECTED).</p>\n      ",
                 "shape_name": "JobExecutionStatus"
               },
               "forceCanceled": {
@@ -19557,6 +19596,12 @@
                 "zonbookDocumentation": "\n         <simpara>The version of the job execution. Job execution versions are incremented each time they are updated\n      by a device.</simpara>\n      ",
                 "documentation": "\n         <p>The version of the job execution. Job execution versions are incremented each time they are updated\n      by a device.</p>\n      ",
                 "shape_name": "VersionNumber"
+              },
+              "approximateSecondsBeforeTimedOut": {
+                "type": "long",
+                "zonbookDocumentation": "\n         <para>The estimated number of seconds that remain before the job execution status will be\n           changed to <code>TIMED_OUT</code>.</para>\n      ",
+                "documentation": "\n         <p>The estimated number of seconds that remain before the job execution status will be\n           changed to <code>TIMED_OUT</code>.</p>\n      ",
+                "shape_name": "ApproximateSecondsBeforeTimedOut"
               }
             },
             "zonbookDocumentation": "\n        <simpara>Information about the job execution.</simpara>\n      ",

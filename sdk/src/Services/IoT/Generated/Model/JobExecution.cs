@@ -32,6 +32,7 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class JobExecution
     {
+        private long? _approximateSecondsBeforeTimedOut;
         private long? _executionNumber;
         private bool? _forceCanceled;
         private string _jobId;
@@ -42,6 +43,25 @@ namespace Amazon.IoT.Model
         private JobExecutionStatusDetails _statusDetails;
         private string _thingArn;
         private long? _versionNumber;
+
+        /// <summary>
+        /// Gets and sets the property ApproximateSecondsBeforeTimedOut. 
+        /// <para>
+        /// The estimated number of seconds that remain before the job execution status will be
+        /// changed to <code>TIMED_OUT</code>.
+        /// </para>
+        /// </summary>
+        public long ApproximateSecondsBeforeTimedOut
+        {
+            get { return this._approximateSecondsBeforeTimedOut.GetValueOrDefault(); }
+            set { this._approximateSecondsBeforeTimedOut = value; }
+        }
+
+        // Check to see if ApproximateSecondsBeforeTimedOut property is set
+        internal bool IsSetApproximateSecondsBeforeTimedOut()
+        {
+            return this._approximateSecondsBeforeTimedOut.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ExecutionNumber. 
@@ -157,8 +177,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCESS, CANCELED, or
-        /// REJECTED).
+        /// The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCEEDED, TIMED_OUT,
+        /// CANCELED, or REJECTED).
         /// </para>
         /// </summary>
         public JobExecutionStatus Status

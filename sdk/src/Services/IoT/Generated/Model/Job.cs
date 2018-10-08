@@ -46,6 +46,7 @@ namespace Amazon.IoT.Model
         private JobStatus _status;
         private List<string> _targets = new List<string>();
         private TargetSelection _targetSelection;
+        private TimeoutConfig _timeoutConfig;
 
         /// <summary>
         /// Gets and sets the property Comment. 
@@ -249,8 +250,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>, or
-        /// <code>COMPLETED</code>. 
+        /// The status of the job, one of <code>IN_PROGRESS</code>, <code>CANCELED</code>, <code>DELETION_IN_PROGRESS</code>
+        /// or <code>COMPLETED</code>. 
         /// </para>
         /// </summary>
         public JobStatus Status
@@ -303,6 +304,27 @@ namespace Amazon.IoT.Model
         internal bool IsSetTargetSelection()
         {
             return this._targetSelection != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimeoutConfig. 
+        /// <para>
+        /// Specifies the amount of time each device has to finish its execution of the job. A
+        /// timer is started when the job execution status is set to <code>IN_PROGRESS</code>.
+        /// If the job execution status is not set to another terminal state before the timer
+        /// expires, it will be automatically set to <code>TIMED_OUT</code>.
+        /// </para>
+        /// </summary>
+        public TimeoutConfig TimeoutConfig
+        {
+            get { return this._timeoutConfig; }
+            set { this._timeoutConfig = value; }
+        }
+
+        // Check to see if TimeoutConfig property is set
+        internal bool IsSetTimeoutConfig()
+        {
+            return this._timeoutConfig != null;
         }
 
     }

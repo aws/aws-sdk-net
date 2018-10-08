@@ -148,6 +148,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.TargetSelection = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("timeoutConfig", targetDepth))
+                {
+                    var unmarshaller = TimeoutConfigUnmarshaller.Instance;
+                    unmarshalledObject.TimeoutConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

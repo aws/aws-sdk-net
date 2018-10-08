@@ -106,6 +106,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.NumberOfSucceededThings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("numberOfTimedOutThings", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.NumberOfTimedOutThings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("processingTargets", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
