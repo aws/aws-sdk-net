@@ -58,6 +58,10 @@ namespace Amazon.IoTJobsDataPlane
         /// Constant SUCCEEDED for JobExecutionStatus
         /// </summary>
         public static readonly JobExecutionStatus SUCCEEDED = new JobExecutionStatus("SUCCEEDED");
+        /// <summary>
+        /// Constant TIMED_OUT for JobExecutionStatus
+        /// </summary>
+        public static readonly JobExecutionStatus TIMED_OUT = new JobExecutionStatus("TIMED_OUT");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

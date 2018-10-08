@@ -1,0 +1,994 @@
+{
+  "version": "1.0",
+  "endpoint_prefix": "data.jobs.iot",
+  "type": "rest-json",
+  "signature_version": "v4",
+  "signing_name": "iot-jobs-data",
+  "service_full_name": "AWS IoT Jobs Data Plane",
+  "serviceId": "IoT Jobs Data Plane",
+  "uid": "iot-jobs-data-2017-09-29",
+  "api_version": "2017-09-29",
+  "documentation": "\n         <p>AWS IoT Jobs is a service that allows you to define a set of jobs — remote operations that are sent to\n         and executed on one or more devices connected to AWS IoT. For example, you can define a job that instructs a\n         set of devices to download and install application or firmware updates, reboot, rotate certificates, or perform\n         remote troubleshooting operations.</p>\n         <p> To create a job, you make a job document which is a description of the remote operations to be\n         performed, and you specify a list of targets that should perform the operations. The targets can be individual\n         things, thing groups or both.</p>\n         <p> AWS IoT Jobs sends a message to inform the targets that a job is available. The target starts the\n         execution of the job by downloading the job document, performing the operations it specifies, and reporting its\n         progress to AWS IoT. The Jobs service provides commands to track the progress of a job on a specific target and\n         for all the targets of the job</p>\n      ",
+  "operations": {
+    "DescribeJobExecution": {
+      "name": "DescribeJobExecution",
+      "http": {
+        "method": "GET",
+        "uri": "/things/{thingName}/jobs/{jobId}?executionNumber={executionNumber}&includeJobDocument={includeJobDocument}"
+      },
+      "input": {
+        "type": "structure",
+        "members": {
+          "jobId": {
+            "type": "string",
+            "pattern": "[a-zA-Z0-9_-]+|^\\$next",
+            "zonbookDocumentation": "\n         <simpara>The unique identifier assigned to this job when it was created.</simpara>\n      ",
+            "documentation": "\n         <p>The unique identifier assigned to this job when it was created.</p>\n      ",
+            "required": true,
+            "location": "uri",
+            "shape_name": "DescribeJobExecutionJobId"
+          },
+          "thingName": {
+            "type": "string",
+            "pattern": "[a-zA-Z0-9:_-]+",
+            "zonbookDocumentation": "\n         <simpara>The thing name associated with the device the job execution is running on.</simpara>\n      ",
+            "documentation": "\n         <p>The thing name associated with the device the job execution is running on.</p>\n      ",
+            "required": true,
+            "location": "uri",
+            "shape_name": "ThingName",
+            "min_length": 1,
+            "max_length": 128
+          },
+          "includeJobDocument": {
+            "type": "boolean",
+            "zonbookDocumentation": "\n         <simpara>Optional. When set to true, the response contains the job document. The default is false.</simpara>\n      ",
+            "documentation": "\n         <p>Optional. When set to true, the response contains the job document. The default is false.</p>\n      ",
+            "location": "uri",
+            "shape_name": "IncludeJobDocument"
+          },
+          "executionNumber": {
+            "type": "long",
+            "zonbookDocumentation": "\n         <simpara>Optional. A number that identifies a particular job execution on a particular device. If not specified,\n         the latest job execution is returned.</simpara>\n      ",
+            "documentation": "\n         <p>Optional. A number that identifies a particular job execution on a particular device. If not specified,\n         the latest job execution is returned.</p>\n      ",
+            "location": "uri",
+            "shape_name": "ExecutionNumber"
+          }
+        },
+        "shape_name": "DescribeJobExecutionRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "execution": {
+            "type": "structure",
+            "members": {
+              "jobId": {
+                "type": "string",
+                "pattern": "[a-zA-Z0-9_-]+",
+                "zonbookDocumentation": "\n         <simpara>The unique identifier you assigned to this job when it was created.</simpara>\n      ",
+                "documentation": "\n         <p>The unique identifier you assigned to this job when it was created.</p>\n      ",
+                "shape_name": "JobId",
+                "min_length": 1,
+                "max_length": 64
+              },
+              "thingName": {
+                "type": "string",
+                "pattern": "[a-zA-Z0-9:_-]+",
+                "zonbookDocumentation": "\n         <simpara>The name of the thing that is executing the job.</simpara>\n      ",
+                "documentation": "\n         <p>The name of the thing that is executing the job.</p>\n      ",
+                "shape_name": "ThingName",
+                "min_length": 1,
+                "max_length": 128
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "QUEUED",
+                  "IN_PROGRESS",
+                  "SUCCEEDED",
+                  "FAILED",
+                  "TIMED_OUT",
+                  "REJECTED",
+                  "REMOVED",
+                  "CANCELED"
+                ],
+                "zonbookDocumentation": "\n         <simpara>The status of the job execution. Can be one of: \"QUEUED\", \"IN_PROGRESS\", \"FAILED\", \"SUCCESS\", \"CANCELED\",\n         \"REJECTED\", or \"REMOVED\".</simpara>\n      ",
+                "documentation": "\n         <p>The status of the job execution. Can be one of: \"QUEUED\", \"IN_PROGRESS\", \"FAILED\", \"SUCCESS\", \"CANCELED\",\n         \"REJECTED\", or \"REMOVED\".</p>\n      ",
+                "shape_name": "JobExecutionStatus"
+              },
+              "statusDetails": {
+                "type": "map",
+                "zonbookDocumentation": "\n         <simpara>A collection of name/value pairs that describe the status of the job execution.</simpara>\n      ",
+                "documentation": "\n         <p>A collection of name/value pairs that describe the status of the job execution.</p>\n      ",
+                "shape_name": "DetailsMap",
+                "keys": {
+                  "type": "string",
+                  "pattern": "[a-zA-Z0-9:_-]+",
+                  "shape_name": "DetailsKey",
+                  "documentation": null,
+                  "min_length": 1,
+                  "max_length": 128
+                },
+                "members": {
+                  "type": "string",
+                  "pattern": "[^\\p{C}]*+",
+                  "shape_name": "DetailsValue",
+                  "documentation": null,
+                  "min_length": 1,
+                  "max_length": 1024
+                }
+              },
+              "queuedAt": {
+                "type": "long",
+                "zonbookDocumentation": "\n         <simpara>The time, in milliseconds since the epoch, when the job execution was enqueued.</simpara>\n      ",
+                "documentation": "\n         <p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>\n      ",
+                "shape_name": "QueuedAt"
+              },
+              "startedAt": {
+                "type": "long",
+                "zonbookDocumentation": "\n         <simpara>The time, in milliseconds since the epoch, when the job execution was started.</simpara>\n      ",
+                "documentation": "\n         <p>The time, in milliseconds since the epoch, when the job execution was started.</p>\n      ",
+                "shape_name": "StartedAt"
+              },
+              "lastUpdatedAt": {
+                "type": "long",
+                "zonbookDocumentation": "\n         <simpara>The time, in milliseconds since the epoch, when the job execution was last updated. </simpara>\n      ",
+                "documentation": "\n         <p>The time, in milliseconds since the epoch, when the job execution was last updated. </p>\n      ",
+                "shape_name": "LastUpdatedAt"
+              },
+              "approximateSecondsBeforeTimedOut": {
+                "type": "long",
+                "zonbookDocumentation": "\n         <para>The estimated number of seconds that remain before the job execution status will be\n           changed to <code>TIMED_OUT</code>.</para>\n      ",
+                "documentation": "\n         <p>The estimated number of seconds that remain before the job execution status will be\n           changed to <code>TIMED_OUT</code>.</p>\n      ",
+                "shape_name": "ApproximateSecondsBeforeTimedOut"
+              },
+              "versionNumber": {
+                "type": "long",
+                "zonbookDocumentation": "\n         <simpara>The version of the job execution. Job execution versions are incremented each time they are updated by a\n         device.</simpara>\n      ",
+                "documentation": "\n         <p>The version of the job execution. Job execution versions are incremented each time they are updated by a\n         device.</p>\n      ",
+                "shape_name": "VersionNumber"
+              },
+              "executionNumber": {
+                "type": "long",
+                "zonbookDocumentation": "\n         <simpara>A number that identifies a particular job execution on a particular device. It can be used later in\n         commands that return or update job execution information.</simpara>\n      ",
+                "documentation": "\n         <p>A number that identifies a particular job execution on a particular device. It can be used later in\n         commands that return or update job execution information.</p>\n      ",
+                "shape_name": "ExecutionNumber"
+              },
+              "jobDocument": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <simpara>The content of the job document.</simpara>\n      ",
+                "documentation": "\n         <p>The content of the job document.</p>\n      ",
+                "shape_name": "JobDocument",
+                "max_length": 32768
+              }
+            },
+            "zonbookDocumentation": "\n         <simpara>Contains data about a job execution.</simpara>\n      ",
+            "documentation": "\n         <p>Contains data about a job execution.</p>\n      ",
+            "shape_name": "JobExecution"
+          }
+        },
+        "shape_name": "DescribeJobExecutionResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The message for the exception.</simpara>\n      ",
+              "documentation": "\n         <p>The message for the exception.</p>\n      ",
+              "shape_name": "errorMessage"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The contents of the request were invalid. For example, this code is returned when an UpdateJobExecution request contains invalid status details. The message contains details about the error.</simpara>\n      ",
+          "documentation": "\n         <p>The contents of the request were invalid. For example, this code is returned when an UpdateJobExecution request contains invalid status details. The message contains details about the error.</p>\n      ",
+          "shape_name": "InvalidRequestException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The message for the exception.</simpara>\n      ",
+              "documentation": "\n         <p>The message for the exception.</p>\n      ",
+              "shape_name": "errorMessage"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The specified resource does not exist.</simpara>\n      ",
+          "documentation": "\n         <p>The specified resource does not exist.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <para>The message associated with the exception.</para>\n      ",
+              "documentation": "\n         <p>The message associated with the exception.</p>\n      ",
+              "shape_name": "errorMessage"
+            },
+            "payload": {
+              "type": "blob",
+              "zonbookDocumentation": "\n         <para>The payload associated with the exception.</para>\n      ",
+              "documentation": "\n         <p>The payload associated with the exception.</p>\n      ",
+              "shape_name": "BinaryBlob"
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The rate exceeds the limit.</para>\n      ",
+          "documentation": "\n         <p>The rate exceeds the limit.</p>\n      ",
+          "shape_name": "ThrottlingException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The message for the exception.</simpara>\n      ",
+              "documentation": "\n         <p>The message for the exception.</p>\n      ",
+              "shape_name": "errorMessage"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The service is temporarily unavailable.</simpara>\n      ",
+          "documentation": "\n         <p>The service is temporarily unavailable.</p>\n      ",
+          "shape_name": "ServiceUnavailableException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>Additional information about the exception.</simpara>\n      ",
+              "documentation": "\n         <p>Additional information about the exception.</p>\n      ",
+              "shape_name": "errorMessage"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The certificate is invalid.</simpara>\n      ",
+          "documentation": "\n         <p>The certificate is invalid.</p>\n      ",
+          "shape_name": "CertificateValidationException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The job is in a terminal state.</simpara>\n      ",
+          "documentation": "\n         <p>The job is in a terminal state.</p>\n      ",
+          "shape_name": "TerminalStateException"
+        }
+      ],
+      "documentation": "\n         <p>Gets details of a job execution.</p>\n      "
+    },
+    "GetPendingJobExecutions": {
+      "name": "GetPendingJobExecutions",
+      "http": {
+        "method": "GET",
+        "uri": "/things/{thingName}/jobs"
+      },
+      "input": {
+        "type": "structure",
+        "members": {
+          "thingName": {
+            "type": "string",
+            "pattern": "[a-zA-Z0-9:_-]+",
+            "zonbookDocumentation": "\n         <simpara>The name of the thing that is executing the job.</simpara>\n      ",
+            "documentation": "\n         <p>The name of the thing that is executing the job.</p>\n      ",
+            "required": true,
+            "location": "uri",
+            "shape_name": "ThingName",
+            "min_length": 1,
+            "max_length": 128
+          }
+        },
+        "shape_name": "GetPendingJobExecutionsRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "inProgressJobs": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>A list of JobExecutionSummary objects with status IN_PROGRESS.</simpara>\n      ",
+            "documentation": "\n         <p>A list of JobExecutionSummary objects with status IN_PROGRESS.</p>\n      ",
+            "shape_name": "JobExecutionSummaryList",
+            "members": {
+              "type": "structure",
+              "members": {
+                "jobId": {
+                  "type": "string",
+                  "pattern": "[a-zA-Z0-9_-]+",
+                  "zonbookDocumentation": "\n         <simpara>The unique identifier you assigned to this job when it was created.</simpara>\n      ",
+                  "documentation": "\n         <p>The unique identifier you assigned to this job when it was created.</p>\n      ",
+                  "shape_name": "JobId",
+                  "min_length": 1,
+                  "max_length": 64
+                },
+                "queuedAt": {
+                  "type": "long",
+                  "zonbookDocumentation": "\n         <simpara>The time, in milliseconds since the epoch, when the job execution was enqueued.</simpara>\n      ",
+                  "documentation": "\n         <p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>\n      ",
+                  "shape_name": "QueuedAt"
+                },
+                "startedAt": {
+                  "type": "long",
+                  "zonbookDocumentation": "\n         <simpara>The time, in milliseconds since the epoch, when the job execution started.</simpara>\n      ",
+                  "documentation": "\n         <p>The time, in milliseconds since the epoch, when the job execution started.</p>\n      ",
+                  "shape_name": "StartedAt"
+                },
+                "lastUpdatedAt": {
+                  "type": "long",
+                  "zonbookDocumentation": "\n         <simpara>The time, in milliseconds since the epoch, when the job execution was last updated.</simpara>\n      ",
+                  "documentation": "\n         <p>The time, in milliseconds since the epoch, when the job execution was last updated.</p>\n      ",
+                  "shape_name": "LastUpdatedAt"
+                },
+                "versionNumber": {
+                  "type": "long",
+                  "zonbookDocumentation": "\n         <simpara>The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives\n         an update from a device.</simpara>\n      ",
+                  "documentation": "\n         <p>The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives\n         an update from a device.</p>\n      ",
+                  "shape_name": "VersionNumber"
+                },
+                "executionNumber": {
+                  "type": "long",
+                  "zonbookDocumentation": "\n         <simpara>A number that identifies a particular job execution on a particular device.</simpara>\n      ",
+                  "documentation": "\n         <p>A number that identifies a particular job execution on a particular device.</p>\n      ",
+                  "shape_name": "ExecutionNumber"
+                }
+              },
+              "zonbookDocumentation": "\n         <simpara>Contains a subset of information about a job execution.</simpara>\n      ",
+              "documentation": "\n         <p>Contains a subset of information about a job execution.</p>\n      ",
+              "shape_name": "JobExecutionSummary"
+            }
+          },
+          "queuedJobs": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>A list of JobExecutionSummary objects with status QUEUED.</simpara>\n      ",
+            "documentation": "\n         <p>A list of JobExecutionSummary objects with status QUEUED.</p>\n      ",
+            "shape_name": "JobExecutionSummaryList",
+            "members": {
+              "type": "structure",
+              "members": {
+                "jobId": {
+                  "type": "string",
+                  "pattern": "[a-zA-Z0-9_-]+",
+                  "zonbookDocumentation": "\n         <simpara>The unique identifier you assigned to this job when it was created.</simpara>\n      ",
+                  "documentation": "\n         <p>The unique identifier you assigned to this job when it was created.</p>\n      ",
+                  "shape_name": "JobId",
+                  "min_length": 1,
+                  "max_length": 64
+                },
+                "queuedAt": {
+                  "type": "long",
+                  "zonbookDocumentation": "\n         <simpara>The time, in milliseconds since the epoch, when the job execution was enqueued.</simpara>\n      ",
+                  "documentation": "\n         <p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>\n      ",
+                  "shape_name": "QueuedAt"
+                },
+                "startedAt": {
+                  "type": "long",
+                  "zonbookDocumentation": "\n         <simpara>The time, in milliseconds since the epoch, when the job execution started.</simpara>\n      ",
+                  "documentation": "\n         <p>The time, in milliseconds since the epoch, when the job execution started.</p>\n      ",
+                  "shape_name": "StartedAt"
+                },
+                "lastUpdatedAt": {
+                  "type": "long",
+                  "zonbookDocumentation": "\n         <simpara>The time, in milliseconds since the epoch, when the job execution was last updated.</simpara>\n      ",
+                  "documentation": "\n         <p>The time, in milliseconds since the epoch, when the job execution was last updated.</p>\n      ",
+                  "shape_name": "LastUpdatedAt"
+                },
+                "versionNumber": {
+                  "type": "long",
+                  "zonbookDocumentation": "\n         <simpara>The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives\n         an update from a device.</simpara>\n      ",
+                  "documentation": "\n         <p>The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives\n         an update from a device.</p>\n      ",
+                  "shape_name": "VersionNumber"
+                },
+                "executionNumber": {
+                  "type": "long",
+                  "zonbookDocumentation": "\n         <simpara>A number that identifies a particular job execution on a particular device.</simpara>\n      ",
+                  "documentation": "\n         <p>A number that identifies a particular job execution on a particular device.</p>\n      ",
+                  "shape_name": "ExecutionNumber"
+                }
+              },
+              "zonbookDocumentation": "\n         <simpara>Contains a subset of information about a job execution.</simpara>\n      ",
+              "documentation": "\n         <p>Contains a subset of information about a job execution.</p>\n      ",
+              "shape_name": "JobExecutionSummary"
+            }
+          }
+        },
+        "shape_name": "GetPendingJobExecutionsResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The message for the exception.</simpara>\n      ",
+              "documentation": "\n         <p>The message for the exception.</p>\n      ",
+              "shape_name": "errorMessage"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The contents of the request were invalid. For example, this code is returned when an UpdateJobExecution request contains invalid status details. The message contains details about the error.</simpara>\n      ",
+          "documentation": "\n         <p>The contents of the request were invalid. For example, this code is returned when an UpdateJobExecution request contains invalid status details. The message contains details about the error.</p>\n      ",
+          "shape_name": "InvalidRequestException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The message for the exception.</simpara>\n      ",
+              "documentation": "\n         <p>The message for the exception.</p>\n      ",
+              "shape_name": "errorMessage"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The specified resource does not exist.</simpara>\n      ",
+          "documentation": "\n         <p>The specified resource does not exist.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <para>The message associated with the exception.</para>\n      ",
+              "documentation": "\n         <p>The message associated with the exception.</p>\n      ",
+              "shape_name": "errorMessage"
+            },
+            "payload": {
+              "type": "blob",
+              "zonbookDocumentation": "\n         <para>The payload associated with the exception.</para>\n      ",
+              "documentation": "\n         <p>The payload associated with the exception.</p>\n      ",
+              "shape_name": "BinaryBlob"
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The rate exceeds the limit.</para>\n      ",
+          "documentation": "\n         <p>The rate exceeds the limit.</p>\n      ",
+          "shape_name": "ThrottlingException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The message for the exception.</simpara>\n      ",
+              "documentation": "\n         <p>The message for the exception.</p>\n      ",
+              "shape_name": "errorMessage"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The service is temporarily unavailable.</simpara>\n      ",
+          "documentation": "\n         <p>The service is temporarily unavailable.</p>\n      ",
+          "shape_name": "ServiceUnavailableException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>Additional information about the exception.</simpara>\n      ",
+              "documentation": "\n         <p>Additional information about the exception.</p>\n      ",
+              "shape_name": "errorMessage"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The certificate is invalid.</simpara>\n      ",
+          "documentation": "\n         <p>The certificate is invalid.</p>\n      ",
+          "shape_name": "CertificateValidationException"
+        }
+      ],
+      "documentation": "\n         <p>Gets the list of all jobs for a thing that are not in a terminal status.</p>\n      "
+    },
+    "UpdateJobExecution": {
+      "name": "UpdateJobExecution",
+      "http": {
+        "method": "POST",
+        "uri": "/things/{thingName}/jobs/{jobId}"
+      },
+      "input": {
+        "type": "structure",
+        "members": {
+          "jobId": {
+            "type": "string",
+            "pattern": "[a-zA-Z0-9_-]+",
+            "zonbookDocumentation": "\n         <simpara>The unique identifier assigned to this job when it was created.</simpara>\n      ",
+            "documentation": "\n         <p>The unique identifier assigned to this job when it was created.</p>\n      ",
+            "required": true,
+            "location": "uri",
+            "shape_name": "JobId",
+            "min_length": 1,
+            "max_length": 64
+          },
+          "thingName": {
+            "type": "string",
+            "pattern": "[a-zA-Z0-9:_-]+",
+            "zonbookDocumentation": "\n         <simpara>The name of the thing associated with the device.</simpara>\n      ",
+            "documentation": "\n         <p>The name of the thing associated with the device.</p>\n      ",
+            "required": true,
+            "location": "uri",
+            "shape_name": "ThingName",
+            "min_length": 1,
+            "max_length": 128
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "QUEUED",
+              "IN_PROGRESS",
+              "SUCCEEDED",
+              "FAILED",
+              "TIMED_OUT",
+              "REJECTED",
+              "REMOVED",
+              "CANCELED"
+            ],
+            "zonbookDocumentation": "\n         <simpara>The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or REJECTED). This must be specified\n         on every update.</simpara>\n      ",
+            "documentation": "\n         <p>The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or REJECTED). This must be specified\n         on every update.</p>\n      ",
+            "required": true,
+            "shape_name": "JobExecutionStatus"
+          },
+          "statusDetails": {
+            "type": "map",
+            "zonbookDocumentation": "\n         <simpara> Optional. A collection of name/value pairs that describe the status of the job execution. If not\n         specified, the statusDetails are unchanged.</simpara>\n      ",
+            "documentation": "\n         <p> Optional. A collection of name/value pairs that describe the status of the job execution. If not\n         specified, the statusDetails are unchanged.</p>\n      ",
+            "shape_name": "DetailsMap",
+            "keys": {
+              "type": "string",
+              "pattern": "[a-zA-Z0-9:_-]+",
+              "shape_name": "DetailsKey",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 128
+            },
+            "members": {
+              "type": "string",
+              "pattern": "[^\\p{C}]*+",
+              "shape_name": "DetailsValue",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "stepTimeoutInMinutes": {
+            "type": "long",
+            "zonbookDocumentation": "\n         <para>Specifies the amount of time this device has to finish execution of this job. If the job \n           execution status is not set to a terminal state before this timer expires, or before the \n           timer is reset (by again calling <code>UpdateJobExecution</code>, setting the status to\n           <code>IN_PROGRESS</code> and specifying a new timeout value in this field) the job execution\n           status will be automatically set to <code>TIMED_OUT</code>.  Note that setting or resetting \n           this timeout has no effect on that job execution timeout which may have been specified when \n           the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</para>\n      ",
+            "documentation": "\n         <p>Specifies the amount of time this device has to finish execution of this job. If the job \n           execution status is not set to a terminal state before this timer expires, or before the \n           timer is reset (by again calling <code>UpdateJobExecution</code>, setting the status to\n           <code>IN_PROGRESS</code> and specifying a new timeout value in this field) the job execution\n           status will be automatically set to <code>TIMED_OUT</code>.  Note that setting or resetting \n           this timeout has no effect on that job execution timeout which may have been specified when \n           the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>\n      ",
+            "shape_name": "StepTimeoutInMinutes"
+          },
+          "expectedVersion": {
+            "type": "long",
+            "zonbookDocumentation": "\n         <simpara>Optional. The expected current version of the job execution. Each time you update the job execution, its\n         version is incremented. If the version of the job execution stored in Jobs does not match, the update is\n         rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data\n         is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain\n         the job execution status data.)</simpara>\n      ",
+            "documentation": "\n         <p>Optional. The expected current version of the job execution. Each time you update the job execution, its\n         version is incremented. If the version of the job execution stored in Jobs does not match, the update is\n         rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data\n         is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain\n         the job execution status data.)</p>\n      ",
+            "shape_name": "ExpectedVersion"
+          },
+          "includeJobExecutionState": {
+            "type": "boolean",
+            "zonbookDocumentation": "\n         <simpara>Optional. When included and set to true, the response contains the JobExecutionState data. The default is\n         false.</simpara>\n      ",
+            "documentation": "\n         <p>Optional. When included and set to true, the response contains the JobExecutionState data. The default is\n         false.</p>\n      ",
+            "shape_name": "IncludeExecutionState"
+          },
+          "includeJobDocument": {
+            "type": "boolean",
+            "zonbookDocumentation": "\n         <simpara>Optional. When set to true, the response contains the job document. The default is false.</simpara>\n      ",
+            "documentation": "\n         <p>Optional. When set to true, the response contains the job document. The default is false.</p>\n      ",
+            "shape_name": "IncludeJobDocument"
+          },
+          "executionNumber": {
+            "type": "long",
+            "zonbookDocumentation": "\n         <simpara>Optional. A number that identifies a particular job execution on a particular device.</simpara>\n      ",
+            "documentation": "\n         <p>Optional. A number that identifies a particular job execution on a particular device.</p>\n      ",
+            "shape_name": "ExecutionNumber"
+          }
+        },
+        "shape_name": "UpdateJobExecutionRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "executionState": {
+            "type": "structure",
+            "members": {
+              "status": {
+                "type": "string",
+                "enum": [
+                  "QUEUED",
+                  "IN_PROGRESS",
+                  "SUCCEEDED",
+                  "FAILED",
+                  "TIMED_OUT",
+                  "REJECTED",
+                  "REMOVED",
+                  "CANCELED"
+                ],
+                "zonbookDocumentation": "\n         <simpara>The status of the job execution. Can be one of: \"QUEUED\", \"IN_PROGRESS\", \"FAILED\", \"SUCCESS\", \"CANCELED\",\n         \"REJECTED\", or \"REMOVED\".</simpara>\n      ",
+                "documentation": "\n         <p>The status of the job execution. Can be one of: \"QUEUED\", \"IN_PROGRESS\", \"FAILED\", \"SUCCESS\", \"CANCELED\",\n         \"REJECTED\", or \"REMOVED\".</p>\n      ",
+                "shape_name": "JobExecutionStatus"
+              },
+              "statusDetails": {
+                "type": "map",
+                "zonbookDocumentation": "\n         <simpara>A collection of name/value pairs that describe the status of the job execution.</simpara>\n      ",
+                "documentation": "\n         <p>A collection of name/value pairs that describe the status of the job execution.</p>\n      ",
+                "shape_name": "DetailsMap",
+                "keys": {
+                  "type": "string",
+                  "pattern": "[a-zA-Z0-9:_-]+",
+                  "shape_name": "DetailsKey",
+                  "documentation": null,
+                  "min_length": 1,
+                  "max_length": 128
+                },
+                "members": {
+                  "type": "string",
+                  "pattern": "[^\\p{C}]*+",
+                  "shape_name": "DetailsValue",
+                  "documentation": null,
+                  "min_length": 1,
+                  "max_length": 1024
+                }
+              },
+              "versionNumber": {
+                "type": "long",
+                "zonbookDocumentation": "\n         <simpara>The version of the job execution. Job execution versions are incremented each time they are updated by a\n         device.</simpara>\n      ",
+                "documentation": "\n         <p>The version of the job execution. Job execution versions are incremented each time they are updated by a\n         device.</p>\n      ",
+                "shape_name": "VersionNumber"
+              }
+            },
+            "zonbookDocumentation": "\n         <simpara>A JobExecutionState object.</simpara>\n      ",
+            "documentation": "\n         <p>A JobExecutionState object.</p>\n      ",
+            "shape_name": "JobExecutionState"
+          },
+          "jobDocument": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>The contents of the Job Documents.</simpara>\n      ",
+            "documentation": "\n         <p>The contents of the Job Documents.</p>\n      ",
+            "shape_name": "JobDocument",
+            "max_length": 32768
+          }
+        },
+        "shape_name": "UpdateJobExecutionResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The message for the exception.</simpara>\n      ",
+              "documentation": "\n         <p>The message for the exception.</p>\n      ",
+              "shape_name": "errorMessage"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The contents of the request were invalid. For example, this code is returned when an UpdateJobExecution request contains invalid status details. The message contains details about the error.</simpara>\n      ",
+          "documentation": "\n         <p>The contents of the request were invalid. For example, this code is returned when an UpdateJobExecution request contains invalid status details. The message contains details about the error.</p>\n      ",
+          "shape_name": "InvalidRequestException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The message for the exception.</simpara>\n      ",
+              "documentation": "\n         <p>The message for the exception.</p>\n      ",
+              "shape_name": "errorMessage"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The specified resource does not exist.</simpara>\n      ",
+          "documentation": "\n         <p>The specified resource does not exist.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <para>The message associated with the exception.</para>\n      ",
+              "documentation": "\n         <p>The message associated with the exception.</p>\n      ",
+              "shape_name": "errorMessage"
+            },
+            "payload": {
+              "type": "blob",
+              "zonbookDocumentation": "\n         <para>The payload associated with the exception.</para>\n      ",
+              "documentation": "\n         <p>The payload associated with the exception.</p>\n      ",
+              "shape_name": "BinaryBlob"
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The rate exceeds the limit.</para>\n      ",
+          "documentation": "\n         <p>The rate exceeds the limit.</p>\n      ",
+          "shape_name": "ThrottlingException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The message for the exception.</simpara>\n      ",
+              "documentation": "\n         <p>The message for the exception.</p>\n      ",
+              "shape_name": "errorMessage"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The service is temporarily unavailable.</simpara>\n      ",
+          "documentation": "\n         <p>The service is temporarily unavailable.</p>\n      ",
+          "shape_name": "ServiceUnavailableException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>Additional information about the exception.</simpara>\n      ",
+              "documentation": "\n         <p>Additional information about the exception.</p>\n      ",
+              "shape_name": "errorMessage"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The certificate is invalid.</simpara>\n      ",
+          "documentation": "\n         <p>The certificate is invalid.</p>\n      ",
+          "shape_name": "CertificateValidationException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>An update attempted to change the job execution to a state that is invalid because of the job execution's\n         current state (for example, an attempt to change a request in state SUCCESS to state IN_PROGRESS). In this\n         case, the body of the error message also contains the executionState field.</simpara>\n      ",
+          "documentation": "\n         <p>An update attempted to change the job execution to a state that is invalid because of the job execution's\n         current state (for example, an attempt to change a request in state SUCCESS to state IN_PROGRESS). In this\n         case, the body of the error message also contains the executionState field.</p>\n      ",
+          "shape_name": "InvalidStateTransitionException"
+        }
+      ],
+      "documentation": "\n         <p>Updates the status of a job execution.</p>\n      "
+    },
+    "StartNextPendingJobExecution": {
+      "name": "StartNextPendingJobExecution",
+      "http": {
+        "method": "PUT",
+        "uri": "/things/{thingName}/jobs/$next"
+      },
+      "input": {
+        "type": "structure",
+        "members": {
+          "thingName": {
+            "type": "string",
+            "pattern": "[a-zA-Z0-9:_-]+",
+            "zonbookDocumentation": "\n         <simpara>The name of the thing associated with the device.</simpara>\n      ",
+            "documentation": "\n         <p>The name of the thing associated with the device.</p>\n      ",
+            "required": true,
+            "location": "uri",
+            "shape_name": "ThingName",
+            "min_length": 1,
+            "max_length": 128
+          },
+          "statusDetails": {
+            "type": "map",
+            "zonbookDocumentation": "\n         <simpara>A collection of name/value pairs that describe the status of the job execution. If not specified, the\n         statusDetails are unchanged.</simpara>\n      ",
+            "documentation": "\n         <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the\n         statusDetails are unchanged.</p>\n      ",
+            "shape_name": "DetailsMap",
+            "keys": {
+              "type": "string",
+              "pattern": "[a-zA-Z0-9:_-]+",
+              "shape_name": "DetailsKey",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 128
+            },
+            "members": {
+              "type": "string",
+              "pattern": "[^\\p{C}]*+",
+              "shape_name": "DetailsValue",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 1024
+            }
+          },
+          "stepTimeoutInMinutes": {
+            "type": "long",
+            "zonbookDocumentation": "\n         <para>Specifies the amount of time this device has to finish execution of this job. If the job \n           execution status is not set to a terminal state before this timer expires, or before the \n           timer is reset (by calling <code>UpdateJobExecution</code>, setting the status to\n           <code>IN_PROGRESS</code> and specifying a new timeout value in field <code>stepTimeoutInMinutes</code>) \n           the job execution status will be automatically set to <code>TIMED_OUT</code>.  Note that setting \n           this timeout has no effect on that job execution timeout which may have been specified when \n           the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</para>\n      ",
+            "documentation": "\n         <p>Specifies the amount of time this device has to finish execution of this job. If the job \n           execution status is not set to a terminal state before this timer expires, or before the \n           timer is reset (by calling <code>UpdateJobExecution</code>, setting the status to\n           <code>IN_PROGRESS</code> and specifying a new timeout value in field <code>stepTimeoutInMinutes</code>) \n           the job execution status will be automatically set to <code>TIMED_OUT</code>.  Note that setting \n           this timeout has no effect on that job execution timeout which may have been specified when \n           the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>\n      ",
+            "shape_name": "StepTimeoutInMinutes"
+          }
+        },
+        "shape_name": "StartNextPendingJobExecutionRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "execution": {
+            "type": "structure",
+            "members": {
+              "jobId": {
+                "type": "string",
+                "pattern": "[a-zA-Z0-9_-]+",
+                "zonbookDocumentation": "\n         <simpara>The unique identifier you assigned to this job when it was created.</simpara>\n      ",
+                "documentation": "\n         <p>The unique identifier you assigned to this job when it was created.</p>\n      ",
+                "shape_name": "JobId",
+                "min_length": 1,
+                "max_length": 64
+              },
+              "thingName": {
+                "type": "string",
+                "pattern": "[a-zA-Z0-9:_-]+",
+                "zonbookDocumentation": "\n         <simpara>The name of the thing that is executing the job.</simpara>\n      ",
+                "documentation": "\n         <p>The name of the thing that is executing the job.</p>\n      ",
+                "shape_name": "ThingName",
+                "min_length": 1,
+                "max_length": 128
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "QUEUED",
+                  "IN_PROGRESS",
+                  "SUCCEEDED",
+                  "FAILED",
+                  "TIMED_OUT",
+                  "REJECTED",
+                  "REMOVED",
+                  "CANCELED"
+                ],
+                "zonbookDocumentation": "\n         <simpara>The status of the job execution. Can be one of: \"QUEUED\", \"IN_PROGRESS\", \"FAILED\", \"SUCCESS\", \"CANCELED\",\n         \"REJECTED\", or \"REMOVED\".</simpara>\n      ",
+                "documentation": "\n         <p>The status of the job execution. Can be one of: \"QUEUED\", \"IN_PROGRESS\", \"FAILED\", \"SUCCESS\", \"CANCELED\",\n         \"REJECTED\", or \"REMOVED\".</p>\n      ",
+                "shape_name": "JobExecutionStatus"
+              },
+              "statusDetails": {
+                "type": "map",
+                "zonbookDocumentation": "\n         <simpara>A collection of name/value pairs that describe the status of the job execution.</simpara>\n      ",
+                "documentation": "\n         <p>A collection of name/value pairs that describe the status of the job execution.</p>\n      ",
+                "shape_name": "DetailsMap",
+                "keys": {
+                  "type": "string",
+                  "pattern": "[a-zA-Z0-9:_-]+",
+                  "shape_name": "DetailsKey",
+                  "documentation": null,
+                  "min_length": 1,
+                  "max_length": 128
+                },
+                "members": {
+                  "type": "string",
+                  "pattern": "[^\\p{C}]*+",
+                  "shape_name": "DetailsValue",
+                  "documentation": null,
+                  "min_length": 1,
+                  "max_length": 1024
+                }
+              },
+              "queuedAt": {
+                "type": "long",
+                "zonbookDocumentation": "\n         <simpara>The time, in milliseconds since the epoch, when the job execution was enqueued.</simpara>\n      ",
+                "documentation": "\n         <p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>\n      ",
+                "shape_name": "QueuedAt"
+              },
+              "startedAt": {
+                "type": "long",
+                "zonbookDocumentation": "\n         <simpara>The time, in milliseconds since the epoch, when the job execution was started.</simpara>\n      ",
+                "documentation": "\n         <p>The time, in milliseconds since the epoch, when the job execution was started.</p>\n      ",
+                "shape_name": "StartedAt"
+              },
+              "lastUpdatedAt": {
+                "type": "long",
+                "zonbookDocumentation": "\n         <simpara>The time, in milliseconds since the epoch, when the job execution was last updated. </simpara>\n      ",
+                "documentation": "\n         <p>The time, in milliseconds since the epoch, when the job execution was last updated. </p>\n      ",
+                "shape_name": "LastUpdatedAt"
+              },
+              "approximateSecondsBeforeTimedOut": {
+                "type": "long",
+                "zonbookDocumentation": "\n         <para>The estimated number of seconds that remain before the job execution status will be\n           changed to <code>TIMED_OUT</code>.</para>\n      ",
+                "documentation": "\n         <p>The estimated number of seconds that remain before the job execution status will be\n           changed to <code>TIMED_OUT</code>.</p>\n      ",
+                "shape_name": "ApproximateSecondsBeforeTimedOut"
+              },
+              "versionNumber": {
+                "type": "long",
+                "zonbookDocumentation": "\n         <simpara>The version of the job execution. Job execution versions are incremented each time they are updated by a\n         device.</simpara>\n      ",
+                "documentation": "\n         <p>The version of the job execution. Job execution versions are incremented each time they are updated by a\n         device.</p>\n      ",
+                "shape_name": "VersionNumber"
+              },
+              "executionNumber": {
+                "type": "long",
+                "zonbookDocumentation": "\n         <simpara>A number that identifies a particular job execution on a particular device. It can be used later in\n         commands that return or update job execution information.</simpara>\n      ",
+                "documentation": "\n         <p>A number that identifies a particular job execution on a particular device. It can be used later in\n         commands that return or update job execution information.</p>\n      ",
+                "shape_name": "ExecutionNumber"
+              },
+              "jobDocument": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <simpara>The content of the job document.</simpara>\n      ",
+                "documentation": "\n         <p>The content of the job document.</p>\n      ",
+                "shape_name": "JobDocument",
+                "max_length": 32768
+              }
+            },
+            "zonbookDocumentation": "\n         <simpara>A JobExecution object.</simpara>\n      ",
+            "documentation": "\n         <p>A JobExecution object.</p>\n      ",
+            "shape_name": "JobExecution"
+          }
+        },
+        "shape_name": "StartNextPendingJobExecutionResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The message for the exception.</simpara>\n      ",
+              "documentation": "\n         <p>The message for the exception.</p>\n      ",
+              "shape_name": "errorMessage"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The contents of the request were invalid. For example, this code is returned when an UpdateJobExecution request contains invalid status details. The message contains details about the error.</simpara>\n      ",
+          "documentation": "\n         <p>The contents of the request were invalid. For example, this code is returned when an UpdateJobExecution request contains invalid status details. The message contains details about the error.</p>\n      ",
+          "shape_name": "InvalidRequestException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The message for the exception.</simpara>\n      ",
+              "documentation": "\n         <p>The message for the exception.</p>\n      ",
+              "shape_name": "errorMessage"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The specified resource does not exist.</simpara>\n      ",
+          "documentation": "\n         <p>The specified resource does not exist.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <para>The message associated with the exception.</para>\n      ",
+              "documentation": "\n         <p>The message associated with the exception.</p>\n      ",
+              "shape_name": "errorMessage"
+            },
+            "payload": {
+              "type": "blob",
+              "zonbookDocumentation": "\n         <para>The payload associated with the exception.</para>\n      ",
+              "documentation": "\n         <p>The payload associated with the exception.</p>\n      ",
+              "shape_name": "BinaryBlob"
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The rate exceeds the limit.</para>\n      ",
+          "documentation": "\n         <p>The rate exceeds the limit.</p>\n      ",
+          "shape_name": "ThrottlingException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The message for the exception.</simpara>\n      ",
+              "documentation": "\n         <p>The message for the exception.</p>\n      ",
+              "shape_name": "errorMessage"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The service is temporarily unavailable.</simpara>\n      ",
+          "documentation": "\n         <p>The service is temporarily unavailable.</p>\n      ",
+          "shape_name": "ServiceUnavailableException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>Additional information about the exception.</simpara>\n      ",
+              "documentation": "\n         <p>Additional information about the exception.</p>\n      ",
+              "shape_name": "errorMessage"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The certificate is invalid.</simpara>\n      ",
+          "documentation": "\n         <p>The certificate is invalid.</p>\n      ",
+          "shape_name": "CertificateValidationException"
+        }
+      ],
+      "documentation": "\n         <p>Gets and starts the next pending (status IN_PROGRESS or QUEUED) job execution for a thing.</p>\n      "
+    }
+  }
+}

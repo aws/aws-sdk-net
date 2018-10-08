@@ -64,6 +64,12 @@ namespace Amazon.IoTJobsDataPlane.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("approximateSecondsBeforeTimedOut", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.ApproximateSecondsBeforeTimedOut = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("executionNumber", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
