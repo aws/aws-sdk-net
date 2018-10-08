@@ -44,6 +44,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Client.DescribeLoadBalancers();
         }
 
+        [Ignore("Excluding tests that need IAM Write/Permissions management. CreateLoadBalancer requires iam:CreateServiceLinkedRole.")]
         [TestMethod]
         [TestCategory("ElasticLoadBalancing")]
         public void TestLoadBalancerOperations()
