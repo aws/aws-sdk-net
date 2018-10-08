@@ -77,6 +77,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             AmazonS3Util.SetMetadataHeaders(request, initiateMultipartUploadRequest.Metadata);
 
+            if (string.IsNullOrEmpty(initiateMultipartUploadRequest.BucketName))
+                throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "InitiateMultipartUploadRequest.BucketName");
+            if (string.IsNullOrEmpty(initiateMultipartUploadRequest.Key))
+                throw new System.ArgumentException("Key is a required property and must be set before making this call.", "InitiateMultipartUploadRequest.Key");
+
             request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
                                                  S3Transforms.ToStringValue(initiateMultipartUploadRequest.BucketName),
                                                  S3Transforms.ToStringValue(initiateMultipartUploadRequest.Key));

@@ -80,6 +80,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if(copyPartRequest.IsSetFirstByte() && copyPartRequest.IsSetLastByte())
             	request.Headers.Add(HeaderKeys.XAmzCopySourceRangeHeader, ConstructCopySourceRangeHeader(copyPartRequest.FirstByte, copyPartRequest.LastByte));
 
+            if (string.IsNullOrEmpty(copyPartRequest.DestinationBucket))
+                throw new System.ArgumentException("DestinationBucket is a required property and must be set before making this call.", "CopyPartRequest.DestinationBucket");
+            if (string.IsNullOrEmpty(copyPartRequest.DestinationKey))
+                throw new System.ArgumentException("DestinationKey is a required property and must be set before making this call.", "CopyPartRequest.DestinationKey");
+
             request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
                                                  S3Transforms.ToStringValue(copyPartRequest.DestinationBucket),
                                                  S3Transforms.ToStringValue(copyPartRequest.DestinationKey));

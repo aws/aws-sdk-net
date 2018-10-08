@@ -36,6 +36,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "DELETE";
 
+            if (string.IsNullOrEmpty(deleteBucketTaggingRequest.BucketName))
+                throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "DeleteBucketTaggingRequest.BucketName");
+
             request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(deleteBucketTaggingRequest.BucketName));
             request.AddSubResource("tagging");
             request.UseQueryString = true;

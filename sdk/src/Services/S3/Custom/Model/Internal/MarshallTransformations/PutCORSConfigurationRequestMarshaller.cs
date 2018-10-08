@@ -42,6 +42,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "PUT";
 
+            if (string.IsNullOrEmpty(putCORSConfigurationRequest.BucketName))
+                throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "PutCORSConfigurationRequest.BucketName");
+
             request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(putCORSConfigurationRequest.BucketName));
 
             request.AddSubResource("cors");

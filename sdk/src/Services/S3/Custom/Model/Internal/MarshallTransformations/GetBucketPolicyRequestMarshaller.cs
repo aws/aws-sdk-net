@@ -37,6 +37,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             request.Suppress404Exceptions = true;
             request.HttpMethod = "GET";
 
+            if (string.IsNullOrEmpty(getBucketPolicyRequest.BucketName))
+                throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "GetBucketPolicyRequest.BucketName");
+
             request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(getBucketPolicyRequest.BucketName));
             request.AddSubResource("policy");
             request.UseQueryString = true;

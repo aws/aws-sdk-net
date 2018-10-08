@@ -36,6 +36,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(listBucketInventoryConfigurationsRequest, "AmazonS3");
 
             request.HttpMethod = "GET";
+
+            if (string.IsNullOrEmpty(listBucketInventoryConfigurationsRequest.BucketName))
+                throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "ListBucketInventoryConfigurationsRequest.BucketName");
+
             request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(listBucketInventoryConfigurationsRequest.BucketName));
             request.AddSubResource("inventory");
             if (listBucketInventoryConfigurationsRequest.IsSetContinuationToken())

@@ -49,6 +49,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (deleteObjectsRequest.IsSetRequestPayer())
                 request.Headers.Add(S3Constants.AmzHeaderRequestPayer, S3Transforms.ToStringValue(deleteObjectsRequest.RequestPayer.ToString()));
 
+            if (string.IsNullOrEmpty(deleteObjectsRequest.BucketName))
+                throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "DeleteObjectsRequest.BucketName");
+
             request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(deleteObjectsRequest.BucketName));
 
             request.AddSubResource("delete");

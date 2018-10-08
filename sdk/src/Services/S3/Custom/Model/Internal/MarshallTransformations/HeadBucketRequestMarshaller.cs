@@ -34,6 +34,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "HEAD";
 
+            if (string.IsNullOrEmpty(headBucketRequest.BucketName))
+                throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "HeadBucketRequest.BucketName");
+
             request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(headBucketRequest.BucketName));
             request.UseQueryString = true;
             

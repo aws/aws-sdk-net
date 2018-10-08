@@ -111,6 +111,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             AmazonS3Util.SetMetadataHeaders(request, copyObjectRequest.Metadata);
 
+            if (string.IsNullOrEmpty(copyObjectRequest.DestinationBucket))
+                throw new System.ArgumentException("DestinationBucket is a required property and must be set before making this call.", "CopyObjectRequest.DestinationBucket");
+            if (string.IsNullOrEmpty(copyObjectRequest.DestinationKey))
+                throw new System.ArgumentException("DestinationKey is a required property and must be set before making this call.", "CopyObjectRequest.DestinationKey");
+
             var destinationKey = copyObjectRequest.DestinationKey.StartsWith("/", StringComparison.Ordinal) 
                                     ? copyObjectRequest.DestinationKey.Substring(1) 
                                     : copyObjectRequest.DestinationKey;

@@ -44,12 +44,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         {
             Client = new AmazonS3Client();
             bucketName = S3TestUtils.CreateBucket(Client);
-
-
-            Client.PutObject(new PutObjectRequest
-            {
-                BucketName = bucketName
-            });
         }
 
         [TestCategory("S3")]

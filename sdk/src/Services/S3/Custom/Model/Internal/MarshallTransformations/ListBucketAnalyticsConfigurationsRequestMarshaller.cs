@@ -36,6 +36,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(listBucketAnalyticsConfigurationsRequest, "AmazonS3");
 
             request.HttpMethod = "GET";
+
+            if (string.IsNullOrEmpty(listBucketAnalyticsConfigurationsRequest.BucketName))
+                throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "ListBucketAnalyticsConfigurationsRequest.BucketName");
+
             request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(listBucketAnalyticsConfigurationsRequest.BucketName));
             request.AddSubResource("analytics");
             if (listBucketAnalyticsConfigurationsRequest.IsSetContinuationToken())

@@ -42,6 +42,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             request.UseQueryString = true;
+
+            if (string.IsNullOrEmpty(getObjectTaggingRequest.BucketName))
+                throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "GetObjectTaggingRequest.BucketName");
+            if (string.IsNullOrEmpty(getObjectTaggingRequest.Key))
+                throw new System.ArgumentException("Key is a required property and must be set before making this call.", "GetObjectTaggingRequest.Key");
+
             request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}", 
                                                  S3Transforms.ToStringValue(getObjectTaggingRequest.BucketName), 
                                                  S3Transforms.ToStringValue(getObjectTaggingRequest.Key));

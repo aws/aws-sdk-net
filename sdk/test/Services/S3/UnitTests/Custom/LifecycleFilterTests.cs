@@ -40,7 +40,7 @@ namespace AWSSDK.UnitTests
                     LifecycleFilterPredicate = new LifecyclePrefixPredicate()
                     {
                         Prefix = "thePrefix"
-                    }
+                    } 
                 }, "theOtherPrefix");
             },
             typeof(AmazonClientException), "LifecycleRule.Prefix is deprecated.  Please only use LifecycleRule.Filter.");
@@ -151,6 +151,7 @@ namespace AWSSDK.UnitTests
         {
             var request = new PutLifecycleConfigurationRequest()
             {
+                BucketName = "bucket",
                 Configuration = new LifecycleConfiguration()
                 {
                     Rules = new List<LifecycleRule>()

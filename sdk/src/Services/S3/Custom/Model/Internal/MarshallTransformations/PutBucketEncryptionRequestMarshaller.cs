@@ -39,7 +39,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(putBucketEncryptionRequest, "AmazonS3");
 
             request.HttpMethod = "PUT";
-            
+
+            if (string.IsNullOrEmpty(putBucketEncryptionRequest.BucketName))
+                throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "PutBucketEncryptionRequest.BucketName");
+
             request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(putBucketEncryptionRequest.BucketName));
 
             request.AddSubResource("encryption");

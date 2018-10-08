@@ -57,7 +57,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
             if (uploadPartRequest.IsSetRequestPayer())
                 request.Headers.Add(S3Constants.AmzHeaderRequestPayer, S3Transforms.ToStringValue(uploadPartRequest.RequestPayer.ToString()));
-            
+
+            if (string.IsNullOrEmpty(uploadPartRequest.BucketName))
+                throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "UploadPartRequest.BucketName");
+            if (string.IsNullOrEmpty(uploadPartRequest.Key))
+                throw new System.ArgumentException("Key is a required property and must be set before making this call.", "UploadPartRequest.Key");
+
             request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
                                                  S3Transforms.ToStringValue(uploadPartRequest.BucketName),
                                                  S3Transforms.ToStringValue(uploadPartRequest.Key));

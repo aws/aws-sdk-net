@@ -36,6 +36,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "GET";
 
+            if (string.IsNullOrEmpty(getBucketVersioningRequest.BucketName))
+                throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "GetBucketVersioningRequest.BucketName");
+
             request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(getBucketVersioningRequest.BucketName));
             request.AddSubResource("versioning");
             request.UseQueryString = true;

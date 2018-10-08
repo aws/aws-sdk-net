@@ -483,7 +483,6 @@
         <Rule Name="ImplementSerializationConstructors" Enabled="True" />
         <Rule Name="ImplementSerializationMethodsCorrectly" Enabled="True" />
         <Rule Name="InitializeValueTypeStaticFieldsInline" Enabled="True" />
-        <Rule Name="InstantiateArgumentExceptionsCorrectly" Enabled="True" />
         <Rule Name="MarkAllNonSerializableFields" Enabled="True" />
         <Rule Name="MarkISerializableTypesWithSerializable" Enabled="True" />
         <Rule Name="MarkWindowsFormsEntryPointsWithStaThread" Enabled="True" />

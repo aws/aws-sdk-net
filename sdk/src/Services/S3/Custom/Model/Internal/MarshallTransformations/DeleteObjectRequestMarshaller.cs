@@ -42,6 +42,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (deleteObjectRequest.IsSetMfaCodes())
                 request.Headers.Add(HeaderKeys.XAmzMfaHeader, deleteObjectRequest.MfaCodes.FormattedMfaCodes);
 
+            if (string.IsNullOrEmpty(deleteObjectRequest.BucketName))
+                throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "DeleteObjectRequest.BucketName");
+            if (string.IsNullOrEmpty(deleteObjectRequest.Key))
+                throw new System.ArgumentException("Key is a required property and must be set before making this call.", "DeleteObjectRequest.Key");
+
             request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}", 
                                                  S3Transforms.ToStringValue(deleteObjectRequest.BucketName), 
                                                  S3Transforms.ToStringValue(deleteObjectRequest.Key));
