@@ -1,3 +1,9 @@
+### 3.3.378.0 (2018-10-08 20:08 UTC)
+* IoT (3.3.19.0)
+	* We are releasing job execution timeout functionalities to customers. Customer now can set job execution timeout on the job level when creating a job. 
+* IoTJobsDataPlane (3.3.1.0)
+	* We are releasing job execution timeout functionalities to customers. Device can now set and update their job execution timeout. 
+
 ### 3.3.377.0 (2018-10-06 01:28 UTC)
 * Core 3.3.27.0
 	* Fix to rectify breaking change that was introduced in v3.3.26 of AWSSDK.Core nuget package. Customer should update to this version of the AWSSDK.Core nuget package.
