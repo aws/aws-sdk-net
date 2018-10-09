@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.378.0",
+    "ProductVersion" : "3.3.379.0",
     "CoreVersion"    : "3.3.27.0",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -369,7 +369,7 @@
             "InPreview"               : false
         },
         "SimpleSystemsManagement"   : {
-            "Version" : "3.3.32.1",
+            "Version" : "3.3.33.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.27.0"

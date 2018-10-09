@@ -1,3 +1,7 @@
+### 3.3.379.0 (2018-10-09 20:36 UTC)
+* SimpleSystemsManagement (3.3.33.0)
+	* Adds StartDate, EndDate, and ScheduleTimezone to CreateMaintenanceWindow and UpdateMaintenanceWindow; Adds NextExecutionTime to GetMaintenanceWindow and DescribeMaintenanceWindows; Adds CancelMaintenanceWindowExecution, DescribeMaintenanceWindowSchedule and DescribeMaintenanceWindowsForTarget APIs.
+
 ### 3.3.378.0 (2018-10-08 20:08 UTC)
 * IoT (3.3.19.0)
 	* We are releasing job execution timeout functionalities to customers. Customer now can set job execution timeout on the job level when creating a job. 
