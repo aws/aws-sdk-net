@@ -177,7 +177,7 @@ namespace Amazon.Runtime.EventStreams.Internal
 
             if (_amountBytesRead < EventStreamMessage.PreludeLen)
             {
-                read = Math.Min(length, EventStreamMessage.PreludeLen - _amountBytesRead);
+                read = Math.Min(length - offset, EventStreamMessage.PreludeLen - _amountBytesRead);
                 Buffer.BlockCopy(data, offset, _workingBuffer, _amountBytesRead, read);
                 _amountBytesRead += read;
             }

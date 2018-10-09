@@ -283,32 +283,37 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void TestStreamingDecoder()
         {
-            using (var memoryStream = new MemoryStream())
+            foreach(var bufferSize in new[] { 20, 128 })
             {
-                foreach (var entry in _positiveEncodedTestCases)
+                _decoderMessages.Clear();
+                using (var memoryStream = new MemoryStream())
                 {
-                    memoryStream.Write(entry.Value, 0, entry.Value.Length);
+                    foreach (var entry in _positiveEncodedTestCases)
+                    {
+                        memoryStream.Write(entry.Value, 0, entry.Value.Length);
+                    }
+
+                    memoryStream.Position = 0;
+
+                    var decoder = new EventStreamDecoder();
+                    decoder.MessageReceived += Decoder_MessageReceived;
+
+                    var buffer = new byte[bufferSize];
+                    var read = 0;
+                    while ((read = memoryStream.Read(buffer, 0, buffer.Length)) > 0)
+                    {
+                        decoder.ProcessData(buffer, 0, read);
+                    }
                 }
 
-                memoryStream.Position = 0;
+                Assert.AreEqual(_positiveEncodedTestCases.Count, _decoderMessages.Count);
+                var index = 0;
 
-                var decoder = new EventStreamDecoder();
-                decoder.MessageReceived += Decoder_MessageReceived;
-
-                var buffer = new byte[128];
-                var read = 0;
-                while ((read = memoryStream.Read(buffer, 0, buffer.Length)) > 0)
+                foreach (var messageBuffer in _positiveEncodedTestCases.Values)
                 {
-                    decoder.ProcessData(buffer, 0, read);
+                    CollectionAssert.AreEqual(messageBuffer, _decoderMessages[index++].ToByteArray());
                 }
-            }
 
-            Assert.AreEqual(_positiveEncodedTestCases.Count, _decoderMessages.Count);
-            var index = 0;
-
-            foreach (var messageBuffer in _positiveEncodedTestCases.Values)
-            {
-                CollectionAssert.AreEqual(messageBuffer, _decoderMessages[index++].ToByteArray());
             }
         }
 
