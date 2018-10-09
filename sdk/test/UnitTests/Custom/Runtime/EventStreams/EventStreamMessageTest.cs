@@ -55,19 +55,19 @@ namespace AWSSDK.UnitTests
         {
             var allResources = typeof(EventStreamMessageTest).Assembly.GetManifestResourceNames();
 
-            var positiveEncodedCases = allResources.Where(name => name.StartsWith(TestFileEncodedPositivePrefix)).ToList();
+            var positiveEncodedCases = allResources.Where(name => name.Contains(TestFileEncodedPositivePrefix)).ToList();
             foreach (var testcase in positiveEncodedCases)
             {
                 AddTestCaseResource(testcase, _positiveEncodedTestCases);
             }
 
-            var positiveDecodedCases = allResources.Where(name => name.StartsWith(TestFileDecodedPositivePrefix)).ToList();
+            var positiveDecodedCases = allResources.Where(name => name.Contains(TestFileDecodedPositivePrefix)).ToList();
             foreach (var testcase in positiveDecodedCases)
             {
                 AddTestCaseResource(testcase, _positiveDecodedTestCases);
             }
 
-            var negativeDecodedCases = allResources.Where(name => name.StartsWith(TestFileEncodedNegativePrefix)).ToList();
+            var negativeDecodedCases = allResources.Where(name => name.Contains(TestFileEncodedNegativePrefix)).ToList();
             foreach (var testcase in negativeDecodedCases)
             {
                 AddTestCaseResource(testcase, _negativeEncodedTestCases);
@@ -87,7 +87,8 @@ namespace AWSSDK.UnitTests
                     offset += read;
                 }
 
-                collection.Add(resourceName, fileBuf);
+                var key = resourceName.Substring(resourceName.LastIndexOf('.') + 1).Replace("eventstream_decoded_", "").Replace("eventstream_encoded_", "");
+                collection.Add(key, fileBuf);
             }
         }
 
