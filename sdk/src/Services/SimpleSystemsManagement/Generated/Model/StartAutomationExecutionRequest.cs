@@ -211,7 +211,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property TargetParameterName. 
         /// <para>
         /// The name of the parameter used as the target resource for the rate-controlled execution.
-        /// Required if you specify Targets.
+        /// Required if you specify targets.
         /// </para>
         /// </summary>
         public string TargetParameterName

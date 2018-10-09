@@ -87,6 +87,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     response.Enabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EndDate", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.EndDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ModifiedDate", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -99,10 +105,28 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     response.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NextExecutionTime", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextExecutionTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Schedule", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Schedule = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ScheduleTimezone", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ScheduleTimezone = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StartDate", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.StartDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("WindowId", targetDepth))

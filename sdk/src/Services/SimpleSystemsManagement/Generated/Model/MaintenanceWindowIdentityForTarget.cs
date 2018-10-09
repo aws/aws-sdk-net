@@ -28,47 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Filter used in the request. Supported filter keys are Name and Enabled.
+    /// The Maintenance Window to which the specified target belongs.
     /// </summary>
-    public partial class MaintenanceWindowFilter
+    public partial class MaintenanceWindowIdentityForTarget
     {
-        private string _key;
-        private List<string> _values = new List<string>();
+        private string _name;
+        private string _windowId;
 
         /// <summary>
-        /// Gets and sets the property Key. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the filter.
+        /// The name of the Maintenance Window.
         /// </para>
         /// </summary>
-        public string Key
+        public string Name
         {
-            get { return this._key; }
-            set { this._key = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if Key property is set
-        internal bool IsSetKey()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._key != null;
+            return this._name != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Values. 
+        /// Gets and sets the property WindowId. 
         /// <para>
-        /// The filter values.
+        /// The ID of the Maintenance Window.
         /// </para>
         /// </summary>
-        public List<string> Values
+        public string WindowId
         {
-            get { return this._values; }
-            set { this._values = value; }
+            get { return this._windowId; }
+            set { this._windowId = value; }
         }
 
-        // Check to see if Values property is set
-        internal bool IsSetValues()
+        // Check to see if WindowId property is set
+        internal bool IsSetWindowId()
         {
-            return this._values != null && this._values.Count > 0; 
+            return this._windowId != null;
         }
 
     }

@@ -439,6 +439,38 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  CancelMaintenanceWindowExecution
+
+        internal virtual CancelMaintenanceWindowExecutionResponse CancelMaintenanceWindowExecution(CancelMaintenanceWindowExecutionRequest request)
+        {
+            var marshaller = CancelMaintenanceWindowExecutionRequestMarshaller.Instance;
+            var unmarshaller = CancelMaintenanceWindowExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<CancelMaintenanceWindowExecutionRequest,CancelMaintenanceWindowExecutionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelMaintenanceWindowExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelMaintenanceWindowExecution operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelMaintenanceWindowExecution">REST API Reference for CancelMaintenanceWindowExecution Operation</seealso>
+        public virtual Task<CancelMaintenanceWindowExecutionResponse> CancelMaintenanceWindowExecutionAsync(CancelMaintenanceWindowExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CancelMaintenanceWindowExecutionRequestMarshaller.Instance;
+            var unmarshaller = CancelMaintenanceWindowExecutionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CancelMaintenanceWindowExecutionRequest,CancelMaintenanceWindowExecutionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateActivation
 
         internal virtual CreateActivationResponse CreateActivation(CreateActivationRequest request)
@@ -2138,6 +2170,70 @@ namespace Amazon.SimpleSystemsManagement
             var unmarshaller = DescribeMaintenanceWindowsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeMaintenanceWindowsRequest,DescribeMaintenanceWindowsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeMaintenanceWindowSchedule
+
+        internal virtual DescribeMaintenanceWindowScheduleResponse DescribeMaintenanceWindowSchedule(DescribeMaintenanceWindowScheduleRequest request)
+        {
+            var marshaller = DescribeMaintenanceWindowScheduleRequestMarshaller.Instance;
+            var unmarshaller = DescribeMaintenanceWindowScheduleResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeMaintenanceWindowScheduleRequest,DescribeMaintenanceWindowScheduleResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMaintenanceWindowSchedule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMaintenanceWindowSchedule operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowSchedule">REST API Reference for DescribeMaintenanceWindowSchedule Operation</seealso>
+        public virtual Task<DescribeMaintenanceWindowScheduleResponse> DescribeMaintenanceWindowScheduleAsync(DescribeMaintenanceWindowScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeMaintenanceWindowScheduleRequestMarshaller.Instance;
+            var unmarshaller = DescribeMaintenanceWindowScheduleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeMaintenanceWindowScheduleRequest,DescribeMaintenanceWindowScheduleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeMaintenanceWindowsForTarget
+
+        internal virtual DescribeMaintenanceWindowsForTargetResponse DescribeMaintenanceWindowsForTarget(DescribeMaintenanceWindowsForTargetRequest request)
+        {
+            var marshaller = DescribeMaintenanceWindowsForTargetRequestMarshaller.Instance;
+            var unmarshaller = DescribeMaintenanceWindowsForTargetResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeMaintenanceWindowsForTargetRequest,DescribeMaintenanceWindowsForTargetResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMaintenanceWindowsForTarget operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMaintenanceWindowsForTarget operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowsForTarget">REST API Reference for DescribeMaintenanceWindowsForTarget Operation</seealso>
+        public virtual Task<DescribeMaintenanceWindowsForTargetResponse> DescribeMaintenanceWindowsForTargetAsync(DescribeMaintenanceWindowsForTargetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeMaintenanceWindowsForTargetRequestMarshaller.Instance;
+            var unmarshaller = DescribeMaintenanceWindowsForTargetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeMaintenanceWindowsForTargetRequest,DescribeMaintenanceWindowsForTargetResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -4039,7 +4135,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Executes commands on one or more managed instances.
         /// </summary>
         /// <param name="documentName">Required. The name of the Systems Manager document to execute. This can be a public document or a custom document.</param>
-        /// <param name="instanceIds">The instance IDs where the command should execute. You can specify a maximum of 50 IDs. If you prefer not to list individual instance IDs, you can instead send commands to a fleet of instances using the Targets parameter, which accepts EC2 tags. For more information about how to use Targets, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</param>
+        /// <param name="instanceIds">The instance IDs where the command should execute. You can specify a maximum of 50 IDs. If you prefer not to list individual instance IDs, you can instead send commands to a fleet of instances using the Targets parameter, which accepts EC2 tags. For more information about how to use targets, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>

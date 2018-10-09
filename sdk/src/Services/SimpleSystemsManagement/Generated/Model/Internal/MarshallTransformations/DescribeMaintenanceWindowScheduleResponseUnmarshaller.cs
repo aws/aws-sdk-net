@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateMaintenanceWindow operation
+    /// Response Unmarshaller for DescribeMaintenanceWindowSchedule operation
     /// </summary>  
-    public class UpdateMaintenanceWindowResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DescribeMaintenanceWindowScheduleResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,76 +45,22 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpdateMaintenanceWindowResponse response = new UpdateMaintenanceWindowResponse();
+            DescribeMaintenanceWindowScheduleResponse response = new DescribeMaintenanceWindowScheduleResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AllowUnassociatedTargets", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.AllowUnassociatedTargets = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Cutoff", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    response.Cutoff = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Description = unmarshaller.Unmarshall(context);
+                    response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Duration", targetDepth))
+                if (context.TestExpression("ScheduledWindowExecutions", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    response.Duration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Enabled", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.Enabled = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EndDate", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.EndDate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Schedule", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Schedule = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ScheduleTimezone", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ScheduleTimezone = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("StartDate", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.StartDate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("WindowId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.WindowId = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<ScheduledWindowExecution, ScheduledWindowExecutionUnmarshaller>(ScheduledWindowExecutionUnmarshaller.Instance);
+                    response.ScheduledWindowExecutions = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -143,9 +89,9 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             return new AmazonSimpleSystemsManagementException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static UpdateMaintenanceWindowResponseUnmarshaller _instance = new UpdateMaintenanceWindowResponseUnmarshaller();        
+        private static DescribeMaintenanceWindowScheduleResponseUnmarshaller _instance = new DescribeMaintenanceWindowScheduleResponseUnmarshaller();        
 
-        internal static UpdateMaintenanceWindowResponseUnmarshaller GetInstance()
+        internal static DescribeMaintenanceWindowScheduleResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -153,7 +99,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateMaintenanceWindowResponseUnmarshaller Instance
+        public static DescribeMaintenanceWindowScheduleResponseUnmarshaller Instance
         {
             get
             {

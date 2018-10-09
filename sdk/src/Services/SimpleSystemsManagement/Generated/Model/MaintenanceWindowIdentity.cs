@@ -36,7 +36,12 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _description;
         private int? _duration;
         private bool? _enabled;
+        private string _endDate;
         private string _name;
+        private string _nextExecutionTime;
+        private string _schedule;
+        private string _scheduleTimezone;
+        private string _startDate;
         private string _windowId;
 
         /// <summary>
@@ -113,6 +118,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EndDate. 
+        /// <para>
+        /// The date and time, in ISO-8601 Extended format, for when the Maintenance Window is
+        /// scheduled to become inactive.
+        /// </para>
+        /// </summary>
+        public string EndDate
+        {
+            get { return this._endDate; }
+            set { this._endDate = value; }
+        }
+
+        // Check to see if EndDate property is set
+        internal bool IsSetEndDate()
+        {
+            return this._endDate != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the Maintenance Window.
@@ -128,6 +152,81 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextExecutionTime. 
+        /// <para>
+        /// The next time the Maintenance Window will actually run, taking into account any specified
+        /// times for the Maintenance Window to become active or inactive.
+        /// </para>
+        /// </summary>
+        public string NextExecutionTime
+        {
+            get { return this._nextExecutionTime; }
+            set { this._nextExecutionTime = value; }
+        }
+
+        // Check to see if NextExecutionTime property is set
+        internal bool IsSetNextExecutionTime()
+        {
+            return this._nextExecutionTime != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Schedule. 
+        /// <para>
+        /// The schedule of the Maintenance Window in the form of a cron or rate expression.
+        /// </para>
+        /// </summary>
+        public string Schedule
+        {
+            get { return this._schedule; }
+            set { this._schedule = value; }
+        }
+
+        // Check to see if Schedule property is set
+        internal bool IsSetSchedule()
+        {
+            return this._schedule != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScheduleTimezone. 
+        /// <para>
+        /// The time zone that the scheduled Maintenance Window executions are based on, in Internet
+        /// Assigned Numbers Authority (IANA) format.
+        /// </para>
+        /// </summary>
+        public string ScheduleTimezone
+        {
+            get { return this._scheduleTimezone; }
+            set { this._scheduleTimezone = value; }
+        }
+
+        // Check to see if ScheduleTimezone property is set
+        internal bool IsSetScheduleTimezone()
+        {
+            return this._scheduleTimezone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartDate. 
+        /// <para>
+        /// The date and time, in ISO-8601 Extended format, for when the Maintenance Window is
+        /// scheduled to become active.
+        /// </para>
+        /// </summary>
+        public string StartDate
+        {
+            get { return this._startDate; }
+            set { this._startDate = value; }
+        }
+
+        // Check to see if StartDate property is set
+        internal bool IsSetStartDate()
+        {
+            return this._startDate != null;
         }
 
         /// <summary>

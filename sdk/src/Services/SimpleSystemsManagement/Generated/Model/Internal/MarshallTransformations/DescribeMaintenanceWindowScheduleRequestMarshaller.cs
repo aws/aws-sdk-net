@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateMaintenanceWindow Request Marshaller
+    /// DescribeMaintenanceWindowSchedule Request Marshaller
     /// </summary>       
-    public class UpdateMaintenanceWindowRequestMarshaller : IMarshaller<IRequest, UpdateMaintenanceWindowRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DescribeMaintenanceWindowScheduleRequestMarshaller : IMarshaller<IRequest, DescribeMaintenanceWindowScheduleRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateMaintenanceWindowRequest)input);
+            return this.Marshall((DescribeMaintenanceWindowScheduleRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateMaintenanceWindowRequest publicRequest)
+        public IRequest Marshall(DescribeMaintenanceWindowScheduleRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleSystemsManagement");
-            string target = "AmazonSSM.UpdateMaintenanceWindow";
+            string target = "AmazonSSM.DescribeMaintenanceWindowSchedule";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -67,70 +67,54 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAllowUnassociatedTargets())
+                if(publicRequest.IsSetFilters())
                 {
-                    context.Writer.WritePropertyName("AllowUnassociatedTargets");
-                    context.Writer.Write(publicRequest.AllowUnassociatedTargets);
+                    context.Writer.WritePropertyName("Filters");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestFiltersListValue in publicRequest.Filters)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PatchOrchestratorFilterMarshaller.Instance;
+                        marshaller.Marshall(publicRequestFiltersListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
-                if(publicRequest.IsSetCutoff())
+                if(publicRequest.IsSetMaxResults())
                 {
-                    context.Writer.WritePropertyName("Cutoff");
-                    context.Writer.Write(publicRequest.Cutoff);
+                    context.Writer.WritePropertyName("MaxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
                 }
 
-                if(publicRequest.IsSetDescription())
+                if(publicRequest.IsSetNextToken())
                 {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
+                    context.Writer.WritePropertyName("NextToken");
+                    context.Writer.Write(publicRequest.NextToken);
                 }
 
-                if(publicRequest.IsSetDuration())
+                if(publicRequest.IsSetResourceType())
                 {
-                    context.Writer.WritePropertyName("Duration");
-                    context.Writer.Write(publicRequest.Duration);
+                    context.Writer.WritePropertyName("ResourceType");
+                    context.Writer.Write(publicRequest.ResourceType);
                 }
 
-                if(publicRequest.IsSetEnabled())
+                if(publicRequest.IsSetTargets())
                 {
-                    context.Writer.WritePropertyName("Enabled");
-                    context.Writer.Write(publicRequest.Enabled);
-                }
+                    context.Writer.WritePropertyName("Targets");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTargetsListValue in publicRequest.Targets)
+                    {
+                        context.Writer.WriteObjectStart();
 
-                if(publicRequest.IsSetEndDate())
-                {
-                    context.Writer.WritePropertyName("EndDate");
-                    context.Writer.Write(publicRequest.EndDate);
-                }
+                        var marshaller = TargetMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTargetsListValue, context);
 
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetReplace())
-                {
-                    context.Writer.WritePropertyName("Replace");
-                    context.Writer.Write(publicRequest.Replace);
-                }
-
-                if(publicRequest.IsSetSchedule())
-                {
-                    context.Writer.WritePropertyName("Schedule");
-                    context.Writer.Write(publicRequest.Schedule);
-                }
-
-                if(publicRequest.IsSetScheduleTimezone())
-                {
-                    context.Writer.WritePropertyName("ScheduleTimezone");
-                    context.Writer.Write(publicRequest.ScheduleTimezone);
-                }
-
-                if(publicRequest.IsSetStartDate())
-                {
-                    context.Writer.WritePropertyName("StartDate");
-                    context.Writer.Write(publicRequest.StartDate);
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetWindowId())
@@ -148,9 +132,9 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static UpdateMaintenanceWindowRequestMarshaller _instance = new UpdateMaintenanceWindowRequestMarshaller();        
+        private static DescribeMaintenanceWindowScheduleRequestMarshaller _instance = new DescribeMaintenanceWindowScheduleRequestMarshaller();        
 
-        internal static UpdateMaintenanceWindowRequestMarshaller GetInstance()
+        internal static DescribeMaintenanceWindowScheduleRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -158,7 +142,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateMaintenanceWindowRequestMarshaller Instance
+        public static DescribeMaintenanceWindowScheduleRequestMarshaller Instance
         {
             get
             {

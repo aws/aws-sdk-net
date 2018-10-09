@@ -28,47 +28,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Filter used in the request. Supported filter keys are Name and Enabled.
+    /// Container for the parameters to the CancelMaintenanceWindowExecution operation.
+    /// Stops a Maintenance Window execution that is already in progress and cancels any tasks
+    /// in the window that have not already starting running. (Tasks already in progress will
+    /// continue to completion.)
     /// </summary>
-    public partial class MaintenanceWindowFilter
+    public partial class CancelMaintenanceWindowExecutionRequest : AmazonSimpleSystemsManagementRequest
     {
-        private string _key;
-        private List<string> _values = new List<string>();
+        private string _windowExecutionId;
 
         /// <summary>
-        /// Gets and sets the property Key. 
+        /// Gets and sets the property WindowExecutionId. 
         /// <para>
-        /// The name of the filter.
+        /// The ID of the Maintenance Window execution to stop.
         /// </para>
         /// </summary>
-        public string Key
+        public string WindowExecutionId
         {
-            get { return this._key; }
-            set { this._key = value; }
+            get { return this._windowExecutionId; }
+            set { this._windowExecutionId = value; }
         }
 
-        // Check to see if Key property is set
-        internal bool IsSetKey()
+        // Check to see if WindowExecutionId property is set
+        internal bool IsSetWindowExecutionId()
         {
-            return this._key != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Values. 
-        /// <para>
-        /// The filter values.
-        /// </para>
-        /// </summary>
-        public List<string> Values
-        {
-            get { return this._values; }
-            set { this._values = value; }
-        }
-
-        // Check to see if Values property is set
-        internal bool IsSetValues()
-        {
-            return this._values != null && this._values.Count > 0; 
+            return this._windowExecutionId != null;
         }
 
     }
