@@ -71,11 +71,7 @@ namespace Amazon.Extensions.CognitoAuthentication.IntegrationTests
             UserPoolPolicyType passwordPolicy = new UserPoolPolicyType();
             List<SchemaAttributeType> requiredAttributes = new List<SchemaAttributeType>();
             List<string> verifiedAttributes = new List<string>();
-
-            var creds = FallbackCredentialsFactory.GetCredentials();
-            var region = FallbackRegionFactory.GetRegionEndpoint();
-
-            provider = new AmazonCognitoIdentityProviderClient(creds, region);
+            provider = GetAmazonCognitoIdentityProviderClient();
 
             AdminCreateUserConfigType adminCreateUser = new AdminCreateUserConfigType()
             {
@@ -110,7 +106,7 @@ namespace Amazon.Extensions.CognitoAuthentication.IntegrationTests
             verifiedAttributes.Add(CognitoConstants.UserAttrPhoneNumber);
 
             //Create Role for MFA
-            using (var managementClient = new AmazonIdentityManagementServiceClient())
+            using ( var managementClient = GetAmazonIdentityManagementServiceClient() )
             {
                 CreateRoleResponse roleResponse = managementClient.CreateRoleAsync(new CreateRoleRequest()
                 {
@@ -230,7 +226,7 @@ namespace Amazon.Extensions.CognitoAuthentication.IntegrationTests
         {
             try
             {
-                using (var client = new AmazonIdentityManagementServiceClient())
+                using (var client = GetAmazonIdentityManagementServiceClient())
                 {
                     client.DetachRolePolicyAsync(new DetachRolePolicyRequest()
                     {

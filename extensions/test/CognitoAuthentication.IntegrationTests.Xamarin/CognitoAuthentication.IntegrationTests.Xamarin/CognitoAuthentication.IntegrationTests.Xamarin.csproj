@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.3</TargetFramework>
+	<BaseIntermediateOutputPath>..\..\Xamarin.Output\obj\Standard</BaseIntermediateOutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+	<OutputPath>..\..\Xamarin.Output\bin\xamarin\</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AWSSDK.Core" Version="3.3.24.4" />
+    <PackageReference Include="AWSSDK.IdentityManagement" Version="3.3.7.1" />
+    <PackageReference Include="AWSSDK.S3" Version="3.3.20" />
+    <PackageReference Include="Xamarin.Forms" Version="3.0.0.561731" />
+    <PackageReference Include="xunit" Version="2.4.0" />
+
+
+    <Compile Include="..\..\CognitoAuthentication.IntegrationTests\*.cs" />
+
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\*" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\AWSSDK.Extensions.CognitoAuthentication\CognitoAuthentication.CoreCLR.csproj" />
+  </ItemGroup>
+</Project>

@@ -26,7 +26,7 @@ namespace Amazon.Extensions.CognitoAuthentication.IntegrationTests
     /// Base class to be used for authentication integrations tests
     /// Allows for child classes to create, sign up, or confirm users
     /// </summary>
-    public class BaseAuthenticationTestClass : IDisposable
+    public partial class BaseAuthenticationTestClass : IDisposable
     {
         protected AmazonCognitoIdentityProviderClient provider;
         protected CognitoUserPool pool;
@@ -42,8 +42,7 @@ namespace Amazon.Extensions.CognitoAuthentication.IntegrationTests
             UserPoolPolicyType passwordPolicy = new UserPoolPolicyType();
             List<SchemaAttributeType> requiredAttributes = new List<SchemaAttributeType>();
             List<string> verifiedAttributes = new List<string>();
-
-            provider = new AmazonCognitoIdentityProviderClient();
+            provider = GetAmazonCognitoIdentityProviderClient();
 
             AdminCreateUserConfigType adminCreateUser = new AdminCreateUserConfigType()
             {
