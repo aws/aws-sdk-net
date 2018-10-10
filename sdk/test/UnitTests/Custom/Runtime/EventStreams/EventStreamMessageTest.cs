@@ -55,19 +55,19 @@ namespace AWSSDK.UnitTests
         {
             var allResources = typeof(EventStreamMessageTest).Assembly.GetManifestResourceNames();
 
-            var positiveEncodedCases = allResources.Where(name => name.StartsWith(TestFileEncodedPositivePrefix)).ToList();
+            var positiveEncodedCases = allResources.Where(name => name.Contains(TestFileEncodedPositivePrefix)).ToList();
             foreach (var testcase in positiveEncodedCases)
             {
                 AddTestCaseResource(testcase, _positiveEncodedTestCases);
             }
 
-            var positiveDecodedCases = allResources.Where(name => name.StartsWith(TestFileDecodedPositivePrefix)).ToList();
+            var positiveDecodedCases = allResources.Where(name => name.Contains(TestFileDecodedPositivePrefix)).ToList();
             foreach (var testcase in positiveDecodedCases)
             {
                 AddTestCaseResource(testcase, _positiveDecodedTestCases);
             }
 
-            var negativeDecodedCases = allResources.Where(name => name.StartsWith(TestFileEncodedNegativePrefix)).ToList();
+            var negativeDecodedCases = allResources.Where(name => name.Contains(TestFileEncodedNegativePrefix)).ToList();
             foreach (var testcase in negativeDecodedCases)
             {
                 AddTestCaseResource(testcase, _negativeEncodedTestCases);
@@ -87,7 +87,8 @@ namespace AWSSDK.UnitTests
                     offset += read;
                 }
 
-                collection.Add(resourceName, fileBuf);
+                var key = resourceName.Substring(resourceName.LastIndexOf('.') + 1).Replace("eventstream_decoded_", "").Replace("eventstream_encoded_", "");
+                collection.Add(key, fileBuf);
             }
         }
 
@@ -282,32 +283,37 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void TestStreamingDecoder()
         {
-            using (var memoryStream = new MemoryStream())
+            foreach(var bufferSize in new[] { 20, 128 })
             {
-                foreach (var entry in _positiveEncodedTestCases)
+                _decoderMessages.Clear();
+                using (var memoryStream = new MemoryStream())
                 {
-                    memoryStream.Write(entry.Value, 0, entry.Value.Length);
+                    foreach (var entry in _positiveEncodedTestCases)
+                    {
+                        memoryStream.Write(entry.Value, 0, entry.Value.Length);
+                    }
+
+                    memoryStream.Position = 0;
+
+                    var decoder = new EventStreamDecoder();
+                    decoder.MessageReceived += Decoder_MessageReceived;
+
+                    var buffer = new byte[bufferSize];
+                    var read = 0;
+                    while ((read = memoryStream.Read(buffer, 0, buffer.Length)) > 0)
+                    {
+                        decoder.ProcessData(buffer, 0, read);
+                    }
                 }
 
-                memoryStream.Position = 0;
+                Assert.AreEqual(_positiveEncodedTestCases.Count, _decoderMessages.Count);
+                var index = 0;
 
-                var decoder = new EventStreamDecoder();
-                decoder.MessageReceived += Decoder_MessageReceived;
-
-                var buffer = new byte[128];
-                var read = 0;
-                while ((read = memoryStream.Read(buffer, 0, buffer.Length)) > 0)
+                foreach (var messageBuffer in _positiveEncodedTestCases.Values)
                 {
-                    decoder.ProcessData(buffer, 0, read);
+                    CollectionAssert.AreEqual(messageBuffer, _decoderMessages[index++].ToByteArray());
                 }
-            }
 
-            Assert.AreEqual(_positiveEncodedTestCases.Count, _decoderMessages.Count);
-            var index = 0;
-
-            foreach (var messageBuffer in _positiveEncodedTestCases.Values)
-            {
-                CollectionAssert.AreEqual(messageBuffer, _decoderMessages[index++].ToByteArray());
             }
         }
 
