@@ -225,6 +225,10 @@ namespace Amazon.Comprehend
     {
 
         /// <summary>
+        /// Constant De for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode De = new LanguageCode("de");
+        /// <summary>
         /// Constant En for LanguageCode
         /// </summary>
         public static readonly LanguageCode En = new LanguageCode("en");
@@ -232,6 +236,18 @@ namespace Amazon.Comprehend
         /// Constant Es for LanguageCode
         /// </summary>
         public static readonly LanguageCode Es = new LanguageCode("es");
+        /// <summary>
+        /// Constant Fr for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode Fr = new LanguageCode("fr");
+        /// <summary>
+        /// Constant It for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode It = new LanguageCode("it");
+        /// <summary>
+        /// Constant Pt for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode Pt = new LanguageCode("pt");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -443,9 +459,29 @@ namespace Amazon.Comprehend
     {
 
         /// <summary>
+        /// Constant De for SyntaxLanguageCode
+        /// </summary>
+        public static readonly SyntaxLanguageCode De = new SyntaxLanguageCode("de");
+        /// <summary>
         /// Constant En for SyntaxLanguageCode
         /// </summary>
         public static readonly SyntaxLanguageCode En = new SyntaxLanguageCode("en");
+        /// <summary>
+        /// Constant Es for SyntaxLanguageCode
+        /// </summary>
+        public static readonly SyntaxLanguageCode Es = new SyntaxLanguageCode("es");
+        /// <summary>
+        /// Constant Fr for SyntaxLanguageCode
+        /// </summary>
+        public static readonly SyntaxLanguageCode Fr = new SyntaxLanguageCode("fr");
+        /// <summary>
+        /// Constant It for SyntaxLanguageCode
+        /// </summary>
+        public static readonly SyntaxLanguageCode It = new SyntaxLanguageCode("it");
+        /// <summary>
+        /// Constant Pt for SyntaxLanguageCode
+        /// </summary>
+        public static readonly SyntaxLanguageCode Pt = new SyntaxLanguageCode("pt");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
