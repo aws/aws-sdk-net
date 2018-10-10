@@ -1,3 +1,10 @@
+### 3.3.379.1 (2018-10-10 02:29 UTC)
+* S3 (3.3.24.4)
+	* Updated to use new Core, version 3.3.27.1
+	* Fixed bug parsing event stream used by S3's Select operation.
+* Core 3.3.27.1
+	* Fixed bug parsing event stream used by S3's Select operation.
+
 ### 3.3.379.0 (2018-10-09 20:36 UTC)
 * SimpleSystemsManagement (3.3.33.0)
 	* Adds StartDate, EndDate, and ScheduleTimezone to CreateMaintenanceWindow and UpdateMaintenanceWindow; Adds NextExecutionTime to GetMaintenanceWindow and DescribeMaintenanceWindows; Adds CancelMaintenanceWindowExecution, DescribeMaintenanceWindowSchedule and DescribeMaintenanceWindowsForTarget APIs.
