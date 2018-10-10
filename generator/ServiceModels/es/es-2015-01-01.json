@@ -318,7 +318,7 @@
             "shape_name": "LogPublishingOptions",
             "keys": {
               "type": "string",
-              "documentation": "\n    <p>Type of Log File, it can be one of the following: \n     <ul>\n       <li>INDEX_SLOW_LOGS: Index slow logs contain insert requests that took more time than configured index query log threshold to execute.</li>\n       <li>SEARCH_SLOW_LOGS: Search slow logs contain search queries that took more time than configured search query log threshold to execute.</li>\n       <li>ES_APPLICATION_LOGS: Elasticsearch application logs contain information about errors and warnings raised during the operation of the service and can be useful for troubleshooting.</li>\n     </ul>\n    </p>\n",
+              "documentation": "\n    <p>Type of Log File, it can be one of the following:\n     <ul>\n       <li>INDEX_SLOW_LOGS: Index slow logs contain insert requests that took more time than configured index query log threshold to execute.</li>\n       <li>SEARCH_SLOW_LOGS: Search slow logs contain search queries that took more time than configured search query log threshold to execute.</li>\n       <li>ES_APPLICATION_LOGS: Elasticsearch application logs contain information about errors and warnings raised during the operation of the service and can be useful for troubleshooting.</li>\n     </ul>\n    </p>\n",
               "enum": [
                 "INDEX_SLOW_LOGS",
                 "SEARCH_SLOW_LOGS",
@@ -722,7 +722,7 @@
                 "shape_name": "LogPublishingOptions",
                 "keys": {
                   "type": "string",
-                  "documentation": "\n    <p>Type of Log File, it can be one of the following: \n     <ul>\n       <li>INDEX_SLOW_LOGS: Index slow logs contain insert requests that took more time than configured index query log threshold to execute.</li>\n       <li>SEARCH_SLOW_LOGS: Search slow logs contain search queries that took more time than configured search query log threshold to execute.</li>\n       <li>ES_APPLICATION_LOGS: Elasticsearch application logs contain information about errors and warnings raised during the operation of the service and can be useful for troubleshooting.</li>\n     </ul>\n    </p>\n",
+                  "documentation": "\n    <p>Type of Log File, it can be one of the following:\n     <ul>\n       <li>INDEX_SLOW_LOGS: Index slow logs contain insert requests that took more time than configured index query log threshold to execute.</li>\n       <li>SEARCH_SLOW_LOGS: Search slow logs contain search queries that took more time than configured search query log threshold to execute.</li>\n       <li>ES_APPLICATION_LOGS: Elasticsearch application logs contain information about errors and warnings raised during the operation of the service and can be useful for troubleshooting.</li>\n     </ul>\n    </p>\n",
                   "enum": [
                     "INDEX_SLOW_LOGS",
                     "SEARCH_SLOW_LOGS",
@@ -747,6 +747,55 @@
                   "documentation": "\n    <p>Log Publishing option that is set for given domain.\n       <br/>Attributes and their details:\n     <ul>\n       <li>CloudWatchLogsLogGroupArn: ARN of the Cloudwatch log group to which log needs to be published.</li>\n       <li>Enabled: Whether the log publishing for given log type is enabled or not</li>\n     </ul>\n   </p>\n",
                   "shape_name": "LogPublishingOption"
                 }
+              },
+              "ServiceSoftwareOptions": {
+                "type": "structure",
+                "members": {
+                  "CurrentVersion": {
+                    "type": "string",
+                    "documentation": "\n    <p>The current service software version that is present on the domain.</p>\n",
+                    "shape_name": "String"
+                  },
+                  "NewVersion": {
+                    "type": "string",
+                    "documentation": "\n    <p>The new service software version if one is available.</p>\n",
+                    "shape_name": "String"
+                  },
+                  "UpdateAvailable": {
+                    "type": "boolean",
+                    "documentation": "\n    <p><code>True</code> if you are able to update you service software version. <code>False</code> if you are not able to update your service software version. </p>\n",
+                    "shape_name": "Boolean"
+                  },
+                  "Cancellable": {
+                    "type": "boolean",
+                    "documentation": "\n    <p><code>True</code> if you are able to cancel your service software version update. <code>False</code> if you are not able to cancel your service software version. </p>\n",
+                    "shape_name": "Boolean"
+                  },
+                  "UpdateStatus": {
+                    "type": "string",
+                    "enum": [
+                      "PENDING_UPDATE",
+                      "IN_PROGRESS",
+                      "COMPLETED",
+                      "NOT_ELIGIBLE",
+                      "ELIGIBLE"
+                    ],
+                    "documentation": "\n    <p>The status of your service software update. This field can take the following values: <code>ELIGIBLE</code>, <code>PENDING_UPDATE</code>, <code>IN_PROGRESS</code>, <code>COMPLETED</code>, and <code>NOT_ELIGIBLE</code>.</p>\n",
+                    "shape_name": "DeploymentStatus"
+                  },
+                  "Description": {
+                    "type": "string",
+                    "documentation": "\n    <p>The description of the <code>UpdateStatus</code>.</p>\n",
+                    "shape_name": "String"
+                  },
+                  "AutomatedUpdateDate": {
+                    "type": "timestamp",
+                    "documentation": "\n    <p>Timestamp, in Epoch time, until which you can manually request a service software update. After this date, we automatically update your service software.</p>\n",
+                    "shape_name": "DeploymentCloseDateTimeStamp"
+                  }
+                },
+                "documentation": "\n       <p>The current status of the Elasticsearch domain's service software.</p>\n  ",
+                "shape_name": "ServiceSoftwareOptions"
               }
             },
             "documentation": "\n      <p>The status of the newly created Elasticsearch domain. </p>\n   ",
@@ -1211,7 +1260,7 @@
                 "shape_name": "LogPublishingOptions",
                 "keys": {
                   "type": "string",
-                  "documentation": "\n    <p>Type of Log File, it can be one of the following: \n     <ul>\n       <li>INDEX_SLOW_LOGS: Index slow logs contain insert requests that took more time than configured index query log threshold to execute.</li>\n       <li>SEARCH_SLOW_LOGS: Search slow logs contain search queries that took more time than configured search query log threshold to execute.</li>\n       <li>ES_APPLICATION_LOGS: Elasticsearch application logs contain information about errors and warnings raised during the operation of the service and can be useful for troubleshooting.</li>\n     </ul>\n    </p>\n",
+                  "documentation": "\n    <p>Type of Log File, it can be one of the following:\n     <ul>\n       <li>INDEX_SLOW_LOGS: Index slow logs contain insert requests that took more time than configured index query log threshold to execute.</li>\n       <li>SEARCH_SLOW_LOGS: Search slow logs contain search queries that took more time than configured search query log threshold to execute.</li>\n       <li>ES_APPLICATION_LOGS: Elasticsearch application logs contain information about errors and warnings raised during the operation of the service and can be useful for troubleshooting.</li>\n     </ul>\n    </p>\n",
                   "enum": [
                     "INDEX_SLOW_LOGS",
                     "SEARCH_SLOW_LOGS",
@@ -1236,6 +1285,55 @@
                   "documentation": "\n    <p>Log Publishing option that is set for given domain.\n       <br/>Attributes and their details:\n     <ul>\n       <li>CloudWatchLogsLogGroupArn: ARN of the Cloudwatch log group to which log needs to be published.</li>\n       <li>Enabled: Whether the log publishing for given log type is enabled or not</li>\n     </ul>\n   </p>\n",
                   "shape_name": "LogPublishingOption"
                 }
+              },
+              "ServiceSoftwareOptions": {
+                "type": "structure",
+                "members": {
+                  "CurrentVersion": {
+                    "type": "string",
+                    "documentation": "\n    <p>The current service software version that is present on the domain.</p>\n",
+                    "shape_name": "String"
+                  },
+                  "NewVersion": {
+                    "type": "string",
+                    "documentation": "\n    <p>The new service software version if one is available.</p>\n",
+                    "shape_name": "String"
+                  },
+                  "UpdateAvailable": {
+                    "type": "boolean",
+                    "documentation": "\n    <p><code>True</code> if you are able to update you service software version. <code>False</code> if you are not able to update your service software version. </p>\n",
+                    "shape_name": "Boolean"
+                  },
+                  "Cancellable": {
+                    "type": "boolean",
+                    "documentation": "\n    <p><code>True</code> if you are able to cancel your service software version update. <code>False</code> if you are not able to cancel your service software version. </p>\n",
+                    "shape_name": "Boolean"
+                  },
+                  "UpdateStatus": {
+                    "type": "string",
+                    "enum": [
+                      "PENDING_UPDATE",
+                      "IN_PROGRESS",
+                      "COMPLETED",
+                      "NOT_ELIGIBLE",
+                      "ELIGIBLE"
+                    ],
+                    "documentation": "\n    <p>The status of your service software update. This field can take the following values: <code>ELIGIBLE</code>, <code>PENDING_UPDATE</code>, <code>IN_PROGRESS</code>, <code>COMPLETED</code>, and <code>NOT_ELIGIBLE</code>.</p>\n",
+                    "shape_name": "DeploymentStatus"
+                  },
+                  "Description": {
+                    "type": "string",
+                    "documentation": "\n    <p>The description of the <code>UpdateStatus</code>.</p>\n",
+                    "shape_name": "String"
+                  },
+                  "AutomatedUpdateDate": {
+                    "type": "timestamp",
+                    "documentation": "\n    <p>Timestamp, in Epoch time, until which you can manually request a service software update. After this date, we automatically update your service software.</p>\n",
+                    "shape_name": "DeploymentCloseDateTimeStamp"
+                  }
+                },
+                "documentation": "\n       <p>The current status of the Elasticsearch domain's service software.</p>\n  ",
+                "shape_name": "ServiceSoftwareOptions"
               }
             },
             "documentation": "\n      <p>The current status of the Elasticsearch domain.</p>\n   ",
@@ -1689,7 +1787,7 @@
                   "shape_name": "LogPublishingOptions",
                   "keys": {
                     "type": "string",
-                    "documentation": "\n    <p>Type of Log File, it can be one of the following: \n     <ul>\n       <li>INDEX_SLOW_LOGS: Index slow logs contain insert requests that took more time than configured index query log threshold to execute.</li>\n       <li>SEARCH_SLOW_LOGS: Search slow logs contain search queries that took more time than configured search query log threshold to execute.</li>\n       <li>ES_APPLICATION_LOGS: Elasticsearch application logs contain information about errors and warnings raised during the operation of the service and can be useful for troubleshooting.</li>\n     </ul>\n    </p>\n",
+                    "documentation": "\n    <p>Type of Log File, it can be one of the following:\n     <ul>\n       <li>INDEX_SLOW_LOGS: Index slow logs contain insert requests that took more time than configured index query log threshold to execute.</li>\n       <li>SEARCH_SLOW_LOGS: Search slow logs contain search queries that took more time than configured search query log threshold to execute.</li>\n       <li>ES_APPLICATION_LOGS: Elasticsearch application logs contain information about errors and warnings raised during the operation of the service and can be useful for troubleshooting.</li>\n     </ul>\n    </p>\n",
                     "enum": [
                       "INDEX_SLOW_LOGS",
                       "SEARCH_SLOW_LOGS",
@@ -1714,6 +1812,55 @@
                     "documentation": "\n    <p>Log Publishing option that is set for given domain.\n       <br/>Attributes and their details:\n     <ul>\n       <li>CloudWatchLogsLogGroupArn: ARN of the Cloudwatch log group to which log needs to be published.</li>\n       <li>Enabled: Whether the log publishing for given log type is enabled or not</li>\n     </ul>\n   </p>\n",
                     "shape_name": "LogPublishingOption"
                   }
+                },
+                "ServiceSoftwareOptions": {
+                  "type": "structure",
+                  "members": {
+                    "CurrentVersion": {
+                      "type": "string",
+                      "documentation": "\n    <p>The current service software version that is present on the domain.</p>\n",
+                      "shape_name": "String"
+                    },
+                    "NewVersion": {
+                      "type": "string",
+                      "documentation": "\n    <p>The new service software version if one is available.</p>\n",
+                      "shape_name": "String"
+                    },
+                    "UpdateAvailable": {
+                      "type": "boolean",
+                      "documentation": "\n    <p><code>True</code> if you are able to update you service software version. <code>False</code> if you are not able to update your service software version. </p>\n",
+                      "shape_name": "Boolean"
+                    },
+                    "Cancellable": {
+                      "type": "boolean",
+                      "documentation": "\n    <p><code>True</code> if you are able to cancel your service software version update. <code>False</code> if you are not able to cancel your service software version. </p>\n",
+                      "shape_name": "Boolean"
+                    },
+                    "UpdateStatus": {
+                      "type": "string",
+                      "enum": [
+                        "PENDING_UPDATE",
+                        "IN_PROGRESS",
+                        "COMPLETED",
+                        "NOT_ELIGIBLE",
+                        "ELIGIBLE"
+                      ],
+                      "documentation": "\n    <p>The status of your service software update. This field can take the following values: <code>ELIGIBLE</code>, <code>PENDING_UPDATE</code>, <code>IN_PROGRESS</code>, <code>COMPLETED</code>, and <code>NOT_ELIGIBLE</code>.</p>\n",
+                      "shape_name": "DeploymentStatus"
+                    },
+                    "Description": {
+                      "type": "string",
+                      "documentation": "\n    <p>The description of the <code>UpdateStatus</code>.</p>\n",
+                      "shape_name": "String"
+                    },
+                    "AutomatedUpdateDate": {
+                      "type": "timestamp",
+                      "documentation": "\n    <p>Timestamp, in Epoch time, until which you can manually request a service software update. After this date, we automatically update your service software.</p>\n",
+                      "shape_name": "DeploymentCloseDateTimeStamp"
+                    }
+                  },
+                  "documentation": "\n       <p>The current status of the Elasticsearch domain's service software.</p>\n  ",
+                  "shape_name": "ServiceSoftwareOptions"
                 }
               },
               "documentation": "\n      <p>The current status of an Elasticsearch domain.</p>\n   ",
@@ -2590,7 +2737,7 @@
                     "shape_name": "LogPublishingOptions",
                     "keys": {
                       "type": "string",
-                      "documentation": "\n    <p>Type of Log File, it can be one of the following: \n     <ul>\n       <li>INDEX_SLOW_LOGS: Index slow logs contain insert requests that took more time than configured index query log threshold to execute.</li>\n       <li>SEARCH_SLOW_LOGS: Search slow logs contain search queries that took more time than configured search query log threshold to execute.</li>\n       <li>ES_APPLICATION_LOGS: Elasticsearch application logs contain information about errors and warnings raised during the operation of the service and can be useful for troubleshooting.</li>\n     </ul>\n    </p>\n",
+                      "documentation": "\n    <p>Type of Log File, it can be one of the following:\n     <ul>\n       <li>INDEX_SLOW_LOGS: Index slow logs contain insert requests that took more time than configured index query log threshold to execute.</li>\n       <li>SEARCH_SLOW_LOGS: Search slow logs contain search queries that took more time than configured search query log threshold to execute.</li>\n       <li>ES_APPLICATION_LOGS: Elasticsearch application logs contain information about errors and warnings raised during the operation of the service and can be useful for troubleshooting.</li>\n     </ul>\n    </p>\n",
                       "enum": [
                         "INDEX_SLOW_LOGS",
                         "SEARCH_SLOW_LOGS",
@@ -2979,7 +3126,7 @@
             "shape_name": "LogPublishingOptions",
             "keys": {
               "type": "string",
-              "documentation": "\n    <p>Type of Log File, it can be one of the following: \n     <ul>\n       <li>INDEX_SLOW_LOGS: Index slow logs contain insert requests that took more time than configured index query log threshold to execute.</li>\n       <li>SEARCH_SLOW_LOGS: Search slow logs contain search queries that took more time than configured search query log threshold to execute.</li>\n       <li>ES_APPLICATION_LOGS: Elasticsearch application logs contain information about errors and warnings raised during the operation of the service and can be useful for troubleshooting.</li>\n     </ul>\n    </p>\n",
+              "documentation": "\n    <p>Type of Log File, it can be one of the following:\n     <ul>\n       <li>INDEX_SLOW_LOGS: Index slow logs contain insert requests that took more time than configured index query log threshold to execute.</li>\n       <li>SEARCH_SLOW_LOGS: Search slow logs contain search queries that took more time than configured search query log threshold to execute.</li>\n       <li>ES_APPLICATION_LOGS: Elasticsearch application logs contain information about errors and warnings raised during the operation of the service and can be useful for troubleshooting.</li>\n     </ul>\n    </p>\n",
               "enum": [
                 "INDEX_SLOW_LOGS",
                 "SEARCH_SLOW_LOGS",
@@ -3822,7 +3969,7 @@
                     "shape_name": "LogPublishingOptions",
                     "keys": {
                       "type": "string",
-                      "documentation": "\n    <p>Type of Log File, it can be one of the following: \n     <ul>\n       <li>INDEX_SLOW_LOGS: Index slow logs contain insert requests that took more time than configured index query log threshold to execute.</li>\n       <li>SEARCH_SLOW_LOGS: Search slow logs contain search queries that took more time than configured search query log threshold to execute.</li>\n       <li>ES_APPLICATION_LOGS: Elasticsearch application logs contain information about errors and warnings raised during the operation of the service and can be useful for troubleshooting.</li>\n     </ul>\n    </p>\n",
+                      "documentation": "\n    <p>Type of Log File, it can be one of the following:\n     <ul>\n       <li>INDEX_SLOW_LOGS: Index slow logs contain insert requests that took more time than configured index query log threshold to execute.</li>\n       <li>SEARCH_SLOW_LOGS: Search slow logs contain search queries that took more time than configured search query log threshold to execute.</li>\n       <li>ES_APPLICATION_LOGS: Elasticsearch application logs contain information about errors and warnings raised during the operation of the service and can be useful for troubleshooting.</li>\n     </ul>\n    </p>\n",
                       "enum": [
                         "INDEX_SLOW_LOGS",
                         "SEARCH_SLOW_LOGS",
@@ -4350,7 +4497,7 @@
                 "shape_name": "LogPublishingOptions",
                 "keys": {
                   "type": "string",
-                  "documentation": "\n    <p>Type of Log File, it can be one of the following: \n     <ul>\n       <li>INDEX_SLOW_LOGS: Index slow logs contain insert requests that took more time than configured index query log threshold to execute.</li>\n       <li>SEARCH_SLOW_LOGS: Search slow logs contain search queries that took more time than configured search query log threshold to execute.</li>\n       <li>ES_APPLICATION_LOGS: Elasticsearch application logs contain information about errors and warnings raised during the operation of the service and can be useful for troubleshooting.</li>\n     </ul>\n    </p>\n",
+                  "documentation": "\n    <p>Type of Log File, it can be one of the following:\n     <ul>\n       <li>INDEX_SLOW_LOGS: Index slow logs contain insert requests that took more time than configured index query log threshold to execute.</li>\n       <li>SEARCH_SLOW_LOGS: Search slow logs contain search queries that took more time than configured search query log threshold to execute.</li>\n       <li>ES_APPLICATION_LOGS: Elasticsearch application logs contain information about errors and warnings raised during the operation of the service and can be useful for troubleshooting.</li>\n     </ul>\n    </p>\n",
                   "enum": [
                     "INDEX_SLOW_LOGS",
                     "SEARCH_SLOW_LOGS",
@@ -4375,6 +4522,55 @@
                   "documentation": "\n    <p>Log Publishing option that is set for given domain.\n       <br/>Attributes and their details:\n     <ul>\n       <li>CloudWatchLogsLogGroupArn: ARN of the Cloudwatch log group to which log needs to be published.</li>\n       <li>Enabled: Whether the log publishing for given log type is enabled or not</li>\n     </ul>\n   </p>\n",
                   "shape_name": "LogPublishingOption"
                 }
+              },
+              "ServiceSoftwareOptions": {
+                "type": "structure",
+                "members": {
+                  "CurrentVersion": {
+                    "type": "string",
+                    "documentation": "\n    <p>The current service software version that is present on the domain.</p>\n",
+                    "shape_name": "String"
+                  },
+                  "NewVersion": {
+                    "type": "string",
+                    "documentation": "\n    <p>The new service software version if one is available.</p>\n",
+                    "shape_name": "String"
+                  },
+                  "UpdateAvailable": {
+                    "type": "boolean",
+                    "documentation": "\n    <p><code>True</code> if you are able to update you service software version. <code>False</code> if you are not able to update your service software version. </p>\n",
+                    "shape_name": "Boolean"
+                  },
+                  "Cancellable": {
+                    "type": "boolean",
+                    "documentation": "\n    <p><code>True</code> if you are able to cancel your service software version update. <code>False</code> if you are not able to cancel your service software version. </p>\n",
+                    "shape_name": "Boolean"
+                  },
+                  "UpdateStatus": {
+                    "type": "string",
+                    "enum": [
+                      "PENDING_UPDATE",
+                      "IN_PROGRESS",
+                      "COMPLETED",
+                      "NOT_ELIGIBLE",
+                      "ELIGIBLE"
+                    ],
+                    "documentation": "\n    <p>The status of your service software update. This field can take the following values: <code>ELIGIBLE</code>, <code>PENDING_UPDATE</code>, <code>IN_PROGRESS</code>, <code>COMPLETED</code>, and <code>NOT_ELIGIBLE</code>.</p>\n",
+                    "shape_name": "DeploymentStatus"
+                  },
+                  "Description": {
+                    "type": "string",
+                    "documentation": "\n    <p>The description of the <code>UpdateStatus</code>.</p>\n",
+                    "shape_name": "String"
+                  },
+                  "AutomatedUpdateDate": {
+                    "type": "timestamp",
+                    "documentation": "\n    <p>Timestamp, in Epoch time, until which you can manually request a service software update. After this date, we automatically update your service software.</p>\n",
+                    "shape_name": "DeploymentCloseDateTimeStamp"
+                  }
+                },
+                "documentation": "\n       <p>The current status of the Elasticsearch domain's service software.</p>\n  ",
+                "shape_name": "ServiceSoftwareOptions"
               }
             },
             "documentation": "\n      <p>The status of the Elasticsearch domain being deleted.</p>\n   ",
@@ -4736,7 +4932,7 @@
         "members": {
           "LimitsByRole": {
             "type": "map",
-            "documentation": "\n    <p>\n      Map of Role of the Instance and Limits that are applicable.\n      Role performed by given Instance in Elasticsearch \n      can be one of the following:\n      <ul>\n        <li>Data: If the given InstanceType is used as Data node</li>\n        <li>Master: If the given InstanceType is used as Master node</li>\n      </ul>\n    </p>\n  ",
+            "documentation": "\n    <p>\n      Map of Role of the Instance and Limits that are applicable.\n      Role performed by given Instance in Elasticsearch\n      can be one of the following:\n      <ul>\n        <li>Data: If the given InstanceType is used as Data node</li>\n        <li>Master: If the given InstanceType is used as Master node</li>\n      </ul>\n    </p>\n  ",
             "shape_name": "LimitsByRole",
             "keys": {
               "type": "string",
@@ -4961,7 +5157,7 @@
           },
           "TagList": {
             "type": "list",
-            "documentation": "\n       <p> List of <code>Tag</code> that need to be added for the Elasticsearch domain. </p> \n   ",
+            "documentation": "\n       <p> List of <code>Tag</code> that need to be added for the Elasticsearch domain. </p>\n   ",
             "required": true,
             "shape_name": "TagList",
             "members": {
@@ -4984,7 +5180,7 @@
                   "max_length": 256
                 }
               },
-              "documentation": "\n       <p>Specifies a key value pair for a resource tag.</p> \n   ",
+              "documentation": "\n       <p>Specifies a key value pair for a resource tag.</p>\n   ",
               "shape_name": "Tag"
             }
           }
@@ -5055,7 +5251,7 @@
         "members": {
           "TagList": {
             "type": "list",
-            "documentation": "\n       <p> List of <code>Tag</code> for the requested Elasticsearch domain.</p> \n   ",
+            "documentation": "\n       <p> List of <code>Tag</code> for the requested Elasticsearch domain.</p>\n   ",
             "shape_name": "TagList",
             "members": {
               "type": "structure",
@@ -5077,7 +5273,7 @@
                   "max_length": 256
                 }
               },
-              "documentation": "\n       <p>Specifies a key value pair for a resource tag.</p> \n   ",
+              "documentation": "\n       <p>Specifies a key value pair for a resource tag.</p>\n   ",
               "shape_name": "Tag"
             }
           }
@@ -5202,7 +5398,7 @@
               "members": {
                 "DomainName": {
                   "type": "string",
-                  "documentation": "\n       <p> Specifies the <code>DomainName</code>.</p> \n   ",
+                  "documentation": "\n       <p> Specifies the <code>DomainName</code>.</p>\n   ",
                   "pattern": "[a-z][a-z0-9\\-]+",
                   "shape_name": "DomainName",
                   "min_length": 3,
@@ -6238,6 +6434,236 @@
         }
       ],
       "documentation": "\n\t\t<p>Retrieves the complete history of the last 10 upgrades that were performed on the domain.</p>\n    "
+    },
+    "StartElasticsearchServiceSoftwareUpdate": {
+      "name": "StartElasticsearchServiceSoftwareUpdate",
+      "http": {
+        "method": "POST",
+        "uri": "/2015-01-01/es/serviceSoftwareUpdate/start"
+      },
+      "input": {
+        "type": "structure",
+        "members": {
+          "DomainName": {
+            "type": "string",
+            "documentation": "\n    <p>The name of the domain that you want to update to the latest service software.</p>\n",
+            "pattern": "[a-z][a-z0-9\\-]+",
+            "required": true,
+            "shape_name": "DomainName",
+            "min_length": 3,
+            "max_length": 28
+          }
+        },
+        "documentation": "\n    <p>Container for the parameters to the <code><a>StartElasticsearchServiceSoftwareUpdate</a></code> operation. Specifies the name of the Elasticsearch domain that you wish to schedule a service software update on.</p>\n",
+        "shape_name": "StartElasticsearchServiceSoftwareUpdateRequest"
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "ServiceSoftwareOptions": {
+            "type": "structure",
+            "members": {
+              "CurrentVersion": {
+                "type": "string",
+                "documentation": "\n    <p>The current service software version that is present on the domain.</p>\n",
+                "shape_name": "String"
+              },
+              "NewVersion": {
+                "type": "string",
+                "documentation": "\n    <p>The new service software version if one is available.</p>\n",
+                "shape_name": "String"
+              },
+              "UpdateAvailable": {
+                "type": "boolean",
+                "documentation": "\n    <p><code>True</code> if you are able to update you service software version. <code>False</code> if you are not able to update your service software version. </p>\n",
+                "shape_name": "Boolean"
+              },
+              "Cancellable": {
+                "type": "boolean",
+                "documentation": "\n    <p><code>True</code> if you are able to cancel your service software version update. <code>False</code> if you are not able to cancel your service software version. </p>\n",
+                "shape_name": "Boolean"
+              },
+              "UpdateStatus": {
+                "type": "string",
+                "enum": [
+                  "PENDING_UPDATE",
+                  "IN_PROGRESS",
+                  "COMPLETED",
+                  "NOT_ELIGIBLE",
+                  "ELIGIBLE"
+                ],
+                "documentation": "\n    <p>The status of your service software update. This field can take the following values: <code>ELIGIBLE</code>, <code>PENDING_UPDATE</code>, <code>IN_PROGRESS</code>, <code>COMPLETED</code>, and <code>NOT_ELIGIBLE</code>.</p>\n",
+                "shape_name": "DeploymentStatus"
+              },
+              "Description": {
+                "type": "string",
+                "documentation": "\n    <p>The description of the <code>UpdateStatus</code>.</p>\n",
+                "shape_name": "String"
+              },
+              "AutomatedUpdateDate": {
+                "type": "timestamp",
+                "documentation": "\n    <p>Timestamp, in Epoch time, until which you can manually request a service software update. After this date, we automatically update your service software.</p>\n",
+                "shape_name": "DeploymentCloseDateTimeStamp"
+              }
+            },
+            "documentation": "\n    <p>The current status of the Elasticsearch service software update.</p>\n",
+            "shape_name": "ServiceSoftwareOptions"
+          }
+        },
+        "documentation": "\n    <p>The result of a <code>StartElasticsearchServiceSoftwareUpdate</code> operation. Contains the status of the update.</p>\n",
+        "shape_name": "StartElasticsearchServiceSoftwareUpdateResponse"
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "documentation": "\n      <p>A description of the error.</p>\n   ",
+              "shape_name": "ErrorMessage"
+            }
+          },
+          "documentation": "\n      <p>An error occurred while processing the request.</p>\n   ",
+          "shape_name": "BaseException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "documentation": "\n      <p>The request processing has failed because of an unknown error, exception or failure (the failure is internal to the service) . Gives http status code of 500.</p>\n   ",
+          "shape_name": "InternalException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "documentation": "\n      <p>An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.</p>\n   ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "documentation": "\n      <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>\n   ",
+          "shape_name": "ValidationException"
+        }
+      ],
+      "documentation": "\n    <p>Schedules a service software update for an Amazon ES domain.</p>\n"
+    },
+    "CancelElasticsearchServiceSoftwareUpdate": {
+      "name": "CancelElasticsearchServiceSoftwareUpdate",
+      "http": {
+        "method": "POST",
+        "uri": "/2015-01-01/es/serviceSoftwareUpdate/cancel"
+      },
+      "input": {
+        "type": "structure",
+        "members": {
+          "DomainName": {
+            "type": "string",
+            "documentation": "\n    <p>The name of the domain that you want to stop the latest service software update on.</p>\n",
+            "pattern": "[a-z][a-z0-9\\-]+",
+            "required": true,
+            "shape_name": "DomainName",
+            "min_length": 3,
+            "max_length": 28
+          }
+        },
+        "documentation": "\n    <p>Container for the parameters to the <code><a>CancelElasticsearchServiceSoftwareUpdate</a></code> operation. Specifies the name of the Elasticsearch domain that you wish to cancel a service software update on.</p>\n",
+        "shape_name": "CancelElasticsearchServiceSoftwareUpdateRequest"
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "ServiceSoftwareOptions": {
+            "type": "structure",
+            "members": {
+              "CurrentVersion": {
+                "type": "string",
+                "documentation": "\n    <p>The current service software version that is present on the domain.</p>\n",
+                "shape_name": "String"
+              },
+              "NewVersion": {
+                "type": "string",
+                "documentation": "\n    <p>The new service software version if one is available.</p>\n",
+                "shape_name": "String"
+              },
+              "UpdateAvailable": {
+                "type": "boolean",
+                "documentation": "\n    <p><code>True</code> if you are able to update you service software version. <code>False</code> if you are not able to update your service software version. </p>\n",
+                "shape_name": "Boolean"
+              },
+              "Cancellable": {
+                "type": "boolean",
+                "documentation": "\n    <p><code>True</code> if you are able to cancel your service software version update. <code>False</code> if you are not able to cancel your service software version. </p>\n",
+                "shape_name": "Boolean"
+              },
+              "UpdateStatus": {
+                "type": "string",
+                "enum": [
+                  "PENDING_UPDATE",
+                  "IN_PROGRESS",
+                  "COMPLETED",
+                  "NOT_ELIGIBLE",
+                  "ELIGIBLE"
+                ],
+                "documentation": "\n    <p>The status of your service software update. This field can take the following values: <code>ELIGIBLE</code>, <code>PENDING_UPDATE</code>, <code>IN_PROGRESS</code>, <code>COMPLETED</code>, and <code>NOT_ELIGIBLE</code>.</p>\n",
+                "shape_name": "DeploymentStatus"
+              },
+              "Description": {
+                "type": "string",
+                "documentation": "\n    <p>The description of the <code>UpdateStatus</code>.</p>\n",
+                "shape_name": "String"
+              },
+              "AutomatedUpdateDate": {
+                "type": "timestamp",
+                "documentation": "\n    <p>Timestamp, in Epoch time, until which you can manually request a service software update. After this date, we automatically update your service software.</p>\n",
+                "shape_name": "DeploymentCloseDateTimeStamp"
+              }
+            },
+            "documentation": "\n    <p>The current status of the Elasticsearch service software update.</p>\n",
+            "shape_name": "ServiceSoftwareOptions"
+          }
+        },
+        "documentation": "\n    <p>The result of a <code>CancelElasticsearchServiceSoftwareUpdate</code> operation. Contains the status of the update.</p>\n",
+        "shape_name": "CancelElasticsearchServiceSoftwareUpdateResponse"
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "documentation": "\n      <p>A description of the error.</p>\n   ",
+              "shape_name": "ErrorMessage"
+            }
+          },
+          "documentation": "\n      <p>An error occurred while processing the request.</p>\n   ",
+          "shape_name": "BaseException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "documentation": "\n      <p>The request processing has failed because of an unknown error, exception or failure (the failure is internal to the service) . Gives http status code of 500.</p>\n   ",
+          "shape_name": "InternalException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "documentation": "\n      <p>An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.</p>\n   ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "documentation": "\n      <p>An exception for missing / invalid input fields. Gives http status code of 400.</p>\n   ",
+          "shape_name": "ValidationException"
+        }
+      ],
+      "documentation": "\n    <p>Cancels a scheduled service software update for an Amazon ES domain. You can only perform this operation before the <code>AutomatedUpdateDate</code> and when the <code>UpdateStatus</code> is in the <code>PENDING_UPDATE</code> state.</p>\n"
     }
   }
 }

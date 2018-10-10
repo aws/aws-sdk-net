@@ -166,6 +166,12 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                     unmarshalledObject.Processing = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ServiceSoftwareOptions", targetDepth))
+                {
+                    var unmarshaller = ServiceSoftwareOptionsUnmarshaller.Instance;
+                    unmarshalledObject.ServiceSoftwareOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SnapshotOptions", targetDepth))
                 {
                     var unmarshaller = SnapshotOptionsUnmarshaller.Instance;

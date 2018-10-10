@@ -99,6 +99,59 @@ namespace Amazon.Elasticsearch
 
         #endregion
         
+        #region  CancelElasticsearchServiceSoftwareUpdate
+
+
+        /// <summary>
+        /// Cancels a scheduled service software update for an Amazon ES domain. You can only
+        /// perform this operation before the <code>AutomatedUpdateDate</code> and when the <code>UpdateStatus</code>
+        /// is in the <code>PENDING_UPDATE</code> state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelElasticsearchServiceSoftwareUpdate service method.</param>
+        /// 
+        /// <returns>The response from the CancelElasticsearchServiceSoftwareUpdate service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        CancelElasticsearchServiceSoftwareUpdateResponse CancelElasticsearchServiceSoftwareUpdate(CancelElasticsearchServiceSoftwareUpdateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelElasticsearchServiceSoftwareUpdate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelElasticsearchServiceSoftwareUpdate operation on AmazonElasticsearchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelElasticsearchServiceSoftwareUpdate
+        ///         operation.</returns>
+        IAsyncResult BeginCancelElasticsearchServiceSoftwareUpdate(CancelElasticsearchServiceSoftwareUpdateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CancelElasticsearchServiceSoftwareUpdate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelElasticsearchServiceSoftwareUpdate.</param>
+        /// 
+        /// <returns>Returns a  CancelElasticsearchServiceSoftwareUpdateResult from Elasticsearch.</returns>
+        CancelElasticsearchServiceSoftwareUpdateResponse EndCancelElasticsearchServiceSoftwareUpdate(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateElasticsearchDomain
 
 
@@ -1053,6 +1106,57 @@ namespace Amazon.Elasticsearch
         /// 
         /// <returns>Returns a  RemoveTagsResult from Elasticsearch.</returns>
         RemoveTagsResponse EndRemoveTags(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartElasticsearchServiceSoftwareUpdate
+
+
+        /// <summary>
+        /// Schedules a service software update for an Amazon ES domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartElasticsearchServiceSoftwareUpdate service method.</param>
+        /// 
+        /// <returns>The response from the StartElasticsearchServiceSoftwareUpdate service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        StartElasticsearchServiceSoftwareUpdateResponse StartElasticsearchServiceSoftwareUpdate(StartElasticsearchServiceSoftwareUpdateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartElasticsearchServiceSoftwareUpdate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartElasticsearchServiceSoftwareUpdate operation on AmazonElasticsearchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartElasticsearchServiceSoftwareUpdate
+        ///         operation.</returns>
+        IAsyncResult BeginStartElasticsearchServiceSoftwareUpdate(StartElasticsearchServiceSoftwareUpdateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartElasticsearchServiceSoftwareUpdate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartElasticsearchServiceSoftwareUpdate.</param>
+        /// 
+        /// <returns>Returns a  StartElasticsearchServiceSoftwareUpdateResult from Elasticsearch.</returns>
+        StartElasticsearchServiceSoftwareUpdateResponse EndStartElasticsearchServiceSoftwareUpdate(IAsyncResult asyncResult);
 
         #endregion
         

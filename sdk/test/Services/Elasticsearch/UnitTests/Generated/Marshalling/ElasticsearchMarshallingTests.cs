@@ -61,6 +61,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Elasticsearch")]
+        public void CancelElasticsearchServiceSoftwareUpdateMarshallTest()
+        {
+            var operation = service_model.FindOperation("CancelElasticsearchServiceSoftwareUpdate");
+
+            var request = InstantiateClassGenerator.Execute<CancelElasticsearchServiceSoftwareUpdateRequest>();
+            var marshaller = new CancelElasticsearchServiceSoftwareUpdateRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("CancelElasticsearchServiceSoftwareUpdate", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CancelElasticsearchServiceSoftwareUpdateResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as CancelElasticsearchServiceSoftwareUpdateResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Elasticsearch")]
         public void CreateElasticsearchDomainMarshallTest()
         {
             var operation = service_model.FindOperation("CreateElasticsearchDomain");
@@ -600,6 +632,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var internalRequest = marshaller.Marshall(request);
             TestTools.RequestValidator.Validate("RemoveTags", request, internalRequest, service_model);            
 
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Elasticsearch")]
+        public void StartElasticsearchServiceSoftwareUpdateMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartElasticsearchServiceSoftwareUpdate");
+
+            var request = InstantiateClassGenerator.Execute<StartElasticsearchServiceSoftwareUpdateRequest>();
+            var marshaller = new StartElasticsearchServiceSoftwareUpdateRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("StartElasticsearchServiceSoftwareUpdate", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = StartElasticsearchServiceSoftwareUpdateResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as StartElasticsearchServiceSoftwareUpdateResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
         

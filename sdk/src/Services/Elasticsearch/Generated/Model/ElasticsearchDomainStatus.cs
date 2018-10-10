@@ -49,6 +49,7 @@ namespace Amazon.Elasticsearch.Model
         private Dictionary<string, LogPublishingOption> _logPublishingOptions = new Dictionary<string, LogPublishingOption>();
         private NodeToNodeEncryptionOptions _nodeToNodeEncryptionOptions;
         private bool? _processing;
+        private ServiceSoftwareOptions _serviceSoftwareOptions;
         private SnapshotOptions _snapshotOptions;
         private bool? _upgradeProcessing;
         private VPCDerivedInfo _vpcOptions;
@@ -368,6 +369,24 @@ namespace Amazon.Elasticsearch.Model
         internal bool IsSetProcessing()
         {
             return this._processing.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceSoftwareOptions. 
+        /// <para>
+        /// The current status of the Elasticsearch domain's service software.
+        /// </para>
+        /// </summary>
+        public ServiceSoftwareOptions ServiceSoftwareOptions
+        {
+            get { return this._serviceSoftwareOptions; }
+            set { this._serviceSoftwareOptions = value; }
+        }
+
+        // Check to see if ServiceSoftwareOptions property is set
+        internal bool IsSetServiceSoftwareOptions()
+        {
+            return this._serviceSoftwareOptions != null;
         }
 
         /// <summary>

@@ -25,6 +25,68 @@ namespace Amazon.Elasticsearch
 {
 
     /// <summary>
+    /// Constants used for properties of type DeploymentStatus.
+    /// </summary>
+    public class DeploymentStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for DeploymentStatus
+        /// </summary>
+        public static readonly DeploymentStatus COMPLETED = new DeploymentStatus("COMPLETED");
+        /// <summary>
+        /// Constant ELIGIBLE for DeploymentStatus
+        /// </summary>
+        public static readonly DeploymentStatus ELIGIBLE = new DeploymentStatus("ELIGIBLE");
+        /// <summary>
+        /// Constant IN_PROGRESS for DeploymentStatus
+        /// </summary>
+        public static readonly DeploymentStatus IN_PROGRESS = new DeploymentStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant NOT_ELIGIBLE for DeploymentStatus
+        /// </summary>
+        public static readonly DeploymentStatus NOT_ELIGIBLE = new DeploymentStatus("NOT_ELIGIBLE");
+        /// <summary>
+        /// Constant PENDING_UPDATE for DeploymentStatus
+        /// </summary>
+        public static readonly DeploymentStatus PENDING_UPDATE = new DeploymentStatus("PENDING_UPDATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeploymentStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeploymentStatus FindValue(string value)
+        {
+            return FindValue<DeploymentStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeploymentStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ESPartitionInstanceType.
     /// </summary>
     public class ESPartitionInstanceType : ConstantClass
