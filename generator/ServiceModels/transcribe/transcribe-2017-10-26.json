@@ -286,8 +286,8 @@
               "documentation": null
             }
           },
-          "zonbookDocumentation": "\n        <simpara>Your request didn't pass one or more validation tests. For example, a name already\n            exists when creating a resource or a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</simpara>\n      ",
-          "documentation": "\n        <p>Your request didn't pass one or more validation tests. For example, a name already\n            exists when creating a resource or a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</p>\n      ",
+          "zonbookDocumentation": "\n        <simpara>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</simpara>\n      ",
+          "documentation": "\n        <p>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</p>\n      ",
           "shape_name": "BadRequestException"
         },
         {
@@ -513,8 +513,8 @@
               "documentation": null
             }
           },
-          "zonbookDocumentation": "\n        <simpara>Your request didn't pass one or more validation tests. For example, a name already\n            exists when creating a resource or a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</simpara>\n      ",
-          "documentation": "\n        <p>Your request didn't pass one or more validation tests. For example, a name already\n            exists when creating a resource or a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</p>\n      ",
+          "zonbookDocumentation": "\n        <simpara>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</simpara>\n      ",
+          "documentation": "\n        <p>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</p>\n      ",
           "shape_name": "BadRequestException"
         },
         {
@@ -710,8 +710,8 @@
               "documentation": null
             }
           },
-          "zonbookDocumentation": "\n        <simpara>Your request didn't pass one or more validation tests. For example, a name already\n            exists when creating a resource or a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</simpara>\n      ",
-          "documentation": "\n        <p>Your request didn't pass one or more validation tests. For example, a name already\n            exists when creating a resource or a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</p>\n      ",
+          "zonbookDocumentation": "\n        <simpara>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</simpara>\n      ",
+          "documentation": "\n        <p>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</p>\n      ",
           "shape_name": "BadRequestException"
         },
         {
@@ -846,8 +846,8 @@
               "documentation": null
             }
           },
-          "zonbookDocumentation": "\n        <simpara>Your request didn't pass one or more validation tests. For example, a name already\n            exists when creating a resource or a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</simpara>\n      ",
-          "documentation": "\n        <p>Your request didn't pass one or more validation tests. For example, a name already\n            exists when creating a resource or a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</p>\n      ",
+          "zonbookDocumentation": "\n        <simpara>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</simpara>\n      ",
+          "documentation": "\n        <p>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</p>\n      ",
           "shape_name": "BadRequestException"
         },
         {
@@ -989,8 +989,8 @@
               "documentation": null
             }
           },
-          "zonbookDocumentation": "\n        <simpara>Your request didn't pass one or more validation tests. For example, a name already\n            exists when creating a resource or a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</simpara>\n      ",
-          "documentation": "\n        <p>Your request didn't pass one or more validation tests. For example, a name already\n            exists when creating a resource or a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</p>\n      ",
+          "zonbookDocumentation": "\n        <simpara>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</simpara>\n      ",
+          "documentation": "\n        <p>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</p>\n      ",
           "shape_name": "BadRequestException"
         },
         {
@@ -1173,8 +1173,8 @@
               "documentation": null
             }
           },
-          "zonbookDocumentation": "\n        <simpara>Your request didn't pass one or more validation tests. For example, a name already\n            exists when creating a resource or a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</simpara>\n      ",
-          "documentation": "\n        <p>Your request didn't pass one or more validation tests. For example, a name already\n            exists when creating a resource or a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</p>\n      ",
+          "zonbookDocumentation": "\n        <simpara>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</simpara>\n      ",
+          "documentation": "\n        <p>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</p>\n      ",
           "shape_name": "BadRequestException"
         }
       ],
@@ -1309,8 +1309,8 @@
               "documentation": null
             }
           },
-          "zonbookDocumentation": "\n        <simpara>Your request didn't pass one or more validation tests. For example, a name already\n            exists when creating a resource or a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</simpara>\n      ",
-          "documentation": "\n        <p>Your request didn't pass one or more validation tests. For example, a name already\n            exists when creating a resource or a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</p>\n      ",
+          "zonbookDocumentation": "\n        <simpara>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</simpara>\n      ",
+          "documentation": "\n        <p>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</p>\n      ",
           "shape_name": "BadRequestException"
         },
         {
@@ -1398,8 +1398,8 @@
               "documentation": null
             }
           },
-          "zonbookDocumentation": "\n        <simpara>Your request didn't pass one or more validation tests. For example, a name already\n            exists when creating a resource or a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</simpara>\n      ",
-          "documentation": "\n        <p>Your request didn't pass one or more validation tests. For example, a name already\n            exists when creating a resource or a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</p>\n      ",
+          "zonbookDocumentation": "\n        <simpara>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</simpara>\n      ",
+          "documentation": "\n        <p>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</p>\n      ",
           "shape_name": "BadRequestException"
         },
         {
@@ -1417,6 +1417,69 @@
         }
       ],
       "documentation": "\n        <p>Deletes a vocabulary from Amazon Transcribe. </p>\n      "
+    },
+    "DeleteTranscriptionJob": {
+      "name": "DeleteTranscriptionJob",
+      "input": {
+        "type": "structure",
+        "members": {
+          "TranscriptionJobName": {
+            "type": "string",
+            "pattern": "^[0-9a-zA-Z._-]+",
+            "zonbookDocumentation": "\n        <para>The name of the transcription job to be deleted.</para>\n      ",
+            "documentation": "\n        <p>The name of the transcription job to be deleted.</p>\n      ",
+            "required": true,
+            "shape_name": "TranscriptionJobName",
+            "min_length": 1,
+            "max_length": 200
+          }
+        },
+        "shape_name": "DeleteTranscriptionJobRequest",
+        "documentation": null
+      },
+      "output": null,
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "String",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n        <simpara>Either you have sent too many requests or your input file is too long. Wait before\n            you resend your request, or use a smaller file and resend the request.</simpara>\n      ",
+          "documentation": "\n        <p>Either you have sent too many requests or your input file is too long. Wait before\n            you resend your request, or use a smaller file and resend the request.</p>\n      ",
+          "shape_name": "LimitExceededException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "FailureReason",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n        <simpara>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</simpara>\n      ",
+          "documentation": "\n        <p>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</p>\n      ",
+          "shape_name": "BadRequestException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "String",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n        <simpara>There was an internal error. Check the error message and try your request\n            again.</simpara>\n      ",
+          "documentation": "\n        <p>There was an internal error. Check the error message and try your request\n            again.</p>\n      ",
+          "shape_name": "InternalFailureException"
+        }
+      ],
+      "documentation": "\n        <p>Deletes a previously submitted transcription job as wella s any other generated results such as the transcription, models, and so on.</p>\n      "
     }
   }
 }

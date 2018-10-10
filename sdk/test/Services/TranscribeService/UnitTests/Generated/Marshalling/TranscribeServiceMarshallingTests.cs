@@ -72,6 +72,22 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("TranscribeService")]
+        public void DeleteTranscriptionJobMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DeleteTranscriptionJobRequest>();
+            var marshaller = new DeleteTranscriptionJobRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DeleteTranscriptionJobRequest>(request,jsonRequest);
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("TranscribeService")]
         public void DeleteVocabularyMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<DeleteVocabularyRequest>();
