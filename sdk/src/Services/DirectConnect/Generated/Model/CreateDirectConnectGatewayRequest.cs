@@ -29,13 +29,13 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDirectConnectGateway operation.
-    /// Creates a new direct connect gateway. A direct connect gateway is an intermediate
-    /// object that enables you to connect a set of virtual interfaces and virtual private
-    /// gateways. direct connect gateways are global and visible in any AWS region after they
-    /// are created. The virtual interfaces and virtual private gateways that are connected
-    /// through a direct connect gateway can be in different regions. This enables you to
-    /// connect to a VPC in any region, regardless of the region in which the virtual interfaces
-    /// are located, and pass traffic between them.
+    /// Creates a Direct Connect gateway, which is an intermediate object that enables you
+    /// to connect a set of virtual interfaces and virtual private gateways. A Direct Connect
+    /// gateway is global and visible in any AWS Region after it is created. The virtual interfaces
+    /// and virtual private gateways that are connected through a Direct Connect gateway can
+    /// be in different AWS Regions. This enables you to connect to a VPC in any Region, regardless
+    /// of the Region in which the virtual interfaces are located, and pass traffic between
+    /// them.
     /// </summary>
     public partial class CreateDirectConnectGatewayRequest : AmazonDirectConnectRequest
     {
@@ -47,15 +47,7 @@ namespace Amazon.DirectConnect.Model
         /// <para>
         /// The autonomous system number (ASN) for Border Gateway Protocol (BGP) to be configured
         /// on the Amazon side of the connection. The ASN must be in the private range of 64,512
-        /// to 65,534 or 4,200,000,000 to 4,294,967,294 
-        /// </para>
-        ///  
-        /// <para>
-        /// Example: 65200
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: 64512
+        /// to 65,534 or 4,200,000,000 to 4,294,967,294. The default is 64512.
         /// </para>
         /// </summary>
         public long AmazonSideAsn
@@ -73,15 +65,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property DirectConnectGatewayName. 
         /// <para>
-        /// The name of the direct connect gateway.
-        /// </para>
-        ///  
-        /// <para>
-        /// Example: "My direct connect gateway"
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
+        /// The name of the Direct Connect gateway.
         /// </para>
         /// </summary>
         public string DirectConnectGatewayName

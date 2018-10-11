@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// A structure containing information about a private virtual interface that will be
-    /// provisioned on a connection.
+    /// Information about a private virtual interface to be provisioned on a connection.
     /// </summary>
     public partial class NewPrivateVirtualInterfaceAllocation
     {
@@ -38,11 +37,15 @@ namespace Amazon.DirectConnect.Model
         private int? _asn;
         private string _authKey;
         private string _customerAddress;
+        private int? _mtu;
         private string _virtualInterfaceName;
         private int? _vlan;
 
         /// <summary>
-        /// Gets and sets the property AddressFamily.
+        /// Gets and sets the property AddressFamily. 
+        /// <para>
+        /// The address family for the BGP peer.
+        /// </para>
         /// </summary>
         public AddressFamily AddressFamily
         {
@@ -57,7 +60,10 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AmazonAddress.
+        /// Gets and sets the property AmazonAddress. 
+        /// <para>
+        /// The IP address assigned to the Amazon interface.
+        /// </para>
         /// </summary>
         public string AmazonAddress
         {
@@ -72,7 +78,10 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Asn.
+        /// Gets and sets the property Asn. 
+        /// <para>
+        /// The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
+        /// </para>
         /// </summary>
         public int Asn
         {
@@ -87,7 +96,10 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AuthKey.
+        /// Gets and sets the property AuthKey. 
+        /// <para>
+        /// The authentication key for BGP configuration.
+        /// </para>
         /// </summary>
         public string AuthKey
         {
@@ -102,7 +114,10 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CustomerAddress.
+        /// Gets and sets the property CustomerAddress. 
+        /// <para>
+        /// The IP address assigned to the customer interface.
+        /// </para>
         /// </summary>
         public string CustomerAddress
         {
@@ -117,7 +132,29 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VirtualInterfaceName.
+        /// Gets and sets the property Mtu. 
+        /// <para>
+        /// The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001.
+        /// The default value is 1500.
+        /// </para>
+        /// </summary>
+        public int Mtu
+        {
+            get { return this._mtu.GetValueOrDefault(); }
+            set { this._mtu = value; }
+        }
+
+        // Check to see if Mtu property is set
+        internal bool IsSetMtu()
+        {
+            return this._mtu.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VirtualInterfaceName. 
+        /// <para>
+        /// The name of the virtual interface assigned by the customer network.
+        /// </para>
         /// </summary>
         public string VirtualInterfaceName
         {
@@ -132,7 +169,10 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Vlan.
+        /// Gets and sets the property Vlan. 
+        /// <para>
+        /// The ID of the VLAN.
+        /// </para>
         /// </summary>
         public int Vlan
         {

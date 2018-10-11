@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// A structure containing a list of virtual private gateways.
+    /// This is the response object from the DescribeVirtualGateways operation.
     /// </summary>
     public partial class DescribeVirtualGatewaysResponse : AmazonWebServiceResponse
     {
@@ -37,7 +37,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property VirtualGateways. 
         /// <para>
-        /// A list of virtual private gateways.
+        /// The virtual private gateways.
         /// </para>
         /// </summary>
         public List<VirtualGateway> VirtualGateways

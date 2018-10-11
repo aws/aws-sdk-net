@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// The tags associated with a Direct Connect resource.
+    /// Information about a tag associated with an AWS Direct Connect resource.
     /// </summary>
     public partial class ResourceTag
     {
@@ -38,7 +38,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Direct Connect resource.
+        /// The Amazon Resource Name (ARN) of the resource.
         /// </para>
         /// </summary>
         public string ResourceArn

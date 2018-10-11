@@ -29,13 +29,13 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the ConfirmPrivateVirtualInterface operation.
-    /// Accept ownership of a private virtual interface created by another customer.
+    /// Accepts ownership of a private virtual interface created by another AWS account.
     /// 
     ///  
     /// <para>
-    /// After the virtual interface owner calls this function, the virtual interface will
-    /// be created and attached to the given virtual private gateway or direct connect gateway,
-    /// and will be available for handling traffic.
+    /// After the virtual interface owner makes this call, the virtual interface is created
+    /// and attached to the specified virtual private gateway or Direct Connect gateway, and
+    /// is made available to handle traffic.
     /// </para>
     /// </summary>
     public partial class ConfirmPrivateVirtualInterfaceRequest : AmazonDirectConnectRequest
@@ -47,16 +47,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property DirectConnectGatewayId. 
         /// <para>
-        /// ID of the direct connect gateway that will be attached to the virtual interface.
-        /// </para>
-        ///  
-        /// <para>
-        ///  A direct connect gateway can be managed via the AWS Direct Connect console or the
-        /// <a>CreateDirectConnectGateway</a> action.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
+        /// The ID of the Direct Connect gateway.
         /// </para>
         /// </summary>
         public string DirectConnectGatewayId
@@ -74,17 +65,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property VirtualGatewayId. 
         /// <para>
-        /// ID of the virtual private gateway that will be attached to the virtual interface.
-        /// </para>
-        ///  
-        /// <para>
-        ///  A virtual private gateway can be managed via the Amazon Virtual Private Cloud (VPC)
-        /// console or the <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html">EC2
-        /// CreateVpnGateway</a> action.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
+        /// The ID of the virtual private gateway.
         /// </para>
         /// </summary>
         public string VirtualGatewayId
@@ -100,7 +81,10 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VirtualInterfaceId.
+        /// Gets and sets the property VirtualInterfaceId. 
+        /// <para>
+        /// The ID of the virtual interface.
+        /// </para>
         /// </summary>
         public string VirtualInterfaceId
         {

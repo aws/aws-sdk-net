@@ -38,16 +38,13 @@ namespace Amazon.DirectConnect
     /// Implementation for accessing DirectConnect
     ///
     /// AWS Direct Connect links your internal network to an AWS Direct Connect location over
-    /// a standard 1 gigabit or 10 gigabit Ethernet fiber-optic cable. One end of the cable
-    /// is connected to your router, the other to an AWS Direct Connect router. With this
-    /// connection in place, you can create virtual interfaces directly to the AWS cloud (for
-    /// example, to Amazon Elastic Compute Cloud (Amazon EC2) and Amazon Simple Storage Service
-    /// (Amazon S3)) and to Amazon Virtual Private Cloud (Amazon VPC), bypassing Internet
-    /// service providers in your network path. An AWS Direct Connect location provides access
-    /// to AWS in the region it is associated with, as well as access to other US regions.
-    /// For example, you can provision a single connection to any AWS Direct Connect location
-    /// in the US and use it to access public AWS services in all US Regions and AWS GovCloud
-    /// (US).
+    /// a standard Ethernet fiber-optic cable. One end of the cable is connected to your router,
+    /// the other to an AWS Direct Connect router. With this connection in place, you can
+    /// create virtual interfaces directly to the AWS cloud (for example, to Amazon EC2 and
+    /// Amazon S3) and to Amazon VPC, bypassing Internet service providers in your network
+    /// path. A connection provides access to all AWS Regions except the China (Beijing) and
+    /// (China) Ningxia Regions. AWS resources in the China Regions can only be accessed through
+    /// locations associated with those Regions.
     /// </summary>
     public partial class AmazonDirectConnectClient : AmazonServiceClient, IAmazonDirectConnect
     {
@@ -1104,12 +1101,7 @@ namespace Amazon.DirectConnect
 
 
         /// <summary>
-        /// Displays all connections in this region.
-        /// 
-        ///  
-        /// <para>
-        /// If a connection ID is provided, the call returns only that particular connection.
-        /// </para>
+        /// Displays the specified connection or all connections in this Region.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1117,12 +1109,10 @@ namespace Amazon.DirectConnect
         /// 
         /// <returns>The response from the DescribeConnections service method, as returned by DirectConnect.</returns>
         /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
-        /// The API was called with invalid parameters. The error message will contain additional
-        /// details about the cause.
+        /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
-        /// A server-side error occurred during the API call. The error message will contain additional
-        /// details about the cause.
+        /// A server-side error occurred.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnections">REST API Reference for DescribeConnections Operation</seealso>
         public virtual Task<DescribeConnectionsResponse> DescribeConnectionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1364,12 +1354,7 @@ namespace Amazon.DirectConnect
 
 
         /// <summary>
-        /// Returns a list of interconnects owned by the AWS account.
-        /// 
-        ///  
-        /// <para>
-        /// If an interconnect ID is provided, it will only return this particular interconnect.
-        /// </para>
+        /// Lists the interconnects owned by the AWS account or only the specified interconnect.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1377,12 +1362,10 @@ namespace Amazon.DirectConnect
         /// 
         /// <returns>The response from the DescribeInterconnects service method, as returned by DirectConnect.</returns>
         /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
-        /// The API was called with invalid parameters. The error message will contain additional
-        /// details about the cause.
+        /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
-        /// A server-side error occurred during the API call. The error message will contain additional
-        /// details about the cause.
+        /// A server-side error occurred.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnects">REST API Reference for DescribeInterconnects Operation</seealso>
         public virtual Task<DescribeInterconnectsResponse> DescribeInterconnectsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1492,8 +1475,8 @@ namespace Amazon.DirectConnect
 
 
         /// <summary>
-        /// Returns the list of AWS Direct Connect locations in the current AWS region. These
-        /// are the locations that may be selected when calling <a>CreateConnection</a> or <a>CreateInterconnect</a>.
+        /// Lists the AWS Direct Connect locations in the current AWS Region. These are the locations
+        /// that can be selected when calling <a>CreateConnection</a> or <a>CreateInterconnect</a>.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1501,12 +1484,10 @@ namespace Amazon.DirectConnect
         /// 
         /// <returns>The response from the DescribeLocations service method, as returned by DirectConnect.</returns>
         /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
-        /// The API was called with invalid parameters. The error message will contain additional
-        /// details about the cause.
+        /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
-        /// A server-side error occurred during the API call. The error message will contain additional
-        /// details about the cause.
+        /// A server-side error occurred.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLocations">REST API Reference for DescribeLocations Operation</seealso>
         public virtual Task<DescribeLocationsResponse> DescribeLocationsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1584,14 +1565,12 @@ namespace Amazon.DirectConnect
 
 
         /// <summary>
-        /// Returns a list of virtual private gateways owned by the AWS account.
+        /// Lists the virtual private gateways owned by the AWS account.
         /// 
         ///  
         /// <para>
-        /// You can create one or more AWS Direct Connect private virtual interfaces linking to
-        /// a virtual private gateway. A virtual private gateway can be managed via Amazon Virtual
-        /// Private Cloud (VPC) console or the <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html">EC2
-        /// CreateVpnGateway</a> action.
+        /// You can create one or more AWS Direct Connect private virtual interfaces linked to
+        /// a virtual private gateway.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -1600,12 +1579,10 @@ namespace Amazon.DirectConnect
         /// 
         /// <returns>The response from the DescribeVirtualGateways service method, as returned by DirectConnect.</returns>
         /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
-        /// The API was called with invalid parameters. The error message will contain additional
-        /// details about the cause.
+        /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
-        /// A server-side error occurred during the API call. The error message will contain additional
-        /// details about the cause.
+        /// A server-side error occurred.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualGateways">REST API Reference for DescribeVirtualGateways Operation</seealso>
         public virtual Task<DescribeVirtualGatewaysResponse> DescribeVirtualGatewaysAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1659,7 +1636,7 @@ namespace Amazon.DirectConnect
         ///  
         /// <para>
         /// A virtual interface (VLAN) transmits the traffic between the AWS Direct Connect location
-        /// and the customer.
+        /// and the customer network.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -1668,12 +1645,10 @@ namespace Amazon.DirectConnect
         /// 
         /// <returns>The response from the DescribeVirtualInterfaces service method, as returned by DirectConnect.</returns>
         /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
-        /// The API was called with invalid parameters. The error message will contain additional
-        /// details about the cause.
+        /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
-        /// A server-side error occurred during the API call. The error message will contain additional
-        /// details about the cause.
+        /// A server-side error occurred.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualInterfaces">REST API Reference for DescribeVirtualInterfaces Operation</seealso>
         public virtual Task<DescribeVirtualInterfacesResponse> DescribeVirtualInterfacesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1826,6 +1801,38 @@ namespace Amazon.DirectConnect
             var unmarshaller = UpdateLagResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateLagRequest,UpdateLagResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateVirtualInterfaceAttributes
+
+        internal virtual UpdateVirtualInterfaceAttributesResponse UpdateVirtualInterfaceAttributes(UpdateVirtualInterfaceAttributesRequest request)
+        {
+            var marshaller = UpdateVirtualInterfaceAttributesRequestMarshaller.Instance;
+            var unmarshaller = UpdateVirtualInterfaceAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateVirtualInterfaceAttributesRequest,UpdateVirtualInterfaceAttributesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateVirtualInterfaceAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVirtualInterfaceAttributes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateVirtualInterfaceAttributes">REST API Reference for UpdateVirtualInterfaceAttributes Operation</seealso>
+        public virtual Task<UpdateVirtualInterfaceAttributesResponse> UpdateVirtualInterfaceAttributesAsync(UpdateVirtualInterfaceAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateVirtualInterfaceAttributesRequestMarshaller.Instance;
+            var unmarshaller = UpdateVirtualInterfaceAttributesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateVirtualInterfaceAttributesRequest,UpdateVirtualInterfaceAttributesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

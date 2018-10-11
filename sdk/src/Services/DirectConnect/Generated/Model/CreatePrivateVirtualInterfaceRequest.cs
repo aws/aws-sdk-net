@@ -29,9 +29,12 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the CreatePrivateVirtualInterface operation.
-    /// Creates a new private virtual interface. A virtual interface is the VLAN that transports
-    /// AWS Direct Connect traffic. A private virtual interface supports sending traffic to
-    /// a single virtual private cloud (VPC).
+    /// Creates a private virtual interface. A virtual interface is the VLAN that transports
+    /// AWS Direct Connect traffic. A private virtual interface can be connected to either
+    /// a Direct Connect gateway or a Virtual Private Gateway (VGW). Connecting the private
+    /// virtual interface to a Direct Connect gateway enables the possibility for connecting
+    /// to multiple VPCs, including VPCs in different AWS Regions. Connecting the private
+    /// virtual interface to a VGW only provides access to a single VPC within the same Region.
     /// </summary>
     public partial class CreatePrivateVirtualInterfaceRequest : AmazonDirectConnectRequest
     {
@@ -39,7 +42,10 @@ namespace Amazon.DirectConnect.Model
         private NewPrivateVirtualInterface _newPrivateVirtualInterface;
 
         /// <summary>
-        /// Gets and sets the property ConnectionId.
+        /// Gets and sets the property ConnectionId. 
+        /// <para>
+        /// The ID of the connection.
+        /// </para>
         /// </summary>
         public string ConnectionId
         {
@@ -56,11 +62,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property NewPrivateVirtualInterface. 
         /// <para>
-        /// Detailed information for the private virtual interface to be created.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
+        /// Information about the private virtual interface.
         /// </para>
         /// </summary>
         public NewPrivateVirtualInterface NewPrivateVirtualInterface

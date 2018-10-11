@@ -28,61 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteBGPPeer operation.
-    /// Deletes the BGP peer on the specified virtual interface with the specified customer
-    /// address and ASN.
+    /// Container for the parameters to the UpdateVirtualInterfaceAttributes operation.
+    /// Updates the specified attributes of the specified virtual private interface.
     /// 
     ///  
     /// <para>
-    /// You cannot delete the last BGP peer from a virtual interface.
+    /// Setting the MTU of a virtual interface to 9001 (jumbo frames) can cause an update
+    /// to the underlying physical connection if it wasn't updated to support jumbo frames.
+    /// Updating the connection disrupts network connectivity for all virtual interfaces associated
+    /// with the connection for up to 30 seconds. To check whether your connection supports
+    /// jumbo frames, call <a>DescribeConnections</a>. To check whether your virtual interface
+    /// supports jumbo frames, call <a>DescribeVirtualInterfaces</a>.
     /// </para>
     /// </summary>
-    public partial class DeleteBGPPeerRequest : AmazonDirectConnectRequest
+    public partial class UpdateVirtualInterfaceAttributesRequest : AmazonDirectConnectRequest
     {
-        private int? _asn;
-        private string _customerAddress;
+        private int? _mtu;
         private string _virtualInterfaceId;
 
         /// <summary>
-        /// Gets and sets the property Asn. 
+        /// Gets and sets the property Mtu. 
         /// <para>
-        /// The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
+        /// The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001.
+        /// The default value is 1500.
         /// </para>
         /// </summary>
-        public int Asn
+        public int Mtu
         {
-            get { return this._asn.GetValueOrDefault(); }
-            set { this._asn = value; }
+            get { return this._mtu.GetValueOrDefault(); }
+            set { this._mtu = value; }
         }
 
-        // Check to see if Asn property is set
-        internal bool IsSetAsn()
+        // Check to see if Mtu property is set
+        internal bool IsSetMtu()
         {
-            return this._asn.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property CustomerAddress. 
-        /// <para>
-        /// The IP address assigned to the customer interface.
-        /// </para>
-        /// </summary>
-        public string CustomerAddress
-        {
-            get { return this._customerAddress; }
-            set { this._customerAddress = value; }
-        }
-
-        // Check to see if CustomerAddress property is set
-        internal bool IsSetCustomerAddress()
-        {
-            return this._customerAddress != null;
+            return this._mtu.HasValue; 
         }
 
         /// <summary>
         /// Gets and sets the property VirtualInterfaceId. 
         /// <para>
-        /// The ID of the virtual interface.
+        /// The ID of the virtual private interface.
         /// </para>
         /// </summary>
         public string VirtualInterfaceId

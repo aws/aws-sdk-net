@@ -28,14 +28,55 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// The response received when ConfirmConnection is called.
+    /// This is the response object from the ConfirmConnection operation.
     /// </summary>
     public partial class ConfirmConnectionResponse : AmazonWebServiceResponse
     {
         private ConnectionState _connectionState;
 
         /// <summary>
-        /// Gets and sets the property ConnectionState.
+        /// Gets and sets the property ConnectionState. 
+        /// <para>
+        /// The state of the connection. The following are the possible values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ordering</code>: The initial state of a hosted connection provisioned on an
+        /// interconnect. The connection stays in the ordering state until the owner of the hosted
+        /// connection confirms or declines the connection order.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>requested</code>: The initial state of a standard connection. The connection
+        /// stays in the requested state until the Letter of Authorization (LOA) is sent to the
+        /// customer.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>pending</code>: The connection has been approved and is being initialized.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>available</code>: The network link is up and the connection is ready for use.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>down</code>: The network link is down.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>deleting</code>: The connection is being deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>deleted</code>: The connection has been deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters
+        /// the <code>rejected</code> state if it is deleted by the customer.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ConnectionState ConnectionState
         {

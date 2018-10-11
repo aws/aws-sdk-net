@@ -37,7 +37,7 @@ namespace Amazon.DirectConnect.Model
     /// 
     ///  <note> 
     /// <para>
-    /// This is intended for use by AWS Direct Connect partners only.
+    /// Intended for use by AWS Direct Connect partners only.
     /// </para>
     ///  </note>
     /// </summary>
@@ -50,14 +50,6 @@ namespace Amazon.DirectConnect.Model
         /// Gets and sets the property ConnectionId. 
         /// <para>
         /// The ID of the hosted connection.
-        /// </para>
-        ///  
-        /// <para>
-        /// Example: dxcon-abc123
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
         /// </para>
         /// </summary>
         public string ConnectionId
@@ -76,14 +68,6 @@ namespace Amazon.DirectConnect.Model
         /// Gets and sets the property ParentConnectionId. 
         /// <para>
         /// The ID of the interconnect or the LAG.
-        /// </para>
-        ///  
-        /// <para>
-        /// Example: dxcon-abc123 or dxlag-abc123
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
         /// </para>
         /// </summary>
         public string ParentConnectionId

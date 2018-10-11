@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// Container for the response from the DescribeDirectConnectGatewayAssociations API call
+    /// This is the response object from the DescribeDirectConnectGatewayAssociations operation.
     /// </summary>
     public partial class DescribeDirectConnectGatewayAssociationsResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property DirectConnectGatewayAssociations. 
         /// <para>
-        /// Information about the direct connect gateway associations.
+        /// The associations.
         /// </para>
         /// </summary>
         public List<DirectConnectGatewayAssociation> DirectConnectGatewayAssociations
@@ -54,7 +54,10 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token to retrieve the next page.
+        /// </para>
         /// </summary>
         public string NextToken
         {

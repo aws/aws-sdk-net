@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// The association between a direct connect gateway and virtual interface.
+    /// Information about an attachment between a Direct Connect gateway and a virtual interface.
     /// </summary>
     public partial class DirectConnectGatewayAttachment
     {
@@ -40,7 +40,31 @@ namespace Amazon.DirectConnect.Model
         private string _virtualInterfaceRegion;
 
         /// <summary>
-        /// Gets and sets the property AttachmentState.
+        /// Gets and sets the property AttachmentState. 
+        /// <para>
+        /// The state of the attachment. The following are the possible values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>attaching</code>: The initial state after a virtual interface is created using
+        /// the Direct Connect gateway.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>attached</code>: The Direct Connect gateway and virtual interface are attached
+        /// and ready to pass traffic.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>detaching</code>: The initial state after calling <a>DeleteVirtualInterface</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>detached</code>: The virtual interface is detached from the Direct Connect
+        /// gateway. Traffic flow between the Direct Connect gateway and virtual interface is
+        /// stopped.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public DirectConnectGatewayAttachmentState AttachmentState
         {
@@ -55,7 +79,10 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DirectConnectGatewayId.
+        /// Gets and sets the property DirectConnectGatewayId. 
+        /// <para>
+        /// The ID of the Direct Connect gateway.
+        /// </para>
         /// </summary>
         public string DirectConnectGatewayId
         {
@@ -70,7 +97,10 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StateChangeError.
+        /// Gets and sets the property StateChangeError. 
+        /// <para>
+        /// The error message if the state of an object failed to advance.
+        /// </para>
         /// </summary>
         public string StateChangeError
         {
@@ -85,7 +115,10 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VirtualInterfaceId.
+        /// Gets and sets the property VirtualInterfaceId. 
+        /// <para>
+        /// The ID of the virtual interface.
+        /// </para>
         /// </summary>
         public string VirtualInterfaceId
         {
@@ -102,7 +135,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property VirtualInterfaceOwnerAccount. 
         /// <para>
-        /// The AWS account ID of the owner of the virtual interface.
+        /// The ID of the AWS account that owns the virtual interface.
         /// </para>
         /// </summary>
         public string VirtualInterfaceOwnerAccount
@@ -118,7 +151,10 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VirtualInterfaceRegion.
+        /// Gets and sets the property VirtualInterfaceRegion. 
+        /// <para>
+        /// The AWS Region where the virtual interface is located.
+        /// </para>
         /// </summary>
         public string VirtualInterfaceRegion
         {

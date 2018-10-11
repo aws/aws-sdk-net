@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// The response received when UntagResource is called.
+    /// This is the response object from the UntagResource operation.
     /// </summary>
     public partial class UntagResourceResponse : AmazonWebServiceResponse
     {

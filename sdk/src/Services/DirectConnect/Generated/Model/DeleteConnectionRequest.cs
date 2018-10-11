@@ -29,14 +29,13 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteConnection operation.
-    /// Deletes the connection.
+    /// Deletes the specified connection.
     /// 
     ///  
     /// <para>
     /// Deleting a connection only stops the AWS Direct Connect port hour and data transfer
-    /// charges. You need to cancel separately with the providers any services or charges
-    /// for cross-connects or network circuits that connect you to the AWS Direct Connect
-    /// location.
+    /// charges. If you are partnering with any third parties to connect with the AWS Direct
+    /// Connect location, you must cancel your service with them separately.
     /// </para>
     /// </summary>
     public partial class DeleteConnectionRequest : AmazonDirectConnectRequest
@@ -44,7 +43,10 @@ namespace Amazon.DirectConnect.Model
         private string _connectionId;
 
         /// <summary>
-        /// Gets and sets the property ConnectionId.
+        /// Gets and sets the property ConnectionId. 
+        /// <para>
+        /// The ID of the connection.
+        /// </para>
         /// </summary>
         public string ConnectionId
         {

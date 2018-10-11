@@ -28,15 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// You can create one or more AWS Direct Connect private virtual interfaces linking to
-    /// your virtual private gateway.
-    /// 
-    ///  
-    /// <para>
-    /// Virtual private gateways can be managed using the Amazon Virtual Private Cloud (Amazon
-    /// VPC) console or the <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html">Amazon
-    /// EC2 CreateVpnGateway action</a>.
-    /// </para>
+    /// Information about a virtual private gateway for a private virtual interface.
     /// </summary>
     public partial class VirtualGateway
     {
@@ -44,7 +36,10 @@ namespace Amazon.DirectConnect.Model
         private string _virtualGatewayState;
 
         /// <summary>
-        /// Gets and sets the property VirtualGatewayId.
+        /// Gets and sets the property VirtualGatewayId. 
+        /// <para>
+        /// The ID of the virtual private gateway.
+        /// </para>
         /// </summary>
         public string VirtualGatewayId
         {
@@ -59,7 +54,28 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VirtualGatewayState.
+        /// Gets and sets the property VirtualGatewayState. 
+        /// <para>
+        /// The state of the virtual private gateway. The following are the possible values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>pending</code>: Initial state after creating the virtual private gateway.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>available</code>: Ready for use by a private virtual interface.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>deleting</code>: Initial state after deleting the virtual private gateway.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>deleted</code>: The virtual private gateway is deleted. The private virtual
+        /// interface is unable to send traffic over this gateway.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string VirtualGatewayState
         {

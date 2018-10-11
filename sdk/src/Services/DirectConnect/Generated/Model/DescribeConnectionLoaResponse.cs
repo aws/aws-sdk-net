@@ -28,14 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// The response received when DescribeConnectionLoa is called.
+    /// This is the response object from the DescribeConnectionLoa operation.
     /// </summary>
     public partial class DescribeConnectionLoaResponse : AmazonWebServiceResponse
     {
         private Loa _loa;
 
         /// <summary>
-        /// Gets and sets the property Loa.
+        /// Gets and sets the property Loa. 
+        /// <para>
+        /// The Letter of Authorization - Connecting Facility Assignment (LOA-CFA).
+        /// </para>
         /// </summary>
         public Loa Loa
         {

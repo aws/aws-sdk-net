@@ -29,16 +29,15 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLag operation.
-    /// Creates a new link aggregation group (LAG) with the specified number of bundled physical
+    /// Creates a link aggregation group (LAG) with the specified number of bundled physical
     /// connections between the customer network and a specific AWS Direct Connect location.
     /// A LAG is a logical interface that uses the Link Aggregation Control Protocol (LACP)
-    /// to aggregate multiple 1 gigabit or 10 gigabit interfaces, allowing you to treat them
-    /// as a single interface.
+    /// to aggregate multiple interfaces, enabling you to treat them as a single interface.
     /// 
     ///  
     /// <para>
-    /// All connections in a LAG must use the same bandwidth (for example, 10 Gbps), and must
-    /// terminate at the same AWS Direct Connect endpoint.
+    /// All connections in a LAG must use the same bandwidth and must terminate at the same
+    /// AWS Direct Connect endpoint.
     /// </para>
     ///  
     /// <para>
@@ -76,10 +75,6 @@ namespace Amazon.DirectConnect.Model
         /// <para>
         /// The ID of an existing connection to migrate to the LAG.
         /// </para>
-        ///  
-        /// <para>
-        /// Default: None
-        /// </para>
         /// </summary>
         public string ConnectionId
         {
@@ -96,15 +91,8 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property ConnectionsBandwidth. 
         /// <para>
-        /// The bandwidth of the individual physical connections bundled by the LAG.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
-        /// </para>
-        ///  
-        /// <para>
-        /// Available values: 1Gbps, 10Gbps
+        /// The bandwidth of the individual physical connections bundled by the LAG. The possible
+        /// values are 1Gbps and 10Gbps.
         /// </para>
         /// </summary>
         public string ConnectionsBandwidth
@@ -124,14 +112,6 @@ namespace Amazon.DirectConnect.Model
         /// <para>
         /// The name of the LAG.
         /// </para>
-        ///  
-        /// <para>
-        /// Example: "<code>3x10G LAG to AWS</code>"
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
-        /// </para>
         /// </summary>
         public string LagName
         {
@@ -148,15 +128,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// The AWS Direct Connect location in which the LAG should be allocated.
-        /// </para>
-        ///  
-        /// <para>
-        /// Example: EqSV5
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
+        /// The location for the LAG.
         /// </para>
         /// </summary>
         public string Location
@@ -175,10 +147,6 @@ namespace Amazon.DirectConnect.Model
         /// Gets and sets the property NumberOfConnections. 
         /// <para>
         /// The number of physical connections initially provisioned and bundled by the LAG.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
         /// </para>
         /// </summary>
         public int NumberOfConnections

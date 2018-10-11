@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// A structure containing a list of virtual interfaces.
+    /// This is the response object from the DescribeVirtualInterfaces operation.
     /// </summary>
     public partial class DescribeVirtualInterfacesResponse : AmazonWebServiceResponse
     {
@@ -37,7 +37,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property VirtualInterfaces. 
         /// <para>
-        /// A list of virtual interfaces.
+        /// The virtual interfaces
         /// </para>
         /// </summary>
         public List<VirtualInterface> VirtualInterfaces

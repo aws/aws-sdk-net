@@ -29,19 +29,19 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeInterconnectLoa operation.
-    /// Deprecated in favor of <a>DescribeLoa</a>.
+    /// Deprecated. Use <a>DescribeLoa</a> instead.
     /// 
     ///  
     /// <para>
-    /// Returns the LOA-CFA for an Interconnect.
+    /// Gets the LOA-CFA for the specified interconnect.
     /// </para>
     ///  
     /// <para>
     /// The Letter of Authorization - Connecting Facility Assignment (LOA-CFA) is a document
     /// that is used when establishing your cross connect to AWS at the colocation facility.
     /// For more information, see <a href="http://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting
-    /// Cross Connects at AWS Direct Connect Locations</a> in the AWS Direct Connect user
-    /// guide.
+    /// Cross Connects at AWS Direct Connect Locations</a> in the <i>AWS Direct Connect User
+    /// Guide</i>.
     /// </para>
     /// </summary>
     public partial class DescribeInterconnectLoaRequest : AmazonDirectConnectRequest
@@ -51,7 +51,10 @@ namespace Amazon.DirectConnect.Model
         private string _providerName;
 
         /// <summary>
-        /// Gets and sets the property InterconnectId.
+        /// Gets and sets the property InterconnectId. 
+        /// <para>
+        /// The ID of the interconnect.
+        /// </para>
         /// </summary>
         public string InterconnectId
         {
@@ -66,7 +69,10 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LoaContentType.
+        /// Gets and sets the property LoaContentType. 
+        /// <para>
+        /// The standard media type for the LOA-CFA document. The only supported value is application/pdf.
+        /// </para>
         /// </summary>
         public LoaContentType LoaContentType
         {
@@ -86,10 +92,6 @@ namespace Amazon.DirectConnect.Model
         /// The name of the service provider who establishes connectivity on your behalf. If you
         /// supply this parameter, the LOA-CFA lists the provider name alongside your company
         /// name as the requester of the cross connect.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
         /// </para>
         /// </summary>
         public string ProviderName

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// Container for the response from the CreateDirectConnectGatewayAssociation API call
+    /// This is the response object from the CreateDirectConnectGatewayAssociation operation.
     /// </summary>
     public partial class CreateDirectConnectGatewayAssociationResponse : AmazonWebServiceResponse
     {
@@ -37,7 +37,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property DirectConnectGatewayAssociation. 
         /// <para>
-        /// The direct connect gateway association to be created.
+        /// The association to be created.
         /// </para>
         /// </summary>
         public DirectConnectGatewayAssociation DirectConnectGatewayAssociation

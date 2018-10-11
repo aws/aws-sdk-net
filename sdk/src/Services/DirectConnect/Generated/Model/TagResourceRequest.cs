@@ -29,13 +29,13 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Adds the specified tags to the specified Direct Connect resource. Each Direct Connect
-    /// resource can have a maximum of 50 tags.
+    /// Adds the specified tags to the specified AWS Direct Connect resource. Each resource
+    /// can have a maximum of 50 tags.
     /// 
     ///  
     /// <para>
     /// Each tag consists of a key and an optional value. If a tag with the same key is already
-    /// associated with the Direct Connect resource, this action updates its value.
+    /// associated with the resource, this action updates its value.
     /// </para>
     /// </summary>
     public partial class TagResourceRequest : AmazonDirectConnectRequest
@@ -46,11 +46,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Direct Connect resource.
-        /// </para>
-        ///  
-        /// <para>
-        /// Example: arn:aws:directconnect:us-east-1:123456789012:dxcon/dxcon-fg5678gh
+        /// The Amazon Resource Name (ARN) of the resource.
         /// </para>
         /// </summary>
         public string ResourceArn
@@ -68,7 +64,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The list of tags to add.
+        /// The tags to add.
         /// </para>
         /// </summary>
         public List<Tag> Tags

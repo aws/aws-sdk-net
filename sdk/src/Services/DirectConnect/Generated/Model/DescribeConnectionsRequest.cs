@@ -29,19 +29,17 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeConnections operation.
-    /// Displays all connections in this region.
-    /// 
-    ///  
-    /// <para>
-    /// If a connection ID is provided, the call returns only that particular connection.
-    /// </para>
+    /// Displays the specified connection or all connections in this Region.
     /// </summary>
     public partial class DescribeConnectionsRequest : AmazonDirectConnectRequest
     {
         private string _connectionId;
 
         /// <summary>
-        /// Gets and sets the property ConnectionId.
+        /// Gets and sets the property ConnectionId. 
+        /// <para>
+        /// The ID of the connection.
+        /// </para>
         /// </summary>
         public string ConnectionId
         {

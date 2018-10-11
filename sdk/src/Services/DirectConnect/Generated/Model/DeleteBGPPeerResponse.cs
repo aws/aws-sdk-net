@@ -28,14 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// The response received when DeleteBGPPeer is called.
+    /// This is the response object from the DeleteBGPPeer operation.
     /// </summary>
     public partial class DeleteBGPPeerResponse : AmazonWebServiceResponse
     {
         private VirtualInterface _virtualInterface;
 
         /// <summary>
-        /// Gets and sets the property VirtualInterface.
+        /// Gets and sets the property VirtualInterface. 
+        /// <para>
+        /// The virtual interface.
+        /// </para>
         /// </summary>
         public VirtualInterface VirtualInterface
         {

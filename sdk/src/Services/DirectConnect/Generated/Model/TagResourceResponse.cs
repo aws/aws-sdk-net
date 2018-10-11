@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// The response received when TagResource is called.
+    /// This is the response object from the TagResource operation.
     /// </summary>
     public partial class TagResourceResponse : AmazonWebServiceResponse
     {

@@ -29,9 +29,9 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDirectConnectGateway operation.
-    /// Deletes a direct connect gateway. You must first delete all virtual interfaces that
-    /// are attached to the direct connect gateway and disassociate all virtual private gateways
-    /// that are associated with the direct connect gateway.
+    /// Deletes the specified Direct Connect gateway. You must first delete all virtual interfaces
+    /// that are attached to the Direct Connect gateway and disassociate all virtual private
+    /// gateways that are associated with the Direct Connect gateway.
     /// </summary>
     public partial class DeleteDirectConnectGatewayRequest : AmazonDirectConnectRequest
     {
@@ -40,15 +40,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property DirectConnectGatewayId. 
         /// <para>
-        /// The ID of the direct connect gateway.
-        /// </para>
-        ///  
-        /// <para>
-        /// Example: "abcd1234-dcba-5678-be23-cdef9876ab45"
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
+        /// The ID of the Direct Connect gateway.
         /// </para>
         /// </summary>
         public string DirectConnectGatewayId

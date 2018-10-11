@@ -37,7 +37,7 @@ namespace Amazon.DirectConnect.Model
     ///  
     /// <para>
     /// A virtual interface (VLAN) transmits the traffic between the AWS Direct Connect location
-    /// and the customer.
+    /// and the customer network.
     /// </para>
     /// </summary>
     public partial class DescribeVirtualInterfacesRequest : AmazonDirectConnectRequest
@@ -46,7 +46,10 @@ namespace Amazon.DirectConnect.Model
         private string _virtualInterfaceId;
 
         /// <summary>
-        /// Gets and sets the property ConnectionId.
+        /// Gets and sets the property ConnectionId. 
+        /// <para>
+        /// The ID of the connection.
+        /// </para>
         /// </summary>
         public string ConnectionId
         {
@@ -61,7 +64,10 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VirtualInterfaceId.
+        /// Gets and sets the property VirtualInterfaceId. 
+        /// <para>
+        /// The ID of the virtual interface.
+        /// </para>
         /// </summary>
         public string VirtualInterfaceId
         {

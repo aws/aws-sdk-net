@@ -33,7 +33,7 @@ namespace Amazon.DirectConnect.Model
     /// 
     ///  <note> 
     /// <para>
-    /// This is intended for use by AWS Direct Connect partners only.
+    /// Intended for use by AWS Direct Connect partners only.
     /// </para>
     ///  </note>
     /// </summary>
@@ -42,7 +42,10 @@ namespace Amazon.DirectConnect.Model
         private string _interconnectId;
 
         /// <summary>
-        /// Gets and sets the property InterconnectId.
+        /// Gets and sets the property InterconnectId. 
+        /// <para>
+        /// The ID of the interconnect.
+        /// </para>
         /// </summary>
         public string InterconnectId
         {

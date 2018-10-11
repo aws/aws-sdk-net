@@ -38,7 +38,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The key of the tag.
+        /// The key.
         /// </para>
         /// </summary>
         public string Key
@@ -56,7 +56,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value of the tag.
+        /// The value.
         /// </para>
         /// </summary>
         public string Value

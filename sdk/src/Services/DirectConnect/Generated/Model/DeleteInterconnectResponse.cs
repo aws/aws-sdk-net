@@ -28,14 +28,44 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// The response received when DeleteInterconnect is called.
+    /// This is the response object from the DeleteInterconnect operation.
     /// </summary>
     public partial class DeleteInterconnectResponse : AmazonWebServiceResponse
     {
         private InterconnectState _interconnectState;
 
         /// <summary>
-        /// Gets and sets the property InterconnectState.
+        /// Gets and sets the property InterconnectState. 
+        /// <para>
+        /// The state of the interconnect. The following are the possible values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>requested</code>: The initial state of an interconnect. The interconnect stays
+        /// in the requested state until the Letter of Authorization (LOA) is sent to the customer.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>pending</code>: The interconnect is approved, and is being initialized.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>available</code>: The network link is up, and the interconnect is ready for
+        /// use.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>down</code>: The network link is down.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>deleting</code>: The interconnect is being deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>deleted</code>: The interconnect is deleted.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public InterconnectState InterconnectState
         {

@@ -29,12 +29,12 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the ConfirmPublicVirtualInterface operation.
-    /// Accept ownership of a public virtual interface created by another customer.
+    /// Accepts ownership of a public virtual interface created by another AWS account.
     /// 
     ///  
     /// <para>
-    /// After the virtual interface owner calls this function, the specified virtual interface
-    /// will be created and made available for handling traffic.
+    /// After the virtual interface owner makes this call, the specified virtual interface
+    /// is created and made available to handle traffic.
     /// </para>
     /// </summary>
     public partial class ConfirmPublicVirtualInterfaceRequest : AmazonDirectConnectRequest
@@ -42,7 +42,10 @@ namespace Amazon.DirectConnect.Model
         private string _virtualInterfaceId;
 
         /// <summary>
-        /// Gets and sets the property VirtualInterfaceId.
+        /// Gets and sets the property VirtualInterfaceId. 
+        /// <para>
+        /// The ID of the virtual interface.
+        /// </para>
         /// </summary>
         public string VirtualInterfaceId
         {

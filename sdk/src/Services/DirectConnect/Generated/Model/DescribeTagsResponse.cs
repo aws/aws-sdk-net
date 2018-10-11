@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// The response received when DescribeTags is called.
+    /// This is the response object from the DescribeTags operation.
     /// </summary>
     public partial class DescribeTagsResponse : AmazonWebServiceResponse
     {

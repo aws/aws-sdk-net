@@ -29,7 +29,8 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDirectConnectGatewayAssociation operation.
-    /// Deletes the association between a direct connect gateway and a virtual private gateway.
+    /// Deletes the association between the specified Direct Connect gateway and virtual private
+    /// gateway.
     /// </summary>
     public partial class DeleteDirectConnectGatewayAssociationRequest : AmazonDirectConnectRequest
     {
@@ -39,15 +40,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property DirectConnectGatewayId. 
         /// <para>
-        /// The ID of the direct connect gateway.
-        /// </para>
-        ///  
-        /// <para>
-        /// Example: "abcd1234-dcba-5678-be23-cdef9876ab45"
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
+        /// The ID of the Direct Connect gateway.
         /// </para>
         /// </summary>
         public string DirectConnectGatewayId
@@ -66,14 +59,6 @@ namespace Amazon.DirectConnect.Model
         /// Gets and sets the property VirtualGatewayId. 
         /// <para>
         /// The ID of the virtual private gateway.
-        /// </para>
-        ///  
-        /// <para>
-        /// Example: "vgw-abc123ef"
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
         /// </para>
         /// </summary>
         public string VirtualGatewayId

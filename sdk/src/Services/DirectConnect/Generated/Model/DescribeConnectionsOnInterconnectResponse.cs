@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// A structure containing a list of connections.
+    /// This is the response object from the DescribeConnectionsOnInterconnect operation.
     /// </summary>
     public partial class DescribeConnectionsOnInterconnectResponse : AmazonWebServiceResponse
     {
@@ -37,7 +37,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property Connections. 
         /// <para>
-        /// A list of connections.
+        /// The connections.
         /// </para>
         /// </summary>
         public List<Connection> Connections

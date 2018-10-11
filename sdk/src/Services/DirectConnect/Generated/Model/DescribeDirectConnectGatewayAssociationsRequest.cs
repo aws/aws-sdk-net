@@ -29,13 +29,13 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDirectConnectGatewayAssociations operation.
-    /// Returns a list of all direct connect gateway and virtual private gateway (VGW) associations.
-    /// Either a direct connect gateway ID or a VGW ID must be provided in the request. If
-    /// a direct connect gateway ID is provided, the response returns all VGWs associated
-    /// with the direct connect gateway. If a VGW ID is provided, the response returns all
-    /// direct connect gateways associated with the VGW. If both are provided, the response
-    /// only returns the association that matches both the direct connect gateway and the
-    /// VGW.
+    /// Lists the associations between your Direct Connect gateways and virtual private gateways.
+    /// You must specify a Direct Connect gateway, a virtual private gateway, or both. If
+    /// you specify a Direct Connect gateway, the response contains all virtual private gateways
+    /// associated with the Direct Connect gateway. If you specify a virtual private gateway,
+    /// the response contains all Direct Connect gateways associated with the virtual private
+    /// gateway. If you specify both, the response contains the association between the Direct
+    /// Connect gateway and the virtual private gateway.
     /// </summary>
     public partial class DescribeDirectConnectGatewayAssociationsRequest : AmazonDirectConnectRequest
     {
@@ -47,15 +47,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property DirectConnectGatewayId. 
         /// <para>
-        /// The ID of the direct connect gateway.
-        /// </para>
-        ///  
-        /// <para>
-        /// Example: "abcd1234-dcba-5678-be23-cdef9876ab45"
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
+        /// The ID of the Direct Connect gateway.
         /// </para>
         /// </summary>
         public string DirectConnectGatewayId
@@ -73,15 +65,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of direct connect gateway associations to return per page.
-        /// </para>
-        ///  
-        /// <para>
-        /// Example: 15
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
+        /// The maximum number of associations to return per page.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -99,12 +83,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token provided in the previous describe result to retrieve the next page of the
-        /// result.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
+        /// The token provided in the previous call to retrieve the next page.
         /// </para>
         /// </summary>
         public string NextToken
@@ -123,14 +102,6 @@ namespace Amazon.DirectConnect.Model
         /// Gets and sets the property VirtualGatewayId. 
         /// <para>
         /// The ID of the virtual private gateway.
-        /// </para>
-        ///  
-        /// <para>
-        /// Example: "vgw-abc123ef"
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
         /// </para>
         /// </summary>
         public string VirtualGatewayId

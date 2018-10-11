@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// A structure containing information about a BGP peer.
+    /// Information about a BGP peer.
     /// </summary>
     public partial class BGPPeer
     {
@@ -42,7 +42,10 @@ namespace Amazon.DirectConnect.Model
         private string _customerAddress;
 
         /// <summary>
-        /// Gets and sets the property AddressFamily.
+        /// Gets and sets the property AddressFamily. 
+        /// <para>
+        /// The address family for the BGP peer.
+        /// </para>
         /// </summary>
         public AddressFamily AddressFamily
         {
@@ -57,7 +60,10 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AmazonAddress.
+        /// Gets and sets the property AmazonAddress. 
+        /// <para>
+        /// The IP address assigned to the Amazon interface.
+        /// </para>
         /// </summary>
         public string AmazonAddress
         {
@@ -72,7 +78,10 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Asn.
+        /// Gets and sets the property Asn. 
+        /// <para>
+        /// The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
+        /// </para>
         /// </summary>
         public int Asn
         {
@@ -87,7 +96,10 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AuthKey.
+        /// Gets and sets the property AuthKey. 
+        /// <para>
+        /// The authentication key for BGP configuration.
+        /// </para>
         /// </summary>
         public string AuthKey
         {
@@ -104,7 +116,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property AwsDeviceV2. 
         /// <para>
-        /// The Direct Connection endpoint which the BGP peer terminates on.
+        /// The Direct Connect endpoint on which the BGP peer terminates.
         /// </para>
         /// </summary>
         public string AwsDeviceV2
@@ -120,7 +132,33 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BgpPeerState.
+        /// Gets and sets the property BgpPeerState. 
+        /// <para>
+        /// The state of the BGP peer. The following are the possible values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>verifying</code>: The BGP peering addresses or ASN require validation before
+        /// the BGP peer can be created. This state applies only to public virtual interfaces.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>pending</code>: The BGP peer is created, and remains in this state until it
+        /// is ready to be established.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>available</code>: The BGP peer is ready to be established.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>deleting</code>: The BGP peer is being deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>deleted</code>: The BGP peer is deleted and cannot be established.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public BGPPeerState BgpPeerState
         {
@@ -135,7 +173,24 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BgpStatus.
+        /// Gets and sets the property BgpStatus. 
+        /// <para>
+        /// The status of the BGP peer. The following are the possible values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>up</code>: The BGP peer is established. This state does not indicate the state
+        /// of the routing function. Ensure that you are receiving routes over the BGP session.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>down</code>: The BGP peer is down.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>unknown</code>: The BGP peer status is unknown.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public BGPStatus BgpStatus
         {
@@ -150,7 +205,10 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CustomerAddress.
+        /// Gets and sets the property CustomerAddress. 
+        /// <para>
+        /// The IP address assigned to the customer interface.
+        /// </para>
         /// </summary>
         public string CustomerAddress
         {

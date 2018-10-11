@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// The association between a direct connect gateway and virtual private gateway.
+    /// Information about an association between a Direct Connect gateway and a virtual private
+    /// gateway.
     /// </summary>
     public partial class DirectConnectGatewayAssociation
     {
@@ -40,7 +41,30 @@ namespace Amazon.DirectConnect.Model
         private string _virtualGatewayRegion;
 
         /// <summary>
-        /// Gets and sets the property AssociationState.
+        /// Gets and sets the property AssociationState. 
+        /// <para>
+        /// The state of the association. The following are the possible values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>associating</code>: The initial state after calling <a>CreateDirectConnectGatewayAssociation</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>associated</code>: The Direct Connect gateway and virtual private gateway are
+        /// successfully associated and ready to pass traffic.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>disassociating</code>: The initial state after calling <a>DeleteDirectConnectGatewayAssociation</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>disassociated</code>: The virtual private gateway is disassociated from the
+        /// Direct Connect gateway. Traffic flow between the Direct Connect gateway and virtual
+        /// private gateway is stopped.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public DirectConnectGatewayAssociationState AssociationState
         {
@@ -55,7 +79,10 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DirectConnectGatewayId.
+        /// Gets and sets the property DirectConnectGatewayId. 
+        /// <para>
+        /// The ID of the Direct Connect gateway.
+        /// </para>
         /// </summary>
         public string DirectConnectGatewayId
         {
@@ -70,7 +97,10 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StateChangeError.
+        /// Gets and sets the property StateChangeError. 
+        /// <para>
+        /// The error message if the state of an object failed to advance.
+        /// </para>
         /// </summary>
         public string StateChangeError
         {
@@ -85,7 +115,10 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VirtualGatewayId.
+        /// Gets and sets the property VirtualGatewayId. 
+        /// <para>
+        /// The ID of the virtual private gateway. Applies only to private virtual interfaces.
+        /// </para>
         /// </summary>
         public string VirtualGatewayId
         {
@@ -102,7 +135,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property VirtualGatewayOwnerAccount. 
         /// <para>
-        /// The AWS account ID of the owner of the virtual private gateway.
+        /// The ID of the AWS account that owns the virtual private gateway.
         /// </para>
         /// </summary>
         public string VirtualGatewayOwnerAccount
@@ -118,7 +151,10 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VirtualGatewayRegion.
+        /// Gets and sets the property VirtualGatewayRegion. 
+        /// <para>
+        /// The AWS Region where the virtual private gateway is located.
+        /// </para>
         /// </summary>
         public string VirtualGatewayRegion
         {

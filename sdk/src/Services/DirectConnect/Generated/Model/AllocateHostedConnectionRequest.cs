@@ -29,16 +29,17 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the AllocateHostedConnection operation.
-    /// Creates a hosted connection on an interconnect or a link aggregation group (LAG).
+    /// Creates a hosted connection on the specified interconnect or a link aggregation group
+    /// (LAG).
     /// 
     ///  
     /// <para>
     /// Allocates a VLAN number and a specified amount of bandwidth for use by a hosted connection
-    /// on the given interconnect or LAG.
+    /// on the specified interconnect or LAG.
     /// </para>
     ///  <note> 
     /// <para>
-    /// This is intended for use by AWS Direct Connect partners only.
+    /// Intended for use by AWS Direct Connect partners only.
     /// </para>
     ///  </note>
     /// </summary>
@@ -53,19 +54,8 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property Bandwidth. 
         /// <para>
-        /// The bandwidth of the connection.
-        /// </para>
-        ///  
-        /// <para>
-        /// Example: <code>500Mbps</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
-        /// </para>
-        ///  
-        /// <para>
-        /// Values: 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps
+        /// The bandwidth of the hosted connection, in Mbps. The possible values are 50Mbps, 100Mbps,
+        /// 200Mbps, 300Mbps, 400Mbps, and 500Mbps.
         /// </para>
         /// </summary>
         public string Bandwidth
@@ -83,15 +73,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property ConnectionId. 
         /// <para>
-        /// The ID of the interconnect or LAG on which the connection will be provisioned.
-        /// </para>
-        ///  
-        /// <para>
-        /// Example: dxcon-456abc78 or dxlag-abc123
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
+        /// The ID of the interconnect or LAG.
         /// </para>
         /// </summary>
         public string ConnectionId
@@ -109,15 +91,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property ConnectionName. 
         /// <para>
-        /// The name of the provisioned connection.
-        /// </para>
-        ///  
-        /// <para>
-        /// Example: "<code>500M Connection to AWS</code>"
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
+        /// The name of the hosted connection.
         /// </para>
         /// </summary>
         public string ConnectionName
@@ -135,15 +109,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property OwnerAccount. 
         /// <para>
-        /// The numeric account ID of the customer for whom the connection will be provisioned.
-        /// </para>
-        ///  
-        /// <para>
-        /// Example: 123443215678
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
+        /// The ID of the AWS account ID of the customer for the connection.
         /// </para>
         /// </summary>
         public string OwnerAccount
@@ -162,14 +128,6 @@ namespace Amazon.DirectConnect.Model
         /// Gets and sets the property Vlan. 
         /// <para>
         /// The dedicated VLAN provisioned to the hosted connection.
-        /// </para>
-        ///  
-        /// <para>
-        /// Example: 101
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
         /// </para>
         /// </summary>
         public int Vlan

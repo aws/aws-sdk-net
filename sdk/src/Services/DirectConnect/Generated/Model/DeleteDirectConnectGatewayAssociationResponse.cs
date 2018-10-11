@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// Container for the response from the DeleteDirectConnectGatewayAssociation API call
+    /// This is the response object from the DeleteDirectConnectGatewayAssociation operation.
     /// </summary>
     public partial class DeleteDirectConnectGatewayAssociationResponse : AmazonWebServiceResponse
     {
@@ -37,7 +37,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property DirectConnectGatewayAssociation. 
         /// <para>
-        /// The direct connect gateway association to be deleted.
+        /// The association to be deleted.
         /// </para>
         /// </summary>
         public DirectConnectGatewayAssociation DirectConnectGatewayAssociation

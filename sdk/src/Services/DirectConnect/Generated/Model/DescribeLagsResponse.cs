@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// A structure containing a list of LAGs.
+    /// This is the response object from the DescribeLags operation.
     /// </summary>
     public partial class DescribeLagsResponse : AmazonWebServiceResponse
     {
@@ -37,7 +37,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property Lags. 
         /// <para>
-        /// A list of LAGs.
+        /// The LAGs.
         /// </para>
         /// </summary>
         public List<Lag> Lags

@@ -29,13 +29,13 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the AllocatePrivateVirtualInterface operation.
-    /// Provisions a private virtual interface to be owned by another AWS customer.
+    /// Provisions a private virtual interface to be owned by the specified AWS account.
     /// 
     ///  
     /// <para>
-    /// Virtual interfaces created using this action must be confirmed by the virtual interface
-    /// owner by using the <a>ConfirmPrivateVirtualInterface</a> action. Until then, the virtual
-    /// interface will be in 'Confirming' state, and will not be available for handling traffic.
+    /// Virtual interfaces created using this action must be confirmed by the owner using
+    /// <a>ConfirmPrivateVirtualInterface</a>. Until then, the virtual interface is in the
+    /// <code>Confirming</code> state and is not available to handle traffic.
     /// </para>
     /// </summary>
     public partial class AllocatePrivateVirtualInterfaceRequest : AmazonDirectConnectRequest
@@ -47,11 +47,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property ConnectionId. 
         /// <para>
-        /// The connection ID on which the private virtual interface is provisioned.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
+        /// The ID of the connection on which the private virtual interface is provisioned.
         /// </para>
         /// </summary>
         public string ConnectionId
@@ -69,11 +65,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property NewPrivateVirtualInterfaceAllocation. 
         /// <para>
-        /// Detailed information for the private virtual interface to be provisioned.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
+        /// Information about the private virtual interface.
         /// </para>
         /// </summary>
         public NewPrivateVirtualInterfaceAllocation NewPrivateVirtualInterfaceAllocation
@@ -91,11 +83,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property OwnerAccount. 
         /// <para>
-        /// The AWS account that will own the new private virtual interface.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
+        /// The ID of the AWS account that owns the virtual private interface.
         /// </para>
         /// </summary>
         public string OwnerAccount

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// An AWS Direct Connect location where connections and interconnects can be requested.
+    /// Information about an AWS Direct Connect location.
     /// </summary>
     public partial class Location
     {
@@ -39,7 +39,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property LocationCode. 
         /// <para>
-        /// The code used to indicate the AWS Direct Connect location.
+        /// The code for the location.
         /// </para>
         /// </summary>
         public string LocationCode
@@ -57,8 +57,8 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property LocationName. 
         /// <para>
-        /// The name of the AWS Direct Connect location. The name includes the colocation partner
-        /// name and the physical site of the lit building.
+        /// The name of the location. This includes the name of the colocation partner and the
+        /// physical site of the building.
         /// </para>
         /// </summary>
         public string LocationName
@@ -76,15 +76,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The AWS region where the AWS Direct connect location is located.
-        /// </para>
-        ///  
-        /// <para>
-        /// Example: us-east-1
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
+        /// The AWS Region for the location.
         /// </para>
         /// </summary>
         public string Region

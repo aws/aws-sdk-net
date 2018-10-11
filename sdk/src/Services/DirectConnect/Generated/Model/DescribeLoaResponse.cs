@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// A structure containing the Letter of Authorization - Connecting Facility Assignment
-    /// (LOA-CFA) for a connection.
+    /// Information about a Letter of Authorization - Connecting Facility Assignment (LOA-CFA)
+    /// for a connection.
     /// </summary>
     public partial class DescribeLoaResponse : AmazonWebServiceResponse
     {
@@ -37,7 +37,10 @@ namespace Amazon.DirectConnect.Model
         private LoaContentType _loaContentType;
 
         /// <summary>
-        /// Gets and sets the property LoaContent.
+        /// Gets and sets the property LoaContent. 
+        /// <para>
+        /// The binary contents of the LOA-CFA document.
+        /// </para>
         /// </summary>
         public MemoryStream LoaContent
         {
@@ -52,7 +55,10 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LoaContentType.
+        /// Gets and sets the property LoaContentType. 
+        /// <para>
+        /// The standard media type for the LOA-CFA document. The only supported value is application/pdf.
+        /// </para>
         /// </summary>
         public LoaContentType LoaContentType
         {

@@ -28,10 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// Describes a link aggregation group (LAG). A LAG is a connection that uses the Link
-    /// Aggregation Control Protocol (LACP) to logically aggregate a bundle of physical connections.
-    /// Like an interconnect, it can host other connections. All connections in a LAG must
-    /// terminate on the same physical AWS Direct Connect endpoint, and must be the same bandwidth.
+    /// Information about a link aggregation group (LAG).
     /// </summary>
     public partial class UpdateLagResponse : AmazonWebServiceResponse
     {
@@ -40,6 +37,7 @@ namespace Amazon.DirectConnect.Model
         private string _awsDeviceV2;
         private List<Connection> _connections = new List<Connection>();
         private string _connectionsBandwidth;
+        private bool? _jumboFrameCapable;
         private string _lagId;
         private string _lagName;
         private LagState _lagState;
@@ -54,11 +52,6 @@ namespace Amazon.DirectConnect.Model
         /// <para>
         /// Indicates whether the LAG can host other connections.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// This is intended for use by AWS Direct Connect partners only.
-        /// </para>
-        ///  </note>
         /// </summary>
         public bool AllowsHostedConnections
         {
@@ -75,11 +68,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property AwsDevice. 
         /// <para>
-        /// Deprecated in favor of awsDeviceV2.
-        /// </para>
-        ///  
-        /// <para>
-        /// The AWS Direct Connection endpoint that hosts the LAG.
+        /// The Direct Connect endpoint that hosts the LAG.
         /// </para>
         /// </summary>
         public string AwsDevice
@@ -97,7 +86,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property AwsDeviceV2. 
         /// <para>
-        /// The AWS Direct Connection endpoint that hosts the LAG.
+        /// The Direct Connect endpoint that hosts the LAG.
         /// </para>
         /// </summary>
         public string AwsDeviceV2
@@ -115,7 +104,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property Connections. 
         /// <para>
-        /// A list of connections bundled by this LAG.
+        /// The connections bundled by the LAG.
         /// </para>
         /// </summary>
         public List<Connection> Connections
@@ -133,11 +122,8 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property ConnectionsBandwidth. 
         /// <para>
-        /// The individual bandwidth of the physical connections bundled by the LAG.
-        /// </para>
-        ///  
-        /// <para>
-        /// Available values: 1Gbps, 10Gbps
+        /// The individual bandwidth of the physical connections bundled by the LAG. The possible
+        /// values are 1Gbps and 10Gbps.
         /// </para>
         /// </summary>
         public string ConnectionsBandwidth
@@ -153,7 +139,28 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LagId.
+        /// Gets and sets the property JumboFrameCapable. 
+        /// <para>
+        /// Indicates whether jumbo frames (9001 MTU) are supported.
+        /// </para>
+        /// </summary>
+        public bool JumboFrameCapable
+        {
+            get { return this._jumboFrameCapable.GetValueOrDefault(); }
+            set { this._jumboFrameCapable = value; }
+        }
+
+        // Check to see if JumboFrameCapable property is set
+        internal bool IsSetJumboFrameCapable()
+        {
+            return this._jumboFrameCapable.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LagId. 
+        /// <para>
+        /// The ID of the LAG.
+        /// </para>
         /// </summary>
         public string LagId
         {
@@ -186,7 +193,37 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LagState.
+        /// Gets and sets the property LagState. 
+        /// <para>
+        /// The state of the LAG. The following are the possible values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>requested</code>: The initial state of a LAG. The LAG stays in the requested
+        /// state until the Letter of Authorization (LOA) is available.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>pending</code>: The LAG has been approved and is being initialized.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>available</code>: The network link is established and the LAG is ready for
+        /// use.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>down</code>: The network link is down.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>deleting</code>: The LAG is being deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>deleted</code>: The LAG is deleted.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public LagState LagState
         {
@@ -201,7 +238,10 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Location.
+        /// Gets and sets the property Location. 
+        /// <para>
+        /// The location of the LAG.
+        /// </para>
         /// </summary>
         public string Location
         {
@@ -219,9 +259,7 @@ namespace Amazon.DirectConnect.Model
         /// Gets and sets the property MinimumLinks. 
         /// <para>
         /// The minimum number of physical connections that must be operational for the LAG itself
-        /// to be operational. If the number of operational connections drops below this setting,
-        /// the LAG state changes to <code>down</code>. This value can help to ensure that a LAG
-        /// is not overutilized if a significant number of its bundled connections go down.
+        /// to be operational.
         /// </para>
         /// </summary>
         public int MinimumLinks
@@ -257,7 +295,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property OwnerAccount. 
         /// <para>
-        /// The owner of the LAG.
+        /// The ID of the AWS account that owns the LAG.
         /// </para>
         /// </summary>
         public string OwnerAccount
@@ -273,7 +311,10 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Region.
+        /// Gets and sets the property Region. 
+        /// <para>
+        /// The AWS Region where the connection is located.
+        /// </para>
         /// </summary>
         public string Region
         {

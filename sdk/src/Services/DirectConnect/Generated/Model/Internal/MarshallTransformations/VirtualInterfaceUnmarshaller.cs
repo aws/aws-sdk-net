@@ -130,10 +130,22 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.DirectConnectGatewayId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("jumboFrameCapable", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.JumboFrameCapable = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("location", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Location = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("mtu", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Mtu = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ownerAccount", targetDepth))

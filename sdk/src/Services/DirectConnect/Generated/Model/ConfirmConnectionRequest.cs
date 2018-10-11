@@ -29,13 +29,12 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the ConfirmConnection operation.
-    /// Confirm the creation of a hosted connection on an interconnect.
+    /// Confirms the creation of the specified hosted connection on an interconnect.
     /// 
     ///  
     /// <para>
-    /// Upon creation, the hosted connection is initially in the 'Ordering' state, and will
-    /// remain in this state until the owner calls ConfirmConnection to confirm creation of
-    /// the hosted connection.
+    /// Upon creation, the hosted connection is initially in the <code>Ordering</code> state,
+    /// and remains in this state until the owner confirms creation of the hosted connection.
     /// </para>
     /// </summary>
     public partial class ConfirmConnectionRequest : AmazonDirectConnectRequest
@@ -43,7 +42,10 @@ namespace Amazon.DirectConnect.Model
         private string _connectionId;
 
         /// <summary>
-        /// Gets and sets the property ConnectionId.
+        /// Gets and sets the property ConnectionId. 
+        /// <para>
+        /// The ID of the hosted connection.
+        /// </para>
         /// </summary>
         public string ConnectionId
         {

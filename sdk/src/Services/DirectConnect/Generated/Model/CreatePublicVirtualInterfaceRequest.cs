@@ -29,15 +29,15 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the CreatePublicVirtualInterface operation.
-    /// Creates a new public virtual interface. A virtual interface is the VLAN that transports
+    /// Creates a public virtual interface. A virtual interface is the VLAN that transports
     /// AWS Direct Connect traffic. A public virtual interface supports sending traffic to
-    /// public services of AWS such as Amazon Simple Storage Service (Amazon S3).
+    /// public services of AWS such as Amazon S3.
     /// 
     ///  
     /// <para>
-    /// When creating an IPv6 public virtual interface (addressFamily is 'ipv6'), the customer
-    /// and amazon address fields should be left blank to use auto-assigned IPv6 space. Custom
-    /// IPv6 Addresses are currently not supported.
+    /// When creating an IPv6 public virtual interface (<code>addressFamily</code> is <code>ipv6</code>),
+    /// leave the <code>customer</code> and <code>amazon</code> address fields blank to use
+    /// auto-assigned IPv6 space. Custom IPv6 addresses are not supported.
     /// </para>
     /// </summary>
     public partial class CreatePublicVirtualInterfaceRequest : AmazonDirectConnectRequest
@@ -46,7 +46,10 @@ namespace Amazon.DirectConnect.Model
         private NewPublicVirtualInterface _newPublicVirtualInterface;
 
         /// <summary>
-        /// Gets and sets the property ConnectionId.
+        /// Gets and sets the property ConnectionId. 
+        /// <para>
+        /// The ID of the connection.
+        /// </para>
         /// </summary>
         public string ConnectionId
         {
@@ -63,11 +66,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property NewPublicVirtualInterface. 
         /// <para>
-        /// Detailed information for the public virtual interface to be created.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
+        /// Information about the public virtual interface.
         /// </para>
         /// </summary>
         public NewPublicVirtualInterface NewPublicVirtualInterface

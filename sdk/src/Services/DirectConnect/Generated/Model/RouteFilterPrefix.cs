@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// A route filter prefix that the customer can advertise through Border Gateway Protocol
-    /// (BGP) over a public virtual interface.
+    /// Information about a route filter prefix that a customer can advertise through Border
+    /// Gateway Protocol (BGP) over a public virtual interface.
     /// </summary>
     public partial class RouteFilterPrefix
     {
@@ -38,15 +38,8 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property Cidr. 
         /// <para>
-        /// CIDR notation for the advertised route. Multiple routes are separated by commas.
-        /// </para>
-        ///  
-        /// <para>
-        /// IPv6 CIDRs must be at least a /64 or shorter
-        /// </para>
-        ///  
-        /// <para>
-        /// Example: 10.10.10.0/24,10.10.11.0/24,2001:db8::/64
+        /// The CIDR block for the advertised route. Separate multiple routes using commas. An
+        /// IPv6 CIDR must use /64 or shorter.
         /// </para>
         /// </summary>
         public string Cidr

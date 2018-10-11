@@ -29,15 +29,15 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeConnectionsOnInterconnect operation.
-    /// Deprecated in favor of <a>DescribeHostedConnections</a>.
+    /// Deprecated. Use <a>DescribeHostedConnections</a> instead.
     /// 
     ///  
     /// <para>
-    /// Returns a list of connections that have been provisioned on the given interconnect.
+    /// Lists the connections that have been provisioned on the specified interconnect.
     /// </para>
     ///  <note> 
     /// <para>
-    /// This is intended for use by AWS Direct Connect partners only.
+    /// Intended for use by AWS Direct Connect partners only.
     /// </para>
     ///  </note>
     /// </summary>
@@ -48,15 +48,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property InterconnectId. 
         /// <para>
-        /// ID of the interconnect on which a list of connection is provisioned.
-        /// </para>
-        ///  
-        /// <para>
-        /// Example: dxcon-abc123
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
+        /// The ID of the interconnect.
         /// </para>
         /// </summary>
         public string InterconnectId

@@ -29,19 +29,19 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeConnectionLoa operation.
-    /// Deprecated in favor of <a>DescribeLoa</a>.
+    /// Deprecated. Use <a>DescribeLoa</a> instead.
     /// 
     ///  
     /// <para>
-    /// Returns the LOA-CFA for a Connection.
+    /// Gets the LOA-CFA for a connection.
     /// </para>
     ///  
     /// <para>
     /// The Letter of Authorization - Connecting Facility Assignment (LOA-CFA) is a document
     /// that your APN partner or service provider uses when establishing your cross connect
     /// to AWS at the colocation facility. For more information, see <a href="http://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting
-    /// Cross Connects at AWS Direct Connect Locations</a> in the AWS Direct Connect user
-    /// guide.
+    /// Cross Connects at AWS Direct Connect Locations</a> in the <i>AWS Direct Connect User
+    /// Guide</i>.
     /// </para>
     /// </summary>
     public partial class DescribeConnectionLoaRequest : AmazonDirectConnectRequest
@@ -51,7 +51,10 @@ namespace Amazon.DirectConnect.Model
         private string _providerName;
 
         /// <summary>
-        /// Gets and sets the property ConnectionId.
+        /// Gets and sets the property ConnectionId. 
+        /// <para>
+        /// The ID of the connection.
+        /// </para>
         /// </summary>
         public string ConnectionId
         {
@@ -66,7 +69,10 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LoaContentType.
+        /// Gets and sets the property LoaContentType. 
+        /// <para>
+        /// The standard media type for the LOA-CFA document. The only supported value is application/pdf.
+        /// </para>
         /// </summary>
         public LoaContentType LoaContentType
         {
@@ -84,12 +90,8 @@ namespace Amazon.DirectConnect.Model
         /// Gets and sets the property ProviderName. 
         /// <para>
         /// The name of the APN partner or service provider who establishes connectivity on your
-        /// behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside
+        /// behalf. If you specify this parameter, the LOA-CFA lists the provider name alongside
         /// your company name as the requester of the cross connect.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
         /// </para>
         /// </summary>
         public string ProviderName

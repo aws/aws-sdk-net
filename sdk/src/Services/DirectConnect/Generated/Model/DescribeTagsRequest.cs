@@ -29,7 +29,7 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeTags operation.
-    /// Describes the tags associated with the specified Direct Connect resources.
+    /// Describes the tags associated with the specified AWS Direct Connect resources.
     /// </summary>
     public partial class DescribeTagsRequest : AmazonDirectConnectRequest
     {
@@ -38,7 +38,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property ResourceArns. 
         /// <para>
-        /// The Amazon Resource Names (ARNs) of the Direct Connect resources.
+        /// The Amazon Resource Names (ARNs) of the resources.
         /// </para>
         /// </summary>
         public List<string> ResourceArns

@@ -29,19 +29,17 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeInterconnects operation.
-    /// Returns a list of interconnects owned by the AWS account.
-    /// 
-    ///  
-    /// <para>
-    /// If an interconnect ID is provided, it will only return this particular interconnect.
-    /// </para>
+    /// Lists the interconnects owned by the AWS account or only the specified interconnect.
     /// </summary>
     public partial class DescribeInterconnectsRequest : AmazonDirectConnectRequest
     {
         private string _interconnectId;
 
         /// <summary>
-        /// Gets and sets the property InterconnectId.
+        /// Gets and sets the property InterconnectId. 
+        /// <para>
+        /// The ID of the interconnect.
+        /// </para>
         /// </summary>
         public string InterconnectId
         {

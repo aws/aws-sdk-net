@@ -29,7 +29,7 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the AllocateConnectionOnInterconnect operation.
-    /// Deprecated in favor of <a>AllocateHostedConnection</a>.
+    /// Deprecated. Use <a>AllocateHostedConnection</a> instead.
     /// 
     ///  
     /// <para>
@@ -38,11 +38,11 @@ namespace Amazon.DirectConnect.Model
     ///  
     /// <para>
     /// Allocates a VLAN number and a specified amount of bandwidth for use by a hosted connection
-    /// on the given interconnect.
+    /// on the specified interconnect.
     /// </para>
     ///  <note> 
     /// <para>
-    /// This is intended for use by AWS Direct Connect partners only.
+    /// Intended for use by AWS Direct Connect partners only.
     /// </para>
     ///  </note>
     /// </summary>
@@ -57,19 +57,8 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property Bandwidth. 
         /// <para>
-        /// Bandwidth of the connection.
-        /// </para>
-        ///  
-        /// <para>
-        /// Example: "<i>500Mbps</i>"
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
-        /// </para>
-        ///  
-        /// <para>
-        /// Values: 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps
+        /// The bandwidth of the connection, in Mbps. The possible values are 50Mbps, 100Mbps,
+        /// 200Mbps, 300Mbps, 400Mbps, and 500Mbps.
         /// </para>
         /// </summary>
         public string Bandwidth
@@ -87,15 +76,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property ConnectionName. 
         /// <para>
-        /// Name of the provisioned connection.
-        /// </para>
-        ///  
-        /// <para>
-        /// Example: "<i>500M Connection to AWS</i>"
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
+        /// The name of the provisioned connection.
         /// </para>
         /// </summary>
         public string ConnectionName
@@ -113,15 +94,8 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property InterconnectId. 
         /// <para>
-        /// ID of the interconnect on which the connection will be provisioned.
-        /// </para>
-        ///  
-        /// <para>
-        /// Example: dxcon-456abc78
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
+        /// The ID of the interconnect on which the connection will be provisioned. For example,
+        /// dxcon-456abc78.
         /// </para>
         /// </summary>
         public string InterconnectId
@@ -139,15 +113,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property OwnerAccount. 
         /// <para>
-        /// Numeric account Id of the customer for whom the connection will be provisioned.
-        /// </para>
-        ///  
-        /// <para>
-        /// Example: 123443215678
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
+        /// The ID of the AWS account of the customer for whom the connection will be provisioned.
         /// </para>
         /// </summary>
         public string OwnerAccount
@@ -166,14 +132,6 @@ namespace Amazon.DirectConnect.Model
         /// Gets and sets the property Vlan. 
         /// <para>
         /// The dedicated VLAN provisioned to the connection.
-        /// </para>
-        ///  
-        /// <para>
-        /// Example: 101
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
         /// </para>
         /// </summary>
         public int Vlan

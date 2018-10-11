@@ -29,15 +29,15 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLoa operation.
-    /// Returns the LOA-CFA for a connection, interconnect, or link aggregation group (LAG).
+    /// Gets the LOA-CFA for a connection, interconnect, or link aggregation group (LAG).
     /// 
     ///  
     /// <para>
     /// The Letter of Authorization - Connecting Facility Assignment (LOA-CFA) is a document
     /// that is used when establishing your cross connect to AWS at the colocation facility.
     /// For more information, see <a href="http://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting
-    /// Cross Connects at AWS Direct Connect Locations</a> in the AWS Direct Connect user
-    /// guide.
+    /// Cross Connects at AWS Direct Connect Locations</a> in the <i>AWS Direct Connect User
+    /// Guide</i>.
     /// </para>
     /// </summary>
     public partial class DescribeLoaRequest : AmazonDirectConnectRequest
@@ -49,15 +49,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property ConnectionId. 
         /// <para>
-        /// The ID of a connection, LAG, or interconnect for which to get the LOA-CFA information.
-        /// </para>
-        ///  
-        /// <para>
-        /// Example: dxcon-abc123 or dxlag-abc123
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
+        /// The ID of a connection, LAG, or interconnect.
         /// </para>
         /// </summary>
         public string ConnectionId
@@ -75,12 +67,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property LoaContentType. 
         /// <para>
-        /// A standard media type indicating the content type of the LOA-CFA document. Currently,
-        /// the only supported value is "application/pdf".
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: application/pdf
+        /// The standard media type for the LOA-CFA document. The only supported value is application/pdf.
         /// </para>
         /// </summary>
         public LoaContentType LoaContentType
@@ -99,12 +86,8 @@ namespace Amazon.DirectConnect.Model
         /// Gets and sets the property ProviderName. 
         /// <para>
         /// The name of the service provider who establishes connectivity on your behalf. If you
-        /// supply this parameter, the LOA-CFA lists the provider name alongside your company
+        /// specify this parameter, the LOA-CFA lists the provider name alongside your company
         /// name as the requester of the cross connect.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
         /// </para>
         /// </summary>
         public string ProviderName

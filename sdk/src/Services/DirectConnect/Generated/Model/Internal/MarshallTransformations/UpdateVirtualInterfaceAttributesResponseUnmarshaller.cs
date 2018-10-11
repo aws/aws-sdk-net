@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateLag operation
+    /// Response Unmarshaller for UpdateVirtualInterfaceAttributes operation
     /// </summary>  
-    public class UpdateLagResponseUnmarshaller : JsonResponseUnmarshaller
+    public class UpdateVirtualInterfaceAttributesResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,22 +45,40 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpdateLagResponse response = new UpdateLagResponse();
+            UpdateVirtualInterfaceAttributesResponse response = new UpdateVirtualInterfaceAttributesResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("allowsHostedConnections", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.AllowsHostedConnections = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("awsDevice", targetDepth))
+                if (context.TestExpression("addressFamily", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.AwsDevice = unmarshaller.Unmarshall(context);
+                    response.AddressFamily = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("amazonAddress", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AmazonAddress = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("amazonSideAsn", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    response.AmazonSideAsn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("asn", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.Asn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("authKey", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AuthKey = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("awsDeviceV2", targetDepth))
@@ -69,16 +87,34 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                     response.AwsDeviceV2 = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("connections", targetDepth))
+                if (context.TestExpression("bgpPeers", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Connection, ConnectionUnmarshaller>(ConnectionUnmarshaller.Instance);
-                    response.Connections = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<BGPPeer, BGPPeerUnmarshaller>(BGPPeerUnmarshaller.Instance);
+                    response.BgpPeers = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("connectionsBandwidth", targetDepth))
+                if (context.TestExpression("connectionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ConnectionsBandwidth = unmarshaller.Unmarshall(context);
+                    response.ConnectionId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("customerAddress", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.CustomerAddress = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("customerRouterConfig", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.CustomerRouterConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("directConnectGatewayId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.DirectConnectGatewayId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("jumboFrameCapable", targetDepth))
@@ -87,40 +123,16 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                     response.JumboFrameCapable = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("lagId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.LagId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("lagName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.LagName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("lagState", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.LagState = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("location", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Location = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("minimumLinks", targetDepth))
+                if (context.TestExpression("mtu", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
-                    response.MinimumLinks = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("numberOfConnections", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    response.NumberOfConnections = unmarshaller.Unmarshall(context);
+                    response.Mtu = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ownerAccount", targetDepth))
@@ -133,6 +145,48 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Region = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("routeFilterPrefixes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<RouteFilterPrefix, RouteFilterPrefixUnmarshaller>(RouteFilterPrefixUnmarshaller.Instance);
+                    response.RouteFilterPrefixes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("virtualGatewayId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.VirtualGatewayId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("virtualInterfaceId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.VirtualInterfaceId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("virtualInterfaceName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.VirtualInterfaceName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("virtualInterfaceState", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.VirtualInterfaceState = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("virtualInterfaceType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.VirtualInterfaceType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("vlan", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.Vlan = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -161,9 +215,9 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
             return new AmazonDirectConnectException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static UpdateLagResponseUnmarshaller _instance = new UpdateLagResponseUnmarshaller();        
+        private static UpdateVirtualInterfaceAttributesResponseUnmarshaller _instance = new UpdateVirtualInterfaceAttributesResponseUnmarshaller();        
 
-        internal static UpdateLagResponseUnmarshaller GetInstance()
+        internal static UpdateVirtualInterfaceAttributesResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -171,7 +225,7 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateLagResponseUnmarshaller Instance
+        public static UpdateVirtualInterfaceAttributesResponseUnmarshaller Instance
         {
             get
             {

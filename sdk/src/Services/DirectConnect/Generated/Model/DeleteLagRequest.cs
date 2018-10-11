@@ -29,8 +29,8 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteLag operation.
-    /// Deletes a link aggregation group (LAG). You cannot delete a LAG if it has active virtual
-    /// interfaces or hosted connections.
+    /// Deletes the specified link aggregation group (LAG). You cannot delete a LAG if it
+    /// has active virtual interfaces or hosted connections.
     /// </summary>
     public partial class DeleteLagRequest : AmazonDirectConnectRequest
     {
@@ -39,15 +39,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property LagId. 
         /// <para>
-        /// The ID of the LAG to delete.
-        /// </para>
-        ///  
-        /// <para>
-        /// Example: dxlag-abc123
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
+        /// The ID of the LAG.
         /// </para>
         /// </summary>
         public string LagId

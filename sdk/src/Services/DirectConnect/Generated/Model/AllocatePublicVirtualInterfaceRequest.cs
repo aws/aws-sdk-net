@@ -29,25 +29,24 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the AllocatePublicVirtualInterface operation.
-    /// Provisions a public virtual interface to be owned by a different customer.
+    /// Provisions a public virtual interface to be owned by the specified AWS account.
     /// 
     ///  
     /// <para>
     /// The owner of a connection calls this function to provision a public virtual interface
-    /// which will be owned by another AWS customer.
+    /// to be owned by the specified AWS account.
     /// </para>
     ///  
     /// <para>
-    /// Virtual interfaces created using this function must be confirmed by the virtual interface
-    /// owner by calling ConfirmPublicVirtualInterface. Until this step has been completed,
-    /// the virtual interface will be in 'Confirming' state, and will not be available for
-    /// handling traffic.
+    /// Virtual interfaces created using this function must be confirmed by the owner using
+    /// <a>ConfirmPublicVirtualInterface</a>. Until this step has been completed, the virtual
+    /// interface is in the <code>confirming</code> state and is not available to handle traffic.
     /// </para>
     ///  
     /// <para>
-    /// When creating an IPv6 public virtual interface (addressFamily is 'ipv6'), the customer
-    /// and amazon address fields should be left blank to use auto-assigned IPv6 space. Custom
-    /// IPv6 Addresses are currently not supported.
+    /// When creating an IPv6 public virtual interface, omit the Amazon address and customer
+    /// address. IPv6 addresses are automatically assigned from the Amazon pool of IPv6 addresses;
+    /// you cannot specify custom IPv6 addresses.
     /// </para>
     /// </summary>
     public partial class AllocatePublicVirtualInterfaceRequest : AmazonDirectConnectRequest
@@ -59,11 +58,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property ConnectionId. 
         /// <para>
-        /// The connection ID on which the public virtual interface is provisioned.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
+        /// The ID of the connection on which the public virtual interface is provisioned.
         /// </para>
         /// </summary>
         public string ConnectionId
@@ -81,11 +76,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property NewPublicVirtualInterfaceAllocation. 
         /// <para>
-        /// Detailed information for the public virtual interface to be provisioned.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
+        /// Information about the public virtual interface.
         /// </para>
         /// </summary>
         public NewPublicVirtualInterfaceAllocation NewPublicVirtualInterfaceAllocation
@@ -103,11 +94,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property OwnerAccount. 
         /// <para>
-        /// The AWS account that will own the new public virtual interface.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
+        /// The ID of the AWS account that owns the public virtual interface.
         /// </para>
         /// </summary>
         public string OwnerAccount

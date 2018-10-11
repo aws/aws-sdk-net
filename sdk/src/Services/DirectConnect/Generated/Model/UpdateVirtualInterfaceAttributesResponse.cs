@@ -30,7 +30,7 @@ namespace Amazon.DirectConnect.Model
     /// <summary>
     /// Information about a virtual interface.
     /// </summary>
-    public partial class AllocatePublicVirtualInterfaceResponse : AmazonWebServiceResponse
+    public partial class UpdateVirtualInterfaceAttributesResponse : AmazonWebServiceResponse
     {
         private AddressFamily _addressFamily;
         private string _amazonAddress;

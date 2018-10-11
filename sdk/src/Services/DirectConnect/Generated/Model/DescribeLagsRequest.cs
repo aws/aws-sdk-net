@@ -29,12 +29,7 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLags operation.
-    /// Describes the link aggregation groups (LAGs) in your account. 
-    /// 
-    ///  
-    /// <para>
-    /// If a LAG ID is provided, only information about the specified LAG is returned.
-    /// </para>
+    /// Describes all your link aggregation groups (LAG) or the specified LAG.
     /// </summary>
     public partial class DescribeLagsRequest : AmazonDirectConnectRequest
     {
@@ -44,14 +39,6 @@ namespace Amazon.DirectConnect.Model
         /// Gets and sets the property LagId. 
         /// <para>
         /// The ID of the LAG.
-        /// </para>
-        ///  
-        /// <para>
-        /// Example: dxlag-abc123
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
         /// </para>
         /// </summary>
         public string LagId

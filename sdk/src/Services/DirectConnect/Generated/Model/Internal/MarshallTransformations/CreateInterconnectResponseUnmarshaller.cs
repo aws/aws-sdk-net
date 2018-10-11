@@ -87,6 +87,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                     response.InterconnectState = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("jumboFrameCapable", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.JumboFrameCapable = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lagId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// A direct connect gateway is an intermediate object that enables you to connect virtual
-    /// interfaces and virtual private gateways.
+    /// Information about a Direct Connect gateway, which enables you to connect virtual interfaces
+    /// and virtual private gateways.
     /// </summary>
     public partial class DirectConnectGateway
     {
@@ -59,7 +59,10 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DirectConnectGatewayId.
+        /// Gets and sets the property DirectConnectGatewayId. 
+        /// <para>
+        /// The ID of the Direct Connect gateway.
+        /// </para>
         /// </summary>
         public string DirectConnectGatewayId
         {
@@ -74,7 +77,10 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DirectConnectGatewayName.
+        /// Gets and sets the property DirectConnectGatewayName. 
+        /// <para>
+        /// The name of the Direct Connect gateway.
+        /// </para>
         /// </summary>
         public string DirectConnectGatewayName
         {
@@ -89,7 +95,27 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DirectConnectGatewayState.
+        /// Gets and sets the property DirectConnectGatewayState. 
+        /// <para>
+        /// The state of the Direct Connect gateway. The following are the possible values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>pending</code>: The initial state after calling <a>CreateDirectConnectGateway</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>available</code>: The Direct Connect gateway is ready for use.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>deleting</code>: The initial state after calling <a>DeleteDirectConnectGateway</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>deleted</code>: The Direct Connect gateway is deleted and cannot pass traffic.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public DirectConnectGatewayState DirectConnectGatewayState
         {
@@ -106,7 +132,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property OwnerAccount. 
         /// <para>
-        /// The AWS account ID of the owner of the direct connect gateway.
+        /// The ID of the AWS account that owns the Direct Connect gateway.
         /// </para>
         /// </summary>
         public string OwnerAccount
@@ -122,7 +148,10 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StateChangeError.
+        /// Gets and sets the property StateChangeError. 
+        /// <para>
+        /// The error message if the state of an object failed to advance.
+        /// </para>
         /// </summary>
         public string StateChangeError
         {

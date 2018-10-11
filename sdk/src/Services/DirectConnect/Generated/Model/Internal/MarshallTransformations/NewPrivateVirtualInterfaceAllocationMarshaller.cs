@@ -75,6 +75,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CustomerAddress);
             }
 
+            if(requestObject.IsSetMtu())
+            {
+                context.Writer.WritePropertyName("mtu");
+                context.Writer.Write(requestObject.Mtu);
+            }
+
             if(requestObject.IsSetVirtualInterfaceName())
             {
                 context.Writer.WritePropertyName("virtualInterfaceName");

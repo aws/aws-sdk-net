@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// A structure containing information about a new public virtual interface.
+    /// Information about a public virtual interface.
     /// </summary>
     public partial class NewPublicVirtualInterface
     {
@@ -42,7 +42,10 @@ namespace Amazon.DirectConnect.Model
         private int? _vlan;
 
         /// <summary>
-        /// Gets and sets the property AddressFamily.
+        /// Gets and sets the property AddressFamily. 
+        /// <para>
+        /// The address family for the BGP peer.
+        /// </para>
         /// </summary>
         public AddressFamily AddressFamily
         {
@@ -57,7 +60,10 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AmazonAddress.
+        /// Gets and sets the property AmazonAddress. 
+        /// <para>
+        /// The IP address assigned to the Amazon interface.
+        /// </para>
         /// </summary>
         public string AmazonAddress
         {
@@ -72,7 +78,10 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Asn.
+        /// Gets and sets the property Asn. 
+        /// <para>
+        /// The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
+        /// </para>
         /// </summary>
         public int Asn
         {
@@ -87,7 +96,10 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AuthKey.
+        /// Gets and sets the property AuthKey. 
+        /// <para>
+        /// The authentication key for BGP configuration.
+        /// </para>
         /// </summary>
         public string AuthKey
         {
@@ -102,7 +114,10 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CustomerAddress.
+        /// Gets and sets the property CustomerAddress. 
+        /// <para>
+        /// The IP address assigned to the customer interface.
+        /// </para>
         /// </summary>
         public string CustomerAddress
         {
@@ -117,7 +132,11 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RouteFilterPrefixes.
+        /// Gets and sets the property RouteFilterPrefixes. 
+        /// <para>
+        /// The routes to be advertised to the AWS network in this Region. Applies to public virtual
+        /// interfaces.
+        /// </para>
         /// </summary>
         public List<RouteFilterPrefix> RouteFilterPrefixes
         {
@@ -132,7 +151,10 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VirtualInterfaceName.
+        /// Gets and sets the property VirtualInterfaceName. 
+        /// <para>
+        /// The name of the virtual interface assigned by the customer network.
+        /// </para>
         /// </summary>
         public string VirtualInterfaceName
         {
@@ -147,7 +169,10 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Vlan.
+        /// Gets and sets the property Vlan. 
+        /// <para>
+        /// The ID of the VLAN.
+        /// </para>
         /// </summary>
         public int Vlan
         {
