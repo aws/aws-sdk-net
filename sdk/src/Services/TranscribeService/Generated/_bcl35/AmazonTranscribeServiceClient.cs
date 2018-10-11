@@ -239,15 +239,17 @@ namespace Amazon.TranscribeService
 
         /// <summary>
         /// Creates a new custom vocabulary that you can use to change the way Amazon Transcribe
-        /// handles transcription of an audio file.
+        /// handles transcription of an audio file. Note that vocabularies for en-AU, en-UK, and
+        /// fr-CA languages that are in preview are not available. In the console, the vocabulary
+        /// section will be greyed-out and SDK will return error message.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVocabulary service method.</param>
         /// 
         /// <returns>The response from the CreateVocabulary service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. For example, a name may not
-        /// exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code>
-        /// field for more information.
+        /// Your request didn't pass one or more validation tests. For example, if the transcription
+        /// you're trying to delete doesn't exist of if it is in a non-terminal state (for example,
+        /// it's "in progress"). See the exception <code>Message</code> field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
         /// When you are using the <code>StartTranscriptionJob</code> operation, the <code>JobName</code>
@@ -315,16 +317,16 @@ namespace Amazon.TranscribeService
         #region  DeleteTranscriptionJob
 
         /// <summary>
-        /// Deletes a previously submitted transcription job as wella s any other generated results
+        /// Deletes a previously submitted transcription job as well as any other generated results
         /// such as the transcription, models, and so on.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTranscriptionJob service method.</param>
         /// 
         /// <returns>The response from the DeleteTranscriptionJob service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. For example, a name may not
-        /// exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code>
-        /// field for more information.
+        /// Your request didn't pass one or more validation tests. For example, if the transcription
+        /// you're trying to delete doesn't exist of if it is in a non-terminal state (for example,
+        /// it's "in progress"). See the exception <code>Message</code> field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message and try your request again.
@@ -387,9 +389,9 @@ namespace Amazon.TranscribeService
         /// 
         /// <returns>The response from the DeleteVocabulary service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. For example, a name may not
-        /// exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code>
-        /// field for more information.
+        /// Your request didn't pass one or more validation tests. For example, if the transcription
+        /// you're trying to delete doesn't exist of if it is in a non-terminal state (for example,
+        /// it's "in progress"). See the exception <code>Message</code> field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message and try your request again.
@@ -458,9 +460,9 @@ namespace Amazon.TranscribeService
         /// 
         /// <returns>The response from the GetTranscriptionJob service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. For example, a name may not
-        /// exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code>
-        /// field for more information.
+        /// Your request didn't pass one or more validation tests. For example, if the transcription
+        /// you're trying to delete doesn't exist of if it is in a non-terminal state (for example,
+        /// it's "in progress"). See the exception <code>Message</code> field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message and try your request again.
@@ -520,15 +522,17 @@ namespace Amazon.TranscribeService
         #region  GetVocabulary
 
         /// <summary>
-        /// Gets information about a vocabulary.
+        /// Gets information about a vocabulary. Note that vocabularies for en-AU, en-UK, and
+        /// fr-CA languages that are in preview are not available. In the console, the vocabulary
+        /// section will be greyed-out and SDK will return error message.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetVocabulary service method.</param>
         /// 
         /// <returns>The response from the GetVocabulary service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. For example, a name may not
-        /// exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code>
-        /// field for more information.
+        /// Your request didn't pass one or more validation tests. For example, if the transcription
+        /// you're trying to delete doesn't exist of if it is in a non-terminal state (for example,
+        /// it's "in progress"). See the exception <code>Message</code> field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message and try your request again.
@@ -594,9 +598,9 @@ namespace Amazon.TranscribeService
         /// 
         /// <returns>The response from the ListTranscriptionJobs service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. For example, a name may not
-        /// exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code>
-        /// field for more information.
+        /// Your request didn't pass one or more validation tests. For example, if the transcription
+        /// you're trying to delete doesn't exist of if it is in a non-terminal state (for example,
+        /// it's "in progress"). See the exception <code>Message</code> field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message and try your request again.
@@ -660,9 +664,9 @@ namespace Amazon.TranscribeService
         /// 
         /// <returns>The response from the ListVocabularies service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. For example, a name may not
-        /// exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code>
-        /// field for more information.
+        /// Your request didn't pass one or more validation tests. For example, if the transcription
+        /// you're trying to delete doesn't exist of if it is in a non-terminal state (for example,
+        /// it's "in progress"). See the exception <code>Message</code> field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message and try your request again.
@@ -719,15 +723,16 @@ namespace Amazon.TranscribeService
         #region  StartTranscriptionJob
 
         /// <summary>
-        /// Starts an asynchronous job to transcribe speech to text.
+        /// Starts an asynchronous job to transcribe speech to text. Note that en-AU, en-UK, and
+        /// fr-CA languages are in preview and are only available to whitelisted customers.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartTranscriptionJob service method.</param>
         /// 
         /// <returns>The response from the StartTranscriptionJob service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. For example, a name may not
-        /// exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code>
-        /// field for more information.
+        /// Your request didn't pass one or more validation tests. For example, if the transcription
+        /// you're trying to delete doesn't exist of if it is in a non-terminal state (for example,
+        /// it's "in progress"). See the exception <code>Message</code> field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
         /// When you are using the <code>StartTranscriptionJob</code> operation, the <code>JobName</code>
@@ -797,15 +802,17 @@ namespace Amazon.TranscribeService
         /// <summary>
         /// Updates an existing vocabulary with new values. The <code>UpdateVocabulary</code>
         /// operation overwrites all of the existing information with the values that you provide
-        /// in the request.
+        /// in the request. Note that vocabularies for en-AU, en-UK, and fr-CA languages that
+        /// are in preview are not available. In the console, the vocabulary section will be greyed-out
+        /// and SDK will return error message.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateVocabulary service method.</param>
         /// 
         /// <returns>The response from the UpdateVocabulary service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
-        /// Your request didn't pass one or more validation tests. For example, a name may not
-        /// exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code>
-        /// field for more information.
+        /// Your request didn't pass one or more validation tests. For example, if the transcription
+        /// you're trying to delete doesn't exist of if it is in a non-terminal state (for example,
+        /// it's "in progress"). See the exception <code>Message</code> field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
         /// When you are using the <code>StartTranscriptionJob</code> operation, the <code>JobName</code>

@@ -29,7 +29,9 @@ namespace Amazon.TranscribeService.Model
 {
     /// <summary>
     /// Container for the parameters to the GetVocabulary operation.
-    /// Gets information about a vocabulary.
+    /// Gets information about a vocabulary. Note that vocabularies for en-AU, en-UK, and
+    /// fr-CA languages that are in preview are not available. In the console, the vocabulary
+    /// section will be greyed-out and SDK will return error message.
     /// </summary>
     public partial class GetVocabularyRequest : AmazonTranscribeServiceRequest
     {

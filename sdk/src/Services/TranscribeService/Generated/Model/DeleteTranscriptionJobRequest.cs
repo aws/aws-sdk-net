@@ -29,7 +29,7 @@ namespace Amazon.TranscribeService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteTranscriptionJob operation.
-    /// Deletes a previously submitted transcription job as wella s any other generated results
+    /// Deletes a previously submitted transcription job as well as any other generated results
     /// such as the transcription, models, and so on.
     /// </summary>
     public partial class DeleteTranscriptionJobRequest : AmazonTranscribeServiceRequest

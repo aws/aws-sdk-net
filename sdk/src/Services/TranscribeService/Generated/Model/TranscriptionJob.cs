@@ -29,7 +29,8 @@ namespace Amazon.TranscribeService.Model
 {
     /// <summary>
     /// Describes an asynchronous transcription job that was created with the <code>StartTranscriptionJob</code>
-    /// operation.
+    /// operation. Note that en-AU, en-UK, and fr-CA languages are in preview and are only
+    /// available to whitelisted customers.
     /// </summary>
     public partial class TranscriptionJob
     {

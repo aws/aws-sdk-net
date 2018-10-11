@@ -31,7 +31,10 @@
             "type": "string",
             "enum": [
               "en-US",
-              "es-US"
+              "es-US",
+              "en-AU",
+              "fr-CA",
+              "en-UK"
             ],
             "zonbookDocumentation": "\n        <simpara>The language code for the language used in the input media file.</simpara>\n      ",
             "documentation": "\n        <p>The language code for the language used in the input media file.</p>\n      ",
@@ -154,7 +157,10 @@
                 "type": "string",
                 "enum": [
                   "en-US",
-                  "es-US"
+                  "es-US",
+                  "en-AU",
+                  "fr-CA",
+                  "en-UK"
                 ],
                 "zonbookDocumentation": "\n        <simpara>The language code for the input speech.</simpara>\n      ",
                 "documentation": "\n        <p>The language code for the input speech.</p>\n      ",
@@ -286,8 +292,8 @@
               "documentation": null
             }
           },
-          "zonbookDocumentation": "\n        <simpara>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</simpara>\n      ",
-          "documentation": "\n        <p>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</p>\n      ",
+          "zonbookDocumentation": "\n        <simpara>Your request didn't pass one or more validation tests. For example, if the \n            transcription you're trying to delete doesn't exist of if it is in a non-terminal state (for \n            example, it's \"in progress\"). See the exception <code>Message</code> field for more\n            information.</simpara>\n      ",
+          "documentation": "\n        <p>Your request didn't pass one or more validation tests. For example, if the \n            transcription you're trying to delete doesn't exist of if it is in a non-terminal state (for \n            example, it's \"in progress\"). See the exception <code>Message</code> field for more\n            information.</p>\n      ",
           "shape_name": "BadRequestException"
         },
         {
@@ -330,7 +336,7 @@
           "shape_name": "ConflictException"
         }
       ],
-      "documentation": "\n        <p>Starts an asynchronous job to transcribe speech to text.</p>\n      "
+      "documentation": "\n        <p>Starts an asynchronous job to transcribe speech to text. Note that en-AU, en-UK, \n            and fr-CA languages are in preview and are only available to whitelisted customers. </p>\n      "
     },
     "GetTranscriptionJob": {
       "name": "GetTranscriptionJob",
@@ -381,7 +387,10 @@
                 "type": "string",
                 "enum": [
                   "en-US",
-                  "es-US"
+                  "es-US",
+                  "en-AU",
+                  "fr-CA",
+                  "en-UK"
                 ],
                 "zonbookDocumentation": "\n        <simpara>The language code for the input speech.</simpara>\n      ",
                 "documentation": "\n        <p>The language code for the input speech.</p>\n      ",
@@ -513,8 +522,8 @@
               "documentation": null
             }
           },
-          "zonbookDocumentation": "\n        <simpara>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</simpara>\n      ",
-          "documentation": "\n        <p>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</p>\n      ",
+          "zonbookDocumentation": "\n        <simpara>Your request didn't pass one or more validation tests. For example, if the \n            transcription you're trying to delete doesn't exist of if it is in a non-terminal state (for \n            example, it's \"in progress\"). See the exception <code>Message</code> field for more\n            information.</simpara>\n      ",
+          "documentation": "\n        <p>Your request didn't pass one or more validation tests. For example, if the \n            transcription you're trying to delete doesn't exist of if it is in a non-terminal state (for \n            example, it's \"in progress\"). See the exception <code>Message</code> field for more\n            information.</p>\n      ",
           "shape_name": "BadRequestException"
         },
         {
@@ -657,7 +666,10 @@
                   "type": "string",
                   "enum": [
                     "en-US",
-                    "es-US"
+                    "es-US",
+                    "en-AU",
+                    "fr-CA",
+                    "en-UK"
                   ],
                   "zonbookDocumentation": "\n        <simpara>The language code for the input speech.</simpara>\n      ",
                   "documentation": "\n        <p>The language code for the input speech.</p>\n      ",
@@ -691,8 +703,8 @@
                   "shape_name": "OutputLocationType"
                 }
               },
-              "zonbookDocumentation": "\n        <simpara>Provides a summary of information about a transcription job.</simpara>\n      ",
-              "documentation": "\n        <p>Provides a summary of information about a transcription job.</p>\n      ",
+              "zonbookDocumentation": "\n        <simpara>Provides a summary of information about a transcription job. Note that en-AU, en-UK, \n            and fr-CA languages are in preview and are only available to whitelisted customers.</simpara>\n      ",
+              "documentation": "\n        <p>Provides a summary of information about a transcription job. Note that en-AU, en-UK, \n            and fr-CA languages are in preview and are only available to whitelisted customers.</p>\n      ",
               "shape_name": "TranscriptionJobSummary"
             }
           }
@@ -710,8 +722,8 @@
               "documentation": null
             }
           },
-          "zonbookDocumentation": "\n        <simpara>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</simpara>\n      ",
-          "documentation": "\n        <p>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</p>\n      ",
+          "zonbookDocumentation": "\n        <simpara>Your request didn't pass one or more validation tests. For example, if the \n            transcription you're trying to delete doesn't exist of if it is in a non-terminal state (for \n            example, it's \"in progress\"). See the exception <code>Message</code> field for more\n            information.</simpara>\n      ",
+          "documentation": "\n        <p>Your request didn't pass one or more validation tests. For example, if the \n            transcription you're trying to delete doesn't exist of if it is in a non-terminal state (for \n            example, it's \"in progress\"). See the exception <code>Message</code> field for more\n            information.</p>\n      ",
           "shape_name": "BadRequestException"
         },
         {
@@ -762,7 +774,10 @@
             "type": "string",
             "enum": [
               "en-US",
-              "es-US"
+              "es-US",
+              "en-AU",
+              "fr-CA",
+              "en-UK"
             ],
             "zonbookDocumentation": "\n        <simpara>The language code of the vocabulary entries.</simpara>\n      ",
             "documentation": "\n        <p>The language code of the vocabulary entries.</p>\n      ",
@@ -803,7 +818,10 @@
             "type": "string",
             "enum": [
               "en-US",
-              "es-US"
+              "es-US",
+              "en-AU",
+              "fr-CA",
+              "en-UK"
             ],
             "zonbookDocumentation": "\n        <simpara>The language code of the vocabulary entries.</simpara>\n      ",
             "documentation": "\n        <p>The language code of the vocabulary entries.</p>\n      ",
@@ -846,8 +864,8 @@
               "documentation": null
             }
           },
-          "zonbookDocumentation": "\n        <simpara>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</simpara>\n      ",
-          "documentation": "\n        <p>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</p>\n      ",
+          "zonbookDocumentation": "\n        <simpara>Your request didn't pass one or more validation tests. For example, if the \n            transcription you're trying to delete doesn't exist of if it is in a non-terminal state (for \n            example, it's \"in progress\"). See the exception <code>Message</code> field for more\n            information.</simpara>\n      ",
+          "documentation": "\n        <p>Your request didn't pass one or more validation tests. For example, if the \n            transcription you're trying to delete doesn't exist of if it is in a non-terminal state (for \n            example, it's \"in progress\"). See the exception <code>Message</code> field for more\n            information.</p>\n      ",
           "shape_name": "BadRequestException"
         },
         {
@@ -890,7 +908,7 @@
           "shape_name": "ConflictException"
         }
       ],
-      "documentation": "\n        <p>Creates a new custom vocabulary that you can use to change the way Amazon Transcribe handles\n            transcription of an audio file.</p>\n      "
+      "documentation": "\n        <p>Creates a new custom vocabulary that you can use to change the way Amazon Transcribe handles\n            transcription of an audio file. Note that vocabularies for en-AU, en-UK, and fr-CA languages that are in\n            preview are not available. In the console, the vocabulary section will be greyed-out and SDK \n            will return error message. </p>\n      "
     },
     "UpdateVocabulary": {
       "name": "UpdateVocabulary",
@@ -911,7 +929,10 @@
             "type": "string",
             "enum": [
               "en-US",
-              "es-US"
+              "es-US",
+              "en-AU",
+              "fr-CA",
+              "en-UK"
             ],
             "zonbookDocumentation": "\n        <simpara>The language code of the vocabulary entries.</simpara>\n      ",
             "documentation": "\n        <p>The language code of the vocabulary entries.</p>\n      ",
@@ -952,7 +973,10 @@
             "type": "string",
             "enum": [
               "en-US",
-              "es-US"
+              "es-US",
+              "en-AU",
+              "fr-CA",
+              "en-UK"
             ],
             "zonbookDocumentation": "\n        <simpara>The language code of the vocabulary entries.</simpara>\n      ",
             "documentation": "\n        <p>The language code of the vocabulary entries.</p>\n      ",
@@ -989,8 +1013,8 @@
               "documentation": null
             }
           },
-          "zonbookDocumentation": "\n        <simpara>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</simpara>\n      ",
-          "documentation": "\n        <p>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</p>\n      ",
+          "zonbookDocumentation": "\n        <simpara>Your request didn't pass one or more validation tests. For example, if the \n            transcription you're trying to delete doesn't exist of if it is in a non-terminal state (for \n            example, it's \"in progress\"). See the exception <code>Message</code> field for more\n            information.</simpara>\n      ",
+          "documentation": "\n        <p>Your request didn't pass one or more validation tests. For example, if the \n            transcription you're trying to delete doesn't exist of if it is in a non-terminal state (for \n            example, it's \"in progress\"). See the exception <code>Message</code> field for more\n            information.</p>\n      ",
           "shape_name": "BadRequestException"
         },
         {
@@ -1046,7 +1070,7 @@
           "shape_name": "ConflictException"
         }
       ],
-      "documentation": "\n        <p>Updates an existing vocabulary with new values. The <code>UpdateVocabulary</code>\n            operation overwrites all of the existing information with the values that you provide in\n            the request.</p>\n      "
+      "documentation": "\n        <p>Updates an existing vocabulary with new values. The <code>UpdateVocabulary</code>\n            operation overwrites all of the existing information with the values that you provide in\n            the request. Note that vocabularies for en-AU, en-UK, and fr-CA languages that are in\n            preview are not available. In the console, the vocabulary section will be greyed-out and SDK \n            will return error message.</p>\n      "
     },
     "GetVocabulary": {
       "name": "GetVocabulary",
@@ -1083,7 +1107,10 @@
             "type": "string",
             "enum": [
               "en-US",
-              "es-US"
+              "es-US",
+              "en-AU",
+              "fr-CA",
+              "en-UK"
             ],
             "zonbookDocumentation": "\n        <simpara>The language code of the vocabulary entries.</simpara>\n      ",
             "documentation": "\n        <p>The language code of the vocabulary entries.</p>\n      ",
@@ -1173,12 +1200,12 @@
               "documentation": null
             }
           },
-          "zonbookDocumentation": "\n        <simpara>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</simpara>\n      ",
-          "documentation": "\n        <p>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</p>\n      ",
+          "zonbookDocumentation": "\n        <simpara>Your request didn't pass one or more validation tests. For example, if the \n            transcription you're trying to delete doesn't exist of if it is in a non-terminal state (for \n            example, it's \"in progress\"). See the exception <code>Message</code> field for more\n            information.</simpara>\n      ",
+          "documentation": "\n        <p>Your request didn't pass one or more validation tests. For example, if the \n            transcription you're trying to delete doesn't exist of if it is in a non-terminal state (for \n            example, it's \"in progress\"). See the exception <code>Message</code> field for more\n            information.</p>\n      ",
           "shape_name": "BadRequestException"
         }
       ],
-      "documentation": "\n        <p>Gets information about a vocabulary.</p>\n      "
+      "documentation": "\n        <p>Gets information about a vocabulary. Note that vocabularies for en-AU, en-UK, and fr-CA languages that are in\n            preview are not available. In the console, the vocabulary section will be greyed-out and SDK \n            will return error message.</p>\n      "
     },
     "ListVocabularies": {
       "name": "ListVocabularies",
@@ -1266,7 +1293,10 @@
                   "type": "string",
                   "enum": [
                     "en-US",
-                    "es-US"
+                    "es-US",
+                    "en-AU",
+                    "fr-CA",
+                    "en-UK"
                   ],
                   "zonbookDocumentation": "\n        <simpara>The language code of the vocabulary entries.</simpara>\n      ",
                   "documentation": "\n        <p>The language code of the vocabulary entries.</p>\n      ",
@@ -1290,8 +1320,8 @@
                   "shape_name": "VocabularyState"
                 }
               },
-              "zonbookDocumentation": "\n        <simpara>Provides information about a custom vocabulary.</simpara>\n      ",
-              "documentation": "\n        <p>Provides information about a custom vocabulary.</p>\n      ",
+              "zonbookDocumentation": "\n        <simpara>Provides information about a custom vocabulary. Note that vocabularies for en-AU, en-UK, and fr-CA languages that are in\n            preview are not available. In the console, the vocabulary section will be greyed-out and SDK \n            will return error message.</simpara>\n      ",
+              "documentation": "\n        <p>Provides information about a custom vocabulary. Note that vocabularies for en-AU, en-UK, and fr-CA languages that are in\n            preview are not available. In the console, the vocabulary section will be greyed-out and SDK \n            will return error message.</p>\n      ",
               "shape_name": "VocabularyInfo"
             }
           }
@@ -1309,8 +1339,8 @@
               "documentation": null
             }
           },
-          "zonbookDocumentation": "\n        <simpara>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</simpara>\n      ",
-          "documentation": "\n        <p>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</p>\n      ",
+          "zonbookDocumentation": "\n        <simpara>Your request didn't pass one or more validation tests. For example, if the \n            transcription you're trying to delete doesn't exist of if it is in a non-terminal state (for \n            example, it's \"in progress\"). See the exception <code>Message</code> field for more\n            information.</simpara>\n      ",
+          "documentation": "\n        <p>Your request didn't pass one or more validation tests. For example, if the \n            transcription you're trying to delete doesn't exist of if it is in a non-terminal state (for \n            example, it's \"in progress\"). See the exception <code>Message</code> field for more\n            information.</p>\n      ",
           "shape_name": "BadRequestException"
         },
         {
@@ -1398,8 +1428,8 @@
               "documentation": null
             }
           },
-          "zonbookDocumentation": "\n        <simpara>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</simpara>\n      ",
-          "documentation": "\n        <p>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</p>\n      ",
+          "zonbookDocumentation": "\n        <simpara>Your request didn't pass one or more validation tests. For example, if the \n            transcription you're trying to delete doesn't exist of if it is in a non-terminal state (for \n            example, it's \"in progress\"). See the exception <code>Message</code> field for more\n            information.</simpara>\n      ",
+          "documentation": "\n        <p>Your request didn't pass one or more validation tests. For example, if the \n            transcription you're trying to delete doesn't exist of if it is in a non-terminal state (for \n            example, it's \"in progress\"). See the exception <code>Message</code> field for more\n            information.</p>\n      ",
           "shape_name": "BadRequestException"
         },
         {
@@ -1461,8 +1491,8 @@
               "documentation": null
             }
           },
-          "zonbookDocumentation": "\n        <simpara>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</simpara>\n      ",
-          "documentation": "\n        <p>Your request didn't pass one or more validation tests. For example, a name may not exist when getting a transcription job\n            or custom vocabulary. See the exception <code>Message</code> field for more\n            information.</p>\n      ",
+          "zonbookDocumentation": "\n        <simpara>Your request didn't pass one or more validation tests. For example, if the \n            transcription you're trying to delete doesn't exist of if it is in a non-terminal state (for \n            example, it's \"in progress\"). See the exception <code>Message</code> field for more\n            information.</simpara>\n      ",
+          "documentation": "\n        <p>Your request didn't pass one or more validation tests. For example, if the \n            transcription you're trying to delete doesn't exist of if it is in a non-terminal state (for \n            example, it's \"in progress\"). See the exception <code>Message</code> field for more\n            information.</p>\n      ",
           "shape_name": "BadRequestException"
         },
         {
@@ -1479,7 +1509,7 @@
           "shape_name": "InternalFailureException"
         }
       ],
-      "documentation": "\n        <p>Deletes a previously submitted transcription job as wella s any other generated results such as the transcription, models, and so on.</p>\n      "
+      "documentation": "\n        <p>Deletes a previously submitted transcription job as well as any other generated results such as the transcription, models, and so on.</p>\n      "
     }
   }
 }

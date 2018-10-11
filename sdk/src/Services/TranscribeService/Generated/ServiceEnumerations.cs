@@ -31,6 +31,14 @@ namespace Amazon.TranscribeService
     {
 
         /// <summary>
+        /// Constant EnAU for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode EnAU = new LanguageCode("en-AU");
+        /// <summary>
+        /// Constant EnUK for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode EnUK = new LanguageCode("en-UK");
+        /// <summary>
         /// Constant EnUS for LanguageCode
         /// </summary>
         public static readonly LanguageCode EnUS = new LanguageCode("en-US");
@@ -38,6 +46,10 @@ namespace Amazon.TranscribeService
         /// Constant EsUS for LanguageCode
         /// </summary>
         public static readonly LanguageCode EsUS = new LanguageCode("es-US");
+        /// <summary>
+        /// Constant FrCA for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode FrCA = new LanguageCode("fr-CA");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

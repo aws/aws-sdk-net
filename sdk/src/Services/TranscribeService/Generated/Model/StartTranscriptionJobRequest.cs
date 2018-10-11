@@ -29,7 +29,8 @@ namespace Amazon.TranscribeService.Model
 {
     /// <summary>
     /// Container for the parameters to the StartTranscriptionJob operation.
-    /// Starts an asynchronous job to transcribe speech to text.
+    /// Starts an asynchronous job to transcribe speech to text. Note that en-AU, en-UK, and
+    /// fr-CA languages are in preview and are only available to whitelisted customers.
     /// </summary>
     public partial class StartTranscriptionJobRequest : AmazonTranscribeServiceRequest
     {
