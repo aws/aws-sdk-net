@@ -36,6 +36,19 @@ namespace Amazon.S3
     public partial class AmazonS3Client : AmazonServiceClient, IAmazonS3
     {
         /// <summary>
+        /// Specialize the initialize of the client.
+        /// </summary>
+        protected override void Initialize()
+        {
+            var clientConfig = this.Config as ClientConfig;
+            if (clientConfig != null)
+            {
+                clientConfig.ResignRetries = true;
+            }
+            base.Initialize();
+        }
+
+        /// <summary>
         /// Create a signed URL allowing access to a resource that would 
         /// usually require authentication.
         /// </summary>
