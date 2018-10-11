@@ -462,7 +462,8 @@ namespace Amazon.Runtime
 #if BCL || CORECLR
             if (DeterminedCSMConfiguration.Instance.CSMConfiguration.Enabled && !string.IsNullOrEmpty(ServiceMetadata.ServiceId))
             {
-                this.RuntimePipeline.AddHandlerBefore<ErrorHandler>(new CSMHandler());
+                this.RuntimePipeline.AddHandlerBefore<ErrorHandler>(new CSMCallAttemptHandler());
+                this.RuntimePipeline.AddHandlerBefore<MetricsHandler>(new CSMCallEventHandler());
             }
 #endif
 

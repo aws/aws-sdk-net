@@ -36,20 +36,23 @@ namespace Amazon.Runtime
         /// <param name="executionContext">The execution context which contains both the
         /// requests and response context.</param>
         /// <param name="exception">The exception throw after issuing the request.</param>
-        /// <returns>Returns true if the request should be retried, else false.</returns>
+        /// <returns>Returns true if the request should be retried, else false. The exception is retried if it matches with clockskew error codes.</returns>
         public async Task<bool> RetryAsync(IExecutionContext executionContext, Exception exception)
         {
-            bool retryFlag;
-            var helperResult = RetrySync(executionContext, exception);
-            if (helperResult.HasValue)
+            bool canRetry = !RetryLimitReached(executionContext) && CanRetry(executionContext);
+            if (canRetry || executionContext.RequestContext.CSMEnabled)
             {
-                retryFlag = helperResult.Value;
+                if ((IsClockskew(executionContext, exception)) || await RetryForExceptionAsync(executionContext, exception))
+                {
+                    executionContext.RequestContext.IsLastExceptionRetryable = true;
+                    if (!canRetry)
+                    {
+                        return false;
+                    }
+                    return OnRetry(executionContext);
+                }
             }
-            else
-            {
-                retryFlag = await RetryForExceptionAsync(executionContext, exception).ConfigureAwait(false);
-            }
-            return (retryFlag && OnRetry(executionContext));
+            return false;
         }
 
         /// <summary>

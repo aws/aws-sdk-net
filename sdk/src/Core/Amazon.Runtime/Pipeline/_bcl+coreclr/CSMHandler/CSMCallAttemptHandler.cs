@@ -23,12 +23,12 @@ using System.Collections.Generic;
 namespace Amazon.Runtime.Internal
 {
     /// <summary>
-    /// The CSM handler has the logic for capturing data for CSM events when enabled.
+    /// The CSM handler has the logic for capturing data for CSM attempts when enabled.
     /// </summary>
-    public class CSMHandler : PipelineHandler
+    public class CSMCallAttemptHandler : PipelineHandler
     {
         /// <summary>
-        /// Invokes the CSM handler and captures data for the CSM events.
+        /// Invokes the CSM handler and captures data for the CSM attempts.
         /// </summary>
         public override void InvokeSync(IExecutionContext executionContext)
         {
@@ -49,7 +49,7 @@ namespace Amazon.Runtime.Internal
             }
             finally
             {
-                CSMMetricsCapture(executionContext.RequestContext, executionContext.ResponseContext);
+                CSMCallAttemptMetricsCapture(executionContext.RequestContext, executionContext.ResponseContext);
                 CSMUtilities.SerializetoJsonAndPostOverUDP(executionContext.RequestContext.CSMCallAttempt);
             }
         }
@@ -80,13 +80,13 @@ namespace Amazon.Runtime.Internal
             }
             finally
             {
-                CSMMetricsCapture(executionContext.RequestContext, executionContext.ResponseContext);
+                CSMCallAttemptMetricsCapture(executionContext.RequestContext, executionContext.ResponseContext);
                 CSMUtilities.SerializetoJsonAndPostOverUDPAsync(executionContext.RequestContext.CSMCallAttempt).ConfigureAwait(false);
             }
         }
 #elif AWS_APM_API
         /// <summary>
-        /// Invokes the CSM handler and captures data for the CSM events.
+        /// Invokes the CSM handler and captures data for the CSM attempts.
         /// </summary>
         public override IAsyncResult InvokeAsync(IAsyncExecutionContext executionContext)
         {
@@ -112,7 +112,7 @@ namespace Amazon.Runtime.Internal
                 }
             }
             
-            CSMMetricsCapture(syncExecutionContext.RequestContext, syncExecutionContext.ResponseContext);
+            CSMCallAttemptMetricsCapture(syncExecutionContext.RequestContext, syncExecutionContext.ResponseContext);
             CSMUtilities.BeginSerializetoJsonAndPostOverUDP(executionContext.RequestContext.CSMCallAttempt);
             base.InvokeAsyncCallback(executionContext);
         }
@@ -122,10 +122,9 @@ namespace Amazon.Runtime.Internal
         /// Method that gets called in the final clause that captures data for each http request
         /// from the request and response context.
         /// </summary>
-        protected void CSMMetricsCapture(IRequestContext requestContext, IResponseContext responseContext)
+        protected static void CSMCallAttemptMetricsCapture(IRequestContext requestContext, IResponseContext responseContext)
         {
-            requestContext.CSMCallAttempt.Service = requestContext.CSMCallEvent.Service = requestContext.ServiceMetaData.ServiceId;
-
+            requestContext.CSMCallAttempt.Service = requestContext.CSMCallEvent.Service;
             requestContext.CSMCallAttempt.Fqdn = requestContext.Request.GetHeaderValue(HeaderKeys.HostHeader);
 
             requestContext.CSMCallAttempt.UserAgent = requestContext.Request.GetHeaderValue(HeaderKeys.UserAgentHeader);
@@ -134,18 +133,14 @@ namespace Amazon.Runtime.Internal
 
             requestContext.CSMCallAttempt.Region = requestContext.Request.DeterminedSigningRegion;
 
-            var requestName = requestContext.Request.RequestName;
+            requestContext.CSMCallAttempt.Api = CSMUtilities.
+                GetApiNameFromRequest(requestContext.Request.RequestName, requestContext.ServiceMetaData.OperationNameMapping, requestContext.CSMCallAttempt.Service);
 
-            requestContext.CSMCallAttempt.Api = requestContext.CSMCallEvent.Api = CSMUtilities.
-                GetApiNameFromRequest(requestName, requestContext.ServiceMetaData.OperationNameMapping, requestContext.CSMCallAttempt.Service);
-            
             requestContext.CSMCallAttempt.AccessKey = requestContext.ImmutableCredentials.AccessKey;
 
             requestContext.CSMCallAttempt.AttemptLatency = AWSSDKUtils.ConvertTimeSpanToMilliseconds(requestContext
                 .Metrics.StopEvent(Metric.CSMAttemptLatency)
                 .ElapsedTime);
-
-            requestContext.CSMCallEvent.AttemptCount = requestContext.Retries + 1;
 
             if (responseContext.HttpResponse != null)
             {
@@ -165,7 +160,7 @@ namespace Amazon.Runtime.Internal
         /// <summary>
         /// Executes the OnPreInvoke action as part of pre-invoke.
         /// </summary>
-        protected void PreInvoke(IExecutionContext executionContext)
+        protected virtual void PreInvoke(IExecutionContext executionContext)
         {
             executionContext.RequestContext.CSMCallAttempt = new MonitoringAPICallAttempt(executionContext.RequestContext);
             executionContext.RequestContext.Metrics.StartEvent(Metric.CSMAttemptLatency);

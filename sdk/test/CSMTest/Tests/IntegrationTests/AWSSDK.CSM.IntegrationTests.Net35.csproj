@@ -20,15 +20,12 @@
     <!-- workaround per https://github.com/Microsoft/msbuild/issues/1333 -->
     <FrameworkPathOverride>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v3.5\Profile\Client</FrameworkPathOverride>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="**\**" />
-    <None Remove="**\**" />
-  </ItemGroup>
   
   <ItemGroup>
-    <Compile Include="_bcl35\*.cs" />
-    <Compile Include="*.cs" />
+    <Compile Remove="**\_bcl45+coreclr\**" />
+    <Compile Remove="**\_bcl45\**" />
+    <Compile Remove="obj\**" />
+    <None Remove="obj\**" />
   </ItemGroup>
   
   <ItemGroup>

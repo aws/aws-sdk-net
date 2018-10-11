@@ -26,7 +26,7 @@ namespace AWSSDK.CSM.IntegrationTests
         public int TestRequestExecution { get; set; }
         public Stopwatch TestTimer { get; set; } = new Stopwatch();
 
-        [Fact]
+        [Fact(Skip = "Running performance tests as part of a regular build is expensive.")]
         [Trait("Category", "CSM")]
         [Trait("Category", "bcl45")]
         [Trait("Category", "Sync")]
@@ -41,7 +41,7 @@ namespace AWSSDK.CSM.IntegrationTests
             AmazonDynamoDBClient client = new MockDDBClient(config);
             Random generator = new Random();
             TestTimer.Start();
-            while (TestTimer.ElapsedMilliseconds <= 60000)
+            while (TestTimer.ElapsedMilliseconds <= 5000)
             {
                 // Define item attributes
                 Dictionary<string, AttributeValue> attributes = new Dictionary<string, AttributeValue>();

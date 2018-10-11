@@ -30,7 +30,6 @@ namespace Amazon.Runtime.Internal
         {
             Type = CSMType.ApiCall.ToString();
         }
-
         /// <summary>
         /// Contains the total number of attempts that were made 
         /// by the service client to fulfill this request before succeeding or failing
@@ -43,5 +42,13 @@ namespace Amazon.Runtime.Internal
         /// final response or error is manifested to the caller
         /// </summary>
         public long Latency { get; internal set; }
+
+        /// <summary>
+        /// a boolean (0/1) value that is 0 unless the Api call failed
+        /// and the final attempt returned a retryable error.This entry should be
+        /// serialized as a numeric 0/1 value. This is mapped to MaxRetriesExceeded
+        /// when serialized to a UDP datagram.
+        /// </summary>
+        public bool IsLastExceptionRetryable { get; internal set; }
     }
 }

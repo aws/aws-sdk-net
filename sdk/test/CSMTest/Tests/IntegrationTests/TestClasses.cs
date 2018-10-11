@@ -40,6 +40,8 @@ namespace AWSSDK.CSM.IntegrationTests
         public long Timestamp { get; set; }
         public string Type { get; set; }
         public int Version { get; set; }
+        public int MaxRetriesExceeded { get; set; }
+        public string Region { get; set; }
     }
 
 }

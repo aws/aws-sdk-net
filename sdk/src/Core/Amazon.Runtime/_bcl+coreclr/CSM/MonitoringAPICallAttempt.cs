@@ -51,12 +51,6 @@ namespace Amazon.Runtime.Internal
         public string SessionToken { get; internal set; }
 
         /// <summary>
-        /// Contains the signing region used by the 
-        /// service client that made the request attempt.
-        /// </summary>
-        public string Region { get; internal set; }
-
-        /// <summary>
         /// Contains the aws_access_key value that 
         /// was used to sign the http request.
         /// </summary>

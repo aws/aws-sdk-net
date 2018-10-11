@@ -177,12 +177,6 @@ namespace Amazon.Runtime.Internal
                 jw.Write(monitoringAPICallAttempt.SdkExceptionMessage);
             }
 
-            if (!string.IsNullOrEmpty(monitoringAPICallAttempt.Region))
-            {
-                jw.WritePropertyName("Region");
-                jw.Write(monitoringAPICallAttempt.Region);
-            }
-
             if (!string.IsNullOrEmpty(monitoringAPICallAttempt.SessionToken))
             {
                 jw.WritePropertyName("SessionToken");
@@ -239,6 +233,14 @@ namespace Amazon.Runtime.Internal
             jw.WritePropertyName("AttemptCount");
             jw.Write(monitoringAPICallEvent.AttemptCount);
 
+            jw.WritePropertyName("MaxRetriesExceeded");
+            int maxRetriesValue = 0;
+            if (monitoringAPICallEvent.IsLastExceptionRetryable)
+            {
+                maxRetriesValue = 1;
+            }
+            jw.Write(maxRetriesValue);
+
             jw.WriteObjectEnd();
             response = jw.ToString();
 
@@ -282,6 +284,12 @@ namespace Amazon.Runtime.Internal
 
             jw.WritePropertyName("Timestamp");
             jw.Write(monitoringAPICall.Timestamp);
+
+            if (!string.IsNullOrEmpty(monitoringAPICall.Region))
+            {
+                jw.WritePropertyName("Region");
+                jw.Write(monitoringAPICall.Region);
+            }
 
             return jw;
         }

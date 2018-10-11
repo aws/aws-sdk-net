@@ -26,12 +26,13 @@ namespace AWSSDK.CSM.IntegrationTests
         public int TestRequestExecution { get; set; }
         public Stopwatch TestTimer { get; set; } = new Stopwatch();
 
-        [Fact]
+
+        [Fact(Skip = "Running performance tests as part of a regular build is expensive.")]
         [Trait("Category", "CSM")]
         [Trait("Category", "bcl45")]
         [Trait("Category", "Async")]
         [Trait("Category", "perfTests")]
-        public void MultipleSuccessfulRequestsTest()
+        public async Task MultipleSuccessfulRequestsTestAsync()
         {
             var task = Task.Run(() => UDPListener());
             AmazonDynamoDBConfig config = new AmazonDynamoDBConfig
@@ -51,7 +52,7 @@ namespace AWSSDK.CSM.IntegrationTests
                     TableName = "TestTable",
                     Item = attributes
                 };
-                client.PutItemAsync(request);
+                var response = await client.PutItemAsync(request);
                 TestRequestExecution++;
                 Thread.Sleep(10);
             }

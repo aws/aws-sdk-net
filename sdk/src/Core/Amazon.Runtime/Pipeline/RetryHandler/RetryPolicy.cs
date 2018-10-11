@@ -45,21 +45,31 @@ namespace Amazon.Runtime
         /// </summary>
         /// <param name="executionContext">The execution context which contains both the
         /// requests and response context.</param>
-        /// <param name="exception">The exception throw after issuing the request.</param>
-        /// <returns>Returns true if the request should be retried, else false.</returns>
+        /// <param name="exception">The exception thrown after issuing the request.</param>
+        /// <returns>Returns true if the request should be retried, else false. The exception is retried if it matches with clockskew error codes.</returns>
         public bool Retry(IExecutionContext executionContext, Exception exception)
         {
-            bool retryFlag;
-            var syncResult = RetrySync(executionContext, exception);
-            if (syncResult.HasValue)
+            // Boolean that denotes retries have not exceeded maxretries and request is rewindable
+            bool canRetry = !RetryLimitReached(executionContext) && CanRetry(executionContext);
+            // If canRetry is false, we still want to evaluate the exception if its retryable or not,
+            // is CSM is enabled. This is necessary to set the IsLastExceptionRetryable property on 
+            // CSM Call Attempt. For S3, with the BucketRegion mismatch exception, an overhead of 100-
+            // 115 ms was added(because of GetPreSignedUrl and Http HEAD requests).
+            if (canRetry || executionContext.RequestContext.CSMEnabled)
             {
-                retryFlag = syncResult.Value;
+                if (IsClockskew(executionContext, exception) || RetryForException(executionContext, exception))
+                {
+                    executionContext.RequestContext.IsLastExceptionRetryable = true;
+                    // If CSM is enabled but canRetry was false, we should not retry the request.
+                    // Return false after successfully evaluating the last exception for retryable.
+                    if (!canRetry)
+                    {
+                        return false;
+                    }
+                    return OnRetry(executionContext);
+                }
             }
-            else
-            {
-                retryFlag = RetryForException(executionContext, exception);
-            }
-            return (retryFlag && OnRetry(executionContext));
+            return false;
         }
 
         #region Clock skew correction
@@ -134,32 +144,6 @@ namespace Amazon.Runtime
         {
             return true;
         }
-        /// <summary>
-        /// Perform the processor-bound portion of the Retry logic.
-        /// This is shared by the sync, async, and APM versions of the Retry method.
-        /// </summary>
-        /// <param name="executionContext"></param>
-        /// <param name="exception"></param>
-        /// <returns>a value if it can be determined, or null if the IO-bound calculations need to be done</returns>
-        private bool? RetrySync(IExecutionContext executionContext, Exception exception)
-        {
-            if (!RetryLimitReached(executionContext) && CanRetry(executionContext))
-            {
-                if (IsClockskew(executionContext, exception))
-                {
-                    return true;
-                }
-                else
-                {
-                    return null;
-                }
-            }
-            else
-            {
-                return false;
-            }
-        }
-
         private bool IsClockskew(IExecutionContext executionContext, Exception exception)
         {
             var clientConfig = executionContext.RequestContext.ClientConfig;

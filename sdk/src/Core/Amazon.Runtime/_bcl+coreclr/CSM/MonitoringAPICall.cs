@@ -86,5 +86,11 @@ namespace Amazon.Runtime.Internal
         /// Defaults to 1.
         /// </summary>
         public int Version { get; internal set; } = 1;
+
+        /// <summary>
+        /// Contains the signing region used by the 
+        /// service client that made the request attempt.
+        /// </summary>
+        public string Region { get; internal set; }
     }
 }

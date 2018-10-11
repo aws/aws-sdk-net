@@ -20,14 +20,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="**\**" />
-    <None Remove="**\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Include="*.cs" />
-    <Compile Include="_bcl45/*.cs " />
-    <Compile Include="Properties\*.cs" />
+    <Compile Remove="**\_bcl35\**" />
+    <Compile Remove="**\obj\**" />
+    <Compile Remove="obj\**" />
+    <None Remove="obj\**" />
   </ItemGroup>
 
   <ItemGroup>

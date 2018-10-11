@@ -50,6 +50,7 @@ namespace Amazon.Runtime
         IServiceMetadata ServiceMetaData { get; }
 
         bool CSMEnabled { get; }
+        bool IsLastExceptionRetryable { get; set; }
     }
 
     public interface IResponseContext
@@ -164,6 +165,11 @@ namespace Amazon.Runtime.Internal
         }
 
         public bool CSMEnabled { get; private set; }
+        /// <summary>
+        /// Property to denote that the last exception returned by an AWS Service
+        /// was retryable or not.
+        /// </summary>
+        public bool IsLastExceptionRetryable { get; set; }
     }
 
     public class AsyncRequestContext : RequestContext, IAsyncRequestContext

@@ -19,60 +19,38 @@ using System.Diagnostics;
 
 namespace AWSSDK.CSM.IntegrationTests
 {
-    public class CSMIntegrationTestsAsync
+    public class CSMIntegrationTestsSync
     {
         private IList<string> stash { get; set; } = new List<string>();
 
         [Fact]
         [Trait("Category", "CSM")]
-        [Trait("Category", "Async")]
+        [Trait("Category", "Sync")]
         [Trait("Category", "bcl35")]
         public void SingleSuccessfulRequest()
         {
             ThreadPool.QueueUserWorkItem(UDPListener);
+            CSMTestUtilities testUtils = new CSMTestUtilities
+            {
+                Service = "DynamoDB",
+                ApiCall = "ListTables",
+                AttemptCount = 1,
+                Domain = "dynamodb.us-east-1.amazonaws.com",
+                Region = "us-east-1",
+                HttpStatusCode = 200,
+                MaxRetriesExceeded = 0,
+                StashCount = 3
+            };
             AmazonDynamoDBConfig config = new AmazonDynamoDBConfig
             {
                 RegionEndpoint = Amazon.RegionEndpoint.USEast1
             };
             AmazonDynamoDBClient client = new AmazonDynamoDBClient(config);
-            var result = client.BeginListTables(new ListTablesRequest(), null, null);
-            client.EndListTables(result);
-            
-            using (var udpClient = new UdpClient())
-            {
-                udpClient.Send(Encoding.UTF8.GetBytes("Exit"),
-                        Encoding.UTF8.GetBytes("Exit").Length, "127.0.0.1", 31000);
-                Thread.Sleep(10);
-            }
-            Assert.Equal(3, stash.Count);
-            CSMTestUtilities testUtils = new CSMTestUtilities
-            {
-                Service = "DynamoDB",
-                ApiCall = "ListTables",
-                Domain = "dynamodb.us-east-1.amazonaws.com",
-                Region = "us-east-1",
-                HttpStatusCode = 200
-            };
-            foreach (var value in stash)
-            {
-                if (!value.Equals("Exit"))
-                {
-                    try
-                    {
-                        testUtils.Validate(JsonConvert.DeserializeObject<MonitoringAPICallEvent>(value));
-                    }
-                    catch (Exception e)
-                    {
-                        testUtils.Validate(JsonConvert.DeserializeObject<MonitoringAPICallAttempt>(value));
-                    }
-                }
-                else
-                {
-                    break;
-                }
-            }
+            client.ListTables(new ListTablesRequest { });
+            Thread.Sleep(10);
+            testUtils.EndTest();
+            testUtils.Validate(stash);
         }
-
         private void UDPListener(Object state)
         {
             using (var udpClient = new UdpClient())

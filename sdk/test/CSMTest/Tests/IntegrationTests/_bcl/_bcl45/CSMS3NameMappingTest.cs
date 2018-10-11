@@ -20,81 +20,39 @@ namespace AWSSDK.CSM.IntegrationTests
     public class CSMS3NameMappingTest
     {
         [Fact]
-        public void IoExceptionRetryableRequestsTest()
+        public async Task IoExceptionRetryableRequestsTestAsync()
         {
-            var task = Task.Run(() => UDPListener());
             AmazonS3Config config = new AmazonS3Config
             {
                 RegionEndpoint = Amazon.RegionEndpoint.USEast1,
                 MaxErrorRetry = 2
             };
-
-            AmazonS3Client client = new MockS3Client(config);
-            
-            try
-            {
-                client.PutBucketAsync(new PutBucketRequest
-                {
-                    BucketName = "TestBucket"
-                }).Wait();
-            }
-            catch (Exception e)
-            {
-
-            }
-            using (var udpClient = new UdpClient())
-            {
-                udpClient.Send(Encoding.UTF8.GetBytes("Exit"),
-                        Encoding.UTF8.GetBytes("Exit").Length, "127.0.0.1", 31000);
-                Thread.Sleep(10);
-            }
-
-            Assert.Equal(5, task.Result.Count);
             CSMTestUtilities testUtils = new CSMTestUtilities
             {
                 Service = "S3",
                 ApiCall = "CreateBucket",
                 Domain = "s3.amazonaws.com",
                 Region = "us-east-1",
-                AttemptCount = 3,
+                AttemptCount = config.MaxErrorRetry + 1,
                 SdkException = "IOException",
-                SdkExceptionMessage = "I/O"
+                SdkExceptionMessage = "I/O",
+                MaxRetriesExceeded = 1,
+                StashCount = config.MaxErrorRetry + 3
             };
-            foreach (var value in task.Result)
-            {
-                if (!value.Equals("Exit"))
-                {
-                    try
-                    {
-                        testUtils.Validate(JsonConvert.DeserializeObject<MonitoringAPICallEvent>(value));
-                    }
-                    catch (Exception e)
-                    {
-                        testUtils.Validate(JsonConvert.DeserializeObject<MonitoringAPICallAttempt>(value));
-                    }
-                }
-                else
-                {
-                    break;
-                }
-            }
-        }
+            var task = Task.Run(() => testUtils.UDPListener());
 
-        private List<string> UDPListener()
-        {
-            List<string> stash = new List<string>();
-            using (var udpClient = new UdpClient())
+            AmazonS3Client client = new MockS3Client(config);
+
+            var exception = await Record.ExceptionAsync(async () => await client.PutBucketAsync(new PutBucketRequest
             {
-                udpClient.Client.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, true);
-                udpClient.Client.Bind(new IPEndPoint(IPAddress.Any, 31000));
-                IPEndPoint RemoteIpEndPoint = new IPEndPoint(IPAddress.Any, 0);
-                do
-                {
-                    stash.Add(Encoding.UTF8.GetString(udpClient.Receive(ref RemoteIpEndPoint)));
-                }
-                while (!stash.Last().Equals("Exit"));
-            }
-            return stash;
+                BucketName = "TestBucket"
+            }));
+            Assert.NotNull(exception);
+            Assert.IsType<IOException>(exception);
+            Thread.Sleep(10);
+            testUtils.EndTest();
+            task.Wait();
+            testUtils.Validate(task.Result);
         }
         class MockS3Client : AmazonS3Client
         {
