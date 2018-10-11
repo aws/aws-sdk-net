@@ -23,7 +23,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
         public static readonly long MEG_SIZE = (int)Math.Pow(2, 20);
 
         private Random random = new Random();
-        private static string bucketName;
+        private string bucketName;
         private const string testContent = "This is the content body!";
         private string filePath = string.Empty;
         private const string testKey = "test-key.json.gz";
