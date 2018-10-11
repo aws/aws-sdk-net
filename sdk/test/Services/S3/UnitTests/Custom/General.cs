@@ -82,6 +82,14 @@ namespace AWSSDK.UnitTests
         {
             var serviceClient = new AmazonS3Client("aaaa", "bbbb", Amazon.RegionEndpoint.USEast1);
             Assert.IsTrue(serviceClient.Config.ResignRetries);
+
+
+            serviceClient = new AmazonS3Client("aaaa", "bbbb", new AmazonS3Config
+            {
+                RegionEndpoint = Amazon.RegionEndpoint.USEast1,
+                ResignRetries = false
+            });
+            Assert.IsTrue(serviceClient.Config.ResignRetries);
         }
     }
 }

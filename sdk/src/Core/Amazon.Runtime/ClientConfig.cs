@@ -279,6 +279,7 @@ namespace Amazon.Runtime
 
         /// <summary>
         /// Flag on whether to resign requests on retry or not.
+        /// For Amazon S3 and Amazon Glacier this value will always be set to true.
         /// </summary>
         public bool ResignRetries
         {
