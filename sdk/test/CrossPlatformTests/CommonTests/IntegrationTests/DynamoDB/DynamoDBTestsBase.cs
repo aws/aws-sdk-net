@@ -318,7 +318,7 @@ namespace CommonTests.IntegrationTests.DynamoDB
                 return allReady;
             };
 
-            UtilityMethods.WaitUntil(testFunction);
+            UtilityMethods.WaitUntil(testFunction, 5, 600);
 
             Console.WriteLine("All tables ready");
         }
