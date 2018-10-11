@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.379.1",
+    "ProductVersion" : "3.3.380.0",
     "CoreVersion"    : "3.3.27.1",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -425,7 +425,7 @@
             "InPreview"               : false
         },
         "Elasticsearch"             : {
-            "Version" : "3.3.9.3",
+            "Version" : "3.3.10.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.27.0"
@@ -961,7 +961,7 @@
             "InPreview"               : false
         },
         "Comprehend"                      : {
-            "Version" : "3.3.2.11",
+            "Version" : "3.3.3.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.27.0"
@@ -1049,7 +1049,7 @@
             "InPreview"               : false
         },
         "TranscribeService"               : {
-            "Version" : "3.3.3.10",
+            "Version" : "3.3.4.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.27.0"

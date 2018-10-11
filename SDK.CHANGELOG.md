@@ -1,3 +1,11 @@
+### 3.3.380.0 (2018-10-10 22:51 UTC)
+* Comprehend (3.3.3.0)
+	* This release adds French, Italian, German and Portuguese language support for all existing synchronous and asynchronous APIs
+* Elasticsearch (3.3.10.0)
+	* Amazon Elasticsearch Service now supports customer-scheduled service software updates. When new service software becomes available, you can request an update to your domain and benefit from new features more quickly. If you take no action, we update the service software automatically after a certain time frame.
+* TranscribeService (3.3.4.0)
+	* With this update Amazon Transcribe now supports deleting completed transcription jobs. 
+
 ### 3.3.379.1 (2018-10-10 02:29 UTC)
 * S3 (3.3.24.4)
 	* Updated to use new Core, version 3.3.27.1
