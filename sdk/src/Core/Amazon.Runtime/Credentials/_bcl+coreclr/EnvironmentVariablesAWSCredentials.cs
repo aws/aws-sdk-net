@@ -65,11 +65,11 @@ namespace Amazon.Runtime
         /// <returns></returns>
         public ImmutableCredentials FetchCredentials()
         {
-            string accessKeyId = Environment.GetEnvironmentVariable(ENVIRONMENT_VARIABLE_ACCESSKEY);
-            string secretKey = Environment.GetEnvironmentVariable(ENVIRONMENT_VARIABLE_SECRETKEY);
+            string accessKeyId = GetEnvironmentVariable(ENVIRONMENT_VARIABLE_ACCESSKEY);
+            string secretKey = GetEnvironmentVariable(ENVIRONMENT_VARIABLE_SECRETKEY);
             if (string.IsNullOrEmpty(secretKey))
             {
-                secretKey = Environment.GetEnvironmentVariable(LEGACY_ENVIRONMENT_VARIABLE_SECRETKEY);
+                secretKey = GetEnvironmentVariable(LEGACY_ENVIRONMENT_VARIABLE_SECRETKEY);
                 if (!string.IsNullOrEmpty(secretKey))
                     logger.InfoFormat("AWS secret key found using legacy and non-standard environment variable '{0}', consider updating to the cross-SDK standard variable '{1}'.",
                                       LEGACY_ENVIRONMENT_VARIABLE_SECRETKEY, ENVIRONMENT_VARIABLE_SECRETKEY);
@@ -82,7 +82,7 @@ namespace Amazon.Runtime
                     ENVIRONMENT_VARIABLE_ACCESSKEY, ENVIRONMENT_VARIABLE_SECRETKEY, ENVIRONMENT_VARIABLE_SESSION_TOKEN));
             }
 
-            string sessionToken = Environment.GetEnvironmentVariable(ENVIRONMENT_VARIABLE_SESSION_TOKEN);
+            string sessionToken = GetEnvironmentVariable(ENVIRONMENT_VARIABLE_SESSION_TOKEN);
 
             logger.InfoFormat("Credentials found using environment variables.");
 
@@ -96,6 +96,16 @@ namespace Amazon.Runtime
         public override ImmutableCredentials GetCredentials()
         {
             return FetchCredentials();
+        }
+
+        /// <summary>
+        /// Retrieve an environment variable at the process level by default, but fallback to user variables if unavailable.
+        /// </summary>
+        /// <returns>string containing environment variable value, otherwise null.</returns>
+        private string GetEnvironmentVariable(string name)
+        {
+            return Environment.GetEnvironmentVariable(name, EnvironmentVariableTarget.Process)
+                   ?? Environment.GetEnvironmentVariable(name, EnvironmentVariableTarget.User);
         }
     }
 }
