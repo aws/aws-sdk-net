@@ -90,7 +90,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// <param name="eventString">Amazon Mobile Analytics event in string.</param>
         /// <param name="appID">Amazon Mobile Analytics App ID.</param>
         [System.Security.SecuritySafeCritical]
-        public virtual void PutEvent(string eventString, string appID)
+        public void PutEvent(string eventString, string appID)
         {
             long currentDatabaseSize = this.DatabaseSize;
 
@@ -118,7 +118,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// </summary>
         /// <param name="rowIds">List of row identifiers.</param>
         [System.Security.SecuritySafeCritical]
-        public virtual void DeleteEvent(List<string> rowIds)
+        public void DeleteEvent(List<string> rowIds)
         {
             string ids = string.Format(CultureInfo.InvariantCulture, "'{0}'", string.Join("', '", rowIds.ToArray()));
             string sqlCommand = string.Format(CultureInfo.InvariantCulture, "DELETE FROM {0} WHERE {1} IN ({2})", TABLE_NAME, EVENT_ID_COLUMN_NAME, ids);
@@ -172,7 +172,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// <param name="appID">Amazon Mobile Analytics App Identifier.</param>
         /// <returns>The number of events.</returns>
         [System.Security.SecuritySafeCritical]
-        public virtual long NumberOfEvents(string appID)
+        public long NumberOfEvents(string appID)
         {
             long count = 0;
 
@@ -200,7 +200,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// Gets the size of the database.
         /// </summary>
         /// <returns>The database size.</returns>
-        public virtual long DatabaseSize
+        public long DatabaseSize
         {
             get
             {
