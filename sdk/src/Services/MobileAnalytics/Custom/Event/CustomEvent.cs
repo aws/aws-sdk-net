@@ -238,7 +238,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
             bool ret = false;
             lock(_lock)
             {
-                ret = _attributes.ContainsKey("attributeName");
+                ret = _attributes.ContainsKey(attributeName);
             }
             
             return ret;
@@ -536,11 +536,11 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         {
             if(string.IsNullOrEmpty(eventType))
             {
-                throw new ArgumentNullException(eventType);
+                throw new ArgumentNullException("eventType");
             }
             if(string.IsNullOrEmpty(attributeName))
             {
-                throw new ArgumentNullException(attributeName);
+                throw new ArgumentNullException("attributeName");
             }
             
             string ret = null;
@@ -698,12 +698,12 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
         {
             if(string.IsNullOrEmpty(eventType))
             {
-                throw new ArgumentNullException(eventType);
+                throw new ArgumentNullException("eventType");
             }
             
             if(string.IsNullOrEmpty(metricName))
             {
-                throw new ArgumentNullException(metricName);
+                throw new ArgumentNullException("metricName");
             }
             
             double? ret = null;
