@@ -18,5 +18,7 @@ To provide credentials to the test applications, place a file named "settings.js
 
 	"AuthProvider" : "",
 	"AuthToken" : ""
+	"AppId":""
+
 
 }
