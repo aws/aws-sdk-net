@@ -39,8 +39,8 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property EncryptionConfiguration. 
         /// <para>
-        /// If query results are encrypted in S3, indicates the S3 encryption option used (for
-        /// example, <code>SSE-KMS</code> or <code>CSE-KMS</code> and key information.
+        /// If query results are encrypted in Amazon S3, indicates the encryption option used
+        /// (for example, <code>SSE-KMS</code> or <code>CSE-KMS</code>) and key information.
         /// </para>
         /// </summary>
         public EncryptionConfiguration EncryptionConfiguration
@@ -58,7 +58,9 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property OutputLocation. 
         /// <para>
-        /// The location in S3 where query results are stored.
+        /// The location in Amazon S3 where your query results are stored, such as <code>s3://path/to/query/bucket/</code>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/athena/latest/ug/querying.html">Queries
+        /// and Query Result Files. </a> 
         /// </para>
         /// </summary>
         public string OutputLocation

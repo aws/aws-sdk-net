@@ -29,7 +29,7 @@ namespace Amazon.Athena.Model
 {
     /// <summary>
     /// The amount of data scanned during the query execution and the amount of time that
-    /// it took to execute.
+    /// it took to execute, and the type of statement that was run.
     /// </summary>
     public partial class QueryExecutionStatistics
     {

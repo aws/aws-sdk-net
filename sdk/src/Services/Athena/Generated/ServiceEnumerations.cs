@@ -195,6 +195,60 @@ namespace Amazon.Athena
 
 
     /// <summary>
+    /// Constants used for properties of type StatementType.
+    /// </summary>
+    public class StatementType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DDL for StatementType
+        /// </summary>
+        public static readonly StatementType DDL = new StatementType("DDL");
+        /// <summary>
+        /// Constant DML for StatementType
+        /// </summary>
+        public static readonly StatementType DML = new StatementType("DML");
+        /// <summary>
+        /// Constant UTILITY for StatementType
+        /// </summary>
+        public static readonly StatementType UTILITY = new StatementType("UTILITY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StatementType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StatementType FindValue(string value)
+        {
+            return FindValue<StatementType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StatementType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ThrottleReason.
     /// </summary>
     public class ThrottleReason : ConstantClass

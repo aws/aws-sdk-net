@@ -39,7 +39,14 @@ namespace Amazon.Athena
     /// 
     ///  
     /// <para>
-    /// For code samples using the AWS SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
+    /// If you connect to Athena using the JDBC driver, use version 1.1.0 of the driver or
+    /// later with the Amazon Athena API. Earlier version drivers do not support the API.
+    /// For more information and to download the driver, see <a href="https://docs.aws.amazon.com/athena/latest/ug/connect-with-jdbc.html">Accessing
+    /// Amazon Athena with JDBC</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For code samples using the AWS SDK for Java, see <a href="https://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
     /// and Code Samples</a> in the <i>Amazon Athena User Guide</i>.
     /// </para>
     /// </summary>
@@ -529,7 +536,8 @@ namespace Amazon.Athena
         /// parameter may be missing or out of range.
         /// </exception>
         /// <exception cref="Amazon.Athena.Model.TooManyRequestsException">
-        /// Indicates that the request was throttled.
+        /// Indicates that the request was throttled and includes the reason for throttling, for
+        /// example, the limit of concurrent queries has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StartQueryExecution">REST API Reference for StartQueryExecution Operation</seealso>
         StartQueryExecutionResponse StartQueryExecution(StartQueryExecutionRequest request);

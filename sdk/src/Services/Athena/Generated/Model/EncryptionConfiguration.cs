@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Athena.Model
 {
     /// <summary>
-    /// If query results are encrypted in Amazon S3, indicates the Amazon S3 encryption option
-    /// used.
+    /// If query results are encrypted in Amazon S3, indicates the encryption option used
+    /// (for example, <code>SSE-KMS</code> or <code>CSE-KMS</code>) and key information.
     /// </summary>
     public partial class EncryptionConfiguration
     {

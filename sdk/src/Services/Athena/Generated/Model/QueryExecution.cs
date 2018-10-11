@@ -36,6 +36,7 @@ namespace Amazon.Athena.Model
         private QueryExecutionContext _queryExecutionContext;
         private string _queryExecutionId;
         private ResultConfiguration _resultConfiguration;
+        private StatementType _statementType;
         private QueryExecutionStatistics _statistics;
         private QueryExecutionStatus _status;
 
@@ -113,10 +114,32 @@ namespace Amazon.Athena.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StatementType. 
+        /// <para>
+        /// The type of query statement that was run. <code>DDL</code> indicates DDL query statements.
+        /// <code>DML</code> indicates DML (Data Manipulation Language) query statements, such
+        /// as <code>CREATE TABLE AS SELECT</code>. <code>UTILITY</code> indicates query statements
+        /// other than DDL and DML, such as <code>SHOW CREATE TABLE</code>, or <code>DESCRIBE
+        /// &lt;table&gt;</code>.
+        /// </para>
+        /// </summary>
+        public StatementType StatementType
+        {
+            get { return this._statementType; }
+            set { this._statementType = value; }
+        }
+
+        // Check to see if StatementType property is set
+        internal bool IsSetStatementType()
+        {
+            return this._statementType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Statistics. 
         /// <para>
         /// The amount of data scanned during the query execution and the amount of time that
-        /// it took to execute.
+        /// it took to execute, and the type of statement that was run.
         /// </para>
         /// </summary>
         public QueryExecutionStatistics Statistics

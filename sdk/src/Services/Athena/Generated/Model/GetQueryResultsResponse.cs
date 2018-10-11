@@ -34,6 +34,7 @@ namespace Amazon.Athena.Model
     {
         private string _nextToken;
         private ResultSet _resultSet;
+        private long? _updateCount;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,6 +70,24 @@ namespace Amazon.Athena.Model
         internal bool IsSetResultSet()
         {
             return this._resultSet != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdateCount. 
+        /// <para>
+        /// The number of rows inserted with a CREATE TABLE AS SELECT statement. 
+        /// </para>
+        /// </summary>
+        public long UpdateCount
+        {
+            get { return this._updateCount.GetValueOrDefault(); }
+            set { this._updateCount = value; }
+        }
+
+        // Check to see if UpdateCount property is set
+        internal bool IsSetUpdateCount()
+        {
+            return this._updateCount.HasValue; 
         }
 
     }

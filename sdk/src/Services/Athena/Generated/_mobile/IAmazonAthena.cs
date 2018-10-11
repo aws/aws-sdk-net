@@ -41,7 +41,14 @@ namespace Amazon.Athena
     /// 
     ///  
     /// <para>
-    /// For code samples using the AWS SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
+    /// If you connect to Athena using the JDBC driver, use version 1.1.0 of the driver or
+    /// later with the Amazon Athena API. Earlier version drivers do not support the API.
+    /// For more information and to download the driver, see <a href="https://docs.aws.amazon.com/athena/latest/ug/connect-with-jdbc.html">Accessing
+    /// Amazon Athena with JDBC</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For code samples using the AWS SDK for Java, see <a href="https://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
     /// and Code Samples</a> in the <i>Amazon Athena User Guide</i>.
     /// </para>
     /// </summary>

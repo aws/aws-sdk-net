@@ -63,6 +63,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                     response.ResultSet = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("UpdateCount", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    response.UpdateCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

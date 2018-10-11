@@ -1,0 +1,1530 @@
+{
+  "version": "1.0",
+  "type": "json",
+  "json_version": "1.1",
+  "signature_version": "v4",
+  "service_full_name": "Amazon Athena",
+  "service_id": "Athena",
+  "uid": "athena-2017-05-18",
+  "endpoint_prefix": "athena",
+  "api_version": "2017-05-18",
+  "target_prefix": "AmazonAthena",
+  "documentation": "\n         <p>Amazon Athena is an interactive query service that lets you use standard SQL to analyze data directly in Amazon S3. You can point Athena at your data in Amazon S3 and run ad-hoc queries and get results in seconds. Athena is serverless, so there is no infrastructure to set up or manage. You pay only for the queries you run. Athena scales automatically—executing queries in parallel—so results are fast, even with large datasets and complex queries. For more information, see <a href=\"http://docs.aws.amazon.com/athena/latest/ug/what-is.html\">What is Amazon Athena</a> in the <i>Amazon Athena User Guide</i>.</p>\n         <p>If you connect to Athena using the JDBC driver, use version 1.1.0 of the driver or later with the Amazon Athena API. Earlier version drivers do not support the API. For more information and to download the driver, see <a href=\"https://docs.aws.amazon.com/athena/latest/ug/connect-with-jdbc.html\">Accessing Amazon Athena with JDBC</a>.</p>\n         <p>For code samples using the AWS SDK for Java, see <a href=\"https://docs.aws.amazon.com/athena/latest/ug/code-samples.html\">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>\n      ",
+  "operations": {
+    "CreateNamedQuery": {
+      "name": "CreateNamedQuery",
+      "input": {
+        "type": "structure",
+        "members": {
+          "Name": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>The plain language name for the query.</simpara>\n      ",
+            "documentation": "\n         <p>The plain language name for the query.</p>\n      ",
+            "required": true,
+            "shape_name": "NameString",
+            "min_length": 1,
+            "max_length": 128
+          },
+          "Description": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>A brief explanation of the query.</simpara>\n      ",
+            "documentation": "\n         <p>A brief explanation of the query.</p>\n      ",
+            "shape_name": "DescriptionString",
+            "min_length": 1,
+            "max_length": 1024
+          },
+          "Database": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>The database to which the query belongs.</simpara>\n      ",
+            "documentation": "\n         <p>The database to which the query belongs.</p>\n      ",
+            "required": true,
+            "shape_name": "DatabaseString",
+            "min_length": 1,
+            "max_length": 32
+          },
+          "QueryString": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>The text of the query itself. In other words, all query statements.</simpara>\n      ",
+            "documentation": "\n         <p>The text of the query itself. In other words, all query statements.</p>\n      ",
+            "required": true,
+            "shape_name": "QueryString",
+            "min_length": 1,
+            "max_length": 262144
+          },
+          "ClientRequestToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>CreateNamedQuery</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</simpara>\n         <important>\n            <simpara>This token is listed as not required because AWS SDKs (for example the AWS SDK for Java) auto-generate the token for users. If you are not using the AWS SDK or the AWS CLI, you must provide this token or the action will fail.</simpara>\n         </important>\n      ",
+            "documentation": "\n         <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>CreateNamedQuery</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p>\n         <important>\n            <p>This token is listed as not required because AWS SDKs (for example the AWS SDK for Java) auto-generate the token for users. If you are not using the AWS SDK or the AWS CLI, you must provide this token or the action will fail.</p>\n         </important>\n      ",
+            "idempotencyToken": true,
+            "shape_name": "IdempotencyToken",
+            "min_length": 32,
+            "max_length": 128
+          }
+        },
+        "shape_name": "CreateNamedQueryInput",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "NamedQueryId": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>The unique ID of the query.</simpara>\n      ",
+            "documentation": "\n         <p>The unique ID of the query.</p>\n      ",
+            "shape_name": "NamedQueryId"
+          }
+        },
+        "shape_name": "CreateNamedQueryOutput",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>Indicates a platform issue, which may be due to a transient condition or outage.</simpara>\n      ",
+          "documentation": "\n         <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>\n      ",
+          "shape_name": "InternalServerException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "AthenaErrorCode": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The error code returned when the query execution failed to process, or when the processing request for the named query failed.</simpara>\n      ",
+              "documentation": "\n         <p>The error code returned when the query execution failed to process, or when the processing request for the named query failed.</p>\n      ",
+              "shape_name": "ErrorCode",
+              "min_length": 1,
+              "max_length": 256
+            },
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</simpara>\n      ",
+          "documentation": "\n         <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>\n      ",
+          "shape_name": "InvalidRequestException"
+        }
+      ],
+      "documentation": "\n         <p>Creates a named query.</p>\n         <p>For code samples using the AWS SDK for Java, see <a href=\"http://docs.aws.amazon.com/athena/latest/ug/code-samples.html\">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>\n      "
+    },
+    "DeleteNamedQuery": {
+      "name": "DeleteNamedQuery",
+      "input": {
+        "type": "structure",
+        "members": {
+          "NamedQueryId": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>The unique ID of the query to delete.</simpara>\n      ",
+            "documentation": "\n         <p>The unique ID of the query to delete.</p>\n      ",
+            "required": true,
+            "idempotencyToken": true,
+            "shape_name": "NamedQueryId"
+          }
+        },
+        "shape_name": "DeleteNamedQueryInput",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+        },
+        "shape_name": "DeleteNamedQueryOutput",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>Indicates a platform issue, which may be due to a transient condition or outage.</simpara>\n      ",
+          "documentation": "\n         <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>\n      ",
+          "shape_name": "InternalServerException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "AthenaErrorCode": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The error code returned when the query execution failed to process, or when the processing request for the named query failed.</simpara>\n      ",
+              "documentation": "\n         <p>The error code returned when the query execution failed to process, or when the processing request for the named query failed.</p>\n      ",
+              "shape_name": "ErrorCode",
+              "min_length": 1,
+              "max_length": 256
+            },
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</simpara>\n      ",
+          "documentation": "\n         <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>\n      ",
+          "shape_name": "InvalidRequestException"
+        }
+      ],
+      "documentation": "\n         <p>Deletes a named query.</p>\n         <p>For code samples using the AWS SDK for Java, see <a href=\"http://docs.aws.amazon.com/athena/latest/ug/code-samples.html\">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>\n      "
+    },
+    "GetNamedQuery": {
+      "name": "GetNamedQuery",
+      "input": {
+        "type": "structure",
+        "members": {
+          "NamedQueryId": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>The unique ID of the query. Use <xref linkend=\"ListNamedQueries\"/> to get query IDs.</simpara>\n      ",
+            "documentation": "\n         <p>The unique ID of the query. Use <a>ListNamedQueries</a> to get query IDs.</p>\n      ",
+            "required": true,
+            "shape_name": "NamedQueryId"
+          }
+        },
+        "shape_name": "GetNamedQueryInput",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "NamedQuery": {
+            "type": "structure",
+            "members": {
+              "Name": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <simpara>The plain-language name of the query.</simpara>\n      ",
+                "documentation": "\n         <p>The plain-language name of the query.</p>\n      ",
+                "required": true,
+                "shape_name": "NameString",
+                "min_length": 1,
+                "max_length": 128
+              },
+              "Description": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <simpara>A brief description of the query.</simpara>\n      ",
+                "documentation": "\n         <p>A brief description of the query.</p>\n      ",
+                "shape_name": "DescriptionString",
+                "min_length": 1,
+                "max_length": 1024
+              },
+              "Database": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <simpara>The database to which the query belongs.</simpara>\n      ",
+                "documentation": "\n         <p>The database to which the query belongs.</p>\n      ",
+                "required": true,
+                "shape_name": "DatabaseString",
+                "min_length": 1,
+                "max_length": 32
+              },
+              "QueryString": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <simpara>The SQL query statements that comprise the query.</simpara>\n      ",
+                "documentation": "\n         <p>The SQL query statements that comprise the query.</p>\n      ",
+                "required": true,
+                "shape_name": "QueryString",
+                "min_length": 1,
+                "max_length": 262144
+              },
+              "NamedQueryId": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <simpara>The unique identifier of the query.</simpara>\n      ",
+                "documentation": "\n         <p>The unique identifier of the query.</p>\n      ",
+                "shape_name": "NamedQueryId"
+              }
+            },
+            "zonbookDocumentation": "\n         <simpara>Information about the query.</simpara>\n      ",
+            "documentation": "\n         <p>Information about the query.</p>\n      ",
+            "shape_name": "NamedQuery"
+          }
+        },
+        "shape_name": "GetNamedQueryOutput",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>Indicates a platform issue, which may be due to a transient condition or outage.</simpara>\n      ",
+          "documentation": "\n         <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>\n      ",
+          "shape_name": "InternalServerException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "AthenaErrorCode": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The error code returned when the query execution failed to process, or when the processing request for the named query failed.</simpara>\n      ",
+              "documentation": "\n         <p>The error code returned when the query execution failed to process, or when the processing request for the named query failed.</p>\n      ",
+              "shape_name": "ErrorCode",
+              "min_length": 1,
+              "max_length": 256
+            },
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</simpara>\n      ",
+          "documentation": "\n         <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>\n      ",
+          "shape_name": "InvalidRequestException"
+        }
+      ],
+      "documentation": "\n         <p>Returns information about a single query.</p>\n      "
+    },
+    "ListNamedQueries": {
+      "name": "ListNamedQueries",
+      "input": {
+        "type": "structure",
+        "members": {
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>The token that specifies where to start pagination if a previous request was truncated.</simpara>\n      ",
+            "documentation": "\n         <p>The token that specifies where to start pagination if a previous request was truncated.</p>\n      ",
+            "shape_name": "Token"
+          },
+          "MaxResults": {
+            "type": "integer",
+            "box": true,
+            "zonbookDocumentation": "\n         <simpara>The maximum number of queries to return in this request.</simpara>\n      ",
+            "documentation": "\n         <p>The maximum number of queries to return in this request.</p>\n      ",
+            "shape_name": "MaxNamedQueriesCount",
+            "min_length": 0,
+            "max_length": 50
+          }
+        },
+        "shape_name": "ListNamedQueriesInput",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "NamedQueryIds": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>The list of unique query IDs.</simpara>\n      ",
+            "documentation": "\n         <p>The list of unique query IDs.</p>\n      ",
+            "shape_name": "NamedQueryIdList",
+            "min_length": 1,
+            "max_length": 50,
+            "members": {
+              "type": "string",
+              "shape_name": "NamedQueryId",
+              "documentation": null
+            }
+          },
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>A token to be used by the next request if this request is truncated.</simpara>\n      ",
+            "documentation": "\n         <p>A token to be used by the next request if this request is truncated.</p>\n      ",
+            "shape_name": "Token"
+          }
+        },
+        "shape_name": "ListNamedQueriesOutput",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>Indicates a platform issue, which may be due to a transient condition or outage.</simpara>\n      ",
+          "documentation": "\n         <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>\n      ",
+          "shape_name": "InternalServerException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "AthenaErrorCode": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The error code returned when the query execution failed to process, or when the processing request for the named query failed.</simpara>\n      ",
+              "documentation": "\n         <p>The error code returned when the query execution failed to process, or when the processing request for the named query failed.</p>\n      ",
+              "shape_name": "ErrorCode",
+              "min_length": 1,
+              "max_length": 256
+            },
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</simpara>\n      ",
+          "documentation": "\n         <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>\n      ",
+          "shape_name": "InvalidRequestException"
+        }
+      ],
+      "documentation": "\n         <p>Provides a list of all available query IDs.</p>\n         <p>For code samples using the AWS SDK for Java, see <a href=\"http://docs.aws.amazon.com/athena/latest/ug/code-samples.html\">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>\n      "
+    },
+    "BatchGetNamedQuery": {
+      "name": "BatchGetNamedQuery",
+      "input": {
+        "type": "structure",
+        "members": {
+          "NamedQueryIds": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>An array of query IDs.</simpara>\n      ",
+            "documentation": "\n         <p>An array of query IDs.</p>\n      ",
+            "required": true,
+            "shape_name": "NamedQueryIdList",
+            "min_length": 1,
+            "max_length": 50,
+            "members": {
+              "type": "string",
+              "shape_name": "NamedQueryId",
+              "documentation": null
+            }
+          }
+        },
+        "shape_name": "BatchGetNamedQueryInput",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "NamedQueries": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>Information about the named query IDs submitted.</simpara>\n      ",
+            "documentation": "\n         <p>Information about the named query IDs submitted.</p>\n      ",
+            "shape_name": "NamedQueryList",
+            "members": {
+              "type": "structure",
+              "members": {
+                "Name": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The plain-language name of the query.</simpara>\n      ",
+                  "documentation": "\n         <p>The plain-language name of the query.</p>\n      ",
+                  "required": true,
+                  "shape_name": "NameString",
+                  "min_length": 1,
+                  "max_length": 128
+                },
+                "Description": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>A brief description of the query.</simpara>\n      ",
+                  "documentation": "\n         <p>A brief description of the query.</p>\n      ",
+                  "shape_name": "DescriptionString",
+                  "min_length": 1,
+                  "max_length": 1024
+                },
+                "Database": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The database to which the query belongs.</simpara>\n      ",
+                  "documentation": "\n         <p>The database to which the query belongs.</p>\n      ",
+                  "required": true,
+                  "shape_name": "DatabaseString",
+                  "min_length": 1,
+                  "max_length": 32
+                },
+                "QueryString": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The SQL query statements that comprise the query.</simpara>\n      ",
+                  "documentation": "\n         <p>The SQL query statements that comprise the query.</p>\n      ",
+                  "required": true,
+                  "shape_name": "QueryString",
+                  "min_length": 1,
+                  "max_length": 262144
+                },
+                "NamedQueryId": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The unique identifier of the query.</simpara>\n      ",
+                  "documentation": "\n         <p>The unique identifier of the query.</p>\n      ",
+                  "shape_name": "NamedQueryId"
+                }
+              },
+              "zonbookDocumentation": "\n         <simpara>A query, where <code>QueryString</code> is the SQL query statements that comprise the query.</simpara>\n      ",
+              "documentation": "\n         <p>A query, where <code>QueryString</code> is the SQL query statements that comprise the query.</p>\n      ",
+              "shape_name": "NamedQuery"
+            }
+          },
+          "UnprocessedNamedQueryIds": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>Information about provided query IDs.</simpara>\n      ",
+            "documentation": "\n         <p>Information about provided query IDs.</p>\n      ",
+            "shape_name": "UnprocessedNamedQueryIdList",
+            "members": {
+              "type": "structure",
+              "members": {
+                "NamedQueryId": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The unique identifier of the named query.</simpara>\n      ",
+                  "documentation": "\n         <p>The unique identifier of the named query.</p>\n      ",
+                  "shape_name": "NamedQueryId"
+                },
+                "ErrorCode": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The error code returned when the processing request for the named query failed, if applicable.</simpara>\n      ",
+                  "documentation": "\n         <p>The error code returned when the processing request for the named query failed, if applicable.</p>\n      ",
+                  "shape_name": "ErrorCode",
+                  "min_length": 1,
+                  "max_length": 256
+                },
+                "ErrorMessage": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The error message returned when the processing request for the named query failed, if applicable.</simpara>\n      ",
+                  "documentation": "\n         <p>The error message returned when the processing request for the named query failed, if applicable.</p>\n      ",
+                  "shape_name": "ErrorMessage"
+                }
+              },
+              "zonbookDocumentation": "\n         <simpara>Information about a named query ID that could not be processed.</simpara>\n      ",
+              "documentation": "\n         <p>Information about a named query ID that could not be processed.</p>\n      ",
+              "shape_name": "UnprocessedNamedQueryId"
+            }
+          }
+        },
+        "shape_name": "BatchGetNamedQueryOutput",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>Indicates a platform issue, which may be due to a transient condition or outage.</simpara>\n      ",
+          "documentation": "\n         <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>\n      ",
+          "shape_name": "InternalServerException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "AthenaErrorCode": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The error code returned when the query execution failed to process, or when the processing request for the named query failed.</simpara>\n      ",
+              "documentation": "\n         <p>The error code returned when the query execution failed to process, or when the processing request for the named query failed.</p>\n      ",
+              "shape_name": "ErrorCode",
+              "min_length": 1,
+              "max_length": 256
+            },
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</simpara>\n      ",
+          "documentation": "\n         <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>\n      ",
+          "shape_name": "InvalidRequestException"
+        }
+      ],
+      "documentation": "\n         <p>Returns the details of a single named query or a list of up to 50 queries, which you provide as an array of query ID strings. Use <a>ListNamedQueries</a> to get the list of named query IDs. If information could not be retrieved for a submitted query ID, information about the query ID submitted is listed under <a>UnprocessedNamedQueryId</a>. Named queries are different from executed queries. Use <a>BatchGetQueryExecution</a> to get details about each unique query execution, and <a>ListQueryExecutions</a> to get a list of query execution IDs.</p>\n      "
+    },
+    "StartQueryExecution": {
+      "name": "StartQueryExecution",
+      "input": {
+        "type": "structure",
+        "members": {
+          "QueryString": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>The SQL query statements to be executed.</simpara>\n      ",
+            "documentation": "\n         <p>The SQL query statements to be executed.</p>\n      ",
+            "required": true,
+            "shape_name": "QueryString",
+            "min_length": 1,
+            "max_length": 262144
+          },
+          "ClientRequestToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>StartQueryExecution</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</simpara>\n         <important>\n            <simpara>This token is listed as not required because AWS SDKs (for example the AWS SDK for Java) auto-generate the token for users. If you are not using the AWS SDK or the AWS CLI, you must provide this token or the action will fail.</simpara>\n         </important>\n      ",
+            "documentation": "\n         <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>StartQueryExecution</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p>\n         <important>\n            <p>This token is listed as not required because AWS SDKs (for example the AWS SDK for Java) auto-generate the token for users. If you are not using the AWS SDK or the AWS CLI, you must provide this token or the action will fail.</p>\n         </important>\n      ",
+            "idempotencyToken": true,
+            "shape_name": "IdempotencyToken",
+            "min_length": 32,
+            "max_length": 128
+          },
+          "QueryExecutionContext": {
+            "type": "structure",
+            "members": {
+              "Database": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <simpara>The name of the database.</simpara>\n      ",
+                "documentation": "\n         <p>The name of the database.</p>\n      ",
+                "shape_name": "DatabaseString",
+                "min_length": 1,
+                "max_length": 32
+              }
+            },
+            "zonbookDocumentation": "\n         <simpara>The database within which the query executes.</simpara>\n      ",
+            "documentation": "\n         <p>The database within which the query executes.</p>\n      ",
+            "shape_name": "QueryExecutionContext"
+          },
+          "ResultConfiguration": {
+            "type": "structure",
+            "members": {
+              "OutputLocation": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <simpara>The location in Amazon S3 where your query results are stored, such as <code>s3://path/to/query/bucket/</code>. \n         For more information, see \n         <ulink type=\"documentation\" url=\"athena/latest/ug/querying.html\">Queries and Query Result Files. </ulink>\n         </simpara>\n      ",
+                "documentation": "\n         <p>The location in Amazon S3 where your query results are stored, such as <code>s3://path/to/query/bucket/</code>. \n         For more information, see \n         <a href=\"http://docs.aws.amazon.com/athena/latest/ug/querying.html\">Queries and Query Result Files. </a>\n         </p>\n      ",
+                "required": true,
+                "shape_name": "String"
+              },
+              "EncryptionConfiguration": {
+                "type": "structure",
+                "members": {
+                  "EncryptionOption": {
+                    "type": "string",
+                    "enum": [
+                      "SSE_S3",
+                      "SSE_KMS",
+                      "CSE_KMS"
+                    ],
+                    "zonbookDocumentation": "\n         <simpara>Indicates whether Amazon S3 server-side encryption with Amazon S3-managed keys\n            (<code>SSE-S3</code>), server-side encryption with KMS-managed keys\n            (<code>SSE-KMS</code>), or client-side encryption with KMS-managed keys (CSE-KMS) is\n         used.</simpara>\n      ",
+                    "documentation": "\n         <p>Indicates whether Amazon S3 server-side encryption with Amazon S3-managed keys\n            (<code>SSE-S3</code>), server-side encryption with KMS-managed keys\n            (<code>SSE-KMS</code>), or client-side encryption with KMS-managed keys (CSE-KMS) is\n         used.</p>\n      ",
+                    "required": true,
+                    "shape_name": "EncryptionOption"
+                  },
+                  "KmsKey": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n         <simpara>For <code>SSE-KMS</code> and <code>CSE-KMS</code>, this is the KMS key ARN or\n         ID.</simpara>\n      ",
+                    "documentation": "\n         <p>For <code>SSE-KMS</code> and <code>CSE-KMS</code>, this is the KMS key ARN or\n         ID.</p>\n      ",
+                    "shape_name": "String"
+                  }
+                },
+                "zonbookDocumentation": "\n         <simpara>If query results are encrypted in Amazon S3, indicates the encryption option used (for\n         example, <code>SSE-KMS</code> or <code>CSE-KMS</code>) and key information.</simpara>\n      ",
+                "documentation": "\n         <p>If query results are encrypted in Amazon S3, indicates the encryption option used (for\n         example, <code>SSE-KMS</code> or <code>CSE-KMS</code>) and key information.</p>\n      ",
+                "shape_name": "EncryptionConfiguration"
+              }
+            },
+            "zonbookDocumentation": "\n         <simpara>Specifies information about where and how to save the results of the query execution.</simpara>\n      ",
+            "documentation": "\n         <p>Specifies information about where and how to save the results of the query execution.</p>\n      ",
+            "required": true,
+            "shape_name": "ResultConfiguration"
+          }
+        },
+        "shape_name": "StartQueryExecutionInput",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "QueryExecutionId": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>The unique ID of the query that ran as a result of this request.</simpara>\n      ",
+            "documentation": "\n         <p>The unique ID of the query that ran as a result of this request.</p>\n      ",
+            "shape_name": "QueryExecutionId"
+          }
+        },
+        "shape_name": "StartQueryExecutionOutput",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>Indicates a platform issue, which may be due to a transient condition or outage.</simpara>\n      ",
+          "documentation": "\n         <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>\n      ",
+          "shape_name": "InternalServerException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "AthenaErrorCode": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The error code returned when the query execution failed to process, or when the processing request for the named query failed.</simpara>\n      ",
+              "documentation": "\n         <p>The error code returned when the query execution failed to process, or when the processing request for the named query failed.</p>\n      ",
+              "shape_name": "ErrorCode",
+              "min_length": 1,
+              "max_length": 256
+            },
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</simpara>\n      ",
+          "documentation": "\n         <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>\n      ",
+          "shape_name": "InvalidRequestException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            },
+            "Reason": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The reason for the query throttling, for example, when it exceeds the concurrent query limit.</simpara>\n      ",
+              "documentation": "\n         <p>The reason for the query throttling, for example, when it exceeds the concurrent query limit.</p>\n      ",
+              "enum": [
+                "CONCURRENT_QUERY_LIMIT_EXCEEDED"
+              ],
+              "shape_name": "ThrottleReason"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>Indicates that the request was throttled and includes the reason for throttling, for example, the limit of concurrent queries has been exceeded.</simpara>\n      ",
+          "documentation": "\n         <p>Indicates that the request was throttled and includes the reason for throttling, for example, the limit of concurrent queries has been exceeded.</p>\n      ",
+          "shape_name": "TooManyRequestsException"
+        }
+      ],
+      "documentation": "\n         <p>Runs (executes) the SQL query statements contained in the <code>Query</code> string.</p>\n         <p>For code samples using the AWS SDK for Java, see <a href=\"http://docs.aws.amazon.com/athena/latest/ug/code-samples.html\">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>\n      "
+    },
+    "StopQueryExecution": {
+      "name": "StopQueryExecution",
+      "input": {
+        "type": "structure",
+        "members": {
+          "QueryExecutionId": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>The unique ID of the query execution to stop.</simpara>\n      ",
+            "documentation": "\n         <p>The unique ID of the query execution to stop.</p>\n      ",
+            "required": true,
+            "idempotencyToken": true,
+            "shape_name": "QueryExecutionId"
+          }
+        },
+        "shape_name": "StopQueryExecutionInput",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+        },
+        "shape_name": "StopQueryExecutionOutput",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>Indicates a platform issue, which may be due to a transient condition or outage.</simpara>\n      ",
+          "documentation": "\n         <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>\n      ",
+          "shape_name": "InternalServerException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "AthenaErrorCode": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The error code returned when the query execution failed to process, or when the processing request for the named query failed.</simpara>\n      ",
+              "documentation": "\n         <p>The error code returned when the query execution failed to process, or when the processing request for the named query failed.</p>\n      ",
+              "shape_name": "ErrorCode",
+              "min_length": 1,
+              "max_length": 256
+            },
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</simpara>\n      ",
+          "documentation": "\n         <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>\n      ",
+          "shape_name": "InvalidRequestException"
+        }
+      ],
+      "documentation": "\n         <p>Stops a query execution.</p>\n         <p>For code samples using the AWS SDK for Java, see <a href=\"http://docs.aws.amazon.com/athena/latest/ug/code-samples.html\">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>\n      "
+    },
+    "ListQueryExecutions": {
+      "name": "ListQueryExecutions",
+      "input": {
+        "type": "structure",
+        "members": {
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>The token that specifies where to start pagination if a previous request was truncated.</simpara>\n      ",
+            "documentation": "\n         <p>The token that specifies where to start pagination if a previous request was truncated.</p>\n      ",
+            "shape_name": "Token"
+          },
+          "MaxResults": {
+            "type": "integer",
+            "box": true,
+            "zonbookDocumentation": "\n         <simpara>The maximum number of query executions to return in this request.</simpara>\n      ",
+            "documentation": "\n         <p>The maximum number of query executions to return in this request.</p>\n      ",
+            "shape_name": "MaxQueryExecutionsCount",
+            "min_length": 0,
+            "max_length": 50
+          }
+        },
+        "shape_name": "ListQueryExecutionsInput",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "QueryExecutionIds": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>The unique IDs of each query execution as an array of strings.</simpara>\n      ",
+            "documentation": "\n         <p>The unique IDs of each query execution as an array of strings.</p>\n      ",
+            "shape_name": "QueryExecutionIdList",
+            "min_length": 1,
+            "max_length": 50,
+            "members": {
+              "type": "string",
+              "shape_name": "QueryExecutionId",
+              "documentation": null
+            }
+          },
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>A token to be used by the next request if this request is truncated.</simpara>\n      ",
+            "documentation": "\n         <p>A token to be used by the next request if this request is truncated.</p>\n      ",
+            "shape_name": "Token"
+          }
+        },
+        "shape_name": "ListQueryExecutionsOutput",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>Indicates a platform issue, which may be due to a transient condition or outage.</simpara>\n      ",
+          "documentation": "\n         <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>\n      ",
+          "shape_name": "InternalServerException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "AthenaErrorCode": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The error code returned when the query execution failed to process, or when the processing request for the named query failed.</simpara>\n      ",
+              "documentation": "\n         <p>The error code returned when the query execution failed to process, or when the processing request for the named query failed.</p>\n      ",
+              "shape_name": "ErrorCode",
+              "min_length": 1,
+              "max_length": 256
+            },
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</simpara>\n      ",
+          "documentation": "\n         <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>\n      ",
+          "shape_name": "InvalidRequestException"
+        }
+      ],
+      "documentation": "\n         <p>Provides a list of all available query execution IDs.</p>\n         <p>For code samples using the AWS SDK for Java, see <a href=\"http://docs.aws.amazon.com/athena/latest/ug/code-samples.html\">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>\n      "
+    },
+    "BatchGetQueryExecution": {
+      "name": "BatchGetQueryExecution",
+      "input": {
+        "type": "structure",
+        "members": {
+          "QueryExecutionIds": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>An array of query execution IDs.</simpara>\n      ",
+            "documentation": "\n         <p>An array of query execution IDs.</p>\n      ",
+            "required": true,
+            "shape_name": "QueryExecutionIdList",
+            "min_length": 1,
+            "max_length": 50,
+            "members": {
+              "type": "string",
+              "shape_name": "QueryExecutionId",
+              "documentation": null
+            }
+          }
+        },
+        "shape_name": "BatchGetQueryExecutionInput",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "QueryExecutions": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>Information about a query execution.</simpara>\n      ",
+            "documentation": "\n         <p>Information about a query execution.</p>\n      ",
+            "shape_name": "QueryExecutionList",
+            "members": {
+              "type": "structure",
+              "members": {
+                "QueryExecutionId": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The unique identifier for each query execution.</simpara>\n      ",
+                  "documentation": "\n         <p>The unique identifier for each query execution.</p>\n      ",
+                  "shape_name": "QueryExecutionId"
+                },
+                "Query": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The SQL query statements which the query execution ran.</simpara>\n      ",
+                  "documentation": "\n         <p>The SQL query statements which the query execution ran.</p>\n      ",
+                  "shape_name": "QueryString",
+                  "min_length": 1,
+                  "max_length": 262144
+                },
+                "StatementType": {
+                  "type": "string",
+                  "enum": [
+                    "DDL",
+                    "DML",
+                    "UTILITY"
+                  ],
+                  "zonbookDocumentation": "\n         <simpara>The type of query statement that was run. <code>DDL</code> indicates DDL query\n         statements. <code>DML</code> indicates DML (Data Manipulation Language) query statements,\n         such as <code>CREATE TABLE AS SELECT</code>. <code>UTILITY</code>\n         indicates query statements other than DDL and DML, such as <code>SHOW CREATE TABLE</code>,\n         or <code>DESCRIBE &lt;table&gt;</code>.</simpara>\n      ",
+                  "documentation": "\n         <p>The type of query statement that was run. <code>DDL</code> indicates DDL query\n         statements. <code>DML</code> indicates DML (Data Manipulation Language) query statements,\n         such as <code>CREATE TABLE AS SELECT</code>. <code>UTILITY</code>\n         indicates query statements other than DDL and DML, such as <code>SHOW CREATE TABLE</code>,\n         or <code>DESCRIBE &lt;table&gt;</code>.</p>\n      ",
+                  "shape_name": "StatementType"
+                },
+                "ResultConfiguration": {
+                  "type": "structure",
+                  "members": {
+                    "OutputLocation": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n         <simpara>The location in Amazon S3 where your query results are stored, such as <code>s3://path/to/query/bucket/</code>. \n         For more information, see \n         <ulink type=\"documentation\" url=\"athena/latest/ug/querying.html\">Queries and Query Result Files. </ulink>\n         </simpara>\n      ",
+                      "documentation": "\n         <p>The location in Amazon S3 where your query results are stored, such as <code>s3://path/to/query/bucket/</code>. \n         For more information, see \n         <a href=\"http://docs.aws.amazon.com/athena/latest/ug/querying.html\">Queries and Query Result Files. </a>\n         </p>\n      ",
+                      "required": true,
+                      "shape_name": "String"
+                    },
+                    "EncryptionConfiguration": {
+                      "type": "structure",
+                      "members": {
+                        "EncryptionOption": {
+                          "type": "string",
+                          "enum": [
+                            "SSE_S3",
+                            "SSE_KMS",
+                            "CSE_KMS"
+                          ],
+                          "zonbookDocumentation": "\n         <simpara>Indicates whether Amazon S3 server-side encryption with Amazon S3-managed keys\n            (<code>SSE-S3</code>), server-side encryption with KMS-managed keys\n            (<code>SSE-KMS</code>), or client-side encryption with KMS-managed keys (CSE-KMS) is\n         used.</simpara>\n      ",
+                          "documentation": "\n         <p>Indicates whether Amazon S3 server-side encryption with Amazon S3-managed keys\n            (<code>SSE-S3</code>), server-side encryption with KMS-managed keys\n            (<code>SSE-KMS</code>), or client-side encryption with KMS-managed keys (CSE-KMS) is\n         used.</p>\n      ",
+                          "required": true,
+                          "shape_name": "EncryptionOption"
+                        },
+                        "KmsKey": {
+                          "type": "string",
+                          "zonbookDocumentation": "\n         <simpara>For <code>SSE-KMS</code> and <code>CSE-KMS</code>, this is the KMS key ARN or\n         ID.</simpara>\n      ",
+                          "documentation": "\n         <p>For <code>SSE-KMS</code> and <code>CSE-KMS</code>, this is the KMS key ARN or\n         ID.</p>\n      ",
+                          "shape_name": "String"
+                        }
+                      },
+                      "zonbookDocumentation": "\n         <simpara>If query results are encrypted in Amazon S3, indicates the encryption option used (for\n         example, <code>SSE-KMS</code> or <code>CSE-KMS</code>) and key information.</simpara>\n      ",
+                      "documentation": "\n         <p>If query results are encrypted in Amazon S3, indicates the encryption option used (for\n         example, <code>SSE-KMS</code> or <code>CSE-KMS</code>) and key information.</p>\n      ",
+                      "shape_name": "EncryptionConfiguration"
+                    }
+                  },
+                  "zonbookDocumentation": "\n         <simpara>The location in Amazon S3 where query results were stored and the encryption option,\n         if any, used for query results.</simpara>\n      ",
+                  "documentation": "\n         <p>The location in Amazon S3 where query results were stored and the encryption option,\n         if any, used for query results.</p>\n      ",
+                  "shape_name": "ResultConfiguration"
+                },
+                "QueryExecutionContext": {
+                  "type": "structure",
+                  "members": {
+                    "Database": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n         <simpara>The name of the database.</simpara>\n      ",
+                      "documentation": "\n         <p>The name of the database.</p>\n      ",
+                      "shape_name": "DatabaseString",
+                      "min_length": 1,
+                      "max_length": 32
+                    }
+                  },
+                  "zonbookDocumentation": "\n         <simpara>The database in which the query execution occurred.</simpara>\n      ",
+                  "documentation": "\n         <p>The database in which the query execution occurred.</p>\n      ",
+                  "shape_name": "QueryExecutionContext"
+                },
+                "Status": {
+                  "type": "structure",
+                  "members": {
+                    "State": {
+                      "type": "string",
+                      "enum": [
+                        "QUEUED",
+                        "RUNNING",
+                        "SUCCEEDED",
+                        "FAILED",
+                        "CANCELLED"
+                      ],
+                      "zonbookDocumentation": "\n         <simpara>The state of query execution. <code>QUEUED</code> state is listed but is not used by\n         Athena and is reserved for future use. <code>RUNNING</code> indicates that the query has\n         been submitted to the service, and Athena will execute the query as soon as resources are\n         available. <code>SUCCEEDED</code> indicates that the query completed without error.\n            <code>FAILED</code> indicates that the query experienced an error and did not complete\n            processing.<code>CANCELLED</code> indicates that user input interrupted query execution. </simpara>\n      ",
+                      "documentation": "\n         <p>The state of query execution. <code>QUEUED</code> state is listed but is not used by\n         Athena and is reserved for future use. <code>RUNNING</code> indicates that the query has\n         been submitted to the service, and Athena will execute the query as soon as resources are\n         available. <code>SUCCEEDED</code> indicates that the query completed without error.\n            <code>FAILED</code> indicates that the query experienced an error and did not complete\n            processing.<code>CANCELLED</code> indicates that user input interrupted query execution. </p>\n      ",
+                      "shape_name": "QueryExecutionState"
+                    },
+                    "StateChangeReason": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n         <simpara>Further detail about the status of the query.</simpara>\n      ",
+                      "documentation": "\n         <p>Further detail about the status of the query.</p>\n      ",
+                      "shape_name": "String"
+                    },
+                    "SubmissionDateTime": {
+                      "type": "timestamp",
+                      "zonbookDocumentation": "\n         <simpara>The date and time that the query was submitted.</simpara>\n      ",
+                      "documentation": "\n         <p>The date and time that the query was submitted.</p>\n      ",
+                      "shape_name": "Date"
+                    },
+                    "CompletionDateTime": {
+                      "type": "timestamp",
+                      "zonbookDocumentation": "\n         <simpara>The date and time that the query completed.</simpara>\n      ",
+                      "documentation": "\n         <p>The date and time that the query completed.</p>\n      ",
+                      "shape_name": "Date"
+                    }
+                  },
+                  "zonbookDocumentation": "\n         <simpara>The completion date, current state, submission time, and state change reason (if applicable) for the query execution.</simpara>\n      ",
+                  "documentation": "\n         <p>The completion date, current state, submission time, and state change reason (if applicable) for the query execution.</p>\n      ",
+                  "shape_name": "QueryExecutionStatus"
+                },
+                "Statistics": {
+                  "type": "structure",
+                  "members": {
+                    "EngineExecutionTimeInMillis": {
+                      "type": "long",
+                      "zonbookDocumentation": "\n         <simpara>The number of milliseconds that the query took to execute.</simpara>\n      ",
+                      "documentation": "\n         <p>The number of milliseconds that the query took to execute.</p>\n      ",
+                      "shape_name": "Long"
+                    },
+                    "DataScannedInBytes": {
+                      "type": "long",
+                      "zonbookDocumentation": "\n         <simpara>The number of bytes in the data that was queried.</simpara>\n      ",
+                      "documentation": "\n         <p>The number of bytes in the data that was queried.</p>\n      ",
+                      "shape_name": "Long"
+                    }
+                  },
+                  "zonbookDocumentation": "\n         <simpara>The amount of data scanned during the query execution and the amount of time that it\n         took to execute, and the type of statement that was run.</simpara>\n      ",
+                  "documentation": "\n         <p>The amount of data scanned during the query execution and the amount of time that it\n         took to execute, and the type of statement that was run.</p>\n      ",
+                  "shape_name": "QueryExecutionStatistics"
+                }
+              },
+              "zonbookDocumentation": "\n         <simpara>Information about a single instance of a query execution.</simpara>\n      ",
+              "documentation": "\n         <p>Information about a single instance of a query execution.</p>\n      ",
+              "shape_name": "QueryExecution"
+            }
+          },
+          "UnprocessedQueryExecutionIds": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>Information about the query executions that failed to run.</simpara>\n      ",
+            "documentation": "\n         <p>Information about the query executions that failed to run.</p>\n      ",
+            "shape_name": "UnprocessedQueryExecutionIdList",
+            "members": {
+              "type": "structure",
+              "members": {
+                "QueryExecutionId": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The unique identifier of the query execution.</simpara>\n      ",
+                  "documentation": "\n         <p>The unique identifier of the query execution.</p>\n      ",
+                  "shape_name": "QueryExecutionId"
+                },
+                "ErrorCode": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The error code returned when the query execution failed to process, if applicable.</simpara>\n      ",
+                  "documentation": "\n         <p>The error code returned when the query execution failed to process, if applicable.</p>\n      ",
+                  "shape_name": "ErrorCode",
+                  "min_length": 1,
+                  "max_length": 256
+                },
+                "ErrorMessage": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The error message returned when the query execution failed to process, if applicable.</simpara>\n      ",
+                  "documentation": "\n         <p>The error message returned when the query execution failed to process, if applicable.</p>\n      ",
+                  "shape_name": "ErrorMessage"
+                }
+              },
+              "zonbookDocumentation": "\n         <simpara>Describes a query execution that failed to process.</simpara>\n      ",
+              "documentation": "\n         <p>Describes a query execution that failed to process.</p>\n      ",
+              "shape_name": "UnprocessedQueryExecutionId"
+            }
+          }
+        },
+        "shape_name": "BatchGetQueryExecutionOutput",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>Indicates a platform issue, which may be due to a transient condition or outage.</simpara>\n      ",
+          "documentation": "\n         <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>\n      ",
+          "shape_name": "InternalServerException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "AthenaErrorCode": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The error code returned when the query execution failed to process, or when the processing request for the named query failed.</simpara>\n      ",
+              "documentation": "\n         <p>The error code returned when the query execution failed to process, or when the processing request for the named query failed.</p>\n      ",
+              "shape_name": "ErrorCode",
+              "min_length": 1,
+              "max_length": 256
+            },
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</simpara>\n      ",
+          "documentation": "\n         <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>\n      ",
+          "shape_name": "InvalidRequestException"
+        }
+      ],
+      "documentation": "\n         <p>Returns the details of a single query execution or a list of up to 50 query executions, which you provide as an array of query execution ID strings. To get a list of query execution IDs, use <a>ListQueryExecutions</a>. Query executions are different from named (saved) queries. Use <a>BatchGetNamedQuery</a> to get details about named queries.</p>\n      "
+    },
+    "GetQueryExecution": {
+      "name": "GetQueryExecution",
+      "input": {
+        "type": "structure",
+        "members": {
+          "QueryExecutionId": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>The unique ID of the query execution.</simpara>\n      ",
+            "documentation": "\n         <p>The unique ID of the query execution.</p>\n      ",
+            "required": true,
+            "shape_name": "QueryExecutionId"
+          }
+        },
+        "shape_name": "GetQueryExecutionInput",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "QueryExecution": {
+            "type": "structure",
+            "members": {
+              "QueryExecutionId": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <simpara>The unique identifier for each query execution.</simpara>\n      ",
+                "documentation": "\n         <p>The unique identifier for each query execution.</p>\n      ",
+                "shape_name": "QueryExecutionId"
+              },
+              "Query": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <simpara>The SQL query statements which the query execution ran.</simpara>\n      ",
+                "documentation": "\n         <p>The SQL query statements which the query execution ran.</p>\n      ",
+                "shape_name": "QueryString",
+                "min_length": 1,
+                "max_length": 262144
+              },
+              "StatementType": {
+                "type": "string",
+                "enum": [
+                  "DDL",
+                  "DML",
+                  "UTILITY"
+                ],
+                "zonbookDocumentation": "\n         <simpara>The type of query statement that was run. <code>DDL</code> indicates DDL query\n         statements. <code>DML</code> indicates DML (Data Manipulation Language) query statements,\n         such as <code>CREATE TABLE AS SELECT</code>. <code>UTILITY</code>\n         indicates query statements other than DDL and DML, such as <code>SHOW CREATE TABLE</code>,\n         or <code>DESCRIBE &lt;table&gt;</code>.</simpara>\n      ",
+                "documentation": "\n         <p>The type of query statement that was run. <code>DDL</code> indicates DDL query\n         statements. <code>DML</code> indicates DML (Data Manipulation Language) query statements,\n         such as <code>CREATE TABLE AS SELECT</code>. <code>UTILITY</code>\n         indicates query statements other than DDL and DML, such as <code>SHOW CREATE TABLE</code>,\n         or <code>DESCRIBE &lt;table&gt;</code>.</p>\n      ",
+                "shape_name": "StatementType"
+              },
+              "ResultConfiguration": {
+                "type": "structure",
+                "members": {
+                  "OutputLocation": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n         <simpara>The location in Amazon S3 where your query results are stored, such as <code>s3://path/to/query/bucket/</code>. \n         For more information, see \n         <ulink type=\"documentation\" url=\"athena/latest/ug/querying.html\">Queries and Query Result Files. </ulink>\n         </simpara>\n      ",
+                    "documentation": "\n         <p>The location in Amazon S3 where your query results are stored, such as <code>s3://path/to/query/bucket/</code>. \n         For more information, see \n         <a href=\"http://docs.aws.amazon.com/athena/latest/ug/querying.html\">Queries and Query Result Files. </a>\n         </p>\n      ",
+                    "required": true,
+                    "shape_name": "String"
+                  },
+                  "EncryptionConfiguration": {
+                    "type": "structure",
+                    "members": {
+                      "EncryptionOption": {
+                        "type": "string",
+                        "enum": [
+                          "SSE_S3",
+                          "SSE_KMS",
+                          "CSE_KMS"
+                        ],
+                        "zonbookDocumentation": "\n         <simpara>Indicates whether Amazon S3 server-side encryption with Amazon S3-managed keys\n            (<code>SSE-S3</code>), server-side encryption with KMS-managed keys\n            (<code>SSE-KMS</code>), or client-side encryption with KMS-managed keys (CSE-KMS) is\n         used.</simpara>\n      ",
+                        "documentation": "\n         <p>Indicates whether Amazon S3 server-side encryption with Amazon S3-managed keys\n            (<code>SSE-S3</code>), server-side encryption with KMS-managed keys\n            (<code>SSE-KMS</code>), or client-side encryption with KMS-managed keys (CSE-KMS) is\n         used.</p>\n      ",
+                        "required": true,
+                        "shape_name": "EncryptionOption"
+                      },
+                      "KmsKey": {
+                        "type": "string",
+                        "zonbookDocumentation": "\n         <simpara>For <code>SSE-KMS</code> and <code>CSE-KMS</code>, this is the KMS key ARN or\n         ID.</simpara>\n      ",
+                        "documentation": "\n         <p>For <code>SSE-KMS</code> and <code>CSE-KMS</code>, this is the KMS key ARN or\n         ID.</p>\n      ",
+                        "shape_name": "String"
+                      }
+                    },
+                    "zonbookDocumentation": "\n         <simpara>If query results are encrypted in Amazon S3, indicates the encryption option used (for\n         example, <code>SSE-KMS</code> or <code>CSE-KMS</code>) and key information.</simpara>\n      ",
+                    "documentation": "\n         <p>If query results are encrypted in Amazon S3, indicates the encryption option used (for\n         example, <code>SSE-KMS</code> or <code>CSE-KMS</code>) and key information.</p>\n      ",
+                    "shape_name": "EncryptionConfiguration"
+                  }
+                },
+                "zonbookDocumentation": "\n         <simpara>The location in Amazon S3 where query results were stored and the encryption option,\n         if any, used for query results.</simpara>\n      ",
+                "documentation": "\n         <p>The location in Amazon S3 where query results were stored and the encryption option,\n         if any, used for query results.</p>\n      ",
+                "shape_name": "ResultConfiguration"
+              },
+              "QueryExecutionContext": {
+                "type": "structure",
+                "members": {
+                  "Database": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n         <simpara>The name of the database.</simpara>\n      ",
+                    "documentation": "\n         <p>The name of the database.</p>\n      ",
+                    "shape_name": "DatabaseString",
+                    "min_length": 1,
+                    "max_length": 32
+                  }
+                },
+                "zonbookDocumentation": "\n         <simpara>The database in which the query execution occurred.</simpara>\n      ",
+                "documentation": "\n         <p>The database in which the query execution occurred.</p>\n      ",
+                "shape_name": "QueryExecutionContext"
+              },
+              "Status": {
+                "type": "structure",
+                "members": {
+                  "State": {
+                    "type": "string",
+                    "enum": [
+                      "QUEUED",
+                      "RUNNING",
+                      "SUCCEEDED",
+                      "FAILED",
+                      "CANCELLED"
+                    ],
+                    "zonbookDocumentation": "\n         <simpara>The state of query execution. <code>QUEUED</code> state is listed but is not used by\n         Athena and is reserved for future use. <code>RUNNING</code> indicates that the query has\n         been submitted to the service, and Athena will execute the query as soon as resources are\n         available. <code>SUCCEEDED</code> indicates that the query completed without error.\n            <code>FAILED</code> indicates that the query experienced an error and did not complete\n            processing.<code>CANCELLED</code> indicates that user input interrupted query execution. </simpara>\n      ",
+                    "documentation": "\n         <p>The state of query execution. <code>QUEUED</code> state is listed but is not used by\n         Athena and is reserved for future use. <code>RUNNING</code> indicates that the query has\n         been submitted to the service, and Athena will execute the query as soon as resources are\n         available. <code>SUCCEEDED</code> indicates that the query completed without error.\n            <code>FAILED</code> indicates that the query experienced an error and did not complete\n            processing.<code>CANCELLED</code> indicates that user input interrupted query execution. </p>\n      ",
+                    "shape_name": "QueryExecutionState"
+                  },
+                  "StateChangeReason": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n         <simpara>Further detail about the status of the query.</simpara>\n      ",
+                    "documentation": "\n         <p>Further detail about the status of the query.</p>\n      ",
+                    "shape_name": "String"
+                  },
+                  "SubmissionDateTime": {
+                    "type": "timestamp",
+                    "zonbookDocumentation": "\n         <simpara>The date and time that the query was submitted.</simpara>\n      ",
+                    "documentation": "\n         <p>The date and time that the query was submitted.</p>\n      ",
+                    "shape_name": "Date"
+                  },
+                  "CompletionDateTime": {
+                    "type": "timestamp",
+                    "zonbookDocumentation": "\n         <simpara>The date and time that the query completed.</simpara>\n      ",
+                    "documentation": "\n         <p>The date and time that the query completed.</p>\n      ",
+                    "shape_name": "Date"
+                  }
+                },
+                "zonbookDocumentation": "\n         <simpara>The completion date, current state, submission time, and state change reason (if applicable) for the query execution.</simpara>\n      ",
+                "documentation": "\n         <p>The completion date, current state, submission time, and state change reason (if applicable) for the query execution.</p>\n      ",
+                "shape_name": "QueryExecutionStatus"
+              },
+              "Statistics": {
+                "type": "structure",
+                "members": {
+                  "EngineExecutionTimeInMillis": {
+                    "type": "long",
+                    "zonbookDocumentation": "\n         <simpara>The number of milliseconds that the query took to execute.</simpara>\n      ",
+                    "documentation": "\n         <p>The number of milliseconds that the query took to execute.</p>\n      ",
+                    "shape_name": "Long"
+                  },
+                  "DataScannedInBytes": {
+                    "type": "long",
+                    "zonbookDocumentation": "\n         <simpara>The number of bytes in the data that was queried.</simpara>\n      ",
+                    "documentation": "\n         <p>The number of bytes in the data that was queried.</p>\n      ",
+                    "shape_name": "Long"
+                  }
+                },
+                "zonbookDocumentation": "\n         <simpara>The amount of data scanned during the query execution and the amount of time that it\n         took to execute, and the type of statement that was run.</simpara>\n      ",
+                "documentation": "\n         <p>The amount of data scanned during the query execution and the amount of time that it\n         took to execute, and the type of statement that was run.</p>\n      ",
+                "shape_name": "QueryExecutionStatistics"
+              }
+            },
+            "zonbookDocumentation": "\n         <simpara>Information about the query execution.</simpara>\n      ",
+            "documentation": "\n         <p>Information about the query execution.</p>\n      ",
+            "shape_name": "QueryExecution"
+          }
+        },
+        "shape_name": "GetQueryExecutionOutput",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>Indicates a platform issue, which may be due to a transient condition or outage.</simpara>\n      ",
+          "documentation": "\n         <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>\n      ",
+          "shape_name": "InternalServerException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "AthenaErrorCode": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The error code returned when the query execution failed to process, or when the processing request for the named query failed.</simpara>\n      ",
+              "documentation": "\n         <p>The error code returned when the query execution failed to process, or when the processing request for the named query failed.</p>\n      ",
+              "shape_name": "ErrorCode",
+              "min_length": 1,
+              "max_length": 256
+            },
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</simpara>\n      ",
+          "documentation": "\n         <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>\n      ",
+          "shape_name": "InvalidRequestException"
+        }
+      ],
+      "documentation": "\n         <p>Returns information about a single execution of a query. Each time a query executes, information about the query execution is saved with a unique ID.</p>\n      "
+    },
+    "GetQueryResults": {
+      "name": "GetQueryResults",
+      "input": {
+        "type": "structure",
+        "members": {
+          "QueryExecutionId": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>The unique ID of the query execution.</simpara>\n      ",
+            "documentation": "\n         <p>The unique ID of the query execution.</p>\n      ",
+            "required": true,
+            "shape_name": "QueryExecutionId"
+          },
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>The token that specifies where to start pagination if a previous request was truncated.</simpara>\n      ",
+            "documentation": "\n         <p>The token that specifies where to start pagination if a previous request was truncated.</p>\n      ",
+            "shape_name": "Token"
+          },
+          "MaxResults": {
+            "type": "integer",
+            "box": true,
+            "zonbookDocumentation": "\n         <simpara>The maximum number of results (rows) to return in this request.</simpara>\n      ",
+            "documentation": "\n         <p>The maximum number of results (rows) to return in this request.</p>\n      ",
+            "shape_name": "MaxQueryResults",
+            "min_length": 0,
+            "max_length": 1000
+          }
+        },
+        "shape_name": "GetQueryResultsInput",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "UpdateCount": {
+            "type": "long",
+            "zonbookDocumentation": "\n         <simpara>The number of rows inserted with a CREATE TABLE AS SELECT statement.\n      </simpara>\n      ",
+            "documentation": "\n         <p>The number of rows inserted with a CREATE TABLE AS SELECT statement.\n      </p>\n      ",
+            "shape_name": "Long"
+          },
+          "ResultSet": {
+            "type": "structure",
+            "members": {
+              "Rows": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <simpara>The rows in the table.</simpara>\n      ",
+                "documentation": "\n         <p>The rows in the table.</p>\n      ",
+                "shape_name": "RowList",
+                "members": {
+                  "type": "structure",
+                  "members": {
+                    "Data": {
+                      "type": "list",
+                      "zonbookDocumentation": "\n         <simpara>The data that populates a row in a query result table.</simpara>\n      ",
+                      "documentation": "\n         <p>The data that populates a row in a query result table.</p>\n      ",
+                      "shape_name": "datumList",
+                      "members": {
+                        "type": "structure",
+                        "members": {
+                          "VarCharValue": {
+                            "type": "string",
+                            "zonbookDocumentation": "\n         <simpara>The value of the datum.</simpara>\n      ",
+                            "documentation": "\n         <p>The value of the datum.</p>\n      ",
+                            "shape_name": "datumString"
+                          }
+                        },
+                        "zonbookDocumentation": "\n         <simpara>A piece of data (a field in the table).</simpara>\n      ",
+                        "documentation": "\n         <p>A piece of data (a field in the table).</p>\n      ",
+                        "shape_name": "Datum"
+                      }
+                    }
+                  },
+                  "zonbookDocumentation": "\n         <simpara>The rows that comprise a query result table.</simpara>\n      ",
+                  "documentation": "\n         <p>The rows that comprise a query result table.</p>\n      ",
+                  "shape_name": "Row"
+                }
+              },
+              "ResultSetMetadata": {
+                "type": "structure",
+                "members": {
+                  "ColumnInfo": {
+                    "type": "list",
+                    "zonbookDocumentation": "\n         <simpara>Information about the columns returned in a query result metadata.</simpara>\n      ",
+                    "documentation": "\n         <p>Information about the columns returned in a query result metadata.</p>\n      ",
+                    "shape_name": "ColumnInfoList",
+                    "members": {
+                      "type": "structure",
+                      "members": {
+                        "CatalogName": {
+                          "type": "string",
+                          "zonbookDocumentation": "\n         <simpara>The catalog to which the query results belong.</simpara>\n      ",
+                          "documentation": "\n         <p>The catalog to which the query results belong.</p>\n      ",
+                          "shape_name": "String"
+                        },
+                        "SchemaName": {
+                          "type": "string",
+                          "zonbookDocumentation": "\n         <simpara>The schema name (database name) to which the query results belong.</simpara>\n      ",
+                          "documentation": "\n         <p>The schema name (database name) to which the query results belong.</p>\n      ",
+                          "shape_name": "String"
+                        },
+                        "TableName": {
+                          "type": "string",
+                          "zonbookDocumentation": "\n         <simpara>The table name for the query results.</simpara>\n      ",
+                          "documentation": "\n         <p>The table name for the query results.</p>\n      ",
+                          "shape_name": "String"
+                        },
+                        "Name": {
+                          "type": "string",
+                          "zonbookDocumentation": "\n         <simpara>The name of the column.</simpara>\n      ",
+                          "documentation": "\n         <p>The name of the column.</p>\n      ",
+                          "required": true,
+                          "shape_name": "String"
+                        },
+                        "Label": {
+                          "type": "string",
+                          "zonbookDocumentation": "\n         <simpara>A column label.</simpara>\n      ",
+                          "documentation": "\n         <p>A column label.</p>\n      ",
+                          "shape_name": "String"
+                        },
+                        "Type": {
+                          "type": "string",
+                          "zonbookDocumentation": "\n         <simpara>The data type of the column.</simpara>\n      ",
+                          "documentation": "\n         <p>The data type of the column.</p>\n      ",
+                          "required": true,
+                          "shape_name": "String"
+                        },
+                        "Precision": {
+                          "type": "integer",
+                          "zonbookDocumentation": "\n         <simpara>For <code>DECIMAL</code> data types, specifies the total number of digits, up to 38. For performance reasons, we recommend up to 18 digits.</simpara>\n      ",
+                          "documentation": "\n         <p>For <code>DECIMAL</code> data types, specifies the total number of digits, up to 38. For performance reasons, we recommend up to 18 digits.</p>\n      ",
+                          "shape_name": "Integer"
+                        },
+                        "Scale": {
+                          "type": "integer",
+                          "zonbookDocumentation": "\n         <simpara>For <code>DECIMAL</code> data types, specifies the total number of digits in the fractional part of the value. Defaults to 0.</simpara>\n      ",
+                          "documentation": "\n         <p>For <code>DECIMAL</code> data types, specifies the total number of digits in the fractional part of the value. Defaults to 0.</p>\n      ",
+                          "shape_name": "Integer"
+                        },
+                        "Nullable": {
+                          "type": "string",
+                          "enum": [
+                            "NOT_NULL",
+                            "NULLABLE",
+                            "UNKNOWN"
+                          ],
+                          "zonbookDocumentation": "\n         <simpara>Indicates the column's nullable status.</simpara>\n      ",
+                          "documentation": "\n         <p>Indicates the column's nullable status.</p>\n      ",
+                          "shape_name": "ColumnNullable"
+                        },
+                        "CaseSensitive": {
+                          "type": "boolean",
+                          "zonbookDocumentation": "\n         <simpara>Indicates whether values in the column are case-sensitive.</simpara>\n      ",
+                          "documentation": "\n         <p>Indicates whether values in the column are case-sensitive.</p>\n      ",
+                          "shape_name": "Boolean"
+                        }
+                      },
+                      "zonbookDocumentation": "\n         <simpara>Information about the columns in a query execution result.</simpara>\n      ",
+                      "documentation": "\n         <p>Information about the columns in a query execution result.</p>\n      ",
+                      "shape_name": "ColumnInfo"
+                    }
+                  }
+                },
+                "zonbookDocumentation": "\n         <simpara>The metadata that describes the column structure and data types of a table of query results.</simpara>\n      ",
+                "documentation": "\n         <p>The metadata that describes the column structure and data types of a table of query results.</p>\n      ",
+                "shape_name": "ResultSetMetadata"
+              }
+            },
+            "zonbookDocumentation": "\n         <simpara>The results of the query execution.</simpara>\n      ",
+            "documentation": "\n         <p>The results of the query execution.</p>\n      ",
+            "shape_name": "ResultSet"
+          },
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>A token to be used by the next request if this request is truncated.</simpara>\n      ",
+            "documentation": "\n         <p>A token to be used by the next request if this request is truncated.</p>\n      ",
+            "shape_name": "Token"
+          }
+        },
+        "shape_name": "GetQueryResultsOutput",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>Indicates a platform issue, which may be due to a transient condition or outage.</simpara>\n      ",
+          "documentation": "\n         <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>\n      ",
+          "shape_name": "InternalServerException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "AthenaErrorCode": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The error code returned when the query execution failed to process, or when the processing request for the named query failed.</simpara>\n      ",
+              "documentation": "\n         <p>The error code returned when the query execution failed to process, or when the processing request for the named query failed.</p>\n      ",
+              "shape_name": "ErrorCode",
+              "min_length": 1,
+              "max_length": 256
+            },
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</simpara>\n      ",
+          "documentation": "\n         <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>\n      ",
+          "shape_name": "InvalidRequestException"
+        }
+      ],
+      "documentation": "\n         <p>Returns the results of a single query execution specified by <code>QueryExecutionId</code>. This request does not execute the query but returns results. Use <a>StartQueryExecution</a> to run a query.</p>\n      "
+    }
+  }
+}

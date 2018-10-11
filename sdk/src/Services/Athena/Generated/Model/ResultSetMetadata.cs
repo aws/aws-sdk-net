@@ -38,7 +38,7 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property ColumnInfo. 
         /// <para>
-        /// Information about the columns in a query execution result.
+        /// Information about the columns returned in a query result metadata.
         /// </para>
         /// </summary>
         public List<ColumnInfo> ColumnInfo
