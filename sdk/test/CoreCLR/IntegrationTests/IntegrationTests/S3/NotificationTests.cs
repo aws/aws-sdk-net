@@ -139,6 +139,7 @@ namespace Amazon.DNXCore.IntegrationTests
 
                     // Purge queue to remove test message sent configuration was setup.
                     await sqsClient.PurgeQueueAsync(createResponse.QueueUrl);
+                    Thread.Sleep(TimeSpan.FromSeconds(1));
 
                     // make sure the queue is really clear
                     WaitUtils.WaitForComplete(
