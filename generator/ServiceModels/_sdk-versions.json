@@ -1,7 +1,7 @@
 
 {
-    "ProductVersion" : "3.3.381.0",
-    "CoreVersion"    : "3.3.27.1",
+    "ProductVersion" : "3.3.382.0",
+    "CoreVersion"    : "3.3.27.2",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
         "CloudHSM" : {
@@ -265,7 +265,7 @@
             "InPreview"               : false
         },
         "MobileAnalytics"      : {
-            "Version" : "3.3.1.43",
+            "Version" : "3.3.1.44",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.27.0"
@@ -313,7 +313,7 @@
             "InPreview"               : false
         },
         "S3"                   : {
-            "Version" : "3.3.24.4",
+            "Version" : "3.3.25.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.27.1"

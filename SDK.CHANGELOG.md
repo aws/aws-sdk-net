@@ -1,3 +1,13 @@
+### 3.3.382.0 (2018-10-12 17:01 UTC)
+* MobileAnalytics (3.3.1.44)
+	* Fixed bugs in handling attributes of CustomEvent.
+Fixed NullReferenceException in DeliveryClient.AttemptDeliveryAsync()
+* S3 (3.3.25.0)
+	* Changed service client to throw an exception when operations are called without a required BucketName or Key parameter.
+Changed service client to resign request on retries.
+* Core 3.3.27.2
+	* Changed the exception thrown by ClientContext constructor to be more descriptive.
+
 ### 3.3.381.0 (2018-10-11 22:56 UTC)
 * Athena (3.3.1.0)
 	* 1. GetQueryExecution API changes to return statementType of a submitted Athena query.  2. GetQueryResults API changes to return the number of rows added to a table when a CTAS query is executed.
