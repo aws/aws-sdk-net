@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.380.0",
+    "ProductVersion" : "3.3.381.0",
     "CoreVersion"    : "3.3.27.1",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -135,7 +135,7 @@
             "InPreview"               : false
         },
         "DirectConnect"     : {
-            "Version" : "3.3.7.5",
+            "Version" : "3.3.8.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.27.0"
@@ -151,7 +151,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.3.64.2",
+            "Version" : "3.3.65.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.27.0"
@@ -793,7 +793,7 @@
             "InPreview"               : false
         },
         "Athena"                          : {
-            "Version" : "3.3.0.26",
+            "Version" : "3.3.1.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.27.0"
@@ -1049,7 +1049,7 @@
             "InPreview"               : false
         },
         "TranscribeService"               : {
-            "Version" : "3.3.4.0",
+            "Version" : "3.3.5.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.27.0"

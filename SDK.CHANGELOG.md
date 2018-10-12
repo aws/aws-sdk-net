@@ -1,3 +1,13 @@
+### 3.3.381.0 (2018-10-11 22:56 UTC)
+* Athena (3.3.1.0)
+	* 1. GetQueryExecution API changes to return statementType of a submitted Athena query.  2. GetQueryResults API changes to return the number of rows added to a table when a CTAS query is executed.
+* DirectConnect (3.3.8.0)
+	* This release adds support for Jumbo Frames over AWS Direct Connect. You can now set MTU value when creating new virtual interfaces. This release also includes a new API to modify MTU value of existing virtual interfaces.
+* EC2 (3.3.65.0)
+	* You can now launch the smaller-sized G3 instance called g3s.xlarge. G3s.xlarge provides 4 vCPU, 30.5 GB RAM and a NVIDIA Tesla M60 GPU. It is ideal for remote workstations, engineering and architectural applications, and 3D visualizations and rendering for visual effects.
+* TranscribeService (3.3.5.0)
+	* With this release, Amazon Transcribe now supports transcriptions from audio sources in British English (en-UK), Australian English (en-AU), and Canadian French (fr-CA).
+
 ### 3.3.380.0 (2018-10-10 22:51 UTC)
 * Comprehend (3.3.3.0)
 	* This release adds French, Italian, German and Portuguese language support for all existing synchronous and asynchronous APIs
