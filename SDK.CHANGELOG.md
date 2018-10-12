@@ -1,3 +1,7 @@
+### 3.3.383.0 (2018-10-12 21:46 UTC)
+* CloudTrail (3.3.3.0)
+	* The LookupEvents API now supports two new attribute keys: ReadOnly and AccessKeyId
+
 ### 3.3.382.0 (2018-10-12 17:01 UTC)
 * MobileAnalytics (3.3.1.44)
 	* Fixed bugs in handling attributes of CustomEvent.

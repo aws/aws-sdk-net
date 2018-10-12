@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.382.0",
+    "ProductVersion" : "3.3.383.0",
     "CoreVersion"    : "3.3.27.2",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -61,7 +61,7 @@
             "InPreview"               : false
         },
         "CloudTrail"        : {
-            "Version" : "3.3.2.5",
+            "Version" : "3.3.3.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.27.0"
