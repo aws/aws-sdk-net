@@ -194,6 +194,7 @@ namespace CommonTests.IntegrationTests.DynamoDB
         }
 
         [Test]
+        [Category("DynamoDB")]
         public void TestDataCalls()
         {
             RunAsSync(async () =>

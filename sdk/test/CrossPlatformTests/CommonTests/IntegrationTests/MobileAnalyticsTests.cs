@@ -32,6 +32,7 @@ namespace CommonTests.IntegrationTests
         }
 
         [Test]
+        [Category("MobileAnalytics")]
         public void TestConstructor()
         {
             string appID1 = Guid.NewGuid().ToString();
@@ -57,11 +58,24 @@ namespace CommonTests.IntegrationTests
 
 
         [Test]
+        [Category("MobileAnalytics")]
         public void TestRecordEvent()
         {
-            string appID = Guid.NewGuid().ToString();
+            string appID = TestRunner.StoredSettings.AppId;
             MobileAnalyticsManager manager = MobileAnalyticsManager.GetOrCreateInstance(appID, CommonTests.Framework.TestRunner.Credentials, RegionEndpoint.USEast1);
+            // sleep a while to make sure event is stored before we delete all event record before now
+            Task.Delay(TimeSpan.FromSeconds(10)).Wait();
             SQLiteEventStore eventStore = new SQLiteEventStore(new MobileAnalyticsManagerConfig());
+            // remove all rows submitted before
+            var allEventList = eventStore.GetEvents(appID, 10000);
+            var deleteEventsIdList = new List<string>();
+            foreach (JsonData eventData in allEventList)
+            {
+                deleteEventsIdList.Add(eventData["id"].ToString());
+            }
+            eventStore.DeleteEvent(deleteEventsIdList);
+            Assert.AreEqual(0, eventStore.NumberOfEvents(appID));
+
 
             try
             {
@@ -89,20 +103,22 @@ namespace CommonTests.IntegrationTests
             }
 
             // sleep a while to make sure event is stored
-            Task.Delay(TimeSpan.FromSeconds(1)).Wait();
+            Task.Delay(TimeSpan.FromSeconds(10)).Wait();
 
-            // Event store should have one custom event, one monetization event and one session start event.
-            Assert.AreEqual(3, eventStore.NumberOfEvents(appID));
+            // Event store should have one custom event, one monetization event 
+            long num = eventStore.NumberOfEvents(appID);
+            Assert.AreEqual(2, eventStore.NumberOfEvents(appID));
         }
 
 
         [Test]
+        [Category("MobileAnalytics")]
         public void TestSessionTimeout()
         {
             MobileAnalyticsManagerConfig maConfig = new MobileAnalyticsManagerConfig();
-            Console.WriteLine("session delta is " + maConfig.SessionTimeout);
+            Console.WriteLine("session delta is " + maConfig.SessionTimeout); 
 
-            string appID = Guid.NewGuid().ToString();
+            string appID = TestRunner.StoredSettings.AppId;
 
             // create AmazonMobileAnayticsManager instance
             MobileAnalyticsManager.GetOrCreateInstance(appID, CommonTests.Framework.TestRunner.Credentials, RegionEndpoint.USEast1, maConfig);
@@ -158,6 +174,7 @@ namespace CommonTests.IntegrationTests
 
 
         [Test]
+        [Category("MobileAnalytics")]
         public void TestLowLevelAPI()
         {
             List<Amazon.MobileAnalytics.Model.Event> listEvent = new List<Amazon.MobileAnalytics.Model.Event>();
@@ -176,6 +193,7 @@ namespace CommonTests.IntegrationTests
         }
 
         [Test]
+        [Category("MobileAnalytics")]
         public void TestLowLevelAPIErrorCaseEmptyEvent()
         {
             PutEventsRequest putRequest = new PutEventsRequest();
@@ -185,12 +203,16 @@ namespace CommonTests.IntegrationTests
                             System.Text.Encoding.UTF8.GetBytes(clientContext));
             putRequest.ClientContextEncoding = "base64";
 
-            var exception = AssertExtensions.ExpectExceptionAsync<AmazonMobileAnalyticsException>(Client.PutEventsAsync(putRequest)).Result;
+   
+            var exception = AssertExtensions.ExpectExceptionAsync<BadRequestException>(Client.PutEventsAsync(putRequest)).Result;
             Assert.AreEqual(exception.StatusCode, HttpStatusCode.BadRequest);
-            Assert.AreEqual(exception.ErrorCode, "ValidationException");
+            Assert.AreEqual(exception.ErrorCode, "BadRequestException");
+            
+
         }
 
         [Test]
+        [Category("MobileAnalytics")]
         public void TestLowLevelAPIErrorCaseWrongClientContext()
         {
             List<Amazon.MobileAnalytics.Model.Event> listEvent = new List<Amazon.MobileAnalytics.Model.Event>();
@@ -227,6 +249,7 @@ namespace CommonTests.IntegrationTests
         }
 
         [Test]
+        [Category("MobileAnalytics")]
         public void TestLowLevelAPIErrorCaseWrongCognitoCred()
         {
             List<Amazon.MobileAnalytics.Model.Event> listEvent = new List<Amazon.MobileAnalytics.Model.Event>();
@@ -264,6 +287,7 @@ namespace CommonTests.IntegrationTests
         }
 
         [Test]
+        [Category("MobileAnalytics")]
         public void TestSessionEvent()
         {
             string sessionID = Guid.NewGuid().ToString();
@@ -283,6 +307,7 @@ namespace CommonTests.IntegrationTests
         }
 
         [Test]
+        [Category("MobileAnalytics")]
         public void TestEventStore()
         {
             // Create table
@@ -341,12 +366,18 @@ namespace CommonTests.IntegrationTests
         }
 
         [Test]
+        [Category("MobileAnalytics")]
         public void TestErrorEventHandler()
         {
-            string appID = Guid.NewGuid().ToString();
+            string appID = TestRunner.StoredSettings.AppId;
             MobileAnalyticsManager manager = MobileAnalyticsManager.GetOrCreateInstance(appID, new CognitoAWSCredentials("wrong-cognito-pool-id", RegionEndpoint.USEast1), RegionEndpoint.USEast1);
             manager.MobileAnalyticsErrorEvent += errorHandler;
-
+            CustomEvent customEvent = new CustomEvent("TestRecordEvent");
+            customEvent.AddAttribute("LevelName", "Level5");
+            customEvent.AddAttribute("Successful", "True");
+            customEvent.AddMetric("Score", 12345);
+            customEvent.AddMetric("TimeInLevel", 64);
+            manager.RecordEvent(customEvent);
             Task.Delay(TimeSpan.FromSeconds(75)).Wait();
             lock (_lock)
             {
@@ -405,7 +436,7 @@ namespace CommonTests.IntegrationTests
             _client.Add("app_package_name", "com.amazonaws.unity");
 
             Dictionary<string, string> _servicesData = new Dictionary<string, string>();
-            _servicesData.Add("app_id", Guid.NewGuid().ToString());
+            _servicesData.Add("app_id", TestRunner.StoredSettings.AppId);
 
             Dictionary<string, Dictionary<string, string>> _services = new Dictionary<string, Dictionary<string, string>>();
             _services.Add("mobile_analytics", _servicesData);

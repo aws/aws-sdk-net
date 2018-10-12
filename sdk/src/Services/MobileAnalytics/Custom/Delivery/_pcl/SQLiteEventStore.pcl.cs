@@ -69,6 +69,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 TABLE_NAME, EVENT_COLUMN_NAME, EVENT_ID_COLUMN_NAME, MA_APP_ID_COLUMN_NAME, EVENT_DELIVERY_ATTEMPT_COUNT_COLUMN_NAME);
 
             var r = Sqlite3.sqlite3_open(this.DBfileFullPath, out Handle);
+            
 
             if (r != Sqlite3.SQLITE_OK)
             {

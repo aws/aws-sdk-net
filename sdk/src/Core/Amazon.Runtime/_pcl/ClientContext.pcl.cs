@@ -15,6 +15,7 @@
 
 using Amazon.Util.Internal.PlatformServices;
 using System.Collections.Generic;
+using Amazon.Runtime.Internal.Util;
 using System;
 
 namespace Amazon.Runtime.Internal
@@ -38,9 +39,19 @@ namespace Amazon.Runtime.Internal
             {
                 _clientID = _appSetting.GetValue(APP_ID_KEY, ApplicationSettingsMode.Local);
                 if (string.IsNullOrEmpty(_clientID))
-                {
-                    _clientID = Guid.NewGuid().ToString();
-                    _appSetting.SetValue(APP_ID_KEY, _clientID, ApplicationSettingsMode.Local);
+                { 
+                    string newClientID = Guid.NewGuid().ToString();
+                    try
+                    {
+                        _appSetting.SetValue(APP_ID_KEY, newClientID, ApplicationSettingsMode.Local);
+                    }
+                    catch(Exception e)
+                    {
+                        Logger.GetLogger(typeof(ClientContext)).Error(e, "Failed to save client id to local application setting");
+                        Exception exception = new Exception("Failed to save client id to local application setting", e);
+                        throw exception;
+                    }
+                    _clientID = newClientID;
                 }
             }
         }

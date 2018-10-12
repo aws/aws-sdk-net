@@ -117,7 +117,7 @@ namespace CommonTests.Framework
             public string AccountId { get; set; }
             public string AuthProvider { get; set; }
             public string AuthToken { get; set; }
-
+            public string AppId{ get; set; }
        }
     }
 }
