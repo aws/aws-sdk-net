@@ -31,6 +31,10 @@ namespace Amazon.CloudTrail
     {
 
         /// <summary>
+        /// Constant AccessKeyId for LookupAttributeKey
+        /// </summary>
+        public static readonly LookupAttributeKey AccessKeyId = new LookupAttributeKey("AccessKeyId");
+        /// <summary>
         /// Constant EventId for LookupAttributeKey
         /// </summary>
         public static readonly LookupAttributeKey EventId = new LookupAttributeKey("EventId");
@@ -42,6 +46,10 @@ namespace Amazon.CloudTrail
         /// Constant EventSource for LookupAttributeKey
         /// </summary>
         public static readonly LookupAttributeKey EventSource = new LookupAttributeKey("EventSource");
+        /// <summary>
+        /// Constant ReadOnly for LookupAttributeKey
+        /// </summary>
+        public static readonly LookupAttributeKey ReadOnly = new LookupAttributeKey("ReadOnly");
         /// <summary>
         /// Constant ResourceName for LookupAttributeKey
         /// </summary>

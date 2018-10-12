@@ -33,13 +33,34 @@ namespace Amazon.CloudTrail.Model
     /// </summary>
     public partial class Event
     {
+        private string _accessKeyId;
         private string _cloudTrailEvent;
         private string _eventId;
         private string _eventName;
         private string _eventSource;
         private DateTime? _eventTime;
+        private string _readOnly;
         private List<Resource> _resources = new List<Resource>();
         private string _username;
+
+        /// <summary>
+        /// Gets and sets the property AccessKeyId. 
+        /// <para>
+        /// The AWS access key ID that was used to sign the request. If the request was made with
+        /// temporary security credentials, this is the access key ID of the temporary credentials.
+        /// </para>
+        /// </summary>
+        public string AccessKeyId
+        {
+            get { return this._accessKeyId; }
+            set { this._accessKeyId = value; }
+        }
+
+        // Check to see if AccessKeyId property is set
+        internal bool IsSetAccessKeyId()
+        {
+            return this._accessKeyId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CloudTrailEvent. 
@@ -129,6 +150,24 @@ namespace Amazon.CloudTrail.Model
         internal bool IsSetEventTime()
         {
             return this._eventTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReadOnly. 
+        /// <para>
+        /// Information about whether the event is a write event or a read event. 
+        /// </para>
+        /// </summary>
+        public string ReadOnly
+        {
+            get { return this._readOnly; }
+            set { this._readOnly = value; }
+        }
+
+        // Check to see if ReadOnly property is set
+        internal bool IsSetReadOnly()
+        {
+            return this._readOnly != null;
         }
 
         /// <summary>

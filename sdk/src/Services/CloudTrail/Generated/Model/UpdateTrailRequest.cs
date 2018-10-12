@@ -176,11 +176,11 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+        /// arn:aws:kms:us-east-2:123456789012:alias/MyAliasName
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+        /// arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -234,7 +234,7 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> 
+        ///  <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> 
         /// </para>
         /// </summary>
         public string Name

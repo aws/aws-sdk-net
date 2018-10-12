@@ -28,11 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// Use event selectors to specify whether you want your trail to log management and/or
-    /// data events. When an event occurs in your account, CloudTrail evaluates the event
-    /// selector for all trails. For each trail, if the event matches any event selector,
-    /// the trail processes and logs the event. If the event doesn't match any event selector,
-    /// the trail doesn't log the event.
+    /// Use event selectors to further specify the management and data event settings for
+    /// your trail. By default, trails created without specific event selectors will be configured
+    /// to log all read and write management events, and no data events. When an event occurs
+    /// in your account, CloudTrail evaluates the event selector for all trails. For each
+    /// trail, if the event matches any event selector, the trail processes and logs the event.
+    /// If the event doesn't match any event selector, the trail doesn't log the event.
     /// 
     ///  
     /// <para>
@@ -48,13 +49,16 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property DataResources. 
         /// <para>
-        /// CloudTrail supports logging only data events for S3 objects. You can specify up to
-        /// 250 S3 buckets and object prefixes for a trail.
+        /// CloudTrail supports data event logging for Amazon S3 objects and AWS Lambda functions.
+        /// You can specify up to 250 resources for an individual event selector, but the total
+        /// number of data resources cannot exceed 250 across all event selectors in a trail.
+        /// This limit does not apply if you configure resource logging for all data events. 
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data
-        /// Events</a> in the <i>AWS CloudTrail User Guide</i>.
+        /// Events</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits
+        /// in AWS CloudTrail</a> in the <i>AWS CloudTrail User Guide</i>.
         /// </para>
         /// </summary>
         public List<DataResource> DataResources

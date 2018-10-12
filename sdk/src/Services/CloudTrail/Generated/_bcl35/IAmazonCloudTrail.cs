@@ -81,7 +81,7 @@ namespace Amazon.CloudTrail
         /// 
         ///  
         /// <para>
-        ///  <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> 
+        ///  <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidTagParameterException">
@@ -441,7 +441,8 @@ namespace Amazon.CloudTrail
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// The S3 objects that you are logging for data events.
+        /// If your event selector includes read-only events, write-only events, or all events.
+        /// This applies to both management events and data events.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -449,7 +450,8 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If your event selector includes read-only events, write-only events, or all. 
+        /// If your event selector includes data events, the Amazon S3 objects or AWS Lambda functions
+        /// that you are logging for data events.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -681,7 +683,7 @@ namespace Amazon.CloudTrail
         /// 
         ///  
         /// <para>
-        ///  <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> 
+        ///  <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidTokenException">
@@ -762,12 +764,15 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Looks up API activity events captured by CloudTrail that create, update, or delete
-        /// resources in your account. Events for a region can be looked up for the times in which
-        /// you had CloudTrail turned on in that region during the last seven days. Lookup supports
-        /// the following attributes:
+        /// Looks up <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-management-events">management
+        /// events</a> captured by CloudTrail. Events for a region can be looked up in that region
+        /// during the last 90 days. Lookup supports the following attributes:
         /// 
         ///  <ul> <li> 
+        /// <para>
+        /// AWS access key
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// Event ID
         /// </para>
@@ -778,6 +783,10 @@ namespace Amazon.CloudTrail
         ///  </li> <li> 
         /// <para>
         /// Event source
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Read only
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -793,7 +802,7 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// All attributes are optional. The default number of results returned is 10, with a
+        /// All attributes are optional. The default number of results returned is 50, with a
         /// maximum of 50 possible. The response includes a token that you can use to get the
         /// next page of results.
         /// </para>
@@ -861,12 +870,18 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Configures an event selector for your trail. Use event selectors to specify whether
-        /// you want your trail to log management and/or data events. When an event occurs in
-        /// your account, CloudTrail evaluates the event selectors in all trails. For each trail,
-        /// if the event matches any event selector, the trail processes and logs the event. If
-        /// the event doesn't match any event selector, the trail doesn't log the event. 
+        /// Configures an event selector for your trail. Use event selectors to further specify
+        /// the management and data event settings for your trail. By default, trails created
+        /// without specific event selectors will be configured to log all read and write management
+        /// events, and no data events. 
         /// 
+        ///  
+        /// <para>
+        /// When an event occurs in your account, CloudTrail evaluates the event selectors in
+        /// all trails. For each trail, if the event matches any event selector, the trail processes
+        /// and logs the event. If the event doesn't match any event selector, the trail doesn't
+        /// log the event. 
+        /// </para>
         ///  
         /// <para>
         /// Example
@@ -903,7 +918,8 @@ namespace Amazon.CloudTrail
         /// <para>
         /// You can configure up to five event selectors for each trail. For more information,
         /// see <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html">Logging
-        /// Data and Management Events for Trails </a> in the <i>AWS CloudTrail User Guide</i>.
+        /// Data and Management Events for Trails </a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits
+        /// in AWS CloudTrail</a> in the <i>AWS CloudTrail User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutEventSelectors service method.</param>
@@ -911,16 +927,25 @@ namespace Amazon.CloudTrail
         /// <returns>The response from the PutEventSelectors service method, as returned by CloudTrail.</returns>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidEventSelectorsException">
         /// This exception is thrown when the <code>PutEventSelectors</code> operation is called
-        /// with an invalid number of event selectors, data resources, or an invalid value for
-        /// a parameter:
+        /// with a number of event selectors or data resources that is not valid. The combination
+        /// of event selectors and data resources is not valid. A trail can have up to 5 event
+        /// selectors. A trail is limited to 250 data resources. These data resources can be distributed
+        /// across event selectors, but the overall total cannot exceed 250.
         /// 
+        ///  
+        /// <para>
+        /// You can:
+        /// </para>
         ///  <ul> <li> 
         /// <para>
         /// Specify a valid number of event selectors (1 to 5) for a trail.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Specify a valid number of data resources (1 to 250) for an event selector.
+        /// Specify a valid number of data resources (1 to 250) for an event selector. The limit
+        /// of number of resources on an individual event selector is configurable up to 250.
+        /// However, this upper limit is allowed only if the total number of data resources does
+        /// not exceed 250 across all event selectors for a trail.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1016,7 +1041,7 @@ namespace Amazon.CloudTrail
         /// 
         ///  
         /// <para>
-        ///  <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> 
+        ///  <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidTagParameterException">
