@@ -1143,6 +1143,172 @@ namespace Amazon.ServiceCatalog
 
 
     /// <summary>
+    /// Constants used for properties of type ServiceActionAssociationErrorCode.
+    /// </summary>
+    public class ServiceActionAssociationErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DUPLICATE_RESOURCE for ServiceActionAssociationErrorCode
+        /// </summary>
+        public static readonly ServiceActionAssociationErrorCode DUPLICATE_RESOURCE = new ServiceActionAssociationErrorCode("DUPLICATE_RESOURCE");
+        /// <summary>
+        /// Constant INTERNAL_FAILURE for ServiceActionAssociationErrorCode
+        /// </summary>
+        public static readonly ServiceActionAssociationErrorCode INTERNAL_FAILURE = new ServiceActionAssociationErrorCode("INTERNAL_FAILURE");
+        /// <summary>
+        /// Constant LIMIT_EXCEEDED for ServiceActionAssociationErrorCode
+        /// </summary>
+        public static readonly ServiceActionAssociationErrorCode LIMIT_EXCEEDED = new ServiceActionAssociationErrorCode("LIMIT_EXCEEDED");
+        /// <summary>
+        /// Constant RESOURCE_NOT_FOUND for ServiceActionAssociationErrorCode
+        /// </summary>
+        public static readonly ServiceActionAssociationErrorCode RESOURCE_NOT_FOUND = new ServiceActionAssociationErrorCode("RESOURCE_NOT_FOUND");
+        /// <summary>
+        /// Constant THROTTLING for ServiceActionAssociationErrorCode
+        /// </summary>
+        public static readonly ServiceActionAssociationErrorCode THROTTLING = new ServiceActionAssociationErrorCode("THROTTLING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ServiceActionAssociationErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServiceActionAssociationErrorCode FindValue(string value)
+        {
+            return FindValue<ServiceActionAssociationErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServiceActionAssociationErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ServiceActionDefinitionKey.
+    /// </summary>
+    public class ServiceActionDefinitionKey : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AssumeRole for ServiceActionDefinitionKey
+        /// </summary>
+        public static readonly ServiceActionDefinitionKey AssumeRole = new ServiceActionDefinitionKey("AssumeRole");
+        /// <summary>
+        /// Constant Name for ServiceActionDefinitionKey
+        /// </summary>
+        public static readonly ServiceActionDefinitionKey Name = new ServiceActionDefinitionKey("Name");
+        /// <summary>
+        /// Constant Parameters for ServiceActionDefinitionKey
+        /// </summary>
+        public static readonly ServiceActionDefinitionKey Parameters = new ServiceActionDefinitionKey("Parameters");
+        /// <summary>
+        /// Constant Version for ServiceActionDefinitionKey
+        /// </summary>
+        public static readonly ServiceActionDefinitionKey Version = new ServiceActionDefinitionKey("Version");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ServiceActionDefinitionKey(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServiceActionDefinitionKey FindValue(string value)
+        {
+            return FindValue<ServiceActionDefinitionKey>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServiceActionDefinitionKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ServiceActionDefinitionType.
+    /// </summary>
+    public class ServiceActionDefinitionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SSM_AUTOMATION for ServiceActionDefinitionType
+        /// </summary>
+        public static readonly ServiceActionDefinitionType SSM_AUTOMATION = new ServiceActionDefinitionType("SSM_AUTOMATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ServiceActionDefinitionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServiceActionDefinitionType FindValue(string value)
+        {
+            return FindValue<ServiceActionDefinitionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServiceActionDefinitionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SortOrder.
     /// </summary>
     public class SortOrder : ConstantClass

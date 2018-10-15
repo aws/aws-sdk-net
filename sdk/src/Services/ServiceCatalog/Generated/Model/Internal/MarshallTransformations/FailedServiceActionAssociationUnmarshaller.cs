@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ProvisionedProductDetail Object
+    /// Response Unmarshaller for FailedServiceActionAssociation Object
     /// </summary>  
-    public class ProvisionedProductDetailUnmarshaller : IUnmarshaller<ProvisionedProductDetail, XmlUnmarshallerContext>, IUnmarshaller<ProvisionedProductDetail, JsonUnmarshallerContext>
+    public class FailedServiceActionAssociationUnmarshaller : IUnmarshaller<FailedServiceActionAssociation, XmlUnmarshallerContext>, IUnmarshaller<FailedServiceActionAssociation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ProvisionedProductDetail IUnmarshaller<ProvisionedProductDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        FailedServiceActionAssociation IUnmarshaller<FailedServiceActionAssociation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,27 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ProvisionedProductDetail Unmarshall(JsonUnmarshallerContext context)
+        public FailedServiceActionAssociation Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ProvisionedProductDetail unmarshalledObject = new ProvisionedProductDetail();
+            FailedServiceActionAssociation unmarshalledObject = new FailedServiceActionAssociation();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("ErrorCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ErrorCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("CreatedTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreatedTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("ErrorMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("IdempotencyToken", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IdempotencyToken = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LastRecordId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LastRecordId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ErrorMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ProductId", targetDepth))
@@ -112,22 +88,10 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                     unmarshalledObject.ProvisioningArtifactId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("ServiceActionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("StatusMessage", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StatusMessage = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Type", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ServiceActionId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -136,12 +100,12 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         }
 
 
-        private static ProvisionedProductDetailUnmarshaller _instance = new ProvisionedProductDetailUnmarshaller();        
+        private static FailedServiceActionAssociationUnmarshaller _instance = new FailedServiceActionAssociationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ProvisionedProductDetailUnmarshaller Instance
+        public static FailedServiceActionAssociationUnmarshaller Instance
         {
             get
             {

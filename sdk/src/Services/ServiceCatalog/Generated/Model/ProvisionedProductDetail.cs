@@ -38,6 +38,8 @@ namespace Amazon.ServiceCatalog.Model
         private string _idempotencyToken;
         private string _lastRecordId;
         private string _name;
+        private string _productId;
+        private string _provisioningArtifactId;
         private ProvisionedProductStatus _status;
         private string _statusMessage;
         private string _type;
@@ -149,6 +151,42 @@ namespace Amazon.ServiceCatalog.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProductId. 
+        /// <para>
+        /// The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.
+        /// </para>
+        /// </summary>
+        public string ProductId
+        {
+            get { return this._productId; }
+            set { this._productId = value; }
+        }
+
+        // Check to see if ProductId property is set
+        internal bool IsSetProductId()
+        {
+            return this._productId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProvisioningArtifactId. 
+        /// <para>
+        /// The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.
+        /// </para>
+        /// </summary>
+        public string ProvisioningArtifactId
+        {
+            get { return this._provisioningArtifactId; }
+            set { this._provisioningArtifactId = value; }
+        }
+
+        // Check to see if ProvisioningArtifactId property is set
+        internal bool IsSetProvisioningArtifactId()
+        {
+            return this._provisioningArtifactId != null;
         }
 
         /// <summary>

@@ -391,6 +391,55 @@ namespace Amazon.ServiceCatalog
 
         #endregion
         
+        #region  AssociateServiceActionWithProvisioningArtifact
+
+
+        /// <summary>
+        /// Associates a self-service action with a provisioning artifact.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateServiceActionWithProvisioningArtifact service method.</param>
+        /// 
+        /// <returns>The response from the AssociateServiceActionWithProvisioningArtifact service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.DuplicateResourceException">
+        /// The specified resource is a duplicate.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.LimitExceededException">
+        /// The current limits of the service would have been exceeded by this operation. Decrease
+        /// your resource use or increase your service limits and retry the operation.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateServiceActionWithProvisioningArtifact">REST API Reference for AssociateServiceActionWithProvisioningArtifact Operation</seealso>
+        public virtual AssociateServiceActionWithProvisioningArtifactResponse AssociateServiceActionWithProvisioningArtifact(AssociateServiceActionWithProvisioningArtifactRequest request)
+        {
+            var marshaller = AssociateServiceActionWithProvisioningArtifactRequestMarshaller.Instance;
+            var unmarshaller = AssociateServiceActionWithProvisioningArtifactResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateServiceActionWithProvisioningArtifactRequest,AssociateServiceActionWithProvisioningArtifactResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateServiceActionWithProvisioningArtifact operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateServiceActionWithProvisioningArtifact operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateServiceActionWithProvisioningArtifact">REST API Reference for AssociateServiceActionWithProvisioningArtifact Operation</seealso>
+        public virtual Task<AssociateServiceActionWithProvisioningArtifactResponse> AssociateServiceActionWithProvisioningArtifactAsync(AssociateServiceActionWithProvisioningArtifactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = AssociateServiceActionWithProvisioningArtifactRequestMarshaller.Instance;
+            var unmarshaller = AssociateServiceActionWithProvisioningArtifactResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateServiceActionWithProvisioningArtifactRequest,AssociateServiceActionWithProvisioningArtifactResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AssociateTagOptionWithResource
 
 
@@ -447,6 +496,90 @@ namespace Amazon.ServiceCatalog
             var unmarshaller = AssociateTagOptionWithResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<AssociateTagOptionWithResourceRequest,AssociateTagOptionWithResourceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchAssociateServiceActionWithProvisioningArtifact
+
+
+        /// <summary>
+        /// Associates multiple self-service actions with provisioning artifacts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchAssociateServiceActionWithProvisioningArtifact service method.</param>
+        /// 
+        /// <returns>The response from the BatchAssociateServiceActionWithProvisioningArtifact service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/BatchAssociateServiceActionWithProvisioningArtifact">REST API Reference for BatchAssociateServiceActionWithProvisioningArtifact Operation</seealso>
+        public virtual BatchAssociateServiceActionWithProvisioningArtifactResponse BatchAssociateServiceActionWithProvisioningArtifact(BatchAssociateServiceActionWithProvisioningArtifactRequest request)
+        {
+            var marshaller = BatchAssociateServiceActionWithProvisioningArtifactRequestMarshaller.Instance;
+            var unmarshaller = BatchAssociateServiceActionWithProvisioningArtifactResponseUnmarshaller.Instance;
+
+            return Invoke<BatchAssociateServiceActionWithProvisioningArtifactRequest,BatchAssociateServiceActionWithProvisioningArtifactResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchAssociateServiceActionWithProvisioningArtifact operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchAssociateServiceActionWithProvisioningArtifact operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/BatchAssociateServiceActionWithProvisioningArtifact">REST API Reference for BatchAssociateServiceActionWithProvisioningArtifact Operation</seealso>
+        public virtual Task<BatchAssociateServiceActionWithProvisioningArtifactResponse> BatchAssociateServiceActionWithProvisioningArtifactAsync(BatchAssociateServiceActionWithProvisioningArtifactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = BatchAssociateServiceActionWithProvisioningArtifactRequestMarshaller.Instance;
+            var unmarshaller = BatchAssociateServiceActionWithProvisioningArtifactResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchAssociateServiceActionWithProvisioningArtifactRequest,BatchAssociateServiceActionWithProvisioningArtifactResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchDisassociateServiceActionFromProvisioningArtifact
+
+
+        /// <summary>
+        /// Disassociates a batch of self-service actions from the specified provisioning artifact.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDisassociateServiceActionFromProvisioningArtifact service method.</param>
+        /// 
+        /// <returns>The response from the BatchDisassociateServiceActionFromProvisioningArtifact service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/BatchDisassociateServiceActionFromProvisioningArtifact">REST API Reference for BatchDisassociateServiceActionFromProvisioningArtifact Operation</seealso>
+        public virtual BatchDisassociateServiceActionFromProvisioningArtifactResponse BatchDisassociateServiceActionFromProvisioningArtifact(BatchDisassociateServiceActionFromProvisioningArtifactRequest request)
+        {
+            var marshaller = BatchDisassociateServiceActionFromProvisioningArtifactRequestMarshaller.Instance;
+            var unmarshaller = BatchDisassociateServiceActionFromProvisioningArtifactResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDisassociateServiceActionFromProvisioningArtifactRequest,BatchDisassociateServiceActionFromProvisioningArtifactResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchDisassociateServiceActionFromProvisioningArtifact operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchDisassociateServiceActionFromProvisioningArtifact operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/BatchDisassociateServiceActionFromProvisioningArtifact">REST API Reference for BatchDisassociateServiceActionFromProvisioningArtifact Operation</seealso>
+        public virtual Task<BatchDisassociateServiceActionFromProvisioningArtifactResponse> BatchDisassociateServiceActionFromProvisioningArtifactAsync(BatchDisassociateServiceActionFromProvisioningArtifactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = BatchDisassociateServiceActionFromProvisioningArtifactRequestMarshaller.Instance;
+            var unmarshaller = BatchDisassociateServiceActionFromProvisioningArtifactResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchDisassociateServiceActionFromProvisioningArtifactRequest,BatchDisassociateServiceActionFromProvisioningArtifactResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -827,6 +960,52 @@ namespace Amazon.ServiceCatalog
 
         #endregion
         
+        #region  CreateServiceAction
+
+
+        /// <summary>
+        /// Creates a self-service action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateServiceAction service method.</param>
+        /// 
+        /// <returns>The response from the CreateServiceAction service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.LimitExceededException">
+        /// The current limits of the service would have been exceeded by this operation. Decrease
+        /// your resource use or increase your service limits and retry the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateServiceAction">REST API Reference for CreateServiceAction Operation</seealso>
+        public virtual CreateServiceActionResponse CreateServiceAction(CreateServiceActionRequest request)
+        {
+            var marshaller = CreateServiceActionRequestMarshaller.Instance;
+            var unmarshaller = CreateServiceActionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateServiceActionRequest,CreateServiceActionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateServiceAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateServiceAction operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateServiceAction">REST API Reference for CreateServiceAction Operation</seealso>
+        public virtual Task<CreateServiceActionResponse> CreateServiceActionAsync(CreateServiceActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateServiceActionRequestMarshaller.Instance;
+            var unmarshaller = CreateServiceActionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateServiceActionRequest,CreateServiceActionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateTagOption
 
 
@@ -1181,6 +1360,52 @@ namespace Amazon.ServiceCatalog
             var unmarshaller = DeleteProvisioningArtifactResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteProvisioningArtifactRequest,DeleteProvisioningArtifactResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteServiceAction
+
+
+        /// <summary>
+        /// Deletes a self-service action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteServiceAction service method.</param>
+        /// 
+        /// <returns>The response from the DeleteServiceAction service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceInUseException">
+        /// A resource that is currently in use. Ensure that the resource is not in use and retry
+        /// the operation.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteServiceAction">REST API Reference for DeleteServiceAction Operation</seealso>
+        public virtual DeleteServiceActionResponse DeleteServiceAction(DeleteServiceActionRequest request)
+        {
+            var marshaller = DeleteServiceActionRequestMarshaller.Instance;
+            var unmarshaller = DeleteServiceActionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteServiceActionRequest,DeleteServiceActionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteServiceAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteServiceAction operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteServiceAction">REST API Reference for DeleteServiceAction Operation</seealso>
+        public virtual Task<DeleteServiceActionResponse> DeleteServiceActionAsync(DeleteServiceActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteServiceActionRequestMarshaller.Instance;
+            var unmarshaller = DeleteServiceActionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteServiceActionRequest,DeleteServiceActionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1735,6 +1960,48 @@ namespace Amazon.ServiceCatalog
 
         #endregion
         
+        #region  DescribeServiceAction
+
+
+        /// <summary>
+        /// Describes a self-service action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeServiceAction service method.</param>
+        /// 
+        /// <returns>The response from the DescribeServiceAction service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeServiceAction">REST API Reference for DescribeServiceAction Operation</seealso>
+        public virtual DescribeServiceActionResponse DescribeServiceAction(DescribeServiceActionRequest request)
+        {
+            var marshaller = DescribeServiceActionRequestMarshaller.Instance;
+            var unmarshaller = DescribeServiceActionResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeServiceActionRequest,DescribeServiceActionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeServiceAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeServiceAction operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeServiceAction">REST API Reference for DescribeServiceAction Operation</seealso>
+        public virtual Task<DescribeServiceActionResponse> DescribeServiceActionAsync(DescribeServiceActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeServiceActionRequestMarshaller.Instance;
+            var unmarshaller = DescribeServiceActionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeServiceActionRequest,DescribeServiceActionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeTagOption
 
 
@@ -1876,6 +2143,49 @@ namespace Amazon.ServiceCatalog
 
         #endregion
         
+        #region  DisassociateServiceActionFromProvisioningArtifact
+
+
+        /// <summary>
+        /// Disassociates the specified self-service action association from the specified provisioning
+        /// artifact.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateServiceActionFromProvisioningArtifact service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateServiceActionFromProvisioningArtifact service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateServiceActionFromProvisioningArtifact">REST API Reference for DisassociateServiceActionFromProvisioningArtifact Operation</seealso>
+        public virtual DisassociateServiceActionFromProvisioningArtifactResponse DisassociateServiceActionFromProvisioningArtifact(DisassociateServiceActionFromProvisioningArtifactRequest request)
+        {
+            var marshaller = DisassociateServiceActionFromProvisioningArtifactRequestMarshaller.Instance;
+            var unmarshaller = DisassociateServiceActionFromProvisioningArtifactResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateServiceActionFromProvisioningArtifactRequest,DisassociateServiceActionFromProvisioningArtifactResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateServiceActionFromProvisioningArtifact operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateServiceActionFromProvisioningArtifact operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateServiceActionFromProvisioningArtifact">REST API Reference for DisassociateServiceActionFromProvisioningArtifact Operation</seealso>
+        public virtual Task<DisassociateServiceActionFromProvisioningArtifactResponse> DisassociateServiceActionFromProvisioningArtifactAsync(DisassociateServiceActionFromProvisioningArtifactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DisassociateServiceActionFromProvisioningArtifactRequestMarshaller.Instance;
+            var unmarshaller = DisassociateServiceActionFromProvisioningArtifactResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateServiceActionFromProvisioningArtifactRequest,DisassociateServiceActionFromProvisioningArtifactResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisassociateTagOptionFromResource
 
 
@@ -1967,6 +2277,55 @@ namespace Amazon.ServiceCatalog
             var unmarshaller = ExecuteProvisionedProductPlanResponseUnmarshaller.Instance;
 
             return InvokeAsync<ExecuteProvisionedProductPlanRequest,ExecuteProvisionedProductPlanResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ExecuteProvisionedProductServiceAction
+
+
+        /// <summary>
+        /// Executes a self-service action against a provisioned product.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteProvisionedProductServiceAction service method.</param>
+        /// 
+        /// <returns>The response from the ExecuteProvisionedProductServiceAction service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidStateException">
+        /// An attempt was made to modify a resource that is in a state that is not valid. Check
+        /// your resources to ensure that they are in valid states before retrying the operation.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ExecuteProvisionedProductServiceAction">REST API Reference for ExecuteProvisionedProductServiceAction Operation</seealso>
+        public virtual ExecuteProvisionedProductServiceActionResponse ExecuteProvisionedProductServiceAction(ExecuteProvisionedProductServiceActionRequest request)
+        {
+            var marshaller = ExecuteProvisionedProductServiceActionRequestMarshaller.Instance;
+            var unmarshaller = ExecuteProvisionedProductServiceActionResponseUnmarshaller.Instance;
+
+            return Invoke<ExecuteProvisionedProductServiceActionRequest,ExecuteProvisionedProductServiceActionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ExecuteProvisionedProductServiceAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteProvisionedProductServiceAction operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ExecuteProvisionedProductServiceAction">REST API Reference for ExecuteProvisionedProductServiceAction Operation</seealso>
+        public virtual Task<ExecuteProvisionedProductServiceActionResponse> ExecuteProvisionedProductServiceActionAsync(ExecuteProvisionedProductServiceActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ExecuteProvisionedProductServiceActionRequestMarshaller.Instance;
+            var unmarshaller = ExecuteProvisionedProductServiceActionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ExecuteProvisionedProductServiceActionRequest,ExecuteProvisionedProductServiceActionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2371,6 +2730,52 @@ namespace Amazon.ServiceCatalog
 
         #endregion
         
+        #region  ListProvisioningArtifactsForServiceAction
+
+
+        /// <summary>
+        /// Lists all provisioning artifacts (also known as versions) for the specified self-service
+        /// action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProvisioningArtifactsForServiceAction service method.</param>
+        /// 
+        /// <returns>The response from the ListProvisioningArtifactsForServiceAction service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListProvisioningArtifactsForServiceAction">REST API Reference for ListProvisioningArtifactsForServiceAction Operation</seealso>
+        public virtual ListProvisioningArtifactsForServiceActionResponse ListProvisioningArtifactsForServiceAction(ListProvisioningArtifactsForServiceActionRequest request)
+        {
+            var marshaller = ListProvisioningArtifactsForServiceActionRequestMarshaller.Instance;
+            var unmarshaller = ListProvisioningArtifactsForServiceActionResponseUnmarshaller.Instance;
+
+            return Invoke<ListProvisioningArtifactsForServiceActionRequest,ListProvisioningArtifactsForServiceActionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListProvisioningArtifactsForServiceAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListProvisioningArtifactsForServiceAction operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListProvisioningArtifactsForServiceAction">REST API Reference for ListProvisioningArtifactsForServiceAction Operation</seealso>
+        public virtual Task<ListProvisioningArtifactsForServiceActionResponse> ListProvisioningArtifactsForServiceActionAsync(ListProvisioningArtifactsForServiceActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListProvisioningArtifactsForServiceActionRequestMarshaller.Instance;
+            var unmarshaller = ListProvisioningArtifactsForServiceActionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListProvisioningArtifactsForServiceActionRequest,ListProvisioningArtifactsForServiceActionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListRecordHistory
 
 
@@ -2458,6 +2863,94 @@ namespace Amazon.ServiceCatalog
             var unmarshaller = ListResourcesForTagOptionResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListResourcesForTagOptionRequest,ListResourcesForTagOptionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListServiceActions
+
+
+        /// <summary>
+        /// Lists all self-service actions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceActions service method.</param>
+        /// 
+        /// <returns>The response from the ListServiceActions service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListServiceActions">REST API Reference for ListServiceActions Operation</seealso>
+        public virtual ListServiceActionsResponse ListServiceActions(ListServiceActionsRequest request)
+        {
+            var marshaller = ListServiceActionsRequestMarshaller.Instance;
+            var unmarshaller = ListServiceActionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListServiceActionsRequest,ListServiceActionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListServiceActions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceActions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListServiceActions">REST API Reference for ListServiceActions Operation</seealso>
+        public virtual Task<ListServiceActionsResponse> ListServiceActionsAsync(ListServiceActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListServiceActionsRequestMarshaller.Instance;
+            var unmarshaller = ListServiceActionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListServiceActionsRequest,ListServiceActionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListServiceActionsForProvisioningArtifact
+
+
+        /// <summary>
+        /// Returns a paginated list of self-service actions associated with the specified Product
+        /// ID and Provisioning Artifact ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceActionsForProvisioningArtifact service method.</param>
+        /// 
+        /// <returns>The response from the ListServiceActionsForProvisioningArtifact service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListServiceActionsForProvisioningArtifact">REST API Reference for ListServiceActionsForProvisioningArtifact Operation</seealso>
+        public virtual ListServiceActionsForProvisioningArtifactResponse ListServiceActionsForProvisioningArtifact(ListServiceActionsForProvisioningArtifactRequest request)
+        {
+            var marshaller = ListServiceActionsForProvisioningArtifactRequestMarshaller.Instance;
+            var unmarshaller = ListServiceActionsForProvisioningArtifactResponseUnmarshaller.Instance;
+
+            return Invoke<ListServiceActionsForProvisioningArtifactRequest,ListServiceActionsForProvisioningArtifactResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListServiceActionsForProvisioningArtifact operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceActionsForProvisioningArtifact operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListServiceActionsForProvisioningArtifact">REST API Reference for ListServiceActionsForProvisioningArtifact Operation</seealso>
+        public virtual Task<ListServiceActionsForProvisioningArtifactResponse> ListServiceActionsForProvisioningArtifactAsync(ListServiceActionsForProvisioningArtifactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListServiceActionsForProvisioningArtifactRequestMarshaller.Instance;
+            var unmarshaller = ListServiceActionsForProvisioningArtifactResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListServiceActionsForProvisioningArtifactRequest,ListServiceActionsForProvisioningArtifactResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -3096,6 +3589,51 @@ namespace Amazon.ServiceCatalog
             var unmarshaller = UpdateProvisioningArtifactResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateProvisioningArtifactRequest,UpdateProvisioningArtifactResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateServiceAction
+
+
+        /// <summary>
+        /// Updates a self-service action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateServiceAction service method.</param>
+        /// 
+        /// <returns>The response from the UpdateServiceAction service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateServiceAction">REST API Reference for UpdateServiceAction Operation</seealso>
+        public virtual UpdateServiceActionResponse UpdateServiceAction(UpdateServiceActionRequest request)
+        {
+            var marshaller = UpdateServiceActionRequestMarshaller.Instance;
+            var unmarshaller = UpdateServiceActionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateServiceActionRequest,UpdateServiceActionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateServiceAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateServiceAction operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateServiceAction">REST API Reference for UpdateServiceAction Operation</seealso>
+        public virtual Task<UpdateServiceActionResponse> UpdateServiceActionAsync(UpdateServiceActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateServiceActionRequestMarshaller.Instance;
+            var unmarshaller = UpdateServiceActionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateServiceActionRequest,UpdateServiceActionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

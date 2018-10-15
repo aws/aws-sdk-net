@@ -431,6 +431,69 @@ namespace Amazon.ServiceCatalog
 
         #endregion
         
+        #region  AssociateServiceActionWithProvisioningArtifact
+
+        /// <summary>
+        /// Associates a self-service action with a provisioning artifact.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateServiceActionWithProvisioningArtifact service method.</param>
+        /// 
+        /// <returns>The response from the AssociateServiceActionWithProvisioningArtifact service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.DuplicateResourceException">
+        /// The specified resource is a duplicate.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.LimitExceededException">
+        /// The current limits of the service would have been exceeded by this operation. Decrease
+        /// your resource use or increase your service limits and retry the operation.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateServiceActionWithProvisioningArtifact">REST API Reference for AssociateServiceActionWithProvisioningArtifact Operation</seealso>
+        public virtual AssociateServiceActionWithProvisioningArtifactResponse AssociateServiceActionWithProvisioningArtifact(AssociateServiceActionWithProvisioningArtifactRequest request)
+        {
+            var marshaller = AssociateServiceActionWithProvisioningArtifactRequestMarshaller.Instance;
+            var unmarshaller = AssociateServiceActionWithProvisioningArtifactResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateServiceActionWithProvisioningArtifactRequest,AssociateServiceActionWithProvisioningArtifactResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateServiceActionWithProvisioningArtifact operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateServiceActionWithProvisioningArtifact operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateServiceActionWithProvisioningArtifact
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateServiceActionWithProvisioningArtifact">REST API Reference for AssociateServiceActionWithProvisioningArtifact Operation</seealso>
+        public virtual IAsyncResult BeginAssociateServiceActionWithProvisioningArtifact(AssociateServiceActionWithProvisioningArtifactRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = AssociateServiceActionWithProvisioningArtifactRequestMarshaller.Instance;
+            var unmarshaller = AssociateServiceActionWithProvisioningArtifactResponseUnmarshaller.Instance;
+
+            return BeginInvoke<AssociateServiceActionWithProvisioningArtifactRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateServiceActionWithProvisioningArtifact operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateServiceActionWithProvisioningArtifact.</param>
+        /// 
+        /// <returns>Returns a  AssociateServiceActionWithProvisioningArtifactResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateServiceActionWithProvisioningArtifact">REST API Reference for AssociateServiceActionWithProvisioningArtifact Operation</seealso>
+        public virtual AssociateServiceActionWithProvisioningArtifactResponse EndAssociateServiceActionWithProvisioningArtifact(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateServiceActionWithProvisioningArtifactResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  AssociateTagOptionWithResource
 
         /// <summary>
@@ -502,6 +565,118 @@ namespace Amazon.ServiceCatalog
         public virtual AssociateTagOptionWithResourceResponse EndAssociateTagOptionWithResource(IAsyncResult asyncResult)
         {
             return EndInvoke<AssociateTagOptionWithResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  BatchAssociateServiceActionWithProvisioningArtifact
+
+        /// <summary>
+        /// Associates multiple self-service actions with provisioning artifacts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchAssociateServiceActionWithProvisioningArtifact service method.</param>
+        /// 
+        /// <returns>The response from the BatchAssociateServiceActionWithProvisioningArtifact service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/BatchAssociateServiceActionWithProvisioningArtifact">REST API Reference for BatchAssociateServiceActionWithProvisioningArtifact Operation</seealso>
+        public virtual BatchAssociateServiceActionWithProvisioningArtifactResponse BatchAssociateServiceActionWithProvisioningArtifact(BatchAssociateServiceActionWithProvisioningArtifactRequest request)
+        {
+            var marshaller = BatchAssociateServiceActionWithProvisioningArtifactRequestMarshaller.Instance;
+            var unmarshaller = BatchAssociateServiceActionWithProvisioningArtifactResponseUnmarshaller.Instance;
+
+            return Invoke<BatchAssociateServiceActionWithProvisioningArtifactRequest,BatchAssociateServiceActionWithProvisioningArtifactResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchAssociateServiceActionWithProvisioningArtifact operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchAssociateServiceActionWithProvisioningArtifact operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchAssociateServiceActionWithProvisioningArtifact
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/BatchAssociateServiceActionWithProvisioningArtifact">REST API Reference for BatchAssociateServiceActionWithProvisioningArtifact Operation</seealso>
+        public virtual IAsyncResult BeginBatchAssociateServiceActionWithProvisioningArtifact(BatchAssociateServiceActionWithProvisioningArtifactRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = BatchAssociateServiceActionWithProvisioningArtifactRequestMarshaller.Instance;
+            var unmarshaller = BatchAssociateServiceActionWithProvisioningArtifactResponseUnmarshaller.Instance;
+
+            return BeginInvoke<BatchAssociateServiceActionWithProvisioningArtifactRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchAssociateServiceActionWithProvisioningArtifact operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchAssociateServiceActionWithProvisioningArtifact.</param>
+        /// 
+        /// <returns>Returns a  BatchAssociateServiceActionWithProvisioningArtifactResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/BatchAssociateServiceActionWithProvisioningArtifact">REST API Reference for BatchAssociateServiceActionWithProvisioningArtifact Operation</seealso>
+        public virtual BatchAssociateServiceActionWithProvisioningArtifactResponse EndBatchAssociateServiceActionWithProvisioningArtifact(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchAssociateServiceActionWithProvisioningArtifactResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  BatchDisassociateServiceActionFromProvisioningArtifact
+
+        /// <summary>
+        /// Disassociates a batch of self-service actions from the specified provisioning artifact.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDisassociateServiceActionFromProvisioningArtifact service method.</param>
+        /// 
+        /// <returns>The response from the BatchDisassociateServiceActionFromProvisioningArtifact service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/BatchDisassociateServiceActionFromProvisioningArtifact">REST API Reference for BatchDisassociateServiceActionFromProvisioningArtifact Operation</seealso>
+        public virtual BatchDisassociateServiceActionFromProvisioningArtifactResponse BatchDisassociateServiceActionFromProvisioningArtifact(BatchDisassociateServiceActionFromProvisioningArtifactRequest request)
+        {
+            var marshaller = BatchDisassociateServiceActionFromProvisioningArtifactRequestMarshaller.Instance;
+            var unmarshaller = BatchDisassociateServiceActionFromProvisioningArtifactResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDisassociateServiceActionFromProvisioningArtifactRequest,BatchDisassociateServiceActionFromProvisioningArtifactResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchDisassociateServiceActionFromProvisioningArtifact operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchDisassociateServiceActionFromProvisioningArtifact operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchDisassociateServiceActionFromProvisioningArtifact
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/BatchDisassociateServiceActionFromProvisioningArtifact">REST API Reference for BatchDisassociateServiceActionFromProvisioningArtifact Operation</seealso>
+        public virtual IAsyncResult BeginBatchDisassociateServiceActionFromProvisioningArtifact(BatchDisassociateServiceActionFromProvisioningArtifactRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = BatchDisassociateServiceActionFromProvisioningArtifactRequestMarshaller.Instance;
+            var unmarshaller = BatchDisassociateServiceActionFromProvisioningArtifactResponseUnmarshaller.Instance;
+
+            return BeginInvoke<BatchDisassociateServiceActionFromProvisioningArtifactRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchDisassociateServiceActionFromProvisioningArtifact operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchDisassociateServiceActionFromProvisioningArtifact.</param>
+        /// 
+        /// <returns>Returns a  BatchDisassociateServiceActionFromProvisioningArtifactResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/BatchDisassociateServiceActionFromProvisioningArtifact">REST API Reference for BatchDisassociateServiceActionFromProvisioningArtifact Operation</seealso>
+        public virtual BatchDisassociateServiceActionFromProvisioningArtifactResponse EndBatchDisassociateServiceActionFromProvisioningArtifact(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchDisassociateServiceActionFromProvisioningArtifactResponse>(asyncResult);
         }
 
         #endregion
@@ -979,6 +1154,66 @@ namespace Amazon.ServiceCatalog
 
         #endregion
         
+        #region  CreateServiceAction
+
+        /// <summary>
+        /// Creates a self-service action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateServiceAction service method.</param>
+        /// 
+        /// <returns>The response from the CreateServiceAction service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.LimitExceededException">
+        /// The current limits of the service would have been exceeded by this operation. Decrease
+        /// your resource use or increase your service limits and retry the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateServiceAction">REST API Reference for CreateServiceAction Operation</seealso>
+        public virtual CreateServiceActionResponse CreateServiceAction(CreateServiceActionRequest request)
+        {
+            var marshaller = CreateServiceActionRequestMarshaller.Instance;
+            var unmarshaller = CreateServiceActionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateServiceActionRequest,CreateServiceActionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateServiceAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateServiceAction operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateServiceAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateServiceAction">REST API Reference for CreateServiceAction Operation</seealso>
+        public virtual IAsyncResult BeginCreateServiceAction(CreateServiceActionRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = CreateServiceActionRequestMarshaller.Instance;
+            var unmarshaller = CreateServiceActionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateServiceActionRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateServiceAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateServiceAction.</param>
+        /// 
+        /// <returns>Returns a  CreateServiceActionResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateServiceAction">REST API Reference for CreateServiceAction Operation</seealso>
+        public virtual CreateServiceActionResponse EndCreateServiceAction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateServiceActionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateTagOption
 
         /// <summary>
@@ -1432,6 +1667,66 @@ namespace Amazon.ServiceCatalog
         public virtual DeleteProvisioningArtifactResponse EndDeleteProvisioningArtifact(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteProvisioningArtifactResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteServiceAction
+
+        /// <summary>
+        /// Deletes a self-service action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteServiceAction service method.</param>
+        /// 
+        /// <returns>The response from the DeleteServiceAction service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceInUseException">
+        /// A resource that is currently in use. Ensure that the resource is not in use and retry
+        /// the operation.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteServiceAction">REST API Reference for DeleteServiceAction Operation</seealso>
+        public virtual DeleteServiceActionResponse DeleteServiceAction(DeleteServiceActionRequest request)
+        {
+            var marshaller = DeleteServiceActionRequestMarshaller.Instance;
+            var unmarshaller = DeleteServiceActionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteServiceActionRequest,DeleteServiceActionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteServiceAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteServiceAction operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteServiceAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteServiceAction">REST API Reference for DeleteServiceAction Operation</seealso>
+        public virtual IAsyncResult BeginDeleteServiceAction(DeleteServiceActionRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DeleteServiceActionRequestMarshaller.Instance;
+            var unmarshaller = DeleteServiceActionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteServiceActionRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteServiceAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteServiceAction.</param>
+        /// 
+        /// <returns>Returns a  DeleteServiceActionResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteServiceAction">REST API Reference for DeleteServiceAction Operation</seealso>
+        public virtual DeleteServiceActionResponse EndDeleteServiceAction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteServiceActionResponse>(asyncResult);
         }
 
         #endregion
@@ -2153,6 +2448,62 @@ namespace Amazon.ServiceCatalog
 
         #endregion
         
+        #region  DescribeServiceAction
+
+        /// <summary>
+        /// Describes a self-service action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeServiceAction service method.</param>
+        /// 
+        /// <returns>The response from the DescribeServiceAction service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeServiceAction">REST API Reference for DescribeServiceAction Operation</seealso>
+        public virtual DescribeServiceActionResponse DescribeServiceAction(DescribeServiceActionRequest request)
+        {
+            var marshaller = DescribeServiceActionRequestMarshaller.Instance;
+            var unmarshaller = DescribeServiceActionResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeServiceActionRequest,DescribeServiceActionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeServiceAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeServiceAction operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeServiceAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeServiceAction">REST API Reference for DescribeServiceAction Operation</seealso>
+        public virtual IAsyncResult BeginDescribeServiceAction(DescribeServiceActionRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DescribeServiceActionRequestMarshaller.Instance;
+            var unmarshaller = DescribeServiceActionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeServiceActionRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeServiceAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeServiceAction.</param>
+        /// 
+        /// <returns>Returns a  DescribeServiceActionResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeServiceAction">REST API Reference for DescribeServiceAction Operation</seealso>
+        public virtual DescribeServiceActionResponse EndDescribeServiceAction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeServiceActionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeTagOption
 
         /// <summary>
@@ -2336,6 +2687,63 @@ namespace Amazon.ServiceCatalog
 
         #endregion
         
+        #region  DisassociateServiceActionFromProvisioningArtifact
+
+        /// <summary>
+        /// Disassociates the specified self-service action association from the specified provisioning
+        /// artifact.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateServiceActionFromProvisioningArtifact service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateServiceActionFromProvisioningArtifact service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateServiceActionFromProvisioningArtifact">REST API Reference for DisassociateServiceActionFromProvisioningArtifact Operation</seealso>
+        public virtual DisassociateServiceActionFromProvisioningArtifactResponse DisassociateServiceActionFromProvisioningArtifact(DisassociateServiceActionFromProvisioningArtifactRequest request)
+        {
+            var marshaller = DisassociateServiceActionFromProvisioningArtifactRequestMarshaller.Instance;
+            var unmarshaller = DisassociateServiceActionFromProvisioningArtifactResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateServiceActionFromProvisioningArtifactRequest,DisassociateServiceActionFromProvisioningArtifactResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateServiceActionFromProvisioningArtifact operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateServiceActionFromProvisioningArtifact operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateServiceActionFromProvisioningArtifact
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateServiceActionFromProvisioningArtifact">REST API Reference for DisassociateServiceActionFromProvisioningArtifact Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateServiceActionFromProvisioningArtifact(DisassociateServiceActionFromProvisioningArtifactRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DisassociateServiceActionFromProvisioningArtifactRequestMarshaller.Instance;
+            var unmarshaller = DisassociateServiceActionFromProvisioningArtifactResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DisassociateServiceActionFromProvisioningArtifactRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateServiceActionFromProvisioningArtifact operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateServiceActionFromProvisioningArtifact.</param>
+        /// 
+        /// <returns>Returns a  DisassociateServiceActionFromProvisioningArtifactResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateServiceActionFromProvisioningArtifact">REST API Reference for DisassociateServiceActionFromProvisioningArtifact Operation</seealso>
+        public virtual DisassociateServiceActionFromProvisioningArtifactResponse EndDisassociateServiceActionFromProvisioningArtifact(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateServiceActionFromProvisioningArtifactResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DisassociateTagOptionFromResource
 
         /// <summary>
@@ -2456,6 +2864,69 @@ namespace Amazon.ServiceCatalog
         public virtual ExecuteProvisionedProductPlanResponse EndExecuteProvisionedProductPlan(IAsyncResult asyncResult)
         {
             return EndInvoke<ExecuteProvisionedProductPlanResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ExecuteProvisionedProductServiceAction
+
+        /// <summary>
+        /// Executes a self-service action against a provisioned product.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteProvisionedProductServiceAction service method.</param>
+        /// 
+        /// <returns>The response from the ExecuteProvisionedProductServiceAction service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidStateException">
+        /// An attempt was made to modify a resource that is in a state that is not valid. Check
+        /// your resources to ensure that they are in valid states before retrying the operation.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ExecuteProvisionedProductServiceAction">REST API Reference for ExecuteProvisionedProductServiceAction Operation</seealso>
+        public virtual ExecuteProvisionedProductServiceActionResponse ExecuteProvisionedProductServiceAction(ExecuteProvisionedProductServiceActionRequest request)
+        {
+            var marshaller = ExecuteProvisionedProductServiceActionRequestMarshaller.Instance;
+            var unmarshaller = ExecuteProvisionedProductServiceActionResponseUnmarshaller.Instance;
+
+            return Invoke<ExecuteProvisionedProductServiceActionRequest,ExecuteProvisionedProductServiceActionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ExecuteProvisionedProductServiceAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteProvisionedProductServiceAction operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExecuteProvisionedProductServiceAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ExecuteProvisionedProductServiceAction">REST API Reference for ExecuteProvisionedProductServiceAction Operation</seealso>
+        public virtual IAsyncResult BeginExecuteProvisionedProductServiceAction(ExecuteProvisionedProductServiceActionRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ExecuteProvisionedProductServiceActionRequestMarshaller.Instance;
+            var unmarshaller = ExecuteProvisionedProductServiceActionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ExecuteProvisionedProductServiceActionRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ExecuteProvisionedProductServiceAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExecuteProvisionedProductServiceAction.</param>
+        /// 
+        /// <returns>Returns a  ExecuteProvisionedProductServiceActionResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ExecuteProvisionedProductServiceAction">REST API Reference for ExecuteProvisionedProductServiceAction Operation</seealso>
+        public virtual ExecuteProvisionedProductServiceActionResponse EndExecuteProvisionedProductServiceAction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ExecuteProvisionedProductServiceActionResponse>(asyncResult);
         }
 
         #endregion
@@ -2985,6 +3456,66 @@ namespace Amazon.ServiceCatalog
 
         #endregion
         
+        #region  ListProvisioningArtifactsForServiceAction
+
+        /// <summary>
+        /// Lists all provisioning artifacts (also known as versions) for the specified self-service
+        /// action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProvisioningArtifactsForServiceAction service method.</param>
+        /// 
+        /// <returns>The response from the ListProvisioningArtifactsForServiceAction service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListProvisioningArtifactsForServiceAction">REST API Reference for ListProvisioningArtifactsForServiceAction Operation</seealso>
+        public virtual ListProvisioningArtifactsForServiceActionResponse ListProvisioningArtifactsForServiceAction(ListProvisioningArtifactsForServiceActionRequest request)
+        {
+            var marshaller = ListProvisioningArtifactsForServiceActionRequestMarshaller.Instance;
+            var unmarshaller = ListProvisioningArtifactsForServiceActionResponseUnmarshaller.Instance;
+
+            return Invoke<ListProvisioningArtifactsForServiceActionRequest,ListProvisioningArtifactsForServiceActionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListProvisioningArtifactsForServiceAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListProvisioningArtifactsForServiceAction operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListProvisioningArtifactsForServiceAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListProvisioningArtifactsForServiceAction">REST API Reference for ListProvisioningArtifactsForServiceAction Operation</seealso>
+        public virtual IAsyncResult BeginListProvisioningArtifactsForServiceAction(ListProvisioningArtifactsForServiceActionRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ListProvisioningArtifactsForServiceActionRequestMarshaller.Instance;
+            var unmarshaller = ListProvisioningArtifactsForServiceActionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListProvisioningArtifactsForServiceActionRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListProvisioningArtifactsForServiceAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListProvisioningArtifactsForServiceAction.</param>
+        /// 
+        /// <returns>Returns a  ListProvisioningArtifactsForServiceActionResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListProvisioningArtifactsForServiceAction">REST API Reference for ListProvisioningArtifactsForServiceAction Operation</seealso>
+        public virtual ListProvisioningArtifactsForServiceActionResponse EndListProvisioningArtifactsForServiceAction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListProvisioningArtifactsForServiceActionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListRecordHistory
 
         /// <summary>
@@ -3101,6 +3632,122 @@ namespace Amazon.ServiceCatalog
         public virtual ListResourcesForTagOptionResponse EndListResourcesForTagOption(IAsyncResult asyncResult)
         {
             return EndInvoke<ListResourcesForTagOptionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListServiceActions
+
+        /// <summary>
+        /// Lists all self-service actions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceActions service method.</param>
+        /// 
+        /// <returns>The response from the ListServiceActions service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListServiceActions">REST API Reference for ListServiceActions Operation</seealso>
+        public virtual ListServiceActionsResponse ListServiceActions(ListServiceActionsRequest request)
+        {
+            var marshaller = ListServiceActionsRequestMarshaller.Instance;
+            var unmarshaller = ListServiceActionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListServiceActionsRequest,ListServiceActionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListServiceActions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceActions operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListServiceActions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListServiceActions">REST API Reference for ListServiceActions Operation</seealso>
+        public virtual IAsyncResult BeginListServiceActions(ListServiceActionsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ListServiceActionsRequestMarshaller.Instance;
+            var unmarshaller = ListServiceActionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListServiceActionsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListServiceActions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListServiceActions.</param>
+        /// 
+        /// <returns>Returns a  ListServiceActionsResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListServiceActions">REST API Reference for ListServiceActions Operation</seealso>
+        public virtual ListServiceActionsResponse EndListServiceActions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListServiceActionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListServiceActionsForProvisioningArtifact
+
+        /// <summary>
+        /// Returns a paginated list of self-service actions associated with the specified Product
+        /// ID and Provisioning Artifact ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceActionsForProvisioningArtifact service method.</param>
+        /// 
+        /// <returns>The response from the ListServiceActionsForProvisioningArtifact service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListServiceActionsForProvisioningArtifact">REST API Reference for ListServiceActionsForProvisioningArtifact Operation</seealso>
+        public virtual ListServiceActionsForProvisioningArtifactResponse ListServiceActionsForProvisioningArtifact(ListServiceActionsForProvisioningArtifactRequest request)
+        {
+            var marshaller = ListServiceActionsForProvisioningArtifactRequestMarshaller.Instance;
+            var unmarshaller = ListServiceActionsForProvisioningArtifactResponseUnmarshaller.Instance;
+
+            return Invoke<ListServiceActionsForProvisioningArtifactRequest,ListServiceActionsForProvisioningArtifactResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListServiceActionsForProvisioningArtifact operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceActionsForProvisioningArtifact operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListServiceActionsForProvisioningArtifact
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListServiceActionsForProvisioningArtifact">REST API Reference for ListServiceActionsForProvisioningArtifact Operation</seealso>
+        public virtual IAsyncResult BeginListServiceActionsForProvisioningArtifact(ListServiceActionsForProvisioningArtifactRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ListServiceActionsForProvisioningArtifactRequestMarshaller.Instance;
+            var unmarshaller = ListServiceActionsForProvisioningArtifactResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListServiceActionsForProvisioningArtifactRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListServiceActionsForProvisioningArtifact operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListServiceActionsForProvisioningArtifact.</param>
+        /// 
+        /// <returns>Returns a  ListServiceActionsForProvisioningArtifactResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListServiceActionsForProvisioningArtifact">REST API Reference for ListServiceActionsForProvisioningArtifact Operation</seealso>
+        public virtual ListServiceActionsForProvisioningArtifactResponse EndListServiceActionsForProvisioningArtifact(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListServiceActionsForProvisioningArtifactResponse>(asyncResult);
         }
 
         #endregion
@@ -3921,6 +4568,65 @@ namespace Amazon.ServiceCatalog
         public virtual UpdateProvisioningArtifactResponse EndUpdateProvisioningArtifact(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateProvisioningArtifactResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateServiceAction
+
+        /// <summary>
+        /// Updates a self-service action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateServiceAction service method.</param>
+        /// 
+        /// <returns>The response from the UpdateServiceAction service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateServiceAction">REST API Reference for UpdateServiceAction Operation</seealso>
+        public virtual UpdateServiceActionResponse UpdateServiceAction(UpdateServiceActionRequest request)
+        {
+            var marshaller = UpdateServiceActionRequestMarshaller.Instance;
+            var unmarshaller = UpdateServiceActionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateServiceActionRequest,UpdateServiceActionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateServiceAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateServiceAction operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateServiceAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateServiceAction">REST API Reference for UpdateServiceAction Operation</seealso>
+        public virtual IAsyncResult BeginUpdateServiceAction(UpdateServiceActionRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = UpdateServiceActionRequestMarshaller.Instance;
+            var unmarshaller = UpdateServiceActionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateServiceActionRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateServiceAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateServiceAction.</param>
+        /// 
+        /// <returns>Returns a  UpdateServiceActionResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateServiceAction">REST API Reference for UpdateServiceAction Operation</seealso>
+        public virtual UpdateServiceActionResponse EndUpdateServiceAction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateServiceActionResponse>(asyncResult);
         }
 
         #endregion
