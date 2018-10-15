@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.383.0",
+    "ProductVersion" : "3.3.384.0",
     "CoreVersion"    : "3.3.27.2",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -241,7 +241,7 @@
             "InPreview"               : false
         },
         "Lambda"               : {
-            "Version" : "3.3.16.5",
+            "Version" : "3.3.16.6",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.27.0"
@@ -281,7 +281,7 @@
             "InPreview"               : false
         },
         "RDS"                  : {
-            "Version" : "3.3.30.2",
+            "Version" : "3.3.31.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.27.0"
@@ -561,7 +561,7 @@
             "InPreview"               : false
         },
         "ServiceCatalog"                  : {
-            "Version" : "3.3.10.14",
+            "Version" : "3.3.11.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.27.0"

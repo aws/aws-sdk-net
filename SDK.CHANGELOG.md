@@ -1,3 +1,11 @@
+### 3.3.384.0 (2018-10-15 21:19 UTC)
+* Lambda (3.3.16.6)
+	* Documentation updates for lambda
+* RDS (3.3.31.0)
+	* This release adds a new parameter to specify the DB instance or cluster parameter group for restore from DB snapshot and restore to point int time operations. For more information, see Amazon RDS Documentation.
+* ServiceCatalog (3.3.11.0)
+	* AWS Service Catalog enables you to reduce administrative maintenance and end-user training while adhering to compliance and security measures. With service actions, you as the administrator can enable end users to perform operational tasks, troubleshoot issues, run approved commands, or request permissions within Service Catalog. Service actions are defined using AWS Systems Manager documents, where you have access to pre-defined actions that implement AWS best practices, such asEC2 stop and reboot, as well as the ability to define custom actions.
+
 ### 3.3.383.0 (2018-10-12 21:46 UTC)
 * CloudTrail (3.3.3.0)
 	* The LookupEvents API now supports two new attribute keys: ReadOnly and AccessKeyId
