@@ -381,40 +381,48 @@
         <XUnitWrapperTask
             TestSuiteRunner="dotnet"
             TestContainer="..\sdk\test\CSMTest\Tests\IntegrationTests\AWSSDK.CSM.IntegrationTests.CoreCLR.csproj"
-            Configuration="$(Configuration)"/>
+            Configuration="$(Configuration)"
+            TestExecutionProfile="test-runner"/>
         <Message Text="CSM 45"/>
         <XUnitWrapperTask
             TestSuiteRunner="dotnet"
             TestContainer="..\sdk\test\CSMTest\Tests\IntegrationTests\AWSSDK.CSM.IntegrationTests.Net45.csproj"
-            Configuration="$(Configuration)"/>
+            Configuration="$(Configuration)"
+            TestExecutionProfile="test-runner"/>
         <Message Text="CSM 35"/>
         <XUnitWrapperTask
             TestSuiteRunner="dotnet"
             TestContainer="..\sdk\test\CSMTest\Tests\IntegrationTests\AWSSDK.CSM.IntegrationTests.Net35.csproj"
-            Configuration="$(Configuration)"/>
+            Configuration="$(Configuration)"
+            TestExecutionProfile="test-runner"/>
     </Target>
 
     <Target Name="run-CSM-unit-tests">
         <XUnitWrapperTask
             TestSuiteRunner="dotnet"
             TestContainer="..\sdk\test\CSMTest\Tests\UnitTests\FallBackConfigTests\AWSSDK.AppConfigTests.Net45.csproj"
-            Configuration="$(Configuration)"/>
+            Configuration="$(Configuration)"
+            TestExecutionProfile="test-runner"/>
         <XUnitWrapperTask
             TestSuiteRunner="dotnet"
             TestContainer="..\sdk\test\CSMTest\Tests\UnitTests\FallBackConfigTests\AWSSDK.EnvFallBackTests.CoreCLR.csproj"
-            Configuration="$(Configuration)"/>
+            Configuration="$(Configuration)"
+            TestExecutionProfile="test-runner"/>
         <XUnitWrapperTask
             TestSuiteRunner="dotnet"
             TestContainer="..\sdk\test\CSMTest\Tests\UnitTests\FallBackConfigTests\AWSSDK.EnvFallBackTests.Net45.csproj"
-            Configuration="$(Configuration)"/>
+            Configuration="$(Configuration)"
+            TestExecutionProfile="test-runner"/>
         <XUnitWrapperTask
             TestSuiteRunner="dotnet"
             TestContainer="..\sdk\test\CSMTest\Tests\UnitTests\FallBackConfigTests\AWSSDK.SharedProfileTests.CoreCLR.csproj"
-            Configuration="$(Configuration)"/>
+            Configuration="$(Configuration)"
+            TestExecutionProfile="test-runner"/>
         <XUnitWrapperTask
             TestSuiteRunner="dotnet"
             TestContainer="..\sdk\test\CSMTest\Tests\UnitTests\FallBackConfigTests\AWSSDK.SharedProfileTests.Net45.csproj"
-            Configuration="$(Configuration)"/>
+            Configuration="$(Configuration)"
+            TestExecutionProfile="test-runner"/>
     </Target>
 
     <Target Name="nuget-pack" Condition="'$(Configuration)' == 'Release'">
