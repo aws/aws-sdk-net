@@ -66,7 +66,7 @@ namespace Amazon.S3.Model
                 }
                 if (IsSetValue())
                 {
-                    xmlWriter.WriteElementString("Value", S3Transforms.ToXmlStringValue(key));
+                    xmlWriter.WriteElementString("Value", S3Transforms.ToXmlStringValue(value));
                 }
             }
             xmlWriter.WriteEndElement();

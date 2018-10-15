@@ -5,6 +5,7 @@ using Amazon.S3.Util;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Amazon.S3.Transfer;
 
 using AWSSDK_DotNet.IntegrationTests.Utils;
@@ -31,6 +32,32 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         {
             AmazonS3Util.DeleteS3BucketWithObjects(Client, bucketName);
             BaseClean();
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void TagBucket()
+        {
+            var request = new PutBucketTaggingRequest
+            {
+                BucketName = bucketName,
+                TagSet = new List<Tag>
+                {
+                    new Tag
+                    {
+                        Key = "TagBucketKey",
+                        Value = "TagBucketValue"
+                    }
+                }
+            };
+
+            Client.PutBucketTagging(request);
+
+            var tags = Client.GetBucketTagging(new GetBucketTaggingRequest { BucketName = bucketName}).TagSet;
+
+            var tag = tags.FirstOrDefault(x => string.Equals(x.Key, "TagBucketKey"));
+            Assert.IsNotNull(tag);
+            Assert.AreEqual("TagBucketValue", tag.Value);
         }
 
         [TestMethod]
