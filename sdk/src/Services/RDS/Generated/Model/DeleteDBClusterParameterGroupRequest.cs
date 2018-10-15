@@ -61,7 +61,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Cannot be associated with any DB clusters.
+        /// Can't be associated with any DB clusters.
         /// </para>
         ///  </li> </ul>
         /// </summary>

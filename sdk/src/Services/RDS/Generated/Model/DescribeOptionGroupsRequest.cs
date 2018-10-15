@@ -147,7 +147,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property OptionGroupName. 
         /// <para>
-        /// The name of the option group to describe. Cannot be supplied together with EngineName
+        /// The name of the option group to describe. Can't be supplied together with EngineName
         /// or MajorEngineVersion.
         /// </para>
         /// </summary>

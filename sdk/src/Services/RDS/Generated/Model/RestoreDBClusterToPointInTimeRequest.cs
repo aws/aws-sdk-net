@@ -53,6 +53,7 @@ namespace Amazon.RDS.Model
     {
         private long? _backtrackWindow;
         private string _dbClusterIdentifier;
+        private string _dbClusterParameterGroupName;
         private string _dbSubnetGroupName;
         private bool? _deletionProtection;
         private List<string> _enableCloudwatchLogsExports = new List<string>();
@@ -118,7 +119,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// Can't end with a hyphen or contain two consecutive hyphens
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -132,6 +133,47 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBClusterIdentifier()
         {
             return this._dbClusterIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBClusterParameterGroupName. 
+        /// <para>
+        /// The name of the DB cluster parameter group to associate with this DB cluster. If this
+        /// argument is omitted, the default DB cluster parameter group for the specified engine
+        /// is used.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If supplied, must match the name of an existing DB cluster parameter group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must be 1 to 255 letters, numbers, or hyphens.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can't end with a hyphen or contain two consecutive hyphens.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string DBClusterParameterGroupName
+        {
+            get { return this._dbClusterParameterGroupName; }
+            set { this._dbClusterParameterGroupName = value; }
+        }
+
+        // Check to see if DBClusterParameterGroupName property is set
+        internal bool IsSetDBClusterParameterGroupName()
+        {
+            return this._dbClusterParameterGroupName != null;
         }
 
         /// <summary>
@@ -244,8 +286,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following
-        /// will occur:
+        /// If you don't specify a value for the <code>KmsKeyId</code> parameter, then the following
+        /// occurs:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -341,11 +383,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Cannot be specified if <code>UseLatestRestorableTime</code> parameter is true
+        /// Can't be specified if <code>UseLatestRestorableTime</code> parameter is true
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Cannot be specified if <code>RestoreType</code> parameter is <code>copy-on-write</code>
+        /// Can't be specified if <code>RestoreType</code> parameter is <code>copy-on-write</code>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -457,7 +499,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Cannot be specified if <code>RestoreToTime</code> parameter is provided.
+        /// Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.
         /// </para>
         /// </summary>
         public bool UseLatestRestorableTime

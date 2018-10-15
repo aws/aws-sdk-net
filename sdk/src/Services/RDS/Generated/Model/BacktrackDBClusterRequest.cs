@@ -66,7 +66,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Cannot contain a timestamp set in the future.
+        /// Can't contain a timestamp set in the future.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -105,7 +105,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Cannot end with a hyphen or contain two consecutive hyphens.
+        /// Can't end with a hyphen or contain two consecutive hyphens.
         /// </para>
         ///  </li> </ul> 
         /// <para>

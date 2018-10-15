@@ -83,7 +83,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must match the name of an existing DBClusterParameterGroup.
+        /// Must match the name of an existing DB cluster parameter group.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>

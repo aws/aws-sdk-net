@@ -54,6 +54,7 @@ namespace Amazon.RDS.Model
         private long? _backtrackWindow;
         private string _databaseName;
         private string _dbClusterIdentifier;
+        private string _dbClusterParameterGroupName;
         private string _dbSubnetGroupName;
         private bool? _deletionProtection;
         private List<string> _enableCloudwatchLogsExports = new List<string>();
@@ -72,8 +73,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
-        /// Provides the list of EC2 Availability Zones that instances in the restored DB cluster
-        /// can be created in.
+        /// Provides the list of Amazon EC2 Availability Zones that instances in the restored
+        /// DB cluster can be created in.
         /// </para>
         /// </summary>
         public List<string> AvailabilityZones
@@ -158,7 +159,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// Can't end with a hyphen or contain two consecutive hyphens
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -178,13 +179,54 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DBClusterParameterGroupName. 
+        /// <para>
+        /// The name of the DB cluster parameter group to associate with this DB cluster. If this
+        /// argument is omitted, the default DB cluster parameter group for the specified engine
+        /// is used.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If supplied, must match the name of an existing default DB cluster parameter group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must be 1 to 255 letters, numbers, or hyphens.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can't end with a hyphen or contain two consecutive hyphens.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string DBClusterParameterGroupName
+        {
+            get { return this._dbClusterParameterGroupName; }
+            set { this._dbClusterParameterGroupName = value; }
+        }
+
+        // Check to see if DBClusterParameterGroupName property is set
+        internal bool IsSetDBClusterParameterGroupName()
+        {
+            return this._dbClusterParameterGroupName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DBSubnetGroupName. 
         /// <para>
         /// The name of the DB subnet group to use for the new DB cluster.
         /// </para>
         ///  
         /// <para>
-        /// Constraints: If supplied, must match the name of an existing DBSubnetGroup.
+        /// Constraints: If supplied, must match the name of an existing DB subnet group.
         /// </para>
         ///  
         /// <para>
@@ -225,9 +267,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EnableCloudwatchLogsExports. 
         /// <para>
-        /// The list of logs that the restored DB cluster is to export to CloudWatch Logs. The
-        /// values in the list depend on the DB engine being used. For more information, see <a
-        /// href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+        /// The list of logs that the restored DB cluster is to export to Amazon CloudWatch Logs.
+        /// The values in the list depend on the DB engine being used. For more information, see
+        /// <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
         /// Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         /// </summary>
@@ -344,8 +386,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following
-        /// will occur:
+        /// If you don't specify a value for the <code>KmsKeyId</code> parameter, then the following
+        /// occurs:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -397,7 +439,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Value must be <code>1150-65535</code> 
+        /// Constraints: This value must be <code>1150-65535</code> 
         /// </para>
         ///  
         /// <para>
