@@ -135,7 +135,7 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property RoutingConfig. 
         /// <para>
         /// Specifies an additional function versions the alias points to, allowing you to dictate
-        /// what percentage of traffic will invoke each version. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+        /// what percentage of traffic will invoke each version.
         /// </para>
         /// </summary>
         public AliasRoutingConfiguration RoutingConfig

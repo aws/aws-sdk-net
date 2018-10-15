@@ -36,10 +36,9 @@ namespace Amazon.Lambda.Model
     /// 
     ///  
     /// <para>
-    /// Using the optional <code>Qualifier</code> parameter, you can specify a specific function
-    /// version for which you want this information. If you don't specify this parameter,
-    /// the API uses unqualified function ARN which return information about the <code>$LATEST</code>
-    /// version of the Lambda function. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+    /// Use the <code>Qualifier</code> parameter to retrieve a published version of the function.
+    /// Otherwise, returns the unpublished version (<code>$LATEST</code>). For more information,
+    /// see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
     /// Lambda Function Versioning and Aliases</a>.
     /// </para>
     ///  
@@ -55,15 +54,26 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionName. 
         /// <para>
-        /// The Lambda function name.
+        /// The name of the lambda function.
         /// </para>
-        ///  
+        ///  <p class="title"> <b>Name formats</b> 
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
-        ///  You can specify a function name (for example, <code>Thumbnail</code>) or you can
-        /// specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
-        /// AWS Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>).
-        /// Note that the length constraint applies only to the ARN. If you specify only the function
-        /// name, it is limited to 64 characters in length. 
+        ///  <b>Function name</b> - <code>MyFunction</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The length constraint applies only to the full ARN. If you specify only the function
+        /// name, it is limited to 64 characters in length.
         /// </para>
         /// </summary>
         public string FunctionName
@@ -81,13 +91,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Qualifier. 
         /// <para>
-        /// Use this optional parameter to specify a function version or an alias name. If you
-        /// specify function version, the API uses qualified function ARN for the request and
-        /// returns information about the specific Lambda function version. If you specify an
-        /// alias name, the API uses the alias ARN and returns information about the function
-        /// version to which the alias points. If you don't provide this parameter, the API uses
-        /// unqualified function ARN and returns information about the <code>$LATEST</code> version
-        /// of the Lambda function. 
+        /// Specify a version or alias to get details about a published version of the function.
         /// </para>
         /// </summary>
         public string Qualifier

@@ -30,8 +30,8 @@ namespace Amazon.Lambda.Model
     /// <summary>
     /// Container for the parameters to the CreateEventSourceMapping operation.
     /// Identifies a poll-based event source for a Lambda function. It can be either an Amazon
-    /// Kinesis or DynamoDB stream, or an Amazon SQS queue. AWS Lambda invokes the specified
-    /// function when records are posted to the event source.
+    /// Kinesis or DynamoDB stream. AWS Lambda invokes the specified function when records
+    /// are posted to the event source.
     /// 
     ///  
     /// <para>
@@ -49,6 +49,11 @@ namespace Amazon.Lambda.Model
     /// Lambda functions and a given Lambda function can be associated with multiple AWS event
     /// sources. For Amazon SQS, you can configure multiple queues as event sources for a
     /// single Lambda function, but an SQS queue can be mapped only to a single Lambda function.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can configure an SQS queue in an account separate from your Lambda function's
+    /// account. Also the queue needs to reside in the same AWS region as your function. 
     /// </para>
     ///  
     /// <para>
@@ -77,7 +82,7 @@ namespace Amazon.Lambda.Model
         /// The largest number of records that AWS Lambda will retrieve from your event source
         /// at the time of invoking your function. Your function receives an event with all the
         /// retrieved records. The default for Amazon Kinesis and Amazon DynamoDB is 100 records.
-        /// For SQS, the default is 1.
+        /// Both the default and maximum for Amazon SQS are 10 messages.
         /// </para>
         /// </summary>
         public int BatchSize
@@ -95,8 +100,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Indicates whether AWS Lambda should begin polling the event source. By default, <code>Enabled</code>
-        /// is true. 
+        /// Set to false to disable the event source upon creation. 
         /// </para>
         /// </summary>
         public bool Enabled
@@ -114,9 +118,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property EventSourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the event source. Any record added to this source
-        /// could cause AWS Lambda to invoke your Lambda function, it depends on the <code>BatchSize</code>.
-        /// AWS Lambda POSTs the event's records to your Lambda function as JSON.
+        /// The Amazon Resource Name (ARN) of the event source.
         /// </para>
         /// </summary>
         public string EventSourceArn
@@ -134,29 +136,29 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionName. 
         /// <para>
-        /// The Lambda function to invoke when AWS Lambda detects an event on the stream.
+        /// The name of the lambda function.
         /// </para>
-        ///  
-        /// <para>
-        ///  You can specify the function name (for example, <code>Thumbnail</code>) or you can
-        /// specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
-        /// 
+        ///  <p class="title"> <b>Name formats</b> 
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        ///  If you are using versioning, you can also provide a qualified function ARN (ARN that
-        /// is qualified with function version or alias name as suffix). For more information
-        /// about versioning, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-        /// Lambda Function Versioning and Aliases</a> 
+        ///  <b>Function name</b> - <code>MyFunction</code>.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// AWS Lambda also allows you to specify only the function name with the account ID qualifier
-        /// (for example, <code>account-id:Thumbnail</code>). 
+        ///  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// Note that the length constraint applies only to the ARN. If you specify only the function
+        ///  <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The length constraint applies only to the full ARN. If you specify only the function
         /// name, it is limited to 64 characters in length.
         /// </para>
         /// </summary>

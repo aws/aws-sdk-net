@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// Contains a list of AWS Lambda function configurations (see <a>FunctionConfiguration</a>.
+    /// A list of Lambda functions.
     /// </summary>
     public partial class ListFunctionsResponse : AmazonWebServiceResponse
     {

@@ -68,9 +68,26 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionName. 
         /// <para>
-        /// Name of the Lambda function for which you want to create an alias. Note that the length
-        /// constraint applies only to the ARN. If you specify only the function name, it is limited
-        /// to 64 characters in length.
+        /// The name of the lambda function.
+        /// </para>
+        ///  <p class="title"> <b>Name formats</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Function name</b> - <code>MyFunction</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The length constraint applies only to the full ARN. If you specify only the function
+        /// name, it is limited to 64 characters in length.
         /// </para>
         /// </summary>
         public string FunctionName
@@ -125,7 +142,8 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property RoutingConfig. 
         /// <para>
         /// Specifies an additional version your alias can point to, allowing you to dictate what
-        /// percentage of traffic will invoke each version. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+        /// percentage of traffic will invoke each version. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic
+        /// Shifting Using Aliases</a>.
         /// </para>
         /// </summary>
         public AliasRoutingConfiguration RoutingConfig

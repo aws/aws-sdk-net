@@ -29,7 +29,8 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Provides limits of code size and concurrency associated with the current account and
-    /// region.
+    /// region. For more information or to request a limit increase for concurrent executions,
+    /// see <a href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">Lambda Limits</a>.
     /// </summary>
     public partial class AccountLimit
     {
@@ -81,9 +82,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property ConcurrentExecutions. 
         /// <para>
-        /// Number of simultaneous executions of your function per region. For more information
-        /// or to request a limit increase for concurrent executions, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Lambda
-        /// Function Concurrent Executions</a>. The default limit is 1000.
+        /// Number of simultaneous executions of your function per region. The default limit is
+        /// 1000.
         /// </para>
         /// </summary>
         public int ConcurrentExecutions
@@ -121,7 +121,8 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property UnreservedConcurrentExecutions. 
         /// <para>
         /// The number of concurrent executions available to functions that do not have concurrency
-        /// limits set. For more information, see <a>concurrent-executions</a>.
+        /// limits set. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing
+        /// Concurrency</a>.
         /// </para>
         /// </summary>
         public int UnreservedConcurrentExecutions

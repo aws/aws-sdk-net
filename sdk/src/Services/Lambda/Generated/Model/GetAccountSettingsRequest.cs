@@ -29,15 +29,8 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAccountSettings operation.
-    /// Returns a customer's account settings.
-    /// 
-    ///  
-    /// <para>
-    /// You can use this operation to retrieve Lambda limits information, such as code size
-    /// and concurrency limits. For more information about limits, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">AWS
-    /// Lambda Limits</a>. You can also retrieve resource usage statistics, such as code storage
-    /// usage and function count.
-    /// </para>
+    /// Retrieves details about your account's <a href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">limits</a>
+    /// and usage in a region.
     /// </summary>
     public partial class GetAccountSettingsRequest : AmazonLambdaRequest
     {

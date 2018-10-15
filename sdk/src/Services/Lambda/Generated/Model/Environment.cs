@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// The parent object that contains your environment's configuration settings.
+    /// A function's environment variable settings.
     /// </summary>
     public partial class Environment
     {
@@ -37,7 +37,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Variables. 
         /// <para>
-        /// The key-value pairs that represent your environment's configuration settings.
+        /// Environment variable key-value pairs.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Variables

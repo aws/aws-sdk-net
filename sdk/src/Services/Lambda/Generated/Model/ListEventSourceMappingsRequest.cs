@@ -39,13 +39,6 @@ namespace Amazon.Lambda.Model
     /// </para>
     ///  
     /// <para>
-    /// If you are using the versioning feature, you can get list of event source mappings
-    /// for a specific Lambda function version or an alias as described in the <code>FunctionName</code>
-    /// parameter. For information about the versioning feature, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-    /// Lambda Function Versioning and Aliases</a>. 
-    /// </para>
-    ///  
-    /// <para>
     /// This operation requires permission for the <code>lambda:ListEventSourceMappings</code>
     /// action.
     /// </para>
@@ -60,8 +53,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property EventSourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream, or an SQS
-        /// queue. (This parameter is optional.)
+        /// The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream. (This parameter
+        /// is optional.)
         /// </para>
         /// </summary>
         public string EventSourceArn
@@ -79,18 +72,30 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionName. 
         /// <para>
-        /// The name of the Lambda function.
+        /// The name of the lambda function.
         /// </para>
-        ///  
+        ///  <p class="title"> <b>Name formats</b> 
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
-        ///  You can specify the function name (for example, <code>Thumbnail</code>) or you can
-        /// specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
-        /// If you are using versioning, you can also provide a qualified function ARN (ARN that
-        /// is qualified with function version or alias name as suffix). AWS Lambda also allows
-        /// you to specify only the function name with the account ID qualifier (for example,
-        /// <code>account-id:Thumbnail</code>). Note that the length constraint applies only to
-        /// the ARN. If you specify only the function name, it is limited to 64 characters in
-        /// length. 
+        ///  <b>Function name</b> - <code>MyFunction</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The length constraint applies only to the full ARN. If you specify only the function
+        /// name, it is limited to 64 characters in length.
         /// </para>
         /// </summary>
         public string FunctionName

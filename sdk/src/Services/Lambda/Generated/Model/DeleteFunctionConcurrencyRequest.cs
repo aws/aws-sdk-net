@@ -30,7 +30,8 @@ namespace Amazon.Lambda.Model
     /// <summary>
     /// Container for the parameters to the DeleteFunctionConcurrency operation.
     /// Removes concurrent execution limits from this function. For more information, see
-    /// <a>concurrent-executions</a>.
+    /// <a href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing
+    /// Concurrency</a>.
     /// </summary>
     public partial class DeleteFunctionConcurrencyRequest : AmazonLambdaRequest
     {
@@ -39,8 +40,26 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionName. 
         /// <para>
-        /// The name of the function you are removing concurrent execution limits from. For more
-        /// information, see <a>concurrent-executions</a>.
+        /// The name of the lambda function.
+        /// </para>
+        ///  <p class="title"> <b>Name formats</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Function name</b> - <code>MyFunction</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The length constraint applies only to the full ARN. If you specify only the function
+        /// name, it is limited to 64 characters in length.
         /// </para>
         /// </summary>
         public string FunctionName

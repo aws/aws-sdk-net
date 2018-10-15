@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// Parent object of the tracing information associated with your Lambda function.
+    /// The function's AWS X-Ray tracing configuration.
     /// </summary>
     public partial class TracingConfigResponse
     {
@@ -37,7 +37,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Mode. 
         /// <para>
-        /// The tracing mode associated with your Lambda function.
+        /// The tracing mode.
         /// </para>
         /// </summary>
         public TracingMode Mode

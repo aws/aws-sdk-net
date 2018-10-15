@@ -68,9 +68,26 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionName. 
         /// <para>
-        /// The function name for which the alias is created. Note that the length constraint
-        /// applies only to the ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.
+        /// The name of the lambda function.
+        /// </para>
+        ///  <p class="title"> <b>Name formats</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Function name</b> - <code>MyFunction</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The length constraint applies only to the full ARN. If you specify only the function
+        /// name, it is limited to 64 characters in length.
         /// </para>
         /// </summary>
         public string FunctionName
@@ -128,8 +145,8 @@ namespace Amazon.Lambda.Model
         /// An optional value you can use to ensure you are updating the latest update of the
         /// function version or alias. If the <code>RevisionID</code> you pass doesn't match the
         /// latest <code>RevisionId</code> of the function or alias, it will fail with an error
-        /// message, advising you to retrieve the latest function version or alias <code>RevisionID</code>
-        /// using either or .
+        /// message, advising you retrieve the latest function version or alias <code>RevisionID</code>
+        /// using either <a>GetFunction</a> or <a>GetAlias</a>.
         /// </para>
         /// </summary>
         public string RevisionId
@@ -148,7 +165,8 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property RoutingConfig. 
         /// <para>
         /// Specifies an additional version your alias can point to, allowing you to dictate what
-        /// percentage of traffic will invoke each version. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+        /// percentage of traffic will invoke each version. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic
+        /// Shifting Using Aliases</a>.
         /// </para>
         /// </summary>
         public AliasRoutingConfiguration RoutingConfig

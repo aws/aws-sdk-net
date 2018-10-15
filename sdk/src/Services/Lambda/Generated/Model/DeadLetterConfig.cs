@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic you specify
-    /// as your Dead Letter Queue (DLQ). For more information, see <a>dlq</a>.
+    /// The <a href="http://docs.aws.amazon.com/lambda/latest/dg/dlq.html">dead letter queue</a>
+    /// for failed asynchronous invocations.
     /// </summary>
     public partial class DeadLetterConfig
     {
@@ -38,9 +38,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property TargetArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic you specify
-        /// as your Dead Letter Queue (DLQ). <a>dlq</a>. For more information, see <a>dlq</a>.
-        /// 
+        /// The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
         /// </para>
         /// </summary>
         public string TargetArn

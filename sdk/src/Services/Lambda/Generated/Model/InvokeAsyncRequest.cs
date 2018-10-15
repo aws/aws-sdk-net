@@ -31,7 +31,7 @@ namespace Amazon.Lambda.Model
     /// Container for the parameters to the InvokeAsync operation.
     /// <important> 
     /// <para>
-    /// This API is deprecated. We recommend you use <code>Invoke</code> API (see <a>Invoke</a>).
+    /// For asynchronous function invocation, use <a>Invoke</a>.
     /// </para>
     ///  </important> 
     /// <para>
@@ -53,8 +53,26 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionName. 
         /// <para>
-        /// The Lambda function name. Note that the length constraint applies only to the ARN.
-        /// If you specify only the function name, it is limited to 64 characters in length.
+        /// The name of the lambda function.
+        /// </para>
+        ///  <p class="title"> <b>Name formats</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Function name</b> - <code>MyFunction</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The length constraint applies only to the full ARN. If you specify only the function
+        /// name, it is limited to 64 characters in length.
         /// </para>
         /// </summary>
         public string FunctionName

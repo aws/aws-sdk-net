@@ -36,7 +36,10 @@ namespace Amazon.Lambda.Model
         private AccountUsage _accountUsage;
 
         /// <summary>
-        /// Gets and sets the property AccountLimit.
+        /// Gets and sets the property AccountLimit. 
+        /// <para>
+        /// Limits related to concurrency and code storage.
+        /// </para>
         /// </summary>
         public AccountLimit AccountLimit
         {
@@ -51,7 +54,10 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AccountUsage.
+        /// Gets and sets the property AccountUsage. 
+        /// <para>
+        /// The number of functions and amount of storage in use.
+        /// </para>
         /// </summary>
         public AccountUsage AccountUsage
         {

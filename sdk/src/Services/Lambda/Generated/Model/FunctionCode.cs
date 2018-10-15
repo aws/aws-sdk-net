@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// The code for the Lambda function.
+    /// The code for the Lambda function. You can specify either an S3 location, or upload
+    /// a deployment package directly.
     /// </summary>
     public partial class FunctionCode
     {
@@ -40,8 +41,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property S3Bucket. 
         /// <para>
-        /// Amazon S3 bucket name where the .zip file containing your deployment package is stored.
-        /// This bucket must reside in the same AWS region where you are creating the Lambda function.
+        /// An Amazon S3 bucket in the same region as your function.
         /// </para>
         /// </summary>
         public string S3Bucket
@@ -59,7 +59,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property S3Key. 
         /// <para>
-        /// The Amazon S3 object (the deployment package) key name you want to upload.
+        /// The Amazon S3 key of the deployment package.
         /// </para>
         /// </summary>
         public string S3Key
@@ -77,7 +77,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property S3ObjectVersion. 
         /// <para>
-        /// The Amazon S3 object (the deployment package) version you want to upload.
+        /// For versioned objects, the version of the deployment package object to use.
         /// </para>
         /// </summary>
         public string S3ObjectVersion
@@ -95,11 +95,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property ZipFile. 
         /// <para>
-        /// The contents of your zip file containing your deployment package. If you are using
-        /// the web API directly, the contents of the zip file must be base64-encoded. If you
-        /// are using the AWS SDKs or the AWS CLI, the SDKs or CLI will do the encoding for you.
-        /// For more information about creating a .zip file, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html">Execution
-        /// Permissions</a> in the <b>AWS Lambda Developer Guide</b>. 
+        /// The base64-encoded contents of your zip file containing your deployment package. AWS
+        /// SDK and AWS CLI clients handle the encoding for you.
         /// </para>
         /// </summary>
         public MemoryStream ZipFile

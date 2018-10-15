@@ -31,20 +31,17 @@ namespace Amazon.Lambda.Model
     /// Container for the parameters to the AddPermission operation.
     /// Adds a permission to the resource policy associated with the specified AWS Lambda
     /// function. You use resource policies to grant permissions to event sources that use
-    /// <i>push</i> model. In a <i>push</i> model, event sources (such as Amazon S3 and custom
-    /// applications) invoke your Lambda function. Each permission you add to the resource
-    /// policy allows an event source, permission to invoke the Lambda function. 
+    /// the <i>push</i> model. In a <i>push</i> model, event sources (such as Amazon S3 and
+    /// custom applications) invoke your Lambda function. Each permission you add to the resource
+    /// policy allows an event source permission to invoke the Lambda function. 
     /// 
     ///  
     /// <para>
-    /// For information about the push model, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">Lambda
-    /// Functions</a>. 
-    /// </para>
-    ///  
-    /// <para>
-    /// If you are using versioning, the permissions you add are specific to the Lambda function
-    /// version or alias you specify in the <code>AddPermission</code> request via the <code>Qualifier</code>
-    /// parameter. For more information about versioning, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+    /// Permissions apply to the Amazon Resource Name (ARN) used to invoke the function, which
+    /// can be unqualified (the unpublished version of the function), or include a version
+    /// or alias. If a client uses a version or alias to invoke a function, use the <code>Qualifier</code>
+    /// parameter to apply permissions to that ARN. For more information about versioning,
+    /// see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
     /// Lambda Function Versioning and Aliases</a>. 
     /// </para>
     ///  
@@ -107,16 +104,26 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionName. 
         /// <para>
-        /// Name of the Lambda function whose resource policy you are updating by adding a new
-        /// permission.
+        /// The name of the lambda function.
         /// </para>
-        ///  
+        ///  <p class="title"> <b>Name formats</b> 
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
-        ///  You can specify a function name (for example, <code>Thumbnail</code>) or you can
-        /// specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
-        /// AWS Lambda also allows you to specify partial ARN (for example, <code>account-id:Thumbnail</code>).
-        /// Note that the length constraint applies only to the ARN. If you specify only the function
-        /// name, it is limited to 64 characters in length. 
+        ///  <b>Function name</b> - <code>MyFunction</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The length constraint applies only to the full ARN. If you specify only the function
+        /// name, it is limited to 64 characters in length.
         /// </para>
         /// </summary>
         public string FunctionName
@@ -134,12 +141,11 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Principal. 
         /// <para>
-        /// The principal who is getting this permission. It can be Amazon S3 service Principal
-        /// (<code>s3.amazonaws.com</code>) if you want Amazon S3 to invoke the function, an AWS
-        /// account ID if you are granting cross-account permission, or any valid AWS service
-        /// principal such as <code>sns.amazonaws.com</code>. For example, you might want to allow
-        /// a custom application in another AWS account to push events to AWS Lambda by invoking
-        /// your function. 
+        /// The principal who is getting this permission. The principal can be an AWS service
+        /// (e.g. <code>s3.amazonaws.com</code> or <code>sns.amazonaws.com</code>) for service
+        /// triggers, or an account ID for cross-account access. If you specify a service as a
+        /// principal, use the <code>SourceArn</code> parameter to limit who can invoke the function
+        /// through that service.
         /// </para>
         /// </summary>
         public string Principal
@@ -157,32 +163,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Qualifier. 
         /// <para>
-        /// You can use this optional query parameter to describe a qualified ARN using a function
-        /// version or an alias name. The permission will then apply to the specific qualified
-        /// ARN. For example, if you specify function version 2 as the qualifier, then permission
-        /// applies only when request is made using qualified function ARN:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>arn:aws:lambda:aws-region:acct-id:function:function-name:2</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// If you specify an alias name, for example <code>PROD</code>, then the permission is
-        /// valid only for requests made using the alias ARN:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>arn:aws:lambda:aws-region:acct-id:function:function-name:PROD</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// If the qualifier is not specified, the permission is valid only when requests is made
-        /// using unqualified function ARN.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>arn:aws:lambda:aws-region:acct-id:function:function-name</code> 
+        /// Specify a version or alias to add permissions to a published version of the function.
         /// </para>
         /// </summary>
         public string Qualifier
@@ -204,7 +185,7 @@ namespace Amazon.Lambda.Model
         /// function version or alias. If the <code>RevisionID</code> you pass doesn't match the
         /// latest <code>RevisionId</code> of the function or alias, it will fail with an error
         /// message, advising you to retrieve the latest function version or alias <code>RevisionID</code>
-        /// using either or .
+        /// using either <a>GetFunction</a> or <a>GetAlias</a> 
         /// </para>
         /// </summary>
         public string RevisionId
@@ -246,14 +227,12 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property SourceArn. 
         /// <para>
-        /// This is optional; however, when granting permission to invoke your function, you should
-        /// specify this field with the Amazon Resource Name (ARN) as its value. This ensures
-        /// that only events generated from the specified source can invoke the function.
+        /// The Amazon Resource Name of the invoker. 
         /// </para>
         ///  <important> 
         /// <para>
-        /// If you add a permission without providing the source ARN, any AWS account that creates
-        /// a mapping to your function ARN can send events to invoke your Lambda function.
+        /// If you add a permission to a service principal without providing the source ARN, any
+        /// AWS account that creates a mapping to your function ARN can invoke your Lambda function.
         /// </para>
         ///  </important>
         /// </summary>

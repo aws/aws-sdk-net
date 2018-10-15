@@ -33,15 +33,7 @@ namespace Amazon.Lambda.Model
     /// 
     ///  
     /// <para>
-    ///  If you are using the versioning feature, you can get the resource policy associated
-    /// with the specific Lambda function version or alias by specifying the version or alias
-    /// name using the <code>Qualifier</code> parameter. For more information about versioning,
-    /// see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-    /// Lambda Function Versioning and Aliases</a>. 
-    /// </para>
-    ///  
-    /// <para>
-    /// You need permission for the <code>lambda:GetPolicy action.</code> 
+    /// This action requires permission for the <code>lambda:GetPolicy action.</code> 
     /// </para>
     /// </summary>
     public partial class GetPolicyRequest : AmazonLambdaRequest
@@ -52,18 +44,26 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionName. 
         /// <para>
-        /// Function name whose resource policy you want to retrieve.
+        /// The name of the lambda function.
         /// </para>
-        ///  
+        ///  <p class="title"> <b>Name formats</b> 
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
-        ///  You can specify the function name (for example, <code>Thumbnail</code>) or you can
-        /// specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
-        /// If you are using versioning, you can also provide a qualified function ARN (ARN that
-        /// is qualified with function version or alias name as suffix). AWS Lambda also allows
-        /// you to specify only the function name with the account ID qualifier (for example,
-        /// <code>account-id:Thumbnail</code>). Note that the length constraint applies only to
-        /// the ARN. If you specify only the function name, it is limited to 64 characters in
-        /// length. 
+        ///  <b>Function name</b> - <code>MyFunction</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The length constraint applies only to the full ARN. If you specify only the function
+        /// name, it is limited to 64 characters in length.
         /// </para>
         /// </summary>
         public string FunctionName

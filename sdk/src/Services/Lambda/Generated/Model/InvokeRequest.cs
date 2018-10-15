@@ -29,25 +29,34 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the Invoke operation.
-    /// Invokes a specific Lambda function. For an example, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/with-dynamodb-create-function.html#with-dbb-invoke-manually">Create
+    /// Invokes a Lambda function. For an example, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/with-dynamodb-create-function.html#with-dbb-invoke-manually">Create
     /// the Lambda Function and Test It Manually</a>. 
     /// 
     ///  
     /// <para>
-    /// If you are using the versioning feature, you can invoke the specific function version
-    /// by providing function version or alias name that is pointing to the function version
-    /// using the <code>Qualifier</code> parameter in the request. If you don't provide the
-    /// <code>Qualifier</code> parameter, the <code>$LATEST</code> version of the Lambda function
-    /// is invoked. Invocations occur at least once in response to an event and functions
-    /// must be idempotent to handle this. For information about the versioning feature, see
-    /// <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-    /// Lambda Function Versioning and Aliases</a>. 
+    /// Specify just a function name to invoke the latest version of the function. To invoke
+    /// a published version, use the <code>Qualifier</code> parameter to specify a <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">version
+    /// or alias</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you use the <code>RequestResponse</code> (synchronous) invocation option, the function
+    /// will be invoked only once. If you use the <code>Event</code> (asynchronous) invocation
+    /// option, the function will be invoked at least once in response to an event and the
+    /// function must be idempotent to handle this.
+    /// </para>
+    ///  
+    /// <para>
+    /// For functions with a long timeout, your client may be disconnected during synchronous
+    /// invocation while it waits for a response. Configure your HTTP client, SDK, firewall,
+    /// proxy, or operating system to allow for long connections with timeout or keep-alive
+    /// settings.
     /// </para>
     ///  
     /// <para>
     /// This operation requires permission for the <code>lambda:InvokeFunction</code> action.
     /// </para>
-    ///  <note> 
+    ///  
     /// <para>
     /// The <code>TooManyRequestsException</code> noted below will return the following: <code>ConcurrentInvocationLimitExceeded</code>
     /// will be returned if you have no functions with reserved concurrency and have exceeded
@@ -56,7 +65,6 @@ namespace Amazon.Lambda.Model
     /// will be returned when a function with reserved concurrency exceeds its configured
     /// concurrency limit. 
     /// </para>
-    ///  </note>
     /// </summary>
     public partial class InvokeRequest : AmazonLambdaRequest
     {
@@ -80,6 +88,12 @@ namespace Amazon.Lambda.Model
         /// <para>
         /// The ClientContext JSON must be base64-encoded and has a maximum size of 3583 bytes.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <code>ClientContext</code> information is returned only if you use the synchronous
+        /// (<code>RequestResponse</code>) invocation type.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string ClientContextBase64
         {
@@ -96,15 +110,26 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionName. 
         /// <para>
-        /// The Lambda function name.
+        /// The name of the lambda function.
         /// </para>
-        ///  
+        ///  <p class="title"> <b>Name formats</b> 
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
-        ///  You can specify a function name (for example, <code>Thumbnail</code>) or you can
-        /// specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
-        /// AWS Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>).
-        /// Note that the length constraint applies only to the ARN. If you specify only the function
-        /// name, it is limited to 64 characters in length. 
+        ///  <b>Function name</b> - <code>MyFunction</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The length constraint applies only to the full ARN. If you specify only the function
+        /// name, it is limited to 64 characters in length.
         /// </para>
         /// </summary>
         public string FunctionName
@@ -122,15 +147,24 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property InvocationType. 
         /// <para>
-        /// By default, the <code>Invoke</code> API assumes <code>RequestResponse</code> invocation
-        /// type. You can optionally request asynchronous execution by specifying <code>Event</code>
-        /// as the <code>InvocationType</code>. You can also use this parameter to request AWS
-        /// Lambda to not execute the function but do some verification, such as if the caller
-        /// is authorized to invoke the function and if the inputs are valid. You request this
-        /// by specifying <code>DryRun</code> as the <code>InvocationType</code>. This is useful
-        /// in a cross-account scenario when you want to verify access to a function without running
-        /// it. 
+        /// Choose from the following options.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep
+        /// the connection open until the function returns a response or times out.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple
+        /// times to the function's dead-letter queue (if configured).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DryRun</code> - Validate parameter values and verify that the user or role
+        /// has permission to invoke the function.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public InvocationType InvocationType
         {
@@ -186,15 +220,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Qualifier. 
         /// <para>
-        /// You can use this optional parameter to specify a Lambda function version or alias
-        /// name. If you specify a function version, the API uses the qualified function ARN to
-        /// invoke a specific Lambda function. If you specify an alias name, the API uses the
-        /// alias ARN to invoke the Lambda function version to which the alias points.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you don't provide this parameter, then the API uses unqualified function ARN which
-        /// results in invocation of the <code>$LATEST</code> version.
+        /// Specify a version or alias to invoke a published version of the function.
         /// </para>
         /// </summary>
         public string Qualifier

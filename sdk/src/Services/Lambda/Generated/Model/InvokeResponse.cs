@@ -42,7 +42,8 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property ExecutedVersion. 
         /// <para>
         /// The function version that has been executed. This value is returned only if the invocation
-        /// type is <code>RequestResponse</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+        /// type is <code>RequestResponse</code>. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic
+        /// Shifting Using Aliases</a>.
         /// </para>
         /// </summary>
         public string ExecutedVersion

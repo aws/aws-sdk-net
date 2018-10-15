@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// A complex type that describes function metadata.
+    /// A Lambda function's configuration settings.
     /// </summary>
     public partial class PublishVersionResponse : AmazonWebServiceResponse
     {
@@ -55,7 +55,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property CodeSha256. 
         /// <para>
-        /// It is the SHA256 hash of your function deployment package.
+        /// The SHA256 hash of the function's deployment package.
         /// </para>
         /// </summary>
         public string CodeSha256
@@ -73,7 +73,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property CodeSize. 
         /// <para>
-        /// The size, in bytes, of the function .zip file you uploaded.
+        /// The size of the function's deployment package in bytes.
         /// </para>
         /// </summary>
         public long CodeSize
@@ -91,8 +91,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property DeadLetterConfig. 
         /// <para>
-        /// The parent object that contains the target ARN (Amazon Resource Name) of an Amazon
-        /// SQS queue or Amazon SNS topic. For more information, see <a>dlq</a>. 
+        /// The function's dead letter queue.
         /// </para>
         /// </summary>
         public DeadLetterConfig DeadLetterConfig
@@ -110,7 +109,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The user-provided description.
+        /// The function's description.
         /// </para>
         /// </summary>
         public string Description
@@ -128,7 +127,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Environment. 
         /// <para>
-        /// The parent object that contains your environment's configuration settings.
+        /// The function's environment variables.
         /// </para>
         /// </summary>
         public EnvironmentResponse Environment
@@ -146,7 +145,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) assigned to the function.
+        /// The function's Amazon Resource Name.
         /// </para>
         /// </summary>
         public string FunctionArn
@@ -164,8 +163,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionName. 
         /// <para>
-        /// The name of the function. Note that the length constraint applies only to the ARN.
-        /// If you specify only the function name, it is limited to 64 characters in length.
+        /// The name of the function.
         /// </para>
         /// </summary>
         public string FunctionName
@@ -201,8 +199,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property KMSKeyArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment
-        /// variables. If empty, it means you are using the AWS Lambda default service key.
+        /// The KMS key used to encrypt the function's environment variables. Only returned if
+        /// you've configured a customer managed CMK.
         /// </para>
         /// </summary>
         public string KMSKeyArn
@@ -220,10 +218,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property LastModified. 
         /// <para>
-        /// The time stamp of the last time you updated the function. The time stamp is conveyed
-        /// as a string complying with ISO-8601 in this way YYYY-MM-DDThh:mm:ssTZD (e.g., 1997-07-16T19:20:30+01:00).
-        /// For more information, see <a href="https://www.w3.org/TR/NOTE-datetime">Date and Time
-        /// Formats</a>.
+        /// The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601
+        /// format</a> (YYYY-MM-DDThh:mm:ssTZD).
         /// </para>
         /// </summary>
         public string LastModified
@@ -241,7 +237,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MasterArn. 
         /// <para>
-        /// Returns the ARN (Amazon Resource Name) of the master function.
+        /// The ARN of the master function.
         /// </para>
         /// </summary>
         public string MasterArn
@@ -259,8 +255,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MemorySize. 
         /// <para>
-        /// The memory size, in MB, you configured for the function. Must be a multiple of 64
-        /// MB.
+        /// The memory allocated to the function
         /// </para>
         /// </summary>
         public int MemorySize
@@ -296,8 +291,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Role. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it executes
-        /// your function to access any other Amazon Web Services (AWS) resources.
+        /// The function's execution role.
         /// </para>
         /// </summary>
         public string Role
@@ -333,9 +327,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Timeout. 
         /// <para>
-        /// The function execution time at which Lambda should terminate the function. Because
-        /// the execution time has cost implications, we recommend you set this value based on
-        /// your expected execution time. The default is 3 seconds.
+        /// The amount of time that Lambda allows a function to run before terminating it.
         /// </para>
         /// </summary>
         public int Timeout
@@ -353,7 +345,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property TracingConfig. 
         /// <para>
-        /// The parent object that contains your function's tracing settings.
+        /// The function's AWS X-Ray tracing configuration.
         /// </para>
         /// </summary>
         public TracingConfigResponse TracingConfig
@@ -389,7 +381,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property VpcConfig. 
         /// <para>
-        /// VPC configuration associated with your Lambda function.
+        /// The function's networking configuration.
         /// </para>
         /// </summary>
         public VpcConfigDetail VpcConfig

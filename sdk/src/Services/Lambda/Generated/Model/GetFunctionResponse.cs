@@ -38,7 +38,10 @@ namespace Amazon.Lambda.Model
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property Code.
+        /// Gets and sets the property Code. 
+        /// <para>
+        /// The function's code.
+        /// </para>
         /// </summary>
         public FunctionCodeLocation Code
         {
@@ -55,7 +58,9 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Concurrency. 
         /// <para>
-        /// The concurrent execution limit set for this function. For more information, see <a>concurrent-executions</a>.
+        /// The concurrent execution limit set for this function. For more information, see <a
+        /// href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing
+        /// Concurrency</a>.
         /// </para>
         /// </summary>
         public Concurrency Concurrency
@@ -71,7 +76,10 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Configuration.
+        /// Gets and sets the property Configuration. 
+        /// <para>
+        /// The function's configuration.
+        /// </para>
         /// </summary>
         public FunctionConfiguration Configuration
         {

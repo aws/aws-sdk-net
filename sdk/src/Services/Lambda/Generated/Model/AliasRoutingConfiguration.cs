@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// The parent object that implements what percentage of traffic will invoke each function
-    /// version. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+    /// The alias's <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">traffic
+    /// shifting</a> configuration.
     /// </summary>
     public partial class AliasRoutingConfiguration
     {
@@ -38,9 +38,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property AdditionalVersionWeights. 
         /// <para>
-        /// Set this value to dictate what percentage of traffic will invoke the updated function
-        /// version. If set to an empty string, 100 percent of traffic will invoke <code>function-version</code>.
-        /// For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+        /// The name of the second alias, and the percentage of traffic that is routed to it.
         /// </para>
         /// </summary>
         public Dictionary<string, double> AdditionalVersionWeights

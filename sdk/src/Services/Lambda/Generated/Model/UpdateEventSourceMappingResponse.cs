@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// Describes mapping between an Amazon Kinesis or DynamoDB stream or an Amazon SQS queue
-    /// and a Lambda function.
+    /// Describes mapping between an Amazon Kinesis or DynamoDB stream and a Lambda function.
     /// </summary>
     public partial class UpdateEventSourceMappingResponse : AmazonWebServiceResponse
     {
@@ -65,8 +64,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property EventSourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream or the SQS
-        /// queue that is the source of events.
+        /// The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream that is the
+        /// source of events.
         /// </para>
         /// </summary>
         public string EventSourceArn
@@ -120,7 +119,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property LastProcessingResult. 
         /// <para>
-        /// The result of the last AWS Lambda invocation of your Lambda function.
+        /// The result of the last AWS Lambda invocation of your Lambda function. This value will
+        /// be null if an SQS queue is the event source.
         /// </para>
         /// </summary>
         public string LastProcessingResult

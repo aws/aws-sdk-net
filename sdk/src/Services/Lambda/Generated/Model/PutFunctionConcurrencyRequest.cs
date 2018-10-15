@@ -34,7 +34,8 @@ namespace Amazon.Lambda.Model
     /// Lambda automatically reserves a buffer of 100 concurrent executions for functions
     /// without any reserved concurrency limit. This means if your account limit is 1000,
     /// you have a total of 900 available to allocate to individual functions. For more information,
-    /// see <a>concurrent-executions</a>.
+    /// see <a href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing
+    /// Concurrency</a>.
     /// </summary>
     public partial class PutFunctionConcurrencyRequest : AmazonLambdaRequest
     {
@@ -44,8 +45,26 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionName. 
         /// <para>
-        /// The name of the function you are setting concurrent execution limits on. For more
-        /// information, see <a>concurrent-executions</a>.
+        /// The name of the lambda function.
+        /// </para>
+        ///  <p class="title"> <b>Name formats</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Function name</b> - <code>MyFunction</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The length constraint applies only to the full ARN. If you specify only the function
+        /// name, it is limited to 64 characters in length.
         /// </para>
         /// </summary>
         public string FunctionName
@@ -63,8 +82,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property ReservedConcurrentExecutions. 
         /// <para>
-        /// The concurrent execution limit reserved for this function. For more information, see
-        /// <a>concurrent-executions</a>.
+        /// The concurrent execution limit reserved for this function.
         /// </para>
         /// </summary>
         public int ReservedConcurrentExecutions

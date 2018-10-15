@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// VPC configuration associated with your Lambda function.
+    /// The VPC security groups and subnets attached to a Lambda function.
     /// </summary>
     public partial class VpcConfigDetail
     {
@@ -39,7 +39,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
-        /// A list of security group IDs associated with the Lambda function.
+        /// A list of VPC security groups IDs.
         /// </para>
         /// </summary>
         public List<string> SecurityGroupIds
@@ -57,7 +57,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        /// A list of subnet IDs associated with the Lambda function.
+        /// A list of VPC subnet IDs.
         /// </para>
         /// </summary>
         public List<string> SubnetIds
@@ -75,7 +75,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        /// The VPC ID associated with you Lambda function.
+        /// The ID of the VPC.
         /// </para>
         /// </summary>
         public string VpcId

@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// The parent object that contains error information associated with your configuration
-    /// settings.
+    /// Error messages for environment variables that could not be applied.
     /// </summary>
     public partial class EnvironmentError
     {
@@ -39,7 +38,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property ErrorCode. 
         /// <para>
-        /// The error code returned by the environment error object.
+        /// The error code.
         /// </para>
         /// </summary>
         public string ErrorCode
@@ -57,7 +56,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// The message returned by the environment error object.
+        /// The error message.
         /// </para>
         /// </summary>
         public string Message

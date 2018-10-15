@@ -66,8 +66,9 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property DeadLetterConfig. 
         /// <para>
-        /// The parent object that contains the target ARN (Amazon Resource Name) of an Amazon
-        /// SQS queue or Amazon SNS topic. For more information, see <a>dlq</a>. 
+        /// A dead letter queue configuration that specifies the queue or topic where Lambda sends
+        /// asynchronous events when they fail processing. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/dlq.html">Dead
+        /// Letter Queues</a>.
         /// </para>
         /// </summary>
         public DeadLetterConfig DeadLetterConfig
@@ -122,15 +123,26 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionName. 
         /// <para>
-        /// The name of the Lambda function.
+        /// The name of the lambda function.
         /// </para>
-        ///  
+        ///  <p class="title"> <b>Name formats</b> 
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
-        ///  You can specify a function name (for example, <code>Thumbnail</code>) or you can
-        /// specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
-        /// AWS Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>).
-        /// Note that the length constraint applies only to the ARN. If you specify only the function
-        /// name, it is limited to 64 character in length. 
+        ///  <b>Function name</b> - <code>MyFunction</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The length constraint applies only to the full ARN. If you specify only the function
+        /// name, it is limited to 64 characters in length.
         /// </para>
         /// </summary>
         public string FunctionName
@@ -213,7 +225,7 @@ namespace Amazon.Lambda.Model
         /// function version or alias. If the <code>RevisionID</code> you pass doesn't match the
         /// latest <code>RevisionId</code> of the function or alias, it will fail with an error
         /// message, advising you to retrieve the latest function version or alias <code>RevisionID</code>
-        /// using either or .
+        /// using either <a>GetFunction</a> or <a>GetAlias</a>.
         /// </para>
         /// </summary>
         public string RevisionId
@@ -250,25 +262,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Runtime. 
         /// <para>
-        /// The runtime environment for the Lambda function.
+        /// The runtime version for the function.
         /// </para>
-        ///  
-        /// <para>
-        /// To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime
-        /// v2.7, set the value to "python2.7". To use the Node.js runtime v6.10, set the value
-        /// to "nodejs6.10". To use the Node.js runtime v4.3, set the value to "nodejs4.3". To
-        /// use the .NET Core runtime v1.0, set the value to "dotnetcore1.0". To use the .NET
-        /// Core runtime v2.0, set the value to "dotnetcore2.0".
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// Node v0.10.42 is currently marked as deprecated. You must migrate existing functions
-        /// to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10)
-        /// as soon as possible. Failure to do so will result in an invalid parameter error being
-        /// returned. Note that you will have to follow this procedure for each region that contains
-        /// functions written in the Node v0.10.42 runtime.
-        /// </para>
-        ///  </note>
         /// </summary>
         public Runtime Runtime
         {
@@ -285,9 +280,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Timeout. 
         /// <para>
-        /// The function execution time at which AWS Lambda should terminate the function. Because
-        /// the execution time has cost implications, we recommend you set this value based on
-        /// your expected execution time. The default is 3 seconds.
+        /// The amount of time that Lambda allows a function to run before terminating it. The
+        /// default is 3 seconds. The maximum allowed value is 900 seconds.
         /// </para>
         /// </summary>
         public int Timeout
@@ -305,7 +299,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property TracingConfig. 
         /// <para>
-        /// The parent object that contains your function's tracing settings.
+        /// Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming
+        /// requests with AWS X-Ray.
         /// </para>
         /// </summary>
         public TracingConfig TracingConfig
@@ -321,7 +316,10 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VpcConfig.
+        /// Gets and sets the property VpcConfig. 
+        /// <para>
+        /// Specify security groups and subnets in a VPC to which your Lambda function needs access.
+        /// </para>
         /// </summary>
         public VpcConfig VpcConfig
         {
