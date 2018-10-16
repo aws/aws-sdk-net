@@ -224,6 +224,16 @@ namespace Amazon.Runtime
         /// </summary>
         TimeSpan ClockOffset { get; }
 
+#if BCL
+        /// <summary>
+        /// Gets the TCP keep-alive values to use for service requests. Enabling TCP keep-alive sends periodic TCP keep-alive probe packets, to prevent disconnection due to 
+        /// network inactivity. This is useful when you make API calls that take a long time to respond. In this case, the connection could be dropped by an intermediate 
+        /// node (e.g. proxy) as the connection is inactive for a long time. Timeout controls the duration of inactivity before a keep-alive probe packet is sent. 
+        /// Interval controls the amount of time to wait before retrying a keep-alive probe packet in the event the server doesn't respond to a keep-alive probe.
+        /// </summary>
+        TcpKeepAlive TcpKeepAlive { get; }                
+#endif
+
 #if CORECLR
         /// <summary>
         /// Get the value to use for <see cref="HttpClientHandler.MaxConnectionsPerServer"/> on requests.
