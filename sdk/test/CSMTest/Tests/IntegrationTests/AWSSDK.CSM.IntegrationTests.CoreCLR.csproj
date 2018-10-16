@@ -27,6 +27,7 @@
   <ItemGroup>
     <Compile Include="_coreclr\*.cs" />
     <Compile Include="*.cs " />
+    <Compile Include="Properties\*.cs" />
   </ItemGroup>
 
   <ItemGroup>
