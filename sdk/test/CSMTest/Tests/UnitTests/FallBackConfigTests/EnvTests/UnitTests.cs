@@ -90,11 +90,7 @@ namespace AWSSDK.EnvFallBackTests
 
             CSMFallbackConfigChain.AllGenerators = new List<CSMFallbackConfigChain.ConfigurationSource>() { () => new EnvironmentVariableCSMConfigs(environment.Object, CSMFallbackConfigChain) };
 
-            var exception = Record.Exception(() => CSMFallbackConfigChain.GetCSMConfig());
-            Assert.NotNull(exception);
-            Assert.IsType<AmazonClientException>(exception);
-            Assert.Contains("Set a valid boolean value", exception.Message);
-            Assert.Equal("environment variable", CSMFallbackConfigChain.ConfigSource);
+            Assert.False(CSMFallbackConfigChain.GetCSMConfig().Enabled);
         }
 
         [Fact]
@@ -116,11 +112,9 @@ namespace AWSSDK.EnvFallBackTests
 
             CSMFallbackConfigChain.AllGenerators = new List<CSMFallbackConfigChain.ConfigurationSource>() { () => new EnvironmentVariableCSMConfigs(environment.Object, CSMFallbackConfigChain) };
 
-            var exception = Record.Exception(() => CSMFallbackConfigChain.GetCSMConfig());
-            Assert.NotNull(exception);
-            Assert.IsType<AmazonClientException>(exception);
-            Assert.Contains("Set a valid integer value", exception.Message);
-            Assert.Equal("environment variable", CSMFallbackConfigChain.ConfigSource);
+            var csmConfig = CSMFallbackConfigChain.GetCSMConfig();
+            Assert.True(csmConfig.Enabled);
+            Assert.Equal(31000, csmConfig.Port);
         }
     }
 }

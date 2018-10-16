@@ -77,11 +77,7 @@ namespace AWSSDK.SharedProfileFallBackTests
             };
 
             CSMFallbackConfigChain.AllGenerators = new List<CSMFallbackConfigChain.ConfigurationSource>() { () => new ProfileCSMConfigs(CSMFallbackConfigChain, "Test", profileProperties) };
-            var exception = Record.Exception(() => CSMFallbackConfigChain.GetCSMConfig());
-            Assert.NotNull(exception);
-            Assert.IsType<AmazonClientException>(exception);
-            Assert.Contains("Set a valid boolean value", exception.Message);
-            Assert.Equal("shared profile", CSMFallbackConfigChain.ConfigSource);
+            Assert.False(CSMFallbackConfigChain.GetCSMConfig().Enabled);
         }
 
         [Fact]
@@ -100,11 +96,9 @@ namespace AWSSDK.SharedProfileFallBackTests
             };
 
             CSMFallbackConfigChain.AllGenerators = new List<CSMFallbackConfigChain.ConfigurationSource>() { () => new ProfileCSMConfigs(CSMFallbackConfigChain, "Test", profileProperties) };
-            var exception = Record.Exception(() => CSMFallbackConfigChain.GetCSMConfig());
-            Assert.NotNull(exception);
-            Assert.IsType<AmazonClientException>(exception);
-            Assert.Contains("Set a valid integer value", exception.Message);
-            Assert.Equal("shared profile", CSMFallbackConfigChain.ConfigSource);
+            var csmConfig = CSMFallbackConfigChain.GetCSMConfig();
+            Assert.True(csmConfig.Enabled);
+            Assert.Equal(31000, csmConfig.Port);
         }
     }
 }

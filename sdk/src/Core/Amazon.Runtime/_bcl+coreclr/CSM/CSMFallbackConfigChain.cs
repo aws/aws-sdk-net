@@ -33,7 +33,9 @@ namespace Amazon.Runtime.Internal
     /// </summary>
     public class CSMFallbackConfigChain
     {
-        private static CredentialProfileStoreChain credentialProfileChain = new CredentialProfileStoreChain();
+        private readonly ILogger LOGGER = Logger.GetLogger(typeof(CSMFallbackConfigChain));
+
+        private static CredentialProfileStoreChain credentialProfileChain = new CredentialProfileStoreChain(AWSConfigs.AWSProfilesLocation);
 
         public delegate void ConfigurationSource();
         public List<ConfigurationSource> AllGenerators { get; set; }
@@ -57,10 +59,17 @@ namespace Amazon.Runtime.Internal
         {
             foreach (var generator in AllGenerators)
             {
-                generator();
-                if (IsConfigSet)
+                try
                 {
-                    break;
+                    generator();
+                    if (IsConfigSet)
+                    {
+                        break;
+                    }
+                }
+                catch(Exception e)
+                {
+                    LOGGER.Error(e, "Error looking for CSM configuration");
                 }
             }
             return CSMConfiguration;
