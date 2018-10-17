@@ -32,8 +32,28 @@ namespace Amazon.ResourceGroups.Model
     /// </summary>
     public partial class ListGroupsResponse : AmazonWebServiceResponse
     {
+        private List<GroupIdentifier> _groupIdentifiers = new List<GroupIdentifier>();
         private List<Group> _groups = new List<Group>();
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property GroupIdentifiers. 
+        /// <para>
+        /// A list of GroupIdentifier objects. Each identifier is an object that contains both
+        /// the GroupName and the GroupArn.
+        /// </para>
+        /// </summary>
+        public List<GroupIdentifier> GroupIdentifiers
+        {
+            get { return this._groupIdentifiers; }
+            set { this._groupIdentifiers = value; }
+        }
+
+        // Check to see if GroupIdentifiers property is set
+        internal bool IsSetGroupIdentifiers()
+        {
+            return this._groupIdentifiers != null && this._groupIdentifiers.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Groups. 
@@ -41,6 +61,7 @@ namespace Amazon.ResourceGroups.Model
         /// A list of resource groups.
         /// </para>
         /// </summary>
+        [Obsolete("This field is deprecated, use GroupIdentifiers instead.")]
         public List<Group> Groups
         {
             get { return this._groups; }

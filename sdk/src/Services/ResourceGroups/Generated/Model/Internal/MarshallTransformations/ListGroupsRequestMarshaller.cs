@@ -66,6 +66,33 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = uriResourcePath;
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            {
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetFilters())
+                {
+                    context.Writer.WritePropertyName("Filters");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestFiltersListValue in publicRequest.Filters)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = GroupFilterMarshaller.Instance;
+                        marshaller.Marshall(publicRequestFiltersListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+        
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+            }
+
             request.UseQueryString = true;
 
             return request;

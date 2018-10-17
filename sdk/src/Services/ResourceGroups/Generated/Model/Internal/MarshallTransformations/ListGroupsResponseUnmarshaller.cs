@@ -51,6 +51,12 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("GroupIdentifiers", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<GroupIdentifier, GroupIdentifierUnmarshaller>(GroupIdentifierUnmarshaller.Instance);
+                    response.GroupIdentifiers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Groups", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Group, GroupUnmarshaller>(GroupUnmarshaller.Instance);

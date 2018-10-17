@@ -33,8 +33,35 @@ namespace Amazon.ResourceGroups.Model
     /// </summary>
     public partial class ListGroupsRequest : AmazonResourceGroupsRequest
     {
+        private List<GroupFilter> _filters = new List<GroupFilter>();
         private int? _maxResults;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property Filters. 
+        /// <para>
+        /// Filters, formatted as GroupFilter objects, that you want to apply to a ListGroups
+        /// operation.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>group-type</code> - Filter groups by resource type. Specify up to five group
+        /// types in the format AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance,
+        /// or AWS::S3::Bucket.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public List<GroupFilter> Filters
+        {
+            get { return this._filters; }
+            set { this._filters = value; }
+        }
+
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
+        {
+            return this._filters != null && this._filters.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 

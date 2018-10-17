@@ -117,6 +117,16 @@
     <pattern>[a-zA-Z0-9_\.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.GroupIdentifier.GroupArn</property>
+    <pattern>arn:aws:resource-groups:[a-z]{2}-[a-z]+-\d{1}:[0-9]{12}:group/[a-zA-Z0-9_\.-]{1,128}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroups.Model.GroupIdentifier.GroupName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_\.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ResourceGroups.Model.GroupQuery.GroupName</property>
     <min>1</min>
     <max>128</max>
