@@ -647,8 +647,8 @@
                     },
                     "TaskCount": {
                       "type": "integer",
-                      "zonbookDocumentation": "\n        <simpara>The number of tasks to create based on <code>TaskDefinition</code>. The default is\n            1.</simpara>\n      ",
-                      "documentation": "\n        <p>The number of tasks to create based on <code>TaskDefinition</code>. The default is\n            1.</p>\n      ",
+                      "zonbookDocumentation": "\n        <simpara>The number of tasks to create based on <code>TaskDefinition</code>. The default is\n            1.</simpara>\n\n      ",
+                      "documentation": "\n        <p>The number of tasks to create based on <code>TaskDefinition</code>. The default is\n            1.</p>\n\n      ",
                       "shape_name": "LimitMin1",
                       "min_length": 1
                     },
@@ -1307,8 +1307,8 @@
                     },
                     "TaskCount": {
                       "type": "integer",
-                      "zonbookDocumentation": "\n        <simpara>The number of tasks to create based on <code>TaskDefinition</code>. The default is\n            1.</simpara>\n      ",
-                      "documentation": "\n        <p>The number of tasks to create based on <code>TaskDefinition</code>. The default is\n            1.</p>\n      ",
+                      "zonbookDocumentation": "\n        <simpara>The number of tasks to create based on <code>TaskDefinition</code>. The default is\n            1.</simpara>\n\n      ",
+                      "documentation": "\n        <p>The number of tasks to create based on <code>TaskDefinition</code>. The default is\n            1.</p>\n\n      ",
                       "shape_name": "LimitMin1",
                       "min_length": 1
                     },
@@ -2054,8 +2054,8 @@
           "Principal": {
             "type": "string",
             "pattern": "(\\d{12}|\\*)",
-            "zonbookDocumentation": "\n        <simpara>The 12-digit AWS account ID that you are permitting to put events to your default \n            event bus. Specify \"*\" to permit any account to put events to your default event bus.</simpara>\n        <simpara>If you specify \"*\", avoid creating rules that may match undesirable events. To create \n            more secure rules, make sure that the event pattern for each rule contains an <code>account</code> \n            field with a specific account ID from which to receive events. Rules with an account \n            field do not match any events sent from other accounts.</simpara>\n\n      ",
-            "documentation": "\n        <p>The 12-digit AWS account ID that you are permitting to put events to your default \n            event bus. Specify \"*\" to permit any account to put events to your default event bus.</p>\n        <p>If you specify \"*\", avoid creating rules that may match undesirable events. To create \n            more secure rules, make sure that the event pattern for each rule contains an <code>account</code> \n            field with a specific account ID from which to receive events. Rules with an account \n            field do not match any events sent from other accounts.</p>\n\n      ",
+            "zonbookDocumentation": "\n        <simpara>The 12-digit AWS account ID that you are permitting to put events to your default \n            event bus. Specify \"*\" to permit any account to put events to your default event bus.</simpara>\n\n        <simpara>If you specify \"*\" without specifying <code>Condition</code>, avoid creating rules that may match undesirable events. To create \n            more secure rules, make sure that the event pattern for each rule contains an <code>account</code> \n            field with a specific account ID from which to receive events. Rules with an account \n            field do not match any events sent from other accounts.</simpara>\n\n      ",
+            "documentation": "\n        <p>The 12-digit AWS account ID that you are permitting to put events to your default \n            event bus. Specify \"*\" to permit any account to put events to your default event bus.</p>\n\n        <p>If you specify \"*\" without specifying <code>Condition</code>, avoid creating rules that may match undesirable events. To create \n            more secure rules, make sure that the event pattern for each rule contains an <code>account</code> \n            field with a specific account ID from which to receive events. Rules with an account \n            field do not match any events sent from other accounts.</p>\n\n      ",
             "required": true,
             "shape_name": "Principal",
             "min_length": 1,
@@ -2070,6 +2070,35 @@
             "shape_name": "StatementId",
             "min_length": 1,
             "max_length": 64
+          },
+          "Condition": {
+            "type": "structure",
+            "members": {
+              "Type": {
+                "type": "string",
+                "zonbookDocumentation": "\n        <para>Specifies the type of condition. Currently the only supported value is <code>StringEquals</code>.</para>\n      ",
+                "documentation": "\n        <p>Specifies the type of condition. Currently the only supported value is <code>StringEquals</code>.</p>\n      ",
+                "required": true,
+                "shape_name": "String"
+              },
+              "Key": {
+                "type": "string",
+                "zonbookDocumentation": "\n        <para>Specifies the key for the condition. Currently the only supported key is <code>aws:PrincipalOrgID</code>.</para>\n      ",
+                "documentation": "\n        <p>Specifies the key for the condition. Currently the only supported key is <code>aws:PrincipalOrgID</code>.</p>\n      ",
+                "required": true,
+                "shape_name": "String"
+              },
+              "Value": {
+                "type": "string",
+                "zonbookDocumentation": "\n        <para>Specifies the value for the key. Currently, this must be the ID of the organization.</para>\n      ",
+                "documentation": "\n        <p>Specifies the value for the key. Currently, this must be the ID of the organization.</p>\n      ",
+                "required": true,
+                "shape_name": "String"
+              }
+            },
+            "zonbookDocumentation": "\n        <para>This parameter enables you to limit the permission to accounts that \n            fulfill a certain condition, such as being a member of a certain AWS organization. For more information about AWS Organizations, \n            see <ulink type=\"documentation\" url=\"organizations/latest/userguide/orgs_introduction.html\">What Is AWS Organizations</ulink> in the <emphasis>AWS Organizations User Guide</emphasis>.</para>\n        <para>If you specify <code>Condition</code> with an AWS organization ID, and specify \"*\" as the value\n            for <code>Principal</code>, you grant permission to all the accounts in the named organization.</para>\n\n        <para>The <code>Condition</code> is a JSON string which must contain <code>Type</code>, <code>Key</code>, and <code>Value</code> fields.</para>\n      ",
+            "documentation": "\n        <p>This parameter enables you to limit the permission to accounts that \n            fulfill a certain condition, such as being a member of a certain AWS organization. For more information about AWS Organizations, \n            see <a href=\"http://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html\">What Is AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.</p>\n        <p>If you specify <code>Condition</code> with an AWS organization ID, and specify \"*\" as the value\n            for <code>Principal</code>, you grant permission to all the accounts in the named organization.</p>\n\n        <p>The <code>Condition</code> is a JSON string which must contain <code>Type</code>, <code>Key</code>, and <code>Value</code> fields.</p>\n      ",
+            "shape_name": "Condition"
           }
         },
         "shape_name": "PutPermissionRequest",
@@ -2110,7 +2139,7 @@
           "shape_name": "ConcurrentModificationException"
         }
       ],
-      "documentation": "\n        <p>Running <code>PutPermission</code> permits the specified AWS account to put events to your account's default <i>event bus</i>. \n            CloudWatch Events rules in your account are triggered by these events arriving to your default event bus.  </p>\n        <p>For another account to send events to your account, that external account must have a CloudWatch Events rule with your account's\n        default event bus as a target.</p>\n        <p>To enable multiple AWS accounts to put events to your default event bus, run <code>PutPermission</code> once for each of these accounts.</p>\n        <p>The permission policy on the default event bus cannot exceed 10 KB in\n            size.</p>\n      "
+      "documentation": "\n        <p>Running <code>PutPermission</code> permits the specified AWS account or AWS organization to put events to your account's default <i>event bus</i>. \n            CloudWatch Events rules in your account are triggered by these events arriving to your default event bus.  </p>\n        <p>For another account to send events to your account, that external account must have a CloudWatch Events rule with your account's\n        default event bus as a target.</p>\n\n        <p>To enable multiple AWS accounts to put events to your default event bus, run <code>PutPermission</code> once for each of these accounts. Or, \n        if all the accounts are members of the same AWS organization, you can run <code>PutPermission</code> once specifying <code>Principal</code>\n        as \"*\" and specifying the AWS organization ID in <code>Condition</code>, to grant permissions to all accounts\n        in that organization.</p>\n\n        <p>The permission policy on the default event bus cannot exceed 10 KB in\n            size.</p>\n      "
     },
     "RemovePermission": {
       "name": "RemovePermission",
