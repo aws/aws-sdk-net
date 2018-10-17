@@ -1835,6 +1835,10 @@ namespace Amazon.Lightsail
         /// </summary>
         public static readonly RegionName ApSoutheast2 = new RegionName("ap-southeast-2");
         /// <summary>
+        /// Constant CaCentral1 for RegionName
+        /// </summary>
+        public static readonly RegionName CaCentral1 = new RegionName("ca-central-1");
+        /// <summary>
         /// Constant EuCentral1 for RegionName
         /// </summary>
         public static readonly RegionName EuCentral1 = new RegionName("eu-central-1");
@@ -1846,6 +1850,10 @@ namespace Amazon.Lightsail
         /// Constant EuWest2 for RegionName
         /// </summary>
         public static readonly RegionName EuWest2 = new RegionName("eu-west-2");
+        /// <summary>
+        /// Constant EuWest3 for RegionName
+        /// </summary>
+        public static readonly RegionName EuWest3 = new RegionName("eu-west-3");
         /// <summary>
         /// Constant UsEast1 for RegionName
         /// </summary>
@@ -1899,6 +1907,172 @@ namespace Amazon.Lightsail
 
 
     /// <summary>
+    /// Constants used for properties of type RelationalDatabaseEngine.
+    /// </summary>
+    public class RelationalDatabaseEngine : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Mysql for RelationalDatabaseEngine
+        /// </summary>
+        public static readonly RelationalDatabaseEngine Mysql = new RelationalDatabaseEngine("mysql");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RelationalDatabaseEngine(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RelationalDatabaseEngine FindValue(string value)
+        {
+            return FindValue<RelationalDatabaseEngine>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RelationalDatabaseEngine(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RelationalDatabaseMetricName.
+    /// </summary>
+    public class RelationalDatabaseMetricName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CPUUtilization for RelationalDatabaseMetricName
+        /// </summary>
+        public static readonly RelationalDatabaseMetricName CPUUtilization = new RelationalDatabaseMetricName("CPUUtilization");
+        /// <summary>
+        /// Constant DatabaseConnections for RelationalDatabaseMetricName
+        /// </summary>
+        public static readonly RelationalDatabaseMetricName DatabaseConnections = new RelationalDatabaseMetricName("DatabaseConnections");
+        /// <summary>
+        /// Constant DiskQueueDepth for RelationalDatabaseMetricName
+        /// </summary>
+        public static readonly RelationalDatabaseMetricName DiskQueueDepth = new RelationalDatabaseMetricName("DiskQueueDepth");
+        /// <summary>
+        /// Constant FreeStorageSpace for RelationalDatabaseMetricName
+        /// </summary>
+        public static readonly RelationalDatabaseMetricName FreeStorageSpace = new RelationalDatabaseMetricName("FreeStorageSpace");
+        /// <summary>
+        /// Constant NetworkReceiveThroughput for RelationalDatabaseMetricName
+        /// </summary>
+        public static readonly RelationalDatabaseMetricName NetworkReceiveThroughput = new RelationalDatabaseMetricName("NetworkReceiveThroughput");
+        /// <summary>
+        /// Constant NetworkTransmitThroughput for RelationalDatabaseMetricName
+        /// </summary>
+        public static readonly RelationalDatabaseMetricName NetworkTransmitThroughput = new RelationalDatabaseMetricName("NetworkTransmitThroughput");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RelationalDatabaseMetricName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RelationalDatabaseMetricName FindValue(string value)
+        {
+            return FindValue<RelationalDatabaseMetricName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RelationalDatabaseMetricName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RelationalDatabasePasswordVersion.
+    /// </summary>
+    public class RelationalDatabasePasswordVersion : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CURRENT for RelationalDatabasePasswordVersion
+        /// </summary>
+        public static readonly RelationalDatabasePasswordVersion CURRENT = new RelationalDatabasePasswordVersion("CURRENT");
+        /// <summary>
+        /// Constant PENDING for RelationalDatabasePasswordVersion
+        /// </summary>
+        public static readonly RelationalDatabasePasswordVersion PENDING = new RelationalDatabasePasswordVersion("PENDING");
+        /// <summary>
+        /// Constant PREVIOUS for RelationalDatabasePasswordVersion
+        /// </summary>
+        public static readonly RelationalDatabasePasswordVersion PREVIOUS = new RelationalDatabasePasswordVersion("PREVIOUS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RelationalDatabasePasswordVersion(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RelationalDatabasePasswordVersion FindValue(string value)
+        {
+            return FindValue<RelationalDatabasePasswordVersion>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RelationalDatabasePasswordVersion(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResourceType.
     /// </summary>
     public class ResourceType : ConstantClass
@@ -1940,6 +2114,14 @@ namespace Amazon.Lightsail
         /// Constant PeeredVpc for ResourceType
         /// </summary>
         public static readonly ResourceType PeeredVpc = new ResourceType("PeeredVpc");
+        /// <summary>
+        /// Constant RelationalDatabase for ResourceType
+        /// </summary>
+        public static readonly ResourceType RelationalDatabase = new ResourceType("RelationalDatabase");
+        /// <summary>
+        /// Constant RelationalDatabaseSnapshot for ResourceType
+        /// </summary>
+        public static readonly ResourceType RelationalDatabaseSnapshot = new ResourceType("RelationalDatabaseSnapshot");
         /// <summary>
         /// Constant StaticIp for ResourceType
         /// </summary>

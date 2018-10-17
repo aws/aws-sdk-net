@@ -179,7 +179,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// The region name and availability zone where you created the snapshot.
+        /// The region name and Availability Zone where you created the snapshot.
         /// </para>
         /// </summary>
         public ResourceLocation Location

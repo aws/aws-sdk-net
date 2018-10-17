@@ -229,7 +229,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Period. 
         /// <para>
-        /// The time period duration for your health data request.
+        /// The granularity, in seconds, of the returned data points.
         /// </para>
         /// </summary>
         public int Period

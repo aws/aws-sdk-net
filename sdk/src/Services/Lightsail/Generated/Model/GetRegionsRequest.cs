@@ -30,11 +30,12 @@ namespace Amazon.Lightsail.Model
     /// <summary>
     /// Container for the parameters to the GetRegions operation.
     /// Returns a list of all valid regions for Amazon Lightsail. Use the <code>include availability
-    /// zones</code> parameter to also return the availability zones in a region.
+    /// zones</code> parameter to also return the Availability Zones in a region.
     /// </summary>
     public partial class GetRegionsRequest : AmazonLightsailRequest
     {
         private bool? _includeAvailabilityZones;
+        private bool? _includeRelationalDatabaseAvailabilityZones;
 
         /// <summary>
         /// Gets and sets the property IncludeAvailabilityZones. 
@@ -53,6 +54,26 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetIncludeAvailabilityZones()
         {
             return this._includeAvailabilityZones.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeRelationalDatabaseAvailabilityZones. 
+        /// <para>
+        /// &gt;A Boolean value indicating whether to also include Availability Zones for databases
+        /// in your get regions request. Availability Zones are indicated with a letter (e.g.,
+        /// <code>us-east-2a</code>).
+        /// </para>
+        /// </summary>
+        public bool IncludeRelationalDatabaseAvailabilityZones
+        {
+            get { return this._includeRelationalDatabaseAvailabilityZones.GetValueOrDefault(); }
+            set { this._includeRelationalDatabaseAvailabilityZones = value; }
+        }
+
+        // Check to see if IncludeRelationalDatabaseAvailabilityZones property is set
+        internal bool IsSetIncludeRelationalDatabaseAvailabilityZones()
+        {
+            return this._includeRelationalDatabaseAvailabilityZones.HasValue; 
         }
 
     }

@@ -63,8 +63,8 @@ namespace Amazon.Lightsail.Model
         ///  
         /// <para>
         /// There can be two certificates associated with a Lightsail load balancer: the primary
-        /// and the backup. The force parameter is required when the primary SSL/TLS certificate
-        /// is in use by an instance attached to the load balancer.
+        /// and the backup. The <code>force</code> parameter is required when the primary SSL/TLS
+        /// certificate is in use by an instance attached to the load balancer.
         /// </para>
         /// </summary>
         public bool Force

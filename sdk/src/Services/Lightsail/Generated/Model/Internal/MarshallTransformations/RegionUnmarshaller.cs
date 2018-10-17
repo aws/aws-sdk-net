@@ -94,6 +94,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("relationalDatabaseAvailabilityZones", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AvailabilityZone, AvailabilityZoneUnmarshaller>(AvailabilityZoneUnmarshaller.Instance);
+                    unmarshalledObject.RelationalDatabaseAvailabilityZones = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

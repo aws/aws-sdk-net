@@ -803,6 +803,102 @@ namespace Amazon.Lightsail
 
         #endregion
         
+        #region  CreateRelationalDatabase
+
+        internal virtual CreateRelationalDatabaseResponse CreateRelationalDatabase(CreateRelationalDatabaseRequest request)
+        {
+            var marshaller = CreateRelationalDatabaseRequestMarshaller.Instance;
+            var unmarshaller = CreateRelationalDatabaseResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRelationalDatabaseRequest,CreateRelationalDatabaseResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateRelationalDatabase operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateRelationalDatabase operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateRelationalDatabase">REST API Reference for CreateRelationalDatabase Operation</seealso>
+        public virtual Task<CreateRelationalDatabaseResponse> CreateRelationalDatabaseAsync(CreateRelationalDatabaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateRelationalDatabaseRequestMarshaller.Instance;
+            var unmarshaller = CreateRelationalDatabaseResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateRelationalDatabaseRequest,CreateRelationalDatabaseResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateRelationalDatabaseFromSnapshot
+
+        internal virtual CreateRelationalDatabaseFromSnapshotResponse CreateRelationalDatabaseFromSnapshot(CreateRelationalDatabaseFromSnapshotRequest request)
+        {
+            var marshaller = CreateRelationalDatabaseFromSnapshotRequestMarshaller.Instance;
+            var unmarshaller = CreateRelationalDatabaseFromSnapshotResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRelationalDatabaseFromSnapshotRequest,CreateRelationalDatabaseFromSnapshotResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateRelationalDatabaseFromSnapshot operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateRelationalDatabaseFromSnapshot operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateRelationalDatabaseFromSnapshot">REST API Reference for CreateRelationalDatabaseFromSnapshot Operation</seealso>
+        public virtual Task<CreateRelationalDatabaseFromSnapshotResponse> CreateRelationalDatabaseFromSnapshotAsync(CreateRelationalDatabaseFromSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateRelationalDatabaseFromSnapshotRequestMarshaller.Instance;
+            var unmarshaller = CreateRelationalDatabaseFromSnapshotResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateRelationalDatabaseFromSnapshotRequest,CreateRelationalDatabaseFromSnapshotResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateRelationalDatabaseSnapshot
+
+        internal virtual CreateRelationalDatabaseSnapshotResponse CreateRelationalDatabaseSnapshot(CreateRelationalDatabaseSnapshotRequest request)
+        {
+            var marshaller = CreateRelationalDatabaseSnapshotRequestMarshaller.Instance;
+            var unmarshaller = CreateRelationalDatabaseSnapshotResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRelationalDatabaseSnapshotRequest,CreateRelationalDatabaseSnapshotResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateRelationalDatabaseSnapshot operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateRelationalDatabaseSnapshot operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateRelationalDatabaseSnapshot">REST API Reference for CreateRelationalDatabaseSnapshot Operation</seealso>
+        public virtual Task<CreateRelationalDatabaseSnapshotResponse> CreateRelationalDatabaseSnapshotAsync(CreateRelationalDatabaseSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateRelationalDatabaseSnapshotRequestMarshaller.Instance;
+            var unmarshaller = CreateRelationalDatabaseSnapshotResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateRelationalDatabaseSnapshotRequest,CreateRelationalDatabaseSnapshotResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteDisk
 
         internal virtual DeleteDiskResponse DeleteDisk(DeleteDiskRequest request)
@@ -1086,6 +1182,70 @@ namespace Amazon.Lightsail
             var unmarshaller = DeleteLoadBalancerTlsCertificateResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteLoadBalancerTlsCertificateRequest,DeleteLoadBalancerTlsCertificateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteRelationalDatabase
+
+        internal virtual DeleteRelationalDatabaseResponse DeleteRelationalDatabase(DeleteRelationalDatabaseRequest request)
+        {
+            var marshaller = DeleteRelationalDatabaseRequestMarshaller.Instance;
+            var unmarshaller = DeleteRelationalDatabaseResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRelationalDatabaseRequest,DeleteRelationalDatabaseResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRelationalDatabase operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRelationalDatabase operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteRelationalDatabase">REST API Reference for DeleteRelationalDatabase Operation</seealso>
+        public virtual Task<DeleteRelationalDatabaseResponse> DeleteRelationalDatabaseAsync(DeleteRelationalDatabaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteRelationalDatabaseRequestMarshaller.Instance;
+            var unmarshaller = DeleteRelationalDatabaseResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteRelationalDatabaseRequest,DeleteRelationalDatabaseResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteRelationalDatabaseSnapshot
+
+        internal virtual DeleteRelationalDatabaseSnapshotResponse DeleteRelationalDatabaseSnapshot(DeleteRelationalDatabaseSnapshotRequest request)
+        {
+            var marshaller = DeleteRelationalDatabaseSnapshotRequestMarshaller.Instance;
+            var unmarshaller = DeleteRelationalDatabaseSnapshotResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRelationalDatabaseSnapshotRequest,DeleteRelationalDatabaseSnapshotResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRelationalDatabaseSnapshot operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRelationalDatabaseSnapshot operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteRelationalDatabaseSnapshot">REST API Reference for DeleteRelationalDatabaseSnapshot Operation</seealso>
+        public virtual Task<DeleteRelationalDatabaseSnapshotResponse> DeleteRelationalDatabaseSnapshotAsync(DeleteRelationalDatabaseSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteRelationalDatabaseSnapshotRequestMarshaller.Instance;
+            var unmarshaller = DeleteRelationalDatabaseSnapshotResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteRelationalDatabaseSnapshotRequest,DeleteRelationalDatabaseSnapshotResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2083,6 +2243,390 @@ namespace Amazon.Lightsail
 
         #endregion
         
+        #region  GetRelationalDatabase
+
+        internal virtual GetRelationalDatabaseResponse GetRelationalDatabase(GetRelationalDatabaseRequest request)
+        {
+            var marshaller = GetRelationalDatabaseRequestMarshaller.Instance;
+            var unmarshaller = GetRelationalDatabaseResponseUnmarshaller.Instance;
+
+            return Invoke<GetRelationalDatabaseRequest,GetRelationalDatabaseResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRelationalDatabase operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRelationalDatabase operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabase">REST API Reference for GetRelationalDatabase Operation</seealso>
+        public virtual Task<GetRelationalDatabaseResponse> GetRelationalDatabaseAsync(GetRelationalDatabaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetRelationalDatabaseRequestMarshaller.Instance;
+            var unmarshaller = GetRelationalDatabaseResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRelationalDatabaseRequest,GetRelationalDatabaseResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetRelationalDatabaseBlueprints
+
+        internal virtual GetRelationalDatabaseBlueprintsResponse GetRelationalDatabaseBlueprints(GetRelationalDatabaseBlueprintsRequest request)
+        {
+            var marshaller = GetRelationalDatabaseBlueprintsRequestMarshaller.Instance;
+            var unmarshaller = GetRelationalDatabaseBlueprintsResponseUnmarshaller.Instance;
+
+            return Invoke<GetRelationalDatabaseBlueprintsRequest,GetRelationalDatabaseBlueprintsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRelationalDatabaseBlueprints operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRelationalDatabaseBlueprints operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseBlueprints">REST API Reference for GetRelationalDatabaseBlueprints Operation</seealso>
+        public virtual Task<GetRelationalDatabaseBlueprintsResponse> GetRelationalDatabaseBlueprintsAsync(GetRelationalDatabaseBlueprintsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetRelationalDatabaseBlueprintsRequestMarshaller.Instance;
+            var unmarshaller = GetRelationalDatabaseBlueprintsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRelationalDatabaseBlueprintsRequest,GetRelationalDatabaseBlueprintsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetRelationalDatabaseBundles
+
+        internal virtual GetRelationalDatabaseBundlesResponse GetRelationalDatabaseBundles(GetRelationalDatabaseBundlesRequest request)
+        {
+            var marshaller = GetRelationalDatabaseBundlesRequestMarshaller.Instance;
+            var unmarshaller = GetRelationalDatabaseBundlesResponseUnmarshaller.Instance;
+
+            return Invoke<GetRelationalDatabaseBundlesRequest,GetRelationalDatabaseBundlesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRelationalDatabaseBundles operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRelationalDatabaseBundles operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseBundles">REST API Reference for GetRelationalDatabaseBundles Operation</seealso>
+        public virtual Task<GetRelationalDatabaseBundlesResponse> GetRelationalDatabaseBundlesAsync(GetRelationalDatabaseBundlesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetRelationalDatabaseBundlesRequestMarshaller.Instance;
+            var unmarshaller = GetRelationalDatabaseBundlesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRelationalDatabaseBundlesRequest,GetRelationalDatabaseBundlesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetRelationalDatabaseEvents
+
+        internal virtual GetRelationalDatabaseEventsResponse GetRelationalDatabaseEvents(GetRelationalDatabaseEventsRequest request)
+        {
+            var marshaller = GetRelationalDatabaseEventsRequestMarshaller.Instance;
+            var unmarshaller = GetRelationalDatabaseEventsResponseUnmarshaller.Instance;
+
+            return Invoke<GetRelationalDatabaseEventsRequest,GetRelationalDatabaseEventsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRelationalDatabaseEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRelationalDatabaseEvents operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseEvents">REST API Reference for GetRelationalDatabaseEvents Operation</seealso>
+        public virtual Task<GetRelationalDatabaseEventsResponse> GetRelationalDatabaseEventsAsync(GetRelationalDatabaseEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetRelationalDatabaseEventsRequestMarshaller.Instance;
+            var unmarshaller = GetRelationalDatabaseEventsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRelationalDatabaseEventsRequest,GetRelationalDatabaseEventsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetRelationalDatabaseLogEvents
+
+        internal virtual GetRelationalDatabaseLogEventsResponse GetRelationalDatabaseLogEvents(GetRelationalDatabaseLogEventsRequest request)
+        {
+            var marshaller = GetRelationalDatabaseLogEventsRequestMarshaller.Instance;
+            var unmarshaller = GetRelationalDatabaseLogEventsResponseUnmarshaller.Instance;
+
+            return Invoke<GetRelationalDatabaseLogEventsRequest,GetRelationalDatabaseLogEventsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRelationalDatabaseLogEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRelationalDatabaseLogEvents operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseLogEvents">REST API Reference for GetRelationalDatabaseLogEvents Operation</seealso>
+        public virtual Task<GetRelationalDatabaseLogEventsResponse> GetRelationalDatabaseLogEventsAsync(GetRelationalDatabaseLogEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetRelationalDatabaseLogEventsRequestMarshaller.Instance;
+            var unmarshaller = GetRelationalDatabaseLogEventsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRelationalDatabaseLogEventsRequest,GetRelationalDatabaseLogEventsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetRelationalDatabaseLogStreams
+
+        internal virtual GetRelationalDatabaseLogStreamsResponse GetRelationalDatabaseLogStreams(GetRelationalDatabaseLogStreamsRequest request)
+        {
+            var marshaller = GetRelationalDatabaseLogStreamsRequestMarshaller.Instance;
+            var unmarshaller = GetRelationalDatabaseLogStreamsResponseUnmarshaller.Instance;
+
+            return Invoke<GetRelationalDatabaseLogStreamsRequest,GetRelationalDatabaseLogStreamsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRelationalDatabaseLogStreams operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRelationalDatabaseLogStreams operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseLogStreams">REST API Reference for GetRelationalDatabaseLogStreams Operation</seealso>
+        public virtual Task<GetRelationalDatabaseLogStreamsResponse> GetRelationalDatabaseLogStreamsAsync(GetRelationalDatabaseLogStreamsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetRelationalDatabaseLogStreamsRequestMarshaller.Instance;
+            var unmarshaller = GetRelationalDatabaseLogStreamsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRelationalDatabaseLogStreamsRequest,GetRelationalDatabaseLogStreamsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetRelationalDatabaseMasterUserPassword
+
+        internal virtual GetRelationalDatabaseMasterUserPasswordResponse GetRelationalDatabaseMasterUserPassword(GetRelationalDatabaseMasterUserPasswordRequest request)
+        {
+            var marshaller = GetRelationalDatabaseMasterUserPasswordRequestMarshaller.Instance;
+            var unmarshaller = GetRelationalDatabaseMasterUserPasswordResponseUnmarshaller.Instance;
+
+            return Invoke<GetRelationalDatabaseMasterUserPasswordRequest,GetRelationalDatabaseMasterUserPasswordResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRelationalDatabaseMasterUserPassword operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRelationalDatabaseMasterUserPassword operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseMasterUserPassword">REST API Reference for GetRelationalDatabaseMasterUserPassword Operation</seealso>
+        public virtual Task<GetRelationalDatabaseMasterUserPasswordResponse> GetRelationalDatabaseMasterUserPasswordAsync(GetRelationalDatabaseMasterUserPasswordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetRelationalDatabaseMasterUserPasswordRequestMarshaller.Instance;
+            var unmarshaller = GetRelationalDatabaseMasterUserPasswordResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRelationalDatabaseMasterUserPasswordRequest,GetRelationalDatabaseMasterUserPasswordResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetRelationalDatabaseMetricData
+
+        internal virtual GetRelationalDatabaseMetricDataResponse GetRelationalDatabaseMetricData(GetRelationalDatabaseMetricDataRequest request)
+        {
+            var marshaller = GetRelationalDatabaseMetricDataRequestMarshaller.Instance;
+            var unmarshaller = GetRelationalDatabaseMetricDataResponseUnmarshaller.Instance;
+
+            return Invoke<GetRelationalDatabaseMetricDataRequest,GetRelationalDatabaseMetricDataResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRelationalDatabaseMetricData operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRelationalDatabaseMetricData operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseMetricData">REST API Reference for GetRelationalDatabaseMetricData Operation</seealso>
+        public virtual Task<GetRelationalDatabaseMetricDataResponse> GetRelationalDatabaseMetricDataAsync(GetRelationalDatabaseMetricDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetRelationalDatabaseMetricDataRequestMarshaller.Instance;
+            var unmarshaller = GetRelationalDatabaseMetricDataResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRelationalDatabaseMetricDataRequest,GetRelationalDatabaseMetricDataResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetRelationalDatabaseParameters
+
+        internal virtual GetRelationalDatabaseParametersResponse GetRelationalDatabaseParameters(GetRelationalDatabaseParametersRequest request)
+        {
+            var marshaller = GetRelationalDatabaseParametersRequestMarshaller.Instance;
+            var unmarshaller = GetRelationalDatabaseParametersResponseUnmarshaller.Instance;
+
+            return Invoke<GetRelationalDatabaseParametersRequest,GetRelationalDatabaseParametersResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRelationalDatabaseParameters operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRelationalDatabaseParameters operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseParameters">REST API Reference for GetRelationalDatabaseParameters Operation</seealso>
+        public virtual Task<GetRelationalDatabaseParametersResponse> GetRelationalDatabaseParametersAsync(GetRelationalDatabaseParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetRelationalDatabaseParametersRequestMarshaller.Instance;
+            var unmarshaller = GetRelationalDatabaseParametersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRelationalDatabaseParametersRequest,GetRelationalDatabaseParametersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetRelationalDatabases
+
+        internal virtual GetRelationalDatabasesResponse GetRelationalDatabases(GetRelationalDatabasesRequest request)
+        {
+            var marshaller = GetRelationalDatabasesRequestMarshaller.Instance;
+            var unmarshaller = GetRelationalDatabasesResponseUnmarshaller.Instance;
+
+            return Invoke<GetRelationalDatabasesRequest,GetRelationalDatabasesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRelationalDatabases operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRelationalDatabases operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabases">REST API Reference for GetRelationalDatabases Operation</seealso>
+        public virtual Task<GetRelationalDatabasesResponse> GetRelationalDatabasesAsync(GetRelationalDatabasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetRelationalDatabasesRequestMarshaller.Instance;
+            var unmarshaller = GetRelationalDatabasesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRelationalDatabasesRequest,GetRelationalDatabasesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetRelationalDatabaseSnapshot
+
+        internal virtual GetRelationalDatabaseSnapshotResponse GetRelationalDatabaseSnapshot(GetRelationalDatabaseSnapshotRequest request)
+        {
+            var marshaller = GetRelationalDatabaseSnapshotRequestMarshaller.Instance;
+            var unmarshaller = GetRelationalDatabaseSnapshotResponseUnmarshaller.Instance;
+
+            return Invoke<GetRelationalDatabaseSnapshotRequest,GetRelationalDatabaseSnapshotResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRelationalDatabaseSnapshot operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRelationalDatabaseSnapshot operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseSnapshot">REST API Reference for GetRelationalDatabaseSnapshot Operation</seealso>
+        public virtual Task<GetRelationalDatabaseSnapshotResponse> GetRelationalDatabaseSnapshotAsync(GetRelationalDatabaseSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetRelationalDatabaseSnapshotRequestMarshaller.Instance;
+            var unmarshaller = GetRelationalDatabaseSnapshotResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRelationalDatabaseSnapshotRequest,GetRelationalDatabaseSnapshotResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetRelationalDatabaseSnapshots
+
+        internal virtual GetRelationalDatabaseSnapshotsResponse GetRelationalDatabaseSnapshots(GetRelationalDatabaseSnapshotsRequest request)
+        {
+            var marshaller = GetRelationalDatabaseSnapshotsRequestMarshaller.Instance;
+            var unmarshaller = GetRelationalDatabaseSnapshotsResponseUnmarshaller.Instance;
+
+            return Invoke<GetRelationalDatabaseSnapshotsRequest,GetRelationalDatabaseSnapshotsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRelationalDatabaseSnapshots operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRelationalDatabaseSnapshots operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseSnapshots">REST API Reference for GetRelationalDatabaseSnapshots Operation</seealso>
+        public virtual Task<GetRelationalDatabaseSnapshotsResponse> GetRelationalDatabaseSnapshotsAsync(GetRelationalDatabaseSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetRelationalDatabaseSnapshotsRequestMarshaller.Instance;
+            var unmarshaller = GetRelationalDatabaseSnapshotsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRelationalDatabaseSnapshotsRequest,GetRelationalDatabaseSnapshotsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetStaticIp
 
         internal virtual GetStaticIpResponse GetStaticIp(GetStaticIpRequest request)
@@ -2339,6 +2883,38 @@ namespace Amazon.Lightsail
 
         #endregion
         
+        #region  RebootRelationalDatabase
+
+        internal virtual RebootRelationalDatabaseResponse RebootRelationalDatabase(RebootRelationalDatabaseRequest request)
+        {
+            var marshaller = RebootRelationalDatabaseRequestMarshaller.Instance;
+            var unmarshaller = RebootRelationalDatabaseResponseUnmarshaller.Instance;
+
+            return Invoke<RebootRelationalDatabaseRequest,RebootRelationalDatabaseResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RebootRelationalDatabase operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RebootRelationalDatabase operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RebootRelationalDatabase">REST API Reference for RebootRelationalDatabase Operation</seealso>
+        public virtual Task<RebootRelationalDatabaseResponse> RebootRelationalDatabaseAsync(RebootRelationalDatabaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = RebootRelationalDatabaseRequestMarshaller.Instance;
+            var unmarshaller = RebootRelationalDatabaseResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RebootRelationalDatabaseRequest,RebootRelationalDatabaseResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ReleaseStaticIp
 
         internal virtual ReleaseStaticIpResponse ReleaseStaticIp(ReleaseStaticIpRequest request)
@@ -2403,6 +2979,38 @@ namespace Amazon.Lightsail
 
         #endregion
         
+        #region  StartRelationalDatabase
+
+        internal virtual StartRelationalDatabaseResponse StartRelationalDatabase(StartRelationalDatabaseRequest request)
+        {
+            var marshaller = StartRelationalDatabaseRequestMarshaller.Instance;
+            var unmarshaller = StartRelationalDatabaseResponseUnmarshaller.Instance;
+
+            return Invoke<StartRelationalDatabaseRequest,StartRelationalDatabaseResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartRelationalDatabase operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartRelationalDatabase operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StartRelationalDatabase">REST API Reference for StartRelationalDatabase Operation</seealso>
+        public virtual Task<StartRelationalDatabaseResponse> StartRelationalDatabaseAsync(StartRelationalDatabaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = StartRelationalDatabaseRequestMarshaller.Instance;
+            var unmarshaller = StartRelationalDatabaseResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartRelationalDatabaseRequest,StartRelationalDatabaseResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StopInstance
 
         internal virtual StopInstanceResponse StopInstance(StopInstanceRequest request)
@@ -2430,6 +3038,38 @@ namespace Amazon.Lightsail
             var unmarshaller = StopInstanceResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopInstanceRequest,StopInstanceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopRelationalDatabase
+
+        internal virtual StopRelationalDatabaseResponse StopRelationalDatabase(StopRelationalDatabaseRequest request)
+        {
+            var marshaller = StopRelationalDatabaseRequestMarshaller.Instance;
+            var unmarshaller = StopRelationalDatabaseResponseUnmarshaller.Instance;
+
+            return Invoke<StopRelationalDatabaseRequest,StopRelationalDatabaseResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopRelationalDatabase operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopRelationalDatabase operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StopRelationalDatabase">REST API Reference for StopRelationalDatabase Operation</seealso>
+        public virtual Task<StopRelationalDatabaseResponse> StopRelationalDatabaseAsync(StopRelationalDatabaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = StopRelationalDatabaseRequestMarshaller.Instance;
+            var unmarshaller = StopRelationalDatabaseResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopRelationalDatabaseRequest,StopRelationalDatabaseResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2526,6 +3166,70 @@ namespace Amazon.Lightsail
             var unmarshaller = UpdateLoadBalancerAttributeResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateLoadBalancerAttributeRequest,UpdateLoadBalancerAttributeResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateRelationalDatabase
+
+        internal virtual UpdateRelationalDatabaseResponse UpdateRelationalDatabase(UpdateRelationalDatabaseRequest request)
+        {
+            var marshaller = UpdateRelationalDatabaseRequestMarshaller.Instance;
+            var unmarshaller = UpdateRelationalDatabaseResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRelationalDatabaseRequest,UpdateRelationalDatabaseResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateRelationalDatabase operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRelationalDatabase operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateRelationalDatabase">REST API Reference for UpdateRelationalDatabase Operation</seealso>
+        public virtual Task<UpdateRelationalDatabaseResponse> UpdateRelationalDatabaseAsync(UpdateRelationalDatabaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateRelationalDatabaseRequestMarshaller.Instance;
+            var unmarshaller = UpdateRelationalDatabaseResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateRelationalDatabaseRequest,UpdateRelationalDatabaseResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateRelationalDatabaseParameters
+
+        internal virtual UpdateRelationalDatabaseParametersResponse UpdateRelationalDatabaseParameters(UpdateRelationalDatabaseParametersRequest request)
+        {
+            var marshaller = UpdateRelationalDatabaseParametersRequestMarshaller.Instance;
+            var unmarshaller = UpdateRelationalDatabaseParametersResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRelationalDatabaseParametersRequest,UpdateRelationalDatabaseParametersResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateRelationalDatabaseParameters operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRelationalDatabaseParameters operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateRelationalDatabaseParameters">REST API Reference for UpdateRelationalDatabaseParameters Operation</seealso>
+        public virtual Task<UpdateRelationalDatabaseParametersResponse> UpdateRelationalDatabaseParametersAsync(UpdateRelationalDatabaseParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateRelationalDatabaseParametersRequestMarshaller.Instance;
+            var unmarshaller = UpdateRelationalDatabaseParametersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateRelationalDatabaseParametersRequest,UpdateRelationalDatabaseParametersResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

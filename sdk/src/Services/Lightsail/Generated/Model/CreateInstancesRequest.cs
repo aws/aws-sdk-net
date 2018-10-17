@@ -30,6 +30,11 @@ namespace Amazon.Lightsail.Model
     /// <summary>
     /// Container for the parameters to the CreateInstances operation.
     /// Creates one or more Amazon Lightsail virtual private servers, or <i>instances</i>.
+    /// Create instances using active blueprints. Inactive blueprints are listed to support
+    /// customers with existing instances but are not necessarily available for launch of
+    /// new instances. Blueprints are marked inactive when they become outdated due to operating
+    /// system updates or new application releases. Use the get blueprints operation to return
+    /// a list of available blueprints.
     /// </summary>
     public partial class CreateInstancesRequest : AmazonLightsailRequest
     {
@@ -45,9 +50,9 @@ namespace Amazon.Lightsail.Model
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
         /// The Availability Zone in which to create your instance. Use the following format:
-        /// <code>us-east-2a</code> (case sensitive). You can get a list of availability zones
+        /// <code>us-east-2a</code> (case sensitive). You can get a list of Availability Zones
         /// by using the <a href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get
-        /// regions</a> operation. Be sure to add the <code>include availability zones</code>
+        /// regions</a> operation. Be sure to add the <code>include Availability Zones</code>
         /// parameter to your request.
         /// </para>
         /// </summary>

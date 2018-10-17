@@ -73,6 +73,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.IncludeAvailabilityZones);
                 }
 
+                if(publicRequest.IsSetIncludeRelationalDatabaseAvailabilityZones())
+                {
+                    context.Writer.WritePropertyName("includeRelationalDatabaseAvailabilityZones");
+                    context.Writer.Write(publicRequest.IncludeRelationalDatabaseAvailabilityZones);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

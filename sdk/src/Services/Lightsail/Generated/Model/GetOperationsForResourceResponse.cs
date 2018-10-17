@@ -44,7 +44,7 @@ namespace Amazon.Lightsail.Model
         ///  <note> 
         /// <para>
         /// In releases prior to June 12, 2017, this parameter returned <code>null</code> by the
-        /// API. It is now deprecated, and the API returns the <code>nextPageToken</code> parameter
+        /// API. It is now deprecated, and the API returns the <code>next page token</code> parameter
         /// instead.
         /// </para>
         ///  </note>

@@ -198,7 +198,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// The region name and availability zone where the instance is located.
+        /// The region name and Availability Zone where the instance is located.
         /// </para>
         /// </summary>
         public ResourceLocation Location

@@ -29,7 +29,7 @@ namespace Amazon.Lightsail.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateKeyPair operation.
-    /// Creates sn SSH key pair.
+    /// Creates an SSH key pair.
     /// </summary>
     public partial class CreateKeyPairRequest : AmazonLightsailRequest
     {

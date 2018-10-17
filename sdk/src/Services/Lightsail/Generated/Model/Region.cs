@@ -37,6 +37,7 @@ namespace Amazon.Lightsail.Model
         private string _description;
         private string _displayName;
         private RegionName _name;
+        private List<AvailabilityZone> _relationalDatabaseAvailabilityZones = new List<AvailabilityZone>();
 
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
@@ -127,6 +128,24 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RelationalDatabaseAvailabilityZones. 
+        /// <para>
+        /// The Availability Zones for databases. Follows the format <code>us-east-2a</code> (case-sensitive).
+        /// </para>
+        /// </summary>
+        public List<AvailabilityZone> RelationalDatabaseAvailabilityZones
+        {
+            get { return this._relationalDatabaseAvailabilityZones; }
+            set { this._relationalDatabaseAvailabilityZones = value; }
+        }
+
+        // Check to see if RelationalDatabaseAvailabilityZones property is set
+        internal bool IsSetRelationalDatabaseAvailabilityZones()
+        {
+            return this._relationalDatabaseAvailabilityZones != null && this._relationalDatabaseAvailabilityZones.Count > 0; 
         }
 
     }

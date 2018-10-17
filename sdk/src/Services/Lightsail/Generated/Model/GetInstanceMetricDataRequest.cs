@@ -99,7 +99,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Period. 
         /// <para>
-        /// The time period for which you are requesting data.
+        /// The granularity, in seconds, of the returned data points.
         /// </para>
         /// </summary>
         public int Period
