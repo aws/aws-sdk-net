@@ -1,3 +1,11 @@
+### 3.3.385.0 (2018-10-17 00:57 UTC)
+* Glue (3.3.15.0)
+	* New Glue APIs for creating, updating, reading and deleting Data Catalog resource-based policies.
+* Lightsail (3.3.7.0)
+	* Adds support for Lightsail managed databases.
+* ResourceGroups (3.3.2.0)
+	* AWS Resource Groups service added a new feature to filter resource groups by resource-type when using the ListGroups operation.
+
 ### 3.3.384.0 (2018-10-15 21:19 UTC)
 * Lambda (3.3.16.6)
 	* Documentation updates for lambda

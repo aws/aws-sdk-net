@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.384.0",
+    "ProductVersion" : "3.3.385.0",
     "CoreVersion"    : "3.3.27.2",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -617,7 +617,7 @@
             "InPreview"               : false
         },
         "Lightsail"                       : {
-            "Version" : "3.3.6.5",
+            "Version" : "3.3.7.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.27.0"
@@ -825,7 +825,7 @@
             "InPreview"               : false
         },
         "Glue"                            : {
-            "Version" : "3.3.14.2",
+            "Version" : "3.3.15.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.27.0"
@@ -993,7 +993,7 @@
             "InPreview"               : false
         },
         "ResourceGroups"                  : {
-            "Version" : "3.3.1.9",
+            "Version" : "3.3.2.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.27.0"
