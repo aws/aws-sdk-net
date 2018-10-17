@@ -1,3 +1,9 @@
+### 3.3.387.0 (2018-10-17 20:41 UTC)
+* APIGateway (3.3.22.3)
+	* Documentation updates for API Gateway
+* CloudWatchEvents (3.3.7.0)
+	* AWS Events - AWS Organizations Support in Event-Bus Policies. This release introduces a new parameter in the PutPermission API named Condition. Using the Condition parameter, customers can allow one or more AWS Organizations to access their CloudWatch Events Event-Bus resource.
+
 ### 3.3.386.0 (2018-10-17 18:09 UTC)
 * Lambda (3.3.17.0)
 	* Enables TCP keepalive as default in Lambda.

@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.386.0",
+    "ProductVersion" : "3.3.387.0",
     "CoreVersion"    : "3.3.27.3",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -481,7 +481,7 @@
             "InPreview"               : false
         },
         "APIGateway"                      : {
-            "Version" : "3.3.22.2",
+            "Version" : "3.3.22.3",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.27.3"
@@ -497,7 +497,7 @@
             "InPreview"               : false
         },
         "CloudWatchEvents"                : {
-            "Version" : "3.3.6.7",
+            "Version" : "3.3.7.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.27.3"
