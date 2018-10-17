@@ -797,6 +797,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("Glue")]
+        public void DeleteResourcePolicyMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DeleteResourcePolicyRequest>();
+            var marshaller = new DeleteResourcePolicyRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DeleteResourcePolicyRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteResourcePolicy").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = DeleteResourcePolicyResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteResourcePolicyResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Glue")]
         public void DeleteSecurityConfigurationMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<DeleteSecurityConfigurationRequest>();
@@ -1580,6 +1609,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("Glue")]
+        public void GetResourcePolicyMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<GetResourcePolicyRequest>();
+            var marshaller = new GetResourcePolicyRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<GetResourcePolicyRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetResourcePolicy").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = GetResourcePolicyResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetResourcePolicyResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Glue")]
         public void GetSecurityConfigurationMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<GetSecurityConfigurationRequest>();
@@ -1920,6 +1978,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = PutDataCatalogEncryptionSettingsResponseUnmarshaller.Instance.Unmarshall(context)
                 as PutDataCatalogEncryptionSettingsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Glue")]
+        public void PutResourcePolicyMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<PutResourcePolicyRequest>();
+            var marshaller = new PutResourcePolicyRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<PutResourcePolicyRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("PutResourcePolicy").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = PutResourcePolicyResponseUnmarshaller.Instance.Unmarshall(context)
+                as PutResourcePolicyResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 

@@ -59,7 +59,8 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>USER_NAME</code> - The name under which to log in to the database.
+        ///  <code>USER_NAME</code> - The name under which to log in to the database. The value
+        /// string for <code>USER_NAME</code> is "<code>USERNAME</code>".
         /// </para>
         ///  </li> <li> 
         /// <para>

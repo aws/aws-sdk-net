@@ -28,38 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetDevEndpoint operation.
-    /// Retrieves information about a specified DevEndpoint.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// When you create a development endpoint in a virtual private cloud (VPC), AWS Glue
-    /// returns only a private IP address, and the public IP address field is not populated.
-    /// When you create a non-VPC development endpoint, AWS Glue returns only a public IP
-    /// address.
-    /// </para>
-    ///  </note>
+    /// Container for the parameters to the DeleteResourcePolicy operation.
+    /// Deletes a specified policy.
     /// </summary>
-    public partial class GetDevEndpointRequest : AmazonGlueRequest
+    public partial class DeleteResourcePolicyRequest : AmazonGlueRequest
     {
-        private string _endpointName;
+        private string _policyHashCondition;
 
         /// <summary>
-        /// Gets and sets the property EndpointName. 
+        /// Gets and sets the property PolicyHashCondition. 
         /// <para>
-        /// Name of the DevEndpoint for which to retrieve information.
+        /// The hash value returned when this policy was set.
         /// </para>
         /// </summary>
-        public string EndpointName
+        public string PolicyHashCondition
         {
-            get { return this._endpointName; }
-            set { this._endpointName = value; }
+            get { return this._policyHashCondition; }
+            set { this._policyHashCondition = value; }
         }
 
-        // Check to see if EndpointName property is set
-        internal bool IsSetEndpointName()
+        // Check to see if PolicyHashCondition property is set
+        internal bool IsSetPolicyHashCondition()
         {
-            return this._endpointName != null;
+            return this._policyHashCondition != null;
         }
 
     }

@@ -30,6 +30,15 @@ namespace Amazon.Glue.Model
     /// <summary>
     /// Container for the parameters to the GetDevEndpoints operation.
     /// Retrieves all the DevEndpoints in this AWS account.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// When you create a development endpoint in a virtual private cloud (VPC), AWS Glue
+    /// returns only a private IP address and the public IP address field is not populated.
+    /// When you create a non-VPC development endpoint, AWS Glue returns only a public IP
+    /// address.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class GetDevEndpointsRequest : AmazonGlueRequest
     {
