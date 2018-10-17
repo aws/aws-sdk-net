@@ -30,8 +30,8 @@ namespace Amazon.APIGateway.Model
     /// <summary>
     /// Represents the usage data of a usage plan.
     /// 
-    ///  <div class="remarks"/> <div class="seeAlso"> <a href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/api-gateway-api-usage-plans.html">Create
-    /// and Use Usage Plans</a>, <a href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/api-gateway-create-usage-plans-with-console.html#api-gateway-usage-plan-manage-usage">Manage
+    ///  <div class="remarks"/> <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html">Create
+    /// and Use Usage Plans</a>, <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-create-usage-plans-with-console.html#api-gateway-usage-plan-manage-usage">Manage
     /// Usage in a Usage Plan</a> </div>
     /// </summary>
     public partial class UpdateUsageResponse : AmazonWebServiceResponse

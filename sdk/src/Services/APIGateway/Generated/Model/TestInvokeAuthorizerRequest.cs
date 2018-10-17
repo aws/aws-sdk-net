@@ -32,7 +32,7 @@ namespace Amazon.APIGateway.Model
     /// Simulate the execution of an <a>Authorizer</a> in your <a>RestApi</a> with headers,
     /// parameters, and an incoming request body.
     /// 
-    ///  <div class="seeAlso"> <a href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/use-custom-authorizer.html">Enable
+    ///  <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/use-custom-authorizer.html">Enable
     /// custom authorizers</a> </div>
     /// </summary>
     public partial class TestInvokeAuthorizerRequest : AmazonAPIGatewayRequest

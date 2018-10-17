@@ -32,7 +32,7 @@ namespace Amazon.APIGateway.Model
     /// that require an API key. API keys can be mapped to any <a>Stage</a> on any <a>RestApi</a>,
     /// which indicates that the callers with the API key can make requests to that stage.
     /// 
-    ///  <div class="seeAlso"> <a href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/how-to-api-keys.html">Use
+    ///  <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-api-keys.html">Use
     /// API Keys</a> </div>
     /// </summary>
     public partial class CreateApiKeyResponse : AmazonWebServiceResponse

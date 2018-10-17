@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
     /// <summary>
     /// A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.
     /// 
-    ///  <div class="seeAlso"><a href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/stages.html">Deploying
+    ///  <div class="seeAlso"><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/stages.html">Deploying
     /// API in Stages</a></div>
     /// </summary>
     public partial class GetStagesResponse : AmazonWebServiceResponse

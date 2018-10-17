@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
     /// <summary>
     /// Represents a collection of <a>DomainName</a> resources.
     /// 
-    ///  <div class="seeAlso"> <a href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/how-to-custom-domains.html">Use
+    ///  <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html">Use
     /// Client-Side Certificate</a> </div>
     /// </summary>
     public partial class GetDomainNamesResponse : AmazonWebServiceResponse

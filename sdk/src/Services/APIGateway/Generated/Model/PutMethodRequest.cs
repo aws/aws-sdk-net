@@ -151,7 +151,8 @@ namespace Amazon.APIGateway.Model
         /// <para>
         /// A human-friendly operation identifier for the method. For example, you can assign
         /// the <code>operationName</code> of <code>ListPets</code> for the <code>GET /pets</code>
-        /// method in <a href="[[PetstoreDemoUrl]]">PetStore</a> example.
+        /// method in <a href="https://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a>
+        /// example.
         /// </para>
         /// </summary>
         public string OperationName

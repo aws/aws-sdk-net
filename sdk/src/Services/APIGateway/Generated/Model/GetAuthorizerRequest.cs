@@ -31,7 +31,7 @@ namespace Amazon.APIGateway.Model
     /// Container for the parameters to the GetAuthorizer operation.
     /// Describe an existing <a>Authorizer</a> resource.
     /// 
-    ///  <div class="seeAlso"><a href="[[AwsDocsUrlPrefix]]/cli/latest/reference/apigateway/get-authorizer.html">AWS
+    ///  <div class="seeAlso"><a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizer.html">AWS
     /// CLI</a></div>
     /// </summary>
     public partial class GetAuthorizerRequest : AmazonAPIGatewayRequest

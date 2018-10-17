@@ -32,10 +32,10 @@ namespace Amazon.APIGateway.Model
     /// 
     ///  <div class="remarks"> 
     /// <para>
-    /// In Swagger, the <a>RequestValidators</a> of an API is defined by the <a href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/api-gateway-swagger-extensions.html#api-gateway-swagger-extensions-request-validators.html">x-amazon-apigateway-request-validators</a>
+    /// In OpenAPI, the <a>RequestValidators</a> of an API is defined by the <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions.html#api-gateway-swagger-extensions-request-validators.html">x-amazon-apigateway-request-validators</a>
     /// extension.
     /// </para>
-    ///  </div> <div class="seeAlso"><a href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/api-gateway-method-request-validation.html">Enable
+    ///  </div> <div class="seeAlso"><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-method-request-validation.html">Enable
     /// Basic Request Validation in API Gateway</a></div>
     /// </summary>
     public partial class GetRequestValidatorsResponse : AmazonWebServiceResponse

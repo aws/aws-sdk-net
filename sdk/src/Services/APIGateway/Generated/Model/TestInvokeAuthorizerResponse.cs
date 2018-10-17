@@ -58,8 +58,9 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Claims. 
         /// <para>
-        /// The <a href="[[OpenIdClaimsUrl]]">open identity claims</a>, with any supported custom
-        /// attributes, returned from the Cognito Your User Pool configured for the API.
+        /// The <a href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
+        /// identity claims</a>, with any supported custom attributes, returned from the Cognito
+        /// Your User Pool configured for the API.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Claims

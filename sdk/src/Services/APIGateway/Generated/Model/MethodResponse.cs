@@ -45,13 +45,13 @@ namespace Amazon.APIGateway.Model
     /// <para>
     /// The successful response returns <code>200 OK</code> status and a payload as follows:
     /// </para>
-    ///  <pre><code>{ "_links": { "curies": { "href": "[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/restapi-method-response-{rel}.html",
+    ///  <pre><code>{ "_links": { "curies": { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html",
     /// "name": "methodresponse", "templated": true }, "self": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200",
     /// "title": "200" }, "methodresponse:delete": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200"
     /// }, "methodresponse:update": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200"
     /// } }, "responseModels": { "application/json": "Empty" }, "responseParameters": { "method.response.header.Content-Type":
     /// false }, "statusCode": "200" }</code></pre>  </div> <div class="seeAlso"> <a>Method</a>,
-    /// <a>IntegrationResponse</a>, <a>Integration</a> <a href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/how-to-create-api.html">Creating
+    /// <a>IntegrationResponse</a>, <a>Integration</a> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating
     /// an API</a> </div>
     /// </summary>
     public partial class MethodResponse

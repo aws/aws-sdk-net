@@ -41,7 +41,7 @@ namespace Amazon.APIGateway.Model
     /// where <code>myApi</code> is the base path mapping (<a>BasePathMapping</a>) of your
     /// API under the custom domain name. 
     /// </para>
-    ///  </div> <div class="seeAlso"> <a href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/how-to-custom-domains.html">Set
+    ///  </div> <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html">Set
     /// a Custom Host Name for an API</a> </div>
     /// </summary>
     public partial class DomainName
@@ -121,7 +121,7 @@ namespace Amazon.APIGateway.Model
         /// The domain name of the Amazon CloudFront distribution associated with this custom
         /// domain name for an edge-optimized endpoint. You set up this association when adding
         /// a DNS record pointing the custom domain name to this distribution name. For more information
-        /// about CloudFront distributions, see the <a href="[[AwsAmazonUrlPrefix]]/documentation/cloudfront/"
+        /// about CloudFront distributions, see the <a href="https://aws.amazon.com/documentation/cloudfront/"
         /// target="_blank">Amazon CloudFront documentation</a>.
         /// </para>
         /// </summary>
@@ -142,8 +142,8 @@ namespace Amazon.APIGateway.Model
         /// <para>
         /// The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint.
         /// The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions. For more information,
-        /// see <a href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
-        /// up a Regional Custom Domain Name</a> and <a href="[[AwsDocsUrlPrefix]]/general/latest/gr/rande.html#apigateway_region">AWS
+        /// see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
+        /// up a Regional Custom Domain Name</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
         /// Regions and Endpoints for API Gateway</a>. 
         /// </para>
         /// </summary>
@@ -258,8 +258,8 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property RegionalHostedZoneId. 
         /// <para>
         /// The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more
-        /// information, see <a href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
-        /// up a Regional Custom Domain Name</a> and <a href="[[AwsDocsUrlPrefix]]/general/latest/gr/rande.html#apigateway_region">AWS
+        /// information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
+        /// up a Regional Custom Domain Name</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
         /// Regions and Endpoints for API Gateway</a>. 
         /// </para>
         /// </summary>

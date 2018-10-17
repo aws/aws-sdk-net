@@ -34,9 +34,9 @@ namespace Amazon.APIGateway.Model
     /// <para>
     /// Publishing API documentation involves creating a documentation version associated
     /// with an API stage and exporting the versioned documentation to an external (e.g.,
-    /// Swagger) file.
+    /// OpenAPI) file.
     /// </para>
-    /// </div> <div class="seeAlso"> <a href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/api-gateway-documenting-api.html">Documenting
+    /// </div> <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api.html">Documenting
     /// an API</a>, <a>DocumentationPart</a>, <a>DocumentationVersions</a> </div>
     /// </summary>
     public partial class DocumentationVersion

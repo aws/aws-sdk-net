@@ -33,7 +33,7 @@ namespace Amazon.APIGateway.Model
     /// collection.
     /// 
     ///  <div class="remarks"> For more information about valid gateway response types, see
-    /// <a href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/supported-gateway-response-types.html">Gateway
+    /// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/supported-gateway-response-types.html">Gateway
     /// Response Types Supported by API Gateway</a> <div class="example"> <h4>Example: Get
     /// the collection of gateway responses of an API</h4> <h5>Request</h5> 
     /// <para>
@@ -175,7 +175,7 @@ namespace Amazon.APIGateway.Model
     /// <para>
     /// 
     /// </para>
-    ///  </div> </div> <div class="seeAlso"> <a href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/customize-gateway-responses.html">Customize
+    ///  </div> </div> <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/customize-gateway-responses.html">Customize
     /// Gateway Responses</a> </div>
     /// </summary>
     public partial class GetGatewayResponsesResponse : AmazonWebServiceResponse
