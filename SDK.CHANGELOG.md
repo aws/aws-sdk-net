@@ -1,3 +1,12 @@
+### 3.3.386.0 (2018-10-17 18:09 UTC)
+* Lambda (3.3.17.0)
+	* Enables TCP keepalive as default in Lambda.
+* S3 (3.3.25.1)
+	* Fixed incorrect marshalling of S3 tag.
+* Core 3.3.27.3
+	* Referencing the CredentialProfileStoreChain constructor that takes in the profile location on AWSConfigs. Make code more defensive looking for CSM configuration. 
+	* All services packages updated to require new Core
+
 ### 3.3.385.0 (2018-10-17 00:57 UTC)
 * Glue (3.3.15.0)
 	* New Glue APIs for creating, updating, reading and deleting Data Catalog resource-based policies.
