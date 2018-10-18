@@ -38,7 +38,7 @@ namespace Amazon.Route53.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>GET /2013-04-01/geolocation?ContinentCode=<i>two-letter abbreviation for a
+    ///  <code>GET /2013-04-01/geolocation?continentcode=<i>two-letter abbreviation for a
     /// continent</i> </code> 
     /// </para>
     ///  
@@ -47,7 +47,7 @@ namespace Amazon.Route53.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>GET /2013-04-01/geolocation?CountryCode=<i>two-character country code</i> </code>
+    ///  <code>GET /2013-04-01/geolocation?countrycode=<i>two-character country code</i> </code>
     /// 
     /// </para>
     ///  
@@ -57,7 +57,7 @@ namespace Amazon.Route53.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>GET /2013-04-01/geolocation?CountryCode=<i>two-character country code</i>&amp;SubdivisionCode=<i>subdivision
+    ///  <code>GET /2013-04-01/geolocation?countrycode=<i>two-character country code</i>&amp;subdivisioncode=<i>subdivision
     /// code</i> </code> 
     /// </para>
     /// </summary>
@@ -138,8 +138,8 @@ namespace Amazon.Route53.Model
         /// <para>
         /// Amazon Route 53 uses the one- to three-letter subdivision codes that are specified
         /// in <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1
-        /// alpha-2</a>. Amazon Route 53 doesn't support subdivision codes for all countries.
-        /// If you specify <code>SubdivisionCode</code>, you must also specify <code>CountryCode</code>.
+        /// alpha-2</a>. Route 53 doesn't support subdivision codes for all countries. If you
+        /// specify <code>subdivisioncode</code>, you must also specify <code>countrycode</code>.
         /// 
         /// </para>
         /// </summary>

@@ -115,6 +115,12 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         unmarshalledObject.Inverted = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("Disabled", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.Disabled = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("HealthThreshold", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;

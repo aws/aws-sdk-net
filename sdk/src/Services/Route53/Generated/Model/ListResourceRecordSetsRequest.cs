@@ -35,8 +35,16 @@ namespace Amazon.Route53.Model
     /// <para>
     ///  <code>ListResourceRecordSets</code> returns up to 100 resource record sets at a time
     /// in ASCII order, beginning at a position specified by the <code>name</code> and <code>type</code>
-    /// elements. The action sorts results first by DNS name with the labels reversed, for
-    /// example:
+    /// elements.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Sort order</b> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>ListResourceRecordSets</code> sorts results first by DNS name with the labels
+    /// reversed, for example:
     /// </para>
     ///  
     /// <para>
@@ -44,17 +52,23 @@ namespace Amazon.Route53.Model
     /// </para>
     ///  
     /// <para>
-    /// Note the trailing dot, which can change the sort order in some circumstances.
+    /// Note the trailing dot, which can change the sort order when the record name contains
+    /// characters that appear before <code>.</code> (decimal 46) in the ASCII table. These
+    /// characters include the following: <code>! " # $ % &amp; ' ( ) * + , -</code> 
     /// </para>
     ///  
     /// <para>
-    /// When multiple records have the same DNS name, the action sorts results by the record
-    /// type.
+    /// When multiple records have the same DNS name, <code>ListResourceRecordSets</code>
+    /// sorts results by the record type.
     /// </para>
     ///  
     /// <para>
-    /// You can use the name and type elements to adjust the beginning position of the list
-    /// of resource record sets returned:
+    ///  <b>Specifying where to start listing records</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// You can use the name and type elements to specify the resource record set that the
+    /// list begins with:
     /// </para>
     ///  <dl> <dt>If you do not specify Name or Type</dt> <dd> 
     /// <para>
@@ -76,9 +90,17 @@ namespace Amazon.Route53.Model
     /// </para>
     ///  </dd> </dl> 
     /// <para>
+    ///  <b>Resource record sets that are PENDING</b> 
+    /// </para>
+    ///  
+    /// <para>
     /// This action returns the most current version of the records. This includes records
-    /// that are <code>PENDING</code>, and that are not yet available on all Amazon Route
-    /// 53 DNS servers.
+    /// that are <code>PENDING</code>, and that are not yet available on all Route 53 DNS
+    /// servers.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Changing resource record sets</b> 
     /// </para>
     ///  
     /// <para>
@@ -87,6 +109,19 @@ namespace Amazon.Route53.Model
     /// while you're paging through the results of a <code>ListResourceRecordSets</code> request.
     /// If you do, some pages may display results without the latest changes while other pages
     /// display results with the latest changes.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Displaying the next page of results</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// If a <code>ListResourceRecordSets</code> command returns more than one page of results,
+    /// the value of <code>IsTruncated</code> is <code>true</code>. To display the next page
+    /// of results, get the values of <code>NextRecordName</code>, <code>NextRecordType</code>,
+    /// and <code>NextRecordIdentifier</code> (if any) from the response. Then submit another
+    /// <code>ListResourceRecordSets</code> request, and specify those values for <code>StartRecordName</code>,
+    /// <code>StartRecordType</code>, and <code>StartRecordIdentifier</code>.
     /// </para>
     /// </summary>
     public partial class ListResourceRecordSetsRequest : AmazonRoute53Request
@@ -163,7 +198,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  
         /// <para>
-        /// Values for weighted, latency, geo, and failover resource record sets: <code>A</code>
+        /// Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code>
         /// | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code>
         /// | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> 
         /// </para>

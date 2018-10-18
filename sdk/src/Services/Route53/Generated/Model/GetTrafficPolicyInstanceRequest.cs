@@ -40,7 +40,7 @@ namespace Amazon.Route53.Model
     /// </para>
     ///  </note> <note> 
     /// <para>
-    /// In the Amazon Route 53 console, traffic policy instances are known as policy records.
+    /// In the Route 53 console, traffic policy instances are known as policy records.
     /// </para>
     ///  </note>
     /// </summary>

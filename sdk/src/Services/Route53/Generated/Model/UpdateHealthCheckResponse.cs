@@ -35,7 +35,10 @@ namespace Amazon.Route53.Model
         private HealthCheck _healthCheck;
 
         /// <summary>
-        /// Gets and sets the property HealthCheck.
+        /// Gets and sets the property HealthCheck. 
+        /// <para>
+        /// A complex type that contains the response to an <code>UpdateHealthCheck</code> request.
+        /// </para>
         /// </summary>
         public HealthCheck HealthCheck
         {

@@ -62,9 +62,8 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property HostedZoneIdMarker. 
         /// <para>
         /// If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code>
-        /// is the ID of the hosted zone of the first traffic policy instance that Amazon Route
-        /// 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request.
-        /// 
+        /// is the ID of the hosted zone of the first traffic policy instance that Route 53 will
+        /// return if you submit another <code>ListTrafficPolicyInstances</code> request. 
         /// </para>
         /// </summary>
         public string HostedZoneIdMarker
@@ -83,8 +82,8 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property TrafficPolicyInstanceNameMarker. 
         /// <para>
         /// If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code>
-        /// is the name of the first traffic policy instance that Amazon Route 53 will return
-        /// if you submit another <code>ListTrafficPolicyInstances</code> request. 
+        /// is the name of the first traffic policy instance that Route 53 will return if you
+        /// submit another <code>ListTrafficPolicyInstances</code> request. 
         /// </para>
         /// </summary>
         public string TrafficPolicyInstanceNameMarker

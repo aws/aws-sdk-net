@@ -67,10 +67,10 @@ namespace Amazon.Route53.Model
     /// </para>
     ///  
     /// <para>
-    /// Amazon Route 53 returns up to 100 items in each response. If you have a lot of hosted
-    /// zones, use the <code>MaxItems</code> parameter to list them in groups of up to 100.
-    /// The response includes values that help navigate from one group of <code>MaxItems</code>
-    /// hosted zones to the next:
+    /// Route 53 returns up to 100 items in each response. If you have a lot of hosted zones,
+    /// use the <code>MaxItems</code> parameter to list them in groups of up to 100. The response
+    /// includes values that help navigate from one group of <code>MaxItems</code> hosted
+    /// zones to the next:
     /// </para>
     ///  <ul> <li> 
     /// <para>

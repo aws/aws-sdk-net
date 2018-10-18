@@ -125,18 +125,18 @@ namespace Amazon.Route53.Model
         ///  <dl> <dt>Applied</dt> <dd> 
         /// <para>
         /// Amazon Route 53 has finished creating resource record sets, and changes have propagated
-        /// to all Amazon Route 53 edge locations.
+        /// to all Route 53 edge locations.
         /// </para>
         ///  </dd> <dt>Creating</dt> <dd> 
         /// <para>
-        /// Amazon Route 53 is creating the resource record sets. Use <code>GetTrafficPolicyInstance</code>
+        /// Route 53 is creating the resource record sets. Use <code>GetTrafficPolicyInstance</code>
         /// to confirm that the <code>CreateTrafficPolicyInstance</code> request completed successfully.
         /// </para>
         ///  </dd> <dt>Failed</dt> <dd> 
         /// <para>
-        /// Amazon Route 53 wasn't able to create or update the resource record sets. When the
-        /// value of <code>State</code> is <code>Failed</code>, see <code>Message</code> for an
-        /// explanation of what caused the request to fail.
+        /// Route 53 wasn't able to create or update the resource record sets. When the value
+        /// of <code>State</code> is <code>Failed</code>, see <code>Message</code> for an explanation
+        /// of what caused the request to fail.
         /// </para>
         ///  </dd> </dl>
         /// </summary>

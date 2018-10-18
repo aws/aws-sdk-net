@@ -34,12 +34,12 @@ namespace Amazon.Route53.Model
     /// 
     ///  
     /// <para>
-    /// DNS query logs contain information about the queries that Amazon Route 53 receives
-    /// for a specified public hosted zone, such as the following:
+    /// DNS query logs contain information about the queries that Route 53 receives for a
+    /// specified public hosted zone, such as the following:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Amazon Route 53 edge location that responded to the DNS query
+    /// Route 53 edge location that responded to the DNS query
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -59,8 +59,8 @@ namespace Amazon.Route53.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// If you create a query logging configuration using the Amazon Route 53 console, Amazon
-    /// Route 53 performs these operations automatically.
+    /// If you create a query logging configuration using the Route 53 console, Route 53 performs
+    /// these operations automatically.
     /// </para>
     ///  </note> <ol> <li> 
     /// <para>
@@ -88,19 +88,19 @@ namespace Amazon.Route53.Model
     ///  
     /// <para>
     /// In the next step, you'll create a resource policy, which controls access to one or
-    /// more log groups and the associated AWS resources, such as Amazon Route 53 hosted zones.
-    /// There's a limit on the number of resource policies that you can create, so we recommend
-    /// that you use a consistent prefix so you can use the same resource policy for all the
-    /// log groups that you create for query logging.
+    /// more log groups and the associated AWS resources, such as Route 53 hosted zones. There's
+    /// a limit on the number of resource policies that you can create, so we recommend that
+    /// you use a consistent prefix so you can use the same resource policy for all the log
+    /// groups that you create for query logging.
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
-    /// Create a CloudWatch Logs resource policy, and give it the permissions that Amazon
-    /// Route 53 needs to create log streams and to send query logs to log streams. For the
-    /// value of <code>Resource</code>, specify the ARN for the log group that you created
-    /// in the previous step. To use the same resource policy for all the CloudWatch Logs
-    /// log groups that you created for query logging configurations, replace the hosted zone
-    /// name with <code>*</code>, for example:
+    /// Create a CloudWatch Logs resource policy, and give it the permissions that Route 53
+    /// needs to create log streams and to send query logs to log streams. For the value of
+    /// <code>Resource</code>, specify the ARN for the log group that you created in the previous
+    /// step. To use the same resource policy for all the CloudWatch Logs log groups that
+    /// you created for query logging configurations, replace the hosted zone name with <code>*</code>,
+    /// for example:
     /// </para>
     ///  
     /// <para>
@@ -113,14 +113,14 @@ namespace Amazon.Route53.Model
     /// </para>
     ///  </note> </li> </ol> </dd> <dt>Log Streams and Edge Locations</dt> <dd> 
     /// <para>
-    /// When Amazon Route 53 finishes creating the configuration for DNS query logging, it
-    /// does the following:
+    /// When Route 53 finishes creating the configuration for DNS query logging, it does the
+    /// following:
     /// </para>
     ///  <ul> <li> 
     /// <para>
     /// Creates a log stream for an edge location the first time that the edge location responds
     /// to DNS queries for the specified hosted zone. That log stream is used to log all queries
-    /// that Amazon Route 53 responds to for that edge location.
+    /// that Route 53 responds to for that edge location.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -140,20 +140,19 @@ namespace Amazon.Route53.Model
     /// for example, DFW3. The three-letter code typically corresponds with the International
     /// Air Transport Association airport code for an airport near the edge location. (These
     /// abbreviations might change in the future.) For a list of edge locations, see "The
-    /// Amazon Route 53 Global Network" on the <a href="http://aws.amazon.com/route53/details/">Amazon
-    /// Route 53 Product Details</a> page.
+    /// Route 53 Global Network" on the <a href="http://aws.amazon.com/route53/details/">Route
+    /// 53 Product Details</a> page.
     /// </para>
     ///  </dd> <dt>Queries That Are Logged</dt> <dd> 
     /// <para>
-    /// Query logs contain only the queries that DNS resolvers forward to Amazon Route 53.
-    /// If a DNS resolver has already cached the response to a query (such as the IP address
-    /// for a load balancer for example.com), the resolver will continue to return the cached
-    /// response. It doesn't forward another query to Amazon Route 53 until the TTL for the
-    /// corresponding resource record set expires. Depending on how many DNS queries are submitted
-    /// for a resource record set, and depending on the TTL for that resource record set,
-    /// query logs might contain information about only one query out of every several thousand
-    /// queries that are submitted to DNS. For more information about how DNS works, see <a
-    /// href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-dns-service.html">Routing
+    /// Query logs contain only the queries that DNS resolvers forward to Route 53. If a DNS
+    /// resolver has already cached the response to a query (such as the IP address for a
+    /// load balancer for example.com), the resolver will continue to return the cached response.
+    /// It doesn't forward another query to Route 53 until the TTL for the corresponding resource
+    /// record set expires. Depending on how many DNS queries are submitted for a resource
+    /// record set, and depending on the TTL for that resource record set, query logs might
+    /// contain information about only one query out of every several thousand queries that
+    /// are submitted to DNS. For more information about how DNS works, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-dns-service.html">Routing
     /// Internet Traffic to Your Website or Web Application</a> in the <i>Amazon Route 53
     /// Developer Guide</i>.
     /// </para>
@@ -169,8 +168,8 @@ namespace Amazon.Route53.Model
     /// </para>
     ///  </dd> <dt>How to Stop Logging</dt> <dd> 
     /// <para>
-    /// If you want Amazon Route 53 to stop sending query logs to CloudWatch Logs, delete
-    /// the query logging configuration. For more information, see <a>DeleteQueryLoggingConfig</a>.
+    /// If you want Route 53 to stop sending query logs to CloudWatch Logs, delete the query
+    /// logging configuration. For more information, see <a>DeleteQueryLoggingConfig</a>.
     /// </para>
     ///  </dd> </dl>
     /// </summary>

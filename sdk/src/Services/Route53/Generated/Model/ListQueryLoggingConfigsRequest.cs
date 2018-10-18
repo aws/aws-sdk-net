@@ -108,8 +108,8 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify a value for <code>MaxResults</code>, Amazon Route 53 returns
-        /// up to 100 configurations.
+        /// If you don't specify a value for <code>MaxResults</code>, Route 53 returns up to 100
+        /// configurations.
         /// </para>
         /// </summary>
         public string MaxResults

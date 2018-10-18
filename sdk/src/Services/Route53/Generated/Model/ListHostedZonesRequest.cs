@@ -88,8 +88,8 @@ namespace Amazon.Route53.Model
         /// (Optional) The maximum number of hosted zones that you want Amazon Route 53 to return.
         /// If you have more than <code>maxitems</code> hosted zones, the value of <code>IsTruncated</code>
         /// in the response is <code>true</code>, and the value of <code>NextMarker</code> is
-        /// the hosted zone ID of the first hosted zone that Amazon Route 53 will return if you
-        /// submit another request.
+        /// the hosted zone ID of the first hosted zone that Route 53 will return if you submit
+        /// another request.
         /// </para>
         /// </summary>
         public string MaxItems

@@ -39,7 +39,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property VPCRegion. 
         /// <para>
-        /// (Private hosted zones only) The region in which you created an Amazon VPC.
+        /// (Private hosted zones only) The region that an Amazon VPC was created in.
         /// </para>
         /// </summary>
         public VPCRegion VPCRegion

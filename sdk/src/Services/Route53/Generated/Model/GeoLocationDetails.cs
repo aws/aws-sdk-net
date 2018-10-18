@@ -115,8 +115,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property SubdivisionCode. 
         /// <para>
-        /// The code for the subdivision, for example, a state in the United States or a province
-        /// in Canada.
+        /// The code for the subdivision. Route 53 currently supports only states in the United
+        /// States.
         /// </para>
         /// </summary>
         public string SubdivisionCode
@@ -134,8 +134,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property SubdivisionName. 
         /// <para>
-        /// The full name of the subdivision, for example, a state in the United States or a province
-        /// in Canada.
+        /// The full name of the subdivision. Route 53 currently supports only states in the United
+        /// States.
         /// </para>
         /// </summary>
         public string SubdivisionName

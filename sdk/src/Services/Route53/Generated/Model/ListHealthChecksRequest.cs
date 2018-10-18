@@ -72,8 +72,8 @@ namespace Amazon.Route53.Model
         /// <para>
         /// The maximum number of health checks that you want <code>ListHealthChecks</code> to
         /// return in response to the current request. Amazon Route 53 returns a maximum of 100
-        /// items. If you set <code>MaxItems</code> to a value greater than 100, Amazon Route
-        /// 53 returns only the first 100 health checks. 
+        /// items. If you set <code>MaxItems</code> to a value greater than 100, Route 53 returns
+        /// only the first 100 health checks. 
         /// </para>
         /// </summary>
         public string MaxItems

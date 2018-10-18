@@ -29,19 +29,22 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateVPCFromHostedZone operation.
-    /// Disassociates a VPC from a Amazon Route 53 private hosted zone. 
+    /// Disassociates a VPC from a Amazon Route 53 private hosted zone. Note the following:
     /// 
-    ///  <note> 
+    ///  <ul> <li> 
     /// <para>
     /// You can't disassociate the last VPC from a private hosted zone.
     /// </para>
-    ///  </note> <important> 
+    ///  </li> <li> 
     /// <para>
-    /// You can't disassociate a VPC from a private hosted zone when only one VPC is associated
-    /// with the hosted zone. You also can't convert a private hosted zone into a public hosted
-    /// zone.
+    /// You can't convert a private hosted zone into a public hosted zone.
     /// </para>
-    ///  </important>
+    ///  </li> <li> 
+    /// <para>
+    /// You can submit a <code>DisassociateVPCFromHostedZone</code> request using either the
+    /// account that created the hosted zone or the account that created the VPC.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class DisassociateVPCFromHostedZoneRequest : AmazonRoute53Request
     {

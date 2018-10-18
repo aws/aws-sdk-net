@@ -91,7 +91,7 @@ namespace Amazon.Route53.Model
         /// <para>
         ///  <i>Optional</i>: An integer that specifies the maximum number of VPCs that you want
         /// Amazon Route 53 to return. If you don't specify a value for <code>MaxResults</code>,
-        /// Amazon Route 53 returns up to 50 VPCs per page.
+        /// Route 53 returns up to 50 VPCs per page.
         /// </para>
         /// </summary>
         public string MaxResults

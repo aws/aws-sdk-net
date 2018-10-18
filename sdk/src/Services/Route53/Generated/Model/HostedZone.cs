@@ -163,7 +163,7 @@ namespace Amazon.Route53.Model
         /// <para>
         /// If the hosted zone was created by another service, the service that created the hosted
         /// zone. When a hosted zone is created by another service, you can't edit or delete it
-        /// using Amazon Route 53. 
+        /// using Route 53. 
         /// </para>
         /// </summary>
         public LinkedService LinkedService

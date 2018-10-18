@@ -667,7 +667,7 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// Retrieves a list of supported geo locations.
+        /// Retrieves a list of supported geographic locations.
         /// 
         ///  
         /// <para>

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type that contains information about a geo location.
+    /// A complex type that contains information about a geographic location.
     /// </summary>
     public partial class GeoLocation
     {
@@ -85,8 +85,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property SubdivisionCode. 
         /// <para>
-        /// The code for the subdivision, for example, a state in the United States or a province
-        /// in Canada.
+        /// The code for the subdivision. Route 53 currently supports only states in the United
+        /// States.
         /// </para>
         /// </summary>
         public string SubdivisionCode

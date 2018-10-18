@@ -43,16 +43,16 @@ namespace Amazon.Route53.Model
     /// The request body must include a document with a <code>ChangeResourceRecordSetsRequest</code>
     /// element. The request body contains a list of change items, known as a change batch.
     /// Change batches are considered transactional changes. When using the Amazon Route 53
-    /// API to change resource record sets, Amazon Route 53 either makes all or none of the
-    /// changes in a change batch request. This ensures that Amazon Route 53 never partially
-    /// implements the intended changes to the resource record sets in a hosted zone. 
+    /// API to change resource record sets, Route 53 either makes all or none of the changes
+    /// in a change batch request. This ensures that Route 53 never partially implements the
+    /// intended changes to the resource record sets in a hosted zone. 
     /// </para>
     ///  
     /// <para>
     /// For example, a change batch request that deletes the <code>CNAME</code> record for
-    /// www.example.com and creates an alias resource record set for www.example.com. Amazon
-    /// Route 53 deletes the first resource record set and creates the second resource record
-    /// set in a single operation. If either the <code>DELETE</code> or the <code>CREATE</code>
+    /// www.example.com and creates an alias resource record set for www.example.com. Route
+    /// 53 deletes the first resource record set and creates the second resource record set
+    /// in a single operation. If either the <code>DELETE</code> or the <code>CREATE</code>
     /// action fails, then both changes (plus any other changes in the batch) fail, and the
     /// original <code>CNAME</code> record continues to exist.
     /// </para>
@@ -60,7 +60,7 @@ namespace Amazon.Route53.Model
     /// <para>
     /// Due to the nature of transactional changes, you can't delete the same resource record
     /// set more than once in a single change batch. If you attempt to delete the same change
-    /// batch more than once, Amazon Route 53 returns an <code>InvalidChangeBatch</code> error.
+    /// batch more than once, Route 53 returns an <code>InvalidChangeBatch</code> error.
     /// </para>
     ///  </important> 
     /// <para>
@@ -69,7 +69,7 @@ namespace Amazon.Route53.Model
     ///  
     /// <para>
     /// To create resource record sets for complex routing configurations, use either the
-    /// traffic flow visual editor in the Amazon Route 53 console or the API actions for traffic
+    /// traffic flow visual editor in the Route 53 console or the API actions for traffic
     /// policies and traffic policy instances. Save the configuration as a traffic policy,
     /// then associate the traffic policy with one or more domain names (such as example.com)
     /// or subdomain names (such as www.example.com), in the same hosted zone or in multiple
@@ -97,8 +97,8 @@ namespace Amazon.Route53.Model
     ///  </li> <li> 
     /// <para>
     ///  <code>UPSERT</code>: If a resource record set does not already exist, AWS creates
-    /// it. If a resource set does exist, Amazon Route 53 updates it with the values in the
-    /// request. 
+    /// it. If a resource set does exist, Route 53 updates it with the values in the request.
+    /// 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -122,16 +122,16 @@ namespace Amazon.Route53.Model
     /// </para>
     ///  
     /// <para>
-    ///  <b>Change Propagation to Amazon Route 53 DNS Servers</b> 
+    ///  <b>Change Propagation to Route 53 DNS Servers</b> 
     /// </para>
     ///  
     /// <para>
-    /// When you submit a <code>ChangeResourceRecordSets</code> request, Amazon Route 53 propagates
-    /// your changes to all of the Amazon Route 53 authoritative DNS servers. While your changes
+    /// When you submit a <code>ChangeResourceRecordSets</code> request, Route 53 propagates
+    /// your changes to all of the Route 53 authoritative DNS servers. While your changes
     /// are propagating, <code>GetChange</code> returns a status of <code>PENDING</code>.
     /// When propagation is complete, <code>GetChange</code> returns a status of <code>INSYNC</code>.
-    /// Changes generally propagate to all Amazon Route 53 name servers within 60 seconds.
-    /// For more information, see <a>GetChange</a>.
+    /// Changes generally propagate to all Route 53 name servers within 60 seconds. For more
+    /// information, see <a>GetChange</a>.
     /// </para>
     ///  
     /// <para>

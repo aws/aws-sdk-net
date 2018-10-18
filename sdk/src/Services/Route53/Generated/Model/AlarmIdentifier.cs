@@ -29,7 +29,7 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// A complex type that identifies the CloudWatch alarm that you want Amazon Route 53
-    /// health checkers to use to determine whether this health check is healthy.
+    /// health checkers to use to determine whether the specified health check is healthy.
     /// </summary>
     public partial class AlarmIdentifier
     {
@@ -39,8 +39,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// A complex type that identifies the CloudWatch alarm that you want Amazon Route 53
-        /// health checkers to use to determine whether this health check is healthy.
+        /// For the CloudWatch alarm that you want Route 53 health checkers to use to determine
+        /// whether this health check is healthy, the region that the alarm was created in.
         /// </para>
         ///  
         /// <para>
@@ -67,6 +67,22 @@ namespace Amazon.Route53.Model
         /// The name of the CloudWatch alarm that you want Amazon Route 53 health checkers to
         /// use to determine whether this health check is healthy.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Route 53 supports CloudWatch alarms with the following features:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Standard-resolution metrics. High-resolution metrics aren't supported. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/publishingMetrics.html#high-resolution-metrics">High-Resolution
+        /// Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Statistics: Average, Minimum, Maximum, Sum, and SampleCount. Extended statistics aren't
+        /// supported.
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         public string Name
         {

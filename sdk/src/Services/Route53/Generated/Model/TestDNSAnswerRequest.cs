@@ -147,6 +147,20 @@ namespace Amazon.Route53.Model
         /// simulate a request from 192.0.2.0/24. The default value is 24 bits for IPv4 addresses
         /// and 64 bits for IPv6 addresses.
         /// </para>
+        ///  
+        /// <para>
+        /// The range of valid values depends on whether <code>edns0clientsubnetip</code> is an
+        /// IPv4 or an IPv6 address:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>IPv4</b>: Specify a value between 0 and 32
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>IPv6</b>: Specify a value between 0 and 128
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string EDNS0ClientSubnetMask
         {

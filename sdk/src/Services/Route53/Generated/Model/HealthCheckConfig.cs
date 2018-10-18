@@ -42,6 +42,7 @@ namespace Amazon.Route53.Model
         private int? _failureThreshold;
         private bool? _measureLatency;
         private bool? _inverted;
+        private bool? _disabled;
         private int? _healthThreshold;
         private List<string> _childHealthChecks = new List<string>();
         private bool? _enableSNI;
@@ -53,10 +54,10 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property IPAddress. 
         /// <para>
         /// The IPv4 or IPv6 IP address of the endpoint that you want Amazon Route 53 to perform
-        /// health checks on. If you don't specify a value for <code>IPAddress</code>, Amazon
-        /// Route 53 sends a DNS request to resolve the domain name that you specify in <code>FullyQualifiedDomainName</code>
+        /// health checks on. If you don't specify a value for <code>IPAddress</code>, Route 53
+        /// sends a DNS request to resolve the domain name that you specify in <code>FullyQualifiedDomainName</code>
         /// at the interval that you specify in <code>RequestInterval</code>. Using an IP address
-        /// returned by DNS, Amazon Route 53 then checks the health of the endpoint.
+        /// returned by DNS, Route 53 then checks the health of the endpoint.
         /// </para>
         ///  
         /// <para>
@@ -85,9 +86,9 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Amazon Route 53 can't check the health of endpoints for which the IP
-        /// address is in local, private, non-routable, or multicast ranges. For more information
-        /// about IP addresses for which you can't create health checks, see the following documents:
+        /// Constraints: Route 53 can't check the health of endpoints for which the IP address
+        /// is in local, private, non-routable, or multicast ranges. For more information about
+        /// IP addresses for which you can't create health checks, see the following documents:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -157,15 +158,15 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>HTTP</b>: Amazon Route 53 tries to establish a TCP connection. If successful,
-        /// Amazon Route 53 submits an HTTP request and waits for an HTTP status code of 200 or
-        /// greater and less than 400.
+        ///  <b>HTTP</b>: Route 53 tries to establish a TCP connection. If successful, Route 53
+        /// submits an HTTP request and waits for an HTTP status code of 200 or greater and less
+        /// than 400.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>HTTPS</b>: Amazon Route 53 tries to establish a TCP connection. If successful,
-        /// Amazon Route 53 submits an HTTPS request and waits for an HTTP status code of 200
-        /// or greater and less than 400.
+        ///  <b>HTTPS</b>: Route 53 tries to establish a TCP connection. If successful, Route
+        /// 53 submits an HTTPS request and waits for an HTTP status code of 200 or greater and
+        /// less than 400.
         /// </para>
         ///  <important> 
         /// <para>
@@ -174,19 +175,19 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        ///  <b>HTTP_STR_MATCH</b>: Amazon Route 53 tries to establish a TCP connection. If successful,
-        /// Amazon Route 53 submits an HTTP request and searches the first 5,120 bytes of the
-        /// response body for the string that you specify in <code>SearchString</code>.
+        ///  <b>HTTP_STR_MATCH</b>: Route 53 tries to establish a TCP connection. If successful,
+        /// Route 53 submits an HTTP request and searches the first 5,120 bytes of the response
+        /// body for the string that you specify in <code>SearchString</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>HTTPS_STR_MATCH</b>: Amazon Route 53 tries to establish a TCP connection. If successful,
-        /// Amazon Route 53 submits an <code>HTTPS</code> request and searches the first 5,120
-        /// bytes of the response body for the string that you specify in <code>SearchString</code>.
+        ///  <b>HTTPS_STR_MATCH</b>: Route 53 tries to establish a TCP connection. If successful,
+        /// Route 53 submits an <code>HTTPS</code> request and searches the first 5,120 bytes
+        /// of the response body for the string that you specify in <code>SearchString</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>TCP</b>: Amazon Route 53 tries to establish a TCP connection.
+        ///  <b>TCP</b>: Route 53 tries to establish a TCP connection.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -200,15 +201,15 @@ namespace Amazon.Route53.Model
         ///  </li> <li> 
         /// <para>
         ///  <b>CALCULATED</b>: For health checks that monitor the status of other health checks,
-        /// Amazon Route 53 adds up the number of health checks that Amazon Route 53 health checkers
-        /// consider to be healthy and compares that number with the value of <code>HealthThreshold</code>.
+        /// Route 53 adds up the number of health checks that Route 53 health checkers consider
+        /// to be healthy and compares that number with the value of <code>HealthThreshold</code>.
         /// 
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
-        /// Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route
-        /// 53 Developer Guide</i>.
+        /// Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer
+        /// Guide</i>.
         /// </para>
         /// </summary>
         public HealthCheckType Type
@@ -229,6 +230,7 @@ namespace Amazon.Route53.Model
         /// The path, if any, that you want Amazon Route 53 to request when performing health
         /// checks. The path can be any value for which your endpoint will return an HTTP status
         /// code of 2xx or 3xx when the endpoint is healthy, for example, the file /docs/route53-health-check.html.
+        /// You can also include query string parameters, for example, <code>/welcome.html?language=jp&amp;login=y</code>.
         /// 
         /// </para>
         /// </summary>
@@ -258,38 +260,36 @@ namespace Amazon.Route53.Model
         /// Amazon Route 53 sends health check requests to the specified IPv4 or IPv6 address
         /// and passes the value of <code>FullyQualifiedDomainName</code> in the <code>Host</code>
         /// header for all health checks except TCP health checks. This is typically the fully
-        /// qualified DNS name of the endpoint on which you want Amazon Route 53 to perform health
-        /// checks.
+        /// qualified DNS name of the endpoint on which you want Route 53 to perform health checks.
         /// </para>
         ///  
         /// <para>
-        /// When Amazon Route 53 checks the health of an endpoint, here is how it constructs the
-        /// <code>Host</code> header:
+        /// When Route 53 checks the health of an endpoint, here is how it constructs the <code>Host</code>
+        /// header:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// If you specify a value of <code>80</code> for <code>Port</code> and <code>HTTP</code>
-        /// or <code>HTTP_STR_MATCH</code> for <code>Type</code>, Amazon Route 53 passes the value
-        /// of <code>FullyQualifiedDomainName</code> to the endpoint in the Host header. 
+        /// or <code>HTTP_STR_MATCH</code> for <code>Type</code>, Route 53 passes the value of
+        /// <code>FullyQualifiedDomainName</code> to the endpoint in the Host header. 
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If you specify a value of <code>443</code> for <code>Port</code> and <code>HTTPS</code>
-        /// or <code>HTTPS_STR_MATCH</code> for <code>Type</code>, Amazon Route 53 passes the
-        /// value of <code>FullyQualifiedDomainName</code> to the endpoint in the <code>Host</code>
-        /// header.
+        /// or <code>HTTPS_STR_MATCH</code> for <code>Type</code>, Route 53 passes the value of
+        /// <code>FullyQualifiedDomainName</code> to the endpoint in the <code>Host</code> header.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If you specify another value for <code>Port</code> and any value except <code>TCP</code>
-        /// for <code>Type</code>, Amazon Route 53 passes <code>FullyQualifiedDomainName:Port</code>
+        /// for <code>Type</code>, Route 53 passes <code>FullyQualifiedDomainName:Port</code>
         /// to the endpoint in the <code>Host</code> header.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you don't specify a value for <code>FullyQualifiedDomainName</code>, Amazon Route
-        /// 53 substitutes the value of <code>IPAddress</code> in the <code>Host</code> header
-        /// in each of the preceding cases.
+        /// If you don't specify a value for <code>FullyQualifiedDomainName</code>, Route 53 substitutes
+        /// the value of <code>IPAddress</code> in the <code>Host</code> header in each of the
+        /// preceding cases.
         /// </para>
         ///  
         /// <para>
@@ -297,16 +297,16 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  
         /// <para>
-        /// Amazon Route 53 sends a DNS request to the domain that you specify for <code>FullyQualifiedDomainName</code>
+        /// Route 53 sends a DNS request to the domain that you specify for <code>FullyQualifiedDomainName</code>
         /// at the interval that you specify for <code>RequestInterval</code>. Using an IPv4 address
-        /// that DNS returns, Amazon Route 53 then checks the health of the endpoint.
+        /// that DNS returns, Route 53 then checks the health of the endpoint.
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you don't specify a value for <code>IPAddress</code>, Amazon Route 53 uses only
-        /// IPv4 to send health checks to the endpoint. If there's no resource record set with
-        /// a type of A for the name that you specify for <code>FullyQualifiedDomainName</code>,
-        /// the health check fails with a "DNS resolution failed" error.
+        /// If you don't specify a value for <code>IPAddress</code>, Route 53 uses only IPv4 to
+        /// send health checks to the endpoint. If there's no resource record set with a type
+        /// of A for the name that you specify for <code>FullyQualifiedDomainName</code>, the
+        /// health check fails with a "DNS resolution failed" error.
         /// </para>
         ///  </note> 
         /// <para>
@@ -328,9 +328,9 @@ namespace Amazon.Route53.Model
         /// <para>
         /// In addition, if the value that you specify for <code>Type</code> is <code>HTTP</code>,
         /// <code>HTTPS</code>, <code>HTTP_STR_MATCH</code>, or <code>HTTPS_STR_MATCH</code>,
-        /// Amazon Route 53 passes the value of <code>FullyQualifiedDomainName</code> in the <code>Host</code>
+        /// Route 53 passes the value of <code>FullyQualifiedDomainName</code> in the <code>Host</code>
         /// header, as it does when you specify a value for <code>IPAddress</code>. If the value
-        /// of <code>Type</code> is <code>TCP</code>, Amazon Route 53 doesn't pass a <code>Host</code>
+        /// of <code>Type</code> is <code>TCP</code>, Route 53 doesn't pass a <code>Host</code>
         /// header.
         /// </para>
         /// </summary>
@@ -351,13 +351,13 @@ namespace Amazon.Route53.Model
         /// <para>
         /// If the value of Type is <code>HTTP_STR_MATCH</code> or <code>HTTP_STR_MATCH</code>,
         /// the string that you want Amazon Route 53 to search for in the response body from the
-        /// specified resource. If the string appears in the response body, Amazon Route 53 considers
+        /// specified resource. If the string appears in the response body, Route 53 considers
         /// the resource healthy.
         /// </para>
         ///  
         /// <para>
-        /// Amazon Route 53 considers case when searching for <code>SearchString</code> in the
-        /// response body. 
+        /// Route 53 considers case when searching for <code>SearchString</code> in the response
+        /// body. 
         /// </para>
         /// </summary>
         public string SearchString
@@ -376,8 +376,8 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property RequestInterval. 
         /// <para>
         /// The number of seconds between the time that Amazon Route 53 gets a response from your
-        /// endpoint and the time that it sends the next health check request. Each Amazon Route
-        /// 53 health checker makes requests at this interval.
+        /// endpoint and the time that it sends the next health check request. Each Route 53 health
+        /// checker makes requests at this interval.
         /// </para>
         ///  <important> 
         /// <para>
@@ -434,7 +434,7 @@ namespace Amazon.Route53.Model
         /// <para>
         /// Specify whether you want Amazon Route 53 to measure the latency between health checkers
         /// in multiple AWS regions and your endpoint, and to display CloudWatch latency graphs
-        /// on the <b>Health Checks</b> page in the Amazon Route 53 console.
+        /// on the <b>Health Checks</b> page in the Route 53 console.
         /// </para>
         ///  <important> 
         /// <para>
@@ -476,6 +476,53 @@ namespace Amazon.Route53.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Disabled. 
+        /// <para>
+        /// Stops Route 53 from performing health checks. When you disable a health check, here's
+        /// what happens:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Health checks that check the health of endpoints:</b> Route 53 stops submitting
+        /// requests to your application, server, or other resource.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Calculated health checks:</b> Route 53 stops aggregating the status of the referenced
+        /// health checks.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Health checks that monitor CloudWatch alarms:</b> Route 53 stops monitoring the
+        /// corresponding CloudWatch metrics.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// After you disable a health check, Route 53 considers the status of the health check
+        /// to always be healthy. If you configured DNS failover, Route 53 continues to route
+        /// traffic to the corresponding resources. If you want to stop routing traffic to a resource,
+        /// change the value of <a>UpdateHealthCheckRequest$Inverted</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Charges for a health check still apply when the health check is disabled. For more
+        /// information, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53
+        /// Pricing</a>.
+        /// </para>
+        /// </summary>
+        public bool Disabled
+        {
+            get { return this._disabled.GetValueOrDefault(); }
+            set { this._disabled = value; }
+        }
+
+        // Check to see if Disabled property is set
+        internal bool IsSetDisabled()
+        {
+            return this._disabled.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property HealthThreshold. 
         /// <para>
         /// The number of child health checks that are associated with a <code>CALCULATED</code>
@@ -490,13 +537,12 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you specify a number greater than the number of child health checks, Amazon Route
-        /// 53 always considers this health check to be unhealthy.
+        /// If you specify a number greater than the number of child health checks, Route 53 always
+        /// considers this health check to be unhealthy.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you specify <code>0</code>, Amazon Route 53 always considers this health check
-        /// to be healthy.
+        /// If you specify <code>0</code>, Route 53 always considers this health check to be healthy.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -581,15 +627,15 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify any regions, Amazon Route 53 health checkers automatically performs
+        /// If you don't specify any regions, Route 53 health checkers automatically performs
         /// checks from all of the regions that are listed under <b>Valid Values</b>.
         /// </para>
         ///  
         /// <para>
         /// If you update a health check to remove a region that has been performing health checks,
-        /// Amazon Route 53 will briefly continue to perform checks from that region to ensure
-        /// that some health checkers are always checking the endpoint (for example, if you replace
-        /// three regions with four different regions). 
+        /// Route 53 will briefly continue to perform checks from that region to ensure that some
+        /// health checkers are always checking the endpoint (for example, if you replace three
+        /// regions with four different regions). 
         /// </para>
         /// </summary>
         public List<string> Regions
@@ -608,7 +654,7 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property AlarmIdentifier. 
         /// <para>
         /// A complex type that identifies the CloudWatch alarm that you want Amazon Route 53
-        /// health checkers to use to determine whether this health check is healthy.
+        /// health checkers to use to determine whether the specified health check is healthy.
         /// </para>
         /// </summary>
         public AlarmIdentifier AlarmIdentifier
@@ -631,18 +677,18 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Healthy</code>: Amazon Route 53 considers the health check to be healthy.
+        ///  <code>Healthy</code>: Route 53 considers the health check to be healthy.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Unhealthy</code>: Amazon Route 53 considers the health check to be unhealthy.
+        ///  <code>Unhealthy</code>: Route 53 considers the health check to be unhealthy.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LastKnownStatus</code>: Amazon Route 53 uses the status of the health check
-        /// from the last time that CloudWatch had sufficient data to determine the alarm state.
-        /// For new health checks that have no last known status, the default status for the health
-        /// check is healthy.
+        ///  <code>LastKnownStatus</code>: Route 53 uses the status of the health check from the
+        /// last time that CloudWatch had sufficient data to determine the alarm state. For new
+        /// health checks that have no last known status, the default status for the health check
+        /// is healthy.
         /// </para>
         ///  </li> </ul>
         /// </summary>

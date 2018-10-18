@@ -90,6 +90,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetInverted())
                     xmlWriter.WriteElementString("Inverted", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromBool(publicRequest.Inverted));                    
 
+                if(publicRequest.IsSetDisabled())
+                    xmlWriter.WriteElementString("Disabled", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromBool(publicRequest.Disabled));                    
+
                 if(publicRequest.IsSetHealthThreshold())
                     xmlWriter.WriteElementString("HealthThreshold", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromInt(publicRequest.HealthThreshold));                    
 
