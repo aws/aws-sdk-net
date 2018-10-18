@@ -28,34 +28,33 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeImages operation.
-    /// Retrieves a list that describes one or more specified images, if the image names or
-    /// image ARNs are provided. Otherwise, all images in the account are described.
+    /// Container for the parameters to the DescribeUsers operation.
+    /// Retrieves a list that describes one or more specified users in the user pool, if user
+    /// names are provided. Otherwise, all users in the user pool are described.
     /// </summary>
-    public partial class DescribeImagesRequest : AmazonAppStreamRequest
+    public partial class DescribeUsersRequest : AmazonAppStreamRequest
     {
-        private List<string> _arns = new List<string>();
+        private AuthenticationType _authenticationType;
         private int? _maxResults;
-        private List<string> _names = new List<string>();
         private string _nextToken;
-        private VisibilityType _type;
 
         /// <summary>
-        /// Gets and sets the property Arns. 
+        /// Gets and sets the property AuthenticationType. 
         /// <para>
-        /// The ARNs of the public, private, and shared images to describe.
+        /// The authentication type for the users in the user pool to describe. You must specify
+        /// USERPOOL.
         /// </para>
         /// </summary>
-        public List<string> Arns
+        public AuthenticationType AuthenticationType
         {
-            get { return this._arns; }
-            set { this._arns = value; }
+            get { return this._authenticationType; }
+            set { this._authenticationType = value; }
         }
 
-        // Check to see if Arns property is set
-        internal bool IsSetArns()
+        // Check to see if AuthenticationType property is set
+        internal bool IsSetAuthenticationType()
         {
-            return this._arns != null && this._arns.Count > 0; 
+            return this._authenticationType != null;
         }
 
         /// <summary>
@@ -77,24 +76,6 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Names. 
-        /// <para>
-        /// The names of the public or private images to describe.
-        /// </para>
-        /// </summary>
-        public List<string> Names
-        {
-            get { return this._names; }
-            set { this._names = value; }
-        }
-
-        // Check to see if Names property is set
-        internal bool IsSetNames()
-        {
-            return this._names != null && this._names.Count > 0; 
-        }
-
-        /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
         /// The pagination token to use to retrieve the next page of results for this operation.
@@ -111,24 +92,6 @@ namespace Amazon.AppStream.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Type. 
-        /// <para>
-        /// The type of image (public, private, or shared) to describe. 
-        /// </para>
-        /// </summary>
-        public VisibilityType Type
-        {
-            get { return this._type; }
-            set { this._type = value; }
-        }
-
-        // Check to see if Type property is set
-        internal bool IsSetType()
-        {
-            return this._type != null;
         }
 
     }

@@ -3883,6 +3883,12 @@
                 "zonbookDocumentation": "\n        <simpara>The permissions to provide to the destination AWS account for the specified image.</simpara>\n      ",
                 "documentation": "\n        <p>The permissions to provide to the destination AWS account for the specified image.</p>\n      ",
                 "shape_name": "ImagePermissions"
+              },
+              "ImageShared": {
+                "type": "boolean",
+                "internalonly": true,
+                "shape_name": "BooleanObject",
+                "documentation": null
               }
             },
             "zonbookDocumentation": "\n        <simpara>Describes an image.</simpara>\n      ",
@@ -4016,8 +4022,8 @@
           },
           "NextToken": {
             "type": "string",
-            "zonbookDocumentation": "\n        <simpara>The pagination token to use to retrieve the next page of results. If this value is empty, only the first page is retrieved.</simpara>\n      ",
-            "documentation": "\n        <p>The pagination token to use to retrieve the next page of results. If this value is empty, only the first page is retrieved.</p>\n      ",
+            "zonbookDocumentation": "\n        <simpara>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</simpara>\n      ",
+            "documentation": "\n        <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>\n      ",
             "shape_name": "String",
             "min_length": 1
           },
@@ -4283,6 +4289,12 @@
                   "zonbookDocumentation": "\n        <simpara>The permissions to provide to the destination AWS account for the specified image.</simpara>\n      ",
                   "documentation": "\n        <p>The permissions to provide to the destination AWS account for the specified image.</p>\n      ",
                   "shape_name": "ImagePermissions"
+                },
+                "ImageShared": {
+                  "type": "boolean",
+                  "internalonly": true,
+                  "shape_name": "BooleanObject",
+                  "documentation": null
                 }
               },
               "zonbookDocumentation": "\n        <simpara>Describes an image.</simpara>\n      ",
@@ -4292,8 +4304,8 @@
           },
           "NextToken": {
             "type": "string",
-            "zonbookDocumentation": "\n        <simpara>The pagination token to use to retrieve the next page of results. If there are no more pages, this value is null.</simpara>\n      ",
-            "documentation": "\n        <p>The pagination token to use to retrieve the next page of results. If there are no more pages, this value is null.</p>\n      ",
+            "zonbookDocumentation": "\n        <simpara>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</simpara>\n      ",
+            "documentation": "\n        <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>\n      ",
             "shape_name": "String",
             "min_length": 1
           }
@@ -4448,8 +4460,8 @@
           "MaxResults": {
             "type": "integer",
             "box": true,
-            "zonbookDocumentation": "\n        <simpara>The maximum size of each results page.</simpara>\n      ",
-            "documentation": "\n        <p>The maximum size of each results page.</p>\n      ",
+            "zonbookDocumentation": "\n        <simpara>The maximum size of each page of results.</simpara>\n      ",
+            "documentation": "\n        <p>The maximum size of each page of results.</p>\n      ",
             "shape_name": "MaxResults",
             "min_length": 0,
             "max_length": 500
@@ -4470,8 +4482,8 @@
           },
           "NextToken": {
             "type": "string",
-            "zonbookDocumentation": "\n        <simpara>The pagination token to use to retrieve the next page of results. If this value is empty, only the first page is retrieved.</simpara>\n      ",
-            "documentation": "\n        <p>The pagination token to use to retrieve the next page of results. If this value is empty, only the first page is retrieved.</p>\n      ",
+            "zonbookDocumentation": "\n        <simpara>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</simpara>\n      ",
+            "documentation": "\n        <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>\n      ",
             "shape_name": "String",
             "min_length": 1
           }
@@ -4534,8 +4546,8 @@
           },
           "NextToken": {
             "type": "string",
-            "zonbookDocumentation": "\n        <simpara>The pagination token to use to retrieve the next page of results. If this value is empty, only the first page is retrieved.</simpara>\n      ",
-            "documentation": "\n        <p>The pagination token to use to retrieve the next page of results. If this value is empty, only the first page is retrieved.</p>\n      ",
+            "zonbookDocumentation": "\n        <simpara>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</simpara>\n      ",
+            "documentation": "\n        <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>\n      ",
             "shape_name": "String",
             "min_length": 1
           }
@@ -5467,6 +5479,12 @@
                 "zonbookDocumentation": "\n        <simpara>The permissions to provide to the destination AWS account for the specified image.</simpara>\n      ",
                 "documentation": "\n        <p>The permissions to provide to the destination AWS account for the specified image.</p>\n      ",
                 "shape_name": "ImagePermissions"
+              },
+              "ImageShared": {
+                "type": "boolean",
+                "internalonly": true,
+                "shape_name": "BooleanObject",
+                "documentation": null
               }
             },
             "zonbookDocumentation": "\n        <simpara>Information about the image.</simpara>\n      ",
@@ -7332,6 +7350,12 @@
                 "zonbookDocumentation": "\n        <simpara>The permissions to provide to the destination AWS account for the specified image.</simpara>\n      ",
                 "documentation": "\n        <p>The permissions to provide to the destination AWS account for the specified image.</p>\n      ",
                 "shape_name": "ImagePermissions"
+              },
+              "ImageShared": {
+                "type": "boolean",
+                "internalonly": true,
+                "shape_name": "BooleanObject",
+                "documentation": null
               }
             },
             "zonbookDocumentation": "\n        <simpara>Describes an image.</simpara>\n      ",
@@ -8051,6 +8075,12 @@
                 "zonbookDocumentation": "\n        <simpara>The permissions to provide to the destination AWS account for the specified image.</simpara>\n      ",
                 "documentation": "\n        <p>The permissions to provide to the destination AWS account for the specified image.</p>\n      ",
                 "shape_name": "ImagePermissions"
+              },
+              "ImageShared": {
+                "type": "boolean",
+                "internalonly": true,
+                "shape_name": "BooleanObject",
+                "documentation": null
               }
             },
             "zonbookDocumentation": "\n        <simpara>Describes an image.</simpara>\n      ",
@@ -8738,20 +8768,38 @@
               "SAML",
               "USERPOOL"
             ],
+            "zonbookDocumentation": "\n        <simpara>The authentication type for the users in the user pool to describe. You must specify USERPOOL.</simpara>\n      ",
+            "documentation": "\n        <p>The authentication type for the users in the user pool to describe. You must specify USERPOOL.</p>\n      ",
             "required": true,
-            "shape_name": "AuthenticationType",
-            "documentation": null
+            "shape_name": "AuthenticationType"
           },
-          "Limit": {
+          "MaxResults": {
             "type": "integer",
-            "shape_name": "Integer",
-            "documentation": null
+            "zonbookDocumentation": "\n        <simpara>The maximum size of each page of results.</simpara>\n      ",
+            "documentation": "\n        <p>The maximum size of each page of results.</p>\n      ",
+            "shape_name": "Integer"
           },
           "NextToken": {
             "type": "string",
+            "zonbookDocumentation": "\n        <simpara>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</simpara>\n      ",
+            "documentation": "\n        <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>\n      ",
             "shape_name": "String",
-            "documentation": null,
             "min_length": 1
+          },
+          "UserNames": {
+            "type": "list",
+            "internalonly": true,
+            "shape_name": "UserNames",
+            "documentation": null,
+            "members": {
+              "type": "string",
+              "pattern": "[\\p{L}\\p{M}\\p{S}\\p{N}\\p{P}]+",
+              "sensitive": true,
+              "shape_name": "Username",
+              "documentation": null,
+              "min_length": 1,
+              "max_length": 128
+            }
           }
         },
         "shape_name": "DescribeUsersRequest",
@@ -8762,21 +8810,22 @@
         "members": {
           "Users": {
             "type": "list",
-            "internalonly": true,
+            "zonbookDocumentation": "\n        <simpara>Information about users in the user pool.</simpara>\n      ",
+            "documentation": "\n        <p>Information about users in the user pool.</p>\n      ",
             "shape_name": "UserList",
-            "documentation": null,
             "members": {
               "type": "structure",
               "members": {
                 "Arn": {
                   "type": "string",
                   "pattern": "^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$",
-                  "shape_name": "Arn",
-                  "documentation": null
+                  "zonbookDocumentation": "\n        <simpara>The ARN of the user.</simpara>\n      ",
+                  "documentation": "\n        <p>The ARN of the user.</p>\n      ",
+                  "shape_name": "Arn"
                 },
                 "Id": {
                   "type": "string",
-                  "required": true,
+                  "internalonly": true,
                   "shape_name": "String",
                   "documentation": null,
                   "min_length": 1
@@ -8791,48 +8840,66 @@
                   "min_length": 1,
                   "max_length": 128
                 },
+                "UserName": {
+                  "type": "string",
+                  "pattern": "[\\p{L}\\p{M}\\p{S}\\p{N}\\p{P}]+",
+                  "sensitive": true,
+                  "zonbookDocumentation": "\n        <simpara>The email address of the user.</simpara>\n      ",
+                  "documentation": "\n        <p>The email address of the user.</p>\n      ",
+                  "shape_name": "Username",
+                  "min_length": 1,
+                  "max_length": 128
+                },
                 "EmailAddress": {
                   "type": "string",
+                  "pattern": "[\\p{L}\\p{M}\\p{S}\\p{N}\\p{P}]+",
                   "sensitive": true,
                   "internalonly": true,
-                  "shape_name": "UserAttributeValue",
+                  "shape_name": "Username",
                   "documentation": null,
-                  "max_length": 2048
+                  "min_length": 1,
+                  "max_length": 128
                 },
                 "Enabled": {
                   "type": "boolean",
-                  "shape_name": "Boolean",
-                  "documentation": null
+                  "zonbookDocumentation": "\n        <simpara>Specifies whether the user in the user pool is enabled.</simpara>\n      ",
+                  "documentation": "\n        <p>Specifies whether the user in the user pool is enabled.</p>\n      ",
+                  "shape_name": "Boolean"
                 },
                 "Status": {
                   "type": "string",
+                  "zonbookDocumentation": "\n        <simpara>The status of the user in the user pool. The status can be one of the following:</simpara>\n        <itemizedlist>\n            <listitem>\n               <simpara>UNCONFIRMED – The user is created but not confirmed.</simpara>\n            </listitem>\n            <listitem>\n               <simpara>CONFIRMED – The user is confirmed.</simpara>\n            </listitem>\n            <listitem>\n               <simpara>ARCHIVED – The user is no longer active.</simpara>\n            </listitem>\n            <listitem>\n               <simpara>COMPROMISED – The user is disabled because of a potential security threat.</simpara>\n            </listitem>\n            <listitem>\n               <simpara>UNKNOWN – The user status is not known.</simpara>\n            </listitem>\n        </itemizedlist>\n      ",
+                  "documentation": "\n        <p>The status of the user in the user pool. The status can be one of the following:</p>\n        <ul>\n            <li>\n               <p>UNCONFIRMED – The user is created but not confirmed.</p>\n            </li>\n            <li>\n               <p>CONFIRMED – The user is confirmed.</p>\n            </li>\n            <li>\n               <p>ARCHIVED – The user is no longer active.</p>\n            </li>\n            <li>\n               <p>COMPROMISED – The user is disabled because of a potential security threat.</p>\n            </li>\n            <li>\n               <p>UNKNOWN – The user status is not known.</p>\n            </li>\n         </ul>\n      ",
                   "shape_name": "String",
-                  "documentation": null,
                   "min_length": 1
                 },
                 "FirstName": {
                   "type": "string",
+                  "pattern": "^[A-Za-z0-9_\\-\\s]+$",
                   "sensitive": true,
-                  "internalonly": true,
+                  "zonbookDocumentation": "\n        <simpara>The first name, or given name, of the user.</simpara>\n      ",
+                  "documentation": "\n        <p>The first name, or given name, of the user.</p>\n      ",
                   "shape_name": "UserAttributeValue",
-                  "documentation": null,
                   "max_length": 2048
                 },
                 "LastName": {
                   "type": "string",
+                  "pattern": "^[A-Za-z0-9_\\-\\s]+$",
                   "sensitive": true,
-                  "internalonly": true,
+                  "zonbookDocumentation": "\n        <simpara>The last name, or surname, of the user.</simpara>\n      ",
+                  "documentation": "\n        <p>The last name, or surname, of the user.</p>\n      ",
                   "shape_name": "UserAttributeValue",
-                  "documentation": null,
                   "max_length": 2048
                 },
                 "CreatedTime": {
                   "type": "timestamp",
-                  "shape_name": "Timestamp",
-                  "documentation": null
+                  "zonbookDocumentation": "\n        <simpara>The date and time the user was created in the user pool.</simpara>\n      ",
+                  "documentation": "\n        <p>The date and time the user was created in the user pool.</p>\n      ",
+                  "shape_name": "Timestamp"
                 },
                 "LastModifiedTime": {
                   "type": "timestamp",
+                  "internalonly": true,
                   "shape_name": "Timestamp",
                   "documentation": null
                 },
@@ -8843,20 +8910,22 @@
                     "SAML",
                     "USERPOOL"
                   ],
+                  "zonbookDocumentation": "\n        <simpara>The authentication type for the user.</simpara>\n      ",
+                  "documentation": "\n        <p>The authentication type for the user.</p>\n      ",
                   "required": true,
-                  "shape_name": "AuthenticationType",
-                  "documentation": null
+                  "shape_name": "AuthenticationType"
                 }
               },
-              "documentation": "\n        A type representing a User in AppStream2\n    ",
-              "internalonly": true,
+              "zonbookDocumentation": "\n        <simpara>Describes a user in the user pool.</simpara>\n      ",
+              "documentation": "\n        <p>Describes a user in the user pool.</p>\n      ",
               "shape_name": "User"
             }
           },
           "NextToken": {
             "type": "string",
+            "zonbookDocumentation": "\n        <simpara>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</simpara>\n      ",
+            "documentation": "\n        <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>\n      ",
             "shape_name": "String",
-            "documentation": null,
             "min_length": 1
           }
         },
@@ -8877,61 +8946,76 @@
           "zonbookDocumentation": "\n        <simpara>The specified resource was not found.</simpara>\n      ",
           "documentation": "\n        <p>The specified resource was not found.</p>\n      ",
           "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The error message in the exception.</simpara>\n      ",
+              "documentation": "\n        <p>The error message in the exception.</p>\n      ",
+              "shape_name": "ErrorMessage"
+            }
+          },
+          "zonbookDocumentation": "\n        <simpara>Indicates an incorrect combination of parameters, or a missing parameter.</simpara>\n      ",
+          "documentation": "\n        <p>Indicates an incorrect combination of parameters, or a missing parameter.</p>\n      ",
+          "shape_name": "InvalidParameterCombinationException"
         }
       ],
-      "documentation": "\n        Returns a list of users for the customer based on the specified authentication type\n\n        Maximum value of limit = 60 and by default this will return 60 users at a time.\n    "
+      "documentation": "\n        <p>Retrieves a list that describes one or more specified users in the user pool, if user names are provided. Otherwise, all users in the user pool are described.</p>\n      "
     },
     "CreateUser": {
       "name": "CreateUser",
       "input": {
         "type": "structure",
         "members": {
-          "Name": {
+          "UserName": {
             "type": "string",
             "pattern": "[\\p{L}\\p{M}\\p{S}\\p{N}\\p{P}]+",
             "sensitive": true,
-            "internalonly": true,
+            "zonbookDocumentation": "\n        <simpara>The email address of the user.</simpara>\n      ",
+            "documentation": "\n        <p>The email address of the user.</p>\n      ",
             "required": true,
             "shape_name": "Username",
-            "documentation": null,
             "min_length": 1,
             "max_length": 128
           },
           "MessageAction": {
             "type": "string",
-            "documentation": "\n        Denotes the action that needs to be taken for email notification when a user is created.\n        Set to null to send invitaion email with user creation (normal case)\n        Set to \"SUPPRESS\" when invitation email shouldn't be sent\n        Set to \"RESEND\" to resend invitation email\n    ",
             "enum": [
               "SUPPRESS",
               "RESEND"
             ],
-            "internalonly": true,
+            "zonbookDocumentation": "\n        <simpara>The action to take for the welcome email that is sent to a user after the user is created in the user pool. If you specify SUPPRESS, no email is sent. If you specify RESEND, do not specify the first name or last name of the user. If the value is null, the email is sent. </simpara>\n        \n        <note>\n            <simpara>The temporary password in the welcome email is valid for only 7 days. If users don’t set their passwords within 7 days, you must send them a new welcome email.</simpara>\n         </note>\n      ",
+            "documentation": "\n        <p>The action to take for the welcome email that is sent to a user after the user is created in the user pool. If you specify SUPPRESS, no email is sent. If you specify RESEND, do not specify the first name or last name of the user. If the value is null, the email is sent. </p>\n        \n        <note>\n            <p>The temporary password in the welcome email is valid for only 7 days. If users don’t set their passwords within 7 days, you must send them a new welcome email.</p>\n         </note>\n      ",
             "shape_name": "MessageAction"
           },
           "EmailAddress": {
             "type": "string",
+            "pattern": "[\\p{L}\\p{M}\\p{S}\\p{N}\\p{P}]+",
             "sensitive": true,
             "internalonly": true,
-            "required": true,
-            "shape_name": "UserAttributeValue",
+            "shape_name": "Username",
             "documentation": null,
-            "max_length": 2048
+            "min_length": 1,
+            "max_length": 128
           },
           "FirstName": {
             "type": "string",
+            "pattern": "^[A-Za-z0-9_\\-\\s]+$",
             "sensitive": true,
-            "internalonly": true,
-            "required": true,
+            "zonbookDocumentation": "\n        <simpara>The first name, or given name, of the user.</simpara>\n      ",
+            "documentation": "\n        <p>The first name, or given name, of the user.</p>\n      ",
             "shape_name": "UserAttributeValue",
-            "documentation": null,
             "max_length": 2048
           },
           "LastName": {
             "type": "string",
+            "pattern": "^[A-Za-z0-9_\\-\\s]+$",
             "sensitive": true,
-            "internalonly": true,
-            "required": true,
+            "zonbookDocumentation": "\n        <simpara>The last name, or surname, of the user.</simpara>\n      ",
+            "documentation": "\n        <p>The last name, or surname, of the user.</p>\n      ",
             "shape_name": "UserAttributeValue",
-            "documentation": null,
             "max_length": 2048
           },
           "AuthenticationType": {
@@ -8941,9 +9025,10 @@
               "SAML",
               "USERPOOL"
             ],
+            "zonbookDocumentation": "\n        <simpara>The authentication type for the user. You must specify USERPOOL. </simpara>\n      ",
+            "documentation": "\n        <p>The authentication type for the user. You must specify USERPOOL. </p>\n      ",
             "required": true,
-            "shape_name": "AuthenticationType",
-            "documentation": null
+            "shape_name": "AuthenticationType"
           }
         },
         "shape_name": "CreateUserRequest",
@@ -8984,25 +9069,79 @@
           "zonbookDocumentation": "\n            <simpara>The resource cannot be created because your AWS account is suspended. For assistance, contact AWS Support. </simpara>\n        ",
           "documentation": "\n            <p>The resource cannot be created because your AWS account is suspended. For assistance, contact AWS Support. </p>\n        ",
           "shape_name": "InvalidAccountStatusException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The error message in the exception.</simpara>\n      ",
+              "documentation": "\n        <p>The error message in the exception.</p>\n      ",
+              "shape_name": "ErrorMessage"
+            }
+          },
+          "zonbookDocumentation": "\n        <simpara>Indicates an incorrect combination of parameters, or a missing parameter.</simpara>\n      ",
+          "documentation": "\n        <p>Indicates an incorrect combination of parameters, or a missing parameter.</p>\n      ",
+          "shape_name": "InvalidParameterCombinationException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The error message in the exception.</simpara>\n      ",
+              "documentation": "\n        <p>The error message in the exception.</p>\n      ",
+              "shape_name": "ErrorMessage"
+            }
+          },
+          "zonbookDocumentation": "\n        <simpara>The requested limit exceeds the permitted limit for an account.</simpara>\n      ",
+          "documentation": "\n        <p>The requested limit exceeds the permitted limit for an account.</p>\n      ",
+          "shape_name": "LimitExceededException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The error message in the exception.</simpara>\n      ",
+              "documentation": "\n        <p>The error message in the exception.</p>\n      ",
+              "shape_name": "ErrorMessage"
+            }
+          },
+          "zonbookDocumentation": "\n        <simpara>The attempted operation is not permitted.</simpara>\n      ",
+          "documentation": "\n        <p>The attempted operation is not permitted.</p>\n      ",
+          "shape_name": "OperationNotPermittedException"
         }
       ],
-      "documentation": "\n        Creates a cognito user in the customer's cognito user pool. If the cognito user\n        pool doesn't exist, it is created for the customer.\n    "
+      "documentation": "\n        <p>Creates a new user in the user pool.</p>\n      "
     },
     "EnableUser": {
       "name": "EnableUser",
       "input": {
         "type": "structure",
         "members": {
-          "Name": {
+          "UserName": {
             "type": "string",
             "pattern": "[\\p{L}\\p{M}\\p{S}\\p{N}\\p{P}]+",
             "sensitive": true,
-            "internalonly": true,
+            "zonbookDocumentation": "\n        <simpara>The email address of the user.</simpara>\n      ",
+            "documentation": "\n        <p>The email address of the user.</p>\n      ",
             "required": true,
             "shape_name": "Username",
-            "documentation": null,
             "min_length": 1,
             "max_length": 128
+          },
+          "AuthenticationType": {
+            "type": "string",
+            "enum": [
+              "API",
+              "SAML",
+              "USERPOOL"
+            ],
+            "zonbookDocumentation": "\n        <simpara>The authentication type for the user. You must specify USERPOOL.</simpara>\n      ",
+            "documentation": "\n        <p>The authentication type for the user. You must specify USERPOOL.</p>\n      ",
+            "required": true,
+            "shape_name": "AuthenticationType"
           }
         },
         "shape_name": "EnableUserRequest",
@@ -9045,23 +9184,35 @@
           "shape_name": "InvalidAccountStatusException"
         }
       ],
-      "documentation": "\n        Enables a user which allows them to authenticate successfully.\n    "
+      "documentation": "\n        <p>Enables a user in the user pool. After being enabled, users can sign in to AppStream 2.0 and open applications from the stacks to which they are assigned.</p>\n      "
     },
     "DisableUser": {
       "name": "DisableUser",
       "input": {
         "type": "structure",
         "members": {
-          "Name": {
+          "UserName": {
             "type": "string",
             "pattern": "[\\p{L}\\p{M}\\p{S}\\p{N}\\p{P}]+",
             "sensitive": true,
-            "internalonly": true,
+            "zonbookDocumentation": "\n        <simpara>The email address of the user.</simpara>\n      ",
+            "documentation": "\n        <p>The email address of the user.</p>\n      ",
             "required": true,
             "shape_name": "Username",
-            "documentation": null,
             "min_length": 1,
             "max_length": 128
+          },
+          "AuthenticationType": {
+            "type": "string",
+            "enum": [
+              "API",
+              "SAML",
+              "USERPOOL"
+            ],
+            "zonbookDocumentation": "\n        <simpara>The authentication type for the user. You must specify USERPOOL.</simpara>\n      ",
+            "documentation": "\n        <p>The authentication type for the user. You must specify USERPOOL.</p>\n      ",
+            "required": true,
+            "shape_name": "AuthenticationType"
           }
         },
         "shape_name": "DisableUserRequest",
@@ -9090,7 +9241,64 @@
           "shape_name": "ResourceNotFoundException"
         }
       ],
-      "documentation": "\n        Disables a user which prevents them from authenticating successfully.\n    "
+      "documentation": "\n        <p>Disables the specified user in the user pool. Users can't sign in to AppStream 2.0 until they are re-enabled. This action does not delete the user. </p>\n      "
+    },
+    "DeleteUser": {
+      "name": "DeleteUser",
+      "input": {
+        "type": "structure",
+        "members": {
+          "UserName": {
+            "type": "string",
+            "pattern": "[\\p{L}\\p{M}\\p{S}\\p{N}\\p{P}]+",
+            "sensitive": true,
+            "zonbookDocumentation": "\n        <simpara>The email address of the user.</simpara>\n      ",
+            "documentation": "\n        <p>The email address of the user.</p>\n      ",
+            "required": true,
+            "shape_name": "Username",
+            "min_length": 1,
+            "max_length": 128
+          },
+          "AuthenticationType": {
+            "type": "string",
+            "enum": [
+              "API",
+              "SAML",
+              "USERPOOL"
+            ],
+            "zonbookDocumentation": "\n        <simpara>The authentication type for the user. You must specify USERPOOL.</simpara>\n      ",
+            "documentation": "\n        <p>The authentication type for the user. You must specify USERPOOL.</p>\n      ",
+            "required": true,
+            "shape_name": "AuthenticationType"
+          }
+        },
+        "shape_name": "DeleteUserRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+        },
+        "shape_name": "DeleteUserResult",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The error message in the exception.</simpara>\n      ",
+              "documentation": "\n        <p>The error message in the exception.</p>\n      ",
+              "shape_name": "ErrorMessage"
+            }
+          },
+          "zonbookDocumentation": "\n        <simpara>The specified resource was not found.</simpara>\n      ",
+          "documentation": "\n        <p>The specified resource was not found.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        }
+      ],
+      "documentation": "\n        <p>Deletes a user from the user pool.</p>\n      "
     },
     "AddAssignments": {
       "name": "AddAssignments",
@@ -9119,12 +9327,13 @@
                     "Arn": {
                       "type": "string",
                       "pattern": "^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$",
-                      "shape_name": "Arn",
-                      "documentation": null
+                      "zonbookDocumentation": "\n        <simpara>The ARN of the user.</simpara>\n      ",
+                      "documentation": "\n        <p>The ARN of the user.</p>\n      ",
+                      "shape_name": "Arn"
                     },
                     "Id": {
                       "type": "string",
-                      "required": true,
+                      "internalonly": true,
                       "shape_name": "String",
                       "documentation": null,
                       "min_length": 1
@@ -9139,48 +9348,66 @@
                       "min_length": 1,
                       "max_length": 128
                     },
+                    "UserName": {
+                      "type": "string",
+                      "pattern": "[\\p{L}\\p{M}\\p{S}\\p{N}\\p{P}]+",
+                      "sensitive": true,
+                      "zonbookDocumentation": "\n        <simpara>The email address of the user.</simpara>\n      ",
+                      "documentation": "\n        <p>The email address of the user.</p>\n      ",
+                      "shape_name": "Username",
+                      "min_length": 1,
+                      "max_length": 128
+                    },
                     "EmailAddress": {
                       "type": "string",
+                      "pattern": "[\\p{L}\\p{M}\\p{S}\\p{N}\\p{P}]+",
                       "sensitive": true,
                       "internalonly": true,
-                      "shape_name": "UserAttributeValue",
+                      "shape_name": "Username",
                       "documentation": null,
-                      "max_length": 2048
+                      "min_length": 1,
+                      "max_length": 128
                     },
                     "Enabled": {
                       "type": "boolean",
-                      "shape_name": "Boolean",
-                      "documentation": null
+                      "zonbookDocumentation": "\n        <simpara>Specifies whether the user in the user pool is enabled.</simpara>\n      ",
+                      "documentation": "\n        <p>Specifies whether the user in the user pool is enabled.</p>\n      ",
+                      "shape_name": "Boolean"
                     },
                     "Status": {
                       "type": "string",
+                      "zonbookDocumentation": "\n        <simpara>The status of the user in the user pool. The status can be one of the following:</simpara>\n        <itemizedlist>\n            <listitem>\n               <simpara>UNCONFIRMED – The user is created but not confirmed.</simpara>\n            </listitem>\n            <listitem>\n               <simpara>CONFIRMED – The user is confirmed.</simpara>\n            </listitem>\n            <listitem>\n               <simpara>ARCHIVED – The user is no longer active.</simpara>\n            </listitem>\n            <listitem>\n               <simpara>COMPROMISED – The user is disabled because of a potential security threat.</simpara>\n            </listitem>\n            <listitem>\n               <simpara>UNKNOWN – The user status is not known.</simpara>\n            </listitem>\n        </itemizedlist>\n      ",
+                      "documentation": "\n        <p>The status of the user in the user pool. The status can be one of the following:</p>\n        <ul>\n            <li>\n               <p>UNCONFIRMED – The user is created but not confirmed.</p>\n            </li>\n            <li>\n               <p>CONFIRMED – The user is confirmed.</p>\n            </li>\n            <li>\n               <p>ARCHIVED – The user is no longer active.</p>\n            </li>\n            <li>\n               <p>COMPROMISED – The user is disabled because of a potential security threat.</p>\n            </li>\n            <li>\n               <p>UNKNOWN – The user status is not known.</p>\n            </li>\n         </ul>\n      ",
                       "shape_name": "String",
-                      "documentation": null,
                       "min_length": 1
                     },
                     "FirstName": {
                       "type": "string",
+                      "pattern": "^[A-Za-z0-9_\\-\\s]+$",
                       "sensitive": true,
-                      "internalonly": true,
+                      "zonbookDocumentation": "\n        <simpara>The first name, or given name, of the user.</simpara>\n      ",
+                      "documentation": "\n        <p>The first name, or given name, of the user.</p>\n      ",
                       "shape_name": "UserAttributeValue",
-                      "documentation": null,
                       "max_length": 2048
                     },
                     "LastName": {
                       "type": "string",
+                      "pattern": "^[A-Za-z0-9_\\-\\s]+$",
                       "sensitive": true,
-                      "internalonly": true,
+                      "zonbookDocumentation": "\n        <simpara>The last name, or surname, of the user.</simpara>\n      ",
+                      "documentation": "\n        <p>The last name, or surname, of the user.</p>\n      ",
                       "shape_name": "UserAttributeValue",
-                      "documentation": null,
                       "max_length": 2048
                     },
                     "CreatedTime": {
                       "type": "timestamp",
-                      "shape_name": "Timestamp",
-                      "documentation": null
+                      "zonbookDocumentation": "\n        <simpara>The date and time the user was created in the user pool.</simpara>\n      ",
+                      "documentation": "\n        <p>The date and time the user was created in the user pool.</p>\n      ",
+                      "shape_name": "Timestamp"
                     },
                     "LastModifiedTime": {
                       "type": "timestamp",
+                      "internalonly": true,
                       "shape_name": "Timestamp",
                       "documentation": null
                     },
@@ -9191,15 +9418,34 @@
                         "SAML",
                         "USERPOOL"
                       ],
+                      "zonbookDocumentation": "\n        <simpara>The authentication type for the user.</simpara>\n      ",
+                      "documentation": "\n        <p>The authentication type for the user.</p>\n      ",
                       "required": true,
-                      "shape_name": "AuthenticationType",
-                      "documentation": null
+                      "shape_name": "AuthenticationType"
                     }
                   },
-                  "documentation": "\n        A type representing a User in AppStream2\n    ",
-                  "internalonly": true,
-                  "required": true,
+                  "zonbookDocumentation": "\n        <simpara>Describes a user in the user pool.</simpara>\n      ",
+                  "documentation": "\n        <p>Describes a user in the user pool.</p>\n      ",
                   "shape_name": "User"
+                },
+                "UserName": {
+                  "type": "string",
+                  "pattern": "[\\p{L}\\p{M}\\p{S}\\p{N}\\p{P}]+",
+                  "sensitive": true,
+                  "shape_name": "Username",
+                  "documentation": null,
+                  "min_length": 1,
+                  "max_length": 128
+                },
+                "AuthenticationType": {
+                  "type": "string",
+                  "enum": [
+                    "API",
+                    "SAML",
+                    "USERPOOL"
+                  ],
+                  "shape_name": "AuthenticationType",
+                  "documentation": null
                 },
                 "SendEmailNotification": {
                   "type": "boolean",
@@ -9243,12 +9489,13 @@
                         "Arn": {
                           "type": "string",
                           "pattern": "^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$",
-                          "shape_name": "Arn",
-                          "documentation": null
+                          "zonbookDocumentation": "\n        <simpara>The ARN of the user.</simpara>\n      ",
+                          "documentation": "\n        <p>The ARN of the user.</p>\n      ",
+                          "shape_name": "Arn"
                         },
                         "Id": {
                           "type": "string",
-                          "required": true,
+                          "internalonly": true,
                           "shape_name": "String",
                           "documentation": null,
                           "min_length": 1
@@ -9263,48 +9510,66 @@
                           "min_length": 1,
                           "max_length": 128
                         },
+                        "UserName": {
+                          "type": "string",
+                          "pattern": "[\\p{L}\\p{M}\\p{S}\\p{N}\\p{P}]+",
+                          "sensitive": true,
+                          "zonbookDocumentation": "\n        <simpara>The email address of the user.</simpara>\n      ",
+                          "documentation": "\n        <p>The email address of the user.</p>\n      ",
+                          "shape_name": "Username",
+                          "min_length": 1,
+                          "max_length": 128
+                        },
                         "EmailAddress": {
                           "type": "string",
+                          "pattern": "[\\p{L}\\p{M}\\p{S}\\p{N}\\p{P}]+",
                           "sensitive": true,
                           "internalonly": true,
-                          "shape_name": "UserAttributeValue",
+                          "shape_name": "Username",
                           "documentation": null,
-                          "max_length": 2048
+                          "min_length": 1,
+                          "max_length": 128
                         },
                         "Enabled": {
                           "type": "boolean",
-                          "shape_name": "Boolean",
-                          "documentation": null
+                          "zonbookDocumentation": "\n        <simpara>Specifies whether the user in the user pool is enabled.</simpara>\n      ",
+                          "documentation": "\n        <p>Specifies whether the user in the user pool is enabled.</p>\n      ",
+                          "shape_name": "Boolean"
                         },
                         "Status": {
                           "type": "string",
+                          "zonbookDocumentation": "\n        <simpara>The status of the user in the user pool. The status can be one of the following:</simpara>\n        <itemizedlist>\n            <listitem>\n               <simpara>UNCONFIRMED – The user is created but not confirmed.</simpara>\n            </listitem>\n            <listitem>\n               <simpara>CONFIRMED – The user is confirmed.</simpara>\n            </listitem>\n            <listitem>\n               <simpara>ARCHIVED – The user is no longer active.</simpara>\n            </listitem>\n            <listitem>\n               <simpara>COMPROMISED – The user is disabled because of a potential security threat.</simpara>\n            </listitem>\n            <listitem>\n               <simpara>UNKNOWN – The user status is not known.</simpara>\n            </listitem>\n        </itemizedlist>\n      ",
+                          "documentation": "\n        <p>The status of the user in the user pool. The status can be one of the following:</p>\n        <ul>\n            <li>\n               <p>UNCONFIRMED – The user is created but not confirmed.</p>\n            </li>\n            <li>\n               <p>CONFIRMED – The user is confirmed.</p>\n            </li>\n            <li>\n               <p>ARCHIVED – The user is no longer active.</p>\n            </li>\n            <li>\n               <p>COMPROMISED – The user is disabled because of a potential security threat.</p>\n            </li>\n            <li>\n               <p>UNKNOWN – The user status is not known.</p>\n            </li>\n         </ul>\n      ",
                           "shape_name": "String",
-                          "documentation": null,
                           "min_length": 1
                         },
                         "FirstName": {
                           "type": "string",
+                          "pattern": "^[A-Za-z0-9_\\-\\s]+$",
                           "sensitive": true,
-                          "internalonly": true,
+                          "zonbookDocumentation": "\n        <simpara>The first name, or given name, of the user.</simpara>\n      ",
+                          "documentation": "\n        <p>The first name, or given name, of the user.</p>\n      ",
                           "shape_name": "UserAttributeValue",
-                          "documentation": null,
                           "max_length": 2048
                         },
                         "LastName": {
                           "type": "string",
+                          "pattern": "^[A-Za-z0-9_\\-\\s]+$",
                           "sensitive": true,
-                          "internalonly": true,
+                          "zonbookDocumentation": "\n        <simpara>The last name, or surname, of the user.</simpara>\n      ",
+                          "documentation": "\n        <p>The last name, or surname, of the user.</p>\n      ",
                           "shape_name": "UserAttributeValue",
-                          "documentation": null,
                           "max_length": 2048
                         },
                         "CreatedTime": {
                           "type": "timestamp",
-                          "shape_name": "Timestamp",
-                          "documentation": null
+                          "zonbookDocumentation": "\n        <simpara>The date and time the user was created in the user pool.</simpara>\n      ",
+                          "documentation": "\n        <p>The date and time the user was created in the user pool.</p>\n      ",
+                          "shape_name": "Timestamp"
                         },
                         "LastModifiedTime": {
                           "type": "timestamp",
+                          "internalonly": true,
                           "shape_name": "Timestamp",
                           "documentation": null
                         },
@@ -9315,15 +9580,34 @@
                             "SAML",
                             "USERPOOL"
                           ],
+                          "zonbookDocumentation": "\n        <simpara>The authentication type for the user.</simpara>\n      ",
+                          "documentation": "\n        <p>The authentication type for the user.</p>\n      ",
                           "required": true,
-                          "shape_name": "AuthenticationType",
-                          "documentation": null
+                          "shape_name": "AuthenticationType"
                         }
                       },
-                      "documentation": "\n        A type representing a User in AppStream2\n    ",
-                      "internalonly": true,
-                      "required": true,
+                      "zonbookDocumentation": "\n        <simpara>Describes a user in the user pool.</simpara>\n      ",
+                      "documentation": "\n        <p>Describes a user in the user pool.</p>\n      ",
                       "shape_name": "User"
+                    },
+                    "UserName": {
+                      "type": "string",
+                      "pattern": "[\\p{L}\\p{M}\\p{S}\\p{N}\\p{P}]+",
+                      "sensitive": true,
+                      "shape_name": "Username",
+                      "documentation": null,
+                      "min_length": 1,
+                      "max_length": 128
+                    },
+                    "AuthenticationType": {
+                      "type": "string",
+                      "enum": [
+                        "API",
+                        "SAML",
+                        "USERPOOL"
+                      ],
+                      "shape_name": "AuthenticationType",
+                      "documentation": null
                     },
                     "SendEmailNotification": {
                       "type": "boolean",
@@ -9340,6 +9624,7 @@
                   "documentation": "\n        Error code returned during adding/removing User to Stack assignments in AppStream2\n    ",
                   "enum": [
                     "STACK_NOT_FOUND",
+                    "USER_NAME_NOT_FOUND",
                     "INTERNAL_ERROR"
                   ],
                   "internalonly": true,
@@ -9396,12 +9681,13 @@
               "Arn": {
                 "type": "string",
                 "pattern": "^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$",
-                "shape_name": "Arn",
-                "documentation": null
+                "zonbookDocumentation": "\n        <simpara>The ARN of the user.</simpara>\n      ",
+                "documentation": "\n        <p>The ARN of the user.</p>\n      ",
+                "shape_name": "Arn"
               },
               "Id": {
                 "type": "string",
-                "required": true,
+                "internalonly": true,
                 "shape_name": "String",
                 "documentation": null,
                 "min_length": 1
@@ -9416,48 +9702,66 @@
                 "min_length": 1,
                 "max_length": 128
               },
+              "UserName": {
+                "type": "string",
+                "pattern": "[\\p{L}\\p{M}\\p{S}\\p{N}\\p{P}]+",
+                "sensitive": true,
+                "zonbookDocumentation": "\n        <simpara>The email address of the user.</simpara>\n      ",
+                "documentation": "\n        <p>The email address of the user.</p>\n      ",
+                "shape_name": "Username",
+                "min_length": 1,
+                "max_length": 128
+              },
               "EmailAddress": {
                 "type": "string",
+                "pattern": "[\\p{L}\\p{M}\\p{S}\\p{N}\\p{P}]+",
                 "sensitive": true,
                 "internalonly": true,
-                "shape_name": "UserAttributeValue",
+                "shape_name": "Username",
                 "documentation": null,
-                "max_length": 2048
+                "min_length": 1,
+                "max_length": 128
               },
               "Enabled": {
                 "type": "boolean",
-                "shape_name": "Boolean",
-                "documentation": null
+                "zonbookDocumentation": "\n        <simpara>Specifies whether the user in the user pool is enabled.</simpara>\n      ",
+                "documentation": "\n        <p>Specifies whether the user in the user pool is enabled.</p>\n      ",
+                "shape_name": "Boolean"
               },
               "Status": {
                 "type": "string",
+                "zonbookDocumentation": "\n        <simpara>The status of the user in the user pool. The status can be one of the following:</simpara>\n        <itemizedlist>\n            <listitem>\n               <simpara>UNCONFIRMED – The user is created but not confirmed.</simpara>\n            </listitem>\n            <listitem>\n               <simpara>CONFIRMED – The user is confirmed.</simpara>\n            </listitem>\n            <listitem>\n               <simpara>ARCHIVED – The user is no longer active.</simpara>\n            </listitem>\n            <listitem>\n               <simpara>COMPROMISED – The user is disabled because of a potential security threat.</simpara>\n            </listitem>\n            <listitem>\n               <simpara>UNKNOWN – The user status is not known.</simpara>\n            </listitem>\n        </itemizedlist>\n      ",
+                "documentation": "\n        <p>The status of the user in the user pool. The status can be one of the following:</p>\n        <ul>\n            <li>\n               <p>UNCONFIRMED – The user is created but not confirmed.</p>\n            </li>\n            <li>\n               <p>CONFIRMED – The user is confirmed.</p>\n            </li>\n            <li>\n               <p>ARCHIVED – The user is no longer active.</p>\n            </li>\n            <li>\n               <p>COMPROMISED – The user is disabled because of a potential security threat.</p>\n            </li>\n            <li>\n               <p>UNKNOWN – The user status is not known.</p>\n            </li>\n         </ul>\n      ",
                 "shape_name": "String",
-                "documentation": null,
                 "min_length": 1
               },
               "FirstName": {
                 "type": "string",
+                "pattern": "^[A-Za-z0-9_\\-\\s]+$",
                 "sensitive": true,
-                "internalonly": true,
+                "zonbookDocumentation": "\n        <simpara>The first name, or given name, of the user.</simpara>\n      ",
+                "documentation": "\n        <p>The first name, or given name, of the user.</p>\n      ",
                 "shape_name": "UserAttributeValue",
-                "documentation": null,
                 "max_length": 2048
               },
               "LastName": {
                 "type": "string",
+                "pattern": "^[A-Za-z0-9_\\-\\s]+$",
                 "sensitive": true,
-                "internalonly": true,
+                "zonbookDocumentation": "\n        <simpara>The last name, or surname, of the user.</simpara>\n      ",
+                "documentation": "\n        <p>The last name, or surname, of the user.</p>\n      ",
                 "shape_name": "UserAttributeValue",
-                "documentation": null,
                 "max_length": 2048
               },
               "CreatedTime": {
                 "type": "timestamp",
-                "shape_name": "Timestamp",
-                "documentation": null
+                "zonbookDocumentation": "\n        <simpara>The date and time the user was created in the user pool.</simpara>\n      ",
+                "documentation": "\n        <p>The date and time the user was created in the user pool.</p>\n      ",
+                "shape_name": "Timestamp"
               },
               "LastModifiedTime": {
                 "type": "timestamp",
+                "internalonly": true,
                 "shape_name": "Timestamp",
                 "documentation": null
               },
@@ -9468,16 +9772,43 @@
                   "SAML",
                   "USERPOOL"
                 ],
+                "zonbookDocumentation": "\n        <simpara>The authentication type for the user.</simpara>\n      ",
+                "documentation": "\n        <p>The authentication type for the user.</p>\n      ",
                 "required": true,
-                "shape_name": "AuthenticationType",
-                "documentation": null
+                "shape_name": "AuthenticationType"
               }
             },
-            "documentation": "\n        A type representing a User in AppStream2\n    ",
+            "zonbookDocumentation": "\n        <simpara>Describes a user in the user pool.</simpara>\n      ",
+            "documentation": "\n        <p>Describes a user in the user pool.</p>\n      ",
             "internalonly": true,
             "shape_name": "User"
           },
           "Limit": {
+            "type": "integer",
+            "internalonly": true,
+            "shape_name": "Integer",
+            "documentation": null
+          },
+          "UserName": {
+            "type": "string",
+            "pattern": "[\\p{L}\\p{M}\\p{S}\\p{N}\\p{P}]+",
+            "sensitive": true,
+            "shape_name": "Username",
+            "documentation": null,
+            "min_length": 1,
+            "max_length": 128
+          },
+          "AuthenticationType": {
+            "type": "string",
+            "enum": [
+              "API",
+              "SAML",
+              "USERPOOL"
+            ],
+            "shape_name": "AuthenticationType",
+            "documentation": null
+          },
+          "MaxResults": {
             "type": "integer",
             "shape_name": "Integer",
             "documentation": null
@@ -9516,12 +9847,13 @@
                     "Arn": {
                       "type": "string",
                       "pattern": "^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$",
-                      "shape_name": "Arn",
-                      "documentation": null
+                      "zonbookDocumentation": "\n        <simpara>The ARN of the user.</simpara>\n      ",
+                      "documentation": "\n        <p>The ARN of the user.</p>\n      ",
+                      "shape_name": "Arn"
                     },
                     "Id": {
                       "type": "string",
-                      "required": true,
+                      "internalonly": true,
                       "shape_name": "String",
                       "documentation": null,
                       "min_length": 1
@@ -9536,48 +9868,66 @@
                       "min_length": 1,
                       "max_length": 128
                     },
+                    "UserName": {
+                      "type": "string",
+                      "pattern": "[\\p{L}\\p{M}\\p{S}\\p{N}\\p{P}]+",
+                      "sensitive": true,
+                      "zonbookDocumentation": "\n        <simpara>The email address of the user.</simpara>\n      ",
+                      "documentation": "\n        <p>The email address of the user.</p>\n      ",
+                      "shape_name": "Username",
+                      "min_length": 1,
+                      "max_length": 128
+                    },
                     "EmailAddress": {
                       "type": "string",
+                      "pattern": "[\\p{L}\\p{M}\\p{S}\\p{N}\\p{P}]+",
                       "sensitive": true,
                       "internalonly": true,
-                      "shape_name": "UserAttributeValue",
+                      "shape_name": "Username",
                       "documentation": null,
-                      "max_length": 2048
+                      "min_length": 1,
+                      "max_length": 128
                     },
                     "Enabled": {
                       "type": "boolean",
-                      "shape_name": "Boolean",
-                      "documentation": null
+                      "zonbookDocumentation": "\n        <simpara>Specifies whether the user in the user pool is enabled.</simpara>\n      ",
+                      "documentation": "\n        <p>Specifies whether the user in the user pool is enabled.</p>\n      ",
+                      "shape_name": "Boolean"
                     },
                     "Status": {
                       "type": "string",
+                      "zonbookDocumentation": "\n        <simpara>The status of the user in the user pool. The status can be one of the following:</simpara>\n        <itemizedlist>\n            <listitem>\n               <simpara>UNCONFIRMED – The user is created but not confirmed.</simpara>\n            </listitem>\n            <listitem>\n               <simpara>CONFIRMED – The user is confirmed.</simpara>\n            </listitem>\n            <listitem>\n               <simpara>ARCHIVED – The user is no longer active.</simpara>\n            </listitem>\n            <listitem>\n               <simpara>COMPROMISED – The user is disabled because of a potential security threat.</simpara>\n            </listitem>\n            <listitem>\n               <simpara>UNKNOWN – The user status is not known.</simpara>\n            </listitem>\n        </itemizedlist>\n      ",
+                      "documentation": "\n        <p>The status of the user in the user pool. The status can be one of the following:</p>\n        <ul>\n            <li>\n               <p>UNCONFIRMED – The user is created but not confirmed.</p>\n            </li>\n            <li>\n               <p>CONFIRMED – The user is confirmed.</p>\n            </li>\n            <li>\n               <p>ARCHIVED – The user is no longer active.</p>\n            </li>\n            <li>\n               <p>COMPROMISED – The user is disabled because of a potential security threat.</p>\n            </li>\n            <li>\n               <p>UNKNOWN – The user status is not known.</p>\n            </li>\n         </ul>\n      ",
                       "shape_name": "String",
-                      "documentation": null,
                       "min_length": 1
                     },
                     "FirstName": {
                       "type": "string",
+                      "pattern": "^[A-Za-z0-9_\\-\\s]+$",
                       "sensitive": true,
-                      "internalonly": true,
+                      "zonbookDocumentation": "\n        <simpara>The first name, or given name, of the user.</simpara>\n      ",
+                      "documentation": "\n        <p>The first name, or given name, of the user.</p>\n      ",
                       "shape_name": "UserAttributeValue",
-                      "documentation": null,
                       "max_length": 2048
                     },
                     "LastName": {
                       "type": "string",
+                      "pattern": "^[A-Za-z0-9_\\-\\s]+$",
                       "sensitive": true,
-                      "internalonly": true,
+                      "zonbookDocumentation": "\n        <simpara>The last name, or surname, of the user.</simpara>\n      ",
+                      "documentation": "\n        <p>The last name, or surname, of the user.</p>\n      ",
                       "shape_name": "UserAttributeValue",
-                      "documentation": null,
                       "max_length": 2048
                     },
                     "CreatedTime": {
                       "type": "timestamp",
-                      "shape_name": "Timestamp",
-                      "documentation": null
+                      "zonbookDocumentation": "\n        <simpara>The date and time the user was created in the user pool.</simpara>\n      ",
+                      "documentation": "\n        <p>The date and time the user was created in the user pool.</p>\n      ",
+                      "shape_name": "Timestamp"
                     },
                     "LastModifiedTime": {
                       "type": "timestamp",
+                      "internalonly": true,
                       "shape_name": "Timestamp",
                       "documentation": null
                     },
@@ -9588,15 +9938,34 @@
                         "SAML",
                         "USERPOOL"
                       ],
+                      "zonbookDocumentation": "\n        <simpara>The authentication type for the user.</simpara>\n      ",
+                      "documentation": "\n        <p>The authentication type for the user.</p>\n      ",
                       "required": true,
-                      "shape_name": "AuthenticationType",
-                      "documentation": null
+                      "shape_name": "AuthenticationType"
                     }
                   },
-                  "documentation": "\n        A type representing a User in AppStream2\n    ",
-                  "internalonly": true,
-                  "required": true,
+                  "zonbookDocumentation": "\n        <simpara>Describes a user in the user pool.</simpara>\n      ",
+                  "documentation": "\n        <p>Describes a user in the user pool.</p>\n      ",
                   "shape_name": "User"
+                },
+                "UserName": {
+                  "type": "string",
+                  "pattern": "[\\p{L}\\p{M}\\p{S}\\p{N}\\p{P}]+",
+                  "sensitive": true,
+                  "shape_name": "Username",
+                  "documentation": null,
+                  "min_length": 1,
+                  "max_length": 128
+                },
+                "AuthenticationType": {
+                  "type": "string",
+                  "enum": [
+                    "API",
+                    "SAML",
+                    "USERPOOL"
+                  ],
+                  "shape_name": "AuthenticationType",
+                  "documentation": null
                 },
                 "SendEmailNotification": {
                   "type": "boolean",
@@ -9651,12 +10020,13 @@
                     "Arn": {
                       "type": "string",
                       "pattern": "^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$",
-                      "shape_name": "Arn",
-                      "documentation": null
+                      "zonbookDocumentation": "\n        <simpara>The ARN of the user.</simpara>\n      ",
+                      "documentation": "\n        <p>The ARN of the user.</p>\n      ",
+                      "shape_name": "Arn"
                     },
                     "Id": {
                       "type": "string",
-                      "required": true,
+                      "internalonly": true,
                       "shape_name": "String",
                       "documentation": null,
                       "min_length": 1
@@ -9671,48 +10041,66 @@
                       "min_length": 1,
                       "max_length": 128
                     },
+                    "UserName": {
+                      "type": "string",
+                      "pattern": "[\\p{L}\\p{M}\\p{S}\\p{N}\\p{P}]+",
+                      "sensitive": true,
+                      "zonbookDocumentation": "\n        <simpara>The email address of the user.</simpara>\n      ",
+                      "documentation": "\n        <p>The email address of the user.</p>\n      ",
+                      "shape_name": "Username",
+                      "min_length": 1,
+                      "max_length": 128
+                    },
                     "EmailAddress": {
                       "type": "string",
+                      "pattern": "[\\p{L}\\p{M}\\p{S}\\p{N}\\p{P}]+",
                       "sensitive": true,
                       "internalonly": true,
-                      "shape_name": "UserAttributeValue",
+                      "shape_name": "Username",
                       "documentation": null,
-                      "max_length": 2048
+                      "min_length": 1,
+                      "max_length": 128
                     },
                     "Enabled": {
                       "type": "boolean",
-                      "shape_name": "Boolean",
-                      "documentation": null
+                      "zonbookDocumentation": "\n        <simpara>Specifies whether the user in the user pool is enabled.</simpara>\n      ",
+                      "documentation": "\n        <p>Specifies whether the user in the user pool is enabled.</p>\n      ",
+                      "shape_name": "Boolean"
                     },
                     "Status": {
                       "type": "string",
+                      "zonbookDocumentation": "\n        <simpara>The status of the user in the user pool. The status can be one of the following:</simpara>\n        <itemizedlist>\n            <listitem>\n               <simpara>UNCONFIRMED – The user is created but not confirmed.</simpara>\n            </listitem>\n            <listitem>\n               <simpara>CONFIRMED – The user is confirmed.</simpara>\n            </listitem>\n            <listitem>\n               <simpara>ARCHIVED – The user is no longer active.</simpara>\n            </listitem>\n            <listitem>\n               <simpara>COMPROMISED – The user is disabled because of a potential security threat.</simpara>\n            </listitem>\n            <listitem>\n               <simpara>UNKNOWN – The user status is not known.</simpara>\n            </listitem>\n        </itemizedlist>\n      ",
+                      "documentation": "\n        <p>The status of the user in the user pool. The status can be one of the following:</p>\n        <ul>\n            <li>\n               <p>UNCONFIRMED – The user is created but not confirmed.</p>\n            </li>\n            <li>\n               <p>CONFIRMED – The user is confirmed.</p>\n            </li>\n            <li>\n               <p>ARCHIVED – The user is no longer active.</p>\n            </li>\n            <li>\n               <p>COMPROMISED – The user is disabled because of a potential security threat.</p>\n            </li>\n            <li>\n               <p>UNKNOWN – The user status is not known.</p>\n            </li>\n         </ul>\n      ",
                       "shape_name": "String",
-                      "documentation": null,
                       "min_length": 1
                     },
                     "FirstName": {
                       "type": "string",
+                      "pattern": "^[A-Za-z0-9_\\-\\s]+$",
                       "sensitive": true,
-                      "internalonly": true,
+                      "zonbookDocumentation": "\n        <simpara>The first name, or given name, of the user.</simpara>\n      ",
+                      "documentation": "\n        <p>The first name, or given name, of the user.</p>\n      ",
                       "shape_name": "UserAttributeValue",
-                      "documentation": null,
                       "max_length": 2048
                     },
                     "LastName": {
                       "type": "string",
+                      "pattern": "^[A-Za-z0-9_\\-\\s]+$",
                       "sensitive": true,
-                      "internalonly": true,
+                      "zonbookDocumentation": "\n        <simpara>The last name, or surname, of the user.</simpara>\n      ",
+                      "documentation": "\n        <p>The last name, or surname, of the user.</p>\n      ",
                       "shape_name": "UserAttributeValue",
-                      "documentation": null,
                       "max_length": 2048
                     },
                     "CreatedTime": {
                       "type": "timestamp",
-                      "shape_name": "Timestamp",
-                      "documentation": null
+                      "zonbookDocumentation": "\n        <simpara>The date and time the user was created in the user pool.</simpara>\n      ",
+                      "documentation": "\n        <p>The date and time the user was created in the user pool.</p>\n      ",
+                      "shape_name": "Timestamp"
                     },
                     "LastModifiedTime": {
                       "type": "timestamp",
+                      "internalonly": true,
                       "shape_name": "Timestamp",
                       "documentation": null
                     },
@@ -9723,15 +10111,34 @@
                         "SAML",
                         "USERPOOL"
                       ],
+                      "zonbookDocumentation": "\n        <simpara>The authentication type for the user.</simpara>\n      ",
+                      "documentation": "\n        <p>The authentication type for the user.</p>\n      ",
                       "required": true,
-                      "shape_name": "AuthenticationType",
-                      "documentation": null
+                      "shape_name": "AuthenticationType"
                     }
                   },
-                  "documentation": "\n        A type representing a User in AppStream2\n    ",
-                  "internalonly": true,
-                  "required": true,
+                  "zonbookDocumentation": "\n        <simpara>Describes a user in the user pool.</simpara>\n      ",
+                  "documentation": "\n        <p>Describes a user in the user pool.</p>\n      ",
                   "shape_name": "User"
+                },
+                "UserName": {
+                  "type": "string",
+                  "pattern": "[\\p{L}\\p{M}\\p{S}\\p{N}\\p{P}]+",
+                  "sensitive": true,
+                  "shape_name": "Username",
+                  "documentation": null,
+                  "min_length": 1,
+                  "max_length": 128
+                },
+                "AuthenticationType": {
+                  "type": "string",
+                  "enum": [
+                    "API",
+                    "SAML",
+                    "USERPOOL"
+                  ],
+                  "shape_name": "AuthenticationType",
+                  "documentation": null
                 },
                 "SendEmailNotification": {
                   "type": "boolean",
@@ -9775,12 +10182,13 @@
                         "Arn": {
                           "type": "string",
                           "pattern": "^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$",
-                          "shape_name": "Arn",
-                          "documentation": null
+                          "zonbookDocumentation": "\n        <simpara>The ARN of the user.</simpara>\n      ",
+                          "documentation": "\n        <p>The ARN of the user.</p>\n      ",
+                          "shape_name": "Arn"
                         },
                         "Id": {
                           "type": "string",
-                          "required": true,
+                          "internalonly": true,
                           "shape_name": "String",
                           "documentation": null,
                           "min_length": 1
@@ -9795,48 +10203,66 @@
                           "min_length": 1,
                           "max_length": 128
                         },
+                        "UserName": {
+                          "type": "string",
+                          "pattern": "[\\p{L}\\p{M}\\p{S}\\p{N}\\p{P}]+",
+                          "sensitive": true,
+                          "zonbookDocumentation": "\n        <simpara>The email address of the user.</simpara>\n      ",
+                          "documentation": "\n        <p>The email address of the user.</p>\n      ",
+                          "shape_name": "Username",
+                          "min_length": 1,
+                          "max_length": 128
+                        },
                         "EmailAddress": {
                           "type": "string",
+                          "pattern": "[\\p{L}\\p{M}\\p{S}\\p{N}\\p{P}]+",
                           "sensitive": true,
                           "internalonly": true,
-                          "shape_name": "UserAttributeValue",
+                          "shape_name": "Username",
                           "documentation": null,
-                          "max_length": 2048
+                          "min_length": 1,
+                          "max_length": 128
                         },
                         "Enabled": {
                           "type": "boolean",
-                          "shape_name": "Boolean",
-                          "documentation": null
+                          "zonbookDocumentation": "\n        <simpara>Specifies whether the user in the user pool is enabled.</simpara>\n      ",
+                          "documentation": "\n        <p>Specifies whether the user in the user pool is enabled.</p>\n      ",
+                          "shape_name": "Boolean"
                         },
                         "Status": {
                           "type": "string",
+                          "zonbookDocumentation": "\n        <simpara>The status of the user in the user pool. The status can be one of the following:</simpara>\n        <itemizedlist>\n            <listitem>\n               <simpara>UNCONFIRMED – The user is created but not confirmed.</simpara>\n            </listitem>\n            <listitem>\n               <simpara>CONFIRMED – The user is confirmed.</simpara>\n            </listitem>\n            <listitem>\n               <simpara>ARCHIVED – The user is no longer active.</simpara>\n            </listitem>\n            <listitem>\n               <simpara>COMPROMISED – The user is disabled because of a potential security threat.</simpara>\n            </listitem>\n            <listitem>\n               <simpara>UNKNOWN – The user status is not known.</simpara>\n            </listitem>\n        </itemizedlist>\n      ",
+                          "documentation": "\n        <p>The status of the user in the user pool. The status can be one of the following:</p>\n        <ul>\n            <li>\n               <p>UNCONFIRMED – The user is created but not confirmed.</p>\n            </li>\n            <li>\n               <p>CONFIRMED – The user is confirmed.</p>\n            </li>\n            <li>\n               <p>ARCHIVED – The user is no longer active.</p>\n            </li>\n            <li>\n               <p>COMPROMISED – The user is disabled because of a potential security threat.</p>\n            </li>\n            <li>\n               <p>UNKNOWN – The user status is not known.</p>\n            </li>\n         </ul>\n      ",
                           "shape_name": "String",
-                          "documentation": null,
                           "min_length": 1
                         },
                         "FirstName": {
                           "type": "string",
+                          "pattern": "^[A-Za-z0-9_\\-\\s]+$",
                           "sensitive": true,
-                          "internalonly": true,
+                          "zonbookDocumentation": "\n        <simpara>The first name, or given name, of the user.</simpara>\n      ",
+                          "documentation": "\n        <p>The first name, or given name, of the user.</p>\n      ",
                           "shape_name": "UserAttributeValue",
-                          "documentation": null,
                           "max_length": 2048
                         },
                         "LastName": {
                           "type": "string",
+                          "pattern": "^[A-Za-z0-9_\\-\\s]+$",
                           "sensitive": true,
-                          "internalonly": true,
+                          "zonbookDocumentation": "\n        <simpara>The last name, or surname, of the user.</simpara>\n      ",
+                          "documentation": "\n        <p>The last name, or surname, of the user.</p>\n      ",
                           "shape_name": "UserAttributeValue",
-                          "documentation": null,
                           "max_length": 2048
                         },
                         "CreatedTime": {
                           "type": "timestamp",
-                          "shape_name": "Timestamp",
-                          "documentation": null
+                          "zonbookDocumentation": "\n        <simpara>The date and time the user was created in the user pool.</simpara>\n      ",
+                          "documentation": "\n        <p>The date and time the user was created in the user pool.</p>\n      ",
+                          "shape_name": "Timestamp"
                         },
                         "LastModifiedTime": {
                           "type": "timestamp",
+                          "internalonly": true,
                           "shape_name": "Timestamp",
                           "documentation": null
                         },
@@ -9847,15 +10273,34 @@
                             "SAML",
                             "USERPOOL"
                           ],
+                          "zonbookDocumentation": "\n        <simpara>The authentication type for the user.</simpara>\n      ",
+                          "documentation": "\n        <p>The authentication type for the user.</p>\n      ",
                           "required": true,
-                          "shape_name": "AuthenticationType",
-                          "documentation": null
+                          "shape_name": "AuthenticationType"
                         }
                       },
-                      "documentation": "\n        A type representing a User in AppStream2\n    ",
-                      "internalonly": true,
-                      "required": true,
+                      "zonbookDocumentation": "\n        <simpara>Describes a user in the user pool.</simpara>\n      ",
+                      "documentation": "\n        <p>Describes a user in the user pool.</p>\n      ",
                       "shape_name": "User"
+                    },
+                    "UserName": {
+                      "type": "string",
+                      "pattern": "[\\p{L}\\p{M}\\p{S}\\p{N}\\p{P}]+",
+                      "sensitive": true,
+                      "shape_name": "Username",
+                      "documentation": null,
+                      "min_length": 1,
+                      "max_length": 128
+                    },
+                    "AuthenticationType": {
+                      "type": "string",
+                      "enum": [
+                        "API",
+                        "SAML",
+                        "USERPOOL"
+                      ],
+                      "shape_name": "AuthenticationType",
+                      "documentation": null
                     },
                     "SendEmailNotification": {
                       "type": "boolean",
@@ -9872,6 +10317,7 @@
                   "documentation": "\n        Error code returned during adding/removing User to Stack assignments in AppStream2\n    ",
                   "enum": [
                     "STACK_NOT_FOUND",
+                    "USER_NAME_NOT_FOUND",
                     "INTERNAL_ERROR"
                   ],
                   "internalonly": true,
@@ -9897,6 +10343,455 @@
 
       ],
       "documentation": "\n        Removes User to Stack assignments. If any errors are encountered while removing assignments\n        then they are returned individually per assignment in the Result.\n    "
+    },
+    "BatchAssociateUserStack": {
+      "name": "BatchAssociateUserStack",
+      "input": {
+        "type": "structure",
+        "members": {
+          "UserStackAssociations": {
+            "type": "list",
+            "zonbookDocumentation": "\n        <simpara>The list of UserStackAssociation objects.</simpara>\n      ",
+            "documentation": "\n        <p>The list of UserStackAssociation objects.</p>\n      ",
+            "required": true,
+            "shape_name": "UserStackAssociationList",
+            "members": {
+              "type": "structure",
+              "members": {
+                "StackName": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n        <simpara>The name of the stack that is associated with the user.</simpara>\n      ",
+                  "documentation": "\n        <p>The name of the stack that is associated with the user.</p>\n      ",
+                  "required": true,
+                  "shape_name": "String",
+                  "min_length": 1
+                },
+                "UserName": {
+                  "type": "string",
+                  "pattern": "[\\p{L}\\p{M}\\p{S}\\p{N}\\p{P}]+",
+                  "sensitive": true,
+                  "zonbookDocumentation": "\n        <simpara>The email address of the user who is associated with the stack.</simpara>\n      ",
+                  "documentation": "\n        <p>The email address of the user who is associated with the stack.</p>\n      ",
+                  "required": true,
+                  "shape_name": "Username",
+                  "min_length": 1,
+                  "max_length": 128
+                },
+                "AuthenticationType": {
+                  "type": "string",
+                  "enum": [
+                    "API",
+                    "SAML",
+                    "USERPOOL"
+                  ],
+                  "zonbookDocumentation": "\n        <simpara>The authentication type for the user.</simpara>\n      ",
+                  "documentation": "\n        <p>The authentication type for the user.</p>\n      ",
+                  "required": true,
+                  "shape_name": "AuthenticationType"
+                },
+                "SendEmailNotification": {
+                  "type": "boolean",
+                  "zonbookDocumentation": "\n        <simpara>Specifies whether a welcome email is sent to a user after the user is created in the user pool.</simpara>\n      ",
+                  "documentation": "\n        <p>Specifies whether a welcome email is sent to a user after the user is created in the user pool.</p>\n      ",
+                  "shape_name": "Boolean"
+                }
+              },
+              "zonbookDocumentation": "\n        <simpara>Describes a user in the user pool and the associated stack.</simpara>\n      ",
+              "documentation": "\n        <p>Describes a user in the user pool and the associated stack.</p>\n      ",
+              "shape_name": "UserStackAssociation"
+            }
+          }
+        },
+        "shape_name": "BatchAssociateUserStackRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "errors": {
+            "type": "list",
+            "zonbookDocumentation": "\n        <simpara>The list of UserStackAssociationError objects.</simpara>\n      ",
+            "documentation": "\n        <p>The list of UserStackAssociationError objects.</p>\n      ",
+            "shape_name": "UserStackAssociationErrorList",
+            "members": {
+              "type": "structure",
+              "members": {
+                "UserStackAssociation": {
+                  "type": "structure",
+                  "members": {
+                    "StackName": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n        <simpara>The name of the stack that is associated with the user.</simpara>\n      ",
+                      "documentation": "\n        <p>The name of the stack that is associated with the user.</p>\n      ",
+                      "required": true,
+                      "shape_name": "String",
+                      "min_length": 1
+                    },
+                    "UserName": {
+                      "type": "string",
+                      "pattern": "[\\p{L}\\p{M}\\p{S}\\p{N}\\p{P}]+",
+                      "sensitive": true,
+                      "zonbookDocumentation": "\n        <simpara>The email address of the user who is associated with the stack.</simpara>\n      ",
+                      "documentation": "\n        <p>The email address of the user who is associated with the stack.</p>\n      ",
+                      "required": true,
+                      "shape_name": "Username",
+                      "min_length": 1,
+                      "max_length": 128
+                    },
+                    "AuthenticationType": {
+                      "type": "string",
+                      "enum": [
+                        "API",
+                        "SAML",
+                        "USERPOOL"
+                      ],
+                      "zonbookDocumentation": "\n        <simpara>The authentication type for the user.</simpara>\n      ",
+                      "documentation": "\n        <p>The authentication type for the user.</p>\n      ",
+                      "required": true,
+                      "shape_name": "AuthenticationType"
+                    },
+                    "SendEmailNotification": {
+                      "type": "boolean",
+                      "zonbookDocumentation": "\n        <simpara>Specifies whether a welcome email is sent to a user after the user is created in the user pool.</simpara>\n      ",
+                      "documentation": "\n        <p>Specifies whether a welcome email is sent to a user after the user is created in the user pool.</p>\n      ",
+                      "shape_name": "Boolean"
+                    }
+                  },
+                  "zonbookDocumentation": "\n        <simpara>Information about the user and associated stack.</simpara>\n      ",
+                  "documentation": "\n        <p>Information about the user and associated stack.</p>\n      ",
+                  "shape_name": "UserStackAssociation"
+                },
+                "ErrorCode": {
+                  "type": "string",
+                  "enum": [
+                    "STACK_NOT_FOUND",
+                    "USER_NAME_NOT_FOUND",
+                    "INTERNAL_ERROR"
+                  ],
+                  "zonbookDocumentation": "\n        <simpara>The error code for the error that is returned when a user can’t be associated with or disassociated from a stack.</simpara>\n      ",
+                  "documentation": "\n        <p>The error code for the error that is returned when a user can’t be associated with or disassociated from a stack.</p>\n      ",
+                  "shape_name": "UserStackAssociationErrorCode"
+                },
+                "ErrorMessage": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n        <simpara>The error message for the error that is returned when a user can’t be associated with or disassociated from a stack.</simpara>\n      ",
+                  "documentation": "\n        <p>The error message for the error that is returned when a user can’t be associated with or disassociated from a stack.</p>\n      ",
+                  "shape_name": "String",
+                  "min_length": 1
+                }
+              },
+              "zonbookDocumentation": "\n        <simpara>Describes the error that is returned when a user can’t be associated with or disassociated from a stack. </simpara>\n      ",
+              "documentation": "\n        <p>Describes the error that is returned when a user can’t be associated with or disassociated from a stack. </p>\n      ",
+              "shape_name": "UserStackAssociationError"
+            }
+          }
+        },
+        "shape_name": "BatchAssociateUserStackResult",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The error message in the exception.</simpara>\n      ",
+              "documentation": "\n        <p>The error message in the exception.</p>\n      ",
+              "shape_name": "ErrorMessage"
+            }
+          },
+          "zonbookDocumentation": "\n        <simpara>The attempted operation is not permitted.</simpara>\n      ",
+          "documentation": "\n        <p>The attempted operation is not permitted.</p>\n      ",
+          "shape_name": "OperationNotPermittedException"
+        }
+      ],
+      "documentation": "\n        <p>Associates the specified users with the specified stacks. Users in a user pool cannot be assigned to stacks with fleets that are joined to an Active Directory domain.</p>\n      "
+    },
+    "BatchDisassociateUserStack": {
+      "name": "BatchDisassociateUserStack",
+      "input": {
+        "type": "structure",
+        "members": {
+          "UserStackAssociations": {
+            "type": "list",
+            "zonbookDocumentation": "\n        <simpara>The list of UserStackAssociation objects.</simpara>\n      ",
+            "documentation": "\n        <p>The list of UserStackAssociation objects.</p>\n      ",
+            "required": true,
+            "shape_name": "UserStackAssociationList",
+            "members": {
+              "type": "structure",
+              "members": {
+                "StackName": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n        <simpara>The name of the stack that is associated with the user.</simpara>\n      ",
+                  "documentation": "\n        <p>The name of the stack that is associated with the user.</p>\n      ",
+                  "required": true,
+                  "shape_name": "String",
+                  "min_length": 1
+                },
+                "UserName": {
+                  "type": "string",
+                  "pattern": "[\\p{L}\\p{M}\\p{S}\\p{N}\\p{P}]+",
+                  "sensitive": true,
+                  "zonbookDocumentation": "\n        <simpara>The email address of the user who is associated with the stack.</simpara>\n      ",
+                  "documentation": "\n        <p>The email address of the user who is associated with the stack.</p>\n      ",
+                  "required": true,
+                  "shape_name": "Username",
+                  "min_length": 1,
+                  "max_length": 128
+                },
+                "AuthenticationType": {
+                  "type": "string",
+                  "enum": [
+                    "API",
+                    "SAML",
+                    "USERPOOL"
+                  ],
+                  "zonbookDocumentation": "\n        <simpara>The authentication type for the user.</simpara>\n      ",
+                  "documentation": "\n        <p>The authentication type for the user.</p>\n      ",
+                  "required": true,
+                  "shape_name": "AuthenticationType"
+                },
+                "SendEmailNotification": {
+                  "type": "boolean",
+                  "zonbookDocumentation": "\n        <simpara>Specifies whether a welcome email is sent to a user after the user is created in the user pool.</simpara>\n      ",
+                  "documentation": "\n        <p>Specifies whether a welcome email is sent to a user after the user is created in the user pool.</p>\n      ",
+                  "shape_name": "Boolean"
+                }
+              },
+              "zonbookDocumentation": "\n        <simpara>Describes a user in the user pool and the associated stack.</simpara>\n      ",
+              "documentation": "\n        <p>Describes a user in the user pool and the associated stack.</p>\n      ",
+              "shape_name": "UserStackAssociation"
+            }
+          }
+        },
+        "shape_name": "BatchDisassociateUserStackRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "errors": {
+            "type": "list",
+            "zonbookDocumentation": "\n        <simpara>The list of UserStackAssociationError objects.</simpara>\n      ",
+            "documentation": "\n        <p>The list of UserStackAssociationError objects.</p>\n      ",
+            "shape_name": "UserStackAssociationErrorList",
+            "members": {
+              "type": "structure",
+              "members": {
+                "UserStackAssociation": {
+                  "type": "structure",
+                  "members": {
+                    "StackName": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n        <simpara>The name of the stack that is associated with the user.</simpara>\n      ",
+                      "documentation": "\n        <p>The name of the stack that is associated with the user.</p>\n      ",
+                      "required": true,
+                      "shape_name": "String",
+                      "min_length": 1
+                    },
+                    "UserName": {
+                      "type": "string",
+                      "pattern": "[\\p{L}\\p{M}\\p{S}\\p{N}\\p{P}]+",
+                      "sensitive": true,
+                      "zonbookDocumentation": "\n        <simpara>The email address of the user who is associated with the stack.</simpara>\n      ",
+                      "documentation": "\n        <p>The email address of the user who is associated with the stack.</p>\n      ",
+                      "required": true,
+                      "shape_name": "Username",
+                      "min_length": 1,
+                      "max_length": 128
+                    },
+                    "AuthenticationType": {
+                      "type": "string",
+                      "enum": [
+                        "API",
+                        "SAML",
+                        "USERPOOL"
+                      ],
+                      "zonbookDocumentation": "\n        <simpara>The authentication type for the user.</simpara>\n      ",
+                      "documentation": "\n        <p>The authentication type for the user.</p>\n      ",
+                      "required": true,
+                      "shape_name": "AuthenticationType"
+                    },
+                    "SendEmailNotification": {
+                      "type": "boolean",
+                      "zonbookDocumentation": "\n        <simpara>Specifies whether a welcome email is sent to a user after the user is created in the user pool.</simpara>\n      ",
+                      "documentation": "\n        <p>Specifies whether a welcome email is sent to a user after the user is created in the user pool.</p>\n      ",
+                      "shape_name": "Boolean"
+                    }
+                  },
+                  "zonbookDocumentation": "\n        <simpara>Information about the user and associated stack.</simpara>\n      ",
+                  "documentation": "\n        <p>Information about the user and associated stack.</p>\n      ",
+                  "shape_name": "UserStackAssociation"
+                },
+                "ErrorCode": {
+                  "type": "string",
+                  "enum": [
+                    "STACK_NOT_FOUND",
+                    "USER_NAME_NOT_FOUND",
+                    "INTERNAL_ERROR"
+                  ],
+                  "zonbookDocumentation": "\n        <simpara>The error code for the error that is returned when a user can’t be associated with or disassociated from a stack.</simpara>\n      ",
+                  "documentation": "\n        <p>The error code for the error that is returned when a user can’t be associated with or disassociated from a stack.</p>\n      ",
+                  "shape_name": "UserStackAssociationErrorCode"
+                },
+                "ErrorMessage": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n        <simpara>The error message for the error that is returned when a user can’t be associated with or disassociated from a stack.</simpara>\n      ",
+                  "documentation": "\n        <p>The error message for the error that is returned when a user can’t be associated with or disassociated from a stack.</p>\n      ",
+                  "shape_name": "String",
+                  "min_length": 1
+                }
+              },
+              "zonbookDocumentation": "\n        <simpara>Describes the error that is returned when a user can’t be associated with or disassociated from a stack. </simpara>\n      ",
+              "documentation": "\n        <p>Describes the error that is returned when a user can’t be associated with or disassociated from a stack. </p>\n      ",
+              "shape_name": "UserStackAssociationError"
+            }
+          }
+        },
+        "shape_name": "BatchDisassociateUserStackResult",
+        "documentation": null
+      },
+      "errors": [
+
+      ],
+      "documentation": "\n        <p>Disassociates the specified users from the specified stacks.</p>\n      "
+    },
+    "DescribeUserStackAssociations": {
+      "name": "DescribeUserStackAssociations",
+      "input": {
+        "type": "structure",
+        "members": {
+          "StackName": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <simpara>The name of the stack that is associated with the user.</simpara>\n      ",
+            "documentation": "\n        <p>The name of the stack that is associated with the user.</p>\n      ",
+            "shape_name": "String",
+            "min_length": 1
+          },
+          "UserName": {
+            "type": "string",
+            "pattern": "[\\p{L}\\p{M}\\p{S}\\p{N}\\p{P}]+",
+            "sensitive": true,
+            "zonbookDocumentation": "\n        <simpara>The email address of the user who is associated with the stack.</simpara>\n      ",
+            "documentation": "\n        <p>The email address of the user who is associated with the stack.</p>\n      ",
+            "shape_name": "Username",
+            "min_length": 1,
+            "max_length": 128
+          },
+          "AuthenticationType": {
+            "type": "string",
+            "enum": [
+              "API",
+              "SAML",
+              "USERPOOL"
+            ],
+            "zonbookDocumentation": "\n        <simpara>The authentication type for the user who is associated with the stack. You must specify USERPOOL.</simpara>\n      ",
+            "documentation": "\n        <p>The authentication type for the user who is associated with the stack. You must specify USERPOOL.</p>\n      ",
+            "shape_name": "AuthenticationType"
+          },
+          "MaxResults": {
+            "type": "integer",
+            "box": true,
+            "zonbookDocumentation": "\n        <simpara>The maximum size of each page of results.</simpara>\n      ",
+            "documentation": "\n        <p>The maximum size of each page of results.</p>\n      ",
+            "shape_name": "MaxResults",
+            "min_length": 0,
+            "max_length": 500
+          },
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <simpara>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</simpara>\n      ",
+            "documentation": "\n        <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>\n      ",
+            "shape_name": "String",
+            "min_length": 1
+          }
+        },
+        "shape_name": "DescribeUserStackAssociationsRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "UserStackAssociations": {
+            "type": "list",
+            "zonbookDocumentation": "\n        <simpara>The UserStackAssociation objects.</simpara>\n      ",
+            "documentation": "\n        <p>The UserStackAssociation objects.</p>\n      ",
+            "shape_name": "UserStackAssociationList",
+            "members": {
+              "type": "structure",
+              "members": {
+                "StackName": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n        <simpara>The name of the stack that is associated with the user.</simpara>\n      ",
+                  "documentation": "\n        <p>The name of the stack that is associated with the user.</p>\n      ",
+                  "required": true,
+                  "shape_name": "String",
+                  "min_length": 1
+                },
+                "UserName": {
+                  "type": "string",
+                  "pattern": "[\\p{L}\\p{M}\\p{S}\\p{N}\\p{P}]+",
+                  "sensitive": true,
+                  "zonbookDocumentation": "\n        <simpara>The email address of the user who is associated with the stack.</simpara>\n      ",
+                  "documentation": "\n        <p>The email address of the user who is associated with the stack.</p>\n      ",
+                  "required": true,
+                  "shape_name": "Username",
+                  "min_length": 1,
+                  "max_length": 128
+                },
+                "AuthenticationType": {
+                  "type": "string",
+                  "enum": [
+                    "API",
+                    "SAML",
+                    "USERPOOL"
+                  ],
+                  "zonbookDocumentation": "\n        <simpara>The authentication type for the user.</simpara>\n      ",
+                  "documentation": "\n        <p>The authentication type for the user.</p>\n      ",
+                  "required": true,
+                  "shape_name": "AuthenticationType"
+                },
+                "SendEmailNotification": {
+                  "type": "boolean",
+                  "zonbookDocumentation": "\n        <simpara>Specifies whether a welcome email is sent to a user after the user is created in the user pool.</simpara>\n      ",
+                  "documentation": "\n        <p>Specifies whether a welcome email is sent to a user after the user is created in the user pool.</p>\n      ",
+                  "shape_name": "Boolean"
+                }
+              },
+              "zonbookDocumentation": "\n        <simpara>Describes a user in the user pool and the associated stack.</simpara>\n      ",
+              "documentation": "\n        <p>Describes a user in the user pool and the associated stack.</p>\n      ",
+              "shape_name": "UserStackAssociation"
+            }
+          },
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <simpara>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</simpara>\n      ",
+            "documentation": "\n        <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>\n      ",
+            "shape_name": "String",
+            "min_length": 1
+          }
+        },
+        "shape_name": "DescribeUserStackAssociationsResult",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "zonbookDocumentation": "\n        <simpara>The error message in the exception.</simpara>\n      ",
+              "documentation": "\n        <p>The error message in the exception.</p>\n      ",
+              "shape_name": "ErrorMessage"
+            }
+          },
+          "zonbookDocumentation": "\n        <simpara>Indicates an incorrect combination of parameters, or a missing parameter.</simpara>\n      ",
+          "documentation": "\n        <p>Indicates an incorrect combination of parameters, or a missing parameter.</p>\n      ",
+          "shape_name": "InvalidParameterCombinationException"
+        }
+      ],
+      "documentation": "\n        <p>Retrieves a list that describes the UserStackAssociation objects. You must specify either or both of the following:</p>\n        <ul>\n            <li>\n               <p>The stack name</p>\n            </li>\n            <li> \n               <p>The user name (email address of the user associated with the stack) and the authentication type for the user</p>\n            </li>\n         </ul>      \n      "
     },
     "CreateDirectoryConfig": {
       "name": "CreateDirectoryConfig",
@@ -10855,6 +11750,7 @@
               },
               "titleText": {
                 "type": "string",
+                "pattern": "^[-@./#&+\\w\\s]*$",
                 "internalonly": true,
                 "shape_name": "ThemeTitleText",
                 "documentation": null,
@@ -10877,6 +11773,7 @@
                   "members": {
                     "displayName": {
                       "type": "string",
+                      "pattern": "^[-@./#&+\\w\\s]*$",
                       "internalonly": true,
                       "shape_name": "ThemeFooterLinkDisplayName",
                       "documentation": null,
@@ -11019,6 +11916,7 @@
                 },
                 "titleText": {
                   "type": "string",
+                  "pattern": "^[-@./#&+\\w\\s]*$",
                   "internalonly": true,
                   "shape_name": "ThemeTitleText",
                   "documentation": null,
@@ -11041,6 +11939,7 @@
                     "members": {
                       "displayName": {
                         "type": "string",
+                        "pattern": "^[-@./#&+\\w\\s]*$",
                         "internalonly": true,
                         "shape_name": "ThemeFooterLinkDisplayName",
                         "documentation": null,
@@ -11167,6 +12066,7 @@
               "members": {
                 "displayName": {
                   "type": "string",
+                  "pattern": "^[-@./#&+\\w\\s]*$",
                   "internalonly": true,
                   "shape_name": "ThemeFooterLinkDisplayName",
                   "documentation": null,
@@ -11189,6 +12089,7 @@
           },
           "titleText": {
             "type": "string",
+            "pattern": "^[-@./#&+\\w\\s]*$",
             "internalonly": true,
             "required": true,
             "shape_name": "ThemeTitleText",
@@ -11335,6 +12236,7 @@
               "members": {
                 "displayName": {
                   "type": "string",
+                  "pattern": "^[-@./#&+\\w\\s]*$",
                   "internalonly": true,
                   "shape_name": "ThemeFooterLinkDisplayName",
                   "documentation": null,
@@ -11357,6 +12259,7 @@
           },
           "titleText": {
             "type": "string",
+            "pattern": "^[-@./#&+\\w\\s]*$",
             "internalonly": true,
             "shape_name": "ThemeTitleText",
             "documentation": null,

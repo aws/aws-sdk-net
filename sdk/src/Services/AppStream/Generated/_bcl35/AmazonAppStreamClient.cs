@@ -311,6 +311,116 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  BatchAssociateUserStack
+
+        /// <summary>
+        /// Associates the specified users with the specified stacks. Users in a user pool cannot
+        /// be assigned to stacks with fleets that are joined to an Active Directory domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchAssociateUserStack service method.</param>
+        /// 
+        /// <returns>The response from the BatchAssociateUserStack service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/BatchAssociateUserStack">REST API Reference for BatchAssociateUserStack Operation</seealso>
+        public virtual BatchAssociateUserStackResponse BatchAssociateUserStack(BatchAssociateUserStackRequest request)
+        {
+            var marshaller = BatchAssociateUserStackRequestMarshaller.Instance;
+            var unmarshaller = BatchAssociateUserStackResponseUnmarshaller.Instance;
+
+            return Invoke<BatchAssociateUserStackRequest,BatchAssociateUserStackResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchAssociateUserStack operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchAssociateUserStack operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchAssociateUserStack
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/BatchAssociateUserStack">REST API Reference for BatchAssociateUserStack Operation</seealso>
+        public virtual IAsyncResult BeginBatchAssociateUserStack(BatchAssociateUserStackRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = BatchAssociateUserStackRequestMarshaller.Instance;
+            var unmarshaller = BatchAssociateUserStackResponseUnmarshaller.Instance;
+
+            return BeginInvoke<BatchAssociateUserStackRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchAssociateUserStack operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchAssociateUserStack.</param>
+        /// 
+        /// <returns>Returns a  BatchAssociateUserStackResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/BatchAssociateUserStack">REST API Reference for BatchAssociateUserStack Operation</seealso>
+        public virtual BatchAssociateUserStackResponse EndBatchAssociateUserStack(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchAssociateUserStackResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  BatchDisassociateUserStack
+
+        /// <summary>
+        /// Disassociates the specified users from the specified stacks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDisassociateUserStack service method.</param>
+        /// 
+        /// <returns>The response from the BatchDisassociateUserStack service method, as returned by AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/BatchDisassociateUserStack">REST API Reference for BatchDisassociateUserStack Operation</seealso>
+        public virtual BatchDisassociateUserStackResponse BatchDisassociateUserStack(BatchDisassociateUserStackRequest request)
+        {
+            var marshaller = BatchDisassociateUserStackRequestMarshaller.Instance;
+            var unmarshaller = BatchDisassociateUserStackResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDisassociateUserStackRequest,BatchDisassociateUserStackResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchDisassociateUserStack operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchDisassociateUserStack operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchDisassociateUserStack
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/BatchDisassociateUserStack">REST API Reference for BatchDisassociateUserStack Operation</seealso>
+        public virtual IAsyncResult BeginBatchDisassociateUserStack(BatchDisassociateUserStackRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = BatchDisassociateUserStackRequestMarshaller.Instance;
+            var unmarshaller = BatchDisassociateUserStackResponseUnmarshaller.Instance;
+
+            return BeginInvoke<BatchDisassociateUserStackRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchDisassociateUserStack operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchDisassociateUserStack.</param>
+        /// 
+        /// <returns>Returns a  BatchDisassociateUserStackResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/BatchDisassociateUserStack">REST API Reference for BatchDisassociateUserStack Operation</seealso>
+        public virtual BatchDisassociateUserStackResponse EndBatchDisassociateUserStack(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchDisassociateUserStackResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CopyImage
 
         /// <summary>
@@ -824,6 +934,75 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  CreateUser
+
+        /// <summary>
+        /// Creates a new user in the user pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUser service method.</param>
+        /// 
+        /// <returns>The response from the CreateUser service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.InvalidAccountStatusException">
+        /// The resource cannot be created because your AWS account is suspended. For assistance,
+        /// contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
+        /// The requested limit exceeds the permitted limit for an account.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateUser">REST API Reference for CreateUser Operation</seealso>
+        public virtual CreateUserResponse CreateUser(CreateUserRequest request)
+        {
+            var marshaller = CreateUserRequestMarshaller.Instance;
+            var unmarshaller = CreateUserResponseUnmarshaller.Instance;
+
+            return Invoke<CreateUserRequest,CreateUserResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateUser operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateUser operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateUser
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateUser">REST API Reference for CreateUser Operation</seealso>
+        public virtual IAsyncResult BeginCreateUser(CreateUserRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = CreateUserRequestMarshaller.Instance;
+            var unmarshaller = CreateUserResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateUserRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateUser operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateUser.</param>
+        /// 
+        /// <returns>Returns a  CreateUserResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateUser">REST API Reference for CreateUser Operation</seealso>
+        public virtual CreateUserResponse EndCreateUser(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateUserResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteDirectoryConfig
 
         /// <summary>
@@ -1195,6 +1374,62 @@ namespace Amazon.AppStream
         public virtual DeleteStackResponse EndDeleteStack(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteStackResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteUser
+
+        /// <summary>
+        /// Deletes a user from the user pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUser service method.</param>
+        /// 
+        /// <returns>The response from the DeleteUser service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
+        public virtual DeleteUserResponse DeleteUser(DeleteUserRequest request)
+        {
+            var marshaller = DeleteUserRequestMarshaller.Instance;
+            var unmarshaller = DeleteUserResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteUserRequest,DeleteUserResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteUser operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUser operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteUser
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
+        public virtual IAsyncResult BeginDeleteUser(DeleteUserRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DeleteUserRequestMarshaller.Instance;
+            var unmarshaller = DeleteUserResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteUserRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteUser operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteUser.</param>
+        /// 
+        /// <returns>Returns a  DeleteUserResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
+        public virtual DeleteUserResponse EndDeleteUser(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteUserResponse>(asyncResult);
         }
 
         #endregion
@@ -1611,6 +1846,191 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  DescribeUsers
+
+        /// <summary>
+        /// Retrieves a list that describes one or more specified users in the user pool, if user
+        /// names are provided. Otherwise, all users in the user pool are described.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeUsers service method.</param>
+        /// 
+        /// <returns>The response from the DescribeUsers service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeUsers">REST API Reference for DescribeUsers Operation</seealso>
+        public virtual DescribeUsersResponse DescribeUsers(DescribeUsersRequest request)
+        {
+            var marshaller = DescribeUsersRequestMarshaller.Instance;
+            var unmarshaller = DescribeUsersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeUsersRequest,DescribeUsersResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeUsers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeUsers operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeUsers
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeUsers">REST API Reference for DescribeUsers Operation</seealso>
+        public virtual IAsyncResult BeginDescribeUsers(DescribeUsersRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DescribeUsersRequestMarshaller.Instance;
+            var unmarshaller = DescribeUsersResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeUsersRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeUsers operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeUsers.</param>
+        /// 
+        /// <returns>Returns a  DescribeUsersResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeUsers">REST API Reference for DescribeUsers Operation</seealso>
+        public virtual DescribeUsersResponse EndDescribeUsers(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeUsersResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeUserStackAssociations
+
+        /// <summary>
+        /// Retrieves a list that describes the UserStackAssociation objects. You must specify
+        /// either or both of the following:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The stack name
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The user name (email address of the user associated with the stack) and the authentication
+        /// type for the user
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeUserStackAssociations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeUserStackAssociations service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeUserStackAssociations">REST API Reference for DescribeUserStackAssociations Operation</seealso>
+        public virtual DescribeUserStackAssociationsResponse DescribeUserStackAssociations(DescribeUserStackAssociationsRequest request)
+        {
+            var marshaller = DescribeUserStackAssociationsRequestMarshaller.Instance;
+            var unmarshaller = DescribeUserStackAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeUserStackAssociationsRequest,DescribeUserStackAssociationsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeUserStackAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeUserStackAssociations operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeUserStackAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeUserStackAssociations">REST API Reference for DescribeUserStackAssociations Operation</seealso>
+        public virtual IAsyncResult BeginDescribeUserStackAssociations(DescribeUserStackAssociationsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DescribeUserStackAssociationsRequestMarshaller.Instance;
+            var unmarshaller = DescribeUserStackAssociationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeUserStackAssociationsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeUserStackAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeUserStackAssociations.</param>
+        /// 
+        /// <returns>Returns a  DescribeUserStackAssociationsResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeUserStackAssociations">REST API Reference for DescribeUserStackAssociations Operation</seealso>
+        public virtual DescribeUserStackAssociationsResponse EndDescribeUserStackAssociations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeUserStackAssociationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DisableUser
+
+        /// <summary>
+        /// Disables the specified user in the user pool. Users can't sign in to AppStream 2.0
+        /// until they are re-enabled. This action does not delete the user.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableUser service method.</param>
+        /// 
+        /// <returns>The response from the DisableUser service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisableUser">REST API Reference for DisableUser Operation</seealso>
+        public virtual DisableUserResponse DisableUser(DisableUserRequest request)
+        {
+            var marshaller = DisableUserRequestMarshaller.Instance;
+            var unmarshaller = DisableUserResponseUnmarshaller.Instance;
+
+            return Invoke<DisableUserRequest,DisableUserResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableUser operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableUser operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableUser
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisableUser">REST API Reference for DisableUser Operation</seealso>
+        public virtual IAsyncResult BeginDisableUser(DisableUserRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DisableUserRequestMarshaller.Instance;
+            var unmarshaller = DisableUserResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DisableUserRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisableUser operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableUser.</param>
+        /// 
+        /// <returns>Returns a  DisableUserResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisableUser">REST API Reference for DisableUser Operation</seealso>
+        public virtual DisableUserResponse EndDisableUser(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisableUserResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DisassociateFleet
 
         /// <summary>
@@ -1669,6 +2089,67 @@ namespace Amazon.AppStream
         public virtual DisassociateFleetResponse EndDisassociateFleet(IAsyncResult asyncResult)
         {
             return EndInvoke<DisassociateFleetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  EnableUser
+
+        /// <summary>
+        /// Enables a user in the user pool. After being enabled, users can sign in to AppStream
+        /// 2.0 and open applications from the stacks to which they are assigned.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableUser service method.</param>
+        /// 
+        /// <returns>The response from the EnableUser service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.InvalidAccountStatusException">
+        /// The resource cannot be created because your AWS account is suspended. For assistance,
+        /// contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/EnableUser">REST API Reference for EnableUser Operation</seealso>
+        public virtual EnableUserResponse EnableUser(EnableUserRequest request)
+        {
+            var marshaller = EnableUserRequestMarshaller.Instance;
+            var unmarshaller = EnableUserResponseUnmarshaller.Instance;
+
+            return Invoke<EnableUserRequest,EnableUserResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableUser operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableUser operation on AmazonAppStreamClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableUser
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/EnableUser">REST API Reference for EnableUser Operation</seealso>
+        public virtual IAsyncResult BeginEnableUser(EnableUserRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = EnableUserRequestMarshaller.Instance;
+            var unmarshaller = EnableUserResponseUnmarshaller.Instance;
+
+            return BeginInvoke<EnableUserRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  EnableUser operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableUser.</param>
+        /// 
+        /// <returns>Returns a  EnableUserResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/EnableUser">REST API Reference for EnableUser Operation</seealso>
+        public virtual EnableUserResponse EndEnableUser(IAsyncResult asyncResult)
+        {
+            return EndInvoke<EnableUserResponse>(asyncResult);
         }
 
         #endregion

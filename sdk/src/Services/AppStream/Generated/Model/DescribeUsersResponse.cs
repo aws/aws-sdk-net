@@ -28,31 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeImagePermissions operation.
+    /// This is the response object from the DescribeUsers operation.
     /// </summary>
-    public partial class DescribeImagePermissionsResponse : AmazonWebServiceResponse
+    public partial class DescribeUsersResponse : AmazonWebServiceResponse
     {
-        private string _name;
         private string _nextToken;
-        private List<SharedImagePermissions> _sharedImagePermissionsList = new List<SharedImagePermissions>();
-
-        /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// The name of the private image.
-        /// </para>
-        /// </summary>
-        public string Name
-        {
-            get { return this._name; }
-            set { this._name = value; }
-        }
-
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this._name != null;
-        }
+        private List<User> _users = new List<User>();
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -74,21 +55,21 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SharedImagePermissionsList. 
+        /// Gets and sets the property Users. 
         /// <para>
-        /// The permissions for a private image that you own. 
+        /// Information about users in the user pool.
         /// </para>
         /// </summary>
-        public List<SharedImagePermissions> SharedImagePermissionsList
+        public List<User> Users
         {
-            get { return this._sharedImagePermissionsList; }
-            set { this._sharedImagePermissionsList = value; }
+            get { return this._users; }
+            set { this._users = value; }
         }
 
-        // Check to see if SharedImagePermissionsList property is set
-        internal bool IsSetSharedImagePermissionsList()
+        // Check to see if Users property is set
+        internal bool IsSetUsers()
         {
-            return this._sharedImagePermissionsList != null && this._sharedImagePermissionsList.Count > 0; 
+            return this._users != null && this._users.Count > 0; 
         }
 
     }

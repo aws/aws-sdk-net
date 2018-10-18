@@ -299,6 +299,88 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  BatchAssociateUserStack
+
+
+        /// <summary>
+        /// Associates the specified users with the specified stacks. Users in a user pool cannot
+        /// be assigned to stacks with fleets that are joined to an Active Directory domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchAssociateUserStack service method.</param>
+        /// 
+        /// <returns>The response from the BatchAssociateUserStack service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/BatchAssociateUserStack">REST API Reference for BatchAssociateUserStack Operation</seealso>
+        public virtual BatchAssociateUserStackResponse BatchAssociateUserStack(BatchAssociateUserStackRequest request)
+        {
+            var marshaller = BatchAssociateUserStackRequestMarshaller.Instance;
+            var unmarshaller = BatchAssociateUserStackResponseUnmarshaller.Instance;
+
+            return Invoke<BatchAssociateUserStackRequest,BatchAssociateUserStackResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchAssociateUserStack operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchAssociateUserStack operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/BatchAssociateUserStack">REST API Reference for BatchAssociateUserStack Operation</seealso>
+        public virtual Task<BatchAssociateUserStackResponse> BatchAssociateUserStackAsync(BatchAssociateUserStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = BatchAssociateUserStackRequestMarshaller.Instance;
+            var unmarshaller = BatchAssociateUserStackResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchAssociateUserStackRequest,BatchAssociateUserStackResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchDisassociateUserStack
+
+
+        /// <summary>
+        /// Disassociates the specified users from the specified stacks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDisassociateUserStack service method.</param>
+        /// 
+        /// <returns>The response from the BatchDisassociateUserStack service method, as returned by AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/BatchDisassociateUserStack">REST API Reference for BatchDisassociateUserStack Operation</seealso>
+        public virtual BatchDisassociateUserStackResponse BatchDisassociateUserStack(BatchDisassociateUserStackRequest request)
+        {
+            var marshaller = BatchDisassociateUserStackRequestMarshaller.Instance;
+            var unmarshaller = BatchDisassociateUserStackResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDisassociateUserStackRequest,BatchDisassociateUserStackResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchDisassociateUserStack operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchDisassociateUserStack operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/BatchDisassociateUserStack">REST API Reference for BatchDisassociateUserStack Operation</seealso>
+        public virtual Task<BatchDisassociateUserStackResponse> BatchDisassociateUserStackAsync(BatchDisassociateUserStackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = BatchDisassociateUserStackRequestMarshaller.Instance;
+            var unmarshaller = BatchDisassociateUserStackResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchDisassociateUserStackRequest,BatchDisassociateUserStackResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CopyImage
 
 
@@ -714,6 +796,61 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  CreateUser
+
+
+        /// <summary>
+        /// Creates a new user in the user pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUser service method.</param>
+        /// 
+        /// <returns>The response from the CreateUser service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.InvalidAccountStatusException">
+        /// The resource cannot be created because your AWS account is suspended. For assistance,
+        /// contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
+        /// The requested limit exceeds the permitted limit for an account.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateUser">REST API Reference for CreateUser Operation</seealso>
+        public virtual CreateUserResponse CreateUser(CreateUserRequest request)
+        {
+            var marshaller = CreateUserRequestMarshaller.Instance;
+            var unmarshaller = CreateUserResponseUnmarshaller.Instance;
+
+            return Invoke<CreateUserRequest,CreateUserResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateUser operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateUser operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateUser">REST API Reference for CreateUser Operation</seealso>
+        public virtual Task<CreateUserResponse> CreateUserAsync(CreateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateUserRequestMarshaller.Instance;
+            var unmarshaller = CreateUserResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateUserRequest,CreateUserResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteDirectoryConfig
 
 
@@ -1000,6 +1137,48 @@ namespace Amazon.AppStream
             var unmarshaller = DeleteStackResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteStackRequest,DeleteStackResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteUser
+
+
+        /// <summary>
+        /// Deletes a user from the user pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUser service method.</param>
+        /// 
+        /// <returns>The response from the DeleteUser service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
+        public virtual DeleteUserResponse DeleteUser(DeleteUserRequest request)
+        {
+            var marshaller = DeleteUserRequestMarshaller.Instance;
+            var unmarshaller = DeleteUserResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteUserRequest,DeleteUserResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteUser operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUser operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
+        public virtual Task<DeleteUserResponse> DeleteUserAsync(DeleteUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteUserRequestMarshaller.Instance;
+            var unmarshaller = DeleteUserResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteUserRequest,DeleteUserResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1319,6 +1498,149 @@ namespace Amazon.AppStream
 
         #endregion
         
+        #region  DescribeUsers
+
+
+        /// <summary>
+        /// Retrieves a list that describes one or more specified users in the user pool, if user
+        /// names are provided. Otherwise, all users in the user pool are described.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeUsers service method.</param>
+        /// 
+        /// <returns>The response from the DescribeUsers service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeUsers">REST API Reference for DescribeUsers Operation</seealso>
+        public virtual DescribeUsersResponse DescribeUsers(DescribeUsersRequest request)
+        {
+            var marshaller = DescribeUsersRequestMarshaller.Instance;
+            var unmarshaller = DescribeUsersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeUsersRequest,DescribeUsersResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeUsers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeUsers operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeUsers">REST API Reference for DescribeUsers Operation</seealso>
+        public virtual Task<DescribeUsersResponse> DescribeUsersAsync(DescribeUsersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeUsersRequestMarshaller.Instance;
+            var unmarshaller = DescribeUsersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeUsersRequest,DescribeUsersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeUserStackAssociations
+
+
+        /// <summary>
+        /// Retrieves a list that describes the UserStackAssociation objects. You must specify
+        /// either or both of the following:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The stack name
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The user name (email address of the user associated with the stack) and the authentication
+        /// type for the user
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeUserStackAssociations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeUserStackAssociations service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeUserStackAssociations">REST API Reference for DescribeUserStackAssociations Operation</seealso>
+        public virtual DescribeUserStackAssociationsResponse DescribeUserStackAssociations(DescribeUserStackAssociationsRequest request)
+        {
+            var marshaller = DescribeUserStackAssociationsRequestMarshaller.Instance;
+            var unmarshaller = DescribeUserStackAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeUserStackAssociationsRequest,DescribeUserStackAssociationsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeUserStackAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeUserStackAssociations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeUserStackAssociations">REST API Reference for DescribeUserStackAssociations Operation</seealso>
+        public virtual Task<DescribeUserStackAssociationsResponse> DescribeUserStackAssociationsAsync(DescribeUserStackAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeUserStackAssociationsRequestMarshaller.Instance;
+            var unmarshaller = DescribeUserStackAssociationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeUserStackAssociationsRequest,DescribeUserStackAssociationsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisableUser
+
+
+        /// <summary>
+        /// Disables the specified user in the user pool. Users can't sign in to AppStream 2.0
+        /// until they are re-enabled. This action does not delete the user.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableUser service method.</param>
+        /// 
+        /// <returns>The response from the DisableUser service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisableUser">REST API Reference for DisableUser Operation</seealso>
+        public virtual DisableUserResponse DisableUser(DisableUserRequest request)
+        {
+            var marshaller = DisableUserRequestMarshaller.Instance;
+            var unmarshaller = DisableUserResponseUnmarshaller.Instance;
+
+            return Invoke<DisableUserRequest,DisableUserResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableUser operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableUser operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisableUser">REST API Reference for DisableUser Operation</seealso>
+        public virtual Task<DisableUserResponse> DisableUserAsync(DisableUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DisableUserRequestMarshaller.Instance;
+            var unmarshaller = DisableUserResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisableUserRequest,DisableUserResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisassociateFleet
 
 
@@ -1362,6 +1684,53 @@ namespace Amazon.AppStream
             var unmarshaller = DisassociateFleetResponseUnmarshaller.Instance;
 
             return InvokeAsync<DisassociateFleetRequest,DisassociateFleetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  EnableUser
+
+
+        /// <summary>
+        /// Enables a user in the user pool. After being enabled, users can sign in to AppStream
+        /// 2.0 and open applications from the stacks to which they are assigned.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableUser service method.</param>
+        /// 
+        /// <returns>The response from the EnableUser service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.InvalidAccountStatusException">
+        /// The resource cannot be created because your AWS account is suspended. For assistance,
+        /// contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/EnableUser">REST API Reference for EnableUser Operation</seealso>
+        public virtual EnableUserResponse EnableUser(EnableUserRequest request)
+        {
+            var marshaller = EnableUserRequestMarshaller.Instance;
+            var unmarshaller = EnableUserResponseUnmarshaller.Instance;
+
+            return Invoke<EnableUserRequest,EnableUserResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableUser operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableUser operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/EnableUser">REST API Reference for EnableUser Operation</seealso>
+        public virtual Task<EnableUserResponse> EnableUserAsync(EnableUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = EnableUserRequestMarshaller.Instance;
+            var unmarshaller = EnableUserResponseUnmarshaller.Instance;
+
+            return InvokeAsync<EnableUserRequest,EnableUserResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

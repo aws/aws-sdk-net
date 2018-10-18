@@ -28,31 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeImagePermissions operation.
+    /// This is the response object from the DescribeUserStackAssociations operation.
     /// </summary>
-    public partial class DescribeImagePermissionsResponse : AmazonWebServiceResponse
+    public partial class DescribeUserStackAssociationsResponse : AmazonWebServiceResponse
     {
-        private string _name;
         private string _nextToken;
-        private List<SharedImagePermissions> _sharedImagePermissionsList = new List<SharedImagePermissions>();
-
-        /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// The name of the private image.
-        /// </para>
-        /// </summary>
-        public string Name
-        {
-            get { return this._name; }
-            set { this._name = value; }
-        }
-
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this._name != null;
-        }
+        private List<UserStackAssociation> _userStackAssociations = new List<UserStackAssociation>();
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -74,21 +55,21 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SharedImagePermissionsList. 
+        /// Gets and sets the property UserStackAssociations. 
         /// <para>
-        /// The permissions for a private image that you own. 
+        /// The UserStackAssociation objects.
         /// </para>
         /// </summary>
-        public List<SharedImagePermissions> SharedImagePermissionsList
+        public List<UserStackAssociation> UserStackAssociations
         {
-            get { return this._sharedImagePermissionsList; }
-            set { this._sharedImagePermissionsList = value; }
+            get { return this._userStackAssociations; }
+            set { this._userStackAssociations = value; }
         }
 
-        // Check to see if SharedImagePermissionsList property is set
-        internal bool IsSetSharedImagePermissionsList()
+        // Check to see if UserStackAssociations property is set
+        internal bool IsSetUserStackAssociations()
         {
-            return this._sharedImagePermissionsList != null && this._sharedImagePermissionsList.Count > 0; 
+            return this._userStackAssociations != null && this._userStackAssociations.Count > 0; 
         }
 
     }

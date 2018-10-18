@@ -693,6 +693,56 @@ namespace Amazon.AppStream
 
 
     /// <summary>
+    /// Constants used for properties of type MessageAction.
+    /// </summary>
+    public class MessageAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RESEND for MessageAction
+        /// </summary>
+        public static readonly MessageAction RESEND = new MessageAction("RESEND");
+        /// <summary>
+        /// Constant SUPPRESS for MessageAction
+        /// </summary>
+        public static readonly MessageAction SUPPRESS = new MessageAction("SUPPRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MessageAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MessageAction FindValue(string value)
+        {
+            return FindValue<MessageAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MessageAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Permission.
     /// </summary>
     public class Permission : ConstantClass
@@ -1014,6 +1064,60 @@ namespace Amazon.AppStream
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StreamSessionState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UserStackAssociationErrorCode.
+    /// </summary>
+    public class UserStackAssociationErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INTERNAL_ERROR for UserStackAssociationErrorCode
+        /// </summary>
+        public static readonly UserStackAssociationErrorCode INTERNAL_ERROR = new UserStackAssociationErrorCode("INTERNAL_ERROR");
+        /// <summary>
+        /// Constant STACK_NOT_FOUND for UserStackAssociationErrorCode
+        /// </summary>
+        public static readonly UserStackAssociationErrorCode STACK_NOT_FOUND = new UserStackAssociationErrorCode("STACK_NOT_FOUND");
+        /// <summary>
+        /// Constant USER_NAME_NOT_FOUND for UserStackAssociationErrorCode
+        /// </summary>
+        public static readonly UserStackAssociationErrorCode USER_NAME_NOT_FOUND = new UserStackAssociationErrorCode("USER_NAME_NOT_FOUND");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UserStackAssociationErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UserStackAssociationErrorCode FindValue(string value)
+        {
+            return FindValue<UserStackAssociationErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UserStackAssociationErrorCode(string value)
         {
             return FindValue(value);
         }

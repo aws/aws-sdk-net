@@ -42,7 +42,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum size of each results page.
+        /// The maximum size of each page of results.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -79,8 +79,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The pagination token to use to retrieve the next page of results. If this value is
-        /// empty, only the first page is retrieved.
+        /// The pagination token to use to retrieve the next page of results for this operation.
+        /// If this value is null, it retrieves the first page.
         /// </para>
         /// </summary>
         public string NextToken

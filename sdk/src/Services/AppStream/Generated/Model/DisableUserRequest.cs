@@ -28,48 +28,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeImages operation.
+    /// Container for the parameters to the DisableUser operation.
+    /// Disables the specified user in the user pool. Users can't sign in to AppStream 2.0
+    /// until they are re-enabled. This action does not delete the user.
     /// </summary>
-    public partial class DescribeImagesResponse : AmazonWebServiceResponse
+    public partial class DisableUserRequest : AmazonAppStreamRequest
     {
-        private List<Image> _images = new List<Image>();
-        private string _nextToken;
+        private AuthenticationType _authenticationType;
+        private string _userName;
 
         /// <summary>
-        /// Gets and sets the property Images. 
+        /// Gets and sets the property AuthenticationType. 
         /// <para>
-        /// Information about the images.
+        /// The authentication type for the user. You must specify USERPOOL.
         /// </para>
         /// </summary>
-        public List<Image> Images
+        public AuthenticationType AuthenticationType
         {
-            get { return this._images; }
-            set { this._images = value; }
+            get { return this._authenticationType; }
+            set { this._authenticationType = value; }
         }
 
-        // Check to see if Images property is set
-        internal bool IsSetImages()
+        // Check to see if AuthenticationType property is set
+        internal bool IsSetAuthenticationType()
         {
-            return this._images != null && this._images.Count > 0; 
+            return this._authenticationType != null;
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property UserName. 
         /// <para>
-        /// The pagination token to use to retrieve the next page of results for this operation.
-        /// If there are no more pages, this value is null.
+        /// The email address of the user.
         /// </para>
         /// </summary>
-        public string NextToken
+        public string UserName
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._userName; }
+            set { this._userName = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if UserName property is set
+        internal bool IsSetUserName()
         {
-            return this._nextToken != null;
+            return this._userName != null;
         }
 
     }
