@@ -37,6 +37,7 @@ namespace Amazon.MediaLive.Model
         private string _name;
         private string _offeringId;
         private string _requestId;
+        private string _start;
 
         /// <summary>
         /// Gets and sets the property Count. Number of resources
@@ -97,6 +98,23 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetRequestId()
         {
             return this._requestId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Start. Requested reservation start time (UTC) in ISO-8601
+        /// format. The specified time must be between the first day of the current month and
+        /// one year from now. If no value is given, the default is now.
+        /// </summary>
+        public string Start
+        {
+            get { return this._start; }
+            set { this._start = value; }
+        }
+
+        // Check to see if Start property is set
+        internal bool IsSetStart()
+        {
+            return this._start != null;
         }
 
     }

@@ -35,8 +35,7 @@ namespace Amazon.MediaLive.Model
         private List<string> _actionNames = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property ActionNames. A list of schedule actions to delete, identified
-        /// by unique name.
+        /// Gets and sets the property ActionNames. A list of schedule actions to delete.
         /// </summary>
         public List<string> ActionNames
         {

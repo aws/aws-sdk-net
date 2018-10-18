@@ -28,15 +28,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// When the schedule action starts.
+    /// Settings to specify the start time for an action.
     /// </summary>
     public partial class ScheduleActionStartSettings
     {
         private FixedModeScheduleActionStartSettings _fixedModeScheduleActionStartSettings;
 
         /// <summary>
-        /// Gets and sets the property FixedModeScheduleActionStartSettings. Fixed timestamp action
-        /// start. Conforms to ISO-8601.
+        /// Gets and sets the property FixedModeScheduleActionStartSettings. Holds the start time
+        /// for the action.
         /// </summary>
         public FixedModeScheduleActionStartSettings FixedModeScheduleActionStartSettings
         {

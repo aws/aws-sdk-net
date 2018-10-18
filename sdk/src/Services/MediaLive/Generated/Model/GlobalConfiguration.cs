@@ -55,12 +55,10 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InputEndAction. Indicates the action to take when an input
-        /// completes (e.g. end-of-file.) Options include immediately switching to the next sequential
-        /// input (via "switchInput"), switching to the next input and looping back to the first
-        /// input when last input ends (via "switchAndLoopInputs") or not switching inputs and
-        /// instead transcoding black / color / slate images per the "Input Loss Behavior" configuration
-        /// until an activateInput REST command is received (via "none").
+        /// Gets and sets the property InputEndAction. Indicates the action to take when the input
+        /// completes (e.g. end-of-file). Options include looping on the input (via "switchAndLoopInputs")
+        /// or transcoding black / color / slate images per the "Input Loss Behavior" configuration
+        /// (via "none").
         /// </summary>
         public GlobalConfigurationInputEndAction InputEndAction
         {

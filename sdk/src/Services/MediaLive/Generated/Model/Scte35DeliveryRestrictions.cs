@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// SCTE-35 Delivery Restrictions.
+    /// Corresponds to SCTE-35 delivery_not_restricted_flag parameter. To declare delivery
+    /// restrictions, include this element and its four "restriction" flags. To declare that
+    /// there are no restrictions, omit this element.
     /// </summary>
     public partial class Scte35DeliveryRestrictions
     {
@@ -38,7 +40,7 @@ namespace Amazon.MediaLive.Model
         private Scte35WebDeliveryAllowedFlag _webDeliveryAllowedFlag;
 
         /// <summary>
-        /// Gets and sets the property ArchiveAllowedFlag. SCTE-35 segmentation_descriptor archive_allowed_flag.
+        /// Gets and sets the property ArchiveAllowedFlag. Corresponds to SCTE-35 archive_allowed_flag.
         /// </summary>
         public Scte35ArchiveAllowedFlag ArchiveAllowedFlag
         {
@@ -53,7 +55,8 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DeviceRestrictions. SCTE-35 segmentation_descriptor web_delivery_allowed_flag.
+        /// Gets and sets the property DeviceRestrictions. Corresponds to SCTE-35 device_restrictions
+        /// parameter.
         /// </summary>
         public Scte35DeviceRestrictions DeviceRestrictions
         {
@@ -68,8 +71,8 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NoRegionalBlackoutFlag. SCTE-35 segmentation_descriptor
-        /// no_regional_blackout_flag.
+        /// Gets and sets the property NoRegionalBlackoutFlag. Corresponds to SCTE-35 no_regional_blackout_flag
+        /// parameter.
         /// </summary>
         public Scte35NoRegionalBlackoutFlag NoRegionalBlackoutFlag
         {
@@ -84,8 +87,8 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property WebDeliveryAllowedFlag. SCTE-35 segmentation_descriptor
-        /// web_delivery_allowed_flag.
+        /// Gets and sets the property WebDeliveryAllowedFlag. Corresponds to SCTE-35 web_delivery_allowed_flag
+        /// parameter.
         /// </summary>
         public Scte35WebDeliveryAllowedFlag WebDeliveryAllowedFlag
         {

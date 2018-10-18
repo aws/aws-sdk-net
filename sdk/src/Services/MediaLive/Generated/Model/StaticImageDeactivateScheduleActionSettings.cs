@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Static image deactivate.
+    /// Settings for the action to deactivate the image in a specific layer.
     /// </summary>
     public partial class StaticImageDeactivateScheduleActionSettings
     {
@@ -37,7 +37,7 @@ namespace Amazon.MediaLive.Model
 
         /// <summary>
         /// Gets and sets the property FadeOut. The time in milliseconds for the image to fade
-        /// out. Defaults to 0.
+        /// out. Default is 0 (no fade-out).
         /// </summary>
         public int FadeOut
         {
@@ -52,9 +52,8 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Layer. The Z order of the inserted image.  Images with
-        /// higher layer values will be inserted on top of images with lower layer values. Permitted
-        /// values are 0-7 inclusive. Defaults to 0.
+        /// Gets and sets the property Layer. The image overlay layer to deactivate, 0 to 7. Default
+        /// is 0.
         /// </summary>
         public int Layer
         {

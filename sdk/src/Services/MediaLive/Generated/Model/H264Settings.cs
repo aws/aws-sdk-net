@@ -58,6 +58,7 @@ namespace Amazon.MediaLive.Model
         private int? _parDenominator;
         private int? _parNumerator;
         private H264Profile _profile;
+        private int? _qvbrQualityLevel;
         private H264RateControlMode _rateControlMode;
         private H264ScanType _scanType;
         private H264SceneChangeDetect _sceneChangeDetect;
@@ -377,8 +378,8 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxBitrate. Maximum bitrate in bits/second (for VBR mode
-        /// only).
+        /// Gets and sets the property MaxBitrate. Maximum bitrate in bits/second (for VBR and
+        /// QVBR modes only).Required when rateControlMode is "qvbr".
         /// </summary>
         public int MaxBitrate
         {
@@ -494,7 +495,28 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RateControlMode. Rate control mode.
+        /// Gets and sets the property QvbrQualityLevel. Target quality value. Applicable only
+        /// to QVBR mode. 1 is the lowest quality and 10 is thehighest and approaches lossless.
+        /// Typical levels for content distribution are between 6 and 8.
+        /// </summary>
+        public int QvbrQualityLevel
+        {
+            get { return this._qvbrQualityLevel.GetValueOrDefault(); }
+            set { this._qvbrQualityLevel = value; }
+        }
+
+        // Check to see if QvbrQualityLevel property is set
+        internal bool IsSetQvbrQualityLevel()
+        {
+            return this._qvbrQualityLevel.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RateControlMode. Rate control mode. - CBR: Constant Bit
+        /// Rate- VBR: Variable Bit Rate- QVBR: Encoder dynamically controls the bitrate to meet
+        /// the desired quality (specifiedthrough the qvbrQualityLevel field). The bitrate will
+        /// not exceed the bitrate specified inthe maxBitrate field and will not fall below the
+        /// bitrate required to meet the desiredquality level.
         /// </summary>
         public H264RateControlMode RateControlMode
         {
@@ -525,8 +547,9 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SceneChangeDetect. Scene change detection.  Inserts I-frames
-        /// on scene changes when enabled.
+        /// Gets and sets the property SceneChangeDetect. Scene change detection.- On: inserts
+        /// I-frames when scene change is detected.- Off: does not force an I-frame when scene
+        /// change is detected.
         /// </summary>
         public H264SceneChangeDetect SceneChangeDetect
         {

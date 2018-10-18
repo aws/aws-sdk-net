@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Static image activate.
+    /// Settings for the action to activate a static image.
     /// </summary>
     public partial class StaticImageActivateScheduleActionSettings
     {
@@ -45,8 +45,8 @@ namespace Amazon.MediaLive.Model
 
         /// <summary>
         /// Gets and sets the property Duration. The duration in milliseconds for the image to
-        /// remain in the video. If omitted or set to 0, duration is infinite and image will remain
-        /// until explicitly deactivated.
+        /// remain on the video. If omitted or set to 0 the duration is unlimited and the image
+        /// will remain until it is explicitly deactivated.
         /// </summary>
         public int Duration
         {
@@ -62,7 +62,7 @@ namespace Amazon.MediaLive.Model
 
         /// <summary>
         /// Gets and sets the property FadeIn. The time in milliseconds for the image to fade
-        /// in. Defaults to 0.
+        /// in. The fade-in starts at the start time of the overlay. Default is 0 (no fade-in).
         /// </summary>
         public int FadeIn
         {
@@ -77,8 +77,9 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FadeOut. The time in milliseconds for the image to fade
-        /// out. Defaults to 0.
+        /// Gets and sets the property FadeOut. Applies only if a duration is specified. The time
+        /// in milliseconds for the image to fade out. The fade-out starts when the duration time
+        /// is hit, so it effectively extends the duration. Default is 0 (no fade-out).
         /// </summary>
         public int FadeOut
         {
@@ -94,7 +95,8 @@ namespace Amazon.MediaLive.Model
 
         /// <summary>
         /// Gets and sets the property Height. The height of the image when inserted into the
-        /// video.  Defaults to the native height of the image.
+        /// video, in pixels. The overlay will be scaled up or down to the specified height. Leave
+        /// blank to use the native height of the overlay.
         /// </summary>
         public int Height
         {
@@ -109,8 +111,9 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Image. The image to overlay on the video.  Must be a 32
-        /// bit BMP, PNG, or TGA file.  Must not be larger than the input video.
+        /// Gets and sets the property Image. The location and filename of the image file to overlay
+        /// on the video. The file must be a 32-bit BMP, PNG, or TGA file, and must not be larger
+        /// (in pixels) than the input video.
         /// </summary>
         public InputLocation Image
         {
@@ -125,8 +128,10 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ImageX. Placement of the left edge of the image on the
-        /// horizontal axis in pixels. 0 is the left edge of the frame. Defaults to 0.
+        /// Gets and sets the property ImageX. Placement of the left edge of the overlay relative
+        /// to the left edge of the video frame, in pixels. 0 (the default) is the left edge of
+        /// the frame. If the placement causes the overlay to extend beyond the right edge of
+        /// the underlying video, then the overlay is cropped on the right.
         /// </summary>
         public int ImageX
         {
@@ -141,8 +146,10 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ImageY. Placement of the top edge of the image on the vertical
-        /// axis in pixels.  0 is the top edge of the frame. Defaults to 0.
+        /// Gets and sets the property ImageY. Placement of the top edge of the overlay relative
+        /// to the top edge of the video frame, in pixels. 0 (the default) is the top edge of
+        /// the frame. If the placement causes the overlay to extend beyond the bottom edge of
+        /// the underlying video, then the overlay is cropped on the bottom.
         /// </summary>
         public int ImageY
         {
@@ -157,9 +164,10 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Layer. The Z order of the inserted image.  Images with
-        /// higher layer values will be inserted on top of images with lower layer values. Permitted
-        /// values are 0-7 inclusive. Defaults to 0.
+        /// Gets and sets the property Layer. The number of the layer, 0 to 7. There are 8 layers
+        /// that can be overlaid on the video, each layer with a different image. The layers are
+        /// in Z order, which means that overlays with higher values of layer are inserted on
+        /// top of overlays with lower values of layer. Default is 0.
         /// </summary>
         public int Layer
         {
@@ -175,7 +183,7 @@ namespace Amazon.MediaLive.Model
 
         /// <summary>
         /// Gets and sets the property Opacity. Opacity of image where 0 is transparent and 100
-        /// is fully opaque. Defaults to 100.
+        /// is fully opaque. Default is 100.
         /// </summary>
         public int Opacity
         {
@@ -190,8 +198,9 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Width. The width of the image when inserted into the video.
-        ///  Defaults to the native width of the image.
+        /// Gets and sets the property Width. The width of the image when inserted into the video,
+        /// in pixels. The overlay will be scaled up or down to the specified width. Leave blank
+        /// to use the native width of the overlay.
         /// </summary>
         public int Width
         {

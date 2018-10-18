@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Response to a batch update schedule call.
+    /// Placeholder documentation for BatchUpdateScheduleResponse
     /// </summary>
     public partial class BatchUpdateScheduleResponse : AmazonWebServiceResponse
     {

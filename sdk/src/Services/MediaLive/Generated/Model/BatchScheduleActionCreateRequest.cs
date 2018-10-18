@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// A list of schedule actions to create.
+    /// A list of schedule actions to create (in a request) or that have been created (in
+    /// a response).
     /// </summary>
     public partial class BatchScheduleActionCreateRequest
     {

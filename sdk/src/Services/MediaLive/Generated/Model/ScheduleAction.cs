@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// A single schedule action.
+    /// Contains information on a single schedule action.
     /// </summary>
     public partial class ScheduleAction
     {
@@ -38,7 +38,10 @@ namespace Amazon.MediaLive.Model
 
         /// <summary>
         /// Gets and sets the property ActionName. The name of the action, must be unique within
-        /// the schedule.
+        /// the schedule. This name provides the main reference to an action once it is added
+        /// to the schedule. A name is unique if it is no longer in the schedule. The schedule
+        /// is automatically cleaned up to remove actions with a start time of more than 1 hour
+        /// ago (approximately) so at that point a name can be reused.
         /// </summary>
         public string ActionName
         {
@@ -68,7 +71,8 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ScheduleActionStartSettings. When the action takes effect.
+        /// Gets and sets the property ScheduleActionStartSettings. The time for the action to
+        /// start in the channel.
         /// </summary>
         public ScheduleActionStartSettings ScheduleActionStartSettings
         {

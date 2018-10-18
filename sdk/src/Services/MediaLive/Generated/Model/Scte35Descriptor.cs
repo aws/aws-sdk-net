@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// SCTE-35 Descriptor.
+    /// Holds one set of SCTE-35 Descriptor Settings.
     /// </summary>
     public partial class Scte35Descriptor
     {

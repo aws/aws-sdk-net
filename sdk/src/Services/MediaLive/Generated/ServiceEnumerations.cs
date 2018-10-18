@@ -3927,6 +3927,10 @@ namespace Amazon.MediaLive
         /// </summary>
         public static readonly H264RateControlMode CBR = new H264RateControlMode("CBR");
         /// <summary>
+        /// Constant QVBR for H264RateControlMode
+        /// </summary>
+        public static readonly H264RateControlMode QVBR = new H264RateControlMode("QVBR");
+        /// <summary>
         /// Constant VBR for H264RateControlMode
         /// </summary>
         public static readonly H264RateControlMode VBR = new H264RateControlMode("VBR");

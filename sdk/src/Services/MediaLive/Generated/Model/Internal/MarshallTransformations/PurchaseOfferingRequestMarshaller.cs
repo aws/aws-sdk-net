@@ -91,6 +91,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("requestId");
                     context.Writer.Write(Guid.NewGuid().ToString());                                                
                 }
+                if(publicRequest.IsSetStart())
+                {
+                    context.Writer.WritePropertyName("start");
+                    context.Writer.Write(publicRequest.Start);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

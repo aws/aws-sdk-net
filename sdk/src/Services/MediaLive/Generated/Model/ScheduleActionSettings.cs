@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Settings for a single schedule action.
+    /// Holds the settings for a single schedule action.
     /// </summary>
     public partial class ScheduleActionSettings
     {
@@ -39,8 +39,8 @@ namespace Amazon.MediaLive.Model
         private StaticImageDeactivateScheduleActionSettings _staticImageDeactivateSettings;
 
         /// <summary>
-        /// Gets and sets the property Scte35ReturnToNetworkSettings. SCTE-35 Return to Network
-        /// Settings
+        /// Gets and sets the property Scte35ReturnToNetworkSettings. Settings for SCTE-35 return_to_network
+        /// message
         /// </summary>
         public Scte35ReturnToNetworkScheduleActionSettings Scte35ReturnToNetworkSettings
         {
@@ -55,7 +55,8 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Scte35SpliceInsertSettings. SCTE-35 Splice Insert Settings
+        /// Gets and sets the property Scte35SpliceInsertSettings. Settings for SCTE-35 splice_insert
+        /// message
         /// </summary>
         public Scte35SpliceInsertScheduleActionSettings Scte35SpliceInsertSettings
         {
@@ -70,7 +71,8 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Scte35TimeSignalSettings. SCTE-35 Time Signal Settings
+        /// Gets and sets the property Scte35TimeSignalSettings. Settings for SCTE-35 time_signal
+        /// message
         /// </summary>
         public Scte35TimeSignalScheduleActionSettings Scte35TimeSignalSettings
         {
@@ -85,7 +87,8 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StaticImageActivateSettings. Static Image Activate
+        /// Gets and sets the property StaticImageActivateSettings. Settings to activate a static
+        /// image overlay
         /// </summary>
         public StaticImageActivateScheduleActionSettings StaticImageActivateSettings
         {
@@ -100,7 +103,8 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StaticImageDeactivateSettings. Static Image Deactivate
+        /// Gets and sets the property StaticImageDeactivateSettings. Settings to deactivate a
+        /// static image overlay
         /// </summary>
         public StaticImageDeactivateScheduleActionSettings StaticImageDeactivateSettings
         {

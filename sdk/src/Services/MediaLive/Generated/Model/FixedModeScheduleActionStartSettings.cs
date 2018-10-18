@@ -28,14 +28,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Fixed mode schedule action start settings
+    /// Start time for the action.
     /// </summary>
     public partial class FixedModeScheduleActionStartSettings
     {
         private string _time;
 
         /// <summary>
-        /// Gets and sets the property Time. Fixed timestamp action start. Conforms to ISO-8601.
+        /// Gets and sets the property Time. Start time for the action to start in the channel.
+        /// (Not the time for the action to be added to the schedule: actions are always added
+        /// to the schedule immediately.) UTC format: yyyy-mm-ddThh:mm:ss.nnnZ. All the letters
+        /// are digits (for example, mm might be 01) except for the two constants "T" for time
+        /// and "Z" for "UTC format".
         /// </summary>
         public string Time
         {

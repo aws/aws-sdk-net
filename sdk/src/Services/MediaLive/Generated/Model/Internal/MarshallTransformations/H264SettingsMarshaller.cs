@@ -201,6 +201,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Profile);
             }
 
+            if(requestObject.IsSetQvbrQualityLevel())
+            {
+                context.Writer.WritePropertyName("qvbrQualityLevel");
+                context.Writer.Write(requestObject.QvbrQualityLevel);
+            }
+
             if(requestObject.IsSetRateControlMode())
             {
                 context.Writer.WritePropertyName("rateControlMode");

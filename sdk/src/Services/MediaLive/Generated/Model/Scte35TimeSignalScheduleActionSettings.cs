@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// SCTE-35 Time Signal Settings.
+    /// Settings for a SCTE-35 time_signal.
     /// </summary>
     public partial class Scte35TimeSignalScheduleActionSettings
     {

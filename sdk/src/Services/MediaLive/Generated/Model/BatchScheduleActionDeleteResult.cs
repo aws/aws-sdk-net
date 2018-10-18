@@ -28,14 +28,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Returned list of deleted schedule actions.
+    /// List of actions that have been deleted from the schedule.
     /// </summary>
     public partial class BatchScheduleActionDeleteResult
     {
         private List<ScheduleAction> _scheduleActions = new List<ScheduleAction>();
 
         /// <summary>
-        /// Gets and sets the property ScheduleActions. Returned list of deleted schedule actions.
+        /// Gets and sets the property ScheduleActions. List of actions that have been deleted
+        /// from the schedule.
         /// </summary>
         public List<ScheduleAction> ScheduleActions
         {

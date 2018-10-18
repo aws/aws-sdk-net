@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// SCTE-35 Return to Network Settings.
+    /// Settings for a SCTE-35 return_to_network message.
     /// </summary>
     public partial class Scte35ReturnToNetworkScheduleActionSettings
     {

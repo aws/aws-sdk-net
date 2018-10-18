@@ -220,6 +220,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.Profile = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("qvbrQualityLevel", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.QvbrQualityLevel = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("rateControlMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

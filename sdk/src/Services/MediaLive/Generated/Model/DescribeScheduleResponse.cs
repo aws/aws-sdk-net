@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Response for a describe schedule call.
+    /// Placeholder documentation for DescribeScheduleResponse
     /// </summary>
     public partial class DescribeScheduleResponse : AmazonWebServiceResponse
     {
@@ -51,7 +51,7 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ScheduleActions. The list of schedule actions.
+        /// Gets and sets the property ScheduleActions. The list of actions in the schedule.
         /// </summary>
         public List<ScheduleAction> ScheduleActions
         {
