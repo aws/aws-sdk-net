@@ -77,7 +77,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// State (string: "INSTALLED", "INSTALLED OTHER", "MISSING", "NOT APPLICABLE", "FAILED")
+        /// State (string, such as "INSTALLED" or "FAILED")
         /// </para>
         ///  
         /// <para>

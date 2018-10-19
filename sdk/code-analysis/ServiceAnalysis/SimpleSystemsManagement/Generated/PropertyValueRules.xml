@@ -59,6 +59,18 @@
     <pattern>(^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreateAssociationRequest.MaxConcurrency</property>
+    <min>1</min>
+    <max>7</max>
+    <pattern>^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreateAssociationRequest.MaxErrors</property>
+    <min>1</min>
+    <max>7</max>
+    <pattern>^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.CreateAssociationRequest.Name</property>
     <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
   </property-value-rule>
@@ -1392,6 +1404,18 @@
     <pattern>([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdateAssociationRequest.MaxConcurrency</property>
+    <min>1</min>
+    <max>7</max>
+    <pattern>^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdateAssociationRequest.MaxErrors</property>
+    <min>1</min>
+    <max>7</max>
+    <pattern>^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.UpdateAssociationRequest.Name</property>
     <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
   </property-value-rule>
@@ -1762,6 +1786,18 @@
     <pattern>(^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.AssociationDescription.MaxConcurrency</property>
+    <min>1</min>
+    <max>7</max>
+    <pattern>^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.AssociationDescription.MaxErrors</property>
+    <min>1</min>
+    <max>7</max>
+    <pattern>^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.AssociationDescription.Name</property>
     <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
   </property-value-rule>
@@ -1840,6 +1876,18 @@
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.AssociationVersionInfo.DocumentVersion</property>
     <pattern>([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.AssociationVersionInfo.MaxConcurrency</property>
+    <min>1</min>
+    <max>7</max>
+    <pattern>^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.AssociationVersionInfo.MaxErrors</property>
+    <min>1</min>
+    <max>7</max>
+    <pattern>^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.AssociationVersionInfo.Name</property>
@@ -2104,6 +2152,18 @@
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.CreateAssociationBatchRequestEntry.InstanceId</property>
     <pattern>(^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreateAssociationBatchRequestEntry.MaxConcurrency</property>
+    <min>1</min>
+    <max>7</max>
+    <pattern>^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreateAssociationBatchRequestEntry.MaxErrors</property>
+    <min>1</min>
+    <max>7</max>
+    <pattern>^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.CreateAssociationBatchRequestEntry.Name</property>

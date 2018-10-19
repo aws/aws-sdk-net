@@ -116,8 +116,12 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state of the patch on the instance (INSTALLED, INSTALLED_OTHER, MISSING, NOT_APPLICABLE
-        /// or FAILED).
+        /// The state of the patch on the instance, such as INSTALLED or FAILED.
+        /// </para>
+        ///  
+        /// <para>
+        /// For descriptions of each patch state, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About
+        /// Patch Compliance</a> in the <i>AWS Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
         public PatchComplianceDataState State

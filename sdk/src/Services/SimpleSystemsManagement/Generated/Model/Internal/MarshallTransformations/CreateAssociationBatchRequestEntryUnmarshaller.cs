@@ -82,6 +82,18 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.InstanceId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MaxConcurrency", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MaxConcurrency = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MaxErrors", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MaxErrors = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

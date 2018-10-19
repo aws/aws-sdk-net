@@ -54,7 +54,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// One or more filters. Use a filter to return a more specific list of instances.
+        /// One or more filters. Use a filter to return a more specific list of instances. You
+        /// can filter on Amazon EC2 tag. Specify tags by using a key-value mapping.
         /// </para>
         /// </summary>
         public List<InstanceInformationStringFilter> Filters

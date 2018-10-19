@@ -37,7 +37,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property WindowTaskId. 
         /// <para>
-        /// The id of the task in the Maintenance Window.
+        /// The ID of the task in the Maintenance Window.
         /// </para>
         /// </summary>
         public string WindowTaskId

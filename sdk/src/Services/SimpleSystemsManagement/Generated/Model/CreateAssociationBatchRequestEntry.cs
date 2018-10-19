@@ -35,6 +35,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _associationName;
         private string _documentVersion;
         private string _instanceId;
+        private string _maxConcurrency;
+        private string _maxErrors;
         private string _name;
         private InstanceAssociationOutputLocation _outputLocation;
         private Dictionary<string, List<string>> _parameters = new Dictionary<string, List<string>>();
@@ -93,6 +95,65 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetInstanceId()
         {
             return this._instanceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxConcurrency. 
+        /// <para>
+        /// The maximum number of targets allowed to run the association at the same time. You
+        /// can specify a number, for example 10, or a percentage of the target set, for example
+        /// 10%. The default value is 100%, which means all targets run the association at the
+        /// same time.
+        /// </para>
+        ///  
+        /// <para>
+        /// If a new instance starts and attempts to execute an association while Systems Manager
+        /// is executing MaxConcurrency associations, the association is allowed to run. During
+        /// the next association interval, the new instance will process its association within
+        /// the limit specified for MaxConcurrency.
+        /// </para>
+        /// </summary>
+        public string MaxConcurrency
+        {
+            get { return this._maxConcurrency; }
+            set { this._maxConcurrency = value; }
+        }
+
+        // Check to see if MaxConcurrency property is set
+        internal bool IsSetMaxConcurrency()
+        {
+            return this._maxConcurrency != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxErrors. 
+        /// <para>
+        /// The number of errors that are allowed before the system stops sending requests to
+        /// run the association on additional targets. You can specify either an absolute number
+        /// of errors, for example 10, or a percentage of the target set, for example 10%. If
+        /// you specify 3, for example, the system stops sending requests when the fourth error
+        /// is received. If you specify 0, then the system stops sending requests after the first
+        /// error is returned. If you run an association on 50 instances and set MaxError to 10%,
+        /// then the system stops sending the request when the sixth error is received.
+        /// </para>
+        ///  
+        /// <para>
+        /// Executions that are already running an association when MaxErrors is reached are allowed
+        /// to complete, but some of these executions may fail as well. If you need to ensure
+        /// that there won't be more than max-errors failed executions, set MaxConcurrency to
+        /// 1 so that executions proceed one at a time.
+        /// </para>
+        /// </summary>
+        public string MaxErrors
+        {
+            get { return this._maxErrors; }
+            set { this._maxErrors = value; }
+        }
+
+        // Check to see if MaxErrors property is set
+        internal bool IsSetMaxErrors()
+        {
+            return this._maxErrors != null;
         }
 
         /// <summary>

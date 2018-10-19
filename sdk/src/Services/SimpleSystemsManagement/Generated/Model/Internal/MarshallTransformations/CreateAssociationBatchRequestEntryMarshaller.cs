@@ -63,6 +63,18 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.InstanceId);
             }
 
+            if(requestObject.IsSetMaxConcurrency())
+            {
+                context.Writer.WritePropertyName("MaxConcurrency");
+                context.Writer.Write(requestObject.MaxConcurrency);
+            }
+
+            if(requestObject.IsSetMaxErrors())
+            {
+                context.Writer.WritePropertyName("MaxErrors");
+                context.Writer.Write(requestObject.MaxErrors);
+            }
+
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
