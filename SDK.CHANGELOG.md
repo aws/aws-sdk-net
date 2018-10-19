@@ -1,3 +1,9 @@
+### 3.3.389.0 (2018-10-19 20:49 UTC)
+* SimpleSystemsManagement (3.3.34.0)
+	* Rate Control feature release for State Manager. Users now have the ability to apply rate control parameters similar to run command to their association in state manager console or CLI.
+* WorkSpaces (3.3.3.0)
+	* Added support for PowerPro and GraphicsPro WorkSpaces bundles.
+
 ### 3.3.388.0 (2018-10-18 21:32 UTC)
 * AppStream (3.3.19.0)
 	* This API update adds support for creating, managing, and deleting users in the AppStream 2.0 user pool.
