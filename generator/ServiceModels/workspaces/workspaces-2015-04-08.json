@@ -1,0 +1,3264 @@
+{
+  "version": "1.0",
+  "type": "json",
+  "json_version": 1.1,
+  "signature_version": "v4",
+  "service_full_name": "Amazon WorkSpaces",
+  "endpoint_prefix": "workspaces",
+  "service_id": "WorkSpaces",
+  "uid": "workspaces-2015-04-08",
+  "api_version": "2015-04-08",
+  "xmlnamespace": "http://workspaces.amazonaws.com/api/v1",
+  "target_prefix": "WorkspacesService",
+  "documentation": "\n         <fullname>Amazon WorkSpaces Service</fullname>\n         <p>Amazon WorkSpaces enables you to provision virtual, cloud-based \n         Microsoft Windows desktops for your users.</p>\n      ",
+  "operations": {
+    "DescribeWorkspaceDirectories": {
+      "name": "DescribeWorkspaceDirectories",
+      "input": {
+        "type": "structure",
+        "members": {
+          "DirectoryIds": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>The identifiers of the directories. If the value is null, all directories are retrieved.</simpara>\n      ",
+            "documentation": "\n         <p>The identifiers of the directories. If the value is null, all directories are retrieved.</p>\n      ",
+            "shape_name": "DirectoryIdList",
+            "min_length": 1,
+            "max_length": 25,
+            "members": {
+              "type": "string",
+              "pattern": "^d-[0-9a-f]{8,63}$",
+              "shape_name": "DirectoryId",
+              "documentation": null
+            }
+          },
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>The token for the next set of results. (You received this token from a previous call.)</simpara>\n      ",
+            "documentation": "\n         <p>The token for the next set of results. (You received this token from a previous call.)</p>\n      ",
+            "shape_name": "PaginationToken",
+            "min_length": 1,
+            "max_length": 63
+          }
+        },
+        "shape_name": "DescribeWorkspaceDirectoriesRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "Directories": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>Information about the directories.</simpara>\n      ",
+            "documentation": "\n         <p>Information about the directories.</p>\n      ",
+            "shape_name": "DirectoryList",
+            "members": {
+              "type": "structure",
+              "members": {
+                "DirectoryId": {
+                  "type": "string",
+                  "pattern": "^d-[0-9a-f]{8,63}$",
+                  "zonbookDocumentation": "\n         <simpara>The directory identifier.</simpara>\n      ",
+                  "documentation": "\n         <p>The directory identifier.</p>\n      ",
+                  "shape_name": "DirectoryId"
+                },
+                "Alias": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The directory alias.</simpara>\n      ",
+                  "documentation": "\n         <p>The directory alias.</p>\n      ",
+                  "shape_name": "Alias"
+                },
+                "DirectoryName": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The name of the directory.</simpara>\n      ",
+                  "documentation": "\n         <p>The name of the directory.</p>\n      ",
+                  "shape_name": "DirectoryName"
+                },
+                "RegistrationCode": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The registration code for the directory. This is the code that users enter in their Amazon WorkSpaces client application to connect to the directory.</simpara>\n      ",
+                  "documentation": "\n         <p>The registration code for the directory. This is the code that users enter in their Amazon WorkSpaces client application to connect to the directory.</p>\n      ",
+                  "shape_name": "RegistrationCode",
+                  "min_length": 1,
+                  "max_length": 20
+                },
+                "SubnetIds": {
+                  "type": "list",
+                  "zonbookDocumentation": "\n         <simpara>The identifiers of the subnets used with the directory.</simpara>\n      ",
+                  "documentation": "\n         <p>The identifiers of the subnets used with the directory.</p>\n      ",
+                  "shape_name": "SubnetIds",
+                  "members": {
+                    "type": "string",
+                    "pattern": "^(subnet-[0-9a-f]{8})$",
+                    "shape_name": "SubnetId",
+                    "documentation": null
+                  }
+                },
+                "DnsIpAddresses": {
+                  "type": "list",
+                  "zonbookDocumentation": "\n         <simpara>The IP addresses of the DNS servers for the directory.</simpara>\n      ",
+                  "documentation": "\n         <p>The IP addresses of the DNS servers for the directory.</p>\n      ",
+                  "shape_name": "DnsIpAddresses",
+                  "members": {
+                    "type": "string",
+                    "shape_name": "IpAddress",
+                    "documentation": null
+                  }
+                },
+                "CustomerUserName": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The user name for the service account.</simpara>\n      ",
+                  "documentation": "\n         <p>The user name for the service account.</p>\n      ",
+                  "shape_name": "UserName",
+                  "min_length": 1,
+                  "max_length": 63
+                },
+                "IamRoleId": {
+                  "type": "string",
+                  "pattern": "^arn:aws:[A-Za-z0-9][A-za-z0-9_/.-]{0,62}:[A-za-z0-9_/.-]{0,63}:[A-za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-za-z0-9_/.-]{0,127}$",
+                  "zonbookDocumentation": "\n         <simpara>The identifier of the IAM role. This is the role that allows Amazon WorkSpaces to make calls to other services, such as Amazon EC2, on your behalf.</simpara>\n      ",
+                  "documentation": "\n         <p>The identifier of the IAM role. This is the role that allows Amazon WorkSpaces to make calls to other services, such as Amazon EC2, on your behalf.</p>\n      ",
+                  "shape_name": "ARN"
+                },
+                "DirectoryType": {
+                  "type": "string",
+                  "enum": [
+                    "SIMPLE_AD",
+                    "AD_CONNECTOR"
+                  ],
+                  "zonbookDocumentation": "\n         <simpara>The directory type.</simpara>\n      ",
+                  "documentation": "\n         <p>The directory type.</p>\n      ",
+                  "shape_name": "WorkspaceDirectoryType"
+                },
+                "WorkspaceSecurityGroupId": {
+                  "type": "string",
+                  "pattern": "^(sg-[0-9a-f]{8})$",
+                  "zonbookDocumentation": "\n         <simpara>The identifier of the security group that is assigned to new WorkSpaces.</simpara>\n      ",
+                  "documentation": "\n         <p>The identifier of the security group that is assigned to new WorkSpaces.</p>\n      ",
+                  "shape_name": "SecurityGroupId"
+                },
+                "State": {
+                  "type": "string",
+                  "enum": [
+                    "REGISTERING",
+                    "REGISTERED",
+                    "DEREGISTERING",
+                    "DEREGISTERED",
+                    "ERROR"
+                  ],
+                  "zonbookDocumentation": "\n         <simpara>The state of the directory's registration with Amazon WorkSpaces</simpara>\n      ",
+                  "documentation": "\n         <p>The state of the directory's registration with Amazon WorkSpaces</p>\n      ",
+                  "shape_name": "WorkspaceDirectoryState"
+                },
+                "WorkspaceCreationProperties": {
+                  "type": "structure",
+                  "members": {
+                    "EnableWorkDocs": {
+                      "type": "boolean",
+                      "zonbookDocumentation": "\n         <simpara>Indicates whether the directory is enabled for Amazon WorkDocs.</simpara>\n      ",
+                      "documentation": "\n         <p>Indicates whether the directory is enabled for Amazon WorkDocs.</p>\n      ",
+                      "shape_name": "BooleanObject"
+                    },
+                    "EnableInternetAccess": {
+                      "type": "boolean",
+                      "zonbookDocumentation": "\n         <simpara>The public IP address to attach to all WorkSpaces that are created or rebuilt.</simpara>\n      ",
+                      "documentation": "\n         <p>The public IP address to attach to all WorkSpaces that are created or rebuilt.</p>\n      ",
+                      "shape_name": "BooleanObject"
+                    },
+                    "DefaultOu": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n         <simpara>The organizational unit (OU) in the directory for the WorkSpace machine accounts.</simpara>\n      ",
+                      "documentation": "\n         <p>The organizational unit (OU) in the directory for the WorkSpace machine accounts.</p>\n      ",
+                      "shape_name": "DefaultOu"
+                    },
+                    "CustomSecurityGroupId": {
+                      "type": "string",
+                      "pattern": "^(sg-[0-9a-f]{8})$",
+                      "zonbookDocumentation": "\n         <simpara>The identifier of any security groups to apply to WorkSpaces when they are created.</simpara>\n      ",
+                      "documentation": "\n         <p>The identifier of any security groups to apply to WorkSpaces when they are created.</p>\n      ",
+                      "shape_name": "SecurityGroupId"
+                    },
+                    "UserEnabledAsLocalAdministrator": {
+                      "type": "boolean",
+                      "zonbookDocumentation": "\n         <simpara>Indicates whether the WorkSpace user is an administrator on the WorkSpace.</simpara>\n      ",
+                      "documentation": "\n         <p>Indicates whether the WorkSpace user is an administrator on the WorkSpace.</p>\n      ",
+                      "shape_name": "BooleanObject"
+                    }
+                  },
+                  "zonbookDocumentation": "\n         <simpara>The default creation properties for all WorkSpaces in the directory.</simpara>\n      ",
+                  "documentation": "\n         <p>The default creation properties for all WorkSpaces in the directory.</p>\n      ",
+                  "shape_name": "DefaultWorkspaceCreationProperties"
+                },
+                "ipGroupIds": {
+                  "type": "list",
+                  "zonbookDocumentation": "\n         <para>The identifiers of the IP access control groups associated with the directory.</para>\n      ",
+                  "documentation": "\n         <p>The identifiers of the IP access control groups associated with the directory.</p>\n      ",
+                  "shape_name": "IpGroupIdList",
+                  "members": {
+                    "type": "string",
+                    "pattern": "wsipg-[0-9a-z]{8,63}$",
+                    "shape_name": "IpGroupId",
+                    "documentation": null
+                  }
+                }
+              },
+              "zonbookDocumentation": "\n         <simpara>Information about an AWS Directory Service directory for use with Amazon WorkSpaces.</simpara>\n      ",
+              "documentation": "\n         <p>Information about an AWS Directory Service directory for use with Amazon WorkSpaces.</p>\n      ",
+              "shape_name": "WorkspaceDirectory"
+            }
+          },
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>The token to use to retrieve the next set of results, or null if there are no more results available. \n         This token is valid for one day and must be used within that time frame.</simpara>\n      ",
+            "documentation": "\n         <p>The token to use to retrieve the next set of results, or null if there are no more results available. \n         This token is valid for one day and must be used within that time frame.</p>\n      ",
+            "shape_name": "PaginationToken",
+            "min_length": 1,
+            "max_length": 63
+          }
+        },
+        "shape_name": "DescribeWorkspaceDirectoriesResult",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The exception error message.</simpara>\n      ",
+              "documentation": "\n         <p>The exception error message.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>One or more parameter values are not valid.</simpara>\n      ",
+          "documentation": "\n         <p>One or more parameter values are not valid.</p>\n      ",
+          "shape_name": "InvalidParameterValuesException"
+        }
+      ],
+      "documentation": "\n         <p>Describes the available AWS Directory Service directories that are registered with Amazon WorkSpaces.</p>\n      "
+    },
+    "DescribeWorkspaceBundles": {
+      "name": "DescribeWorkspaceBundles",
+      "input": {
+        "type": "structure",
+        "members": {
+          "BundleIds": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>The IDs of the bundles. This parameter cannot be combined with any other filter.</simpara>\n      ",
+            "documentation": "\n         <p>The IDs of the bundles. This parameter cannot be combined with any other filter.</p>\n      ",
+            "shape_name": "BundleIdList",
+            "min_length": 1,
+            "max_length": 25,
+            "members": {
+              "type": "string",
+              "pattern": "^wsb-[0-9a-z]{8,63}$",
+              "shape_name": "BundleId",
+              "documentation": null
+            }
+          },
+          "Owner": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>The owner of the bundles. This parameter cannot be combined with any other filter.</simpara>\n         <simpara>Specify <code>AMAZON</code> to describe the bundles provided by AWS or null \n         to describe the bundles that belong to your account.</simpara>\n      ",
+            "documentation": "\n         <p>The owner of the bundles. This parameter cannot be combined with any other filter.</p>\n         <p>Specify <code>AMAZON</code> to describe the bundles provided by AWS or null \n         to describe the bundles that belong to your account.</p>\n      ",
+            "shape_name": "BundleOwner"
+          },
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>The token for the next set of results. (You received this token from a previous call.)</simpara>\n      ",
+            "documentation": "\n         <p>The token for the next set of results. (You received this token from a previous call.)</p>\n      ",
+            "shape_name": "PaginationToken",
+            "min_length": 1,
+            "max_length": 63
+          }
+        },
+        "shape_name": "DescribeWorkspaceBundlesRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "Bundles": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>Information about the bundles.</simpara>\n      ",
+            "documentation": "\n         <p>Information about the bundles.</p>\n      ",
+            "shape_name": "BundleList",
+            "members": {
+              "type": "structure",
+              "members": {
+                "BundleId": {
+                  "type": "string",
+                  "pattern": "^wsb-[0-9a-z]{8,63}$",
+                  "zonbookDocumentation": "\n         <simpara>The bundle identifier.</simpara>\n      ",
+                  "documentation": "\n         <p>The bundle identifier.</p>\n      ",
+                  "shape_name": "BundleId"
+                },
+                "Name": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The name of the bundle.</simpara>\n      ",
+                  "documentation": "\n         <p>The name of the bundle.</p>\n      ",
+                  "shape_name": "NonEmptyString",
+                  "min_length": 1
+                },
+                "Owner": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The owner of the bundle. This is the account identifier of the owner, or\n         <code>AMAZON</code> if the bundle is provided by AWS.</simpara>\n      ",
+                  "documentation": "\n         <p>The owner of the bundle. This is the account identifier of the owner, or\n         <code>AMAZON</code> if the bundle is provided by AWS.</p>\n      ",
+                  "shape_name": "BundleOwner"
+                },
+                "Description": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>A description.</simpara>\n      ",
+                  "documentation": "\n         <p>A description.</p>\n      ",
+                  "shape_name": "Description"
+                },
+                "RootStorage": {
+                  "type": "structure",
+                  "members": {
+                    "Capacity": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n         <simpara>The size of the root volume.</simpara>\n      ",
+                      "documentation": "\n         <p>The size of the root volume.</p>\n      ",
+                      "shape_name": "NonEmptyString",
+                      "min_length": 1
+                    }
+                  },
+                  "zonbookDocumentation": "\n         <simpara>The size of the root volume.</simpara>\n      ",
+                  "documentation": "\n         <p>The size of the root volume.</p>\n      ",
+                  "shape_name": "RootStorage"
+                },
+                "UserStorage": {
+                  "type": "structure",
+                  "members": {
+                    "Capacity": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n         <simpara>The size of the user storage.</simpara>\n      ",
+                      "documentation": "\n         <p>The size of the user storage.</p>\n      ",
+                      "shape_name": "NonEmptyString",
+                      "min_length": 1
+                    }
+                  },
+                  "zonbookDocumentation": "\n         <simpara>The size of the user storage.</simpara>\n      ",
+                  "documentation": "\n         <p>The size of the user storage.</p>\n      ",
+                  "shape_name": "UserStorage"
+                },
+                "ComputeType": {
+                  "type": "structure",
+                  "members": {
+                    "Name": {
+                      "type": "string",
+                      "enum": [
+                        "VALUE",
+                        "STANDARD",
+                        "PERFORMANCE",
+                        "POWER",
+                        "GRAPHICS",
+                        "POWERPRO",
+                        "GRAPHICSPRO"
+                      ],
+                      "zonbookDocumentation": "\n         <simpara>The compute type.</simpara>\n      ",
+                      "documentation": "\n         <p>The compute type.</p>\n      ",
+                      "shape_name": "Compute"
+                    }
+                  },
+                  "zonbookDocumentation": "\n         <simpara>The compute type. For more information, see <ulink type=\"marketing\" url=\"workspaces/details/#Amazon_WorkSpaces_Bundles\">Amazon WorkSpaces Bundles</ulink>.</simpara>\n      ",
+                  "documentation": "\n         <p>The compute type. For more information, see <a href=\"http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles\">Amazon WorkSpaces Bundles</a>.</p>\n      ",
+                  "shape_name": "ComputeType"
+                }
+              },
+              "zonbookDocumentation": "\n         <simpara>Information about a WorkSpace bundle.</simpara>\n      ",
+              "documentation": "\n         <p>Information about a WorkSpace bundle.</p>\n      ",
+              "shape_name": "WorkspaceBundle"
+            }
+          },
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>The token to use to retrieve the next set of results, or null if there are no more results available. \n         This token is valid for one day and must be used within that time frame.</simpara>\n      ",
+            "documentation": "\n         <p>The token to use to retrieve the next set of results, or null if there are no more results available. \n         This token is valid for one day and must be used within that time frame.</p>\n      ",
+            "shape_name": "PaginationToken",
+            "min_length": 1,
+            "max_length": 63
+          }
+        },
+        "shape_name": "DescribeWorkspaceBundlesResult",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The exception error message.</simpara>\n      ",
+              "documentation": "\n         <p>The exception error message.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>One or more parameter values are not valid.</simpara>\n      ",
+          "documentation": "\n         <p>One or more parameter values are not valid.</p>\n      ",
+          "shape_name": "InvalidParameterValuesException"
+        }
+      ],
+      "documentation": "\n         <p>Describes the available WorkSpace bundles.</p>\n         <p>You can filter the results using either bundle ID or owner, but not both.</p> \n      "
+    },
+    "DescribeWorkspaces": {
+      "name": "DescribeWorkspaces",
+      "input": {
+        "type": "structure",
+        "members": {
+          "WorkspaceIds": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>The IDs of the WorkSpaces. This parameter cannot be combined with any other filter.</simpara>\n         <simpara>Because the <xref linkend=\"CreateWorkspaces\"/> operation is asynchronous, the identifier it returns \n         is not immediately available. If you immediately call\n         <xref linkend=\"DescribeWorkspaces\"/> with this identifier, no information is returned.</simpara>\n      ",
+            "documentation": "\n         <p>The IDs of the WorkSpaces. This parameter cannot be combined with any other filter.</p>\n         <p>Because the <a>CreateWorkspaces</a> operation is asynchronous, the identifier it returns \n         is not immediately available. If you immediately call\n         <a>DescribeWorkspaces</a> with this identifier, no information is returned.</p>\n      ",
+            "shape_name": "WorkspaceIdList",
+            "min_length": 1,
+            "max_length": 25,
+            "members": {
+              "type": "string",
+              "pattern": "^ws-[0-9a-z]{8,63}$",
+              "shape_name": "WorkspaceId",
+              "documentation": null
+            }
+          },
+          "DirectoryId": {
+            "type": "string",
+            "pattern": "^d-[0-9a-f]{8,63}$",
+            "zonbookDocumentation": "\n         <simpara>The ID of the directory. In addition, you can optionally specify a specific directory user \n         (see <code>UserName</code>). This parameter cannot be combined with any other filter.</simpara>\n      ",
+            "documentation": "\n         <p>The ID of the directory. In addition, you can optionally specify a specific directory user \n         (see <code>UserName</code>). This parameter cannot be combined with any other filter.</p>\n      ",
+            "shape_name": "DirectoryId"
+          },
+          "UserName": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>The name of the directory user. You must specify this parameter with <code>DirectoryId</code>.</simpara>\n      ",
+            "documentation": "\n         <p>The name of the directory user. You must specify this parameter with <code>DirectoryId</code>.</p>\n      ",
+            "shape_name": "UserName",
+            "min_length": 1,
+            "max_length": 63
+          },
+          "BundleId": {
+            "type": "string",
+            "pattern": "^wsb-[0-9a-z]{8,63}$",
+            "zonbookDocumentation": "\n         <simpara>The ID of the bundle. All WorkSpaces that are created from this bundle are retrieved. \n         This parameter cannot be combined with any other filter.</simpara>\n      ",
+            "documentation": "\n         <p>The ID of the bundle. All WorkSpaces that are created from this bundle are retrieved. \n         This parameter cannot be combined with any other filter.</p>\n      ",
+            "shape_name": "BundleId"
+          },
+          "Limit": {
+            "type": "integer",
+            "zonbookDocumentation": "\n         <simpara>The maximum number of items to return.</simpara>\n      ",
+            "documentation": "\n         <p>The maximum number of items to return.</p>\n      ",
+            "shape_name": "Limit",
+            "min_length": 1,
+            "max_length": 25
+          },
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>The token for the next set of results. (You received this token from a previous call.)</simpara>\n      ",
+            "documentation": "\n         <p>The token for the next set of results. (You received this token from a previous call.)</p>\n      ",
+            "shape_name": "PaginationToken",
+            "min_length": 1,
+            "max_length": 63
+          }
+        },
+        "shape_name": "DescribeWorkspacesRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "Workspaces": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>Information about the WorkSpaces.</simpara>\n         <simpara>Because <xref linkend=\"CreateWorkspaces\"/> is an asynchronous operation, some of the returned information \n         could be incomplete.</simpara>\n      ",
+            "documentation": "\n         <p>Information about the WorkSpaces.</p>\n         <p>Because <a>CreateWorkspaces</a> is an asynchronous operation, some of the returned information \n         could be incomplete.</p>\n      ",
+            "shape_name": "WorkspaceList",
+            "members": {
+              "type": "structure",
+              "members": {
+                "WorkspaceId": {
+                  "type": "string",
+                  "pattern": "^ws-[0-9a-z]{8,63}$",
+                  "zonbookDocumentation": "\n         <simpara>The identifier of the WorkSpace.</simpara>\n      ",
+                  "documentation": "\n         <p>The identifier of the WorkSpace.</p>\n      ",
+                  "shape_name": "WorkspaceId"
+                },
+                "DirectoryId": {
+                  "type": "string",
+                  "pattern": "^d-[0-9a-f]{8,63}$",
+                  "zonbookDocumentation": "\n         <simpara>The identifier of the AWS Directory Service directory for the WorkSpace.</simpara>\n      ",
+                  "documentation": "\n         <p>The identifier of the AWS Directory Service directory for the WorkSpace.</p>\n      ",
+                  "shape_name": "DirectoryId"
+                },
+                "UserName": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The user for the WorkSpace.</simpara>\n      ",
+                  "documentation": "\n         <p>The user for the WorkSpace.</p>\n      ",
+                  "shape_name": "UserName",
+                  "min_length": 1,
+                  "max_length": 63
+                },
+                "IpAddress": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The IP address of the WorkSpace.</simpara>\n      ",
+                  "documentation": "\n         <p>The IP address of the WorkSpace.</p>\n      ",
+                  "shape_name": "IpAddress"
+                },
+                "State": {
+                  "type": "string",
+                  "enum": [
+                    "PENDING",
+                    "AVAILABLE",
+                    "IMPAIRED",
+                    "UNHEALTHY",
+                    "REBOOTING",
+                    "STARTING",
+                    "REBUILDING",
+                    "MAINTENANCE",
+                    "ADMIN_MAINTENANCE",
+                    "TERMINATING",
+                    "TERMINATED",
+                    "SUSPENDED",
+                    "UPDATING",
+                    "STOPPING",
+                    "STOPPED",
+                    "ERROR"
+                  ],
+                  "zonbookDocumentation": "\n         <simpara>The operational state of the WorkSpace.</simpara>\n      ",
+                  "documentation": "\n         <p>The operational state of the WorkSpace.</p>\n      ",
+                  "shape_name": "WorkspaceState"
+                },
+                "BundleId": {
+                  "type": "string",
+                  "pattern": "^wsb-[0-9a-z]{8,63}$",
+                  "zonbookDocumentation": "\n         <simpara>The identifier of the bundle used to create the WorkSpace.</simpara>\n      ",
+                  "documentation": "\n         <p>The identifier of the bundle used to create the WorkSpace.</p>\n      ",
+                  "shape_name": "BundleId"
+                },
+                "SubnetId": {
+                  "type": "string",
+                  "pattern": "^(subnet-[0-9a-f]{8})$",
+                  "zonbookDocumentation": "\n         <simpara>The identifier of the subnet for the WorkSpace.</simpara>\n      ",
+                  "documentation": "\n         <p>The identifier of the subnet for the WorkSpace.</p>\n      ",
+                  "shape_name": "SubnetId"
+                },
+                "ErrorMessage": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>If the WorkSpace could not be created, contains a textual error message that describes the failure.</simpara>\n      ",
+                  "documentation": "\n         <p>If the WorkSpace could not be created, contains a textual error message that describes the failure.</p>\n      ",
+                  "shape_name": "Description"
+                },
+                "ErrorCode": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>If the WorkSpace could not be created, contains the error code.</simpara>\n      ",
+                  "documentation": "\n         <p>If the WorkSpace could not be created, contains the error code.</p>\n      ",
+                  "shape_name": "WorkspaceErrorCode"
+                },
+                "ComputerName": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The name of the WorkSpace, as seen by the operating system.</simpara>\n      ",
+                  "documentation": "\n         <p>The name of the WorkSpace, as seen by the operating system.</p>\n      ",
+                  "shape_name": "ComputerName"
+                },
+                "VolumeEncryptionKey": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The KMS key used to encrypt data stored on your WorkSpace.</simpara>\n      ",
+                  "documentation": "\n         <p>The KMS key used to encrypt data stored on your WorkSpace.</p>\n      ",
+                  "shape_name": "VolumeEncryptionKey"
+                },
+                "UserVolumeEncryptionEnabled": {
+                  "type": "boolean",
+                  "zonbookDocumentation": "\n         <simpara>Indicates whether the data stored on the user volume is encrypted.</simpara>\n      ",
+                  "documentation": "\n         <p>Indicates whether the data stored on the user volume is encrypted.</p>\n      ",
+                  "shape_name": "BooleanObject"
+                },
+                "RootVolumeEncryptionEnabled": {
+                  "type": "boolean",
+                  "zonbookDocumentation": "\n         <simpara>Indicates whether the data stored on the root volume is encrypted.</simpara>\n      ",
+                  "documentation": "\n         <p>Indicates whether the data stored on the root volume is encrypted.</p>\n      ",
+                  "shape_name": "BooleanObject"
+                },
+                "WorkspaceProperties": {
+                  "type": "structure",
+                  "members": {
+                    "RunningMode": {
+                      "type": "string",
+                      "enum": [
+                        "AUTO_STOP",
+                        "ALWAYS_ON"
+                      ],
+                      "zonbookDocumentation": "\n         <simpara>The running mode. For more information, see <ulink type=\"documentation\" url=\"workspaces/latest/adminguide/running-mode.html\">Manage the WorkSpace Running Mode</ulink>.</simpara>\n      ",
+                      "documentation": "\n         <p>The running mode. For more information, see <a href=\"http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html\">Manage the WorkSpace Running Mode</a>.</p>\n      ",
+                      "shape_name": "RunningMode"
+                    },
+                    "RunningModeAutoStopTimeoutInMinutes": {
+                      "type": "integer",
+                      "zonbookDocumentation": "\n         <simpara>The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60 minute intervals.</simpara>\n      ",
+                      "documentation": "\n         <p>The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60 minute intervals.</p>\n      ",
+                      "shape_name": "RunningModeAutoStopTimeoutInMinutes"
+                    },
+                    "RootVolumeSizeGib": {
+                      "type": "integer",
+                      "zonbookDocumentation": "\n         <simpara>The size of the root volume.</simpara>\n      ",
+                      "documentation": "\n         <p>The size of the root volume.</p>\n      ",
+                      "shape_name": "RootVolumeSizeGib"
+                    },
+                    "UserVolumeSizeGib": {
+                      "type": "integer",
+                      "zonbookDocumentation": "\n         <simpara>The size of the user storage.</simpara>\n      ",
+                      "documentation": "\n         <p>The size of the user storage.</p>\n      ",
+                      "shape_name": "UserVolumeSizeGib"
+                    },
+                    "ComputeTypeName": {
+                      "type": "string",
+                      "enum": [
+                        "VALUE",
+                        "STANDARD",
+                        "PERFORMANCE",
+                        "POWER",
+                        "GRAPHICS",
+                        "POWERPRO",
+                        "GRAPHICSPRO"
+                      ],
+                      "zonbookDocumentation": "\n         <simpara>The compute type. For more information, see <ulink type=\"marketing\" url=\"workspaces/details/#Amazon_WorkSpaces_Bundles\">Amazon WorkSpaces Bundles</ulink>.</simpara>\n      ",
+                      "documentation": "\n         <p>The compute type. For more information, see <a href=\"http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles\">Amazon WorkSpaces Bundles</a>.</p>\n      ",
+                      "shape_name": "Compute"
+                    }
+                  },
+                  "zonbookDocumentation": "\n         <simpara>The properties of the WorkSpace.</simpara>\n      ",
+                  "documentation": "\n         <p>The properties of the WorkSpace.</p>\n      ",
+                  "shape_name": "WorkspaceProperties"
+                },
+                "ModificationStates": {
+                  "type": "list",
+                  "zonbookDocumentation": "\n         <simpara>The modification states of the WorkSpace.</simpara>\n      ",
+                  "documentation": "\n         <p>The modification states of the WorkSpace.</p>\n      ",
+                  "shape_name": "ModificationStateList",
+                  "members": {
+                    "type": "structure",
+                    "members": {
+                      "Resource": {
+                        "type": "string",
+                        "enum": [
+                          "ROOT_VOLUME",
+                          "USER_VOLUME",
+                          "COMPUTE_TYPE"
+                        ],
+                        "zonbookDocumentation": "\n         <simpara>The resource.</simpara>\n      ",
+                        "documentation": "\n         <p>The resource.</p>\n      ",
+                        "shape_name": "ModificationResourceEnum"
+                      },
+                      "State": {
+                        "type": "string",
+                        "enum": [
+                          "UPDATE_INITIATED",
+                          "UPDATE_IN_PROGRESS"
+                        ],
+                        "zonbookDocumentation": "\n         <simpara>The modification state.</simpara>\n      ",
+                        "documentation": "\n         <p>The modification state.</p>\n      ",
+                        "shape_name": "ModificationStateEnum"
+                      }
+                    },
+                    "zonbookDocumentation": "\n         <simpara>Information about a WorkSpace modification.</simpara>\n      ",
+                    "documentation": "\n         <p>Information about a WorkSpace modification.</p>\n      ",
+                    "shape_name": "ModificationState"
+                  }
+                }
+              },
+              "zonbookDocumentation": "\n         <simpara>Information about a WorkSpace.</simpara>\n      ",
+              "documentation": "\n         <p>Information about a WorkSpace.</p>\n      ",
+              "shape_name": "Workspace"
+            }
+          },
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>The token to use to retrieve the next set of results, or null if there are no more results available. \n         This token is valid for one day and must be used within that time frame.</simpara>\n      ",
+            "documentation": "\n         <p>The token to use to retrieve the next set of results, or null if there are no more results available. \n         This token is valid for one day and must be used within that time frame.</p>\n      ",
+            "shape_name": "PaginationToken",
+            "min_length": 1,
+            "max_length": 63
+          }
+        },
+        "shape_name": "DescribeWorkspacesResult",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The exception error message.</simpara>\n      ",
+              "documentation": "\n         <p>The exception error message.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>One or more parameter values are not valid.</simpara>\n      ",
+          "documentation": "\n         <p>One or more parameter values are not valid.</p>\n      ",
+          "shape_name": "InvalidParameterValuesException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The exception error message.</simpara>\n      ",
+              "documentation": "\n         <p>The exception error message.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "ResourceId": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The identifier of the resource that is not available.</simpara>\n      ",
+              "documentation": "\n         <p>The identifier of the resource that is not available.</p>\n      ",
+              "shape_name": "NonEmptyString",
+              "min_length": 1
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The specified resource is not available.</simpara>\n      ",
+          "documentation": "\n         <p>The specified resource is not available.</p>\n      ",
+          "shape_name": "ResourceUnavailableException"
+        }
+      ],
+      "documentation": "\n         <p>Describes the specified WorkSpaces.</p>\n         <p>You can filter the results using bundle ID, directory ID, or owner, but you can specify only one filter at a time.</p>\n      "
+    },
+    "CreateWorkspaces": {
+      "name": "CreateWorkspaces",
+      "input": {
+        "type": "structure",
+        "members": {
+          "Workspaces": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>The WorkSpaces to create. You can specify up to 25 WorkSpaces.</simpara>\n      ",
+            "documentation": "\n         <p>The WorkSpaces to create. You can specify up to 25 WorkSpaces.</p>\n      ",
+            "required": true,
+            "shape_name": "WorkspaceRequestList",
+            "min_length": 1,
+            "max_length": 25,
+            "members": {
+              "type": "structure",
+              "members": {
+                "DirectoryId": {
+                  "type": "string",
+                  "pattern": "^d-[0-9a-f]{8,63}$",
+                  "zonbookDocumentation": "\n         <simpara>The identifier of the AWS Directory Service directory for the WorkSpace. \n         You can use <xref linkend=\"DescribeWorkspaceDirectories\"/> to list the available directories.</simpara>\n      ",
+                  "documentation": "\n         <p>The identifier of the AWS Directory Service directory for the WorkSpace. \n         You can use <a>DescribeWorkspaceDirectories</a> to list the available directories.</p>\n      ",
+                  "required": true,
+                  "shape_name": "DirectoryId"
+                },
+                "UserName": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The username of the user for the WorkSpace. This username must exist in the\n         AWS Directory Service directory for the WorkSpace.</simpara>\n      ",
+                  "documentation": "\n         <p>The username of the user for the WorkSpace. This username must exist in the\n         AWS Directory Service directory for the WorkSpace.</p>\n      ",
+                  "required": true,
+                  "shape_name": "UserName",
+                  "min_length": 1,
+                  "max_length": 63
+                },
+                "BundleId": {
+                  "type": "string",
+                  "pattern": "^wsb-[0-9a-z]{8,63}$",
+                  "zonbookDocumentation": "\n         <simpara>The identifier of the bundle for the WorkSpace. \n         You can use <xref linkend=\"DescribeWorkspaceBundles\"/> to list the available bundles.</simpara>\n      ",
+                  "documentation": "\n         <p>The identifier of the bundle for the WorkSpace. \n         You can use <a>DescribeWorkspaceBundles</a> to list the available bundles.</p>\n      ",
+                  "required": true,
+                  "shape_name": "BundleId"
+                },
+                "VolumeEncryptionKey": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The KMS key used to encrypt data stored on your WorkSpace.</simpara>\n      ",
+                  "documentation": "\n         <p>The KMS key used to encrypt data stored on your WorkSpace.</p>\n      ",
+                  "shape_name": "VolumeEncryptionKey"
+                },
+                "UserVolumeEncryptionEnabled": {
+                  "type": "boolean",
+                  "zonbookDocumentation": "\n         <simpara>Indicates whether the data stored on the user volume is encrypted.</simpara>\n      ",
+                  "documentation": "\n         <p>Indicates whether the data stored on the user volume is encrypted.</p>\n      ",
+                  "shape_name": "BooleanObject"
+                },
+                "RootVolumeEncryptionEnabled": {
+                  "type": "boolean",
+                  "zonbookDocumentation": "\n         <simpara>Indicates whether the data stored on the root volume is encrypted.</simpara>\n      ",
+                  "documentation": "\n         <p>Indicates whether the data stored on the root volume is encrypted.</p>\n      ",
+                  "shape_name": "BooleanObject"
+                },
+                "WorkspaceProperties": {
+                  "type": "structure",
+                  "members": {
+                    "RunningMode": {
+                      "type": "string",
+                      "enum": [
+                        "AUTO_STOP",
+                        "ALWAYS_ON"
+                      ],
+                      "zonbookDocumentation": "\n         <simpara>The running mode. For more information, see <ulink type=\"documentation\" url=\"workspaces/latest/adminguide/running-mode.html\">Manage the WorkSpace Running Mode</ulink>.</simpara>\n      ",
+                      "documentation": "\n         <p>The running mode. For more information, see <a href=\"http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html\">Manage the WorkSpace Running Mode</a>.</p>\n      ",
+                      "shape_name": "RunningMode"
+                    },
+                    "RunningModeAutoStopTimeoutInMinutes": {
+                      "type": "integer",
+                      "zonbookDocumentation": "\n         <simpara>The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60 minute intervals.</simpara>\n      ",
+                      "documentation": "\n         <p>The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60 minute intervals.</p>\n      ",
+                      "shape_name": "RunningModeAutoStopTimeoutInMinutes"
+                    },
+                    "RootVolumeSizeGib": {
+                      "type": "integer",
+                      "zonbookDocumentation": "\n         <simpara>The size of the root volume.</simpara>\n      ",
+                      "documentation": "\n         <p>The size of the root volume.</p>\n      ",
+                      "shape_name": "RootVolumeSizeGib"
+                    },
+                    "UserVolumeSizeGib": {
+                      "type": "integer",
+                      "zonbookDocumentation": "\n         <simpara>The size of the user storage.</simpara>\n      ",
+                      "documentation": "\n         <p>The size of the user storage.</p>\n      ",
+                      "shape_name": "UserVolumeSizeGib"
+                    },
+                    "ComputeTypeName": {
+                      "type": "string",
+                      "enum": [
+                        "VALUE",
+                        "STANDARD",
+                        "PERFORMANCE",
+                        "POWER",
+                        "GRAPHICS",
+                        "POWERPRO",
+                        "GRAPHICSPRO"
+                      ],
+                      "zonbookDocumentation": "\n         <simpara>The compute type. For more information, see <ulink type=\"marketing\" url=\"workspaces/details/#Amazon_WorkSpaces_Bundles\">Amazon WorkSpaces Bundles</ulink>.</simpara>\n      ",
+                      "documentation": "\n         <p>The compute type. For more information, see <a href=\"http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles\">Amazon WorkSpaces Bundles</a>.</p>\n      ",
+                      "shape_name": "Compute"
+                    }
+                  },
+                  "zonbookDocumentation": "\n         <simpara>The WorkSpace properties.</simpara>\n      ",
+                  "documentation": "\n         <p>The WorkSpace properties.</p>\n      ",
+                  "shape_name": "WorkspaceProperties"
+                },
+                "Tags": {
+                  "type": "list",
+                  "zonbookDocumentation": "\n         <simpara>The tags for the WorkSpace.</simpara>\n      ",
+                  "documentation": "\n         <p>The tags for the WorkSpace.</p>\n      ",
+                  "shape_name": "TagList",
+                  "members": {
+                    "type": "structure",
+                    "members": {
+                      "Key": {
+                        "type": "string",
+                        "zonbookDocumentation": "\n         <simpara>The key of the tag.</simpara>\n      ",
+                        "documentation": "\n         <p>The key of the tag.</p>\n      ",
+                        "required": true,
+                        "shape_name": "TagKey",
+                        "min_length": 1,
+                        "max_length": 127
+                      },
+                      "Value": {
+                        "type": "string",
+                        "zonbookDocumentation": "\n         <simpara>The value of the tag.</simpara>\n      ",
+                        "documentation": "\n         <p>The value of the tag.</p>\n      ",
+                        "shape_name": "TagValue",
+                        "max_length": 255
+                      }
+                    },
+                    "zonbookDocumentation": "\n         <simpara>Information about a tag.</simpara>\n      ",
+                    "documentation": "\n         <p>Information about a tag.</p>\n      ",
+                    "shape_name": "Tag"
+                  }
+                }
+              },
+              "zonbookDocumentation": "\n         <simpara>Information used to create a WorkSpace.</simpara>\n      ",
+              "documentation": "\n         <p>Information used to create a WorkSpace.</p>\n      ",
+              "shape_name": "WorkspaceRequest"
+            }
+          }
+        },
+        "shape_name": "CreateWorkspacesRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "FailedRequests": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>Information about the WorkSpaces that could not be created.</simpara>\n      ",
+            "documentation": "\n         <p>Information about the WorkSpaces that could not be created.</p>\n      ",
+            "shape_name": "FailedCreateWorkspaceRequests",
+            "members": {
+              "type": "structure",
+              "members": {
+                "WorkspaceRequest": {
+                  "type": "structure",
+                  "members": {
+                    "DirectoryId": {
+                      "type": "string",
+                      "pattern": "^d-[0-9a-f]{8,63}$",
+                      "zonbookDocumentation": "\n         <simpara>The identifier of the AWS Directory Service directory for the WorkSpace. \n         You can use <xref linkend=\"DescribeWorkspaceDirectories\"/> to list the available directories.</simpara>\n      ",
+                      "documentation": "\n         <p>The identifier of the AWS Directory Service directory for the WorkSpace. \n         You can use <a>DescribeWorkspaceDirectories</a> to list the available directories.</p>\n      ",
+                      "required": true,
+                      "shape_name": "DirectoryId"
+                    },
+                    "UserName": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n         <simpara>The username of the user for the WorkSpace. This username must exist in the\n         AWS Directory Service directory for the WorkSpace.</simpara>\n      ",
+                      "documentation": "\n         <p>The username of the user for the WorkSpace. This username must exist in the\n         AWS Directory Service directory for the WorkSpace.</p>\n      ",
+                      "required": true,
+                      "shape_name": "UserName",
+                      "min_length": 1,
+                      "max_length": 63
+                    },
+                    "BundleId": {
+                      "type": "string",
+                      "pattern": "^wsb-[0-9a-z]{8,63}$",
+                      "zonbookDocumentation": "\n         <simpara>The identifier of the bundle for the WorkSpace. \n         You can use <xref linkend=\"DescribeWorkspaceBundles\"/> to list the available bundles.</simpara>\n      ",
+                      "documentation": "\n         <p>The identifier of the bundle for the WorkSpace. \n         You can use <a>DescribeWorkspaceBundles</a> to list the available bundles.</p>\n      ",
+                      "required": true,
+                      "shape_name": "BundleId"
+                    },
+                    "VolumeEncryptionKey": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n         <simpara>The KMS key used to encrypt data stored on your WorkSpace.</simpara>\n      ",
+                      "documentation": "\n         <p>The KMS key used to encrypt data stored on your WorkSpace.</p>\n      ",
+                      "shape_name": "VolumeEncryptionKey"
+                    },
+                    "UserVolumeEncryptionEnabled": {
+                      "type": "boolean",
+                      "zonbookDocumentation": "\n         <simpara>Indicates whether the data stored on the user volume is encrypted.</simpara>\n      ",
+                      "documentation": "\n         <p>Indicates whether the data stored on the user volume is encrypted.</p>\n      ",
+                      "shape_name": "BooleanObject"
+                    },
+                    "RootVolumeEncryptionEnabled": {
+                      "type": "boolean",
+                      "zonbookDocumentation": "\n         <simpara>Indicates whether the data stored on the root volume is encrypted.</simpara>\n      ",
+                      "documentation": "\n         <p>Indicates whether the data stored on the root volume is encrypted.</p>\n      ",
+                      "shape_name": "BooleanObject"
+                    },
+                    "WorkspaceProperties": {
+                      "type": "structure",
+                      "members": {
+                        "RunningMode": {
+                          "type": "string",
+                          "enum": [
+                            "AUTO_STOP",
+                            "ALWAYS_ON"
+                          ],
+                          "zonbookDocumentation": "\n         <simpara>The running mode. For more information, see <ulink type=\"documentation\" url=\"workspaces/latest/adminguide/running-mode.html\">Manage the WorkSpace Running Mode</ulink>.</simpara>\n      ",
+                          "documentation": "\n         <p>The running mode. For more information, see <a href=\"http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html\">Manage the WorkSpace Running Mode</a>.</p>\n      ",
+                          "shape_name": "RunningMode"
+                        },
+                        "RunningModeAutoStopTimeoutInMinutes": {
+                          "type": "integer",
+                          "zonbookDocumentation": "\n         <simpara>The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60 minute intervals.</simpara>\n      ",
+                          "documentation": "\n         <p>The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60 minute intervals.</p>\n      ",
+                          "shape_name": "RunningModeAutoStopTimeoutInMinutes"
+                        },
+                        "RootVolumeSizeGib": {
+                          "type": "integer",
+                          "zonbookDocumentation": "\n         <simpara>The size of the root volume.</simpara>\n      ",
+                          "documentation": "\n         <p>The size of the root volume.</p>\n      ",
+                          "shape_name": "RootVolumeSizeGib"
+                        },
+                        "UserVolumeSizeGib": {
+                          "type": "integer",
+                          "zonbookDocumentation": "\n         <simpara>The size of the user storage.</simpara>\n      ",
+                          "documentation": "\n         <p>The size of the user storage.</p>\n      ",
+                          "shape_name": "UserVolumeSizeGib"
+                        },
+                        "ComputeTypeName": {
+                          "type": "string",
+                          "enum": [
+                            "VALUE",
+                            "STANDARD",
+                            "PERFORMANCE",
+                            "POWER",
+                            "GRAPHICS",
+                            "POWERPRO",
+                            "GRAPHICSPRO"
+                          ],
+                          "zonbookDocumentation": "\n         <simpara>The compute type. For more information, see <ulink type=\"marketing\" url=\"workspaces/details/#Amazon_WorkSpaces_Bundles\">Amazon WorkSpaces Bundles</ulink>.</simpara>\n      ",
+                          "documentation": "\n         <p>The compute type. For more information, see <a href=\"http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles\">Amazon WorkSpaces Bundles</a>.</p>\n      ",
+                          "shape_name": "Compute"
+                        }
+                      },
+                      "zonbookDocumentation": "\n         <simpara>The WorkSpace properties.</simpara>\n      ",
+                      "documentation": "\n         <p>The WorkSpace properties.</p>\n      ",
+                      "shape_name": "WorkspaceProperties"
+                    },
+                    "Tags": {
+                      "type": "list",
+                      "zonbookDocumentation": "\n         <simpara>The tags for the WorkSpace.</simpara>\n      ",
+                      "documentation": "\n         <p>The tags for the WorkSpace.</p>\n      ",
+                      "shape_name": "TagList",
+                      "members": {
+                        "type": "structure",
+                        "members": {
+                          "Key": {
+                            "type": "string",
+                            "zonbookDocumentation": "\n         <simpara>The key of the tag.</simpara>\n      ",
+                            "documentation": "\n         <p>The key of the tag.</p>\n      ",
+                            "required": true,
+                            "shape_name": "TagKey",
+                            "min_length": 1,
+                            "max_length": 127
+                          },
+                          "Value": {
+                            "type": "string",
+                            "zonbookDocumentation": "\n         <simpara>The value of the tag.</simpara>\n      ",
+                            "documentation": "\n         <p>The value of the tag.</p>\n      ",
+                            "shape_name": "TagValue",
+                            "max_length": 255
+                          }
+                        },
+                        "zonbookDocumentation": "\n         <simpara>Information about a tag.</simpara>\n      ",
+                        "documentation": "\n         <p>Information about a tag.</p>\n      ",
+                        "shape_name": "Tag"
+                      }
+                    }
+                  },
+                  "zonbookDocumentation": "\n         <simpara>Information about the WorkSpace.</simpara>\n      ",
+                  "documentation": "\n         <p>Information about the WorkSpace.</p>\n      ",
+                  "shape_name": "WorkspaceRequest"
+                },
+                "ErrorCode": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The error code.</simpara>\n      ",
+                  "documentation": "\n         <p>The error code.</p>\n      ",
+                  "shape_name": "ErrorType"
+                },
+                "ErrorMessage": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The textual error message.</simpara>\n      ",
+                  "documentation": "\n         <p>The textual error message.</p>\n      ",
+                  "shape_name": "Description"
+                }
+              },
+              "zonbookDocumentation": "\n         <simpara>Information about a WorkSpace that could not be created.</simpara>\n      ",
+              "documentation": "\n         <p>Information about a WorkSpace that could not be created.</p>\n      ",
+              "shape_name": "FailedCreateWorkspaceRequest"
+            }
+          },
+          "PendingRequests": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>Information about the WorkSpaces that were created.</simpara>\n         <simpara>Because this operation is asynchronous, the identifier returned is not\n         immediately available for use with other operations. For example, if you call \n         <xref linkend=\"DescribeWorkspaces\"/> before the WorkSpace is created, the \n         information returned can be incomplete.</simpara>\n      ",
+            "documentation": "\n         <p>Information about the WorkSpaces that were created.</p>\n         <p>Because this operation is asynchronous, the identifier returned is not\n         immediately available for use with other operations. For example, if you call \n         <a>DescribeWorkspaces</a> before the WorkSpace is created, the \n         information returned can be incomplete.</p>\n      ",
+            "shape_name": "WorkspaceList",
+            "members": {
+              "type": "structure",
+              "members": {
+                "WorkspaceId": {
+                  "type": "string",
+                  "pattern": "^ws-[0-9a-z]{8,63}$",
+                  "zonbookDocumentation": "\n         <simpara>The identifier of the WorkSpace.</simpara>\n      ",
+                  "documentation": "\n         <p>The identifier of the WorkSpace.</p>\n      ",
+                  "shape_name": "WorkspaceId"
+                },
+                "DirectoryId": {
+                  "type": "string",
+                  "pattern": "^d-[0-9a-f]{8,63}$",
+                  "zonbookDocumentation": "\n         <simpara>The identifier of the AWS Directory Service directory for the WorkSpace.</simpara>\n      ",
+                  "documentation": "\n         <p>The identifier of the AWS Directory Service directory for the WorkSpace.</p>\n      ",
+                  "shape_name": "DirectoryId"
+                },
+                "UserName": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The user for the WorkSpace.</simpara>\n      ",
+                  "documentation": "\n         <p>The user for the WorkSpace.</p>\n      ",
+                  "shape_name": "UserName",
+                  "min_length": 1,
+                  "max_length": 63
+                },
+                "IpAddress": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The IP address of the WorkSpace.</simpara>\n      ",
+                  "documentation": "\n         <p>The IP address of the WorkSpace.</p>\n      ",
+                  "shape_name": "IpAddress"
+                },
+                "State": {
+                  "type": "string",
+                  "enum": [
+                    "PENDING",
+                    "AVAILABLE",
+                    "IMPAIRED",
+                    "UNHEALTHY",
+                    "REBOOTING",
+                    "STARTING",
+                    "REBUILDING",
+                    "MAINTENANCE",
+                    "ADMIN_MAINTENANCE",
+                    "TERMINATING",
+                    "TERMINATED",
+                    "SUSPENDED",
+                    "UPDATING",
+                    "STOPPING",
+                    "STOPPED",
+                    "ERROR"
+                  ],
+                  "zonbookDocumentation": "\n         <simpara>The operational state of the WorkSpace.</simpara>\n      ",
+                  "documentation": "\n         <p>The operational state of the WorkSpace.</p>\n      ",
+                  "shape_name": "WorkspaceState"
+                },
+                "BundleId": {
+                  "type": "string",
+                  "pattern": "^wsb-[0-9a-z]{8,63}$",
+                  "zonbookDocumentation": "\n         <simpara>The identifier of the bundle used to create the WorkSpace.</simpara>\n      ",
+                  "documentation": "\n         <p>The identifier of the bundle used to create the WorkSpace.</p>\n      ",
+                  "shape_name": "BundleId"
+                },
+                "SubnetId": {
+                  "type": "string",
+                  "pattern": "^(subnet-[0-9a-f]{8})$",
+                  "zonbookDocumentation": "\n         <simpara>The identifier of the subnet for the WorkSpace.</simpara>\n      ",
+                  "documentation": "\n         <p>The identifier of the subnet for the WorkSpace.</p>\n      ",
+                  "shape_name": "SubnetId"
+                },
+                "ErrorMessage": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>If the WorkSpace could not be created, contains a textual error message that describes the failure.</simpara>\n      ",
+                  "documentation": "\n         <p>If the WorkSpace could not be created, contains a textual error message that describes the failure.</p>\n      ",
+                  "shape_name": "Description"
+                },
+                "ErrorCode": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>If the WorkSpace could not be created, contains the error code.</simpara>\n      ",
+                  "documentation": "\n         <p>If the WorkSpace could not be created, contains the error code.</p>\n      ",
+                  "shape_name": "WorkspaceErrorCode"
+                },
+                "ComputerName": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The name of the WorkSpace, as seen by the operating system.</simpara>\n      ",
+                  "documentation": "\n         <p>The name of the WorkSpace, as seen by the operating system.</p>\n      ",
+                  "shape_name": "ComputerName"
+                },
+                "VolumeEncryptionKey": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The KMS key used to encrypt data stored on your WorkSpace.</simpara>\n      ",
+                  "documentation": "\n         <p>The KMS key used to encrypt data stored on your WorkSpace.</p>\n      ",
+                  "shape_name": "VolumeEncryptionKey"
+                },
+                "UserVolumeEncryptionEnabled": {
+                  "type": "boolean",
+                  "zonbookDocumentation": "\n         <simpara>Indicates whether the data stored on the user volume is encrypted.</simpara>\n      ",
+                  "documentation": "\n         <p>Indicates whether the data stored on the user volume is encrypted.</p>\n      ",
+                  "shape_name": "BooleanObject"
+                },
+                "RootVolumeEncryptionEnabled": {
+                  "type": "boolean",
+                  "zonbookDocumentation": "\n         <simpara>Indicates whether the data stored on the root volume is encrypted.</simpara>\n      ",
+                  "documentation": "\n         <p>Indicates whether the data stored on the root volume is encrypted.</p>\n      ",
+                  "shape_name": "BooleanObject"
+                },
+                "WorkspaceProperties": {
+                  "type": "structure",
+                  "members": {
+                    "RunningMode": {
+                      "type": "string",
+                      "enum": [
+                        "AUTO_STOP",
+                        "ALWAYS_ON"
+                      ],
+                      "zonbookDocumentation": "\n         <simpara>The running mode. For more information, see <ulink type=\"documentation\" url=\"workspaces/latest/adminguide/running-mode.html\">Manage the WorkSpace Running Mode</ulink>.</simpara>\n      ",
+                      "documentation": "\n         <p>The running mode. For more information, see <a href=\"http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html\">Manage the WorkSpace Running Mode</a>.</p>\n      ",
+                      "shape_name": "RunningMode"
+                    },
+                    "RunningModeAutoStopTimeoutInMinutes": {
+                      "type": "integer",
+                      "zonbookDocumentation": "\n         <simpara>The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60 minute intervals.</simpara>\n      ",
+                      "documentation": "\n         <p>The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60 minute intervals.</p>\n      ",
+                      "shape_name": "RunningModeAutoStopTimeoutInMinutes"
+                    },
+                    "RootVolumeSizeGib": {
+                      "type": "integer",
+                      "zonbookDocumentation": "\n         <simpara>The size of the root volume.</simpara>\n      ",
+                      "documentation": "\n         <p>The size of the root volume.</p>\n      ",
+                      "shape_name": "RootVolumeSizeGib"
+                    },
+                    "UserVolumeSizeGib": {
+                      "type": "integer",
+                      "zonbookDocumentation": "\n         <simpara>The size of the user storage.</simpara>\n      ",
+                      "documentation": "\n         <p>The size of the user storage.</p>\n      ",
+                      "shape_name": "UserVolumeSizeGib"
+                    },
+                    "ComputeTypeName": {
+                      "type": "string",
+                      "enum": [
+                        "VALUE",
+                        "STANDARD",
+                        "PERFORMANCE",
+                        "POWER",
+                        "GRAPHICS",
+                        "POWERPRO",
+                        "GRAPHICSPRO"
+                      ],
+                      "zonbookDocumentation": "\n         <simpara>The compute type. For more information, see <ulink type=\"marketing\" url=\"workspaces/details/#Amazon_WorkSpaces_Bundles\">Amazon WorkSpaces Bundles</ulink>.</simpara>\n      ",
+                      "documentation": "\n         <p>The compute type. For more information, see <a href=\"http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles\">Amazon WorkSpaces Bundles</a>.</p>\n      ",
+                      "shape_name": "Compute"
+                    }
+                  },
+                  "zonbookDocumentation": "\n         <simpara>The properties of the WorkSpace.</simpara>\n      ",
+                  "documentation": "\n         <p>The properties of the WorkSpace.</p>\n      ",
+                  "shape_name": "WorkspaceProperties"
+                },
+                "ModificationStates": {
+                  "type": "list",
+                  "zonbookDocumentation": "\n         <simpara>The modification states of the WorkSpace.</simpara>\n      ",
+                  "documentation": "\n         <p>The modification states of the WorkSpace.</p>\n      ",
+                  "shape_name": "ModificationStateList",
+                  "members": {
+                    "type": "structure",
+                    "members": {
+                      "Resource": {
+                        "type": "string",
+                        "enum": [
+                          "ROOT_VOLUME",
+                          "USER_VOLUME",
+                          "COMPUTE_TYPE"
+                        ],
+                        "zonbookDocumentation": "\n         <simpara>The resource.</simpara>\n      ",
+                        "documentation": "\n         <p>The resource.</p>\n      ",
+                        "shape_name": "ModificationResourceEnum"
+                      },
+                      "State": {
+                        "type": "string",
+                        "enum": [
+                          "UPDATE_INITIATED",
+                          "UPDATE_IN_PROGRESS"
+                        ],
+                        "zonbookDocumentation": "\n         <simpara>The modification state.</simpara>\n      ",
+                        "documentation": "\n         <p>The modification state.</p>\n      ",
+                        "shape_name": "ModificationStateEnum"
+                      }
+                    },
+                    "zonbookDocumentation": "\n         <simpara>Information about a WorkSpace modification.</simpara>\n      ",
+                    "documentation": "\n         <p>Information about a WorkSpace modification.</p>\n      ",
+                    "shape_name": "ModificationState"
+                  }
+                }
+              },
+              "zonbookDocumentation": "\n         <simpara>Information about a WorkSpace.</simpara>\n      ",
+              "documentation": "\n         <p>Information about a WorkSpace.</p>\n      ",
+              "shape_name": "Workspace"
+            }
+          }
+        },
+        "shape_name": "CreateWorkspacesResult",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The exception error message.</simpara>\n      ",
+              "documentation": "\n         <p>The exception error message.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>Your resource limits have been exceeded.</simpara>\n      ",
+          "documentation": "\n         <p>Your resource limits have been exceeded.</p>\n      ",
+          "shape_name": "ResourceLimitExceededException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The exception error message.</simpara>\n      ",
+              "documentation": "\n         <p>The exception error message.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>One or more parameter values are not valid.</simpara>\n      ",
+          "documentation": "\n         <p>One or more parameter values are not valid.</p>\n      ",
+          "shape_name": "InvalidParameterValuesException"
+        }
+      ],
+      "documentation": "\n         <p>Creates one or more WorkSpaces.</p>\n         <p>This operation is asynchronous and returns before the WorkSpaces are created.</p>\n      "
+    },
+    "TerminateWorkspaces": {
+      "name": "TerminateWorkspaces",
+      "input": {
+        "type": "structure",
+        "members": {
+          "TerminateWorkspaceRequests": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>The WorkSpaces to terminate. You can specify up to 25 WorkSpaces.</simpara>\n      ",
+            "documentation": "\n         <p>The WorkSpaces to terminate. You can specify up to 25 WorkSpaces.</p>\n      ",
+            "required": true,
+            "shape_name": "TerminateWorkspaceRequests",
+            "min_length": 1,
+            "max_length": 25,
+            "members": {
+              "type": "structure",
+              "members": {
+                "WorkspaceId": {
+                  "type": "string",
+                  "pattern": "^ws-[0-9a-z]{8,63}$",
+                  "zonbookDocumentation": "\n         <simpara>The ID of the WorkSpace.</simpara>\n      ",
+                  "documentation": "\n         <p>The ID of the WorkSpace.</p>\n      ",
+                  "required": true,
+                  "shape_name": "WorkspaceId"
+                }
+              },
+              "zonbookDocumentation": "\n         <simpara>Information used to terminate a WorkSpace.</simpara>\n      ",
+              "documentation": "\n         <p>Information used to terminate a WorkSpace.</p>\n      ",
+              "shape_name": "TerminateRequest"
+            }
+          }
+        },
+        "shape_name": "TerminateWorkspacesRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "FailedRequests": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>Information about the WorkSpaces that could not be terminated.</simpara>\n      ",
+            "documentation": "\n         <p>Information about the WorkSpaces that could not be terminated.</p>\n      ",
+            "shape_name": "FailedTerminateWorkspaceRequests",
+            "members": {
+              "type": "structure",
+              "members": {
+                "WorkspaceId": {
+                  "type": "string",
+                  "pattern": "^ws-[0-9a-z]{8,63}$",
+                  "zonbookDocumentation": "\n         <simpara>The identifier of the WorkSpace.</simpara>\n      ",
+                  "documentation": "\n         <p>The identifier of the WorkSpace.</p>\n      ",
+                  "shape_name": "WorkspaceId"
+                },
+                "ErrorCode": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The error code.</simpara>\n      ",
+                  "documentation": "\n         <p>The error code.</p>\n      ",
+                  "shape_name": "ErrorType"
+                },
+                "ErrorMessage": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The textual error message.</simpara>\n      ",
+                  "documentation": "\n         <p>The textual error message.</p>\n      ",
+                  "shape_name": "Description"
+                }
+              },
+              "zonbookDocumentation": "\n         <simpara>Information about a WorkSpace that could not be rebooted\n         (<xref linkend=\"RebootWorkspaces\"/>), rebuilt (<xref linkend=\"RebuildWorkspaces\"/>), terminated\n         (<xref linkend=\"TerminateWorkspaces\"/>), started (<xref linkend=\"StartWorkspaces\"/>), or stopped (<xref linkend=\"StopWorkspaces\"/>).</simpara>\n      ",
+              "documentation": "\n         <p>Information about a WorkSpace that could not be rebooted\n         (<a>RebootWorkspaces</a>), rebuilt (<a>RebuildWorkspaces</a>), terminated\n         (<a>TerminateWorkspaces</a>), started (<a>StartWorkspaces</a>), or stopped (<a>StopWorkspaces</a>).</p>\n      ",
+              "shape_name": "FailedWorkspaceChangeRequest"
+            }
+          }
+        },
+        "shape_name": "TerminateWorkspacesResult",
+        "documentation": null
+      },
+      "errors": [
+
+      ],
+      "documentation": "\n         <p>Terminates the specified WorkSpaces.</p>\n         <p>Terminating a WorkSpace is a permanent action and cannot be undone. The user's data is destroyed. \n         If you need to archive any user data, contact Amazon Web Services before terminating the WorkSpace.</p>\n         <p>You can terminate a WorkSpace that is in any state except <code>SUSPENDED</code>.</p>\n         <p>This operation is asynchronous and returns before the WorkSpaces have been completely terminated.</p>\n      "
+    },
+    "RebootWorkspaces": {
+      "name": "RebootWorkspaces",
+      "input": {
+        "type": "structure",
+        "members": {
+          "RebootWorkspaceRequests": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>The WorkSpaces to reboot. You can specify up to 25 WorkSpaces.</simpara>\n      ",
+            "documentation": "\n         <p>The WorkSpaces to reboot. You can specify up to 25 WorkSpaces.</p>\n      ",
+            "required": true,
+            "shape_name": "RebootWorkspaceRequests",
+            "min_length": 1,
+            "max_length": 25,
+            "members": {
+              "type": "structure",
+              "members": {
+                "WorkspaceId": {
+                  "type": "string",
+                  "pattern": "^ws-[0-9a-z]{8,63}$",
+                  "zonbookDocumentation": "\n         <simpara>The ID of the WorkSpace.</simpara>\n      ",
+                  "documentation": "\n         <p>The ID of the WorkSpace.</p>\n      ",
+                  "required": true,
+                  "shape_name": "WorkspaceId"
+                }
+              },
+              "zonbookDocumentation": "\n         <simpara>Information used to reboot a WorkSpace.</simpara>\n      ",
+              "documentation": "\n         <p>Information used to reboot a WorkSpace.</p>\n      ",
+              "shape_name": "RebootRequest"
+            }
+          }
+        },
+        "shape_name": "RebootWorkspacesRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "FailedRequests": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>Information about the WorkSpaces that could not be rebooted.</simpara>\n      ",
+            "documentation": "\n         <p>Information about the WorkSpaces that could not be rebooted.</p>\n      ",
+            "shape_name": "FailedRebootWorkspaceRequests",
+            "members": {
+              "type": "structure",
+              "members": {
+                "WorkspaceId": {
+                  "type": "string",
+                  "pattern": "^ws-[0-9a-z]{8,63}$",
+                  "zonbookDocumentation": "\n         <simpara>The identifier of the WorkSpace.</simpara>\n      ",
+                  "documentation": "\n         <p>The identifier of the WorkSpace.</p>\n      ",
+                  "shape_name": "WorkspaceId"
+                },
+                "ErrorCode": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The error code.</simpara>\n      ",
+                  "documentation": "\n         <p>The error code.</p>\n      ",
+                  "shape_name": "ErrorType"
+                },
+                "ErrorMessage": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The textual error message.</simpara>\n      ",
+                  "documentation": "\n         <p>The textual error message.</p>\n      ",
+                  "shape_name": "Description"
+                }
+              },
+              "zonbookDocumentation": "\n         <simpara>Information about a WorkSpace that could not be rebooted\n         (<xref linkend=\"RebootWorkspaces\"/>), rebuilt (<xref linkend=\"RebuildWorkspaces\"/>), terminated\n         (<xref linkend=\"TerminateWorkspaces\"/>), started (<xref linkend=\"StartWorkspaces\"/>), or stopped (<xref linkend=\"StopWorkspaces\"/>).</simpara>\n      ",
+              "documentation": "\n         <p>Information about a WorkSpace that could not be rebooted\n         (<a>RebootWorkspaces</a>), rebuilt (<a>RebuildWorkspaces</a>), terminated\n         (<a>TerminateWorkspaces</a>), started (<a>StartWorkspaces</a>), or stopped (<a>StopWorkspaces</a>).</p>\n      ",
+              "shape_name": "FailedWorkspaceChangeRequest"
+            }
+          }
+        },
+        "shape_name": "RebootWorkspacesResult",
+        "documentation": null
+      },
+      "errors": [
+
+      ],
+      "documentation": "\n         <p>Reboots the specified WorkSpaces.</p>\n         <p>You cannot reboot a WorkSpace unless its state is <code>AVAILABLE</code> or <code>UNHEALTHY</code>.</p>\n         <p>This operation is asynchronous and returns before the WorkSpaces have rebooted.</p>\n      "
+    },
+    "RebuildWorkspaces": {
+      "name": "RebuildWorkspaces",
+      "input": {
+        "type": "structure",
+        "members": {
+          "RebuildWorkspaceRequests": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>The WorkSpace to rebuild. You can specify a single WorkSpace.</simpara>\n      ",
+            "documentation": "\n         <p>The WorkSpace to rebuild. You can specify a single WorkSpace.</p>\n      ",
+            "required": true,
+            "shape_name": "RebuildWorkspaceRequests",
+            "min_length": 1,
+            "max_length": 1,
+            "members": {
+              "type": "structure",
+              "members": {
+                "WorkspaceId": {
+                  "type": "string",
+                  "pattern": "^ws-[0-9a-z]{8,63}$",
+                  "zonbookDocumentation": "\n         <simpara>The ID of the WorkSpace.</simpara>\n      ",
+                  "documentation": "\n         <p>The ID of the WorkSpace.</p>\n      ",
+                  "required": true,
+                  "shape_name": "WorkspaceId"
+                }
+              },
+              "zonbookDocumentation": "\n         <simpara>Information used to rebuild a WorkSpace.</simpara>\n      ",
+              "documentation": "\n         <p>Information used to rebuild a WorkSpace.</p>\n      ",
+              "shape_name": "RebuildRequest"
+            }
+          }
+        },
+        "shape_name": "RebuildWorkspacesRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "FailedRequests": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>Information about the WorkSpace if it could not be rebuilt.</simpara>\n      ",
+            "documentation": "\n         <p>Information about the WorkSpace if it could not be rebuilt.</p>\n      ",
+            "shape_name": "FailedRebuildWorkspaceRequests",
+            "members": {
+              "type": "structure",
+              "members": {
+                "WorkspaceId": {
+                  "type": "string",
+                  "pattern": "^ws-[0-9a-z]{8,63}$",
+                  "zonbookDocumentation": "\n         <simpara>The identifier of the WorkSpace.</simpara>\n      ",
+                  "documentation": "\n         <p>The identifier of the WorkSpace.</p>\n      ",
+                  "shape_name": "WorkspaceId"
+                },
+                "ErrorCode": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The error code.</simpara>\n      ",
+                  "documentation": "\n         <p>The error code.</p>\n      ",
+                  "shape_name": "ErrorType"
+                },
+                "ErrorMessage": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The textual error message.</simpara>\n      ",
+                  "documentation": "\n         <p>The textual error message.</p>\n      ",
+                  "shape_name": "Description"
+                }
+              },
+              "zonbookDocumentation": "\n         <simpara>Information about a WorkSpace that could not be rebooted\n         (<xref linkend=\"RebootWorkspaces\"/>), rebuilt (<xref linkend=\"RebuildWorkspaces\"/>), terminated\n         (<xref linkend=\"TerminateWorkspaces\"/>), started (<xref linkend=\"StartWorkspaces\"/>), or stopped (<xref linkend=\"StopWorkspaces\"/>).</simpara>\n      ",
+              "documentation": "\n         <p>Information about a WorkSpace that could not be rebooted\n         (<a>RebootWorkspaces</a>), rebuilt (<a>RebuildWorkspaces</a>), terminated\n         (<a>TerminateWorkspaces</a>), started (<a>StartWorkspaces</a>), or stopped (<a>StopWorkspaces</a>).</p>\n      ",
+              "shape_name": "FailedWorkspaceChangeRequest"
+            }
+          }
+        },
+        "shape_name": "RebuildWorkspacesResult",
+        "documentation": null
+      },
+      "errors": [
+
+      ],
+      "documentation": "\n         <p>Rebuilds the specified WorkSpace.</p>\n         <p>You cannot rebuild a WorkSpace unless its state is <code>AVAILABLE</code>, <code>ERROR</code>, or <code>UNHEALTHY</code>.</p>\n         <p>Rebuilding a WorkSpace is a potentially destructive action that can result in the loss of data. \n         For more information, see <a href=\"http://docs.aws.amazon.com/workspaces/latest/adminguide/reset-workspace.html\">Rebuild a WorkSpace</a>.</p>\n         <p>This operation is asynchronous and returns before the WorkSpaces have been completely rebuilt.</p>\n      "
+    },
+    "DescribeTags": {
+      "name": "DescribeTags",
+      "input": {
+        "type": "structure",
+        "members": {
+          "ResourceId": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>The ID of the WorkSpace. To find this ID, use <xref linkend=\"DescribeWorkspaces\"/>.</simpara>\n      ",
+            "documentation": "\n         <p>The ID of the WorkSpace. To find this ID, use <a>DescribeWorkspaces</a>.</p>\n      ",
+            "required": true,
+            "shape_name": "NonEmptyString",
+            "min_length": 1
+          }
+        },
+        "shape_name": "DescribeTagsRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "TagList": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>The tags.</simpara>\n      ",
+            "documentation": "\n         <p>The tags.</p>\n      ",
+            "shape_name": "TagList",
+            "members": {
+              "type": "structure",
+              "members": {
+                "Key": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The key of the tag.</simpara>\n      ",
+                  "documentation": "\n         <p>The key of the tag.</p>\n      ",
+                  "required": true,
+                  "shape_name": "TagKey",
+                  "min_length": 1,
+                  "max_length": 127
+                },
+                "Value": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The value of the tag.</simpara>\n      ",
+                  "documentation": "\n         <p>The value of the tag.</p>\n      ",
+                  "shape_name": "TagValue",
+                  "max_length": 255
+                }
+              },
+              "zonbookDocumentation": "\n         <simpara>Information about a tag.</simpara>\n      ",
+              "documentation": "\n         <p>Information about a tag.</p>\n      ",
+              "shape_name": "Tag"
+            }
+          }
+        },
+        "shape_name": "DescribeTagsResult",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The resource could not be found.</simpara>\n      ",
+              "documentation": "\n         <p>The resource could not be found.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "ResourceId": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The ID of the resource that could not be found.</simpara>\n      ",
+              "documentation": "\n         <p>The ID of the resource that could not be found.</p>\n      ",
+              "shape_name": "NonEmptyString",
+              "min_length": 1
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The resource could not be found.</simpara>\n      ",
+          "documentation": "\n         <p>The resource could not be found.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        }
+      ],
+      "documentation": "\n         <p>Describes the specified tags for the specified WorkSpace.</p>\n      "
+    },
+    "CreateTags": {
+      "name": "CreateTags",
+      "input": {
+        "type": "structure",
+        "members": {
+          "ResourceId": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>The ID of the WorkSpace. To find this ID, use <xref linkend=\"DescribeWorkspaces\"/>.</simpara>\n      ",
+            "documentation": "\n         <p>The ID of the WorkSpace. To find this ID, use <a>DescribeWorkspaces</a>.</p>\n      ",
+            "required": true,
+            "shape_name": "NonEmptyString",
+            "min_length": 1
+          },
+          "Tags": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>The tags. Each WorkSpace can have a maximum of 50 tags.</simpara>\n      ",
+            "documentation": "\n         <p>The tags. Each WorkSpace can have a maximum of 50 tags.</p>\n      ",
+            "required": true,
+            "shape_name": "TagList",
+            "members": {
+              "type": "structure",
+              "members": {
+                "Key": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The key of the tag.</simpara>\n      ",
+                  "documentation": "\n         <p>The key of the tag.</p>\n      ",
+                  "required": true,
+                  "shape_name": "TagKey",
+                  "min_length": 1,
+                  "max_length": 127
+                },
+                "Value": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The value of the tag.</simpara>\n      ",
+                  "documentation": "\n         <p>The value of the tag.</p>\n      ",
+                  "shape_name": "TagValue",
+                  "max_length": 255
+                }
+              },
+              "zonbookDocumentation": "\n         <simpara>Information about a tag.</simpara>\n      ",
+              "documentation": "\n         <p>Information about a tag.</p>\n      ",
+              "shape_name": "Tag"
+            }
+          }
+        },
+        "shape_name": "CreateTagsRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+        },
+        "shape_name": "CreateTagsResult",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The resource could not be found.</simpara>\n      ",
+              "documentation": "\n         <p>The resource could not be found.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "ResourceId": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The ID of the resource that could not be found.</simpara>\n      ",
+              "documentation": "\n         <p>The ID of the resource that could not be found.</p>\n      ",
+              "shape_name": "NonEmptyString",
+              "min_length": 1
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The resource could not be found.</simpara>\n      ",
+          "documentation": "\n         <p>The resource could not be found.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The exception error message.</simpara>\n      ",
+              "documentation": "\n         <p>The exception error message.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>One or more parameter values are not valid.</simpara>\n      ",
+          "documentation": "\n         <p>One or more parameter values are not valid.</p>\n      ",
+          "shape_name": "InvalidParameterValuesException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The exception error message.</simpara>\n      ",
+              "documentation": "\n         <p>The exception error message.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>Your resource limits have been exceeded.</simpara>\n      ",
+          "documentation": "\n         <p>Your resource limits have been exceeded.</p>\n      ",
+          "shape_name": "ResourceLimitExceededException"
+        }
+      ],
+      "documentation": "\n         <p>Creates the specified tags for the specified WorkSpace.</p>\n      "
+    },
+    "DeleteTags": {
+      "name": "DeleteTags",
+      "input": {
+        "type": "structure",
+        "members": {
+          "ResourceId": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>The ID of the WorkSpace. To find this ID, use <xref linkend=\"DescribeWorkspaces\"/>.</simpara>\n      ",
+            "documentation": "\n         <p>The ID of the WorkSpace. To find this ID, use <a>DescribeWorkspaces</a>.</p>\n      ",
+            "required": true,
+            "shape_name": "NonEmptyString",
+            "min_length": 1
+          },
+          "TagKeys": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>The tag keys.</simpara>\n      ",
+            "documentation": "\n         <p>The tag keys.</p>\n      ",
+            "required": true,
+            "shape_name": "TagKeyList",
+            "members": {
+              "type": "string",
+              "shape_name": "NonEmptyString",
+              "documentation": null,
+              "min_length": 1
+            }
+          }
+        },
+        "shape_name": "DeleteTagsRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+        },
+        "shape_name": "DeleteTagsResult",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The resource could not be found.</simpara>\n      ",
+              "documentation": "\n         <p>The resource could not be found.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "ResourceId": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The ID of the resource that could not be found.</simpara>\n      ",
+              "documentation": "\n         <p>The ID of the resource that could not be found.</p>\n      ",
+              "shape_name": "NonEmptyString",
+              "min_length": 1
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The resource could not be found.</simpara>\n      ",
+          "documentation": "\n         <p>The resource could not be found.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The exception error message.</simpara>\n      ",
+              "documentation": "\n         <p>The exception error message.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>One or more parameter values are not valid.</simpara>\n      ",
+          "documentation": "\n         <p>One or more parameter values are not valid.</p>\n      ",
+          "shape_name": "InvalidParameterValuesException"
+        }
+      ],
+      "documentation": "\n         <p>Deletes the specified tags from the specified WorkSpace.</p>\n      "
+    },
+    "StartWorkspaces": {
+      "name": "StartWorkspaces",
+      "input": {
+        "type": "structure",
+        "members": {
+          "StartWorkspaceRequests": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>The WorkSpaces to start. You can specify up to 25 WorkSpaces.</simpara>\n      ",
+            "documentation": "\n         <p>The WorkSpaces to start. You can specify up to 25 WorkSpaces.</p>\n      ",
+            "required": true,
+            "shape_name": "StartWorkspaceRequests",
+            "min_length": 1,
+            "max_length": 25,
+            "members": {
+              "type": "structure",
+              "members": {
+                "WorkspaceId": {
+                  "type": "string",
+                  "pattern": "^ws-[0-9a-z]{8,63}$",
+                  "zonbookDocumentation": "\n         <simpara>The ID of the WorkSpace.</simpara>\n      ",
+                  "documentation": "\n         <p>The ID of the WorkSpace.</p>\n      ",
+                  "shape_name": "WorkspaceId"
+                }
+              },
+              "zonbookDocumentation": "\n         <simpara>Information used to start a WorkSpace.</simpara>\n      ",
+              "documentation": "\n         <p>Information used to start a WorkSpace.</p>\n      ",
+              "shape_name": "StartRequest"
+            }
+          }
+        },
+        "shape_name": "StartWorkspacesRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "FailedRequests": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>Information about the WorkSpaces that could not be started.</simpara>\n      ",
+            "documentation": "\n         <p>Information about the WorkSpaces that could not be started.</p>\n      ",
+            "shape_name": "FailedStartWorkspaceRequests",
+            "members": {
+              "type": "structure",
+              "members": {
+                "WorkspaceId": {
+                  "type": "string",
+                  "pattern": "^ws-[0-9a-z]{8,63}$",
+                  "zonbookDocumentation": "\n         <simpara>The identifier of the WorkSpace.</simpara>\n      ",
+                  "documentation": "\n         <p>The identifier of the WorkSpace.</p>\n      ",
+                  "shape_name": "WorkspaceId"
+                },
+                "ErrorCode": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The error code.</simpara>\n      ",
+                  "documentation": "\n         <p>The error code.</p>\n      ",
+                  "shape_name": "ErrorType"
+                },
+                "ErrorMessage": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The textual error message.</simpara>\n      ",
+                  "documentation": "\n         <p>The textual error message.</p>\n      ",
+                  "shape_name": "Description"
+                }
+              },
+              "zonbookDocumentation": "\n         <simpara>Information about a WorkSpace that could not be rebooted\n         (<xref linkend=\"RebootWorkspaces\"/>), rebuilt (<xref linkend=\"RebuildWorkspaces\"/>), terminated\n         (<xref linkend=\"TerminateWorkspaces\"/>), started (<xref linkend=\"StartWorkspaces\"/>), or stopped (<xref linkend=\"StopWorkspaces\"/>).</simpara>\n      ",
+              "documentation": "\n         <p>Information about a WorkSpace that could not be rebooted\n         (<a>RebootWorkspaces</a>), rebuilt (<a>RebuildWorkspaces</a>), terminated\n         (<a>TerminateWorkspaces</a>), started (<a>StartWorkspaces</a>), or stopped (<a>StopWorkspaces</a>).</p>\n      ",
+              "shape_name": "FailedWorkspaceChangeRequest"
+            }
+          }
+        },
+        "shape_name": "StartWorkspacesResult",
+        "documentation": null
+      },
+      "errors": [
+
+      ],
+      "documentation": "\n         <p>Starts the specified WorkSpaces.</p>\n         <p>You cannot start a WorkSpace unless it has a running mode of <code>AutoStop</code> and a state of <code>STOPPED</code>.</p>\n      "
+    },
+    "StopWorkspaces": {
+      "name": "StopWorkspaces",
+      "input": {
+        "type": "structure",
+        "members": {
+          "StopWorkspaceRequests": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>The WorkSpaces to stop. You can specify up to 25 WorkSpaces.</simpara>\n      ",
+            "documentation": "\n         <p>The WorkSpaces to stop. You can specify up to 25 WorkSpaces.</p>\n      ",
+            "required": true,
+            "shape_name": "StopWorkspaceRequests",
+            "min_length": 1,
+            "max_length": 25,
+            "members": {
+              "type": "structure",
+              "members": {
+                "WorkspaceId": {
+                  "type": "string",
+                  "pattern": "^ws-[0-9a-z]{8,63}$",
+                  "zonbookDocumentation": "\n         <simpara>The ID of the WorkSpace.</simpara>\n      ",
+                  "documentation": "\n         <p>The ID of the WorkSpace.</p>\n      ",
+                  "shape_name": "WorkspaceId"
+                }
+              },
+              "zonbookDocumentation": "\n         <simpara>Information used to stop a WorkSpace.</simpara>\n      ",
+              "documentation": "\n         <p>Information used to stop a WorkSpace.</p>\n      ",
+              "shape_name": "StopRequest"
+            }
+          }
+        },
+        "shape_name": "StopWorkspacesRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "FailedRequests": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>Information about the WorkSpaces that could not be stopped.</simpara>\n      ",
+            "documentation": "\n         <p>Information about the WorkSpaces that could not be stopped.</p>\n      ",
+            "shape_name": "FailedStopWorkspaceRequests",
+            "members": {
+              "type": "structure",
+              "members": {
+                "WorkspaceId": {
+                  "type": "string",
+                  "pattern": "^ws-[0-9a-z]{8,63}$",
+                  "zonbookDocumentation": "\n         <simpara>The identifier of the WorkSpace.</simpara>\n      ",
+                  "documentation": "\n         <p>The identifier of the WorkSpace.</p>\n      ",
+                  "shape_name": "WorkspaceId"
+                },
+                "ErrorCode": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The error code.</simpara>\n      ",
+                  "documentation": "\n         <p>The error code.</p>\n      ",
+                  "shape_name": "ErrorType"
+                },
+                "ErrorMessage": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>The textual error message.</simpara>\n      ",
+                  "documentation": "\n         <p>The textual error message.</p>\n      ",
+                  "shape_name": "Description"
+                }
+              },
+              "zonbookDocumentation": "\n         <simpara>Information about a WorkSpace that could not be rebooted\n         (<xref linkend=\"RebootWorkspaces\"/>), rebuilt (<xref linkend=\"RebuildWorkspaces\"/>), terminated\n         (<xref linkend=\"TerminateWorkspaces\"/>), started (<xref linkend=\"StartWorkspaces\"/>), or stopped (<xref linkend=\"StopWorkspaces\"/>).</simpara>\n      ",
+              "documentation": "\n         <p>Information about a WorkSpace that could not be rebooted\n         (<a>RebootWorkspaces</a>), rebuilt (<a>RebuildWorkspaces</a>), terminated\n         (<a>TerminateWorkspaces</a>), started (<a>StartWorkspaces</a>), or stopped (<a>StopWorkspaces</a>).</p>\n      ",
+              "shape_name": "FailedWorkspaceChangeRequest"
+            }
+          }
+        },
+        "shape_name": "StopWorkspacesResult",
+        "documentation": null
+      },
+      "errors": [
+
+      ],
+      "documentation": "\n         <p> Stops the specified WorkSpaces.</p> \n         <p>You cannot stop a WorkSpace unless it has a running mode of <code>AutoStop</code> and a state of <code>AVAILABLE</code>, <code>IMPAIRED</code>, <code>UNHEALTHY</code>, or <code>ERROR</code>.</p>\n      "
+    },
+    "ModifyWorkspaceProperties": {
+      "name": "ModifyWorkspaceProperties",
+      "input": {
+        "type": "structure",
+        "members": {
+          "WorkspaceId": {
+            "type": "string",
+            "pattern": "^ws-[0-9a-z]{8,63}$",
+            "zonbookDocumentation": "\n         <simpara>The ID of the WorkSpace.</simpara>\n      ",
+            "documentation": "\n         <p>The ID of the WorkSpace.</p>\n      ",
+            "required": true,
+            "shape_name": "WorkspaceId"
+          },
+          "WorkspaceProperties": {
+            "type": "structure",
+            "members": {
+              "RunningMode": {
+                "type": "string",
+                "enum": [
+                  "AUTO_STOP",
+                  "ALWAYS_ON"
+                ],
+                "zonbookDocumentation": "\n         <simpara>The running mode. For more information, see <ulink type=\"documentation\" url=\"workspaces/latest/adminguide/running-mode.html\">Manage the WorkSpace Running Mode</ulink>.</simpara>\n      ",
+                "documentation": "\n         <p>The running mode. For more information, see <a href=\"http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html\">Manage the WorkSpace Running Mode</a>.</p>\n      ",
+                "shape_name": "RunningMode"
+              },
+              "RunningModeAutoStopTimeoutInMinutes": {
+                "type": "integer",
+                "zonbookDocumentation": "\n         <simpara>The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60 minute intervals.</simpara>\n      ",
+                "documentation": "\n         <p>The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60 minute intervals.</p>\n      ",
+                "shape_name": "RunningModeAutoStopTimeoutInMinutes"
+              },
+              "RootVolumeSizeGib": {
+                "type": "integer",
+                "zonbookDocumentation": "\n         <simpara>The size of the root volume.</simpara>\n      ",
+                "documentation": "\n         <p>The size of the root volume.</p>\n      ",
+                "shape_name": "RootVolumeSizeGib"
+              },
+              "UserVolumeSizeGib": {
+                "type": "integer",
+                "zonbookDocumentation": "\n         <simpara>The size of the user storage.</simpara>\n      ",
+                "documentation": "\n         <p>The size of the user storage.</p>\n      ",
+                "shape_name": "UserVolumeSizeGib"
+              },
+              "ComputeTypeName": {
+                "type": "string",
+                "enum": [
+                  "VALUE",
+                  "STANDARD",
+                  "PERFORMANCE",
+                  "POWER",
+                  "GRAPHICS",
+                  "POWERPRO",
+                  "GRAPHICSPRO"
+                ],
+                "zonbookDocumentation": "\n         <simpara>The compute type. For more information, see <ulink type=\"marketing\" url=\"workspaces/details/#Amazon_WorkSpaces_Bundles\">Amazon WorkSpaces Bundles</ulink>.</simpara>\n      ",
+                "documentation": "\n         <p>The compute type. For more information, see <a href=\"http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles\">Amazon WorkSpaces Bundles</a>.</p>\n      ",
+                "shape_name": "Compute"
+              }
+            },
+            "zonbookDocumentation": "\n         <simpara>The properties of the WorkSpace.</simpara>\n      ",
+            "documentation": "\n         <p>The properties of the WorkSpace.</p>\n      ",
+            "required": true,
+            "shape_name": "WorkspaceProperties"
+          }
+        },
+        "shape_name": "ModifyWorkspacePropertiesRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+        },
+        "shape_name": "ModifyWorkspacePropertiesResult",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The exception error message.</simpara>\n      ",
+              "documentation": "\n         <p>The exception error message.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>One or more parameter values are not valid.</simpara>\n      ",
+          "documentation": "\n         <p>One or more parameter values are not valid.</p>\n      ",
+          "shape_name": "InvalidParameterValuesException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "shape_name": "ExceptionMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The state of the resource is not valid for this operation.</simpara>\n      ",
+          "documentation": "\n         <p>The state of the resource is not valid for this operation.</p>\n      ",
+          "shape_name": "InvalidResourceStateException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "shape_name": "ExceptionMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The properties of this WorkSpace are currently being modified. Try again in a moment.</simpara>\n      ",
+          "documentation": "\n         <p>The properties of this WorkSpace are currently being modified. Try again in a moment.</p>\n      ",
+          "shape_name": "OperationInProgressException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "shape_name": "ExceptionMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The configuration of this WorkSpace is not supported for this operation. For more information, see the \n         <ulink type=\"documentation\" url=\"workspaces/latest/adminguide/\">Amazon WorkSpaces Administration Guide</ulink>. </simpara>\n      ",
+          "documentation": "\n         <p>The configuration of this WorkSpace is not supported for this operation. For more information, see the \n         <a href=\"http://docs.aws.amazon.com/workspaces/latest/adminguide/\">Amazon WorkSpaces Administration Guide</a>. </p>\n      ",
+          "shape_name": "UnsupportedWorkspaceConfigurationException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The resource could not be found.</simpara>\n      ",
+              "documentation": "\n         <p>The resource could not be found.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "ResourceId": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The ID of the resource that could not be found.</simpara>\n      ",
+              "documentation": "\n         <p>The ID of the resource that could not be found.</p>\n      ",
+              "shape_name": "NonEmptyString",
+              "min_length": 1
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The resource could not be found.</simpara>\n      ",
+          "documentation": "\n         <p>The resource could not be found.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "shape_name": "ExceptionMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The user is not authorized to access a resource.</simpara>\n      ",
+          "documentation": "\n         <p>The user is not authorized to access a resource.</p>\n      ",
+          "shape_name": "AccessDeniedException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The exception error message.</simpara>\n      ",
+              "documentation": "\n         <p>The exception error message.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "ResourceId": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The identifier of the resource that is not available.</simpara>\n      ",
+              "documentation": "\n         <p>The identifier of the resource that is not available.</p>\n      ",
+              "shape_name": "NonEmptyString",
+              "min_length": 1
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The specified resource is not available.</simpara>\n      ",
+          "documentation": "\n         <p>The specified resource is not available.</p>\n      ",
+          "shape_name": "ResourceUnavailableException"
+        }
+      ],
+      "documentation": "\n         <p>Modifies the specified WorkSpace properties.</p>\n      "
+    },
+    "DescribeWorkspacesConnectionStatus": {
+      "name": "DescribeWorkspacesConnectionStatus",
+      "input": {
+        "type": "structure",
+        "members": {
+          "WorkspaceIds": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.</simpara>\n      ",
+            "documentation": "\n         <p>The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.</p>\n      ",
+            "shape_name": "WorkspaceIdList",
+            "min_length": 1,
+            "max_length": 25,
+            "members": {
+              "type": "string",
+              "pattern": "^ws-[0-9a-z]{8,63}$",
+              "shape_name": "WorkspaceId",
+              "documentation": null
+            }
+          },
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>The token for the next set of results. (You received this token from a previous call.)</simpara>\n      ",
+            "documentation": "\n         <p>The token for the next set of results. (You received this token from a previous call.)</p>\n      ",
+            "shape_name": "PaginationToken",
+            "min_length": 1,
+            "max_length": 63
+          }
+        },
+        "shape_name": "DescribeWorkspacesConnectionStatusRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "WorkspacesConnectionStatus": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>Information about the connection status of the WorkSpace.</simpara>\n      ",
+            "documentation": "\n         <p>Information about the connection status of the WorkSpace.</p>\n      ",
+            "shape_name": "WorkspaceConnectionStatusList",
+            "members": {
+              "type": "structure",
+              "members": {
+                "WorkspaceId": {
+                  "type": "string",
+                  "pattern": "^ws-[0-9a-z]{8,63}$",
+                  "zonbookDocumentation": "\n         <simpara>The ID of the WorkSpace.</simpara>\n      ",
+                  "documentation": "\n         <p>The ID of the WorkSpace.</p>\n      ",
+                  "shape_name": "WorkspaceId"
+                },
+                "ConnectionState": {
+                  "type": "string",
+                  "enum": [
+                    "CONNECTED",
+                    "DISCONNECTED",
+                    "UNKNOWN"
+                  ],
+                  "zonbookDocumentation": "\n         <simpara>The connection state of the WorkSpace. The connection state is unknown if the WorkSpace is stopped.</simpara>\n      ",
+                  "documentation": "\n         <p>The connection state of the WorkSpace. The connection state is unknown if the WorkSpace is stopped.</p>\n      ",
+                  "shape_name": "ConnectionState"
+                },
+                "ConnectionStateCheckTimestamp": {
+                  "type": "timestamp",
+                  "zonbookDocumentation": "\n         <simpara>The timestamp of the connection state check.</simpara>\n      ",
+                  "documentation": "\n         <p>The timestamp of the connection state check.</p>\n      ",
+                  "shape_name": "Timestamp"
+                },
+                "LastKnownUserConnectionTimestamp": {
+                  "type": "timestamp",
+                  "zonbookDocumentation": "\n         <simpara>The timestamp of the last known user connection.</simpara>\n      ",
+                  "documentation": "\n         <p>The timestamp of the last known user connection.</p>\n      ",
+                  "shape_name": "Timestamp"
+                }
+              },
+              "zonbookDocumentation": "\n         <simpara>Describes the connection status of a WorkSpace.</simpara>\n      ",
+              "documentation": "\n         <p>Describes the connection status of a WorkSpace.</p>\n      ",
+              "shape_name": "WorkspaceConnectionStatus"
+            }
+          },
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>The token to use to retrieve the next set of results, or null if there are no more results available.</simpara>\n      ",
+            "documentation": "\n         <p>The token to use to retrieve the next set of results, or null if there are no more results available.</p>\n      ",
+            "shape_name": "PaginationToken",
+            "min_length": 1,
+            "max_length": 63
+          }
+        },
+        "shape_name": "DescribeWorkspacesConnectionStatusResult",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The exception error message.</simpara>\n      ",
+              "documentation": "\n         <p>The exception error message.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>One or more parameter values are not valid.</simpara>\n      ",
+          "documentation": "\n         <p>One or more parameter values are not valid.</p>\n      ",
+          "shape_name": "InvalidParameterValuesException"
+        }
+      ],
+      "documentation": "\n         <p>Describes the connection status of the specified WorkSpaces.</p>\n      "
+    },
+    "ModifyWorkspaceState": {
+      "name": "ModifyWorkspaceState",
+      "input": {
+        "type": "structure",
+        "members": {
+          "WorkspaceId": {
+            "type": "string",
+            "pattern": "^ws-[0-9a-z]{8,63}$",
+            "zonbookDocumentation": "\n         <para>The ID of the WorkSpace.</para>\n      ",
+            "documentation": "\n         <p>The ID of the WorkSpace.</p>\n      ",
+            "required": true,
+            "shape_name": "WorkspaceId"
+          },
+          "WorkspaceState": {
+            "type": "string",
+            "enum": [
+              "AVAILABLE",
+              "ADMIN_MAINTENANCE"
+            ],
+            "zonbookDocumentation": "\n         <para>The WorkSpace state.</para>\n      ",
+            "documentation": "\n         <p>The WorkSpace state.</p>\n      ",
+            "required": true,
+            "shape_name": "TargetWorkspaceState"
+          }
+        },
+        "shape_name": "ModifyWorkspaceStateRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+        },
+        "shape_name": "ModifyWorkspaceStateResult",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The exception error message.</simpara>\n      ",
+              "documentation": "\n         <p>The exception error message.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>One or more parameter values are not valid.</simpara>\n      ",
+          "documentation": "\n         <p>One or more parameter values are not valid.</p>\n      ",
+          "shape_name": "InvalidParameterValuesException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "shape_name": "ExceptionMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The state of the resource is not valid for this operation.</simpara>\n      ",
+          "documentation": "\n         <p>The state of the resource is not valid for this operation.</p>\n      ",
+          "shape_name": "InvalidResourceStateException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The resource could not be found.</simpara>\n      ",
+              "documentation": "\n         <p>The resource could not be found.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "ResourceId": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The ID of the resource that could not be found.</simpara>\n      ",
+              "documentation": "\n         <p>The ID of the resource that could not be found.</p>\n      ",
+              "shape_name": "NonEmptyString",
+              "min_length": 1
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The resource could not be found.</simpara>\n      ",
+          "documentation": "\n         <p>The resource could not be found.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        }
+      ],
+      "documentation": "\n         <p>Sets the state of the specified WorkSpace.</p>\n         <p>To maintain a WorkSpace without being interrupted, set the WorkSpace state to \n         <code>ADMIN_MAINTENANCE</code>. WorkSpaces in this state do not respond to requests \n         to reboot, stop, start, or rebuild. An AutoStop WorkSpace in this state is not stopped. \n         Users can log into a WorkSpace in the <code>ADMIN_MAINTENANCE</code> state.</p>\n      "
+    },
+    "DescribeIpGroups": {
+      "name": "DescribeIpGroups",
+      "input": {
+        "type": "structure",
+        "members": {
+          "GroupIds": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <para>The IDs of one or more IP access control groups.</para>\n      ",
+            "documentation": "\n         <p>The IDs of one or more IP access control groups.</p>\n      ",
+            "shape_name": "IpGroupIdList",
+            "members": {
+              "type": "string",
+              "pattern": "wsipg-[0-9a-z]{8,63}$",
+              "shape_name": "IpGroupId",
+              "documentation": null
+            }
+          },
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>The token for the next set of results. (You received this token from a previous call.)</para>\n      ",
+            "documentation": "\n         <p>The token for the next set of results. (You received this token from a previous call.)</p>\n      ",
+            "shape_name": "PaginationToken",
+            "min_length": 1,
+            "max_length": 63
+          },
+          "MaxResults": {
+            "type": "integer",
+            "zonbookDocumentation": "\n         <para>The maximum number of items to return.</para>\n      ",
+            "documentation": "\n         <p>The maximum number of items to return.</p>\n      ",
+            "shape_name": "Limit",
+            "min_length": 1,
+            "max_length": 25
+          }
+        },
+        "shape_name": "DescribeIpGroupsRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "Result": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <para>Information about the IP access control groups.</para>\n      ",
+            "documentation": "\n         <p>Information about the IP access control groups.</p>\n      ",
+            "shape_name": "WorkspacesIpGroupsList",
+            "members": {
+              "type": "structure",
+              "members": {
+                "groupId": {
+                  "type": "string",
+                  "pattern": "wsipg-[0-9a-z]{8,63}$",
+                  "zonbookDocumentation": "\n         <para>The ID of the group.</para>\n      ",
+                  "documentation": "\n         <p>The ID of the group.</p>\n      ",
+                  "shape_name": "IpGroupId"
+                },
+                "groupName": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <para>The name of the group.</para>\n      ",
+                  "documentation": "\n         <p>The name of the group.</p>\n      ",
+                  "shape_name": "IpGroupName"
+                },
+                "groupDesc": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <para>The description of the group.</para>\n      ",
+                  "documentation": "\n         <p>The description of the group.</p>\n      ",
+                  "shape_name": "IpGroupDesc"
+                },
+                "userRules": {
+                  "type": "list",
+                  "zonbookDocumentation": "\n         <para>The rules.</para>\n      ",
+                  "documentation": "\n         <p>The rules.</p>\n      ",
+                  "shape_name": "IpRuleList",
+                  "members": {
+                    "type": "structure",
+                    "members": {
+                      "ipRule": {
+                        "type": "string",
+                        "zonbookDocumentation": "\n         <para>The IP address range, in CIDR notation.</para>\n      ",
+                        "documentation": "\n         <p>The IP address range, in CIDR notation.</p>\n      ",
+                        "shape_name": "IpRule"
+                      },
+                      "ruleDesc": {
+                        "type": "string",
+                        "zonbookDocumentation": "\n         <para>The description.</para>\n      ",
+                        "documentation": "\n         <p>The description.</p>\n      ",
+                        "shape_name": "IpRuleDesc"
+                      }
+                    },
+                    "zonbookDocumentation": "\n         <para>Information about a rule for an IP access control group.</para>\n      ",
+                    "documentation": "\n         <p>Information about a rule for an IP access control group.</p>\n      ",
+                    "shape_name": "IpRuleItem"
+                  }
+                }
+              },
+              "zonbookDocumentation": "\n         <para>Information about an IP access control group.</para>\n      ",
+              "documentation": "\n         <p>Information about an IP access control group.</p>\n      ",
+              "shape_name": "WorkspacesIpGroup"
+            }
+          },
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>The token to use to retrieve the next set of results, or null if there are no more results available. \n         This token is valid for one day and must be used within that time frame.</para>\n      ",
+            "documentation": "\n         <p>The token to use to retrieve the next set of results, or null if there are no more results available. \n         This token is valid for one day and must be used within that time frame.</p>\n      ",
+            "shape_name": "PaginationToken",
+            "min_length": 1,
+            "max_length": 63
+          }
+        },
+        "shape_name": "DescribeIpGroupsResult",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The exception error message.</simpara>\n      ",
+              "documentation": "\n         <p>The exception error message.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>One or more parameter values are not valid.</simpara>\n      ",
+          "documentation": "\n         <p>One or more parameter values are not valid.</p>\n      ",
+          "shape_name": "InvalidParameterValuesException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "shape_name": "ExceptionMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The user is not authorized to access a resource.</simpara>\n      ",
+          "documentation": "\n         <p>The user is not authorized to access a resource.</p>\n      ",
+          "shape_name": "AccessDeniedException"
+        }
+      ],
+      "documentation": "\n         <p>Describes one or more of your IP access control groups.</p>\n      "
+    },
+    "CreateIpGroup": {
+      "name": "CreateIpGroup",
+      "input": {
+        "type": "structure",
+        "members": {
+          "GroupName": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>The name of the group.</para>\n      ",
+            "documentation": "\n         <p>The name of the group.</p>\n      ",
+            "required": true,
+            "shape_name": "IpGroupName"
+          },
+          "GroupDesc": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>The description of the group.</para>\n      ",
+            "documentation": "\n         <p>The description of the group.</p>\n      ",
+            "shape_name": "IpGroupDesc"
+          },
+          "UserRules": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <para>The rules to add to the group.</para>\n      ",
+            "documentation": "\n         <p>The rules to add to the group.</p>\n      ",
+            "shape_name": "IpRuleList",
+            "members": {
+              "type": "structure",
+              "members": {
+                "ipRule": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <para>The IP address range, in CIDR notation.</para>\n      ",
+                  "documentation": "\n         <p>The IP address range, in CIDR notation.</p>\n      ",
+                  "shape_name": "IpRule"
+                },
+                "ruleDesc": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <para>The description.</para>\n      ",
+                  "documentation": "\n         <p>The description.</p>\n      ",
+                  "shape_name": "IpRuleDesc"
+                }
+              },
+              "zonbookDocumentation": "\n         <para>Information about a rule for an IP access control group.</para>\n      ",
+              "documentation": "\n         <p>Information about a rule for an IP access control group.</p>\n      ",
+              "shape_name": "IpRuleItem"
+            }
+          }
+        },
+        "shape_name": "CreateIpGroupRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "GroupId": {
+            "type": "string",
+            "pattern": "wsipg-[0-9a-z]{8,63}$",
+            "zonbookDocumentation": "\n         <para>The ID of the group.</para>\n      ",
+            "documentation": "\n         <p>The ID of the group.</p>\n      ",
+            "shape_name": "IpGroupId"
+          }
+        },
+        "shape_name": "CreateIpGroupResult",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The exception error message.</simpara>\n      ",
+              "documentation": "\n         <p>The exception error message.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>One or more parameter values are not valid.</simpara>\n      ",
+          "documentation": "\n         <p>One or more parameter values are not valid.</p>\n      ",
+          "shape_name": "InvalidParameterValuesException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The exception error message.</simpara>\n      ",
+              "documentation": "\n         <p>The exception error message.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>Your resource limits have been exceeded.</simpara>\n      ",
+          "documentation": "\n         <p>Your resource limits have been exceeded.</p>\n      ",
+          "shape_name": "ResourceLimitExceededException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "shape_name": "ExceptionMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The specified resource already exists.</para>\n      ",
+          "documentation": "\n         <p>The specified resource already exists.</p>\n      ",
+          "shape_name": "ResourceAlreadyExistsException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "shape_name": "ExceptionMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The resource could not be created.</para>\n      ",
+          "documentation": "\n         <p>The resource could not be created.</p>\n      ",
+          "shape_name": "ResourceCreationFailedException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "shape_name": "ExceptionMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The user is not authorized to access a resource.</simpara>\n      ",
+          "documentation": "\n         <p>The user is not authorized to access a resource.</p>\n      ",
+          "shape_name": "AccessDeniedException"
+        }
+      ],
+      "documentation": "\n         <p>Creates an IP access control group.</p>\n         <p>An IP access control group provides you with the ability to control the IP addresses\n         from which users are allowed to access their WorkSpaces. To specify the CIDR address ranges,\n         add rules to your IP access control group and then associate the group with your directory.\n         You can add rules when you create the group or at any time using <a>AuthorizeIpRules</a>.</p>\n         <p>There is a default IP access control group associated with your directory. If you don't\n         associate an IP access control group with your directory, the default group is used. \n         The default group includes a default rule that allows users to access their WorkSpaces \n         from anywhere. You cannot modify the default IP access control group for your directory.</p>\n      "
+    },
+    "DeleteIpGroup": {
+      "name": "DeleteIpGroup",
+      "input": {
+        "type": "structure",
+        "members": {
+          "GroupId": {
+            "type": "string",
+            "pattern": "wsipg-[0-9a-z]{8,63}$",
+            "zonbookDocumentation": "\n         <para>The ID of the IP access control group.</para>\n      ",
+            "documentation": "\n         <p>The ID of the IP access control group.</p>\n      ",
+            "required": true,
+            "shape_name": "IpGroupId"
+          }
+        },
+        "shape_name": "DeleteIpGroupRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+        },
+        "shape_name": "DeleteIpGroupResult",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The exception error message.</simpara>\n      ",
+              "documentation": "\n         <p>The exception error message.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>One or more parameter values are not valid.</simpara>\n      ",
+          "documentation": "\n         <p>One or more parameter values are not valid.</p>\n      ",
+          "shape_name": "InvalidParameterValuesException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The resource could not be found.</simpara>\n      ",
+              "documentation": "\n         <p>The resource could not be found.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "ResourceId": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The ID of the resource that could not be found.</simpara>\n      ",
+              "documentation": "\n         <p>The ID of the resource that could not be found.</p>\n      ",
+              "shape_name": "NonEmptyString",
+              "min_length": 1
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The resource could not be found.</simpara>\n      ",
+          "documentation": "\n         <p>The resource could not be found.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "shape_name": "ExceptionMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The resource is associated with a directory.</para>\n      ",
+          "documentation": "\n         <p>The resource is associated with a directory.</p>\n      ",
+          "shape_name": "ResourceAssociatedException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "shape_name": "ExceptionMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The user is not authorized to access a resource.</simpara>\n      ",
+          "documentation": "\n         <p>The user is not authorized to access a resource.</p>\n      ",
+          "shape_name": "AccessDeniedException"
+        }
+      ],
+      "documentation": "\n         <p>Deletes the specified IP access control group.</p>\n         <p>You cannot delete an IP access control group that is associated with a directory.</p>\n      "
+    },
+    "AuthorizeIpRules": {
+      "name": "AuthorizeIpRules",
+      "input": {
+        "type": "structure",
+        "members": {
+          "GroupId": {
+            "type": "string",
+            "pattern": "wsipg-[0-9a-z]{8,63}$",
+            "zonbookDocumentation": "\n         <para>The ID of the group.</para>\n      ",
+            "documentation": "\n         <p>The ID of the group.</p>\n      ",
+            "required": true,
+            "shape_name": "IpGroupId"
+          },
+          "UserRules": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <para>The rules to add to the group.</para>\n      ",
+            "documentation": "\n         <p>The rules to add to the group.</p>\n      ",
+            "required": true,
+            "shape_name": "IpRuleList",
+            "members": {
+              "type": "structure",
+              "members": {
+                "ipRule": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <para>The IP address range, in CIDR notation.</para>\n      ",
+                  "documentation": "\n         <p>The IP address range, in CIDR notation.</p>\n      ",
+                  "shape_name": "IpRule"
+                },
+                "ruleDesc": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <para>The description.</para>\n      ",
+                  "documentation": "\n         <p>The description.</p>\n      ",
+                  "shape_name": "IpRuleDesc"
+                }
+              },
+              "zonbookDocumentation": "\n         <para>Information about a rule for an IP access control group.</para>\n      ",
+              "documentation": "\n         <p>Information about a rule for an IP access control group.</p>\n      ",
+              "shape_name": "IpRuleItem"
+            }
+          }
+        },
+        "shape_name": "AuthorizeIpRulesRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+        },
+        "shape_name": "AuthorizeIpRulesResult",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The exception error message.</simpara>\n      ",
+              "documentation": "\n         <p>The exception error message.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>One or more parameter values are not valid.</simpara>\n      ",
+          "documentation": "\n         <p>One or more parameter values are not valid.</p>\n      ",
+          "shape_name": "InvalidParameterValuesException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The resource could not be found.</simpara>\n      ",
+              "documentation": "\n         <p>The resource could not be found.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "ResourceId": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The ID of the resource that could not be found.</simpara>\n      ",
+              "documentation": "\n         <p>The ID of the resource that could not be found.</p>\n      ",
+              "shape_name": "NonEmptyString",
+              "min_length": 1
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The resource could not be found.</simpara>\n      ",
+          "documentation": "\n         <p>The resource could not be found.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The exception error message.</simpara>\n      ",
+              "documentation": "\n         <p>The exception error message.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>Your resource limits have been exceeded.</simpara>\n      ",
+          "documentation": "\n         <p>Your resource limits have been exceeded.</p>\n      ",
+          "shape_name": "ResourceLimitExceededException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "shape_name": "ExceptionMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The state of the resource is not valid for this operation.</simpara>\n      ",
+          "documentation": "\n         <p>The state of the resource is not valid for this operation.</p>\n      ",
+          "shape_name": "InvalidResourceStateException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "shape_name": "ExceptionMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The user is not authorized to access a resource.</simpara>\n      ",
+          "documentation": "\n         <p>The user is not authorized to access a resource.</p>\n      ",
+          "shape_name": "AccessDeniedException"
+        }
+      ],
+      "documentation": "\n         <p>Adds one or more rules to the specified IP access control group.</p>\n         <p>This action gives users permission to access their WorkSpaces from the CIDR address ranges\n          specified in the rules.</p>\n      "
+    },
+    "RevokeIpRules": {
+      "name": "RevokeIpRules",
+      "input": {
+        "type": "structure",
+        "members": {
+          "GroupId": {
+            "type": "string",
+            "pattern": "wsipg-[0-9a-z]{8,63}$",
+            "zonbookDocumentation": "\n         <para>The ID of the group.</para>\n      ",
+            "documentation": "\n         <p>The ID of the group.</p>\n      ",
+            "required": true,
+            "shape_name": "IpGroupId"
+          },
+          "UserRules": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <para>The rules to remove from the group.</para>\n      ",
+            "documentation": "\n         <p>The rules to remove from the group.</p>\n      ",
+            "required": true,
+            "shape_name": "IpRevokedRuleList",
+            "members": {
+              "type": "string",
+              "shape_name": "IpRule",
+              "documentation": null
+            }
+          }
+        },
+        "shape_name": "RevokeIpRulesRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+        },
+        "shape_name": "RevokeIpRulesResult",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The exception error message.</simpara>\n      ",
+              "documentation": "\n         <p>The exception error message.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>One or more parameter values are not valid.</simpara>\n      ",
+          "documentation": "\n         <p>One or more parameter values are not valid.</p>\n      ",
+          "shape_name": "InvalidParameterValuesException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The resource could not be found.</simpara>\n      ",
+              "documentation": "\n         <p>The resource could not be found.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "ResourceId": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The ID of the resource that could not be found.</simpara>\n      ",
+              "documentation": "\n         <p>The ID of the resource that could not be found.</p>\n      ",
+              "shape_name": "NonEmptyString",
+              "min_length": 1
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The resource could not be found.</simpara>\n      ",
+          "documentation": "\n         <p>The resource could not be found.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "shape_name": "ExceptionMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The state of the resource is not valid for this operation.</simpara>\n      ",
+          "documentation": "\n         <p>The state of the resource is not valid for this operation.</p>\n      ",
+          "shape_name": "InvalidResourceStateException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "shape_name": "ExceptionMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The user is not authorized to access a resource.</simpara>\n      ",
+          "documentation": "\n         <p>The user is not authorized to access a resource.</p>\n      ",
+          "shape_name": "AccessDeniedException"
+        }
+      ],
+      "documentation": "\n         <p>Removes one or more rules from the specified IP access control group.</p>\n      "
+    },
+    "AssociateIpGroups": {
+      "name": "AssociateIpGroups",
+      "input": {
+        "type": "structure",
+        "members": {
+          "DirectoryId": {
+            "type": "string",
+            "pattern": "^d-[0-9a-f]{8,63}$",
+            "zonbookDocumentation": "\n         <para>The ID of the directory.</para>\n      ",
+            "documentation": "\n         <p>The ID of the directory.</p>\n      ",
+            "required": true,
+            "shape_name": "DirectoryId"
+          },
+          "GroupIds": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <para>The IDs of one or more IP access control groups.</para>\n      ",
+            "documentation": "\n         <p>The IDs of one or more IP access control groups.</p>\n      ",
+            "required": true,
+            "shape_name": "IpGroupIdList",
+            "members": {
+              "type": "string",
+              "pattern": "wsipg-[0-9a-z]{8,63}$",
+              "shape_name": "IpGroupId",
+              "documentation": null
+            }
+          }
+        },
+        "shape_name": "AssociateIpGroupsRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+        },
+        "shape_name": "AssociateIpGroupsResult",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The exception error message.</simpara>\n      ",
+              "documentation": "\n         <p>The exception error message.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>One or more parameter values are not valid.</simpara>\n      ",
+          "documentation": "\n         <p>One or more parameter values are not valid.</p>\n      ",
+          "shape_name": "InvalidParameterValuesException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The resource could not be found.</simpara>\n      ",
+              "documentation": "\n         <p>The resource could not be found.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "ResourceId": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The ID of the resource that could not be found.</simpara>\n      ",
+              "documentation": "\n         <p>The ID of the resource that could not be found.</p>\n      ",
+              "shape_name": "NonEmptyString",
+              "min_length": 1
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The resource could not be found.</simpara>\n      ",
+          "documentation": "\n         <p>The resource could not be found.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The exception error message.</simpara>\n      ",
+              "documentation": "\n         <p>The exception error message.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>Your resource limits have been exceeded.</simpara>\n      ",
+          "documentation": "\n         <p>Your resource limits have been exceeded.</p>\n      ",
+          "shape_name": "ResourceLimitExceededException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "shape_name": "ExceptionMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The state of the resource is not valid for this operation.</simpara>\n      ",
+          "documentation": "\n         <p>The state of the resource is not valid for this operation.</p>\n      ",
+          "shape_name": "InvalidResourceStateException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "shape_name": "ExceptionMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The user is not authorized to access a resource.</simpara>\n      ",
+          "documentation": "\n         <p>The user is not authorized to access a resource.</p>\n      ",
+          "shape_name": "AccessDeniedException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "shape_name": "ExceptionMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>This operation is not supported.</para>\n      ",
+          "documentation": "\n         <p>This operation is not supported.</p>\n      ",
+          "shape_name": "OperationNotSupportedException"
+        }
+      ],
+      "documentation": "\n         <p>Associates the specified IP access control group with the specified directory.</p>\n      "
+    },
+    "DisassociateIpGroups": {
+      "name": "DisassociateIpGroups",
+      "input": {
+        "type": "structure",
+        "members": {
+          "DirectoryId": {
+            "type": "string",
+            "pattern": "^d-[0-9a-f]{8,63}$",
+            "zonbookDocumentation": "\n         <para>The ID of the directory.</para>\n      ",
+            "documentation": "\n         <p>The ID of the directory.</p>\n      ",
+            "required": true,
+            "shape_name": "DirectoryId"
+          },
+          "GroupIds": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <para>The IDs of one or more IP access control groups.</para>\n      ",
+            "documentation": "\n         <p>The IDs of one or more IP access control groups.</p>\n      ",
+            "required": true,
+            "shape_name": "IpGroupIdList",
+            "members": {
+              "type": "string",
+              "pattern": "wsipg-[0-9a-z]{8,63}$",
+              "shape_name": "IpGroupId",
+              "documentation": null
+            }
+          }
+        },
+        "shape_name": "DisassociateIpGroupsRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+        },
+        "shape_name": "DisassociateIpGroupsResult",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The exception error message.</simpara>\n      ",
+              "documentation": "\n         <p>The exception error message.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>One or more parameter values are not valid.</simpara>\n      ",
+          "documentation": "\n         <p>One or more parameter values are not valid.</p>\n      ",
+          "shape_name": "InvalidParameterValuesException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The resource could not be found.</simpara>\n      ",
+              "documentation": "\n         <p>The resource could not be found.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "ResourceId": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The ID of the resource that could not be found.</simpara>\n      ",
+              "documentation": "\n         <p>The ID of the resource that could not be found.</p>\n      ",
+              "shape_name": "NonEmptyString",
+              "min_length": 1
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The resource could not be found.</simpara>\n      ",
+          "documentation": "\n         <p>The resource could not be found.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "shape_name": "ExceptionMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The state of the resource is not valid for this operation.</simpara>\n      ",
+          "documentation": "\n         <p>The state of the resource is not valid for this operation.</p>\n      ",
+          "shape_name": "InvalidResourceStateException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "shape_name": "ExceptionMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The user is not authorized to access a resource.</simpara>\n      ",
+          "documentation": "\n         <p>The user is not authorized to access a resource.</p>\n      ",
+          "shape_name": "AccessDeniedException"
+        }
+      ],
+      "documentation": "\n         <p>Disassociates the specified IP access control group from the specified directory.</p>\n      "
+    },
+    "UpdateRulesOfIpGroup": {
+      "name": "UpdateRulesOfIpGroup",
+      "input": {
+        "type": "structure",
+        "members": {
+          "GroupId": {
+            "type": "string",
+            "pattern": "wsipg-[0-9a-z]{8,63}$",
+            "zonbookDocumentation": "\n         <para>The ID of the group.</para>\n      ",
+            "documentation": "\n         <p>The ID of the group.</p>\n      ",
+            "required": true,
+            "shape_name": "IpGroupId"
+          },
+          "UserRules": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <para>One or more rules.</para>\n      ",
+            "documentation": "\n         <p>One or more rules.</p>\n      ",
+            "required": true,
+            "shape_name": "IpRuleList",
+            "members": {
+              "type": "structure",
+              "members": {
+                "ipRule": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <para>The IP address range, in CIDR notation.</para>\n      ",
+                  "documentation": "\n         <p>The IP address range, in CIDR notation.</p>\n      ",
+                  "shape_name": "IpRule"
+                },
+                "ruleDesc": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <para>The description.</para>\n      ",
+                  "documentation": "\n         <p>The description.</p>\n      ",
+                  "shape_name": "IpRuleDesc"
+                }
+              },
+              "zonbookDocumentation": "\n         <para>Information about a rule for an IP access control group.</para>\n      ",
+              "documentation": "\n         <p>Information about a rule for an IP access control group.</p>\n      ",
+              "shape_name": "IpRuleItem"
+            }
+          }
+        },
+        "shape_name": "UpdateRulesOfIpGroupRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+        },
+        "shape_name": "UpdateRulesOfIpGroupResult",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The exception error message.</simpara>\n      ",
+              "documentation": "\n         <p>The exception error message.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>One or more parameter values are not valid.</simpara>\n      ",
+          "documentation": "\n         <p>One or more parameter values are not valid.</p>\n      ",
+          "shape_name": "InvalidParameterValuesException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The resource could not be found.</simpara>\n      ",
+              "documentation": "\n         <p>The resource could not be found.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "ResourceId": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The ID of the resource that could not be found.</simpara>\n      ",
+              "documentation": "\n         <p>The ID of the resource that could not be found.</p>\n      ",
+              "shape_name": "NonEmptyString",
+              "min_length": 1
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The resource could not be found.</simpara>\n      ",
+          "documentation": "\n         <p>The resource could not be found.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The exception error message.</simpara>\n      ",
+              "documentation": "\n         <p>The exception error message.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>Your resource limits have been exceeded.</simpara>\n      ",
+          "documentation": "\n         <p>Your resource limits have been exceeded.</p>\n      ",
+          "shape_name": "ResourceLimitExceededException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "shape_name": "ExceptionMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The state of the resource is not valid for this operation.</simpara>\n      ",
+          "documentation": "\n         <p>The state of the resource is not valid for this operation.</p>\n      ",
+          "shape_name": "InvalidResourceStateException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "shape_name": "ExceptionMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The user is not authorized to access a resource.</simpara>\n      ",
+          "documentation": "\n         <p>The user is not authorized to access a resource.</p>\n      ",
+          "shape_name": "AccessDeniedException"
+        }
+      ],
+      "documentation": "\n         <p>Replaces the current rules of the specified IP access control group with the specified rules.</p>\n      "
+    }
+  }
+}

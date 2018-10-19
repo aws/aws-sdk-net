@@ -35,6 +35,10 @@ namespace Amazon.WorkSpaces
         /// </summary>
         public static readonly Compute GRAPHICS = new Compute("GRAPHICS");
         /// <summary>
+        /// Constant GRAPHICSPRO for Compute
+        /// </summary>
+        public static readonly Compute GRAPHICSPRO = new Compute("GRAPHICSPRO");
+        /// <summary>
         /// Constant PERFORMANCE for Compute
         /// </summary>
         public static readonly Compute PERFORMANCE = new Compute("PERFORMANCE");
@@ -42,6 +46,10 @@ namespace Amazon.WorkSpaces
         /// Constant POWER for Compute
         /// </summary>
         public static readonly Compute POWER = new Compute("POWER");
+        /// <summary>
+        /// Constant POWERPRO for Compute
+        /// </summary>
+        public static readonly Compute POWERPRO = new Compute("POWERPRO");
         /// <summary>
         /// Constant STANDARD for Compute
         /// </summary>
