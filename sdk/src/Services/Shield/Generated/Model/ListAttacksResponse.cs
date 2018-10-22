@@ -61,6 +61,12 @@ namespace Amazon.Shield.Model
         /// parameter in a subsequent call to <code>ListAttacks</code> to retrieve the next set
         /// of items.
         /// </para>
+        ///  
+        /// <para>
+        /// AWS WAF might return the list of <a>AttackSummary</a> objects in batches smaller than
+        /// the number specified by MaxResults. If there are more <a>AttackSummary</a> objects
+        /// to return, AWS WAF will always also return a <code>NextToken</code>.
+        /// </para>
         /// </summary>
         public string NextToken
         {

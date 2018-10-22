@@ -776,12 +776,12 @@ namespace Amazon.Shield
         /// <param name="request">Container for the necessary parameters to execute the DescribeAttack service method.</param>
         /// 
         /// <returns>The response from the DescribeAttack service method, as returned by Shield.</returns>
+        /// <exception cref="Amazon.Shield.Model.AccessDeniedException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.Shield.Model.InternalErrorException">
         /// Exception that indicates that a problem occurred with the service infrastructure.
         /// You can retry the request.
-        /// </exception>
-        /// <exception cref="Amazon.Shield.Model.InvalidParameterException">
-        /// Exception that indicates that the parameters passed to the API are invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeAttack">REST API Reference for DescribeAttack Operation</seealso>
         public virtual DescribeAttackResponse DescribeAttack(DescribeAttackRequest request)

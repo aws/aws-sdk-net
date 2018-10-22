@@ -91,8 +91,8 @@ namespace Amazon.Shield.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For Amazon Route 53: <code>arn:aws:route53::<i>account-id</i>:hostedzone/<i>hosted-zone-id</i>
-        /// </code> 
+        /// For Amazon Route 53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
