@@ -605,6 +605,41 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Inspector.Model.NetworkInterface.NetworkInterfaceId</property>
+    <min>0</min>
+    <max>20000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector.Model.NetworkInterface.PrivateDnsName</property>
+    <min>0</min>
+    <max>20000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector.Model.NetworkInterface.PrivateIpAddress</property>
+    <min>0</min>
+    <max>20000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector.Model.NetworkInterface.PublicDnsName</property>
+    <min>0</min>
+    <max>20000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector.Model.NetworkInterface.PublicIp</property>
+    <min>0</min>
+    <max>20000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector.Model.NetworkInterface.SubnetId</property>
+    <min>0</min>
+    <max>20000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector.Model.NetworkInterface.VpcId</property>
+    <min>0</min>
+    <max>20000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Inspector.Model.NoSuchEntityException.Message</property>
     <min>0</min>
     <max>1000</max>
@@ -613,6 +648,16 @@
     <property>Amazon.Inspector.Model.PreviewGenerationInProgressException.Message</property>
     <min>0</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector.Model.PrivateIp.PrivateDnsName</property>
+    <min>0</min>
+    <max>20000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector.Model.PrivateIp.PrivateIpAddress</property>
+    <min>0</min>
+    <max>20000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector.Model.ResourceGroup.Arn</property>
@@ -653,6 +698,16 @@
     <property>Amazon.Inspector.Model.RulesPackage.Version</property>
     <min>0</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector.Model.SecurityGroup.GroupId</property>
+    <min>0</min>
+    <max>20000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector.Model.SecurityGroup.GroupName</property>
+    <min>0</min>
+    <max>20000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector.Model.ServiceTemporarilyUnavailableException.Message</property>

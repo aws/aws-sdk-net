@@ -37,7 +37,9 @@ namespace Amazon.Inspector.Model
         private string _autoScalingGroup;
         private string _hostname;
         private List<string> _ipv4Addresses = new List<string>();
+        private List<NetworkInterface> _networkInterfaces = new List<NetworkInterface>();
         private int? _schemaVersion;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property AgentId. 
@@ -131,6 +133,25 @@ namespace Amazon.Inspector.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NetworkInterfaces. 
+        /// <para>
+        /// An array of the network interfaces interacting with the EC2 instance where the finding
+        /// is generated.
+        /// </para>
+        /// </summary>
+        public List<NetworkInterface> NetworkInterfaces
+        {
+            get { return this._networkInterfaces; }
+            set { this._networkInterfaces = value; }
+        }
+
+        // Check to see if NetworkInterfaces property is set
+        internal bool IsSetNetworkInterfaces()
+        {
+            return this._networkInterfaces != null && this._networkInterfaces.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property SchemaVersion. 
         /// <para>
         /// The schema version of this data type.
@@ -146,6 +167,24 @@ namespace Amazon.Inspector.Model
         internal bool IsSetSchemaVersion()
         {
             return this._schemaVersion.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags related to the EC2 instance where the finding is generated.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

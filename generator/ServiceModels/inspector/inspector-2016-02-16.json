@@ -5993,6 +5993,180 @@
                         "min_length": 7,
                         "max_length": 15
                       }
+                    },
+                    "tags": {
+                      "type": "list",
+                      "zonbookDocumentation": "\n         <simpara>The tags related to the EC2 instance where the finding is generated.</simpara>\n      ",
+                      "documentation": "\n         <p>The tags related to the EC2 instance where the finding is generated.</p>\n      ",
+                      "shape_name": "Tags",
+                      "members": {
+                        "type": "structure",
+                        "members": {
+                          "key": {
+                            "type": "string",
+                            "zonbookDocumentation": "\n         <simpara>A tag key.</simpara>\n      ",
+                            "documentation": "\n         <p>A tag key.</p>\n      ",
+                            "required": true,
+                            "shape_name": "TagKey",
+                            "min_length": 1,
+                            "max_length": 128
+                          },
+                          "value": {
+                            "type": "string",
+                            "zonbookDocumentation": "\n         <simpara>A value assigned to a tag key.</simpara>\n      ",
+                            "documentation": "\n         <p>A value assigned to a tag key.</p>\n      ",
+                            "shape_name": "TagValue",
+                            "min_length": 1,
+                            "max_length": 256
+                          }
+                        },
+                        "zonbookDocumentation": "\n         <simpara>A key and value pair. This data type is used as a request parameter in the <xref linkend=\"SetTagsForResource\"/> action and a response element in the <xref linkend=\"ListTagsForResource\"/> action.</simpara>\n      ",
+                        "documentation": "\n         <p>A key and value pair. This data type is used as a request parameter in the <a>SetTagsForResource</a> action and a response element in the <a>ListTagsForResource</a> action.</p>\n      ",
+                        "shape_name": "Tag"
+                      }
+                    },
+                    "networkInterfaces": {
+                      "type": "list",
+                      "zonbookDocumentation": "\n         <simpara>An array of the network interfaces interacting with the EC2 instance where the\n         finding is generated.</simpara>\n      ",
+                      "documentation": "\n         <p>An array of the network interfaces interacting with the EC2 instance where the\n         finding is generated.</p>\n      ",
+                      "shape_name": "NetworkInterfaces",
+                      "members": {
+                        "type": "structure",
+                        "members": {
+                          "networkInterfaceId": {
+                            "type": "string",
+                            "zonbookDocumentation": "\n         <simpara>The ID of the network interface.</simpara>\n      ",
+                            "documentation": "\n         <p>The ID of the network interface.</p>\n      ",
+                            "shape_name": "Text",
+                            "min_length": 0,
+                            "max_length": 20000
+                          },
+                          "subnetId": {
+                            "type": "string",
+                            "zonbookDocumentation": "\n         <simpara>The ID of a subnet associated with the network interface.</simpara>\n      ",
+                            "documentation": "\n         <p>The ID of a subnet associated with the network interface.</p>\n      ",
+                            "shape_name": "Text",
+                            "min_length": 0,
+                            "max_length": 20000
+                          },
+                          "vpcId": {
+                            "type": "string",
+                            "zonbookDocumentation": "\n         <simpara>The ID of a VPC associated with the network interface.</simpara>\n      ",
+                            "documentation": "\n         <p>The ID of a VPC associated with the network interface.</p>\n      ",
+                            "shape_name": "Text",
+                            "min_length": 0,
+                            "max_length": 20000
+                          },
+                          "privateDnsName": {
+                            "type": "string",
+                            "zonbookDocumentation": "\n         <simpara>The name of a private DNS associated with the network interface.</simpara>\n      ",
+                            "documentation": "\n         <p>The name of a private DNS associated with the network interface.</p>\n      ",
+                            "shape_name": "Text",
+                            "min_length": 0,
+                            "max_length": 20000
+                          },
+                          "privateIpAddress": {
+                            "type": "string",
+                            "zonbookDocumentation": "\n         <simpara>The private IP address associated with the network interface.</simpara>\n      ",
+                            "documentation": "\n         <p>The private IP address associated with the network interface.</p>\n      ",
+                            "shape_name": "Text",
+                            "min_length": 0,
+                            "max_length": 20000
+                          },
+                          "privateIpAddresses": {
+                            "type": "list",
+                            "zonbookDocumentation": "\n         <simpara>A list of the private IP addresses associated with the network interface. Includes\n         the privateDnsName and privateIpAddress.</simpara>\n      ",
+                            "documentation": "\n         <p>A list of the private IP addresses associated with the network interface. Includes\n         the privateDnsName and privateIpAddress.</p>\n      ",
+                            "shape_name": "PrivateIpAddresses",
+                            "members": {
+                              "type": "structure",
+                              "members": {
+                                "privateDnsName": {
+                                  "type": "string",
+                                  "zonbookDocumentation": "\n         <simpara>The DNS name of the private IP address.</simpara>\n      ",
+                                  "documentation": "\n         <p>The DNS name of the private IP address.</p>\n      ",
+                                  "shape_name": "Text",
+                                  "min_length": 0,
+                                  "max_length": 20000
+                                },
+                                "privateIpAddress": {
+                                  "type": "string",
+                                  "zonbookDocumentation": "\n         <simpara>The full IP address of the network inteface.</simpara>\n      ",
+                                  "documentation": "\n         <p>The full IP address of the network inteface.</p>\n      ",
+                                  "shape_name": "Text",
+                                  "min_length": 0,
+                                  "max_length": 20000
+                                }
+                              },
+                              "zonbookDocumentation": "\n         <simpara>Contains information about a private IP address associated with a network interface. This\n         data type is used as a response element in the <xref linkend=\"DescribeFindings\"/>\n         action.</simpara>\n      ",
+                              "documentation": "\n         <p>Contains information about a private IP address associated with a network interface. This\n         data type is used as a response element in the <a>DescribeFindings</a>\n         action.</p>\n      ",
+                              "shape_name": "PrivateIp"
+                            }
+                          },
+                          "publicDnsName": {
+                            "type": "string",
+                            "zonbookDocumentation": "\n         <simpara>The name of a public DNS associated with the network interface.</simpara>\n      ",
+                            "documentation": "\n         <p>The name of a public DNS associated with the network interface.</p>\n      ",
+                            "shape_name": "Text",
+                            "min_length": 0,
+                            "max_length": 20000
+                          },
+                          "publicIp": {
+                            "type": "string",
+                            "zonbookDocumentation": "\n         <simpara>The public IP address from which the network interface is reachable.</simpara>\n      ",
+                            "documentation": "\n         <p>The public IP address from which the network interface is reachable.</p>\n      ",
+                            "shape_name": "Text",
+                            "min_length": 0,
+                            "max_length": 20000
+                          },
+                          "ipv6Addresses": {
+                            "type": "list",
+                            "zonbookDocumentation": "\n         <simpara>The IP addresses associated with the network interface.</simpara>\n      ",
+                            "documentation": "\n         <p>The IP addresses associated with the network interface.</p>\n      ",
+                            "shape_name": "Ipv6Addresses",
+                            "members": {
+                              "type": "string",
+                              "shape_name": "Text",
+                              "documentation": null,
+                              "min_length": 0,
+                              "max_length": 20000
+                            }
+                          },
+                          "securityGroups": {
+                            "type": "list",
+                            "zonbookDocumentation": "\n         <simpara>A list of the security groups associated with the network interface. Includes the\n         groupId and groupName.</simpara>\n      ",
+                            "documentation": "\n         <p>A list of the security groups associated with the network interface. Includes the\n         groupId and groupName.</p>\n      ",
+                            "shape_name": "SecurityGroups",
+                            "members": {
+                              "type": "structure",
+                              "members": {
+                                "groupName": {
+                                  "type": "string",
+                                  "zonbookDocumentation": "\n         <simpara>The name of the security group.</simpara>\n      ",
+                                  "documentation": "\n         <p>The name of the security group.</p>\n      ",
+                                  "shape_name": "Text",
+                                  "min_length": 0,
+                                  "max_length": 20000
+                                },
+                                "groupId": {
+                                  "type": "string",
+                                  "zonbookDocumentation": "\n         <simpara>The ID of the security group.</simpara>\n      ",
+                                  "documentation": "\n         <p>The ID of the security group.</p>\n      ",
+                                  "shape_name": "Text",
+                                  "min_length": 0,
+                                  "max_length": 20000
+                                }
+                              },
+                              "zonbookDocumentation": "\n         <simpara>Contains information about a security group associated with a network interface. This\n         data type is used as one of the elements of the <xref linkend=\"NetworkInterface\"/> data\n         type.</simpara>\n      ",
+                              "documentation": "\n         <p>Contains information about a security group associated with a network interface. This\n         data type is used as one of the elements of the <a>NetworkInterface</a> data\n         type.</p>\n      ",
+                              "shape_name": "SecurityGroup"
+                            }
+                          }
+                        },
+                        "zonbookDocumentation": "\n         <simpara>Contains information about the network interfaces interacting with an EC2 instance.\n         This data type is used as one of the elements of the <xref linkend=\"AssetAttributes\"/> data\n         type.</simpara>\n      ",
+                        "documentation": "\n         <p>Contains information about the network interfaces interacting with an EC2 instance.\n         This data type is used as one of the elements of the <a>AssetAttributes</a> data\n         type.</p>\n      ",
+                        "shape_name": "NetworkInterface"
+                      }
                     }
                   },
                   "zonbookDocumentation": "\n         <simpara>A collection of attributes of the host from which the finding is generated.</simpara>\n      ",

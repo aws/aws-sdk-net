@@ -94,10 +94,22 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
                     unmarshalledObject.Ipv4Addresses = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("networkInterfaces", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<NetworkInterface, NetworkInterfaceUnmarshaller>(NetworkInterfaceUnmarshaller.Instance);
+                    unmarshalledObject.NetworkInterfaces = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("schemaVersion", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.SchemaVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("tags", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
+                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
