@@ -1,3 +1,56 @@
+### 3.3.390.0 (2018-10-22 16:20 UTC)
+* AutoScaling (3.3.7.0)
+	* Updated to use new Core, version 3.3.28.0
+	* Deprecated properties resulting in non-Universal DateTime values being handled as if they were Universal. Created new replacement properties that honor the DateTimeKind, such properties are marked with the "Utc" suffix. All DateTime properties now consider DateTime values of type Unspecified as if they were Local.
+* CloudWatch (3.3.9.0)
+	* Updated to use new Core, version 3.3.28.0
+	* Deprecated properties resulting in non-Universal DateTime values being handled as if they were Universal. Created new replacement properties that honor the DateTimeKind, such properties are marked with the "Utc" suffix. All DateTime properties now consider DateTime values of type Unspecified as if they were Local.
+* EC2 (3.3.66.0)
+	* Updated to use new Core, version 3.3.28.0
+	* Deprecated properties resulting in non-Universal DateTime values being handled as if they were Universal. Created new replacement properties that honor the DateTimeKind, such properties are marked with the "Utc" suffix. All DateTime properties now consider DateTime values of type Unspecified as if they were Local.
+* ElastiCache (3.3.7.0)
+	* Updated to use new Core, version 3.3.28.0
+	* Deprecated properties resulting in non-Universal DateTime values being handled as if they were Universal. Created new replacement properties that honor the DateTimeKind, such properties are marked with the "Utc" suffix. All DateTime properties now consider DateTime values of type Unspecified as if they were Local.
+* ElasticBeanstalk (3.3.11.0)
+	* Updated to use new Core, version 3.3.28.0
+	* Deprecated properties resulting in non-Universal DateTime values being handled as if they were Universal. Created new replacement properties that honor the DateTimeKind, such properties are marked with the "Utc" suffix. All DateTime properties now consider DateTime values of type Unspecified as if they were Local.
+* IoT (3.3.20.0)
+	* Updated to use new Core, version 3.3.28.0
+	* Deprecated properties resulting in non-Universal DateTime values being handled as if they were Universal. Created new replacement properties that honor the DateTimeKind, such properties are marked with the "Utc" suffix. All DateTime properties now consider DateTime values of type Unspecified as if they were Local.
+* IoT1ClickDevicesService (3.3.1.0)
+	* Updated to use new Core, version 3.3.28.0
+	* Deprecated properties resulting in non-Universal DateTime values being handled as if they were Universal. Created new replacement properties that honor the DateTimeKind, such properties are marked with the "Utc" suffix. All DateTime properties now consider DateTime values of type Unspecified as if they were Local.
+* IoTAnalytics (3.3.5.0)
+	* Updated to use new Core, version 3.3.28.0
+	* Deprecated properties resulting in non-Universal DateTime values being handled as if they were Universal. Created new replacement properties that honor the DateTimeKind, such properties are marked with the "Utc" suffix. All DateTime properties now consider DateTime values of type Unspecified as if they were Local.
+* MobileAnalytics (3.3.2.0)
+	* Updated to use new Core, version 3.3.28.0
+	* Deprecated properties resulting in non-Universal DateTime values being handled as if they were Universal. Created new replacement properties that honor the DateTimeKind, such properties are marked with the "Utc" suffix. All DateTime properties now consider DateTime values of type Unspecified as if they were Local.
+* Neptune (3.3.4.0)
+	* Updated to use new Core, version 3.3.28.0
+	* Deprecated properties resulting in non-Universal DateTime values being handled as if they were Universal. Created new replacement properties that honor the DateTimeKind, such properties are marked with the "Utc" suffix. All DateTime properties now consider DateTime values of type Unspecified as if they were Local.
+* RDS (3.3.32.0)
+	* Updated to use new Core, version 3.3.28.0
+	* Deprecated properties resulting in non-Universal DateTime values being handled as if they were Universal. Created new replacement properties that honor the DateTimeKind, such properties are marked with the "Utc" suffix. All DateTime properties now consider DateTime values of type Unspecified as if they were Local.
+* Redshift (3.3.9.0)
+	* Updated to use new Core, version 3.3.28.0
+	* Deprecated properties resulting in non-Universal DateTime values being handled as if they were Universal. Created new replacement properties that honor the DateTimeKind, such properties are marked with the "Utc" suffix. All DateTime properties now consider DateTime values of type Unspecified as if they were Local.
+* S3 (3.3.26.0)
+	* Updated to use new Core, version 3.3.28.0
+	* Deprecated properties resulting in non-Universal DateTime values being handled as if they were Universal. Created new replacement properties that honor the DateTimeKind, such properties are marked with the "Utc" suffix. All DateTime properties now consider DateTime values of type Unspecified as if they were Local.
+* SimpleEmail (3.3.7.0)
+	* Updated to use new Core, version 3.3.28.0
+	* Deprecated properties resulting in non-Universal DateTime values being handled as if they were Universal. Created new replacement properties that honor the DateTimeKind, such properties are marked with the "Utc" suffix. All DateTime properties now consider DateTime values of type Unspecified as if they were Local.
+* SimpleNotificationService (3.3.2.0)
+	* Updated to use new Core, version 3.3.28.0
+	* Deprecated properties resulting in non-Universal DateTime values being handled as if they were Universal. Created new replacement properties that honor the DateTimeKind, such properties are marked with the "Utc" suffix. All DateTime properties now consider DateTime values of type Unspecified as if they were Local.
+* WorkDocs (3.3.6.0)
+	* Updated to use new Core, version 3.3.28.0
+	* Deprecated properties resulting in non-Universal DateTime values being handled as if they were Universal. Created new replacement properties that honor the DateTimeKind, such properties are marked with the "Utc" suffix. All DateTime properties now consider DateTime values of type Unspecified as if they were Local.
+* Core 3.3.28.0
+	* Update to support DateTime serialization fixes in service libraries.
+	* All services packages updated to require new Core
+
 ### 3.3.389.0 (2018-10-19 20:49 UTC)
 * SimpleSystemsManagement (3.3.34.0)
 	* Rate Control feature release for State Manager. Users now have the ability to apply rate control parameters similar to run command to their association in state manager console or CLI.
