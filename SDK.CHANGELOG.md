@@ -1,3 +1,14 @@
+### 3.3.391.0 (2018-10-22 21:38 UTC)
+* Inspector (3.3.8.0)
+	* Finding will be decorated with ec2 related metadata
+* Shield (3.3.4.0)
+	* AWS Shield Advanced API introduced a new service-specific AccessDeniedException which will be thrown when accessing individual attack information without sufficient permission.
+* Core 3.3.28.1
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.390.0 (2018-10-22 16:20 UTC)
 * AutoScaling (3.3.7.0)
 	* Updated to use new Core, version 3.3.28.0
