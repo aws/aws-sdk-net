@@ -66,6 +66,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Domain", StringUtils.FromString(publicRequest.Domain));
                 }
+                if(publicRequest.IsSetPublicIpv4Pool())
+                {
+                    request.Parameters.Add("PublicIpv4Pool", StringUtils.FromString(publicRequest.PublicIpv4Pool));
+                }
             }
             return request;
         }

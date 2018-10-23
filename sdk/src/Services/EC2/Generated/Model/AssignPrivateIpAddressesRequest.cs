@@ -30,6 +30,9 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the AssignPrivateIpAddresses operation.
     /// Assigns one or more secondary private IP addresses to the specified network interface.
+    /// 
+    ///  
+    /// <para>
     /// You can specify one or more specific secondary IP addresses, or you can specify the
     /// number of secondary IP addresses to be automatically assigned within the subnet's
     /// CIDR block range. The number of secondary IP addresses that you can assign to an instance
@@ -37,10 +40,17 @@ namespace Amazon.EC2.Model
     /// Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For more information
     /// about Elastic IP addresses, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
     /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-    /// 
+    /// </para>
     ///  
     /// <para>
-    /// AssignPrivateIpAddresses is available only in EC2-VPC.
+    /// When you move a secondary private IP address to another network interface, any Elastic
+    /// IP address that is associated with the IP address is also moved.
+    /// </para>
+    ///  
+    /// <para>
+    /// Remapping an IP address is an asynchronous operation. When you move an IP address
+    /// from one network interface to another, check <code>network/interfaces/macs/mac/local-ipv4s</code>
+    /// in the instance metadata to confirm that the remapping is complete.
     /// </para>
     /// </summary>
     public partial class AssignPrivateIpAddressesRequest : AmazonEC2Request

@@ -40,6 +40,7 @@ namespace Amazon.EC2.Model
         private string _networkInterfaceOwnerId;
         private string _privateIpAddress;
         private string _publicIp;
+        private string _publicIpv4Pool;
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
@@ -185,6 +186,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetPublicIp()
         {
             return this._publicIp != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PublicIpv4Pool. 
+        /// <para>
+        /// The ID of an address pool.
+        /// </para>
+        /// </summary>
+        public string PublicIpv4Pool
+        {
+            get { return this._publicIpv4Pool; }
+            set { this._publicIpv4Pool = value; }
+        }
+
+        // Check to see if PublicIpv4Pool property is set
+        internal bool IsSetPublicIpv4Pool()
+        {
+            return this._publicIpv4Pool != null;
         }
 
         /// <summary>

@@ -92,7 +92,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to use to retrieve the next page of results.
+        /// The token for the next page of results.
         /// </para>
         /// </summary>
         public string NextToken

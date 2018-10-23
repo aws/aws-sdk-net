@@ -378,6 +378,38 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  AdvertiseByoipCidr
+
+        internal virtual AdvertiseByoipCidrResponse AdvertiseByoipCidr(AdvertiseByoipCidrRequest request)
+        {
+            var marshaller = AdvertiseByoipCidrRequestMarshaller.Instance;
+            var unmarshaller = AdvertiseByoipCidrResponseUnmarshaller.Instance;
+
+            return Invoke<AdvertiseByoipCidrRequest,AdvertiseByoipCidrResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AdvertiseByoipCidr operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AdvertiseByoipCidr operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AdvertiseByoipCidr">REST API Reference for AdvertiseByoipCidr Operation</seealso>
+        public virtual Task<AdvertiseByoipCidrResponse> AdvertiseByoipCidrAsync(AdvertiseByoipCidrRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = AdvertiseByoipCidrRequestMarshaller.Instance;
+            var unmarshaller = AdvertiseByoipCidrResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AdvertiseByoipCidrRequest,AdvertiseByoipCidrResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AllocateAddress
 
         internal virtual AllocateAddressResponse AllocateAddress()
@@ -399,6 +431,14 @@ namespace Amazon.EC2
         /// an Elastic IP address, it is released to the IP address pool and can be allocated
         /// to a different AWS account.
         /// 
+        ///  
+        /// <para>
+        /// You can allocate an Elastic IP address from an address pool owned by AWS or from an
+        /// address pool created from a public IPv4 address range that you have brought to AWS
+        /// for use with your AWS resources using bring your own IP addresses (BYOIP). For more
+        /// information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
+        /// Your Own IP Addresses (BYOIP)</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
         ///  
         /// <para>
         /// [EC2-VPC] If you release an Elastic IP address, you might be able to recover it. You
@@ -3600,6 +3640,38 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DeprovisionByoipCidr
+
+        internal virtual DeprovisionByoipCidrResponse DeprovisionByoipCidr(DeprovisionByoipCidrRequest request)
+        {
+            var marshaller = DeprovisionByoipCidrRequestMarshaller.Instance;
+            var unmarshaller = DeprovisionByoipCidrResponseUnmarshaller.Instance;
+
+            return Invoke<DeprovisionByoipCidrRequest,DeprovisionByoipCidrResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeprovisionByoipCidr operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeprovisionByoipCidr operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeprovisionByoipCidr">REST API Reference for DeprovisionByoipCidr Operation</seealso>
+        public virtual Task<DeprovisionByoipCidrResponse> DeprovisionByoipCidrAsync(DeprovisionByoipCidrRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeprovisionByoipCidrRequestMarshaller.Instance;
+            var unmarshaller = DeprovisionByoipCidrResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeprovisionByoipCidrRequest,DeprovisionByoipCidrResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeregisterImage
 
         internal virtual DeregisterImageResponse DeregisterImage(DeregisterImageRequest request)
@@ -3920,6 +3992,38 @@ namespace Amazon.EC2
             var unmarshaller = DescribeBundleTasksResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeBundleTasksRequest,DescribeBundleTasksResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeByoipCidrs
+
+        internal virtual DescribeByoipCidrsResponse DescribeByoipCidrs(DescribeByoipCidrsRequest request)
+        {
+            var marshaller = DescribeByoipCidrsRequestMarshaller.Instance;
+            var unmarshaller = DescribeByoipCidrsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeByoipCidrsRequest,DescribeByoipCidrsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeByoipCidrs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeByoipCidrs operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeByoipCidrs">REST API Reference for DescribeByoipCidrs Operation</seealso>
+        public virtual Task<DescribeByoipCidrsResponse> DescribeByoipCidrsAsync(DescribeByoipCidrsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeByoipCidrsRequestMarshaller.Instance;
+            var unmarshaller = DescribeByoipCidrsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeByoipCidrsRequest,DescribeByoipCidrsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -5518,6 +5622,38 @@ namespace Amazon.EC2
             var unmarshaller = DescribePrincipalIdFormatResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribePrincipalIdFormatRequest,DescribePrincipalIdFormatResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribePublicIpv4Pools
+
+        internal virtual DescribePublicIpv4PoolsResponse DescribePublicIpv4Pools(DescribePublicIpv4PoolsRequest request)
+        {
+            var marshaller = DescribePublicIpv4PoolsRequestMarshaller.Instance;
+            var unmarshaller = DescribePublicIpv4PoolsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribePublicIpv4PoolsRequest,DescribePublicIpv4PoolsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribePublicIpv4Pools operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribePublicIpv4Pools operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePublicIpv4Pools">REST API Reference for DescribePublicIpv4Pools Operation</seealso>
+        public virtual Task<DescribePublicIpv4PoolsResponse> DescribePublicIpv4PoolsAsync(DescribePublicIpv4PoolsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribePublicIpv4PoolsRequestMarshaller.Instance;
+            var unmarshaller = DescribePublicIpv4PoolsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribePublicIpv4PoolsRequest,DescribePublicIpv4PoolsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -9084,6 +9220,38 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ProvisionByoipCidr
+
+        internal virtual ProvisionByoipCidrResponse ProvisionByoipCidr(ProvisionByoipCidrRequest request)
+        {
+            var marshaller = ProvisionByoipCidrRequestMarshaller.Instance;
+            var unmarshaller = ProvisionByoipCidrResponseUnmarshaller.Instance;
+
+            return Invoke<ProvisionByoipCidrRequest,ProvisionByoipCidrResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ProvisionByoipCidr operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ProvisionByoipCidr operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionByoipCidr">REST API Reference for ProvisionByoipCidr Operation</seealso>
+        public virtual Task<ProvisionByoipCidrResponse> ProvisionByoipCidrAsync(ProvisionByoipCidrRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ProvisionByoipCidrRequestMarshaller.Instance;
+            var unmarshaller = ProvisionByoipCidrResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ProvisionByoipCidrRequest,ProvisionByoipCidrResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PurchaseHostReservation
 
         internal virtual PurchaseHostReservationResponse PurchaseHostReservation(PurchaseHostReservationRequest request)
@@ -10199,6 +10367,38 @@ namespace Amazon.EC2
             var unmarshaller = UpdateSecurityGroupRuleDescriptionsIngressResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateSecurityGroupRuleDescriptionsIngressRequest,UpdateSecurityGroupRuleDescriptionsIngressResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  WithdrawByoipCidr
+
+        internal virtual WithdrawByoipCidrResponse WithdrawByoipCidr(WithdrawByoipCidrRequest request)
+        {
+            var marshaller = WithdrawByoipCidrRequestMarshaller.Instance;
+            var unmarshaller = WithdrawByoipCidrResponseUnmarshaller.Instance;
+
+            return Invoke<WithdrawByoipCidrRequest,WithdrawByoipCidrResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the WithdrawByoipCidr operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the WithdrawByoipCidr operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/WithdrawByoipCidr">REST API Reference for WithdrawByoipCidr Operation</seealso>
+        public virtual Task<WithdrawByoipCidrResponse> WithdrawByoipCidrAsync(WithdrawByoipCidrRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = WithdrawByoipCidrRequestMarshaller.Instance;
+            var unmarshaller = WithdrawByoipCidrResponseUnmarshaller.Instance;
+
+            return InvokeAsync<WithdrawByoipCidrRequest,WithdrawByoipCidrResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

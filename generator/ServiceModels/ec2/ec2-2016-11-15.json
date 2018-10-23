@@ -115,43 +115,55 @@
               "vpc",
               "standard"
             ],
-            "zonbookDocumentation": "\n         <simpara>Set to <code>vpc</code> to allocate the address for use with instances in a VPC.</simpara>\n         <simpara>Default: The address is for use with instances in EC2-Classic.</simpara>\n      ",
+            "zonbookDocumentation": "\n         <para>Set to <code>vpc</code> to allocate the address for use with instances in a VPC.</para>\n         <para>Default: The address is for use with instances in EC2-Classic.</para>\n      ",
             "documentation": "\n         <p>Set to <code>vpc</code> to allocate the address for use with instances in a VPC.</p>\n         <p>Default: The address is for use with instances in EC2-Classic.</p>\n      ",
             "shape_name": "DomainType"
           },
           "Address": {
             "type": "string",
-            "zonbookDocumentation": "\n         <simpara>[EC2-VPC] The Elastic IP address to recover.</simpara>\n      ",
-            "documentation": "\n         <p>[EC2-VPC] The Elastic IP address to recover.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>[EC2-VPC] The Elastic IP address to recover or an IPv4 address from an address pool.</para>\n      ",
+            "documentation": "\n         <p>[EC2-VPC] The Elastic IP address to recover or an IPv4 address from an address pool.</p>\n      ",
+            "shape_name": "String"
+          },
+          "PublicIpv4Pool": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>The ID of an address pool that you own. Use this parameter to let Amazon EC2 select an address from the address pool.\n       To specify a specific address from the address pool, use the <code>Address</code> parameter instead.</para>\n      ",
+            "documentation": "\n         <p>The ID of an address pool that you own. Use this parameter to let Amazon EC2 select an address from the address pool.\n       To specify a specific address from the address pool, use the <code>Address</code> parameter instead.</p>\n      ",
             "shape_name": "String"
           },
           "DryRun": {
             "type": "boolean",
-            "zonbookDocumentation": "\n         <simpara>Checks whether you have the required permissions for the action, without actually making the request, \n       and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n       Otherwise, it is <code>UnauthorizedOperation</code>.</simpara>\n      ",
-            "documentation": "\n         <p>Checks whether you have the required permissions for the action, without actually making the request, \n       and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n       Otherwise, it is <code>UnauthorizedOperation</code>.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>Checks whether you have the required permissions for the action, without actually making the request, \n   and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n   Otherwise, it is <code>UnauthorizedOperation</code>.</para>\n      ",
+            "documentation": "\n         <p>Checks whether you have the required permissions for the action, without actually making the request, \n   and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n   Otherwise, it is <code>UnauthorizedOperation</code>.</p>\n      ",
             "shape_name": "Boolean"
           }
         },
-        "zonbookDocumentation": "\n         <simpara>Contains the parameters for AllocateAddress.</simpara>\n      ",
-        "documentation": "\n         <p>Contains the parameters for AllocateAddress.</p>\n      ",
-        "shape_name": "AllocateAddressRequest"
+        "shape_name": "AllocateAddressRequest",
+        "documentation": null
       },
       "output": {
         "type": "structure",
         "members": {
           "PublicIp": {
             "type": "string",
-            "zonbookDocumentation": "\n         <simpara>The Elastic IP address.</simpara>\n      ",
+            "zonbookDocumentation": "\n         <para>The Elastic IP address.</para>\n      ",
             "documentation": "\n         <p>The Elastic IP address.</p>\n      ",
             "shape_name": "String",
             "xmlname": "publicIp"
           },
           "AllocationId": {
             "type": "string",
-            "zonbookDocumentation": "\n         <simpara>[EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic IP address for use with instances in a VPC.</simpara>\n      ",
+            "zonbookDocumentation": "\n         <para>[EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic IP address for use with instances in a VPC.</para>\n      ",
             "documentation": "\n         <p>[EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic IP address for use with instances in a VPC.</p>\n      ",
             "shape_name": "String",
             "xmlname": "allocationId"
+          },
+          "PublicIpv4Pool": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>The ID of an address pool.</para>\n      ",
+            "documentation": "\n         <p>The ID of an address pool.</p>\n      ",
+            "shape_name": "String",
+            "xmlname": "publicIpv4Pool"
           },
           "Domain": {
             "type": "string",
@@ -159,20 +171,19 @@
               "vpc",
               "standard"
             ],
-            "zonbookDocumentation": "\n         <simpara>Indicates whether this Elastic IP address is for use with instances\n\t\t\t\tin EC2-Classic (<code>standard</code>) or instances in a VPC (<code>vpc</code>).</simpara>\n      ",
+            "zonbookDocumentation": "\n         <para>Indicates whether this Elastic IP address is for use with instances\n\t\t\t\tin EC2-Classic (<code>standard</code>) or instances in a VPC (<code>vpc</code>).</para>\n      ",
             "documentation": "\n         <p>Indicates whether this Elastic IP address is for use with instances\n\t\t\t\tin EC2-Classic (<code>standard</code>) or instances in a VPC (<code>vpc</code>).</p>\n      ",
             "shape_name": "DomainType",
             "xmlname": "domain"
           }
         },
-        "zonbookDocumentation": "\n         <simpara>Contains the output of AllocateAddress.</simpara>\n      ",
-        "documentation": "\n         <p>Contains the output of AllocateAddress.</p>\n      ",
-        "shape_name": "AllocateAddressResult"
+        "shape_name": "AllocateAddressResult",
+        "documentation": null
       },
       "errors": [
 
       ],
-      "documentation": "\n         <p>Allocates an Elastic IP address to your AWS account. After you allocate the Elastic IP address you can associate  \n         it with an instance or network interface. After you release an Elastic IP address, it is released to the IP address \n         pool and can be allocated to a different AWS account.</p>\n         <p>[EC2-VPC] If you release an Elastic IP address, you might be able to recover it. You cannot recover an \n         Elastic IP address that you released after it is allocated to another AWS account. You cannot recover an Elastic IP\n         address for EC2-Classic. To attempt to recover an Elastic IP address that you released, specify it in this operation.</p>\n         <p>An Elastic IP address is for use either in the EC2-Classic platform or in a VPC. By default, you can allocate\n         5 Elastic IP addresses for EC2-Classic per region and 5 Elastic IP addresses for EC2-VPC per region.</p>\n         <p>For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html\">Elastic IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>\n     \n      "
+      "documentation": "\n         <p>Allocates an Elastic IP address to your AWS account. After you allocate the Elastic IP address you can associate  \n         it with an instance or network interface. After you release an Elastic IP address, it is released to the IP address \n         pool and can be allocated to a different AWS account.</p>\n         <p>You can allocate an Elastic IP address from an address pool owned by AWS or from an address pool created \n         from a public IPv4 address range that you have brought to AWS for use with your AWS resources using bring your own \n         IP addresses (BYOIP). For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html\">Bring Your Own IP Addresses (BYOIP)</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>\n         <p>[EC2-VPC] If you release an Elastic IP address, you might be able to recover it. You cannot recover an \n         Elastic IP address that you released after it is allocated to another AWS account. You cannot recover an Elastic IP\n         address for EC2-Classic. To attempt to recover an Elastic IP address that you released, specify it in this operation.</p>\n         <p>An Elastic IP address is for use either in the EC2-Classic platform or in a VPC. By default, you can allocate\n         5 Elastic IP addresses for EC2-Classic per region and 5 Elastic IP addresses for EC2-VPC per region.</p>\n         <p>For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html\">Elastic IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>\n     \n      "
     },
     "AssignIpv6Addresses": {
       "name": "AssignIpv6Addresses",
@@ -286,7 +297,7 @@
       "errors": [
 
       ],
-      "documentation": "\n        <p>Assigns one or more secondary private IP addresses to the specified network interface. You\n            can specify one or more specific secondary IP addresses, or you can specify the number of\n            secondary IP addresses to be automatically assigned within the subnet's CIDR block range. The\n            number of secondary IP addresses that you can assign to an instance varies by instance type.\n            For information about instance types, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html\">Instance\n                Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For more information about Elastic IP addresses,\n            see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html\">Elastic IP Addresses</a> in the\n            <i>Amazon Elastic Compute Cloud User Guide</i>.</p>\n        <p>AssignPrivateIpAddresses is available only in EC2-VPC.</p>\n        \n      "
+      "documentation": "\n        <p>Assigns one or more secondary private IP addresses to the specified network interface.</p> \n        <p>You can specify one or more specific secondary IP addresses, or you can specify the number \n            of secondary IP addresses to be automatically assigned within the subnet's CIDR block range. \n            The number of secondary IP addresses that you can assign to an instance varies by instance type.\n            For information about instance types, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html\">Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For more information about \n            Elastic IP addresses, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html\">Elastic IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>\n        <p>When you move a secondary private IP address to another network interface, any Elastic IP address \n            that is associated with the IP address is also moved.</p>\n        <p>Remapping an IP address is an asynchronous operation. When you move an IP address from one network\n            interface to another, check <code>network/interfaces/macs/mac/local-ipv4s</code> in the instance\n            metadata to confirm that the remapping is complete.</p>\n        \n      "
     },
     "AssociateAddress": {
       "name": "AssociateAddress",
@@ -295,65 +306,63 @@
         "members": {
           "AllocationId": {
             "type": "string",
-            "zonbookDocumentation": "\n         <simpara>[EC2-VPC] The allocation ID. This is required for EC2-VPC.</simpara>\n      ",
+            "zonbookDocumentation": "\n         <para>[EC2-VPC] The allocation ID. This is required for EC2-VPC.</para>\n      ",
             "documentation": "\n         <p>[EC2-VPC] The allocation ID. This is required for EC2-VPC.</p>\n      ",
             "shape_name": "String"
           },
           "InstanceId": {
             "type": "string",
-            "zonbookDocumentation": "\n         <simpara>The ID of the instance. This is required for EC2-Classic. For EC2-VPC, you can specify either the instance ID or the network interface ID, but not both. The operation fails if you specify an instance ID unless exactly one network interface is attached.</simpara>\n      ",
+            "zonbookDocumentation": "\n         <para>The ID of the instance. This is required for EC2-Classic. For EC2-VPC, you can specify either the instance ID or the network interface ID, but not both. The operation fails if you specify an instance ID unless exactly one network interface is attached.</para>\n      ",
             "documentation": "\n         <p>The ID of the instance. This is required for EC2-Classic. For EC2-VPC, you can specify either the instance ID or the network interface ID, but not both. The operation fails if you specify an instance ID unless exactly one network interface is attached.</p>\n      ",
             "shape_name": "String"
           },
           "PublicIp": {
             "type": "string",
-            "zonbookDocumentation": "\n         <simpara>The Elastic IP address. This is required for EC2-Classic.</simpara>\n      ",
+            "zonbookDocumentation": "\n         <para>The Elastic IP address. This is required for EC2-Classic.</para>\n      ",
             "documentation": "\n         <p>The Elastic IP address. This is required for EC2-Classic.</p>\n      ",
             "shape_name": "String"
           },
           "AllowReassociation": {
             "type": "boolean",
-            "zonbookDocumentation": "\n         <simpara>[EC2-VPC] For a VPC in an EC2-Classic account, specify true to allow an Elastic IP address that is already associated with an instance or network interface to be reassociated with the specified instance or network interface. Otherwise, the operation fails. In a VPC in an EC2-VPC-only account, reassociation is automatic, therefore you can specify false to ensure the operation fails if the Elastic IP address is already associated with another resource.</simpara>\n      ",
+            "zonbookDocumentation": "\n         <para>[EC2-VPC] For a VPC in an EC2-Classic account, specify true to allow an Elastic IP address that is already associated with an instance or network interface to be reassociated with the specified instance or network interface. Otherwise, the operation fails. In a VPC in an EC2-VPC-only account, reassociation is automatic, therefore you can specify false to ensure the operation fails if the Elastic IP address is already associated with another resource.</para>\n      ",
             "documentation": "\n         <p>[EC2-VPC] For a VPC in an EC2-Classic account, specify true to allow an Elastic IP address that is already associated with an instance or network interface to be reassociated with the specified instance or network interface. Otherwise, the operation fails. In a VPC in an EC2-VPC-only account, reassociation is automatic, therefore you can specify false to ensure the operation fails if the Elastic IP address is already associated with another resource.</p>\n      ",
             "shape_name": "Boolean"
           },
           "DryRun": {
             "type": "boolean",
-            "zonbookDocumentation": "\n         <simpara>Checks whether you have the required permissions for the action, without actually making the request, \n       and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n       Otherwise, it is <code>UnauthorizedOperation</code>.</simpara>\n      ",
-            "documentation": "\n         <p>Checks whether you have the required permissions for the action, without actually making the request, \n       and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n       Otherwise, it is <code>UnauthorizedOperation</code>.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>Checks whether you have the required permissions for the action, without actually making the request, \n   and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n   Otherwise, it is <code>UnauthorizedOperation</code>.</para>\n      ",
+            "documentation": "\n         <p>Checks whether you have the required permissions for the action, without actually making the request, \n   and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n   Otherwise, it is <code>UnauthorizedOperation</code>.</p>\n      ",
             "shape_name": "Boolean"
           },
           "NetworkInterfaceId": {
             "type": "string",
-            "zonbookDocumentation": "\n         <simpara>[EC2-VPC] The ID of the network interface. If the instance has more than one network interface, you must specify a network interface ID.</simpara>\n      ",
+            "zonbookDocumentation": "\n         <para>[EC2-VPC] The ID of the network interface. If the instance has more than one network interface, you must specify a network interface ID.</para>\n      ",
             "documentation": "\n         <p>[EC2-VPC] The ID of the network interface. If the instance has more than one network interface, you must specify a network interface ID.</p>\n      ",
             "shape_name": "String"
           },
           "PrivateIpAddress": {
             "type": "string",
-            "zonbookDocumentation": "\n         <simpara>[EC2-VPC] The primary or secondary private IP address to associate with the Elastic IP address. If no private IP address is specified, the Elastic IP address is associated with the primary private IP address.</simpara>\n      ",
+            "zonbookDocumentation": "\n         <para>[EC2-VPC] The primary or secondary private IP address to associate with the Elastic IP address. If no private IP address is specified, the Elastic IP address is associated with the primary private IP address.</para>\n      ",
             "documentation": "\n         <p>[EC2-VPC] The primary or secondary private IP address to associate with the Elastic IP address. If no private IP address is specified, the Elastic IP address is associated with the primary private IP address.</p>\n      ",
             "shape_name": "String"
           }
         },
-        "zonbookDocumentation": "\n         <simpara>Contains the parameters for AssociateAddress.</simpara>\n      ",
-        "documentation": "\n         <p>Contains the parameters for AssociateAddress.</p>\n      ",
-        "shape_name": "AssociateAddressRequest"
+        "shape_name": "AssociateAddressRequest",
+        "documentation": null
       },
       "output": {
         "type": "structure",
         "members": {
           "AssociationId": {
             "type": "string",
-            "zonbookDocumentation": "\n         <simpara>[EC2-VPC] The ID that represents the association of the Elastic IP address with an instance.</simpara>\n      ",
+            "zonbookDocumentation": "\n         <para>[EC2-VPC] The ID that represents the association of the Elastic IP address with an instance.</para>\n      ",
             "documentation": "\n         <p>[EC2-VPC] The ID that represents the association of the Elastic IP address with an instance.</p>\n      ",
             "shape_name": "String",
             "xmlname": "associationId"
           }
         },
-        "zonbookDocumentation": "\n         <simpara>Contains the output of AssociateAddress.</simpara>\n      ",
-        "documentation": "\n         <p>Contains the output of AssociateAddress.</p>\n      ",
-        "shape_name": "AssociateAddressResult"
+        "shape_name": "AssociateAddressResult",
+        "documentation": null
       },
       "errors": [
 
@@ -367,7 +376,7 @@
         "members": {
           "Filters": {
             "type": "list",
-            "zonbookDocumentation": "\n         <simpara>One or more filters. Filter names and values are case-sensitive.</simpara>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>allocation-id</code> - [EC2-VPC] The allocation ID for the address.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>association-id</code> - [EC2-VPC] The association ID for the address.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>domain</code> - Indicates whether the address is for use in EC2-Classic (<code>standard</code>) \n              or in a VPC (<code>vpc</code>).</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>instance-id</code> - The ID of the instance the address is associated with, if any.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>network-interface-id</code> - [EC2-VPC] The ID of the network interface that the address is associated with, if any.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>network-interface-owner-id</code> - The AWS account ID of the owner.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>private-ip-address</code> - [EC2-VPC] The private IP address associated with the Elastic IP address.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>public-ip</code> - The Elastic IP address.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value.\n    For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</para>\n            </listitem>\n         </itemizedlist>\n      ",
+            "zonbookDocumentation": "\n         <para>One or more filters. Filter names and values are case-sensitive.</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>allocation-id</code> - [EC2-VPC] The allocation ID for the address.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>association-id</code> - [EC2-VPC] The association ID for the address.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>domain</code> - Indicates whether the address is for use in EC2-Classic (<code>standard</code>) \n              or in a VPC (<code>vpc</code>).</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>instance-id</code> - The ID of the instance the address is associated with, if any.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>network-interface-id</code> - [EC2-VPC] The ID of the network interface that the address is associated with, if any.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>network-interface-owner-id</code> - The AWS account ID of the owner.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>private-ip-address</code> - [EC2-VPC] The private IP address associated with the Elastic IP address.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>public-ip</code> - The Elastic IP address.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value.\n    For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</para>\n            </listitem>\n         </itemizedlist>\n      ",
             "documentation": "\n         <p>One or more filters. Filter names and values are case-sensitive.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>allocation-id</code> - [EC2-VPC] The allocation ID for the address.</p>\n            </li>\n            <li>\n               <p>\n                  <code>association-id</code> - [EC2-VPC] The association ID for the address.</p>\n            </li>\n            <li>\n               <p>\n                  <code>domain</code> - Indicates whether the address is for use in EC2-Classic (<code>standard</code>) \n              or in a VPC (<code>vpc</code>).</p>\n            </li>\n            <li>\n               <p>\n                  <code>instance-id</code> - The ID of the instance the address is associated with, if any.</p>\n            </li>\n            <li>\n               <p>\n                  <code>network-interface-id</code> - [EC2-VPC] The ID of the network interface that the address is associated with, if any.</p>\n            </li>\n            <li>\n               <p>\n                  <code>network-interface-owner-id</code> - The AWS account ID of the owner.</p>\n            </li>\n            <li>\n               <p>\n                  <code>private-ip-address</code> - [EC2-VPC] The private IP address associated with the Elastic IP address.</p>\n            </li>\n            <li>\n               <p>\n                  <code>public-ip</code> - The Elastic IP address.</p>\n            </li>\n            <li>\n               <p>\n                  <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value.\n    For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>\n            </li>\n            <li>\n               <p>\n                  <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p>\n            </li>\n         </ul>\n      ",
             "shape_name": "FilterList",
             "members": {
@@ -402,7 +411,7 @@
           },
           "PublicIps": {
             "type": "list",
-            "zonbookDocumentation": "\n         <simpara>[EC2-Classic] One or more Elastic IP addresses.</simpara>\n         <simpara>Default: Describes all your Elastic IP addresses.</simpara>\n      ",
+            "zonbookDocumentation": "\n         <para>[EC2-Classic] One or more Elastic IP addresses.</para>\n         <para>Default: Describes all your Elastic IP addresses.</para>\n      ",
             "documentation": "\n         <p>[EC2-Classic] One or more Elastic IP addresses.</p>\n         <p>Default: Describes all your Elastic IP addresses.</p>\n      ",
             "shape_name": "PublicIpStringList",
             "members": {
@@ -415,7 +424,7 @@
           },
           "AllocationIds": {
             "type": "list",
-            "zonbookDocumentation": "\n         <simpara>[EC2-VPC] One or more allocation IDs.</simpara>\n         <simpara>Default: Describes all your Elastic IP addresses.</simpara>\n      ",
+            "zonbookDocumentation": "\n         <para>[EC2-VPC] One or more allocation IDs.</para>\n         <para>Default: Describes all your Elastic IP addresses.</para>\n      ",
             "documentation": "\n         <p>[EC2-VPC] One or more allocation IDs.</p>\n         <p>Default: Describes all your Elastic IP addresses.</p>\n      ",
             "shape_name": "AllocationIdList",
             "members": {
@@ -428,21 +437,20 @@
           },
           "DryRun": {
             "type": "boolean",
-            "zonbookDocumentation": "\n         <simpara>Checks whether you have the required permissions for the action, without actually making the request, \n       and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n       Otherwise, it is <code>UnauthorizedOperation</code>.</simpara>\n      ",
-            "documentation": "\n         <p>Checks whether you have the required permissions for the action, without actually making the request, \n       and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n       Otherwise, it is <code>UnauthorizedOperation</code>.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>Checks whether you have the required permissions for the action, without actually making the request, \n   and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n   Otherwise, it is <code>UnauthorizedOperation</code>.</para>\n      ",
+            "documentation": "\n         <p>Checks whether you have the required permissions for the action, without actually making the request, \n   and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n   Otherwise, it is <code>UnauthorizedOperation</code>.</p>\n      ",
             "shape_name": "Boolean"
           }
         },
-        "zonbookDocumentation": "\n         <simpara>Contains the parameters for DescribeAddresses.</simpara>\n      ",
-        "documentation": "\n         <p>Contains the parameters for DescribeAddresses.</p>\n      ",
-        "shape_name": "DescribeAddressesRequest"
+        "shape_name": "DescribeAddressesRequest",
+        "documentation": null
       },
       "output": {
         "type": "structure",
         "members": {
           "Addresses": {
             "type": "list",
-            "zonbookDocumentation": "\n         <simpara>Information about one or more Elastic IP addresses.</simpara>\n      ",
+            "zonbookDocumentation": "\n         <para>Information about one or more Elastic IP addresses.</para>\n      ",
             "documentation": "\n         <p>Information about one or more Elastic IP addresses.</p>\n      ",
             "shape_name": "AddressList",
             "xmlname": "addressesSet",
@@ -451,28 +459,28 @@
               "members": {
                 "InstanceId": {
                   "type": "string",
-                  "zonbookDocumentation": "\n         <simpara>The ID of the instance that the address is associated with (if any).</simpara>\n      ",
+                  "zonbookDocumentation": "\n         <para>The ID of the instance that the address is associated with (if any).</para>\n      ",
                   "documentation": "\n         <p>The ID of the instance that the address is associated with (if any).</p>\n      ",
                   "shape_name": "String",
                   "xmlname": "instanceId"
                 },
                 "PublicIp": {
                   "type": "string",
-                  "zonbookDocumentation": "\n         <simpara>The Elastic IP address.</simpara>\n      ",
+                  "zonbookDocumentation": "\n         <para>The Elastic IP address.</para>\n      ",
                   "documentation": "\n         <p>The Elastic IP address.</p>\n      ",
                   "shape_name": "String",
                   "xmlname": "publicIp"
                 },
                 "AllocationId": {
                   "type": "string",
-                  "zonbookDocumentation": "\n         <simpara>The ID representing the allocation of the address for use with EC2-VPC.</simpara>\n      ",
+                  "zonbookDocumentation": "\n         <para>The ID representing the allocation of the address for use with EC2-VPC.</para>\n      ",
                   "documentation": "\n         <p>The ID representing the allocation of the address for use with EC2-VPC.</p>\n      ",
                   "shape_name": "String",
                   "xmlname": "allocationId"
                 },
                 "AssociationId": {
                   "type": "string",
-                  "zonbookDocumentation": "\n         <simpara>The ID representing the association of the address with an instance in a VPC.</simpara>\n      ",
+                  "zonbookDocumentation": "\n         <para>The ID representing the association of the address with an instance in a VPC.</para>\n      ",
                   "documentation": "\n         <p>The ID representing the association of the address with an instance in a VPC.</p>\n      ",
                   "shape_name": "String",
                   "xmlname": "associationId"
@@ -483,35 +491,35 @@
                     "vpc",
                     "standard"
                   ],
-                  "zonbookDocumentation": "\n         <simpara>Indicates whether this Elastic IP address is for use with instances\n\t\t\t\tin EC2-Classic (<code>standard</code>) or instances in a VPC (<code>vpc</code>).</simpara>\n      ",
+                  "zonbookDocumentation": "\n         <para>Indicates whether this Elastic IP address is for use with instances\n\t\t\t\tin EC2-Classic (<code>standard</code>) or instances in a VPC (<code>vpc</code>).</para>\n      ",
                   "documentation": "\n         <p>Indicates whether this Elastic IP address is for use with instances\n\t\t\t\tin EC2-Classic (<code>standard</code>) or instances in a VPC (<code>vpc</code>).</p>\n      ",
                   "shape_name": "DomainType",
                   "xmlname": "domain"
                 },
                 "NetworkInterfaceId": {
                   "type": "string",
-                  "zonbookDocumentation": "\n         <simpara>The ID of the network interface.</simpara>\n      ",
+                  "zonbookDocumentation": "\n         <para>The ID of the network interface.</para>\n      ",
                   "documentation": "\n         <p>The ID of the network interface.</p>\n      ",
                   "shape_name": "String",
                   "xmlname": "networkInterfaceId"
                 },
                 "NetworkInterfaceOwnerId": {
                   "type": "string",
-                  "zonbookDocumentation": "\n         <simpara>The ID of the AWS account that owns the network interface.</simpara>\n      ",
+                  "zonbookDocumentation": "\n         <para>The ID of the AWS account that owns the network interface.</para>\n      ",
                   "documentation": "\n         <p>The ID of the AWS account that owns the network interface.</p>\n      ",
                   "shape_name": "String",
                   "xmlname": "networkInterfaceOwnerId"
                 },
                 "PrivateIpAddress": {
                   "type": "string",
-                  "zonbookDocumentation": "\n         <simpara>The private IP address associated with the Elastic IP address.</simpara>\n      ",
+                  "zonbookDocumentation": "\n         <para>The private IP address associated with the Elastic IP address.</para>\n      ",
                   "documentation": "\n         <p>The private IP address associated with the Elastic IP address.</p>\n      ",
                   "shape_name": "String",
                   "xmlname": "privateIpAddress"
                 },
                 "Tags": {
                   "type": "list",
-                  "zonbookDocumentation": "\n         <simpara>Any tags assigned to the Elastic IP address.</simpara>\n      ",
+                  "zonbookDocumentation": "\n         <para>Any tags assigned to the Elastic IP address.</para>\n      ",
                   "documentation": "\n         <p>Any tags assigned to the Elastic IP address.</p>\n      ",
                   "shape_name": "TagList",
                   "xmlname": "tagSet",
@@ -538,18 +546,24 @@
                     "shape_name": "Tag",
                     "xmlname": "item"
                   }
+                },
+                "PublicIpv4Pool": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <para>The ID of an address pool.</para>\n      ",
+                  "documentation": "\n         <p>The ID of an address pool.</p>\n      ",
+                  "shape_name": "String",
+                  "xmlname": "publicIpv4Pool"
                 }
               },
-              "zonbookDocumentation": "\n         <simpara>Describes an Elastic IP address.</simpara>\n      ",
+              "zonbookDocumentation": "\n         <para>Describes an Elastic IP address.</para>\n      ",
               "documentation": "\n         <p>Describes an Elastic IP address.</p>\n      ",
               "shape_name": "Address",
               "xmlname": "item"
             }
           }
         },
-        "zonbookDocumentation": "\n         <simpara>Contains the output of DescribeAddresses.</simpara>\n      ",
-        "documentation": "\n         <p>Contains the output of DescribeAddresses.</p>\n      ",
-        "shape_name": "DescribeAddressesResult"
+        "shape_name": "DescribeAddressesResult",
+        "documentation": null
       },
       "errors": [
 
@@ -563,7 +577,7 @@
         "members": {
           "Filters": {
             "type": "list",
-            "zonbookDocumentation": "\n         <simpara>One or more filters.</simpara>\n         <itemizedlist>\n            <listitem>\n               <simpara>\n                  <code>moving-status</code> - The status of the Elastic IP address\n          (<code>MovingToVpc</code> | <code>RestoringToClassic</code>).</simpara>\n            </listitem>\n         </itemizedlist>\n      ",
+            "zonbookDocumentation": "\n         <para>One or more filters.</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>moving-status</code> - The status of the Elastic IP address\n          (<code>MovingToVpc</code> | <code>RestoringToClassic</code>).</para>\n            </listitem>\n         </itemizedlist>\n      ",
             "documentation": "\n         <p>One or more filters.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>moving-status</code> - The status of the Elastic IP address\n          (<code>MovingToVpc</code> | <code>RestoringToClassic</code>).</p>\n            </li>\n         </ul>\n      ",
             "shape_name": "FilterList",
             "members": {
@@ -598,25 +612,25 @@
           },
           "DryRun": {
             "type": "boolean",
-            "zonbookDocumentation": "\n         <simpara>Checks whether you have the required permissions for the action, without actually making the request, \n    and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n    Otherwise, it is <code>UnauthorizedOperation</code>.</simpara>\n      ",
-            "documentation": "\n         <p>Checks whether you have the required permissions for the action, without actually making the request, \n    and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n    Otherwise, it is <code>UnauthorizedOperation</code>.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>Checks whether you have the required permissions for the action, without actually making the request, \n   and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n   Otherwise, it is <code>UnauthorizedOperation</code>.</para>\n      ",
+            "documentation": "\n         <p>Checks whether you have the required permissions for the action, without actually making the request, \n   and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n   Otherwise, it is <code>UnauthorizedOperation</code>.</p>\n      ",
             "shape_name": "Boolean"
           },
           "MaxResults": {
             "type": "integer",
-            "zonbookDocumentation": "\n         <simpara>The maximum number of results to return for the request in a single page. The remaining\n      results of the initial request can be seen by sending another request with the returned\n      <code>NextToken</code> value. This value can be between 5 and 1000; if\n      <code>MaxResults</code> is given a value outside of this range, an error is returned.</simpara>\n         <simpara>Default: If no value is provided, the default is 1000.</simpara>\n      ",
+            "zonbookDocumentation": "\n         <para>The maximum number of results to return for the request in a single page. The remaining\n      results of the initial request can be seen by sending another request with the returned\n      <code>NextToken</code> value. This value can be between 5 and 1000; if\n      <code>MaxResults</code> is given a value outside of this range, an error is returned.</para>\n         <para>Default: If no value is provided, the default is 1000.</para>\n      ",
             "documentation": "\n         <p>The maximum number of results to return for the request in a single page. The remaining\n      results of the initial request can be seen by sending another request with the returned\n      <code>NextToken</code> value. This value can be between 5 and 1000; if\n      <code>MaxResults</code> is given a value outside of this range, an error is returned.</p>\n         <p>Default: If no value is provided, the default is 1000.</p>\n      ",
             "shape_name": "Integer"
           },
           "NextToken": {
             "type": "string",
-            "zonbookDocumentation": "\n         <simpara>The token to use to retrieve the next page of results.</simpara>\n      ",
-            "documentation": "\n         <p>The token to use to retrieve the next page of results.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The token for the next page of results.</para>\n      ",
+            "documentation": "\n         <p>The token for the next page of results.</p>\n      ",
             "shape_name": "String"
           },
           "PublicIps": {
             "type": "list",
-            "zonbookDocumentation": "\n         <simpara>One or more Elastic IP addresses.</simpara>\n      ",
+            "zonbookDocumentation": "\n         <para>One or more Elastic IP addresses.</para>\n      ",
             "documentation": "\n         <p>One or more Elastic IP addresses.</p>\n      ",
             "shape_name": "ValueStringList",
             "members": {
@@ -628,16 +642,15 @@
             "flattened": true
           }
         },
-        "zonbookDocumentation": "\n         <simpara>Contains the parameters for DescribeMovingAddresses.</simpara>\n      ",
-        "documentation": "\n         <p>Contains the parameters for DescribeMovingAddresses.</p>\n      ",
-        "shape_name": "DescribeMovingAddressesRequest"
+        "shape_name": "DescribeMovingAddressesRequest",
+        "documentation": null
       },
       "output": {
         "type": "structure",
         "members": {
           "MovingAddressStatuses": {
             "type": "list",
-            "zonbookDocumentation": "\n         <simpara>The status for each Elastic IP address.</simpara>\n      ",
+            "zonbookDocumentation": "\n         <para>The status for each Elastic IP address.</para>\n      ",
             "documentation": "\n         <p>The status for each Elastic IP address.</p>\n      ",
             "shape_name": "MovingAddressStatusSet",
             "xmlname": "movingAddressStatusSet",
@@ -650,20 +663,20 @@
                     "movingToVpc",
                     "restoringToClassic"
                   ],
-                  "zonbookDocumentation": "\n         <simpara>The status of the Elastic IP address that's being moved to the EC2-VPC platform, or restored to the EC2-Classic platform.</simpara>\n      ",
+                  "zonbookDocumentation": "\n         <para>The status of the Elastic IP address that's being moved to the EC2-VPC platform, or restored to the EC2-Classic platform.</para>\n      ",
                   "documentation": "\n         <p>The status of the Elastic IP address that's being moved to the EC2-VPC platform, or restored to the EC2-Classic platform.</p>\n      ",
                   "shape_name": "MoveStatus",
                   "xmlname": "moveStatus"
                 },
                 "PublicIp": {
                   "type": "string",
-                  "zonbookDocumentation": "\n         <simpara>The Elastic IP address.</simpara>\n      ",
+                  "zonbookDocumentation": "\n         <para>The Elastic IP address.</para>\n      ",
                   "documentation": "\n         <p>The Elastic IP address.</p>\n      ",
                   "shape_name": "String",
                   "xmlname": "publicIp"
                 }
               },
-              "zonbookDocumentation": "\n         <simpara>Describes the status of a moving Elastic IP address.</simpara>\n      ",
+              "zonbookDocumentation": "\n         <para>Describes the status of a moving Elastic IP address.</para>\n      ",
               "documentation": "\n         <p>Describes the status of a moving Elastic IP address.</p>\n      ",
               "shape_name": "MovingAddressStatus",
               "xmlname": "item"
@@ -671,15 +684,14 @@
           },
           "NextToken": {
             "type": "string",
-            "zonbookDocumentation": "\n         <simpara>The token to use to retrieve the next page of results. This value is <code>null</code> when\n      there are no more results to return.</simpara>\n      ",
-            "documentation": "\n         <p>The token to use to retrieve the next page of results. This value is <code>null</code> when\n      there are no more results to return.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</para>\n      ",
+            "documentation": "\n         <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>\n      ",
             "shape_name": "String",
             "xmlname": "nextToken"
           }
         },
-        "zonbookDocumentation": "\n         <simpara>Contains the output of DescribeMovingAddresses.</simpara>\n      ",
-        "documentation": "\n         <p>Contains the output of DescribeMovingAddresses.</p>\n      ",
-        "shape_name": "DescribeMovingAddressesResult"
+        "shape_name": "DescribeMovingAddressesResult",
+        "documentation": null
       },
       "errors": [
 
@@ -693,26 +705,25 @@
         "members": {
           "AssociationId": {
             "type": "string",
-            "zonbookDocumentation": "\n         <simpara>[EC2-VPC] The association ID. Required for EC2-VPC.</simpara>\n      ",
+            "zonbookDocumentation": "\n         <para>[EC2-VPC] The association ID. Required for EC2-VPC.</para>\n      ",
             "documentation": "\n         <p>[EC2-VPC] The association ID. Required for EC2-VPC.</p>\n      ",
             "shape_name": "String"
           },
           "PublicIp": {
             "type": "string",
-            "zonbookDocumentation": "\n         <simpara>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</simpara>\n      ",
+            "zonbookDocumentation": "\n         <para>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</para>\n      ",
             "documentation": "\n         <p>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</p>\n      ",
             "shape_name": "String"
           },
           "DryRun": {
             "type": "boolean",
-            "zonbookDocumentation": "\n         <simpara>Checks whether you have the required permissions for the action, without actually making the request, \n       and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n       Otherwise, it is <code>UnauthorizedOperation</code>.</simpara>\n      ",
-            "documentation": "\n         <p>Checks whether you have the required permissions for the action, without actually making the request, \n       and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n       Otherwise, it is <code>UnauthorizedOperation</code>.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>Checks whether you have the required permissions for the action, without actually making the request, \n   and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n   Otherwise, it is <code>UnauthorizedOperation</code>.</para>\n      ",
+            "documentation": "\n         <p>Checks whether you have the required permissions for the action, without actually making the request, \n   and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n   Otherwise, it is <code>UnauthorizedOperation</code>.</p>\n      ",
             "shape_name": "Boolean"
           }
         },
-        "zonbookDocumentation": "\n         <simpara>Contains the parameters for DisassociateAddress.</simpara>\n      ",
-        "documentation": "\n         <p>Contains the parameters for DisassociateAddress.</p>\n      ",
-        "shape_name": "DisassociateAddressRequest"
+        "shape_name": "DisassociateAddressRequest",
+        "documentation": null
       },
       "output": null,
       "errors": [
@@ -727,28 +738,27 @@
         "members": {
           "DryRun": {
             "type": "boolean",
-            "zonbookDocumentation": "\n         <simpara>Checks whether you have the required permissions for the action, without actually making the request, \n    and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n    Otherwise, it is <code>UnauthorizedOperation</code>.</simpara>\n      ",
-            "documentation": "\n         <p>Checks whether you have the required permissions for the action, without actually making the request, \n    and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n    Otherwise, it is <code>UnauthorizedOperation</code>.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>Checks whether you have the required permissions for the action, without actually making the request, \n   and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n   Otherwise, it is <code>UnauthorizedOperation</code>.</para>\n      ",
+            "documentation": "\n         <p>Checks whether you have the required permissions for the action, without actually making the request, \n   and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n   Otherwise, it is <code>UnauthorizedOperation</code>.</p>\n      ",
             "shape_name": "Boolean"
           },
           "PublicIp": {
             "type": "string",
-            "zonbookDocumentation": "\n         <simpara>The Elastic IP address.</simpara>\n      ",
+            "zonbookDocumentation": "\n         <para>The Elastic IP address.</para>\n      ",
             "documentation": "\n         <p>The Elastic IP address.</p>\n      ",
             "required": true,
             "shape_name": "String"
           }
         },
-        "zonbookDocumentation": "\n         <simpara>Contains the parameters for MoveAddressToVpc.</simpara>\n      ",
-        "documentation": "\n         <p>Contains the parameters for MoveAddressToVpc.</p>\n      ",
-        "shape_name": "MoveAddressToVpcRequest"
+        "shape_name": "MoveAddressToVpcRequest",
+        "documentation": null
       },
       "output": {
         "type": "structure",
         "members": {
           "AllocationId": {
             "type": "string",
-            "zonbookDocumentation": "\n         <simpara>The allocation ID for the Elastic IP address.</simpara>\n      ",
+            "zonbookDocumentation": "\n         <para>The allocation ID for the Elastic IP address.</para>\n      ",
             "documentation": "\n         <p>The allocation ID for the Elastic IP address.</p>\n      ",
             "shape_name": "String",
             "xmlname": "allocationId"
@@ -760,15 +770,14 @@
               "InVpc",
               "InClassic"
             ],
-            "zonbookDocumentation": "\n         <simpara>The status of the move of the IP address.</simpara>\n      ",
+            "zonbookDocumentation": "\n         <para>The status of the move of the IP address.</para>\n      ",
             "documentation": "\n         <p>The status of the move of the IP address.</p>\n      ",
             "shape_name": "Status",
             "xmlname": "status"
           }
         },
-        "zonbookDocumentation": "\n         <simpara>Contains the output of MoveAddressToVpc.</simpara>\n      ",
-        "documentation": "\n         <p>Contains the output of MoveAddressToVpc.</p>\n      ",
-        "shape_name": "MoveAddressToVpcResult"
+        "shape_name": "MoveAddressToVpcResult",
+        "documentation": null
       },
       "errors": [
 
@@ -782,26 +791,25 @@
         "members": {
           "AllocationId": {
             "type": "string",
-            "zonbookDocumentation": "\n         <simpara>[EC2-VPC] The allocation ID. Required for EC2-VPC.</simpara>\n      ",
+            "zonbookDocumentation": "\n         <para>[EC2-VPC] The allocation ID. Required for EC2-VPC.</para>\n      ",
             "documentation": "\n         <p>[EC2-VPC] The allocation ID. Required for EC2-VPC.</p>\n      ",
             "shape_name": "String"
           },
           "PublicIp": {
             "type": "string",
-            "zonbookDocumentation": "\n         <simpara>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</simpara>\n      ",
+            "zonbookDocumentation": "\n         <para>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</para>\n      ",
             "documentation": "\n         <p>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</p>\n      ",
             "shape_name": "String"
           },
           "DryRun": {
             "type": "boolean",
-            "zonbookDocumentation": "\n         <simpara>Checks whether you have the required permissions for the action, without actually making the request, \n       and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n       Otherwise, it is <code>UnauthorizedOperation</code>.</simpara>\n      ",
-            "documentation": "\n         <p>Checks whether you have the required permissions for the action, without actually making the request, \n       and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n       Otherwise, it is <code>UnauthorizedOperation</code>.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>Checks whether you have the required permissions for the action, without actually making the request, \n   and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n   Otherwise, it is <code>UnauthorizedOperation</code>.</para>\n      ",
+            "documentation": "\n         <p>Checks whether you have the required permissions for the action, without actually making the request, \n   and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n   Otherwise, it is <code>UnauthorizedOperation</code>.</p>\n      ",
             "shape_name": "Boolean"
           }
         },
-        "zonbookDocumentation": "\n         <simpara>Contains the parameters for ReleaseAddress.</simpara>\n      ",
-        "documentation": "\n         <p>Contains the parameters for ReleaseAddress.</p>\n      ",
-        "shape_name": "ReleaseAddressRequest"
+        "shape_name": "ReleaseAddressRequest",
+        "documentation": null
       },
       "output": null,
       "errors": [
@@ -816,28 +824,27 @@
         "members": {
           "DryRun": {
             "type": "boolean",
-            "zonbookDocumentation": "  \n         <simpara>Checks whether you have the required permissions for the action, without actually making the request, \n      and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n      Otherwise, it is <code>UnauthorizedOperation</code>.</simpara>\n      ",
-            "documentation": "  \n         <p>Checks whether you have the required permissions for the action, without actually making the request, \n      and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n      Otherwise, it is <code>UnauthorizedOperation</code>.</p>\n      ",
+            "zonbookDocumentation": "  \n         <para>Checks whether you have the required permissions for the action, without actually making the request, \n   and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n   Otherwise, it is <code>UnauthorizedOperation</code>.</para>\n      ",
+            "documentation": "  \n         <p>Checks whether you have the required permissions for the action, without actually making the request, \n   and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n   Otherwise, it is <code>UnauthorizedOperation</code>.</p>\n      ",
             "shape_name": "Boolean"
           },
           "PublicIp": {
             "type": "string",
-            "zonbookDocumentation": "   \n         <simpara>The Elastic IP address.</simpara>\n      ",
+            "zonbookDocumentation": "   \n         <para>The Elastic IP address.</para>\n      ",
             "documentation": "   \n         <p>The Elastic IP address.</p>\n      ",
             "required": true,
             "shape_name": "String"
           }
         },
-        "zonbookDocumentation": "   \n         <simpara>Contains the parameters for RestoreAddressToClassic.</simpara>\n      ",
-        "documentation": "   \n         <p>Contains the parameters for RestoreAddressToClassic.</p>\n      ",
-        "shape_name": "RestoreAddressToClassicRequest"
+        "shape_name": "RestoreAddressToClassicRequest",
+        "documentation": null
       },
       "output": {
         "type": "structure",
         "members": {
           "PublicIp": {
             "type": "string",
-            "zonbookDocumentation": "\n         <simpara>The Elastic IP address.</simpara>\n      ",
+            "zonbookDocumentation": "\n         <para>The Elastic IP address.</para>\n      ",
             "documentation": "\n         <p>The Elastic IP address.</p>\n      ",
             "shape_name": "String",
             "xmlname": "publicIp"
@@ -849,15 +856,14 @@
               "InVpc",
               "InClassic"
             ],
-            "zonbookDocumentation": "  \n         <simpara>The move status for the IP address.</simpara>\n      ",
+            "zonbookDocumentation": "  \n         <para>The move status for the IP address.</para>\n      ",
             "documentation": "  \n         <p>The move status for the IP address.</p>\n      ",
             "shape_name": "Status",
             "xmlname": "status"
           }
         },
-        "zonbookDocumentation": " \n         <simpara>Contains the output of RestoreAddressToClassic.</simpara>\n      ",
-        "documentation": " \n         <p>Contains the output of RestoreAddressToClassic.</p>\n      ",
-        "shape_name": "RestoreAddressToClassicResult"
+        "shape_name": "RestoreAddressToClassicResult",
+        "documentation": null
       },
       "errors": [
 
@@ -1492,6 +1498,458 @@
 
       ],
       "documentation": "   \n         <p>Describes one or more of your bundling tasks.</p>\n         <note>\n            <p>Completed bundle tasks are listed for only a limited time. If your bundle task is no longer in the list, you can still register an AMI from it. Just use <code>RegisterImage</code> with the Amazon S3 bucket name and image manifest name you provided to the bundle task.</p>\n         </note>\n     \n      "
+    },
+    "AdvertiseByoipCidr": {
+      "name": "AdvertiseByoipCidr",
+      "input": {
+        "type": "structure",
+        "members": {
+          "Cidr": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>The IPv4 address range, in CIDR notation.</para>\n      ",
+            "documentation": "\n         <p>The IPv4 address range, in CIDR notation.</p>\n      ",
+            "required": true,
+            "shape_name": "String"
+          },
+          "DryRun": {
+            "type": "boolean",
+            "zonbookDocumentation": "\n         <para>Checks whether you have the required permissions for the action, without actually making the request, \n   and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n   Otherwise, it is <code>UnauthorizedOperation</code>.</para>\n      ",
+            "documentation": "\n         <p>Checks whether you have the required permissions for the action, without actually making the request, \n   and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n   Otherwise, it is <code>UnauthorizedOperation</code>.</p>\n      ",
+            "shape_name": "Boolean"
+          }
+        },
+        "shape_name": "AdvertiseByoipCidrRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "ByoipCidr": {
+            "type": "structure",
+            "members": {
+              "Cidr": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <para>The public IPv4 address range, in CIDR notation.</para>\n      ",
+                "documentation": "\n         <p>The public IPv4 address range, in CIDR notation.</p>\n      ",
+                "shape_name": "String",
+                "xmlname": "cidr"
+              },
+              "Description": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <para>The description of the address range.</para>\n      ",
+                "documentation": "\n         <p>The description of the address range.</p>\n      ",
+                "shape_name": "String",
+                "xmlname": "description"
+              },
+              "StatusMessage": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <para>Upon success, contains the ID of the address pool. Otherwise, contains an error message.</para>\n      ",
+                "documentation": "\n         <p>Upon success, contains the ID of the address pool. Otherwise, contains an error message.</p>\n      ",
+                "shape_name": "String",
+                "xmlname": "statusMessage"
+              },
+              "State": {
+                "type": "string",
+                "enum": [
+                  "advertised",
+                  "deprovisioned",
+                  "failed-deprovision",
+                  "failed-provision",
+                  "pending-deprovision",
+                  "pending-provision",
+                  "provisioned"
+                ],
+                "zonbookDocumentation": "\n         <para>The state of the address pool.</para>\n      ",
+                "documentation": "\n         <p>The state of the address pool.</p>\n      ",
+                "shape_name": "ByoipCidrState",
+                "xmlname": "state"
+              }
+            },
+            "zonbookDocumentation": "\n         <para>Information about the address range.</para>\n      ",
+            "documentation": "\n         <p>Information about the address range.</p>\n      ",
+            "shape_name": "ByoipCidr",
+            "xmlname": "byoipCidr"
+          }
+        },
+        "shape_name": "AdvertiseByoipCidrResult",
+        "documentation": null
+      },
+      "errors": [
+
+      ],
+      "documentation": "\n         <p>Advertises an IPv4 address range that is provisioned for use with your AWS resources through \n         bring your own IP addresses (BYOIP).</p> \n         <p>You can perform this operation at most once every 10 seconds, even if you specify different \n         address ranges each time.</p>\n         <p>We recommend that you stop advertising the BYOIP CIDR from other locations when you advertise\n         it from AWS. To minimize down time, you can configure your AWS resources to use an address from a\n         BYOIP CIDR before it is advertised, and then simultaneously stop advertising it from the current \n         location and start advertising it through AWS.</p>\n         <p>It can take a few minutes before traffic to the specified addresses starts routing to AWS\n         because of BGP propagation delays.</p>\n         <p>To stop advertising the BYOIP CIDR, use <a>WithdrawByoipCidr</a>.</p>\n      "
+    },
+    "ProvisionByoipCidr": {
+      "name": "ProvisionByoipCidr",
+      "input": {
+        "type": "structure",
+        "members": {
+          "Cidr": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>The public IPv4 address range, in CIDR notation. The most specific prefix that you can \n         specify is /24. The address range cannot overlap with another address range that you've \n         brought to this or another region.</para>\n      ",
+            "documentation": "\n         <p>The public IPv4 address range, in CIDR notation. The most specific prefix that you can \n         specify is /24. The address range cannot overlap with another address range that you've \n         brought to this or another region.</p>\n      ",
+            "required": true,
+            "shape_name": "String"
+          },
+          "CidrAuthorizationContext": {
+            "type": "structure",
+            "members": {
+              "Message": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <para>The plain-text authorization message for the prefix and account.</para>\n      ",
+                "documentation": "\n         <p>The plain-text authorization message for the prefix and account.</p>\n      ",
+                "required": true,
+                "shape_name": "String"
+              },
+              "Signature": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <para>The signed authorization message for the prefix and account.</para>\n      ",
+                "documentation": "\n         <p>The signed authorization message for the prefix and account.</p>\n      ",
+                "required": true,
+                "shape_name": "String"
+              }
+            },
+            "zonbookDocumentation": "\n         <para>A signed document that proves that you are authorized to bring the specified IP address \n         range to Amazon using BYOIP.</para>\n      ",
+            "documentation": "\n         <p>A signed document that proves that you are authorized to bring the specified IP address \n         range to Amazon using BYOIP.</p>\n      ",
+            "shape_name": "CidrAuthorizationContext"
+          },
+          "Description": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>A description for the address range and the address pool.</para>\n      ",
+            "documentation": "\n         <p>A description for the address range and the address pool.</p>\n      ",
+            "shape_name": "String"
+          },
+          "DryRun": {
+            "type": "boolean",
+            "zonbookDocumentation": "\n         <para>Checks whether you have the required permissions for the action, without actually making the request, \n   and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n   Otherwise, it is <code>UnauthorizedOperation</code>.</para>\n      ",
+            "documentation": "\n         <p>Checks whether you have the required permissions for the action, without actually making the request, \n   and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n   Otherwise, it is <code>UnauthorizedOperation</code>.</p>\n      ",
+            "shape_name": "Boolean"
+          }
+        },
+        "shape_name": "ProvisionByoipCidrRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "ByoipCidr": {
+            "type": "structure",
+            "members": {
+              "Cidr": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <para>The public IPv4 address range, in CIDR notation.</para>\n      ",
+                "documentation": "\n         <p>The public IPv4 address range, in CIDR notation.</p>\n      ",
+                "shape_name": "String",
+                "xmlname": "cidr"
+              },
+              "Description": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <para>The description of the address range.</para>\n      ",
+                "documentation": "\n         <p>The description of the address range.</p>\n      ",
+                "shape_name": "String",
+                "xmlname": "description"
+              },
+              "StatusMessage": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <para>Upon success, contains the ID of the address pool. Otherwise, contains an error message.</para>\n      ",
+                "documentation": "\n         <p>Upon success, contains the ID of the address pool. Otherwise, contains an error message.</p>\n      ",
+                "shape_name": "String",
+                "xmlname": "statusMessage"
+              },
+              "State": {
+                "type": "string",
+                "enum": [
+                  "advertised",
+                  "deprovisioned",
+                  "failed-deprovision",
+                  "failed-provision",
+                  "pending-deprovision",
+                  "pending-provision",
+                  "provisioned"
+                ],
+                "zonbookDocumentation": "\n         <para>The state of the address pool.</para>\n      ",
+                "documentation": "\n         <p>The state of the address pool.</p>\n      ",
+                "shape_name": "ByoipCidrState",
+                "xmlname": "state"
+              }
+            },
+            "zonbookDocumentation": "\n         <para>Information about the address pool.</para>\n      ",
+            "documentation": "\n         <p>Information about the address pool.</p>\n      ",
+            "shape_name": "ByoipCidr",
+            "xmlname": "byoipCidr"
+          }
+        },
+        "shape_name": "ProvisionByoipCidrResult",
+        "documentation": null
+      },
+      "errors": [
+
+      ],
+      "documentation": "\n         <p>Provisions an address range for use with your AWS resources through bring your own IP \n         addresses (BYOIP) and creates a corresponding address pool. After the address range is\n         provisioned, it is ready to be advertised using <a>AdvertiseByoipCidr</a>.</p>\n         <p>AWS verifies that you own the address range and are authorized to advertise it. \n         You must ensure that the address range is registered to you and that you created an \n         RPKI ROA to authorize Amazon ASNs 16509 and 14618 to advertise the address range. \n         For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html\">Bring Your Own IP Addresses (BYOIP)</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>\n         <p>Provisioning an address range is an asynchronous operation, so the call returns immediately,\n         but the address range is not ready to use until its status changes from <code>pending-provision</code>\n         to <code>provisioned</code>. To monitor the status of an address range, use <a>DescribeByoipCidrs</a>. \n         To allocate an Elastic IP address from your address pool, use <a>AllocateAddress</a> \n         with either the specific address from the address pool or the ID of the address pool.</p>\n      "
+    },
+    "DescribeByoipCidrs": {
+      "name": "DescribeByoipCidrs",
+      "input": {
+        "type": "structure",
+        "members": {
+          "DryRun": {
+            "type": "boolean",
+            "zonbookDocumentation": "\n         <para>Checks whether you have the required permissions for the action, without actually making the request, \n   and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n   Otherwise, it is <code>UnauthorizedOperation</code>.</para>\n      ",
+            "documentation": "\n         <p>Checks whether you have the required permissions for the action, without actually making the request, \n   and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n   Otherwise, it is <code>UnauthorizedOperation</code>.</p>\n      ",
+            "shape_name": "Boolean"
+          },
+          "MaxResults": {
+            "type": "integer",
+            "zonbookDocumentation": "\n         <para>The maximum number of results to return with a single call.\n\tTo retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</para>\n      ",
+            "documentation": "\n         <p>The maximum number of results to return with a single call.\n\tTo retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>\n      ",
+            "required": true,
+            "shape_name": "MaxResults",
+            "min_length": 5,
+            "max_length": 255
+          },
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>The token for the next page of results.</para>\n      ",
+            "documentation": "\n         <p>The token for the next page of results.</p>\n      ",
+            "shape_name": "NextToken",
+            "min_length": 1,
+            "max_length": 1024
+          }
+        },
+        "shape_name": "DescribeByoipCidrsRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "ByoipCidrs": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <para>Information about your address ranges.</para>\n      ",
+            "documentation": "\n         <p>Information about your address ranges.</p>\n      ",
+            "shape_name": "ByoipCidrSet",
+            "xmlname": "byoipCidrSet",
+            "members": {
+              "type": "structure",
+              "members": {
+                "Cidr": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <para>The public IPv4 address range, in CIDR notation.</para>\n      ",
+                  "documentation": "\n         <p>The public IPv4 address range, in CIDR notation.</p>\n      ",
+                  "shape_name": "String",
+                  "xmlname": "cidr"
+                },
+                "Description": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <para>The description of the address range.</para>\n      ",
+                  "documentation": "\n         <p>The description of the address range.</p>\n      ",
+                  "shape_name": "String",
+                  "xmlname": "description"
+                },
+                "StatusMessage": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <para>Upon success, contains the ID of the address pool. Otherwise, contains an error message.</para>\n      ",
+                  "documentation": "\n         <p>Upon success, contains the ID of the address pool. Otherwise, contains an error message.</p>\n      ",
+                  "shape_name": "String",
+                  "xmlname": "statusMessage"
+                },
+                "State": {
+                  "type": "string",
+                  "enum": [
+                    "advertised",
+                    "deprovisioned",
+                    "failed-deprovision",
+                    "failed-provision",
+                    "pending-deprovision",
+                    "pending-provision",
+                    "provisioned"
+                  ],
+                  "zonbookDocumentation": "\n         <para>The state of the address pool.</para>\n      ",
+                  "documentation": "\n         <p>The state of the address pool.</p>\n      ",
+                  "shape_name": "ByoipCidrState",
+                  "xmlname": "state"
+                }
+              },
+              "zonbookDocumentation": "\n         <para>Information about an address range that is provisioned for use with your AWS resources \n         through bring your own IP addresses (BYOIP).</para>\n      ",
+              "documentation": "\n         <p>Information about an address range that is provisioned for use with your AWS resources \n         through bring your own IP addresses (BYOIP).</p>\n      ",
+              "shape_name": "ByoipCidr",
+              "xmlname": "item"
+            }
+          },
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</para>\n      ",
+            "documentation": "\n         <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>\n      ",
+            "shape_name": "String",
+            "xmlname": "nextToken"
+          }
+        },
+        "shape_name": "DescribeByoipCidrsResult",
+        "documentation": null
+      },
+      "errors": [
+
+      ],
+      "documentation": "\n         <p>Describes the IP address ranges that were specified in calls to <a>ProvisionByoipCidr</a>.</p>\n         <p>To describe the address pools that were created when you provisioned the address\n         ranges, use <a>DescribePublicIpv4Pools</a>.</p>\n      "
+    },
+    "DeprovisionByoipCidr": {
+      "name": "DeprovisionByoipCidr",
+      "input": {
+        "type": "structure",
+        "members": {
+          "Cidr": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>The public IPv4 address range, in CIDR notation. The prefix must be the same prefix \n         that you specified when you provisioned the address range.</para>\n      ",
+            "documentation": "\n         <p>The public IPv4 address range, in CIDR notation. The prefix must be the same prefix \n         that you specified when you provisioned the address range.</p>\n      ",
+            "required": true,
+            "shape_name": "String"
+          },
+          "DryRun": {
+            "type": "boolean",
+            "zonbookDocumentation": "\n         <para>Checks whether you have the required permissions for the action, without actually making the request, \n   and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n   Otherwise, it is <code>UnauthorizedOperation</code>.</para>\n      ",
+            "documentation": "\n         <p>Checks whether you have the required permissions for the action, without actually making the request, \n   and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n   Otherwise, it is <code>UnauthorizedOperation</code>.</p>\n      ",
+            "shape_name": "Boolean"
+          }
+        },
+        "shape_name": "DeprovisionByoipCidrRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "ByoipCidr": {
+            "type": "structure",
+            "members": {
+              "Cidr": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <para>The public IPv4 address range, in CIDR notation.</para>\n      ",
+                "documentation": "\n         <p>The public IPv4 address range, in CIDR notation.</p>\n      ",
+                "shape_name": "String",
+                "xmlname": "cidr"
+              },
+              "Description": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <para>The description of the address range.</para>\n      ",
+                "documentation": "\n         <p>The description of the address range.</p>\n      ",
+                "shape_name": "String",
+                "xmlname": "description"
+              },
+              "StatusMessage": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <para>Upon success, contains the ID of the address pool. Otherwise, contains an error message.</para>\n      ",
+                "documentation": "\n         <p>Upon success, contains the ID of the address pool. Otherwise, contains an error message.</p>\n      ",
+                "shape_name": "String",
+                "xmlname": "statusMessage"
+              },
+              "State": {
+                "type": "string",
+                "enum": [
+                  "advertised",
+                  "deprovisioned",
+                  "failed-deprovision",
+                  "failed-provision",
+                  "pending-deprovision",
+                  "pending-provision",
+                  "provisioned"
+                ],
+                "zonbookDocumentation": "\n         <para>The state of the address pool.</para>\n      ",
+                "documentation": "\n         <p>The state of the address pool.</p>\n      ",
+                "shape_name": "ByoipCidrState",
+                "xmlname": "state"
+              }
+            },
+            "zonbookDocumentation": "\n         <para>Information about the address range.</para>\n      ",
+            "documentation": "\n         <p>Information about the address range.</p>\n      ",
+            "shape_name": "ByoipCidr",
+            "xmlname": "byoipCidr"
+          }
+        },
+        "shape_name": "DeprovisionByoipCidrResult",
+        "documentation": null
+      },
+      "errors": [
+
+      ],
+      "documentation": "\n         <p>Releases the specified address range that you provisioned for use with your AWS resources\n         through bring your own IP addresses (BYOIP) and deletes the corresponding address pool.</p>\n         <p>Before you can release an address range, you must stop advertising it using <a>WithdrawByoipCidr</a> and you must not have any IP addresses allocated from its\n         address range.</p>\n      "
+    },
+    "WithdrawByoipCidr": {
+      "name": "WithdrawByoipCidr",
+      "input": {
+        "type": "structure",
+        "members": {
+          "Cidr": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>The public IPv4 address range, in CIDR notation.</para>\n      ",
+            "documentation": "\n         <p>The public IPv4 address range, in CIDR notation.</p>\n      ",
+            "required": true,
+            "shape_name": "String"
+          },
+          "DryRun": {
+            "type": "boolean",
+            "zonbookDocumentation": "\n         <para>Checks whether you have the required permissions for the action, without actually making the request, \n   and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n   Otherwise, it is <code>UnauthorizedOperation</code>.</para>\n      ",
+            "documentation": "\n         <p>Checks whether you have the required permissions for the action, without actually making the request, \n   and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. \n   Otherwise, it is <code>UnauthorizedOperation</code>.</p>\n      ",
+            "shape_name": "Boolean"
+          }
+        },
+        "shape_name": "WithdrawByoipCidrRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "ByoipCidr": {
+            "type": "structure",
+            "members": {
+              "Cidr": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <para>The public IPv4 address range, in CIDR notation.</para>\n      ",
+                "documentation": "\n         <p>The public IPv4 address range, in CIDR notation.</p>\n      ",
+                "shape_name": "String",
+                "xmlname": "cidr"
+              },
+              "Description": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <para>The description of the address range.</para>\n      ",
+                "documentation": "\n         <p>The description of the address range.</p>\n      ",
+                "shape_name": "String",
+                "xmlname": "description"
+              },
+              "StatusMessage": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <para>Upon success, contains the ID of the address pool. Otherwise, contains an error message.</para>\n      ",
+                "documentation": "\n         <p>Upon success, contains the ID of the address pool. Otherwise, contains an error message.</p>\n      ",
+                "shape_name": "String",
+                "xmlname": "statusMessage"
+              },
+              "State": {
+                "type": "string",
+                "enum": [
+                  "advertised",
+                  "deprovisioned",
+                  "failed-deprovision",
+                  "failed-provision",
+                  "pending-deprovision",
+                  "pending-provision",
+                  "provisioned"
+                ],
+                "zonbookDocumentation": "\n         <para>The state of the address pool.</para>\n      ",
+                "documentation": "\n         <p>The state of the address pool.</p>\n      ",
+                "shape_name": "ByoipCidrState",
+                "xmlname": "state"
+              }
+            },
+            "zonbookDocumentation": "\n         <para>Information about the address pool.</para>\n      ",
+            "documentation": "\n         <p>Information about the address pool.</p>\n      ",
+            "shape_name": "ByoipCidr",
+            "xmlname": "byoipCidr"
+          }
+        },
+        "shape_name": "WithdrawByoipCidrResult",
+        "documentation": null
+      },
+      "errors": [
+
+      ],
+      "documentation": "\n         <p>Stops advertising an IPv4 address range that is provisioned as an address pool.</p>\n         <p>You can perform this operation at most once every 10 seconds, even if you specify different \n         address ranges each time.</p>\n         <p>It can take a few minutes before traffic to the specified addresses stops routing to AWS\n          because of BGP propagation delays.</p>\n      "
     },
     "DescribeVpcClassicLinkDnsSupport": {
       "name": "DescribeVpcClassicLinkDnsSupport",
@@ -5478,8 +5936,8 @@
                     "vpn-connection",
                     "vpn-gateway"
                   ],
-                  "zonbookDocumentation": "\n\n        <simpara>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t\t<code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\tcreated, see <xref linkend=\"CreateTags\"/>.</simpara>\n\n      ",
-                  "documentation": "\n\n        <p>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t\t<code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\tcreated, see <a>CreateTags</a>.</p>\n\n      ",
+                  "zonbookDocumentation": "\n        <para>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\t  creation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t  <code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\t  created, see <xref linkend=\"CreateTags\"/>.</para>\n      ",
+                  "documentation": "\n        <p>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\t  creation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t  <code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\t  created, see <a>CreateTags</a>.</p>\n      ",
                   "shape_name": "ResourceType"
                 },
                 "Tags": {
@@ -7064,8 +7522,8 @@
                     "vpn-connection",
                     "vpn-gateway"
                   ],
-                  "zonbookDocumentation": "\n\n        <simpara>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t\t<code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\tcreated, see <xref linkend=\"CreateTags\"/>.</simpara>\n\n      ",
-                  "documentation": "\n\n        <p>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t\t<code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\tcreated, see <a>CreateTags</a>.</p>\n\n      ",
+                  "zonbookDocumentation": "\n        <para>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\t  creation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t  <code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\t  created, see <xref linkend=\"CreateTags\"/>.</para>\n      ",
+                  "documentation": "\n        <p>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\t  creation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t  <code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\t  created, see <a>CreateTags</a>.</p>\n      ",
                   "shape_name": "ResourceType"
                 },
                 "Tags": {
@@ -15764,8 +16222,8 @@
                     "vpn-connection",
                     "vpn-gateway"
                   ],
-                  "zonbookDocumentation": "\n\n        <simpara>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t\t<code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\tcreated, see <xref linkend=\"CreateTags\"/>.</simpara>\n\n      ",
-                  "documentation": "\n\n        <p>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t\t<code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\tcreated, see <a>CreateTags</a>.</p>\n\n      ",
+                  "zonbookDocumentation": "\n        <para>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\t  creation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t  <code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\t  created, see <xref linkend=\"CreateTags\"/>.</para>\n      ",
+                  "documentation": "\n        <p>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\t  creation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t  <code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\t  created, see <a>CreateTags</a>.</p>\n      ",
                   "shape_name": "ResourceType"
                 },
                 "Tags": {
@@ -23781,8 +24239,8 @@
                 "shape_name": "Integer"
               }
             },
-            "zonbookDocumentation": "\n\t\t       <para>ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying the ICMP\n            protocol, or protocol 58 (ICMPv6) with an IPv6 CIDR block.</para>\n      ",
-            "documentation": "\n\t\t       <p>ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying the ICMP\n            protocol, or protocol 58 (ICMPv6) with an IPv6 CIDR block.</p>\n      ",
+            "zonbookDocumentation": "\n\t\t       <para>ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying protocol \n\t\t        1 (ICMP) or protocol 58 (ICMPv6) with an IPv6 CIDR block.</para>\n      ",
+            "documentation": "\n\t\t       <p>ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying protocol \n\t\t        1 (ICMP) or protocol 58 (ICMPv6) with an IPv6 CIDR block.</p>\n      ",
             "shape_name": "IcmpTypeCode",
             "xmlname": "Icmp"
           },
@@ -23815,14 +24273,14 @@
                 "shape_name": "Integer"
               }
             },
-            "zonbookDocumentation": "\n\t\t       <para>TCP or UDP protocols: The range of ports the rule applies to.</para>\n      ",
-            "documentation": "\n\t\t       <p>TCP or UDP protocols: The range of ports the rule applies to.</p>\n      ",
+            "zonbookDocumentation": "\n\t\t       <para>TCP or UDP protocols: The range of ports the rule applies to.\n\t\t        Required if specifying protocol 6 (TCP) or 17 (UDP).</para>\n      ",
+            "documentation": "\n\t\t       <p>TCP or UDP protocols: The range of ports the rule applies to.\n\t\t        Required if specifying protocol 6 (TCP) or 17 (UDP).</p>\n      ",
             "shape_name": "PortRange"
           },
           "Protocol": {
             "type": "string",
-            "zonbookDocumentation": "\n\t\t       <para>The protocol. A value of <code>-1</code> or <code>all</code> means all protocols. If\n\t\t\tyou specify <code>all</code>, <code>-1</code>, or a protocol number other than\n\t\t\t\t<code>6</code> (tcp), <code>17</code> (udp), or <code>1</code> (icmp), traffic on\n\t\t\tall ports is allowed, regardless of any ports or ICMP types or codes that you specify.\n\t\t\tIf you specify protocol <code>58</code> (ICMPv6) and specify an IPv4 CIDR block, traffic\n\t\t\tfor all ICMP types and codes allowed, regardless of any that you specify. If you specify\n\t\t\tprotocol <code>58</code> (ICMPv6) and specify an IPv6 CIDR block, you must specify an\n\t\t\tICMP type and code.</para>\n      ",
-            "documentation": "\n\t\t       <p>The protocol. A value of <code>-1</code> or <code>all</code> means all protocols. If\n\t\t\tyou specify <code>all</code>, <code>-1</code>, or a protocol number other than\n\t\t\t\t<code>6</code> (tcp), <code>17</code> (udp), or <code>1</code> (icmp), traffic on\n\t\t\tall ports is allowed, regardless of any ports or ICMP types or codes that you specify.\n\t\t\tIf you specify protocol <code>58</code> (ICMPv6) and specify an IPv4 CIDR block, traffic\n\t\t\tfor all ICMP types and codes allowed, regardless of any that you specify. If you specify\n\t\t\tprotocol <code>58</code> (ICMPv6) and specify an IPv6 CIDR block, you must specify an\n\t\t\tICMP type and code.</p>\n      ",
+            "zonbookDocumentation": "\n\t\t       <para>The protocol number. A value of \"-1\" means all protocols. If you specify \"-1\" or a\n  \t\t\tprotocol number other than \"6\" (TCP), \"17\" (UDP), or \"1\" (ICMP), traffic on all ports is \n\t\t\tallowed, regardless of any ports or ICMP types or codes that you specify. If you specify \n\t\t\tprotocol \"58\" (ICMPv6) and specify an IPv4 CIDR block, traffic for all ICMP types and \n\t\t\tcodes allowed, regardless of any that you specify. If you specify protocol \"58\" (ICMPv6) \n\t\t\tand specify an IPv6 CIDR block, you must specify an ICMP type and code.</para>\n      ",
+            "documentation": "\n\t\t       <p>The protocol number. A value of \"-1\" means all protocols. If you specify \"-1\" or a\n  \t\t\tprotocol number other than \"6\" (TCP), \"17\" (UDP), or \"1\" (ICMP), traffic on all ports is \n\t\t\tallowed, regardless of any ports or ICMP types or codes that you specify. If you specify \n\t\t\tprotocol \"58\" (ICMPv6) and specify an IPv4 CIDR block, traffic for all ICMP types and \n\t\t\tcodes allowed, regardless of any that you specify. If you specify protocol \"58\" (ICMPv6) \n\t\t\tand specify an IPv6 CIDR block, you must specify an ICMP type and code.</p>\n      ",
             "required": true,
             "shape_name": "String"
           },
@@ -23852,7 +24310,7 @@
       "errors": [
 
       ],
-      "documentation": "\n\t\t       <p>Creates an entry (a rule) in a network ACL with the specified rule number. Each network ACL has a set of numbered ingress rules and a separate set of numbered egress rules. When determining whether a packet should be allowed in or out of a subnet associated with the ACL, we process the entries in the ACL according to the rule numbers, in ascending order. Each network ACL has a set of ingress rules and a separate set of egress rules.</p>\n\t\t       <p>We recommend that you leave room between the rule numbers (for example, 100, 110, 120, ...), and not number them one right after the other (for example, 101, 102, 103, ...). This makes it easier to add a rule between existing ones without having to renumber the rules.</p>\n\t\t       <p>After you add an entry, you can't modify it; you must either replace it, or create an entry and delete the old one.</p>\n         <p>For more information about network ACLs, see <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html\">Network ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>\n     \n      "
+      "documentation": "\n\t\t       <p>Creates an entry (a rule) in a network ACL with the specified rule number. Each network ACL has a set of numbered ingress rules \n\t\t        and a separate set of numbered egress rules. When determining whether a packet should be allowed in or out of a subnet associated \n\t\t        with the ACL, we process the entries in the ACL according to the rule numbers, in ascending order. Each network ACL has a set of \n\t\t        ingress rules and a separate set of egress rules.</p>\n\t\t       <p>We recommend that you leave room between the rule numbers (for example, 100, 110, 120, ...), and not number them one right after the \n\t\t        other (for example, 101, 102, 103, ...). This makes it easier to add a rule between existing ones without having to renumber the rules.</p>\n\t\t       <p>After you add an entry, you can't modify it; you must either replace it, or create an entry and delete the old one.</p>\n         <p>For more information about network ACLs, see <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html\">Network ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>\n     \n      "
     },
     "DeleteNetworkAclEntry": {
       "name": "DeleteNetworkAclEntry",
@@ -23936,8 +24394,8 @@
                 "shape_name": "Integer"
               }
             },
-            "zonbookDocumentation": "\n\t\t       <para>ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying the ICMP (1)\n            protocol, or protocol 58 (ICMPv6) with an IPv6 CIDR block.</para>\n      ",
-            "documentation": "\n\t\t       <p>ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying the ICMP (1)\n            protocol, or protocol 58 (ICMPv6) with an IPv6 CIDR block.</p>\n      ",
+            "zonbookDocumentation": "\n\t\t       <para>ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying protocol\n\t\t        1 (ICMP) or protocol 58 (ICMPv6) with an IPv6 CIDR block.</para>\n      ",
+            "documentation": "\n\t\t       <p>ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying protocol\n\t\t        1 (ICMP) or protocol 58 (ICMPv6) with an IPv6 CIDR block.</p>\n      ",
             "shape_name": "IcmpTypeCode",
             "xmlname": "Icmp"
           },
@@ -23970,14 +24428,14 @@
                 "shape_name": "Integer"
               }
             },
-            "zonbookDocumentation": "\n\t\t       <para>TCP or UDP protocols: The range of ports the rule applies to. Required if specifying\n            TCP (6) or UDP (17) for the protocol.</para>\n      ",
-            "documentation": "\n\t\t       <p>TCP or UDP protocols: The range of ports the rule applies to. Required if specifying\n            TCP (6) or UDP (17) for the protocol.</p>\n      ",
+            "zonbookDocumentation": "\n\t\t       <para>TCP or UDP protocols: The range of ports the rule applies to. \n\t\t        Required if specifying protocol 6 (TCP) or 17 (UDP).</para>\n      ",
+            "documentation": "\n\t\t       <p>TCP or UDP protocols: The range of ports the rule applies to. \n\t\t        Required if specifying protocol 6 (TCP) or 17 (UDP).</p>\n      ",
             "shape_name": "PortRange"
           },
           "Protocol": {
             "type": "string",
-            "zonbookDocumentation": "\n\t\t       <para>The IP protocol. You can specify <code>all</code> or <code>-1</code> to mean all\n\t\t\tprotocols. If you specify <code>all</code>, <code>-1</code>, or a protocol number other\n\t\t\tthan <code>tcp</code>, <code>udp</code>, or <code>icmp</code>, traffic on all ports is\n\t\t\tallowed, regardless of any ports or ICMP types or codes you that specify. If you specify\n\t\t\tprotocol <code>58</code> (ICMPv6) and specify an IPv4 CIDR block, traffic for all ICMP\n\t\t\ttypes and codes allowed, regardless of any that you specify. If you specify protocol\n\t\t\t\t<code>58</code> (ICMPv6) and specify an IPv6 CIDR block, you must specify an ICMP\n\t\t\ttype and code.</para>\n      ",
-            "documentation": "\n\t\t       <p>The IP protocol. You can specify <code>all</code> or <code>-1</code> to mean all\n\t\t\tprotocols. If you specify <code>all</code>, <code>-1</code>, or a protocol number other\n\t\t\tthan <code>tcp</code>, <code>udp</code>, or <code>icmp</code>, traffic on all ports is\n\t\t\tallowed, regardless of any ports or ICMP types or codes you that specify. If you specify\n\t\t\tprotocol <code>58</code> (ICMPv6) and specify an IPv4 CIDR block, traffic for all ICMP\n\t\t\ttypes and codes allowed, regardless of any that you specify. If you specify protocol\n\t\t\t\t<code>58</code> (ICMPv6) and specify an IPv6 CIDR block, you must specify an ICMP\n\t\t\ttype and code.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The protocol number. A value of \"-1\" means all protocols. If you specify \"-1\" or a\n           protocol number other than \"6\" (TCP), \"17\" (UDP), or \"1\" (ICMP), traffic on all ports is \n           allowed, regardless of any ports or ICMP types or codes that you specify. If you specify \n           protocol \"58\" (ICMPv6) and specify an IPv4 CIDR block, traffic for all ICMP types and \n           codes allowed, regardless of any that you specify. If you specify protocol \"58\" (ICMPv6) \n           and specify an IPv6 CIDR block, you must specify an ICMP type and code.</para>\n      ",
+            "documentation": "\n         <p>The protocol number. A value of \"-1\" means all protocols. If you specify \"-1\" or a\n           protocol number other than \"6\" (TCP), \"17\" (UDP), or \"1\" (ICMP), traffic on all ports is \n           allowed, regardless of any ports or ICMP types or codes that you specify. If you specify \n           protocol \"58\" (ICMPv6) and specify an IPv4 CIDR block, traffic for all ICMP types and \n           codes allowed, regardless of any that you specify. If you specify protocol \"58\" (ICMPv6) \n           and specify an IPv6 CIDR block, you must specify an ICMP type and code.</p>\n      ",
             "required": true,
             "shape_name": "String"
           },
@@ -24152,8 +24610,8 @@
                     },
                     "Protocol": {
                       "type": "string",
-                      "zonbookDocumentation": "\n\t\t       <para>The protocol. A value of <code>-1</code> means all protocols.</para>\n      ",
-                      "documentation": "\n\t\t       <p>The protocol. A value of <code>-1</code> means all protocols.</p>\n      ",
+                      "zonbookDocumentation": "\n\t\t       <para>The protocol number. A value of \"-1\" means all protocols.</para>\n      ",
+                      "documentation": "\n\t\t       <p>The protocol number. A value of \"-1\" means all protocols.</p>\n      ",
                       "shape_name": "String",
                       "xmlname": "protocol"
                     },
@@ -24466,8 +24924,8 @@
                       },
                       "Protocol": {
                         "type": "string",
-                        "zonbookDocumentation": "\n\t\t       <para>The protocol. A value of <code>-1</code> means all protocols.</para>\n      ",
-                        "documentation": "\n\t\t       <p>The protocol. A value of <code>-1</code> means all protocols.</p>\n      ",
+                        "zonbookDocumentation": "\n\t\t       <para>The protocol number. A value of \"-1\" means all protocols.</para>\n      ",
+                        "documentation": "\n\t\t       <p>The protocol number. A value of \"-1\" means all protocols.</p>\n      ",
                         "shape_name": "String",
                         "xmlname": "protocol"
                       },
@@ -24609,7 +25067,7 @@
       "errors": [
 
       ],
-      "documentation": "\n         <p>Changes which network ACL a subnet is associated with. By default when you create a\n\t\t\tsubnet, it's automatically associated with the default network ACL. For more\n\t\t\tinformation, see <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html\">Network\n\t\t\t\tACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>\n        <p>This is an idempotent operation.</p>\n      \n      "
+      "documentation": "\n         <p>Changes which network ACL a subnet is associated with. By default when you create a\n\t\t\tsubnet, it's automatically associated with the default network ACL. For more\n\t\t\tinformation, see <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html\">Network\n\t\t\tACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>\n        <p>This is an idempotent operation.</p>\n      \n      "
     },
     "AttachNetworkInterface": {
       "name": "AttachNetworkInterface",
@@ -26779,6 +27237,151 @@
 
       ],
       "documentation": "\n        <p>Modifies the placement attributes for a specified instance. You can do the\n            following:</p>\n        <ul>\n            <li>\n                <p>Modify the affinity between an instance and a <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html\">Dedicated\n                        Host</a>. When affinity is set to <code>host</code> and the instance is\n                    not associated with a specific Dedicated Host, the next time the instance is\n                    launched, it is automatically associated with the host on which it lands. If the\n                    instance is restarted or rebooted, this relationship persists.</p>\n            </li>\n            <li>\n                <p>Change the Dedicated Host with which an instance is associated.</p>\n            </li>\n            <li>\n                <p>Change the instance tenancy of an instance from <code>host</code> to\n                        <code>dedicated</code>, or from <code>dedicated</code> to\n                    <code>host</code>.</p>\n            </li>\n            <li>\n                <p>Move an instance to or from a <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html\">placement\n                    group</a>.</p>\n            </li>\n         </ul>\n        <p>At least one attribute for affinity, host ID, tenancy, or placement group name must\n            be specified in the request. Affinity and tenancy can be modified in the same\n            request.</p>\n        <p>To modify the host ID, tenancy, or placement group for an instance, the instance\n            must be in the <code>stopped</code> state.</p>\n        \n      "
+    },
+    "DescribePublicIpv4Pools": {
+      "name": "DescribePublicIpv4Pools",
+      "input": {
+        "type": "structure",
+        "members": {
+          "PoolIds": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <para>The IDs of the address pools.</para>\n      ",
+            "documentation": "\n         <p>The IDs of the address pools.</p>\n      ",
+            "shape_name": "ValueStringList",
+            "members": {
+              "type": "string",
+              "shape_name": "String",
+              "documentation": null,
+              "xmlname": "PoolId"
+            },
+            "flattened": true
+          },
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>The token for the next page of results.</para>\n      ",
+            "documentation": "\n         <p>The token for the next page of results.</p>\n      ",
+            "shape_name": "NextToken",
+            "min_length": 1,
+            "max_length": 1024
+          },
+          "MaxResults": {
+            "type": "integer",
+            "zonbookDocumentation": "\n         <para>The maximum number of results to return with a single call.\n\tTo retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</para>\n      ",
+            "documentation": "\n         <p>The maximum number of results to return with a single call.\n\tTo retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>\n      ",
+            "shape_name": "PoolMaxResults",
+            "min_length": 1,
+            "max_length": 10
+          }
+        },
+        "shape_name": "DescribePublicIpv4PoolsRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "PublicIpv4Pools": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <para>Information about the address pools.</para>\n      ",
+            "documentation": "\n         <p>Information about the address pools.</p>\n      ",
+            "shape_name": "PublicIpv4PoolSet",
+            "xmlname": "publicIpv4PoolSet",
+            "members": {
+              "type": "structure",
+              "members": {
+                "PoolId": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <para>The ID of the IPv4 address pool.</para>\n      ",
+                  "documentation": "\n         <p>The ID of the IPv4 address pool.</p>\n      ",
+                  "shape_name": "String",
+                  "xmlname": "poolId"
+                },
+                "Description": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <para>A description of the address pool.</para>\n      ",
+                  "documentation": "\n         <p>A description of the address pool.</p>\n      ",
+                  "shape_name": "String",
+                  "xmlname": "description"
+                },
+                "PoolAddressRanges": {
+                  "type": "list",
+                  "zonbookDocumentation": "\n         <para>The address ranges.</para>\n      ",
+                  "documentation": "\n         <p>The address ranges.</p>\n      ",
+                  "shape_name": "PublicIpv4PoolRangeSet",
+                  "xmlname": "poolAddressRangeSet",
+                  "members": {
+                    "type": "structure",
+                    "members": {
+                      "FirstAddress": {
+                        "type": "string",
+                        "zonbookDocumentation": "\n         <para>The first IP address in the range.</para>\n      ",
+                        "documentation": "\n         <p>The first IP address in the range.</p>\n      ",
+                        "shape_name": "String",
+                        "xmlname": "firstAddress"
+                      },
+                      "LastAddress": {
+                        "type": "string",
+                        "zonbookDocumentation": "\n         <para>The last IP address in the range.</para>\n      ",
+                        "documentation": "\n         <p>The last IP address in the range.</p>\n      ",
+                        "shape_name": "String",
+                        "xmlname": "lastAddress"
+                      },
+                      "AddressCount": {
+                        "type": "integer",
+                        "zonbookDocumentation": "\n         <para>The number of addresses in the range.</para>\n      ",
+                        "documentation": "\n         <p>The number of addresses in the range.</p>\n      ",
+                        "shape_name": "Integer",
+                        "xmlname": "addressCount"
+                      },
+                      "AvailableAddressCount": {
+                        "type": "integer",
+                        "zonbookDocumentation": "\n         <para>The number of available addresses in the range.</para>\n      ",
+                        "documentation": "\n         <p>The number of available addresses in the range.</p>\n      ",
+                        "shape_name": "Integer",
+                        "xmlname": "availableAddressCount"
+                      }
+                    },
+                    "zonbookDocumentation": "\n         <para>Describes an address range of an IPv4 address pool.</para>\n      ",
+                    "documentation": "\n         <p>Describes an address range of an IPv4 address pool.</p>\n      ",
+                    "shape_name": "PublicIpv4PoolRange",
+                    "xmlname": "item"
+                  }
+                },
+                "TotalAddressCount": {
+                  "type": "integer",
+                  "zonbookDocumentation": "\n         <para>The total number of addresses.</para>\n      ",
+                  "documentation": "\n         <p>The total number of addresses.</p>\n      ",
+                  "shape_name": "Integer",
+                  "xmlname": "totalAddressCount"
+                },
+                "TotalAvailableAddressCount": {
+                  "type": "integer",
+                  "zonbookDocumentation": "\n         <para>The total number of available addresses.</para>\n      ",
+                  "documentation": "\n         <p>The total number of available addresses.</p>\n      ",
+                  "shape_name": "Integer",
+                  "xmlname": "totalAvailableAddressCount"
+                }
+              },
+              "zonbookDocumentation": "\n         <para>Describes an address pool.</para>\n      ",
+              "documentation": "\n         <p>Describes an address pool.</p>\n      ",
+              "shape_name": "PublicIpv4Pool",
+              "xmlname": "item"
+            }
+          },
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</para>\n      ",
+            "documentation": "\n         <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>\n      ",
+            "shape_name": "String",
+            "xmlname": "nextToken"
+          }
+        },
+        "shape_name": "DescribePublicIpv4PoolsResult",
+        "documentation": null
+      },
+      "errors": [
+
+      ],
+      "documentation": "\n         <p>Describes the specified IPv4 address pools.</p>\n      "
     },
     "DescribePrefixLists": {
       "name": "DescribePrefixLists",
@@ -34821,8 +35424,8 @@
                     "vpn-connection",
                     "vpn-gateway"
                   ],
-                  "zonbookDocumentation": "\n\n        <simpara>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t\t<code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\tcreated, see <xref linkend=\"CreateTags\"/>.</simpara>\n\n      ",
-                  "documentation": "\n\n        <p>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t\t<code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\tcreated, see <a>CreateTags</a>.</p>\n\n      ",
+                  "zonbookDocumentation": "\n        <para>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\t  creation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t  <code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\t  created, see <xref linkend=\"CreateTags\"/>.</para>\n      ",
+                  "documentation": "\n        <p>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\t  creation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t  <code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\t  created, see <a>CreateTags</a>.</p>\n      ",
                   "shape_name": "ResourceType"
                 },
                 "Tags": {
@@ -36680,7 +37283,7 @@
       "errors": [
 
       ],
-      "documentation": "\n         <p>Describes the events for the specified Spot Fleet request during the specified time.</p>\n         <p>Spot Fleet events are delayed by up to 30 seconds before they can be described. This ensures that you can query by the last evaluated time and not miss a recorded event.</p>\n      \n      "
+      "documentation": "\n         <p>Describes the events for the specified Spot Fleet request during the specified time.</p>\n         <p>Spot Fleet events are delayed by up to 30 seconds before they can be described. This ensures that you can query \n          by the last evaluated time and not miss a recorded event. Spot Fleet events are available for 48 hours.</p>\n      \n      "
     },
     "DescribeSpotFleetRequests": {
       "name": "DescribeSpotFleetRequests",
@@ -36809,8 +37412,8 @@
                     },
                     "FulfilledCapacity": {
                       "type": "double",
-                      "zonbookDocumentation": "\n         <para>The number of units fulfilled by this request compared to the set target capacity.</para>\n      ",
-                      "documentation": "\n         <p>The number of units fulfilled by this request compared to the set target capacity.</p>\n      ",
+                      "zonbookDocumentation": "\n         <para>The number of units fulfilled by this request compared to the set target capacity. You cannot set this value.</para>\n      ",
+                      "documentation": "\n         <p>The number of units fulfilled by this request compared to the set target capacity. You cannot set this value.</p>\n      ",
                       "shape_name": "Double",
                       "xmlname": "fulfilledCapacity"
                     },
@@ -38079,8 +38682,8 @@
               },
               "FulfilledCapacity": {
                 "type": "double",
-                "zonbookDocumentation": "\n         <para>The number of units fulfilled by this request compared to the set target capacity.</para>\n      ",
-                "documentation": "\n         <p>The number of units fulfilled by this request compared to the set target capacity.</p>\n      ",
+                "zonbookDocumentation": "\n         <para>The number of units fulfilled by this request compared to the set target capacity. You cannot set this value.</para>\n      ",
+                "documentation": "\n         <p>The number of units fulfilled by this request compared to the set target capacity. You cannot set this value.</p>\n      ",
                 "shape_name": "Double"
               },
               "OnDemandFulfilledCapacity": {
@@ -42977,8 +43580,8 @@
           },
           "Resources": {
             "type": "list",
-            "zonbookDocumentation": "\n         <para>The IDs of one or more resources to tag. For example, ami-1a2b3c4d.</para>\n      ",
-            "documentation": "\n         <p>The IDs of one or more resources to tag. For example, ami-1a2b3c4d.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The IDs of one or more resources, separated by spaces.</para>\n      ",
+            "documentation": "\n         <p>The IDs of one or more resources, separated by spaces.</p>\n      ",
             "required": true,
             "shape_name": "ResourceIdList",
             "members": {
@@ -43041,8 +43644,8 @@
           },
           "Resources": {
             "type": "list",
-            "zonbookDocumentation": "\n         <para>The IDs of one or more resources.</para>\n      ",
-            "documentation": "\n         <p>The IDs of one or more resources.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The IDs of one or more resources, separated by spaces.</para>\n      ",
+            "documentation": "\n         <p>The IDs of one or more resources, separated by spaces.</p>\n      ",
             "required": true,
             "shape_name": "ResourceIdList",
             "members": {
@@ -43181,8 +43784,8 @@
                 },
                 "ResourceId": {
                   "type": "string",
-                  "zonbookDocumentation": "\n         <para>The ID of the resource. For example, <code>ami-1a2b3c4d</code>.</para>\n      ",
-                  "documentation": "\n         <p>The ID of the resource. For example, <code>ami-1a2b3c4d</code>.</p>\n      ",
+                  "zonbookDocumentation": "\n         <para>The ID of the resource.</para>\n      ",
+                  "documentation": "\n         <p>The ID of the resource.</p>\n      ",
                   "shape_name": "String",
                   "xmlname": "resourceId"
                 },
@@ -43997,8 +44600,8 @@
                     "vpn-connection",
                     "vpn-gateway"
                   ],
-                  "zonbookDocumentation": "\n\n        <simpara>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t\t<code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\tcreated, see <xref linkend=\"CreateTags\"/>.</simpara>\n\n      ",
-                  "documentation": "\n\n        <p>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\tcreation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t\t<code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\tcreated, see <a>CreateTags</a>.</p>\n\n      ",
+                  "zonbookDocumentation": "\n        <para>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\t  creation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t  <code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\t  created, see <xref linkend=\"CreateTags\"/>.</para>\n      ",
+                  "documentation": "\n        <p>The type of resource to tag. Currently, the resource types that support tagging on\n\t\t\t  creation are <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>,\n\t\t\t  <code>snapshot</code>, and <code>volume</code>. To tag a resource after it has been\n\t\t\t  created, see <a>CreateTags</a>.</p>\n      ",
                   "shape_name": "ResourceType"
                 },
                 "Tags": {

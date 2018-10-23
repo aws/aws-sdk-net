@@ -116,6 +116,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property FulfilledCapacity. 
         /// <para>
         /// The number of units fulfilled by this request compared to the set target capacity.
+        /// You cannot set this value.
         /// </para>
         /// </summary>
         public double FulfilledCapacity

@@ -159,6 +159,56 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  AdvertiseByoipCidr
+
+
+        /// <summary>
+        /// Advertises an IPv4 address range that is provisioned for use with your AWS resources
+        /// through bring your own IP addresses (BYOIP).
+        /// 
+        ///  
+        /// <para>
+        /// You can perform this operation at most once every 10 seconds, even if you specify
+        /// different address ranges each time.
+        /// </para>
+        ///  
+        /// <para>
+        /// We recommend that you stop advertising the BYOIP CIDR from other locations when you
+        /// advertise it from AWS. To minimize down time, you can configure your AWS resources
+        /// to use an address from a BYOIP CIDR before it is advertised, and then simultaneously
+        /// stop advertising it from the current location and start advertising it through AWS.
+        /// </para>
+        ///  
+        /// <para>
+        /// It can take a few minutes before traffic to the specified addresses starts routing
+        /// to AWS because of BGP propagation delays.
+        /// </para>
+        ///  
+        /// <para>
+        /// To stop advertising the BYOIP CIDR, use <a>WithdrawByoipCidr</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AdvertiseByoipCidr service method.</param>
+        /// 
+        /// <returns>The response from the AdvertiseByoipCidr service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AdvertiseByoipCidr">REST API Reference for AdvertiseByoipCidr Operation</seealso>
+        AdvertiseByoipCidrResponse AdvertiseByoipCidr(AdvertiseByoipCidrRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AdvertiseByoipCidr operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AdvertiseByoipCidr operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AdvertiseByoipCidr">REST API Reference for AdvertiseByoipCidr Operation</seealso>
+        Task<AdvertiseByoipCidrResponse> AdvertiseByoipCidrAsync(AdvertiseByoipCidrRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  AllocateAddress
 
 
@@ -168,6 +218,14 @@ namespace Amazon.EC2
         /// an Elastic IP address, it is released to the IP address pool and can be allocated
         /// to a different AWS account.
         /// 
+        ///  
+        /// <para>
+        /// You can allocate an Elastic IP address from an address pool owned by AWS or from an
+        /// address pool created from a public IPv4 address range that you have brought to AWS
+        /// for use with your AWS resources using bring your own IP addresses (BYOIP). For more
+        /// information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
+        /// Your Own IP Addresses (BYOIP)</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
         ///  
         /// <para>
         /// [EC2-VPC] If you release an Elastic IP address, you might be able to recover it. You
@@ -201,6 +259,14 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
+        /// You can allocate an Elastic IP address from an address pool owned by AWS or from an
+        /// address pool created from a public IPv4 address range that you have brought to AWS
+        /// for use with your AWS resources using bring your own IP addresses (BYOIP). For more
+        /// information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
+        /// Your Own IP Addresses (BYOIP)</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
         /// [EC2-VPC] If you release an Elastic IP address, you might be able to recover it. You
         /// cannot recover an Elastic IP address that you released after it is allocated to another
         /// AWS account. You cannot recover an Elastic IP address for EC2-Classic. To attempt
@@ -231,6 +297,14 @@ namespace Amazon.EC2
         /// an Elastic IP address, it is released to the IP address pool and can be allocated
         /// to a different AWS account.
         /// 
+        ///  
+        /// <para>
+        /// You can allocate an Elastic IP address from an address pool owned by AWS or from an
+        /// address pool created from a public IPv4 address range that you have brought to AWS
+        /// for use with your AWS resources using bring your own IP addresses (BYOIP). For more
+        /// information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
+        /// Your Own IP Addresses (BYOIP)</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
         ///  
         /// <para>
         /// [EC2-VPC] If you release an Elastic IP address, you might be able to recover it. You
@@ -339,6 +413,9 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Assigns one or more secondary private IP addresses to the specified network interface.
+        /// 
+        ///  
+        /// <para>
         /// You can specify one or more specific secondary IP addresses, or you can specify the
         /// number of secondary IP addresses to be automatically assigned within the subnet's
         /// CIDR block range. The number of secondary IP addresses that you can assign to an instance
@@ -346,10 +423,17 @@ namespace Amazon.EC2
         /// Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For more information
         /// about Elastic IP addresses, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
         /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// 
+        /// </para>
         ///  
         /// <para>
-        /// AssignPrivateIpAddresses is available only in EC2-VPC.
+        /// When you move a secondary private IP address to another network interface, any Elastic
+        /// IP address that is associated with the IP address is also moved.
+        /// </para>
+        ///  
+        /// <para>
+        /// Remapping an IP address is an asynchronous operation. When you move an IP address
+        /// from one network interface to another, check <code>network/interfaces/macs/mac/local-ipv4s</code>
+        /// in the instance metadata to confirm that the remapping is complete.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssignPrivateIpAddresses service method.</param>
@@ -3962,6 +4046,41 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DeprovisionByoipCidr
+
+
+        /// <summary>
+        /// Releases the specified address range that you provisioned for use with your AWS resources
+        /// through bring your own IP addresses (BYOIP) and deletes the corresponding address
+        /// pool.
+        /// 
+        ///  
+        /// <para>
+        /// Before you can release an address range, you must stop advertising it using <a>WithdrawByoipCidr</a>
+        /// and you must not have any IP addresses allocated from its address range.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeprovisionByoipCidr service method.</param>
+        /// 
+        /// <returns>The response from the DeprovisionByoipCidr service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeprovisionByoipCidr">REST API Reference for DeprovisionByoipCidr Operation</seealso>
+        DeprovisionByoipCidrResponse DeprovisionByoipCidr(DeprovisionByoipCidrRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeprovisionByoipCidr operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeprovisionByoipCidr operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeprovisionByoipCidr">REST API Reference for DeprovisionByoipCidr Operation</seealso>
+        Task<DeprovisionByoipCidrResponse> DeprovisionByoipCidrAsync(DeprovisionByoipCidrRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeregisterImage
 
 
@@ -4408,6 +4527,39 @@ namespace Amazon.EC2
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeBundleTasks">REST API Reference for DescribeBundleTasks Operation</seealso>
         Task<DescribeBundleTasksResponse> DescribeBundleTasksAsync(DescribeBundleTasksRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeByoipCidrs
+
+
+        /// <summary>
+        /// Describes the IP address ranges that were specified in calls to <a>ProvisionByoipCidr</a>.
+        /// 
+        ///  
+        /// <para>
+        /// To describe the address pools that were created when you provisioned the address ranges,
+        /// use <a>DescribePublicIpv4Pools</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeByoipCidrs service method.</param>
+        /// 
+        /// <returns>The response from the DescribeByoipCidrs service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeByoipCidrs">REST API Reference for DescribeByoipCidrs Operation</seealso>
+        DescribeByoipCidrsResponse DescribeByoipCidrs(DescribeByoipCidrsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeByoipCidrs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeByoipCidrs operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeByoipCidrs">REST API Reference for DescribeByoipCidrs Operation</seealso>
+        Task<DescribeByoipCidrsResponse> DescribeByoipCidrsAsync(DescribeByoipCidrsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -6158,6 +6310,33 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribePublicIpv4Pools
+
+
+        /// <summary>
+        /// Describes the specified IPv4 address pools.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePublicIpv4Pools service method.</param>
+        /// 
+        /// <returns>The response from the DescribePublicIpv4Pools service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePublicIpv4Pools">REST API Reference for DescribePublicIpv4Pools Operation</seealso>
+        DescribePublicIpv4PoolsResponse DescribePublicIpv4Pools(DescribePublicIpv4PoolsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribePublicIpv4Pools operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribePublicIpv4Pools operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePublicIpv4Pools">REST API Reference for DescribePublicIpv4Pools Operation</seealso>
+        Task<DescribePublicIpv4PoolsResponse> DescribePublicIpv4PoolsAsync(DescribePublicIpv4PoolsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeRegions
 
 
@@ -7206,6 +7385,7 @@ namespace Amazon.EC2
         /// <para>
         /// Spot Fleet events are delayed by up to 30 seconds before they can be described. This
         /// ensures that you can query by the last evaluated time and not miss a recorded event.
+        /// Spot Fleet events are available for 48 hours.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSpotFleetRequestHistory service method.</param>
@@ -10380,6 +10560,52 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ProvisionByoipCidr
+
+
+        /// <summary>
+        /// Provisions an address range for use with your AWS resources through bring your own
+        /// IP addresses (BYOIP) and creates a corresponding address pool. After the address range
+        /// is provisioned, it is ready to be advertised using <a>AdvertiseByoipCidr</a>.
+        /// 
+        ///  
+        /// <para>
+        /// AWS verifies that you own the address range and are authorized to advertise it. You
+        /// must ensure that the address range is registered to you and that you created an RPKI
+        /// ROA to authorize Amazon ASNs 16509 and 14618 to advertise the address range. For more
+        /// information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
+        /// Your Own IP Addresses (BYOIP)</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Provisioning an address range is an asynchronous operation, so the call returns immediately,
+        /// but the address range is not ready to use until its status changes from <code>pending-provision</code>
+        /// to <code>provisioned</code>. To monitor the status of an address range, use <a>DescribeByoipCidrs</a>.
+        /// To allocate an Elastic IP address from your address pool, use <a>AllocateAddress</a>
+        /// with either the specific address from the address pool or the ID of the address pool.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ProvisionByoipCidr service method.</param>
+        /// 
+        /// <returns>The response from the ProvisionByoipCidr service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionByoipCidr">REST API Reference for ProvisionByoipCidr Operation</seealso>
+        ProvisionByoipCidrResponse ProvisionByoipCidr(ProvisionByoipCidrRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ProvisionByoipCidr operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ProvisionByoipCidr operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionByoipCidr">REST API Reference for ProvisionByoipCidr Operation</seealso>
+        Task<ProvisionByoipCidrResponse> ProvisionByoipCidrAsync(ProvisionByoipCidrRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  PurchaseHostReservation
 
 
@@ -11814,6 +12040,44 @@ namespace Amazon.EC2
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateSecurityGroupRuleDescriptionsIngress">REST API Reference for UpdateSecurityGroupRuleDescriptionsIngress Operation</seealso>
         Task<UpdateSecurityGroupRuleDescriptionsIngressResponse> UpdateSecurityGroupRuleDescriptionsIngressAsync(UpdateSecurityGroupRuleDescriptionsIngressRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  WithdrawByoipCidr
+
+
+        /// <summary>
+        /// Stops advertising an IPv4 address range that is provisioned as an address pool.
+        /// 
+        ///  
+        /// <para>
+        /// You can perform this operation at most once every 10 seconds, even if you specify
+        /// different address ranges each time.
+        /// </para>
+        ///  
+        /// <para>
+        /// It can take a few minutes before traffic to the specified addresses stops routing
+        /// to AWS because of BGP propagation delays.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the WithdrawByoipCidr service method.</param>
+        /// 
+        /// <returns>The response from the WithdrawByoipCidr service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/WithdrawByoipCidr">REST API Reference for WithdrawByoipCidr Operation</seealso>
+        WithdrawByoipCidrResponse WithdrawByoipCidr(WithdrawByoipCidrRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the WithdrawByoipCidr operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the WithdrawByoipCidr operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/WithdrawByoipCidr">REST API Reference for WithdrawByoipCidr Operation</seealso>
+        Task<WithdrawByoipCidrResponse> WithdrawByoipCidrAsync(WithdrawByoipCidrRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

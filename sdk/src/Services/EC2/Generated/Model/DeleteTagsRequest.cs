@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates DeleteTagsRequest with the parameterized properties
         /// </summary>
-        /// <param name="resources">The IDs of one or more resources.</param>
+        /// <param name="resources">The IDs of one or more resources, separated by spaces.</param>
         public DeleteTagsRequest(List<string> resources)
         {
             _resources = resources;
@@ -60,7 +60,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Resources. 
         /// <para>
-        /// The IDs of one or more resources.
+        /// The IDs of one or more resources, separated by spaces.
         /// </para>
         /// </summary>
         public List<string> Resources

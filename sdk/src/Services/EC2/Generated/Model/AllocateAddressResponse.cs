@@ -28,13 +28,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Contains the output of AllocateAddress.
+    /// This is the response object from the AllocateAddress operation.
     /// </summary>
     public partial class AllocateAddressResponse : AmazonWebServiceResponse
     {
         private string _allocationId;
         private DomainType _domain;
         private string _publicIp;
+        private string _publicIpv4Pool;
 
         /// <summary>
         /// Gets and sets the property AllocationId. 
@@ -90,6 +91,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetPublicIp()
         {
             return this._publicIp != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PublicIpv4Pool. 
+        /// <para>
+        /// The ID of an address pool.
+        /// </para>
+        /// </summary>
+        public string PublicIpv4Pool
+        {
+            get { return this._publicIpv4Pool; }
+            set { this._publicIpv4Pool = value; }
+        }
+
+        // Check to see if PublicIpv4Pool property is set
+        internal bool IsSetPublicIpv4Pool()
+        {
+            return this._publicIpv4Pool != null;
         }
 
     }

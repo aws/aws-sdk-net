@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Contains the output of AssociateAddress.
+    /// This is the response object from the AssociateAddress operation.
     /// </summary>
     public partial class AssociateAddressResponse : AmazonWebServiceResponse
     {

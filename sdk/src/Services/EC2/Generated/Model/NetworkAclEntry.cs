@@ -134,7 +134,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Protocol. 
         /// <para>
-        /// The protocol. A value of <code>-1</code> means all protocols.
+        /// The protocol number. A value of "-1" means all protocols.
         /// </para>
         /// </summary>
         public string Protocol

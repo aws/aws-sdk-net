@@ -626,7 +626,7 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
                     From = 53,
                     To = 53
                 },
-                Protocol = "udp",
+                Protocol = "17",
                 RuleAction = "allow",
                 RuleNumber = 100
             });
@@ -2612,7 +2612,7 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
                     From = 53,
                     To = 53
                 },
-                Protocol = "udp",
+                Protocol = "17",
                 RuleAction = "allow",
                 RuleNumber = 100
             });

@@ -36,6 +36,14 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
+    /// You can allocate an Elastic IP address from an address pool owned by AWS or from an
+    /// address pool created from a public IPv4 address range that you have brought to AWS
+    /// for use with your AWS resources using bring your own IP addresses (BYOIP). For more
+    /// information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
+    /// Your Own IP Addresses (BYOIP)</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
     /// [EC2-VPC] If you release an Elastic IP address, you might be able to recover it. You
     /// cannot recover an Elastic IP address that you released after it is allocated to another
     /// AWS account. You cannot recover an Elastic IP address for EC2-Classic. To attempt
@@ -57,11 +65,12 @@ namespace Amazon.EC2.Model
     {
         private string _address;
         private DomainType _domain;
+        private string _publicIpv4Pool;
 
         /// <summary>
         /// Gets and sets the property Address. 
         /// <para>
-        /// [EC2-VPC] The Elastic IP address to recover.
+        /// [EC2-VPC] The Elastic IP address to recover or an IPv4 address from an address pool.
         /// </para>
         /// </summary>
         public string Address
@@ -96,6 +105,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetDomain()
         {
             return this._domain != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PublicIpv4Pool. 
+        /// <para>
+        /// The ID of an address pool that you own. Use this parameter to let Amazon EC2 select
+        /// an address from the address pool. To specify a specific address from the address pool,
+        /// use the <code>Address</code> parameter instead.
+        /// </para>
+        /// </summary>
+        public string PublicIpv4Pool
+        {
+            get { return this._publicIpv4Pool; }
+            set { this._publicIpv4Pool = value; }
+        }
+
+        // Check to see if PublicIpv4Pool property is set
+        internal bool IsSetPublicIpv4Pool()
+        {
+            return this._publicIpv4Pool != null;
         }
 
     }

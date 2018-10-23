@@ -87,8 +87,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property IcmpTypeCode. 
         /// <para>
-        /// ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying the ICMP (1)
-        /// protocol, or protocol 58 (ICMPv6) with an IPv6 CIDR block.
+        /// ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying protocol 1
+        /// (ICMP) or protocol 58 (ICMPv6) with an IPv6 CIDR block.
         /// </para>
         /// </summary>
         public IcmpTypeCode IcmpTypeCode
@@ -143,7 +143,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property PortRange. 
         /// <para>
         /// TCP or UDP protocols: The range of ports the rule applies to. Required if specifying
-        /// TCP (6) or UDP (17) for the protocol.
+        /// protocol 6 (TCP) or 17 (UDP).
         /// </para>
         /// </summary>
         public PortRange PortRange
@@ -161,14 +161,12 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Protocol. 
         /// <para>
-        /// The IP protocol. You can specify <code>all</code> or <code>-1</code> to mean all protocols.
-        /// If you specify <code>all</code>, <code>-1</code>, or a protocol number other than
-        /// <code>tcp</code>, <code>udp</code>, or <code>icmp</code>, traffic on all ports is
-        /// allowed, regardless of any ports or ICMP types or codes you that specify. If you specify
-        /// protocol <code>58</code> (ICMPv6) and specify an IPv4 CIDR block, traffic for all
-        /// ICMP types and codes allowed, regardless of any that you specify. If you specify protocol
-        /// <code>58</code> (ICMPv6) and specify an IPv6 CIDR block, you must specify an ICMP
-        /// type and code.
+        /// The protocol number. A value of "-1" means all protocols. If you specify "-1" or a
+        /// protocol number other than "6" (TCP), "17" (UDP), or "1" (ICMP), traffic on all ports
+        /// is allowed, regardless of any ports or ICMP types or codes that you specify. If you
+        /// specify protocol "58" (ICMPv6) and specify an IPv4 CIDR block, traffic for all ICMP
+        /// types and codes allowed, regardless of any that you specify. If you specify protocol
+        /// "58" (ICMPv6) and specify an IPv6 CIDR block, you must specify an ICMP type and code.
         /// </para>
         /// </summary>
         public string Protocol

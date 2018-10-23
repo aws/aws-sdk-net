@@ -73,6 +73,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         response.PublicIp = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("publicIpv4Pool", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.PublicIpv4Pool = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 } 
             }
 

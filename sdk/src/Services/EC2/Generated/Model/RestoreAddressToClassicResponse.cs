@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Contains the output of RestoreAddressToClassic.
+    /// This is the response object from the RestoreAddressToClassic operation.
     /// </summary>
     public partial class RestoreAddressToClassicResponse : AmazonWebServiceResponse
     {

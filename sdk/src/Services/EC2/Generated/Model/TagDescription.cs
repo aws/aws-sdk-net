@@ -58,7 +58,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The ID of the resource. For example, <code>ami-1a2b3c4d</code>.
+        /// The ID of the resource.
         /// </para>
         /// </summary>
         public string ResourceId

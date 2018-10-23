@@ -102,6 +102,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.PublicIp = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("publicIpv4Pool", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PublicIpv4Pool = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("tagSet/item", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;
