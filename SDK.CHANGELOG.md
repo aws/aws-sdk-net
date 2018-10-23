@@ -1,3 +1,7 @@
+### 3.3.383.1 (2018-10-23 20:14 UTC)
+* Core 3.3.27.3
+	* Sample merge config for build migration
+
 ### 3.3.383.0 (2018-10-12 21:46 UTC)
 * CloudTrail (3.3.3.0)
 	* The LookupEvents API now supports two new attribute keys: ReadOnly and AccessKeyId

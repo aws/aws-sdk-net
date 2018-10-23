@@ -294,8 +294,8 @@ namespace AWSSDKDocSamples.Amazon.WAFRegional.Generated
                 MaxItems = 100,
                 RuleId = "WAFRule-1-Example",
                 TimeWindow = new TimeWindow {
-                    EndTime = new DateTime(2016, 9, 27, 8, 50, 0),
-                    StartTime = new DateTime(2016, 9, 27, 8, 50, 0)
+                    EndTime = new DateTime(2016, 9, 27, 3, 50, 0),
+                    StartTime = new DateTime(2016, 9, 27, 3, 50, 0)
                 },
                 WebAclId = "createwebacl-1472061481310"
             });

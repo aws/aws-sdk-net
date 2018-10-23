@@ -1656,8 +1656,8 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             var response = client.DescribeScheduledInstanceAvailability(new DescribeScheduledInstanceAvailabilityRequest 
             {
                 FirstSlotStartTimeRange = new SlotDateTimeRangeRequest {
-                    EarliestTime = new DateTime(2016, 1, 30, 4, 0, 0),
-                    LatestTime = new DateTime(2016, 1, 30, 8, 0, 0)
+                    EarliestTime = new DateTime(2016, 1, 31, 12, 0, 0),
+                    LatestTime = new DateTime(2016, 1, 31, 4, 0, 0)
                 },
                 Recurrence = new ScheduledInstanceRecurrenceRequest {
                     Frequency = "Weekly",
@@ -1833,7 +1833,7 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             var response = client.DescribeSpotFleetRequestHistory(new DescribeSpotFleetRequestHistoryRequest 
             {
                 SpotFleetRequestId = "sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE",
-                StartTime = new DateTime(2015, 5, 25, 5, 0, 0)
+                StartTime = new DateTime(2015, 5, 26, 12, 0, 0)
             });
 
             List<HistoryRecord> historyRecords = response.HistoryRecords;
