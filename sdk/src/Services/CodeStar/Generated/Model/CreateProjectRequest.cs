@@ -29,7 +29,10 @@ namespace Amazon.CodeStar.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateProject operation.
-    /// Reserved for future use. To create a project, use the AWS CodeStar console.
+    /// Creates a project, including project resources. This action creates a project based
+    /// on a submitted project request. A set of source code files and a toolchain template
+    /// file can be included with the project request. If these are not provided, an empty
+    /// project is created.
     /// </summary>
     public partial class CreateProjectRequest : AmazonCodeStarRequest
     {
@@ -37,12 +40,15 @@ namespace Amazon.CodeStar.Model
         private string _description;
         private string _id;
         private string _name;
+        private List<Code> _sourceCode = new List<Code>();
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Toolchain _toolchain;
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// Reserved for future use.
+        /// A user- or system-generated token that identifies the entity that requested project
+        /// creation. This token can be used to repeat the request.
         /// </para>
         /// </summary>
         public string ClientRequestToken
@@ -60,7 +66,7 @@ namespace Amazon.CodeStar.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Reserved for future use.
+        /// The description of the project, if any.
         /// </para>
         /// </summary>
         public string Description
@@ -78,7 +84,7 @@ namespace Amazon.CodeStar.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// Reserved for future use.
+        /// The ID of the project to be created in AWS CodeStar.
         /// </para>
         /// </summary>
         public string Id
@@ -96,7 +102,7 @@ namespace Amazon.CodeStar.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Reserved for future use.
+        /// The display name for the project to be created in AWS CodeStar.
         /// </para>
         /// </summary>
         public string Name
@@ -109,6 +115,25 @@ namespace Amazon.CodeStar.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceCode. 
+        /// <para>
+        /// A list of the Code objects submitted with the project request. If this parameter is
+        /// specified, the request must also include the toolchain parameter.
+        /// </para>
+        /// </summary>
+        public List<Code> SourceCode
+        {
+            get { return this._sourceCode; }
+            set { this._sourceCode = value; }
+        }
+
+        // Check to see if SourceCode property is set
+        internal bool IsSetSourceCode()
+        {
+            return this._sourceCode != null && this._sourceCode.Count > 0; 
         }
 
         /// <summary>
@@ -127,6 +152,25 @@ namespace Amazon.CodeStar.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Toolchain. 
+        /// <para>
+        /// The name of the toolchain template file submitted with the project request. If this
+        /// parameter is specified, the request must also include the sourceCode parameter.
+        /// </para>
+        /// </summary>
+        public Toolchain Toolchain
+        {
+            get { return this._toolchain; }
+            set { this._toolchain = value; }
+        }
+
+        // Check to see if Toolchain property is set
+        internal bool IsSetToolchain()
+        {
+            return this._toolchain != null;
         }
 
     }

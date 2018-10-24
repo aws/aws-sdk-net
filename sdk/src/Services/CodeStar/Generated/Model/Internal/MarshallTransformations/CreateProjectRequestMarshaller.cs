@@ -91,6 +91,22 @@ namespace Amazon.CodeStar.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetSourceCode())
+                {
+                    context.Writer.WritePropertyName("sourceCode");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSourceCodeListValue in publicRequest.SourceCode)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CodeMarshaller.Instance;
+                        marshaller.Marshall(publicRequestSourceCodeListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");
@@ -102,6 +118,17 @@ namespace Amazon.CodeStar.Model.Internal.MarshallTransformations
 
                             context.Writer.Write(publicRequestTagsValue);
                     }
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetToolchain())
+                {
+                    context.Writer.WritePropertyName("toolchain");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ToolchainMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Toolchain, context);
+
                     context.Writer.WriteObjectEnd();
                 }
 

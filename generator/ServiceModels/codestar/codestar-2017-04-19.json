@@ -10,7 +10,7 @@
   "endpoint_prefix": "codestar",
   "api_version": "2017-04-19",
   "target_prefix": "CodeStar_20170419",
-  "documentation": "\n         <fullname>AWS CodeStar</fullname>\n         <p>This is the API reference for AWS CodeStar. This reference provides descriptions of the\n      operations and data types for the AWS CodeStar API along with usage examples.</p>\n         <p>You can use the AWS CodeStar API to work with:</p>\n         <p>Projects and their resources, by calling the following:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>DeleteProject</code>, which deletes a project.</p>\n            </li>\n            <li>\n               <p>\n                  <code>DescribeProject</code>, which lists the attributes of a project.</p>\n            </li>\n            <li>\n               <p>\n                  <code>ListProjects</code>, which lists all projects associated\n          with your AWS account.</p>\n            </li>\n            <li>\n               <p>\n                  <code>ListResources</code>, which lists the resources associated with a project.</p>\n            </li>\n            <li>\n               <p>\n                  <code>ListTagsForProject</code>, which lists the tags associated with a project.</p>\n            </li>\n            <li>\n               <p>\n                  <code>TagProject</code>, which adds tags to a project.</p>\n            </li>\n            <li>\n               <p>\n                  <code>UntagProject</code>, which removes tags from a project.</p>\n            </li>\n            <li>\n               <p>\n                  <code>UpdateProject</code>, which updates the attributes of a project.</p>\n            </li>\n         </ul>\n         <p>Teams and team members, by calling the following:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>AssociateTeamMember</code>, which adds an IAM user to the team for a project.</p>\n            </li>\n            <li>\n               <p>\n                  <code>DisassociateTeamMember</code>, which removes an IAM user from the team for a project.</p>\n            </li>\n            <li>\n               <p>\n                  <code>ListTeamMembers</code>, which lists all the IAM users in the team for a project, including their roles and attributes.</p>\n            </li>\n            <li>\n               <p>\n                  <code>UpdateTeamMember</code>, which updates a team member's attributes in a project.</p>\n            </li>\n         </ul>\n         <p>Users, by calling the following:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>CreateUserProfile</code>, which creates a user profile that contains data associated with the user across all projects.</p>\n            </li>\n            <li>\n               <p>\n                  <code>DeleteUserProfile</code>, which deletes all user profile information across all projects.</p>\n            </li>\n            <li>\n               <p>\n                  <code>DescribeUserProfile</code>, which describes the profile of a user.</p>\n            </li>\n            <li>\n               <p>\n                  <code>ListUserProfiles</code>, which lists all user profiles.</p>\n            </li>\n            <li>\n               <p>\n                  <code>UpdateUserProfile</code>, which updates the profile for a user.</p>\n            </li>\n         </ul>\n      ",
+  "documentation": "\n         <fullname>AWS CodeStar</fullname>\n         <p>This is the API reference for AWS CodeStar. This reference provides descriptions of the\n      operations and data types for the AWS CodeStar API along with usage examples.</p>\n         <p>You can use the AWS CodeStar API to work with:</p>\n         <p>Projects and their resources, by calling the following:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>DeleteProject</code>, which deletes a project.</p>\n            </li>\n            <li>\n               <p>\n                  <code>DescribeProject</code>, which lists the attributes of a project.</p>\n            </li>\n            <li>\n               <p>\n                  <code>ListProjects</code>, which lists all projects associated with your AWS\n          account.</p>\n            </li>\n            <li>\n               <p>\n                  <code>ListResources</code>, which lists the resources associated with a\n          project.</p>\n            </li>\n            <li>\n               <p>\n                  <code>ListTagsForProject</code>, which lists the tags associated with a\n          project.</p>\n            </li>\n            <li>\n               <p>\n                  <code>TagProject</code>, which adds tags to a project.</p>\n            </li>\n            <li>\n               <p>\n                  <code>UntagProject</code>, which removes tags from a project.</p>\n            </li>\n            <li>\n               <p>\n                  <code>UpdateProject</code>, which updates the attributes of a project.</p>\n            </li>\n         </ul>\n         <p>Teams and team members, by calling the following:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>AssociateTeamMember</code>, which adds an IAM user to the team for a\n          project.</p>\n            </li>\n            <li>\n               <p>\n                  <code>DisassociateTeamMember</code>, which removes an IAM user from the team for a\n          project.</p>\n            </li>\n            <li>\n               <p>\n                  <code>ListTeamMembers</code>, which lists all the IAM users in the team for a\n          project, including their roles and attributes.</p>\n            </li>\n            <li>\n               <p>\n                  <code>UpdateTeamMember</code>, which updates a team member's attributes in a\n          project.</p>\n            </li>\n         </ul>\n         <p>Users, by calling the following:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>CreateUserProfile</code>, which creates a user profile that contains data\n          associated with the user across all projects.</p>\n            </li>\n            <li>\n               <p>\n                  <code>DeleteUserProfile</code>, which deletes all user profile information across\n          all projects.</p>\n            </li>\n            <li>\n               <p>\n                  <code>DescribeUserProfile</code>, which describes the profile of a user.</p>\n            </li>\n            <li>\n               <p>\n                  <code>ListUserProfiles</code>, which lists all user profiles.</p>\n            </li>\n            <li>\n               <p>\n                  <code>UpdateUserProfile</code>, which updates the profile for a user.</p>\n            </li>\n         </ul>\n      ",
   "operations": {
     "CreateProject": {
       "name": "CreateProject",
@@ -21,8 +21,8 @@
             "type": "string",
             "pattern": "^\\S(.*\\S)?$",
             "sensitive": true,
-            "zonbookDocumentation": "\n         <simpara>Reserved for future use.</simpara>\n      ",
-            "documentation": "\n         <p>Reserved for future use.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>The display name for the project to be created in AWS CodeStar.</simpara>\n      ",
+            "documentation": "\n         <p>The display name for the project to be created in AWS CodeStar.</p>\n      ",
             "required": true,
             "shape_name": "ProjectName",
             "min_length": 1,
@@ -31,8 +31,8 @@
           "id": {
             "type": "string",
             "pattern": "^[a-z][a-z0-9-]+$",
-            "zonbookDocumentation": "\n         <simpara>Reserved for future use.</simpara>\n      ",
-            "documentation": "\n         <p>Reserved for future use.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>The ID of the project to be created in AWS CodeStar.</simpara>\n      ",
+            "documentation": "\n         <p>The ID of the project to be created in AWS CodeStar.</p>\n      ",
             "required": true,
             "shape_name": "ProjectId",
             "min_length": 2,
@@ -42,16 +42,16 @@
             "type": "string",
             "sensitive": true,
             "pattern": "^$|^\\S(.*\\S)?$",
-            "zonbookDocumentation": "\n         <simpara>Reserved for future use.</simpara>\n      ",
-            "documentation": "\n         <p>Reserved for future use.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>The description of the project, if any.</simpara>\n      ",
+            "documentation": "\n         <p>The description of the project, if any.</p>\n      ",
             "shape_name": "ProjectDescription",
             "max_length": 1024
           },
           "clientRequestToken": {
             "type": "string",
             "pattern": "^[\\w:/-]+$",
-            "zonbookDocumentation": "\n         <simpara>Reserved for future use.</simpara>\n      ",
-            "documentation": "\n         <p>Reserved for future use.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>A user- or system-generated token that identifies the entity that requested project\n      creation. This token can be used to repeat the request.</simpara>\n      ",
+            "documentation": "\n         <p>A user- or system-generated token that identifies the entity that requested project\n      creation. This token can be used to repeat the request.</p>\n      ",
             "shape_name": "ClientRequestToken",
             "min_length": 1,
             "max_length": 256
@@ -76,6 +76,240 @@
             "shape_name": "ProjectTemplateId",
             "documentation": null,
             "min_length": 1
+          },
+          "sourceCode": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>A list of the Code objects submitted with the project request. If this\n      parameter is specified, the request must also include the toolchain parameter.</simpara>\n      ",
+            "documentation": "\n         <p>A list of the Code objects submitted with the project request. If this\n      parameter is specified, the request must also include the toolchain parameter.</p>\n      ",
+            "shape_name": "SourceCode",
+            "members": {
+              "type": "structure",
+              "members": {
+                "source": {
+                  "type": "structure",
+                  "members": {
+                    "s3": {
+                      "type": "structure",
+                      "members": {
+                        "bucketName": {
+                          "type": "string",
+                          "zonbookDocumentation": "\n         <simpara>The Amazon S3 bucket name where the source code files provided with the project\n      request are stored.</simpara>\n      ",
+                          "documentation": "\n         <p>The Amazon S3 bucket name where the source code files provided with the project\n      request are stored.</p>\n      ",
+                          "shape_name": "BucketName",
+                          "min_length": 3,
+                          "max_length": 63
+                        },
+                        "bucketKey": {
+                          "type": "string",
+                          "zonbookDocumentation": "\n         <simpara>The Amazon S3 object key where the source code files provided with the project\n      request are stored.</simpara>\n      ",
+                          "documentation": "\n         <p>The Amazon S3 object key where the source code files provided with the project\n      request are stored.</p>\n      ",
+                          "shape_name": "BucketKey"
+                        }
+                      },
+                      "zonbookDocumentation": "\n         <simpara>Information about the Amazon S3 location where the source code files provided with the\n      project request are stored. </simpara>\n      ",
+                      "documentation": "\n         <p>Information about the Amazon S3 location where the source code files provided with the\n      project request are stored. </p>\n      ",
+                      "required": true,
+                      "shape_name": "S3Location"
+                    }
+                  },
+                  "zonbookDocumentation": "\n         <simpara>The location where the source code files provided with the project request are\n      stored. AWS CodeStar retrieves the files during project creation.</simpara>\n      ",
+                  "documentation": "\n         <p>The location where the source code files provided with the project request are\n      stored. AWS CodeStar retrieves the files during project creation.</p>\n      ",
+                  "required": true,
+                  "shape_name": "CodeSource"
+                },
+                "destination": {
+                  "type": "structure",
+                  "members": {
+                    "codeCommit": {
+                      "type": "structure",
+                      "members": {
+                        "name": {
+                          "type": "string",
+                          "pattern": "^\\S[\\w.-]*$",
+                          "zonbookDocumentation": "\n         <simpara>The name of the AWS CodeCommit repository to be created in AWS CodeStar.</simpara>\n      ",
+                          "documentation": "\n         <p>The name of the AWS CodeCommit repository to be created in AWS CodeStar.</p>\n      ",
+                          "required": true,
+                          "shape_name": "RepositoryName",
+                          "min_length": 1,
+                          "max_length": 100
+                        }
+                      },
+                      "zonbookDocumentation": "\n         <simpara>Information about the AWS CodeCommit repository to be created in AWS CodeStar. This is where the source code files provided\n      with the project request will be uploaded after project creation.</simpara>\n      ",
+                      "documentation": "\n         <p>Information about the AWS CodeCommit repository to be created in AWS CodeStar. This is where the source code files provided\n      with the project request will be uploaded after project creation.</p>\n      ",
+                      "shape_name": "CodeCommitCodeDestination"
+                    },
+                    "gitHub": {
+                      "type": "structure",
+                      "members": {
+                        "name": {
+                          "type": "string",
+                          "pattern": "^\\S[\\w.-]*$",
+                          "zonbookDocumentation": "\n         <simpara>Name of the GitHub repository to be created in AWS CodeStar.</simpara>\n      ",
+                          "documentation": "\n         <p>Name of the GitHub repository to be created in AWS CodeStar.</p>\n      ",
+                          "required": true,
+                          "shape_name": "RepositoryName",
+                          "min_length": 1,
+                          "max_length": 100
+                        },
+                        "description": {
+                          "type": "string",
+                          "pattern": "^\\S(.*\\S)?$",
+                          "zonbookDocumentation": "\n         <simpara>Description for the GitHub repository to be created in AWS CodeStar. This description displays in\n      GitHub after the repository is created.</simpara>\n      ",
+                          "documentation": "\n         <p>Description for the GitHub repository to be created in AWS CodeStar. This description displays in\n      GitHub after the repository is created.</p>\n      ",
+                          "shape_name": "RepositoryDescription",
+                          "min_length": 1,
+                          "max_length": 1000
+                        },
+                        "type": {
+                          "type": "string",
+                          "pattern": "^(user|organization|User|Organization)$",
+                          "zonbookDocumentation": "\n         <simpara>The type of GitHub repository to be created in AWS CodeStar. Valid values are User or Organization.</simpara>\n      ",
+                          "documentation": "\n         <p>The type of GitHub repository to be created in AWS CodeStar. Valid values are User or Organization.</p>\n      ",
+                          "required": true,
+                          "shape_name": "RepositoryType"
+                        },
+                        "owner": {
+                          "type": "string",
+                          "pattern": "^\\S(.*\\S)?$",
+                          "zonbookDocumentation": "\n         <simpara>The GitHub username for the owner of the GitHub repository to be created in AWS CodeStar. If this repository should\n      be owned by a GitHub organization, provide its name.</simpara>\n      ",
+                          "documentation": "\n         <p>The GitHub username for the owner of the GitHub repository to be created in AWS CodeStar. If this repository should\n      be owned by a GitHub organization, provide its name.</p>\n      ",
+                          "required": true,
+                          "shape_name": "RepositoryOwner",
+                          "min_length": 1,
+                          "max_length": 100
+                        },
+                        "privateRepository": {
+                          "type": "boolean",
+                          "zonbookDocumentation": "\n         <simpara>Whether the GitHub repository is to be a private repository.</simpara>\n      ",
+                          "documentation": "\n         <p>Whether the GitHub repository is to be a private repository.</p>\n      ",
+                          "required": true,
+                          "shape_name": "RepositoryIsPrivate"
+                        },
+                        "issuesEnabled": {
+                          "type": "boolean",
+                          "zonbookDocumentation": "\n         <simpara>Whether to enable issues for the GitHub repository.</simpara>\n      ",
+                          "documentation": "\n         <p>Whether to enable issues for the GitHub repository.</p>\n      ",
+                          "required": true,
+                          "shape_name": "RepositoryEnableIssues"
+                        },
+                        "token": {
+                          "type": "string",
+                          "sensitive": true,
+                          "zonbookDocumentation": "\n         <simpara>The GitHub user's personal access token for the GitHub repository.</simpara>\n      ",
+                          "documentation": "\n         <p>The GitHub user's personal access token for the GitHub repository.</p>\n      ",
+                          "required": true,
+                          "shape_name": "GitHubPersonalToken",
+                          "min_length": 1
+                        },
+                        "thirdPartyId": {
+                          "type": "string",
+                          "internalonly": true,
+                          "shape_name": "NonEmptyString",
+                          "documentation": null,
+                          "min_length": 1
+                        },
+                        "requestToken": {
+                          "type": "string",
+                          "internalonly": true,
+                          "shape_name": "NonEmptyString",
+                          "documentation": null,
+                          "min_length": 1
+                        }
+                      },
+                      "zonbookDocumentation": "\n         <simpara>Information about the GitHub repository to be created in AWS CodeStar. This is where the source code files provided with the\n      project request will be uploaded after project creation.</simpara>\n      ",
+                      "documentation": "\n         <p>Information about the GitHub repository to be created in AWS CodeStar. This is where the source code files provided with the\n      project request will be uploaded after project creation.</p>\n      ",
+                      "shape_name": "GitHubCodeDestination"
+                    }
+                  },
+                  "zonbookDocumentation": "\n         <simpara>The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit or GitHub. After AWS CodeStar provisions the new repository, the\n      source code files provided with the project request are placed in the repository.</simpara>\n      ",
+                  "documentation": "\n         <p>The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit or GitHub. After AWS CodeStar provisions the new repository, the\n      source code files provided with the project request are placed in the repository.</p>\n      ",
+                  "required": true,
+                  "shape_name": "CodeDestination"
+                }
+              },
+              "zonbookDocumentation": "\n         <simpara>Location and destination information about the source code files provided with the\n      project request. The source code is uploaded to the new project source repository after\n      project creation.</simpara>\n      ",
+              "documentation": "\n         <p>Location and destination information about the source code files provided with the\n      project request. The source code is uploaded to the new project source repository after\n      project creation.</p>\n      ",
+              "shape_name": "Code"
+            }
+          },
+          "toolchain": {
+            "type": "structure",
+            "members": {
+              "source": {
+                "type": "structure",
+                "members": {
+                  "s3": {
+                    "type": "structure",
+                    "members": {
+                      "bucketName": {
+                        "type": "string",
+                        "zonbookDocumentation": "\n         <simpara>The Amazon S3 bucket name where the source code files provided with the project\n      request are stored.</simpara>\n      ",
+                        "documentation": "\n         <p>The Amazon S3 bucket name where the source code files provided with the project\n      request are stored.</p>\n      ",
+                        "shape_name": "BucketName",
+                        "min_length": 3,
+                        "max_length": 63
+                      },
+                      "bucketKey": {
+                        "type": "string",
+                        "zonbookDocumentation": "\n         <simpara>The Amazon S3 object key where the source code files provided with the project\n      request are stored.</simpara>\n      ",
+                        "documentation": "\n         <p>The Amazon S3 object key where the source code files provided with the project\n      request are stored.</p>\n      ",
+                        "shape_name": "BucketKey"
+                      }
+                    },
+                    "zonbookDocumentation": "\n         <simpara>The Amazon S3 bucket where the toolchain template file provided with the project\n      request is stored.</simpara>\n      ",
+                    "documentation": "\n         <p>The Amazon S3 bucket where the toolchain template file provided with the project\n      request is stored.</p>\n      ",
+                    "required": true,
+                    "shape_name": "S3Location"
+                  }
+                },
+                "zonbookDocumentation": "\n         <simpara>The Amazon S3 location where the toolchain template file provided with the\n      project request is stored. AWS CodeStar retrieves the file during project creation.</simpara>\n      ",
+                "documentation": "\n         <p>The Amazon S3 location where the toolchain template file provided with the\n      project request is stored. AWS CodeStar retrieves the file during project creation.</p>\n      ",
+                "required": true,
+                "shape_name": "ToolchainSource"
+              },
+              "roleArn": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <simpara>The service role ARN for AWS CodeStar to use for the toolchain template during stack\n      provisioning.</simpara>\n      ",
+                "documentation": "\n         <p>The service role ARN for AWS CodeStar to use for the toolchain template during stack\n      provisioning.</p>\n      ",
+                "shape_name": "RoleArn",
+                "min_length": 1,
+                "max_length": 1224
+              },
+              "stackParameters": {
+                "type": "map",
+                "zonbookDocumentation": "\n         <simpara>The list of parameter overrides to be passed into the toolchain template during stack\n      provisioning, if any.</simpara>\n      ",
+                "documentation": "\n         <p>The list of parameter overrides to be passed into the toolchain template during stack\n      provisioning, if any.</p>\n      ",
+                "shape_name": "TemplateParameterMap",
+                "max_length": 25,
+                "keys": {
+                  "type": "string",
+                  "pattern": "^\\S(.*\\S)?$",
+                  "shape_name": "TemplateParameterKey",
+                  "documentation": null,
+                  "min_length": 1,
+                  "max_length": 30
+                },
+                "members": {
+                  "type": "string",
+                  "pattern": "^\\S(.*\\S)?$",
+                  "sensitive": true,
+                  "shape_name": "TemplateParameterValue",
+                  "documentation": null,
+                  "min_length": 1,
+                  "max_length": 100
+                }
+              },
+              "encryptedStackParameters": {
+                "type": "string",
+                "internalonly": true,
+                "shape_name": "NonEmptyString",
+                "documentation": null,
+                "min_length": 1
+              }
+            },
+            "zonbookDocumentation": "\n         <simpara>The name of the toolchain template file submitted with the project request. If\n      this parameter is specified, the request must also include the sourceCode parameter.</simpara>\n      ",
+            "documentation": "\n         <p>The name of the toolchain template file submitted with the project request. If\n      this parameter is specified, the request must also include the sourceCode parameter.</p>\n      ",
+            "shape_name": "Toolchain"
           },
           "tags": {
             "type": "map",
@@ -108,8 +342,8 @@
           "id": {
             "type": "string",
             "pattern": "^[a-z][a-z0-9-]+$",
-            "zonbookDocumentation": "\n         <simpara>Reserved for future use.</simpara>\n      ",
-            "documentation": "\n         <p>Reserved for future use.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>The ID of the project.</simpara>\n      ",
+            "documentation": "\n         <p>The ID of the project.</p>\n      ",
             "required": true,
             "shape_name": "ProjectId",
             "min_length": 2,
@@ -118,16 +352,16 @@
           "arn": {
             "type": "string",
             "pattern": "^arn:aws[^:\\s]*:codestar:[^:\\s]+:[0-9]{12}:project\\/[a-z]([a-z0-9|-])+$",
-            "zonbookDocumentation": "\n         <simpara>Reserved for future use.</simpara>\n      ",
-            "documentation": "\n         <p>Reserved for future use.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>The Amazon Resource Name (ARN) of the created project.</simpara>\n      ",
+            "documentation": "\n         <p>The Amazon Resource Name (ARN) of the created project.</p>\n      ",
             "required": true,
             "shape_name": "ProjectArn"
           },
           "clientRequestToken": {
             "type": "string",
             "pattern": "^[\\w:/-]+$",
-            "zonbookDocumentation": "\n         <simpara>Reserved for future use.</simpara>\n      ",
-            "documentation": "\n         <p>Reserved for future use.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>A user- or system-generated token that identifies the entity that requested project\n      creation.</simpara>\n      ",
+            "documentation": "\n         <p>A user- or system-generated token that identifies the entity that requested project\n      creation.</p>\n      ",
             "shape_name": "ClientRequestToken",
             "min_length": 1,
             "max_length": 256
@@ -149,8 +383,8 @@
           "type": "structure",
           "members": {
           },
-          "zonbookDocumentation": "\n         <simpara>An AWS CodeStar project with the same ID already exists in this region for the AWS\n      account. AWS CodeStar project IDs must be unique within a region for the AWS\n      account.</simpara>\n      ",
-          "documentation": "\n         <p>An AWS CodeStar project with the same ID already exists in this region for the AWS\n      account. AWS CodeStar project IDs must be unique within a region for the AWS\n      account.</p>\n      ",
+          "zonbookDocumentation": "\n         <simpara>An AWS CodeStar project with the same ID already exists in this region for the AWS account.\n      AWS CodeStar project IDs must be unique within a region for the AWS account.</simpara>\n      ",
+          "documentation": "\n         <p>An AWS CodeStar project with the same ID already exists in this region for the AWS account.\n      AWS CodeStar project IDs must be unique within a region for the AWS account.</p>\n      ",
           "shape_name": "ProjectAlreadyExistsException"
         },
         {
@@ -202,7 +436,7 @@
           "shape_name": "ConcurrentModificationException"
         }
       ],
-      "documentation": "\n         <p>Reserved for future use. To create a project, use the AWS CodeStar console.</p>\n      "
+      "documentation": "\n         <p>Creates a project, including project resources. This action creates a project based on\n      a submitted project request. A set of source code files and a toolchain template file\n      can be included with the project request. If these are not provided, an empty project is created.</p>\n      "
     },
     "CreateProjectV2": {
       "name": "CreateProjectV2",
@@ -306,8 +540,8 @@
           "type": "structure",
           "members": {
           },
-          "zonbookDocumentation": "\n         <simpara>An AWS CodeStar project with the same ID already exists in this region for the AWS\n      account. AWS CodeStar project IDs must be unique within a region for the AWS\n      account.</simpara>\n      ",
-          "documentation": "\n         <p>An AWS CodeStar project with the same ID already exists in this region for the AWS\n      account. AWS CodeStar project IDs must be unique within a region for the AWS\n      account.</p>\n      ",
+          "zonbookDocumentation": "\n         <simpara>An AWS CodeStar project with the same ID already exists in this region for the AWS account.\n      AWS CodeStar project IDs must be unique within a region for the AWS account.</simpara>\n      ",
+          "documentation": "\n         <p>An AWS CodeStar project with the same ID already exists in this region for the AWS account.\n      AWS CodeStar project IDs must be unique within a region for the AWS account.</p>\n      ",
           "shape_name": "ProjectAlreadyExistsException"
         },
         {
@@ -453,8 +687,8 @@
           "type": "structure",
           "members": {
           },
-          "zonbookDocumentation": "\n         <simpara>An AWS CodeStar project with the same ID already exists in this region for the AWS\n      account. AWS CodeStar project IDs must be unique within a region for the AWS\n      account.</simpara>\n      ",
-          "documentation": "\n         <p>An AWS CodeStar project with the same ID already exists in this region for the AWS\n      account. AWS CodeStar project IDs must be unique within a region for the AWS\n      account.</p>\n      ",
+          "zonbookDocumentation": "\n         <simpara>An AWS CodeStar project with the same ID already exists in this region for the AWS account.\n      AWS CodeStar project IDs must be unique within a region for the AWS account.</simpara>\n      ",
+          "documentation": "\n         <p>An AWS CodeStar project with the same ID already exists in this region for the AWS account.\n      AWS CodeStar project IDs must be unique within a region for the AWS account.</p>\n      ",
           "shape_name": "ProjectAlreadyExistsException"
         },
         {
@@ -515,8 +749,25 @@
             "min_length": 2,
             "max_length": 15
           },
+          "description": {
+            "type": "string",
+            "sensitive": true,
+            "pattern": "^$|^\\S(.*\\S)?$",
+            "shape_name": "ProjectDescription",
+            "documentation": null,
+            "max_length": 1024
+          },
+          "clientRequestToken": {
+            "type": "string",
+            "pattern": "^[\\w:/-]+$",
+            "shape_name": "ClientRequestToken",
+            "documentation": null,
+            "min_length": 1,
+            "max_length": 256
+          },
           "sourceCode": {
             "type": "list",
+            "required": true,
             "shape_name": "SourceCode",
             "documentation": null,
             "members": {
@@ -530,23 +781,29 @@
                       "members": {
                         "bucketName": {
                           "type": "string",
+                          "zonbookDocumentation": "\n         <simpara>The Amazon S3 bucket name where the source code files provided with the project\n      request are stored.</simpara>\n      ",
+                          "documentation": "\n         <p>The Amazon S3 bucket name where the source code files provided with the project\n      request are stored.</p>\n      ",
                           "shape_name": "BucketName",
-                          "documentation": null,
                           "min_length": 3,
                           "max_length": 63
                         },
                         "bucketKey": {
                           "type": "string",
-                          "shape_name": "BucketKey",
-                          "documentation": null
+                          "zonbookDocumentation": "\n         <simpara>The Amazon S3 object key where the source code files provided with the project\n      request are stored.</simpara>\n      ",
+                          "documentation": "\n         <p>The Amazon S3 object key where the source code files provided with the project\n      request are stored.</p>\n      ",
+                          "shape_name": "BucketKey"
                         }
                       },
-                      "shape_name": "S3Location",
-                      "documentation": null
+                      "zonbookDocumentation": "\n         <simpara>Information about the Amazon S3 location where the source code files provided with the\n      project request are stored. </simpara>\n      ",
+                      "documentation": "\n         <p>Information about the Amazon S3 location where the source code files provided with the\n      project request are stored. </p>\n      ",
+                      "required": true,
+                      "shape_name": "S3Location"
                     }
                   },
-                  "shape_name": "CodeSource",
-                  "documentation": null
+                  "zonbookDocumentation": "\n         <simpara>The location where the source code files provided with the project request are\n      stored. AWS CodeStar retrieves the files during project creation.</simpara>\n      ",
+                  "documentation": "\n         <p>The location where the source code files provided with the project request are\n      stored. AWS CodeStar retrieves the files during project creation.</p>\n      ",
+                  "required": true,
+                  "shape_name": "CodeSource"
                 },
                 "destination": {
                   "type": "structure",
@@ -557,14 +814,17 @@
                         "name": {
                           "type": "string",
                           "pattern": "^\\S[\\w.-]*$",
+                          "zonbookDocumentation": "\n         <simpara>The name of the AWS CodeCommit repository to be created in AWS CodeStar.</simpara>\n      ",
+                          "documentation": "\n         <p>The name of the AWS CodeCommit repository to be created in AWS CodeStar.</p>\n      ",
+                          "required": true,
                           "shape_name": "RepositoryName",
-                          "documentation": null,
                           "min_length": 1,
                           "max_length": 100
                         }
                       },
-                      "shape_name": "CodeCommitCodeDestination",
-                      "documentation": null
+                      "zonbookDocumentation": "\n         <simpara>Information about the AWS CodeCommit repository to be created in AWS CodeStar. This is where the source code files provided\n      with the project request will be uploaded after project creation.</simpara>\n      ",
+                      "documentation": "\n         <p>Information about the AWS CodeCommit repository to be created in AWS CodeStar. This is where the source code files provided\n      with the project request will be uploaded after project creation.</p>\n      ",
+                      "shape_name": "CodeCommitCodeDestination"
                     },
                     "gitHub": {
                       "type": "structure",
@@ -572,47 +832,61 @@
                         "name": {
                           "type": "string",
                           "pattern": "^\\S[\\w.-]*$",
+                          "zonbookDocumentation": "\n         <simpara>Name of the GitHub repository to be created in AWS CodeStar.</simpara>\n      ",
+                          "documentation": "\n         <p>Name of the GitHub repository to be created in AWS CodeStar.</p>\n      ",
+                          "required": true,
                           "shape_name": "RepositoryName",
-                          "documentation": null,
                           "min_length": 1,
                           "max_length": 100
                         },
                         "description": {
                           "type": "string",
                           "pattern": "^\\S(.*\\S)?$",
+                          "zonbookDocumentation": "\n         <simpara>Description for the GitHub repository to be created in AWS CodeStar. This description displays in\n      GitHub after the repository is created.</simpara>\n      ",
+                          "documentation": "\n         <p>Description for the GitHub repository to be created in AWS CodeStar. This description displays in\n      GitHub after the repository is created.</p>\n      ",
                           "shape_name": "RepositoryDescription",
-                          "documentation": null,
                           "min_length": 1,
                           "max_length": 1000
                         },
                         "type": {
                           "type": "string",
                           "pattern": "^(user|organization|User|Organization)$",
-                          "shape_name": "RepositoryType",
-                          "documentation": null
+                          "zonbookDocumentation": "\n         <simpara>The type of GitHub repository to be created in AWS CodeStar. Valid values are User or Organization.</simpara>\n      ",
+                          "documentation": "\n         <p>The type of GitHub repository to be created in AWS CodeStar. Valid values are User or Organization.</p>\n      ",
+                          "required": true,
+                          "shape_name": "RepositoryType"
                         },
                         "owner": {
                           "type": "string",
                           "pattern": "^\\S(.*\\S)?$",
+                          "zonbookDocumentation": "\n         <simpara>The GitHub username for the owner of the GitHub repository to be created in AWS CodeStar. If this repository should\n      be owned by a GitHub organization, provide its name.</simpara>\n      ",
+                          "documentation": "\n         <p>The GitHub username for the owner of the GitHub repository to be created in AWS CodeStar. If this repository should\n      be owned by a GitHub organization, provide its name.</p>\n      ",
+                          "required": true,
                           "shape_name": "RepositoryOwner",
-                          "documentation": null,
                           "min_length": 1,
                           "max_length": 100
                         },
                         "privateRepository": {
                           "type": "boolean",
-                          "shape_name": "RepositoryIsPrivate",
-                          "documentation": null
+                          "zonbookDocumentation": "\n         <simpara>Whether the GitHub repository is to be a private repository.</simpara>\n      ",
+                          "documentation": "\n         <p>Whether the GitHub repository is to be a private repository.</p>\n      ",
+                          "required": true,
+                          "shape_name": "RepositoryIsPrivate"
                         },
                         "issuesEnabled": {
                           "type": "boolean",
-                          "shape_name": "RepositoryEnableIssues",
-                          "documentation": null
+                          "zonbookDocumentation": "\n         <simpara>Whether to enable issues for the GitHub repository.</simpara>\n      ",
+                          "documentation": "\n         <p>Whether to enable issues for the GitHub repository.</p>\n      ",
+                          "required": true,
+                          "shape_name": "RepositoryEnableIssues"
                         },
                         "token": {
                           "type": "string",
-                          "shape_name": "NonEmptyString",
-                          "documentation": null,
+                          "sensitive": true,
+                          "zonbookDocumentation": "\n         <simpara>The GitHub user's personal access token for the GitHub repository.</simpara>\n      ",
+                          "documentation": "\n         <p>The GitHub user's personal access token for the GitHub repository.</p>\n      ",
+                          "required": true,
+                          "shape_name": "GitHubPersonalToken",
                           "min_length": 1
                         },
                         "thirdPartyId": {
@@ -630,140 +904,21 @@
                           "min_length": 1
                         }
                       },
-                      "shape_name": "GitHubCodeDestination",
-                      "documentation": null
+                      "zonbookDocumentation": "\n         <simpara>Information about the GitHub repository to be created in AWS CodeStar. This is where the source code files provided with the\n      project request will be uploaded after project creation.</simpara>\n      ",
+                      "documentation": "\n         <p>Information about the GitHub repository to be created in AWS CodeStar. This is where the source code files provided with the\n      project request will be uploaded after project creation.</p>\n      ",
+                      "shape_name": "GitHubCodeDestination"
                     }
                   },
-                  "shape_name": "CodeDestination",
-                  "documentation": null
+                  "zonbookDocumentation": "\n         <simpara>The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit or GitHub. After AWS CodeStar provisions the new repository, the\n      source code files provided with the project request are placed in the repository.</simpara>\n      ",
+                  "documentation": "\n         <p>The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit or GitHub. After AWS CodeStar provisions the new repository, the\n      source code files provided with the project request are placed in the repository.</p>\n      ",
+                  "required": true,
+                  "shape_name": "CodeDestination"
                 }
               },
-              "shape_name": "Code",
-              "documentation": null
+              "zonbookDocumentation": "\n         <simpara>Location and destination information about the source code files provided with the\n      project request. The source code is uploaded to the new project source repository after\n      project creation.</simpara>\n      ",
+              "documentation": "\n         <p>Location and destination information about the source code files provided with the\n      project request. The source code is uploaded to the new project source repository after\n      project creation.</p>\n      ",
+              "shape_name": "Code"
             }
-          },
-          "code": {
-            "type": "structure",
-            "members": {
-              "source": {
-                "type": "structure",
-                "members": {
-                  "s3": {
-                    "type": "structure",
-                    "members": {
-                      "bucketName": {
-                        "type": "string",
-                        "shape_name": "BucketName",
-                        "documentation": null,
-                        "min_length": 3,
-                        "max_length": 63
-                      },
-                      "bucketKey": {
-                        "type": "string",
-                        "shape_name": "BucketKey",
-                        "documentation": null
-                      }
-                    },
-                    "shape_name": "S3Location",
-                    "documentation": null
-                  }
-                },
-                "shape_name": "CodeSource",
-                "documentation": null
-              },
-              "destination": {
-                "type": "structure",
-                "members": {
-                  "codeCommit": {
-                    "type": "structure",
-                    "members": {
-                      "name": {
-                        "type": "string",
-                        "pattern": "^\\S[\\w.-]*$",
-                        "shape_name": "RepositoryName",
-                        "documentation": null,
-                        "min_length": 1,
-                        "max_length": 100
-                      }
-                    },
-                    "shape_name": "CodeCommitCodeDestination",
-                    "documentation": null
-                  },
-                  "gitHub": {
-                    "type": "structure",
-                    "members": {
-                      "name": {
-                        "type": "string",
-                        "pattern": "^\\S[\\w.-]*$",
-                        "shape_name": "RepositoryName",
-                        "documentation": null,
-                        "min_length": 1,
-                        "max_length": 100
-                      },
-                      "description": {
-                        "type": "string",
-                        "pattern": "^\\S(.*\\S)?$",
-                        "shape_name": "RepositoryDescription",
-                        "documentation": null,
-                        "min_length": 1,
-                        "max_length": 1000
-                      },
-                      "type": {
-                        "type": "string",
-                        "pattern": "^(user|organization|User|Organization)$",
-                        "shape_name": "RepositoryType",
-                        "documentation": null
-                      },
-                      "owner": {
-                        "type": "string",
-                        "pattern": "^\\S(.*\\S)?$",
-                        "shape_name": "RepositoryOwner",
-                        "documentation": null,
-                        "min_length": 1,
-                        "max_length": 100
-                      },
-                      "privateRepository": {
-                        "type": "boolean",
-                        "shape_name": "RepositoryIsPrivate",
-                        "documentation": null
-                      },
-                      "issuesEnabled": {
-                        "type": "boolean",
-                        "shape_name": "RepositoryEnableIssues",
-                        "documentation": null
-                      },
-                      "token": {
-                        "type": "string",
-                        "shape_name": "NonEmptyString",
-                        "documentation": null,
-                        "min_length": 1
-                      },
-                      "thirdPartyId": {
-                        "type": "string",
-                        "internalonly": true,
-                        "shape_name": "NonEmptyString",
-                        "documentation": null,
-                        "min_length": 1
-                      },
-                      "requestToken": {
-                        "type": "string",
-                        "internalonly": true,
-                        "shape_name": "NonEmptyString",
-                        "documentation": null,
-                        "min_length": 1
-                      }
-                    },
-                    "shape_name": "GitHubCodeDestination",
-                    "documentation": null
-                  }
-                },
-                "shape_name": "CodeDestination",
-                "documentation": null
-              }
-            },
-            "required": true,
-            "shape_name": "Code",
-            "documentation": null
           },
           "toolchain": {
             "type": "structure",
@@ -776,35 +931,43 @@
                     "members": {
                       "bucketName": {
                         "type": "string",
+                        "zonbookDocumentation": "\n         <simpara>The Amazon S3 bucket name where the source code files provided with the project\n      request are stored.</simpara>\n      ",
+                        "documentation": "\n         <p>The Amazon S3 bucket name where the source code files provided with the project\n      request are stored.</p>\n      ",
                         "shape_name": "BucketName",
-                        "documentation": null,
                         "min_length": 3,
                         "max_length": 63
                       },
                       "bucketKey": {
                         "type": "string",
-                        "shape_name": "BucketKey",
-                        "documentation": null
+                        "zonbookDocumentation": "\n         <simpara>The Amazon S3 object key where the source code files provided with the project\n      request are stored.</simpara>\n      ",
+                        "documentation": "\n         <p>The Amazon S3 object key where the source code files provided with the project\n      request are stored.</p>\n      ",
+                        "shape_name": "BucketKey"
                       }
                     },
-                    "shape_name": "S3Location",
-                    "documentation": null
+                    "zonbookDocumentation": "\n         <simpara>The Amazon S3 bucket where the toolchain template file provided with the project\n      request is stored.</simpara>\n      ",
+                    "documentation": "\n         <p>The Amazon S3 bucket where the toolchain template file provided with the project\n      request is stored.</p>\n      ",
+                    "required": true,
+                    "shape_name": "S3Location"
                   }
                 },
-                "shape_name": "ToolchainSource",
-                "documentation": null
+                "zonbookDocumentation": "\n         <simpara>The Amazon S3 location where the toolchain template file provided with the\n      project request is stored. AWS CodeStar retrieves the file during project creation.</simpara>\n      ",
+                "documentation": "\n         <p>The Amazon S3 location where the toolchain template file provided with the\n      project request is stored. AWS CodeStar retrieves the file during project creation.</p>\n      ",
+                "required": true,
+                "shape_name": "ToolchainSource"
               },
               "roleArn": {
                 "type": "string",
+                "zonbookDocumentation": "\n         <simpara>The service role ARN for AWS CodeStar to use for the toolchain template during stack\n      provisioning.</simpara>\n      ",
+                "documentation": "\n         <p>The service role ARN for AWS CodeStar to use for the toolchain template during stack\n      provisioning.</p>\n      ",
                 "shape_name": "RoleArn",
-                "documentation": null,
                 "min_length": 1,
                 "max_length": 1224
               },
               "stackParameters": {
                 "type": "map",
+                "zonbookDocumentation": "\n         <simpara>The list of parameter overrides to be passed into the toolchain template during stack\n      provisioning, if any.</simpara>\n      ",
+                "documentation": "\n         <p>The list of parameter overrides to be passed into the toolchain template during stack\n      provisioning, if any.</p>\n      ",
                 "shape_name": "TemplateParameterMap",
-                "documentation": null,
                 "max_length": 25,
                 "keys": {
                   "type": "string",
@@ -823,11 +986,19 @@
                   "min_length": 1,
                   "max_length": 100
                 }
+              },
+              "encryptedStackParameters": {
+                "type": "string",
+                "internalonly": true,
+                "shape_name": "NonEmptyString",
+                "documentation": null,
+                "min_length": 1
               }
             },
+            "zonbookDocumentation": "\n         <simpara>The toolchain template file provided with the project request. AWS CodeStar uses\n      the template to provision the toolchain stack in AWS CloudFormation.</simpara>\n      ",
+            "documentation": "\n         <p>The toolchain template file provided with the project request. AWS CodeStar uses\n      the template to provision the toolchain stack in AWS CloudFormation.</p>\n      ",
             "required": true,
-            "shape_name": "Toolchain",
-            "documentation": null
+            "shape_name": "Toolchain"
           },
           "tags": {
             "type": "map",
@@ -856,11 +1027,21 @@
       "output": {
         "type": "structure",
         "members": {
-          "stackId": {
+          "clientRequestToken": {
             "type": "string",
-            "pattern": "^arn:aws[^:\\s]*:cloudformation:[^:\\s]+:[0-9]{12}:stack\\/[^:\\s]+\\/[^:\\s]+$",
-            "shape_name": "StackId",
-            "documentation": null
+            "pattern": "^[\\w:/-]+$",
+            "shape_name": "ClientRequestToken",
+            "documentation": null,
+            "min_length": 1,
+            "max_length": 256
+          },
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]+$",
+            "shape_name": "ProjectId",
+            "documentation": null,
+            "min_length": 2,
+            "max_length": 15
           },
           "projectArn": {
             "type": "string",
@@ -877,8 +1058,8 @@
           "type": "structure",
           "members": {
           },
-          "zonbookDocumentation": "\n         <simpara>An AWS CodeStar project with the same ID already exists in this region for the AWS\n      account. AWS CodeStar project IDs must be unique within a region for the AWS\n      account.</simpara>\n      ",
-          "documentation": "\n         <p>An AWS CodeStar project with the same ID already exists in this region for the AWS\n      account. AWS CodeStar project IDs must be unique within a region for the AWS\n      account.</p>\n      ",
+          "zonbookDocumentation": "\n         <simpara>An AWS CodeStar project with the same ID already exists in this region for the AWS account.\n      AWS CodeStar project IDs must be unique within a region for the AWS account.</simpara>\n      ",
+          "documentation": "\n         <p>An AWS CodeStar project with the same ID already exists in this region for the AWS account.\n      AWS CodeStar project IDs must be unique within a region for the AWS account.</p>\n      ",
           "shape_name": "ProjectAlreadyExistsException"
         },
         {
@@ -888,29 +1069,6 @@
           "zonbookDocumentation": "\n         <simpara>The specified input is either not valid, or it could not be validated.</simpara>\n      ",
           "documentation": "\n         <p>The specified input is either not valid, or it could not be validated.</p>\n      ",
           "shape_name": "ValidationException"
-        },
-        {
-          "type": "structure",
-          "members": {
-          },
-          "zonbookDocumentation": "\n         <simpara>The service role is not valid.</simpara>\n      ",
-          "documentation": "\n         <p>The service role is not valid.</p>\n      ",
-          "shape_name": "InvalidServiceRoleException"
-        },
-        {
-          "type": "structure",
-          "members": {
-          },
-          "zonbookDocumentation": "\n         <simpara>A resource limit has been exceeded.</simpara>\n      ",
-          "documentation": "\n         <p>A resource limit has been exceeded.</p>\n      ",
-          "shape_name": "LimitExceededException"
-        },
-        {
-          "type": "structure",
-          "members": {
-          },
-          "shape_name": "ResourceAlreadyExistsException",
-          "documentation": null
         }
       ],
       "documentation": null
@@ -1016,8 +1174,8 @@
               "reason": {
                 "type": "string",
                 "pattern": "^$|^\\S(.*\\S)?$",
-                "zonbookDocumentation": "\n         <simpara>In the case of a project creation or deletion failure, a reason for the failure.</simpara>\n      ",
-                "documentation": "\n         <p>In the case of a project creation or deletion failure, a reason for the failure.</p>\n      ",
+                "zonbookDocumentation": "\n         <simpara>In the case of a project creation or deletion failure, a reason for the\n      failure.</simpara>\n      ",
+                "documentation": "\n         <p>In the case of a project creation or deletion failure, a reason for the\n      failure.</p>\n      ",
                 "shape_name": "Reason",
                 "max_length": 1024
               }
@@ -1298,7 +1456,7 @@
           "shape_name": "ValidationException"
         }
       ],
-      "documentation": "\n         <p>Updates a project in AWS CodeStar.</p>\n    \n    \n      "
+      "documentation": "\n         <p>Updates a project in AWS CodeStar.</p>\n\n    \n      "
     },
     "ListProjects": {
       "name": "ListProjects",
@@ -1393,6 +1551,85 @@
         }
       ],
       "documentation": "\n         <p>Lists all projects in AWS CodeStar associated with your AWS account.</p>\n\n    \n      "
+    },
+    "ListProjectsWithResource": {
+      "name": "ListProjectsWithResource",
+      "input": {
+        "type": "structure",
+        "members": {
+          "resourceId": {
+            "type": "string",
+            "pattern": "^arn\\:aws\\:\\S.*\\:.*",
+            "required": true,
+            "shape_name": "ResourceId",
+            "documentation": null,
+            "min_length": 11
+          },
+          "nextToken": {
+            "type": "string",
+            "pattern": "^[\\w/+=]+$",
+            "shape_name": "PaginationToken",
+            "documentation": null,
+            "min_length": 1,
+            "max_length": 512
+          },
+          "maxResults": {
+            "type": "integer",
+            "box": true,
+            "shape_name": "MaxResults",
+            "documentation": null,
+            "min_length": 1,
+            "max_length": 100
+          }
+        },
+        "shape_name": "ListProjectsWithResourceRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "projects": {
+            "type": "list",
+            "shape_name": "ProjectsResult",
+            "documentation": null,
+            "members": {
+              "type": "string",
+              "pattern": "^arn:aws[^:\\s]*:codestar:[^:\\s]+:[0-9]{12}:project\\/[a-z]([a-z0-9|-])+$",
+              "shape_name": "ProjectArn",
+              "documentation": null
+            }
+          },
+          "nextToken": {
+            "type": "string",
+            "pattern": "^[\\w/+=]+$",
+            "shape_name": "PaginationToken",
+            "documentation": null,
+            "min_length": 1,
+            "max_length": 512
+          }
+        },
+        "shape_name": "ListProjectsWithResourceResult",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n         <simpara>The next token is not valid.</simpara>\n      ",
+          "documentation": "\n         <p>The next token is not valid.</p>\n      ",
+          "shape_name": "InvalidNextTokenException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n         <simpara>The specified input is either not valid, or it could not be validated.</simpara>\n      ",
+          "documentation": "\n         <p>The specified input is either not valid, or it could not be validated.</p>\n      ",
+          "shape_name": "ValidationException"
+        }
+      ],
+      "documentation": null
     },
     "ListTagsForProject": {
       "name": "ListTagsForProject",
@@ -1836,8 +2073,8 @@
           "projectRole": {
             "type": "string",
             "pattern": "^(Owner|Viewer|Contributor)$",
-            "zonbookDocumentation": "\n         <simpara>The AWS CodeStar project role that will apply to this user. This role determines what\n      actions a user can take in an AWS CodeStar project.</simpara>\n      ",
-            "documentation": "\n         <p>The AWS CodeStar project role that will apply to this user. This role determines what\n      actions a user can take in an AWS CodeStar project.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>The AWS CodeStar project role that will apply to this user. This role determines what actions\n      a user can take in an AWS CodeStar project.</simpara>\n      ",
+            "documentation": "\n         <p>The AWS CodeStar project role that will apply to this user. This role determines what actions\n      a user can take in an AWS CodeStar project.</p>\n      ",
             "required": true,
             "shape_name": "Role"
           },
@@ -2123,8 +2360,8 @@
           "projectId": {
             "type": "string",
             "pattern": "^[a-z][a-z0-9-]+$",
-            "zonbookDocumentation": "\n         <simpara>The ID of the AWS CodeStar project from which you want to remove a team\n      member.</simpara>\n      ",
-            "documentation": "\n         <p>The ID of the AWS CodeStar project from which you want to remove a team\n      member.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>The ID of the AWS CodeStar project from which you want to remove a team member.</simpara>\n      ",
+            "documentation": "\n         <p>The ID of the AWS CodeStar project from which you want to remove a team member.</p>\n      ",
             "required": true,
             "shape_name": "ProjectId",
             "min_length": 2,
@@ -2185,7 +2422,7 @@
           "shape_name": "ConcurrentModificationException"
         }
       ],
-      "documentation": "\n         <p>Removes a user from a project. Removing a user from a project also removes the IAM\n      policies from that user that allowed access to the project and its resources. Disassociating a\n      team member does not remove that user's profile from AWS CodeStar. It does not remove the user\n      from IAM.</p>\n\n    \n      "
+      "documentation": "\n         <p>Removes a user from a project. Removing a user from a project also removes the IAM\n      policies from that user that allowed access to the project and its resources. Disassociating a\n      team member does not remove that user's profile from AWS CodeStar. It does not remove the user from\n      IAM.</p>\n\n    \n      "
     },
     "BatchDisassociateTeamMembers": {
       "name": "BatchDisassociateTeamMembers",
@@ -2414,7 +2651,7 @@
           "shape_name": "TeamMemberNotFoundException"
         }
       ],
-      "documentation": "\n         <p>Updates a team member's attributes in an AWS CodeStar project. For example, you can\n      change a team member's role in the project, or change whether they have remote access to\n      project resources.</p>\n\n    \n      "
+      "documentation": "\n         <p>Updates a team member's attributes in an AWS CodeStar project. For example, you can change a\n      team member's role in the project, or change whether they have remote access to project\n      resources.</p>\n\n    \n      "
     },
     "SyncResources": {
       "name": "SyncResources",
@@ -3027,8 +3264,8 @@
             "type": "string",
             "pattern": "^\\S(.*\\S)?$",
             "sensitive": true,
-            "zonbookDocumentation": "\n         <simpara>The name that will be displayed as the friendly name for the user in AWS CodeStar.\n    </simpara>\n      ",
-            "documentation": "\n         <p>The name that will be displayed as the friendly name for the user in AWS CodeStar.\n    </p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>The name that will be displayed as the friendly name for the user in AWS CodeStar. </simpara>\n      ",
+            "documentation": "\n         <p>The name that will be displayed as the friendly name for the user in AWS CodeStar. </p>\n      ",
             "required": true,
             "shape_name": "UserProfileDisplayName",
             "min_length": 1,
@@ -3038,8 +3275,8 @@
             "type": "string",
             "pattern": "^[\\w-.+]+@[\\w-.+]+$",
             "sensitive": true,
-            "zonbookDocumentation": "\n         <simpara>The email address that will be displayed as part of the user's profile in AWS CodeStar.</simpara>\n      ",
-            "documentation": "\n         <p>The email address that will be displayed as part of the user's profile in AWS CodeStar.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>The email address that will be displayed as part of the user's profile in\n      AWS CodeStar.</simpara>\n      ",
+            "documentation": "\n         <p>The email address that will be displayed as part of the user's profile in\n      AWS CodeStar.</p>\n      ",
             "required": true,
             "shape_name": "Email",
             "min_length": 3,
@@ -3048,8 +3285,8 @@
           "sshPublicKey": {
             "type": "string",
             "pattern": "^[\\t\\r\\n\\u0020-\\u00FF]*$",
-            "zonbookDocumentation": "\n         <simpara>The SSH public key associated with the user in AWS CodeStar. If a project owner allows\n      the user remote access to project resources, this public key will be used along with the\n      user's private key for SSH access.</simpara>\n      ",
-            "documentation": "\n         <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows\n      the user remote access to project resources, this public key will be used along with the\n      user's private key for SSH access.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the\n      user remote access to project resources, this public key will be used along with the user's\n      private key for SSH access.</simpara>\n      ",
+            "documentation": "\n         <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the\n      user remote access to project resources, this public key will be used along with the user's\n      private key for SSH access.</p>\n      ",
             "shape_name": "SshPublicKey",
             "max_length": 16384
           }
@@ -3093,8 +3330,8 @@
           "sshPublicKey": {
             "type": "string",
             "pattern": "^[\\t\\r\\n\\u0020-\\u00FF]*$",
-            "zonbookDocumentation": "\n         <simpara>The SSH public key associated with the user in AWS CodeStar. This is the public portion\n      of the public/private keypair the user can use to access project resources if a project owner\n      allows the user remote access to those resources.</simpara>\n      ",
-            "documentation": "\n         <p>The SSH public key associated with the user in AWS CodeStar. This is the public portion\n      of the public/private keypair the user can use to access project resources if a project owner\n      allows the user remote access to those resources.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>The SSH public key associated with the user in AWS CodeStar. This is the public portion of the\n      public/private keypair the user can use to access project resources if a project owner allows\n      the user remote access to those resources.</simpara>\n      ",
+            "documentation": "\n         <p>The SSH public key associated with the user in AWS CodeStar. This is the public portion of the\n      public/private keypair the user can use to access project resources if a project owner allows\n      the user remote access to those resources.</p>\n      ",
             "shape_name": "SshPublicKey",
             "max_length": 16384
           },
@@ -3180,7 +3417,7 @@
           "shape_name": "ValidationException"
         }
       ],
-      "documentation": "\n         <p>Deletes a user profile in AWS CodeStar, including all personal preference data\n      associated with that profile, such as display name and email address. It does not delete the\n      history of that user, for example the history of commits made by that user.</p>\n    \n      "
+      "documentation": "\n         <p>Deletes a user profile in AWS CodeStar, including all personal preference data associated with\n      that profile, such as display name and email address. It does not delete the history of that\n      user, for example the history of commits made by that user.</p>\n    \n      "
     },
     "DescribeUserProfile": {
       "name": "DescribeUserProfile",
@@ -3218,8 +3455,8 @@
             "type": "string",
             "pattern": "^\\S(.*\\S)?$",
             "sensitive": true,
-            "zonbookDocumentation": "\n         <simpara>The display name shown for the user in AWS CodeStar projects. For example, this could\n      be set to both first and last name (\"Mary Major\") or a single name (\"Mary\"). The display name\n      is also used to generate the initial icon associated with the user in AWS CodeStar projects.\n      If spaces are included in the display name, the first character that appears after the space\n      will be used as the second character in the user initial icon. The initial icon displays a\n      maximum of two characters, so a display name with more than one space (for example \"Mary Jane\n      Major\") would generate an initial icon using the first character and the first character after\n      the space (\"MJ\", not \"MM\").</simpara>\n      ",
-            "documentation": "\n         <p>The display name shown for the user in AWS CodeStar projects. For example, this could\n      be set to both first and last name (\"Mary Major\") or a single name (\"Mary\"). The display name\n      is also used to generate the initial icon associated with the user in AWS CodeStar projects.\n      If spaces are included in the display name, the first character that appears after the space\n      will be used as the second character in the user initial icon. The initial icon displays a\n      maximum of two characters, so a display name with more than one space (for example \"Mary Jane\n      Major\") would generate an initial icon using the first character and the first character after\n      the space (\"MJ\", not \"MM\").</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>The display name shown for the user in AWS CodeStar projects. For example, this could be set\n      to both first and last name (\"Mary Major\") or a single name (\"Mary\"). The display name is also\n      used to generate the initial icon associated with the user in AWS CodeStar projects. If spaces are\n      included in the display name, the first character that appears after the space will be used as\n      the second character in the user initial icon. The initial icon displays a maximum of two\n      characters, so a display name with more than one space (for example \"Mary Jane Major\") would\n      generate an initial icon using the first character and the first character after the space\n      (\"MJ\", not \"MM\").</simpara>\n      ",
+            "documentation": "\n         <p>The display name shown for the user in AWS CodeStar projects. For example, this could be set\n      to both first and last name (\"Mary Major\") or a single name (\"Mary\"). The display name is also\n      used to generate the initial icon associated with the user in AWS CodeStar projects. If spaces are\n      included in the display name, the first character that appears after the space will be used as\n      the second character in the user initial icon. The initial icon displays a maximum of two\n      characters, so a display name with more than one space (for example \"Mary Jane Major\") would\n      generate an initial icon using the first character and the first character after the space\n      (\"MJ\", not \"MM\").</p>\n      ",
             "shape_name": "UserProfileDisplayName",
             "min_length": 1,
             "max_length": 64
@@ -3332,8 +3569,8 @@
                   "type": "string",
                   "pattern": "^\\S(.*\\S)?$",
                   "sensitive": true,
-                  "zonbookDocumentation": "\n         <simpara>The display name of a user in AWS CodeStar. For example, this could be set to both\n      first and last name (\"Mary Major\") or a single name (\"Mary\"). The display name is also used to\n      generate the initial icon associated with the user in AWS CodeStar projects. If spaces are\n      included in the display name, the first character that appears after the space will be used as\n      the second character in the user initial icon. The initial icon displays a maximum of two\n      characters, so a display name with more than one space (for example \"Mary Jane Major\") would\n      generate an initial icon using the first character and the first character after the space\n      (\"MJ\", not \"MM\").</simpara>\n      ",
-                  "documentation": "\n         <p>The display name of a user in AWS CodeStar. For example, this could be set to both\n      first and last name (\"Mary Major\") or a single name (\"Mary\"). The display name is also used to\n      generate the initial icon associated with the user in AWS CodeStar projects. If spaces are\n      included in the display name, the first character that appears after the space will be used as\n      the second character in the user initial icon. The initial icon displays a maximum of two\n      characters, so a display name with more than one space (for example \"Mary Jane Major\") would\n      generate an initial icon using the first character and the first character after the space\n      (\"MJ\", not \"MM\").</p>\n      ",
+                  "zonbookDocumentation": "\n         <simpara>The display name of a user in AWS CodeStar. For example, this could be set to both first and\n      last name (\"Mary Major\") or a single name (\"Mary\"). The display name is also used to generate\n      the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the\n      display name, the first character that appears after the space will be used as the second\n      character in the user initial icon. The initial icon displays a maximum of two characters, so\n      a display name with more than one space (for example \"Mary Jane Major\") would generate an\n      initial icon using the first character and the first character after the space (\"MJ\", not\n      \"MM\").</simpara>\n      ",
+                  "documentation": "\n         <p>The display name of a user in AWS CodeStar. For example, this could be set to both first and\n      last name (\"Mary Major\") or a single name (\"Mary\"). The display name is also used to generate\n      the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the\n      display name, the first character that appears after the space will be used as the second\n      character in the user initial icon. The initial icon displays a maximum of two characters, so\n      a display name with more than one space (for example \"Mary Jane Major\") would generate an\n      initial icon using the first character and the first character after the space (\"MJ\", not\n      \"MM\").</p>\n      ",
                   "shape_name": "UserProfileDisplayName",
                   "min_length": 1,
                   "max_length": 64
@@ -3351,8 +3588,8 @@
                 "sshPublicKey": {
                   "type": "string",
                   "pattern": "^[\\t\\r\\n\\u0020-\\u00FF]*$",
-                  "zonbookDocumentation": "\n         <simpara>The SSH public key associated with the user in AWS CodeStar. If a project owner allows\n      the user remote access to project resources, this public key will be used along with the\n      user's private key for SSH access.</simpara>\n      ",
-                  "documentation": "\n         <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows\n      the user remote access to project resources, this public key will be used along with the\n      user's private key for SSH access.</p>\n      ",
+                  "zonbookDocumentation": "\n         <simpara>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the\n      user remote access to project resources, this public key will be used along with the user's\n      private key for SSH access.</simpara>\n      ",
+                  "documentation": "\n         <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the\n      user remote access to project resources, this public key will be used along with the user's\n      private key for SSH access.</p>\n      ",
                   "shape_name": "SshPublicKey",
                   "max_length": 16384
                 }
@@ -3433,8 +3670,8 @@
           "sshPublicKey": {
             "type": "string",
             "pattern": "^[\\t\\r\\n\\u0020-\\u00FF]*$",
-            "zonbookDocumentation": "\n         <simpara>The SSH public key associated with the user in AWS CodeStar. If a project owner allows\n      the user remote access to project resources, this public key will be used along with the\n      user's private key for SSH access.</simpara>\n      ",
-            "documentation": "\n         <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows\n      the user remote access to project resources, this public key will be used along with the\n      user's private key for SSH access.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the\n      user remote access to project resources, this public key will be used along with the user's\n      private key for SSH access.</simpara>\n      ",
+            "documentation": "\n         <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the\n      user remote access to project resources, this public key will be used along with the user's\n      private key for SSH access.</p>\n      ",
             "shape_name": "SshPublicKey",
             "max_length": 16384
           }
@@ -3478,8 +3715,8 @@
           "sshPublicKey": {
             "type": "string",
             "pattern": "^[\\t\\r\\n\\u0020-\\u00FF]*$",
-            "zonbookDocumentation": "\n         <simpara>The SSH public key associated with the user in AWS CodeStar. This is the public portion\n      of the public/private keypair the user can use to access project resources if a project owner\n      allows the user remote access to those resources.</simpara>\n      ",
-            "documentation": "\n         <p>The SSH public key associated with the user in AWS CodeStar. This is the public portion\n      of the public/private keypair the user can use to access project resources if a project owner\n      allows the user remote access to those resources.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>The SSH public key associated with the user in AWS CodeStar. This is the public portion of the\n      public/private keypair the user can use to access project resources if a project owner allows\n      the user remote access to those resources.</simpara>\n      ",
+            "documentation": "\n         <p>The SSH public key associated with the user in AWS CodeStar. This is the public portion of the\n      public/private keypair the user can use to access project resources if a project owner allows\n      the user remote access to those resources.</p>\n      ",
             "shape_name": "SshPublicKey",
             "max_length": 16384
           },

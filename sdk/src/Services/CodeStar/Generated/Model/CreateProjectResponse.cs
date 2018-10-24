@@ -40,7 +40,7 @@ namespace Amazon.CodeStar.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// Reserved for future use.
+        /// The Amazon Resource Name (ARN) of the created project.
         /// </para>
         /// </summary>
         public string Arn
@@ -58,7 +58,8 @@ namespace Amazon.CodeStar.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// Reserved for future use.
+        /// A user- or system-generated token that identifies the entity that requested project
+        /// creation.
         /// </para>
         /// </summary>
         public string ClientRequestToken
@@ -76,7 +77,7 @@ namespace Amazon.CodeStar.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// Reserved for future use.
+        /// The ID of the project.
         /// </para>
         /// </summary>
         public string Id

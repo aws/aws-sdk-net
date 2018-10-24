@@ -438,6 +438,38 @@
     <pattern>^arn:aws:iam::\d{12}:user(?:(\u002F)|(\u002F[\u0021-\u007E]+\u002F))[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeStar.Model.CodeCommitCodeDestination.Name</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^\S[\w.-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeStar.Model.GitHubCodeDestination.Description</property>
+    <min>1</min>
+    <max>1000</max>
+    <pattern>^\S(.*\S)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeStar.Model.GitHubCodeDestination.Name</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^\S[\w.-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeStar.Model.GitHubCodeDestination.Owner</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^\S(.*\S)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeStar.Model.GitHubCodeDestination.Token</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeStar.Model.GitHubCodeDestination.Type</property>
+    <pattern>^(user|organization|User|Organization)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeStar.Model.ProjectStatus.Reason</property>
     <max>1024</max>
     <pattern>^$|^\S(.*\S)?$</pattern>
@@ -462,6 +494,11 @@
     <pattern>^arn\:aws\:\S.*\:.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeStar.Model.S3Location.BucketName</property>
+    <min>3</min>
+    <max>63</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeStar.Model.TeamMember.ProjectRole</property>
     <pattern>^(Owner|Viewer|Contributor)$</pattern>
   </property-value-rule>
@@ -470,6 +507,11 @@
     <min>32</min>
     <max>95</max>
     <pattern>^arn:aws:iam::\d{12}:user(?:(\u002F)|(\u002F[\u0021-\u007E]+\u002F))[\w+=,.@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeStar.Model.Toolchain.RoleArn</property>
+    <min>1</min>
+    <max>1224</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStar.Model.UserProfileSummary.DisplayName</property>
