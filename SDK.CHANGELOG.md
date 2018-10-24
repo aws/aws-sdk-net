@@ -1,3 +1,9 @@
+### 3.3.393.0 (2018-10-24 19:20 UTC)
+* AlexaForBusiness (3.3.6.0)
+	* We extended the functionality of the Alexa for Business SDK, including additional support for third-party Alexa built-in devices, managing private and public skills, and conferencing setup.
+* CodeStar (3.3.3.0)
+	* This release lets you create projects from source code and a toolchain definition that you provide.
+
 ### 3.3.392.0 (2018-10-23 20:09 UTC)
 * EC2 (3.3.67.0)
 	* Provides customers the ability to Bring Your Own IP (BYOIP) prefix.  You can bring part or all of your public IPv4 address range from your on-premises network to your AWS account. You continue to own the address range, but AWS advertises it on the internet.

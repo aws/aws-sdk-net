@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.392.0",
+    "ProductVersion" : "3.3.393.0",
     "CoreVersion"    : "3.3.28.1",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -769,7 +769,7 @@
             "InPreview"               : false
         },
         "CodeStar"                        : {
-            "Version" : "3.3.2.5",
+            "Version" : "3.3.3.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.28.1"
@@ -1001,7 +1001,7 @@
             "InPreview"               : false
         },
         "AlexaForBusiness"                : {
-            "Version" : "3.3.5.16",
+            "Version" : "3.3.6.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.28.1"
