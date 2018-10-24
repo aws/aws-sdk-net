@@ -67,6 +67,12 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetEnablementType())
+                {
+                    context.Writer.WritePropertyName("EnablementType");
+                    context.Writer.Write(publicRequest.EnablementType);
+                }
+
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
@@ -83,6 +89,12 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("SkillGroupArn");
                     context.Writer.Write(publicRequest.SkillGroupArn);
+                }
+
+                if(publicRequest.IsSetSkillType())
+                {
+                    context.Writer.WritePropertyName("SkillType");
+                    context.Writer.Write(publicRequest.SkillType);
                 }
 
         

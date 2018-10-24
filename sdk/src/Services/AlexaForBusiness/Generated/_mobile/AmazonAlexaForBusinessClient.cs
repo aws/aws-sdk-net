@@ -43,7 +43,9 @@ namespace Amazon.AlexaForBusiness
     /// using the Alexa Skills Kit and the Alexa for Business API operations. You can make
     /// also these available as private skills for your organization. Alexa for Business makes
     /// it easy to voice-enable your products and services, providing context-aware voice
-    /// experiences for your customers.
+    /// experiences for your customers. In addition, Alexa for Business enables Alexa Voice
+    /// Services (AVS) device manufacturers to centrally deploy and manage their devices in
+    /// Alexa for Business as shared devices as a part of their existing management flow.
     /// </summary>
     public partial class AmazonAlexaForBusinessClient : AmazonServiceClient, IAmazonAlexaForBusiness
     {
@@ -248,6 +250,38 @@ namespace Amazon.AlexaForBusiness
         #endregion
 
         
+        #region  ApproveSkill
+
+        internal virtual ApproveSkillResponse ApproveSkill(ApproveSkillRequest request)
+        {
+            var marshaller = ApproveSkillRequestMarshaller.Instance;
+            var unmarshaller = ApproveSkillResponseUnmarshaller.Instance;
+
+            return Invoke<ApproveSkillRequest,ApproveSkillResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ApproveSkill operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ApproveSkill operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ApproveSkill">REST API Reference for ApproveSkill Operation</seealso>
+        public virtual Task<ApproveSkillResponse> ApproveSkillAsync(ApproveSkillRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ApproveSkillRequestMarshaller.Instance;
+            var unmarshaller = ApproveSkillResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ApproveSkillRequest,ApproveSkillResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AssociateContactWithAddressBook
 
         internal virtual AssociateContactWithAddressBookResponse AssociateContactWithAddressBook(AssociateContactWithAddressBookRequest request)
@@ -344,6 +378,38 @@ namespace Amazon.AlexaForBusiness
 
         #endregion
         
+        #region  AssociateSkillWithSkillGroup
+
+        internal virtual AssociateSkillWithSkillGroupResponse AssociateSkillWithSkillGroup(AssociateSkillWithSkillGroupRequest request)
+        {
+            var marshaller = AssociateSkillWithSkillGroupRequestMarshaller.Instance;
+            var unmarshaller = AssociateSkillWithSkillGroupResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateSkillWithSkillGroupRequest,AssociateSkillWithSkillGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateSkillWithSkillGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSkillWithSkillGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithSkillGroup">REST API Reference for AssociateSkillWithSkillGroup Operation</seealso>
+        public virtual Task<AssociateSkillWithSkillGroupResponse> AssociateSkillWithSkillGroupAsync(AssociateSkillWithSkillGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = AssociateSkillWithSkillGroupRequestMarshaller.Instance;
+            var unmarshaller = AssociateSkillWithSkillGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateSkillWithSkillGroupRequest,AssociateSkillWithSkillGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateAddressBook
 
         internal virtual CreateAddressBookResponse CreateAddressBook(CreateAddressBookRequest request)
@@ -371,6 +437,38 @@ namespace Amazon.AlexaForBusiness
             var unmarshaller = CreateAddressBookResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateAddressBookRequest,CreateAddressBookResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateConferenceProvider
+
+        internal virtual CreateConferenceProviderResponse CreateConferenceProvider(CreateConferenceProviderRequest request)
+        {
+            var marshaller = CreateConferenceProviderRequestMarshaller.Instance;
+            var unmarshaller = CreateConferenceProviderResponseUnmarshaller.Instance;
+
+            return Invoke<CreateConferenceProviderRequest,CreateConferenceProviderResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateConferenceProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateConferenceProvider operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateConferenceProvider">REST API Reference for CreateConferenceProvider Operation</seealso>
+        public virtual Task<CreateConferenceProviderResponse> CreateConferenceProviderAsync(CreateConferenceProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateConferenceProviderRequestMarshaller.Instance;
+            var unmarshaller = CreateConferenceProviderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateConferenceProviderRequest,CreateConferenceProviderResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -568,6 +666,38 @@ namespace Amazon.AlexaForBusiness
 
         #endregion
         
+        #region  DeleteConferenceProvider
+
+        internal virtual DeleteConferenceProviderResponse DeleteConferenceProvider(DeleteConferenceProviderRequest request)
+        {
+            var marshaller = DeleteConferenceProviderRequestMarshaller.Instance;
+            var unmarshaller = DeleteConferenceProviderResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteConferenceProviderRequest,DeleteConferenceProviderResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteConferenceProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConferenceProvider operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteConferenceProvider">REST API Reference for DeleteConferenceProvider Operation</seealso>
+        public virtual Task<DeleteConferenceProviderResponse> DeleteConferenceProviderAsync(DeleteConferenceProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteConferenceProviderRequestMarshaller.Instance;
+            var unmarshaller = DeleteConferenceProviderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteConferenceProviderRequest,DeleteConferenceProviderResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteContact
 
         internal virtual DeleteContactResponse DeleteContact(DeleteContactRequest request)
@@ -595,6 +725,38 @@ namespace Amazon.AlexaForBusiness
             var unmarshaller = DeleteContactResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteContactRequest,DeleteContactResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteDevice
+
+        internal virtual DeleteDeviceResponse DeleteDevice(DeleteDeviceRequest request)
+        {
+            var marshaller = DeleteDeviceRequestMarshaller.Instance;
+            var unmarshaller = DeleteDeviceResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDeviceRequest,DeleteDeviceResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDevice operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDevice operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteDevice">REST API Reference for DeleteDevice Operation</seealso>
+        public virtual Task<DeleteDeviceResponse> DeleteDeviceAsync(DeleteDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteDeviceRequestMarshaller.Instance;
+            var unmarshaller = DeleteDeviceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDeviceRequest,DeleteDeviceResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -691,6 +853,38 @@ namespace Amazon.AlexaForBusiness
             var unmarshaller = DeleteRoomSkillParameterResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteRoomSkillParameterRequest,DeleteRoomSkillParameterResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteSkillAuthorization
+
+        internal virtual DeleteSkillAuthorizationResponse DeleteSkillAuthorization(DeleteSkillAuthorizationRequest request)
+        {
+            var marshaller = DeleteSkillAuthorizationRequestMarshaller.Instance;
+            var unmarshaller = DeleteSkillAuthorizationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSkillAuthorizationRequest,DeleteSkillAuthorizationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSkillAuthorization operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSkillAuthorization operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteSkillAuthorization">REST API Reference for DeleteSkillAuthorization Operation</seealso>
+        public virtual Task<DeleteSkillAuthorizationResponse> DeleteSkillAuthorizationAsync(DeleteSkillAuthorizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteSkillAuthorizationRequestMarshaller.Instance;
+            var unmarshaller = DeleteSkillAuthorizationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteSkillAuthorizationRequest,DeleteSkillAuthorizationResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -824,6 +1018,38 @@ namespace Amazon.AlexaForBusiness
 
         #endregion
         
+        #region  DisassociateSkillFromSkillGroup
+
+        internal virtual DisassociateSkillFromSkillGroupResponse DisassociateSkillFromSkillGroup(DisassociateSkillFromSkillGroupRequest request)
+        {
+            var marshaller = DisassociateSkillFromSkillGroupRequestMarshaller.Instance;
+            var unmarshaller = DisassociateSkillFromSkillGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateSkillFromSkillGroupRequest,DisassociateSkillFromSkillGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateSkillFromSkillGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateSkillFromSkillGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillFromSkillGroup">REST API Reference for DisassociateSkillFromSkillGroup Operation</seealso>
+        public virtual Task<DisassociateSkillFromSkillGroupResponse> DisassociateSkillFromSkillGroupAsync(DisassociateSkillFromSkillGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DisassociateSkillFromSkillGroupRequestMarshaller.Instance;
+            var unmarshaller = DisassociateSkillFromSkillGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateSkillFromSkillGroupRequest,DisassociateSkillFromSkillGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisassociateSkillGroupFromRoom
 
         internal virtual DisassociateSkillGroupFromRoomResponse DisassociateSkillGroupFromRoom(DisassociateSkillGroupFromRoomRequest request)
@@ -856,6 +1082,38 @@ namespace Amazon.AlexaForBusiness
 
         #endregion
         
+        #region  ForgetSmartHomeAppliances
+
+        internal virtual ForgetSmartHomeAppliancesResponse ForgetSmartHomeAppliances(ForgetSmartHomeAppliancesRequest request)
+        {
+            var marshaller = ForgetSmartHomeAppliancesRequestMarshaller.Instance;
+            var unmarshaller = ForgetSmartHomeAppliancesResponseUnmarshaller.Instance;
+
+            return Invoke<ForgetSmartHomeAppliancesRequest,ForgetSmartHomeAppliancesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ForgetSmartHomeAppliances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ForgetSmartHomeAppliances operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ForgetSmartHomeAppliances">REST API Reference for ForgetSmartHomeAppliances Operation</seealso>
+        public virtual Task<ForgetSmartHomeAppliancesResponse> ForgetSmartHomeAppliancesAsync(ForgetSmartHomeAppliancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ForgetSmartHomeAppliancesRequestMarshaller.Instance;
+            var unmarshaller = ForgetSmartHomeAppliancesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ForgetSmartHomeAppliancesRequest,ForgetSmartHomeAppliancesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetAddressBook
 
         internal virtual GetAddressBookResponse GetAddressBook(GetAddressBookRequest request)
@@ -883,6 +1141,70 @@ namespace Amazon.AlexaForBusiness
             var unmarshaller = GetAddressBookResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetAddressBookRequest,GetAddressBookResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetConferencePreference
+
+        internal virtual GetConferencePreferenceResponse GetConferencePreference(GetConferencePreferenceRequest request)
+        {
+            var marshaller = GetConferencePreferenceRequestMarshaller.Instance;
+            var unmarshaller = GetConferencePreferenceResponseUnmarshaller.Instance;
+
+            return Invoke<GetConferencePreferenceRequest,GetConferencePreferenceResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetConferencePreference operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetConferencePreference operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetConferencePreference">REST API Reference for GetConferencePreference Operation</seealso>
+        public virtual Task<GetConferencePreferenceResponse> GetConferencePreferenceAsync(GetConferencePreferenceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetConferencePreferenceRequestMarshaller.Instance;
+            var unmarshaller = GetConferencePreferenceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetConferencePreferenceRequest,GetConferencePreferenceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetConferenceProvider
+
+        internal virtual GetConferenceProviderResponse GetConferenceProvider(GetConferenceProviderRequest request)
+        {
+            var marshaller = GetConferenceProviderRequestMarshaller.Instance;
+            var unmarshaller = GetConferenceProviderResponseUnmarshaller.Instance;
+
+            return Invoke<GetConferenceProviderRequest,GetConferenceProviderResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetConferenceProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetConferenceProvider operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetConferenceProvider">REST API Reference for GetConferenceProvider Operation</seealso>
+        public virtual Task<GetConferenceProviderResponse> GetConferenceProviderAsync(GetConferenceProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetConferenceProviderRequestMarshaller.Instance;
+            var unmarshaller = GetConferenceProviderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetConferenceProviderRequest,GetConferenceProviderResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1080,6 +1402,38 @@ namespace Amazon.AlexaForBusiness
 
         #endregion
         
+        #region  ListConferenceProviders
+
+        internal virtual ListConferenceProvidersResponse ListConferenceProviders(ListConferenceProvidersRequest request)
+        {
+            var marshaller = ListConferenceProvidersRequestMarshaller.Instance;
+            var unmarshaller = ListConferenceProvidersResponseUnmarshaller.Instance;
+
+            return Invoke<ListConferenceProvidersRequest,ListConferenceProvidersResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListConferenceProviders operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListConferenceProviders operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListConferenceProviders">REST API Reference for ListConferenceProviders Operation</seealso>
+        public virtual Task<ListConferenceProvidersResponse> ListConferenceProvidersAsync(ListConferenceProvidersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListConferenceProvidersRequestMarshaller.Instance;
+            var unmarshaller = ListConferenceProvidersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListConferenceProvidersRequest,ListConferenceProvidersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListDeviceEvents
 
         internal virtual ListDeviceEventsResponse ListDeviceEvents(ListDeviceEventsRequest request)
@@ -1144,6 +1498,102 @@ namespace Amazon.AlexaForBusiness
 
         #endregion
         
+        #region  ListSkillsStoreCategories
+
+        internal virtual ListSkillsStoreCategoriesResponse ListSkillsStoreCategories(ListSkillsStoreCategoriesRequest request)
+        {
+            var marshaller = ListSkillsStoreCategoriesRequestMarshaller.Instance;
+            var unmarshaller = ListSkillsStoreCategoriesResponseUnmarshaller.Instance;
+
+            return Invoke<ListSkillsStoreCategoriesRequest,ListSkillsStoreCategoriesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSkillsStoreCategories operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSkillsStoreCategories operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkillsStoreCategories">REST API Reference for ListSkillsStoreCategories Operation</seealso>
+        public virtual Task<ListSkillsStoreCategoriesResponse> ListSkillsStoreCategoriesAsync(ListSkillsStoreCategoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListSkillsStoreCategoriesRequestMarshaller.Instance;
+            var unmarshaller = ListSkillsStoreCategoriesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListSkillsStoreCategoriesRequest,ListSkillsStoreCategoriesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListSkillsStoreSkillsByCategory
+
+        internal virtual ListSkillsStoreSkillsByCategoryResponse ListSkillsStoreSkillsByCategory(ListSkillsStoreSkillsByCategoryRequest request)
+        {
+            var marshaller = ListSkillsStoreSkillsByCategoryRequestMarshaller.Instance;
+            var unmarshaller = ListSkillsStoreSkillsByCategoryResponseUnmarshaller.Instance;
+
+            return Invoke<ListSkillsStoreSkillsByCategoryRequest,ListSkillsStoreSkillsByCategoryResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSkillsStoreSkillsByCategory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSkillsStoreSkillsByCategory operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkillsStoreSkillsByCategory">REST API Reference for ListSkillsStoreSkillsByCategory Operation</seealso>
+        public virtual Task<ListSkillsStoreSkillsByCategoryResponse> ListSkillsStoreSkillsByCategoryAsync(ListSkillsStoreSkillsByCategoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListSkillsStoreSkillsByCategoryRequestMarshaller.Instance;
+            var unmarshaller = ListSkillsStoreSkillsByCategoryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListSkillsStoreSkillsByCategoryRequest,ListSkillsStoreSkillsByCategoryResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListSmartHomeAppliances
+
+        internal virtual ListSmartHomeAppliancesResponse ListSmartHomeAppliances(ListSmartHomeAppliancesRequest request)
+        {
+            var marshaller = ListSmartHomeAppliancesRequestMarshaller.Instance;
+            var unmarshaller = ListSmartHomeAppliancesResponseUnmarshaller.Instance;
+
+            return Invoke<ListSmartHomeAppliancesRequest,ListSmartHomeAppliancesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSmartHomeAppliances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSmartHomeAppliances operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSmartHomeAppliances">REST API Reference for ListSmartHomeAppliances Operation</seealso>
+        public virtual Task<ListSmartHomeAppliancesResponse> ListSmartHomeAppliancesAsync(ListSmartHomeAppliancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListSmartHomeAppliancesRequestMarshaller.Instance;
+            var unmarshaller = ListSmartHomeAppliancesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListSmartHomeAppliancesRequest,ListSmartHomeAppliancesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTags
 
         internal virtual ListTagsResponse ListTags(ListTagsRequest request)
@@ -1176,6 +1626,38 @@ namespace Amazon.AlexaForBusiness
 
         #endregion
         
+        #region  PutConferencePreference
+
+        internal virtual PutConferencePreferenceResponse PutConferencePreference(PutConferencePreferenceRequest request)
+        {
+            var marshaller = PutConferencePreferenceRequestMarshaller.Instance;
+            var unmarshaller = PutConferencePreferenceResponseUnmarshaller.Instance;
+
+            return Invoke<PutConferencePreferenceRequest,PutConferencePreferenceResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutConferencePreference operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutConferencePreference operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutConferencePreference">REST API Reference for PutConferencePreference Operation</seealso>
+        public virtual Task<PutConferencePreferenceResponse> PutConferencePreferenceAsync(PutConferencePreferenceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = PutConferencePreferenceRequestMarshaller.Instance;
+            var unmarshaller = PutConferencePreferenceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutConferencePreferenceRequest,PutConferencePreferenceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutRoomSkillParameter
 
         internal virtual PutRoomSkillParameterResponse PutRoomSkillParameter(PutRoomSkillParameterRequest request)
@@ -1203,6 +1685,102 @@ namespace Amazon.AlexaForBusiness
             var unmarshaller = PutRoomSkillParameterResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutRoomSkillParameterRequest,PutRoomSkillParameterResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutSkillAuthorization
+
+        internal virtual PutSkillAuthorizationResponse PutSkillAuthorization(PutSkillAuthorizationRequest request)
+        {
+            var marshaller = PutSkillAuthorizationRequestMarshaller.Instance;
+            var unmarshaller = PutSkillAuthorizationResponseUnmarshaller.Instance;
+
+            return Invoke<PutSkillAuthorizationRequest,PutSkillAuthorizationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutSkillAuthorization operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutSkillAuthorization operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutSkillAuthorization">REST API Reference for PutSkillAuthorization Operation</seealso>
+        public virtual Task<PutSkillAuthorizationResponse> PutSkillAuthorizationAsync(PutSkillAuthorizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = PutSkillAuthorizationRequestMarshaller.Instance;
+            var unmarshaller = PutSkillAuthorizationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutSkillAuthorizationRequest,PutSkillAuthorizationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RegisterAVSDevice
+
+        internal virtual RegisterAVSDeviceResponse RegisterAVSDevice(RegisterAVSDeviceRequest request)
+        {
+            var marshaller = RegisterAVSDeviceRequestMarshaller.Instance;
+            var unmarshaller = RegisterAVSDeviceResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterAVSDeviceRequest,RegisterAVSDeviceResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterAVSDevice operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterAVSDevice operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RegisterAVSDevice">REST API Reference for RegisterAVSDevice Operation</seealso>
+        public virtual Task<RegisterAVSDeviceResponse> RegisterAVSDeviceAsync(RegisterAVSDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = RegisterAVSDeviceRequestMarshaller.Instance;
+            var unmarshaller = RegisterAVSDeviceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RegisterAVSDeviceRequest,RegisterAVSDeviceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RejectSkill
+
+        internal virtual RejectSkillResponse RejectSkill(RejectSkillRequest request)
+        {
+            var marshaller = RejectSkillRequestMarshaller.Instance;
+            var unmarshaller = RejectSkillResponseUnmarshaller.Instance;
+
+            return Invoke<RejectSkillRequest,RejectSkillResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RejectSkill operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RejectSkill operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RejectSkill">REST API Reference for RejectSkill Operation</seealso>
+        public virtual Task<RejectSkillResponse> RejectSkillAsync(RejectSkillRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = RejectSkillRequestMarshaller.Instance;
+            var unmarshaller = RejectSkillResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RejectSkillRequest,RejectSkillResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1560,6 +2138,38 @@ namespace Amazon.AlexaForBusiness
 
         #endregion
         
+        #region  StartSmartHomeApplianceDiscovery
+
+        internal virtual StartSmartHomeApplianceDiscoveryResponse StartSmartHomeApplianceDiscovery(StartSmartHomeApplianceDiscoveryRequest request)
+        {
+            var marshaller = StartSmartHomeApplianceDiscoveryRequestMarshaller.Instance;
+            var unmarshaller = StartSmartHomeApplianceDiscoveryResponseUnmarshaller.Instance;
+
+            return Invoke<StartSmartHomeApplianceDiscoveryRequest,StartSmartHomeApplianceDiscoveryResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartSmartHomeApplianceDiscovery operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartSmartHomeApplianceDiscovery operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/StartSmartHomeApplianceDiscovery">REST API Reference for StartSmartHomeApplianceDiscovery Operation</seealso>
+        public virtual Task<StartSmartHomeApplianceDiscoveryResponse> StartSmartHomeApplianceDiscoveryAsync(StartSmartHomeApplianceDiscoveryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = StartSmartHomeApplianceDiscoveryRequestMarshaller.Instance;
+            var unmarshaller = StartSmartHomeApplianceDiscoveryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartSmartHomeApplianceDiscoveryRequest,StartSmartHomeApplianceDiscoveryResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  TagResource
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
@@ -1651,6 +2261,38 @@ namespace Amazon.AlexaForBusiness
             var unmarshaller = UpdateAddressBookResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateAddressBookRequest,UpdateAddressBookResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateConferenceProvider
+
+        internal virtual UpdateConferenceProviderResponse UpdateConferenceProvider(UpdateConferenceProviderRequest request)
+        {
+            var marshaller = UpdateConferenceProviderRequestMarshaller.Instance;
+            var unmarshaller = UpdateConferenceProviderResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateConferenceProviderRequest,UpdateConferenceProviderResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateConferenceProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConferenceProvider operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateConferenceProvider">REST API Reference for UpdateConferenceProvider Operation</seealso>
+        public virtual Task<UpdateConferenceProviderResponse> UpdateConferenceProviderAsync(UpdateConferenceProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateConferenceProviderRequestMarshaller.Instance;
+            var unmarshaller = UpdateConferenceProviderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateConferenceProviderRequest,UpdateConferenceProviderResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

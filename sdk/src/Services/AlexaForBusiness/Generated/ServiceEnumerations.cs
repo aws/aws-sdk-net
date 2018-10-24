@@ -25,6 +25,142 @@ namespace Amazon.AlexaForBusiness
 {
 
     /// <summary>
+    /// Constants used for properties of type CommsProtocol.
+    /// </summary>
+    public class CommsProtocol : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant H323 for CommsProtocol
+        /// </summary>
+        public static readonly CommsProtocol H323 = new CommsProtocol("H323");
+        /// <summary>
+        /// Constant SIP for CommsProtocol
+        /// </summary>
+        public static readonly CommsProtocol SIP = new CommsProtocol("SIP");
+        /// <summary>
+        /// Constant SIPS for CommsProtocol
+        /// </summary>
+        public static readonly CommsProtocol SIPS = new CommsProtocol("SIPS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CommsProtocol(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CommsProtocol FindValue(string value)
+        {
+            return FindValue<CommsProtocol>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CommsProtocol(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConferenceProviderType.
+    /// </summary>
+    public class ConferenceProviderType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BLUEJEANS for ConferenceProviderType
+        /// </summary>
+        public static readonly ConferenceProviderType BLUEJEANS = new ConferenceProviderType("BLUEJEANS");
+        /// <summary>
+        /// Constant CHIME for ConferenceProviderType
+        /// </summary>
+        public static readonly ConferenceProviderType CHIME = new ConferenceProviderType("CHIME");
+        /// <summary>
+        /// Constant CUSTOM for ConferenceProviderType
+        /// </summary>
+        public static readonly ConferenceProviderType CUSTOM = new ConferenceProviderType("CUSTOM");
+        /// <summary>
+        /// Constant FUZE for ConferenceProviderType
+        /// </summary>
+        public static readonly ConferenceProviderType FUZE = new ConferenceProviderType("FUZE");
+        /// <summary>
+        /// Constant GOOGLE_HANGOUTS for ConferenceProviderType
+        /// </summary>
+        public static readonly ConferenceProviderType GOOGLE_HANGOUTS = new ConferenceProviderType("GOOGLE_HANGOUTS");
+        /// <summary>
+        /// Constant POLYCOM for ConferenceProviderType
+        /// </summary>
+        public static readonly ConferenceProviderType POLYCOM = new ConferenceProviderType("POLYCOM");
+        /// <summary>
+        /// Constant RINGCENTRAL for ConferenceProviderType
+        /// </summary>
+        public static readonly ConferenceProviderType RINGCENTRAL = new ConferenceProviderType("RINGCENTRAL");
+        /// <summary>
+        /// Constant SKYPE_FOR_BUSINESS for ConferenceProviderType
+        /// </summary>
+        public static readonly ConferenceProviderType SKYPE_FOR_BUSINESS = new ConferenceProviderType("SKYPE_FOR_BUSINESS");
+        /// <summary>
+        /// Constant WEBEX for ConferenceProviderType
+        /// </summary>
+        public static readonly ConferenceProviderType WEBEX = new ConferenceProviderType("WEBEX");
+        /// <summary>
+        /// Constant ZOOM for ConferenceProviderType
+        /// </summary>
+        public static readonly ConferenceProviderType ZOOM = new ConferenceProviderType("ZOOM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConferenceProviderType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConferenceProviderType FindValue(string value)
+        {
+            return FindValue<ConferenceProviderType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConferenceProviderType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConnectionStatus.
     /// </summary>
     public class ConnectionStatus : ConstantClass
@@ -283,6 +419,106 @@ namespace Amazon.AlexaForBusiness
 
 
     /// <summary>
+    /// Constants used for properties of type EnablementType.
+    /// </summary>
+    public class EnablementType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ENABLED for EnablementType
+        /// </summary>
+        public static readonly EnablementType ENABLED = new EnablementType("ENABLED");
+        /// <summary>
+        /// Constant PENDING for EnablementType
+        /// </summary>
+        public static readonly EnablementType PENDING = new EnablementType("PENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EnablementType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EnablementType FindValue(string value)
+        {
+            return FindValue<EnablementType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EnablementType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EnablementTypeFilter.
+    /// </summary>
+    public class EnablementTypeFilter : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ENABLED for EnablementTypeFilter
+        /// </summary>
+        public static readonly EnablementTypeFilter ENABLED = new EnablementTypeFilter("ENABLED");
+        /// <summary>
+        /// Constant PENDING for EnablementTypeFilter
+        /// </summary>
+        public static readonly EnablementTypeFilter PENDING = new EnablementTypeFilter("PENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EnablementTypeFilter(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EnablementTypeFilter FindValue(string value)
+        {
+            return FindValue<EnablementTypeFilter>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EnablementTypeFilter(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EnrollmentStatus.
     /// </summary>
     public class EnrollmentStatus : ConstantClass
@@ -404,6 +640,164 @@ namespace Amazon.AlexaForBusiness
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Feature(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RequirePin.
+    /// </summary>
+    public class RequirePin : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NO for RequirePin
+        /// </summary>
+        public static readonly RequirePin NO = new RequirePin("NO");
+        /// <summary>
+        /// Constant OPTIONAL for RequirePin
+        /// </summary>
+        public static readonly RequirePin OPTIONAL = new RequirePin("OPTIONAL");
+        /// <summary>
+        /// Constant YES for RequirePin
+        /// </summary>
+        public static readonly RequirePin YES = new RequirePin("YES");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RequirePin(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RequirePin FindValue(string value)
+        {
+            return FindValue<RequirePin>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RequirePin(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SkillType.
+    /// </summary>
+    public class SkillType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PRIVATE for SkillType
+        /// </summary>
+        public static readonly SkillType PRIVATE = new SkillType("PRIVATE");
+        /// <summary>
+        /// Constant PUBLIC for SkillType
+        /// </summary>
+        public static readonly SkillType PUBLIC = new SkillType("PUBLIC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SkillType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SkillType FindValue(string value)
+        {
+            return FindValue<SkillType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SkillType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SkillTypeFilter.
+    /// </summary>
+    public class SkillTypeFilter : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for SkillTypeFilter
+        /// </summary>
+        public static readonly SkillTypeFilter ALL = new SkillTypeFilter("ALL");
+        /// <summary>
+        /// Constant PRIVATE for SkillTypeFilter
+        /// </summary>
+        public static readonly SkillTypeFilter PRIVATE = new SkillTypeFilter("PRIVATE");
+        /// <summary>
+        /// Constant PUBLIC for SkillTypeFilter
+        /// </summary>
+        public static readonly SkillTypeFilter PUBLIC = new SkillTypeFilter("PUBLIC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SkillTypeFilter(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SkillTypeFilter FindValue(string value)
+        {
+            return FindValue<SkillTypeFilter>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SkillTypeFilter(string value)
         {
             return FindValue(value);
         }

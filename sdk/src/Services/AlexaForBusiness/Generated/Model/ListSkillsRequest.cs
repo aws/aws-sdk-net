@@ -33,9 +33,30 @@ namespace Amazon.AlexaForBusiness.Model
     /// </summary>
     public partial class ListSkillsRequest : AmazonAlexaForBusinessRequest
     {
+        private EnablementTypeFilter _enablementType;
         private int? _maxResults;
         private string _nextToken;
         private string _skillGroupArn;
+        private SkillTypeFilter _skillType;
+
+        /// <summary>
+        /// Gets and sets the property EnablementType. 
+        /// <para>
+        /// Whether the skill is enabled under the user's account, or if it requires linking to
+        /// be used.
+        /// </para>
+        /// </summary>
+        public EnablementTypeFilter EnablementType
+        {
+            get { return this._enablementType; }
+            set { this._enablementType = value; }
+        }
+
+        // Check to see if EnablementType property is set
+        internal bool IsSetEnablementType()
+        {
+            return this._enablementType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -93,6 +114,24 @@ namespace Amazon.AlexaForBusiness.Model
         internal bool IsSetSkillGroupArn()
         {
             return this._skillGroupArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SkillType. 
+        /// <para>
+        /// Whether the skill is publicly available or is a private skill.
+        /// </para>
+        /// </summary>
+        public SkillTypeFilter SkillType
+        {
+            get { return this._skillType; }
+            set { this._skillType = value; }
+        }
+
+        // Check to see if SkillType property is set
+        internal bool IsSetSkillType()
+        {
+            return this._skillType != null;
         }
 
     }

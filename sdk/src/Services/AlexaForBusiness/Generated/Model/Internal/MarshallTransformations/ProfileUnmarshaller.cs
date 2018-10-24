@@ -70,10 +70,22 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
                     unmarshalledObject.Address = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AddressBookArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AddressBookArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DistanceUnit", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DistanceUnit = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IsDefault", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IsDefault = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MaxVolumeLimit", targetDepth))

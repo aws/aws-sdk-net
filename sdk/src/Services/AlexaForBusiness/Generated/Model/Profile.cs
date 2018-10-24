@@ -33,7 +33,9 @@ namespace Amazon.AlexaForBusiness.Model
     public partial class Profile
     {
         private string _address;
+        private string _addressBookArn;
         private DistanceUnit _distanceUnit;
+        private bool? _isDefault;
         private int? _maxVolumeLimit;
         private string _profileArn;
         private string _profileName;
@@ -62,6 +64,24 @@ namespace Amazon.AlexaForBusiness.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AddressBookArn. 
+        /// <para>
+        /// The ARN of the address book.
+        /// </para>
+        /// </summary>
+        public string AddressBookArn
+        {
+            get { return this._addressBookArn; }
+            set { this._addressBookArn = value; }
+        }
+
+        // Check to see if AddressBookArn property is set
+        internal bool IsSetAddressBookArn()
+        {
+            return this._addressBookArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DistanceUnit. 
         /// <para>
         /// The distance unit of a room profile.
@@ -77,6 +97,24 @@ namespace Amazon.AlexaForBusiness.Model
         internal bool IsSetDistanceUnit()
         {
             return this._distanceUnit != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsDefault. 
+        /// <para>
+        /// Retrieves if the profile is default or not.
+        /// </para>
+        /// </summary>
+        public bool IsDefault
+        {
+            get { return this._isDefault.GetValueOrDefault(); }
+            set { this._isDefault = value; }
+        }
+
+        // Check to see if IsDefault property is set
+        internal bool IsSetIsDefault()
+        {
+            return this._isDefault.HasValue; 
         }
 
         /// <summary>

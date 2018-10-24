@@ -76,6 +76,12 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
                     unmarshalledObject.DistanceUnit = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IsDefault", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IsDefault = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ProfileArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

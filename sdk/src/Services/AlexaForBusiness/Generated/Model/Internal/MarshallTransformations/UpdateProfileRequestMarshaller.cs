@@ -79,6 +79,12 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DistanceUnit);
                 }
 
+                if(publicRequest.IsSetIsDefault())
+                {
+                    context.Writer.WritePropertyName("IsDefault");
+                    context.Writer.Write(publicRequest.IsDefault);
+                }
+
                 if(publicRequest.IsSetMaxVolumeLimit())
                 {
                     context.Writer.WritePropertyName("MaxVolumeLimit");

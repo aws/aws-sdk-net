@@ -32,9 +32,30 @@ namespace Amazon.AlexaForBusiness.Model
     /// </summary>
     public partial class SkillSummary
     {
+        private EnablementType _enablementType;
         private string _skillId;
         private string _skillName;
+        private SkillType _skillType;
         private bool? _supportsLinking;
+
+        /// <summary>
+        /// Gets and sets the property EnablementType. 
+        /// <para>
+        /// Whether the skill is enabled under the user's account, or if it requires linking to
+        /// be used.
+        /// </para>
+        /// </summary>
+        public EnablementType EnablementType
+        {
+            get { return this._enablementType; }
+            set { this._enablementType = value; }
+        }
+
+        // Check to see if EnablementType property is set
+        internal bool IsSetEnablementType()
+        {
+            return this._enablementType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property SkillId. 
@@ -70,6 +91,24 @@ namespace Amazon.AlexaForBusiness.Model
         internal bool IsSetSkillName()
         {
             return this._skillName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SkillType. 
+        /// <para>
+        /// Whether the skill is publicly available or is a private skill.
+        /// </para>
+        /// </summary>
+        public SkillType SkillType
+        {
+            get { return this._skillType; }
+            set { this._skillType = value; }
+        }
+
+        // Check to see if SkillType property is set
+        internal bool IsSetSkillType()
+        {
+            return this._skillType != null;
         }
 
         /// <summary>

@@ -34,6 +34,7 @@ namespace Amazon.AlexaForBusiness.Model
     {
         private string _address;
         private DistanceUnit _distanceUnit;
+        private bool? _isDefault;
         private string _profileArn;
         private string _profileName;
         private TemperatureUnit _temperatureUnit;
@@ -74,6 +75,24 @@ namespace Amazon.AlexaForBusiness.Model
         internal bool IsSetDistanceUnit()
         {
             return this._distanceUnit != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsDefault. 
+        /// <para>
+        /// Retrieves if the profile data is default or not.
+        /// </para>
+        /// </summary>
+        public bool IsDefault
+        {
+            get { return this._isDefault.GetValueOrDefault(); }
+            set { this._isDefault = value; }
+        }
+
+        // Check to see if IsDefault property is set
+        internal bool IsSetIsDefault()
+        {
+            return this._isDefault.HasValue; 
         }
 
         /// <summary>

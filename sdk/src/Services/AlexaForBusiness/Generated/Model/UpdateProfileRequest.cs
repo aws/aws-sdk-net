@@ -35,6 +35,7 @@ namespace Amazon.AlexaForBusiness.Model
     {
         private string _address;
         private DistanceUnit _distanceUnit;
+        private bool? _isDefault;
         private int? _maxVolumeLimit;
         private string _profileArn;
         private string _profileName;
@@ -78,6 +79,25 @@ namespace Amazon.AlexaForBusiness.Model
         internal bool IsSetDistanceUnit()
         {
             return this._distanceUnit != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsDefault. 
+        /// <para>
+        /// Sets the profile as default if selected. If this is missing, no update is done to
+        /// the default status.
+        /// </para>
+        /// </summary>
+        public bool IsDefault
+        {
+            get { return this._isDefault.GetValueOrDefault(); }
+            set { this._isDefault = value; }
+        }
+
+        // Check to see if IsDefault property is set
+        internal bool IsSetIsDefault()
+        {
+            return this._isDefault.HasValue; 
         }
 
         /// <summary>

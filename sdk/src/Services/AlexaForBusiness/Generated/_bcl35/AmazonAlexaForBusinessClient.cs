@@ -40,7 +40,9 @@ namespace Amazon.AlexaForBusiness
     /// using the Alexa Skills Kit and the Alexa for Business API operations. You can make
     /// also these available as private skills for your organization. Alexa for Business makes
     /// it easy to voice-enable your products and services, providing context-aware voice
-    /// experiences for your customers.
+    /// experiences for your customers. In addition, Alexa for Business enables Alexa Voice
+    /// Services (AVS) device manufacturers to centrally deploy and manage their devices in
+    /// Alexa for Business as shared devices as a part of their existing management flow.
     /// </summary>
     public partial class AmazonAlexaForBusinessClient : AmazonServiceClient, IAmazonAlexaForBusiness
     {
@@ -241,6 +243,69 @@ namespace Amazon.AlexaForBusiness
         #endregion
 
         
+        #region  ApproveSkill
+
+        /// <summary>
+        /// Associates a skill with the organization under the customer's AWS account. If a skill
+        /// is private, the user implicitly accepts access to this skill during enablement.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ApproveSkill service method.</param>
+        /// 
+        /// <returns>The response from the ApproveSkill service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
+        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.LimitExceededException">
+        /// You are performing an action that would put you beyond your account's limits.
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ApproveSkill">REST API Reference for ApproveSkill Operation</seealso>
+        public virtual ApproveSkillResponse ApproveSkill(ApproveSkillRequest request)
+        {
+            var marshaller = ApproveSkillRequestMarshaller.Instance;
+            var unmarshaller = ApproveSkillResponseUnmarshaller.Instance;
+
+            return Invoke<ApproveSkillRequest,ApproveSkillResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ApproveSkill operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ApproveSkill operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndApproveSkill
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ApproveSkill">REST API Reference for ApproveSkill Operation</seealso>
+        public virtual IAsyncResult BeginApproveSkill(ApproveSkillRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ApproveSkillRequestMarshaller.Instance;
+            var unmarshaller = ApproveSkillResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ApproveSkillRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ApproveSkill operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginApproveSkill.</param>
+        /// 
+        /// <returns>Returns a  ApproveSkillResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ApproveSkill">REST API Reference for ApproveSkill Operation</seealso>
+        public virtual ApproveSkillResponse EndApproveSkill(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ApproveSkillResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  AssociateContactWithAddressBook
 
         /// <summary>
@@ -250,8 +315,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the AssociateContactWithAddressBook service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.LimitExceededException">
-        /// You are performing an action that would put you beyond your account's limits. HTTP
-        /// Status Code: 400
+        /// You are performing an action that would put you beyond your account's limits.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateContactWithAddressBook">REST API Reference for AssociateContactWithAddressBook Operation</seealso>
         public virtual AssociateContactWithAddressBookResponse AssociateContactWithAddressBook(AssociateContactWithAddressBookRequest request)
@@ -308,13 +372,15 @@ namespace Amazon.AlexaForBusiness
         /// <param name="request">Container for the necessary parameters to execute the AssociateDeviceWithRoom service method.</param>
         /// 
         /// <returns>The response from the AssociateDeviceWithRoom service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
+        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.DeviceNotRegisteredException">
         /// The request failed because this device is no longer registered and therefore no longer
         /// managed by this account.
         /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.LimitExceededException">
-        /// You are performing an action that would put you beyond your account's limits. HTTP
-        /// Status Code: 400
+        /// You are performing an action that would put you beyond your account's limits.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateDeviceWithRoom">REST API Reference for AssociateDeviceWithRoom Operation</seealso>
         public virtual AssociateDeviceWithRoomResponse AssociateDeviceWithRoom(AssociateDeviceWithRoomRequest request)
@@ -370,6 +436,9 @@ namespace Amazon.AlexaForBusiness
         /// <param name="request">Container for the necessary parameters to execute the AssociateSkillGroupWithRoom service method.</param>
         /// 
         /// <returns>The response from the AssociateSkillGroupWithRoom service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
+        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillGroupWithRoom">REST API Reference for AssociateSkillGroupWithRoom Operation</seealso>
         public virtual AssociateSkillGroupWithRoomResponse AssociateSkillGroupWithRoom(AssociateSkillGroupWithRoomRequest request)
         {
@@ -415,6 +484,65 @@ namespace Amazon.AlexaForBusiness
 
         #endregion
         
+        #region  AssociateSkillWithSkillGroup
+
+        /// <summary>
+        /// Associates a skill with a skill group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSkillWithSkillGroup service method.</param>
+        /// 
+        /// <returns>The response from the AssociateSkillWithSkillGroup service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
+        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithSkillGroup">REST API Reference for AssociateSkillWithSkillGroup Operation</seealso>
+        public virtual AssociateSkillWithSkillGroupResponse AssociateSkillWithSkillGroup(AssociateSkillWithSkillGroupRequest request)
+        {
+            var marshaller = AssociateSkillWithSkillGroupRequestMarshaller.Instance;
+            var unmarshaller = AssociateSkillWithSkillGroupResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateSkillWithSkillGroupRequest,AssociateSkillWithSkillGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateSkillWithSkillGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSkillWithSkillGroup operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateSkillWithSkillGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithSkillGroup">REST API Reference for AssociateSkillWithSkillGroup Operation</seealso>
+        public virtual IAsyncResult BeginAssociateSkillWithSkillGroup(AssociateSkillWithSkillGroupRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = AssociateSkillWithSkillGroupRequestMarshaller.Instance;
+            var unmarshaller = AssociateSkillWithSkillGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<AssociateSkillWithSkillGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateSkillWithSkillGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateSkillWithSkillGroup.</param>
+        /// 
+        /// <returns>Returns a  AssociateSkillWithSkillGroupResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithSkillGroup">REST API Reference for AssociateSkillWithSkillGroup Operation</seealso>
+        public virtual AssociateSkillWithSkillGroupResponse EndAssociateSkillWithSkillGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateSkillWithSkillGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateAddressBook
 
         /// <summary>
@@ -424,11 +552,10 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the CreateAddressBook service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.AlreadyExistsException">
-        /// The resource being created already exists. HTTP Status Code: 400
+        /// The resource being created already exists.
         /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.LimitExceededException">
-        /// You are performing an action that would put you beyond your account's limits. HTTP
-        /// Status Code: 400
+        /// You are performing an action that would put you beyond your account's limits.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateAddressBook">REST API Reference for CreateAddressBook Operation</seealso>
         public virtual CreateAddressBookResponse CreateAddressBook(CreateAddressBookRequest request)
@@ -475,6 +602,62 @@ namespace Amazon.AlexaForBusiness
 
         #endregion
         
+        #region  CreateConferenceProvider
+
+        /// <summary>
+        /// Adds a new conference provider under the user's AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConferenceProvider service method.</param>
+        /// 
+        /// <returns>The response from the CreateConferenceProvider service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.AlreadyExistsException">
+        /// The resource being created already exists.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateConferenceProvider">REST API Reference for CreateConferenceProvider Operation</seealso>
+        public virtual CreateConferenceProviderResponse CreateConferenceProvider(CreateConferenceProviderRequest request)
+        {
+            var marshaller = CreateConferenceProviderRequestMarshaller.Instance;
+            var unmarshaller = CreateConferenceProviderResponseUnmarshaller.Instance;
+
+            return Invoke<CreateConferenceProviderRequest,CreateConferenceProviderResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateConferenceProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateConferenceProvider operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateConferenceProvider
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateConferenceProvider">REST API Reference for CreateConferenceProvider Operation</seealso>
+        public virtual IAsyncResult BeginCreateConferenceProvider(CreateConferenceProviderRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = CreateConferenceProviderRequestMarshaller.Instance;
+            var unmarshaller = CreateConferenceProviderResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateConferenceProviderRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateConferenceProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateConferenceProvider.</param>
+        /// 
+        /// <returns>Returns a  CreateConferenceProviderResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateConferenceProvider">REST API Reference for CreateConferenceProvider Operation</seealso>
+        public virtual CreateConferenceProviderResponse EndCreateConferenceProvider(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateConferenceProviderResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateContact
 
         /// <summary>
@@ -484,11 +667,10 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the CreateContact service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.AlreadyExistsException">
-        /// The resource being created already exists. HTTP Status Code: 400
+        /// The resource being created already exists.
         /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.LimitExceededException">
-        /// You are performing an action that would put you beyond your account's limits. HTTP
-        /// Status Code: 400
+        /// You are performing an action that would put you beyond your account's limits.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateContact">REST API Reference for CreateContact Operation</seealso>
         public virtual CreateContactResponse CreateContact(CreateContactRequest request)
@@ -544,11 +726,13 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the CreateProfile service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.AlreadyExistsException">
-        /// The resource being created already exists. HTTP Status Code: 400
+        /// The resource being created already exists.
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
+        /// Concurrent modification of resources. HTTP Status Code: 400.
         /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.LimitExceededException">
-        /// You are performing an action that would put you beyond your account's limits. HTTP
-        /// Status Code: 400
+        /// You are performing an action that would put you beyond your account's limits.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateProfile">REST API Reference for CreateProfile Operation</seealso>
         public virtual CreateProfileResponse CreateProfile(CreateProfileRequest request)
@@ -604,11 +788,10 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the CreateRoom service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.AlreadyExistsException">
-        /// The resource being created already exists. HTTP Status Code: 400
+        /// The resource being created already exists.
         /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.LimitExceededException">
-        /// You are performing an action that would put you beyond your account's limits. HTTP
-        /// Status Code: 400
+        /// You are performing an action that would put you beyond your account's limits.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateRoom">REST API Reference for CreateRoom Operation</seealso>
         public virtual CreateRoomResponse CreateRoom(CreateRoomRequest request)
@@ -664,11 +847,13 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the CreateSkillGroup service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.AlreadyExistsException">
-        /// The resource being created already exists. HTTP Status Code: 400
+        /// The resource being created already exists.
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
+        /// Concurrent modification of resources. HTTP Status Code: 400.
         /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.LimitExceededException">
-        /// You are performing an action that would put you beyond your account's limits. HTTP
-        /// Status Code: 400
+        /// You are performing an action that would put you beyond your account's limits.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateSkillGroup">REST API Reference for CreateSkillGroup Operation</seealso>
         public virtual CreateSkillGroupResponse CreateSkillGroup(CreateSkillGroupRequest request)
@@ -723,12 +908,14 @@ namespace Amazon.AlexaForBusiness
         /// <param name="request">Container for the necessary parameters to execute the CreateUser service method.</param>
         /// 
         /// <returns>The response from the CreateUser service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
+        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.LimitExceededException">
-        /// You are performing an action that would put you beyond your account's limits. HTTP
-        /// Status Code: 400
+        /// You are performing an action that would put you beyond your account's limits.
         /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.ResourceInUseException">
-        /// The resource in the request is already in use. HTTP Status Code: 400
+        /// The resource in the request is already in use.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateUser">REST API Reference for CreateUser Operation</seealso>
         public virtual CreateUserResponse CreateUser(CreateUserRequest request)
@@ -783,8 +970,11 @@ namespace Amazon.AlexaForBusiness
         /// <param name="request">Container for the necessary parameters to execute the DeleteAddressBook service method.</param>
         /// 
         /// <returns>The response from the DeleteAddressBook service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
+        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
-        /// The resource is not found. HTTP Status Code: 400
+        /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteAddressBook">REST API Reference for DeleteAddressBook Operation</seealso>
         public virtual DeleteAddressBookResponse DeleteAddressBook(DeleteAddressBookRequest request)
@@ -831,6 +1021,62 @@ namespace Amazon.AlexaForBusiness
 
         #endregion
         
+        #region  DeleteConferenceProvider
+
+        /// <summary>
+        /// Deletes a conference provider.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConferenceProvider service method.</param>
+        /// 
+        /// <returns>The response from the DeleteConferenceProvider service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteConferenceProvider">REST API Reference for DeleteConferenceProvider Operation</seealso>
+        public virtual DeleteConferenceProviderResponse DeleteConferenceProvider(DeleteConferenceProviderRequest request)
+        {
+            var marshaller = DeleteConferenceProviderRequestMarshaller.Instance;
+            var unmarshaller = DeleteConferenceProviderResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteConferenceProviderRequest,DeleteConferenceProviderResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteConferenceProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConferenceProvider operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteConferenceProvider
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteConferenceProvider">REST API Reference for DeleteConferenceProvider Operation</seealso>
+        public virtual IAsyncResult BeginDeleteConferenceProvider(DeleteConferenceProviderRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DeleteConferenceProviderRequestMarshaller.Instance;
+            var unmarshaller = DeleteConferenceProviderResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteConferenceProviderRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteConferenceProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteConferenceProvider.</param>
+        /// 
+        /// <returns>Returns a  DeleteConferenceProviderResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteConferenceProvider">REST API Reference for DeleteConferenceProvider Operation</seealso>
+        public virtual DeleteConferenceProviderResponse EndDeleteConferenceProvider(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteConferenceProviderResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteContact
 
         /// <summary>
@@ -839,8 +1085,11 @@ namespace Amazon.AlexaForBusiness
         /// <param name="request">Container for the necessary parameters to execute the DeleteContact service method.</param>
         /// 
         /// <returns>The response from the DeleteContact service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
+        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
-        /// The resource is not found. HTTP Status Code: 400
+        /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteContact">REST API Reference for DeleteContact Operation</seealso>
         public virtual DeleteContactResponse DeleteContact(DeleteContactRequest request)
@@ -887,6 +1136,68 @@ namespace Amazon.AlexaForBusiness
 
         #endregion
         
+        #region  DeleteDevice
+
+        /// <summary>
+        /// Removes a device from Alexa For Business.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDevice service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDevice service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
+        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.InvalidCertificateAuthorityException">
+        /// The Certificate Authority can't issue or revoke a certificate.
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteDevice">REST API Reference for DeleteDevice Operation</seealso>
+        public virtual DeleteDeviceResponse DeleteDevice(DeleteDeviceRequest request)
+        {
+            var marshaller = DeleteDeviceRequestMarshaller.Instance;
+            var unmarshaller = DeleteDeviceResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDeviceRequest,DeleteDeviceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDevice operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDevice operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDevice
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteDevice">REST API Reference for DeleteDevice Operation</seealso>
+        public virtual IAsyncResult BeginDeleteDevice(DeleteDeviceRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DeleteDeviceRequestMarshaller.Instance;
+            var unmarshaller = DeleteDeviceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteDeviceRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteDevice operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDevice.</param>
+        /// 
+        /// <returns>Returns a  DeleteDeviceResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteDevice">REST API Reference for DeleteDevice Operation</seealso>
+        public virtual DeleteDeviceResponse EndDeleteDevice(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteDeviceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteProfile
 
         /// <summary>
@@ -895,8 +1206,11 @@ namespace Amazon.AlexaForBusiness
         /// <param name="request">Container for the necessary parameters to execute the DeleteProfile service method.</param>
         /// 
         /// <returns>The response from the DeleteProfile service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
+        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
-        /// The resource is not found. HTTP Status Code: 400
+        /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteProfile">REST API Reference for DeleteProfile Operation</seealso>
         public virtual DeleteProfileResponse DeleteProfile(DeleteProfileRequest request)
@@ -951,8 +1265,11 @@ namespace Amazon.AlexaForBusiness
         /// <param name="request">Container for the necessary parameters to execute the DeleteRoom service method.</param>
         /// 
         /// <returns>The response from the DeleteRoom service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
+        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
-        /// The resource is not found. HTTP Status Code: 400
+        /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteRoom">REST API Reference for DeleteRoom Operation</seealso>
         public virtual DeleteRoomResponse DeleteRoom(DeleteRoomRequest request)
@@ -1007,6 +1324,9 @@ namespace Amazon.AlexaForBusiness
         /// <param name="request">Container for the necessary parameters to execute the DeleteRoomSkillParameter service method.</param>
         /// 
         /// <returns>The response from the DeleteRoomSkillParameter service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
+        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteRoomSkillParameter">REST API Reference for DeleteRoomSkillParameter Operation</seealso>
         public virtual DeleteRoomSkillParameterResponse DeleteRoomSkillParameter(DeleteRoomSkillParameterRequest request)
         {
@@ -1052,6 +1372,65 @@ namespace Amazon.AlexaForBusiness
 
         #endregion
         
+        #region  DeleteSkillAuthorization
+
+        /// <summary>
+        /// Unlinks a third-party account from a skill.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSkillAuthorization service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSkillAuthorization service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
+        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteSkillAuthorization">REST API Reference for DeleteSkillAuthorization Operation</seealso>
+        public virtual DeleteSkillAuthorizationResponse DeleteSkillAuthorization(DeleteSkillAuthorizationRequest request)
+        {
+            var marshaller = DeleteSkillAuthorizationRequestMarshaller.Instance;
+            var unmarshaller = DeleteSkillAuthorizationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSkillAuthorizationRequest,DeleteSkillAuthorizationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSkillAuthorization operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSkillAuthorization operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSkillAuthorization
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteSkillAuthorization">REST API Reference for DeleteSkillAuthorization Operation</seealso>
+        public virtual IAsyncResult BeginDeleteSkillAuthorization(DeleteSkillAuthorizationRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DeleteSkillAuthorizationRequestMarshaller.Instance;
+            var unmarshaller = DeleteSkillAuthorizationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteSkillAuthorizationRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteSkillAuthorization operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSkillAuthorization.</param>
+        /// 
+        /// <returns>Returns a  DeleteSkillAuthorizationResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteSkillAuthorization">REST API Reference for DeleteSkillAuthorization Operation</seealso>
+        public virtual DeleteSkillAuthorizationResponse EndDeleteSkillAuthorization(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteSkillAuthorizationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteSkillGroup
 
         /// <summary>
@@ -1060,8 +1439,11 @@ namespace Amazon.AlexaForBusiness
         /// <param name="request">Container for the necessary parameters to execute the DeleteSkillGroup service method.</param>
         /// 
         /// <returns>The response from the DeleteSkillGroup service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
+        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
-        /// The resource is not found. HTTP Status Code: 400
+        /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteSkillGroup">REST API Reference for DeleteSkillGroup Operation</seealso>
         public virtual DeleteSkillGroupResponse DeleteSkillGroup(DeleteSkillGroupRequest request)
@@ -1116,8 +1498,11 @@ namespace Amazon.AlexaForBusiness
         /// <param name="request">Container for the necessary parameters to execute the DeleteUser service method.</param>
         /// 
         /// <returns>The response from the DeleteUser service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
+        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
-        /// The resource is not found. HTTP Status Code: 400
+        /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         public virtual DeleteUserResponse DeleteUser(DeleteUserRequest request)
@@ -1227,6 +1612,9 @@ namespace Amazon.AlexaForBusiness
         /// <param name="request">Container for the necessary parameters to execute the DisassociateDeviceFromRoom service method.</param>
         /// 
         /// <returns>The response from the DisassociateDeviceFromRoom service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
+        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.DeviceNotRegisteredException">
         /// The request failed because this device is no longer registered and therefore no longer
         /// managed by this account.
@@ -1276,6 +1664,65 @@ namespace Amazon.AlexaForBusiness
 
         #endregion
         
+        #region  DisassociateSkillFromSkillGroup
+
+        /// <summary>
+        /// Disassociates a skill from a skill group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateSkillFromSkillGroup service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateSkillFromSkillGroup service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
+        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillFromSkillGroup">REST API Reference for DisassociateSkillFromSkillGroup Operation</seealso>
+        public virtual DisassociateSkillFromSkillGroupResponse DisassociateSkillFromSkillGroup(DisassociateSkillFromSkillGroupRequest request)
+        {
+            var marshaller = DisassociateSkillFromSkillGroupRequestMarshaller.Instance;
+            var unmarshaller = DisassociateSkillFromSkillGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateSkillFromSkillGroupRequest,DisassociateSkillFromSkillGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateSkillFromSkillGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateSkillFromSkillGroup operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateSkillFromSkillGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillFromSkillGroup">REST API Reference for DisassociateSkillFromSkillGroup Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateSkillFromSkillGroup(DisassociateSkillFromSkillGroupRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DisassociateSkillFromSkillGroupRequestMarshaller.Instance;
+            var unmarshaller = DisassociateSkillFromSkillGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DisassociateSkillFromSkillGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateSkillFromSkillGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateSkillFromSkillGroup.</param>
+        /// 
+        /// <returns>Returns a  DisassociateSkillFromSkillGroupResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillFromSkillGroup">REST API Reference for DisassociateSkillFromSkillGroup Operation</seealso>
+        public virtual DisassociateSkillFromSkillGroupResponse EndDisassociateSkillFromSkillGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateSkillFromSkillGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DisassociateSkillGroupFromRoom
 
         /// <summary>
@@ -1285,6 +1732,9 @@ namespace Amazon.AlexaForBusiness
         /// <param name="request">Container for the necessary parameters to execute the DisassociateSkillGroupFromRoom service method.</param>
         /// 
         /// <returns>The response from the DisassociateSkillGroupFromRoom service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
+        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillGroupFromRoom">REST API Reference for DisassociateSkillGroupFromRoom Operation</seealso>
         public virtual DisassociateSkillGroupFromRoomResponse DisassociateSkillGroupFromRoom(DisassociateSkillGroupFromRoomRequest request)
         {
@@ -1330,6 +1780,62 @@ namespace Amazon.AlexaForBusiness
 
         #endregion
         
+        #region  ForgetSmartHomeAppliances
+
+        /// <summary>
+        /// Forgets smart home appliances associated to a room.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ForgetSmartHomeAppliances service method.</param>
+        /// 
+        /// <returns>The response from the ForgetSmartHomeAppliances service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ForgetSmartHomeAppliances">REST API Reference for ForgetSmartHomeAppliances Operation</seealso>
+        public virtual ForgetSmartHomeAppliancesResponse ForgetSmartHomeAppliances(ForgetSmartHomeAppliancesRequest request)
+        {
+            var marshaller = ForgetSmartHomeAppliancesRequestMarshaller.Instance;
+            var unmarshaller = ForgetSmartHomeAppliancesResponseUnmarshaller.Instance;
+
+            return Invoke<ForgetSmartHomeAppliancesRequest,ForgetSmartHomeAppliancesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ForgetSmartHomeAppliances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ForgetSmartHomeAppliances operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndForgetSmartHomeAppliances
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ForgetSmartHomeAppliances">REST API Reference for ForgetSmartHomeAppliances Operation</seealso>
+        public virtual IAsyncResult BeginForgetSmartHomeAppliances(ForgetSmartHomeAppliancesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ForgetSmartHomeAppliancesRequestMarshaller.Instance;
+            var unmarshaller = ForgetSmartHomeAppliancesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ForgetSmartHomeAppliancesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ForgetSmartHomeAppliances operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginForgetSmartHomeAppliances.</param>
+        /// 
+        /// <returns>Returns a  ForgetSmartHomeAppliancesResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ForgetSmartHomeAppliances">REST API Reference for ForgetSmartHomeAppliances Operation</seealso>
+        public virtual ForgetSmartHomeAppliancesResponse EndForgetSmartHomeAppliances(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ForgetSmartHomeAppliancesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetAddressBook
 
         /// <summary>
@@ -1339,7 +1845,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the GetAddressBook service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
-        /// The resource is not found. HTTP Status Code: 400
+        /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetAddressBook">REST API Reference for GetAddressBook Operation</seealso>
         public virtual GetAddressBookResponse GetAddressBook(GetAddressBookRequest request)
@@ -1386,6 +1892,118 @@ namespace Amazon.AlexaForBusiness
 
         #endregion
         
+        #region  GetConferencePreference
+
+        /// <summary>
+        /// Retrieves the existing conference preferences.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConferencePreference service method.</param>
+        /// 
+        /// <returns>The response from the GetConferencePreference service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetConferencePreference">REST API Reference for GetConferencePreference Operation</seealso>
+        public virtual GetConferencePreferenceResponse GetConferencePreference(GetConferencePreferenceRequest request)
+        {
+            var marshaller = GetConferencePreferenceRequestMarshaller.Instance;
+            var unmarshaller = GetConferencePreferenceResponseUnmarshaller.Instance;
+
+            return Invoke<GetConferencePreferenceRequest,GetConferencePreferenceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetConferencePreference operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetConferencePreference operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetConferencePreference
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetConferencePreference">REST API Reference for GetConferencePreference Operation</seealso>
+        public virtual IAsyncResult BeginGetConferencePreference(GetConferencePreferenceRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = GetConferencePreferenceRequestMarshaller.Instance;
+            var unmarshaller = GetConferencePreferenceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetConferencePreferenceRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetConferencePreference operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetConferencePreference.</param>
+        /// 
+        /// <returns>Returns a  GetConferencePreferenceResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetConferencePreference">REST API Reference for GetConferencePreference Operation</seealso>
+        public virtual GetConferencePreferenceResponse EndGetConferencePreference(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetConferencePreferenceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetConferenceProvider
+
+        /// <summary>
+        /// Gets details about a specific conference provider.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConferenceProvider service method.</param>
+        /// 
+        /// <returns>The response from the GetConferenceProvider service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetConferenceProvider">REST API Reference for GetConferenceProvider Operation</seealso>
+        public virtual GetConferenceProviderResponse GetConferenceProvider(GetConferenceProviderRequest request)
+        {
+            var marshaller = GetConferenceProviderRequestMarshaller.Instance;
+            var unmarshaller = GetConferenceProviderResponseUnmarshaller.Instance;
+
+            return Invoke<GetConferenceProviderRequest,GetConferenceProviderResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetConferenceProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetConferenceProvider operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetConferenceProvider
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetConferenceProvider">REST API Reference for GetConferenceProvider Operation</seealso>
+        public virtual IAsyncResult BeginGetConferenceProvider(GetConferenceProviderRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = GetConferenceProviderRequestMarshaller.Instance;
+            var unmarshaller = GetConferenceProviderResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetConferenceProviderRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetConferenceProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetConferenceProvider.</param>
+        /// 
+        /// <returns>Returns a  GetConferenceProviderResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetConferenceProvider">REST API Reference for GetConferenceProvider Operation</seealso>
+        public virtual GetConferenceProviderResponse EndGetConferenceProvider(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetConferenceProviderResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetContact
 
         /// <summary>
@@ -1395,7 +2013,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the GetContact service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
-        /// The resource is not found. HTTP Status Code: 400
+        /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetContact">REST API Reference for GetContact Operation</seealso>
         public virtual GetContactResponse GetContact(GetContactRequest request)
@@ -1451,7 +2069,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the GetDevice service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
-        /// The resource is not found. HTTP Status Code: 400
+        /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetDevice">REST API Reference for GetDevice Operation</seealso>
         public virtual GetDeviceResponse GetDevice(GetDeviceRequest request)
@@ -1507,7 +2125,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the GetProfile service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
-        /// The resource is not found. HTTP Status Code: 400
+        /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetProfile">REST API Reference for GetProfile Operation</seealso>
         public virtual GetProfileResponse GetProfile(GetProfileRequest request)
@@ -1563,7 +2181,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the GetRoom service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
-        /// The resource is not found. HTTP Status Code: 400
+        /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetRoom">REST API Reference for GetRoom Operation</seealso>
         public virtual GetRoomResponse GetRoom(GetRoomRequest request)
@@ -1619,7 +2237,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the GetRoomSkillParameter service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
-        /// The resource is not found. HTTP Status Code: 400
+        /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetRoomSkillParameter">REST API Reference for GetRoomSkillParameter Operation</seealso>
         public virtual GetRoomSkillParameterResponse GetRoomSkillParameter(GetRoomSkillParameterRequest request)
@@ -1675,7 +2293,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the GetSkillGroup service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
-        /// The resource is not found. HTTP Status Code: 400
+        /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetSkillGroup">REST API Reference for GetSkillGroup Operation</seealso>
         public virtual GetSkillGroupResponse GetSkillGroup(GetSkillGroupRequest request)
@@ -1722,6 +2340,59 @@ namespace Amazon.AlexaForBusiness
 
         #endregion
         
+        #region  ListConferenceProviders
+
+        /// <summary>
+        /// Lists conference providers under a specific AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConferenceProviders service method.</param>
+        /// 
+        /// <returns>The response from the ListConferenceProviders service method, as returned by AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListConferenceProviders">REST API Reference for ListConferenceProviders Operation</seealso>
+        public virtual ListConferenceProvidersResponse ListConferenceProviders(ListConferenceProvidersRequest request)
+        {
+            var marshaller = ListConferenceProvidersRequestMarshaller.Instance;
+            var unmarshaller = ListConferenceProvidersResponseUnmarshaller.Instance;
+
+            return Invoke<ListConferenceProvidersRequest,ListConferenceProvidersResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListConferenceProviders operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListConferenceProviders operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListConferenceProviders
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListConferenceProviders">REST API Reference for ListConferenceProviders Operation</seealso>
+        public virtual IAsyncResult BeginListConferenceProviders(ListConferenceProvidersRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ListConferenceProvidersRequestMarshaller.Instance;
+            var unmarshaller = ListConferenceProvidersResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListConferenceProvidersRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListConferenceProviders operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListConferenceProviders.</param>
+        /// 
+        /// <returns>Returns a  ListConferenceProvidersResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListConferenceProviders">REST API Reference for ListConferenceProviders Operation</seealso>
+        public virtual ListConferenceProvidersResponse EndListConferenceProviders(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListConferenceProvidersResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListDeviceEvents
 
         /// <summary>
@@ -1731,7 +2402,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the ListDeviceEvents service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
-        /// The resource is not found. HTTP Status Code: 400
+        /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListDeviceEvents">REST API Reference for ListDeviceEvents Operation</seealso>
         public virtual ListDeviceEventsResponse ListDeviceEvents(ListDeviceEventsRequest request)
@@ -1831,6 +2502,168 @@ namespace Amazon.AlexaForBusiness
 
         #endregion
         
+        #region  ListSkillsStoreCategories
+
+        /// <summary>
+        /// Lists all categories in the Alexa skill store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSkillsStoreCategories service method.</param>
+        /// 
+        /// <returns>The response from the ListSkillsStoreCategories service method, as returned by AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkillsStoreCategories">REST API Reference for ListSkillsStoreCategories Operation</seealso>
+        public virtual ListSkillsStoreCategoriesResponse ListSkillsStoreCategories(ListSkillsStoreCategoriesRequest request)
+        {
+            var marshaller = ListSkillsStoreCategoriesRequestMarshaller.Instance;
+            var unmarshaller = ListSkillsStoreCategoriesResponseUnmarshaller.Instance;
+
+            return Invoke<ListSkillsStoreCategoriesRequest,ListSkillsStoreCategoriesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSkillsStoreCategories operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSkillsStoreCategories operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSkillsStoreCategories
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkillsStoreCategories">REST API Reference for ListSkillsStoreCategories Operation</seealso>
+        public virtual IAsyncResult BeginListSkillsStoreCategories(ListSkillsStoreCategoriesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ListSkillsStoreCategoriesRequestMarshaller.Instance;
+            var unmarshaller = ListSkillsStoreCategoriesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListSkillsStoreCategoriesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSkillsStoreCategories operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSkillsStoreCategories.</param>
+        /// 
+        /// <returns>Returns a  ListSkillsStoreCategoriesResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkillsStoreCategories">REST API Reference for ListSkillsStoreCategories Operation</seealso>
+        public virtual ListSkillsStoreCategoriesResponse EndListSkillsStoreCategories(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListSkillsStoreCategoriesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListSkillsStoreSkillsByCategory
+
+        /// <summary>
+        /// Lists all skills in the Alexa skill store by category.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSkillsStoreSkillsByCategory service method.</param>
+        /// 
+        /// <returns>The response from the ListSkillsStoreSkillsByCategory service method, as returned by AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkillsStoreSkillsByCategory">REST API Reference for ListSkillsStoreSkillsByCategory Operation</seealso>
+        public virtual ListSkillsStoreSkillsByCategoryResponse ListSkillsStoreSkillsByCategory(ListSkillsStoreSkillsByCategoryRequest request)
+        {
+            var marshaller = ListSkillsStoreSkillsByCategoryRequestMarshaller.Instance;
+            var unmarshaller = ListSkillsStoreSkillsByCategoryResponseUnmarshaller.Instance;
+
+            return Invoke<ListSkillsStoreSkillsByCategoryRequest,ListSkillsStoreSkillsByCategoryResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSkillsStoreSkillsByCategory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSkillsStoreSkillsByCategory operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSkillsStoreSkillsByCategory
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkillsStoreSkillsByCategory">REST API Reference for ListSkillsStoreSkillsByCategory Operation</seealso>
+        public virtual IAsyncResult BeginListSkillsStoreSkillsByCategory(ListSkillsStoreSkillsByCategoryRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ListSkillsStoreSkillsByCategoryRequestMarshaller.Instance;
+            var unmarshaller = ListSkillsStoreSkillsByCategoryResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListSkillsStoreSkillsByCategoryRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSkillsStoreSkillsByCategory operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSkillsStoreSkillsByCategory.</param>
+        /// 
+        /// <returns>Returns a  ListSkillsStoreSkillsByCategoryResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkillsStoreSkillsByCategory">REST API Reference for ListSkillsStoreSkillsByCategory Operation</seealso>
+        public virtual ListSkillsStoreSkillsByCategoryResponse EndListSkillsStoreSkillsByCategory(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListSkillsStoreSkillsByCategoryResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListSmartHomeAppliances
+
+        /// <summary>
+        /// Lists all of the smart home appliances associated with a room.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSmartHomeAppliances service method.</param>
+        /// 
+        /// <returns>The response from the ListSmartHomeAppliances service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSmartHomeAppliances">REST API Reference for ListSmartHomeAppliances Operation</seealso>
+        public virtual ListSmartHomeAppliancesResponse ListSmartHomeAppliances(ListSmartHomeAppliancesRequest request)
+        {
+            var marshaller = ListSmartHomeAppliancesRequestMarshaller.Instance;
+            var unmarshaller = ListSmartHomeAppliancesResponseUnmarshaller.Instance;
+
+            return Invoke<ListSmartHomeAppliancesRequest,ListSmartHomeAppliancesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSmartHomeAppliances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSmartHomeAppliances operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSmartHomeAppliances
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSmartHomeAppliances">REST API Reference for ListSmartHomeAppliances Operation</seealso>
+        public virtual IAsyncResult BeginListSmartHomeAppliances(ListSmartHomeAppliancesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ListSmartHomeAppliancesRequestMarshaller.Instance;
+            var unmarshaller = ListSmartHomeAppliancesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListSmartHomeAppliancesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSmartHomeAppliances operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSmartHomeAppliances.</param>
+        /// 
+        /// <returns>Returns a  ListSmartHomeAppliancesResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSmartHomeAppliances">REST API Reference for ListSmartHomeAppliances Operation</seealso>
+        public virtual ListSmartHomeAppliancesResponse EndListSmartHomeAppliances(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListSmartHomeAppliancesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListTags
 
         /// <summary>
@@ -1840,7 +2673,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the ListTags service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
-        /// The resource is not found. HTTP Status Code: 400
+        /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListTags">REST API Reference for ListTags Operation</seealso>
         public virtual ListTagsResponse ListTags(ListTagsRequest request)
@@ -1887,6 +2720,62 @@ namespace Amazon.AlexaForBusiness
 
         #endregion
         
+        #region  PutConferencePreference
+
+        /// <summary>
+        /// Sets the conference preferences on a specific conference provider at the account level.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutConferencePreference service method.</param>
+        /// 
+        /// <returns>The response from the PutConferencePreference service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutConferencePreference">REST API Reference for PutConferencePreference Operation</seealso>
+        public virtual PutConferencePreferenceResponse PutConferencePreference(PutConferencePreferenceRequest request)
+        {
+            var marshaller = PutConferencePreferenceRequestMarshaller.Instance;
+            var unmarshaller = PutConferencePreferenceResponseUnmarshaller.Instance;
+
+            return Invoke<PutConferencePreferenceRequest,PutConferencePreferenceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutConferencePreference operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutConferencePreference operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutConferencePreference
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutConferencePreference">REST API Reference for PutConferencePreference Operation</seealso>
+        public virtual IAsyncResult BeginPutConferencePreference(PutConferencePreferenceRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = PutConferencePreferenceRequestMarshaller.Instance;
+            var unmarshaller = PutConferencePreferenceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<PutConferencePreferenceRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutConferencePreference operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutConferencePreference.</param>
+        /// 
+        /// <returns>Returns a  PutConferencePreferenceResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutConferencePreference">REST API Reference for PutConferencePreference Operation</seealso>
+        public virtual PutConferencePreferenceResponse EndPutConferencePreference(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutConferencePreferenceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  PutRoomSkillParameter
 
         /// <summary>
@@ -1896,6 +2785,9 @@ namespace Amazon.AlexaForBusiness
         /// <param name="request">Container for the necessary parameters to execute the PutRoomSkillParameter service method.</param>
         /// 
         /// <returns>The response from the PutRoomSkillParameter service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
+        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutRoomSkillParameter">REST API Reference for PutRoomSkillParameter Operation</seealso>
         public virtual PutRoomSkillParameterResponse PutRoomSkillParameter(PutRoomSkillParameterRequest request)
         {
@@ -1941,6 +2833,191 @@ namespace Amazon.AlexaForBusiness
 
         #endregion
         
+        #region  PutSkillAuthorization
+
+        /// <summary>
+        /// Links a user's account to a third-party skill provider. If this API is called by an
+        /// assumed IAM role, the skill being linked must be a private skill, and the skill must
+        /// be owned by the AWS account that assumed the IAM role.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutSkillAuthorization service method.</param>
+        /// 
+        /// <returns>The response from the PutSkillAuthorization service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
+        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.UnauthorizedException">
+        /// The caller has no permissions to operate on the resource involved in the API call.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutSkillAuthorization">REST API Reference for PutSkillAuthorization Operation</seealso>
+        public virtual PutSkillAuthorizationResponse PutSkillAuthorization(PutSkillAuthorizationRequest request)
+        {
+            var marshaller = PutSkillAuthorizationRequestMarshaller.Instance;
+            var unmarshaller = PutSkillAuthorizationResponseUnmarshaller.Instance;
+
+            return Invoke<PutSkillAuthorizationRequest,PutSkillAuthorizationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutSkillAuthorization operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutSkillAuthorization operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutSkillAuthorization
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutSkillAuthorization">REST API Reference for PutSkillAuthorization Operation</seealso>
+        public virtual IAsyncResult BeginPutSkillAuthorization(PutSkillAuthorizationRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = PutSkillAuthorizationRequestMarshaller.Instance;
+            var unmarshaller = PutSkillAuthorizationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<PutSkillAuthorizationRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutSkillAuthorization operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutSkillAuthorization.</param>
+        /// 
+        /// <returns>Returns a  PutSkillAuthorizationResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutSkillAuthorization">REST API Reference for PutSkillAuthorization Operation</seealso>
+        public virtual PutSkillAuthorizationResponse EndPutSkillAuthorization(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutSkillAuthorizationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  RegisterAVSDevice
+
+        /// <summary>
+        /// Registers an Alexa-enabled device built by an Original Equipment Manufacturer (OEM)
+        /// using Alexa Voice Service (AVS).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterAVSDevice service method.</param>
+        /// 
+        /// <returns>The response from the RegisterAVSDevice service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
+        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.InvalidDeviceException">
+        /// The device is in an invalid state.
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.LimitExceededException">
+        /// You are performing an action that would put you beyond your account's limits.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RegisterAVSDevice">REST API Reference for RegisterAVSDevice Operation</seealso>
+        public virtual RegisterAVSDeviceResponse RegisterAVSDevice(RegisterAVSDeviceRequest request)
+        {
+            var marshaller = RegisterAVSDeviceRequestMarshaller.Instance;
+            var unmarshaller = RegisterAVSDeviceResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterAVSDeviceRequest,RegisterAVSDeviceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterAVSDevice operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterAVSDevice operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterAVSDevice
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RegisterAVSDevice">REST API Reference for RegisterAVSDevice Operation</seealso>
+        public virtual IAsyncResult BeginRegisterAVSDevice(RegisterAVSDeviceRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = RegisterAVSDeviceRequestMarshaller.Instance;
+            var unmarshaller = RegisterAVSDeviceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<RegisterAVSDeviceRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RegisterAVSDevice operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterAVSDevice.</param>
+        /// 
+        /// <returns>Returns a  RegisterAVSDeviceResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RegisterAVSDevice">REST API Reference for RegisterAVSDevice Operation</seealso>
+        public virtual RegisterAVSDeviceResponse EndRegisterAVSDevice(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RegisterAVSDeviceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  RejectSkill
+
+        /// <summary>
+        /// Disassociates a skill from the organization under a user's AWS account. If the skill
+        /// is a private skill, it moves to an AcceptStatus of PENDING. Any private or public
+        /// skill that is rejected can be added later by calling the ApproveSkill API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RejectSkill service method.</param>
+        /// 
+        /// <returns>The response from the RejectSkill service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
+        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RejectSkill">REST API Reference for RejectSkill Operation</seealso>
+        public virtual RejectSkillResponse RejectSkill(RejectSkillRequest request)
+        {
+            var marshaller = RejectSkillRequestMarshaller.Instance;
+            var unmarshaller = RejectSkillResponseUnmarshaller.Instance;
+
+            return Invoke<RejectSkillRequest,RejectSkillResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RejectSkill operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RejectSkill operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRejectSkill
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RejectSkill">REST API Reference for RejectSkill Operation</seealso>
+        public virtual IAsyncResult BeginRejectSkill(RejectSkillRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = RejectSkillRequestMarshaller.Instance;
+            var unmarshaller = RejectSkillResponseUnmarshaller.Instance;
+
+            return BeginInvoke<RejectSkillRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RejectSkill operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRejectSkill.</param>
+        /// 
+        /// <returns>Returns a  RejectSkillResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RejectSkill">REST API Reference for RejectSkill Operation</seealso>
+        public virtual RejectSkillResponse EndRejectSkill(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RejectSkillResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ResolveRoom
 
         /// <summary>
@@ -1951,7 +3028,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the ResolveRoom service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
-        /// The resource is not found. HTTP Status Code: 400
+        /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ResolveRoom">REST API Reference for ResolveRoom Operation</seealso>
         public virtual ResolveRoomResponse ResolveRoom(ResolveRoomRequest request)
@@ -2006,8 +3083,11 @@ namespace Amazon.AlexaForBusiness
         /// <param name="request">Container for the necessary parameters to execute the RevokeInvitation service method.</param>
         /// 
         /// <returns>The response from the RevokeInvitation service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
+        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
-        /// The resource is not found. HTTP Status Code: 400
+        /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RevokeInvitation">REST API Reference for RevokeInvitation Operation</seealso>
         public virtual RevokeInvitationResponse RevokeInvitation(RevokeInvitationRequest request)
@@ -2434,12 +3514,14 @@ namespace Amazon.AlexaForBusiness
         /// <param name="request">Container for the necessary parameters to execute the SendInvitation service method.</param>
         /// 
         /// <returns>The response from the SendInvitation service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
+        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.InvalidUserStatusException">
-        /// The attempt to update a user is invalid due to the user's current status. HTTP Status
-        /// Code: 400
+        /// The attempt to update a user is invalid due to the user's current status.
         /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
-        /// The resource is not found. HTTP Status Code: 400
+        /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SendInvitation">REST API Reference for SendInvitation Operation</seealso>
         public virtual SendInvitationResponse SendInvitation(SendInvitationRequest request)
@@ -2544,6 +3626,62 @@ namespace Amazon.AlexaForBusiness
 
         #endregion
         
+        #region  StartSmartHomeApplianceDiscovery
+
+        /// <summary>
+        /// Initiates the discovery of any smart home appliances associated with the room.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSmartHomeApplianceDiscovery service method.</param>
+        /// 
+        /// <returns>The response from the StartSmartHomeApplianceDiscovery service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/StartSmartHomeApplianceDiscovery">REST API Reference for StartSmartHomeApplianceDiscovery Operation</seealso>
+        public virtual StartSmartHomeApplianceDiscoveryResponse StartSmartHomeApplianceDiscovery(StartSmartHomeApplianceDiscoveryRequest request)
+        {
+            var marshaller = StartSmartHomeApplianceDiscoveryRequestMarshaller.Instance;
+            var unmarshaller = StartSmartHomeApplianceDiscoveryResponseUnmarshaller.Instance;
+
+            return Invoke<StartSmartHomeApplianceDiscoveryRequest,StartSmartHomeApplianceDiscoveryResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartSmartHomeApplianceDiscovery operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartSmartHomeApplianceDiscovery operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartSmartHomeApplianceDiscovery
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/StartSmartHomeApplianceDiscovery">REST API Reference for StartSmartHomeApplianceDiscovery Operation</seealso>
+        public virtual IAsyncResult BeginStartSmartHomeApplianceDiscovery(StartSmartHomeApplianceDiscoveryRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = StartSmartHomeApplianceDiscoveryRequestMarshaller.Instance;
+            var unmarshaller = StartSmartHomeApplianceDiscoveryResponseUnmarshaller.Instance;
+
+            return BeginInvoke<StartSmartHomeApplianceDiscoveryRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartSmartHomeApplianceDiscovery operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartSmartHomeApplianceDiscovery.</param>
+        /// 
+        /// <returns>Returns a  StartSmartHomeApplianceDiscoveryResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/StartSmartHomeApplianceDiscovery">REST API Reference for StartSmartHomeApplianceDiscovery Operation</seealso>
+        public virtual StartSmartHomeApplianceDiscoveryResponse EndStartSmartHomeApplianceDiscovery(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartSmartHomeApplianceDiscoveryResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  TagResource
 
         /// <summary>
@@ -2553,7 +3691,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the TagResource service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
-        /// The resource is not found. HTTP Status Code: 400
+        /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
@@ -2609,7 +3747,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the UntagResource service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
-        /// The resource is not found. HTTP Status Code: 400
+        /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
@@ -2664,11 +3802,14 @@ namespace Amazon.AlexaForBusiness
         /// <param name="request">Container for the necessary parameters to execute the UpdateAddressBook service method.</param>
         /// 
         /// <returns>The response from the UpdateAddressBook service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
+        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NameInUseException">
-        /// The name sent in the request is already in use. HTTP Status Code: 400
+        /// The name sent in the request is already in use.
         /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
-        /// The resource is not found. HTTP Status Code: 400
+        /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateAddressBook">REST API Reference for UpdateAddressBook Operation</seealso>
         public virtual UpdateAddressBookResponse UpdateAddressBook(UpdateAddressBookRequest request)
@@ -2715,6 +3856,62 @@ namespace Amazon.AlexaForBusiness
 
         #endregion
         
+        #region  UpdateConferenceProvider
+
+        /// <summary>
+        /// Updates an existing conference provider's settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConferenceProvider service method.</param>
+        /// 
+        /// <returns>The response from the UpdateConferenceProvider service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateConferenceProvider">REST API Reference for UpdateConferenceProvider Operation</seealso>
+        public virtual UpdateConferenceProviderResponse UpdateConferenceProvider(UpdateConferenceProviderRequest request)
+        {
+            var marshaller = UpdateConferenceProviderRequestMarshaller.Instance;
+            var unmarshaller = UpdateConferenceProviderResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateConferenceProviderRequest,UpdateConferenceProviderResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateConferenceProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConferenceProvider operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateConferenceProvider
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateConferenceProvider">REST API Reference for UpdateConferenceProvider Operation</seealso>
+        public virtual IAsyncResult BeginUpdateConferenceProvider(UpdateConferenceProviderRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = UpdateConferenceProviderRequestMarshaller.Instance;
+            var unmarshaller = UpdateConferenceProviderResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateConferenceProviderRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateConferenceProvider operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateConferenceProvider.</param>
+        /// 
+        /// <returns>Returns a  UpdateConferenceProviderResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateConferenceProvider">REST API Reference for UpdateConferenceProvider Operation</seealso>
+        public virtual UpdateConferenceProviderResponse EndUpdateConferenceProvider(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateConferenceProviderResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateContact
 
         /// <summary>
@@ -2723,8 +3920,11 @@ namespace Amazon.AlexaForBusiness
         /// <param name="request">Container for the necessary parameters to execute the UpdateContact service method.</param>
         /// 
         /// <returns>The response from the UpdateContact service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
+        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
-        /// The resource is not found. HTTP Status Code: 400
+        /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateContact">REST API Reference for UpdateContact Operation</seealso>
         public virtual UpdateContactResponse UpdateContact(UpdateContactRequest request)
@@ -2779,12 +3979,15 @@ namespace Amazon.AlexaForBusiness
         /// <param name="request">Container for the necessary parameters to execute the UpdateDevice service method.</param>
         /// 
         /// <returns>The response from the UpdateDevice service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
+        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.DeviceNotRegisteredException">
         /// The request failed because this device is no longer registered and therefore no longer
         /// managed by this account.
         /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
-        /// The resource is not found. HTTP Status Code: 400
+        /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateDevice">REST API Reference for UpdateDevice Operation</seealso>
         public virtual UpdateDeviceResponse UpdateDevice(UpdateDeviceRequest request)
@@ -2839,11 +4042,14 @@ namespace Amazon.AlexaForBusiness
         /// <param name="request">Container for the necessary parameters to execute the UpdateProfile service method.</param>
         /// 
         /// <returns>The response from the UpdateProfile service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
+        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NameInUseException">
-        /// The name sent in the request is already in use. HTTP Status Code: 400
+        /// The name sent in the request is already in use.
         /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
-        /// The resource is not found. HTTP Status Code: 400
+        /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateProfile">REST API Reference for UpdateProfile Operation</seealso>
         public virtual UpdateProfileResponse UpdateProfile(UpdateProfileRequest request)
@@ -2899,10 +4105,10 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the UpdateRoom service method, as returned by AlexaForBusiness.</returns>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NameInUseException">
-        /// The name sent in the request is already in use. HTTP Status Code: 400
+        /// The name sent in the request is already in use.
         /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
-        /// The resource is not found. HTTP Status Code: 400
+        /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateRoom">REST API Reference for UpdateRoom Operation</seealso>
         public virtual UpdateRoomResponse UpdateRoom(UpdateRoomRequest request)
@@ -2957,11 +4163,14 @@ namespace Amazon.AlexaForBusiness
         /// <param name="request">Container for the necessary parameters to execute the UpdateSkillGroup service method.</param>
         /// 
         /// <returns>The response from the UpdateSkillGroup service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
+        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NameInUseException">
-        /// The name sent in the request is already in use. HTTP Status Code: 400
+        /// The name sent in the request is already in use.
         /// </exception>
         /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
-        /// The resource is not found. HTTP Status Code: 400
+        /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateSkillGroup">REST API Reference for UpdateSkillGroup Operation</seealso>
         public virtual UpdateSkillGroupResponse UpdateSkillGroup(UpdateSkillGroupRequest request)

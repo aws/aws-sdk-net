@@ -64,6 +64,12 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("EnablementType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EnablementType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SkillId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -74,6 +80,12 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SkillName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SkillType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SkillType = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SupportsLinking", targetDepth))
