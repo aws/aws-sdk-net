@@ -588,8 +588,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>DynamoDBEntry representing the data</returns>
         public static implicit operator DynamoDBEntry(String data)
         {
+            if(data == null) return new Primitive();
             return new UnconvertedDynamoDBEntry(data);
         }
+
         /// <summary>
         /// Explicitly convert DynamoDBEntry to String
         /// </summary>

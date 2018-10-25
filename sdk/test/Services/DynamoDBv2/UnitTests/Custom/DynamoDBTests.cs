@@ -103,5 +103,49 @@ namespace AWSSDK_DotNet35.UnitTests
                 Assert.AreEqual(jsonOriginal[property].ToString(), jsonNew[property].ToString());
             }
         }
+
+        private class EmptyStringTestObject
+        {
+            public int Id { get; set; }
+            public string Name { get; set; }
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void TestEmptyPropertyFromObjectOnDocument()
+        {
+            var obj = new EmptyStringTestObject
+            {
+                Id = 1,
+                Name = null
+            };
+
+            var doc = new Document
+            {
+                ["Id"] = obj.Id,
+                ["Name"] = obj.Name
+            };
+
+            Assert.AreEqual(2, doc.Keys.Count);
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void TestExplicitNullPropertyOnDocument()
+        {
+            var obj = new EmptyStringTestObject
+            {
+                Id = 1
+            };
+
+            var doc = new Document
+            {
+                ["Id"] = obj.Id,
+                ["Name"] = null
+            };
+
+            Assert.AreEqual(2, doc.Keys.Count);
+        }
+
     }
 }
