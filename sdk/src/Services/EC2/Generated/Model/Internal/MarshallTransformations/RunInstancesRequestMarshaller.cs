@@ -113,6 +113,20 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetCapacityReservationSpecification())
+                {
+                    if(publicRequest.CapacityReservationSpecification.IsSetCapacityReservationPreference())
+                    {
+                        request.Parameters.Add("CapacityReservationSpecification" + "." + "CapacityReservationPreference", StringUtils.FromString(publicRequest.CapacityReservationSpecification.CapacityReservationPreference));
+                    }
+                    if(publicRequest.CapacityReservationSpecification.IsSetCapacityReservationTarget())
+                    {
+                        if(publicRequest.CapacityReservationSpecification.CapacityReservationTarget.IsSetCapacityReservationId())
+                        {
+                            request.Parameters.Add("CapacityReservationSpecification" + "." + "CapacityReservationTarget" + "." + "CapacityReservationId", StringUtils.FromString(publicRequest.CapacityReservationSpecification.CapacityReservationTarget.CapacityReservationId));
+                        }
+                    }
+                }
                 if(publicRequest.IsSetClientToken())
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(publicRequest.ClientToken));

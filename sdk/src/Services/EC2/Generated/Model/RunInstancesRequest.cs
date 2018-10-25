@@ -114,6 +114,7 @@ namespace Amazon.EC2.Model
     {
         private string _additionalInfo;
         private List<BlockDeviceMapping> _blockDeviceMappings = new List<BlockDeviceMapping>();
+        private CapacityReservationSpecification _capacityReservationSpecification;
         private string _clientToken;
         private CpuOptionsRequest _cpuOptions;
         private CreditSpecificationRequest _creditSpecification;
@@ -198,6 +199,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetBlockDeviceMappings()
         {
             return this._blockDeviceMappings != null && this._blockDeviceMappings.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CapacityReservationSpecification. 
+        /// <para>
+        /// Information about the Capacity Reservation targeting option.
+        /// </para>
+        /// </summary>
+        public CapacityReservationSpecification CapacityReservationSpecification
+        {
+            get { return this._capacityReservationSpecification; }
+            set { this._capacityReservationSpecification = value; }
+        }
+
+        // Check to see if CapacityReservationSpecification property is set
+        internal bool IsSetCapacityReservationSpecification()
+        {
+            return this._capacityReservationSpecification != null;
         }
 
         /// <summary>

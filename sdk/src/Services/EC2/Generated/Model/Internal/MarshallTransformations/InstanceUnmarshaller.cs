@@ -73,6 +73,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.BlockDeviceMappings.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("capacityReservationId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CapacityReservationId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("capacityReservationSpecification", targetDepth))
+                    {
+                        var unmarshaller = CapacityReservationSpecificationResponseUnmarshaller.Instance;
+                        unmarshalledObject.CapacityReservationSpecification = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("clientToken", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

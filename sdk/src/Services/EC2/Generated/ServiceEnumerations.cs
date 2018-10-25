@@ -841,6 +841,242 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type CapacityReservationInstancePlatform.
+    /// </summary>
+    public class CapacityReservationInstancePlatform : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LinuxUNIX for CapacityReservationInstancePlatform
+        /// </summary>
+        public static readonly CapacityReservationInstancePlatform LinuxUNIX = new CapacityReservationInstancePlatform("Linux/UNIX");
+        /// <summary>
+        /// Constant RedHatEnterpriseLinux for CapacityReservationInstancePlatform
+        /// </summary>
+        public static readonly CapacityReservationInstancePlatform RedHatEnterpriseLinux = new CapacityReservationInstancePlatform("Red Hat Enterprise Linux");
+        /// <summary>
+        /// Constant SUSELinux for CapacityReservationInstancePlatform
+        /// </summary>
+        public static readonly CapacityReservationInstancePlatform SUSELinux = new CapacityReservationInstancePlatform("SUSE Linux");
+        /// <summary>
+        /// Constant Windows for CapacityReservationInstancePlatform
+        /// </summary>
+        public static readonly CapacityReservationInstancePlatform Windows = new CapacityReservationInstancePlatform("Windows");
+        /// <summary>
+        /// Constant WindowsWithSQLServer for CapacityReservationInstancePlatform
+        /// </summary>
+        public static readonly CapacityReservationInstancePlatform WindowsWithSQLServer = new CapacityReservationInstancePlatform("Windows with SQL Server");
+        /// <summary>
+        /// Constant WindowsWithSQLServerEnterprise for CapacityReservationInstancePlatform
+        /// </summary>
+        public static readonly CapacityReservationInstancePlatform WindowsWithSQLServerEnterprise = new CapacityReservationInstancePlatform("Windows with SQL Server Enterprise");
+        /// <summary>
+        /// Constant WindowsWithSQLServerStandard for CapacityReservationInstancePlatform
+        /// </summary>
+        public static readonly CapacityReservationInstancePlatform WindowsWithSQLServerStandard = new CapacityReservationInstancePlatform("Windows with SQL Server Standard");
+        /// <summary>
+        /// Constant WindowsWithSQLServerWeb for CapacityReservationInstancePlatform
+        /// </summary>
+        public static readonly CapacityReservationInstancePlatform WindowsWithSQLServerWeb = new CapacityReservationInstancePlatform("Windows with SQL Server Web");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapacityReservationInstancePlatform(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapacityReservationInstancePlatform FindValue(string value)
+        {
+            return FindValue<CapacityReservationInstancePlatform>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapacityReservationInstancePlatform(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CapacityReservationPreference.
+    /// </summary>
+    public class CapacityReservationPreference : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant None for CapacityReservationPreference
+        /// </summary>
+        public static readonly CapacityReservationPreference None = new CapacityReservationPreference("none");
+        /// <summary>
+        /// Constant Open for CapacityReservationPreference
+        /// </summary>
+        public static readonly CapacityReservationPreference Open = new CapacityReservationPreference("open");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapacityReservationPreference(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapacityReservationPreference FindValue(string value)
+        {
+            return FindValue<CapacityReservationPreference>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapacityReservationPreference(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CapacityReservationState.
+    /// </summary>
+    public class CapacityReservationState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for CapacityReservationState
+        /// </summary>
+        public static readonly CapacityReservationState Active = new CapacityReservationState("active");
+        /// <summary>
+        /// Constant Cancelled for CapacityReservationState
+        /// </summary>
+        public static readonly CapacityReservationState Cancelled = new CapacityReservationState("cancelled");
+        /// <summary>
+        /// Constant Expired for CapacityReservationState
+        /// </summary>
+        public static readonly CapacityReservationState Expired = new CapacityReservationState("expired");
+        /// <summary>
+        /// Constant Failed for CapacityReservationState
+        /// </summary>
+        public static readonly CapacityReservationState Failed = new CapacityReservationState("failed");
+        /// <summary>
+        /// Constant Pending for CapacityReservationState
+        /// </summary>
+        public static readonly CapacityReservationState Pending = new CapacityReservationState("pending");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapacityReservationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapacityReservationState FindValue(string value)
+        {
+            return FindValue<CapacityReservationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapacityReservationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CapacityReservationTenancy.
+    /// </summary>
+    public class CapacityReservationTenancy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Dedicated for CapacityReservationTenancy
+        /// </summary>
+        public static readonly CapacityReservationTenancy Dedicated = new CapacityReservationTenancy("dedicated");
+        /// <summary>
+        /// Constant Default for CapacityReservationTenancy
+        /// </summary>
+        public static readonly CapacityReservationTenancy Default = new CapacityReservationTenancy("default");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapacityReservationTenancy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapacityReservationTenancy FindValue(string value)
+        {
+            return FindValue<CapacityReservationTenancy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapacityReservationTenancy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConnectionNotificationState.
     /// </summary>
     public class ConnectionNotificationState : ConstantClass
@@ -1488,6 +1724,56 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ElasticGpuStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EndDateType.
+    /// </summary>
+    public class EndDateType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Limited for EndDateType
+        /// </summary>
+        public static readonly EndDateType Limited = new EndDateType("limited");
+        /// <summary>
+        /// Constant Unlimited for EndDateType
+        /// </summary>
+        public static readonly EndDateType Unlimited = new EndDateType("unlimited");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EndDateType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EndDateType FindValue(string value)
+        {
+            return FindValue<EndDateType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EndDateType(string value)
         {
             return FindValue(value);
         }
@@ -2918,6 +3204,56 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator InstanceLifecycleType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InstanceMatchCriteria.
+    /// </summary>
+    public class InstanceMatchCriteria : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Open for InstanceMatchCriteria
+        /// </summary>
+        public static readonly InstanceMatchCriteria Open = new InstanceMatchCriteria("open");
+        /// <summary>
+        /// Constant Targeted for InstanceMatchCriteria
+        /// </summary>
+        public static readonly InstanceMatchCriteria Targeted = new InstanceMatchCriteria("targeted");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstanceMatchCriteria(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceMatchCriteria FindValue(string value)
+        {
+            return FindValue<InstanceMatchCriteria>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceMatchCriteria(string value)
         {
             return FindValue(value);
         }

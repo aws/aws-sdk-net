@@ -499,6 +499,23 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  CancelCapacityReservation
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelCapacityReservation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelCapacityReservation operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelCapacityReservation">REST API Reference for CancelCapacityReservation Operation</seealso>
+        Task<CancelCapacityReservationResponse> CancelCapacityReservationAsync(CancelCapacityReservationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CancelConversionTask
 
 
@@ -666,6 +683,23 @@ namespace Amazon.EC2
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopySnapshot">REST API Reference for CopySnapshot Operation</seealso>
         Task<CopySnapshotResponse> CopySnapshotAsync(CopySnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateCapacityReservation
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateCapacityReservation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateCapacityReservation operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityReservation">REST API Reference for CreateCapacityReservation Operation</seealso>
+        Task<CreateCapacityReservationResponse> CreateCapacityReservationAsync(CreateCapacityReservationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -2111,6 +2145,23 @@ namespace Amazon.EC2
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeByoipCidrs">REST API Reference for DescribeByoipCidrs Operation</seealso>
         Task<DescribeByoipCidrsResponse> DescribeByoipCidrsAsync(DescribeByoipCidrsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeCapacityReservations
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeCapacityReservations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCapacityReservations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityReservations">REST API Reference for DescribeCapacityReservations Operation</seealso>
+        Task<DescribeCapacityReservationsResponse> DescribeCapacityReservationsAsync(DescribeCapacityReservationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -4651,6 +4702,23 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  ModifyCapacityReservation
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyCapacityReservation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyCapacityReservation operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyCapacityReservation">REST API Reference for ModifyCapacityReservation Operation</seealso>
+        Task<ModifyCapacityReservationResponse> ModifyCapacityReservationAsync(ModifyCapacityReservationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ModifyFleet
 
 
@@ -4767,6 +4835,23 @@ namespace Amazon.EC2
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceAttribute">REST API Reference for ModifyInstanceAttribute Operation</seealso>
         Task<ModifyInstanceAttributeResponse> ModifyInstanceAttributeAsync(ModifyInstanceAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ModifyInstanceCapacityReservationAttributes
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyInstanceCapacityReservationAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceCapacityReservationAttributes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCapacityReservationAttributes">REST API Reference for ModifyInstanceCapacityReservationAttributes Operation</seealso>
+        Task<ModifyInstanceCapacityReservationAttributesResponse> ModifyInstanceCapacityReservationAttributesAsync(ModifyInstanceCapacityReservationAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

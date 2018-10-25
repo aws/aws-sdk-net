@@ -1057,6 +1057,43 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CancelCapacityReservation
+
+
+        /// <summary>
+        /// Cancels the specified Capacity Reservation, releases the reserved capacity, and changes
+        /// the Capacity Reservation's state to <code>cancelled</code>.
+        /// 
+        ///  
+        /// <para>
+        /// Instances running in the reserved capacity continue running until you stop them. Stopped
+        /// instances that target the Capacity Reservation can no longer launch. Modify these
+        /// instances to either target a different Capacity Reservation, launch On-Demand Instance
+        /// capacity, or run in any open Capacity Reservation that has matching attributes and
+        /// sufficient capacity.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelCapacityReservation service method.</param>
+        /// 
+        /// <returns>The response from the CancelCapacityReservation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelCapacityReservation">REST API Reference for CancelCapacityReservation Operation</seealso>
+        CancelCapacityReservationResponse CancelCapacityReservation(CancelCapacityReservationRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelCapacityReservation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelCapacityReservation operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelCapacityReservation">REST API Reference for CancelCapacityReservation Operation</seealso>
+        Task<CancelCapacityReservationResponse> CancelCapacityReservationAsync(CancelCapacityReservationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CancelConversionTask
 
 
@@ -1402,6 +1439,61 @@ namespace Amazon.EC2
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopySnapshot">REST API Reference for CopySnapshot Operation</seealso>
         Task<CopySnapshotResponse> CopySnapshotAsync(CopySnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateCapacityReservation
+
+
+        /// <summary>
+        /// Creates a new Capacity Reservation with the specified attributes.
+        /// 
+        ///  
+        /// <para>
+        /// Capacity Reservations enable you to reserve capacity for your Amazon EC2 instances
+        /// in a specific Availability Zone for any duration. This gives you the flexibility to
+        /// selectively add capacity reservations and still get the Regional RI discounts for
+        /// that usage. By creating Capacity Reservations, you ensure that you always have access
+        /// to Amazon EC2 capacity when you need it, for as long as you need it. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html">Capacity
+        /// Reservations</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Your request to create a Capacity Reservation could fail if Amazon EC2 does not have
+        /// sufficient capacity to fulfill the request. If your request fails due to Amazon EC2
+        /// capacity constraints, either try again at a later time, try in a different Availability
+        /// Zone, or request a smaller capacity reservation. If your application is flexible across
+        /// instance types and sizes, try to create a Capacity Reservation with different instance
+        /// attributes.
+        /// </para>
+        ///  
+        /// <para>
+        /// Your request could also fail if the requested quantity exceeds your On-Demand Instance
+        /// limit for the selected instance type. If your request fails due to limit constraints,
+        /// increase your On-Demand Instance limit for the required instance type and try again.
+        /// For more information about increasing your instance limits, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon
+        /// EC2 Service Limits</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCapacityReservation service method.</param>
+        /// 
+        /// <returns>The response from the CreateCapacityReservation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityReservation">REST API Reference for CreateCapacityReservation Operation</seealso>
+        CreateCapacityReservationResponse CreateCapacityReservation(CreateCapacityReservationRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateCapacityReservation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateCapacityReservation operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityReservation">REST API Reference for CreateCapacityReservation Operation</seealso>
+        Task<CreateCapacityReservationResponse> CreateCapacityReservationAsync(CreateCapacityReservationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -4560,6 +4652,34 @@ namespace Amazon.EC2
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeByoipCidrs">REST API Reference for DescribeByoipCidrs Operation</seealso>
         Task<DescribeByoipCidrsResponse> DescribeByoipCidrsAsync(DescribeByoipCidrsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeCapacityReservations
+
+
+        /// <summary>
+        /// Describes one or more of your Capacity Reservations. The results describe only the
+        /// Capacity Reservations in the AWS Region that you're currently using.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCapacityReservations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeCapacityReservations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityReservations">REST API Reference for DescribeCapacityReservations Operation</seealso>
+        DescribeCapacityReservationsResponse DescribeCapacityReservations(DescribeCapacityReservationsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeCapacityReservations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCapacityReservations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityReservations">REST API Reference for DescribeCapacityReservations Operation</seealso>
+        Task<DescribeCapacityReservationsResponse> DescribeCapacityReservationsAsync(DescribeCapacityReservationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -9533,6 +9653,37 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyCapacityReservation
+
+
+        /// <summary>
+        /// Modifies a Capacity Reservation's capacity and the conditions under which it is to
+        /// be released. You cannot change a Capacity Reservation's instance type, EBS optimization,
+        /// instance store settings, platform, Availability Zone, or instance eligibility. If
+        /// you need to modify any of these attributes, we recommend that you cancel the Capacity
+        /// Reservation, and then create a new one with the required attributes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyCapacityReservation service method.</param>
+        /// 
+        /// <returns>The response from the ModifyCapacityReservation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyCapacityReservation">REST API Reference for ModifyCapacityReservation Operation</seealso>
+        ModifyCapacityReservationResponse ModifyCapacityReservation(ModifyCapacityReservationRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyCapacityReservation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyCapacityReservation operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyCapacityReservation">REST API Reference for ModifyCapacityReservation Operation</seealso>
+        Task<ModifyCapacityReservationResponse> ModifyCapacityReservationAsync(ModifyCapacityReservationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ModifyFleet
 
 
@@ -9824,6 +9975,35 @@ namespace Amazon.EC2
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceAttribute">REST API Reference for ModifyInstanceAttribute Operation</seealso>
         Task<ModifyInstanceAttributeResponse> ModifyInstanceAttributeAsync(ModifyInstanceAttributeRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ModifyInstanceCapacityReservationAttributes
+
+
+        /// <summary>
+        /// Modifies the Capacity Reservation settings for a stopped instance. Use this action
+        /// to configure an instance to target a specific Capacity Reservation, run in any <code>open</code>
+        /// Capacity Reservation with matching attributes, or run On-Demand Instance capacity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceCapacityReservationAttributes service method.</param>
+        /// 
+        /// <returns>The response from the ModifyInstanceCapacityReservationAttributes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCapacityReservationAttributes">REST API Reference for ModifyInstanceCapacityReservationAttributes Operation</seealso>
+        ModifyInstanceCapacityReservationAttributesResponse ModifyInstanceCapacityReservationAttributes(ModifyInstanceCapacityReservationAttributesRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyInstanceCapacityReservationAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceCapacityReservationAttributes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCapacityReservationAttributes">REST API Reference for ModifyInstanceCapacityReservationAttributes Operation</seealso>
+        Task<ModifyInstanceCapacityReservationAttributesResponse> ModifyInstanceCapacityReservationAttributesAsync(ModifyInstanceCapacityReservationAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

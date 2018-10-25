@@ -1067,6 +1067,38 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CancelCapacityReservation
+
+        internal virtual CancelCapacityReservationResponse CancelCapacityReservation(CancelCapacityReservationRequest request)
+        {
+            var marshaller = CancelCapacityReservationRequestMarshaller.Instance;
+            var unmarshaller = CancelCapacityReservationResponseUnmarshaller.Instance;
+
+            return Invoke<CancelCapacityReservationRequest,CancelCapacityReservationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelCapacityReservation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelCapacityReservation operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelCapacityReservation">REST API Reference for CancelCapacityReservation Operation</seealso>
+        public virtual Task<CancelCapacityReservationResponse> CancelCapacityReservationAsync(CancelCapacityReservationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CancelCapacityReservationRequestMarshaller.Instance;
+            var unmarshaller = CancelCapacityReservationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CancelCapacityReservationRequest,CancelCapacityReservationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CancelConversionTask
 
         internal virtual CancelConversionTaskResponse CancelConversionTask(CancelConversionTaskRequest request)
@@ -1382,6 +1414,38 @@ namespace Amazon.EC2
             var unmarshaller = CopySnapshotResponseUnmarshaller.Instance;
 
             return InvokeAsync<CopySnapshotRequest,CopySnapshotResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateCapacityReservation
+
+        internal virtual CreateCapacityReservationResponse CreateCapacityReservation(CreateCapacityReservationRequest request)
+        {
+            var marshaller = CreateCapacityReservationRequestMarshaller.Instance;
+            var unmarshaller = CreateCapacityReservationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCapacityReservationRequest,CreateCapacityReservationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateCapacityReservation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateCapacityReservation operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityReservation">REST API Reference for CreateCapacityReservation Operation</seealso>
+        public virtual Task<CreateCapacityReservationResponse> CreateCapacityReservationAsync(CreateCapacityReservationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateCapacityReservationRequestMarshaller.Instance;
+            var unmarshaller = CreateCapacityReservationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateCapacityReservationRequest,CreateCapacityReservationResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -4024,6 +4088,38 @@ namespace Amazon.EC2
             var unmarshaller = DescribeByoipCidrsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeByoipCidrsRequest,DescribeByoipCidrsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeCapacityReservations
+
+        internal virtual DescribeCapacityReservationsResponse DescribeCapacityReservations(DescribeCapacityReservationsRequest request)
+        {
+            var marshaller = DescribeCapacityReservationsRequestMarshaller.Instance;
+            var unmarshaller = DescribeCapacityReservationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCapacityReservationsRequest,DescribeCapacityReservationsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeCapacityReservations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCapacityReservations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityReservations">REST API Reference for DescribeCapacityReservations Operation</seealso>
+        public virtual Task<DescribeCapacityReservationsResponse> DescribeCapacityReservationsAsync(DescribeCapacityReservationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeCapacityReservationsRequestMarshaller.Instance;
+            var unmarshaller = DescribeCapacityReservationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeCapacityReservationsRequest,DescribeCapacityReservationsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -8388,6 +8484,38 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyCapacityReservation
+
+        internal virtual ModifyCapacityReservationResponse ModifyCapacityReservation(ModifyCapacityReservationRequest request)
+        {
+            var marshaller = ModifyCapacityReservationRequestMarshaller.Instance;
+            var unmarshaller = ModifyCapacityReservationResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyCapacityReservationRequest,ModifyCapacityReservationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyCapacityReservation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyCapacityReservation operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyCapacityReservation">REST API Reference for ModifyCapacityReservation Operation</seealso>
+        public virtual Task<ModifyCapacityReservationResponse> ModifyCapacityReservationAsync(ModifyCapacityReservationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ModifyCapacityReservationRequestMarshaller.Instance;
+            var unmarshaller = ModifyCapacityReservationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyCapacityReservationRequest,ModifyCapacityReservationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ModifyFleet
 
         internal virtual ModifyFleetResponse ModifyFleet(ModifyFleetRequest request)
@@ -8607,6 +8735,38 @@ namespace Amazon.EC2
             var unmarshaller = ModifyInstanceAttributeResponseUnmarshaller.Instance;
 
             return InvokeAsync<ModifyInstanceAttributeRequest,ModifyInstanceAttributeResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyInstanceCapacityReservationAttributes
+
+        internal virtual ModifyInstanceCapacityReservationAttributesResponse ModifyInstanceCapacityReservationAttributes(ModifyInstanceCapacityReservationAttributesRequest request)
+        {
+            var marshaller = ModifyInstanceCapacityReservationAttributesRequestMarshaller.Instance;
+            var unmarshaller = ModifyInstanceCapacityReservationAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyInstanceCapacityReservationAttributesRequest,ModifyInstanceCapacityReservationAttributesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyInstanceCapacityReservationAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceCapacityReservationAttributes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCapacityReservationAttributes">REST API Reference for ModifyInstanceCapacityReservationAttributes Operation</seealso>
+        public virtual Task<ModifyInstanceCapacityReservationAttributesResponse> ModifyInstanceCapacityReservationAttributesAsync(ModifyInstanceCapacityReservationAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ModifyInstanceCapacityReservationAttributesRequestMarshaller.Instance;
+            var unmarshaller = ModifyInstanceCapacityReservationAttributesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyInstanceCapacityReservationAttributesRequest,ModifyInstanceCapacityReservationAttributesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

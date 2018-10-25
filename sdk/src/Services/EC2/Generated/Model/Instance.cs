@@ -35,6 +35,8 @@ namespace Amazon.EC2.Model
         private int? _amiLaunchIndex;
         private ArchitectureValues _architecture;
         private List<InstanceBlockDeviceMapping> _blockDeviceMappings = new List<InstanceBlockDeviceMapping>();
+        private string _capacityReservationId;
+        private CapacityReservationSpecificationResponse _capacityReservationSpecification;
         private string _clientToken;
         private CpuOptions _cpuOptions;
         private bool? _ebsOptimized;
@@ -125,6 +127,42 @@ namespace Amazon.EC2.Model
         internal bool IsSetBlockDeviceMappings()
         {
             return this._blockDeviceMappings != null && this._blockDeviceMappings.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CapacityReservationId. 
+        /// <para>
+        /// The ID of the Capacity Reservation.
+        /// </para>
+        /// </summary>
+        public string CapacityReservationId
+        {
+            get { return this._capacityReservationId; }
+            set { this._capacityReservationId = value; }
+        }
+
+        // Check to see if CapacityReservationId property is set
+        internal bool IsSetCapacityReservationId()
+        {
+            return this._capacityReservationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CapacityReservationSpecification. 
+        /// <para>
+        /// Information about the Capacity Reservation targeting option.
+        /// </para>
+        /// </summary>
+        public CapacityReservationSpecificationResponse CapacityReservationSpecification
+        {
+            get { return this._capacityReservationSpecification; }
+            set { this._capacityReservationSpecification = value; }
+        }
+
+        // Check to see if CapacityReservationSpecification property is set
+        internal bool IsSetCapacityReservationSpecification()
+        {
+            return this._capacityReservationSpecification != null;
         }
 
         /// <summary>

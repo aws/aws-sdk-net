@@ -115,6 +115,20 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             publicRequestLaunchTemplateDatalistValueIndex++;
                         }
                     }
+                    if(publicRequest.LaunchTemplateData.IsSetCapacityReservationSpecification())
+                    {
+                        if(publicRequest.LaunchTemplateData.CapacityReservationSpecification.IsSetCapacityReservationPreference())
+                        {
+                            request.Parameters.Add("LaunchTemplateData" + "." + "CapacityReservationSpecification" + "." + "CapacityReservationPreference", StringUtils.FromString(publicRequest.LaunchTemplateData.CapacityReservationSpecification.CapacityReservationPreference));
+                        }
+                        if(publicRequest.LaunchTemplateData.CapacityReservationSpecification.IsSetCapacityReservationTarget())
+                        {
+                            if(publicRequest.LaunchTemplateData.CapacityReservationSpecification.CapacityReservationTarget.IsSetCapacityReservationId())
+                            {
+                                request.Parameters.Add("LaunchTemplateData" + "." + "CapacityReservationSpecification" + "." + "CapacityReservationTarget" + "." + "CapacityReservationId", StringUtils.FromString(publicRequest.LaunchTemplateData.CapacityReservationSpecification.CapacityReservationTarget.CapacityReservationId));
+                            }
+                        }
+                    }
                     if(publicRequest.LaunchTemplateData.IsSetCpuOptions())
                     {
                         if(publicRequest.LaunchTemplateData.CpuOptions.IsSetCoreCount())

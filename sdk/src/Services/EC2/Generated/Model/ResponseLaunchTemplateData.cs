@@ -33,6 +33,7 @@ namespace Amazon.EC2.Model
     public partial class ResponseLaunchTemplateData
     {
         private List<LaunchTemplateBlockDeviceMapping> _blockDeviceMappings = new List<LaunchTemplateBlockDeviceMapping>();
+        private LaunchTemplateCapacityReservationSpecificationResponse _capacityReservationSpecification;
         private LaunchTemplateCpuOptions _cpuOptions;
         private CreditSpecification _creditSpecification;
         private bool? _disableApiTermination;
@@ -70,6 +71,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetBlockDeviceMappings()
         {
             return this._blockDeviceMappings != null && this._blockDeviceMappings.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CapacityReservationSpecification. 
+        /// <para>
+        /// Information about the Capacity Reservation targeting option.
+        /// </para>
+        /// </summary>
+        public LaunchTemplateCapacityReservationSpecificationResponse CapacityReservationSpecification
+        {
+            get { return this._capacityReservationSpecification; }
+            set { this._capacityReservationSpecification = value; }
+        }
+
+        // Check to see if CapacityReservationSpecification property is set
+        internal bool IsSetCapacityReservationSpecification()
+        {
+            return this._capacityReservationSpecification != null;
         }
 
         /// <summary>
