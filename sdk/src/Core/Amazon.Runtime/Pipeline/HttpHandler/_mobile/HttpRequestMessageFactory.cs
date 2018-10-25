@@ -31,6 +31,20 @@ using System.Threading.Tasks;
 
 namespace Amazon.Runtime
 {
+#if PCL
+    /// <summary>
+    /// A factory which creates HTTP clients.
+    /// </summary>
+    [CLSCompliant(false)]
+    public interface IHttpClientFactory
+    {
+        /// <summary>
+        /// Create and configure an HttpClient.
+        /// </summary>
+        /// <returns></returns>
+        HttpClient CreateHttpClient(IClientConfig clientConfig);
+    }
+#endif
 
     /// <summary>
     /// A factory which creates HTTP requests which uses System.Net.Http.HttpClient.
@@ -63,7 +77,7 @@ namespace Amazon.Runtime
         public IHttpRequest<HttpContent> CreateHttpRequest(Uri requestUri)
         {
             HttpClient httpClient = null;
-            if(_clientConfig.CacheHttpClient)
+            if(ClientConfig.IsAllowedToCacheHttpClients(_clientConfig) && _clientConfig.CacheHttpClient)
             {
                 if(_httpClientCache == null)
                 {
@@ -163,6 +177,30 @@ namespace Amazon.Runtime
 
         private static HttpClient CreateHttpClient(IClientConfig clientConfig)
         {
+#if PCL
+            if (clientConfig.HttpClientFactory == null)
+            {
+                return CreateManagedHttpClient(clientConfig);
+            }
+            else
+            {
+                return clientConfig.HttpClientFactory.CreateHttpClient(clientConfig);
+            }
+#else
+            return CreateManagedHttpClient(clientConfig);
+#endif
+        }
+
+         /// <summary>
+         /// Create and configure a managed HttpClient instance.
+         /// The use of HttpClientHandler in the constructor for HttpClient implicitly creates a managed HttpClient.
+         /// If a native HttpClient is required the SDK user must implement IHttpClientFactory and provide an
+         /// instance via IClientConfig.HttpClientFactory (only available in PCL).
+         /// </summary>
+         /// <param name="clientConfig"></param>
+         /// <returns></returns>
+        private static HttpClient CreateManagedHttpClient(IClientConfig clientConfig)
+        {
             var httpMessageHandler = new HttpClientHandler();
 #if CORECLR
             if (clientConfig.MaxConnectionsPerServer.HasValue)
@@ -191,6 +229,7 @@ namespace Amazon.Runtime
             }
 
             var httpClient = new HttpClient(httpMessageHandler);
+            
             if (clientConfig.Timeout.HasValue)
             {
                 // Timeout value is set to ClientConfig.MaxTimeout for S3 and Glacier.
@@ -201,7 +240,7 @@ namespace Amazon.Runtime
             return httpClient;
         }
 
-    /// <summary>
+        /// <summary>
         ///  Create a unique string used for caching the HttpClient based on the settings that are used from the ClientConfig that are set on the HttpClient.
         /// </summary>
         /// <param name="clientConfig"></param>
@@ -428,7 +467,7 @@ namespace Amazon.Runtime
                 var responseMessage = await _httpClient.SendAsync(_request, HttpCompletionOption.ResponseHeadersRead, cancellationToken)
                     .ConfigureAwait(continueOnCapturedContext: false);
 
-                bool disposeClient = !_clientConfig.CacheHttpClient;
+                bool disposeClient = !ClientConfig.IsAllowedToCacheHttpClients(_clientConfig) || !_clientConfig.CacheHttpClient;
                 // If AllowAutoRedirect is set to false, HTTP 3xx responses are returned back as response.
                 if (!_clientConfig.AllowAutoRedirect &&
                     responseMessage.StatusCode >= HttpStatusCode.Ambiguous &&

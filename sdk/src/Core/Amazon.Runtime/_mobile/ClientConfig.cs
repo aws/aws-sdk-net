@@ -24,7 +24,8 @@ namespace Amazon.Runtime
     /// <summary>
     /// This class is the base class of all the configurations settings to connect
     /// to a service.
-    /// </summary>    
+    /// </summary>
+    [CLSCompliant(false)]
     public abstract partial class ClientConfig
     {
         private IWebProxy proxy = null;
@@ -99,7 +100,6 @@ namespace Amazon.Runtime
                 }
             }
         }
-
 #if CORECLR
         /// <summary>
         /// Get or set the value to use for <see cref="HttpClientHandler.MaxConnectionsPerServer"/> on requests.
@@ -112,5 +112,31 @@ namespace Amazon.Runtime
             set;
         }
 #endif
+
+#if PCL
+        /// <summary>
+        /// IHttpClientFactory used to create new HttpClients.
+        /// If null, an HttpClient will be created by the SDK.
+        /// The client must not be shared with other parts of the application, and will be disposed of by the SDK after use.
+        /// Note that IClientConfig members such as ProxyHost, ProxyPort, GetWebProxy, and AllowAutoRedirect
+        /// will have no effect unless they're used explicitly by the IHttpClientFactory implementation.
+        /// If this property is set then HttpClient caching will be disabled,
+        /// regardless of the CacheHttpClient property's value.
+        /// 
+        /// See https://docs.microsoft.com/en-us/xamarin/cross-platform/macios/http-stack?context=xamarin/ios and
+        /// https://docs.microsoft.com/en-us/xamarin/android/app-fundamentals/http-stack?context=xamarin%2Fcross-platform&tabs=macos#ssltls-implementation-build-option
+        /// for guidance on creating HttpClients for your platform.
+        /// </summary>
+        public IHttpClientFactory HttpClientFactory { get; set; }
+#endif
+
+        internal static bool IsAllowedToCacheHttpClients(IClientConfig clientConfig)
+        {
+#if PCL
+            return clientConfig.HttpClientFactory == null;
+#else
+            return true;
+#endif
+        }
     }
 }

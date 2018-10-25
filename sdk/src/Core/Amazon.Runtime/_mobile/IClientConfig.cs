@@ -20,9 +20,11 @@ using System.Text;
 using Amazon.Util;
 
 using Amazon.Runtime.Internal.Auth;
+using System.Net.Http;
 
 namespace Amazon.Runtime
 {
+    [CLSCompliant(false)]
     public partial interface IClientConfig
     {
         /// <summary>
@@ -41,5 +43,21 @@ namespace Amazon.Runtime
         /// </summary>
         IWebProxy GetWebProxy();
 
+#if PCL
+        /// <summary>
+        /// IHttpClientFactory used to create new HttpClients.
+        /// If null, an HttpClient will be created by the SDK.
+        /// The client must not be shared with other parts of the application, and will be disposed of by the SDK after use.
+        /// Note that IClientConfig members such as ProxyHost, ProxyPort, GetWebProxy, and AllowAutoRedirect
+        /// will have no effect unless they're used explicitly by the IHttpClientFactory implementation.
+        /// If this property is set then HttpClient caching will be disabled,
+        /// regardless of the CacheHttpClient property's value.
+        /// 
+        /// See https://docs.microsoft.com/en-us/xamarin/cross-platform/macios/http-stack?context=xamarin/ios and
+        /// https://docs.microsoft.com/en-us/xamarin/android/app-fundamentals/http-stack?context=xamarin%2Fcross-platform&tabs=macos#ssltls-implementation-build-option
+        /// for guidance on creating HttpClients for your platform.
+        /// </summary>
+        IHttpClientFactory HttpClientFactory { get; }
+#endif
     }
 }
