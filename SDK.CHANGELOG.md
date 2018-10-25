@@ -1,3 +1,7 @@
+### 3.3.394.0 (2018-10-25 18:59 UTC)
+* EC2 (3.3.68.0)
+	* As part of this release we are introducing EC2 On-Demand Capacity Reservations. With On-Demand Capacity Reservations, customers can reserve the exact EC2 capacity they need, and can keep it only for as long as they need it.
+
 ### 3.3.393.0 (2018-10-24 19:20 UTC)
 * AlexaForBusiness (3.3.6.0)
 	* We extended the functionality of the Alexa for Business SDK, including additional support for third-party Alexa built-in devices, managing private and public skills, and conferencing setup.
