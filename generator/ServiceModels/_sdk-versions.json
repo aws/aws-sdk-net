@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.395.0",
+    "ProductVersion" : "3.3.396.0",
     "CoreVersion"    : "3.3.29.0",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -369,7 +369,7 @@
             "InPreview"               : false
         },
         "SimpleSystemsManagement"   : {
-            "Version" : "3.3.34.3",
+            "Version" : "3.3.35.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.0"
@@ -945,7 +945,7 @@
             "InPreview"               : false
         },
         "SageMaker"                       : {
-            "Version" : "3.3.13.6",
+            "Version" : "3.3.14.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.0"
@@ -1001,7 +1001,7 @@
             "InPreview"               : false
         },
         "AlexaForBusiness"                : {
-            "Version" : "3.3.6.1",
+            "Version" : "3.3.6.2",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.0"

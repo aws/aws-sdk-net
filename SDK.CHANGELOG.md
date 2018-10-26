@@ -1,3 +1,11 @@
+### 3.3.396.0 (2018-10-26 20:02 UTC)
+* AlexaForBusiness (3.3.6.2)
+	* Documentation updates for AWS Alexa for Business
+* SageMaker (3.3.14.0)
+	* SageMaker notebook instances can now have a volume size configured.
+* SimpleSystemsManagement (3.3.35.0)
+	* Compliance Severity feature release for State Manager. Users now have the ability to select compliance severity to their association in state manager console or CLI.
+
 ### 3.3.395.0 (2018-10-26 17:53 UTC)
 * Core 3.3.29.0
 	* Code for future SDK instrumentation and telemetry.
