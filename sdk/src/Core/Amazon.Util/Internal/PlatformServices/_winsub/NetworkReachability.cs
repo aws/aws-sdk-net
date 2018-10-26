@@ -24,7 +24,6 @@ namespace Amazon.Util.Internal.PlatformServices
 
         public event EventHandler<NetworkStatusEventArgs> NetworkReachabilityChanged;
 
-        //refer this http://stackoverflow.com/questions/16523447/how-to-detect-if-windows-8-device-is-on-wifi-lan-or-3g-internet-connection
         private void CheckInternetConnectivity()
         {
             

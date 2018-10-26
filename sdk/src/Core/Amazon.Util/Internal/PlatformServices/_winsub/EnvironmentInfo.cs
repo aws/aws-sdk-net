@@ -19,7 +19,6 @@ namespace Amazon.Util.Internal.PlatformServices
             this.Locale = CultureInfo.CurrentCulture.DisplayName;
             this.FrameworkUserAgent = InternalSDKUtils.UnknownNetFrameworkVersion;
             this.PclPlatform = "PCL/Windows8";
-
         }
 
         public string Platform { get; private set; }

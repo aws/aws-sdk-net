@@ -22,8 +22,6 @@ namespace Amazon.Util.Internal.PlatformServices
         {
             get
             {
- 
-
                 return string.Format("0.0.0.0");
             }
         }
@@ -32,8 +30,6 @@ namespace Amazon.Util.Internal.PlatformServices
         {
             get
             {
- 
-
                 return string.Format("0");
             }
         }
