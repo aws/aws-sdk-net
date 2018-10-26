@@ -51,6 +51,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AssociationName);
             }
 
+            if(requestObject.IsSetComplianceSeverity())
+            {
+                context.Writer.WritePropertyName("ComplianceSeverity");
+                context.Writer.Write(requestObject.ComplianceSeverity);
+            }
+
             if(requestObject.IsSetDocumentVersion())
             {
                 context.Writer.WritePropertyName("DocumentVersion");

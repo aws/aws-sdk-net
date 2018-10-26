@@ -35,6 +35,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _associationId;
         private string _associationName;
         private string _associationVersion;
+        private AssociationComplianceSeverity _complianceSeverity;
         private DateTime? _createdDate;
         private string _documentVersion;
         private string _maxConcurrency;
@@ -97,6 +98,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetAssociationVersion()
         {
             return this._associationVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComplianceSeverity. 
+        /// <para>
+        /// The severity level that is assigned to the association.
+        /// </para>
+        /// </summary>
+        public AssociationComplianceSeverity ComplianceSeverity
+        {
+            get { return this._complianceSeverity; }
+            set { this._complianceSeverity = value; }
+        }
+
+        // Check to see if ComplianceSeverity property is set
+        internal bool IsSetComplianceSeverity()
+        {
+            return this._complianceSeverity != null;
         }
 
         /// <summary>

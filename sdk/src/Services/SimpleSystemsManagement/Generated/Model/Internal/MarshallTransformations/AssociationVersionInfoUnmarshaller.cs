@@ -82,6 +82,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.AssociationVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ComplianceSeverity", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ComplianceSeverity = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreatedDate", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

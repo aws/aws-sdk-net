@@ -33,6 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class CreateAssociationBatchRequestEntry
     {
         private string _associationName;
+        private AssociationComplianceSeverity _complianceSeverity;
         private string _documentVersion;
         private string _instanceId;
         private string _maxConcurrency;
@@ -59,6 +60,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetAssociationName()
         {
             return this._associationName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComplianceSeverity. 
+        /// <para>
+        /// The severity level to assign to the association.
+        /// </para>
+        /// </summary>
+        public AssociationComplianceSeverity ComplianceSeverity
+        {
+            get { return this._complianceSeverity; }
+            set { this._complianceSeverity = value; }
+        }
+
+        // Check to see if ComplianceSeverity property is set
+        internal bool IsSetComplianceSeverity()
+        {
+            return this._complianceSeverity != null;
         }
 
         /// <summary>
