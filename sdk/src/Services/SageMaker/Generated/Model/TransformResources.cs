@@ -79,10 +79,28 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property VolumeKmsKeyId. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker
-        /// uses to encrypt data on the storage volume attached to the ML compute instance(s)
-        /// that run the batch transform job.
+        /// The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt
+        /// data on the storage volume attached to the ML compute instance(s) that run the batch
+        /// transform job. The <code>VolumeKmsKeyId</code> can be any of the following formats:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// // KMS Key ID
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// // Amazon Resource Name (ARN) of a KMS Key
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+        /// 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string VolumeKmsKeyId
         {

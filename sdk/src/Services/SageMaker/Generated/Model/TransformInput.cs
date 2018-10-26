@@ -42,8 +42,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property CompressionType. 
         /// <para>
         /// Compressing data helps save on storage space. If your transform data is compressed,
-        /// specify the compression type.and Amazon SageMaker will automatically decompress the
-        /// data for the transform job accordingly. The default value is <code>None</code>.
+        /// specify the compression type. Amazon SageMaker automatically decompresses the data
+        /// for the transform job accordingly. The default value is <code>None</code>.
         /// </para>
         /// </summary>
         public CompressionType CompressionType

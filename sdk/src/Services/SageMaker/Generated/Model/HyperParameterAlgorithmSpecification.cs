@@ -60,7 +60,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property TrainingImage. 
         /// <para>
         ///  The registry path of the Docker image that contains the training algorithm. For information
-        /// about Docker registry paths for built-in algorithms, see <a>sagemaker-algo-docker-registry-paths</a>.
+        /// about Docker registry paths for built-in algorithms, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
+        /// Provided by Amazon SageMaker: Common Parameters</a>.
         /// </para>
         /// </summary>
         public string TrainingImage

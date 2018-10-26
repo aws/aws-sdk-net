@@ -165,8 +165,9 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// A <a>VpcConfig</a> object that specifies the VPC that you want your model to connect
         /// to. Control access to and from your model container by configuring the VPC. <code>VpcConfig</code>
-        /// is currently used in hosting services but not in batch transform. For more information,
-        /// see <a>host-vpc</a>.
+        /// is used in hosting services and in batch transform. For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect
+        /// Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect
+        /// Data in Batch Transform Jobs by Using an Amazon Virtual Private Cloud</a>.
         /// </para>
         /// </summary>
         public VpcConfig VpcConfig

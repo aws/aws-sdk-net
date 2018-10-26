@@ -240,53 +240,77 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SecondaryStatus. 
         /// <para>
-        ///  Provides granular information about the system state. For more information, see <code>TrainingJobStatus</code>.
-        /// 
+        ///  Provides detailed information about the state of the training job. For detailed information
+        /// on the secondary status of the training job, see <code>StatusMessage</code> under
+        /// <a>SecondaryStatusTransition</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon SageMaker provides primary statuses and secondary statuses that apply to each
+        /// of them:
+        /// </para>
+        ///  <dl> <dt>InProgress</dt> <dd> <ul> <li> 
+        /// <para>
+        ///  <code>Starting</code> - Starting the training job.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Downloading</code> - An optional stage for algorithms that support <code>File</code>
+        /// training input mode. It indicates that data is being downloaded to the ML storage
+        /// volumes.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Training</code> - Training is in progress.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Uploading</code> - Training is complete and the model artifacts are being uploaded
+        /// to the S3 location.
+        /// </para>
+        ///  </li> </ul> </dd> <dt>Completed</dt> <dd> <ul> <li> 
+        /// <para>
+        ///  <code>Completed</code> - The training job has completed.
+        /// </para>
+        ///  </li> </ul> </dd> <dt>Failed</dt> <dd> <ul> <li> 
+        /// <para>
+        ///  <code>Failed</code> - The training job has failed. The reason for the failure is
+        /// returned in the <code>FailureReason</code> field of <code>DescribeTrainingJobResponse</code>.
+        /// </para>
+        ///  </li> </ul> </dd> <dt>Stopped</dt> <dd> <ul> <li> 
+        /// <para>
+        ///  <code>MaxRuntimeExceeded</code> - The job stopped because it exceeded the maximum
+        /// allowed runtime.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Stopped</code> - The training job has stopped.
+        /// </para>
+        ///  </li> </ul> </dd> <dt>Stopping</dt> <dd> <ul> <li> 
+        /// <para>
+        ///  <code>Stopping</code> - Stopping the training job.
+        /// </para>
+        ///  </li> </ul> </dd> </dl> <important> 
+        /// <para>
+        /// Valid values for <code>SecondaryStatus</code> are subject to change. 
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// We no longer support the following secondary statuses:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Starting</code> - starting the training job.
+        ///  <code>LaunchingMLInstances</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Downloading</code> - downloading the input data.
+        ///  <code>PreparingTrainingStack</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Training</code> - model training is in progress.
+        ///  <code>DownloadingTrainingImage</code> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Uploading</code> - uploading the trained model.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Stopping</code> - stopping the training job.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Stopped</code> - the training job has stopped.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>MaxRuntimeExceeded</code> - the training job exceeded the specified max run
-        /// time and has been stopped.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Completed</code> - the training job has completed.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Failed</code> - the training job has failed. The failure reason is stored in
-        /// the <code>FailureReason</code> field of <code>DescribeTrainingJobResponse</code>.
-        /// </para>
-        ///  </li> </ul> <important> 
-        /// <para>
-        /// The valid values for <code>SecondaryStatus</code> are subject to change. They primarily
-        /// provide information on the progress of the training job.
-        /// </para>
-        ///  </important>
+        ///  </li> </ul>
         /// </summary>
         public SecondaryStatus SecondaryStatus
         {
@@ -303,8 +327,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SecondaryStatusTransitions. 
         /// <para>
-        /// To give an overview of the training job lifecycle, <code>SecondaryStatusTransitions</code>
-        /// is a log of time-ordered secondary statuses that a training job has transitioned.
+        /// A history of all of the secondary statuses that the training job has transitioned
+        /// through.
         /// </para>
         /// </summary>
         public List<SecondaryStatusTransition> SecondaryStatusTransitions
@@ -398,40 +422,38 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property TrainingJobStatus. 
         /// <para>
-        /// The status of the training job. 
+        /// The status of the training job.
         /// </para>
         ///  
         /// <para>
-        /// For the <code>InProgress</code> status, Amazon SageMaker can return these secondary
-        /// statuses:
+        /// Amazon SageMaker provides the following training job statuses:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Starting - Preparing for training.
+        ///  <code>InProgress</code> - The training is in progress.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Downloading - Optional stage for algorithms that support File training input mode.
-        /// It indicates data is being downloaded to ML storage volumes.
+        ///  <code>Completed</code> - The training job has completed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Training - Training is in progress.
+        ///  <code>Failed</code> - The training job has failed. To see the reason for the failure,
+        /// see the <code>FailureReason</code> field in the response to a <code>DescribeTrainingJobResponse</code>
+        /// call.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Uploading - Training is complete and model upload is in progress.
+        ///  <code>Stopping</code> - The training job is stopping.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Stopped</code> - The training job has stopped.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For the <code>Stopped</code> training status, Amazon SageMaker can return these secondary
-        /// statuses:
+        /// For more detailed information, see <code>SecondaryStatus</code>. 
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// MaxRuntimeExceeded - Job stopped as a result of maximum allowed runtime exceeded.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public TrainingJobStatus TrainingJobStatus
         {
@@ -490,7 +512,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property VpcConfig. 
         /// <para>
         /// A <a>VpcConfig</a> object that specifies the VPC that this training job has access
-        /// to. For more information, see <a>train-vpc</a>.
+        /// to. For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
+        /// Training Jobs by Using an Amazon Virtual Private Cloud</a>.
         /// </para>
         /// </summary>
         public VpcConfig VpcConfig

@@ -97,6 +97,54 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The status of the endpoint.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>OutOfService</code>: Endpoint is not available to take incoming requests.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Creating</code>: <a>CreateEndpoint</a> is executing.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Updating</code>: <a>UpdateEndpoint</a> or <a>UpdateEndpointWeightsAndCapacities</a>
+        /// is executing.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SystemUpdating</code>: Endpoint is undergoing maintenance and cannot be updated
+        /// or deleted or re-scaled until it has completed. This mainenance operation does not
+        /// change any customer-specified values such as VPC config, KMS encryption, model, instance
+        /// type, or instance count.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>RollingBack</code>: Endpoint fails to scale up or down or change its variant
+        /// weight and is in the process of rolling back to its previous configuration. Once the
+        /// rollback completes, endpoint returns to an <code>InService</code> status. This transitional
+        /// status only applies to an endpoint that has autoscaling enabled and is undergoing
+        /// variant weight or capacity changes as part of an <a>UpdateEndpointWeightsAndCapacities</a>
+        /// call or when the <a>UpdateEndpointWeightsAndCapacities</a> operation is called explicitly.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>InService</code>: Endpoint is available to process incoming requests.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Deleting</code>: <a>DeleteEndpoint</a> is executing.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Failed</code>: Endpoint could not be created, updated, or re-scaled. Use <a>DescribeEndpointOutput$FailureReason</a>
+        /// for information about the failure. <a>DeleteEndpoint</a> is the only operation that
+        /// can be performed on a failed endpoint.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To get a list of endpoints with a specified status, use the <a>ListEndpointsInput$StatusEquals</a>
+        /// filter.
+        /// </para>
         /// </summary>
         public EndpointStatus EndpointStatus
         {

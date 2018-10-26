@@ -214,7 +214,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property StatusEquals. 
         /// <para>
-        ///  A filter that returns only endpoints with the specified status. 
+        ///  A filter that returns only endpoints with the specified status.
         /// </para>
         /// </summary>
         public EndpointStatus StatusEquals

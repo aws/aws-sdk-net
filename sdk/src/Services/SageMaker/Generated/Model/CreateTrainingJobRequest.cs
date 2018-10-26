@@ -107,7 +107,8 @@ namespace Amazon.SageMaker.Model
         /// The registry path of the Docker image that contains the training algorithm and algorithm-specific
         /// metadata, including the input mode. For more information about algorithms provided
         /// by Amazon SageMaker, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
-        /// For information about providing your own algorithms, see <a>your-algorithms</a>. 
+        /// For information about providing your own algorithms, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
+        /// Your Own Algorithms with Amazon SageMaker</a>. 
         /// </para>
         /// </summary>
         public AlgorithmSpecification AlgorithmSpecification
@@ -334,7 +335,8 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// A <a>VpcConfig</a> object that specifies the VPC that you want your training job to
         /// connect to. Control access to and from your training container by configuring the
-        /// VPC. For more information, see <a>train-vpc</a> 
+        /// VPC. For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
+        /// Training Jobs by Using an Amazon Virtual Private Cloud</a>.
         /// </para>
         /// </summary>
         public VpcConfig VpcConfig

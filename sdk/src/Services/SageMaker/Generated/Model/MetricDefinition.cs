@@ -29,7 +29,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Specifies a metric that the training algorithm writes to <code>stderr</code> or <code>stdout</code>.
-    /// Amazon SageMakerHyperparamter tuning captures all defined metrics. You specify one
+    /// Amazon SageMakerhyperparameter tuning captures all defined metrics. You specify one
     /// metric that a hyperparameter tuning job uses as its objective metric to choose the
     /// best training job.
     /// </summary>
@@ -61,7 +61,8 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// A regular expression that searches the output of a training job and gets the value
         /// of the metric. For more information about using regular expressions to define metrics,
-        /// see <a>automatic-model-tuning-define-metrics</a>.
+        /// see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Defining
+        /// Objective Metrics</a>.
         /// </para>
         /// </summary>
         public string Regex

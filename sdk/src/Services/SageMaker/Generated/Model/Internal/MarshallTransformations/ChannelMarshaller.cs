@@ -74,6 +74,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetInputMode())
+            {
+                context.Writer.WritePropertyName("InputMode");
+                context.Writer.Write(requestObject.InputMode);
+            }
+
             if(requestObject.IsSetRecordWrapperType())
             {
                 context.Writer.WritePropertyName("RecordWrapperType");

@@ -62,13 +62,7 @@ namespace Amazon.SageMaker.Model
         /// Defines how to assemble the results of the transform job as a single S3 object. You
         /// should select a format that is most convenient to you. To concatenate the results
         /// in binary format, specify <code>None</code>. To add a newline character at the end
-        /// of every transformed record, specify <code>Line</code>. To assemble the output in
-        /// RecordIO format, specify <code>RecordIO</code>. The default value is <code>None</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// For information about the <code>RecordIO</code> format, see <a href="http://mxnet.io/architecture/note_data_loading.html#data-format">Data
-        /// Format</a>.
+        /// of every transformed record, specify <code>Line</code>.
         /// </para>
         /// </summary>
         public AssemblyType AssembleWith
@@ -86,10 +80,44 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The AWS Key Management Service (AWS KMS) key for Amazon S3 server-side encryption
-        /// that Amazon SageMaker uses to encrypt the transformed data.
+        /// The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt
+        /// the model artifacts at rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code>
+        /// can be any of the following formats: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// // KMS Key ID
         /// </para>
         ///  
+        /// <para>
+        ///  <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// // Amazon Resource Name (ARN) of a KMS Key
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// // KMS Key Alias
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"alias/ExampleAlias"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// // Amazon Resource Name (ARN) of a KMS Key Alias
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> 
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon
         /// S3 for your role's account. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed

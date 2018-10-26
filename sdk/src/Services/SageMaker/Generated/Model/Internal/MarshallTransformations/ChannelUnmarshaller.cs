@@ -88,6 +88,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.DataSource = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InputMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InputMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RecordWrapperType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

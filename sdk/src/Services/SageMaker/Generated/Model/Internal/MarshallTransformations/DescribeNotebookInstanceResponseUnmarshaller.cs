@@ -141,6 +141,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.Url = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("VolumeSizeInGB", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.VolumeSizeInGB = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

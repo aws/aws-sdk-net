@@ -39,19 +39,54 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt
-        /// the model artifacts at rest using Amazon S3 server-side encryption. 
+        /// the model artifacts at rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code>
+        /// can be any of the following formats: 
         /// </para>
-        ///  <note> 
+        ///  <ul> <li> 
+        /// <para>
+        /// // KMS Key ID
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// // Amazon Resource Name (ARN) of a KMS Key
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// // KMS Key Alias
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"alias/ExampleAlias"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// // Amazon Resource Name (ARN) of a KMS Key Alias
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> 
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// If you don't provide the KMS key ID, Amazon SageMaker uses the default KMS key for
         /// Amazon S3 for your role's account. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
-        /// Encryption Keys</a> in Amazon Simple Storage Service developer guide.
+        /// Encryption Keys</a> in <i>Amazon Simple Storage Service Developer Guide.</i> 
         /// </para>
-        ///  </note> <note> 
+        ///  <note> 
         /// <para>
-        ///  The KMS key policy must grant permission to the IAM role you specify in your <code>CreateTrainingJob</code>
-        /// request. <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
-        /// Key Policies in AWS KMS</a> in the AWS Key Management Service Developer Guide. 
+        /// The KMS key policy must grant permission to the IAM role that you specify in your
+        /// <code>CreateTrainingJob</code> request. <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
+        /// Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
+        /// 
         /// </para>
         ///  </note>
         /// </summary>

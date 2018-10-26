@@ -36,6 +36,7 @@ namespace Amazon.SageMaker.Model
         private CompressionType _compressionType;
         private string _contentType;
         private DataSource _dataSource;
+        private TrainingInputMode _inputMode;
         private RecordWrapper _recordWrapperType;
 
         /// <summary>
@@ -110,6 +111,21 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetDataSource()
         {
             return this._dataSource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InputMode.
+        /// </summary>
+        public TrainingInputMode InputMode
+        {
+            get { return this._inputMode; }
+            set { this._inputMode = value; }
+        }
+
+        // Check to see if InputMode property is set
+        internal bool IsSetInputMode()
+        {
+            return this._inputMode != null;
         }
 
         /// <summary>

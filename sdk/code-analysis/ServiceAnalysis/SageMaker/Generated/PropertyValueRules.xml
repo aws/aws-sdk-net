@@ -85,6 +85,11 @@
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateNotebookInstanceRequest.VolumeSizeInGB</property>
+    <min>5</min>
+    <max>16384</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateNotebookInstanceResponse.NotebookInstanceArn</property>
     <max>256</max>
   </property-value-rule>
@@ -298,6 +303,11 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeNotebookInstanceResponse.SubnetId</property>
     <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeNotebookInstanceResponse.VolumeSizeInGB</property>
+    <min>5</min>
+    <max>16384</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeNotebookInstanceLifecycleConfigRequest.NotebookInstanceLifecycleConfigName</property>
@@ -626,6 +636,11 @@
     <min>20</min>
     <max>2048</max>
     <pattern>^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateNotebookInstanceRequest.VolumeSizeInGB</property>
+    <min>5</min>
+    <max>16384</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.UpdateNotebookInstanceLifecycleConfigRequest.NotebookInstanceLifecycleConfigName</property>

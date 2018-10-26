@@ -40,6 +40,7 @@ namespace Amazon.SageMaker.Model
         private string _lifecycleConfigName;
         private string _notebookInstanceName;
         private string _roleArn;
+        private int? _volumeSizeInGB;
 
         /// <summary>
         /// Gets and sets the property DisassociateLifecycleConfig. 
@@ -82,7 +83,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property LifecycleConfigName. 
         /// <para>
         /// The name of a lifecycle configuration to associate with the notebook instance. For
-        /// information about lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+        /// information about lifestyle configurations, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+        /// 2.1: (Optional) Customize a Notebook Instance</a>.
         /// </para>
         /// </summary>
         public string LifecycleConfigName
@@ -139,6 +141,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeSizeInGB. 
+        /// <para>
+        /// The size, in GB, of the ML storage volume to attach to the notebook instance.
+        /// </para>
+        /// </summary>
+        public int VolumeSizeInGB
+        {
+            get { return this._volumeSizeInGB.GetValueOrDefault(); }
+            set { this._volumeSizeInGB = value; }
+        }
+
+        // Check to see if VolumeSizeInGB property is set
+        internal bool IsSetVolumeSizeInGB()
+        {
+            return this._volumeSizeInGB.HasValue; 
         }
 
     }

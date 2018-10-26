@@ -34,7 +34,8 @@ namespace Amazon.SageMaker.Model
     ///  
     /// <para>
     /// For more information about algorithms provided by Amazon SageMaker, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
-    /// For information about using your own algorithms, see <a>your-algorithms</a>. 
+    /// For information about using your own algorithms, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
+    /// Your Own Algorithms with Amazon SageMaker</a>. 
     /// </para>
     /// </summary>
     public partial class AlgorithmSpecification
@@ -46,7 +47,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property TrainingImage. 
         /// <para>
         /// The registry path of the Docker image that contains the training algorithm. For information
-        /// about docker registry paths for built-in algorithms, see <a>sagemaker-algo-docker-registry-paths</a>.
+        /// about docker registry paths for built-in algorithms, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
+        /// Provided by Amazon SageMaker: Common Parameters</a>.
         /// </para>
         /// </summary>
         public string TrainingImage

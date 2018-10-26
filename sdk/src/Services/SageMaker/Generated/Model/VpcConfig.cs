@@ -30,7 +30,9 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Specifies a VPC that your training jobs and hosted models have access to. Control
     /// access to and from your training and model containers by configuring the VPC. For
-    /// more information, see <a>host-vpc</a> and <a>train-vpc</a>.
+    /// more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect
+    /// Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
+    /// Training Jobs by Using an Amazon Virtual Private Cloud</a>.
     /// </summary>
     public partial class VpcConfig
     {
@@ -60,7 +62,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property Subnets. 
         /// <para>
         /// The ID of the subnets in the VPC to which you want to connect your training job or
-        /// model.
+        /// model. 
         /// </para>
         /// </summary>
         public List<string> Subnets

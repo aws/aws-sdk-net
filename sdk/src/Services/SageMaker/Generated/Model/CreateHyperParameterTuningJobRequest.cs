@@ -83,8 +83,13 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// An array of key-value pairs. You can use tags to categorize your AWS resources in
         /// different ways, for example, by purpose, owner, or environment. For more information,
-        /// see <a href="http://docs.aws.amazon.com//awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-        /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+        /// see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
+        /// Tagging Strategies</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Tags that you specify for the tuning job are also added to all training jobs that
+        /// the tuning job launches.
         /// </para>
         /// </summary>
         public List<Tag> Tags

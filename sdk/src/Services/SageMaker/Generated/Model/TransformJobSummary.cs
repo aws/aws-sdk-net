@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Provides a summary information for a transform job. Multiple TransformJobSummary objects
-    /// are returned as a list after calling <a>ListTransformJobs</a>.
+    /// Provides a summary of a transform job. Multiple TransformJobSummary objects are returned
+    /// as a list after calling <a>ListTransformJobs</a>.
     /// </summary>
     public partial class TransformJobSummary
     {

@@ -242,16 +242,26 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Adds or overwrites one or more tags for the specified Amazon SageMaker resource. You
-        /// can add tags to notebook instances, training jobs, models, endpoint configurations,
-        /// and endpoints. 
+        /// can add tags to notebook instances, training jobs, hyperparameter tuning jobs, models,
+        /// endpoint configurations, and endpoints.
         /// 
         ///  
         /// <para>
         /// Each tag consists of a key and an optional value. Tag keys must be unique per resource.
-        /// For more information about tags, see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-        /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
-        /// 
+        /// For more information about tags, see For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
+        /// Tagging Strategies</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Tags that you add to a hyperparameter tuning job by calling this API are also added
+        /// to any training jobs that the hyperparameter tuning job launches after you call this
+        /// API, but not to training jobs that the hyperparameter tuning job launched before you
+        /// called this API. To make sure that the tags associated with a hyperparameter tuning
+        /// job are also added to all training jobs that the hyperparameter tuning job launches,
+        /// add the tags when you first create the tuning job by specifying them in the <code>Tags</code>
+        /// parameter of <a>CreateHyperParameterTuningJob</a> 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddTags service method.</param>
         /// 
@@ -690,7 +700,8 @@ namespace Amazon.SageMaker
         /// </para>
         ///  
         /// <para>
-        /// For information about notebook instance lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+        /// For information about notebook instance lifestyle configurations, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+        /// 2.1: (Optional) Customize a Notebook Instance</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateNotebookInstanceLifecycleConfig service method.</param>
@@ -747,7 +758,8 @@ namespace Amazon.SageMaker
         /// AWS Identity and Access Management user, group, or role used to access the notebook
         /// instance. Use the <code>NotIpAddress</code> condition operator and the <code>aws:SourceIP</code>
         /// condition context key to specify the list of IP addresses that you want to have access
-        /// to the notebook instance. For more information, see <a>nbi-ip-filter</a>.
+        /// to the notebook instance. For more information, see <a href="http://docs.aws.amazon.com/https:/docs.aws.amazon.com/sagemaker/latest/dg/howitworks-access-ws.html#nbi-ip-filter">Limit
+        /// Access to a Notebook Instance by IP Address</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePresignedNotebookInstanceUrl service method.</param>
@@ -1201,6 +1213,13 @@ namespace Amazon.SageMaker
         /// <para>
         /// To list a resource's tags, use the <code>ListTags</code> API. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// When you call this API to delete tags from a hyperparameter tuning job, the deleted
+        /// tags are not removed from training jobs that the hyperparameter tuning job launched
+        /// before you called this API.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTags service method.</param>
         /// 
@@ -1442,7 +1461,8 @@ namespace Amazon.SageMaker
         /// 
         ///  
         /// <para>
-        /// For information about notebook instance lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+        /// For information about notebook instance lifestyle configurations, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+        /// 2.1: (Optional) Customize a Notebook Instance</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeNotebookInstanceLifecycleConfig service method.</param>

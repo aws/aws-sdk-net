@@ -98,6 +98,7 @@ namespace Amazon.SageMaker.Model
         private List<string> _securityGroupIds = new List<string>();
         private string _subnetId;
         private List<Tag> _tags = new List<Tag>();
+        private int? _volumeSizeInGB;
 
         /// <summary>
         /// Gets and sets the property DirectInternetAccess. 
@@ -109,9 +110,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a>appendix-notebook-and-internet-access</a>. You can set
-        /// the value of this parameter to <code>Disabled</code> only if you set a value for the
-        /// <code>SubnetId</code> parameter.
+        /// For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
+        /// Instances Are Internet-Enabled by Default</a>. You can set the value of this parameter
+        /// to <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.
         /// </para>
         /// </summary>
         public DirectInternetAccess DirectInternetAccess
@@ -167,7 +168,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property LifecycleConfigName. 
         /// <para>
         /// The name of a lifecycle configuration to associate with the notebook instance. For
-        /// information about lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+        /// information about lifestyle configurations, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+        /// 2.1: (Optional) Customize a Notebook Instance</a>.
         /// </para>
         /// </summary>
         public string LifecycleConfigName
@@ -284,6 +286,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeSizeInGB. 
+        /// <para>
+        /// The size, in GB, of the ML storage volume to attach to the notebook instance.
+        /// </para>
+        /// </summary>
+        public int VolumeSizeInGB
+        {
+            get { return this._volumeSizeInGB.GetValueOrDefault(); }
+            set { this._volumeSizeInGB = value; }
+        }
+
+        // Check to see if VolumeSizeInGB property is set
+        internal bool IsSetVolumeSizeInGB()
+        {
+            return this._volumeSizeInGB.HasValue; 
         }
 
     }

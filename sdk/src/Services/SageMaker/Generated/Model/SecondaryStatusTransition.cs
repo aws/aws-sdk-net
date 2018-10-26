@@ -28,9 +28,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Specifies a secondary status the job has transitioned into. It includes a start timestamp
-    /// and later an end timestamp. The end timestamp is added either after the job transitions
-    /// to a different secondary status or after the job has ended.
+    /// An array element of <a>DescribeTrainingJobResponse$SecondaryStatusTransitions</a>.
+    /// It provides additional details about a status that the training job has transitioned
+    /// through. A training job can be in one of several states, for example, starting, downloading,
+    /// training, or uploading. Within each state, there are a number of intermediate states.
+    /// For example, within the starting state, Amazon SageMaker could be starting the training
+    /// job or launching the ML instances. These transitional states are referred to as the
+    /// job's secondary status.
     /// </summary>
     public partial class SecondaryStatusTransition
     {
@@ -42,9 +46,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// A timestamp that shows when the secondary status has ended and the job has transitioned
-        /// into another secondary status. The <code>EndTime</code> timestamp is also set after
-        /// the training job has ended.
+        /// A timestamp that shows when the training job transitioned out of this secondary status
+        /// state into another secondary status state or when the training job has ended.
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -62,7 +65,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// A timestamp that shows when the training job has entered this secondary status.
+        /// A timestamp that shows when the training job transitioned to the current secondary
+        /// status state.
         /// </para>
         /// </summary>
         public DateTime StartTime
@@ -80,9 +84,70 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Provides granular information about the system state. For more information, see <code>SecondaryStatus</code>
-        /// under the <a>DescribeTrainingJob</a> response elements.
+        /// Contains a secondary status information from a training job.
         /// </para>
+        ///  
+        /// <para>
+        /// Status might be one of the following secondary statuses:
+        /// </para>
+        ///  <dl> <dt>InProgress</dt> <dd> <ul> <li> 
+        /// <para>
+        ///  <code>Starting</code> - Starting the training job.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Downloading</code> - An optional stage for algorithms that support <code>File</code>
+        /// training input mode. It indicates that data is being downloaded to the ML storage
+        /// volumes.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Training</code> - Training is in progress.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Uploading</code> - Training is complete and the model artifacts are being uploaded
+        /// to the S3 location.
+        /// </para>
+        ///  </li> </ul> </dd> <dt>Completed</dt> <dd> <ul> <li> 
+        /// <para>
+        ///  <code>Completed</code> - The training job has completed.
+        /// </para>
+        ///  </li> </ul> </dd> <dt>Failed</dt> <dd> <ul> <li> 
+        /// <para>
+        ///  <code>Failed</code> - The training job has failed. The reason for the failure is
+        /// returned in the <code>FailureReason</code> field of <code>DescribeTrainingJobResponse</code>.
+        /// </para>
+        ///  </li> </ul> </dd> <dt>Stopped</dt> <dd> <ul> <li> 
+        /// <para>
+        ///  <code>MaxRuntimeExceeded</code> - The job stopped because it exceeded the maximum
+        /// allowed runtime.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Stopped</code> - The training job has stopped.
+        /// </para>
+        ///  </li> </ul> </dd> <dt>Stopping</dt> <dd> <ul> <li> 
+        /// <para>
+        ///  <code>Stopping</code> - Stopping the training job.
+        /// </para>
+        ///  </li> </ul> </dd> </dl> 
+        /// <para>
+        /// We no longer support the following secondary statuses:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>LaunchingMLInstances</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PreparingTrainingStack</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DownloadingTrainingImage</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public SecondaryStatus Status
         {
@@ -99,10 +164,66 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property StatusMessage. 
         /// <para>
-        /// Shows a brief description and other information about the secondary status. For example,
-        /// the <code>LaunchingMLInstances</code> secondary status could show a status message
-        /// of "Insufficent capacity error while launching instances".
+        /// A detailed description of the progress within a secondary status. 
         /// </para>
+        ///  
+        /// <para>
+        /// Amazon SageMaker provides secondary statuses and status messages that apply to each
+        /// of them:
+        /// </para>
+        ///  <dl> <dt>Starting</dt> <dd> <ul> <li> 
+        /// <para>
+        /// Starting the training job.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Launching requested ML instances.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Insufficient capacity error from EC2 while launching instances, retrying!
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Launched instance was unhealthy, replacing it!
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Preparing the instances for training.
+        /// </para>
+        ///  </li> </ul> </dd> <dt>Training</dt> <dd> <ul> <li> 
+        /// <para>
+        /// Downloading the training image.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Training image download completed. Training in progress.
+        /// </para>
+        ///  </li> </ul> </dd> </dl> <important> 
+        /// <para>
+        /// Status messages are subject to change. Therefore, we recommend not including them
+        /// in code that programmatically initiates actions. For examples, don't use status messages
+        /// in if statements.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// To have an overview of your training job's progress, view <code>TrainingJobStatus</code>
+        /// and <code>SecondaryStatus</code> in <a>DescribeTrainingJobResponse</a>, and <code>StatusMessage</code>
+        /// together. For example, at the start of a training job, you might see the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>TrainingJobStatus</code> - InProgress
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SecondaryStatus</code> - Training
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>StatusMessage</code> - Downloading the training image
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string StatusMessage
         {
