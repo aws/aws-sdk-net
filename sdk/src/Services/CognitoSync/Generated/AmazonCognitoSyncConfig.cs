@@ -32,7 +32,7 @@ namespace Amazon.CognitoSync
     public partial class AmazonCognitoSyncConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.3.1.49");
+            InternalSDKUtils.BuildUserAgentString("3.3.1.50");
 
         private string _userAgent = UserAgentString;
 

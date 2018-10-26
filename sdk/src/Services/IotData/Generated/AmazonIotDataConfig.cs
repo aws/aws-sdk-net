@@ -32,7 +32,7 @@ namespace Amazon.IotData
     public partial class AmazonIotDataConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.3.0.47");
+            InternalSDKUtils.BuildUserAgentString("3.3.0.48");
 
         private string _userAgent = UserAgentString;
 

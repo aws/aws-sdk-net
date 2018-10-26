@@ -1,3 +1,8 @@
+### 3.3.395.0 (2018-10-26 17:53 UTC)
+* Core 3.3.29.0
+	* Code for future SDK instrumentation and telemetry.
+	* All services packages updated to require new Core
+
 ### 3.3.394.0 (2018-10-25 18:59 UTC)
 * EC2 (3.3.68.0)
 	* As part of this release we are introducing EC2 On-Demand Capacity Reservations. With On-Demand Capacity Reservations, customers can reserve the exact EC2 capacity they need, and can keep it only for as long as they need it.
