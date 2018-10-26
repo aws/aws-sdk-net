@@ -29,15 +29,15 @@ namespace Amazon.AlexaForBusiness
     /// <summary>
     /// Interface for accessing AlexaForBusiness
     ///
-    /// Alexa for Business makes it easy for you to use Alexa in your organization. Alexa
-    /// for Business gives you the tools you need for managing Alexa devices, enroll your
-    /// users, and assign skills, at scale. You can build your own context-aware voice skills
-    /// using the Alexa Skills Kit and the Alexa for Business API operations. You can make
-    /// also these available as private skills for your organization. Alexa for Business makes
-    /// it easy to voice-enable your products and services, providing context-aware voice
-    /// experiences for your customers. In addition, Alexa for Business enables Alexa Voice
-    /// Services (AVS) device manufacturers to centrally deploy and manage their devices in
-    /// Alexa for Business as shared devices as a part of their existing management flow.
+    /// Alexa for Business helps you use Alexa in your organization. Alexa for Business provides
+    /// the tools you to manage Alexa devices, enroll your users, and assign skills, at scale.
+    /// You can build your own context-aware voice skills using the Alexa Skills Kit and the
+    /// Alexa for Business API operations. You can also make these available as private skills
+    /// for your organization. Alexa for Business makes it efficient to voice-enable your
+    /// products and services, thus providing context-aware voice experiences for your customers.
+    /// In addition, Alexa for Business enables Alexa Voice Services (AVS) device manufacturers
+    /// to centrally deploy and manage their devices in Alexa for Business as shared devices
+    /// as a part of their existing management flow.
     /// </summary>
     public partial interface IAmazonAlexaForBusiness : IAmazonService, IDisposable
     {
@@ -2052,9 +2052,9 @@ namespace Amazon.AlexaForBusiness
 
 
         /// <summary>
-        /// Links a user's account to a third-party skill provider. If this API is called by an
-        /// assumed IAM role, the skill being linked must be a private skill, and the skill must
-        /// be owned by the AWS account that assumed the IAM role.
+        /// Links a user's account to a third-party skill provider. If this API operation is called
+        /// by an assumed IAM role, the skill being linked must be a private skill. Also, the
+        /// skill must be owned by the AWS account that assumed the IAM role.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutSkillAuthorization service method.</param>
         /// 

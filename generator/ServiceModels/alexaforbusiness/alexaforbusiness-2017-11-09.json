@@ -9,7 +9,7 @@
   "uid": "alexaforbusiness-2017-11-09",
   "api_version": "2017-11-09",
   "target_prefix": "AlexaForBusiness",
-  "documentation": "\n         <p>Alexa for Business makes it easy for you to use Alexa in your organization. Alexa for Business gives you the\n         tools you need for managing Alexa devices, enroll your users, and assign skills, at scale. You\n         can build your own context-aware voice skills using the Alexa Skills Kit and the Alexa for Business API \n         operations. You can make also these available as private skills for your organization.\n         Alexa for Business makes it easy to voice-enable your products and services, providing\n         context-aware voice experiences for your customers. In addition, Alexa for Business enables Alexa Voice Services (AVS) device manufacturers to centrally deploy and manage their devices in Alexa for Business as shared devices as a part of their existing management flow. </p>\n      ",
+  "documentation": "\n         <p>Alexa for Business helps you use Alexa in your organization. Alexa for Business provides the tools you to\n         manage Alexa devices, enroll your users, and assign skills, at scale. You can build your\n         own context-aware voice skills using the Alexa Skills Kit and the Alexa for Business API operations.\n         You can also make these available as private skills for your organization. Alexa for Business makes it\n         efficient to voice-enable your products and services, thus providing context-aware voice\n         experiences for your customers. In addition, Alexa for Business enables Alexa Voice Services (AVS)\n         device manufacturers to centrally deploy and manage their devices in Alexa for Business as shared\n         devices as a part of their existing management flow. </p>\n      ",
   "operations": {
     "CreateOrganization": {
       "name": "CreateOrganization",
@@ -363,8 +363,8 @@
           },
           "ClientRequestToken": {
             "type": "string",
-            "documentation": "\n         <p>A unique, user-specified identifier for this request that ensures idempotency.\n      </p>\n      ",
             "pattern": "[a-zA-Z0-9][a-zA-Z0-9_-]*",
+            "documentation": "\n         <p>A unique, user-specified identifier for this request that ensures idempotency.\n      </p>\n      ",
             "zonbookDocumentation": "\n         <simpara>A unique, user-specified identifier for this request that ensures idempotency.\n      </simpara>\n      ",
             "idempotencyToken": true,
             "shape_name": "ClientRequestToken",
@@ -1685,8 +1685,8 @@
           },
           "ClientRequestToken": {
             "type": "string",
-            "documentation": "\n         <p>The user-specified token that is used during the creation of a profile.</p>\n      ",
             "pattern": "[a-zA-Z0-9][a-zA-Z0-9_-]*",
+            "documentation": "\n         <p>The user-specified token that is used during the creation of a profile.</p>\n      ",
             "zonbookDocumentation": "\n         <simpara>The user-specified token that is used during the creation of a profile.</simpara>\n      ",
             "idempotencyToken": true,
             "shape_name": "ClientRequestToken",
@@ -2754,8 +2754,8 @@
           },
           "ClientRequestToken": {
             "type": "string",
-            "documentation": "\n         <p>A unique, user-specified identifier for this request that ensures idempotency.\n      </p>\n      ",
             "pattern": "[a-zA-Z0-9][a-zA-Z0-9_-]*",
+            "documentation": "\n         <p>A unique, user-specified identifier for this request that ensures idempotency.\n      </p>\n      ",
             "zonbookDocumentation": "\n         <simpara>A unique, user-specified identifier for this request that ensures idempotency.\n      </simpara>\n      ",
             "idempotencyToken": true,
             "shape_name": "ClientRequestToken",
@@ -4671,8 +4671,8 @@
           },
           "MaxResults": {
             "type": "integer",
-            "zonbookDocumentation": "\n         <simpara>The maximum number of categories returned per paginated calls.</simpara>\n      ",
-            "documentation": "\n         <p>The maximum number of categories returned per paginated calls.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>The maximum number of categories returned, per paginated calls.</simpara>\n      ",
+            "documentation": "\n         <p>The maximum number of categories returned, per paginated calls.</p>\n      ",
             "shape_name": "MaxResults",
             "min_length": 1,
             "max_length": 50
@@ -5006,8 +5006,8 @@
           "SkillGroupArn": {
             "type": "string",
             "pattern": "arn:[a-z0-9-\\.]{1,63}:[a-z0-9-\\.]{0,63}:[a-z0-9-\\.]{0,63}:[a-z0-9-\\.]{0,63}:[^/].{0,1023}",
-            "zonbookDocumentation": "\n         <simpara>The ARN of the skill group to associate the skill to.</simpara>\n      ",
-            "documentation": "\n         <p>The ARN of the skill group to associate the skill to.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>The ARN of the skill group to associate the skill\n         to.\n         Required.</simpara>\n      ",
+            "documentation": "\n         <p>The ARN of the skill group to associate the skill\n         to.\n         Required.</p>\n      ",
             "shape_name": "Arn"
           },
           "SkillId": {
@@ -5080,8 +5080,8 @@
           "SkillGroupArn": {
             "type": "string",
             "pattern": "arn:[a-z0-9-\\.]{1,63}:[a-z0-9-\\.]{0,63}:[a-z0-9-\\.]{0,63}:[a-z0-9-\\.]{0,63}:[^/].{0,1023}",
-            "zonbookDocumentation": "\n         <simpara>The unique identifier of a skill.</simpara>\n      ",
-            "documentation": "\n         <p>The unique identifier of a skill.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>The unique identifier of a\n         skill.\n         Required.</simpara>\n      ",
+            "documentation": "\n         <p>The unique identifier of a\n         skill.\n         Required.</p>\n      ",
             "shape_name": "Arn"
           },
           "SkillId": {
@@ -6976,8 +6976,8 @@
           },
           "ClientRequestToken": {
             "type": "string",
-            "documentation": "\n        User specified token that is used to support idempotency during Create Resource\n    ",
             "pattern": "[a-zA-Z0-9][a-zA-Z0-9_-]*",
+            "documentation": "\n        User specified token that is used to support idempotency during Create Resource\n    ",
             "idempotencyToken": true,
             "shape_name": "ClientRequestToken",
             "min_length": 10,
@@ -7084,8 +7084,8 @@
           "AmazonId": {
             "type": "string",
             "pattern": "[a-zA-Z0-9]{1,18}",
-            "zonbookDocumentation": "\n         <simpara>The device type ID for your AVS device generated by Amazon when the OEM creates a new product on Amazon's Developer Console.</simpara>\n      ",
-            "documentation": "\n         <p>The device type ID for your AVS device generated by Amazon when the OEM creates a new product on Amazon's Developer Console.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>The device type ID for your AVS device generated by\n         Amazon\n         when the OEM creates a new product on Amazon's Developer Console.</simpara>\n      ",
+            "documentation": "\n         <p>The device type ID for your AVS device generated by\n         Amazon\n         when the OEM creates a new product on Amazon's Developer Console.</p>\n      ",
             "required": true,
             "shape_name": "AmazonId"
           }
@@ -10603,7 +10603,7 @@
           "shape_name": "ConcurrentModificationException"
         }
       ],
-      "documentation": "\n         <p>Links a user's account to a third-party skill provider. If this API is called by an assumed IAM role, the skill being linked must be a private skill, and the skill must be owned by the AWS account that assumed the IAM role.</p>\n      "
+      "documentation": "\n         <p>Links a user's account to a third-party skill provider. If this API operation is\n         called by an assumed IAM role, the skill being linked must be a private skill. Also, the\n         skill must be owned by the AWS account that assumed the IAM role.</p>\n      "
     },
     "DeleteSkillAuthorization": {
       "name": "DeleteSkillAuthorization",
@@ -11113,8 +11113,8 @@
           },
           "MaxResults": {
             "type": "integer",
-            "zonbookDocumentation": "\n         <simpara>The maximum number of appliances to be return per paginated calls.</simpara>\n      ",
-            "documentation": "\n         <p>The maximum number of appliances to be return per paginated calls.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>The maximum number of appliances to be returned, per paginated calls.</simpara>\n      ",
+            "documentation": "\n         <p>The maximum number of appliances to be returned, per paginated calls.</p>\n      ",
             "shape_name": "MaxResults",
             "min_length": 1,
             "max_length": 50
@@ -11898,8 +11898,8 @@
               "ZOOM",
               "CUSTOM"
             ],
-            "zonbookDocumentation": "\n         <simpara>A string that represents a type within a list of predefined types.</simpara>\n      ",
-            "documentation": "\n         <p>A string that represents a type within a list of predefined types.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>Represents a type within a list of predefined types.</simpara>\n      ",
+            "documentation": "\n         <p>Represents a type within a list of predefined types.</p>\n      ",
             "required": true,
             "shape_name": "ConferenceProviderType"
           },
@@ -11997,8 +11997,8 @@
           },
           "ClientRequestToken": {
             "type": "string",
-            "documentation": "\n         <p>The request token of the client.</p>\n      ",
             "pattern": "[a-zA-Z0-9][a-zA-Z0-9_-]*",
+            "documentation": "\n         <p>The request token of the client.</p>\n      ",
             "zonbookDocumentation": "\n         <simpara>The request token of the client.</simpara>\n      ",
             "idempotencyToken": true,
             "shape_name": "ClientRequestToken",
@@ -12015,8 +12015,8 @@
           "ConferenceProviderArn": {
             "type": "string",
             "pattern": "arn:[a-z0-9-\\.]{1,63}:[a-z0-9-\\.]{0,63}:[a-z0-9-\\.]{0,63}:[a-z0-9-\\.]{0,63}:[^/].{0,1023}",
-            "zonbookDocumentation": "\n         <simpara>The ARN of the newly created conference provider.</simpara>\n      ",
-            "documentation": "\n         <p>The ARN of the newly created conference provider.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>The ARN of the newly-created conference provider.</simpara>\n      ",
+            "documentation": "\n         <p>The ARN of the newly-created conference provider.</p>\n      ",
             "shape_name": "Arn"
           }
         },
@@ -12381,8 +12381,8 @@
           },
           "MaxResults": {
             "type": "integer",
-            "zonbookDocumentation": "\n         <simpara>The maximum number of conference providers to be return per paginated calls.</simpara>\n      ",
-            "documentation": "\n         <p>The maximum number of conference providers to be return per paginated calls.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>The maximum number of conference providers to be returned, per paginated\n         calls.</simpara>\n      ",
+            "documentation": "\n         <p>The maximum number of conference providers to be returned, per paginated\n         calls.</p>\n      ",
             "shape_name": "MaxResults",
             "min_length": 1,
             "max_length": 50
@@ -12727,8 +12727,8 @@
           },
           "ClientRequestToken": {
             "type": "string",
-            "documentation": "\n        User specified token that is used to support idempotency during Create Resource\n    ",
             "pattern": "[a-zA-Z0-9][a-zA-Z0-9_-]*",
+            "documentation": "\n        User specified token that is used to support idempotency during Create Resource\n    ",
             "required": true,
             "idempotencyToken": true,
             "shape_name": "ClientRequestToken",
@@ -13460,8 +13460,8 @@
           },
           "ClientRequestToken": {
             "type": "string",
-            "documentation": "\n        User specified token that is used to support idempotency during Create Resource\n    ",
             "pattern": "[a-zA-Z0-9][a-zA-Z0-9_-]*",
+            "documentation": "\n        User specified token that is used to support idempotency during Create Resource\n    ",
             "required": true,
             "idempotencyToken": true,
             "shape_name": "ClientRequestToken",
@@ -14020,8 +14020,8 @@
           },
           "ClientRequestToken": {
             "type": "string",
-            "documentation": "\n        User specified token that is used to support idempotency during Create Resource\n    ",
             "pattern": "[a-zA-Z0-9][a-zA-Z0-9_-]*",
+            "documentation": "\n        User specified token that is used to support idempotency during Create Resource\n    ",
             "idempotencyToken": true,
             "shape_name": "ClientRequestToken",
             "min_length": 10,
@@ -14835,8 +14835,8 @@
           },
           "ClientRequestToken": {
             "type": "string",
-            "documentation": "\n         <p>A unique, user-specified identifier for this request that ensures idempotency.\n      </p>\n      ",
             "pattern": "[a-zA-Z0-9][a-zA-Z0-9_-]*",
+            "documentation": "\n         <p>A unique, user-specified identifier for this request that ensures idempotency.\n      </p>\n      ",
             "zonbookDocumentation": "\n         <simpara>A unique, user-specified identifier for this request that ensures idempotency.\n      </simpara>\n      ",
             "idempotencyToken": true,
             "shape_name": "ClientRequestToken",
@@ -14906,8 +14906,8 @@
             },
             "ClientRequestToken": {
               "type": "string",
-              "documentation": "\n        User specified token that is used to support idempotency during Create Resource\n    ",
               "pattern": "[a-zA-Z0-9][a-zA-Z0-9_-]*",
+              "documentation": "\n        User specified token that is used to support idempotency during Create Resource\n    ",
               "shape_name": "ClientRequestToken",
               "min_length": 10,
               "max_length": 150
@@ -15096,8 +15096,8 @@
             },
             "ClientRequestToken": {
               "type": "string",
-              "documentation": "\n        User specified token that is used to support idempotency during Create Resource\n    ",
               "pattern": "[a-zA-Z0-9][a-zA-Z0-9_-]*",
+              "documentation": "\n        User specified token that is used to support idempotency during Create Resource\n    ",
               "shape_name": "ClientRequestToken",
               "min_length": 10,
               "max_length": 150
@@ -15424,8 +15424,8 @@
           },
           "ClientRequestToken": {
             "type": "string",
-            "documentation": "\n        User specified token that is used to support idempotency during Create Resource\n    ",
             "pattern": "[a-zA-Z0-9][a-zA-Z0-9_-]*",
+            "documentation": "\n        User specified token that is used to support idempotency during Create Resource\n    ",
             "idempotencyToken": true,
             "shape_name": "ClientRequestToken",
             "min_length": 10,
@@ -15460,8 +15460,8 @@
             },
             "ClientRequestToken": {
               "type": "string",
-              "documentation": "\n        User specified token that is used to support idempotency during Create Resource\n    ",
               "pattern": "[a-zA-Z0-9][a-zA-Z0-9_-]*",
+              "documentation": "\n        User specified token that is used to support idempotency during Create Resource\n    ",
               "shape_name": "ClientRequestToken",
               "min_length": 10,
               "max_length": 150
@@ -16592,8 +16592,8 @@
             },
             "ClientRequestToken": {
               "type": "string",
-              "documentation": "\n        User specified token that is used to support idempotency during Create Resource\n    ",
               "pattern": "[a-zA-Z0-9][a-zA-Z0-9_-]*",
+              "documentation": "\n        User specified token that is used to support idempotency during Create Resource\n    ",
               "shape_name": "ClientRequestToken",
               "min_length": 10,
               "max_length": 150
@@ -16945,8 +16945,8 @@
             },
             "ClientRequestToken": {
               "type": "string",
-              "documentation": "\n        User specified token that is used to support idempotency during Create Resource\n    ",
               "pattern": "[a-zA-Z0-9][a-zA-Z0-9_-]*",
+              "documentation": "\n        User specified token that is used to support idempotency during Create Resource\n    ",
               "shape_name": "ClientRequestToken",
               "min_length": 10,
               "max_length": 150
@@ -17513,8 +17513,8 @@
           },
           "ClientRequestToken": {
             "type": "string",
-            "documentation": "\n         <p>A unique, user-specified identifier for this request that ensures idempotency.</p>\n      ",
             "pattern": "[a-zA-Z0-9][a-zA-Z0-9_-]*",
+            "documentation": "\n         <p>A unique, user-specified identifier for this request that ensures idempotency.</p>\n      ",
             "zonbookDocumentation": "\n         <simpara>A unique, user-specified identifier for this request that ensures idempotency.</simpara>\n      ",
             "idempotencyToken": true,
             "shape_name": "ClientRequestToken",
@@ -18005,8 +18005,8 @@
           },
           "ClientRequestToken": {
             "type": "string",
-            "documentation": "\n         <p>A unique, user-specified identifier for the request that ensures idempotency.</p>\n      ",
             "pattern": "[a-zA-Z0-9][a-zA-Z0-9_-]*",
+            "documentation": "\n         <p>A unique, user-specified identifier for the request that ensures idempotency.</p>\n      ",
             "zonbookDocumentation": "\n         <simpara>A unique, user-specified identifier for the request that ensures idempotency.</simpara>\n      ",
             "idempotencyToken": true,
             "shape_name": "ClientRequestToken",

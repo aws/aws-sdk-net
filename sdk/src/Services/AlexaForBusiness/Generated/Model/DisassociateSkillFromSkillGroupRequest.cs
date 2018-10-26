@@ -39,7 +39,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// <summary>
         /// Gets and sets the property SkillGroupArn. 
         /// <para>
-        /// The unique identifier of a skill.
+        /// The unique identifier of a skill. Required.
         /// </para>
         /// </summary>
         public string SkillGroupArn

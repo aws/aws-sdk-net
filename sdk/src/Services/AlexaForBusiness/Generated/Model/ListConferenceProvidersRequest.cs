@@ -39,7 +39,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of conference providers to be return per paginated calls.
+        /// The maximum number of conference providers to be returned, per paginated calls.
         /// </para>
         /// </summary>
         public int MaxResults

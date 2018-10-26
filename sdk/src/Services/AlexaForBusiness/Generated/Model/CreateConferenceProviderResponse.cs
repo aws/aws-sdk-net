@@ -37,7 +37,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// <summary>
         /// Gets and sets the property ConferenceProviderArn. 
         /// <para>
-        /// The ARN of the newly created conference provider.
+        /// The ARN of the newly-created conference provider.
         /// </para>
         /// </summary>
         public string ConferenceProviderArn

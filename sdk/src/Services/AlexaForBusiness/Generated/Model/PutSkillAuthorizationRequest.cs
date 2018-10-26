@@ -29,9 +29,9 @@ namespace Amazon.AlexaForBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the PutSkillAuthorization operation.
-    /// Links a user's account to a third-party skill provider. If this API is called by an
-    /// assumed IAM role, the skill being linked must be a private skill, and the skill must
-    /// be owned by the AWS account that assumed the IAM role.
+    /// Links a user's account to a third-party skill provider. If this API operation is called
+    /// by an assumed IAM role, the skill being linked must be a private skill. Also, the
+    /// skill must be owned by the AWS account that assumed the IAM role.
     /// </summary>
     public partial class PutSkillAuthorizationRequest : AmazonAlexaForBusinessRequest
     {

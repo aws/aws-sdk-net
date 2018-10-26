@@ -79,7 +79,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// <summary>
         /// Gets and sets the property ConferenceProviderType. 
         /// <para>
-        /// A string that represents a type within a list of predefined types.
+        /// Represents a type within a list of predefined types.
         /// </para>
         /// </summary>
         public ConferenceProviderType ConferenceProviderType
