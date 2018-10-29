@@ -1,3 +1,8 @@
+### 3.3.396.2 (2018-10-29 20:45 UTC)
+* Core 3.3.29.2
+	* Allow PCL users to manually create HttpClients to be used by service clients in the SDK.
+	* All services packages updated to require new Core
+
 ### 3.3.396.1 (2018-10-29 16:36 UTC)
 * Core 3.3.29.1
 	* Allow PCL users to manually create HttpClients to be used by service clients in the SDK.
