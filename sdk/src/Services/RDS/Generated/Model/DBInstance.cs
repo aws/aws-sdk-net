@@ -69,6 +69,7 @@ namespace Amazon.RDS.Model
         private string _kmsKeyId;
         private DateTime? _latestRestorableTime;
         private string _licenseModel;
+        private Endpoint _listenerEndpoint;
         private string _masterUsername;
         private int? _monitoringInterval;
         private string _monitoringRoleArn;
@@ -713,6 +714,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetLicenseModel()
         {
             return this._licenseModel != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ListenerEndpoint. 
+        /// <para>
+        /// Specifies the listener connection endpoint for SQL Server Always On.
+        /// </para>
+        /// </summary>
+        public Endpoint ListenerEndpoint
+        {
+            get { return this._listenerEndpoint; }
+            set { this._listenerEndpoint = value; }
+        }
+
+        // Check to see if ListenerEndpoint property is set
+        internal bool IsSetListenerEndpoint()
+        {
+            return this._listenerEndpoint != null;
         }
 
         /// <summary>
