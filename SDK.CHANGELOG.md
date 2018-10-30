@@ -1,3 +1,16 @@
+### 3.3.397.0 (2018-10-30 22:04 UTC)
+* Chime (3.3.0.0)
+	* This is the initial release for the Amazon Chime AWS SDK. In this release, Amazon Chime adds support for administrative actions on users and accounts. API Documentation is also updated on https://docs.aws.amazon.com/chime/index.html
+* DatabaseMigrationService (3.3.10.0)
+	* Add waiters for TestConnectionSucceeds, EndpointDeleted, ReplicationInstanceAvailable, ReplicationInstanceDeleted, ReplicationTaskReady, ReplicationTaskStopped, ReplicationTaskRunning and ReplicationTaskDeleted.
+* RDS (3.3.33.0)
+	* This release adds the listener connection endpoint for SQL Server Always On to the list of fields returned when performing a describe-db-instances operation.
+* Core 3.3.29.3
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.396.2 (2018-10-29 20:45 UTC)
 * Core 3.3.29.2
 	* Allow PCL users to manually create HttpClients to be used by service clients in the SDK.
