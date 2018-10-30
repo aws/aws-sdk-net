@@ -51,6 +51,7 @@
     <ProjectReference Include="..\..\src\Services\Batch\AWSSDK.Batch.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\Budgets\AWSSDK.Budgets.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\CertificateManager\AWSSDK.CertificateManager.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\Chime\AWSSDK.Chime.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\Cloud9\AWSSDK.Cloud9.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\CloudDirectory\AWSSDK.CloudDirectory.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\CloudFormation\AWSSDK.CloudFormation.Net35.csproj"/>

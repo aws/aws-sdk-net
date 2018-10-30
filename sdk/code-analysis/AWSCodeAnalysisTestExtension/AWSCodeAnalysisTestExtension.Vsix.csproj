@@ -120,6 +120,10 @@
       <Project>{0AB37C0F-A819-4054-9853-F5645C120F8D}</Project>
       <Name>AWSSDK.CertificateManager.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Chime/AWSSDK.Chime.CodeAnalysis.csproj">
+      <Project>{D63EC4C1-03F0-4CAD-BA1F-5629F26C92B7}</Project>
+      <Name>AWSSDK.Chime.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Cloud9/AWSSDK.Cloud9.CodeAnalysis.csproj">
       <Project>{835FF2CC-F121-4743-815D-9B6E2BB0353D}</Project>
       <Name>AWSSDK.Cloud9.CodeAnalysis</Name>
