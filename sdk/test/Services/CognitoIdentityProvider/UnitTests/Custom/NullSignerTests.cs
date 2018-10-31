@@ -19,7 +19,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         /// <summary>
         /// SignUp operation uses the NullSigner which doesn't have a rest or query
         /// protocol associated with it. There was a bug in the SDK when temporary credentials 
-        /// were used the SDK threw an exception not knowing how to set the session token
+        /// were used. The SDK threw an exception not knowing how to set the session token
         /// on the request. Session token does not need to be set when using the null signer.
         /// </summary>
         [TestMethod]
