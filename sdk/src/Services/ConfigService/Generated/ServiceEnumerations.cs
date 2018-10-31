@@ -781,6 +781,14 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSCodeBuildProject = new ResourceType("AWS::CodeBuild::Project");
         /// <summary>
+        /// Constant AWSCodePipelinePipeline for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSCodePipelinePipeline = new ResourceType("AWS::CodePipeline::Pipeline");
+        /// <summary>
+        /// Constant AWSConfigResourceCompliance for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSConfigResourceCompliance = new ResourceType("AWS::Config::ResourceCompliance");
+        /// <summary>
         /// Constant AWSDynamoDBTable for ResourceType
         /// </summary>
         public static readonly ResourceType AWSDynamoDBTable = new ResourceType("AWS::DynamoDB::Table");
@@ -929,9 +937,25 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSS3Bucket = new ResourceType("AWS::S3::Bucket");
         /// <summary>
+        /// Constant AWSShieldProtection for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSShieldProtection = new ResourceType("AWS::Shield::Protection");
+        /// <summary>
+        /// Constant AWSShieldRegionalProtection for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSShieldRegionalProtection = new ResourceType("AWS::ShieldRegional::Protection");
+        /// <summary>
+        /// Constant AWSSSMAssociationCompliance for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSSSMAssociationCompliance = new ResourceType("AWS::SSM::AssociationCompliance");
+        /// <summary>
         /// Constant AWSSSMManagedInstanceInventory for ResourceType
         /// </summary>
         public static readonly ResourceType AWSSSMManagedInstanceInventory = new ResourceType("AWS::SSM::ManagedInstanceInventory");
+        /// <summary>
+        /// Constant AWSSSMPatchCompliance for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSSSMPatchCompliance = new ResourceType("AWS::SSM::PatchCompliance");
         /// <summary>
         /// Constant AWSWAFRateBasedRule for ResourceType
         /// </summary>

@@ -584,7 +584,13 @@
                         "AWS::ElasticBeanstalk::ApplicationVersion",
                         "AWS::ElasticBeanstalk::Environment",
                         "AWS::ElasticLoadBalancing::LoadBalancer",
-                        "AWS::XRay::EncryptionConfig"
+                        "AWS::XRay::EncryptionConfig",
+                        "AWS::SSM::AssociationCompliance",
+                        "AWS::SSM::PatchCompliance",
+                        "AWS::Shield::Protection",
+                        "AWS::ShieldRegional::Protection",
+                        "AWS::Config::ResourceCompliance",
+                        "AWS::CodePipeline::Pipeline"
                       ],
                       "shape_name": "ResourceType",
                       "documentation": null
@@ -843,7 +849,13 @@
                           "AWS::ElasticBeanstalk::ApplicationVersion",
                           "AWS::ElasticBeanstalk::Environment",
                           "AWS::ElasticLoadBalancing::LoadBalancer",
-                          "AWS::XRay::EncryptionConfig"
+                          "AWS::XRay::EncryptionConfig",
+                          "AWS::SSM::AssociationCompliance",
+                          "AWS::SSM::PatchCompliance",
+                          "AWS::Shield::Protection",
+                          "AWS::ShieldRegional::Protection",
+                          "AWS::Config::ResourceCompliance",
+                          "AWS::CodePipeline::Pipeline"
                         ],
                         "shape_name": "ResourceType",
                         "documentation": null
@@ -1052,7 +1064,13 @@
               "AWS::ElasticBeanstalk::ApplicationVersion",
               "AWS::ElasticBeanstalk::Environment",
               "AWS::ElasticLoadBalancing::LoadBalancer",
-              "AWS::XRay::EncryptionConfig"
+              "AWS::XRay::EncryptionConfig",
+              "AWS::SSM::AssociationCompliance",
+              "AWS::SSM::PatchCompliance",
+              "AWS::Shield::Protection",
+              "AWS::ShieldRegional::Protection",
+              "AWS::Config::ResourceCompliance",
+              "AWS::CodePipeline::Pipeline"
             ],
             "zonbookDocumentation": "\n\t\t       <simpara>The resource type.</simpara>\n\t     ",
             "documentation": "\n\t\t       <p>The resource type.</p>\n\t     ",
@@ -1230,7 +1248,13 @@
                     "AWS::ElasticBeanstalk::ApplicationVersion",
                     "AWS::ElasticBeanstalk::Environment",
                     "AWS::ElasticLoadBalancing::LoadBalancer",
-                    "AWS::XRay::EncryptionConfig"
+                    "AWS::XRay::EncryptionConfig",
+                    "AWS::SSM::AssociationCompliance",
+                    "AWS::SSM::PatchCompliance",
+                    "AWS::Shield::Protection",
+                    "AWS::ShieldRegional::Protection",
+                    "AWS::Config::ResourceCompliance",
+                    "AWS::CodePipeline::Pipeline"
                   ],
                   "zonbookDocumentation": "\n\t\t       <simpara>The type of AWS resource.</simpara>\n\t     ",
                   "documentation": "\n\t\t       <p>The type of AWS resource.</p>\n\t     ",
@@ -1365,7 +1389,13 @@
                           "AWS::ElasticBeanstalk::ApplicationVersion",
                           "AWS::ElasticBeanstalk::Environment",
                           "AWS::ElasticLoadBalancing::LoadBalancer",
-                          "AWS::XRay::EncryptionConfig"
+                          "AWS::XRay::EncryptionConfig",
+                          "AWS::SSM::AssociationCompliance",
+                          "AWS::SSM::PatchCompliance",
+                          "AWS::Shield::Protection",
+                          "AWS::ShieldRegional::Protection",
+                          "AWS::Config::ResourceCompliance",
+                          "AWS::CodePipeline::Pipeline"
                         ],
                         "zonbookDocumentation": "\n\t\t       <simpara>The resource type of the related resource.</simpara>\n\t     ",
                         "documentation": "\n\t\t       <p>The resource type of the related resource.</p>\n\t     ",
@@ -1614,7 +1644,13 @@
               "AWS::ElasticBeanstalk::ApplicationVersion",
               "AWS::ElasticBeanstalk::Environment",
               "AWS::ElasticLoadBalancing::LoadBalancer",
-              "AWS::XRay::EncryptionConfig"
+              "AWS::XRay::EncryptionConfig",
+              "AWS::SSM::AssociationCompliance",
+              "AWS::SSM::PatchCompliance",
+              "AWS::Shield::Protection",
+              "AWS::ShieldRegional::Protection",
+              "AWS::Config::ResourceCompliance",
+              "AWS::CodePipeline::Pipeline"
             ],
             "zonbookDocumentation": "\n\t\t       <simpara>The type of resources that you want AWS Config to list in the response.</simpara>\n\t     ",
             "documentation": "\n\t\t       <p>The type of resources that you want AWS Config to list in the response.</p>\n\t     ",
@@ -1736,7 +1772,13 @@
                     "AWS::ElasticBeanstalk::ApplicationVersion",
                     "AWS::ElasticBeanstalk::Environment",
                     "AWS::ElasticLoadBalancing::LoadBalancer",
-                    "AWS::XRay::EncryptionConfig"
+                    "AWS::XRay::EncryptionConfig",
+                    "AWS::SSM::AssociationCompliance",
+                    "AWS::SSM::PatchCompliance",
+                    "AWS::Shield::Protection",
+                    "AWS::ShieldRegional::Protection",
+                    "AWS::Config::ResourceCompliance",
+                    "AWS::CodePipeline::Pipeline"
                   ],
                   "zonbookDocumentation": "\n\t\t       <simpara>The type of resource.</simpara>\n\t     ",
                   "documentation": "\n\t\t       <p>The type of resource.</p>\n\t     ",
@@ -1962,7 +2004,13 @@
                     "AWS::ElasticBeanstalk::ApplicationVersion",
                     "AWS::ElasticBeanstalk::Environment",
                     "AWS::ElasticLoadBalancing::LoadBalancer",
-                    "AWS::XRay::EncryptionConfig"
+                    "AWS::XRay::EncryptionConfig",
+                    "AWS::SSM::AssociationCompliance",
+                    "AWS::SSM::PatchCompliance",
+                    "AWS::Shield::Protection",
+                    "AWS::ShieldRegional::Protection",
+                    "AWS::Config::ResourceCompliance",
+                    "AWS::CodePipeline::Pipeline"
                   ],
                   "zonbookDocumentation": "\n\t\t       <simpara>The resource type (for example, <code>\"AWS::EC2::Instance\"</code>).</simpara>\n\t     ",
                   "documentation": "\n\t\t       <p>The resource type (for example, <code>\"AWS::EC2::Instance\"</code>).</p>\n\t     ",
@@ -2094,7 +2142,13 @@
                     "AWS::ElasticBeanstalk::ApplicationVersion",
                     "AWS::ElasticBeanstalk::Environment",
                     "AWS::ElasticLoadBalancing::LoadBalancer",
-                    "AWS::XRay::EncryptionConfig"
+                    "AWS::XRay::EncryptionConfig",
+                    "AWS::SSM::AssociationCompliance",
+                    "AWS::SSM::PatchCompliance",
+                    "AWS::Shield::Protection",
+                    "AWS::ShieldRegional::Protection",
+                    "AWS::Config::ResourceCompliance",
+                    "AWS::CodePipeline::Pipeline"
                   ],
                   "zonbookDocumentation": "\n\t\t       <para>The resource type.</para>\n\t     ",
                   "documentation": "\n\t\t       <p>The resource type.</p>\n\t     ",
@@ -2235,7 +2289,13 @@
                     "AWS::ElasticBeanstalk::ApplicationVersion",
                     "AWS::ElasticBeanstalk::Environment",
                     "AWS::ElasticLoadBalancing::LoadBalancer",
-                    "AWS::XRay::EncryptionConfig"
+                    "AWS::XRay::EncryptionConfig",
+                    "AWS::SSM::AssociationCompliance",
+                    "AWS::SSM::PatchCompliance",
+                    "AWS::Shield::Protection",
+                    "AWS::ShieldRegional::Protection",
+                    "AWS::Config::ResourceCompliance",
+                    "AWS::CodePipeline::Pipeline"
                   ],
                   "zonbookDocumentation": "\n\t\t       <para>The type of AWS resource.</para>\n\t     ",
                   "documentation": "\n\t\t       <p>The type of AWS resource.</p>\n\t     ",
@@ -2373,7 +2433,13 @@
                     "AWS::ElasticBeanstalk::ApplicationVersion",
                     "AWS::ElasticBeanstalk::Environment",
                     "AWS::ElasticLoadBalancing::LoadBalancer",
-                    "AWS::XRay::EncryptionConfig"
+                    "AWS::XRay::EncryptionConfig",
+                    "AWS::SSM::AssociationCompliance",
+                    "AWS::SSM::PatchCompliance",
+                    "AWS::Shield::Protection",
+                    "AWS::ShieldRegional::Protection",
+                    "AWS::Config::ResourceCompliance",
+                    "AWS::CodePipeline::Pipeline"
                   ],
                   "zonbookDocumentation": "\n\t\t       <para>The resource type.</para>\n\t     ",
                   "documentation": "\n\t\t       <p>The resource type.</p>\n\t     ",
@@ -6288,7 +6354,13 @@
               "AWS::ElasticBeanstalk::ApplicationVersion",
               "AWS::ElasticBeanstalk::Environment",
               "AWS::ElasticLoadBalancing::LoadBalancer",
-              "AWS::XRay::EncryptionConfig"
+              "AWS::XRay::EncryptionConfig",
+              "AWS::SSM::AssociationCompliance",
+              "AWS::SSM::PatchCompliance",
+              "AWS::Shield::Protection",
+              "AWS::ShieldRegional::Protection",
+              "AWS::Config::ResourceCompliance",
+              "AWS::CodePipeline::Pipeline"
             ],
             "required": true,
             "shape_name": "ResourceType",
@@ -6434,7 +6506,13 @@
                   "AWS::ElasticBeanstalk::ApplicationVersion",
                   "AWS::ElasticBeanstalk::Environment",
                   "AWS::ElasticLoadBalancing::LoadBalancer",
-                  "AWS::XRay::EncryptionConfig"
+                  "AWS::XRay::EncryptionConfig",
+                  "AWS::SSM::AssociationCompliance",
+                  "AWS::SSM::PatchCompliance",
+                  "AWS::Shield::Protection",
+                  "AWS::ShieldRegional::Protection",
+                  "AWS::Config::ResourceCompliance",
+                  "AWS::CodePipeline::Pipeline"
                 ],
                 "zonbookDocumentation": "\n\t\t       <simpara>The type of AWS resource.</simpara>\n\t     ",
                 "documentation": "\n\t\t       <p>The type of AWS resource.</p>\n\t     ",
@@ -6569,7 +6647,13 @@
                         "AWS::ElasticBeanstalk::ApplicationVersion",
                         "AWS::ElasticBeanstalk::Environment",
                         "AWS::ElasticLoadBalancing::LoadBalancer",
-                        "AWS::XRay::EncryptionConfig"
+                        "AWS::XRay::EncryptionConfig",
+                        "AWS::SSM::AssociationCompliance",
+                        "AWS::SSM::PatchCompliance",
+                        "AWS::Shield::Protection",
+                        "AWS::ShieldRegional::Protection",
+                        "AWS::Config::ResourceCompliance",
+                        "AWS::CodePipeline::Pipeline"
                       ],
                       "zonbookDocumentation": "\n\t\t       <simpara>The resource type of the related resource.</simpara>\n\t     ",
                       "documentation": "\n\t\t       <p>The resource type of the related resource.</p>\n\t     ",
