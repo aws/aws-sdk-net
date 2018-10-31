@@ -92,13 +92,13 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property MoveToVersionId. 
         /// <para>
-        /// (Optional) The secret version ID that you want to add the staging labels to. If you
+        /// (Optional) The secret version ID that you want to add the staging label to. If you
         /// want to remove a label from a version, then do not specify this parameter.
         /// </para>
         ///  
         /// <para>
-        /// If any of the staging labels are already attached to a different version of the secret,
-        /// then you must also specify the <code>RemoveFromVersionId</code> parameter. 
+        /// If the staging label is already attached to a different version of the secret, then
+        /// you must also specify the <code>RemoveFromVersionId</code> parameter. 
         /// </para>
         /// </summary>
         public string MoveToVersionId
@@ -116,7 +116,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property RemoveFromVersionId. 
         /// <para>
-        /// Specifies the secret version ID of the version that the staging labels are to be removed
+        /// Specifies the secret version ID of the version that the staging label is to be removed
         /// from. If the staging label you are trying to attach to one version is already attached
         /// to a different version, then you must include this parameter and specify the version
         /// that the label is to be removed from. If the label is attached and you either do not
@@ -172,7 +172,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property VersionStage. 
         /// <para>
-        /// The list of staging labels to add to this version.
+        /// The staging label to add to this version.
         /// </para>
         /// </summary>
         public string VersionStage

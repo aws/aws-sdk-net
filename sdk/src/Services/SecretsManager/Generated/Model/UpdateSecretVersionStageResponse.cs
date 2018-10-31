@@ -38,7 +38,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property ARN. 
         /// <para>
-        /// The ARN of the secret with the staging labels that were modified.
+        /// The ARN of the secret with the staging label that was modified.
         /// </para>
         /// </summary>
         public string ARN
@@ -56,7 +56,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The friendly name of the secret with the staging labels that were modified.
+        /// The friendly name of the secret with the staging label that was modified.
         /// </para>
         /// </summary>
         public string Name
