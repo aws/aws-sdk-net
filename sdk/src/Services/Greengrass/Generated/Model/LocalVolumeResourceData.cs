@@ -70,7 +70,8 @@ namespace Amazon.Greengrass.Model
 
         /// <summary>
         /// Gets and sets the property SourcePath. The local absolute path of the volume resource
-        /// on the host. The source path for a volume resource type cannot start with ''/sys''.
+        /// on the host. The source path for a volume resource type cannot start with ''/proc''
+        /// or ''/sys''.
         /// </summary>
         public string SourcePath
         {

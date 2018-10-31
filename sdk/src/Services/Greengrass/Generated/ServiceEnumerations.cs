@@ -25,6 +25,72 @@ namespace Amazon.Greengrass
 {
 
     /// <summary>
+    /// Constants used for properties of type BulkDeploymentStatus.
+    /// </summary>
+    public class BulkDeploymentStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Completed for BulkDeploymentStatus
+        /// </summary>
+        public static readonly BulkDeploymentStatus Completed = new BulkDeploymentStatus("Completed");
+        /// <summary>
+        /// Constant Failed for BulkDeploymentStatus
+        /// </summary>
+        public static readonly BulkDeploymentStatus Failed = new BulkDeploymentStatus("Failed");
+        /// <summary>
+        /// Constant Initializing for BulkDeploymentStatus
+        /// </summary>
+        public static readonly BulkDeploymentStatus Initializing = new BulkDeploymentStatus("Initializing");
+        /// <summary>
+        /// Constant Running for BulkDeploymentStatus
+        /// </summary>
+        public static readonly BulkDeploymentStatus Running = new BulkDeploymentStatus("Running");
+        /// <summary>
+        /// Constant Stopped for BulkDeploymentStatus
+        /// </summary>
+        public static readonly BulkDeploymentStatus Stopped = new BulkDeploymentStatus("Stopped");
+        /// <summary>
+        /// Constant Stopping for BulkDeploymentStatus
+        /// </summary>
+        public static readonly BulkDeploymentStatus Stopping = new BulkDeploymentStatus("Stopping");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BulkDeploymentStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BulkDeploymentStatus FindValue(string value)
+        {
+            return FindValue<BulkDeploymentStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BulkDeploymentStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DeploymentType.
     /// </summary>
     public class DeploymentType : ConstantClass

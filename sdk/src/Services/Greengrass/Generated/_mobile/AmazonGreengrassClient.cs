@@ -1175,6 +1175,38 @@ namespace Amazon.Greengrass
 
         #endregion
         
+        #region  GetBulkDeploymentStatus
+
+        internal virtual GetBulkDeploymentStatusResponse GetBulkDeploymentStatus(GetBulkDeploymentStatusRequest request)
+        {
+            var marshaller = GetBulkDeploymentStatusRequestMarshaller.Instance;
+            var unmarshaller = GetBulkDeploymentStatusResponseUnmarshaller.Instance;
+
+            return Invoke<GetBulkDeploymentStatusRequest,GetBulkDeploymentStatusResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBulkDeploymentStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBulkDeploymentStatus operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetBulkDeploymentStatus">REST API Reference for GetBulkDeploymentStatus Operation</seealso>
+        public virtual Task<GetBulkDeploymentStatusResponse> GetBulkDeploymentStatusAsync(GetBulkDeploymentStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetBulkDeploymentStatusRequestMarshaller.Instance;
+            var unmarshaller = GetBulkDeploymentStatusResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetBulkDeploymentStatusRequest,GetBulkDeploymentStatusResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetConnectivityInfo
 
         internal virtual GetConnectivityInfoResponse GetConnectivityInfo(GetConnectivityInfoRequest request)
@@ -1783,6 +1815,70 @@ namespace Amazon.Greengrass
 
         #endregion
         
+        #region  ListBulkDeploymentDetailedReports
+
+        internal virtual ListBulkDeploymentDetailedReportsResponse ListBulkDeploymentDetailedReports(ListBulkDeploymentDetailedReportsRequest request)
+        {
+            var marshaller = ListBulkDeploymentDetailedReportsRequestMarshaller.Instance;
+            var unmarshaller = ListBulkDeploymentDetailedReportsResponseUnmarshaller.Instance;
+
+            return Invoke<ListBulkDeploymentDetailedReportsRequest,ListBulkDeploymentDetailedReportsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBulkDeploymentDetailedReports operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBulkDeploymentDetailedReports operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListBulkDeploymentDetailedReports">REST API Reference for ListBulkDeploymentDetailedReports Operation</seealso>
+        public virtual Task<ListBulkDeploymentDetailedReportsResponse> ListBulkDeploymentDetailedReportsAsync(ListBulkDeploymentDetailedReportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListBulkDeploymentDetailedReportsRequestMarshaller.Instance;
+            var unmarshaller = ListBulkDeploymentDetailedReportsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListBulkDeploymentDetailedReportsRequest,ListBulkDeploymentDetailedReportsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListBulkDeployments
+
+        internal virtual ListBulkDeploymentsResponse ListBulkDeployments(ListBulkDeploymentsRequest request)
+        {
+            var marshaller = ListBulkDeploymentsRequestMarshaller.Instance;
+            var unmarshaller = ListBulkDeploymentsResponseUnmarshaller.Instance;
+
+            return Invoke<ListBulkDeploymentsRequest,ListBulkDeploymentsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBulkDeployments operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBulkDeployments operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListBulkDeployments">REST API Reference for ListBulkDeployments Operation</seealso>
+        public virtual Task<ListBulkDeploymentsResponse> ListBulkDeploymentsAsync(ListBulkDeploymentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListBulkDeploymentsRequestMarshaller.Instance;
+            var unmarshaller = ListBulkDeploymentsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListBulkDeploymentsRequest,ListBulkDeploymentsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListCoreDefinitions
 
         internal virtual ListCoreDefinitionsResponse ListCoreDefinitions(ListCoreDefinitionsRequest request)
@@ -2322,6 +2418,70 @@ namespace Amazon.Greengrass
             var unmarshaller = ResetDeploymentsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ResetDeploymentsRequest,ResetDeploymentsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartBulkDeployment
+
+        internal virtual StartBulkDeploymentResponse StartBulkDeployment(StartBulkDeploymentRequest request)
+        {
+            var marshaller = StartBulkDeploymentRequestMarshaller.Instance;
+            var unmarshaller = StartBulkDeploymentResponseUnmarshaller.Instance;
+
+            return Invoke<StartBulkDeploymentRequest,StartBulkDeploymentResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartBulkDeployment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartBulkDeployment operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/StartBulkDeployment">REST API Reference for StartBulkDeployment Operation</seealso>
+        public virtual Task<StartBulkDeploymentResponse> StartBulkDeploymentAsync(StartBulkDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = StartBulkDeploymentRequestMarshaller.Instance;
+            var unmarshaller = StartBulkDeploymentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartBulkDeploymentRequest,StartBulkDeploymentResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopBulkDeployment
+
+        internal virtual StopBulkDeploymentResponse StopBulkDeployment(StopBulkDeploymentRequest request)
+        {
+            var marshaller = StopBulkDeploymentRequestMarshaller.Instance;
+            var unmarshaller = StopBulkDeploymentResponseUnmarshaller.Instance;
+
+            return Invoke<StopBulkDeploymentRequest,StopBulkDeploymentResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopBulkDeployment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopBulkDeployment operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/StopBulkDeployment">REST API Reference for StopBulkDeployment Operation</seealso>
+        public virtual Task<StopBulkDeploymentResponse> StopBulkDeploymentAsync(StopBulkDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = StopBulkDeploymentRequestMarshaller.Instance;
+            var unmarshaller = StopBulkDeploymentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopBulkDeploymentRequest,StopBulkDeploymentResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

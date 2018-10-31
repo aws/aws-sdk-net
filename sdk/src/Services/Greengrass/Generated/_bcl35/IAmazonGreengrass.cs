@@ -229,7 +229,8 @@ namespace Amazon.Greengrass
 
 
         /// <summary>
-        /// Creates a deployment.
+        /// Creates a deployment. ''CreateDeployment'' requests are idempotent with respect to
+        /// the ''X-Amzn-Client-Token'' token and the request parameters.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDeployment service method.</param>
         /// 
@@ -1325,6 +1326,49 @@ namespace Amazon.Greengrass
 
         #endregion
         
+        #region  GetBulkDeploymentStatus
+
+
+        /// <summary>
+        /// Returns the status of a bulk deployment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBulkDeploymentStatus service method.</param>
+        /// 
+        /// <returns>The response from the GetBulkDeploymentStatus service method, as returned by Greengrass.</returns>
+        /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
+        /// General error information.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetBulkDeploymentStatus">REST API Reference for GetBulkDeploymentStatus Operation</seealso>
+        GetBulkDeploymentStatusResponse GetBulkDeploymentStatus(GetBulkDeploymentStatusRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBulkDeploymentStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBulkDeploymentStatus operation on AmazonGreengrassClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBulkDeploymentStatus
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetBulkDeploymentStatus">REST API Reference for GetBulkDeploymentStatus Operation</seealso>
+        IAsyncResult BeginGetBulkDeploymentStatus(GetBulkDeploymentStatusRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetBulkDeploymentStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBulkDeploymentStatus.</param>
+        /// 
+        /// <returns>Returns a  GetBulkDeploymentStatusResult from Greengrass.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetBulkDeploymentStatus">REST API Reference for GetBulkDeploymentStatus Operation</seealso>
+        GetBulkDeploymentStatusResponse EndGetBulkDeploymentStatus(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetConnectivityInfo
 
 
@@ -2155,6 +2199,93 @@ namespace Amazon.Greengrass
 
         #endregion
         
+        #region  ListBulkDeploymentDetailedReports
+
+
+        /// <summary>
+        /// Gets a paginated list of the deployments that have been started in a bulk deployment
+        /// operation, and their current deployment status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBulkDeploymentDetailedReports service method.</param>
+        /// 
+        /// <returns>The response from the ListBulkDeploymentDetailedReports service method, as returned by Greengrass.</returns>
+        /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
+        /// General error information.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListBulkDeploymentDetailedReports">REST API Reference for ListBulkDeploymentDetailedReports Operation</seealso>
+        ListBulkDeploymentDetailedReportsResponse ListBulkDeploymentDetailedReports(ListBulkDeploymentDetailedReportsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBulkDeploymentDetailedReports operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBulkDeploymentDetailedReports operation on AmazonGreengrassClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBulkDeploymentDetailedReports
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListBulkDeploymentDetailedReports">REST API Reference for ListBulkDeploymentDetailedReports Operation</seealso>
+        IAsyncResult BeginListBulkDeploymentDetailedReports(ListBulkDeploymentDetailedReportsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListBulkDeploymentDetailedReports operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBulkDeploymentDetailedReports.</param>
+        /// 
+        /// <returns>Returns a  ListBulkDeploymentDetailedReportsResult from Greengrass.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListBulkDeploymentDetailedReports">REST API Reference for ListBulkDeploymentDetailedReports Operation</seealso>
+        ListBulkDeploymentDetailedReportsResponse EndListBulkDeploymentDetailedReports(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListBulkDeployments
+
+
+        /// <summary>
+        /// Returns a list of bulk deployments.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBulkDeployments service method.</param>
+        /// 
+        /// <returns>The response from the ListBulkDeployments service method, as returned by Greengrass.</returns>
+        /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
+        /// General error information.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListBulkDeployments">REST API Reference for ListBulkDeployments Operation</seealso>
+        ListBulkDeploymentsResponse ListBulkDeployments(ListBulkDeploymentsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBulkDeployments operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBulkDeployments operation on AmazonGreengrassClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBulkDeployments
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListBulkDeployments">REST API Reference for ListBulkDeployments Operation</seealso>
+        IAsyncResult BeginListBulkDeployments(ListBulkDeploymentsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListBulkDeployments operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBulkDeployments.</param>
+        /// 
+        /// <returns>Returns a  ListBulkDeploymentsResult from Greengrass.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListBulkDeployments">REST API Reference for ListBulkDeployments Operation</seealso>
+        ListBulkDeploymentsResponse EndListBulkDeployments(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListCoreDefinitions
 
 
@@ -2865,6 +2996,99 @@ namespace Amazon.Greengrass
         /// <returns>Returns a  ResetDeploymentsResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ResetDeployments">REST API Reference for ResetDeployments Operation</seealso>
         ResetDeploymentsResponse EndResetDeployments(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartBulkDeployment
+
+
+        /// <summary>
+        /// Deploys multiple groups in one operation. This action starts the bulk deployment of
+        /// a specified set of group versions. Each group version deployment will be triggered
+        /// with an adaptive rate that has a fixed upper limit. We recommend that you include
+        /// an ''X-Amzn-Client-Token'' token in every ''StartBulkDeployment'' request. These requests
+        /// are idempotent with respect to the token and the request parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartBulkDeployment service method.</param>
+        /// 
+        /// <returns>The response from the StartBulkDeployment service method, as returned by Greengrass.</returns>
+        /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
+        /// General error information.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/StartBulkDeployment">REST API Reference for StartBulkDeployment Operation</seealso>
+        StartBulkDeploymentResponse StartBulkDeployment(StartBulkDeploymentRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartBulkDeployment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartBulkDeployment operation on AmazonGreengrassClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartBulkDeployment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/StartBulkDeployment">REST API Reference for StartBulkDeployment Operation</seealso>
+        IAsyncResult BeginStartBulkDeployment(StartBulkDeploymentRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartBulkDeployment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartBulkDeployment.</param>
+        /// 
+        /// <returns>Returns a  StartBulkDeploymentResult from Greengrass.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/StartBulkDeployment">REST API Reference for StartBulkDeployment Operation</seealso>
+        StartBulkDeploymentResponse EndStartBulkDeployment(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StopBulkDeployment
+
+
+        /// <summary>
+        /// Stops the execution of a bulk deployment. This action returns a status of ''Stopping''
+        /// until the deployment is stopped. You cannot start a new bulk deployment while a previous
+        /// deployment is in the ''Stopping'' state. This action doesn't rollback completed deployments
+        /// or cancel pending deployments.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopBulkDeployment service method.</param>
+        /// 
+        /// <returns>The response from the StopBulkDeployment service method, as returned by Greengrass.</returns>
+        /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
+        /// General error information.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/StopBulkDeployment">REST API Reference for StopBulkDeployment Operation</seealso>
+        StopBulkDeploymentResponse StopBulkDeployment(StopBulkDeploymentRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopBulkDeployment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopBulkDeployment operation on AmazonGreengrassClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopBulkDeployment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/StopBulkDeployment">REST API Reference for StopBulkDeployment Operation</seealso>
+        IAsyncResult BeginStopBulkDeployment(StopBulkDeploymentRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopBulkDeployment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopBulkDeployment.</param>
+        /// 
+        /// <returns>Returns a  StopBulkDeploymentResult from Greengrass.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/StopBulkDeployment">REST API Reference for StopBulkDeployment Operation</seealso>
+        StopBulkDeploymentResponse EndStopBulkDeployment(IAsyncResult asyncResult);
 
         #endregion
         

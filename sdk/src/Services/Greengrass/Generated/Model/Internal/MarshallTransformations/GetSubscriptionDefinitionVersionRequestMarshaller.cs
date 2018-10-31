@@ -64,7 +64,11 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetSubscriptionDefinitionVersionId())
                 throw new AmazonGreengrassException("Request object does not have required field SubscriptionDefinitionVersionId set");
             uriResourcePath = uriResourcePath.Replace("{SubscriptionDefinitionVersionId}", StringUtils.FromString(publicRequest.SubscriptionDefinitionVersionId));
+            
+            if (publicRequest.IsSetNextToken())
+                request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = uriResourcePath;
+            request.UseQueryString = true;
 
             return request;
         }

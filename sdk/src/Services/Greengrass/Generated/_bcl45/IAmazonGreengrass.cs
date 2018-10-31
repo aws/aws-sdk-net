@@ -179,7 +179,8 @@ namespace Amazon.Greengrass
 
 
         /// <summary>
-        /// Creates a deployment.
+        /// Creates a deployment. ''CreateDeployment'' requests are idempotent with respect to
+        /// the ''X-Amzn-Client-Token'' token and the request parameters.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDeployment service method.</param>
         /// 
@@ -950,6 +951,36 @@ namespace Amazon.Greengrass
 
         #endregion
         
+        #region  GetBulkDeploymentStatus
+
+
+        /// <summary>
+        /// Returns the status of a bulk deployment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBulkDeploymentStatus service method.</param>
+        /// 
+        /// <returns>The response from the GetBulkDeploymentStatus service method, as returned by Greengrass.</returns>
+        /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
+        /// General error information.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetBulkDeploymentStatus">REST API Reference for GetBulkDeploymentStatus Operation</seealso>
+        GetBulkDeploymentStatusResponse GetBulkDeploymentStatus(GetBulkDeploymentStatusRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBulkDeploymentStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBulkDeploymentStatus operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetBulkDeploymentStatus">REST API Reference for GetBulkDeploymentStatus Operation</seealso>
+        Task<GetBulkDeploymentStatusResponse> GetBulkDeploymentStatusAsync(GetBulkDeploymentStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetConnectivityInfo
 
 
@@ -1533,6 +1564,67 @@ namespace Amazon.Greengrass
 
         #endregion
         
+        #region  ListBulkDeploymentDetailedReports
+
+
+        /// <summary>
+        /// Gets a paginated list of the deployments that have been started in a bulk deployment
+        /// operation, and their current deployment status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBulkDeploymentDetailedReports service method.</param>
+        /// 
+        /// <returns>The response from the ListBulkDeploymentDetailedReports service method, as returned by Greengrass.</returns>
+        /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
+        /// General error information.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListBulkDeploymentDetailedReports">REST API Reference for ListBulkDeploymentDetailedReports Operation</seealso>
+        ListBulkDeploymentDetailedReportsResponse ListBulkDeploymentDetailedReports(ListBulkDeploymentDetailedReportsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBulkDeploymentDetailedReports operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBulkDeploymentDetailedReports operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListBulkDeploymentDetailedReports">REST API Reference for ListBulkDeploymentDetailedReports Operation</seealso>
+        Task<ListBulkDeploymentDetailedReportsResponse> ListBulkDeploymentDetailedReportsAsync(ListBulkDeploymentDetailedReportsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListBulkDeployments
+
+
+        /// <summary>
+        /// Returns a list of bulk deployments.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBulkDeployments service method.</param>
+        /// 
+        /// <returns>The response from the ListBulkDeployments service method, as returned by Greengrass.</returns>
+        /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
+        /// General error information.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListBulkDeployments">REST API Reference for ListBulkDeployments Operation</seealso>
+        ListBulkDeploymentsResponse ListBulkDeployments(ListBulkDeploymentsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBulkDeployments operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBulkDeployments operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListBulkDeployments">REST API Reference for ListBulkDeployments Operation</seealso>
+        Task<ListBulkDeploymentsResponse> ListBulkDeploymentsAsync(ListBulkDeploymentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListCoreDefinitions
 
 
@@ -2022,6 +2114,73 @@ namespace Amazon.Greengrass
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ResetDeployments">REST API Reference for ResetDeployments Operation</seealso>
         Task<ResetDeploymentsResponse> ResetDeploymentsAsync(ResetDeploymentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StartBulkDeployment
+
+
+        /// <summary>
+        /// Deploys multiple groups in one operation. This action starts the bulk deployment of
+        /// a specified set of group versions. Each group version deployment will be triggered
+        /// with an adaptive rate that has a fixed upper limit. We recommend that you include
+        /// an ''X-Amzn-Client-Token'' token in every ''StartBulkDeployment'' request. These requests
+        /// are idempotent with respect to the token and the request parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartBulkDeployment service method.</param>
+        /// 
+        /// <returns>The response from the StartBulkDeployment service method, as returned by Greengrass.</returns>
+        /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
+        /// General error information.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/StartBulkDeployment">REST API Reference for StartBulkDeployment Operation</seealso>
+        StartBulkDeploymentResponse StartBulkDeployment(StartBulkDeploymentRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartBulkDeployment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartBulkDeployment operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/StartBulkDeployment">REST API Reference for StartBulkDeployment Operation</seealso>
+        Task<StartBulkDeploymentResponse> StartBulkDeploymentAsync(StartBulkDeploymentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StopBulkDeployment
+
+
+        /// <summary>
+        /// Stops the execution of a bulk deployment. This action returns a status of ''Stopping''
+        /// until the deployment is stopped. You cannot start a new bulk deployment while a previous
+        /// deployment is in the ''Stopping'' state. This action doesn't rollback completed deployments
+        /// or cancel pending deployments.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopBulkDeployment service method.</param>
+        /// 
+        /// <returns>The response from the StopBulkDeployment service method, as returned by Greengrass.</returns>
+        /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
+        /// General error information.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/StopBulkDeployment">REST API Reference for StopBulkDeployment Operation</seealso>
+        StopBulkDeploymentResponse StopBulkDeployment(StopBulkDeploymentRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopBulkDeployment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopBulkDeployment operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/StopBulkDeployment">REST API Reference for StopBulkDeployment Operation</seealso>
+        Task<StopBulkDeploymentResponse> StopBulkDeploymentAsync(StopBulkDeploymentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

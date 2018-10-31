@@ -64,7 +64,11 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetDeviceDefinitionVersionId())
                 throw new AmazonGreengrassException("Request object does not have required field DeviceDefinitionVersionId set");
             uriResourcePath = uriResourcePath.Replace("{DeviceDefinitionVersionId}", StringUtils.FromString(publicRequest.DeviceDefinitionVersionId));
+            
+            if (publicRequest.IsSetNextToken())
+                request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = uriResourcePath;
+            request.UseQueryString = true;
 
             return request;
         }

@@ -28,45 +28,61 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
-    /// This is the response object from the GetDeploymentStatus operation.
+    /// This is the response object from the GetBulkDeploymentStatus operation.
     /// </summary>
-    public partial class GetDeploymentStatusResponse : AmazonWebServiceResponse
+    public partial class GetBulkDeploymentStatusResponse : AmazonWebServiceResponse
     {
-        private string _deploymentStatus;
-        private DeploymentType _deploymentType;
+        private BulkDeploymentMetrics _bulkDeploymentMetrics;
+        private BulkDeploymentStatus _bulkDeploymentStatus;
+        private string _createdAt;
         private List<ErrorDetail> _errorDetails = new List<ErrorDetail>();
         private string _errorMessage;
-        private string _updatedAt;
 
         /// <summary>
-        /// Gets and sets the property DeploymentStatus. The status of the deployment: ''Pending'',
-        /// ''InProgress'', ''Success'', or ''Failure''.
+        /// Gets and sets the property BulkDeploymentMetrics. Relevant metrics on input records
+        /// processed during bulk deployment.
         /// </summary>
-        public string DeploymentStatus
+        public BulkDeploymentMetrics BulkDeploymentMetrics
         {
-            get { return this._deploymentStatus; }
-            set { this._deploymentStatus = value; }
+            get { return this._bulkDeploymentMetrics; }
+            set { this._bulkDeploymentMetrics = value; }
         }
 
-        // Check to see if DeploymentStatus property is set
-        internal bool IsSetDeploymentStatus()
+        // Check to see if BulkDeploymentMetrics property is set
+        internal bool IsSetBulkDeploymentMetrics()
         {
-            return this._deploymentStatus != null;
+            return this._bulkDeploymentMetrics != null;
         }
 
         /// <summary>
-        /// Gets and sets the property DeploymentType. The type of the deployment.
+        /// Gets and sets the property BulkDeploymentStatus. The status of the bulk deployment.
         /// </summary>
-        public DeploymentType DeploymentType
+        public BulkDeploymentStatus BulkDeploymentStatus
         {
-            get { return this._deploymentType; }
-            set { this._deploymentType = value; }
+            get { return this._bulkDeploymentStatus; }
+            set { this._bulkDeploymentStatus = value; }
         }
 
-        // Check to see if DeploymentType property is set
-        internal bool IsSetDeploymentType()
+        // Check to see if BulkDeploymentStatus property is set
+        internal bool IsSetBulkDeploymentStatus()
         {
-            return this._deploymentType != null;
+            return this._bulkDeploymentStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatedAt. The time, in ISO format, when the deployment
+        /// was created.
+        /// </summary>
+        public string CreatedAt
+        {
+            get { return this._createdAt; }
+            set { this._createdAt = value; }
+        }
+
+        // Check to see if CreatedAt property is set
+        internal bool IsSetCreatedAt()
+        {
+            return this._createdAt != null;
         }
 
         /// <summary>
@@ -97,22 +113,6 @@ namespace Amazon.Greengrass.Model
         internal bool IsSetErrorMessage()
         {
             return this._errorMessage != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property UpdatedAt. The time, in milliseconds since the epoch, when
-        /// the deployment status was updated.
-        /// </summary>
-        public string UpdatedAt
-        {
-            get { return this._updatedAt; }
-            set { this._updatedAt = value; }
-        }
-
-        // Check to see if UpdatedAt property is set
-        internal bool IsSetUpdatedAt()
-        {
-            return this._updatedAt != null;
         }
 
     }

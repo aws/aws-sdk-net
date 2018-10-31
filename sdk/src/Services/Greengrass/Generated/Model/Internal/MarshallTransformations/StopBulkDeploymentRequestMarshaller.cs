@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GetLoggerDefinitionVersion Request Marshaller
+    /// StopBulkDeployment Request Marshaller
     /// </summary>       
-    public class GetLoggerDefinitionVersionRequestMarshaller : IMarshaller<IRequest, GetLoggerDefinitionVersionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class StopBulkDeploymentRequestMarshaller : IMarshaller<IRequest, StopBulkDeploymentRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((GetLoggerDefinitionVersionRequest)input);
+            return this.Marshall((StopBulkDeploymentRequest)input);
         }
 
         /// <summary>
@@ -52,29 +52,23 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(GetLoggerDefinitionVersionRequest publicRequest)
+        public IRequest Marshall(StopBulkDeploymentRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Greengrass");
-            request.HttpMethod = "GET";
+            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.HttpMethod = "PUT";
 
-            string uriResourcePath = "/greengrass/definition/loggers/{LoggerDefinitionId}/versions/{LoggerDefinitionVersionId}";
-            if (!publicRequest.IsSetLoggerDefinitionId())
-                throw new AmazonGreengrassException("Request object does not have required field LoggerDefinitionId set");
-            uriResourcePath = uriResourcePath.Replace("{LoggerDefinitionId}", StringUtils.FromString(publicRequest.LoggerDefinitionId));
-            if (!publicRequest.IsSetLoggerDefinitionVersionId())
-                throw new AmazonGreengrassException("Request object does not have required field LoggerDefinitionVersionId set");
-            uriResourcePath = uriResourcePath.Replace("{LoggerDefinitionVersionId}", StringUtils.FromString(publicRequest.LoggerDefinitionVersionId));
-            
-            if (publicRequest.IsSetNextToken())
-                request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
+            string uriResourcePath = "/greengrass/bulk/deployments/{BulkDeploymentId}/$stop";
+            if (!publicRequest.IsSetBulkDeploymentId())
+                throw new AmazonGreengrassException("Request object does not have required field BulkDeploymentId set");
+            uriResourcePath = uriResourcePath.Replace("{BulkDeploymentId}", StringUtils.FromString(publicRequest.BulkDeploymentId));
             request.ResourcePath = uriResourcePath;
-            request.UseQueryString = true;
 
             return request;
         }
-        private static GetLoggerDefinitionVersionRequestMarshaller _instance = new GetLoggerDefinitionVersionRequestMarshaller();        
+        private static StopBulkDeploymentRequestMarshaller _instance = new StopBulkDeploymentRequestMarshaller();        
 
-        internal static GetLoggerDefinitionVersionRequestMarshaller GetInstance()
+        internal static StopBulkDeploymentRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -82,7 +76,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetLoggerDefinitionVersionRequestMarshaller Instance
+        public static StopBulkDeploymentRequestMarshaller Instance
         {
             get
             {

@@ -28,44 +28,27 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetLoggerDefinitionVersion operation.
-    /// Retrieves information about a logger definition version.
+    /// This is the response object from the ListBulkDeploymentDetailedReports operation.
     /// </summary>
-    public partial class GetLoggerDefinitionVersionRequest : AmazonGreengrassRequest
+    public partial class ListBulkDeploymentDetailedReportsResponse : AmazonWebServiceResponse
     {
-        private string _loggerDefinitionId;
-        private string _loggerDefinitionVersionId;
+        private List<BulkDeploymentResult> _deployments = new List<BulkDeploymentResult>();
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property LoggerDefinitionId. The ID of the logger definition.
+        /// Gets and sets the property Deployments. A list of the individual group deployments
+        /// in the bulk deployment operation.
         /// </summary>
-        public string LoggerDefinitionId
+        public List<BulkDeploymentResult> Deployments
         {
-            get { return this._loggerDefinitionId; }
-            set { this._loggerDefinitionId = value; }
+            get { return this._deployments; }
+            set { this._deployments = value; }
         }
 
-        // Check to see if LoggerDefinitionId property is set
-        internal bool IsSetLoggerDefinitionId()
+        // Check to see if Deployments property is set
+        internal bool IsSetDeployments()
         {
-            return this._loggerDefinitionId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property LoggerDefinitionVersionId. The ID of the logger definition
-        /// version.
-        /// </summary>
-        public string LoggerDefinitionVersionId
-        {
-            get { return this._loggerDefinitionVersionId; }
-            set { this._loggerDefinitionVersionId = value; }
-        }
-
-        // Check to see if LoggerDefinitionVersionId property is set
-        internal bool IsSetLoggerDefinitionVersionId()
-        {
-            return this._loggerDefinitionVersionId != null;
+            return this._deployments != null && this._deployments.Count > 0; 
         }
 
         /// <summary>

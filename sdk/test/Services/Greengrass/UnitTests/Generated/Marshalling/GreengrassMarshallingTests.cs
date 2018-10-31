@@ -972,6 +972,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Greengrass")]
+        public void GetBulkDeploymentStatusMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetBulkDeploymentStatus");
+
+            var request = InstantiateClassGenerator.Execute<GetBulkDeploymentStatusRequest>();
+            var marshaller = new GetBulkDeploymentStatusRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetBulkDeploymentStatus", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetBulkDeploymentStatusResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetBulkDeploymentStatusResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Greengrass")]
         public void GetConnectivityInfoMarshallTest()
         {
             var operation = service_model.FindOperation("GetConnectivityInfo");
@@ -1580,6 +1612,70 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Greengrass")]
+        public void ListBulkDeploymentDetailedReportsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListBulkDeploymentDetailedReports");
+
+            var request = InstantiateClassGenerator.Execute<ListBulkDeploymentDetailedReportsRequest>();
+            var marshaller = new ListBulkDeploymentDetailedReportsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListBulkDeploymentDetailedReports", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListBulkDeploymentDetailedReportsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListBulkDeploymentDetailedReportsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Greengrass")]
+        public void ListBulkDeploymentsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListBulkDeployments");
+
+            var request = InstantiateClassGenerator.Execute<ListBulkDeploymentsRequest>();
+            var marshaller = new ListBulkDeploymentsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListBulkDeployments", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListBulkDeploymentsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListBulkDeploymentsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Greengrass")]
         public void ListCoreDefinitionsMarshallTest()
         {
             var operation = service_model.FindOperation("ListCoreDefinitions");
@@ -2116,6 +2212,70 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = ResetDeploymentsResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as ResetDeploymentsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Greengrass")]
+        public void StartBulkDeploymentMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartBulkDeployment");
+
+            var request = InstantiateClassGenerator.Execute<StartBulkDeploymentRequest>();
+            var marshaller = new StartBulkDeploymentRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("StartBulkDeployment", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = StartBulkDeploymentResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as StartBulkDeploymentResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Greengrass")]
+        public void StopBulkDeploymentMarshallTest()
+        {
+            var operation = service_model.FindOperation("StopBulkDeployment");
+
+            var request = InstantiateClassGenerator.Execute<StopBulkDeploymentRequest>();
+            var marshaller = new StopBulkDeploymentRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("StopBulkDeployment", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = StopBulkDeploymentResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as StopBulkDeploymentResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 

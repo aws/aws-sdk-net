@@ -75,6 +75,12 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
                     response.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NextToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextToken = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Version", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

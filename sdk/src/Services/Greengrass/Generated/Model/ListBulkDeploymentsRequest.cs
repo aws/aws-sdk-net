@@ -28,44 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetLoggerDefinitionVersion operation.
-    /// Retrieves information about a logger definition version.
+    /// Container for the parameters to the ListBulkDeployments operation.
+    /// Returns a list of bulk deployments.
     /// </summary>
-    public partial class GetLoggerDefinitionVersionRequest : AmazonGreengrassRequest
+    public partial class ListBulkDeploymentsRequest : AmazonGreengrassRequest
     {
-        private string _loggerDefinitionId;
-        private string _loggerDefinitionVersionId;
+        private string _maxResults;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property LoggerDefinitionId. The ID of the logger definition.
+        /// Gets and sets the property MaxResults. The maximum number of results to be returned
+        /// per request.
         /// </summary>
-        public string LoggerDefinitionId
+        public string MaxResults
         {
-            get { return this._loggerDefinitionId; }
-            set { this._loggerDefinitionId = value; }
+            get { return this._maxResults; }
+            set { this._maxResults = value; }
         }
 
-        // Check to see if LoggerDefinitionId property is set
-        internal bool IsSetLoggerDefinitionId()
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
         {
-            return this._loggerDefinitionId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property LoggerDefinitionVersionId. The ID of the logger definition
-        /// version.
-        /// </summary>
-        public string LoggerDefinitionVersionId
-        {
-            get { return this._loggerDefinitionVersionId; }
-            set { this._loggerDefinitionVersionId = value; }
-        }
-
-        // Check to see if LoggerDefinitionVersionId property is set
-        internal bool IsSetLoggerDefinitionVersionId()
-        {
-            return this._loggerDefinitionVersionId != null;
+            return this._maxResults != null;
         }
 
         /// <summary>

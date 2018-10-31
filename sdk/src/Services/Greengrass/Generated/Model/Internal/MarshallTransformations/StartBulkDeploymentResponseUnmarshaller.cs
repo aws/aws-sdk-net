@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetSubscriptionDefinitionVersion operation
+    /// Response Unmarshaller for StartBulkDeployment operation
     /// </summary>  
-    public class GetSubscriptionDefinitionVersionResponseUnmarshaller : JsonResponseUnmarshaller
+    public class StartBulkDeploymentResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,46 +45,22 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetSubscriptionDefinitionVersionResponse response = new GetSubscriptionDefinitionVersionResponse();
+            StartBulkDeploymentResponse response = new StartBulkDeploymentResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("BulkDeploymentArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Arn = unmarshaller.Unmarshall(context);
+                    response.BulkDeploymentArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("CreationTimestamp", targetDepth))
+                if (context.TestExpression("BulkDeploymentId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.CreationTimestamp = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Definition", targetDepth))
-                {
-                    var unmarshaller = SubscriptionDefinitionVersionUnmarshaller.Instance;
-                    response.Definition = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Id", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Id = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("NextToken", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.NextToken = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Version", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Version = unmarshaller.Unmarshall(context);
+                    response.BulkDeploymentId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -109,9 +85,9 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             return new AmazonGreengrassException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static GetSubscriptionDefinitionVersionResponseUnmarshaller _instance = new GetSubscriptionDefinitionVersionResponseUnmarshaller();        
+        private static StartBulkDeploymentResponseUnmarshaller _instance = new StartBulkDeploymentResponseUnmarshaller();        
 
-        internal static GetSubscriptionDefinitionVersionResponseUnmarshaller GetInstance()
+        internal static StartBulkDeploymentResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -119,7 +95,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetSubscriptionDefinitionVersionResponseUnmarshaller Instance
+        public static StartBulkDeploymentResponseUnmarshaller Instance
         {
             get
             {

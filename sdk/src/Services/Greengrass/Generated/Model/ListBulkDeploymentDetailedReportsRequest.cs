@@ -28,44 +28,45 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetLoggerDefinitionVersion operation.
-    /// Retrieves information about a logger definition version.
+    /// Container for the parameters to the ListBulkDeploymentDetailedReports operation.
+    /// Gets a paginated list of the deployments that have been started in a bulk deployment
+    /// operation, and their current deployment status.
     /// </summary>
-    public partial class GetLoggerDefinitionVersionRequest : AmazonGreengrassRequest
+    public partial class ListBulkDeploymentDetailedReportsRequest : AmazonGreengrassRequest
     {
-        private string _loggerDefinitionId;
-        private string _loggerDefinitionVersionId;
+        private string _bulkDeploymentId;
+        private string _maxResults;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property LoggerDefinitionId. The ID of the logger definition.
+        /// Gets and sets the property BulkDeploymentId. The ID of the bulk deployment.
         /// </summary>
-        public string LoggerDefinitionId
+        public string BulkDeploymentId
         {
-            get { return this._loggerDefinitionId; }
-            set { this._loggerDefinitionId = value; }
+            get { return this._bulkDeploymentId; }
+            set { this._bulkDeploymentId = value; }
         }
 
-        // Check to see if LoggerDefinitionId property is set
-        internal bool IsSetLoggerDefinitionId()
+        // Check to see if BulkDeploymentId property is set
+        internal bool IsSetBulkDeploymentId()
         {
-            return this._loggerDefinitionId != null;
+            return this._bulkDeploymentId != null;
         }
 
         /// <summary>
-        /// Gets and sets the property LoggerDefinitionVersionId. The ID of the logger definition
-        /// version.
+        /// Gets and sets the property MaxResults. The maximum number of results to be returned
+        /// per request.
         /// </summary>
-        public string LoggerDefinitionVersionId
+        public string MaxResults
         {
-            get { return this._loggerDefinitionVersionId; }
-            set { this._loggerDefinitionVersionId = value; }
+            get { return this._maxResults; }
+            set { this._maxResults = value; }
         }
 
-        // Check to see if LoggerDefinitionVersionId property is set
-        internal bool IsSetLoggerDefinitionVersionId()
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
         {
-            return this._loggerDefinitionVersionId != null;
+            return this._maxResults != null;
         }
 
         /// <summary>

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetSubscriptionDefinitionVersion operation
+    /// Response Unmarshaller for GetBulkDeploymentStatus operation
     /// </summary>  
-    public class GetSubscriptionDefinitionVersionResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetBulkDeploymentStatusResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,46 +45,40 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetSubscriptionDefinitionVersionResponse response = new GetSubscriptionDefinitionVersionResponse();
+            GetBulkDeploymentStatusResponse response = new GetBulkDeploymentStatusResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("BulkDeploymentMetrics", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Arn = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BulkDeploymentMetricsUnmarshaller.Instance;
+                    response.BulkDeploymentMetrics = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("CreationTimestamp", targetDepth))
+                if (context.TestExpression("BulkDeploymentStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.CreationTimestamp = unmarshaller.Unmarshall(context);
+                    response.BulkDeploymentStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Definition", targetDepth))
-                {
-                    var unmarshaller = SubscriptionDefinitionVersionUnmarshaller.Instance;
-                    response.Definition = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("CreatedAt", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Id = unmarshaller.Unmarshall(context);
+                    response.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("ErrorDetails", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.NextToken = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<ErrorDetail, ErrorDetailUnmarshaller>(ErrorDetailUnmarshaller.Instance);
+                    response.ErrorDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Version", targetDepth))
+                if (context.TestExpression("ErrorMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Version = unmarshaller.Unmarshall(context);
+                    response.ErrorMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -109,9 +103,9 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             return new AmazonGreengrassException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static GetSubscriptionDefinitionVersionResponseUnmarshaller _instance = new GetSubscriptionDefinitionVersionResponseUnmarshaller();        
+        private static GetBulkDeploymentStatusResponseUnmarshaller _instance = new GetBulkDeploymentStatusResponseUnmarshaller();        
 
-        internal static GetSubscriptionDefinitionVersionResponseUnmarshaller GetInstance()
+        internal static GetBulkDeploymentStatusResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -119,7 +113,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetSubscriptionDefinitionVersionResponseUnmarshaller Instance
+        public static GetBulkDeploymentStatusResponseUnmarshaller Instance
         {
             get
             {

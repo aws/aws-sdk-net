@@ -29,7 +29,8 @@ namespace Amazon.Greengrass.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDeployment operation.
-    /// Creates a deployment.
+    /// Creates a deployment. ''CreateDeployment'' requests are idempotent with respect to
+    /// the ''X-Amzn-Client-Token'' token and the request parameters.
     /// </summary>
     public partial class CreateDeploymentRequest : AmazonGreengrassRequest
     {

@@ -36,6 +36,7 @@ namespace Amazon.Greengrass.Model
     {
         private string _functionDefinitionId;
         private string _functionDefinitionVersionId;
+        private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property FunctionDefinitionId. The ID of the Lambda function definition.
@@ -66,6 +67,22 @@ namespace Amazon.Greengrass.Model
         internal bool IsSetFunctionDefinitionVersionId()
         {
             return this._functionDefinitionVersionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. The token for the next set of results, or ''null''
+        /// if there are no additional results.
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
     }

@@ -54,7 +54,9 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. The ID of the device.
+        /// Gets and sets the property Id. A descriptive or arbitrary ID for the device. This
+        /// value must be unique within the device definition version. Max length is 128 characters
+        /// with pattern ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
         /// </summary>
         public string Id
         {

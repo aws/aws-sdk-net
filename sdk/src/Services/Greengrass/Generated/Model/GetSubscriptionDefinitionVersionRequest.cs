@@ -33,8 +33,25 @@ namespace Amazon.Greengrass.Model
     /// </summary>
     public partial class GetSubscriptionDefinitionVersionRequest : AmazonGreengrassRequest
     {
+        private string _nextToken;
         private string _subscriptionDefinitionId;
         private string _subscriptionDefinitionVersionId;
+
+        /// <summary>
+        /// Gets and sets the property NextToken. The token for the next set of results, or ''null''
+        /// if there are no additional results.
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
+        }
 
         /// <summary>
         /// Gets and sets the property SubscriptionDefinitionId. The ID of the subscription definition.

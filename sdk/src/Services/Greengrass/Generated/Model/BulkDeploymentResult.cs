@@ -28,19 +28,68 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
-    /// This is the response object from the GetDeploymentStatus operation.
+    /// Information about an individual group deployment in a bulk deployment operation.
     /// </summary>
-    public partial class GetDeploymentStatusResponse : AmazonWebServiceResponse
+    public partial class BulkDeploymentResult
     {
+        private string _createdAt;
+        private string _deploymentArn;
+        private string _deploymentId;
         private string _deploymentStatus;
         private DeploymentType _deploymentType;
         private List<ErrorDetail> _errorDetails = new List<ErrorDetail>();
         private string _errorMessage;
-        private string _updatedAt;
+        private string _groupArn;
 
         /// <summary>
-        /// Gets and sets the property DeploymentStatus. The status of the deployment: ''Pending'',
-        /// ''InProgress'', ''Success'', or ''Failure''.
+        /// Gets and sets the property CreatedAt. The time, in ISO format, when the deployment
+        /// was created.
+        /// </summary>
+        public string CreatedAt
+        {
+            get { return this._createdAt; }
+            set { this._createdAt = value; }
+        }
+
+        // Check to see if CreatedAt property is set
+        internal bool IsSetCreatedAt()
+        {
+            return this._createdAt != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeploymentArn. The ARN of the group deployment.
+        /// </summary>
+        public string DeploymentArn
+        {
+            get { return this._deploymentArn; }
+            set { this._deploymentArn = value; }
+        }
+
+        // Check to see if DeploymentArn property is set
+        internal bool IsSetDeploymentArn()
+        {
+            return this._deploymentArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeploymentId. The ID of the group deployment.
+        /// </summary>
+        public string DeploymentId
+        {
+            get { return this._deploymentId; }
+            set { this._deploymentId = value; }
+        }
+
+        // Check to see if DeploymentId property is set
+        internal bool IsSetDeploymentId()
+        {
+            return this._deploymentId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeploymentStatus. The current status of the group deployment:
+        /// ''Pending'', ''InProgress'', ''Success'', or ''Failure''.
         /// </summary>
         public string DeploymentStatus
         {
@@ -70,7 +119,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ErrorDetails. Error details
+        /// Gets and sets the property ErrorDetails. Details about the error.
         /// </summary>
         public List<ErrorDetail> ErrorDetails
         {
@@ -85,7 +134,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ErrorMessage. Error message
+        /// Gets and sets the property ErrorMessage. The error message for a failed deployment
         /// </summary>
         public string ErrorMessage
         {
@@ -100,19 +149,18 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UpdatedAt. The time, in milliseconds since the epoch, when
-        /// the deployment status was updated.
+        /// Gets and sets the property GroupArn. The ARN of the Greengrass group.
         /// </summary>
-        public string UpdatedAt
+        public string GroupArn
         {
-            get { return this._updatedAt; }
-            set { this._updatedAt = value; }
+            get { return this._groupArn; }
+            set { this._groupArn = value; }
         }
 
-        // Check to see if UpdatedAt property is set
-        internal bool IsSetUpdatedAt()
+        // Check to see if GroupArn property is set
+        internal bool IsSetGroupArn()
         {
-            return this._updatedAt != null;
+            return this._groupArn != null;
         }
 
     }
