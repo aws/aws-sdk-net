@@ -75,7 +75,7 @@ namespace Amazon.MediaStoreData.Model
         /// <summary>
         /// Gets and sets the property StorageClass. 
         /// <para>
-        /// The storage class where the object was persisted. Should be “Temporal”.
+        /// The storage class where the object was persisted. The class should be “Temporal”.
         /// </para>
         /// </summary>
         public StorageClass StorageClass

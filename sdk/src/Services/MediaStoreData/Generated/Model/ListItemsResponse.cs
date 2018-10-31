@@ -38,7 +38,7 @@ namespace Amazon.MediaStoreData.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// Metadata entries for the folders and objects at the requested path.
+        /// The metadata entries for the folders and objects at the requested path.
         /// </para>
         /// </summary>
         public List<Item> Items
@@ -56,7 +56,10 @@ namespace Amazon.MediaStoreData.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>NextToken</code> used to request the next page of results using <code>ListItems</code>.
+        /// The token that can be used in a request to view the next set of results. For example,
+        /// you submit a <code>ListItems</code> request that matches 2,000 items with <code>MaxResults</code>
+        /// set at 500. The service returns the first batch of results (up to 500) and a <code>NextToken</code>
+        /// value that can be used to fetch the next batch of results.
         /// </para>
         /// </summary>
         public string NextToken

@@ -277,7 +277,7 @@ namespace Amazon.MediaStoreData
 
 
         /// <summary>
-        /// Uploads an object to the specified path. Object sizes are limited to 10 MB.
+        /// Uploads an object to the specified path. Object sizes are limited to 25 MB.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutObject service method.</param>
         /// 

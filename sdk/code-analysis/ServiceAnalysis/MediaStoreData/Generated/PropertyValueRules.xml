@@ -18,7 +18,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStoreData.Model.DescribeObjectResponse.ContentType</property>
-    <pattern>^[\w\-\/\.]{1,255}$</pattern>
+    <pattern>^[\w\-\/\.\+]{1,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStoreData.Model.DescribeObjectResponse.ETag</property>
@@ -46,7 +46,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStoreData.Model.GetObjectResponse.ContentType</property>
-    <pattern>^[\w\-\/\.]{1,255}$</pattern>
+    <pattern>^[\w\-\/\.\+]{1,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStoreData.Model.GetObjectResponse.ETag</property>
@@ -67,7 +67,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStoreData.Model.PutObjectRequest.ContentType</property>
-    <pattern>^[\w\-\/\.]{1,255}$</pattern>
+    <pattern>^[\w\-\/\.\+]{1,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStoreData.Model.PutObjectRequest.Path</property>
@@ -115,7 +115,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStoreData.Model.Item.ContentType</property>
-    <pattern>^[\w\-\/\.]{1,255}$</pattern>
+    <pattern>^[\w\-\/\.\+]{1,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStoreData.Model.Item.ETag</property>

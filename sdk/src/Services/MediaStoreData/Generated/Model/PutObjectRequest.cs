@@ -30,7 +30,7 @@ namespace Amazon.MediaStoreData.Model
 {
     /// <summary>
     /// Container for the parameters to the PutObject operation.
-    /// Uploads an object to the specified path. Object sizes are limited to 10 MB.
+    /// Uploads an object to the specified path. Object sizes are limited to 25 MB.
     /// </summary>
     public partial class PutObjectRequest : AmazonMediaStoreDataRequest
     {
