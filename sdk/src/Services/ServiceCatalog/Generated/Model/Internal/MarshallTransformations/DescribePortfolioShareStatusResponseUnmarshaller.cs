@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreatePortfolioShare operation
+    /// Response Unmarshaller for DescribePortfolioShareStatus operation
     /// </summary>  
-    public class CreatePortfolioShareResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DescribePortfolioShareStatusResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,40 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreatePortfolioShareResponse response = new CreatePortfolioShareResponse();
+            DescribePortfolioShareStatusResponse response = new DescribePortfolioShareStatusResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("OrganizationNodeValue", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.OrganizationNodeValue = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PortfolioId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.PortfolioId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PortfolioShareToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PortfolioShareToken = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ShareDetails", targetDepth))
+                {
+                    var unmarshaller = ShareDetailsUnmarshaller.Instance;
+                    response.ShareDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Status", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -76,10 +100,6 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
             {
                 return new InvalidParametersException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
-            {
-                return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("OperationNotSupportedException"))
             {
                 return new OperationNotSupportedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -91,9 +111,9 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
             return new AmazonServiceCatalogException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static CreatePortfolioShareResponseUnmarshaller _instance = new CreatePortfolioShareResponseUnmarshaller();        
+        private static DescribePortfolioShareStatusResponseUnmarshaller _instance = new DescribePortfolioShareStatusResponseUnmarshaller();        
 
-        internal static CreatePortfolioShareResponseUnmarshaller GetInstance()
+        internal static DescribePortfolioShareStatusResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -101,7 +121,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreatePortfolioShareResponseUnmarshaller Instance
+        public static DescribePortfolioShareStatusResponseUnmarshaller Instance
         {
             get
             {

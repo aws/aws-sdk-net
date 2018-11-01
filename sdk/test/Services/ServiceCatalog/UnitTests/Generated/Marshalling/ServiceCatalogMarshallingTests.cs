@@ -826,6 +826,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("ServiceCatalog")]
+        public void DescribePortfolioShareStatusMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribePortfolioShareStatusRequest>();
+            var marshaller = new DescribePortfolioShareStatusRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DescribePortfolioShareStatusRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribePortfolioShareStatus").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = DescribePortfolioShareStatusResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribePortfolioShareStatusResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ServiceCatalog")]
         public void DescribeProductMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<DescribeProductRequest>();
@@ -1116,6 +1145,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("ServiceCatalog")]
+        public void DisableAWSOrganizationsAccessMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DisableAWSOrganizationsAccessRequest>();
+            var marshaller = new DisableAWSOrganizationsAccessRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DisableAWSOrganizationsAccessRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DisableAWSOrganizationsAccess").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = DisableAWSOrganizationsAccessResponseUnmarshaller.Instance.Unmarshall(context)
+                as DisableAWSOrganizationsAccessResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ServiceCatalog")]
         public void DisassociatePrincipalFromPortfolioMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<DisassociatePrincipalFromPortfolioRequest>();
@@ -1232,6 +1290,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("ServiceCatalog")]
+        public void EnableAWSOrganizationsAccessMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<EnableAWSOrganizationsAccessRequest>();
+            var marshaller = new EnableAWSOrganizationsAccessRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<EnableAWSOrganizationsAccessRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("EnableAWSOrganizationsAccess").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = EnableAWSOrganizationsAccessResponseUnmarshaller.Instance.Unmarshall(context)
+                as EnableAWSOrganizationsAccessResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ServiceCatalog")]
         public void ExecuteProvisionedProductPlanMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<ExecuteProvisionedProductPlanRequest>();
@@ -1282,6 +1369,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ExecuteProvisionedProductServiceActionResponseUnmarshaller.Instance.Unmarshall(context)
                 as ExecuteProvisionedProductServiceActionResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ServiceCatalog")]
+        public void GetAWSOrganizationsAccessStatusMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<GetAWSOrganizationsAccessStatusRequest>();
+            var marshaller = new GetAWSOrganizationsAccessStatusRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<GetAWSOrganizationsAccessStatusRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetAWSOrganizationsAccessStatus").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = GetAWSOrganizationsAccessStatusResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetAWSOrganizationsAccessStatusResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -1369,6 +1485,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListLaunchPathsResponseUnmarshaller.Instance.Unmarshall(context)
                 as ListLaunchPathsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ServiceCatalog")]
+        public void ListOrganizationPortfolioAccessMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<ListOrganizationPortfolioAccessRequest>();
+            var marshaller = new ListOrganizationPortfolioAccessRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<ListOrganizationPortfolioAccessRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListOrganizationPortfolioAccess").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = ListOrganizationPortfolioAccessResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListOrganizationPortfolioAccessResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 

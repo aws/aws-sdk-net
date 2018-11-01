@@ -113,6 +113,11 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the master account of
+        /// your organization
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>AWS_SERVICECATALOG</code> - List default portfolios
         /// </para>
         ///  </li> <li> 

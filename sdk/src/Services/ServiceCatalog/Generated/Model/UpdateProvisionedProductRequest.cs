@@ -106,7 +106,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProductId. 
         /// <para>
-        /// The identifier of the provisioned product.
+        /// The identifier of the product.
         /// </para>
         /// </summary>
         public string ProductId

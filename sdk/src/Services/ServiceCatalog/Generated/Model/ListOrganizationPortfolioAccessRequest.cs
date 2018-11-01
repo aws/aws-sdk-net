@@ -28,17 +28,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreatePortfolioShare operation.
-    /// Shares the specified portfolio with the specified account or organization node. Shares
-    /// to an organization node can only be created by the master account of an Organization.
-    /// AWSOrganizationsAccess must be enabled in order to create a portfolio share to an
-    /// organization node.
+    /// Container for the parameters to the ListOrganizationPortfolioAccess operation.
+    /// Lists the organization nodes that have access to the specified portfolio. This API
+    /// can only be called by the master account in the organization.
     /// </summary>
-    public partial class CreatePortfolioShareRequest : AmazonServiceCatalogRequest
+    public partial class ListOrganizationPortfolioAccessRequest : AmazonServiceCatalogRequest
     {
         private string _acceptLanguage;
-        private string _accountId;
-        private OrganizationNode _organizationNode;
+        private OrganizationNodeType _organizationNodeType;
+        private int? _pageSize;
+        private string _pageToken;
         private string _portfolioId;
 
         /// <summary>
@@ -73,49 +72,78 @@ namespace Amazon.ServiceCatalog.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AccountId. 
+        /// Gets and sets the property OrganizationNodeType. 
         /// <para>
-        /// The AWS account ID. For example, <code>123456789012</code>.
+        /// The organization node type that will be returned in the output.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ORGANIZATION</code> - Organization that has access to the portfolio. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio
+        /// within your organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ACCOUNT</code> - Account that has access to the portfolio within your organization.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
-        public string AccountId
+        public OrganizationNodeType OrganizationNodeType
         {
-            get { return this._accountId; }
-            set { this._accountId = value; }
+            get { return this._organizationNodeType; }
+            set { this._organizationNodeType = value; }
         }
 
-        // Check to see if AccountId property is set
-        internal bool IsSetAccountId()
+        // Check to see if OrganizationNodeType property is set
+        internal bool IsSetOrganizationNodeType()
         {
-            return this._accountId != null;
+            return this._organizationNodeType != null;
         }
 
         /// <summary>
-        /// Gets and sets the property OrganizationNode. 
+        /// Gets and sets the property PageSize. 
         /// <para>
-        /// The organization node to whom you are going to share. If <code>OrganizationNode</code>
-        /// is passed in, <code>PortfolioShare</code> will be created for the node and its children
-        /// (when applies), and a <code>PortfolioShareToken</code> will be returned in the output
-        /// in order for the administrator to monitor the status of the <code>PortfolioShare</code>
-        /// creation process.
+        /// The maximum number of items to return with this call.
         /// </para>
         /// </summary>
-        public OrganizationNode OrganizationNode
+        public int PageSize
         {
-            get { return this._organizationNode; }
-            set { this._organizationNode = value; }
+            get { return this._pageSize.GetValueOrDefault(); }
+            set { this._pageSize = value; }
         }
 
-        // Check to see if OrganizationNode property is set
-        internal bool IsSetOrganizationNode()
+        // Check to see if PageSize property is set
+        internal bool IsSetPageSize()
         {
-            return this._organizationNode != null;
+            return this._pageSize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PageToken. 
+        /// <para>
+        /// The page token for the next set of results. To retrieve the first set of results,
+        /// use null.
+        /// </para>
+        /// </summary>
+        public string PageToken
+        {
+            get { return this._pageToken; }
+            set { this._pageToken = value; }
+        }
+
+        // Check to see if PageToken property is set
+        internal bool IsSetPageToken()
+        {
+            return this._pageToken != null;
         }
 
         /// <summary>
         /// Gets and sets the property PortfolioId. 
         /// <para>
-        /// The portfolio identifier.
+        /// The portfolio identifier. For example, <code>port-2abcdext3y5fk</code>.
         /// </para>
         /// </summary>
         public string PortfolioId

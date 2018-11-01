@@ -28,30 +28,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// This is the response object from the DeletePortfolioShare operation.
+    /// Container for the parameters to the DisableAWSOrganizationsAccess operation.
+    /// Disable portfolio sharing through AWS Organizations feature. This feature will not
+    /// delete your current shares but it will prevent you from creating new shares throughout
+    /// your organization. Current shares will not be in sync with your organization structure
+    /// if it changes after calling this API. This API can only be called by the master account
+    /// in the organization.
     /// </summary>
-    public partial class DeletePortfolioShareResponse : AmazonWebServiceResponse
+    public partial class DisableAWSOrganizationsAccessRequest : AmazonServiceCatalogRequest
     {
-        private string _portfolioShareToken;
-
-        /// <summary>
-        /// Gets and sets the property PortfolioShareToken. 
-        /// <para>
-        /// The portfolio share unique identifier. This will only be returned if delete is made
-        /// to an organization node.
-        /// </para>
-        /// </summary>
-        public string PortfolioShareToken
-        {
-            get { return this._portfolioShareToken; }
-            set { this._portfolioShareToken = value; }
-        }
-
-        // Check to see if PortfolioShareToken property is set
-        internal bool IsSetPortfolioShareToken()
-        {
-            return this._portfolioShareToken != null;
-        }
 
     }
 }

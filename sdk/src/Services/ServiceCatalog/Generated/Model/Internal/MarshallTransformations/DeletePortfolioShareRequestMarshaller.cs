@@ -79,6 +79,17 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AccountId);
                 }
 
+                if(publicRequest.IsSetOrganizationNode())
+                {
+                    context.Writer.WritePropertyName("OrganizationNode");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = OrganizationNodeMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OrganizationNode, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetPortfolioId())
                 {
                     context.Writer.WritePropertyName("PortfolioId");

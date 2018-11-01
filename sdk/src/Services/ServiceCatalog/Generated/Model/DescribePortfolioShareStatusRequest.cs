@@ -28,17 +28,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// This is the response object from the DeletePortfolioShare operation.
+    /// Container for the parameters to the DescribePortfolioShareStatus operation.
+    /// Gets the status of the specified portfolio share operation. This API can only be called
+    /// by the master account in the organization.
     /// </summary>
-    public partial class DeletePortfolioShareResponse : AmazonWebServiceResponse
+    public partial class DescribePortfolioShareStatusRequest : AmazonServiceCatalogRequest
     {
         private string _portfolioShareToken;
 
         /// <summary>
         /// Gets and sets the property PortfolioShareToken. 
         /// <para>
-        /// The portfolio share unique identifier. This will only be returned if delete is made
-        /// to an organization node.
+        /// The token for the portfolio share operation. This token is returned either by CreatePortfolioShare
+        /// or by DeletePortfolioShare.
         /// </para>
         /// </summary>
         public string PortfolioShareToken

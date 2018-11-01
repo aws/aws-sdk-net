@@ -1113,6 +1113,38 @@ namespace Amazon.ServiceCatalog
 
         #endregion
         
+        #region  DescribePortfolioShareStatus
+
+        internal virtual DescribePortfolioShareStatusResponse DescribePortfolioShareStatus(DescribePortfolioShareStatusRequest request)
+        {
+            var marshaller = DescribePortfolioShareStatusRequestMarshaller.Instance;
+            var unmarshaller = DescribePortfolioShareStatusResponseUnmarshaller.Instance;
+
+            return Invoke<DescribePortfolioShareStatusRequest,DescribePortfolioShareStatusResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribePortfolioShareStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribePortfolioShareStatus operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribePortfolioShareStatus">REST API Reference for DescribePortfolioShareStatus Operation</seealso>
+        public virtual Task<DescribePortfolioShareStatusResponse> DescribePortfolioShareStatusAsync(DescribePortfolioShareStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribePortfolioShareStatusRequestMarshaller.Instance;
+            var unmarshaller = DescribePortfolioShareStatusResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribePortfolioShareStatusRequest,DescribePortfolioShareStatusResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeProduct
 
         internal virtual DescribeProductResponse DescribeProduct(DescribeProductRequest request)
@@ -1433,6 +1465,38 @@ namespace Amazon.ServiceCatalog
 
         #endregion
         
+        #region  DisableAWSOrganizationsAccess
+
+        internal virtual DisableAWSOrganizationsAccessResponse DisableAWSOrganizationsAccess(DisableAWSOrganizationsAccessRequest request)
+        {
+            var marshaller = DisableAWSOrganizationsAccessRequestMarshaller.Instance;
+            var unmarshaller = DisableAWSOrganizationsAccessResponseUnmarshaller.Instance;
+
+            return Invoke<DisableAWSOrganizationsAccessRequest,DisableAWSOrganizationsAccessResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableAWSOrganizationsAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableAWSOrganizationsAccess operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisableAWSOrganizationsAccess">REST API Reference for DisableAWSOrganizationsAccess Operation</seealso>
+        public virtual Task<DisableAWSOrganizationsAccessResponse> DisableAWSOrganizationsAccessAsync(DisableAWSOrganizationsAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DisableAWSOrganizationsAccessRequestMarshaller.Instance;
+            var unmarshaller = DisableAWSOrganizationsAccessResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisableAWSOrganizationsAccessRequest,DisableAWSOrganizationsAccessResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisassociatePrincipalFromPortfolio
 
         internal virtual DisassociatePrincipalFromPortfolioResponse DisassociatePrincipalFromPortfolio(DisassociatePrincipalFromPortfolioRequest request)
@@ -1561,6 +1625,38 @@ namespace Amazon.ServiceCatalog
 
         #endregion
         
+        #region  EnableAWSOrganizationsAccess
+
+        internal virtual EnableAWSOrganizationsAccessResponse EnableAWSOrganizationsAccess(EnableAWSOrganizationsAccessRequest request)
+        {
+            var marshaller = EnableAWSOrganizationsAccessRequestMarshaller.Instance;
+            var unmarshaller = EnableAWSOrganizationsAccessResponseUnmarshaller.Instance;
+
+            return Invoke<EnableAWSOrganizationsAccessRequest,EnableAWSOrganizationsAccessResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableAWSOrganizationsAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableAWSOrganizationsAccess operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/EnableAWSOrganizationsAccess">REST API Reference for EnableAWSOrganizationsAccess Operation</seealso>
+        public virtual Task<EnableAWSOrganizationsAccessResponse> EnableAWSOrganizationsAccessAsync(EnableAWSOrganizationsAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = EnableAWSOrganizationsAccessRequestMarshaller.Instance;
+            var unmarshaller = EnableAWSOrganizationsAccessResponseUnmarshaller.Instance;
+
+            return InvokeAsync<EnableAWSOrganizationsAccessRequest,EnableAWSOrganizationsAccessResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ExecuteProvisionedProductPlan
 
         internal virtual ExecuteProvisionedProductPlanResponse ExecuteProvisionedProductPlan(ExecuteProvisionedProductPlanRequest request)
@@ -1620,6 +1716,38 @@ namespace Amazon.ServiceCatalog
             var unmarshaller = ExecuteProvisionedProductServiceActionResponseUnmarshaller.Instance;
 
             return InvokeAsync<ExecuteProvisionedProductServiceActionRequest,ExecuteProvisionedProductServiceActionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetAWSOrganizationsAccessStatus
+
+        internal virtual GetAWSOrganizationsAccessStatusResponse GetAWSOrganizationsAccessStatus(GetAWSOrganizationsAccessStatusRequest request)
+        {
+            var marshaller = GetAWSOrganizationsAccessStatusRequestMarshaller.Instance;
+            var unmarshaller = GetAWSOrganizationsAccessStatusResponseUnmarshaller.Instance;
+
+            return Invoke<GetAWSOrganizationsAccessStatusRequest,GetAWSOrganizationsAccessStatusResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAWSOrganizationsAccessStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAWSOrganizationsAccessStatus operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/GetAWSOrganizationsAccessStatus">REST API Reference for GetAWSOrganizationsAccessStatus Operation</seealso>
+        public virtual Task<GetAWSOrganizationsAccessStatusResponse> GetAWSOrganizationsAccessStatusAsync(GetAWSOrganizationsAccessStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetAWSOrganizationsAccessStatusRequestMarshaller.Instance;
+            var unmarshaller = GetAWSOrganizationsAccessStatusResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetAWSOrganizationsAccessStatusRequest,GetAWSOrganizationsAccessStatusResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1716,6 +1844,38 @@ namespace Amazon.ServiceCatalog
             var unmarshaller = ListLaunchPathsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListLaunchPathsRequest,ListLaunchPathsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListOrganizationPortfolioAccess
+
+        internal virtual ListOrganizationPortfolioAccessResponse ListOrganizationPortfolioAccess(ListOrganizationPortfolioAccessRequest request)
+        {
+            var marshaller = ListOrganizationPortfolioAccessRequestMarshaller.Instance;
+            var unmarshaller = ListOrganizationPortfolioAccessResponseUnmarshaller.Instance;
+
+            return Invoke<ListOrganizationPortfolioAccessRequest,ListOrganizationPortfolioAccessResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListOrganizationPortfolioAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListOrganizationPortfolioAccess operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListOrganizationPortfolioAccess">REST API Reference for ListOrganizationPortfolioAccess Operation</seealso>
+        public virtual Task<ListOrganizationPortfolioAccessResponse> ListOrganizationPortfolioAccessAsync(ListOrganizationPortfolioAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListOrganizationPortfolioAccessRequestMarshaller.Instance;
+            var unmarshaller = ListOrganizationPortfolioAccessResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListOrganizationPortfolioAccessRequest,ListOrganizationPortfolioAccessResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

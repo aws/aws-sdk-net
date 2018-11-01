@@ -79,6 +79,60 @@ namespace Amazon.ServiceCatalog
 
 
     /// <summary>
+    /// Constants used for properties of type AccessStatus.
+    /// </summary>
+    public class AccessStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for AccessStatus
+        /// </summary>
+        public static readonly AccessStatus DISABLED = new AccessStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for AccessStatus
+        /// </summary>
+        public static readonly AccessStatus ENABLED = new AccessStatus("ENABLED");
+        /// <summary>
+        /// Constant UNDER_CHANGE for AccessStatus
+        /// </summary>
+        public static readonly AccessStatus UNDER_CHANGE = new AccessStatus("UNDER_CHANGE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AccessStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccessStatus FindValue(string value)
+        {
+            return FindValue<AccessStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccessStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ChangeAction.
     /// </summary>
     public class ChangeAction : ConstantClass
@@ -283,11 +337,69 @@ namespace Amazon.ServiceCatalog
 
 
     /// <summary>
+    /// Constants used for properties of type OrganizationNodeType.
+    /// </summary>
+    public class OrganizationNodeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCOUNT for OrganizationNodeType
+        /// </summary>
+        public static readonly OrganizationNodeType ACCOUNT = new OrganizationNodeType("ACCOUNT");
+        /// <summary>
+        /// Constant ORGANIZATION for OrganizationNodeType
+        /// </summary>
+        public static readonly OrganizationNodeType ORGANIZATION = new OrganizationNodeType("ORGANIZATION");
+        /// <summary>
+        /// Constant ORGANIZATIONAL_UNIT for OrganizationNodeType
+        /// </summary>
+        public static readonly OrganizationNodeType ORGANIZATIONAL_UNIT = new OrganizationNodeType("ORGANIZATIONAL_UNIT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OrganizationNodeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OrganizationNodeType FindValue(string value)
+        {
+            return FindValue<OrganizationNodeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OrganizationNodeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PortfolioShareType.
     /// </summary>
     public class PortfolioShareType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AWS_ORGANIZATIONS for PortfolioShareType
+        /// </summary>
+        public static readonly PortfolioShareType AWS_ORGANIZATIONS = new PortfolioShareType("AWS_ORGANIZATIONS");
         /// <summary>
         /// Constant AWS_SERVICECATALOG for PortfolioShareType
         /// </summary>
@@ -1302,6 +1414,68 @@ namespace Amazon.ServiceCatalog
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ServiceActionDefinitionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ShareStatus.
+    /// </summary>
+    public class ShareStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for ShareStatus
+        /// </summary>
+        public static readonly ShareStatus COMPLETED = new ShareStatus("COMPLETED");
+        /// <summary>
+        /// Constant COMPLETED_WITH_ERRORS for ShareStatus
+        /// </summary>
+        public static readonly ShareStatus COMPLETED_WITH_ERRORS = new ShareStatus("COMPLETED_WITH_ERRORS");
+        /// <summary>
+        /// Constant ERROR for ShareStatus
+        /// </summary>
+        public static readonly ShareStatus ERROR = new ShareStatus("ERROR");
+        /// <summary>
+        /// Constant IN_PROGRESS for ShareStatus
+        /// </summary>
+        public static readonly ShareStatus IN_PROGRESS = new ShareStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant NOT_STARTED for ShareStatus
+        /// </summary>
+        public static readonly ShareStatus NOT_STARTED = new ShareStatus("NOT_STARTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ShareStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ShareStatus FindValue(string value)
+        {
+            return FindValue<ShareStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ShareStatus(string value)
         {
             return FindValue(value);
         }

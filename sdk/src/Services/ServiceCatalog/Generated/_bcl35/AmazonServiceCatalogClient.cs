@@ -885,7 +885,10 @@ namespace Amazon.ServiceCatalog
         #region  CreatePortfolioShare
 
         /// <summary>
-        /// Shares the specified portfolio with the specified account.
+        /// Shares the specified portfolio with the specified account or organization node. Shares
+        /// to an organization node can only be created by the master account of an Organization.
+        /// AWSOrganizationsAccess must be enabled in order to create a portfolio share to an
+        /// organization node.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePortfolioShare service method.</param>
         /// 
@@ -896,6 +899,9 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.LimitExceededException">
         /// The current limits of the service would have been exceeded by this operation. Decrease
         /// your resource use or increase your service limits and retry the operation.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.OperationNotSupportedException">
+        /// The operation is not supported.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -1415,11 +1421,18 @@ namespace Amazon.ServiceCatalog
         #region  DeletePortfolioShare
 
         /// <summary>
-        /// Stops sharing the specified portfolio with the specified account.
+        /// Stops sharing the specified portfolio with the specified account or organization node.
+        /// Shares to an organization node can only be deleted by the master account of an Organization.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePortfolioShare service method.</param>
         /// 
         /// <returns>The response from the DeletePortfolioShare service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.OperationNotSupportedException">
+        /// The operation is not supported.
+        /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
@@ -1965,6 +1978,69 @@ namespace Amazon.ServiceCatalog
         public virtual DescribePortfolioResponse EndDescribePortfolio(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribePortfolioResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribePortfolioShareStatus
+
+        /// <summary>
+        /// Gets the status of the specified portfolio share operation. This API can only be called
+        /// by the master account in the organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePortfolioShareStatus service method.</param>
+        /// 
+        /// <returns>The response from the DescribePortfolioShareStatus service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.OperationNotSupportedException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribePortfolioShareStatus">REST API Reference for DescribePortfolioShareStatus Operation</seealso>
+        public virtual DescribePortfolioShareStatusResponse DescribePortfolioShareStatus(DescribePortfolioShareStatusRequest request)
+        {
+            var marshaller = DescribePortfolioShareStatusRequestMarshaller.Instance;
+            var unmarshaller = DescribePortfolioShareStatusResponseUnmarshaller.Instance;
+
+            return Invoke<DescribePortfolioShareStatusRequest,DescribePortfolioShareStatusResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribePortfolioShareStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribePortfolioShareStatus operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribePortfolioShareStatus
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribePortfolioShareStatus">REST API Reference for DescribePortfolioShareStatus Operation</seealso>
+        public virtual IAsyncResult BeginDescribePortfolioShareStatus(DescribePortfolioShareStatusRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DescribePortfolioShareStatusRequestMarshaller.Instance;
+            var unmarshaller = DescribePortfolioShareStatusResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribePortfolioShareStatusRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribePortfolioShareStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribePortfolioShareStatus.</param>
+        /// 
+        /// <returns>Returns a  DescribePortfolioShareStatusResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribePortfolioShareStatus">REST API Reference for DescribePortfolioShareStatus Operation</seealso>
+        public virtual DescribePortfolioShareStatusResponse EndDescribePortfolioShareStatus(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribePortfolioShareStatusResponse>(asyncResult);
         }
 
         #endregion
@@ -2565,6 +2641,73 @@ namespace Amazon.ServiceCatalog
 
         #endregion
         
+        #region  DisableAWSOrganizationsAccess
+
+        /// <summary>
+        /// Disable portfolio sharing through AWS Organizations feature. This feature will not
+        /// delete your current shares but it will prevent you from creating new shares throughout
+        /// your organization. Current shares will not be in sync with your organization structure
+        /// if it changes after calling this API. This API can only be called by the master account
+        /// in the organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableAWSOrganizationsAccess service method.</param>
+        /// 
+        /// <returns>The response from the DisableAWSOrganizationsAccess service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidStateException">
+        /// An attempt was made to modify a resource that is in a state that is not valid. Check
+        /// your resources to ensure that they are in valid states before retrying the operation.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.OperationNotSupportedException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisableAWSOrganizationsAccess">REST API Reference for DisableAWSOrganizationsAccess Operation</seealso>
+        public virtual DisableAWSOrganizationsAccessResponse DisableAWSOrganizationsAccess(DisableAWSOrganizationsAccessRequest request)
+        {
+            var marshaller = DisableAWSOrganizationsAccessRequestMarshaller.Instance;
+            var unmarshaller = DisableAWSOrganizationsAccessResponseUnmarshaller.Instance;
+
+            return Invoke<DisableAWSOrganizationsAccessRequest,DisableAWSOrganizationsAccessResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableAWSOrganizationsAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableAWSOrganizationsAccess operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableAWSOrganizationsAccess
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisableAWSOrganizationsAccess">REST API Reference for DisableAWSOrganizationsAccess Operation</seealso>
+        public virtual IAsyncResult BeginDisableAWSOrganizationsAccess(DisableAWSOrganizationsAccessRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DisableAWSOrganizationsAccessRequestMarshaller.Instance;
+            var unmarshaller = DisableAWSOrganizationsAccessResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DisableAWSOrganizationsAccessRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisableAWSOrganizationsAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableAWSOrganizationsAccess.</param>
+        /// 
+        /// <returns>Returns a  DisableAWSOrganizationsAccessResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisableAWSOrganizationsAccess">REST API Reference for DisableAWSOrganizationsAccess Operation</seealso>
+        public virtual DisableAWSOrganizationsAccessResponse EndDisableAWSOrganizationsAccess(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisableAWSOrganizationsAccessResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DisassociatePrincipalFromPortfolio
 
         /// <summary>
@@ -2805,6 +2948,77 @@ namespace Amazon.ServiceCatalog
 
         #endregion
         
+        #region  EnableAWSOrganizationsAccess
+
+        /// <summary>
+        /// Enable portfolio sharing feature through AWS Organizations. This API will allow Service
+        /// Catalog to receive updates on your organization in order to sync your shares with
+        /// the current structure. This API can only be called by the master account in the organization.
+        /// 
+        ///  
+        /// <para>
+        /// By calling this API Service Catalog will use FAS credentials to call organizations:EnableAWSServiceAccess
+        /// so that your shares can be in sync with any changes in your AWS Organizations.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableAWSOrganizationsAccess service method.</param>
+        /// 
+        /// <returns>The response from the EnableAWSOrganizationsAccess service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidStateException">
+        /// An attempt was made to modify a resource that is in a state that is not valid. Check
+        /// your resources to ensure that they are in valid states before retrying the operation.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.OperationNotSupportedException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/EnableAWSOrganizationsAccess">REST API Reference for EnableAWSOrganizationsAccess Operation</seealso>
+        public virtual EnableAWSOrganizationsAccessResponse EnableAWSOrganizationsAccess(EnableAWSOrganizationsAccessRequest request)
+        {
+            var marshaller = EnableAWSOrganizationsAccessRequestMarshaller.Instance;
+            var unmarshaller = EnableAWSOrganizationsAccessResponseUnmarshaller.Instance;
+
+            return Invoke<EnableAWSOrganizationsAccessRequest,EnableAWSOrganizationsAccessResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableAWSOrganizationsAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableAWSOrganizationsAccess operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableAWSOrganizationsAccess
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/EnableAWSOrganizationsAccess">REST API Reference for EnableAWSOrganizationsAccess Operation</seealso>
+        public virtual IAsyncResult BeginEnableAWSOrganizationsAccess(EnableAWSOrganizationsAccessRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = EnableAWSOrganizationsAccessRequestMarshaller.Instance;
+            var unmarshaller = EnableAWSOrganizationsAccessResponseUnmarshaller.Instance;
+
+            return BeginInvoke<EnableAWSOrganizationsAccessRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  EnableAWSOrganizationsAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableAWSOrganizationsAccess.</param>
+        /// 
+        /// <returns>Returns a  EnableAWSOrganizationsAccessResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/EnableAWSOrganizationsAccess">REST API Reference for EnableAWSOrganizationsAccess Operation</seealso>
+        public virtual EnableAWSOrganizationsAccessResponse EndEnableAWSOrganizationsAccess(IAsyncResult asyncResult)
+        {
+            return EndInvoke<EnableAWSOrganizationsAccessResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ExecuteProvisionedProductPlan
 
         /// <summary>
@@ -2931,6 +3145,66 @@ namespace Amazon.ServiceCatalog
 
         #endregion
         
+        #region  GetAWSOrganizationsAccessStatus
+
+        /// <summary>
+        /// Get the Access Status for AWS Organization portfolio share feature. This API can only
+        /// be called by the master account in the organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAWSOrganizationsAccessStatus service method.</param>
+        /// 
+        /// <returns>The response from the GetAWSOrganizationsAccessStatus service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.OperationNotSupportedException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/GetAWSOrganizationsAccessStatus">REST API Reference for GetAWSOrganizationsAccessStatus Operation</seealso>
+        public virtual GetAWSOrganizationsAccessStatusResponse GetAWSOrganizationsAccessStatus(GetAWSOrganizationsAccessStatusRequest request)
+        {
+            var marshaller = GetAWSOrganizationsAccessStatusRequestMarshaller.Instance;
+            var unmarshaller = GetAWSOrganizationsAccessStatusResponseUnmarshaller.Instance;
+
+            return Invoke<GetAWSOrganizationsAccessStatusRequest,GetAWSOrganizationsAccessStatusResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAWSOrganizationsAccessStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAWSOrganizationsAccessStatus operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAWSOrganizationsAccessStatus
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/GetAWSOrganizationsAccessStatus">REST API Reference for GetAWSOrganizationsAccessStatus Operation</seealso>
+        public virtual IAsyncResult BeginGetAWSOrganizationsAccessStatus(GetAWSOrganizationsAccessStatusRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = GetAWSOrganizationsAccessStatusRequestMarshaller.Instance;
+            var unmarshaller = GetAWSOrganizationsAccessStatusResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetAWSOrganizationsAccessStatusRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAWSOrganizationsAccessStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAWSOrganizationsAccessStatus.</param>
+        /// 
+        /// <returns>Returns a  GetAWSOrganizationsAccessStatusResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/GetAWSOrganizationsAccessStatus">REST API Reference for GetAWSOrganizationsAccessStatus Operation</seealso>
+        public virtual GetAWSOrganizationsAccessStatusResponse EndGetAWSOrganizationsAccessStatus(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAWSOrganizationsAccessStatusResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListAcceptedPortfolioShares
 
         /// <summary>
@@ -2941,6 +3215,9 @@ namespace Amazon.ServiceCatalog
         /// <returns>The response from the ListAcceptedPortfolioShares service method, as returned by ServiceCatalog.</returns>
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
         /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.OperationNotSupportedException">
+        /// The operation is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListAcceptedPortfolioShares">REST API Reference for ListAcceptedPortfolioShares Operation</seealso>
         public virtual ListAcceptedPortfolioSharesResponse ListAcceptedPortfolioShares(ListAcceptedPortfolioSharesRequest request)
@@ -3103,6 +3380,69 @@ namespace Amazon.ServiceCatalog
         public virtual ListLaunchPathsResponse EndListLaunchPaths(IAsyncResult asyncResult)
         {
             return EndInvoke<ListLaunchPathsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListOrganizationPortfolioAccess
+
+        /// <summary>
+        /// Lists the organization nodes that have access to the specified portfolio. This API
+        /// can only be called by the master account in the organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOrganizationPortfolioAccess service method.</param>
+        /// 
+        /// <returns>The response from the ListOrganizationPortfolioAccess service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.OperationNotSupportedException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListOrganizationPortfolioAccess">REST API Reference for ListOrganizationPortfolioAccess Operation</seealso>
+        public virtual ListOrganizationPortfolioAccessResponse ListOrganizationPortfolioAccess(ListOrganizationPortfolioAccessRequest request)
+        {
+            var marshaller = ListOrganizationPortfolioAccessRequestMarshaller.Instance;
+            var unmarshaller = ListOrganizationPortfolioAccessResponseUnmarshaller.Instance;
+
+            return Invoke<ListOrganizationPortfolioAccessRequest,ListOrganizationPortfolioAccessResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListOrganizationPortfolioAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListOrganizationPortfolioAccess operation on AmazonServiceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListOrganizationPortfolioAccess
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListOrganizationPortfolioAccess">REST API Reference for ListOrganizationPortfolioAccess Operation</seealso>
+        public virtual IAsyncResult BeginListOrganizationPortfolioAccess(ListOrganizationPortfolioAccessRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ListOrganizationPortfolioAccessRequestMarshaller.Instance;
+            var unmarshaller = ListOrganizationPortfolioAccessResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListOrganizationPortfolioAccessRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListOrganizationPortfolioAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListOrganizationPortfolioAccess.</param>
+        /// 
+        /// <returns>Returns a  ListOrganizationPortfolioAccessResult from ServiceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListOrganizationPortfolioAccess">REST API Reference for ListOrganizationPortfolioAccess Operation</seealso>
+        public virtual ListOrganizationPortfolioAccessResponse EndListOrganizationPortfolioAccess(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListOrganizationPortfolioAccessResponse>(asyncResult);
         }
 
         #endregion

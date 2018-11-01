@@ -28,30 +28,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// This is the response object from the DeletePortfolioShare operation.
+    /// Container for the parameters to the EnableAWSOrganizationsAccess operation.
+    /// Enable portfolio sharing feature through AWS Organizations. This API will allow Service
+    /// Catalog to receive updates on your organization in order to sync your shares with
+    /// the current structure. This API can only be called by the master account in the organization.
+    /// 
+    ///  
+    /// <para>
+    /// By calling this API Service Catalog will use FAS credentials to call organizations:EnableAWSServiceAccess
+    /// so that your shares can be in sync with any changes in your AWS Organizations.
+    /// </para>
     /// </summary>
-    public partial class DeletePortfolioShareResponse : AmazonWebServiceResponse
+    public partial class EnableAWSOrganizationsAccessRequest : AmazonServiceCatalogRequest
     {
-        private string _portfolioShareToken;
-
-        /// <summary>
-        /// Gets and sets the property PortfolioShareToken. 
-        /// <para>
-        /// The portfolio share unique identifier. This will only be returned if delete is made
-        /// to an organization node.
-        /// </para>
-        /// </summary>
-        public string PortfolioShareToken
-        {
-            get { return this._portfolioShareToken; }
-            set { this._portfolioShareToken = value; }
-        }
-
-        // Check to see if PortfolioShareToken property is set
-        internal bool IsSetPortfolioShareToken()
-        {
-            return this._portfolioShareToken != null;
-        }
 
     }
 }

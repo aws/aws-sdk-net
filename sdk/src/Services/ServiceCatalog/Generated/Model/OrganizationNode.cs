@@ -28,29 +28,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// This is the response object from the DeletePortfolioShare operation.
+    /// 
     /// </summary>
-    public partial class DeletePortfolioShareResponse : AmazonWebServiceResponse
+    public partial class OrganizationNode
     {
-        private string _portfolioShareToken;
+        private OrganizationNodeType _type;
+        private string _value;
 
         /// <summary>
-        /// Gets and sets the property PortfolioShareToken. 
-        /// <para>
-        /// The portfolio share unique identifier. This will only be returned if delete is made
-        /// to an organization node.
-        /// </para>
+        /// Gets and sets the property Type.
         /// </summary>
-        public string PortfolioShareToken
+        public OrganizationNodeType Type
         {
-            get { return this._portfolioShareToken; }
-            set { this._portfolioShareToken = value; }
+            get { return this._type; }
+            set { this._type = value; }
         }
 
-        // Check to see if PortfolioShareToken property is set
-        internal bool IsSetPortfolioShareToken()
+        // Check to see if Type property is set
+        internal bool IsSetType()
         {
-            return this._portfolioShareToken != null;
+            return this._type != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Value.
+        /// </summary>
+        public string Value
+        {
+            get { return this._value; }
+            set { this._value = value; }
+        }
+
+        // Check to see if Value property is set
+        internal bool IsSetValue()
+        {
+            return this._value != null;
         }
 
     }

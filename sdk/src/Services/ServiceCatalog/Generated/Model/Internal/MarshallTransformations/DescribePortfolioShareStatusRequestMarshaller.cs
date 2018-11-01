@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreatePortfolioShare Request Marshaller
+    /// DescribePortfolioShareStatus Request Marshaller
     /// </summary>       
-    public class CreatePortfolioShareRequestMarshaller : IMarshaller<IRequest, CreatePortfolioShareRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DescribePortfolioShareStatusRequestMarshaller : IMarshaller<IRequest, DescribePortfolioShareStatusRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreatePortfolioShareRequest)input);
+            return this.Marshall((DescribePortfolioShareStatusRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreatePortfolioShareRequest publicRequest)
+        public IRequest Marshall(DescribePortfolioShareStatusRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ServiceCatalog");
-            string target = "AWS242ServiceCatalogService.CreatePortfolioShare";
+            string target = "AWS242ServiceCatalogService.DescribePortfolioShareStatus";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -67,33 +67,10 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAcceptLanguage())
+                if(publicRequest.IsSetPortfolioShareToken())
                 {
-                    context.Writer.WritePropertyName("AcceptLanguage");
-                    context.Writer.Write(publicRequest.AcceptLanguage);
-                }
-
-                if(publicRequest.IsSetAccountId())
-                {
-                    context.Writer.WritePropertyName("AccountId");
-                    context.Writer.Write(publicRequest.AccountId);
-                }
-
-                if(publicRequest.IsSetOrganizationNode())
-                {
-                    context.Writer.WritePropertyName("OrganizationNode");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = OrganizationNodeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OrganizationNode, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetPortfolioId())
-                {
-                    context.Writer.WritePropertyName("PortfolioId");
-                    context.Writer.Write(publicRequest.PortfolioId);
+                    context.Writer.WritePropertyName("PortfolioShareToken");
+                    context.Writer.Write(publicRequest.PortfolioShareToken);
                 }
 
         
@@ -105,9 +82,9 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreatePortfolioShareRequestMarshaller _instance = new CreatePortfolioShareRequestMarshaller();        
+        private static DescribePortfolioShareStatusRequestMarshaller _instance = new DescribePortfolioShareStatusRequestMarshaller();        
 
-        internal static CreatePortfolioShareRequestMarshaller GetInstance()
+        internal static DescribePortfolioShareStatusRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -115,7 +92,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreatePortfolioShareRequestMarshaller Instance
+        public static DescribePortfolioShareStatusRequestMarshaller Instance
         {
             get
             {

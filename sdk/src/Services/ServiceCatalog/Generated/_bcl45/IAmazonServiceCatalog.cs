@@ -428,7 +428,10 @@ namespace Amazon.ServiceCatalog
 
 
         /// <summary>
-        /// Shares the specified portfolio with the specified account.
+        /// Shares the specified portfolio with the specified account or organization node. Shares
+        /// to an organization node can only be created by the master account of an Organization.
+        /// AWSOrganizationsAccess must be enabled in order to create a portfolio share to an
+        /// organization node.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePortfolioShare service method.</param>
         /// 
@@ -439,6 +442,9 @@ namespace Amazon.ServiceCatalog
         /// <exception cref="Amazon.ServiceCatalog.Model.LimitExceededException">
         /// The current limits of the service would have been exceeded by this operation. Decrease
         /// your resource use or increase your service limits and retry the operation.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.OperationNotSupportedException">
+        /// The operation is not supported.
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -750,11 +756,18 @@ namespace Amazon.ServiceCatalog
 
 
         /// <summary>
-        /// Stops sharing the specified portfolio with the specified account.
+        /// Stops sharing the specified portfolio with the specified account or organization node.
+        /// Shares to an organization node can only be deleted by the master account of an Organization.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePortfolioShare service method.</param>
         /// 
         /// <returns>The response from the DeletePortfolioShare service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.OperationNotSupportedException">
+        /// The operation is not supported.
+        /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
@@ -1066,6 +1079,43 @@ namespace Amazon.ServiceCatalog
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribePortfolio">REST API Reference for DescribePortfolio Operation</seealso>
         Task<DescribePortfolioResponse> DescribePortfolioAsync(DescribePortfolioRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribePortfolioShareStatus
+
+
+        /// <summary>
+        /// Gets the status of the specified portfolio share operation. This API can only be called
+        /// by the master account in the organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePortfolioShareStatus service method.</param>
+        /// 
+        /// <returns>The response from the DescribePortfolioShareStatus service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.OperationNotSupportedException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribePortfolioShareStatus">REST API Reference for DescribePortfolioShareStatus Operation</seealso>
+        DescribePortfolioShareStatusResponse DescribePortfolioShareStatus(DescribePortfolioShareStatusRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribePortfolioShareStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribePortfolioShareStatus operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribePortfolioShareStatus">REST API Reference for DescribePortfolioShareStatus Operation</seealso>
+        Task<DescribePortfolioShareStatusResponse> DescribePortfolioShareStatusAsync(DescribePortfolioShareStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1405,6 +1455,47 @@ namespace Amazon.ServiceCatalog
 
         #endregion
         
+        #region  DisableAWSOrganizationsAccess
+
+
+        /// <summary>
+        /// Disable portfolio sharing through AWS Organizations feature. This feature will not
+        /// delete your current shares but it will prevent you from creating new shares throughout
+        /// your organization. Current shares will not be in sync with your organization structure
+        /// if it changes after calling this API. This API can only be called by the master account
+        /// in the organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableAWSOrganizationsAccess service method.</param>
+        /// 
+        /// <returns>The response from the DisableAWSOrganizationsAccess service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidStateException">
+        /// An attempt was made to modify a resource that is in a state that is not valid. Check
+        /// your resources to ensure that they are in valid states before retrying the operation.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.OperationNotSupportedException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisableAWSOrganizationsAccess">REST API Reference for DisableAWSOrganizationsAccess Operation</seealso>
+        DisableAWSOrganizationsAccessResponse DisableAWSOrganizationsAccess(DisableAWSOrganizationsAccessRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableAWSOrganizationsAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableAWSOrganizationsAccess operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisableAWSOrganizationsAccess">REST API Reference for DisableAWSOrganizationsAccess Operation</seealso>
+        Task<DisableAWSOrganizationsAccessResponse> DisableAWSOrganizationsAccessAsync(DisableAWSOrganizationsAccessRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DisassociatePrincipalFromPortfolio
 
 
@@ -1541,6 +1632,51 @@ namespace Amazon.ServiceCatalog
 
         #endregion
         
+        #region  EnableAWSOrganizationsAccess
+
+
+        /// <summary>
+        /// Enable portfolio sharing feature through AWS Organizations. This API will allow Service
+        /// Catalog to receive updates on your organization in order to sync your shares with
+        /// the current structure. This API can only be called by the master account in the organization.
+        /// 
+        ///  
+        /// <para>
+        /// By calling this API Service Catalog will use FAS credentials to call organizations:EnableAWSServiceAccess
+        /// so that your shares can be in sync with any changes in your AWS Organizations.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableAWSOrganizationsAccess service method.</param>
+        /// 
+        /// <returns>The response from the EnableAWSOrganizationsAccess service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidStateException">
+        /// An attempt was made to modify a resource that is in a state that is not valid. Check
+        /// your resources to ensure that they are in valid states before retrying the operation.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.OperationNotSupportedException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/EnableAWSOrganizationsAccess">REST API Reference for EnableAWSOrganizationsAccess Operation</seealso>
+        EnableAWSOrganizationsAccessResponse EnableAWSOrganizationsAccess(EnableAWSOrganizationsAccessRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableAWSOrganizationsAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableAWSOrganizationsAccess operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/EnableAWSOrganizationsAccess">REST API Reference for EnableAWSOrganizationsAccess Operation</seealso>
+        Task<EnableAWSOrganizationsAccessResponse> EnableAWSOrganizationsAccessAsync(EnableAWSOrganizationsAccessRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ExecuteProvisionedProductPlan
 
 
@@ -1615,6 +1751,40 @@ namespace Amazon.ServiceCatalog
 
         #endregion
         
+        #region  GetAWSOrganizationsAccessStatus
+
+
+        /// <summary>
+        /// Get the Access Status for AWS Organization portfolio share feature. This API can only
+        /// be called by the master account in the organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAWSOrganizationsAccessStatus service method.</param>
+        /// 
+        /// <returns>The response from the GetAWSOrganizationsAccessStatus service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.OperationNotSupportedException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/GetAWSOrganizationsAccessStatus">REST API Reference for GetAWSOrganizationsAccessStatus Operation</seealso>
+        GetAWSOrganizationsAccessStatusResponse GetAWSOrganizationsAccessStatus(GetAWSOrganizationsAccessStatusRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAWSOrganizationsAccessStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAWSOrganizationsAccessStatus operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/GetAWSOrganizationsAccessStatus">REST API Reference for GetAWSOrganizationsAccessStatus Operation</seealso>
+        Task<GetAWSOrganizationsAccessStatusResponse> GetAWSOrganizationsAccessStatusAsync(GetAWSOrganizationsAccessStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListAcceptedPortfolioShares
 
 
@@ -1626,6 +1796,9 @@ namespace Amazon.ServiceCatalog
         /// <returns>The response from the ListAcceptedPortfolioShares service method, as returned by ServiceCatalog.</returns>
         /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
         /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.OperationNotSupportedException">
+        /// The operation is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListAcceptedPortfolioShares">REST API Reference for ListAcceptedPortfolioShares Operation</seealso>
         ListAcceptedPortfolioSharesResponse ListAcceptedPortfolioShares(ListAcceptedPortfolioSharesRequest request);
@@ -1710,6 +1883,43 @@ namespace Amazon.ServiceCatalog
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListLaunchPaths">REST API Reference for ListLaunchPaths Operation</seealso>
         Task<ListLaunchPathsResponse> ListLaunchPathsAsync(ListLaunchPathsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListOrganizationPortfolioAccess
+
+
+        /// <summary>
+        /// Lists the organization nodes that have access to the specified portfolio. This API
+        /// can only be called by the master account in the organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOrganizationPortfolioAccess service method.</param>
+        /// 
+        /// <returns>The response from the ListOrganizationPortfolioAccess service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.OperationNotSupportedException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListOrganizationPortfolioAccess">REST API Reference for ListOrganizationPortfolioAccess Operation</seealso>
+        ListOrganizationPortfolioAccessResponse ListOrganizationPortfolioAccess(ListOrganizationPortfolioAccessRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListOrganizationPortfolioAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListOrganizationPortfolioAccess operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListOrganizationPortfolioAccess">REST API Reference for ListOrganizationPortfolioAccess Operation</seealso>
+        Task<ListOrganizationPortfolioAccessResponse> ListOrganizationPortfolioAccessAsync(ListOrganizationPortfolioAccessRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

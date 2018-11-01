@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AcceptPortfolioShare Request Marshaller
+    /// GetAWSOrganizationsAccessStatus Request Marshaller
     /// </summary>       
-    public class AcceptPortfolioShareRequestMarshaller : IMarshaller<IRequest, AcceptPortfolioShareRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetAWSOrganizationsAccessStatusRequestMarshaller : IMarshaller<IRequest, GetAWSOrganizationsAccessStatusRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((AcceptPortfolioShareRequest)input);
+            return this.Marshall((GetAWSOrganizationsAccessStatusRequest)input);
         }
 
         /// <summary>
@@ -52,51 +52,23 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(AcceptPortfolioShareRequest publicRequest)
+        public IRequest Marshall(GetAWSOrganizationsAccessStatusRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ServiceCatalog");
-            string target = "AWS242ServiceCatalogService.AcceptPortfolioShare";
+            string target = "AWS242ServiceCatalogService.GetAWSOrganizationsAccessStatus";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
 
             string uriResourcePath = "/";
             request.ResourcePath = uriResourcePath;
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
-            {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAcceptLanguage())
-                {
-                    context.Writer.WritePropertyName("AcceptLanguage");
-                    context.Writer.Write(publicRequest.AcceptLanguage);
-                }
-
-                if(publicRequest.IsSetPortfolioId())
-                {
-                    context.Writer.WritePropertyName("PortfolioId");
-                    context.Writer.Write(publicRequest.PortfolioId);
-                }
-
-                if(publicRequest.IsSetPortfolioShareType())
-                {
-                    context.Writer.WritePropertyName("PortfolioShareType");
-                    context.Writer.Write(publicRequest.PortfolioShareType);
-                }
-
-        
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-            }
-
+            request.Content = System.Text.Encoding.UTF8.GetBytes("{}");
 
             return request;
         }
-        private static AcceptPortfolioShareRequestMarshaller _instance = new AcceptPortfolioShareRequestMarshaller();        
+        private static GetAWSOrganizationsAccessStatusRequestMarshaller _instance = new GetAWSOrganizationsAccessStatusRequestMarshaller();        
 
-        internal static AcceptPortfolioShareRequestMarshaller GetInstance()
+        internal static GetAWSOrganizationsAccessStatusRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -104,7 +76,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AcceptPortfolioShareRequestMarshaller Instance
+        public static GetAWSOrganizationsAccessStatusRequestMarshaller Instance
         {
             get
             {

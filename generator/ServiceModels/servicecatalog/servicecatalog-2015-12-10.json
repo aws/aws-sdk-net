@@ -1625,8 +1625,8 @@
           "ProductId": {
             "type": "string",
             "pattern": "^[a-zA-Z0-9_\\-]*",
-            "zonbookDocumentation": "\n         <simpara>The identifier of the provisioned product.</simpara>\n      ",
-            "documentation": "\n         <p>The identifier of the provisioned product.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>The identifier of the product.</simpara>\n      ",
+            "documentation": "\n         <p>The identifier of the product.</p>\n      ",
             "shape_name": "Id",
             "min_length": 1,
             "max_length": 100
@@ -4036,10 +4036,35 @@
           "AccountId": {
             "type": "string",
             "pattern": "^[0-9]{12}$",
-            "zonbookDocumentation": "\n         <simpara>The AWS account ID.</simpara>\n      ",
-            "documentation": "\n         <p>The AWS account ID.</p>\n      ",
-            "required": true,
+            "zonbookDocumentation": "\n         <simpara>The AWS account ID. For example, <code>123456789012</code>.</simpara>\n      ",
+            "documentation": "\n         <p>The AWS account ID. For example, <code>123456789012</code>.</p>\n      ",
             "shape_name": "AccountId"
+          },
+          "OrganizationNode": {
+            "type": "structure",
+            "members": {
+              "Type": {
+                "type": "string",
+                "enum": [
+                  "ORGANIZATION",
+                  "ORGANIZATIONAL_UNIT",
+                  "ACCOUNT"
+                ],
+                "zonbookDocumentation": "\n         <para/>\n      ",
+                "documentation": "\n         <p/>\n      ",
+                "shape_name": "OrganizationNodeType"
+              },
+              "Value": {
+                "type": "string",
+                "pattern": "(^[0-9]{12}$)|(^arn:aws:organizations::\\d{12}:organization\\/o-[a-z0-9]{10,32})|(^o-[a-z0-9]{10,32}$)|(^arn:aws:organizations::\\d{12}:ou\\/o-[a-z0-9]{10,32}\\/ou-[0-9a-z]{4,32}-[0-9a-z]{8,32}$)|(^ou-[0-9a-z]{4,32}-[a-z0-9]{8,32}$)",
+                "zonbookDocumentation": "\n         <para/>\n      ",
+                "documentation": "\n         <p/>\n      ",
+                "shape_name": "OrganizationNodeValue"
+              }
+            },
+            "zonbookDocumentation": "\n         <para>The organization node to whom you are going to share. If <code>OrganizationNode</code> is passed in, <code>PortfolioShare</code> will be created for the node and its children (when applies), and a <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to monitor the status of the <code>PortfolioShare</code> creation process.</para>\n      ",
+            "documentation": "\n         <p>The organization node to whom you are going to share. If <code>OrganizationNode</code> is passed in, <code>PortfolioShare</code> will be created for the node and its children (when applies), and a <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to monitor the status of the <code>PortfolioShare</code> creation process.</p>\n      ",
+            "shape_name": "OrganizationNode"
           }
         },
         "shape_name": "CreatePortfolioShareInput",
@@ -4048,6 +4073,12 @@
       "output": {
         "type": "structure",
         "members": {
+          "PortfolioShareToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>The portfolio share unique identifier. This will only be returned if portfolio is shared to an organization node.</para>\n      ",
+            "documentation": "\n         <p>The portfolio share unique identifier. This will only be returned if portfolio is shared to an organization node.</p>\n      ",
+            "shape_name": "PortfolioShareToken"
+          }
         },
         "shape_name": "CreatePortfolioShareOutput",
         "documentation": null
@@ -4076,9 +4107,17 @@
           "zonbookDocumentation": "\n         <simpara>One or more parameters provided to the operation are not valid.</simpara>\n      ",
           "documentation": "\n         <p>One or more parameters provided to the operation are not valid.</p>\n      ",
           "shape_name": "InvalidParametersException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n         <para>The operation is not supported.</para>\n      ",
+          "documentation": "\n         <p>The operation is not supported.</p>\n      ",
+          "shape_name": "OperationNotSupportedException"
         }
       ],
-      "documentation": "\n         <p>Shares the specified portfolio with the specified account.</p>\n      "
+      "documentation": "\n         <p>Shares the specified portfolio with the specified account or organization node. Shares to an organization node can only be created by the master account of an Organization. AWSOrganizationsAccess must be enabled in order to create a portfolio share to an organization node.</p>\n      "
     },
     "DeletePortfolioShare": {
       "name": "DeletePortfolioShare",
@@ -4107,8 +4146,33 @@
             "pattern": "^[0-9]{12}$",
             "zonbookDocumentation": "\n         <simpara>The AWS account ID.</simpara>\n      ",
             "documentation": "\n         <p>The AWS account ID.</p>\n      ",
-            "required": true,
             "shape_name": "AccountId"
+          },
+          "OrganizationNode": {
+            "type": "structure",
+            "members": {
+              "Type": {
+                "type": "string",
+                "enum": [
+                  "ORGANIZATION",
+                  "ORGANIZATIONAL_UNIT",
+                  "ACCOUNT"
+                ],
+                "zonbookDocumentation": "\n         <para/>\n      ",
+                "documentation": "\n         <p/>\n      ",
+                "shape_name": "OrganizationNodeType"
+              },
+              "Value": {
+                "type": "string",
+                "pattern": "(^[0-9]{12}$)|(^arn:aws:organizations::\\d{12}:organization\\/o-[a-z0-9]{10,32})|(^o-[a-z0-9]{10,32}$)|(^arn:aws:organizations::\\d{12}:ou\\/o-[a-z0-9]{10,32}\\/ou-[0-9a-z]{4,32}-[0-9a-z]{8,32}$)|(^ou-[0-9a-z]{4,32}-[a-z0-9]{8,32}$)",
+                "zonbookDocumentation": "\n         <para/>\n      ",
+                "documentation": "\n         <p/>\n      ",
+                "shape_name": "OrganizationNodeValue"
+              }
+            },
+            "zonbookDocumentation": "\n         <para>The organization node to whom you are going to stop sharing.</para>\n      ",
+            "documentation": "\n         <p>The organization node to whom you are going to stop sharing.</p>\n      ",
+            "shape_name": "OrganizationNode"
           }
         },
         "shape_name": "DeletePortfolioShareInput",
@@ -4117,6 +4181,12 @@
       "output": {
         "type": "structure",
         "members": {
+          "PortfolioShareToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>The portfolio share unique identifier. This will only be returned if delete is made to an organization node.</para>\n      ",
+            "documentation": "\n         <p>The portfolio share unique identifier. This will only be returned if delete is made to an organization node.</p>\n      ",
+            "shape_name": "PortfolioShareToken"
+          }
         },
         "shape_name": "DeletePortfolioShareOutput",
         "documentation": null
@@ -4129,9 +4199,25 @@
           "zonbookDocumentation": "\n         <simpara>The specified resource was not found.</simpara>\n      ",
           "documentation": "\n         <p>The specified resource was not found.</p>\n      ",
           "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n         <simpara>One or more parameters provided to the operation are not valid.</simpara>\n      ",
+          "documentation": "\n         <p>One or more parameters provided to the operation are not valid.</p>\n      ",
+          "shape_name": "InvalidParametersException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n         <para>The operation is not supported.</para>\n      ",
+          "documentation": "\n         <p>The operation is not supported.</p>\n      ",
+          "shape_name": "OperationNotSupportedException"
         }
       ],
-      "documentation": "\n         <p>Stops sharing the specified portfolio with the specified account.</p>\n      "
+      "documentation": "\n         <p>Stops sharing the specified portfolio with the specified account or organization node. Shares to an organization node can only be deleted by the master account of an Organization.</p>\n      "
     },
     "ListPortfolioAccess": {
       "name": "ListPortfolioAccess",
@@ -4219,6 +4305,17 @@
             "shape_name": "Id",
             "min_length": 1,
             "max_length": 100
+          },
+          "PortfolioShareType": {
+            "type": "string",
+            "enum": [
+              "IMPORTED",
+              "AWS_SERVICECATALOG",
+              "AWS_ORGANIZATIONS"
+            ],
+            "zonbookDocumentation": "\n         <para>The type of shared portfolios to accept. The default is to accept imported portfolios.</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>AWS_ORGANIZATIONS</code> - Accept portfolios shared by the master account of your organization.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>IMPORTED</code> - Accept imported portfolios.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</para>\n            </listitem>\n         </itemizedlist>\n         <para>For example, <code>aws servicecatalog accept-portfolio-share --portfolio-id \"port-2qwzkwxt3y5fk\" --portfolio-share-type AWS_ORGANIZATIONS</code>\n         </para>\n      ",
+            "documentation": "\n         <p>The type of shared portfolios to accept. The default is to accept imported portfolios.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>AWS_ORGANIZATIONS</code> - Accept portfolios shared by the master account of your organization.</p>\n            </li>\n            <li>\n               <p>\n                  <code>IMPORTED</code> - Accept imported portfolios.</p>\n            </li>\n            <li>\n               <p>\n                  <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p>\n            </li>\n         </ul>\n         <p>For example, <code>aws servicecatalog accept-portfolio-share --portfolio-id \"port-2qwzkwxt3y5fk\" --portfolio-share-type AWS_ORGANIZATIONS</code>\n         </p>\n      ",
+            "shape_name": "PortfolioShareType"
           }
         },
         "shape_name": "AcceptPortfolioShareInput",
@@ -4280,6 +4377,17 @@
             "shape_name": "Id",
             "min_length": 1,
             "max_length": 100
+          },
+          "PortfolioShareType": {
+            "type": "string",
+            "enum": [
+              "IMPORTED",
+              "AWS_SERVICECATALOG",
+              "AWS_ORGANIZATIONS"
+            ],
+            "zonbookDocumentation": "\n         <para>The type of shared portfolios to reject. The default is to reject imported portfolios.</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>AWS_ORGANIZATIONS</code> - Reject portfolios shared by the master account of your organization.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>IMPORTED</code> - Reject imported portfolios.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</para>\n            </listitem>\n         </itemizedlist>\n         <para>For example, <code>aws servicecatalog reject-portfolio-share --portfolio-id \"port-2qwzkwxt3y5fk\" --portfolio-share-type AWS_ORGANIZATIONS</code>\n         </para>\n      \n      ",
+            "documentation": "\n         <p>The type of shared portfolios to reject. The default is to reject imported portfolios.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>AWS_ORGANIZATIONS</code> - Reject portfolios shared by the master account of your organization.</p>\n            </li>\n            <li>\n               <p>\n                  <code>IMPORTED</code> - Reject imported portfolios.</p>\n            </li>\n            <li>\n               <p>\n                  <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p>\n            </li>\n         </ul>\n         <p>For example, <code>aws servicecatalog reject-portfolio-share --portfolio-id \"port-2qwzkwxt3y5fk\" --portfolio-share-type AWS_ORGANIZATIONS</code>\n         </p>\n      \n      ",
+            "shape_name": "PortfolioShareType"
           }
         },
         "shape_name": "RejectPortfolioShareInput",
@@ -4338,10 +4446,11 @@
             "type": "string",
             "enum": [
               "IMPORTED",
-              "AWS_SERVICECATALOG"
+              "AWS_SERVICECATALOG",
+              "AWS_ORGANIZATIONS"
             ],
-            "zonbookDocumentation": "\n         <simpara>The type of shared portfolios to list. The default is to list imported portfolios.</simpara>\n         <itemizedlist>\n            <listitem>\n               <simpara>\n                  <code>AWS_SERVICECATALOG</code> - List default portfolios</simpara>\n            </listitem>\n            <listitem>\n               <simpara>\n                  <code>IMPORTED</code> - List imported portfolios</simpara>\n            </listitem>\n         </itemizedlist>\n      ",
-            "documentation": "\n         <p>The type of shared portfolios to list. The default is to list imported portfolios.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>AWS_SERVICECATALOG</code> - List default portfolios</p>\n            </li>\n            <li>\n               <p>\n                  <code>IMPORTED</code> - List imported portfolios</p>\n            </li>\n         </ul>\n      ",
+            "zonbookDocumentation": "\n         <simpara>The type of shared portfolios to list. The default is to list imported portfolios.</simpara>\n         <itemizedlist>\n            <listitem>\n               <simpara>\n                  <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the master account of your organization</simpara>\n            </listitem>\n            <listitem>\n               <simpara>\n                  <code>AWS_SERVICECATALOG</code> - List default portfolios</simpara>\n            </listitem>\n            <listitem>\n               <simpara>\n                  <code>IMPORTED</code> - List imported portfolios</simpara>\n            </listitem>\n         </itemizedlist>\n      ",
+            "documentation": "\n         <p>The type of shared portfolios to list. The default is to list imported portfolios.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the master account of your organization</p>\n            </li>\n            <li>\n               <p>\n                  <code>AWS_SERVICECATALOG</code> - List default portfolios</p>\n            </li>\n            <li>\n               <p>\n                  <code>IMPORTED</code> - List imported portfolios</p>\n            </li>\n         </ul>\n      ",
             "shape_name": "PortfolioShareType"
           }
         },
@@ -4432,9 +4541,428 @@
           "zonbookDocumentation": "\n         <simpara>One or more parameters provided to the operation are not valid.</simpara>\n      ",
           "documentation": "\n         <p>One or more parameters provided to the operation are not valid.</p>\n      ",
           "shape_name": "InvalidParametersException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n         <para>The operation is not supported.</para>\n      ",
+          "documentation": "\n         <p>The operation is not supported.</p>\n      ",
+          "shape_name": "OperationNotSupportedException"
         }
       ],
       "documentation": "\n         <p>Lists all portfolios for which sharing was accepted by this account.</p>\n      "
+    },
+    "DescribePortfolioShareStatus": {
+      "name": "DescribePortfolioShareStatus",
+      "input": {
+        "type": "structure",
+        "members": {
+          "PortfolioShareToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>The token for the portfolio share operation. This token is returned either by CreatePortfolioShare or by DeletePortfolioShare.</para>\n      ",
+            "documentation": "\n         <p>The token for the portfolio share operation. This token is returned either by CreatePortfolioShare or by DeletePortfolioShare.</p>\n      ",
+            "required": true,
+            "shape_name": "PortfolioShareToken"
+          }
+        },
+        "shape_name": "DescribePortfolioShareStatusInput",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "PortfolioShareToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>The token for the portfolio share operation. For example, <code>share-6v24abcdefghi</code>.</para>\n      ",
+            "documentation": "\n         <p>The token for the portfolio share operation. For example, <code>share-6v24abcdefghi</code>.</p>\n      ",
+            "shape_name": "PortfolioShareToken"
+          },
+          "PortfolioId": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_\\-]*",
+            "zonbookDocumentation": "\n         <para>The portfolio identifier.</para>\n      ",
+            "documentation": "\n         <p>The portfolio identifier.</p>\n      ",
+            "shape_name": "Id",
+            "min_length": 1,
+            "max_length": 100
+          },
+          "OrganizationNodeValue": {
+            "type": "string",
+            "pattern": "(^[0-9]{12}$)|(^arn:aws:organizations::\\d{12}:organization\\/o-[a-z0-9]{10,32})|(^o-[a-z0-9]{10,32}$)|(^arn:aws:organizations::\\d{12}:ou\\/o-[a-z0-9]{10,32}\\/ou-[0-9a-z]{4,32}-[0-9a-z]{8,32}$)|(^ou-[0-9a-z]{4,32}-[a-z0-9]{8,32}$)",
+            "zonbookDocumentation": "\n         <para>Organization node identifier. It can be either account id, organizational unit id or organization id.</para>\n      ",
+            "documentation": "\n         <p>Organization node identifier. It can be either account id, organizational unit id or organization id.</p>\n      ",
+            "shape_name": "OrganizationNodeValue"
+          },
+          "Status": {
+            "type": "string",
+            "enum": [
+              "NOT_STARTED",
+              "IN_PROGRESS",
+              "COMPLETED",
+              "COMPLETED_WITH_ERRORS",
+              "ERROR"
+            ],
+            "zonbookDocumentation": "\n         <para>Status of the portfolio share operation.</para>\n      ",
+            "documentation": "\n         <p>Status of the portfolio share operation.</p>\n      ",
+            "shape_name": "ShareStatus"
+          },
+          "ShareDetails": {
+            "type": "structure",
+            "members": {
+              "SuccessfulShares": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <para>List of accounts for whom the operation succeeded.</para>\n      ",
+                "documentation": "\n         <p>List of accounts for whom the operation succeeded.</p>\n      ",
+                "shape_name": "SuccessfulShares",
+                "members": {
+                  "type": "string",
+                  "pattern": "^[0-9]{12}$",
+                  "shape_name": "AccountId",
+                  "documentation": null
+                }
+              },
+              "ShareErrors": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <para>List of errors.</para>\n      ",
+                "documentation": "\n         <p>List of errors.</p>\n      ",
+                "shape_name": "ShareErrors",
+                "members": {
+                  "type": "structure",
+                  "members": {
+                    "Accounts": {
+                      "type": "list",
+                      "zonbookDocumentation": "\n         <para>List of accounts impacted by the error.</para>\n      ",
+                      "documentation": "\n         <p>List of accounts impacted by the error.</p>\n      ",
+                      "shape_name": "Namespaces",
+                      "members": {
+                        "type": "string",
+                        "pattern": "^[0-9]{12}$",
+                        "shape_name": "AccountId",
+                        "documentation": null
+                      }
+                    },
+                    "Message": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n         <para>Information about the error.</para>\n      ",
+                      "documentation": "\n         <p>Information about the error.</p>\n      ",
+                      "shape_name": "Message"
+                    },
+                    "Error": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n         <para>Error type that happened when processing the operation.</para>\n      ",
+                      "documentation": "\n         <p>Error type that happened when processing the operation.</p>\n      ",
+                      "shape_name": "Error"
+                    }
+                  },
+                  "zonbookDocumentation": "\n         <para>Errors that occurred during the portfolio share operation.</para>\n      ",
+                  "documentation": "\n         <p>Errors that occurred during the portfolio share operation.</p>\n      ",
+                  "shape_name": "ShareError"
+                }
+              }
+            },
+            "zonbookDocumentation": "\n         <para>Information about the portfolio share operation.</para>\n      ",
+            "documentation": "\n         <p>Information about the portfolio share operation.</p>\n      ",
+            "shape_name": "ShareDetails"
+          }
+        },
+        "shape_name": "DescribePortfolioShareStatusOutput",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n         <simpara>The specified resource was not found.</simpara>\n      ",
+          "documentation": "\n         <p>The specified resource was not found.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n         <simpara>One or more parameters provided to the operation are not valid.</simpara>\n      ",
+          "documentation": "\n         <p>One or more parameters provided to the operation are not valid.</p>\n      ",
+          "shape_name": "InvalidParametersException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n         <para>The operation is not supported.</para>\n      ",
+          "documentation": "\n         <p>The operation is not supported.</p>\n      ",
+          "shape_name": "OperationNotSupportedException"
+        }
+      ],
+      "documentation": "\n         <p>Gets the status of the specified portfolio share operation. This API can only be called by the master account in the organization.</p>\n      "
+    },
+    "EnableAWSOrganizationsAccess": {
+      "name": "EnableAWSOrganizationsAccess",
+      "input": {
+        "type": "structure",
+        "members": {
+        },
+        "shape_name": "EnableAWSOrganizationsAccessInput",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+        },
+        "shape_name": "EnableAWSOrganizationsAccessOutput",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n         <simpara>The specified resource was not found.</simpara>\n      ",
+          "documentation": "\n         <p>The specified resource was not found.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n         <simpara>An attempt was made to modify a resource that is in a state that is not valid. \n         Check your resources to ensure that they are in valid states before retrying the operation.</simpara>\n      ",
+          "documentation": "\n         <p>An attempt was made to modify a resource that is in a state that is not valid. \n         Check your resources to ensure that they are in valid states before retrying the operation.</p>\n      ",
+          "shape_name": "InvalidStateException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n         <para>The operation is not supported.</para>\n      ",
+          "documentation": "\n         <p>The operation is not supported.</p>\n      ",
+          "shape_name": "OperationNotSupportedException"
+        }
+      ],
+      "documentation": "\n         <p>Enable portfolio sharing feature through AWS Organizations. This API will allow Service Catalog to receive updates on your organization in order to sync your shares with the current structure. This API can only be called by the master account in the organization.</p>\n         <p>By calling this API Service Catalog will use FAS credentials to call organizations:EnableAWSServiceAccess so that your shares can be in sync with any changes in your AWS Organizations.</p>\n      "
+    },
+    "GetAWSOrganizationsAccessStatus": {
+      "name": "GetAWSOrganizationsAccessStatus",
+      "input": {
+        "type": "structure",
+        "members": {
+        },
+        "shape_name": "GetAWSOrganizationsAccessStatusInput",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "AccessStatus": {
+            "type": "string",
+            "enum": [
+              "ENABLED",
+              "UNDER_CHANGE",
+              "DISABLED"
+            ],
+            "zonbookDocumentation": "\n         <para>The status of the portfolio share feature.</para>\n      ",
+            "documentation": "\n         <p>The status of the portfolio share feature.</p>\n      ",
+            "shape_name": "AccessStatus"
+          }
+        },
+        "shape_name": "GetAWSOrganizationsAccessStatusOutput",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n         <simpara>The specified resource was not found.</simpara>\n      ",
+          "documentation": "\n         <p>The specified resource was not found.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n         <para>The operation is not supported.</para>\n      ",
+          "documentation": "\n         <p>The operation is not supported.</p>\n      ",
+          "shape_name": "OperationNotSupportedException"
+        }
+      ],
+      "documentation": "\n         <p>Get the Access Status for AWS Organization portfolio share feature. This API can only be called by the master account in the organization.</p>\n      "
+    },
+    "DisableAWSOrganizationsAccess": {
+      "name": "DisableAWSOrganizationsAccess",
+      "input": {
+        "type": "structure",
+        "members": {
+        },
+        "shape_name": "DisableAWSOrganizationsAccessInput",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+        },
+        "shape_name": "DisableAWSOrganizationsAccessOutput",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n         <simpara>The specified resource was not found.</simpara>\n      ",
+          "documentation": "\n         <p>The specified resource was not found.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n         <simpara>An attempt was made to modify a resource that is in a state that is not valid. \n         Check your resources to ensure that they are in valid states before retrying the operation.</simpara>\n      ",
+          "documentation": "\n         <p>An attempt was made to modify a resource that is in a state that is not valid. \n         Check your resources to ensure that they are in valid states before retrying the operation.</p>\n      ",
+          "shape_name": "InvalidStateException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n         <para>The operation is not supported.</para>\n      ",
+          "documentation": "\n         <p>The operation is not supported.</p>\n      ",
+          "shape_name": "OperationNotSupportedException"
+        }
+      ],
+      "documentation": "\n         <p>Disable portfolio sharing through AWS Organizations feature. This feature will not delete your current shares but it will prevent you from creating new shares throughout your organization. Current shares will not be in sync with your organization structure if it changes after calling this API. This API can only be called by the master account in the organization.</p>\n      "
+    },
+    "ListOrganizationPortfolioAccess": {
+      "name": "ListOrganizationPortfolioAccess",
+      "input": {
+        "type": "structure",
+        "members": {
+          "AcceptLanguage": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>The language code.</simpara>\n         <itemizedlist>\n            <listitem>\n               <simpara>\n                  <code>en</code> - English (default)</simpara>\n            </listitem>\n            <listitem>\n               <simpara>\n                  <code>jp</code> - Japanese</simpara>\n            </listitem>\n            <listitem>\n               <simpara>\n                  <code>zh</code> - Chinese</simpara>\n            </listitem>\n         </itemizedlist>\n      ",
+            "documentation": "\n         <p>The language code.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>en</code> - English (default)</p>\n            </li>\n            <li>\n               <p>\n                  <code>jp</code> - Japanese</p>\n            </li>\n            <li>\n               <p>\n                  <code>zh</code> - Chinese</p>\n            </li>\n         </ul>\n      ",
+            "shape_name": "AcceptLanguage",
+            "max_length": 100
+          },
+          "PortfolioId": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_\\-]*",
+            "zonbookDocumentation": "\n         <para>The portfolio identifier. For example, <code>port-2abcdext3y5fk</code>.</para>\n      ",
+            "documentation": "\n         <p>The portfolio identifier. For example, <code>port-2abcdext3y5fk</code>.</p>\n      ",
+            "required": true,
+            "shape_name": "Id",
+            "min_length": 1,
+            "max_length": 100
+          },
+          "OrganizationNodeType": {
+            "type": "string",
+            "enum": [
+              "ORGANIZATION",
+              "ORGANIZATIONAL_UNIT",
+              "ACCOUNT"
+            ],
+            "zonbookDocumentation": "\n         <para>The organization node type that will be returned in the output.</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <code>ORGANIZATION</code> - Organization that has access to the portfolio. </para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio within your organization.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</para>\n            </listitem>\n         </itemizedlist>\n      ",
+            "documentation": "\n         <p>The organization node type that will be returned in the output.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>ORGANIZATION</code> - Organization that has access to the portfolio. </p>\n            </li>\n            <li>\n               <p>\n                  <code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio within your organization.</p>\n            </li>\n            <li>\n               <p>\n                  <code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p>\n            </li>\n         </ul>\n      ",
+            "required": true,
+            "shape_name": "OrganizationNodeType"
+          },
+          "PageToken": {
+            "type": "string",
+            "pattern": "[\\u0009\\u000a\\u000d\\u0020-\\uD7FF\\uE000-\\uFFFD]*",
+            "zonbookDocumentation": "\n         <simpara>The page token for the next set of results. To retrieve the first set of results, use null.</simpara>\n      ",
+            "documentation": "\n         <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>\n      ",
+            "paginationToken": true,
+            "shape_name": "PageToken",
+            "max_length": 2024
+          },
+          "PageSize": {
+            "type": "integer",
+            "zonbookDocumentation": "\n         <simpara>The maximum number of items to return with this call.</simpara>\n      ",
+            "documentation": "\n         <p>The maximum number of items to return with this call.</p>\n      ",
+            "pageSize": true,
+            "shape_name": "PageSize",
+            "min_length": 0,
+            "max_length": 20
+          }
+        },
+        "shape_name": "ListOrganizationPortfolioAccessInput",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "OrganizationNodes": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <para>Displays information about the organization nodes.</para>\n      ",
+            "documentation": "\n         <p>Displays information about the organization nodes.</p>\n      ",
+            "shape_name": "OrganizationNodes",
+            "members": {
+              "type": "structure",
+              "members": {
+                "Type": {
+                  "type": "string",
+                  "enum": [
+                    "ORGANIZATION",
+                    "ORGANIZATIONAL_UNIT",
+                    "ACCOUNT"
+                  ],
+                  "zonbookDocumentation": "\n         <para/>\n      ",
+                  "documentation": "\n         <p/>\n      ",
+                  "shape_name": "OrganizationNodeType"
+                },
+                "Value": {
+                  "type": "string",
+                  "pattern": "(^[0-9]{12}$)|(^arn:aws:organizations::\\d{12}:organization\\/o-[a-z0-9]{10,32})|(^o-[a-z0-9]{10,32}$)|(^arn:aws:organizations::\\d{12}:ou\\/o-[a-z0-9]{10,32}\\/ou-[0-9a-z]{4,32}-[0-9a-z]{8,32}$)|(^ou-[0-9a-z]{4,32}-[a-z0-9]{8,32}$)",
+                  "zonbookDocumentation": "\n         <para/>\n      ",
+                  "documentation": "\n         <p/>\n      ",
+                  "shape_name": "OrganizationNodeValue"
+                }
+              },
+              "zonbookDocumentation": "\n         <para/>\n      ",
+              "documentation": "\n         <p/>\n      ",
+              "shape_name": "OrganizationNode"
+            }
+          },
+          "NextPageToken": {
+            "type": "string",
+            "pattern": "[\\u0009\\u000a\\u000d\\u0020-\\uD7FF\\uE000-\\uFFFD]*",
+            "zonbookDocumentation": "\n         <simpara>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</simpara>\n      ",
+            "documentation": "\n         <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>\n      ",
+            "paginationToken": true,
+            "shape_name": "PageToken",
+            "max_length": 2024
+          }
+        },
+        "shape_name": "ListOrganizationPortfolioAccessOutput",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n         <simpara>The specified resource was not found.</simpara>\n      ",
+          "documentation": "\n         <p>The specified resource was not found.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n         <simpara>One or more parameters provided to the operation are not valid.</simpara>\n      ",
+          "documentation": "\n         <p>One or more parameters provided to the operation are not valid.</p>\n      ",
+          "shape_name": "InvalidParametersException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n         <para>The operation is not supported.</para>\n      ",
+          "documentation": "\n         <p>The operation is not supported.</p>\n      ",
+          "shape_name": "OperationNotSupportedException"
+        }
+      ],
+      "documentation": "\n         <p>Lists the organization nodes that have access to the specified portfolio. This API can only be called by the master account in the organization.</p>\n      "
     },
     "AssociatePrincipalWithPortfolio": {
       "name": "AssociatePrincipalWithPortfolio",

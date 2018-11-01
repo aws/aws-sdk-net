@@ -28,30 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// This is the response object from the DeletePortfolioShare operation.
+    /// This is the response object from the EnableAWSOrganizationsAccess operation.
     /// </summary>
-    public partial class DeletePortfolioShareResponse : AmazonWebServiceResponse
+    public partial class EnableAWSOrganizationsAccessResponse : AmazonWebServiceResponse
     {
-        private string _portfolioShareToken;
-
-        /// <summary>
-        /// Gets and sets the property PortfolioShareToken. 
-        /// <para>
-        /// The portfolio share unique identifier. This will only be returned if delete is made
-        /// to an organization node.
-        /// </para>
-        /// </summary>
-        public string PortfolioShareToken
-        {
-            get { return this._portfolioShareToken; }
-            set { this._portfolioShareToken = value; }
-        }
-
-        // Check to see if PortfolioShareToken property is set
-        internal bool IsSetPortfolioShareToken()
-        {
-            return this._portfolioShareToken != null;
-        }
 
     }
 }

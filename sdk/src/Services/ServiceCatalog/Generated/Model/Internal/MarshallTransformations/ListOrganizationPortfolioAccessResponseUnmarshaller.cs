@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreatePortfolioShare operation
+    /// Response Unmarshaller for ListOrganizationPortfolioAccess operation
     /// </summary>  
-    public class CreatePortfolioShareResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListOrganizationPortfolioAccessResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,22 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreatePortfolioShareResponse response = new CreatePortfolioShareResponse();
+            ListOrganizationPortfolioAccessResponse response = new ListOrganizationPortfolioAccessResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("PortfolioShareToken", targetDepth))
+                if (context.TestExpression("NextPageToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.PortfolioShareToken = unmarshaller.Unmarshall(context);
+                    response.NextPageToken = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("OrganizationNodes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<OrganizationNode, OrganizationNodeUnmarshaller>(OrganizationNodeUnmarshaller.Instance);
+                    response.OrganizationNodes = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -76,10 +82,6 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
             {
                 return new InvalidParametersException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
-            {
-                return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("OperationNotSupportedException"))
             {
                 return new OperationNotSupportedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -91,9 +93,9 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
             return new AmazonServiceCatalogException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static CreatePortfolioShareResponseUnmarshaller _instance = new CreatePortfolioShareResponseUnmarshaller();        
+        private static ListOrganizationPortfolioAccessResponseUnmarshaller _instance = new ListOrganizationPortfolioAccessResponseUnmarshaller();        
 
-        internal static CreatePortfolioShareResponseUnmarshaller GetInstance()
+        internal static ListOrganizationPortfolioAccessResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -101,7 +103,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreatePortfolioShareResponseUnmarshaller Instance
+        public static ListOrganizationPortfolioAccessResponseUnmarshaller Instance
         {
             get
             {
