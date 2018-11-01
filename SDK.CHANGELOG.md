@@ -1,3 +1,7 @@
+### 3.3.399.0 (2018-11-01 22:29 UTC)
+* ServiceCatalog (3.3.12.0)
+	* Service Catalog integration with AWS Organizations, enables customers to more easily create and manage a portfolio of IT services across an organization. Administrators can now take advantage of the AWS account structure and account groupings configured in AWS Organizations to share Service Catalog Portfolios increasing agility and reducing risk. With this integration the admin user will leverage the trust relationship that exists within the accounts of the Organization to share portfolios to the entire Organization, a specific Organizational Unit or a specific Account.
+
 ### 3.3.398.0 (2018-10-31 21:06 UTC)
 * ConfigService (3.3.21.0)
 	* With this release, AWS Config updated the ResourceType values. The updated list includes AWS Systems Manager AssociationCompliance and PatchCompliance, AWS Shield regional Protection, AWS Config ResourceCompliance, and AWS CodePipeline Pipeline.

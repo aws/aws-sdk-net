@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.398.0",
+    "ProductVersion" : "3.3.399.0",
     "CoreVersion"    : "3.3.29.3",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -561,7 +561,7 @@
             "InPreview"               : false
         },
         "ServiceCatalog"                  : {
-            "Version" : "3.3.11.7",
+            "Version" : "3.3.12.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.3"
