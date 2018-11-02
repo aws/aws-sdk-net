@@ -548,8 +548,8 @@
                       "members": {
                         "Name": {
                           "type": "string",
-                          "zonbookDocumentation": "\n         <simpara>The name (label) of the object.</simpara>\n      ",
-                          "documentation": "\n         <p>The name (label) of the object.</p>\n      ",
+                          "zonbookDocumentation": "\n         <simpara>The name (label) of the object or scene.</simpara>\n      ",
+                          "documentation": "\n         <p>The name (label) of the object or scene.</p>\n      ",
                           "shape_name": "String"
                         },
                         "Confidence": {
@@ -559,10 +559,84 @@
                           "shape_name": "Percent",
                           "min_length": 0,
                           "max_length": 100
+                        },
+                        "Instances": {
+                          "type": "list",
+                          "zonbookDocumentation": "\n         <para>If <code>Label</code> represents an object, <code>Instances</code> contains the bounding boxes for each instance of the detected object.\n      Bounding boxes are returned for common object labels such as people, cars, furniture, apparel or pets.</para>\n         <note>\n            <para>Amazon Rekognition Video does not support bounding box information for detected labels. The value of <code>Instances</code> is returned as <code>null</code> by <code>GetLabelDetection</code>.</para>\n         </note>\n    \n      ",
+                          "documentation": "\n         <p>If <code>Label</code> represents an object, <code>Instances</code> contains the bounding boxes for each instance of the detected object.\n      Bounding boxes are returned for common object labels such as people, cars, furniture, apparel or pets.</p>\n         <note>\n            <p>Amazon Rekognition Video does not support bounding box information for detected labels. The value of <code>Instances</code> is returned as <code>null</code> by <code>GetLabelDetection</code>.</p>\n         </note>\n    \n      ",
+                          "shape_name": "Instances",
+                          "members": {
+                            "type": "structure",
+                            "members": {
+                              "BoundingBox": {
+                                "type": "structure",
+                                "members": {
+                                  "Width": {
+                                    "type": "float",
+                                    "zonbookDocumentation": "\n         <simpara>Width of the bounding box as a ratio of the overall image width.</simpara>\n      ",
+                                    "documentation": "\n         <p>Width of the bounding box as a ratio of the overall image width.</p>\n      ",
+                                    "shape_name": "Float"
+                                  },
+                                  "Height": {
+                                    "type": "float",
+                                    "zonbookDocumentation": "\n         <simpara>Height of the bounding box as a ratio of the overall image height.</simpara>\n      ",
+                                    "documentation": "\n         <p>Height of the bounding box as a ratio of the overall image height.</p>\n      ",
+                                    "shape_name": "Float"
+                                  },
+                                  "Left": {
+                                    "type": "float",
+                                    "zonbookDocumentation": "\n         <simpara>Left coordinate of the bounding box as a ratio of overall image width.</simpara>\n      ",
+                                    "documentation": "\n         <p>Left coordinate of the bounding box as a ratio of overall image width.</p>\n      ",
+                                    "shape_name": "Float"
+                                  },
+                                  "Top": {
+                                    "type": "float",
+                                    "zonbookDocumentation": "\n         <simpara>Top coordinate of the bounding box as a ratio of overall image height.</simpara>\n      ",
+                                    "documentation": "\n         <p>Top coordinate of the bounding box as a ratio of overall image height.</p>\n      ",
+                                    "shape_name": "Float"
+                                  }
+                                },
+                                "zonbookDocumentation": "\n         <para>The position of the label instance on the image.</para>\n      ",
+                                "documentation": "\n         <p>The position of the label instance on the image.</p>\n      ",
+                                "shape_name": "BoundingBox"
+                              },
+                              "Confidence": {
+                                "type": "float",
+                                "zonbookDocumentation": "\n         <para>The confidence that Amazon Rekognition Image has in the accuracy of the bounding box.</para>\n      ",
+                                "documentation": "\n         <p>The confidence that Amazon Rekognition Image has in the accuracy of the bounding box.</p>\n      ",
+                                "shape_name": "Percent",
+                                "min_length": 0,
+                                "max_length": 100
+                              }
+                            },
+                            "zonbookDocumentation": "\n         <para>An instance of a label detected by <xref linkend=\"API_DetectLabels\"/>.</para>\n      ",
+                            "documentation": "\n         <p>An instance of a label detected by .</p>\n      ",
+                            "shape_name": "Instance"
+                          }
+                        },
+                        "Parents": {
+                          "type": "list",
+                          "zonbookDocumentation": "\n         <para>The parent labels for a label. The response includes all ancestor labels.</para>\n         <note>\n            <para>Amazon Rekognition Video does not support a hierarchical taxonomy of detected labels. The value of <code>Parents</code> is returned as <code>null</code> by <code>GetLabelDetection</code>.</para>\n         </note>\n    \n      ",
+                          "documentation": "\n         <p>The parent labels for a label. The response includes all ancestor labels.</p>\n         <note>\n            <p>Amazon Rekognition Video does not support a hierarchical taxonomy of detected labels. The value of <code>Parents</code> is returned as <code>null</code> by <code>GetLabelDetection</code>.</p>\n         </note>\n    \n      ",
+                          "shape_name": "Parents",
+                          "members": {
+                            "type": "structure",
+                            "members": {
+                              "Name": {
+                                "type": "string",
+                                "zonbookDocumentation": "\n         <para>The name of the parent label.</para>\n      ",
+                                "documentation": "\n         <p>The name of the parent label.</p>\n      ",
+                                "shape_name": "String"
+                              }
+                            },
+                            "zonbookDocumentation": "\n         <para>A parent label for a label. A label can have 0, 1, or more parents. </para>\n      ",
+                            "documentation": "\n         <p>A parent label for a label. A label can have 0, 1, or more parents. </p>\n      ",
+                            "shape_name": "Parent"
+                          }
                         }
                       },
-                      "zonbookDocumentation": "\n         <simpara>Structure containing details about the detected label, including name, and level of\n      confidence.</simpara>\n      ",
-                      "documentation": "\n         <p>Structure containing details about the detected label, including name, and level of\n      confidence.</p>\n      ",
+                      "zonbookDocumentation": "\n         <simpara>Structure containing details about the detected label, including the name, and level of\n      confidence.</simpara>\n         <para>The Amazon Rekognition Image operation <xref linkend=\"API_DetectLabels\"/> operation returns a hierarchical taxonomy\n      (<code>Parents</code>) for detected labels and also bounding box\n      information (<code>Instances</code>) for detected labels. Amazon Rekognition Video doesn't return this information and \n    <xref linkend=\"API_GetLabelDetection\"/> returns <code>null</code> for the <code>Parents</code> and\n      <code>Instances</code> attributes. \n    </para>\n      ",
+                      "documentation": "\n         <p>Structure containing details about the detected label, including the name, and level of\n      confidence.</p>\n         <p>The Amazon Rekognition Image operation  operation returns a hierarchical taxonomy\n      (<code>Parents</code>) for detected labels and also bounding box\n      information (<code>Instances</code>) for detected labels. Amazon Rekognition Video doesn't return this information and \n     returns <code>null</code> for the <code>Parents</code> and\n      <code>Instances</code> attributes. \n    </p>\n      ",
                       "shape_name": "Label"
                     }
                   },
@@ -752,8 +826,8 @@
               "members": {
                 "Name": {
                   "type": "string",
-                  "zonbookDocumentation": "\n         <simpara>The name (label) of the object.</simpara>\n      ",
-                  "documentation": "\n         <p>The name (label) of the object.</p>\n      ",
+                  "zonbookDocumentation": "\n         <simpara>The name (label) of the object or scene.</simpara>\n      ",
+                  "documentation": "\n         <p>The name (label) of the object or scene.</p>\n      ",
                   "shape_name": "String"
                 },
                 "Confidence": {
@@ -763,10 +837,84 @@
                   "shape_name": "Percent",
                   "min_length": 0,
                   "max_length": 100
+                },
+                "Instances": {
+                  "type": "list",
+                  "zonbookDocumentation": "\n         <para>If <code>Label</code> represents an object, <code>Instances</code> contains the bounding boxes for each instance of the detected object.\n      Bounding boxes are returned for common object labels such as people, cars, furniture, apparel or pets.</para>\n         <note>\n            <para>Amazon Rekognition Video does not support bounding box information for detected labels. The value of <code>Instances</code> is returned as <code>null</code> by <code>GetLabelDetection</code>.</para>\n         </note>\n    \n      ",
+                  "documentation": "\n         <p>If <code>Label</code> represents an object, <code>Instances</code> contains the bounding boxes for each instance of the detected object.\n      Bounding boxes are returned for common object labels such as people, cars, furniture, apparel or pets.</p>\n         <note>\n            <p>Amazon Rekognition Video does not support bounding box information for detected labels. The value of <code>Instances</code> is returned as <code>null</code> by <code>GetLabelDetection</code>.</p>\n         </note>\n    \n      ",
+                  "shape_name": "Instances",
+                  "members": {
+                    "type": "structure",
+                    "members": {
+                      "BoundingBox": {
+                        "type": "structure",
+                        "members": {
+                          "Width": {
+                            "type": "float",
+                            "zonbookDocumentation": "\n         <simpara>Width of the bounding box as a ratio of the overall image width.</simpara>\n      ",
+                            "documentation": "\n         <p>Width of the bounding box as a ratio of the overall image width.</p>\n      ",
+                            "shape_name": "Float"
+                          },
+                          "Height": {
+                            "type": "float",
+                            "zonbookDocumentation": "\n         <simpara>Height of the bounding box as a ratio of the overall image height.</simpara>\n      ",
+                            "documentation": "\n         <p>Height of the bounding box as a ratio of the overall image height.</p>\n      ",
+                            "shape_name": "Float"
+                          },
+                          "Left": {
+                            "type": "float",
+                            "zonbookDocumentation": "\n         <simpara>Left coordinate of the bounding box as a ratio of overall image width.</simpara>\n      ",
+                            "documentation": "\n         <p>Left coordinate of the bounding box as a ratio of overall image width.</p>\n      ",
+                            "shape_name": "Float"
+                          },
+                          "Top": {
+                            "type": "float",
+                            "zonbookDocumentation": "\n         <simpara>Top coordinate of the bounding box as a ratio of overall image height.</simpara>\n      ",
+                            "documentation": "\n         <p>Top coordinate of the bounding box as a ratio of overall image height.</p>\n      ",
+                            "shape_name": "Float"
+                          }
+                        },
+                        "zonbookDocumentation": "\n         <para>The position of the label instance on the image.</para>\n      ",
+                        "documentation": "\n         <p>The position of the label instance on the image.</p>\n      ",
+                        "shape_name": "BoundingBox"
+                      },
+                      "Confidence": {
+                        "type": "float",
+                        "zonbookDocumentation": "\n         <para>The confidence that Amazon Rekognition Image has in the accuracy of the bounding box.</para>\n      ",
+                        "documentation": "\n         <p>The confidence that Amazon Rekognition Image has in the accuracy of the bounding box.</p>\n      ",
+                        "shape_name": "Percent",
+                        "min_length": 0,
+                        "max_length": 100
+                      }
+                    },
+                    "zonbookDocumentation": "\n         <para>An instance of a label detected by <xref linkend=\"API_DetectLabels\"/>.</para>\n      ",
+                    "documentation": "\n         <p>An instance of a label detected by .</p>\n      ",
+                    "shape_name": "Instance"
+                  }
+                },
+                "Parents": {
+                  "type": "list",
+                  "zonbookDocumentation": "\n         <para>The parent labels for a label. The response includes all ancestor labels.</para>\n         <note>\n            <para>Amazon Rekognition Video does not support a hierarchical taxonomy of detected labels. The value of <code>Parents</code> is returned as <code>null</code> by <code>GetLabelDetection</code>.</para>\n         </note>\n    \n      ",
+                  "documentation": "\n         <p>The parent labels for a label. The response includes all ancestor labels.</p>\n         <note>\n            <p>Amazon Rekognition Video does not support a hierarchical taxonomy of detected labels. The value of <code>Parents</code> is returned as <code>null</code> by <code>GetLabelDetection</code>.</p>\n         </note>\n    \n      ",
+                  "shape_name": "Parents",
+                  "members": {
+                    "type": "structure",
+                    "members": {
+                      "Name": {
+                        "type": "string",
+                        "zonbookDocumentation": "\n         <para>The name of the parent label.</para>\n      ",
+                        "documentation": "\n         <p>The name of the parent label.</p>\n      ",
+                        "shape_name": "String"
+                      }
+                    },
+                    "zonbookDocumentation": "\n         <para>A parent label for a label. A label can have 0, 1, or more parents. </para>\n      ",
+                    "documentation": "\n         <p>A parent label for a label. A label can have 0, 1, or more parents. </p>\n      ",
+                    "shape_name": "Parent"
+                  }
                 }
               },
-              "zonbookDocumentation": "\n         <simpara>Structure containing details about the detected label, including name, and level of\n      confidence.</simpara>\n      ",
-              "documentation": "\n         <p>Structure containing details about the detected label, including name, and level of\n      confidence.</p>\n      ",
+              "zonbookDocumentation": "\n         <simpara>Structure containing details about the detected label, including the name, and level of\n      confidence.</simpara>\n         <para>The Amazon Rekognition Image operation <xref linkend=\"API_DetectLabels\"/> operation returns a hierarchical taxonomy\n      (<code>Parents</code>) for detected labels and also bounding box\n      information (<code>Instances</code>) for detected labels. Amazon Rekognition Video doesn't return this information and \n    <xref linkend=\"API_GetLabelDetection\"/> returns <code>null</code> for the <code>Parents</code> and\n      <code>Instances</code> attributes. \n    </para>\n      ",
+              "documentation": "\n         <p>Structure containing details about the detected label, including the name, and level of\n      confidence.</p>\n         <p>The Amazon Rekognition Image operation  operation returns a hierarchical taxonomy\n      (<code>Parents</code>) for detected labels and also bounding box\n      information (<code>Instances</code>) for detected labels. Amazon Rekognition Video doesn't return this information and \n     returns <code>null</code> for the <code>Parents</code> and\n      <code>Instances</code> attributes. \n    </p>\n      ",
               "shape_name": "Label"
             }
           },
@@ -778,9 +926,15 @@
               "ROTATE_180",
               "ROTATE_270"
             ],
-            "zonbookDocumentation": "\n         <simpara> The orientation of the input image (counter-clockwise direction). If your application\n      displays the image, you can use this value to correct the orientation. If Amazon Rekognition detects\n      that the input image was rotated (for example, by 90 degrees), it first corrects the\n      orientation before detecting the labels. </simpara>\n         <note>\n            <simpara>If the input image Exif metadata populates the orientation field, Amazon Rekognition does not\n        perform orientation correction and the value of OrientationCorrection will be\n        null.</simpara>\n         </note>\n      ",
-            "documentation": "\n         <p> The orientation of the input image (counter-clockwise direction). If your application\n      displays the image, you can use this value to correct the orientation. If Amazon Rekognition detects\n      that the input image was rotated (for example, by 90 degrees), it first corrects the\n      orientation before detecting the labels. </p>\n         <note>\n            <p>If the input image Exif metadata populates the orientation field, Amazon Rekognition does not\n        perform orientation correction and the value of OrientationCorrection will be\n        null.</p>\n         </note>\n      ",
+            "zonbookDocumentation": "\n         <para>The value of <code>OrientationCorrection</code> is always null.</para>\n         <para>If the input image is in .jpeg format, it might contain exchangeable image (Exif) metadata\n      that includes the image's orientation. Amazon Rekognition uses this orientation information to perform \n      image correction - the bounding box coordinates are translated to represent object locations\n      after the orientation information in the Exif metadata is used to correct the image orientation. \n      Images in .png format don't contain Exif metadata.</para>\n         <para>Amazon Rekognition doesn’t perform image correction for images in .png format and\n         .jpeg images without orientation information in the image Exif metadata. The bounding box\n         coordinates are not translated and represent the object locations before the image is rotated.\n      </para>\n    \n      ",
+            "documentation": "\n         <p>The value of <code>OrientationCorrection</code> is always null.</p>\n         <p>If the input image is in .jpeg format, it might contain exchangeable image (Exif) metadata\n      that includes the image's orientation. Amazon Rekognition uses this orientation information to perform \n      image correction - the bounding box coordinates are translated to represent object locations\n      after the orientation information in the Exif metadata is used to correct the image orientation. \n      Images in .png format don't contain Exif metadata.</p>\n         <p>Amazon Rekognition doesn’t perform image correction for images in .png format and\n         .jpeg images without orientation information in the image Exif metadata. The bounding box\n         coordinates are not translated and represent the object locations before the image is rotated.\n      </p>\n    \n      ",
             "shape_name": "OrientationCorrection"
+          },
+          "LabelModelVersion": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>Version number of the label detection model that was used to detect labels.</para>\n      ",
+            "documentation": "\n         <p>Version number of the label detection model that was used to detect labels.</p>\n      ",
+            "shape_name": "String"
           }
         },
         "shape_name": "DetectLabelsResponse",
@@ -852,7 +1006,7 @@
           "shape_name": "InvalidImageFormatException"
         }
       ],
-      "documentation": "\n\n         <p>Detects instances of real-world entities within an image (JPEG or PNG)\n       provided as input. This includes objects like flower, tree, and table; events like\n       wedding, graduation, and birthday party; and concepts like landscape, evening, and nature.\n     </p>\n    \n         <p>For an example, see Analyzing Images Stored in an Amazon S3 Bucket in the Amazon Rekognition Developer Guide.</p> \n         <note>\n            <p>\n               <code>DetectLabels</code> does not support the detection of activities. However, activity detection\n        is supported for label detection in videos. For more information, see StartLabelDetection in the Amazon Rekognition Developer Guide.</p> \n         </note>\n   \n         <p>You pass the input image as base64-encoded image bytes or as a reference to an image in\n      an Amazon S3 bucket. If you use the\n      AWS\n      CLI to call Amazon Rekognition operations, passing image bytes is not\n      supported. The image must be either a PNG or JPEG formatted file. </p>\n         <p> For each object, scene, and concept the API returns one or more labels. Each label\n      provides the object name, and the level of confidence that the image contains the object. For\n      example, suppose the input image has a lighthouse, the sea, and a rock. The response includes\n      all three labels, one for each object. </p>\n         <p>\n            <code>{Name: lighthouse, Confidence: 98.4629}</code>\n         </p>\n         <p>\n            <code>{Name: rock,Confidence: 79.2097}</code>\n         </p>\n         <p>\n            <code> {Name: sea,Confidence: 75.061}</code>\n         </p>\n         <p>In the preceding example, the operation returns one label for each of the three\n      objects. The operation can also return multiple labels for the same object in the image. For\n      example, if the input image shows a flower (for example, a tulip), the operation might return\n      the following three labels. </p>\n         <p>\n            <code>{Name: flower,Confidence: 99.0562}</code>\n         </p>\n         <p>\n            <code>{Name: plant,Confidence: 99.0562}</code>\n         </p>\n         <p>\n            <code>{Name: tulip,Confidence: 99.0562}</code>\n         </p>\n\n         <p>In this example, the detection algorithm more precisely identifies the flower as a\n      tulip.</p>\n         <p>In response, the API returns an array of labels. In addition, the response also\n      includes the orientation correction. Optionally, you can specify <code>MinConfidence</code> to\n      control the confidence threshold for the labels returned. The default is 50%. You can also add\n      the <code>MaxLabels</code> parameter to limit the number of labels returned. </p>\n         <note>\n            <p>If the object detected is a person, the operation doesn't provide the same facial\n        details that the <a>DetectFaces</a> operation provides.</p>\n         </note>\n         <p>This is a stateless API operation. That is, the operation does not persist any\n      data.</p>\n         <p>This operation requires permissions to perform the\n        <code>rekognition:DetectLabels</code> action. </p>\n\n   \n\n      "
+      "documentation": "\n\n         <p>Detects instances of real-world entities within an image (JPEG or PNG)\n       provided as input. This includes objects like flower, tree, and table; events like\n       wedding, graduation, and birthday party; and concepts like landscape, evening, and nature.\n     </p>\n    \n         <p>For an example, see Analyzing Images Stored in an Amazon S3 Bucket in the Amazon Rekognition Developer Guide.</p> \n         <note>\n            <p>\n               <code>DetectLabels</code> does not support the detection of activities. However, activity detection\n        is supported for label detection in videos. For more information, see StartLabelDetection in the Amazon Rekognition Developer Guide.</p> \n         </note>\n   \n         <p>You pass the input image as base64-encoded image bytes or as a reference to an image in\n      an Amazon S3 bucket. If you use the\n      AWS\n      CLI to call Amazon Rekognition operations, passing image bytes is not\n      supported. The image must be either a PNG or JPEG formatted file. </p>\n         <p> For each object, scene, and concept the API returns one or more labels. Each label\n      provides the object name, and the level of confidence that the image contains the object. For\n      example, suppose the input image has a lighthouse, the sea, and a rock. The response includes\n      all three labels, one for each object. </p>\n \n         <p>\n            <code>{Name: lighthouse, Confidence: 98.4629}</code>\n         </p>\n         <p>\n            <code>{Name: rock,Confidence: 79.2097}</code>\n         </p>\n         <p>\n            <code> {Name: sea,Confidence: 75.061}</code>\n         </p>\n         <p>In the preceding example, the operation returns one label for each of the three\n      objects. The operation can also return multiple labels for the same object in the image. For\n      example, if the input image shows a flower (for example, a tulip), the operation might return\n      the following three labels. </p>\n         <p>\n            <code>{Name: flower,Confidence: 99.0562}</code>\n         </p>\n         <p>\n            <code>{Name: plant,Confidence: 99.0562}</code>\n         </p>\n         <p>\n            <code>{Name: tulip,Confidence: 99.0562}</code>\n         </p>\n\n         <p>In this example, the detection algorithm more precisely identifies the flower as a\n      tulip.</p>\n         <p>In response, the API returns an array of labels. In addition, the response also\n      includes the orientation correction. Optionally, you can specify <code>MinConfidence</code> to\n      control the confidence threshold for the labels returned. The default is 50%. You can also add\n      the <code>MaxLabels</code> parameter to limit the number of labels returned. </p>\n         <note>\n            <p>If the object detected is a person, the operation doesn't provide the same facial\n        details that the <a>DetectFaces</a> operation provides.</p>\n         </note>\n         <p>\n            <code>DetectLabels</code> returns bounding boxes for instances of common object labels in an array of\n       objects. An <code>Instance</code> object contains a \n       object, for the location of the label on the image. It also includes \n      the confidence by which the bounding box was detected.</p>\n         <p>\n            <code>DetectLabels</code> also returns a hierarchical taxonomy of detected labels. For example,\n      a detected car might be assigned the label <i>car</i>. The label <i>car</i>\n      has two parent labels: <i>Vehicle</i> (its parent) and <i>Transportation</i> (its\n      grandparent).  \n      The response returns the entire list of ancestors for a label. Each ancestor is a unique label in the response.\n      In the previous example, <i>Car</i>, <i>Vehicle</i>, and <i>Transportation</i>\n      are returned as unique labels in the response.\n      </p>\n         <p>This is a stateless API operation. That is, the operation does not persist any\n      data.</p>\n         <p>This operation requires permissions to perform the\n        <code>rekognition:DetectLabels</code> action. </p>\n\n   \n\n      "
     },
     "DeleteFaces": {
       "name": "DeleteFaces",
@@ -1233,8 +1387,8 @@
                       "shape_name": "Float"
                     }
                   },
-                  "zonbookDocumentation": "\n         <simpara>Identifies the bounding box around the face or text. The <code>left</code>\n      (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and\n      left sides of the bounding box. Note that the upper-left corner of the image is the origin\n      (0,0). </simpara>\n         <simpara>The <code>top</code> and <code>left</code> values returned are ratios of the overall\n      image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of\n      the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700)\n      and a <code>top</code> value of 0.25 (50/200).</simpara>\n         <simpara>The <code>width</code> and <code>height</code> values represent the dimensions of the\n      bounding box as a ratio of the overall image dimension. For example, if the input image is\n      700x200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1. </simpara>\n         <note>\n            <simpara> The bounding box coordinates can have negative values. For example, if Amazon Rekognition is\n        able to detect a face that is at the image edge and is only partially visible, the service\n        can return coordinates that are outside the image bounds and, depending on the image edge,\n        you might get negative values or values greater than 1 for the <code>left</code> or\n          <code>top</code> values. </simpara>\n         </note>\n      ",
-                  "documentation": "\n         <p>Identifies the bounding box around the face or text. The <code>left</code>\n      (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and\n      left sides of the bounding box. Note that the upper-left corner of the image is the origin\n      (0,0). </p>\n         <p>The <code>top</code> and <code>left</code> values returned are ratios of the overall\n      image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of\n      the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700)\n      and a <code>top</code> value of 0.25 (50/200).</p>\n         <p>The <code>width</code> and <code>height</code> values represent the dimensions of the\n      bounding box as a ratio of the overall image dimension. For example, if the input image is\n      700x200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1. </p>\n         <note>\n            <p> The bounding box coordinates can have negative values. For example, if Amazon Rekognition is\n        able to detect a face that is at the image edge and is only partially visible, the service\n        can return coordinates that are outside the image bounds and, depending on the image edge,\n        you might get negative values or values greater than 1 for the <code>left</code> or\n          <code>top</code> values. </p>\n         </note>\n      ",
+                  "zonbookDocumentation": "\n         <simpara>Identifies the bounding box around the label, face, or text. The <code>left</code>\n      (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and\n      left sides of the bounding box. Note that the upper-left corner of the image is the origin\n      (0,0). </simpara>\n         <simpara>The <code>top</code> and <code>left</code> values returned are ratios of the overall\n      image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of\n      the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700)\n      and a <code>top</code> value of 0.25 (50/200).</simpara>\n         <simpara>The <code>width</code> and <code>height</code> values represent the dimensions of the\n      bounding box as a ratio of the overall image dimension. For example, if the input image is\n      700x200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1. </simpara>\n         <note>\n            <simpara> The bounding box coordinates can have negative values. For example, if Amazon Rekognition is\n        able to detect a face that is at the image edge and is only partially visible, the service\n        can return coordinates that are outside the image bounds and, depending on the image edge,\n        you might get negative values or values greater than 1 for the <code>left</code> or\n          <code>top</code> values. </simpara>\n         </note>\n      ",
+                  "documentation": "\n         <p>Identifies the bounding box around the label, face, or text. The <code>left</code>\n      (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and\n      left sides of the bounding box. Note that the upper-left corner of the image is the origin\n      (0,0). </p>\n         <p>The <code>top</code> and <code>left</code> values returned are ratios of the overall\n      image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of\n      the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700)\n      and a <code>top</code> value of 0.25 (50/200).</p>\n         <p>The <code>width</code> and <code>height</code> values represent the dimensions of the\n      bounding box as a ratio of the overall image dimension. For example, if the input image is\n      700x200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1. </p>\n         <note>\n            <p> The bounding box coordinates can have negative values. For example, if Amazon Rekognition is\n        able to detect a face that is at the image edge and is only partially visible, the service\n        can return coordinates that are outside the image bounds and, depending on the image edge,\n        you might get negative values or values greater than 1 for the <code>left</code> or\n          <code>top</code> values. </p>\n         </note>\n      ",
                   "shape_name": "BoundingBox"
                 },
                 "ImageId": {
@@ -5912,8 +6066,8 @@
           },
           "MinConfidence": {
             "type": "float",
-            "zonbookDocumentation": "\n         <simpara>Specifies the minimum confidence that Amazon Rekognition must have in order to return a moderated content label. Confidence\n      represents how certain Amazon Rekognition is that the moderated content is correctly identified. 0 is the lowest confidence.\n      100 is the highest confidence.  Amazon Rekognition doesn't return any moderated content labels with a confidence level\n      lower than this specified value.</simpara>  \n      ",
-            "documentation": "\n         <p>Specifies the minimum confidence that Amazon Rekognition must have in order to return a moderated content label. Confidence\n      represents how certain Amazon Rekognition is that the moderated content is correctly identified. 0 is the lowest confidence.\n      100 is the highest confidence.  Amazon Rekognition doesn't return any moderated content labels with a confidence level\n      lower than this specified value.</p>  \n      ",
+            "zonbookDocumentation": "\n         <simpara>Specifies the minimum confidence that Amazon Rekognition must have in order to return a moderated content label. Confidence\n      represents how certain Amazon Rekognition is that the moderated content is correctly identified. 0 is the lowest confidence.\n      100 is the highest confidence.  Amazon Rekognition doesn't return any moderated content labels with a confidence level\n      lower than this specified value. If you don't specify <code>MinConfidence</code>, <code>GetContentModeration</code>\n       returns labels with confidence values greater than or equal to 50 percent.</simpara> \n      ",
+            "documentation": "\n         <p>Specifies the minimum confidence that Amazon Rekognition must have in order to return a moderated content label. Confidence\n      represents how certain Amazon Rekognition is that the moderated content is correctly identified. 0 is the lowest confidence.\n      100 is the highest confidence.  Amazon Rekognition doesn't return any moderated content labels with a confidence level\n      lower than this specified value. If you don't specify <code>MinConfidence</code>, <code>GetContentModeration</code>\n       returns labels with confidence values greater than or equal to 50 percent.</p> \n      ",
             "shape_name": "Percent",
             "min_length": 0,
             "max_length": 100
@@ -6249,7 +6403,7 @@
           "shape_name": "ThrottlingException"
         }
       ],
-      "documentation": "\n         <p>Starts asynchronous detection of faces in a stored video.</p>\n         <p>Amazon Rekognition Video can detect faces in a video stored in an Amazon S3 bucket.\n       Use <a>Video</a> to specify the bucket name and the filename of the video.\n       <code>StartFaceDetection</code> returns a job identifier (<code>JobId</code>) that you\n       use to get the results of the operation.\n       When face detection is finished, Amazon Rekognition Video publishes a completion status\n       to the Amazon Simple Notification Service topic that you specify in <code>NotificationChannel</code>.\n       To get the results of the label detection operation, first check that the status value published to the Amazon SNS\n       topic is <code>SUCCEEDED</code>. If so, call   and pass the job identifier\n      (<code>JobId</code>) from the initial call to <code>StartFaceDetection</code>.</p>\n     \n         <p>For more information, see Detecting Faces in a Stored Video in the \n     Amazon Rekognition Developer Guide.</p>\n      "
+      "documentation": "\n         <p>Starts asynchronous detection of faces in a stored video.</p>\n         <p>Amazon Rekognition Video can detect faces in a video stored in an Amazon S3 bucket.\n       Use <a>Video</a> to specify the bucket name and the filename of the video.\n       <code>StartFaceDetection</code> returns a job identifier (<code>JobId</code>) that you\n       use to get the results of the operation.\n       When face detection is finished, Amazon Rekognition Video publishes a completion status\n       to the Amazon Simple Notification Service topic that you specify in <code>NotificationChannel</code>.\n       To get the results of the face detection operation, first check that the status value published to the Amazon SNS\n       topic is <code>SUCCEEDED</code>. If so, call   and pass the job identifier\n      (<code>JobId</code>) from the initial call to <code>StartFaceDetection</code>.</p>\n     \n         <p>For more information, see Detecting Faces in a Stored Video in the \n     Amazon Rekognition Developer Guide.</p>\n      "
     },
     "StartPersonTracking": {
       "name": "StartPersonTracking",
@@ -6434,7 +6588,7 @@
           "shape_name": "ThrottlingException"
         }
       ],
-      "documentation": "\n         <p>Starts the asynchronous tracking of persons in a stored video.</p>\n         <p>Amazon Rekognition Video can track persons in a video stored in an Amazon S3 bucket. Use <a>Video</a> to specify the bucket name\n       and the filename of the video. <code>StartPersonTracking</code>\n       returns a job identifier (<code>JobId</code>) which you use to get the results of the operation.\n       When label detection is finished, Amazon Rekognition publishes a completion status\n       to the Amazon Simple Notification Service topic that you specify in <code>NotificationChannel</code>. </p>\n         <p>To get the results of the person detection operation, first check that the status value published to the Amazon SNS\n       topic is <code>SUCCEEDED</code>. If so, call   and pass the job identifier\n      (<code>JobId</code>) from the initial call to <code>StartPersonTracking</code>.</p>\n      "
+      "documentation": "\n         <p>Starts the asynchronous tracking of a person's path in a stored video.</p>\n         <p>Amazon Rekognition Video can track the path of people in a video stored in an Amazon S3 bucket. Use <a>Video</a> to specify the bucket name\n       and the filename of the video. <code>StartPersonTracking</code>\n       returns a job identifier (<code>JobId</code>) which you use to get the results of the operation.\n       When label detection is finished, Amazon Rekognition publishes a completion status\n       to the Amazon Simple Notification Service topic that you specify in <code>NotificationChannel</code>. </p>\n         <p>To get the results of the person detection operation, first check that the status value published to the Amazon SNS\n       topic is <code>SUCCEEDED</code>. If so, call   and pass the job identifier\n      (<code>JobId</code>) from the initial call to <code>StartPersonTracking</code>.</p>\n      "
     },
     "StartCelebrityRecognition": {
       "name": "StartCelebrityRecognition",
@@ -6951,8 +7105,8 @@
           },
           "Labels": {
             "type": "list",
-            "zonbookDocumentation": "\n         <simpara>An array of labels detected in the video. Each element contains the detected label and the time,\n        in milliseconds from the start of the video, that the label was detected. </simpara>\n      ",
-            "documentation": "\n         <p>An array of labels detected in the video. Each element contains the detected label and the time,\n        in milliseconds from the start of the video, that the label was detected. </p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>An array of labels detected in the video. Each element contains the detected label and the time,\n        in milliseconds from the start of the video, that the label was detected. </simpara>\n\n      ",
+            "documentation": "\n         <p>An array of labels detected in the video. Each element contains the detected label and the time,\n        in milliseconds from the start of the video, that the label was detected. </p>\n\n      ",
             "shape_name": "LabelDetections",
             "members": {
               "type": "structure",
@@ -6968,8 +7122,8 @@
                   "members": {
                     "Name": {
                       "type": "string",
-                      "zonbookDocumentation": "\n         <simpara>The name (label) of the object.</simpara>\n      ",
-                      "documentation": "\n         <p>The name (label) of the object.</p>\n      ",
+                      "zonbookDocumentation": "\n         <simpara>The name (label) of the object or scene.</simpara>\n      ",
+                      "documentation": "\n         <p>The name (label) of the object or scene.</p>\n      ",
                       "shape_name": "String"
                     },
                     "Confidence": {
@@ -6979,6 +7133,80 @@
                       "shape_name": "Percent",
                       "min_length": 0,
                       "max_length": 100
+                    },
+                    "Instances": {
+                      "type": "list",
+                      "zonbookDocumentation": "\n         <para>If <code>Label</code> represents an object, <code>Instances</code> contains the bounding boxes for each instance of the detected object.\n      Bounding boxes are returned for common object labels such as people, cars, furniture, apparel or pets.</para>\n         <note>\n            <para>Amazon Rekognition Video does not support bounding box information for detected labels. The value of <code>Instances</code> is returned as <code>null</code> by <code>GetLabelDetection</code>.</para>\n         </note>\n    \n      ",
+                      "documentation": "\n         <p>If <code>Label</code> represents an object, <code>Instances</code> contains the bounding boxes for each instance of the detected object.\n      Bounding boxes are returned for common object labels such as people, cars, furniture, apparel or pets.</p>\n         <note>\n            <p>Amazon Rekognition Video does not support bounding box information for detected labels. The value of <code>Instances</code> is returned as <code>null</code> by <code>GetLabelDetection</code>.</p>\n         </note>\n    \n      ",
+                      "shape_name": "Instances",
+                      "members": {
+                        "type": "structure",
+                        "members": {
+                          "BoundingBox": {
+                            "type": "structure",
+                            "members": {
+                              "Width": {
+                                "type": "float",
+                                "zonbookDocumentation": "\n         <simpara>Width of the bounding box as a ratio of the overall image width.</simpara>\n      ",
+                                "documentation": "\n         <p>Width of the bounding box as a ratio of the overall image width.</p>\n      ",
+                                "shape_name": "Float"
+                              },
+                              "Height": {
+                                "type": "float",
+                                "zonbookDocumentation": "\n         <simpara>Height of the bounding box as a ratio of the overall image height.</simpara>\n      ",
+                                "documentation": "\n         <p>Height of the bounding box as a ratio of the overall image height.</p>\n      ",
+                                "shape_name": "Float"
+                              },
+                              "Left": {
+                                "type": "float",
+                                "zonbookDocumentation": "\n         <simpara>Left coordinate of the bounding box as a ratio of overall image width.</simpara>\n      ",
+                                "documentation": "\n         <p>Left coordinate of the bounding box as a ratio of overall image width.</p>\n      ",
+                                "shape_name": "Float"
+                              },
+                              "Top": {
+                                "type": "float",
+                                "zonbookDocumentation": "\n         <simpara>Top coordinate of the bounding box as a ratio of overall image height.</simpara>\n      ",
+                                "documentation": "\n         <p>Top coordinate of the bounding box as a ratio of overall image height.</p>\n      ",
+                                "shape_name": "Float"
+                              }
+                            },
+                            "zonbookDocumentation": "\n         <para>The position of the label instance on the image.</para>\n      ",
+                            "documentation": "\n         <p>The position of the label instance on the image.</p>\n      ",
+                            "shape_name": "BoundingBox"
+                          },
+                          "Confidence": {
+                            "type": "float",
+                            "zonbookDocumentation": "\n         <para>The confidence that Amazon Rekognition Image has in the accuracy of the bounding box.</para>\n      ",
+                            "documentation": "\n         <p>The confidence that Amazon Rekognition Image has in the accuracy of the bounding box.</p>\n      ",
+                            "shape_name": "Percent",
+                            "min_length": 0,
+                            "max_length": 100
+                          }
+                        },
+                        "zonbookDocumentation": "\n         <para>An instance of a label detected by <xref linkend=\"API_DetectLabels\"/>.</para>\n      ",
+                        "documentation": "\n         <p>An instance of a label detected by .</p>\n      ",
+                        "shape_name": "Instance"
+                      }
+                    },
+                    "Parents": {
+                      "type": "list",
+                      "zonbookDocumentation": "\n         <para>The parent labels for a label. The response includes all ancestor labels.</para>\n         <note>\n            <para>Amazon Rekognition Video does not support a hierarchical taxonomy of detected labels. The value of <code>Parents</code> is returned as <code>null</code> by <code>GetLabelDetection</code>.</para>\n         </note>\n    \n      ",
+                      "documentation": "\n         <p>The parent labels for a label. The response includes all ancestor labels.</p>\n         <note>\n            <p>Amazon Rekognition Video does not support a hierarchical taxonomy of detected labels. The value of <code>Parents</code> is returned as <code>null</code> by <code>GetLabelDetection</code>.</p>\n         </note>\n    \n      ",
+                      "shape_name": "Parents",
+                      "members": {
+                        "type": "structure",
+                        "members": {
+                          "Name": {
+                            "type": "string",
+                            "zonbookDocumentation": "\n         <para>The name of the parent label.</para>\n      ",
+                            "documentation": "\n         <p>The name of the parent label.</p>\n      ",
+                            "shape_name": "String"
+                          }
+                        },
+                        "zonbookDocumentation": "\n         <para>A parent label for a label. A label can have 0, 1, or more parents. </para>\n      ",
+                        "documentation": "\n         <p>A parent label for a label. A label can have 0, 1, or more parents. </p>\n      ",
+                        "shape_name": "Parent"
+                      }
                     }
                   },
                   "zonbookDocumentation": "\n        <simpara>Details about the detected label.</simpara>\n      ",
@@ -7053,7 +7281,7 @@
           "shape_name": "ThrottlingException"
         }
       ],
-      "documentation": "\n         <p>Gets the label detection results of a Amazon Rekognition Video analysis started by .  </p>\n\n         <p>The label detection operation is started by a call to \n      which returns a job identifier (<code>JobId</code>). When the label detection operation finishes, Amazon Rekognition publishes a completion status to\n      the Amazon Simple Notification Service topic registered in the initial call to <code>StartlabelDetection</code>. To get the results\n      of the label detection operation, first check that the status value published to the Amazon SNS topic is <code>SUCCEEDED</code>.\n      If so, call   and pass the job identifier\n      (<code>JobId</code>) from the initial call to <code>StartLabelDetection</code>.</p>\n         <p>\n            <code>GetLabelDetection</code> returns an array of detected labels (<code>Labels</code>) sorted by the time\n       the labels were detected. You can also sort by the label name by specifying <code>NAME</code> for the\n       <code>SortBy</code> input parameter.</p>\n         <p>The labels returned include the label name, the percentage confidence in the accuracy of the detected label,\n        and the time the label was detected in the video.</p>\n         <p>Use MaxResults parameter to limit the number of labels returned. If there are more results than\n    specified in <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response contains a pagination token for getting the next set\n    of results. To get the next page of results, call <code>GetlabelDetection</code> and populate the <code>NextToken</code> request parameter with the token\n     value returned from the previous call to <code>GetLabelDetection</code>.</p>\n\n      "
+      "documentation": "\n         <p>Gets the label detection results of a Amazon Rekognition Video analysis started by .  </p>\n\n         <p>The label detection operation is started by a call to \n      which returns a job identifier (<code>JobId</code>). When the label detection operation finishes, Amazon Rekognition publishes a completion status to\n      the Amazon Simple Notification Service topic registered in the initial call to <code>StartlabelDetection</code>. To get the results\n      of the label detection operation, first check that the status value published to the Amazon SNS topic is <code>SUCCEEDED</code>.\n      If so, call   and pass the job identifier\n      (<code>JobId</code>) from the initial call to <code>StartLabelDetection</code>.</p>\n         <p>\n            <code>GetLabelDetection</code> returns an array of detected labels (<code>Labels</code>) sorted by the time\n       the labels were detected. You can also sort by the label name by specifying <code>NAME</code> for the\n       <code>SortBy</code> input parameter.</p>\n         <p>The labels returned include the label name, the percentage confidence in the accuracy of the detected label,\n        and the time the label was detected in the video.</p>\n         <p>Use MaxResults parameter to limit the number of labels returned. If there are more results than\n    specified in <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response contains a pagination token for getting the next set\n    of results. To get the next page of results, call <code>GetlabelDetection</code> and populate the <code>NextToken</code> request parameter with the token\n     value returned from the previous call to <code>GetLabelDetection</code>.</p>\n         <note>\n            <p>\n               <code>GetLabelDetection</code> doesn't return a hierarchical taxonomy, or bounding box\n       information, for detected labels. <code>GetLabelDetection</code> returns <code>null</code> for the \n       <code>Parents</code> and <code>Instances</code> attributes of the  object which is returned in the <code>Labels</code>\n       array.\n     </p>\n         </note>\n\n      "
     },
     "GetContentModeration": {
       "name": "GetContentModeration",
@@ -7993,16 +8221,16 @@
           },
           "Persons": {
             "type": "list",
-            "zonbookDocumentation": "\n         <simpara>An array of the persons detected in the video and the times they are tracked throughout the video.\n        An array element will exist for each time the person is tracked. </simpara>\n      ",
-            "documentation": "\n         <p>An array of the persons detected in the video and the times they are tracked throughout the video.\n        An array element will exist for each time the person is tracked. </p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>An array of the persons detected in the video and the time(s) their path was tracked throughout the video.\n        An array element will exist for each time a person's path is tracked. </simpara>\n      ",
+            "documentation": "\n         <p>An array of the persons detected in the video and the time(s) their path was tracked throughout the video.\n        An array element will exist for each time a person's path is tracked. </p>\n      ",
             "shape_name": "PersonDetections",
             "members": {
               "type": "structure",
               "members": {
                 "Timestamp": {
                   "type": "long",
-                  "zonbookDocumentation": "\n        <simpara>The time, in milliseconds from the start of the video, that the person was tracked.</simpara>\n      ",
-                  "documentation": "\n        <p>The time, in milliseconds from the start of the video, that the person was tracked.</p>\n      ",
+                  "zonbookDocumentation": "\n        <simpara>The time, in milliseconds from the start of the video, that the person's path was tracked.</simpara>\n      ",
+                  "documentation": "\n        <p>The time, in milliseconds from the start of the video, that the person's path was tracked.</p>\n      ",
                   "shape_name": "Timestamp"
                 },
                 "Person": {
@@ -8446,13 +8674,13 @@
                       "shape_name": "FaceDetail"
                     }
                   },
-                  "zonbookDocumentation": "\n        <simpara>Details about a person tracked in a video.</simpara>\n      ",
-                  "documentation": "\n        <p>Details about a person tracked in a video.</p>\n      ",
+                  "zonbookDocumentation": "\n        <simpara>Details about a person whose path was tracked in a video.</simpara>\n      ",
+                  "documentation": "\n        <p>Details about a person whose path was tracked in a video.</p>\n      ",
                   "shape_name": "PersonDetail"
                 }
               },
-              "zonbookDocumentation": "\n        <simpara>Details and tracking information for a single time a person is tracked in a video.\n            Amazon Rekognition operations that track persons return an array of <code>PersonDetection</code> objects\n            with elements for each time a person is tracked in a video. </simpara>\n         <simpara>For more information, see <xref linkend=\"API_GetPersonTracking\"/>. </simpara>\n      \n      ",
-              "documentation": "\n        <p>Details and tracking information for a single time a person is tracked in a video.\n            Amazon Rekognition operations that track persons return an array of <code>PersonDetection</code> objects\n            with elements for each time a person is tracked in a video. </p>\n      \n         <p>For more information, see API_GetPersonTracking in the Amazon Rekognition Developer Guide. </p>\n      ",
+              "zonbookDocumentation": "\n        <simpara>Details and path tracking information for a single time a person's path is tracked in a video.\n            Amazon Rekognition operations that track people's paths return an array of <code>PersonDetection</code> objects\n            with elements for each time a person's path is tracked in a video. </simpara>\n         <simpara>For more information, see <xref linkend=\"API_GetPersonTracking\"/>. </simpara>\n      \n      ",
+              "documentation": "\n        <p>Details and path tracking information for a single time a person's path is tracked in a video.\n            Amazon Rekognition operations that track people's paths return an array of <code>PersonDetection</code> objects\n            with elements for each time a person's path is tracked in a video. </p>\n      \n         <p>For more information, see API_GetPersonTracking in the Amazon Rekognition Developer Guide. </p>\n      ",
               "shape_name": "PersonDetection"
             }
           }
@@ -8518,7 +8746,7 @@
           "shape_name": "ThrottlingException"
         }
       ],
-      "documentation": "\n         <p>Gets the  person tracking results of a Amazon Rekognition Video analysis started by .</p>\n\n         <p>The person detection operation is started by a call to <code>StartPersonTracking</code>\n     which returns a job identifier (<code>JobId</code>). When the person detection operation finishes, Amazon Rekognition Video publishes a completion status to\n     the Amazon Simple Notification Service topic registered in the initial call to <code>StartPersonTracking</code>.</p>\n         <p>To get the results of the person tracking operation, first check that the status value published to the Amazon SNS topic is <code>SUCCEEDED</code>.\n     If so, call   and pass the job identifier\n     (<code>JobId</code>) from the initial call to <code>StartPersonTracking</code>.</p>\n         <p>\n            <code>GetPersonTracking</code> returns an array, <code>Persons</code>, of tracked persons and the time(s) they were tracked in the video. </p>\n         <note>\n            <p>\n               <code>GetPersonTracking</code> only returns the default  \n       facial attributes (<code>BoundingBox</code>, <code>Confidence</code>, \n       <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>). The other facial attributes listed\n       in the <code>Face</code> object of the following response syntax are not returned. </p>\n       \n            <p>For more information, see FaceDetail in the Amazon Rekognition Developer Guide.</p>\n         </note>\n\n    \n         <p>By default, the array is sorted by the time(s) a person is tracked in the video.\n      You can sort by tracked persons by specifying <code>INDEX</code> for the <code>SortBy</code> input parameter.</p>\n\n         <p>Use the <code>MaxResults</code> parameter to limit the number of items returned. If there are more results than\n   specified in <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response contains a pagination token for getting the next set\n   of results. To get the next page of results, call <code>GetPersonTracking</code> and populate the <code>NextToken</code> request parameter with the token\n    value returned from the previous call to <code>GetPersonTracking</code>.</p>\n \n      "
+      "documentation": "\n         <p>Gets the path tracking results of a Amazon Rekognition Video analysis started by .</p>\n\n         <p>The person path tracking operation is started by a call to <code>StartPersonTracking</code>\n     which returns a job identifier (<code>JobId</code>). When the operation finishes, Amazon Rekognition Video publishes a completion status to\n     the Amazon Simple Notification Service topic registered in the initial call to <code>StartPersonTracking</code>.</p>\n         <p>To get the results of the person path tracking operation, first check \n       that the status value published to the Amazon SNS topic is <code>SUCCEEDED</code>.\n     If so, call   and pass the job identifier\n     (<code>JobId</code>) from the initial call to <code>StartPersonTracking</code>.</p>\n         <p>\n            <code>GetPersonTracking</code> returns an array, <code>Persons</code>, of tracked persons and the time(s) their \n       paths were tracked in the video. </p>\n         <note>\n            <p>\n               <code>GetPersonTracking</code> only returns the default  \n       facial attributes (<code>BoundingBox</code>, <code>Confidence</code>, \n       <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>). The other facial attributes listed\n       in the <code>Face</code> object of the following response syntax are not returned. </p>\n       \n            <p>For more information, see FaceDetail in the Amazon Rekognition Developer Guide.</p>\n         </note>\n\n    \n         <p>By default, the array is sorted by the time(s) a person's path is tracked in the video.\n      You can sort by tracked persons by specifying <code>INDEX</code> for the <code>SortBy</code> input parameter.</p>\n\n         <p>Use the <code>MaxResults</code> parameter to limit the number of items returned. If there are more results than\n   specified in <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response contains a pagination token for getting the next set\n   of results. To get the next page of results, call <code>GetPersonTracking</code> and populate the <code>NextToken</code> request parameter with the token\n    value returned from the previous call to <code>GetPersonTracking</code>.</p>\n \n      "
     },
     "GetCelebrityRecognition": {
       "name": "GetCelebrityRecognition",

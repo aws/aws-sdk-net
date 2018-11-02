@@ -28,9 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// Details and tracking information for a single time a person is tracked in a video.
-    /// Amazon Rekognition operations that track persons return an array of <code>PersonDetection</code>
-    /// objects with elements for each time a person is tracked in a video. 
+    /// Details and path tracking information for a single time a person's path is tracked
+    /// in a video. Amazon Rekognition operations that track people's paths return an array
+    /// of <code>PersonDetection</code> objects with elements for each time a person's path
+    /// is tracked in a video. 
     /// 
     ///  
     /// <para>
@@ -46,7 +47,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property Person. 
         /// <para>
-        /// Details about a person tracked in a video.
+        /// Details about a person whose path was tracked in a video.
         /// </para>
         /// </summary>
         public PersonDetail Person
@@ -64,7 +65,8 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property Timestamp. 
         /// <para>
-        /// The time, in milliseconds from the start of the video, that the person was tracked.
+        /// The time, in milliseconds from the start of the video, that the person's path was
+        /// tracked.
         /// </para>
         /// </summary>
         public long Timestamp

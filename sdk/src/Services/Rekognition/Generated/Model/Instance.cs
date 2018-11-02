@@ -28,17 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// Information about where the text detected by is located on an image.
+    /// An instance of a label detected by .
     /// </summary>
-    public partial class Geometry
+    public partial class Instance
     {
         private BoundingBox _boundingBox;
-        private List<Point> _polygon = new List<Point>();
+        private float? _confidence;
 
         /// <summary>
         /// Gets and sets the property BoundingBox. 
         /// <para>
-        /// An axis-aligned coarse representation of the detected text's location on the image.
+        /// The position of the label instance on the image.
         /// </para>
         /// </summary>
         public BoundingBox BoundingBox
@@ -54,21 +54,21 @@ namespace Amazon.Rekognition.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Polygon. 
+        /// Gets and sets the property Confidence. 
         /// <para>
-        /// Within the bounding box, a fine-grained polygon around the detected text.
+        /// The confidence that Amazon Rekognition Image has in the accuracy of the bounding box.
         /// </para>
         /// </summary>
-        public List<Point> Polygon
+        public float Confidence
         {
-            get { return this._polygon; }
-            set { this._polygon = value; }
+            get { return this._confidence.GetValueOrDefault(); }
+            set { this._confidence = value; }
         }
 
-        // Check to see if Polygon property is set
-        internal bool IsSetPolygon()
+        // Check to see if Confidence property is set
+        internal bool IsSetConfidence()
         {
-            return this._polygon != null && this._polygon.Count > 0; 
+            return this._confidence.HasValue; 
         }
 
     }

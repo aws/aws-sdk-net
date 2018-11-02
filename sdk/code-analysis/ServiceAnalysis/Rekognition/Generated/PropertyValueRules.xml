@@ -561,6 +561,11 @@
     <max>5242880</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Rekognition.Model.Instance.Confidence</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Rekognition.Model.KinesisDataStream.Arn</property>
     <pattern>(^arn:([a-z\d-]+):kinesis:([a-z\d-]+):\d{12}:.+$)</pattern>
   </property-value-rule>

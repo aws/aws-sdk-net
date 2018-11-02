@@ -78,8 +78,9 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property Persons. 
         /// <para>
-        /// An array of the persons detected in the video and the times they are tracked throughout
-        /// the video. An array element will exist for each time the person is tracked. 
+        /// An array of the persons detected in the video and the time(s) their path was tracked
+        /// throughout the video. An array element will exist for each time a person's path is
+        /// tracked. 
         /// </para>
         /// </summary>
         public List<PersonDetection> Persons

@@ -62,6 +62,14 @@ namespace Amazon.Rekognition.Model
     /// populate the <code>NextToken</code> request parameter with the token value returned
     /// from the previous call to <code>GetLabelDetection</code>.
     /// </para>
+    ///  <note> 
+    /// <para>
+    ///  <code>GetLabelDetection</code> doesn't return a hierarchical taxonomy, or bounding
+    /// box information, for detected labels. <code>GetLabelDetection</code> returns <code>null</code>
+    /// for the <code>Parents</code> and <code>Instances</code> attributes of the object which
+    /// is returned in the <code>Labels</code> array. 
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class GetLabelDetectionRequest : AmazonRekognitionRequest
     {

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Label Object
+    /// Response Unmarshaller for Instance Object
     /// </summary>  
-    public class LabelUnmarshaller : IUnmarshaller<Label, XmlUnmarshallerContext>, IUnmarshaller<Label, JsonUnmarshallerContext>
+    public class InstanceUnmarshaller : IUnmarshaller<Instance, XmlUnmarshallerContext>, IUnmarshaller<Instance, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Label IUnmarshaller<Label, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Instance IUnmarshaller<Instance, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Label Unmarshall(JsonUnmarshallerContext context)
+        public Instance Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Label unmarshalledObject = new Label();
+            Instance unmarshalledObject = new Instance();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("BoundingBox", targetDepth))
+                {
+                    var unmarshaller = BoundingBoxUnmarshaller.Instance;
+                    unmarshalledObject.BoundingBox = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Confidence", targetDepth))
                 {
                     var unmarshaller = FloatUnmarshaller.Instance;
                     unmarshalledObject.Confidence = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Instances", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Instance, InstanceUnmarshaller>(InstanceUnmarshaller.Instance);
-                    unmarshalledObject.Instances = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Parents", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Parent, ParentUnmarshaller>(ParentUnmarshaller.Instance);
-                    unmarshalledObject.Parents = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         }
 
 
-        private static LabelUnmarshaller _instance = new LabelUnmarshaller();        
+        private static InstanceUnmarshaller _instance = new InstanceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LabelUnmarshaller Instance
+        public static InstanceUnmarshaller Instance
         {
             get
             {

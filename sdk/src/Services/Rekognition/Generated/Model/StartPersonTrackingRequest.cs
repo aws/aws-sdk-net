@@ -29,16 +29,16 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// Container for the parameters to the StartPersonTracking operation.
-    /// Starts the asynchronous tracking of persons in a stored video.
+    /// Starts the asynchronous tracking of a person's path in a stored video.
     /// 
     ///  
     /// <para>
-    /// Amazon Rekognition Video can track persons in a video stored in an Amazon S3 bucket.
-    /// Use <a>Video</a> to specify the bucket name and the filename of the video. <code>StartPersonTracking</code>
-    /// returns a job identifier (<code>JobId</code>) which you use to get the results of
-    /// the operation. When label detection is finished, Amazon Rekognition publishes a completion
-    /// status to the Amazon Simple Notification Service topic that you specify in <code>NotificationChannel</code>.
-    /// 
+    /// Amazon Rekognition Video can track the path of people in a video stored in an Amazon
+    /// S3 bucket. Use <a>Video</a> to specify the bucket name and the filename of the video.
+    /// <code>StartPersonTracking</code> returns a job identifier (<code>JobId</code>) which
+    /// you use to get the results of the operation. When label detection is finished, Amazon
+    /// Rekognition publishes a completion status to the Amazon Simple Notification Service
+    /// topic that you specify in <code>NotificationChannel</code>. 
     /// </para>
     ///  
     /// <para>

@@ -29,26 +29,25 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// Container for the parameters to the GetPersonTracking operation.
-    /// Gets the person tracking results of a Amazon Rekognition Video analysis started by
-    /// .
+    /// Gets the path tracking results of a Amazon Rekognition Video analysis started by .
     /// 
     ///  
     /// <para>
-    /// The person detection operation is started by a call to <code>StartPersonTracking</code>
-    /// which returns a job identifier (<code>JobId</code>). When the person detection operation
-    /// finishes, Amazon Rekognition Video publishes a completion status to the Amazon Simple
-    /// Notification Service topic registered in the initial call to <code>StartPersonTracking</code>.
+    /// The person path tracking operation is started by a call to <code>StartPersonTracking</code>
+    /// which returns a job identifier (<code>JobId</code>). When the operation finishes,
+    /// Amazon Rekognition Video publishes a completion status to the Amazon Simple Notification
+    /// Service topic registered in the initial call to <code>StartPersonTracking</code>.
     /// </para>
     ///  
     /// <para>
-    /// To get the results of the person tracking operation, first check that the status value
-    /// published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call and pass
-    /// the job identifier (<code>JobId</code>) from the initial call to <code>StartPersonTracking</code>.
+    /// To get the results of the person path tracking operation, first check that the status
+    /// value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call and
+    /// pass the job identifier (<code>JobId</code>) from the initial call to <code>StartPersonTracking</code>.
     /// </para>
     ///  
     /// <para>
     ///  <code>GetPersonTracking</code> returns an array, <code>Persons</code>, of tracked
-    /// persons and the time(s) they were tracked in the video. 
+    /// persons and the time(s) their paths were tracked in the video. 
     /// </para>
     ///  <note> 
     /// <para>
@@ -63,8 +62,8 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// By default, the array is sorted by the time(s) a person is tracked in the video. You
-    /// can sort by tracked persons by specifying <code>INDEX</code> for the <code>SortBy</code>
+    /// By default, the array is sorted by the time(s) a person's path is tracked in the video.
+    /// You can sort by tracked persons by specifying <code>INDEX</code> for the <code>SortBy</code>
     /// input parameter.
     /// </para>
     ///  

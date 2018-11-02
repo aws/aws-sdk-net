@@ -726,6 +726,22 @@ namespace Amazon.Rekognition
         /// </para>
         ///  </note> 
         /// <para>
+        ///  <code>DetectLabels</code> returns bounding boxes for instances of common object labels
+        /// in an array of objects. An <code>Instance</code> object contains a object, for the
+        /// location of the label on the image. It also includes the confidence by which the bounding
+        /// box was detected.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>DetectLabels</code> also returns a hierarchical taxonomy of detected labels.
+        /// For example, a detected car might be assigned the label <i>car</i>. The label <i>car</i>
+        /// has two parent labels: <i>Vehicle</i> (its parent) and <i>Transportation</i> (its
+        /// grandparent). The response returns the entire list of ancestors for a label. Each
+        /// ancestor is a unique label in the response. In the previous example, <i>Car</i>, <i>Vehicle</i>,
+        /// and <i>Transportation</i> are returned as unique labels in the response. 
+        /// </para>
+        ///  
+        /// <para>
         /// This is a stateless API operation. That is, the operation does not persist any data.
         /// </para>
         ///  
@@ -1419,6 +1435,14 @@ namespace Amazon.Rekognition
         /// populate the <code>NextToken</code> request parameter with the token value returned
         /// from the previous call to <code>GetLabelDetection</code>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <code>GetLabelDetection</code> doesn't return a hierarchical taxonomy, or bounding
+        /// box information, for detected labels. <code>GetLabelDetection</code> returns <code>null</code>
+        /// for the <code>Parents</code> and <code>Instances</code> attributes of the object which
+        /// is returned in the <code>Labels</code> array. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLabelDetection service method.</param>
         /// 
@@ -1468,26 +1492,25 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
-        /// Gets the person tracking results of a Amazon Rekognition Video analysis started by
-        /// .
+        /// Gets the path tracking results of a Amazon Rekognition Video analysis started by .
         /// 
         ///  
         /// <para>
-        /// The person detection operation is started by a call to <code>StartPersonTracking</code>
-        /// which returns a job identifier (<code>JobId</code>). When the person detection operation
-        /// finishes, Amazon Rekognition Video publishes a completion status to the Amazon Simple
-        /// Notification Service topic registered in the initial call to <code>StartPersonTracking</code>.
+        /// The person path tracking operation is started by a call to <code>StartPersonTracking</code>
+        /// which returns a job identifier (<code>JobId</code>). When the operation finishes,
+        /// Amazon Rekognition Video publishes a completion status to the Amazon Simple Notification
+        /// Service topic registered in the initial call to <code>StartPersonTracking</code>.
         /// </para>
         ///  
         /// <para>
-        /// To get the results of the person tracking operation, first check that the status value
-        /// published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call and pass
-        /// the job identifier (<code>JobId</code>) from the initial call to <code>StartPersonTracking</code>.
+        /// To get the results of the person path tracking operation, first check that the status
+        /// value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call and
+        /// pass the job identifier (<code>JobId</code>) from the initial call to <code>StartPersonTracking</code>.
         /// </para>
         ///  
         /// <para>
         ///  <code>GetPersonTracking</code> returns an array, <code>Persons</code>, of tracked
-        /// persons and the time(s) they were tracked in the video. 
+        /// persons and the time(s) their paths were tracked in the video. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -1502,8 +1525,8 @@ namespace Amazon.Rekognition
         /// </para>
         ///  </note> 
         /// <para>
-        /// By default, the array is sorted by the time(s) a person is tracked in the video. You
-        /// can sort by tracked persons by specifying <code>INDEX</code> for the <code>SortBy</code>
+        /// By default, the array is sorted by the time(s) a person's path is tracked in the video.
+        /// You can sort by tracked persons by specifying <code>INDEX</code> for the <code>SortBy</code>
         /// input parameter.
         /// </para>
         ///  
@@ -2365,7 +2388,7 @@ namespace Amazon.Rekognition
         /// returns a job identifier (<code>JobId</code>) that you use to get the results of the
         /// operation. When face detection is finished, Amazon Rekognition Video publishes a completion
         /// status to the Amazon Simple Notification Service topic that you specify in <code>NotificationChannel</code>.
-        /// To get the results of the label detection operation, first check that the status value
+        /// To get the results of the face detection operation, first check that the status value
         /// published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call and pass
         /// the job identifier (<code>JobId</code>) from the initial call to <code>StartFaceDetection</code>.
         /// </para>
@@ -2600,16 +2623,16 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
-        /// Starts the asynchronous tracking of persons in a stored video.
+        /// Starts the asynchronous tracking of a person's path in a stored video.
         /// 
         ///  
         /// <para>
-        /// Amazon Rekognition Video can track persons in a video stored in an Amazon S3 bucket.
-        /// Use <a>Video</a> to specify the bucket name and the filename of the video. <code>StartPersonTracking</code>
-        /// returns a job identifier (<code>JobId</code>) which you use to get the results of
-        /// the operation. When label detection is finished, Amazon Rekognition publishes a completion
-        /// status to the Amazon Simple Notification Service topic that you specify in <code>NotificationChannel</code>.
-        /// 
+        /// Amazon Rekognition Video can track the path of people in a video stored in an Amazon
+        /// S3 bucket. Use <a>Video</a> to specify the bucket name and the filename of the video.
+        /// <code>StartPersonTracking</code> returns a job identifier (<code>JobId</code>) which
+        /// you use to get the results of the operation. When label detection is finished, Amazon
+        /// Rekognition publishes a completion status to the Amazon Simple Notification Service
+        /// topic that you specify in <code>NotificationChannel</code>. 
         /// </para>
         ///  
         /// <para>
