@@ -1,3 +1,9 @@
+### 3.3.400.0 (2018-11-02 20:06 UTC)
+* CloudDirectory (3.3.10.0)
+	* ListObjectParents API now supports a bool parameter IncludeAllLinksToEachParent, which if set to true, will return a ParentLinks list instead of a Parents map; BatchRead API now supports ListObjectParents operation.
+* Rekognition (3.3.12.0)
+	* This release updates the DetectLabels operation. Bounding boxes are now returned for certain objects, a hierarchical taxonomy is now available for labels, and you can now get the version of the detection model used for detection.
+
 ### 3.3.399.0 (2018-11-01 22:29 UTC)
 * ServiceCatalog (3.3.12.0)
 	* Service Catalog integration with AWS Organizations, enables customers to more easily create and manage a portfolio of IT services across an organization. Administrators can now take advantage of the AWS account structure and account groupings configured in AWS Organizations to share Service Catalog Portfolios increasing agility and reducing risk. With this integration the admin user will leverage the trust relationship that exists within the accounts of the Organization to share portfolios to the entire Organization, a specific Organizational Unit or a specific Account.

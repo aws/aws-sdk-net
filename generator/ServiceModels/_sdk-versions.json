@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.399.0",
+    "ProductVersion" : "3.3.400.0",
     "CoreVersion"    : "3.3.29.3",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -609,7 +609,7 @@
             "InPreview"               : false
         },
         "Rekognition"                     : {
-            "Version" : "3.3.11.11",
+            "Version" : "3.3.12.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.3"
@@ -721,7 +721,7 @@
             "InPreview"               : false
         },
         "CloudDirectory"                  : {
-            "Version" : "3.3.9.20",
+            "Version" : "3.3.10.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.3"
