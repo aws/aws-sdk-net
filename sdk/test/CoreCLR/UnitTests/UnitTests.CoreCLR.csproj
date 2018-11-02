@@ -18,6 +18,7 @@
     <ProjectReference Include="..\..\..\src\Core\AWSSDK.Core.CoreCLR.csproj" />
     <ProjectReference Include="..\..\..\src\Services\CloudFront\AWSSDK.CloudFront.CoreCLR.csproj" />
     <ProjectReference Include="..\..\..\src\Services\S3\AWSSDK.S3.CoreCLR.csproj" />
+    <ProjectReference Include="..\Common\AWSSDK.CommonTest.CoreCLR.csproj" />
   </ItemGroup>
 
   <ItemGroup>

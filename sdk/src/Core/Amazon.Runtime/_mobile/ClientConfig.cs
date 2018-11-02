@@ -128,14 +128,98 @@ namespace Amazon.Runtime
         /// for guidance on creating HttpClients for your platform.
         /// </summary>
         public IHttpClientFactory HttpClientFactory { get; set; }
+#else
+        /// <summary>
+        /// HttpClientFactory used to create new HttpClients.
+        /// If null, an HttpClient will be created by the SDK.
+        /// Note that IClientConfig members such as ProxyHost, ProxyPort, GetWebProxy, and AllowAutoRedirect
+        /// will have no effect unless they're used explicitly by the HttpClientFactory implementation.
+        ///
+        /// See https://docs.microsoft.com/en-us/xamarin/cross-platform/macios/http-stack?context=xamarin/ios and
+        /// https://docs.microsoft.com/en-us/xamarin/android/app-fundamentals/http-stack?context=xamarin%2Fcross-platform&tabs=macos#ssltls-implementation-build-option
+        /// for guidance on creating HttpClients for your platform.
+        /// </summary>
+        public HttpClientFactory HttpClientFactory { get; set; }
 #endif
 
-        internal static bool IsAllowedToCacheHttpClients(IClientConfig clientConfig)
+        /// <summary>
+        /// Returns true if the clients should be cached by HttpRequestMessageFactory, false otherwise.
+        /// </summary>
+        /// <param name="clientConfig"></param>
+        /// <returns></returns>
+        internal static bool CacheHttpClients(IClientConfig clientConfig)
         {
 #if PCL
-            return clientConfig.HttpClientFactory == null;
+            return clientConfig.HttpClientFactory == null && clientConfig.CacheHttpClient;
 #else
-            return true;
+            if (clientConfig.HttpClientFactory == null)
+                return clientConfig.CacheHttpClient;
+            else
+                return clientConfig.HttpClientFactory.UseSDKHttpClientCaching(clientConfig);
+#endif
+        }
+
+        /// <summary>
+        /// Returns true if the SDK should dispose HttpClients after one use, false otherwise.
+        /// </summary>
+        /// <param name="clientConfig"></param>
+        /// <returns></returns>
+        internal static bool DisposeHttpClients(IClientConfig clientConfig)
+        {
+#if PCL
+            return clientConfig.HttpClientFactory != null || !clientConfig.CacheHttpClient;
+#else
+            if (clientConfig.HttpClientFactory == null)
+                return !clientConfig.CacheHttpClient;
+            else
+                return clientConfig.HttpClientFactory.DisposeHttpClientsAfterUse(clientConfig);
+#endif
+        }
+
+        /// <summary>
+        ///  Create a unique string used for caching the HttpClient based on the settings that are used from the ClientConfig that are set on the HttpClient.
+        /// </summary>
+        /// <param name="clientConfig"></param>
+        /// <returns></returns>
+        internal static string CreateConfigUniqueString(IClientConfig clientConfig)
+        {
+#if CORECLR
+            if (clientConfig.HttpClientFactory != null)
+            {
+                return clientConfig.HttpClientFactory.GetConfigUniqueString(clientConfig);
+            }
+#endif
+            string uniqueString = string.Empty;
+            uniqueString = string.Concat("AllowAutoRedirect:", clientConfig.AllowAutoRedirect.ToString(), "CacheSize:", clientConfig.HttpClientCacheSize);
+
+            if (clientConfig.Timeout.HasValue)
+                uniqueString = string.Concat(uniqueString, "Timeout:", clientConfig.Timeout.Value.ToString());
+
+#if CORECLR
+            if (clientConfig.MaxConnectionsPerServer.HasValue)
+                uniqueString = string.Concat(uniqueString, "MaxConnectionsPerServer:", clientConfig.MaxConnectionsPerServer.Value.ToString());
+#endif
+
+            return uniqueString;
+        }
+
+
+        /// <summary>
+        /// Determines if HttpClients created with the given IClientConfig should be cached at the SDK
+        /// client level, or cached globally.
+        ///
+        /// If there is no HttpClientFactory assigned and proxy or proxy credentials are set
+        /// this returns false because those properties can't be serialized as part of the key in the global http client cache.
+        /// </summary>
+        internal static bool UseGlobalHttpClientCache(IClientConfig clientConfig)
+        {
+#if CORECLR
+            if (clientConfig.HttpClientFactory == null)
+                return clientConfig.ProxyCredentials == null && clientConfig.GetWebProxy() == null;
+            else
+                return clientConfig.HttpClientFactory.GetConfigUniqueString(clientConfig) != null;
+#else
+            return clientConfig.ProxyCredentials == null;
 #endif
         }
     }

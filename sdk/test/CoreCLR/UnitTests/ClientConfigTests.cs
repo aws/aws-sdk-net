@@ -44,7 +44,8 @@ namespace UnitTests
             "HttpClientCacheSize",
             "ReadWriteTimeout",
             "CorrectedUtcNow",
-            "ClockOffset"
+            "ClockOffset",
+            "HttpClientFactory"
         };
 
         [Fact]

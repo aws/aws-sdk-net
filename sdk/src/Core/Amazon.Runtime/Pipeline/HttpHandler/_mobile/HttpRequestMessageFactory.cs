@@ -44,6 +44,62 @@ namespace Amazon.Runtime
         /// <returns></returns>
         HttpClient CreateHttpClient(IClientConfig clientConfig);
     }
+#else
+    /// <summary>
+    /// A factory which creates HTTP clients.
+    /// </summary>
+    [CLSCompliant(false)]
+    public abstract class HttpClientFactory
+    {
+        /// <summary>
+        /// Create and configure an HttpClient.
+        /// </summary>
+        /// <returns></returns>
+        public abstract HttpClient CreateHttpClient(IClientConfig clientConfig);
+
+        /// <summary>
+        /// If true the SDK will internally cache the clients created by CreateHttpClient.
+        /// If false the sdk will not cache the clients.
+        /// Override this method to return false if your HttpClientFactory will handle its own caching
+        /// or if you don't want clients to be cached.
+        /// </summary>
+        /// <param name="clientConfig"></param>
+        /// <returns></returns>
+        public virtual bool UseSDKHttpClientCaching(IClientConfig clientConfig)
+        {
+            return clientConfig.CacheHttpClient;
+        }
+
+        /// <summary>
+        /// Determines if the SDK will dispose clients after they're used.
+        /// If HttpClients are cached, either by the SDK or by your HttpClientFactory, this should be false.
+        /// If there is no caching then this should be true.
+        /// </summary>
+        /// <param name="clientConfig"></param>
+        /// <returns></returns>
+        public virtual bool DisposeHttpClientsAfterUse(IClientConfig clientConfig)
+        {
+            return !UseSDKHttpClientCaching(clientConfig);
+        }
+
+        /// <summary>
+        /// Returns a string that's used to group equivalent HttpClients into caches.
+        /// This method isn't used unless UseSDKHttpClientCaching returns true;
+        /// 
+        /// A null return value signals the SDK caching mechanism to cache HttpClients per SDK client.
+        /// So when the SDK client is disposed, the HttpClients are as well.
+        /// 
+        /// A non-null return value signals the SDK that HttpClients created with the given clientConfig
+        /// should be cached and reused globally.  ClientConfigs that produce the same result for
+        /// GetConfigUniqueString will be grouped together and considered equivalent for caching purposes.
+        /// </summary>
+        /// <param name="clientConfig"></param>
+        /// <returns></returns>
+        public virtual string GetConfigUniqueString(IClientConfig clientConfig)
+        {
+            return null;
+        }
+    }
 #endif
 
     /// <summary>
@@ -56,8 +112,8 @@ namespace Amazon.Runtime
         static readonly ReaderWriterLockSlim _httpClientCacheRWLock = new ReaderWriterLockSlim();
         static readonly IDictionary<string, HttpClientCache> _httpClientCaches = new Dictionary<string, HttpClientCache>();
 
-
         private HttpClientCache _httpClientCache;
+        private bool _useGlobalHttpClientCache;
         private IClientConfig _clientConfig;
 
         /// <summary>
@@ -77,12 +133,14 @@ namespace Amazon.Runtime
         public IHttpRequest<HttpContent> CreateHttpRequest(Uri requestUri)
         {
             HttpClient httpClient = null;
-            if(ClientConfig.IsAllowedToCacheHttpClients(_clientConfig) && _clientConfig.CacheHttpClient)
+            if(ClientConfig.CacheHttpClients(_clientConfig))
             {
                 if(_httpClientCache == null)
                 {
-                    if (!CanClientConfigBeSerialized(_clientConfig))
+                    if (!ClientConfig.UseGlobalHttpClientCache(_clientConfig))
                     {
+                        _useGlobalHttpClientCache = false;
+
                         _httpClientCacheRWLock.EnterWriteLock();
                         try
                         {
@@ -98,9 +156,11 @@ namespace Amazon.Runtime
                     }
                     else
                     {
+                        _useGlobalHttpClientCache = true;
+
                         // Check to see if an HttpClient was created by another service client with the 
                         // same settings on the ClientConfig.
-                        var configUniqueString = CreateConfigUniqueString(_clientConfig);
+                        var configUniqueString = ClientConfig.CreateConfigUniqueString(_clientConfig);
                         _httpClientCacheRWLock.EnterReadLock();
                         try
                         {
@@ -143,7 +203,6 @@ namespace Amazon.Runtime
                 httpClient = CreateHttpClient(_clientConfig);
             }
 
-
             return new HttpWebRequestMessage(httpClient, requestUri, _clientConfig);
         }
 
@@ -162,6 +221,14 @@ namespace Amazon.Runtime
         /// <param name="disposing"></param>
         protected virtual void Dispose(bool disposing)
         {
+            if (disposing)
+            {
+                // if the http cache is local to this instance then dispose it
+                if (!_useGlobalHttpClientCache && _httpClientCache != null)
+                {
+                    _httpClientCache.Dispose();
+                }
+            }
         }
 
         private static HttpClientCache CreateHttpClientCache(IClientConfig clientConfig)
@@ -177,7 +244,6 @@ namespace Amazon.Runtime
 
         private static HttpClient CreateHttpClient(IClientConfig clientConfig)
         {
-#if PCL
             if (clientConfig.HttpClientFactory == null)
             {
                 return CreateManagedHttpClient(clientConfig);
@@ -186,9 +252,6 @@ namespace Amazon.Runtime
             {
                 return clientConfig.HttpClientFactory.CreateHttpClient(clientConfig);
             }
-#else
-            return CreateManagedHttpClient(clientConfig);
-#endif
         }
 
          /// <summary>
@@ -240,46 +303,13 @@ namespace Amazon.Runtime
             return httpClient;
         }
 
-        /// <summary>
-        ///  Create a unique string used for caching the HttpClient based on the settings that are used from the ClientConfig that are set on the HttpClient.
-        /// </summary>
-        /// <param name="clientConfig"></param>
-        /// <returns></returns>
-        private static string CreateConfigUniqueString(IClientConfig clientConfig)
-        {
-            string uniqueString = string.Empty;
-            uniqueString = string.Concat("AllowAutoRedirect:", clientConfig.AllowAutoRedirect.ToString(), "CacheSize:", clientConfig.HttpClientCacheSize);
-
-            if (clientConfig.Timeout.HasValue)
-                uniqueString = string.Concat(uniqueString, "Timeout:", clientConfig.Timeout.Value.ToString());
-
-#if CORECLR
-            if (clientConfig.MaxConnectionsPerServer.HasValue)
-                uniqueString = string.Concat(uniqueString, "MaxConnectionsPerServer:", clientConfig.MaxConnectionsPerServer.Value.ToString());
-#endif
-
-            return uniqueString;
-        }
-
-        /// <summary>
-        /// If proxy or proxy credentials are set this returns false because those properties can't be
-        /// serialized as part of the key in the global http client cache.
-        /// </summary>
-        private static bool CanClientConfigBeSerialized(IClientConfig clientConfig)
-        {
-#if CORECLR
-            return clientConfig.ProxyCredentials == null && clientConfig.GetWebProxy() == null;
-#else
-            return clientConfig.ProxyCredentials == null;
-#endif
-        }
     }
 
     /// <summary>
     /// A cache of HttpClient objects. The GetNextClient method does a round robin cycle through the clients
     /// to distribute the load even across.
     /// </summary>
-    public class HttpClientCache
+    public class HttpClientCache : IDisposable
     {
         HttpClient[] _clients;
 
@@ -309,6 +339,33 @@ namespace Amazon.Runtime
                 int next = Interlocked.Increment(ref count);
                 int nextIndex = Math.Abs(next % _clients.Length);
                 return _clients[nextIndex];
+            }
+        }
+
+        /// <summary>
+        /// Disposes the HttpClientCache.
+        /// </summary>
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        /// <summary>
+        /// Dispose the HttpClientCache
+        /// </summary>
+        /// <param name="disposing"></param>
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                if (_clients != null)
+                {
+                    foreach (var client in _clients)
+                    {
+                        client.Dispose();
+                    }
+                }
             }
         }
     }
@@ -467,7 +524,7 @@ namespace Amazon.Runtime
                 var responseMessage = await _httpClient.SendAsync(_request, HttpCompletionOption.ResponseHeadersRead, cancellationToken)
                     .ConfigureAwait(continueOnCapturedContext: false);
 
-                bool disposeClient = !ClientConfig.IsAllowedToCacheHttpClients(_clientConfig) || !_clientConfig.CacheHttpClient;
+                bool disposeClient = ClientConfig.DisposeHttpClients(_clientConfig);
                 // If AllowAutoRedirect is set to false, HTTP 3xx responses are returned back as response.
                 if (!_clientConfig.AllowAutoRedirect &&
                     responseMessage.StatusCode >= HttpStatusCode.Ambiguous &&
