@@ -118,6 +118,12 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
                     unmarshalledObject.ListObjectParentPaths = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ListObjectParents", targetDepth))
+                {
+                    var unmarshaller = BatchListObjectParentsResponseUnmarshaller.Instance;
+                    unmarshalledObject.ListObjectParents = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ListObjectPolicies", targetDepth))
                 {
                     var unmarshaller = BatchListObjectPoliciesResponseUnmarshaller.Instance;

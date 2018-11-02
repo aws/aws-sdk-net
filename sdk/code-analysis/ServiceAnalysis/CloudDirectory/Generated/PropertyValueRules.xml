@@ -217,14 +217,14 @@
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.AttributeKey.Name</property>
     <min>1</min>
-    <max>64</max>
-    <pattern>^[a-zA-Z0-9._-]*$</pattern>
+    <max>230</max>
+    <pattern>^[a-zA-Z0-9._:-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.AttributeNameAndValue.AttributeName</property>
     <min>1</min>
-    <max>64</max>
-    <pattern>^[a-zA-Z0-9._-]*$</pattern>
+    <max>230</max>
+    <pattern>^[a-zA-Z0-9._:-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.BatchAttachObject.LinkName</property>
@@ -275,6 +275,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudDirectory.Model.BatchListObjectParents.MaxResults</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudDirectory.Model.BatchListObjectPolicies.MaxResults</property>
     <min>1</min>
   </property-value-rule>
@@ -305,20 +309,26 @@
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.FacetAttribute.Name</property>
     <min>1</min>
-    <max>64</max>
-    <pattern>^[a-zA-Z0-9._-]*$</pattern>
+    <max>230</max>
+    <pattern>^[a-zA-Z0-9._:-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.FacetAttributeReference.TargetAttributeName</property>
     <min>1</min>
-    <max>64</max>
-    <pattern>^[a-zA-Z0-9._-]*$</pattern>
+    <max>230</max>
+    <pattern>^[a-zA-Z0-9._:-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.FacetAttributeReference.TargetFacetName</property>
     <min>1</min>
     <max>64</max>
     <pattern>^[a-zA-Z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudDirectory.Model.ObjectIdentifierAndLinkNameTuple.LinkName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[^\/\[\]\(\):\{\}#@!?\s\\;]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.SchemaFacet.FacetName</property>
@@ -329,14 +339,14 @@
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.TypedLinkAttributeDefinition.Name</property>
     <min>1</min>
-    <max>64</max>
-    <pattern>^[a-zA-Z0-9._-]*$</pattern>
+    <max>230</max>
+    <pattern>^[a-zA-Z0-9._:-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.TypedLinkAttributeRange.AttributeName</property>
     <min>1</min>
-    <max>64</max>
-    <pattern>^[a-zA-Z0-9._-]*$</pattern>
+    <max>230</max>
+    <pattern>^[a-zA-Z0-9._:-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.TypedLinkFacet.Name</property>

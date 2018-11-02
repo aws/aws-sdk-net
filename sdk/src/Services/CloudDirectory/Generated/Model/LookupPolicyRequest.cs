@@ -34,7 +34,7 @@ namespace Amazon.CloudDirectory.Model
     /// and if some objects don't have the policies attached, it returns the <code>ObjectIdentifier</code>
     /// for such objects. If policies are present, it returns <code>ObjectIdentifier</code>,
     /// <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the root
-    /// from the target object are ignored. For more information, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.
+    /// from the target object are ignored. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.
     /// </summary>
     public partial class LookupPolicyRequest : AmazonCloudDirectoryRequest
     {

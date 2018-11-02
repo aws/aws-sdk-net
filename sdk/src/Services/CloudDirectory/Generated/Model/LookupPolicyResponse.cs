@@ -57,7 +57,7 @@ namespace Amazon.CloudDirectory.Model
         /// Gets and sets the property PolicyToPathList. 
         /// <para>
         /// Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>,
-        /// and <code>PolicyType</code>. For more information, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.
+        /// and <code>PolicyType</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.
         /// </para>
         /// </summary>
         public List<PolicyToPath> PolicyToPathList

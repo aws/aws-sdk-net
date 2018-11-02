@@ -125,8 +125,8 @@ namespace Amazon.CloudDirectory.Model
         /// Gets and sets the property AttachTypedLink. 
         /// <para>
         /// Attaches a typed link to a specified source and target object. For more information,
-        /// see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-        /// link</a>.
+        /// see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
+        /// Links</a>.
         /// </para>
         /// </summary>
         public BatchAttachTypedLink AttachTypedLink
@@ -144,8 +144,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property CreateIndex. 
         /// <para>
-        /// Creates an index object. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_indexing.html">Indexing</a>
-        /// for more information.
+        /// Creates an index object. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/indexing_search.htm">Indexing
+        /// and search</a> for more information.
         /// </para>
         /// </summary>
         public BatchCreateIndex CreateIndex
@@ -254,8 +254,8 @@ namespace Amazon.CloudDirectory.Model
         /// Gets and sets the property DetachTypedLink. 
         /// <para>
         /// Detaches a typed link from a specified source and target object. For more information,
-        /// see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-        /// link</a>.
+        /// see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
+        /// Links</a>.
         /// </para>
         /// </summary>
         public BatchDetachTypedLink DetachTypedLink

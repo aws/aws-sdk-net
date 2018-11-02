@@ -42,8 +42,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property BatchReferenceName. 
         /// <para>
-        /// The batch reference name. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#batches">Batches</a>
-        /// for more information.
+        /// The batch reference name. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction
+        /// Support</a> for more information.
         /// </para>
         /// </summary>
         public string BatchReferenceName

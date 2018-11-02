@@ -29,8 +29,8 @@ namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateIndex operation.
-    /// Creates an index object. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_indexing.html">Indexing</a>
-    /// for more information.
+    /// Creates an index object. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/indexing_search.html">Indexing
+    /// and search</a> for more information.
     /// </summary>
     public partial class CreateIndexRequest : AmazonCloudDirectoryRequest
     {

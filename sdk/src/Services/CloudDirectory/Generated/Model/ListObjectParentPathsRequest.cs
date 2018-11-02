@@ -30,7 +30,7 @@ namespace Amazon.CloudDirectory.Model
     /// <summary>
     /// Container for the parameters to the ListObjectParentPaths operation.
     /// Retrieves all available parent paths for any object type such as node, leaf node,
-    /// policy node, and index node objects. For more information about objects, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#dirstructure">Directory
+    /// policy node, and index node objects. For more information about objects, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html">Directory
     /// Structure</a>.
     /// 
     ///  

@@ -28,18 +28,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
-    /// Represents the output of a <a>LookupPolicy</a> response operation.
+    /// 
     /// </summary>
-    public partial class BatchLookupPolicyResponse
+    public partial class BatchListObjectParents
     {
+        private int? _maxResults;
         private string _nextToken;
-        private List<PolicyToPath> _policyToPathList = new List<PolicyToPath>();
+        private ObjectReference _objectReference;
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
-        /// <para>
-        /// The pagination token.
-        /// </para>
+        /// Gets and sets the property MaxResults.
+        /// </summary>
+        public int MaxResults
+        {
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken.
         /// </summary>
         public string NextToken
         {
@@ -54,22 +67,18 @@ namespace Amazon.CloudDirectory.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PolicyToPathList. 
-        /// <para>
-        /// Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>,
-        /// and <code>PolicyType</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.
-        /// </para>
+        /// Gets and sets the property ObjectReference.
         /// </summary>
-        public List<PolicyToPath> PolicyToPathList
+        public ObjectReference ObjectReference
         {
-            get { return this._policyToPathList; }
-            set { this._policyToPathList = value; }
+            get { return this._objectReference; }
+            set { this._objectReference = value; }
         }
 
-        // Check to see if PolicyToPathList property is set
-        internal bool IsSetPolicyToPathList()
+        // Check to see if ObjectReference property is set
+        internal bool IsSetObjectReference()
         {
-            return this._policyToPathList != null && this._policyToPathList.Count > 0; 
+            return this._objectReference != null;
         }
 
     }

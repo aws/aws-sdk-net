@@ -78,8 +78,8 @@ namespace Amazon.CloudDirectory.Model
         /// Gets and sets the property DirectoryArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) that is associated with the Directory where the typed
-        /// link resides. For more information, see <a>arns</a> or <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-        /// link</a>.
+        /// link resides. For more information, see <a>arns</a> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
+        /// Links</a>.
         /// </para>
         /// </summary>
         public string DirectoryArn

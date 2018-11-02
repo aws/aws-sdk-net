@@ -28,30 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetSchemaAsJson operation.
-    /// Retrieves a JSON representation of the schema. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_jsonformat.html#schemas_json">JSON
-    /// Schema Format</a> for more information.
+    /// A pair of ObjectIdentifier and LinkName.
     /// </summary>
-    public partial class GetSchemaAsJsonRequest : AmazonCloudDirectoryRequest
+    public partial class ObjectIdentifierAndLinkNameTuple
     {
-        private string _schemaArn;
+        private string _linkName;
+        private string _objectIdentifier;
 
         /// <summary>
-        /// Gets and sets the property SchemaArn. 
+        /// Gets and sets the property LinkName. 
         /// <para>
-        /// The ARN of the schema to retrieve.
+        /// The name of the link between the parent and the child object.
         /// </para>
         /// </summary>
-        public string SchemaArn
+        public string LinkName
         {
-            get { return this._schemaArn; }
-            set { this._schemaArn = value; }
+            get { return this._linkName; }
+            set { this._linkName = value; }
         }
 
-        // Check to see if SchemaArn property is set
-        internal bool IsSetSchemaArn()
+        // Check to see if LinkName property is set
+        internal bool IsSetLinkName()
         {
-            return this._schemaArn != null;
+            return this._linkName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ObjectIdentifier. 
+        /// <para>
+        /// The ID that is associated with the object.
+        /// </para>
+        /// </summary>
+        public string ObjectIdentifier
+        {
+            get { return this._objectIdentifier; }
+            set { this._objectIdentifier = value; }
+        }
+
+        // Check to see if ObjectIdentifier property is set
+        internal bool IsSetObjectIdentifier()
+        {
+            return this._objectIdentifier != null;
         }
 
     }

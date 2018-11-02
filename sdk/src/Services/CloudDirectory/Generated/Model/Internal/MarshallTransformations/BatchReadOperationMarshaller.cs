@@ -144,6 +144,17 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetListObjectParents())
+            {
+                context.Writer.WritePropertyName("ListObjectParents");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = BatchListObjectParentsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ListObjectParents, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetListObjectPolicies())
             {
                 context.Writer.WritePropertyName("ListObjectPolicies");

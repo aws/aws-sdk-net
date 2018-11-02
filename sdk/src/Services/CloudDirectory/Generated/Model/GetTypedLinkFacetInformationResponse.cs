@@ -43,8 +43,8 @@ namespace Amazon.CloudDirectory.Model
         /// ranges must be specified at the end. Any attributes that do not have a range specified
         /// are presumed to match the entire range. Filters are interpreted in the order of the
         /// attributes on the typed link facet, not the order in which they are supplied to any
-        /// API calls. For more information about identity attributes, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-        /// link</a>.
+        /// API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
+        /// Links</a>.
         /// </para>
         /// </summary>
         public List<string> IdentityAttributeOrder

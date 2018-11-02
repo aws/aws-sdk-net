@@ -57,6 +57,12 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
                     response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ParentLinks", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ObjectIdentifierAndLinkNameTuple, ObjectIdentifierAndLinkNameTupleUnmarshaller>(ObjectIdentifierAndLinkNameTupleUnmarshaller.Instance);
+                    response.ParentLinks = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Parents", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);

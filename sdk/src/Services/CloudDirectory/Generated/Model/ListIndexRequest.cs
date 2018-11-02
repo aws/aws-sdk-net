@@ -98,8 +98,8 @@ namespace Amazon.CloudDirectory.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of objects in a single page to retrieve from the index during a
-        /// request. For more information, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html#limits_cd">AWS
-        /// Directory Service Limits</a>.
+        /// request. For more information, see <a href="http://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Amazon
+        /// Cloud Directory Limits</a>.
         /// </para>
         /// </summary>
         public int MaxResults

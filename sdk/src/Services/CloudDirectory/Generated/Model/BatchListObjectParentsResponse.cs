@@ -28,30 +28,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetSchemaAsJson operation.
-    /// Retrieves a JSON representation of the schema. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_jsonformat.html#schemas_json">JSON
-    /// Schema Format</a> for more information.
+    /// 
     /// </summary>
-    public partial class GetSchemaAsJsonRequest : AmazonCloudDirectoryRequest
+    public partial class BatchListObjectParentsResponse
     {
-        private string _schemaArn;
+        private string _nextToken;
+        private List<ObjectIdentifierAndLinkNameTuple> _parentLinks = new List<ObjectIdentifierAndLinkNameTuple>();
 
         /// <summary>
-        /// Gets and sets the property SchemaArn. 
-        /// <para>
-        /// The ARN of the schema to retrieve.
-        /// </para>
+        /// Gets and sets the property NextToken.
         /// </summary>
-        public string SchemaArn
+        public string NextToken
         {
-            get { return this._schemaArn; }
-            set { this._schemaArn = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if SchemaArn property is set
-        internal bool IsSetSchemaArn()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._schemaArn != null;
+            return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParentLinks.
+        /// </summary>
+        public List<ObjectIdentifierAndLinkNameTuple> ParentLinks
+        {
+            get { return this._parentLinks; }
+            set { this._parentLinks = value; }
+        }
+
+        // Check to see if ParentLinks property is set
+        internal bool IsSetParentLinks()
+        {
+            return this._parentLinks != null && this._parentLinks.Count > 0; 
         }
 
     }

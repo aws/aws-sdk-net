@@ -37,9 +37,9 @@ namespace Amazon.CloudDirectory
     /// the development and management of cloud-scale web, mobile, and IoT applications. This
     /// guide describes the Cloud Directory operations that you can call programmatically
     /// and includes detailed information on data types and errors. For information about
-    /// AWS Directory Services features, see <a href="https://aws.amazon.com/directoryservice/">AWS
-    /// Directory Service</a> and the <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/what_is.html">AWS
-    /// Directory Service Administration Guide</a>.
+    /// Cloud Directory features, see <a href="https://aws.amazon.com/directoryservice/">AWS
+    /// Directory Service</a> and the <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/what_is_cloud_directory.html">Amazon
+    /// Cloud Directory Developer Guide</a>.
     /// </para>
     /// </summary>
     public partial interface IAmazonCloudDirectory : IAmazonService, IDisposable
@@ -76,7 +76,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -134,12 +134,12 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidAttachmentException">
-        /// Indicates that an attempt to attach an object with the same link name or to apply
-        /// a schema with the same name has occurred. Rename the link or the schema and then try
-        /// again.
+        /// Indicates that an attempt to make an attachment was invalid. For example, attaching
+        /// two nodes with a link type that is not applicable to the nodes or attempting to apply
+        /// a schema to a directory a second time.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -217,12 +217,12 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidAttachmentException">
-        /// Indicates that an attempt to attach an object with the same link name or to apply
-        /// a schema with the same name has occurred. Rename the link or the schema and then try
-        /// again.
+        /// Indicates that an attempt to make an attachment was invalid. For example, attaching
+        /// two nodes with a link type that is not applicable to the nodes or attempting to apply
+        /// a schema to a directory a second time.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LinkNameAlreadyInUseException">
@@ -290,7 +290,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.NotPolicyException">
@@ -357,12 +357,12 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidAttachmentException">
-        /// Indicates that an attempt to attach an object with the same link name or to apply
-        /// a schema with the same name has occurred. Rename the link or the schema and then try
-        /// again.
+        /// Indicates that an attempt to make an attachment was invalid. For example, attaching
+        /// two nodes with a link type that is not applicable to the nodes or attempting to apply
+        /// a schema to a directory a second time.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LinkNameAlreadyInUseException">
@@ -409,8 +409,8 @@ namespace Amazon.CloudDirectory
 
         /// <summary>
         /// Attaches a typed link to a specified source and target object. For more information,
-        /// see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-        /// link</a>.
+        /// see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
+        /// Links</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachTypedLink service method.</param>
         /// 
@@ -435,12 +435,12 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidAttachmentException">
-        /// Indicates that an attempt to attach an object with the same link name or to apply
-        /// a schema with the same name has occurred. Rename the link or the schema and then try
-        /// again.
+        /// Indicates that an attempt to make an attachment was invalid. For example, attaching
+        /// two nodes with a link type that is not applicable to the nodes or attempting to apply
+        /// a schema to a directory a second time.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -503,7 +503,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.RetryableConflictException">
@@ -564,7 +564,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.RetryableConflictException">
@@ -602,6 +602,13 @@ namespace Amazon.CloudDirectory
         /// <summary>
         /// Creates a <a>Directory</a> by copying the published schema into the directory. A directory
         /// cannot be created without a schema.
+        /// 
+        ///  
+        /// <para>
+        /// You can also quickly create a directory using a managed schema, called the <code>QuickStartSchema</code>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_managed.html">Managed
+        /// Schema</a> in the <i>Amazon Cloud Directory Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDirectory service method.</param>
         /// 
@@ -623,7 +630,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -691,7 +698,7 @@ namespace Amazon.CloudDirectory
         /// Occurs when any of the rule parameter keys or values are invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -730,8 +737,8 @@ namespace Amazon.CloudDirectory
 
 
         /// <summary>
-        /// Creates an index object. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_indexing.html">Indexing</a>
-        /// for more information.
+        /// Creates an index object. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/indexing_search.html">Indexing
+        /// and search</a> for more information.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIndex service method.</param>
         /// 
@@ -756,7 +763,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LinkNameAlreadyInUseException">
@@ -830,7 +837,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LinkNameAlreadyInUseException">
@@ -915,7 +922,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.RetryableConflictException">
@@ -955,8 +962,8 @@ namespace Amazon.CloudDirectory
 
 
         /// <summary>
-        /// Creates a <a>TypedLinkFacet</a>. For more information, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-        /// link</a>.
+        /// Creates a <a>TypedLinkFacet</a>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
+        /// Links</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTypedLinkFacet service method.</param>
         /// 
@@ -984,7 +991,7 @@ namespace Amazon.CloudDirectory
         /// Occurs when any of the rule parameter keys or values are invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -1049,7 +1056,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -1114,7 +1121,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -1154,7 +1161,9 @@ namespace Amazon.CloudDirectory
 
         /// <summary>
         /// Deletes an object and its associated attributes. Only objects with no children and
-        /// no parents can be deleted.
+        /// no parents can be deleted. The maximum number of attributes that can be deleted during
+        /// an object deletion is 30. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Amazon
+        /// Cloud Directory Limits</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteObject service method.</param>
         /// 
@@ -1175,7 +1184,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ObjectNotDetachedException">
@@ -1236,7 +1245,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -1279,8 +1288,8 @@ namespace Amazon.CloudDirectory
 
 
         /// <summary>
-        /// Deletes a <a>TypedLinkFacet</a>. For more information, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-        /// link</a>.
+        /// Deletes a <a>TypedLinkFacet</a>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
+        /// Links</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTypedLinkFacet service method.</param>
         /// 
@@ -1301,7 +1310,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -1361,7 +1370,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.NotIndexException">
@@ -1428,7 +1437,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.NotNodeException">
@@ -1492,7 +1501,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.NotPolicyException">
@@ -1535,8 +1544,8 @@ namespace Amazon.CloudDirectory
 
         /// <summary>
         /// Detaches a typed link from a specified source and target object. For more information,
-        /// see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-        /// link</a>.
+        /// see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
+        /// Links</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachTypedLink service method.</param>
         /// 
@@ -1561,7 +1570,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -1623,7 +1632,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -1685,7 +1694,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -1742,7 +1751,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -1799,7 +1808,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.RetryableConflictException">
@@ -1858,7 +1867,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -1922,7 +1931,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -1986,7 +1995,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -2046,7 +2055,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -2085,7 +2094,7 @@ namespace Amazon.CloudDirectory
 
 
         /// <summary>
-        /// Retrieves a JSON representation of the schema. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_schemas.html#jsonformat">JSON
+        /// Retrieves a JSON representation of the schema. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_jsonformat.html#schemas_json">JSON
         /// Schema Format</a> for more information.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSchemaAsJson service method.</param>
@@ -2104,7 +2113,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -2147,8 +2156,8 @@ namespace Amazon.CloudDirectory
 
         /// <summary>
         /// Returns the identity attribute order for a specific <a>TypedLinkFacet</a>. For more
-        /// information, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-        /// link</a>.
+        /// information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
+        /// Links</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTypedLinkFacetInformation service method.</param>
         /// 
@@ -2172,7 +2181,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -2233,7 +2242,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -2293,7 +2302,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -2353,7 +2362,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -2413,7 +2422,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.RetryableConflictException">
@@ -2473,7 +2482,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -2533,7 +2542,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -2574,8 +2583,8 @@ namespace Amazon.CloudDirectory
         /// <summary>
         /// Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a> information
         /// for an object. It also supports filtering by typed link facet and identity attributes.
-        /// For more information, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-        /// link</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
+        /// Links</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIncomingTypedLinks service method.</param>
         /// 
@@ -2603,7 +2612,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -2670,7 +2679,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.NotIndexException">
@@ -2789,7 +2798,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -2852,7 +2861,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.NotNodeException">
@@ -2896,7 +2905,7 @@ namespace Amazon.CloudDirectory
 
         /// <summary>
         /// Retrieves all available parent paths for any object type such as node, leaf node,
-        /// policy node, and index node objects. For more information about objects, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#dirstructure">Directory
+        /// policy node, and index node objects. For more information about objects, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html">Directory
         /// Structure</a>.
         /// 
         ///  
@@ -2931,7 +2940,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -2997,7 +3006,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -3060,7 +3069,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -3101,8 +3110,8 @@ namespace Amazon.CloudDirectory
         /// <summary>
         /// Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a> information
         /// for an object. It also supports filtering by typed link facet and identity attributes.
-        /// For more information, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-        /// link</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
+        /// Links</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOutgoingTypedLinks service method.</param>
         /// 
@@ -3130,7 +3139,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -3193,7 +3202,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.NotPolicyException">
@@ -3258,7 +3267,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -3322,7 +3331,7 @@ namespace Amazon.CloudDirectory
         /// limit is 50 tags per resource.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -3362,8 +3371,8 @@ namespace Amazon.CloudDirectory
 
         /// <summary>
         /// Returns a paginated list of all attribute definitions for a particular <a>TypedLinkFacet</a>.
-        /// For more information, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-        /// link</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
+        /// Links</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTypedLinkFacetAttributes service method.</param>
         /// 
@@ -3387,7 +3396,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -3427,8 +3436,8 @@ namespace Amazon.CloudDirectory
 
         /// <summary>
         /// Returns a paginated list of <code>TypedLink</code> facet names for a particular schema.
-        /// For more information, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-        /// link</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
+        /// Links</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTypedLinkFacetNames service method.</param>
         /// 
@@ -3449,7 +3458,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -3493,7 +3502,7 @@ namespace Amazon.CloudDirectory
         /// and if some objects don't have the policies attached, it returns the <code>ObjectIdentifier</code>
         /// for such objects. If policies are present, it returns <code>ObjectIdentifier</code>,
         /// <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the root
-        /// from the target object are ignored. For more information, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.
+        /// from the target object are ignored. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the LookupPolicy service method.</param>
         /// 
@@ -3517,7 +3526,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -3574,7 +3583,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -3617,7 +3626,7 @@ namespace Amazon.CloudDirectory
 
         /// <summary>
         /// Allows a schema to be updated using JSON upload. Only available for development schemas.
-        /// See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_schemas.html#jsonformat">JSON
+        /// See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_jsonformat.html#schemas_json">JSON
         /// Schema Format</a> for more information.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutSchemaFromJson service method.</param>
@@ -3642,7 +3651,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided <code>SchemaDoc</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.RetryableConflictException">
@@ -3703,7 +3712,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -3765,7 +3774,7 @@ namespace Amazon.CloudDirectory
         /// limit is 50 tags per resource.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -3827,7 +3836,7 @@ namespace Amazon.CloudDirectory
         /// limit is 50 tags per resource.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -3911,7 +3920,7 @@ namespace Amazon.CloudDirectory
         /// Occurs when any of the rule parameter keys or values are invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -3976,7 +3985,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -4040,7 +4049,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LinkNameAlreadyInUseException">
@@ -4101,7 +4110,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -4140,8 +4149,8 @@ namespace Amazon.CloudDirectory
 
 
         /// <summary>
-        /// Updates a <a>TypedLinkFacet</a>. For more information, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-        /// link</a>.
+        /// Updates a <a>TypedLinkFacet</a>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
+        /// Links</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTypedLinkFacet service method.</param>
         /// 
@@ -4172,7 +4181,7 @@ namespace Amazon.CloudDirectory
         /// Occurs when any of the rule parameter keys or values are invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
@@ -4238,9 +4247,9 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidAttachmentException">
-        /// Indicates that an attempt to attach an object with the same link name or to apply
-        /// a schema with the same name has occurred. Rename the link or the schema and then try
-        /// again.
+        /// Indicates that an attempt to make an attachment was invalid. For example, attaching
+        /// two nodes with a link type that is not applicable to the nodes or attempting to apply
+        /// a schema to a directory a second time.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
@@ -4305,12 +4314,12 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidAttachmentException">
-        /// Indicates that an attempt to attach an object with the same link name or to apply
-        /// a schema with the same name has occurred. Rename the link or the schema and then try
-        /// again.
+        /// Indicates that an attempt to make an attachment was invalid. For example, attaching
+        /// two nodes with a link type that is not applicable to the nodes or attempting to apply
+        /// a schema to a directory a second time.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
-        /// Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
         /// for more information.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">

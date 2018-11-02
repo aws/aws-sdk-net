@@ -35,6 +35,7 @@ namespace Amazon.CloudDirectory.Model
     {
         private ConsistencyLevel _consistencyLevel;
         private string _directoryArn;
+        private bool? _includeAllLinksToEachParent;
         private int? _maxResults;
         private string _nextToken;
         private ObjectReference _objectReference;
@@ -75,6 +76,25 @@ namespace Amazon.CloudDirectory.Model
         internal bool IsSetDirectoryArn()
         {
             return this._directoryArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeAllLinksToEachParent. 
+        /// <para>
+        /// When set to True, returns all <a>ListObjectParentsResponse$ParentLinks</a>. There
+        /// could be multiple links between a parent-child pair.
+        /// </para>
+        /// </summary>
+        public bool IncludeAllLinksToEachParent
+        {
+            get { return this._includeAllLinksToEachParent.GetValueOrDefault(); }
+            set { this._includeAllLinksToEachParent = value; }
+        }
+
+        // Check to see if IncludeAllLinksToEachParent property is set
+        internal bool IsSetIncludeAllLinksToEachParent()
+        {
+            return this._includeAllLinksToEachParent.HasValue; 
         }
 
         /// <summary>
