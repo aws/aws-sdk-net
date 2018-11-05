@@ -146,7 +146,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// Gets and sets the property LicenseBody. 
         /// <para>
         /// A local text file that contains the license of the app that matches the spdxLicenseID
-        /// value of your application. The file is of the format file://&lt;path>/&lt;filename>.
+        /// value of your application. The file has the format file://&lt;path>/&lt;filename>.
         /// </para>
         /// 
         /// <para>
@@ -154,8 +154,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// </para>
         /// 
         /// <para>
-        /// Note: Only one of licenseBody and licenseUrl can be specified, otherwise an error
-        /// will result.
+        /// You can specify only one of licenseBody and licenseUrl; otherwise, an error results.
         /// </para>
         /// </summary>
         public string LicenseBody
@@ -182,8 +181,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// </para>
         /// 
         /// <para>
-        /// Note: Only one of licenseBody and licenseUrl can be specified, otherwise an error
-        /// will result.
+        /// You can specify only one of licenseBody and licenseUrl; otherwise, an error results.
         /// </para>
         /// </summary>
         public string LicenseUrl
@@ -228,7 +226,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// Gets and sets the property ReadmeBody. 
         /// <para>
         /// A local text readme file in Markdown language that contains a more detailed description
-        /// of the application and how it works. The file is of the format file://&lt;path>/&lt;filename>.
+        /// of the application and how it works. The file has the format file://&lt;path>/&lt;filename>.
         /// </para>
         /// 
         /// <para>
@@ -236,8 +234,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// </para>
         /// 
         /// <para>
-        /// Note: Only one of readmeBody and readmeUrl can be specified, otherwise an error will
-        /// result.
+        /// You can specify only one of readmeBody and readmeUrl; otherwise, an error results.
         /// </para>
         /// </summary>
         public string ReadmeBody
@@ -264,8 +261,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// </para>
         /// 
         /// <para>
-        /// Note: Only one of readmeBody and readmeUrl can be specified, otherwise an error will
-        /// result.
+        /// You can specify only one of readmeBody and readmeUrl; otherwise, an error results.
         /// </para>
         /// </summary>
         public string ReadmeUrl
@@ -341,13 +337,12 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// <summary>
         /// Gets and sets the property TemplateBody. 
         /// <para>
-        /// The local raw packaged AWS SAM template file of your application. The file is of the
+        /// The local raw packaged AWS SAM template file of your application. The file has the
         /// format file://&lt;path>/&lt;filename>.
         /// </para>
         /// 
         /// <para>
-        /// Note: Only one of templateBody and templateUrl can be specified, otherwise an error
-        /// will result.
+        /// You can specify only one of templateBody and templateUrl; otherwise an error results.
         /// </para>
         /// </summary>
         public string TemplateBody
@@ -365,12 +360,11 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// <summary>
         /// Gets and sets the property TemplateUrl. 
         /// <para>
-        /// A link to the S3 object cotaining the packaged AWS SAM template of your application.
+        /// A link to the S3 object containing the packaged AWS SAM template of your application.
         /// </para>
         /// 
         /// <para>
-        /// Note: Only one of templateBody and templateUrl can be specified, otherwise an error
-        /// will result.
+        /// You can specify only one of templateBody and templateUrl; otherwise an error results.
         /// </para>
         /// </summary>
         public string TemplateUrl

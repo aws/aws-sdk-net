@@ -28,15 +28,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServerlessApplicationRepository.Model
 {
     /// <summary>
-    /// Container for the parameters to the PutApplicationPolicy operation.
-    /// Sets the permission policy for an application. For the list of actions supported for
-    /// this operation, see <a href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application
-    ///  Permissions</a> .
+    /// Container for the parameters to the GetCloudFormationTemplate operation.
+    /// Gets the specified AWS CloudFormation template.
     /// </summary>
-    public partial class PutApplicationPolicyRequest : AmazonServerlessApplicationRepositoryRequest
+    public partial class GetCloudFormationTemplateRequest : AmazonServerlessApplicationRepositoryRequest
     {
         private string _applicationId;
-        private List<ApplicationPolicyStatement> _statements = new List<ApplicationPolicyStatement>();
+        private string _templateId;
 
         /// <summary>
         /// Gets and sets the property ApplicationId. 
@@ -57,21 +55,25 @@ namespace Amazon.ServerlessApplicationRepository.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Statements. 
+        /// Gets and sets the property TemplateId. 
         /// <para>
-        /// An array of policy statements applied to the application.
+        /// The UUID returned by CreateCloudFormationTemplate.
+        /// </para>
+        /// 
+        /// <para>
+        /// Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}
         /// </para>
         /// </summary>
-        public List<ApplicationPolicyStatement> Statements
+        public string TemplateId
         {
-            get { return this._statements; }
-            set { this._statements = value; }
+            get { return this._templateId; }
+            set { this._templateId = value; }
         }
 
-        // Check to see if Statements property is set
-        internal bool IsSetStatements()
+        // Check to see if TemplateId property is set
+        internal bool IsSetTemplateId()
         {
-            return this._statements != null && this._statements.Count > 0; 
+            return this._templateId != null;
         }
 
     }

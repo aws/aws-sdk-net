@@ -379,6 +379,38 @@ namespace Amazon.ServerlessApplicationRepository
 
         #endregion
         
+        #region  CreateCloudFormationTemplate
+
+        internal virtual CreateCloudFormationTemplateResponse CreateCloudFormationTemplate(CreateCloudFormationTemplateRequest request)
+        {
+            var marshaller = CreateCloudFormationTemplateRequestMarshaller.Instance;
+            var unmarshaller = CreateCloudFormationTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCloudFormationTemplateRequest,CreateCloudFormationTemplateResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateCloudFormationTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateCloudFormationTemplate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/CreateCloudFormationTemplate">REST API Reference for CreateCloudFormationTemplate Operation</seealso>
+        public virtual Task<CreateCloudFormationTemplateResponse> CreateCloudFormationTemplateAsync(CreateCloudFormationTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateCloudFormationTemplateRequestMarshaller.Instance;
+            var unmarshaller = CreateCloudFormationTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateCloudFormationTemplateRequest,CreateCloudFormationTemplateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteApplication
 
         internal virtual DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest request)
@@ -470,6 +502,38 @@ namespace Amazon.ServerlessApplicationRepository
             var unmarshaller = GetApplicationPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetApplicationPolicyRequest,GetApplicationPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetCloudFormationTemplate
+
+        internal virtual GetCloudFormationTemplateResponse GetCloudFormationTemplate(GetCloudFormationTemplateRequest request)
+        {
+            var marshaller = GetCloudFormationTemplateRequestMarshaller.Instance;
+            var unmarshaller = GetCloudFormationTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<GetCloudFormationTemplateRequest,GetCloudFormationTemplateResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCloudFormationTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCloudFormationTemplate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/GetCloudFormationTemplate">REST API Reference for GetCloudFormationTemplate Operation</seealso>
+        public virtual Task<GetCloudFormationTemplateResponse> GetCloudFormationTemplateAsync(GetCloudFormationTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetCloudFormationTemplateRequestMarshaller.Instance;
+            var unmarshaller = GetCloudFormationTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCloudFormationTemplateRequest,GetCloudFormationTemplateResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

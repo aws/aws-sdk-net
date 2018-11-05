@@ -23,4 +23,116 @@ using Amazon.Runtime;
 
 namespace Amazon.ServerlessApplicationRepository
 {
+
+    /// <summary>
+    /// Constants used for properties of type Capability.
+    /// </summary>
+    public class Capability : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CAPABILITY_AUTO_EXPAND for Capability
+        /// </summary>
+        public static readonly Capability CAPABILITY_AUTO_EXPAND = new Capability("CAPABILITY_AUTO_EXPAND");
+        /// <summary>
+        /// Constant CAPABILITY_IAM for Capability
+        /// </summary>
+        public static readonly Capability CAPABILITY_IAM = new Capability("CAPABILITY_IAM");
+        /// <summary>
+        /// Constant CAPABILITY_NAMED_IAM for Capability
+        /// </summary>
+        public static readonly Capability CAPABILITY_NAMED_IAM = new Capability("CAPABILITY_NAMED_IAM");
+        /// <summary>
+        /// Constant CAPABILITY_RESOURCE_POLICY for Capability
+        /// </summary>
+        public static readonly Capability CAPABILITY_RESOURCE_POLICY = new Capability("CAPABILITY_RESOURCE_POLICY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Capability(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Capability FindValue(string value)
+        {
+            return FindValue<Capability>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Capability(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Status.
+    /// </summary>
+    public class Status : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for Status
+        /// </summary>
+        public static readonly Status ACTIVE = new Status("ACTIVE");
+        /// <summary>
+        /// Constant EXPIRED for Status
+        /// </summary>
+        public static readonly Status EXPIRED = new Status("EXPIRED");
+        /// <summary>
+        /// Constant PREPARING for Status
+        /// </summary>
+        public static readonly Status PREPARING = new Status("PREPARING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Status(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Status FindValue(string value)
+        {
+            return FindValue<Status>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Status(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
 }

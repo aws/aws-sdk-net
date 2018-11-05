@@ -34,9 +34,18 @@ namespace Amazon.ServerlessApplicationRepository.Model
     public partial class CreateCloudFormationChangeSetRequest : AmazonServerlessApplicationRepositoryRequest
     {
         private string _applicationId;
+        private List<string> _capabilities = new List<string>();
+        private string _changeSetName;
+        private string _clientToken;
+        private string _description;
+        private List<string> _notificationArns = new List<string>();
         private List<ParameterValue> _parameterOverrides = new List<ParameterValue>();
+        private List<string> _resourceTypes = new List<string>();
+        private RollbackConfiguration _rollbackConfiguration;
         private string _semanticVersion;
         private string _stackName;
+        private List<Tag> _tags = new List<Tag>();
+        private string _templateId;
 
         /// <summary>
         /// Gets and sets the property ApplicationId. 
@@ -57,6 +66,141 @@ namespace Amazon.ServerlessApplicationRepository.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Capabilities. 
+        /// <para>
+        /// A list of values that you must specify before you can deploy certain applications.
+        /// Some applications might include resources that can affect permissions in your AWS
+        /// account, for example, by creating new AWS Identity and Access Management (IAM) users.
+        /// For those applications, you must explicitly acknowledge their capabilities by specifying
+        /// this parameter.
+        /// </para>
+        /// 
+        /// <para>
+        /// The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, and CAPABILITY_RESOURCE_POLICY.
+        /// </para>
+        /// 
+        /// <para>
+        /// The following resources require you to specify CAPABILITY_IAM or CAPABILITY_NAMED_IAM:
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>,
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+        /// and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>.
+        /// If the application contains IAM resources, you can specify either CAPABILITY_IAM or
+        /// CAPABILITY_NAMED_IAM. If the application contains IAM resources with custom names,
+        /// you must specify CAPABILITY_NAMED_IAM.
+        /// </para>
+        /// 
+        /// <para>
+        /// The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>,
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html">AWS::S3::BucketPolicy</a>,
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>,
+        /// and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS:TopicPolicy</a>.
+        /// </para>
+        /// 
+        /// <para>
+        /// If your application template contains any of the above resources, we recommend that
+        /// you review all permissions associated with the application before deploying. If you
+        /// don't specify this parameter for an application that requires capabilities, the call
+        /// will fail.
+        /// </para>
+        /// 
+        /// <para>
+        /// Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM | CAPABILITY_RESOURCE_POLICY
+        /// </para>
+        /// </summary>
+        public List<string> Capabilities
+        {
+            get { return this._capabilities; }
+            set { this._capabilities = value; }
+        }
+
+        // Check to see if Capabilities property is set
+        internal bool IsSetCapabilities()
+        {
+            return this._capabilities != null && this._capabilities.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChangeSetName. 
+        /// <para>
+        /// This property corresponds to the parameter of the same name for the <i>AWS CloudFormation
+        /// <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
+        /// CreateChangeSet</a></i> API.
+        /// </para>
+        /// </summary>
+        public string ChangeSetName
+        {
+            get { return this._changeSetName; }
+            set { this._changeSetName = value; }
+        }
+
+        // Check to see if ChangeSetName property is set
+        internal bool IsSetChangeSetName()
+        {
+            return this._changeSetName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// This property corresponds to the parameter of the same name for the <i>AWS CloudFormation
+        /// <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
+        /// CreateChangeSet</a></i> API.
+        /// </para>
+        /// </summary>
+        public string ClientToken
+        {
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
+        }
+
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
+        {
+            return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// This property corresponds to the parameter of the same name for the <i>AWS CloudFormation
+        /// <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
+        /// CreateChangeSet</a></i> API.
+        /// </para>
+        /// </summary>
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NotificationArns. 
+        /// <para>
+        /// This property corresponds to the parameter of the same name for the <i>AWS CloudFormation
+        /// <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
+        /// CreateChangeSet</a></i> API.
+        /// </para>
+        /// </summary>
+        public List<string> NotificationArns
+        {
+            get { return this._notificationArns; }
+            set { this._notificationArns = value; }
+        }
+
+        // Check to see if NotificationArns property is set
+        internal bool IsSetNotificationArns()
+        {
+            return this._notificationArns != null && this._notificationArns.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ParameterOverrides. 
         /// <para>
         /// A list of parameter values for the parameters of the application.
@@ -72,6 +216,46 @@ namespace Amazon.ServerlessApplicationRepository.Model
         internal bool IsSetParameterOverrides()
         {
             return this._parameterOverrides != null && this._parameterOverrides.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceTypes. 
+        /// <para>
+        /// This property corresponds to the parameter of the same name for the <i>AWS CloudFormation
+        /// <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
+        /// CreateChangeSet</a></i> API.
+        /// </para>
+        /// </summary>
+        public List<string> ResourceTypes
+        {
+            get { return this._resourceTypes; }
+            set { this._resourceTypes = value; }
+        }
+
+        // Check to see if ResourceTypes property is set
+        internal bool IsSetResourceTypes()
+        {
+            return this._resourceTypes != null && this._resourceTypes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RollbackConfiguration. 
+        /// <para>
+        /// This property corresponds to the parameter of the same name for the <i>AWS CloudFormation
+        /// <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
+        /// CreateChangeSet</a></i> API.
+        /// </para>
+        /// </summary>
+        public RollbackConfiguration RollbackConfiguration
+        {
+            get { return this._rollbackConfiguration; }
+            set { this._rollbackConfiguration = value; }
+        }
+
+        // Check to see if RollbackConfiguration property is set
+        internal bool IsSetRollbackConfiguration()
+        {
+            return this._rollbackConfiguration != null;
         }
 
         /// <summary>
@@ -99,18 +283,9 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// <summary>
         /// Gets and sets the property StackName. 
         /// <para>
-        /// The name or the unique ID of the stack for which you are creating a change set. AWS
-        /// CloudFormation generates the change set by comparing this stack's information with
-        /// the information that you submit, such as a modified template or different parameter
-        /// input values. 
-        /// </para>
-        /// 
-        /// <para>
-        /// Constraints: Minimum length of 1.
-        /// </para>
-        /// 
-        /// <para>
-        /// Pattern: ([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)
+        /// This property corresponds to the parameter of the same name for the <i>AWS CloudFormation
+        /// <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
+        /// CreateChangeSet</a></i> API.
         /// </para>
         /// </summary>
         public string StackName
@@ -123,6 +298,48 @@ namespace Amazon.ServerlessApplicationRepository.Model
         internal bool IsSetStackName()
         {
             return this._stackName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// This property corresponds to the parameter of the same name for the <i>AWS CloudFormation
+        /// <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
+        /// CreateChangeSet</a></i> API.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TemplateId. 
+        /// <para>
+        /// The UUID returned by CreateCloudFormationTemplate.
+        /// </para>
+        /// 
+        /// <para>
+        /// Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}
+        /// </para>
+        /// </summary>
+        public string TemplateId
+        {
+            get { return this._templateId; }
+            set { this._templateId = value; }
+        }
+
+        // Check to see if TemplateId property is set
+        internal bool IsSetTemplateId()
+        {
+            return this._templateId != null;
         }
 
     }

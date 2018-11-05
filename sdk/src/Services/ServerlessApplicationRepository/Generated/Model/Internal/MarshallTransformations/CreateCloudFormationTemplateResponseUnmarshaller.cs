@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateApplicationVersion operation
+    /// Response Unmarshaller for CreateCloudFormationTemplate operation
     /// </summary>  
-    public class CreateApplicationVersionResponseUnmarshaller : JsonResponseUnmarshaller
+    public class CreateCloudFormationTemplateResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateApplicationVersionResponse response = new CreateApplicationVersionResponse();
+            CreateCloudFormationTemplateResponse response = new CreateCloudFormationTemplateResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -63,22 +63,10 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
                     response.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("parameterDefinitions", targetDepth))
+                if (context.TestExpression("expirationTime", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ParameterDefinition, ParameterDefinitionUnmarshaller>(ParameterDefinitionUnmarshaller.Instance);
-                    response.ParameterDefinitions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("requiredCapabilities", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.RequiredCapabilities = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("resourcesSupported", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.ResourcesSupported = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ExpirationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("semanticVersion", targetDepth))
@@ -87,10 +75,16 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
                     response.SemanticVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("sourceCodeUrl", targetDepth))
+                if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.SourceCodeUrl = unmarshaller.Unmarshall(context);
+                    response.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("templateId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.TemplateId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("templateUrl", targetDepth))
@@ -118,10 +112,6 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
             {
                 return new BadRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
-            {
-                return new ConflictException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ForbiddenException"))
             {
                 return new ForbiddenException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -130,6 +120,10 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
             {
                 return new InternalServerErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("NotFoundException"))
+            {
+                return new NotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyRequestsException"))
             {
                 return new TooManyRequestsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -137,9 +131,9 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
             return new AmazonServerlessApplicationRepositoryException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static CreateApplicationVersionResponseUnmarshaller _instance = new CreateApplicationVersionResponseUnmarshaller();        
+        private static CreateCloudFormationTemplateResponseUnmarshaller _instance = new CreateCloudFormationTemplateResponseUnmarshaller();        
 
-        internal static CreateApplicationVersionResponseUnmarshaller GetInstance()
+        internal static CreateCloudFormationTemplateResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -147,7 +141,7 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateApplicationVersionResponseUnmarshaller Instance
+        public static CreateCloudFormationTemplateResponseUnmarshaller Instance
         {
             get
             {

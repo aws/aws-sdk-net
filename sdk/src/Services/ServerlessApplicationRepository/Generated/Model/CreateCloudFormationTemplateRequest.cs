@@ -28,15 +28,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServerlessApplicationRepository.Model
 {
     /// <summary>
-    /// Container for the parameters to the PutApplicationPolicy operation.
-    /// Sets the permission policy for an application. For the list of actions supported for
-    /// this operation, see <a href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application
-    ///  Permissions</a> .
+    /// Container for the parameters to the CreateCloudFormationTemplate operation.
+    /// Creates an AWS CloudFormation template.
     /// </summary>
-    public partial class PutApplicationPolicyRequest : AmazonServerlessApplicationRepositoryRequest
+    public partial class CreateCloudFormationTemplateRequest : AmazonServerlessApplicationRepositoryRequest
     {
         private string _applicationId;
-        private List<ApplicationPolicyStatement> _statements = new List<ApplicationPolicyStatement>();
+        private string _semanticVersion;
 
         /// <summary>
         /// Gets and sets the property ApplicationId. 
@@ -57,21 +55,25 @@ namespace Amazon.ServerlessApplicationRepository.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Statements. 
+        /// Gets and sets the property SemanticVersion. 
         /// <para>
-        /// An array of policy statements applied to the application.
+        /// The semantic version of the application:
+        /// </para>
+        /// 
+        /// <para>
+        ///  <a href="https://semver.org/">https://semver.org/</a> 
         /// </para>
         /// </summary>
-        public List<ApplicationPolicyStatement> Statements
+        public string SemanticVersion
         {
-            get { return this._statements; }
-            set { this._statements = value; }
+            get { return this._semanticVersion; }
+            set { this._semanticVersion = value; }
         }
 
-        // Check to see if Statements property is set
-        internal bool IsSetStatements()
+        // Check to see if SemanticVersion property is set
+        internal bool IsSetSemanticVersion()
         {
-            return this._statements != null && this._statements.Count > 0; 
+            return this._semanticVersion != null;
         }
 
     }

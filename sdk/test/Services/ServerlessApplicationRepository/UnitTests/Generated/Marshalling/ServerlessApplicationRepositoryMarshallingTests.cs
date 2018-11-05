@@ -140,6 +140,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("ServerlessApplicationRepository")]
+        public void CreateCloudFormationTemplateMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateCloudFormationTemplate");
+
+            var request = InstantiateClassGenerator.Execute<CreateCloudFormationTemplateRequest>();
+            var marshaller = new CreateCloudFormationTemplateRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("CreateCloudFormationTemplate", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CreateCloudFormationTemplateResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as CreateCloudFormationTemplateResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ServerlessApplicationRepository")]
         public void DeleteApplicationMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteApplication");
@@ -213,6 +245,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = GetApplicationPolicyResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as GetApplicationPolicyResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ServerlessApplicationRepository")]
+        public void GetCloudFormationTemplateMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetCloudFormationTemplate");
+
+            var request = InstantiateClassGenerator.Execute<GetCloudFormationTemplateRequest>();
+            var marshaller = new GetCloudFormationTemplateRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetCloudFormationTemplate", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetCloudFormationTemplateResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetCloudFormationTemplateResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 

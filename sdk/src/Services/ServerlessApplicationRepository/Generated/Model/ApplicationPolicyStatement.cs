@@ -39,8 +39,8 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// <summary>
         /// Gets and sets the property Actions. 
         /// <para>
-        /// See <a href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application
-        /// Permissions</a> for the list of supported actions.
+        /// For the list of actions supported for this operation, see <a href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application
+        ///  Permissions</a>.
         /// </para>
         /// </summary>
         public List<string> Actions
