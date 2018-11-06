@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "This is the first release of the Amazon Pinpoint Email API. You can use this API to configure and send transactional email from your Amazon Pinpoint account to specific email addresses. Unlike campaign-based email that you send from Amazon Pinpoint, you don't have to create segments and campaigns in order to send transactional email. ",
+  "generate-client-constructors": true
+}
