@@ -145,10 +145,20 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, the
-        /// path to the ZIP file that contains the source code (for example, <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>)
+        /// For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, one
+        /// of the following. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  The path to the ZIP file that contains the source code (for example, <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>).
+        /// 
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        ///  The path to the folder that contains the source code (for example, <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
+        /// 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         /// For source code in a GitHub repository, the HTTPS clone URL to the repository that
         /// contains the source and the build spec. Also, you must connect your AWS account to
@@ -192,8 +202,9 @@ namespace Amazon.CodeBuild.Model
         /// Gets and sets the property ReportBuildStatus. 
         /// <para>
         ///  Set to true to report the status of a build's start and finish to your source provider.
-        /// This option is only valid when your source provider is GitHub. If this is set and
-        /// you use a different source provider, an invalidInputException is thrown. 
+        /// This option is only valid when your source provider is GitHub, GitHub Enterprise,
+        /// or Bitbucket. If this is set and you use a different source provider, an invalidInputException
+        /// is thrown. 
         /// </para>
         /// </summary>
         public bool ReportBuildStatus

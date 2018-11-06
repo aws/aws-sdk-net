@@ -37,8 +37,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Webhook. 
         /// <para>
-        /// Information about a webhook in GitHub that connects repository events to a build project
-        /// in AWS CodeBuild.
+        /// Information about a webhook that connects repository events to a build project in
+        /// AWS CodeBuild.
         /// </para>
         /// </summary>
         public Webhook Webhook

@@ -29,7 +29,14 @@ namespace Amazon.CodeBuild.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateWebhook operation.
-    /// Updates the webhook associated with an AWS CodeBuild build project.
+    /// Updates the webhook associated with an AWS CodeBuild build project. 
+    /// 
+    ///  <note> 
+    /// <para>
+    ///  If you use Bitbucket for your repository then <code>rotateSecret</code> is ignored.
+    /// 
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class UpdateWebhookRequest : AmazonCodeBuildRequest
     {
@@ -42,8 +49,8 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         /// A regular expression used to determine which branches in a repository are built when
         /// a webhook is triggered. If the name of a branch matches the regular expression, then
-        /// it is built. If it doesn't match, then it is not. If branchFilter is empty, then all
-        /// branches are built.
+        /// it is built. If it doesn't match, then it is not. If <code>branchFilter</code> is
+        /// empty, then all branches are built.
         /// </para>
         /// </summary>
         public string BranchFilter
@@ -79,8 +86,9 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property RotateSecret. 
         /// <para>
-        ///  A boolean value that specifies whether the associated repository's secret token should
-        /// be updated. 
+        ///  A boolean value that specifies whether the associated GitHub repository's secret
+        /// token should be updated. If you use Bitbucket for your repository then <code>rotateSecret</code>
+        /// is ignored. 
         /// </para>
         /// </summary>
         public bool RotateSecret

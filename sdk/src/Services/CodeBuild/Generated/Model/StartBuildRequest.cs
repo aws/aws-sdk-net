@@ -329,8 +329,8 @@ namespace Amazon.CodeBuild.Model
         /// Gets and sets the property ReportBuildStatusOverride. 
         /// <para>
         ///  Set to true to report to your source provider the status of a build's start and completion.
-        /// If you use this option with a source provider other than GitHub, an invalidInputException
-        /// is thrown. 
+        /// If you use this option with a source provider other than GitHub, GitHub Enterprise,
+        /// or Bitbucket, an invalidInputException is thrown. 
         /// </para>
         /// </summary>
         public bool ReportBuildStatusOverride

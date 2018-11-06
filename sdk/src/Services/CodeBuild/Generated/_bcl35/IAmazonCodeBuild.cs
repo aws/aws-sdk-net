@@ -65,8 +65,9 @@ namespace Amazon.CodeBuild
     ///  </li> <li> 
     /// <para>
     ///  <code>CreateWebhook</code>: For an existing AWS CodeBuild build project that has
-    /// its source code stored in a GitHub repository, enables AWS CodeBuild to begin automatically
-    /// rebuilding the source code every time a code change is pushed to the repository.
+    /// its source code stored in a GitHub or Bitbucket repository, enables AWS CodeBuild
+    /// to begin automatically rebuilding the source code every time a code change is pushed
+    /// to the repository.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -79,8 +80,9 @@ namespace Amazon.CodeBuild
     ///  </li> <li> 
     /// <para>
     ///  <code>DeleteWebhook</code>: For an existing AWS CodeBuild build project that has
-    /// its source code stored in a GitHub repository, stops AWS CodeBuild from automatically
-    /// rebuilding the source code every time a code change is pushed to the repository.
+    /// its source code stored in a GitHub or Bitbucket repository, stops AWS CodeBuild from
+    /// automatically rebuilding the source code every time a code change is pushed to the
+    /// repository.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -308,8 +310,8 @@ namespace Amazon.CodeBuild
 
         /// <summary>
         /// For an existing AWS CodeBuild build project that has its source code stored in a GitHub
-        /// repository, enables AWS CodeBuild to begin automatically rebuilding the source code
-        /// every time a code change is pushed to the repository.
+        /// or Bitbucket repository, enables AWS CodeBuild to begin automatically rebuilding the
+        /// source code every time a code change is pushed to the repository.
         /// 
         ///  <important> 
         /// <para>
@@ -419,8 +421,8 @@ namespace Amazon.CodeBuild
 
         /// <summary>
         /// For an existing AWS CodeBuild build project that has its source code stored in a GitHub
-        /// repository, stops AWS CodeBuild from automatically rebuilding the source code every
-        /// time a code change is pushed to the repository.
+        /// or Bitbucket repository, stops AWS CodeBuild from automatically rebuilding the source
+        /// code every time a code change is pushed to the repository.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteWebhook service method.</param>
         /// 
@@ -830,7 +832,14 @@ namespace Amazon.CodeBuild
 
 
         /// <summary>
-        /// Updates the webhook associated with an AWS CodeBuild build project.
+        /// Updates the webhook associated with an AWS CodeBuild build project. 
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  If you use Bitbucket for your repository then <code>rotateSecret</code> is ignored.
+        /// 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateWebhook service method.</param>
         /// 

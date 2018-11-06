@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
-    /// Information about a webhook in GitHub that connects repository events to a build project
-    /// in AWS CodeBuild.
+    /// Information about a webhook that connects repository events to a build project in
+    /// AWS CodeBuild.
     /// </summary>
     public partial class Webhook
     {
@@ -44,8 +44,8 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         /// A regular expression used to determine which branches in a repository are built when
         /// a webhook is triggered. If the name of a branch matches the regular expression, then
-        /// it is built. If it doesn't match, then it is not. If branchFilter is empty, then all
-        /// branches are built.
+        /// it is built. If it doesn't match, then it is not. If <code>branchFilter</code> is
+        /// empty, then all branches are built.
         /// </para>
         /// </summary>
         public string BranchFilter
@@ -101,6 +101,11 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         ///  The secret token of the associated repository. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  A Bitbucket webhook does not support <code>secret</code>. 
+        /// </para>
+        ///  </note>
         /// </summary>
         public string Secret
         {

@@ -67,8 +67,9 @@ namespace Amazon.CodeBuild
     ///  </li> <li> 
     /// <para>
     ///  <code>CreateWebhook</code>: For an existing AWS CodeBuild build project that has
-    /// its source code stored in a GitHub repository, enables AWS CodeBuild to begin automatically
-    /// rebuilding the source code every time a code change is pushed to the repository.
+    /// its source code stored in a GitHub or Bitbucket repository, enables AWS CodeBuild
+    /// to begin automatically rebuilding the source code every time a code change is pushed
+    /// to the repository.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -81,8 +82,9 @@ namespace Amazon.CodeBuild
     ///  </li> <li> 
     /// <para>
     ///  <code>DeleteWebhook</code>: For an existing AWS CodeBuild build project that has
-    /// its source code stored in a GitHub repository, stops AWS CodeBuild from automatically
-    /// rebuilding the source code every time a code change is pushed to the repository.
+    /// its source code stored in a GitHub or Bitbucket repository, stops AWS CodeBuild from
+    /// automatically rebuilding the source code every time a code change is pushed to the
+    /// repository.
     /// </para>
     ///  </li> <li> 
     /// <para>

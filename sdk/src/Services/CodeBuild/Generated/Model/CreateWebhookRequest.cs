@@ -30,8 +30,8 @@ namespace Amazon.CodeBuild.Model
     /// <summary>
     /// Container for the parameters to the CreateWebhook operation.
     /// For an existing AWS CodeBuild build project that has its source code stored in a GitHub
-    /// repository, enables AWS CodeBuild to begin automatically rebuilding the source code
-    /// every time a code change is pushed to the repository.
+    /// or Bitbucket repository, enables AWS CodeBuild to begin automatically rebuilding the
+    /// source code every time a code change is pushed to the repository.
     /// 
     ///  <important> 
     /// <para>
@@ -56,8 +56,8 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         /// A regular expression used to determine which branches in a repository are built when
         /// a webhook is triggered. If the name of a branch matches the regular expression, then
-        /// it is built. If it doesn't match, then it is not. If branchFilter is empty, then all
-        /// branches are built.
+        /// it is built. If it doesn't match, then it is not. If <code>branchFilter</code> is
+        /// empty, then all branches are built.
         /// </para>
         /// </summary>
         public string BranchFilter
