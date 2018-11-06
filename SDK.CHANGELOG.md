@@ -1,3 +1,9 @@
+### 3.3.401.0 (2018-11-05 23:11 UTC)
+* EKS (3.3.2.0)
+	* Adds waiters for ClusterActive and ClusterDeleted
+* ServerlessApplicationRepository (3.3.3.0)
+	* New AWS Serverless Application Repository APIs that support creating and reading a broader set of AWS CloudFormation templates, as well as enhancements to our existing APIs.
+
 ### 3.3.400.0 (2018-11-02 20:06 UTC)
 * CloudDirectory (3.3.10.0)
 	* ListObjectParents API now supports a bool parameter IncludeAllLinksToEachParent, which if set to true, will return a ParentLinks list instead of a Parents map; BatchRead API now supports ListObjectParents operation.

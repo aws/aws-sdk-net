@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.400.0",
+    "ProductVersion" : "3.3.401.0",
     "CoreVersion"    : "3.3.29.3",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -1009,7 +1009,7 @@
             "InPreview"               : false
         },
         "ServerlessApplicationRepository" : {
-            "Version" : "3.3.2.18",
+            "Version" : "3.3.3.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.3"
@@ -1137,7 +1137,7 @@
             "InPreview"               : false
         },
         "EKS"                             : {
-            "Version" : "3.3.1.12",
+            "Version" : "3.3.2.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.3"
