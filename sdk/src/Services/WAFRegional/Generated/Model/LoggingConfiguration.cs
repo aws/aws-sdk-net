@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFRegional.Model
 {
     /// <summary>
-    /// The Amazon Kinesis Data Firehose delivery streams, <code>RedactedFields</code> information,
-    /// and the web ACL Amazon Resource Name (ARN).
+    /// The Amazon Kinesis Data Firehose, <code>RedactedFields</code> information, and the
+    /// web ACL Amazon Resource Name (ARN).
     /// </summary>
     public partial class LoggingConfiguration
     {
@@ -40,7 +40,7 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property LogDestinationConfigs. 
         /// <para>
-        /// An array of Amazon Kinesis Data Firehose delivery stream ARNs.
+        /// An array of Amazon Kinesis Data Firehose ARNs.
         /// </para>
         /// </summary>
         public List<string> LogDestinationConfigs
@@ -59,7 +59,7 @@ namespace Amazon.WAFRegional.Model
         /// Gets and sets the property RedactedFields. 
         /// <para>
         /// The parts of the request that you want redacted from the logs. For example, if you
-        /// redact the cookie field, the cookie field in the delivery stream will be <code>xxx</code>.
+        /// redact the cookie field, the cookie field in the firehose will be <code>xxx</code>.
         /// 
         /// </para>
         /// </summary>

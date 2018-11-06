@@ -7549,6 +7549,14 @@
                   "documentation": "\n\t\t       <p>The <code>ActivatedRule</code> object in an <a>UpdateWebACL</a> request specifies a <code>Rule</code> that you want to insert or delete, \n\t\t\tthe priority of the <code>Rule</code> in the <code>WebACL</code>, and the action that you want AWS WAF to take when a web request matches the <code>Rule</code> \n\t\t\t(<code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>).</p>\n\t\t       <p>To specify whether to insert or delete a <code>Rule</code>, use the <code>Action</code> parameter in the <a>WebACLUpdate</a> data type.</p>\n\t     ",
                   "shape_name": "ActivatedRule"
                 }
+              },
+              "WebACLArn": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <para>Tha Amazon Resource Name (ARN) of the web ACL.</para>\n      ",
+                "documentation": "\n         <p>Tha Amazon Resource Name (ARN) of the web ACL.</p>\n      ",
+                "shape_name": "ResourceArn",
+                "min_length": 1,
+                "max_length": 1224
               }
             },
             "zonbookDocumentation": "\n\t\t       <simpara>The <xref linkend=\"WebACL\"/> returned in the <code>CreateWebACL</code> response.</simpara>\n\t     ",
@@ -7823,6 +7831,14 @@
                   "documentation": "\n\t\t       <p>The <code>ActivatedRule</code> object in an <a>UpdateWebACL</a> request specifies a <code>Rule</code> that you want to insert or delete, \n\t\t\tthe priority of the <code>Rule</code> in the <code>WebACL</code>, and the action that you want AWS WAF to take when a web request matches the <code>Rule</code> \n\t\t\t(<code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>).</p>\n\t\t       <p>To specify whether to insert or delete a <code>Rule</code>, use the <code>Action</code> parameter in the <a>WebACLUpdate</a> data type.</p>\n\t     ",
                   "shape_name": "ActivatedRule"
                 }
+              },
+              "WebACLArn": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <para>Tha Amazon Resource Name (ARN) of the web ACL.</para>\n      ",
+                "documentation": "\n         <p>Tha Amazon Resource Name (ARN) of the web ACL.</p>\n      ",
+                "shape_name": "ResourceArn",
+                "min_length": 1,
+                "max_length": 1224
               }
             },
             "zonbookDocumentation": "\n\t\t       <simpara>Information about the <xref linkend=\"WebACL\"/> that you specified in the <code>GetWebACL</code> request. \n\t\t\tFor more information, see the following topics:</simpara>\n\t\t       <itemizedlist>\n\t\t\t         <listitem>\n               <simpara>\n                  <xref linkend=\"WebACL\"/>: Contains <code>DefaultAction</code>, <code>MetricName</code>, <code>Name</code>, an array of \n\t\t\t\t<code>Rule</code> objects, and <code>WebACLId</code>\n               </simpara>\n            </listitem>\n\t\t\t         <listitem>\n               <simpara>\n                  <code>DefaultAction</code> (Data type is <xref linkend=\"WafAction\"/>): Contains <code>Type</code>\n               </simpara>\n            </listitem>\n\t\t\t         <listitem>\n               <simpara>\n                  <code>Rules</code>: Contains an array of <code>ActivatedRule</code> objects, which contain <code>Action</code>, \n\t\t\t\t<code>Priority</code>, and <code>RuleId</code>\n               </simpara>\n            </listitem>\n\t\t\t         <listitem>\n               <simpara>\n                  <code>Action</code>: Contains <code>Type</code>\n               </simpara>\n            </listitem>\n\t\t       </itemizedlist>\n\t     ",
@@ -12190,6 +12206,16 @@
             "shape_name": "ResourceId",
             "min_length": 1,
             "max_length": 128
+          },
+          "ResourceType": {
+            "type": "string",
+            "enum": [
+              "APPLICATION_LOAD_BALANCER",
+              "API_GATEWAY"
+            ],
+            "zonbookDocumentation": "\n         <para>The type of resource to list, either and application load balancer or Amazon API Gateway.</para>\n      ",
+            "documentation": "\n         <p>The type of resource to list, either and application load balancer or Amazon API Gateway.</p>\n      ",
+            "shape_name": "ResourceType"
           }
         },
         "shape_name": "ListResourcesForWebACLRequest",
@@ -12249,6 +12275,51 @@
           "zonbookDocumentation": "\n\t\t       <simpara>The operation failed because the referenced object doesn't exist.</simpara>\n\t     ",
           "documentation": "\n\t\t       <p>The operation failed because the referenced object doesn't exist.</p>\n\t     ",
           "shape_name": "WAFNonexistentItemException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "field": {
+              "type": "string",
+              "enum": [
+                "CHANGE_ACTION",
+                "WAF_ACTION",
+                "WAF_OVERRIDE_ACTION",
+                "PREDICATE_TYPE",
+                "IPSET_TYPE",
+                "BYTE_MATCH_FIELD_TYPE",
+                "SQL_INJECTION_MATCH_FIELD_TYPE",
+                "BYTE_MATCH_TEXT_TRANSFORMATION",
+                "BYTE_MATCH_POSITIONAL_CONSTRAINT",
+                "SIZE_CONSTRAINT_COMPARISON_OPERATOR",
+                "GEO_MATCH_LOCATION_TYPE",
+                "GEO_MATCH_LOCATION_VALUE",
+                "RATE_KEY",
+                "RULE_TYPE",
+                "NEXT_MARKER"
+              ],
+              "shape_name": "ParameterExceptionField",
+              "documentation": null
+            },
+            "parameter": {
+              "type": "string",
+              "shape_name": "ParameterExceptionParameter",
+              "documentation": null,
+              "min_length": 1
+            },
+            "reason": {
+              "type": "string",
+              "enum": [
+                "INVALID_OPTION",
+                "ILLEGAL_COMBINATION"
+              ],
+              "shape_name": "ParameterExceptionReason",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\t\t\n\t\t       <simpara>The operation failed because AWS WAF didn't recognize a parameter in the request. For example:</simpara>\n\t\t\t      <itemizedlist>\n\t\t\t\t        <listitem>\n               <simpara>You specified an invalid parameter name.</simpara>\n            </listitem>\n\t\t\t\t        <listitem>\n               <simpara>You specified an invalid value.</simpara>\n            </listitem>\n\t\t\t\t        <listitem>\n               <simpara>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>) \n\t\t\t\t\tusing an action other than <code>INSERT</code> or <code>DELETE</code>.</simpara>\n            </listitem>\n\t\t\t\t        <listitem>\n               <simpara>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> \n                  <code>Type</code> other than \n\t\t\t\t\t<code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</simpara>\n            </listitem>\n\t\t          <listitem>\n\t\t \t           <simpara>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</simpara>\n\t\t          </listitem>\n\t\t\t\t        <listitem>\n               <simpara>You tried to update a <code>WebACL</code> with a <code>WafAction</code> \n                  <code>Type</code> other than \n\t\t\t\t\t<code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</simpara>\n            </listitem>\n\t\t\t\t        <listitem>\n               <simpara>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> \n                  <code>Type</code> other than \n\t\t\t\t\tHEADER, METHOD, QUERY_STRING, URI, or BODY.</simpara>\n            </listitem>\n\t\t\t\t        <listitem>\n               <simpara>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> \n\t\t\t\t\tbut no value for <code>Data</code>.</simpara>\n            </listitem>\n\t\t\t   \t     <listitem>\n\t\t\t   \t\t       <simpara>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</simpara>\n\t\t\t   \t     </listitem>\n\t\t\t      </itemizedlist>\n\t     ",
+          "documentation": "\t\t\n\t\t       <p>The operation failed because AWS WAF didn't recognize a parameter in the request. For example:</p>\n\t\t\t      <ul>\n            <li>\n               <p>You specified an invalid parameter name.</p>\n            </li>\n            <li>\n               <p>You specified an invalid value.</p>\n            </li>\n            <li>\n               <p>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>) \n\t\t\t\t\tusing an action other than <code>INSERT</code> or <code>DELETE</code>.</p>\n            </li>\n            <li>\n               <p>You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> \n                  <code>Type</code> other than \n\t\t\t\t\t<code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>\n            </li>\n            <li>\n\t\t \t           <p>You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.</p>\n\t\t          </li>\n            <li>\n               <p>You tried to update a <code>WebACL</code> with a <code>WafAction</code> \n                  <code>Type</code> other than \n\t\t\t\t\t<code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>\n            </li>\n            <li>\n               <p>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> \n                  <code>Type</code> other than \n\t\t\t\t\tHEADER, METHOD, QUERY_STRING, URI, or BODY.</p>\n            </li>\n            <li>\n               <p>You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> \n\t\t\t\t\tbut no value for <code>Data</code>.</p>\n            </li>\n            <li>\n\t\t\t   \t\t       <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL cannot be associated.</p>\n\t\t\t   \t     </li>\n         </ul>\n\t     ",
+          "shape_name": "WAFInvalidParameterException"
         }
       ],
       "documentation": "\n         <p>Returns an array of resources associated with the specified web ACL.</p>\n      "
@@ -12272,8 +12343,8 @@
               },
               "LogDestinationConfigs": {
                 "type": "list",
-                "zonbookDocumentation": "\n         <para>An array of Amazon Kinesis Data Firehose delivery stream ARNs.</para>\n      ",
-                "documentation": "\n         <p>An array of Amazon Kinesis Data Firehose delivery stream ARNs.</p>\n      ",
+                "zonbookDocumentation": "\n         <para>An array of Amazon Kinesis Data Firehose ARNs.</para>\n      ",
+                "documentation": "\n         <p>An array of Amazon Kinesis Data Firehose ARNs.</p>\n      ",
                 "required": true,
                 "shape_name": "LogDestinationConfigs",
                 "min_length": 1,
@@ -12288,8 +12359,8 @@
               },
               "RedactedFields": {
                 "type": "list",
-                "zonbookDocumentation": "\n         <para>The parts of the request that you want redacted from the logs. For\n         example,\n         if you redact the cookie field, the cookie field in the delivery stream will be\n            <code>xxx</code>. </para>\n      ",
-                "documentation": "\n         <p>The parts of the request that you want redacted from the logs. For\n         example,\n         if you redact the cookie field, the cookie field in the delivery stream will be\n            <code>xxx</code>. </p>\n      ",
+                "zonbookDocumentation": "\n         <para>The parts of the request that you want redacted from the logs. For\n         example,\n         if you redact the cookie field, the cookie field in the firehose will be\n            <code>xxx</code>. </para>\n      ",
+                "documentation": "\n         <p>The parts of the request that you want redacted from the logs. For\n         example,\n         if you redact the cookie field, the cookie field in the firehose will be\n            <code>xxx</code>. </p>\n      ",
                 "shape_name": "RedactedFields",
                 "members": {
                   "type": "structure",
@@ -12323,8 +12394,8 @@
                 }
               }
             },
-            "zonbookDocumentation": "\n         <para>The Amazon Kinesis Data Firehose delivery streams that contains the inspected traffic\n         information, the redacted fields details, and the Amazon Resource Name (ARN) of the web ACL\n         to monitor.</para>\n      ",
-            "documentation": "\n         <p>The Amazon Kinesis Data Firehose delivery streams that contains the inspected traffic\n         information, the redacted fields details, and the Amazon Resource Name (ARN) of the web ACL\n         to monitor.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The Amazon Kinesis Data Firehose that contains the inspected traffic\n         information, the redacted fields details, and the Amazon Resource Name (ARN) of the web ACL\n         to monitor.</para>\n      ",
+            "documentation": "\n         <p>The Amazon Kinesis Data Firehose that contains the inspected traffic\n         information, the redacted fields details, and the Amazon Resource Name (ARN) of the web ACL\n         to monitor.</p>\n      ",
             "required": true,
             "shape_name": "LoggingConfiguration"
           }
@@ -12349,8 +12420,8 @@
               },
               "LogDestinationConfigs": {
                 "type": "list",
-                "zonbookDocumentation": "\n         <para>An array of Amazon Kinesis Data Firehose delivery stream ARNs.</para>\n      ",
-                "documentation": "\n         <p>An array of Amazon Kinesis Data Firehose delivery stream ARNs.</p>\n      ",
+                "zonbookDocumentation": "\n         <para>An array of Amazon Kinesis Data Firehose ARNs.</para>\n      ",
+                "documentation": "\n         <p>An array of Amazon Kinesis Data Firehose ARNs.</p>\n      ",
                 "required": true,
                 "shape_name": "LogDestinationConfigs",
                 "min_length": 1,
@@ -12365,8 +12436,8 @@
               },
               "RedactedFields": {
                 "type": "list",
-                "zonbookDocumentation": "\n         <para>The parts of the request that you want redacted from the logs. For\n         example,\n         if you redact the cookie field, the cookie field in the delivery stream will be\n            <code>xxx</code>. </para>\n      ",
-                "documentation": "\n         <p>The parts of the request that you want redacted from the logs. For\n         example,\n         if you redact the cookie field, the cookie field in the delivery stream will be\n            <code>xxx</code>. </p>\n      ",
+                "zonbookDocumentation": "\n         <para>The parts of the request that you want redacted from the logs. For\n         example,\n         if you redact the cookie field, the cookie field in the firehose will be\n            <code>xxx</code>. </para>\n      ",
+                "documentation": "\n         <p>The parts of the request that you want redacted from the logs. For\n         example,\n         if you redact the cookie field, the cookie field in the firehose will be\n            <code>xxx</code>. </p>\n      ",
                 "shape_name": "RedactedFields",
                 "members": {
                   "type": "structure",
@@ -12447,9 +12518,22 @@
           "zonbookDocumentation": "\n\t\t       <simpara>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</simpara>\n\t     ",
           "documentation": "\n\t\t       <p>The operation failed because you tried to create, update, or delete an object by using a change token that has already been used.</p>\n\t     ",
           "shape_name": "WAFStaleDataException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "shape_name": "errorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>AWS WAF is not able to access the service linked role. This can be caused by a previous <code>PutLoggingConfiguration</code> request, which can lock the service linked role for about 20 seconds. Please try your request again. The service linked role can also be locked by a previous <code>DeleteServiceLinkedRole</code> request, which can lock the role for 15 minutes or more. If you recently made a <code>DeleteServiceLinkedRole</code>, wait at least 15 minutes and try the request again. If you receive this same exception again, you will have to wait additional time until the role is unlocked.</para>\n      ",
+          "documentation": "\n         <p>AWS WAF is not able to access the service linked role. This can be caused by a previous <code>PutLoggingConfiguration</code> request, which can lock the service linked role for about 20 seconds. Please try your request again. The service linked role can also be locked by a previous <code>DeleteServiceLinkedRole</code> request, which can lock the role for 15 minutes or more. If you recently made a <code>DeleteServiceLinkedRole</code>, wait at least 15 minutes and try the request again. If you receive this same exception again, you will have to wait additional time until the role is unlocked.</p>\n      ",
+          "shape_name": "WAFServiceLinkedRoleErrorException"
         }
       ],
-      "documentation": "\n         <p>Associates a <a>LoggingConfiguration</a> with a specified web ACL.</p>\n\t        <p>You can access information about all traffic that AWS WAF inspects using the following steps:</p>\n\t        <ol>\n            <li>\n               <p>Create an Amazon Kinesis Data Firehose delivery stream. For more information, see <a href=\"https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html\">Creating an Amazon Kinesis Data Firehose Delivery Stream</a>. \n\t  \n\t   </p>\n            </li>\n            <li>\n               <p>Associate that delivery stream to your web ACL using a <code>PutLoggingConfiguration</code> request.</p>\n            </li>\n         </ol>\n\t  \n         <p>When you successfully enable logging using a <code>PutLoggingConfiguration</code> request, AWS WAF will create a service linked role with the necessary permissions to write logs to the Amazon Kinesis Data Firehose delivery stream.  For more information, see <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/logging.html\">Logging Web ACL Traffic Information</a> in the <i>AWS WAF Developer Guide</i>.</p>\n      "
+      "documentation": "\n         <p>Associates a <a>LoggingConfiguration</a> with a specified web ACL.</p>\n\t        <p>You can access information about all traffic that AWS WAF inspects using the following steps:</p>\n\t        <ol>\n            <li>\n               <p>Create an Amazon Kinesis Data Firehose  . \n\t  \n\t   </p>\n            </li>\n            <li>\n               <p>Associate that firehose to your web ACL using a <code>PutLoggingConfiguration</code> request.</p>\n            </li>\n         </ol>\n\t  \n         <p>When you successfully enable logging using a <code>PutLoggingConfiguration</code> request, AWS WAF will create a service linked role with the necessary permissions to write logs to the Amazon Kinesis Data Firehose.  For more information, see <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/logging.html\">Logging Web ACL Traffic Information</a> in the <i>AWS WAF Developer Guide</i>.</p>\n      "
     },
     "GetLoggingConfiguration": {
       "name": "GetLoggingConfiguration",
@@ -12486,8 +12570,8 @@
               },
               "LogDestinationConfigs": {
                 "type": "list",
-                "zonbookDocumentation": "\n         <para>An array of Amazon Kinesis Data Firehose delivery stream ARNs.</para>\n      ",
-                "documentation": "\n         <p>An array of Amazon Kinesis Data Firehose delivery stream ARNs.</p>\n      ",
+                "zonbookDocumentation": "\n         <para>An array of Amazon Kinesis Data Firehose ARNs.</para>\n      ",
+                "documentation": "\n         <p>An array of Amazon Kinesis Data Firehose ARNs.</p>\n      ",
                 "required": true,
                 "shape_name": "LogDestinationConfigs",
                 "min_length": 1,
@@ -12502,8 +12586,8 @@
               },
               "RedactedFields": {
                 "type": "list",
-                "zonbookDocumentation": "\n         <para>The parts of the request that you want redacted from the logs. For\n         example,\n         if you redact the cookie field, the cookie field in the delivery stream will be\n            <code>xxx</code>. </para>\n      ",
-                "documentation": "\n         <p>The parts of the request that you want redacted from the logs. For\n         example,\n         if you redact the cookie field, the cookie field in the delivery stream will be\n            <code>xxx</code>. </p>\n      ",
+                "zonbookDocumentation": "\n         <para>The parts of the request that you want redacted from the logs. For\n         example,\n         if you redact the cookie field, the cookie field in the firehose will be\n            <code>xxx</code>. </para>\n      ",
+                "documentation": "\n         <p>The parts of the request that you want redacted from the logs. For\n         example,\n         if you redact the cookie field, the cookie field in the firehose will be\n            <code>xxx</code>. </p>\n      ",
                 "shape_name": "RedactedFields",
                 "members": {
                   "type": "structure",
@@ -12621,8 +12705,8 @@
                 },
                 "LogDestinationConfigs": {
                   "type": "list",
-                  "zonbookDocumentation": "\n         <para>An array of Amazon Kinesis Data Firehose delivery stream ARNs.</para>\n      ",
-                  "documentation": "\n         <p>An array of Amazon Kinesis Data Firehose delivery stream ARNs.</p>\n      ",
+                  "zonbookDocumentation": "\n         <para>An array of Amazon Kinesis Data Firehose ARNs.</para>\n      ",
+                  "documentation": "\n         <p>An array of Amazon Kinesis Data Firehose ARNs.</p>\n      ",
                   "required": true,
                   "shape_name": "LogDestinationConfigs",
                   "min_length": 1,
@@ -12637,8 +12721,8 @@
                 },
                 "RedactedFields": {
                   "type": "list",
-                  "zonbookDocumentation": "\n         <para>The parts of the request that you want redacted from the logs. For\n         example,\n         if you redact the cookie field, the cookie field in the delivery stream will be\n            <code>xxx</code>. </para>\n      ",
-                  "documentation": "\n         <p>The parts of the request that you want redacted from the logs. For\n         example,\n         if you redact the cookie field, the cookie field in the delivery stream will be\n            <code>xxx</code>. </p>\n      ",
+                  "zonbookDocumentation": "\n         <para>The parts of the request that you want redacted from the logs. For\n         example,\n         if you redact the cookie field, the cookie field in the firehose will be\n            <code>xxx</code>. </para>\n      ",
+                  "documentation": "\n         <p>The parts of the request that you want redacted from the logs. For\n         example,\n         if you redact the cookie field, the cookie field in the firehose will be\n            <code>xxx</code>. </p>\n      ",
                   "shape_name": "RedactedFields",
                   "members": {
                     "type": "structure",
@@ -12672,8 +12756,8 @@
                   }
                 }
               },
-              "zonbookDocumentation": "\n         <para>The Amazon Kinesis Data Firehose delivery streams, <code>RedactedFields</code>\n         information, and the web ACL Amazon Resource Name (ARN).</para>\n      ",
-              "documentation": "\n         <p>The Amazon Kinesis Data Firehose delivery streams, <code>RedactedFields</code>\n         information, and the web ACL Amazon Resource Name (ARN).</p>\n      ",
+              "zonbookDocumentation": "\n         <para>The Amazon Kinesis Data Firehose, <code>RedactedFields</code>\n         information, and the web ACL Amazon Resource Name (ARN).</para>\n      ",
+              "documentation": "\n         <p>The Amazon Kinesis Data Firehose, <code>RedactedFields</code>\n         information, and the web ACL Amazon Resource Name (ARN).</p>\n      ",
               "shape_name": "LoggingConfiguration"
             }
           },

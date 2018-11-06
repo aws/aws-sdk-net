@@ -67,6 +67,12 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetResourceType())
+                {
+                    context.Writer.WritePropertyName("ResourceType");
+                    context.Writer.Write(publicRequest.ResourceType);
+                }
+
                 if(publicRequest.IsSetWebACLId())
                 {
                     context.Writer.WritePropertyName("WebACLId");

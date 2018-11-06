@@ -80,6 +80,10 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
             {
                 return new WAFInvalidAccountException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("WAFInvalidParameterException"))
+            {
+                return new WAFInvalidParameterException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("WAFNonexistentItemException"))
             {
                 return new WAFNonexistentItemException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

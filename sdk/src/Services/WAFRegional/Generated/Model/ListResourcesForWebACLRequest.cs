@@ -33,7 +33,26 @@ namespace Amazon.WAFRegional.Model
     /// </summary>
     public partial class ListResourcesForWebACLRequest : AmazonWAFRegionalRequest
     {
+        private ResourceType _resourceType;
         private string _webACLId;
+
+        /// <summary>
+        /// Gets and sets the property ResourceType. 
+        /// <para>
+        /// The type of resource to list, either and application load balancer or Amazon API Gateway.
+        /// </para>
+        /// </summary>
+        public ResourceType ResourceType
+        {
+            get { return this._resourceType; }
+            set { this._resourceType = value; }
+        }
+
+        // Check to see if ResourceType property is set
+        internal bool IsSetResourceType()
+        {
+            return this._resourceType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property WebACLId. 

@@ -88,6 +88,12 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
                     unmarshalledObject.Rules = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("WebACLArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.WebACLArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("WebACLId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

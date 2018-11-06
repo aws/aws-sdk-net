@@ -6122,6 +6122,55 @@ namespace Amazon.WAFRegional
         /// The operation failed because you tried to create, update, or delete an object by using
         /// an invalid account identifier.
         /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFInvalidParameterException">
+        /// The operation failed because AWS WAF didn't recognize a parameter in the request.
+        /// For example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an invalid parameter name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>,
+        /// or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value
+        /// other than <code>IP</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
+        /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
+        /// but no value for <code>Data</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL cannot be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
@@ -6500,21 +6549,18 @@ namespace Amazon.WAFRegional
         /// </para>
         ///  <ol> <li> 
         /// <para>
-        /// Create an Amazon Kinesis Data Firehose delivery stream. For more information, see
-        /// <a href="https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html">Creating
-        /// an Amazon Kinesis Data Firehose Delivery Stream</a>. 
+        /// Create an Amazon Kinesis Data Firehose . 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Associate that delivery stream to your web ACL using a <code>PutLoggingConfiguration</code>
+        /// Associate that firehose to your web ACL using a <code>PutLoggingConfiguration</code>
         /// request.
         /// </para>
         ///  </li> </ol> 
         /// <para>
         /// When you successfully enable logging using a <code>PutLoggingConfiguration</code>
         /// request, AWS WAF will create a service linked role with the necessary permissions
-        /// to write logs to the Amazon Kinesis Data Firehose delivery stream. For more information,
-        /// see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
+        /// to write logs to the Amazon Kinesis Data Firehose. For more information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
         /// Web ACL Traffic Information</a> in the <i>AWS WAF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -6527,6 +6573,15 @@ namespace Amazon.WAFRegional
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.WAFRegional.Model.WAFServiceLinkedRoleErrorException">
+        /// AWS WAF is not able to access the service linked role. This can be caused by a previous
+        /// <code>PutLoggingConfiguration</code> request, which can lock the service linked role
+        /// for about 20 seconds. Please try your request again. The service linked role can also
+        /// be locked by a previous <code>DeleteServiceLinkedRole</code> request, which can lock
+        /// the role for 15 minutes or more. If you recently made a <code>DeleteServiceLinkedRole</code>,
+        /// wait at least 15 minutes and try the request again. If you receive this same exception
+        /// again, you will have to wait additional time until the role is unlocked.
         /// </exception>
         /// <exception cref="Amazon.WAFRegional.Model.WAFStaleDataException">
         /// The operation failed because you tried to create, update, or delete an object by using

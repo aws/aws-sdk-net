@@ -44,6 +44,7 @@ namespace Amazon.WAFRegional.Model
         private string _metricName;
         private string _name;
         private List<ActivatedRule> _rules = new List<ActivatedRule>();
+        private string _webACLArn;
         private string _webACLId;
 
         /// <summary>
@@ -121,6 +122,24 @@ namespace Amazon.WAFRegional.Model
         internal bool IsSetRules()
         {
             return this._rules != null && this._rules.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WebACLArn. 
+        /// <para>
+        /// Tha Amazon Resource Name (ARN) of the web ACL.
+        /// </para>
+        /// </summary>
+        public string WebACLArn
+        {
+            get { return this._webACLArn; }
+            set { this._webACLArn = value; }
+        }
+
+        // Check to see if WebACLArn property is set
+        internal bool IsSetWebACLArn()
+        {
+            return this._webACLArn != null;
         }
 
         /// <summary>
