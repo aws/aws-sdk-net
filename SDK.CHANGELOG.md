@@ -1,3 +1,8 @@
+### 3.3.401.1 (2018-11-06 17:46 UTC)
+* Core 3.3.29.4
+	* Make IClientConfig.HttpClientFactory available in .NET standard SDK
+	* All services packages updated to require new Core
+
 ### 3.3.401.0 (2018-11-05 23:11 UTC)
 * EKS (3.3.2.0)
 	* Adds waiters for ClusterActive and ClusterDeleted
