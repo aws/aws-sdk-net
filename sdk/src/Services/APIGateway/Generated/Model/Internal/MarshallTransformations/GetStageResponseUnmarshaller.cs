@@ -147,6 +147,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     response.Variables = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("webAclArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.WebAclArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

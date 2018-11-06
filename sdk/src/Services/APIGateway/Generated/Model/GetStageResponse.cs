@@ -52,6 +52,7 @@ namespace Amazon.APIGateway.Model
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private bool? _tracingEnabled;
         private Dictionary<string, string> _variables = new Dictionary<string, string>();
+        private string _webAclArn;
 
         /// <summary>
         /// Gets and sets the property AccessLogSettings. 
@@ -344,6 +345,24 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetVariables()
         {
             return this._variables != null && this._variables.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WebAclArn. 
+        /// <para>
+        /// The ARN of the WebAcl associated with the <a>Stage</a>.
+        /// </para>
+        /// </summary>
+        public string WebAclArn
+        {
+            get { return this._webAclArn; }
+            set { this._webAclArn = value; }
+        }
+
+        // Check to see if WebAclArn property is set
+        internal bool IsSetWebAclArn()
+        {
+            return this._webAclArn != null;
         }
 
     }
