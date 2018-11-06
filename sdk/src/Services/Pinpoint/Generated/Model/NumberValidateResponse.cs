@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Phone Number Information response.
+    /// Phone Number Validate response.
     /// </summary>
     public partial class NumberValidateResponse
     {
@@ -175,8 +175,8 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OriginalCountryCodeIso2. The two-character ISO code for
-        /// the country or region that you included in the request body.
+        /// Gets and sets the property OriginalCountryCodeIso2. The two-character code (in ISO
+        /// 3166-1 alpha-2 format) for the country or region in the request body.
         /// </summary>
         public string OriginalCountryCodeIso2
         {

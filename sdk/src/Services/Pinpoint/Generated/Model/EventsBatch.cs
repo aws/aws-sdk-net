@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Events batch definition
+    /// A batch of PublicEndpoints and Events to process.
     /// </summary>
     public partial class EventsBatch
     {
@@ -36,7 +36,8 @@ namespace Amazon.Pinpoint.Model
         private Dictionary<string, Event> _events = new Dictionary<string, Event>();
 
         /// <summary>
-        /// Gets and sets the property Endpoint. Endpoint information
+        /// Gets and sets the property Endpoint. The PublicEndpoint attached to the EndpointId
+        /// from the request.
         /// </summary>
         public PublicEndpoint Endpoint
         {
@@ -51,7 +52,8 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Events. Events
+        /// Gets and sets the property Events. An object that contains a set of events associated
+        /// with the endpoint.
         /// </summary>
         public Dictionary<string, Event> Events
         {

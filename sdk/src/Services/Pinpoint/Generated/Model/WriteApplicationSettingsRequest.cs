@@ -69,9 +69,9 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Limits. The default campaign limits for the app. These
-        /// limits apply to each campaign for the app, unless the campaign overrides the default
-        /// with limits of its own.
+        /// Gets and sets the property Limits. The limits that apply to each campaign in the project
+        /// by default. Campaigns can also have their own limits, which override the settings
+        /// at the project level.
         /// </summary>
         public CampaignLimits Limits
         {

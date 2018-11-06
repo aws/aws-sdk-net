@@ -38,7 +38,7 @@ namespace Amazon.Pinpoint.Model
         private string _stopTimestamp;
 
         /// <summary>
-        /// Gets and sets the property Duration. Session duration in millis
+        /// Gets and sets the property Duration. The duration of the session, in milliseconds.
         /// </summary>
         public int Duration
         {

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Phone Number Information request.
+    /// Phone Number Validate request.
     /// </summary>
     public partial class NumberValidateRequest
     {

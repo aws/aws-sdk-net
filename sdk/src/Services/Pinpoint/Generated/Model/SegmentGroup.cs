@@ -57,7 +57,9 @@ namespace Amazon.Pinpoint.Model
         /// on. The source segment defines the starting "universe" of endpoints. When you add
         /// dimensions to the segment, it filters the source segment based on the dimensions that
         /// you specify. You can specify more than one dimensional segment. You can only specify
-        /// one imported segment.
+        /// one imported segment.NOTE: If you specify an imported segment for this attribute,
+        /// the segment size estimate that appears in the Amazon Pinpoint console shows the size
+        /// of the imported segment, without any filters applied to it.
         /// </summary>
         public List<SegmentReference> SourceSegments
         {

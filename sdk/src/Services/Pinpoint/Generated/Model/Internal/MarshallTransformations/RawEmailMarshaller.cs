@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// EmailChannelRequest Marshaller
+    /// RawEmail Marshaller
     /// </summary>       
-    public class EmailChannelRequestMarshaller : IRequestMarshaller<EmailChannelRequest, JsonMarshallerContext> 
+    public class RawEmailMarshaller : IRequestMarshaller<RawEmail, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,36 +43,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(EmailChannelRequest requestObject, JsonMarshallerContext context)
+        public void Marshall(RawEmail requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetConfigurationSet())
+            if(requestObject.IsSetData())
             {
-                context.Writer.WritePropertyName("ConfigurationSet");
-                context.Writer.Write(requestObject.ConfigurationSet);
-            }
-
-            if(requestObject.IsSetEnabled())
-            {
-                context.Writer.WritePropertyName("Enabled");
-                context.Writer.Write(requestObject.Enabled);
-            }
-
-            if(requestObject.IsSetFromAddress())
-            {
-                context.Writer.WritePropertyName("FromAddress");
-                context.Writer.Write(requestObject.FromAddress);
-            }
-
-            if(requestObject.IsSetIdentity())
-            {
-                context.Writer.WritePropertyName("Identity");
-                context.Writer.Write(requestObject.Identity);
-            }
-
-            if(requestObject.IsSetRoleArn())
-            {
-                context.Writer.WritePropertyName("RoleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WritePropertyName("Data");
+                context.Writer.Write(StringUtils.FromMemoryStream(requestObject.Data));
             }
 
         }
@@ -80,7 +56,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static EmailChannelRequestMarshaller Instance = new EmailChannelRequestMarshaller();
+        public readonly static RawEmailMarshaller Instance = new RawEmailMarshaller();
 
     }
 }

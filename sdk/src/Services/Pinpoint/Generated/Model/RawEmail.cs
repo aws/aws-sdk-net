@@ -28,29 +28,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Custom messages associated with events.
+    /// An email represented as a raw MIME message.
     /// </summary>
-    public partial class EventsResponse
+    public partial class RawEmail
     {
-        private Dictionary<string, ItemResponse> _results = new Dictionary<string, ItemResponse>();
+        private MemoryStream _data;
 
         /// <summary>
-        /// Gets and sets the property Results. A map that contains a multipart response for each
-        /// endpoint. Each item in this object uses the endpoint ID as the key, and the item response
-        /// as the value.If no item response exists, the value can also be one of the following:
-        /// 202 (if the request was processed successfully) or 400 (if the payload was invalid,
-        /// or required fields were missing).
+        /// Gets and sets the property Data. The raw data of the email.
         /// </summary>
-        public Dictionary<string, ItemResponse> Results
+        public MemoryStream Data
         {
-            get { return this._results; }
-            set { this._results = value; }
+            get { return this._data; }
+            set { this._data = value; }
         }
 
-        // Check to see if Results property is set
-        internal bool IsSetResults()
+        // Check to see if Data property is set
+        internal bool IsSetData()
         {
-            return this._results != null && this._results.Count > 0; 
+            return this._data != null;
         }
 
     }

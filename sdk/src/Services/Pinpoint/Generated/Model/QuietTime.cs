@@ -36,7 +36,10 @@ namespace Amazon.Pinpoint.Model
         private string _start;
 
         /// <summary>
-        /// Gets and sets the property End. The default end time for quiet time in ISO 8601 format.
+        /// Gets and sets the property End. The time at which quiet time should end. The value
+        /// that you specify has to be in HH:mm format, where HH is the hour in 24-hour format
+        /// (with a leading zero, if applicable), and mm is the minutes. For example, use 02:30
+        /// to represent 2:30 AM, or 14:30 to represent 2:30 PM.
         /// </summary>
         public string End
         {
@@ -51,8 +54,10 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Start. The default start time for quiet time in ISO 8601
-        /// format.
+        /// Gets and sets the property Start. The time at which quiet time should begin. The value
+        /// that you specify has to be in HH:mm format, where HH is the hour in 24-hour format
+        /// (with a leading zero, if applicable), and mm is the minutes. For example, use 02:30
+        /// to represent 2:30 AM, or 14:30 to represent 2:30 PM.
         /// </summary>
         public string Start
         {

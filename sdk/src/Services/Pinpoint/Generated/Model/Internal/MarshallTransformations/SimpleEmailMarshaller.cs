@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// EmailChannelRequest Marshaller
+    /// SimpleEmail Marshaller
     /// </summary>       
-    public class EmailChannelRequestMarshaller : IRequestMarshaller<EmailChannelRequest, JsonMarshallerContext> 
+    public class SimpleEmailMarshaller : IRequestMarshaller<SimpleEmail, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,36 +43,39 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(EmailChannelRequest requestObject, JsonMarshallerContext context)
+        public void Marshall(SimpleEmail requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetConfigurationSet())
+            if(requestObject.IsSetHtmlPart())
             {
-                context.Writer.WritePropertyName("ConfigurationSet");
-                context.Writer.Write(requestObject.ConfigurationSet);
+                context.Writer.WritePropertyName("HtmlPart");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SimpleEmailPartMarshaller.Instance;
+                marshaller.Marshall(requestObject.HtmlPart, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetEnabled())
+            if(requestObject.IsSetSubject())
             {
-                context.Writer.WritePropertyName("Enabled");
-                context.Writer.Write(requestObject.Enabled);
+                context.Writer.WritePropertyName("Subject");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SimpleEmailPartMarshaller.Instance;
+                marshaller.Marshall(requestObject.Subject, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetFromAddress())
+            if(requestObject.IsSetTextPart())
             {
-                context.Writer.WritePropertyName("FromAddress");
-                context.Writer.Write(requestObject.FromAddress);
-            }
+                context.Writer.WritePropertyName("TextPart");
+                context.Writer.WriteObjectStart();
 
-            if(requestObject.IsSetIdentity())
-            {
-                context.Writer.WritePropertyName("Identity");
-                context.Writer.Write(requestObject.Identity);
-            }
+                var marshaller = SimpleEmailPartMarshaller.Instance;
+                marshaller.Marshall(requestObject.TextPart, context);
 
-            if(requestObject.IsSetRoleArn())
-            {
-                context.Writer.WritePropertyName("RoleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WriteObjectEnd();
             }
 
         }
@@ -80,7 +83,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static EmailChannelRequestMarshaller Instance = new EmailChannelRequestMarshaller();
+        public readonly static SimpleEmailMarshaller Instance = new SimpleEmailMarshaller();
 
     }
 }

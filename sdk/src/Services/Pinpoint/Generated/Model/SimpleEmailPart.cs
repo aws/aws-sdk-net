@@ -28,44 +28,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// A complex object that holds the status code and message as a result of processing
-    /// an endpoint.
+    /// Textual email data, plus an optional character set specification.
     /// </summary>
-    public partial class EndpointItemResponse
+    public partial class SimpleEmailPart
     {
-        private string _message;
-        private int? _statusCode;
+        private string _charset;
+        private string _data;
 
         /// <summary>
-        /// Gets and sets the property Message. A custom message associated with the registration
-        /// of an endpoint when issuing a response.
+        /// Gets and sets the property Charset. The character set of the content.
         /// </summary>
-        public string Message
+        public string Charset
         {
-            get { return this._message; }
-            set { this._message = value; }
+            get { return this._charset; }
+            set { this._charset = value; }
         }
 
-        // Check to see if Message property is set
-        internal bool IsSetMessage()
+        // Check to see if Charset property is set
+        internal bool IsSetCharset()
         {
-            return this._message != null;
+            return this._charset != null;
         }
 
         /// <summary>
-        /// Gets and sets the property StatusCode. The status code associated with the merging
-        /// of an endpoint when issuing a response.
+        /// Gets and sets the property Data. The textual data of the content.
         /// </summary>
-        public int StatusCode
+        public string Data
         {
-            get { return this._statusCode.GetValueOrDefault(); }
-            set { this._statusCode = value; }
+            get { return this._data; }
+            set { this._data = value; }
         }
 
-        // Check to see if StatusCode property is set
-        internal bool IsSetStatusCode()
+        // Check to see if Data property is set
+        internal bool IsSetData()
         {
-            return this._statusCode.HasValue; 
+            return this._data != null;
         }
 
     }

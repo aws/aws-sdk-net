@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// The endpoint and events combined response definition
+    /// The response that's provided after registering the endpoint.
     /// </summary>
     public partial class ItemResponse
     {
@@ -36,8 +36,8 @@ namespace Amazon.Pinpoint.Model
         private Dictionary<string, EventItemResponse> _eventsItemResponse = new Dictionary<string, EventItemResponse>();
 
         /// <summary>
-        /// Gets and sets the property EndpointItemResponse. Endpoint item response after endpoint
-        /// registration
+        /// Gets and sets the property EndpointItemResponse. The response received after the endpoint
+        /// was accepted.
         /// </summary>
         public EndpointItemResponse EndpointItemResponse
         {
@@ -52,9 +52,9 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EventsItemResponse. Events item response is a multipart
-        /// response object per event Id, with eventId as the key and EventItemResponse object
-        /// as the value
+        /// Gets and sets the property EventsItemResponse. A multipart response object that contains
+        /// a key and value for each event ID in the request. In each object, the event ID is
+        /// the key, and an EventItemResponse object is the value.
         /// </summary>
         public Dictionary<string, EventItemResponse> EventsItemResponse
         {

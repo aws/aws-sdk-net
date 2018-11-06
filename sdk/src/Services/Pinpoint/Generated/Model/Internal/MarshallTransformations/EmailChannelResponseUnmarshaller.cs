@@ -70,6 +70,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                     unmarshalledObject.ApplicationId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ConfigurationSet", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ConfigurationSet = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreationDate", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

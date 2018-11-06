@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// The responses that are returned after you record an event.
+    /// A complex object that holds the status code and message as a result of processing
+    /// an event.
     /// </summary>
     public partial class EventItemResponse
     {
@@ -52,8 +53,9 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StatusCode. The status code to respond with for a particular
-        /// event id
+        /// Gets and sets the property StatusCode. The status returned in the response as a result
+        /// of processing the event.Possible values: 400 (for invalid events) and 202 (for events
+        /// that were accepted).
         /// </summary>
         public int StatusCode
         {

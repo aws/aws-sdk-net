@@ -87,7 +87,7 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Metrics. Event metrics
+        /// Gets and sets the property Metrics. Custom metrics related to the event.
         /// </summary>
         public Dictionary<string, double> Metrics
         {
@@ -102,7 +102,8 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Session. The session
+        /// Gets and sets the property Session. Information about the session in which the event
+        /// occurred.
         /// </summary>
         public Session Session
         {

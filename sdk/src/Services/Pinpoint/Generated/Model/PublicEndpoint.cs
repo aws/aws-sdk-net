@@ -46,7 +46,7 @@ namespace Amazon.Pinpoint.Model
 
         /// <summary>
         /// Gets and sets the property Address. The unique identifier for the recipient. For example,
-        /// an address could be a device token or an endpoint ID.
+        /// an address could be a device token, email address, or mobile phone number.
         /// </summary>
         public string Address
         {
@@ -109,7 +109,7 @@ namespace Amazon.Pinpoint.Model
 
         /// <summary>
         /// Gets and sets the property EffectiveDate. The date and time when the endpoint was
-        /// last updated.
+        /// last updated, in  ISO 8601 format.
         /// </summary>
         public string EffectiveDate
         {

@@ -36,8 +36,9 @@ namespace Amazon.Pinpoint.Model
         private double? _value;
 
         /// <summary>
-        /// Gets and sets the property ComparisonOperator. GREATER_THAN | LESS_THAN | GREATER_THAN_OR_EQUAL
-        /// | LESS_THAN_OR_EQUAL | EQUAL
+        /// Gets and sets the property ComparisonOperator. The operator that you're using to compare
+        /// metric values. Possible values: GREATER_THAN, LESS_THAN, GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL,
+        /// or EQUAL
         /// </summary>
         public string ComparisonOperator
         {

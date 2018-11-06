@@ -32,10 +32,27 @@ namespace Amazon.Pinpoint.Model
     /// </summary>
     public partial class EmailChannelRequest
     {
+        private string _configurationSet;
         private bool? _enabled;
         private string _fromAddress;
         private string _identity;
         private string _roleArn;
+
+        /// <summary>
+        /// Gets and sets the property ConfigurationSet. The configuration set that you want to
+        /// use when you send email using the Pinpoint Email API.
+        /// </summary>
+        public string ConfigurationSet
+        {
+            get { return this._configurationSet; }
+            set { this._configurationSet = value; }
+        }
+
+        // Check to see if ConfigurationSet property is set
+        internal bool IsSetConfigurationSet()
+        {
+            return this._configurationSet != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Enabled. If the channel is enabled for sending messages.

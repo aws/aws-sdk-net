@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Campaign Limits are used to limit the number of messages that can be sent to a user.
+    /// Campaign Limits are used to limit the number of messages that can be sent to a single
+    /// endpoint.
     /// </summary>
     public partial class CampaignLimits
     {
@@ -38,8 +39,8 @@ namespace Amazon.Pinpoint.Model
         private int? _total;
 
         /// <summary>
-        /// Gets and sets the property Daily. The maximum number of messages that the campaign
-        /// can send daily.
+        /// Gets and sets the property Daily. The maximum number of messages that each campaign
+        /// can send to a single endpoint in a 24-hour period.
         /// </summary>
         public int Daily
         {
@@ -87,8 +88,8 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Total. The maximum total number of messages that the campaign
-        /// can send.
+        /// Gets and sets the property Total. The maximum number of messages that an individual
+        /// campaign can send to a single endpoint over the course of the campaign.
         /// </summary>
         public int Total
         {

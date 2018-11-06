@@ -33,6 +33,7 @@ namespace Amazon.Pinpoint.Model
     public partial class EmailChannelResponse
     {
         private string _applicationId;
+        private string _configurationSet;
         private string _creationDate;
         private bool? _enabled;
         private string _fromAddress;
@@ -61,6 +62,22 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetApplicationId()
         {
             return this._applicationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConfigurationSet. The configuration set that you want to
+        /// use when you send email using the Pinpoint Email API.
+        /// </summary>
+        public string ConfigurationSet
+        {
+            get { return this._configurationSet; }
+            set { this._configurationSet = value; }
+        }
+
+        // Check to see if ConfigurationSet property is set
+        internal bool IsSetConfigurationSet()
+        {
+            return this._configurationSet != null;
         }
 
         /// <summary>

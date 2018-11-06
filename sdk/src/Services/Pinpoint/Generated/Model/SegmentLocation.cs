@@ -36,8 +36,7 @@ namespace Amazon.Pinpoint.Model
         private GPSPointDimension _gpsPoint;
 
         /// <summary>
-        /// Gets and sets the property Country. The country filter according to ISO 3166-1 Alpha-2
-        /// codes.
+        /// Gets and sets the property Country. The country or region, in ISO 3166-1 alpha-2 format.
         /// </summary>
         public SetDimension Country
         {

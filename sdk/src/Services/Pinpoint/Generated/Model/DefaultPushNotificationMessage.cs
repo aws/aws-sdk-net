@@ -94,8 +94,8 @@ namespace Amazon.Pinpoint.Model
 
         /// <summary>
         /// Gets and sets the property SilentPush. Indicates if the message should display on
-        /// the users device. Silent pushes can be used for Remote Configuration and Phone Home
-        /// use cases.
+        /// the recipient's device. You can use silent pushes for remote configuration or to deliver
+        /// messages to in-app notification centers.
         /// </summary>
         public bool SilentPush
         {
