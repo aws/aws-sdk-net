@@ -1,3 +1,22 @@
+### 3.3.402.0 (2018-11-06 23:16 UTC)
+* APIGateway (3.3.23.0)
+	* AWS WAF integration with APIGW. Changes for adding webAclArn as a part of  Stage output. When the user calls a get-stage or get-stages, webAclArn will also be returned as a part of the output.
+* CodeBuild (3.3.17.10)
+	* Documentation updates for codebuild
+* EC2 (3.3.69.0)
+	* You can now launch the new Amazon EC2 memory optimized R5a and general purpose M5a instances families that feature AMD EPYC processors.
+* Pinpoint (3.3.10.0)
+	* This update adds the ability to send transactional email by using the SendMessage API. Transactional emails are emails that you send directly to specific email addresses. Unlike campaign-based email that you send from Amazon Pinpoint, you don't have to create segments and campaigns in order to send transactional email.
+* PinpointEmail (3.3.0.0)
+	* This is the first release of the Amazon Pinpoint Email API. You can use this API to configure and send transactional email from your Amazon Pinpoint account to specific email addresses. Unlike campaign-based email that you send from Amazon Pinpoint, you don't have to create segments and campaigns in order to send transactional email. 
+* WAFRegional (3.3.6.0)
+	* You can now use AWS WAF to configure protections for your Amazon API Gateway APIs.  This will enable you to block (or count) undesired traffic to your APIs based on the different AWS WAF rules and conditions you create. For more information about AWS WAF, see the AWS WAF Developer Guide.
+* Core 3.3.29.5
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.401.1 (2018-11-06 17:46 UTC)
 * Core 3.3.29.4
 	* Make IClientConfig.HttpClientFactory available in .NET standard SDK

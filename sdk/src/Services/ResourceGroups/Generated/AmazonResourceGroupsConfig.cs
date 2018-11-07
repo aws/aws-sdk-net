@@ -32,7 +32,7 @@ namespace Amazon.ResourceGroups
     public partial class AmazonResourceGroupsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.3.2.8");
+            InternalSDKUtils.BuildUserAgentString("3.3.2.9");
 
         private string _userAgent = UserAgentString;
 

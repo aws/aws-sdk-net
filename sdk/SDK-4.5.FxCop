@@ -131,6 +131,7 @@
       <Directory>$(ProjectDir)/src/Services/organizations/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/pi/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/pinpoint/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/pinpointemail/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/polly/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/pricing/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/rds/bin/Release/net45/</Directory>
@@ -279,6 +280,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Organizations.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.PI.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Pinpoint.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.PinpointEmail.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Polly.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Pricing.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.RDS.dll" Analyze="True" AnalyzeAllChildren="True" />

@@ -32,7 +32,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
     public partial class AmazonAWSMarketplaceCommerceAnalyticsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.3.3.43");
+            InternalSDKUtils.BuildUserAgentString("3.3.3.44");
 
         private string _userAgent = UserAgentString;
 
