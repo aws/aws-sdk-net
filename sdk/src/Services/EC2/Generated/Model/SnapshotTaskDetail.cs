@@ -34,7 +34,9 @@ namespace Amazon.EC2.Model
     {
         private string _description;
         private double? _diskImageSize;
+        private bool? _encrypted;
         private string _format;
+        private string _kmsKeyId;
         private string _progress;
         private string _snapshotId;
         private string _status;
@@ -79,6 +81,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Encrypted. 
+        /// <para>
+        /// Indicates whether the snapshot is encrypted.
+        /// </para>
+        /// </summary>
+        public bool Encrypted
+        {
+            get { return this._encrypted.GetValueOrDefault(); }
+            set { this._encrypted = value; }
+        }
+
+        // Check to see if Encrypted property is set
+        internal bool IsSetEncrypted()
+        {
+            return this._encrypted.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Format. 
         /// <para>
         /// The format of the disk image from which the snapshot is created.
@@ -94,6 +114,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetFormat()
         {
             return this._format != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// The identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK)
+        /// that was used to create the encrypted snapshot.
+        /// </para>
+        /// </summary>
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
         }
 
         /// <summary>

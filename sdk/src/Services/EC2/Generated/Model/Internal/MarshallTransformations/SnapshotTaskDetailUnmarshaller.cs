@@ -66,10 +66,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.DiskImageSize = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("encrypted", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.Encrypted = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("format", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Format = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("kmsKeyId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("progress", targetDepth))

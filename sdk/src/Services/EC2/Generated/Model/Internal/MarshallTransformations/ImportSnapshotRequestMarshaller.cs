@@ -111,6 +111,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         }
                     }
                 }
+                if(publicRequest.IsSetEncrypted())
+                {
+                    request.Parameters.Add("Encrypted", StringUtils.FromBool(publicRequest.Encrypted));
+                }
+                if(publicRequest.IsSetKmsKeyId())
+                {
+                    request.Parameters.Add("KmsKeyId", StringUtils.FromString(publicRequest.KmsKeyId));
+                }
                 if(publicRequest.IsSetRoleName())
                 {
                     request.Parameters.Add("RoleName", StringUtils.FromString(publicRequest.RoleName));

@@ -34,9 +34,11 @@ namespace Amazon.EC2.Model
     {
         private string _architecture;
         private string _description;
+        private bool? _encrypted;
         private string _hypervisor;
         private string _imageId;
         private string _importTaskId;
+        private string _kmsKeyId;
         private string _licenseType;
         private string _platform;
         private string _progress;
@@ -82,6 +84,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Encrypted. 
+        /// <para>
+        /// Indicates whether the image is encrypted.
+        /// </para>
+        /// </summary>
+        public bool Encrypted
+        {
+            get { return this._encrypted.GetValueOrDefault(); }
+            set { this._encrypted = value; }
+        }
+
+        // Check to see if Encrypted property is set
+        internal bool IsSetEncrypted()
+        {
+            return this._encrypted.HasValue; 
         }
 
         /// <summary>
@@ -140,6 +160,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetImportTaskId()
         {
             return this._importTaskId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// The identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK)
+        /// that was used to create the encrypted image.
+        /// </para>
+        /// </summary>
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
         }
 
         /// <summary>

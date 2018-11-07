@@ -128,9 +128,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetEncrypted())
+                {
+                    request.Parameters.Add("Encrypted", StringUtils.FromBool(publicRequest.Encrypted));
+                }
                 if(publicRequest.IsSetHypervisor())
                 {
                     request.Parameters.Add("Hypervisor", StringUtils.FromString(publicRequest.Hypervisor));
+                }
+                if(publicRequest.IsSetKmsKeyId())
+                {
+                    request.Parameters.Add("KmsKeyId", StringUtils.FromString(publicRequest.KmsKeyId));
                 }
                 if(publicRequest.IsSetLicenseType())
                 {

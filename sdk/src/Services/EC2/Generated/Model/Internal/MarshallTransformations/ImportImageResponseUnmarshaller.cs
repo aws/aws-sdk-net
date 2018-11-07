@@ -67,6 +67,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         response.Description = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("encrypted", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        response.Encrypted = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("hypervisor", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -83,6 +89,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         response.ImportTaskId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("kmsKeyId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.KmsKeyId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("licenseType", targetDepth))

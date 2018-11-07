@@ -37,6 +37,8 @@ namespace Amazon.EC2.Model
         private string _clientToken;
         private string _description;
         private SnapshotDiskContainer _diskContainer;
+        private bool? _encrypted;
+        private string _kmsKeyId;
         private string _roleName;
 
         /// <summary>
@@ -109,6 +111,84 @@ namespace Amazon.EC2.Model
         internal bool IsSetDiskContainer()
         {
             return this._diskContainer != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Encrypted. 
+        /// <para>
+        /// Specifies whether the destination snapshot of the imported image should be encrypted.
+        /// The default CMK for EBS is used unless you specify a non-default AWS Key Management
+        /// Service (AWS KMS) CMK using <code>KmsKeyId</code>. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+        /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        public bool Encrypted
+        {
+            get { return this._encrypted.GetValueOrDefault(); }
+            set { this._encrypted = value; }
+        }
+
+        // Check to see if Encrypted property is set
+        internal bool IsSetEncrypted()
+        {
+            return this._encrypted.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK)
+        /// to use when creating the encrypted snapshot. This parameter is only required if you
+        /// want to use a non-default CMK; if this parameter is not specified, the default CMK
+        /// for EBS is used. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code>
+        /// flag must also be set. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The CMK identifier may be provided in any of the following formats: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Key ID
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Key alias, in the form <code>alias/<i>ExampleAlias</i> </code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed
+        /// by the region of the CMK, the AWS account ID of the CMK owner, the <code>key</code>
+        /// namespace, and then the CMK ID. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace,
+        /// followed by the region of the CMK, the AWS account ID of the CMK owner, the <code>alias</code>
+        /// namespace, and then the CMK alias. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// AWS parses <code>KmsKeyId</code> asynchronously, meaning that the action you call
+        /// may appear to complete even though you provided an invalid identifier. This action
+        /// will eventually report failure. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The specified CMK must exist in the region that the snapshot is being copied to. 
+        /// </para>
+        /// </summary>
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
         }
 
         /// <summary>
