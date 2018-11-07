@@ -135,6 +135,10 @@ namespace Amazon.CostExplorer
         /// </summary>
         public static readonly Dimension AZ = new Dimension("AZ");
         /// <summary>
+        /// Constant BILLING_ENTITY for Dimension
+        /// </summary>
+        public static readonly Dimension BILLING_ENTITY = new Dimension("BILLING_ENTITY");
+        /// <summary>
         /// Constant CACHE_ENGINE for Dimension
         /// </summary>
         public static readonly Dimension CACHE_ENGINE = new Dimension("CACHE_ENGINE");
@@ -186,6 +190,10 @@ namespace Amazon.CostExplorer
         /// Constant REGION for Dimension
         /// </summary>
         public static readonly Dimension REGION = new Dimension("REGION");
+        /// <summary>
+        /// Constant RESERVATION_ID for Dimension
+        /// </summary>
+        public static readonly Dimension RESERVATION_ID = new Dimension("RESERVATION_ID");
         /// <summary>
         /// Constant SCOPE for Dimension
         /// </summary>
@@ -256,6 +264,10 @@ namespace Amazon.CostExplorer
         /// Constant DAILY for Granularity
         /// </summary>
         public static readonly Granularity DAILY = new Granularity("DAILY");
+        /// <summary>
+        /// Constant HOURLY for Granularity
+        /// </summary>
+        public static readonly Granularity HOURLY = new Granularity("HOURLY");
         /// <summary>
         /// Constant MONTHLY for Granularity
         /// </summary>

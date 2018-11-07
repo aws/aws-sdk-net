@@ -6,10 +6,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CostExplorer.Model.DateInterval.End</property>
-    <pattern>\d{4}-\d{2}-\d{2}</pattern>
+    <pattern>(\d{4}-\d{2}-\d{2})(T\d{2}:\d{2}:\d{2}Z)?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CostExplorer.Model.DateInterval.Start</property>
-    <pattern>\d{4}-\d{2}-\d{2}</pattern>
+    <pattern>(\d{4}-\d{2}-\d{2})(T\d{2}:\d{2}:\d{2}Z)?</pattern>
   </property-value-rule>
 </property-value-rules>

@@ -32,6 +32,7 @@ namespace Amazon.CostExplorer.Model
     /// </summary>
     public partial class ReservationPurchaseRecommendationDetail
     {
+        private string _accountId;
         private string _averageNormalizedUnitsUsedPerHour;
         private string _averageNumberOfInstancesUsedPerHour;
         private string _averageUtilization;
@@ -50,6 +51,21 @@ namespace Amazon.CostExplorer.Model
         private string _recommendedNumberOfInstancesToPurchase;
         private string _recurringStandardMonthlyCost;
         private string _upfrontCost;
+
+        /// <summary>
+        /// Gets and sets the property AccountId.
+        /// </summary>
+        public string AccountId
+        {
+            get { return this._accountId; }
+            set { this._accountId = value; }
+        }
+
+        // Check to see if AccountId property is set
+        internal bool IsSetAccountId()
+        {
+            return this._accountId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AverageNormalizedUnitsUsedPerHour. 

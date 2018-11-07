@@ -61,6 +61,12 @@ namespace Amazon.CostExplorer.Model
         /// The metadata values that you can use to filter and group your results. You can use
         /// <code>GetDimensionValues</code> to find specific values.
         /// </para>
+        ///  
+        /// <para>
+        /// Valid values for the <code>SERVICE</code> dimension are <code>Amazon Elastic Compute
+        /// Cloud - Compute</code>, <code>Amazon Elasticsearch Service</code>, <code>Amazon ElastiCache</code>,
+        /// <code>Amazon Redshift</code>, and <code>Amazon Relational Database Service</code>.
+        /// </para>
         /// </summary>
         public List<string> Values
         {
