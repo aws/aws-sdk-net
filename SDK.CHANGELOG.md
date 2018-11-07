@@ -1,3 +1,16 @@
+### 3.3.403.0 (2018-11-07 21:35 UTC)
+* CostExplorer (3.3.7.0)
+	* Enable Payer Accounts to View Linked Account Recommendations. Payer Accounts can specify "LINKED" as scope in the request now. In the response, there is a new filed called AccountId in ReservationPurchaseRecommendationDetail for indicating which account is this recommendation detail belongs to.
+* DatabaseMigrationService (3.3.11.0)
+	* Update the DMS TestConnectionSucceeds waiter.
+* EC2 (3.3.70.0)
+	* VM Import/Export now supports generating encrypted EBS snapshots, as well as AMIs backed by encrypted EBS snapshots during the import process.
+* Core 3.3.29.6
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.402.0 (2018-11-06 23:16 UTC)
 * APIGateway (3.3.23.0)
 	* AWS WAF integration with APIGW. Changes for adding webAclArn as a part of  Stage output. When the user calls a get-stage or get-stages, webAclArn will also be returned as a part of the output.
