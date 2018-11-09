@@ -30,6 +30,16 @@ namespace Amazon.CloudWatchEvents.Model
     /// <summary>
     /// Targets are the resources to be invoked when a rule is triggered. For a complete list
     /// of services and resources that can be set as a target, see <a>PutTargets</a>.
+    /// 
+    ///  
+    /// <para>
+    /// If you are setting the event bus of another account as the target, and that account
+    /// granted permission to your account through an organization instead of directly by
+    /// the account ID, then you must specify a <code>RoleArn</code> with proper permissions
+    /// in the <code>Target</code> structure. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html">Sending
+    /// and Receiving Events Between AWS Accounts</a> in the <i>Amazon CloudWatch Events User
+    /// Guide</i>.
+    /// </para>
     /// </summary>
     public partial class Target
     {
