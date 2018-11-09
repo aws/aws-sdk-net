@@ -14,21 +14,21 @@ samples:
 publisher-url: http://aws.amazon.com/mobile/sdk/
 packages:
   android:
-  - AWSSDK.CognitoIdentity, Version=3.3.2.48
-  - AWSSDK.Core, Version=3.3.29.7
-  - AWSSDK.CognitoSync,Version=3.3.1.57
+  - AWSSDK.CognitoIdentity, Version=3.3.2.49
+  - AWSSDK.Core, Version=3.3.29.8
+  - AWSSDK.CognitoSync,Version=3.3.1.58
   ios-unified:
-  - AWSSDK.CognitoIdentity, Version=3.3.2.48
-  - AWSSDK.Core, Version=3.3.29.7
-  - AWSSDK.CognitoSync,Version=3.3.1.57
+  - AWSSDK.CognitoIdentity, Version=3.3.2.49
+  - AWSSDK.Core, Version=3.3.29.8
+  - AWSSDK.CognitoSync,Version=3.3.1.58
   winphone-8.0:
-  - AWSSDK.CognitoIdentity, Version=3.3.2.48
-  - AWSSDK.Core, Version=3.3.29.7
-  - AWSSDK.CognitoSync,Version=3.3.1.57
+  - AWSSDK.CognitoIdentity, Version=3.3.2.49
+  - AWSSDK.Core, Version=3.3.29.8
+  - AWSSDK.CognitoSync,Version=3.3.1.58
   winphone-8.1:
-  - AWSSDK.CognitoIdentity, Version=3.3.2.48
-  - AWSSDK.Core, Version=3.3.29.7
-  - AWSSDK.CognitoSync,Version=3.3.1.57
-version: 3.3.1.57
+  - AWSSDK.CognitoIdentity, Version=3.3.2.49
+  - AWSSDK.Core, Version=3.3.29.8
+  - AWSSDK.CognitoSync,Version=3.3.1.58
+version: 3.3.1.58
 is-shell: true
 no_build: true

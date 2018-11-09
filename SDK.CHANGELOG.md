@@ -1,3 +1,12 @@
+### 3.3.405.0 (2018-11-09 22:01 UTC)
+* MediaPackage (3.3.5.0)
+	* As a part of SPEKE DRM encryption, MediaPackage now supports encrypted content keys. You can enable this enhanced content protection in an OriginEndpoint's encryption settings. When this is enabled, MediaPackage indicates to the key server that it requires an encrypted response. To use this, your DRM key provider must support content key encryption. For details on this feature, see the AWS MediaPackage User Guide at https://docs.aws.amazon.com/mediapackage/latest/ug/what-is.html.
+* Core 3.3.29.8
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.404.0 (2018-11-09 02:57 UTC)
 * CloudWatchEvents (3.3.7.10)
 	* Documentation updates for events
