@@ -64,6 +64,12 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("certificateArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CertificateArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("resourceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

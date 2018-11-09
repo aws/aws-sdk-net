@@ -45,6 +45,12 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SpekeKeyProvider requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCertificateArn())
+            {
+                context.Writer.WritePropertyName("certificateArn");
+                context.Writer.Write(requestObject.CertificateArn);
+            }
+
             if(requestObject.IsSetResourceId())
             {
                 context.Writer.WritePropertyName("resourceId");
