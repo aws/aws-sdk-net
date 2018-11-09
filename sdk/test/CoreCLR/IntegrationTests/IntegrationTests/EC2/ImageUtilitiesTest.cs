@@ -31,7 +31,7 @@ namespace Amazon.DNXCore.IntegrationTests.EC2
             Assert.Equal(descriptor.NamePrefix, "Windows_Server-2016-English-Full-Base*");
 
             descriptor = await ImageUtilities.DescriptorFromKeyAsync("WINDOWS_2012_SQL_SERVER_WEB_2012", Client);
-            Assert.Equal(descriptor.NamePrefix, "Windows_Server-2012-RTM-English-64Bit-SQL_2012_SP2_Web*");
+            Assert.Equal(descriptor.NamePrefix, "Windows_Server-2012-RTM-English-64Bit-SQL_2012_SP4_Web*");
         }
     }
 }
