@@ -33,6 +33,7 @@ namespace Amazon.MediaLive.Model
     public partial class ScheduleActionStartSettings
     {
         private FixedModeScheduleActionStartSettings _fixedModeScheduleActionStartSettings;
+        private FollowModeScheduleActionStartSettings _followModeScheduleActionStartSettings;
 
         /// <summary>
         /// Gets and sets the property FixedModeScheduleActionStartSettings. Holds the start time
@@ -48,6 +49,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetFixedModeScheduleActionStartSettings()
         {
             return this._fixedModeScheduleActionStartSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FollowModeScheduleActionStartSettings. Specifies an action
+        /// to follow for scheduling this action.
+        /// </summary>
+        public FollowModeScheduleActionStartSettings FollowModeScheduleActionStartSettings
+        {
+            get { return this._followModeScheduleActionStartSettings; }
+            set { this._followModeScheduleActionStartSettings = value; }
+        }
+
+        // Check to see if FollowModeScheduleActionStartSettings property is set
+        internal bool IsSetFollowModeScheduleActionStartSettings()
+        {
+            return this._followModeScheduleActionStartSettings != null;
         }
 
     }

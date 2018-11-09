@@ -64,6 +64,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("inputSwitchSettings", targetDepth))
+                {
+                    var unmarshaller = InputSwitchScheduleActionSettingsUnmarshaller.Instance;
+                    unmarshalledObject.InputSwitchSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("scte35ReturnToNetworkSettings", targetDepth))
                 {
                     var unmarshaller = Scte35ReturnToNetworkScheduleActionSettingsUnmarshaller.Instance;

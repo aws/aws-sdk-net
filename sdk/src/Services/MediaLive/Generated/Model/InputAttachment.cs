@@ -32,8 +32,25 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class InputAttachment
     {
+        private string _inputAttachmentName;
         private string _inputId;
         private InputSettings _inputSettings;
+
+        /// <summary>
+        /// Gets and sets the property InputAttachmentName. User-specified name for the attachment.
+        /// This is required if the user wants to use this input in an input switch action.
+        /// </summary>
+        public string InputAttachmentName
+        {
+            get { return this._inputAttachmentName; }
+            set { this._inputAttachmentName = value; }
+        }
+
+        // Check to see if InputAttachmentName property is set
+        internal bool IsSetInputAttachmentName()
+        {
+            return this._inputAttachmentName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property InputId. The ID of the input

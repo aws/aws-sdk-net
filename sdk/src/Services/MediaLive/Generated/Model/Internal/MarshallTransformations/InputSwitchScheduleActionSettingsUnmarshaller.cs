@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for InputAttachment Object
+    /// Response Unmarshaller for InputSwitchScheduleActionSettings Object
     /// </summary>  
-    public class InputAttachmentUnmarshaller : IUnmarshaller<InputAttachment, XmlUnmarshallerContext>, IUnmarshaller<InputAttachment, JsonUnmarshallerContext>
+    public class InputSwitchScheduleActionSettingsUnmarshaller : IUnmarshaller<InputSwitchScheduleActionSettings, XmlUnmarshallerContext>, IUnmarshaller<InputSwitchScheduleActionSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        InputAttachment IUnmarshaller<InputAttachment, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        InputSwitchScheduleActionSettings IUnmarshaller<InputSwitchScheduleActionSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,21 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public InputAttachment Unmarshall(JsonUnmarshallerContext context)
+        public InputSwitchScheduleActionSettings Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            InputAttachment unmarshalledObject = new InputAttachment();
+            InputSwitchScheduleActionSettings unmarshalledObject = new InputSwitchScheduleActionSettings();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("inputAttachmentName", targetDepth))
+                if (context.TestExpression("inputAttachmentNameReference", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InputAttachmentName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("inputId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InputId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("inputSettings", targetDepth))
-                {
-                    var unmarshaller = InputSettingsUnmarshaller.Instance;
-                    unmarshalledObject.InputSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InputAttachmentNameReference = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +76,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         }
 
 
-        private static InputAttachmentUnmarshaller _instance = new InputAttachmentUnmarshaller();        
+        private static InputSwitchScheduleActionSettingsUnmarshaller _instance = new InputSwitchScheduleActionSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static InputAttachmentUnmarshaller Instance
+        public static InputSwitchScheduleActionSettingsUnmarshaller Instance
         {
             get
             {

@@ -32,11 +32,27 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class ScheduleActionSettings
     {
+        private InputSwitchScheduleActionSettings _inputSwitchSettings;
         private Scte35ReturnToNetworkScheduleActionSettings _scte35ReturnToNetworkSettings;
         private Scte35SpliceInsertScheduleActionSettings _scte35SpliceInsertSettings;
         private Scte35TimeSignalScheduleActionSettings _scte35TimeSignalSettings;
         private StaticImageActivateScheduleActionSettings _staticImageActivateSettings;
         private StaticImageDeactivateScheduleActionSettings _staticImageDeactivateSettings;
+
+        /// <summary>
+        /// Gets and sets the property InputSwitchSettings. Settings to switch an input
+        /// </summary>
+        public InputSwitchScheduleActionSettings InputSwitchSettings
+        {
+            get { return this._inputSwitchSettings; }
+            set { this._inputSwitchSettings = value; }
+        }
+
+        // Check to see if InputSwitchSettings property is set
+        internal bool IsSetInputSwitchSettings()
+        {
+            return this._inputSwitchSettings != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Scte35ReturnToNetworkSettings. Settings for SCTE-35 return_to_network

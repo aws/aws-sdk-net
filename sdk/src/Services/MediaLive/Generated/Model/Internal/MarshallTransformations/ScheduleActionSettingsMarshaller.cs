@@ -45,6 +45,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ScheduleActionSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetInputSwitchSettings())
+            {
+                context.Writer.WritePropertyName("inputSwitchSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = InputSwitchScheduleActionSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.InputSwitchSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetScte35ReturnToNetworkSettings())
             {
                 context.Writer.WritePropertyName("scte35ReturnToNetworkSettings");

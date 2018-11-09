@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for InputAttachment Object
+    /// Response Unmarshaller for FollowModeScheduleActionStartSettings Object
     /// </summary>  
-    public class InputAttachmentUnmarshaller : IUnmarshaller<InputAttachment, XmlUnmarshallerContext>, IUnmarshaller<InputAttachment, JsonUnmarshallerContext>
+    public class FollowModeScheduleActionStartSettingsUnmarshaller : IUnmarshaller<FollowModeScheduleActionStartSettings, XmlUnmarshallerContext>, IUnmarshaller<FollowModeScheduleActionStartSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        InputAttachment IUnmarshaller<InputAttachment, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        FollowModeScheduleActionStartSettings IUnmarshaller<FollowModeScheduleActionStartSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public InputAttachment Unmarshall(JsonUnmarshallerContext context)
+        public FollowModeScheduleActionStartSettings Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            InputAttachment unmarshalledObject = new InputAttachment();
+            FollowModeScheduleActionStartSettings unmarshalledObject = new FollowModeScheduleActionStartSettings();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("inputAttachmentName", targetDepth))
+                if (context.TestExpression("followPoint", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InputAttachmentName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FollowPoint = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("inputId", targetDepth))
+                if (context.TestExpression("referenceActionName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InputId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("inputSettings", targetDepth))
-                {
-                    var unmarshaller = InputSettingsUnmarshaller.Instance;
-                    unmarshalledObject.InputSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReferenceActionName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +82,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         }
 
 
-        private static InputAttachmentUnmarshaller _instance = new InputAttachmentUnmarshaller();        
+        private static FollowModeScheduleActionStartSettingsUnmarshaller _instance = new FollowModeScheduleActionStartSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static InputAttachmentUnmarshaller Instance
+        public static FollowModeScheduleActionStartSettingsUnmarshaller Instance
         {
             get
             {

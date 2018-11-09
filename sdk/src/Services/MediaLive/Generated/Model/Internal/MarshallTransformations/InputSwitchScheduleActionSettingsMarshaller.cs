@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ScheduleActionStartSettings Marshaller
+    /// InputSwitchScheduleActionSettings Marshaller
     /// </summary>       
-    public class ScheduleActionStartSettingsMarshaller : IRequestMarshaller<ScheduleActionStartSettings, JsonMarshallerContext> 
+    public class InputSwitchScheduleActionSettingsMarshaller : IRequestMarshaller<InputSwitchScheduleActionSettings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,28 +43,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ScheduleActionStartSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(InputSwitchScheduleActionSettings requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetFixedModeScheduleActionStartSettings())
+            if(requestObject.IsSetInputAttachmentNameReference())
             {
-                context.Writer.WritePropertyName("fixedModeScheduleActionStartSettings");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = FixedModeScheduleActionStartSettingsMarshaller.Instance;
-                marshaller.Marshall(requestObject.FixedModeScheduleActionStartSettings, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetFollowModeScheduleActionStartSettings())
-            {
-                context.Writer.WritePropertyName("followModeScheduleActionStartSettings");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = FollowModeScheduleActionStartSettingsMarshaller.Instance;
-                marshaller.Marshall(requestObject.FollowModeScheduleActionStartSettings, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("inputAttachmentNameReference");
+                context.Writer.Write(requestObject.InputAttachmentNameReference);
             }
 
         }
@@ -72,7 +56,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static ScheduleActionStartSettingsMarshaller Instance = new ScheduleActionStartSettingsMarshaller();
+        public readonly static InputSwitchScheduleActionSettingsMarshaller Instance = new InputSwitchScheduleActionSettingsMarshaller();
 
     }
 }

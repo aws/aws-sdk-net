@@ -45,6 +45,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InputAttachment requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetInputAttachmentName())
+            {
+                context.Writer.WritePropertyName("inputAttachmentName");
+                context.Writer.Write(requestObject.InputAttachmentName);
+            }
+
             if(requestObject.IsSetInputId())
             {
                 context.Writer.WritePropertyName("inputId");

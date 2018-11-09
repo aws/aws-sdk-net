@@ -3121,6 +3121,56 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type FollowPoint.
+    /// </summary>
+    public class FollowPoint : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant END for FollowPoint
+        /// </summary>
+        public static readonly FollowPoint END = new FollowPoint("END");
+        /// <summary>
+        /// Constant START for FollowPoint
+        /// </summary>
+        public static readonly FollowPoint START = new FollowPoint("START");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FollowPoint(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FollowPoint FindValue(string value)
+        {
+            return FindValue<FollowPoint>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FollowPoint(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type GlobalConfigurationInputEndAction.
     /// </summary>
     public class GlobalConfigurationInputEndAction : ConstantClass
@@ -5974,6 +6024,10 @@ namespace Amazon.MediaLive
     public class InputType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant MP4_FILE for InputType
+        /// </summary>
+        public static readonly InputType MP4_FILE = new InputType("MP4_FILE");
         /// <summary>
         /// Constant RTMP_PULL for InputType
         /// </summary>

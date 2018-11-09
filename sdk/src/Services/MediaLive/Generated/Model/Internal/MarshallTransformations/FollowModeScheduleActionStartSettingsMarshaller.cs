@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ScheduleActionStartSettings Marshaller
+    /// FollowModeScheduleActionStartSettings Marshaller
     /// </summary>       
-    public class ScheduleActionStartSettingsMarshaller : IRequestMarshaller<ScheduleActionStartSettings, JsonMarshallerContext> 
+    public class FollowModeScheduleActionStartSettingsMarshaller : IRequestMarshaller<FollowModeScheduleActionStartSettings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,28 +43,18 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ScheduleActionStartSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(FollowModeScheduleActionStartSettings requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetFixedModeScheduleActionStartSettings())
+            if(requestObject.IsSetFollowPoint())
             {
-                context.Writer.WritePropertyName("fixedModeScheduleActionStartSettings");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = FixedModeScheduleActionStartSettingsMarshaller.Instance;
-                marshaller.Marshall(requestObject.FixedModeScheduleActionStartSettings, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("followPoint");
+                context.Writer.Write(requestObject.FollowPoint);
             }
 
-            if(requestObject.IsSetFollowModeScheduleActionStartSettings())
+            if(requestObject.IsSetReferenceActionName())
             {
-                context.Writer.WritePropertyName("followModeScheduleActionStartSettings");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = FollowModeScheduleActionStartSettingsMarshaller.Instance;
-                marshaller.Marshall(requestObject.FollowModeScheduleActionStartSettings, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("referenceActionName");
+                context.Writer.Write(requestObject.ReferenceActionName);
             }
 
         }
@@ -72,7 +62,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static ScheduleActionStartSettingsMarshaller Instance = new ScheduleActionStartSettingsMarshaller();
+        public readonly static FollowModeScheduleActionStartSettingsMarshaller Instance = new FollowModeScheduleActionStartSettingsMarshaller();
 
     }
 }

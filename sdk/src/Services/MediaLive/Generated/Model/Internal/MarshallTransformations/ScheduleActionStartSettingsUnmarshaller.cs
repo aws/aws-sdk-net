@@ -70,6 +70,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.FixedModeScheduleActionStartSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("followModeScheduleActionStartSettings", targetDepth))
+                {
+                    var unmarshaller = FollowModeScheduleActionStartSettingsUnmarshaller.Instance;
+                    unmarshalledObject.FollowModeScheduleActionStartSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;
