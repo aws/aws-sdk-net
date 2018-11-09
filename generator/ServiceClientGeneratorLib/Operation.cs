@@ -1,5 +1,6 @@
 ﻿using Json.LitJson;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -721,29 +722,10 @@ namespace ServiceClientGenerator
             "sdb",
             "xray",
         };
-        private static Dictionary<string, bool> _checkedService = new Dictionary<string, bool>();
+        private static ConcurrentDictionary<string, bool> _checkedService = new ConcurrentDictionary<string, bool>();
         private static bool IsExcludedServiceId(string serviceId)
         {
-            bool excluded = false;
-
-            if (_checkedService.TryGetValue(serviceId, out excluded))
-            {
-                return excluded;
-            }
-            else
-            {
-                foreach (string excludedService in _excludedServiceList)
-                {
-                    if (serviceId.StartsWith(excludedService, StringComparison.OrdinalIgnoreCase))
-                    {
-                        excluded = true;
-                        break;
-                    }
-                }
-
-                _checkedService[serviceId] = excluded;
-                return excluded;
-            }
+            return _checkedService.GetOrAdd(serviceId, (k) => _excludedServiceList.Any((excludedService) => k.StartsWith(excludedService, StringComparison.OrdinalIgnoreCase)));
         }
     }
 }
