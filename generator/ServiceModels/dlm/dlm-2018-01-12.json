@@ -115,6 +115,11 @@
                       "min_length": 0,
                       "max_length": 500
                     },
+                    "CopyTags": {
+                      "type": "boolean",
+                      "shape_name": "CopyTags",
+                      "documentation": null
+                    },
                     "TagsToAdd": {
                       "type": "list",
                       "zonbookDocumentation": "\n         <para>The tags to apply to policy-created resources. These user-defined tags are in addition\n      to the AWS-added lifecycle tags.</para>\n      ",
@@ -423,6 +428,11 @@
                       "shape_name": "ScheduleName",
                       "min_length": 0,
                       "max_length": 500
+                    },
+                    "CopyTags": {
+                      "type": "boolean",
+                      "shape_name": "CopyTags",
+                      "documentation": null
                     },
                     "TagsToAdd": {
                       "type": "list",
@@ -897,6 +907,11 @@
                           "shape_name": "ScheduleName",
                           "min_length": 0,
                           "max_length": 500
+                        },
+                        "CopyTags": {
+                          "type": "boolean",
+                          "shape_name": "CopyTags",
+                          "documentation": null
                         },
                         "TagsToAdd": {
                           "type": "list",

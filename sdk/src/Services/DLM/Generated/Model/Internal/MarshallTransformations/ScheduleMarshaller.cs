@@ -45,6 +45,12 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Schedule requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCopyTags())
+            {
+                context.Writer.WritePropertyName("CopyTags");
+                context.Writer.Write(requestObject.CopyTags);
+            }
+
             if(requestObject.IsSetCreateRule())
             {
                 context.Writer.WritePropertyName("CreateRule");

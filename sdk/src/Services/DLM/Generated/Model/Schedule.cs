@@ -32,10 +32,26 @@ namespace Amazon.DLM.Model
     /// </summary>
     public partial class Schedule
     {
+        private bool? _copyTags;
         private CreateRule _createRule;
         private string _name;
         private RetainRule _retainRule;
         private List<Tag> _tagsToAdd = new List<Tag>();
+
+        /// <summary>
+        /// Gets and sets the property CopyTags.
+        /// </summary>
+        public bool CopyTags
+        {
+            get { return this._copyTags.GetValueOrDefault(); }
+            set { this._copyTags = value; }
+        }
+
+        // Check to see if CopyTags property is set
+        internal bool IsSetCopyTags()
+        {
+            return this._copyTags.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property CreateRule. 
