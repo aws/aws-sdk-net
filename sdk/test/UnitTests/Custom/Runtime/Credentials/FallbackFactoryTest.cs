@@ -95,11 +95,9 @@ namespace AWSSDK.UnitTests
                 ReflectionHelpers.Invoke(typeof(FallbackRegionFactory), "credentialProfileChain", new CredentialProfileStoreChain(sharedFixture.CredentialsFilePath));
 
                 testAWSProfileValue = awsProfileValue;
-                if (testAWSProfileValue != null)
-                {
-                    originalAWSProfileValue = Environment.GetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE);
-                    Environment.SetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE, testAWSProfileValue);
-                }
+                originalAWSProfileValue = Environment.GetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE);
+                Environment.SetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE, testAWSProfileValue);
+
 
                 // reset before use to ensure the new credentialProfileChains are used.
                 FallbackCredentialsFactory.Reset();
@@ -108,8 +106,7 @@ namespace AWSSDK.UnitTests
 
             public void Dispose()
             {
-                if (testAWSProfileValue != null)
-                    Environment.SetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE, originalAWSProfileValue);
+                Environment.SetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE, originalAWSProfileValue);
 
                 ReflectionHelpers.Invoke(typeof(FallbackRegionFactory), "credentialProfileChain", originalRegionChain);
                 ReflectionHelpers.Invoke(typeof(FallbackCredentialsFactory), "credentialProfileChain", originalCredsChain);
