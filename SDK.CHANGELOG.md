@@ -1,3 +1,19 @@
+### 3.3.406.0 (2018-11-13 00:33 UTC)
+* Batch (3.3.6.0)
+	* Adding EC2 Launch Template support in AWS Batch Compute Environments.
+* Budgets (3.3.10.0)
+	* 1. Added budget performance history, enabling you to see how well your budgets matched your actual costs and usage.                                                                                             2. Added budget performance history, notification state, and last updated time, enabling you to see how well your budgets matched your actual costs and usage, how often your budget alerts triggered, and when your budget was last updated.
+* CloudFormation (3.3.12.0)
+	* The Drift Detection feature enables customers to detect whether a stack's actual configuration differs, or has drifted, from its expected configuration as defined within AWS CloudFormation.
+* CodePipeline (3.3.6.0)
+	* Add support for cross-region pipeline with accompanying definitions as needed in the AWS CodePipeline API Guide.
+* KinesisFirehose (3.3.7.0)
+	* With this release, Amazon Kinesis Data Firehose allows you to enable/disable server-side encryption(SSE) for your delivery streams ensuring encryption of data at rest. For technical documentation, look at https://docs.aws.amazon.com/firehose/latest/dev/encryption.html
+* Polly (3.3.9.0)
+	* Amazon Polly adds new female voices: Italian - Bianca, Castilian Spanish - Lucia and new language: Mexican Spanish with new female voice - Mia.
+* RDS (3.3.34.0)
+	* API Update for RDS: this update enables Custom Endpoints, a new feature compatible with Aurora Mysql, Aurora PostgreSQL and Neptune that allows users to configure a customizable endpoint that will provide access to their instances in a cluster. 
+
 ### 3.3.405.0 (2018-11-09 22:01 UTC)
 * MediaPackage (3.3.5.0)
 	* As a part of SPEKE DRM encryption, MediaPackage now supports encrypted content keys. You can enable this enhanced content protection in an OriginEndpoint's encryption settings. When this is enabled, MediaPackage indicates to the key server that it requires an encrypted response. To use this, your DRM key provider must support content key encryption. For details on this feature, see the AWS MediaPackage User Guide at https://docs.aws.amazon.com/mediapackage/latest/ug/what-is.html.

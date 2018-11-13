@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.405.0",
+    "ProductVersion" : "3.3.406.0",
     "CoreVersion"    : "3.3.29.8",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -29,7 +29,7 @@
             "InPreview"               : false
         },
         "CloudFormation" : {
-            "Version" : "3.3.11.27",
+            "Version" : "3.3.12.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.8"
@@ -281,7 +281,7 @@
             "InPreview"               : false
         },
         "RDS"                  : {
-            "Version" : "3.3.33.5",
+            "Version" : "3.3.34.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.8"
@@ -417,7 +417,7 @@
             "InPreview"               : false
         },
         "CodePipeline"              : {
-            "Version" : "3.3.5.24",
+            "Version" : "3.3.6.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.8"
@@ -441,7 +441,7 @@
             "InPreview"               : false
         },
         "KinesisFirehose"           : {
-            "Version" : "3.3.6.17",
+            "Version" : "3.3.7.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.8"
@@ -593,7 +593,7 @@
             "InPreview"               : false
         },
         "Budgets"                         : {
-            "Version" : "3.3.9.27",
+            "Version" : "3.3.10.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.8"
@@ -625,7 +625,7 @@
             "InPreview"               : false
         },
         "Polly"                           : {
-            "Version" : "3.3.8.15",
+            "Version" : "3.3.9.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.8"
@@ -705,7 +705,7 @@
             "InPreview"               : false
         },
         "Batch"                           : {
-            "Version" : "3.3.5.29",
+            "Version" : "3.3.6.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.8"
