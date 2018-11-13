@@ -28,30 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// The unit of data in a delivery stream.
+    /// This is the response object from the StartDeliveryStreamEncryption operation.
     /// </summary>
-    public partial class Record
+    public partial class StartDeliveryStreamEncryptionResponse : AmazonWebServiceResponse
     {
-        private MemoryStream _data;
-
-        /// <summary>
-        /// Gets and sets the property Data. 
-        /// <para>
-        /// The data blob, which is base64-encoded when the blob is serialized. The maximum size
-        /// of the data blob, before base64-encoding, is 1,000 KiB.
-        /// </para>
-        /// </summary>
-        public MemoryStream Data
-        {
-            get { return this._data; }
-            set { this._data = value; }
-        }
-
-        // Check to see if Data property is set
-        internal bool IsSetData()
-        {
-            return this._data != null;
-        }
 
     }
 }

@@ -28,47 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// This is the response object from the PutRecord operation.
+    /// Indicates the server-side encryption (SSE) status for the delivery stream.
     /// </summary>
-    public partial class PutRecordResponse : AmazonWebServiceResponse
+    public partial class DeliveryStreamEncryptionConfiguration
     {
-        private bool? _encrypted;
-        private string _recordId;
+        private DeliveryStreamEncryptionStatus _status;
 
         /// <summary>
-        /// Gets and sets the property Encrypted. 
+        /// Gets and sets the property Status. 
         /// <para>
-        /// Indicates whether server-side encryption (SSE) was enabled during this operation.
+        /// For a full description of the different values of this status, see <a>StartDeliveryStreamEncryption</a>
+        /// and <a>StopDeliveryStreamEncryption</a>.
         /// </para>
         /// </summary>
-        public bool Encrypted
+        public DeliveryStreamEncryptionStatus Status
         {
-            get { return this._encrypted.GetValueOrDefault(); }
-            set { this._encrypted = value; }
+            get { return this._status; }
+            set { this._status = value; }
         }
 
-        // Check to see if Encrypted property is set
-        internal bool IsSetEncrypted()
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
         {
-            return this._encrypted.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property RecordId. 
-        /// <para>
-        /// The ID of the record.
-        /// </para>
-        /// </summary>
-        public string RecordId
-        {
-            get { return this._recordId; }
-            set { this._recordId = value; }
-        }
-
-        // Check to see if RecordId property is set
-        internal bool IsSetRecordId()
-        {
-            return this._recordId != null;
+            return this._status != null;
         }
 
     }

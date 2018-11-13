@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PutRecord operation
+    /// Response Unmarshaller for StartDeliveryStreamEncryption operation
     /// </summary>  
-    public class PutRecordResponseUnmarshaller : JsonResponseUnmarshaller
+    public class StartDeliveryStreamEncryptionResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,25 +45,8 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            PutRecordResponse response = new PutRecordResponse();
+            StartDeliveryStreamEncryptionResponse response = new StartDeliveryStreamEncryptionResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("Encrypted", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.Encrypted = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RecordId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.RecordId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -82,20 +65,24 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             {
                 return new InvalidArgumentException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
+            {
+                return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceInUseException"))
+            {
+                return new ResourceInUseException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
             {
                 return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceUnavailableException"))
-            {
-                return new ServiceUnavailableException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             return new AmazonKinesisFirehoseException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static PutRecordResponseUnmarshaller _instance = new PutRecordResponseUnmarshaller();        
+        private static StartDeliveryStreamEncryptionResponseUnmarshaller _instance = new StartDeliveryStreamEncryptionResponseUnmarshaller();        
 
-        internal static PutRecordResponseUnmarshaller GetInstance()
+        internal static StartDeliveryStreamEncryptionResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -103,7 +90,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PutRecordResponseUnmarshaller Instance
+        public static StartDeliveryStreamEncryptionResponseUnmarshaller Instance
         {
             get
             {

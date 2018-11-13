@@ -51,6 +51,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Encrypted", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.Encrypted = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FailedPutCount", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

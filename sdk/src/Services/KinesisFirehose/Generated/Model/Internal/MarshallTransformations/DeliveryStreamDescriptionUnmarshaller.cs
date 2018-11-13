@@ -76,6 +76,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                     unmarshalledObject.DeliveryStreamARN = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DeliveryStreamEncryptionConfiguration", targetDepth))
+                {
+                    var unmarshaller = DeliveryStreamEncryptionConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.DeliveryStreamEncryptionConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DeliveryStreamName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

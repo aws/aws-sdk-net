@@ -246,6 +246,64 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("KinesisFirehose")]
+        public void StartDeliveryStreamEncryptionMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<StartDeliveryStreamEncryptionRequest>();
+            var marshaller = new StartDeliveryStreamEncryptionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<StartDeliveryStreamEncryptionRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("StartDeliveryStreamEncryption").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = StartDeliveryStreamEncryptionResponseUnmarshaller.Instance.Unmarshall(context)
+                as StartDeliveryStreamEncryptionResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("KinesisFirehose")]
+        public void StopDeliveryStreamEncryptionMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<StopDeliveryStreamEncryptionRequest>();
+            var marshaller = new StopDeliveryStreamEncryptionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<StopDeliveryStreamEncryptionRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("StopDeliveryStreamEncryption").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = StopDeliveryStreamEncryptionResponseUnmarshaller.Instance.Unmarshall(context)
+                as StopDeliveryStreamEncryptionResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("KinesisFirehose")]
         public void TagDeliveryStreamMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<TagDeliveryStreamRequest>();

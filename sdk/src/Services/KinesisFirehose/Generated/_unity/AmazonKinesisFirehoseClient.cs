@@ -314,7 +314,7 @@ namespace Amazon.KinesisFirehose
         #region  ListDeliveryStreams
 
         /// <summary>
-        /// Lists your delivery streams.
+        /// Lists your delivery streams in alphabetical order of their names.
         /// 
         ///  
         /// <para>
@@ -322,9 +322,9 @@ namespace Amazon.KinesisFirehose
         /// <code>ListDeliveryStreams</code>. You can limit the number of delivery streams returned,
         /// using the <b>Limit</b> parameter. To determine whether there are more delivery streams
         /// to list, check the value of <code>HasMoreDeliveryStreams</code> in the output. If
-        /// there are more delivery streams to list, you can request them by specifying the name
-        /// of the last delivery stream returned in the call in the <code>ExclusiveStartDeliveryStreamName</code>
-        /// parameter of a subsequent call.
+        /// there are more delivery streams to list, you can request them by calling this operation
+        /// again and setting the <code>ExclusiveStartDeliveryStreamName</code> parameter to the
+        /// name of the last delivery stream returned in the last call.
         /// </para>
         /// </summary>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
@@ -444,6 +444,12 @@ namespace Amazon.KinesisFirehose
         /// are added to a delivery stream as it tries to send the records to the destination.
         /// If the destination is unreachable for more than 24 hours, the data is no longer available.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// Don't concatenate two or more base64 strings to form the data fields of your records.
+        /// Instead, concatenate the raw data, then perform base64 encoding.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="deliveryStreamName">The name of the delivery stream.</param>
         /// <param name="record">The record.</param>
@@ -542,20 +548,22 @@ namespace Amazon.KinesisFirehose
         ///  
         /// <para>
         /// The <a>PutRecordBatch</a> response includes a count of failed records, <b>FailedPutCount</b>,
-        /// and an array of responses, <b>RequestResponses</b>. Each entry in the <b>RequestResponses</b>
+        /// and an array of responses, <b>RequestResponses</b>. Even if the <a>PutRecordBatch</a>
+        /// call succeeds, the value of <b>FailedPutCount</b> may be greater than 0, indicating
+        /// that there are records for which the operation didn't succeed. Each entry in the <b>RequestResponses</b>
         /// array provides additional information about the processed record. It directly correlates
         /// with a record in the request array using the same ordering, from the top to the bottom.
         /// The response array always includes the same number of records as the request array.
         /// <b>RequestResponses</b> includes both successfully and unsuccessfully processed records.
         /// Kinesis Data Firehose tries to process all records in each <a>PutRecordBatch</a> request.
-        /// A single record failure does not stop the processing of subsequent records.
+        /// A single record failure does not stop the processing of subsequent records. 
         /// </para>
         ///  
         /// <para>
         /// A successfully processed record includes a <b>RecordId</b> value, which is unique
         /// for the record. An unsuccessfully processed record includes <b>ErrorCode</b> and <b>ErrorMessage</b>
         /// values. <b>ErrorCode</b> reflects the type of error, and is one of the following values:
-        /// <code>ServiceUnavailable</code> or <code>InternalFailure</code>. <b>ErrorMessage</b>
+        /// <code>ServiceUnavailableException</code> or <code>InternalFailure</code>. <b>ErrorMessage</b>
         /// provides more detailed information about the error.
         /// </para>
         ///  
@@ -578,6 +586,12 @@ namespace Amazon.KinesisFirehose
         /// are added to a delivery stream as it attempts to send the records to the destination.
         /// If the destination is unreachable for more than 24 hours, the data is no longer available.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// Don't concatenate two or more base64 strings to form the data fields of your records.
+        /// Instead, concatenate the raw data, then perform base64 encoding.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="deliveryStreamName">The name of the delivery stream.</param>
         /// <param name="records">One or more records.</param>
@@ -632,6 +646,62 @@ namespace Amazon.KinesisFirehose
                         callback(responseObject); 
                 };
             BeginInvoke<PutRecordBatchRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  StartDeliveryStreamEncryption
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartDeliveryStreamEncryption operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartDeliveryStreamEncryption operation on AmazonKinesisFirehoseClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/StartDeliveryStreamEncryption">REST API Reference for StartDeliveryStreamEncryption Operation</seealso>
+        public virtual void StartDeliveryStreamEncryptionAsync(StartDeliveryStreamEncryptionRequest request, AmazonServiceCallback<StartDeliveryStreamEncryptionRequest, StartDeliveryStreamEncryptionResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = StartDeliveryStreamEncryptionRequestMarshaller.Instance;
+            var unmarshaller = StartDeliveryStreamEncryptionResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<StartDeliveryStreamEncryptionRequest,StartDeliveryStreamEncryptionResponse> responseObject 
+                            = new AmazonServiceResult<StartDeliveryStreamEncryptionRequest,StartDeliveryStreamEncryptionResponse>((StartDeliveryStreamEncryptionRequest)req, (StartDeliveryStreamEncryptionResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<StartDeliveryStreamEncryptionRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  StopDeliveryStreamEncryption
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopDeliveryStreamEncryption operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopDeliveryStreamEncryption operation on AmazonKinesisFirehoseClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/StopDeliveryStreamEncryption">REST API Reference for StopDeliveryStreamEncryption Operation</seealso>
+        public virtual void StopDeliveryStreamEncryptionAsync(StopDeliveryStreamEncryptionRequest request, AmazonServiceCallback<StopDeliveryStreamEncryptionRequest, StopDeliveryStreamEncryptionResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = StopDeliveryStreamEncryptionRequestMarshaller.Instance;
+            var unmarshaller = StopDeliveryStreamEncryptionResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<StopDeliveryStreamEncryptionRequest,StopDeliveryStreamEncryptionResponse> responseObject 
+                            = new AmazonServiceResult<StopDeliveryStreamEncryptionRequest,StopDeliveryStreamEncryptionResponse>((StopDeliveryStreamEncryptionRequest)req, (StopDeliveryStreamEncryptionResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<StopDeliveryStreamEncryptionRequest>(request, marshaller, unmarshaller, options, callbackHelper);
         }
 
         #endregion

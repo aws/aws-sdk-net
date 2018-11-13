@@ -34,6 +34,7 @@ namespace Amazon.KinesisFirehose.Model
     {
         private DateTime? _createTimestamp;
         private string _deliveryStreamARN;
+        private DeliveryStreamEncryptionConfiguration _deliveryStreamEncryptionConfiguration;
         private string _deliveryStreamName;
         private DeliveryStreamStatus _deliveryStreamStatus;
         private DeliveryStreamType _deliveryStreamType;
@@ -79,6 +80,24 @@ namespace Amazon.KinesisFirehose.Model
         internal bool IsSetDeliveryStreamARN()
         {
             return this._deliveryStreamARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeliveryStreamEncryptionConfiguration. 
+        /// <para>
+        /// Indicates the server-side encryption (SSE) status for the delivery stream.
+        /// </para>
+        /// </summary>
+        public DeliveryStreamEncryptionConfiguration DeliveryStreamEncryptionConfiguration
+        {
+            get { return this._deliveryStreamEncryptionConfiguration; }
+            set { this._deliveryStreamEncryptionConfiguration = value; }
+        }
+
+        // Check to see if DeliveryStreamEncryptionConfiguration property is set
+        internal bool IsSetDeliveryStreamEncryptionConfiguration()
+        {
+            return this._deliveryStreamEncryptionConfiguration != null;
         }
 
         /// <summary>

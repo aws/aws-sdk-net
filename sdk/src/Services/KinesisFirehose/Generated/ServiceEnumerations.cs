@@ -83,6 +83,64 @@ namespace Amazon.KinesisFirehose
 
 
     /// <summary>
+    /// Constants used for properties of type DeliveryStreamEncryptionStatus.
+    /// </summary>
+    public class DeliveryStreamEncryptionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for DeliveryStreamEncryptionStatus
+        /// </summary>
+        public static readonly DeliveryStreamEncryptionStatus DISABLED = new DeliveryStreamEncryptionStatus("DISABLED");
+        /// <summary>
+        /// Constant DISABLING for DeliveryStreamEncryptionStatus
+        /// </summary>
+        public static readonly DeliveryStreamEncryptionStatus DISABLING = new DeliveryStreamEncryptionStatus("DISABLING");
+        /// <summary>
+        /// Constant ENABLED for DeliveryStreamEncryptionStatus
+        /// </summary>
+        public static readonly DeliveryStreamEncryptionStatus ENABLED = new DeliveryStreamEncryptionStatus("ENABLED");
+        /// <summary>
+        /// Constant ENABLING for DeliveryStreamEncryptionStatus
+        /// </summary>
+        public static readonly DeliveryStreamEncryptionStatus ENABLING = new DeliveryStreamEncryptionStatus("ENABLING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeliveryStreamEncryptionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeliveryStreamEncryptionStatus FindValue(string value)
+        {
+            return FindValue<DeliveryStreamEncryptionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeliveryStreamEncryptionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DeliveryStreamStatus.
     /// </summary>
     public class DeliveryStreamStatus : ConstantClass

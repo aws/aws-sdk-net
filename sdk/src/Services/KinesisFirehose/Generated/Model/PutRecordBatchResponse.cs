@@ -32,13 +32,34 @@ namespace Amazon.KinesisFirehose.Model
     /// </summary>
     public partial class PutRecordBatchResponse : AmazonWebServiceResponse
     {
+        private bool? _encrypted;
         private int? _failedPutCount;
         private List<PutRecordBatchResponseEntry> _requestResponses = new List<PutRecordBatchResponseEntry>();
 
         /// <summary>
+        /// Gets and sets the property Encrypted. 
+        /// <para>
+        /// Indicates whether server-side encryption (SSE) was enabled during this operation.
+        /// </para>
+        /// </summary>
+        public bool Encrypted
+        {
+            get { return this._encrypted.GetValueOrDefault(); }
+            set { this._encrypted = value; }
+        }
+
+        // Check to see if Encrypted property is set
+        internal bool IsSetEncrypted()
+        {
+            return this._encrypted.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property FailedPutCount. 
         /// <para>
-        /// The number of records that might have failed processing.
+        /// The number of records that might have failed processing. This number might be greater
+        /// than 0 even if the <a>PutRecordBatch</a> call succeeds. Check <code>FailedPutCount</code>
+        /// to determine whether there are records that you need to resend.
         /// </para>
         /// </summary>
         public int FailedPutCount

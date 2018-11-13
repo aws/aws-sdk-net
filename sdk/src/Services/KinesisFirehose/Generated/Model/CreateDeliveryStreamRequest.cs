@@ -116,6 +116,7 @@ namespace Amazon.KinesisFirehose.Model
         private RedshiftDestinationConfiguration _redshiftDestinationConfiguration;
         private S3DestinationConfiguration _s3DestinationConfiguration;
         private SplunkDestinationConfiguration _splunkDestinationConfiguration;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property DeliveryStreamName. 
@@ -274,6 +275,32 @@ namespace Amazon.KinesisFirehose.Model
         internal bool IsSetSplunkDestinationConfiguration()
         {
             return this._splunkDestinationConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A set of tags to assign to the delivery stream. A tag is a key-value pair that you
+        /// can define and assign to AWS resources. Tags are metadata. For example, you can add
+        /// friendly names and descriptions or other types of information that can help you distinguish
+        /// the delivery stream. For more information about tags, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+        /// Cost Allocation Tags</a> in the AWS Billing and Cost Management User Guide.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify up to 50 tags when creating a delivery stream.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }
