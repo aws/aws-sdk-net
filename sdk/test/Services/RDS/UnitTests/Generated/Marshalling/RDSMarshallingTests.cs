@@ -322,6 +322,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void CreateDBClusterEndpointMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateDBClusterEndpoint");
+
+            var request = InstantiateClassGenerator.Execute<CreateDBClusterEndpointRequest>();
+            var marshaller = new CreateDBClusterEndpointRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = CreateDBClusterEndpointResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateDBClusterEndpointResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void CreateDBClusterParameterGroupMarshallTest()
         {
             var operation = service_model.FindOperation("CreateDBClusterParameterGroup");
@@ -586,6 +610,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void DeleteDBClusterEndpointMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteDBClusterEndpoint");
+
+            var request = InstantiateClassGenerator.Execute<DeleteDBClusterEndpointRequest>();
+            var marshaller = new DeleteDBClusterEndpointRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DeleteDBClusterEndpointResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteDBClusterEndpointResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void DeleteDBClusterParameterGroupMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteDBClusterParameterGroup");
@@ -840,6 +888,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = DescribeDBClusterBacktracksResponseUnmarshaller.Instance.Unmarshall(context)
                 as DescribeDBClusterBacktracksResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void DescribeDBClusterEndpointsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeDBClusterEndpoints");
+
+            var request = InstantiateClassGenerator.Execute<DescribeDBClusterEndpointsRequest>();
+            var marshaller = new DescribeDBClusterEndpointsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeDBClusterEndpointsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeDBClusterEndpointsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -1608,6 +1680,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = ModifyDBClusterResponseUnmarshaller.Instance.Unmarshall(context)
                 as ModifyDBClusterResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void ModifyDBClusterEndpointMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyDBClusterEndpoint");
+
+            var request = InstantiateClassGenerator.Execute<ModifyDBClusterEndpointRequest>();
+            var marshaller = new ModifyDBClusterEndpointRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ModifyDBClusterEndpointResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyDBClusterEndpointResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

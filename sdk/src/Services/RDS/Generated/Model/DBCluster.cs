@@ -48,6 +48,7 @@ namespace Amazon.RDS.Model
         private string _characterSetName;
         private string _cloneGroupId;
         private DateTime? _clusterCreateTime;
+        private List<string> _customEndpoints = new List<string>();
         private string _databaseName;
         private string _dbClusterArn;
         private string _dbClusterIdentifier;
@@ -266,6 +267,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetClusterCreateTime()
         {
             return this._clusterCreateTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomEndpoints. 
+        /// <para>
+        /// Identifies all custom endpoints associated with the cluster.
+        /// </para>
+        /// </summary>
+        public List<string> CustomEndpoints
+        {
+            get { return this._customEndpoints; }
+            set { this._customEndpoints = value; }
+        }
+
+        // Check to see if CustomEndpoints property is set
+        internal bool IsSetCustomEndpoints()
+        {
+            return this._customEndpoints != null && this._customEndpoints.Count > 0; 
         }
 
         /// <summary>

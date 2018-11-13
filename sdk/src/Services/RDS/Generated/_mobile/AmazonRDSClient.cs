@@ -705,6 +705,38 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  CreateDBClusterEndpoint
+
+        internal virtual CreateDBClusterEndpointResponse CreateDBClusterEndpoint(CreateDBClusterEndpointRequest request)
+        {
+            var marshaller = CreateDBClusterEndpointRequestMarshaller.Instance;
+            var unmarshaller = CreateDBClusterEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDBClusterEndpointRequest,CreateDBClusterEndpointResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDBClusterEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDBClusterEndpoint operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBClusterEndpoint">REST API Reference for CreateDBClusterEndpoint Operation</seealso>
+        public virtual Task<CreateDBClusterEndpointResponse> CreateDBClusterEndpointAsync(CreateDBClusterEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateDBClusterEndpointRequestMarshaller.Instance;
+            var unmarshaller = CreateDBClusterEndpointResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateDBClusterEndpointRequest,CreateDBClusterEndpointResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateDBClusterParameterGroup
 
         internal virtual CreateDBClusterParameterGroupResponse CreateDBClusterParameterGroup(CreateDBClusterParameterGroupRequest request)
@@ -1052,6 +1084,38 @@ namespace Amazon.RDS
             var unmarshaller = DeleteDBClusterResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteDBClusterRequest,DeleteDBClusterResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteDBClusterEndpoint
+
+        internal virtual DeleteDBClusterEndpointResponse DeleteDBClusterEndpoint(DeleteDBClusterEndpointRequest request)
+        {
+            var marshaller = DeleteDBClusterEndpointRequestMarshaller.Instance;
+            var unmarshaller = DeleteDBClusterEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDBClusterEndpointRequest,DeleteDBClusterEndpointResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDBClusterEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDBClusterEndpoint operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterEndpoint">REST API Reference for DeleteDBClusterEndpoint Operation</seealso>
+        public virtual Task<DeleteDBClusterEndpointResponse> DeleteDBClusterEndpointAsync(DeleteDBClusterEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteDBClusterEndpointRequestMarshaller.Instance;
+            var unmarshaller = DeleteDBClusterEndpointResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDBClusterEndpointRequest,DeleteDBClusterEndpointResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1463,6 +1527,38 @@ namespace Amazon.RDS
             var unmarshaller = DescribeDBClusterBacktracksResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeDBClusterBacktracksRequest,DescribeDBClusterBacktracksResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeDBClusterEndpoints
+
+        internal virtual DescribeDBClusterEndpointsResponse DescribeDBClusterEndpoints(DescribeDBClusterEndpointsRequest request)
+        {
+            var marshaller = DescribeDBClusterEndpointsRequestMarshaller.Instance;
+            var unmarshaller = DescribeDBClusterEndpointsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDBClusterEndpointsRequest,DescribeDBClusterEndpointsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDBClusterEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBClusterEndpoints operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterEndpoints">REST API Reference for DescribeDBClusterEndpoints Operation</seealso>
+        public virtual Task<DescribeDBClusterEndpointsResponse> DescribeDBClusterEndpointsAsync(DescribeDBClusterEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeDBClusterEndpointsRequestMarshaller.Instance;
+            var unmarshaller = DescribeDBClusterEndpointsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeDBClusterEndpointsRequest,DescribeDBClusterEndpointsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2767,6 +2863,38 @@ namespace Amazon.RDS
             var unmarshaller = ModifyDBClusterResponseUnmarshaller.Instance;
 
             return InvokeAsync<ModifyDBClusterRequest,ModifyDBClusterResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyDBClusterEndpoint
+
+        internal virtual ModifyDBClusterEndpointResponse ModifyDBClusterEndpoint(ModifyDBClusterEndpointRequest request)
+        {
+            var marshaller = ModifyDBClusterEndpointRequestMarshaller.Instance;
+            var unmarshaller = ModifyDBClusterEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyDBClusterEndpointRequest,ModifyDBClusterEndpointResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyDBClusterEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDBClusterEndpoint operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBClusterEndpoint">REST API Reference for ModifyDBClusterEndpoint Operation</seealso>
+        public virtual Task<ModifyDBClusterEndpointResponse> ModifyDBClusterEndpointAsync(ModifyDBClusterEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ModifyDBClusterEndpointRequestMarshaller.Instance;
+            var unmarshaller = ModifyDBClusterEndpointResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyDBClusterEndpointRequest,ModifyDBClusterEndpointResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

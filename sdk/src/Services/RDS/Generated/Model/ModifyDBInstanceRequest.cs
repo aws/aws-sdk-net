@@ -241,6 +241,7 @@ namespace Amazon.RDS.Model
         ///  </li> <li> 
         /// <para>
         /// Can be specified for a MySQL Read Replica only if the source is running MySQL 5.6
+        /// or later
         /// </para>
         ///  </li> <li> 
         /// <para>

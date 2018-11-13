@@ -47,6 +47,10 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <a>DescribeDBClusterEndpoints</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a>DescribeDBClusters</a> 
     /// </para>
     ///  </li> <li> 

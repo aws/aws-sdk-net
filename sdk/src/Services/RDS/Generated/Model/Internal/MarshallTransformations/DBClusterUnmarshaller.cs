@@ -116,6 +116,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.ClusterCreateTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("CustomEndpoints/member", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.CustomEndpoints.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("DatabaseName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
