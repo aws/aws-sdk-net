@@ -60,6 +60,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("DriftInformation", targetDepth))
+                    {
+                        var unmarshaller = StackResourceDriftInformationUnmarshaller.Instance;
+                        unmarshalledObject.DriftInformation = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("LastUpdatedTimestamp", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;

@@ -221,6 +221,16 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudFormation.Model.DescribeStackDriftDetectionStatusRequest.StackDriftDetectionId</property>
+    <min>1</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.DescribeStackDriftDetectionStatusResponse.StackDriftDetectionId</property>
+    <min>1</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudFormation.Model.DescribeStackEventsRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
@@ -233,6 +243,26 @@
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.DescribeStackInstanceRequest.StackInstanceAccount</property>
     <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.DescribeStackResourceDriftsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.DescribeStackResourceDriftsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.DescribeStackResourceDriftsRequest.StackName</property>
+    <min>1</min>
+    <pattern>([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.DescribeStackResourceDriftsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.DescribeStacksRequest.NextToken</property>
@@ -249,6 +279,21 @@
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9][-a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.DetectStackDriftRequest.StackName</property>
+    <min>1</min>
+    <pattern>([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.DetectStackDriftResponse.StackDriftDetectionId</property>
+    <min>1</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.DetectStackResourceDriftRequest.StackName</property>
+    <min>1</min>
+    <pattern>([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.EstimateTemplateCostRequest.TemplateBody</property>
@@ -668,6 +713,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.StackResourceDetail.ResourceType</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.StackResourceDrift.ResourceType</property>
     <min>1</min>
     <max>256</max>
   </property-value-rule>

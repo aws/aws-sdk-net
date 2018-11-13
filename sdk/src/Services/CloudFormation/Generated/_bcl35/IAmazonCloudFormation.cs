@@ -724,6 +724,61 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  DescribeStackDriftDetectionStatus
+
+
+        /// <summary>
+        /// Returns information about a stack drift detection operation. A stack drift detection
+        /// operation detects whether a stack's actual configuration differs, or has <i>drifted</i>,
+        /// from it's expected configuration, as defined in the stack template and any values
+        /// specified as template parameters. A stack is considered to have drifted if one or
+        /// more of its resources have drifted. For more information on stack and resource drift,
+        /// see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+        /// Unregulated Configuration Changes to Stacks and Resources</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Use <a>DetectStackDrift</a> to initiate a stack drift detection operation. <code>DetectStackDrift</code>
+        /// returns a <code>StackDriftDetectionId</code> you can use to monitor the progress of
+        /// the operation using <code>DescribeStackDriftDetectionStatus</code>. Once the drift
+        /// detection operation has completed, use <a>DescribeStackResourceDrifts</a> to return
+        /// drift information about the stack and its resources.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStackDriftDetectionStatus service method.</param>
+        /// 
+        /// <returns>The response from the DescribeStackDriftDetectionStatus service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackDriftDetectionStatus">REST API Reference for DescribeStackDriftDetectionStatus Operation</seealso>
+        DescribeStackDriftDetectionStatusResponse DescribeStackDriftDetectionStatus(DescribeStackDriftDetectionStatusRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeStackDriftDetectionStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStackDriftDetectionStatus operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeStackDriftDetectionStatus
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackDriftDetectionStatus">REST API Reference for DescribeStackDriftDetectionStatus Operation</seealso>
+        IAsyncResult BeginDescribeStackDriftDetectionStatus(DescribeStackDriftDetectionStatusRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeStackDriftDetectionStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeStackDriftDetectionStatus.</param>
+        /// 
+        /// <returns>Returns a  DescribeStackDriftDetectionStatusResult from CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackDriftDetectionStatus">REST API Reference for DescribeStackDriftDetectionStatus Operation</seealso>
+        DescribeStackDriftDetectionStatusResponse EndDescribeStackDriftDetectionStatus(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeStackEvents
 
 
@@ -868,6 +923,63 @@ namespace Amazon.CloudFormation
         /// <returns>Returns a  DescribeStackResourceResult from CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackResource">REST API Reference for DescribeStackResource Operation</seealso>
         DescribeStackResourceResponse EndDescribeStackResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeStackResourceDrifts
+
+
+        /// <summary>
+        /// Returns drift information for the resources that have been checked for drift in the
+        /// specified stack. This includes actual and expected configuration values for resources
+        /// where AWS CloudFormation detects configuration drift.
+        /// 
+        ///  
+        /// <para>
+        /// For a given stack, there will be one <code>StackResourceDrift</code> for each stack
+        /// resource that has been checked for drift. Resources that have not yet been checked
+        /// for drift are not included. Resources that do not currently support drift detection
+        /// are not checked, and so not included. For a list of resources that support drift detection,
+        /// see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
+        /// that Support Drift Detection</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use <a>DetectStackResourceDrift</a> to detect drift on individual resources, or <a>DetectStackDrift</a>
+        /// to detect drift on all supported resources for a given stack.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStackResourceDrifts service method.</param>
+        /// 
+        /// <returns>The response from the DescribeStackResourceDrifts service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackResourceDrifts">REST API Reference for DescribeStackResourceDrifts Operation</seealso>
+        DescribeStackResourceDriftsResponse DescribeStackResourceDrifts(DescribeStackResourceDriftsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeStackResourceDrifts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStackResourceDrifts operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeStackResourceDrifts
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackResourceDrifts">REST API Reference for DescribeStackResourceDrifts Operation</seealso>
+        IAsyncResult BeginDescribeStackResourceDrifts(DescribeStackResourceDriftsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeStackResourceDrifts operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeStackResourceDrifts.</param>
+        /// 
+        /// <returns>Returns a  DescribeStackResourceDriftsResult from CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackResourceDrifts">REST API Reference for DescribeStackResourceDrifts Operation</seealso>
+        DescribeStackResourceDriftsResponse EndDescribeStackResourceDrifts(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1087,6 +1199,138 @@ namespace Amazon.CloudFormation
         /// <returns>Returns a  DescribeStackSetOperationResult from CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackSetOperation">REST API Reference for DescribeStackSetOperation Operation</seealso>
         DescribeStackSetOperationResponse EndDescribeStackSetOperation(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DetectStackDrift
+
+
+        /// <summary>
+        /// Detects whether a stack's actual configuration differs, or has <i>drifted</i>, from
+        /// it's expected configuration, as defined in the stack template and any values specified
+        /// as template parameters. For each resource in the stack that supports drift detection,
+        /// AWS CloudFormation compares the actual configuration of the resource with its expected
+        /// template configuration. Only resource properties explicitly defined in the stack template
+        /// are checked for drift. A stack is considered to have drifted if one or more of its
+        /// resources differ from their expected template configurations. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+        /// Unregulated Configuration Changes to Stacks and Resources</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Use <code>DetectStackDrift</code> to detect drift on all supported resources for a
+        /// given stack, or <a>DetectStackResourceDrift</a> to detect drift on individual resources.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a list of stack resources that currently support drift detection, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
+        /// that Support Drift Detection</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>DetectStackDrift</code> can take up to several minutes, depending on the number
+        /// of resources contained within the stack. Use <a>DescribeStackDriftDetectionStatus</a>
+        /// to monitor the progress of a detect stack drift operation. Once the drift detection
+        /// operation has completed, use <a>DescribeStackResourceDrifts</a> to return drift information
+        /// about the stack and its resources.
+        /// </para>
+        ///  
+        /// <para>
+        /// When detecting drift on a stack, AWS CloudFormation does not detect drift on any nested
+        /// stacks belonging to that stack. Perform <code>DetectStackDrift</code> directly on
+        /// the nested stack itself.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetectStackDrift service method.</param>
+        /// 
+        /// <returns>The response from the DetectStackDrift service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DetectStackDrift">REST API Reference for DetectStackDrift Operation</seealso>
+        DetectStackDriftResponse DetectStackDrift(DetectStackDriftRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DetectStackDrift operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DetectStackDrift operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetectStackDrift
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DetectStackDrift">REST API Reference for DetectStackDrift Operation</seealso>
+        IAsyncResult BeginDetectStackDrift(DetectStackDriftRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DetectStackDrift operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDetectStackDrift.</param>
+        /// 
+        /// <returns>Returns a  DetectStackDriftResult from CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DetectStackDrift">REST API Reference for DetectStackDrift Operation</seealso>
+        DetectStackDriftResponse EndDetectStackDrift(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DetectStackResourceDrift
+
+
+        /// <summary>
+        /// Returns information about whether a resource's actual configuration differs, or has
+        /// <i>drifted</i>, from it's expected configuration, as defined in the stack template
+        /// and any values specified as template parameters. This information includes actual
+        /// and expected property values for resources in which AWS CloudFormation detects drift.
+        /// Only resource properties explicitly defined in the stack template are checked for
+        /// drift. For more information about stack and resource drift, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+        /// Unregulated Configuration Changes to Stacks and Resources</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Use <code>DetectStackResourceDrift</code> to detect drift on individual resources,
+        /// or <a>DetectStackDrift</a> to detect drift on all resources in a given stack that
+        /// support drift detection.
+        /// </para>
+        ///  
+        /// <para>
+        /// Resources that do not currently support drift detection cannot be checked. For a list
+        /// of resources that support drift detection, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
+        /// that Support Drift Detection</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetectStackResourceDrift service method.</param>
+        /// 
+        /// <returns>The response from the DetectStackResourceDrift service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DetectStackResourceDrift">REST API Reference for DetectStackResourceDrift Operation</seealso>
+        DetectStackResourceDriftResponse DetectStackResourceDrift(DetectStackResourceDriftRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DetectStackResourceDrift operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DetectStackResourceDrift operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetectStackResourceDrift
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DetectStackResourceDrift">REST API Reference for DetectStackResourceDrift Operation</seealso>
+        IAsyncResult BeginDetectStackResourceDrift(DetectStackResourceDriftRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DetectStackResourceDrift operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDetectStackResourceDrift.</param>
+        /// 
+        /// <returns>Returns a  DetectStackResourceDriftResult from CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DetectStackResourceDrift">REST API Reference for DetectStackResourceDrift Operation</seealso>
+        DetectStackResourceDriftResponse EndDetectStackResourceDrift(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2125,12 +2369,12 @@ namespace Amazon.CloudFormation
         /// <summary>
         /// Updates termination protection for the specified stack. If a user attempts to delete
         /// a stack with termination protection enabled, the operation fails and the stack remains
-        /// unchanged. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
+        /// unchanged. For more information, see <a href="AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
         /// a Stack From Being Deleted</a> in the <i>AWS CloudFormation User Guide</i>.
         /// 
         ///  
         /// <para>
-        ///  For <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+        ///  For <a href="AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
         /// stacks</a>, termination protection is set on the root stack and cannot be changed
         /// directly on the nested stack.
         /// </para>

@@ -34,6 +34,7 @@ namespace Amazon.CloudFormation.Model
     {
         private DateTime? _creationTime;
         private DateTime? _deletionTime;
+        private StackDriftInformationSummary _driftInformation;
         private DateTime? _lastUpdatedTime;
         private string _parentId;
         private string _rootId;
@@ -77,6 +78,27 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetDeletionTime()
         {
             return this._deletionTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DriftInformation. 
+        /// <para>
+        /// Summarizes information on whether a stack's actual configuration differs, or has <i>drifted</i>,
+        /// from it's expected configuration, as defined in the stack template and any values
+        /// specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+        /// Unregulated Configuration Changes to Stacks and Resources</a>.
+        /// </para>
+        /// </summary>
+        public StackDriftInformationSummary DriftInformation
+        {
+            get { return this._driftInformation; }
+            set { this._driftInformation = value; }
+        }
+
+        // Check to see if DriftInformation property is set
+        internal bool IsSetDriftInformation()
+        {
+            return this._driftInformation != null;
         }
 
         /// <summary>

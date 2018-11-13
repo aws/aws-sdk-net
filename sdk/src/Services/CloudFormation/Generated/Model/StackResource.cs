@@ -33,6 +33,7 @@ namespace Amazon.CloudFormation.Model
     public partial class StackResource
     {
         private string _description;
+        private StackResourceDriftInformation _driftInformation;
         private string _logicalResourceId;
         private string _physicalResourceId;
         private ResourceStatus _resourceStatus;
@@ -58,6 +59,27 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DriftInformation. 
+        /// <para>
+        /// Information about whether the resource's actual configuration differs, or has <i>drifted</i>,
+        /// from its expected configuration, as defined in the stack template and any values specified
+        /// as template parameters. For more information, see <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+        /// Unregulated Configuration Changes to Stacks and Resources</a>.
+        /// </para>
+        /// </summary>
+        public StackResourceDriftInformation DriftInformation
+        {
+            get { return this._driftInformation; }
+            set { this._driftInformation = value; }
+        }
+
+        // Check to see if DriftInformation property is set
+        internal bool IsSetDriftInformation()
+        {
+            return this._driftInformation != null;
         }
 
         /// <summary>

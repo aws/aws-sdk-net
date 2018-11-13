@@ -660,6 +660,38 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  DescribeStackDriftDetectionStatus
+
+        internal virtual DescribeStackDriftDetectionStatusResponse DescribeStackDriftDetectionStatus(DescribeStackDriftDetectionStatusRequest request)
+        {
+            var marshaller = DescribeStackDriftDetectionStatusRequestMarshaller.Instance;
+            var unmarshaller = DescribeStackDriftDetectionStatusResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeStackDriftDetectionStatusRequest,DescribeStackDriftDetectionStatusResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeStackDriftDetectionStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStackDriftDetectionStatus operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackDriftDetectionStatus">REST API Reference for DescribeStackDriftDetectionStatus Operation</seealso>
+        public virtual Task<DescribeStackDriftDetectionStatusResponse> DescribeStackDriftDetectionStatusAsync(DescribeStackDriftDetectionStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeStackDriftDetectionStatusRequestMarshaller.Instance;
+            var unmarshaller = DescribeStackDriftDetectionStatusResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeStackDriftDetectionStatusRequest,DescribeStackDriftDetectionStatusResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeStackEvents
 
         internal virtual DescribeStackEventsResponse DescribeStackEvents(DescribeStackEventsRequest request)
@@ -751,6 +783,38 @@ namespace Amazon.CloudFormation
             var unmarshaller = DescribeStackResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeStackResourceRequest,DescribeStackResourceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeStackResourceDrifts
+
+        internal virtual DescribeStackResourceDriftsResponse DescribeStackResourceDrifts(DescribeStackResourceDriftsRequest request)
+        {
+            var marshaller = DescribeStackResourceDriftsRequestMarshaller.Instance;
+            var unmarshaller = DescribeStackResourceDriftsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeStackResourceDriftsRequest,DescribeStackResourceDriftsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeStackResourceDrifts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStackResourceDrifts operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackResourceDrifts">REST API Reference for DescribeStackResourceDrifts Operation</seealso>
+        public virtual Task<DescribeStackResourceDriftsResponse> DescribeStackResourceDriftsAsync(DescribeStackResourceDriftsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeStackResourceDriftsRequestMarshaller.Instance;
+            var unmarshaller = DescribeStackResourceDriftsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeStackResourceDriftsRequest,DescribeStackResourceDriftsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -905,6 +969,70 @@ namespace Amazon.CloudFormation
             var unmarshaller = DescribeStackSetOperationResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeStackSetOperationRequest,DescribeStackSetOperationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DetectStackDrift
+
+        internal virtual DetectStackDriftResponse DetectStackDrift(DetectStackDriftRequest request)
+        {
+            var marshaller = DetectStackDriftRequestMarshaller.Instance;
+            var unmarshaller = DetectStackDriftResponseUnmarshaller.Instance;
+
+            return Invoke<DetectStackDriftRequest,DetectStackDriftResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DetectStackDrift operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DetectStackDrift operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DetectStackDrift">REST API Reference for DetectStackDrift Operation</seealso>
+        public virtual Task<DetectStackDriftResponse> DetectStackDriftAsync(DetectStackDriftRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DetectStackDriftRequestMarshaller.Instance;
+            var unmarshaller = DetectStackDriftResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DetectStackDriftRequest,DetectStackDriftResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DetectStackResourceDrift
+
+        internal virtual DetectStackResourceDriftResponse DetectStackResourceDrift(DetectStackResourceDriftRequest request)
+        {
+            var marshaller = DetectStackResourceDriftRequestMarshaller.Instance;
+            var unmarshaller = DetectStackResourceDriftResponseUnmarshaller.Instance;
+
+            return Invoke<DetectStackResourceDriftRequest,DetectStackResourceDriftResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DetectStackResourceDrift operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DetectStackResourceDrift operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DetectStackResourceDrift">REST API Reference for DetectStackResourceDrift Operation</seealso>
+        public virtual Task<DetectStackResourceDriftResponse> DetectStackResourceDriftAsync(DetectStackResourceDriftRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DetectStackResourceDriftRequestMarshaller.Instance;
+            var unmarshaller = DetectStackResourceDriftResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DetectStackResourceDriftRequest,DetectStackResourceDriftResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

@@ -32,12 +32,34 @@ namespace Amazon.CloudFormation.Model
     /// </summary>
     public partial class StackResourceSummary
     {
+        private StackResourceDriftInformationSummary _driftInformation;
         private DateTime? _lastUpdatedTimestamp;
         private string _logicalResourceId;
         private string _physicalResourceId;
         private ResourceStatus _resourceStatus;
         private string _resourceStatusReason;
         private string _resourceType;
+
+        /// <summary>
+        /// Gets and sets the property DriftInformation. 
+        /// <para>
+        /// Information about whether the resource's actual configuration differs, or has <i>drifted</i>,
+        /// from its expected configuration, as defined in the stack template and any values specified
+        /// as template parameters. For more information, see <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+        /// Unregulated Configuration Changes to Stacks and Resources</a>.
+        /// </para>
+        /// </summary>
+        public StackResourceDriftInformationSummary DriftInformation
+        {
+            get { return this._driftInformation; }
+            set { this._driftInformation = value; }
+        }
+
+        // Check to see if DriftInformation property is set
+        internal bool IsSetDriftInformation()
+        {
+            return this._driftInformation != null;
+        }
 
         /// <summary>
         /// Gets and sets the property LastUpdatedTimestamp. 

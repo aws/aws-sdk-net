@@ -38,6 +38,7 @@ namespace Amazon.CloudFormation.Model
         private DateTime? _deletionTime;
         private string _description;
         private bool? _disableRollback;
+        private StackDriftInformation _driftInformation;
         private bool? _enableTerminationProtection;
         private DateTime? _lastUpdatedTime;
         private List<string> _notificationARNs = new List<string>();
@@ -169,6 +170,27 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetDisableRollback()
         {
             return this._disableRollback.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DriftInformation. 
+        /// <para>
+        /// Information on whether a stack's actual configuration differs, or has <i>drifted</i>,
+        /// from it's expected configuration, as defined in the stack template and any values
+        /// specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+        /// Unregulated Configuration Changes to Stacks and Resources</a>.
+        /// </para>
+        /// </summary>
+        public StackDriftInformation DriftInformation
+        {
+            get { return this._driftInformation; }
+            set { this._driftInformation = value; }
+        }
+
+        // Check to see if DriftInformation property is set
+        internal bool IsSetDriftInformation()
+        {
+            return this._driftInformation != null;
         }
 
         /// <summary>

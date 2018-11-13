@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StackResourceSummary Object
+    /// Response Unmarshaller for StackResourceDriftInformation Object
     /// </summary>  
-    public class StackResourceSummaryUnmarshaller : IUnmarshaller<StackResourceSummary, XmlUnmarshallerContext>, IUnmarshaller<StackResourceSummary, JsonUnmarshallerContext>
+    public class StackResourceDriftInformationUnmarshaller : IUnmarshaller<StackResourceDriftInformation, XmlUnmarshallerContext>, IUnmarshaller<StackResourceDriftInformation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public StackResourceSummary Unmarshall(XmlUnmarshallerContext context)
+        public StackResourceDriftInformation Unmarshall(XmlUnmarshallerContext context)
         {
-            StackResourceSummary unmarshalledObject = new StackResourceSummary();
+            StackResourceDriftInformation unmarshalledObject = new StackResourceDriftInformation();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,46 +54,16 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("DriftInformation", targetDepth))
-                    {
-                        var unmarshaller = StackResourceDriftInformationSummaryUnmarshaller.Instance;
-                        unmarshalledObject.DriftInformation = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("LastUpdatedTimestamp", targetDepth))
+                    if (context.TestExpression("LastCheckTimestamp", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;
-                        unmarshalledObject.LastUpdatedTimestamp = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.LastCheckTimestamp = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("LogicalResourceId", targetDepth))
+                    if (context.TestExpression("StackResourceDriftStatus", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.LogicalResourceId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("PhysicalResourceId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.PhysicalResourceId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("ResourceStatus", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.ResourceStatus = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("ResourceStatusReason", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.ResourceStatusReason = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("ResourceType", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.StackResourceDriftStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -111,18 +81,18 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public StackResourceSummary Unmarshall(JsonUnmarshallerContext context)
+        public StackResourceDriftInformation Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static StackResourceSummaryUnmarshaller _instance = new StackResourceSummaryUnmarshaller();        
+        private static StackResourceDriftInformationUnmarshaller _instance = new StackResourceDriftInformationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StackResourceSummaryUnmarshaller Instance
+        public static StackResourceDriftInformationUnmarshaller Instance
         {
             get
             {

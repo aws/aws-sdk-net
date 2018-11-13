@@ -322,6 +322,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("CloudFormation")]
+        public void DescribeStackDriftDetectionStatusMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeStackDriftDetectionStatus");
+
+            var request = InstantiateClassGenerator.Execute<DescribeStackDriftDetectionStatusRequest>();
+            var marshaller = new DescribeStackDriftDetectionStatusRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeStackDriftDetectionStatusResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeStackDriftDetectionStatusResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
         public void DescribeStackEventsMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeStackEvents");
@@ -385,6 +409,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = DescribeStackResourceResponseUnmarshaller.Instance.Unmarshall(context)
                 as DescribeStackResourceResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
+        public void DescribeStackResourceDriftsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeStackResourceDrifts");
+
+            var request = InstantiateClassGenerator.Execute<DescribeStackResourceDriftsRequest>();
+            var marshaller = new DescribeStackResourceDriftsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeStackResourceDriftsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeStackResourceDriftsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -481,6 +529,54 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = DescribeStackSetOperationResponseUnmarshaller.Instance.Unmarshall(context)
                 as DescribeStackSetOperationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
+        public void DetectStackDriftMarshallTest()
+        {
+            var operation = service_model.FindOperation("DetectStackDrift");
+
+            var request = InstantiateClassGenerator.Execute<DetectStackDriftRequest>();
+            var marshaller = new DetectStackDriftRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DetectStackDriftResponseUnmarshaller.Instance.Unmarshall(context)
+                as DetectStackDriftResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
+        public void DetectStackResourceDriftMarshallTest()
+        {
+            var operation = service_model.FindOperation("DetectStackResourceDrift");
+
+            var request = InstantiateClassGenerator.Execute<DetectStackResourceDriftRequest>();
+            var marshaller = new DetectStackResourceDriftRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DetectStackResourceDriftResponseUnmarshaller.Instance.Unmarshall(context)
+                as DetectStackResourceDriftResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
