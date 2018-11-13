@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.Text.RegularExpressions;
+using Amazon.Runtime.CredentialManagement;
 
 namespace TestWrapper.TestRunners
 {
@@ -223,8 +224,18 @@ namespace TestWrapper.TestRunners
             Console.WriteLine("Dir:  {0}", workingDir);
             if (!string.IsNullOrWhiteSpace(TestExecutionProfile))
             {
-                si.EnvironmentVariables[AWS_PROFILE_ENVIRONMENT_VARIABLE] = TestExecutionProfile;
-                Console.WriteLine($"TestExecutionProfile: {TestExecutionProfile}");
+                var chain = new CredentialProfileStoreChain();
+                CredentialProfile profile;
+                if (chain.TryGetProfile(TestExecutionProfile, out profile))
+                {
+                    Console.WriteLine($"Profile '{TestExecutionProfile}' found.");
+                    si.EnvironmentVariables[AWS_PROFILE_ENVIRONMENT_VARIABLE] = TestExecutionProfile;
+                    Console.WriteLine($"TestExecutionProfile: {TestExecutionProfile}");
+                }
+                else
+                {
+                    Console.WriteLine($"Profile '{TestExecutionProfile}' not found, ignoring the TestExecutionProfile attribute on test wrapper build task.");
+                }
             }
 
             string error;
