@@ -121,6 +121,10 @@ namespace Amazon.Polly
         /// </summary>
         public static readonly LanguageCode EsES = new LanguageCode("es-ES");
         /// <summary>
+        /// Constant EsMX for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode EsMX = new LanguageCode("es-MX");
+        /// <summary>
         /// Constant EsUS for LanguageCode
         /// </summary>
         public static readonly LanguageCode EsUS = new LanguageCode("es-US");
@@ -467,6 +471,10 @@ namespace Amazon.Polly
         /// </summary>
         public static readonly VoiceId Astrid = new VoiceId("Astrid");
         /// <summary>
+        /// Constant Bianca for VoiceId
+        /// </summary>
+        public static readonly VoiceId Bianca = new VoiceId("Bianca");
+        /// <summary>
         /// Constant Brian for VoiceId
         /// </summary>
         public static readonly VoiceId Brian = new VoiceId("Brian");
@@ -583,6 +591,10 @@ namespace Amazon.Polly
         /// </summary>
         public static readonly VoiceId Lotte = new VoiceId("Lotte");
         /// <summary>
+        /// Constant Lucia for VoiceId
+        /// </summary>
+        public static readonly VoiceId Lucia = new VoiceId("Lucia");
+        /// <summary>
         /// Constant Mads for VoiceId
         /// </summary>
         public static readonly VoiceId Mads = new VoiceId("Mads");
@@ -606,6 +618,10 @@ namespace Amazon.Polly
         /// Constant Maxim for VoiceId
         /// </summary>
         public static readonly VoiceId Maxim = new VoiceId("Maxim");
+        /// <summary>
+        /// Constant Mia for VoiceId
+        /// </summary>
+        public static readonly VoiceId Mia = new VoiceId("Mia");
         /// <summary>
         /// Constant Miguel for VoiceId
         /// </summary>
