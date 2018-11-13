@@ -515,6 +515,71 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  CancelResize
+
+        /// <summary>
+        /// Cancels a resize operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelResize service method.</param>
+        /// 
+        /// <returns>The response from the CancelResize service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.ResizeNotFoundException">
+        /// A resize operation for the specified cluster is not found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CancelResize">REST API Reference for CancelResize Operation</seealso>
+        public virtual CancelResizeResponse CancelResize(CancelResizeRequest request)
+        {
+            var marshaller = CancelResizeRequestMarshaller.Instance;
+            var unmarshaller = CancelResizeResponseUnmarshaller.Instance;
+
+            return Invoke<CancelResizeRequest,CancelResizeResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelResize operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelResize operation on AmazonRedshiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelResize
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CancelResize">REST API Reference for CancelResize Operation</seealso>
+        public virtual IAsyncResult BeginCancelResize(CancelResizeRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = CancelResizeRequestMarshaller.Instance;
+            var unmarshaller = CancelResizeResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CancelResizeRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CancelResize operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelResize.</param>
+        /// 
+        /// <returns>Returns a  CancelResizeResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CancelResize">REST API Reference for CancelResize Operation</seealso>
+        public virtual CancelResizeResponse EndCancelResize(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CancelResizeResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CopyClusterSnapshot
 
         /// <summary>
@@ -2141,6 +2206,59 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  DescribeAccountAttributes
+
+        /// <summary>
+        /// Returns a list of attributes attached to an account
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountAttributes service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAccountAttributes service method, as returned by Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
+        public virtual DescribeAccountAttributesResponse DescribeAccountAttributes(DescribeAccountAttributesRequest request)
+        {
+            var marshaller = DescribeAccountAttributesRequestMarshaller.Instance;
+            var unmarshaller = DescribeAccountAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAccountAttributesRequest,DescribeAccountAttributesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAccountAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountAttributes operation on AmazonRedshiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAccountAttributes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
+        public virtual IAsyncResult BeginDescribeAccountAttributes(DescribeAccountAttributesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DescribeAccountAttributesRequestMarshaller.Instance;
+            var unmarshaller = DescribeAccountAttributesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeAccountAttributesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAccountAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAccountAttributes.</param>
+        /// 
+        /// <returns>Returns a  DescribeAccountAttributesResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
+        public virtual DescribeAccountAttributesResponse EndDescribeAccountAttributes(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeAccountAttributesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeClusterDbRevisions
 
         /// <summary>
@@ -2151,6 +2269,9 @@ namespace Amazon.Redshift
         /// <returns>The response from the DescribeClusterDbRevisions service method, as returned by Redshift.</returns>
         /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
         /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <code>available</code> state.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterDbRevisions">REST API Reference for DescribeClusterDbRevisions Operation</seealso>
         public virtual DescribeClusterDbRevisionsResponse DescribeClusterDbRevisions(DescribeClusterDbRevisionsRequest request)
@@ -4811,6 +4932,63 @@ namespace Amazon.Redshift
         public virtual ModifyClusterIamRolesResponse EndModifyClusterIamRoles(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyClusterIamRolesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ModifyClusterMaintenance
+
+        /// <summary>
+        /// Modifies the maintenance settings of a cluster. For example, you can defer a maintenance
+        /// window. You can also update or cancel a deferment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyClusterMaintenance service method.</param>
+        /// 
+        /// <returns>The response from the ModifyClusterMaintenance service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterMaintenance">REST API Reference for ModifyClusterMaintenance Operation</seealso>
+        public virtual ModifyClusterMaintenanceResponse ModifyClusterMaintenance(ModifyClusterMaintenanceRequest request)
+        {
+            var marshaller = ModifyClusterMaintenanceRequestMarshaller.Instance;
+            var unmarshaller = ModifyClusterMaintenanceResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyClusterMaintenanceRequest,ModifyClusterMaintenanceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyClusterMaintenance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyClusterMaintenance operation on AmazonRedshiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyClusterMaintenance
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterMaintenance">REST API Reference for ModifyClusterMaintenance Operation</seealso>
+        public virtual IAsyncResult BeginModifyClusterMaintenance(ModifyClusterMaintenanceRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ModifyClusterMaintenanceRequestMarshaller.Instance;
+            var unmarshaller = ModifyClusterMaintenanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ModifyClusterMaintenanceRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyClusterMaintenance operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyClusterMaintenance.</param>
+        /// 
+        /// <returns>Returns a  ModifyClusterMaintenanceResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterMaintenance">REST API Reference for ModifyClusterMaintenance Operation</seealso>
+        public virtual ModifyClusterMaintenanceResponse EndModifyClusterMaintenance(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyClusterMaintenanceResponse>(asyncResult);
         }
 
         #endregion

@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeClusterDbRevisions operation
+    /// Response Unmarshaller for DescribeAccountAttributes operation
     /// </summary>  
-    public class DescribeClusterDbRevisionsResponseUnmarshaller : XmlResponseUnmarshaller
+    public class DescribeAccountAttributesResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            DescribeClusterDbRevisionsResponse response = new DescribeClusterDbRevisionsResponse();
+            DescribeAccountAttributesResponse response = new DescribeAccountAttributesResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -51,7 +51,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement)
                 {                    
-                    if(context.TestExpression("DescribeClusterDbRevisionsResult", 2))
+                    if(context.TestExpression("DescribeAccountAttributesResult", 2))
                     {
                         UnmarshallResult(context, response);                        
                         continue;
@@ -67,7 +67,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             return response;
         }
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context, DescribeClusterDbRevisionsResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context, DescribeAccountAttributesResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -81,17 +81,11 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if (context.TestExpression("ClusterDbRevisions/ClusterDbRevision", targetDepth))
+                    if (context.TestExpression("AccountAttributes/AccountAttribute", targetDepth))
                     {
-                        var unmarshaller = ClusterDbRevisionUnmarshaller.Instance;
+                        var unmarshaller = AccountAttributeUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
-                        response.ClusterDbRevisions.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("Marker", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.Marker = unmarshaller.Unmarshall(context);
+                        response.AccountAttributes.Add(item);
                         continue;
                     }
                 } 
@@ -111,19 +105,11 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ClusterNotFound"))
-            {
-                return new ClusterNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidClusterState"))
-            {
-                return new InvalidClusterStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             return new AmazonRedshiftException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static DescribeClusterDbRevisionsResponseUnmarshaller _instance = new DescribeClusterDbRevisionsResponseUnmarshaller();        
+        private static DescribeAccountAttributesResponseUnmarshaller _instance = new DescribeAccountAttributesResponseUnmarshaller();        
 
-        internal static DescribeClusterDbRevisionsResponseUnmarshaller GetInstance()
+        internal static DescribeAccountAttributesResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -131,7 +117,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeClusterDbRevisionsResponseUnmarshaller Instance
+        public static DescribeAccountAttributesResponseUnmarshaller Instance
         {
             get
             {

@@ -34,6 +34,7 @@ namespace Amazon.Redshift.Model
     {
         private string _databaseVersion;
         private string _maintenanceTrackName;
+        private List<SupportedOperation> _supportedOperations = new List<SupportedOperation>();
 
         /// <summary>
         /// Gets and sets the property DatabaseVersion. 
@@ -69,6 +70,24 @@ namespace Amazon.Redshift.Model
         internal bool IsSetMaintenanceTrackName()
         {
             return this._maintenanceTrackName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedOperations. 
+        /// <para>
+        /// A list of operations supported by the maintenance track.
+        /// </para>
+        /// </summary>
+        public List<SupportedOperation> SupportedOperations
+        {
+            get { return this._supportedOperations; }
+            set { this._supportedOperations = value; }
+        }
+
+        // Check to see if SupportedOperations property is set
+        internal bool IsSetSupportedOperations()
+        {
+            return this._supportedOperations != null && this._supportedOperations.Count > 0; 
         }
 
     }

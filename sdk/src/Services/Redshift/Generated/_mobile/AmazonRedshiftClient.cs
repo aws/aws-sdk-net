@@ -372,6 +372,38 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  CancelResize
+
+        internal virtual CancelResizeResponse CancelResize(CancelResizeRequest request)
+        {
+            var marshaller = CancelResizeRequestMarshaller.Instance;
+            var unmarshaller = CancelResizeResponseUnmarshaller.Instance;
+
+            return Invoke<CancelResizeRequest,CancelResizeResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelResize operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelResize operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CancelResize">REST API Reference for CancelResize Operation</seealso>
+        public virtual Task<CancelResizeResponse> CancelResizeAsync(CancelResizeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CancelResizeRequestMarshaller.Instance;
+            var unmarshaller = CancelResizeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CancelResizeRequest,CancelResizeResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CopyClusterSnapshot
 
         internal virtual CopyClusterSnapshotResponse CopyClusterSnapshot(CopyClusterSnapshotRequest request)
@@ -1039,6 +1071,38 @@ namespace Amazon.Redshift
             var unmarshaller = DeleteTagsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteTagsRequest,DeleteTagsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeAccountAttributes
+
+        internal virtual DescribeAccountAttributesResponse DescribeAccountAttributes(DescribeAccountAttributesRequest request)
+        {
+            var marshaller = DescribeAccountAttributesRequestMarshaller.Instance;
+            var unmarshaller = DescribeAccountAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAccountAttributesRequest,DescribeAccountAttributesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAccountAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountAttributes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
+        public virtual Task<DescribeAccountAttributesResponse> DescribeAccountAttributesAsync(DescribeAccountAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeAccountAttributesRequestMarshaller.Instance;
+            var unmarshaller = DescribeAccountAttributesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeAccountAttributesRequest,DescribeAccountAttributesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2568,6 +2632,38 @@ namespace Amazon.Redshift
             var unmarshaller = ModifyClusterIamRolesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ModifyClusterIamRolesRequest,ModifyClusterIamRolesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyClusterMaintenance
+
+        internal virtual ModifyClusterMaintenanceResponse ModifyClusterMaintenance(ModifyClusterMaintenanceRequest request)
+        {
+            var marshaller = ModifyClusterMaintenanceRequestMarshaller.Instance;
+            var unmarshaller = ModifyClusterMaintenanceResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyClusterMaintenanceRequest,ModifyClusterMaintenanceResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyClusterMaintenance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyClusterMaintenance operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterMaintenance">REST API Reference for ModifyClusterMaintenance Operation</seealso>
+        public virtual Task<ModifyClusterMaintenanceResponse> ModifyClusterMaintenanceAsync(ModifyClusterMaintenanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ModifyClusterMaintenanceRequestMarshaller.Instance;
+            var unmarshaller = ModifyClusterMaintenanceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyClusterMaintenanceRequest,ModifyClusterMaintenanceResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

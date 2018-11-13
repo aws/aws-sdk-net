@@ -93,7 +93,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Values: Configuration, Management, Monitoring, Security
+        /// Values: configuration, management, monitoring, security
         /// </para>
         /// </summary>
         public List<string> EventCategories

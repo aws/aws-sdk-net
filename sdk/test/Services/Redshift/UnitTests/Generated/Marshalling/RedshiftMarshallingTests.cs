@@ -116,6 +116,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("Redshift")]
+        public void CancelResizeMarshallTest()
+        {
+            var operation = service_model.FindOperation("CancelResize");
+
+            var request = InstantiateClassGenerator.Execute<CancelResizeRequest>();
+            var marshaller = new CancelResizeRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = CancelResizeResponseUnmarshaller.Instance.Unmarshall(context)
+                as CancelResizeResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
         public void CopyClusterSnapshotMarshallTest()
         {
             var operation = service_model.FindOperation("CopyClusterSnapshot");
@@ -567,6 +591,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
 
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void DescribeAccountAttributesMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeAccountAttributes");
+
+            var request = InstantiateClassGenerator.Execute<DescribeAccountAttributesRequest>();
+            var marshaller = new DescribeAccountAttributesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeAccountAttributesResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeAccountAttributesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
         
@@ -1334,6 +1382,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = ModifyClusterIamRolesResponseUnmarshaller.Instance.Unmarshall(context)
                 as ModifyClusterIamRolesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void ModifyClusterMaintenanceMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyClusterMaintenance");
+
+            var request = InstantiateClassGenerator.Execute<ModifyClusterMaintenanceRequest>();
+            var marshaller = new ModifyClusterMaintenanceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ModifyClusterMaintenanceResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyClusterMaintenanceResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

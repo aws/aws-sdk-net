@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateTarget Object
+    /// Response Unmarshaller for AttributeValueTarget Object
     /// </summary>  
-    public class UpdateTargetUnmarshaller : IUnmarshaller<UpdateTarget, XmlUnmarshallerContext>, IUnmarshaller<UpdateTarget, JsonUnmarshallerContext>
+    public class AttributeValueTargetUnmarshaller : IUnmarshaller<AttributeValueTarget, XmlUnmarshallerContext>, IUnmarshaller<AttributeValueTarget, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public UpdateTarget Unmarshall(XmlUnmarshallerContext context)
+        public AttributeValueTarget Unmarshall(XmlUnmarshallerContext context)
         {
-            UpdateTarget unmarshalledObject = new UpdateTarget();
+            AttributeValueTarget unmarshalledObject = new AttributeValueTarget();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,23 +54,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("DatabaseVersion", targetDepth))
+                    if (context.TestExpression("AttributeValue", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.DatabaseVersion = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("MaintenanceTrackName", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.MaintenanceTrackName = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("SupportedOperations/SupportedOperation", targetDepth))
-                    {
-                        var unmarshaller = SupportedOperationUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.SupportedOperations.Add(item);
+                        unmarshalledObject.AttributeValue = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -88,18 +75,18 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public UpdateTarget Unmarshall(JsonUnmarshallerContext context)
+        public AttributeValueTarget Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static UpdateTargetUnmarshaller _instance = new UpdateTargetUnmarshaller();        
+        private static AttributeValueTargetUnmarshaller _instance = new AttributeValueTargetUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateTargetUnmarshaller Instance
+        public static AttributeValueTargetUnmarshaller Instance
         {
             get
             {

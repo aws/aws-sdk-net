@@ -30,7 +30,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// Describes the result of a cluster resize operation.
     /// </summary>
-    public partial class DescribeResizeResponse : AmazonWebServiceResponse
+    public partial class CancelResizeResponse : AmazonWebServiceResponse
     {
         private double? _avgResizeRateInMegaBytesPerSecond;
         private long? _elapsedTimeInSeconds;

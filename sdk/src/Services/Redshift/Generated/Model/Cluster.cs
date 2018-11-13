@@ -46,7 +46,9 @@ namespace Amazon.Redshift.Model
         private string _clusterStatus;
         private string _clusterSubnetGroupName;
         private string _clusterVersion;
+        private DataTransferProgress _dataTransferProgress;
         private string _dbName;
+        private List<DeferredMaintenanceWindow> _deferredMaintenanceWindows = new List<DeferredMaintenanceWindow>();
         private ElasticIpStatus _elasticIpStatus;
         private string _elasticResizeNumberOfNodeOptions;
         private bool? _encrypted;
@@ -64,6 +66,7 @@ namespace Amazon.Redshift.Model
         private PendingModifiedValues _pendingModifiedValues;
         private string _preferredMaintenanceWindow;
         private bool? _publiclyAccessible;
+        private ResizeInfo _resizeInfo;
         private RestoreStatus _restoreStatus;
         private List<Tag> _tags = new List<Tag>();
         private string _vpcId;
@@ -289,6 +292,10 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>cancelling-resize</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>creating</code> 
         /// </para>
         ///  </li> <li> 
@@ -399,6 +406,21 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DataTransferProgress.
+        /// </summary>
+        public DataTransferProgress DataTransferProgress
+        {
+            get { return this._dataTransferProgress; }
+            set { this._dataTransferProgress = value; }
+        }
+
+        // Check to see if DataTransferProgress property is set
+        internal bool IsSetDataTransferProgress()
+        {
+            return this._dataTransferProgress != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DBName. 
         /// <para>
         /// The name of the initial database that was created when the cluster was created. This
@@ -416,6 +438,24 @@ namespace Amazon.Redshift.Model
         internal bool IsSetDBName()
         {
             return this._dbName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeferredMaintenanceWindows. 
+        /// <para>
+        /// Describes a group of <code>DeferredMaintenanceWindow</code> objects.
+        /// </para>
+        /// </summary>
+        public List<DeferredMaintenanceWindow> DeferredMaintenanceWindows
+        {
+            get { return this._deferredMaintenanceWindows; }
+            set { this._deferredMaintenanceWindows = value; }
+        }
+
+        // Check to see if DeferredMaintenanceWindows property is set
+        internal bool IsSetDeferredMaintenanceWindows()
+        {
+            return this._deferredMaintenanceWindows != null && this._deferredMaintenanceWindows.Count > 0; 
         }
 
         /// <summary>
@@ -746,6 +786,33 @@ namespace Amazon.Redshift.Model
         internal bool IsSetPubliclyAccessible()
         {
             return this._publiclyAccessible.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResizeInfo. 
+        /// <para>
+        /// Returns the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// AllowCancelResize: a boolean value indicating if the resize operation can be cancelled.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ResizeType: Returns ClassicResize
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ResizeInfo ResizeInfo
+        {
+            get { return this._resizeInfo; }
+            set { this._resizeInfo = value; }
+        }
+
+        // Check to see if ResizeInfo property is set
+        internal bool IsSetResizeInfo()
+        {
+            return this._resizeInfo != null;
         }
 
         /// <summary>

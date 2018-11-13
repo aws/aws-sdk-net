@@ -141,10 +141,23 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         unmarshalledObject.ClusterVersion = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("DataTransferProgress", targetDepth))
+                    {
+                        var unmarshaller = DataTransferProgressUnmarshaller.Instance;
+                        unmarshalledObject.DataTransferProgress = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("DBName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.DBName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("DeferredMaintenanceWindows/DeferredMaintenanceWindow", targetDepth))
+                    {
+                        var unmarshaller = DeferredMaintenanceWindowUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.DeferredMaintenanceWindows.Add(item);
                         continue;
                     }
                     if (context.TestExpression("ElasticIpStatus", targetDepth))
@@ -249,6 +262,12 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
                         unmarshalledObject.PubliclyAccessible = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ResizeInfo", targetDepth))
+                    {
+                        var unmarshaller = ResizeInfoUnmarshaller.Instance;
+                        unmarshalledObject.ResizeInfo = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("RestoreStatus", targetDepth))

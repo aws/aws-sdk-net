@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateTarget Object
+    /// Response Unmarshaller for DeferredMaintenanceWindow Object
     /// </summary>  
-    public class UpdateTargetUnmarshaller : IUnmarshaller<UpdateTarget, XmlUnmarshallerContext>, IUnmarshaller<UpdateTarget, JsonUnmarshallerContext>
+    public class DeferredMaintenanceWindowUnmarshaller : IUnmarshaller<DeferredMaintenanceWindow, XmlUnmarshallerContext>, IUnmarshaller<DeferredMaintenanceWindow, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public UpdateTarget Unmarshall(XmlUnmarshallerContext context)
+        public DeferredMaintenanceWindow Unmarshall(XmlUnmarshallerContext context)
         {
-            UpdateTarget unmarshalledObject = new UpdateTarget();
+            DeferredMaintenanceWindow unmarshalledObject = new DeferredMaintenanceWindow();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,23 +54,22 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("DatabaseVersion", targetDepth))
+                    if (context.TestExpression("DeferMaintenanceEndTime", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.DatabaseVersion = unmarshaller.Unmarshall(context);
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.DeferMaintenanceEndTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("MaintenanceTrackName", targetDepth))
+                    if (context.TestExpression("DeferMaintenanceIdentifier", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.MaintenanceTrackName = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.DeferMaintenanceIdentifier = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("SupportedOperations/SupportedOperation", targetDepth))
+                    if (context.TestExpression("DeferMaintenanceStartTime", targetDepth))
                     {
-                        var unmarshaller = SupportedOperationUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.SupportedOperations.Add(item);
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.DeferMaintenanceStartTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -88,18 +87,18 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public UpdateTarget Unmarshall(JsonUnmarshallerContext context)
+        public DeferredMaintenanceWindow Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static UpdateTargetUnmarshaller _instance = new UpdateTargetUnmarshaller();        
+        private static DeferredMaintenanceWindowUnmarshaller _instance = new DeferredMaintenanceWindowUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateTargetUnmarshaller Instance
+        public static DeferredMaintenanceWindowUnmarshaller Instance
         {
             get
             {

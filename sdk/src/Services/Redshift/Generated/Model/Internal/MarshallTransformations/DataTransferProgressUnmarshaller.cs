@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateTarget Object
+    /// Response Unmarshaller for DataTransferProgress Object
     /// </summary>  
-    public class UpdateTargetUnmarshaller : IUnmarshaller<UpdateTarget, XmlUnmarshallerContext>, IUnmarshaller<UpdateTarget, JsonUnmarshallerContext>
+    public class DataTransferProgressUnmarshaller : IUnmarshaller<DataTransferProgress, XmlUnmarshallerContext>, IUnmarshaller<DataTransferProgress, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public UpdateTarget Unmarshall(XmlUnmarshallerContext context)
+        public DataTransferProgress Unmarshall(XmlUnmarshallerContext context)
         {
-            UpdateTarget unmarshalledObject = new UpdateTarget();
+            DataTransferProgress unmarshalledObject = new DataTransferProgress();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,23 +54,40 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("DatabaseVersion", targetDepth))
+                    if (context.TestExpression("CurrentRateInMegaBytesPerSecond", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.DatabaseVersion = unmarshaller.Unmarshall(context);
+                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        unmarshalledObject.CurrentRateInMegaBytesPerSecond = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("MaintenanceTrackName", targetDepth))
+                    if (context.TestExpression("DataTransferredInMegaBytes", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.MaintenanceTrackName = unmarshaller.Unmarshall(context);
+                        var unmarshaller = LongUnmarshaller.Instance;
+                        unmarshalledObject.DataTransferredInMegaBytes = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("SupportedOperations/SupportedOperation", targetDepth))
+                    if (context.TestExpression("ElapsedTimeInSeconds", targetDepth))
                     {
-                        var unmarshaller = SupportedOperationUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.SupportedOperations.Add(item);
+                        var unmarshaller = LongUnmarshaller.Instance;
+                        unmarshalledObject.ElapsedTimeInSeconds = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("EstimatedTimeToCompletionInSeconds", targetDepth))
+                    {
+                        var unmarshaller = LongUnmarshaller.Instance;
+                        unmarshalledObject.EstimatedTimeToCompletionInSeconds = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Status", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("TotalDataInMegaBytes", targetDepth))
+                    {
+                        var unmarshaller = LongUnmarshaller.Instance;
+                        unmarshalledObject.TotalDataInMegaBytes = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -88,18 +105,18 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public UpdateTarget Unmarshall(JsonUnmarshallerContext context)
+        public DataTransferProgress Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static UpdateTargetUnmarshaller _instance = new UpdateTargetUnmarshaller();        
+        private static DataTransferProgressUnmarshaller _instance = new DataTransferProgressUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateTargetUnmarshaller Instance
+        public static DataTransferProgressUnmarshaller Instance
         {
             get
             {

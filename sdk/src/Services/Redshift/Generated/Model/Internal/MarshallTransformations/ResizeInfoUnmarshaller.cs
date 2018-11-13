@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateTarget Object
+    /// Response Unmarshaller for ResizeInfo Object
     /// </summary>  
-    public class UpdateTargetUnmarshaller : IUnmarshaller<UpdateTarget, XmlUnmarshallerContext>, IUnmarshaller<UpdateTarget, JsonUnmarshallerContext>
+    public class ResizeInfoUnmarshaller : IUnmarshaller<ResizeInfo, XmlUnmarshallerContext>, IUnmarshaller<ResizeInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public UpdateTarget Unmarshall(XmlUnmarshallerContext context)
+        public ResizeInfo Unmarshall(XmlUnmarshallerContext context)
         {
-            UpdateTarget unmarshalledObject = new UpdateTarget();
+            ResizeInfo unmarshalledObject = new ResizeInfo();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,23 +54,16 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("DatabaseVersion", targetDepth))
+                    if (context.TestExpression("AllowCancelResize", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.DatabaseVersion = unmarshaller.Unmarshall(context);
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.AllowCancelResize = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("MaintenanceTrackName", targetDepth))
+                    if (context.TestExpression("ResizeType", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.MaintenanceTrackName = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("SupportedOperations/SupportedOperation", targetDepth))
-                    {
-                        var unmarshaller = SupportedOperationUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.SupportedOperations.Add(item);
+                        unmarshalledObject.ResizeType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -88,18 +81,18 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public UpdateTarget Unmarshall(JsonUnmarshallerContext context)
+        public ResizeInfo Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static UpdateTargetUnmarshaller _instance = new UpdateTargetUnmarshaller();        
+        private static ResizeInfoUnmarshaller _instance = new ResizeInfoUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateTargetUnmarshaller Instance
+        public static ResizeInfoUnmarshaller Instance
         {
             get
             {
