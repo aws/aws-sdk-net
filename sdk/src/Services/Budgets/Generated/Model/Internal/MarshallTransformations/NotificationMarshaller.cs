@@ -51,6 +51,12 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ComparisonOperator);
             }
 
+            if(requestObject.IsSetNotificationState())
+            {
+                context.Writer.WritePropertyName("NotificationState");
+                context.Writer.Write(requestObject.NotificationState);
+            }
+
             if(requestObject.IsSetNotificationType())
             {
                 context.Writer.WritePropertyName("NotificationType");

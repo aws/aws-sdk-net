@@ -4,14 +4,17 @@
     <property>Amazon.Budgets.Model.CreateBudgetRequest.AccountId</property>
     <min>12</min>
     <max>12</max>
+    <pattern>\d{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.CreateNotificationRequest.AccountId</property>
     <min>12</min>
     <max>12</max>
+    <pattern>\d{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.CreateNotificationRequest.BudgetName</property>
+    <min>1</min>
     <max>100</max>
     <pattern>[^:\\]+</pattern>
   </property-value-rule>
@@ -19,9 +22,11 @@
     <property>Amazon.Budgets.Model.CreateSubscriberRequest.AccountId</property>
     <min>12</min>
     <max>12</max>
+    <pattern>\d{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.CreateSubscriberRequest.BudgetName</property>
+    <min>1</min>
     <max>100</max>
     <pattern>[^:\\]+</pattern>
   </property-value-rule>
@@ -29,9 +34,11 @@
     <property>Amazon.Budgets.Model.DeleteBudgetRequest.AccountId</property>
     <min>12</min>
     <max>12</max>
+    <pattern>\d{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.DeleteBudgetRequest.BudgetName</property>
+    <min>1</min>
     <max>100</max>
     <pattern>[^:\\]+</pattern>
   </property-value-rule>
@@ -39,9 +46,11 @@
     <property>Amazon.Budgets.Model.DeleteNotificationRequest.AccountId</property>
     <min>12</min>
     <max>12</max>
+    <pattern>\d{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.DeleteNotificationRequest.BudgetName</property>
+    <min>1</min>
     <max>100</max>
     <pattern>[^:\\]+</pattern>
   </property-value-rule>
@@ -49,9 +58,11 @@
     <property>Amazon.Budgets.Model.DeleteSubscriberRequest.AccountId</property>
     <min>12</min>
     <max>12</max>
+    <pattern>\d{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.DeleteSubscriberRequest.BudgetName</property>
+    <min>1</min>
     <max>100</max>
     <pattern>[^:\\]+</pattern>
   </property-value-rule>
@@ -59,16 +70,48 @@
     <property>Amazon.Budgets.Model.DescribeBudgetRequest.AccountId</property>
     <min>12</min>
     <max>12</max>
+    <pattern>\d{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.DescribeBudgetRequest.BudgetName</property>
+    <min>1</min>
     <max>100</max>
     <pattern>[^:\\]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.DescribeBudgetPerformanceHistoryRequest.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.DescribeBudgetPerformanceHistoryRequest.BudgetName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[^:\\]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.DescribeBudgetPerformanceHistoryRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.DescribeBudgetPerformanceHistoryRequest.NextToken</property>
+    <min>0</min>
+    <max>2147483647</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.DescribeBudgetPerformanceHistoryResponse.NextToken</property>
+    <min>0</min>
+    <max>2147483647</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.DescribeBudgetsRequest.AccountId</property>
     <min>12</min>
     <max>12</max>
+    <pattern>\d{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.DescribeBudgetsRequest.MaxResults</property>
@@ -76,12 +119,26 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Budgets.Model.DescribeBudgetsRequest.NextToken</property>
+    <min>0</min>
+    <max>2147483647</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.DescribeBudgetsResponse.NextToken</property>
+    <min>0</min>
+    <max>2147483647</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Budgets.Model.DescribeNotificationsForBudgetRequest.AccountId</property>
     <min>12</min>
     <max>12</max>
+    <pattern>\d{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.DescribeNotificationsForBudgetRequest.BudgetName</property>
+    <min>1</min>
     <max>100</max>
     <pattern>[^:\\]+</pattern>
   </property-value-rule>
@@ -91,12 +148,26 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Budgets.Model.DescribeNotificationsForBudgetRequest.NextToken</property>
+    <min>0</min>
+    <max>2147483647</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.DescribeNotificationsForBudgetResponse.NextToken</property>
+    <min>0</min>
+    <max>2147483647</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Budgets.Model.DescribeSubscribersForNotificationRequest.AccountId</property>
     <min>12</min>
     <max>12</max>
+    <pattern>\d{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.DescribeSubscribersForNotificationRequest.BudgetName</property>
+    <min>1</min>
     <max>100</max>
     <pattern>[^:\\]+</pattern>
   </property-value-rule>
@@ -106,17 +177,32 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Budgets.Model.DescribeSubscribersForNotificationRequest.NextToken</property>
+    <min>0</min>
+    <max>2147483647</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.DescribeSubscribersForNotificationResponse.NextToken</property>
+    <min>0</min>
+    <max>2147483647</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Budgets.Model.UpdateBudgetRequest.AccountId</property>
     <min>12</min>
     <max>12</max>
+    <pattern>\d{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.UpdateNotificationRequest.AccountId</property>
     <min>12</min>
     <max>12</max>
+    <pattern>\d{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.UpdateNotificationRequest.BudgetName</property>
+    <min>1</min>
     <max>100</max>
     <pattern>[^:\\]+</pattern>
   </property-value-rule>
@@ -124,31 +210,47 @@
     <property>Amazon.Budgets.Model.UpdateSubscriberRequest.AccountId</property>
     <min>12</min>
     <max>12</max>
+    <pattern>\d{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.UpdateSubscriberRequest.BudgetName</property>
+    <min>1</min>
     <max>100</max>
     <pattern>[^:\\]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.Budget.BudgetName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[^:\\]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.BudgetPerformanceHistory.BudgetName</property>
+    <min>1</min>
     <max>100</max>
     <pattern>[^:\\]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.Notification.Threshold</property>
+    <min>0</min>
     <max>1000000000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.Spend.Amount</property>
+    <min>1</min>
+    <max>2147483647</max>
     <pattern>([0-9]*\.)?[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.Spend.Unit</property>
     <min>1</min>
+    <max>2147483647</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.Subscriber.Address</property>
     <min>1</min>
+    <max>2147483647</max>
+    <pattern>.*</pattern>
   </property-value-rule>
 </property-value-rules>

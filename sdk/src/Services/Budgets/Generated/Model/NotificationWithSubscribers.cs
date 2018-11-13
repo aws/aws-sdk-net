@@ -29,7 +29,7 @@ namespace Amazon.Budgets.Model
 {
     /// <summary>
     /// A notification with subscribers. A notification can have one SNS subscriber and up
-    /// to ten email subscribers, for a total of 11 subscribers.
+    /// to 10 email subscribers, for a total of 11 subscribers.
     /// </summary>
     public partial class NotificationWithSubscribers
     {
@@ -39,7 +39,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property Notification. 
         /// <para>
-        /// The notification associated with a budget.
+        /// The notification that is associated with a budget.
         /// </para>
         /// </summary>
         public Notification Notification

@@ -28,37 +28,40 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Budgets.Model
 {
     /// <summary>
-    /// Response of DescribeBudgets
+    /// This is the response object from the DescribeBudgetPerformanceHistory operation.
     /// </summary>
-    public partial class DescribeBudgetsResponse : AmazonWebServiceResponse
+    public partial class DescribeBudgetPerformanceHistoryResponse : AmazonWebServiceResponse
     {
-        private List<Budget> _budgets = new List<Budget>();
+        private BudgetPerformanceHistory _budgetPerformanceHistory;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Budgets. 
+        /// Gets and sets the property BudgetPerformanceHistory. 
         /// <para>
-        /// A list of budgets.
+        /// The history of how often the budget has gone into an <code>ALARM</code> state.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <code>DAILY</code> budgets, the history saves the state of the budget for the
+        /// last 60 days. For <code>MONTHLY</code> budgets, the history saves the state of the
+        /// budget for the last 12 months. For <code>QUARTERLY</code> budgets, the history saves
+        /// the state of the budget for the last four quarters.
         /// </para>
         /// </summary>
-        public List<Budget> Budgets
+        public BudgetPerformanceHistory BudgetPerformanceHistory
         {
-            get { return this._budgets; }
-            set { this._budgets = value; }
+            get { return this._budgetPerformanceHistory; }
+            set { this._budgetPerformanceHistory = value; }
         }
 
-        // Check to see if Budgets property is set
-        internal bool IsSetBudgets()
+        // Check to see if BudgetPerformanceHistory property is set
+        internal bool IsSetBudgetPerformanceHistory()
         {
-            return this._budgets != null && this._budgets.Count > 0; 
+            return this._budgetPerformanceHistory != null;
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
-        /// <para>
-        /// The pagination token in the service response that indicates the next set of results
-        /// that you can retrieve.
-        /// </para>
+        /// Gets and sets the property NextToken.
         /// </summary>
         public string NextToken
         {

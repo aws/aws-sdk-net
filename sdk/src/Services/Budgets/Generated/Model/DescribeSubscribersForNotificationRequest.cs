@@ -29,7 +29,7 @@ namespace Amazon.Budgets.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSubscribersForNotification operation.
-    /// Lists the subscribers associated with a notification.
+    /// Lists the subscribers that are associated with a notification.
     /// </summary>
     public partial class DescribeSubscribersForNotificationRequest : AmazonBudgetsRequest
     {
@@ -79,7 +79,8 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Optional integer. Specifies the maximum number of results to return in response.
+        /// An optional integer that represents how many entries a paginated response contains.
+        /// The maximum is 100.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -97,7 +98,8 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The pagination token that indicates the next set of results to retrieve.
+        /// The pagination token that you include in your request to indicate the next set of
+        /// results that you want to retrieve.
         /// </para>
         /// </summary>
         public string NextToken

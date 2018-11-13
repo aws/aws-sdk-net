@@ -96,7 +96,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property OldNotification. 
         /// <para>
-        /// The previous notification associated with a budget.
+        /// The previous notification that is associated with a budget.
         /// </para>
         /// </summary>
         public Notification OldNotification

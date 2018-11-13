@@ -29,7 +29,7 @@ namespace Amazon.Budgets.Model
 {
     /// <summary>
     /// The subscriber to a budget notification. The subscriber consists of a subscription
-    /// type and either an Amazon Simple Notification Service topic or an email address.
+    /// type and either an Amazon SNS topic or an email address.
     /// 
     ///  
     /// <para>

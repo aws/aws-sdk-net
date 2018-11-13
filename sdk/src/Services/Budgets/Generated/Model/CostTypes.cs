@@ -28,7 +28,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Budgets.Model
 {
     /// <summary>
-    /// The types of cost included in a budget, such as tax and subscriptions.
+    /// The types of cost that are included in a <code>COST</code> budget, such as tax and
+    /// subscriptions.
+    /// 
+    ///  
+    /// <para>
+    ///  <code>USAGE</code>, <code>RI_UTILIZATION</code>, and <code>RI_COVERAGE</code> budgets
+    /// do not have <code>CostTypes</code>.
+    /// </para>
     /// </summary>
     public partial class CostTypes
     {
@@ -267,7 +274,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property UseBlended. 
         /// <para>
-        /// Specifies whether a budget uses blended rate.
+        /// Specifies whether a budget uses a blended rate.
         /// </para>
         ///  
         /// <para>

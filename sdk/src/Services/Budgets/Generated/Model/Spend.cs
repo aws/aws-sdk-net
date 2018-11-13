@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Budgets.Model
 {
     /// <summary>
-    /// The amount of cost or usage being measured for a budget.
+    /// The amount of cost or usage that is measured for a budget.
     /// 
     ///  
     /// <para>
@@ -53,8 +53,8 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property Amount. 
         /// <para>
-        /// The cost or usage amount associated with a budget forecast, actual spend, or budget
-        /// threshold.
+        /// The cost or usage amount that is associated with a budget forecast, actual spend,
+        /// or budget threshold.
         /// </para>
         /// </summary>
         public decimal Amount
@@ -72,8 +72,8 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property Unit. 
         /// <para>
-        /// The unit of measurement used for the budget forecast, actual spend, or budget threshold,
-        /// such as dollars or GB.
+        /// The unit of measurement that is used for the budget forecast, actual spend, or budget
+        /// threshold, such as dollars or GB.
         /// </para>
         /// </summary>
         public string Unit

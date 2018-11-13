@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Budgets.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Notification Object
+    /// Response Unmarshaller for BudgetedAndActualAmounts Object
     /// </summary>  
-    public class NotificationUnmarshaller : IUnmarshaller<Notification, XmlUnmarshallerContext>, IUnmarshaller<Notification, JsonUnmarshallerContext>
+    public class BudgetedAndActualAmountsUnmarshaller : IUnmarshaller<BudgetedAndActualAmounts, XmlUnmarshallerContext>, IUnmarshaller<BudgetedAndActualAmounts, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Notification IUnmarshaller<Notification, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        BudgetedAndActualAmounts IUnmarshaller<BudgetedAndActualAmounts, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,33 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Notification Unmarshall(JsonUnmarshallerContext context)
+        public BudgetedAndActualAmounts Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Notification unmarshalledObject = new Notification();
+            BudgetedAndActualAmounts unmarshalledObject = new BudgetedAndActualAmounts();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ComparisonOperator", targetDepth))
+                if (context.TestExpression("ActualAmount", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ComparisonOperator = unmarshaller.Unmarshall(context);
+                    var unmarshaller = SpendUnmarshaller.Instance;
+                    unmarshalledObject.ActualAmount = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("NotificationState", targetDepth))
+                if (context.TestExpression("BudgetedAmount", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NotificationState = unmarshaller.Unmarshall(context);
+                    var unmarshaller = SpendUnmarshaller.Instance;
+                    unmarshalledObject.BudgetedAmount = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("NotificationType", targetDepth))
+                if (context.TestExpression("TimePeriod", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NotificationType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Threshold", targetDepth))
-                {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
-                    unmarshalledObject.Threshold = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ThresholdType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ThresholdType = unmarshaller.Unmarshall(context);
+                    var unmarshaller = TimePeriodUnmarshaller.Instance;
+                    unmarshalledObject.TimePeriod = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +88,12 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
         }
 
 
-        private static NotificationUnmarshaller _instance = new NotificationUnmarshaller();        
+        private static BudgetedAndActualAmountsUnmarshaller _instance = new BudgetedAndActualAmountsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static NotificationUnmarshaller Instance
+        public static BudgetedAndActualAmountsUnmarshaller Instance
         {
             get
             {

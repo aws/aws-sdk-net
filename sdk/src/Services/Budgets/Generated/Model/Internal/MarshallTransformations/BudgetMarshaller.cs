@@ -109,6 +109,12 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetLastUpdatedTime())
+            {
+                context.Writer.WritePropertyName("LastUpdatedTime");
+                context.Writer.Write(requestObject.LastUpdatedTime);
+            }
+
             if(requestObject.IsSetTimePeriod())
             {
                 context.Writer.WritePropertyName("TimePeriod");

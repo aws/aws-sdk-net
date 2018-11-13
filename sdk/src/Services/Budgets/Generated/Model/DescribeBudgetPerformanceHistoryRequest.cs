@@ -28,23 +28,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Budgets.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateSubscriber operation.
-    /// Updates a subscriber.
+    /// Container for the parameters to the DescribeBudgetPerformanceHistory operation.
+    /// Describes the history for <code>DAILY</code>, <code>MONTHLY</code>, and <code>QUARTERLY</code>
+    /// budgets. Budget history isn't available for <code>ANNUAL</code> budgets.
     /// </summary>
-    public partial class UpdateSubscriberRequest : AmazonBudgetsRequest
+    public partial class DescribeBudgetPerformanceHistoryRequest : AmazonBudgetsRequest
     {
         private string _accountId;
         private string _budgetName;
-        private Subscriber _newSubscriber;
-        private Notification _notification;
-        private Subscriber _oldSubscriber;
+        private int? _maxResults;
+        private string _nextToken;
+        private TimePeriod _timePeriod;
 
         /// <summary>
-        /// Gets and sets the property AccountId. 
-        /// <para>
-        /// The <code>accountId</code> that is associated with the budget whose subscriber you
-        /// want to update.
-        /// </para>
+        /// Gets and sets the property AccountId.
         /// </summary>
         public string AccountId
         {
@@ -59,10 +56,7 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BudgetName. 
-        /// <para>
-        /// The name of the budget whose subscriber you want to update.
-        /// </para>
+        /// Gets and sets the property BudgetName.
         /// </summary>
         public string BudgetName
         {
@@ -77,57 +71,52 @@ namespace Amazon.Budgets.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NewSubscriber. 
-        /// <para>
-        /// The updated subscriber that is associated with a budget notification.
-        /// </para>
+        /// Gets and sets the property MaxResults.
         /// </summary>
-        public Subscriber NewSubscriber
+        public int MaxResults
         {
-            get { return this._newSubscriber; }
-            set { this._newSubscriber = value; }
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
         }
 
-        // Check to see if NewSubscriber property is set
-        internal bool IsSetNewSubscriber()
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
         {
-            return this._newSubscriber != null;
+            return this._maxResults.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property Notification. 
-        /// <para>
-        /// The notification whose subscriber you want to update.
-        /// </para>
+        /// Gets and sets the property NextToken.
         /// </summary>
-        public Notification Notification
+        public string NextToken
         {
-            get { return this._notification; }
-            set { this._notification = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if Notification property is set
-        internal bool IsSetNotification()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._notification != null;
+            return this._nextToken != null;
         }
 
         /// <summary>
-        /// Gets and sets the property OldSubscriber. 
+        /// Gets and sets the property TimePeriod. 
         /// <para>
-        /// The previous subscriber that is associated with a budget notification.
+        /// Retrieves how often the budget went into an <code>ALARM</code> state for the specified
+        /// time period.
         /// </para>
         /// </summary>
-        public Subscriber OldSubscriber
+        public TimePeriod TimePeriod
         {
-            get { return this._oldSubscriber; }
-            set { this._oldSubscriber = value; }
+            get { return this._timePeriod; }
+            set { this._timePeriod = value; }
         }
 
-        // Check to see if OldSubscriber property is set
-        internal bool IsSetOldSubscriber()
+        // Check to see if TimePeriod property is set
+        internal bool IsSetTimePeriod()
         {
-            return this._oldSubscriber != null;
+            return this._timePeriod != null;
         }
 
     }

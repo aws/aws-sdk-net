@@ -37,40 +37,57 @@ namespace Amazon.Budgets
     /// <summary>
     /// Implementation for accessing Budgets
     ///
-    /// Budgets enable you to plan your service usage, service costs, and your RI utilization.
-    /// You can also track how close your plan is to your budgeted amount or to the free tier
-    /// limits. Budgets provide you with a quick way to see your usage-to-date and current
-    /// estimated charges from AWS and to see how much your predicted usage accrues in charges
-    /// by the end of the month. Budgets also compare current estimates and charges to the
-    /// amount that you indicated you want to use or spend and lets you see how much of your
-    /// budget has been used. AWS updates your budget status several times a day. Budgets
-    /// track your unblended costs, subscriptions, and refunds. You can create the following
-    /// types of budgets:
+    /// The AWS Budgets API enables you to use AWS Budgets to plan your service usage, service
+    /// costs, and instance reservations. The API reference provides descriptions, syntax,
+    /// and usage examples for each of the actions and data types for AWS Budgets. 
     /// 
+    ///  
+    /// <para>
+    /// Budgets provide you with a way to see the following information:
+    /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Cost budgets allow you to say how much you want to spend on a service.
+    /// How close your plan is to your budgeted amount or to the free tier limits
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Usage budgets allow you to say how many hours you want to use for one or more services.
+    /// Your usage-to-date, including how much you've used of your Reserved Instances (RIs)
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// RI utilization budgets allow you to define a utilization threshold and receive alerts
-    /// when RIs are tracking below that threshold.
+    /// Your current estimated charges from AWS, and how much your predicted usage will accrue
+    /// in charges by the end of the month
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// How much of your budget has been used
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// You can create up to 20,000 budgets per AWS master account. Your first two budgets
-    /// are free of charge. Each additional budget costs $0.02 per day. You can set up optional
-    /// notifications that warn you if you exceed, or are forecasted to exceed, your budgeted
-    /// amount. You can have notifications sent to an Amazon SNS topic, to an email address,
-    /// or to both. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-sns-policy.html">Creating
-    /// an Amazon SNS Topic for Budget Notifications</a>. AWS Free Tier usage alerts via AWS
-    /// Budgets are provided for you, and do not count toward your budget limits.
+    /// AWS updates your budget status several times a day. Budgets track your unblended costs,
+    /// subscriptions, refunds, and RIs. You can create the following types of budgets:
     /// </para>
-    ///  
+    ///  <ul> <li> 
+    /// <para>
+    ///  <b>Cost budgets</b> - Plan how much you want to spend on a service.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>Usage budgets</b> - Plan how much you want to use one or more services.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>RI utilization budgets</b> - Define a utilization threshold, and receive alerts
+    /// when your RI usage falls below that threshold. This lets you see if your RIs are unused
+    /// or under-utilized.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>RI coverage budgets</b> - Define a coverage threshold, and receive alerts when
+    /// the number of your instance hours that are covered by RIs fall below that threshold.
+    /// This lets you see how much of your instance usage is covered by a reservation.
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     /// Service Endpoint
     /// </para>
@@ -84,7 +101,7 @@ namespace Amazon.Budgets
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For information about costs associated with the AWS Budgets API, see <a href="https://aws.amazon.com/aws-cost-management/pricing/">AWS
+    /// For information about costs that are associated with the AWS Budgets API, see <a href="https://aws.amazon.com/aws-cost-management/pricing/">AWS
     /// Cost Management Pricing</a>.
     /// </para>
     /// </summary>
@@ -503,6 +520,37 @@ namespace Amazon.Budgets
             var unmarshaller = DescribeBudgetResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeBudgetRequest,DescribeBudgetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeBudgetPerformanceHistory
+
+        internal virtual DescribeBudgetPerformanceHistoryResponse DescribeBudgetPerformanceHistory(DescribeBudgetPerformanceHistoryRequest request)
+        {
+            var marshaller = DescribeBudgetPerformanceHistoryRequestMarshaller.Instance;
+            var unmarshaller = DescribeBudgetPerformanceHistoryResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeBudgetPerformanceHistoryRequest,DescribeBudgetPerformanceHistoryResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeBudgetPerformanceHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBudgetPerformanceHistory operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<DescribeBudgetPerformanceHistoryResponse> DescribeBudgetPerformanceHistoryAsync(DescribeBudgetPerformanceHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeBudgetPerformanceHistoryRequestMarshaller.Instance;
+            var unmarshaller = DescribeBudgetPerformanceHistoryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeBudgetPerformanceHistoryRequest,DescribeBudgetPerformanceHistoryResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
