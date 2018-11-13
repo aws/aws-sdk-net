@@ -86,6 +86,17 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetLaunchTemplate())
+            {
+                context.Writer.WritePropertyName("launchTemplate");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = LaunchTemplateSpecificationMarshaller.Instance;
+                marshaller.Marshall(requestObject.LaunchTemplate, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetMaxvCpus())
             {
                 context.Writer.WritePropertyName("maxvCpus");

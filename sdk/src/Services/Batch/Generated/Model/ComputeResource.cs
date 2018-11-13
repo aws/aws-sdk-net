@@ -38,6 +38,7 @@ namespace Amazon.Batch.Model
         private string _imageId;
         private string _instanceRole;
         private List<string> _instanceTypes = new List<string>();
+        private LaunchTemplateSpecification _launchTemplate;
         private int? _maxvCpus;
         private int? _minvCpus;
         private List<string> _securityGroupIds = new List<string>();
@@ -49,10 +50,12 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property BidPercentage. 
         /// <para>
-        /// The minimum percentage that a Spot Instance price must be when compared with the On-Demand
-        /// price for that instance type before instances are launched. For example, if your bid
+        /// The maximum percentage that a Spot Instance price can be when compared with the On-Demand
+        /// price for that instance type before instances are launched. For example, if your maximum
         /// percentage is 20%, then the Spot price must be below 20% of the current On-Demand
-        /// price for that EC2 instance.
+        /// price for that EC2 instance. You always pay the lowest (market) price and never more
+        /// than your maximum percentage. If you leave this field empty, the default value is
+        /// 100% of the On-Demand price.
         /// </para>
         /// </summary>
         public int BidPercentage
@@ -166,6 +169,27 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LaunchTemplate. 
+        /// <para>
+        /// The launch template to use for your compute resources. Any other compute resource
+        /// parameters that you specify in a <a>CreateComputeEnvironment</a> API operation override
+        /// the same parameters in the launch template. You must specify either the launch template
+        /// ID or launch template name in the request, but not both. 
+        /// </para>
+        /// </summary>
+        public LaunchTemplateSpecification LaunchTemplate
+        {
+            get { return this._launchTemplate; }
+            set { this._launchTemplate = value; }
+        }
+
+        // Check to see if LaunchTemplate property is set
+        internal bool IsSetLaunchTemplate()
+        {
+            return this._launchTemplate != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MaxvCpus. 
         /// <para>
         /// The maximum number of EC2 vCPUs that an environment can reach. 
@@ -186,7 +210,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property MinvCpus. 
         /// <para>
-        /// The minimum number of EC2 vCPUs that an environment should maintain. 
+        /// The minimum number of EC2 vCPUs that an environment should maintain (even if the compute
+        /// environment is <code>DISABLED</code>). 
         /// </para>
         /// </summary>
         public int MinvCpus

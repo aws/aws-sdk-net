@@ -315,12 +315,13 @@ namespace Amazon.Batch
         /// 
         ///  
         /// <para>
-        /// In a managed compute environment, AWS Batch manages the compute resources within the
-        /// environment, based on the compute resources that you specify. Instances launched into
-        /// a managed compute environment use a recent, approved version of the Amazon ECS-optimized
-        /// AMI. You can choose to use Amazon EC2 On-Demand Instances in your managed compute
-        /// environment, or you can use Amazon EC2 Spot Instances that only launch when the Spot
-        /// bid price is below a specified percentage of the On-Demand price.
+        /// In a managed compute environment, AWS Batch manages the capacity and instance types
+        /// of the compute resources within the environment, based on the compute resource specification
+        /// that you define or <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">launch
+        /// template</a> that you specify when you create the compute environment. You can choose
+        /// to use Amazon EC2 On-Demand Instances or Spot Instances in your managed compute environment.
+        /// You can optionally set a maximum price so that Spot Instances only launch when the
+        /// Spot Instance price is below a specified percentage of the On-Demand price.
         /// </para>
         ///  
         /// <para>
@@ -336,6 +337,31 @@ namespace Amazon.Batch
         /// an Amazon ECS Container Instance</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// AWS Batch does not upgrade the AMIs in a compute environment after it is created (for
+        /// example, when a newer version of the Amazon ECS-optimized AMI is available). You are
+        /// responsible for the management of the guest operating system (including updates and
+        /// security patches) and any additional application software or utilities that you install
+        /// on the compute resources. To use a new AMI for your AWS Batch jobs:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Create a new compute environment with the new AMI.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Add the compute environment to an existing job queue.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Remove the old compute environment from your job queue.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Delete the old compute environment.
+        /// </para>
+        ///  </li> </ol> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateComputeEnvironment service method.</param>
         /// 
@@ -791,9 +817,15 @@ namespace Amazon.Batch
 
 
         /// <summary>
-        /// Returns a list of task jobs for a specified job queue. You can filter the results
-        /// by job status with the <code>jobStatus</code> parameter. If you do not specify a status,
-        /// only <code>RUNNING</code> jobs are returned.
+        /// Returns a list of AWS Batch jobs. You must specify either a job queue to return a
+        /// list of jobs in that job queue, or an array job ID to return a list of that job's
+        /// children. You cannot specify both a job queue and an array job ID.
+        /// 
+        ///  
+        /// <para>
+        /// You can filter the results by job status with the <code>jobStatus</code> parameter.
+        /// If you do not specify a status, only <code>RUNNING</code> jobs are returned.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListJobs service method.</param>
         /// 

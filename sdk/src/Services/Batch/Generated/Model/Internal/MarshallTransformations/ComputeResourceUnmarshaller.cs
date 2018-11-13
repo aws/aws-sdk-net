@@ -100,6 +100,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.InstanceTypes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("launchTemplate", targetDepth))
+                {
+                    var unmarshaller = LaunchTemplateSpecificationUnmarshaller.Instance;
+                    unmarshalledObject.LaunchTemplate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("maxvCpus", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

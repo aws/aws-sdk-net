@@ -29,9 +29,15 @@ namespace Amazon.Batch.Model
 {
     /// <summary>
     /// Container for the parameters to the ListJobs operation.
-    /// Returns a list of task jobs for a specified job queue. You can filter the results
-    /// by job status with the <code>jobStatus</code> parameter. If you do not specify a status,
-    /// only <code>RUNNING</code> jobs are returned.
+    /// Returns a list of AWS Batch jobs. You must specify either a job queue to return a
+    /// list of jobs in that job queue, or an array job ID to return a list of that job's
+    /// children. You cannot specify both a job queue and an array job ID.
+    /// 
+    ///  
+    /// <para>
+    /// You can filter the results by job status with the <code>jobStatus</code> parameter.
+    /// If you do not specify a status, only <code>RUNNING</code> jobs are returned.
+    /// </para>
     /// </summary>
     public partial class ListJobsRequest : AmazonBatchRequest
     {
@@ -45,7 +51,8 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property ArrayJobId. 
         /// <para>
         /// The job ID for an array job. Specifying an array job ID with this parameter lists
-        /// all child jobs from within the specified array.
+        /// all child jobs from within the specified array. You must specify either a job queue
+        /// or an array job ID.
         /// </para>
         /// </summary>
         public string ArrayJobId
@@ -64,6 +71,7 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property JobQueue. 
         /// <para>
         /// The name or full Amazon Resource Name (ARN) of the job queue with which to list jobs.
+        /// You must specify either a job queue or an array job ID.
         /// </para>
         /// </summary>
         public string JobQueue
