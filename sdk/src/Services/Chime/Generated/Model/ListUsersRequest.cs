@@ -29,13 +29,15 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the ListUsers operation.
-    /// Lists the users that belong to the specified Amazon Chime account.
+    /// Lists the users that belong to the specified Amazon Chime account. You can specify
+    /// an email address to list only the user that the email address belongs to.
     /// </summary>
     public partial class ListUsersRequest : AmazonChimeRequest
     {
         private string _accountId;
         private int? _maxResults;
         private string _nextToken;
+        private string _userEmail;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -89,6 +91,24 @@ namespace Amazon.Chime.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserEmail. 
+        /// <para>
+        /// Optional. The user email address used to filter results. Maximum 1.
+        /// </para>
+        /// </summary>
+        public string UserEmail
+        {
+            get { return this._userEmail; }
+            set { this._userEmail = value; }
+        }
+
+        // Check to see if UserEmail property is set
+        internal bool IsSetUserEmail()
+        {
+            return this._userEmail != null;
         }
 
     }

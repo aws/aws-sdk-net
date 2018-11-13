@@ -31,6 +31,12 @@ namespace Amazon.Chime.Model
     /// Container for the parameters to the GetUser operation.
     /// Retrieves details for the specified user ID, such as primary email address, license
     /// type, and personal meeting PIN.
+    /// 
+    ///  
+    /// <para>
+    /// To retrieve user details with an email address instead of a user ID, use the <a>ListUsers</a>
+    /// action, and then filter by email address.
+    /// </para>
     /// </summary>
     public partial class GetUserRequest : AmazonChimeRequest
     {

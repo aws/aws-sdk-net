@@ -67,6 +67,9 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("next-token", StringUtils.FromString(publicRequest.NextToken));
+            
+            if (publicRequest.IsSetUserEmail())
+                request.Parameters.Add("user-email", StringUtils.FromString(publicRequest.UserEmail));
             request.ResourcePath = uriResourcePath;
             request.UseQueryString = true;
 
