@@ -138,6 +138,31 @@ namespace Amazon.Budgets.Model
         /// <para>
         /// The cost filters, such as service or region, that are applied to a budget.
         /// </para>
+        ///  
+        /// <para>
+        /// AWS Budgets supports the following services as a filter for RI budgets:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Amazon Elastic Compute Cloud - Compute
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon Redshift
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon Relational Database Service
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon ElastiCache
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon Elasticsearch Service
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public Dictionary<string, List<string>> CostFilters
         {

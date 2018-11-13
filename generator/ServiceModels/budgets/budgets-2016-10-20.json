@@ -70,12 +70,12 @@
               },
               "CostFilters": {
                 "type": "map",
-                "zonbookDocumentation": "\n         <simpara>The cost filters, such as service or region, that are applied to a budget.</simpara>\n      ",
-                "documentation": "\n         <p>The cost filters, such as service or region, that are applied to a budget.</p>\n      ",
+                "zonbookDocumentation": "\n         <para>The cost filters, such as service or region, that are applied to a budget.</para>\n         <para>AWS Budgets supports the following services as a\n      filter for RI\n      budgets:</para>\n         <itemizedlist>\n            <listitem>\n               <para>Amazon Elastic Compute Cloud - Compute</para>\n            </listitem>\n            <listitem>\n               <para>Amazon Redshift</para>\n            </listitem>\n            <listitem>\n               <para>Amazon Relational Database Service</para>\n            </listitem>\n            <listitem>\n               <para>Amazon ElastiCache</para>\n            </listitem>\n            <listitem>\n               <para>Amazon Elasticsearch Service</para>\n            </listitem>\n         </itemizedlist>\n    \n      ",
+                "documentation": "\n         <p>The cost filters, such as service or region, that are applied to a budget.</p>\n         <p>AWS Budgets supports the following services as a\n      filter for RI\n      budgets:</p>\n         <ul>\n            <li>\n               <p>Amazon Elastic Compute Cloud - Compute</p>\n            </li>\n            <li>\n               <p>Amazon Redshift</p>\n            </li>\n            <li>\n               <p>Amazon Relational Database Service</p>\n            </li>\n            <li>\n               <p>Amazon ElastiCache</p>\n            </li>\n            <li>\n               <p>Amazon Elasticsearch Service</p>\n            </li>\n         </ul>\n    \n      ",
                 "shape_name": "CostFilters",
                 "keys": {
                   "type": "string",
-                  "zonbookDocumentation": "\n         <simpara> A generic string.</simpara>\n      ",
+                  "zonbookDocumentation": "\n         <para> A generic string.</para>\n      ",
                   "documentation": "\n         <p> A generic string.</p>\n      ",
                   "pattern": ".*",
                   "shape_name": "GenericString",
@@ -88,7 +88,7 @@
                   "documentation": null,
                   "members": {
                     "type": "string",
-                    "zonbookDocumentation": "\n         <simpara> A generic string.</simpara>\n      ",
+                    "zonbookDocumentation": "\n         <para> A generic string.</para>\n      ",
                     "documentation": "\n         <p> A generic string.</p>\n      ",
                     "pattern": ".*",
                     "shape_name": "GenericString",
@@ -1390,12 +1390,12 @@
               },
               "CostFilters": {
                 "type": "map",
-                "zonbookDocumentation": "\n         <simpara>The cost filters, such as service or region, that are applied to a budget.</simpara>\n      ",
-                "documentation": "\n         <p>The cost filters, such as service or region, that are applied to a budget.</p>\n      ",
+                "zonbookDocumentation": "\n         <para>The cost filters, such as service or region, that are applied to a budget.</para>\n         <para>AWS Budgets supports the following services as a\n      filter for RI\n      budgets:</para>\n         <itemizedlist>\n            <listitem>\n               <para>Amazon Elastic Compute Cloud - Compute</para>\n            </listitem>\n            <listitem>\n               <para>Amazon Redshift</para>\n            </listitem>\n            <listitem>\n               <para>Amazon Relational Database Service</para>\n            </listitem>\n            <listitem>\n               <para>Amazon ElastiCache</para>\n            </listitem>\n            <listitem>\n               <para>Amazon Elasticsearch Service</para>\n            </listitem>\n         </itemizedlist>\n    \n      ",
+                "documentation": "\n         <p>The cost filters, such as service or region, that are applied to a budget.</p>\n         <p>AWS Budgets supports the following services as a\n      filter for RI\n      budgets:</p>\n         <ul>\n            <li>\n               <p>Amazon Elastic Compute Cloud - Compute</p>\n            </li>\n            <li>\n               <p>Amazon Redshift</p>\n            </li>\n            <li>\n               <p>Amazon Relational Database Service</p>\n            </li>\n            <li>\n               <p>Amazon ElastiCache</p>\n            </li>\n            <li>\n               <p>Amazon Elasticsearch Service</p>\n            </li>\n         </ul>\n    \n      ",
                 "shape_name": "CostFilters",
                 "keys": {
                   "type": "string",
-                  "zonbookDocumentation": "\n         <simpara> A generic string.</simpara>\n      ",
+                  "zonbookDocumentation": "\n         <para> A generic string.</para>\n      ",
                   "documentation": "\n         <p> A generic string.</p>\n      ",
                   "pattern": ".*",
                   "shape_name": "GenericString",
@@ -1408,7 +1408,7 @@
                   "documentation": null,
                   "members": {
                     "type": "string",
-                    "zonbookDocumentation": "\n         <simpara> A generic string.</simpara>\n      ",
+                    "zonbookDocumentation": "\n         <para> A generic string.</para>\n      ",
                     "documentation": "\n         <p> A generic string.</p>\n      ",
                     "pattern": ".*",
                     "shape_name": "GenericString",
@@ -1692,7 +1692,7 @@
           },
           "BudgetName": {
             "type": "string",
-            "zonbookDocumentation": "\n         <simpara> A string that represents the budget name. The \":\" and \"\\\" characters aren't\n      allowed.</simpara>\n      ",
+            "zonbookDocumentation": "\n         <para> A string that represents the budget name. The \":\" and \"\\\" characters aren't\n      allowed.</para>\n      ",
             "documentation": "\n         <p> A string that represents the budget name. The \":\" and \"\\\" characters aren't\n      allowed.</p>\n      ",
             "pattern": "[^:\\\\]+",
             "required": true,
@@ -1722,7 +1722,7 @@
           },
           "MaxResults": {
             "type": "integer",
-            "zonbookDocumentation": "\n         <simpara> An integer that represents how many entries a paginated response contains. The maximum is\n      100.</simpara>\n      ",
+            "zonbookDocumentation": "\n         <para> An integer that represents how many entries a paginated response contains. The maximum is\n      100.</para>\n      ",
             "documentation": "\n         <p> An integer that represents how many entries a paginated response contains. The maximum is\n      100.</p>\n      ",
             "box": true,
             "shape_name": "MaxResults",
@@ -1731,7 +1731,7 @@
           },
           "NextToken": {
             "type": "string",
-            "zonbookDocumentation": "\n         <simpara> A generic string.</simpara>\n      ",
+            "zonbookDocumentation": "\n         <para> A generic string.</para>\n      ",
             "documentation": "\n         <p> A generic string.</p>\n      ",
             "pattern": ".*",
             "shape_name": "GenericString",
@@ -1750,7 +1750,7 @@
             "members": {
               "BudgetName": {
                 "type": "string",
-                "zonbookDocumentation": "\n         <simpara> A string that represents the budget name. The \":\" and \"\\\" characters aren't\n      allowed.</simpara>\n      ",
+                "zonbookDocumentation": "\n         <para> A string that represents the budget name. The \":\" and \"\\\" characters aren't\n      allowed.</para>\n      ",
                 "documentation": "\n         <p> A string that represents the budget name. The \":\" and \"\\\" characters aren't\n      allowed.</p>\n      ",
                 "pattern": "[^:\\\\]+",
                 "shape_name": "BudgetName",
@@ -1776,7 +1776,7 @@
                 "shape_name": "CostFilters",
                 "keys": {
                   "type": "string",
-                  "zonbookDocumentation": "\n         <simpara> A generic string.</simpara>\n      ",
+                  "zonbookDocumentation": "\n         <para> A generic string.</para>\n      ",
                   "documentation": "\n         <p> A generic string.</p>\n      ",
                   "pattern": ".*",
                   "shape_name": "GenericString",
@@ -1789,7 +1789,7 @@
                   "documentation": null,
                   "members": {
                     "type": "string",
-                    "zonbookDocumentation": "\n         <simpara> A generic string.</simpara>\n      ",
+                    "zonbookDocumentation": "\n         <para> A generic string.</para>\n      ",
                     "documentation": "\n         <p> A generic string.</p>\n      ",
                     "pattern": ".*",
                     "shape_name": "GenericString",
@@ -1885,7 +1885,7 @@
               },
               "TimeUnit": {
                 "type": "string",
-                "zonbookDocumentation": "\n         <simpara> The time unit of the budget, such as MONTHLY or QUARTERLY.</simpara>\n      ",
+                "zonbookDocumentation": "\n         <para> The time unit of the budget, such as MONTHLY or QUARTERLY.</para>\n      ",
                 "documentation": "\n         <p> The time unit of the budget, such as MONTHLY or QUARTERLY.</p>\n      ",
                 "enum": [
                   "DAILY",
@@ -1986,13 +1986,13 @@
                 }
               }
             },
-            "zonbookDocumentation": "\n         <simpara>The history of how often the budget has gone into an <code>ALARM</code> state.</simpara>\n         <simpara>For <code>DAILY</code> budgets, the history saves the state of the budget for the last\n      60 days. For <code>MONTHLY</code> budgets, the history saves the state of the budget for the\n      last 12 months. For <code>QUARTERLY</code> budgets, the history saves the state of the budget\n      for the last four quarters.</simpara>\n      ",
-            "documentation": "\n         <p>The history of how often the budget has gone into an <code>ALARM</code> state.</p>\n         <p>For <code>DAILY</code> budgets, the history saves the state of the budget for the last\n      60 days. For <code>MONTHLY</code> budgets, the history saves the state of the budget for the\n      last 12 months. For <code>QUARTERLY</code> budgets, the history saves the state of the budget\n      for the last four quarters.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>The history of how often the budget has gone into an <code>ALARM</code> state.</simpara>\n         <simpara>For <code>DAILY</code> budgets, the history saves the state of the budget for the last\n      60 days. For <code>MONTHLY</code> budgets, the history saves the state of the budget for the \n      current month plus the last 12 months. For <code>QUARTERLY</code> budgets, the history saves \n      the state of the budget\n      for the last four quarters.</simpara>\n      ",
+            "documentation": "\n         <p>The history of how often the budget has gone into an <code>ALARM</code> state.</p>\n         <p>For <code>DAILY</code> budgets, the history saves the state of the budget for the last\n      60 days. For <code>MONTHLY</code> budgets, the history saves the state of the budget for the \n      current month plus the last 12 months. For <code>QUARTERLY</code> budgets, the history saves \n      the state of the budget\n      for the last four quarters.</p>\n      ",
             "shape_name": "BudgetPerformanceHistory"
           },
           "NextToken": {
             "type": "string",
-            "zonbookDocumentation": "\n         <simpara> A generic string.</simpara>\n      ",
+            "zonbookDocumentation": "\n         <para> A generic string.</para>\n      ",
             "documentation": "\n         <p> A generic string.</p>\n      ",
             "pattern": ".*",
             "shape_name": "GenericString",
@@ -2166,12 +2166,12 @@
                 },
                 "CostFilters": {
                   "type": "map",
-                  "zonbookDocumentation": "\n         <simpara>The cost filters, such as service or region, that are applied to a budget.</simpara>\n      ",
-                  "documentation": "\n         <p>The cost filters, such as service or region, that are applied to a budget.</p>\n      ",
+                  "zonbookDocumentation": "\n         <para>The cost filters, such as service or region, that are applied to a budget.</para>\n         <para>AWS Budgets supports the following services as a\n      filter for RI\n      budgets:</para>\n         <itemizedlist>\n            <listitem>\n               <para>Amazon Elastic Compute Cloud - Compute</para>\n            </listitem>\n            <listitem>\n               <para>Amazon Redshift</para>\n            </listitem>\n            <listitem>\n               <para>Amazon Relational Database Service</para>\n            </listitem>\n            <listitem>\n               <para>Amazon ElastiCache</para>\n            </listitem>\n            <listitem>\n               <para>Amazon Elasticsearch Service</para>\n            </listitem>\n         </itemizedlist>\n    \n      ",
+                  "documentation": "\n         <p>The cost filters, such as service or region, that are applied to a budget.</p>\n         <p>AWS Budgets supports the following services as a\n      filter for RI\n      budgets:</p>\n         <ul>\n            <li>\n               <p>Amazon Elastic Compute Cloud - Compute</p>\n            </li>\n            <li>\n               <p>Amazon Redshift</p>\n            </li>\n            <li>\n               <p>Amazon Relational Database Service</p>\n            </li>\n            <li>\n               <p>Amazon ElastiCache</p>\n            </li>\n            <li>\n               <p>Amazon Elasticsearch Service</p>\n            </li>\n         </ul>\n    \n      ",
                   "shape_name": "CostFilters",
                   "keys": {
                     "type": "string",
-                    "zonbookDocumentation": "\n         <simpara> A generic string.</simpara>\n      ",
+                    "zonbookDocumentation": "\n         <para> A generic string.</para>\n      ",
                     "documentation": "\n         <p> A generic string.</p>\n      ",
                     "pattern": ".*",
                     "shape_name": "GenericString",
@@ -2184,7 +2184,7 @@
                     "documentation": null,
                     "members": {
                       "type": "string",
-                      "zonbookDocumentation": "\n         <simpara> A generic string.</simpara>\n      ",
+                      "zonbookDocumentation": "\n         <para> A generic string.</para>\n      ",
                       "documentation": "\n         <p> A generic string.</p>\n      ",
                       "pattern": ".*",
                       "shape_name": "GenericString",
@@ -2990,12 +2990,12 @@
               },
               "CostFilters": {
                 "type": "map",
-                "zonbookDocumentation": "\n         <simpara>The cost filters, such as service or region, that are applied to a budget.</simpara>\n      ",
-                "documentation": "\n         <p>The cost filters, such as service or region, that are applied to a budget.</p>\n      ",
+                "zonbookDocumentation": "\n         <para>The cost filters, such as service or region, that are applied to a budget.</para>\n         <para>AWS Budgets supports the following services as a\n      filter for RI\n      budgets:</para>\n         <itemizedlist>\n            <listitem>\n               <para>Amazon Elastic Compute Cloud - Compute</para>\n            </listitem>\n            <listitem>\n               <para>Amazon Redshift</para>\n            </listitem>\n            <listitem>\n               <para>Amazon Relational Database Service</para>\n            </listitem>\n            <listitem>\n               <para>Amazon ElastiCache</para>\n            </listitem>\n            <listitem>\n               <para>Amazon Elasticsearch Service</para>\n            </listitem>\n         </itemizedlist>\n    \n      ",
+                "documentation": "\n         <p>The cost filters, such as service or region, that are applied to a budget.</p>\n         <p>AWS Budgets supports the following services as a\n      filter for RI\n      budgets:</p>\n         <ul>\n            <li>\n               <p>Amazon Elastic Compute Cloud - Compute</p>\n            </li>\n            <li>\n               <p>Amazon Redshift</p>\n            </li>\n            <li>\n               <p>Amazon Relational Database Service</p>\n            </li>\n            <li>\n               <p>Amazon ElastiCache</p>\n            </li>\n            <li>\n               <p>Amazon Elasticsearch Service</p>\n            </li>\n         </ul>\n    \n      ",
                 "shape_name": "CostFilters",
                 "keys": {
                   "type": "string",
-                  "zonbookDocumentation": "\n         <simpara> A generic string.</simpara>\n      ",
+                  "zonbookDocumentation": "\n         <para> A generic string.</para>\n      ",
                   "documentation": "\n         <p> A generic string.</p>\n      ",
                   "pattern": ".*",
                   "shape_name": "GenericString",
@@ -3008,7 +3008,7 @@
                   "documentation": null,
                   "members": {
                     "type": "string",
-                    "zonbookDocumentation": "\n         <simpara> A generic string.</simpara>\n      ",
+                    "zonbookDocumentation": "\n         <para> A generic string.</para>\n      ",
                     "documentation": "\n         <p> A generic string.</p>\n      ",
                     "pattern": ".*",
                     "shape_name": "GenericString",

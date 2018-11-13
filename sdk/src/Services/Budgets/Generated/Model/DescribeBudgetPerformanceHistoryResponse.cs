@@ -44,8 +44,8 @@ namespace Amazon.Budgets.Model
         /// <para>
         /// For <code>DAILY</code> budgets, the history saves the state of the budget for the
         /// last 60 days. For <code>MONTHLY</code> budgets, the history saves the state of the
-        /// budget for the last 12 months. For <code>QUARTERLY</code> budgets, the history saves
-        /// the state of the budget for the last four quarters.
+        /// budget for the current month plus the last 12 months. For <code>QUARTERLY</code> budgets,
+        /// the history saves the state of the budget for the last four quarters.
         /// </para>
         /// </summary>
         public BudgetPerformanceHistory BudgetPerformanceHistory
