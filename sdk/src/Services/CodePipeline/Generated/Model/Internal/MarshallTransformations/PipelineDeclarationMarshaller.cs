@@ -56,6 +56,25 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetArtifactStores())
+            {
+                context.Writer.WritePropertyName("artifactStores");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectArtifactStoresKvp in requestObject.ArtifactStores)
+                {
+                    context.Writer.WritePropertyName(requestObjectArtifactStoresKvp.Key);
+                    var requestObjectArtifactStoresValue = requestObjectArtifactStoresKvp.Value;
+
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ArtifactStoreMarshaller.Instance;
+                    marshaller.Marshall(requestObjectArtifactStoresValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");

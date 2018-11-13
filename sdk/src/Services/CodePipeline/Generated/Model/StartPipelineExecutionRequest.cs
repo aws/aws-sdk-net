@@ -34,7 +34,26 @@ namespace Amazon.CodePipeline.Model
     /// </summary>
     public partial class StartPipelineExecutionRequest : AmazonCodePipelineRequest
     {
+        private string _clientRequestToken;
         private string _name;
+
+        /// <summary>
+        /// Gets and sets the property ClientRequestToken. 
+        /// <para>
+        /// The system-generated unique ID used to identify a unique execution request.
+        /// </para>
+        /// </summary>
+        public string ClientRequestToken
+        {
+            get { return this._clientRequestToken; }
+            set { this._clientRequestToken = value; }
+        }
+
+        // Check to see if ClientRequestToken property is set
+        internal bool IsSetClientRequestToken()
+        {
+            return this._clientRequestToken != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 

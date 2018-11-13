@@ -108,6 +108,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetRegion())
+            {
+                context.Writer.WritePropertyName("region");
+                context.Writer.Write(requestObject.Region);
+            }
+
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("roleArn");

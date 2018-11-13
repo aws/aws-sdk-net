@@ -70,6 +70,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                     unmarshalledObject.ArtifactStore = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("artifactStores", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, ArtifactStore, StringUnmarshaller, ArtifactStoreUnmarshaller>(StringUnmarshaller.Instance, ArtifactStoreUnmarshaller.Instance);
+                    unmarshalledObject.ArtifactStores = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

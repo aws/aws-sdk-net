@@ -33,6 +33,7 @@ namespace Amazon.CodePipeline.Model
     public partial class PipelineDeclaration
     {
         private ArtifactStore _artifactStore;
+        private Dictionary<string, ArtifactStore> _artifactStores = new Dictionary<string, ArtifactStore>();
         private string _name;
         private string _roleArn;
         private List<StageDeclaration> _stages = new List<StageDeclaration>();
@@ -55,6 +56,30 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetArtifactStore()
         {
             return this._artifactStore != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ArtifactStores. 
+        /// <para>
+        /// A mapping of artifactStore objects and their corresponding regions. There must be
+        /// an artifact store for the pipeline region and for each cross-region action within
+        /// the pipeline. You can only use either artifactStore or artifactStores, not both.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you create a cross-region action in your pipeline, you must use artifactStores.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, ArtifactStore> ArtifactStores
+        {
+            get { return this._artifactStores; }
+            set { this._artifactStores = value; }
+        }
+
+        // Check to see if ArtifactStores property is set
+        internal bool IsSetArtifactStores()
+        {
+            return this._artifactStores != null && this._artifactStores.Count > 0; 
         }
 
         /// <summary>

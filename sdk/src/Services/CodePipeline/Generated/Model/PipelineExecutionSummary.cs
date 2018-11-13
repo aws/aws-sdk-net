@@ -75,7 +75,10 @@ namespace Amazon.CodePipeline.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceRevisions.
+        /// Gets and sets the property SourceRevisions. 
+        /// <para>
+        /// A list of the source artifact revisions that initiated a pipeline execution.
+        /// </para>
         /// </summary>
         public List<SourceRevision> SourceRevisions
         {

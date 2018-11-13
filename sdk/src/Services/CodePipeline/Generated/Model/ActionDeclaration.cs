@@ -37,6 +37,7 @@ namespace Amazon.CodePipeline.Model
         private List<InputArtifact> _inputArtifacts = new List<InputArtifact>();
         private string _name;
         private List<OutputArtifact> _outputArtifacts = new List<OutputArtifact>();
+        private string _region;
         private string _roleArn;
         private int? _runOrder;
 
@@ -128,6 +129,24 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetOutputArtifacts()
         {
             return this._outputArtifacts != null && this._outputArtifacts.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Region. 
+        /// <para>
+        /// The action declaration's AWS Region, such as us-east-1.
+        /// </para>
+        /// </summary>
+        public string Region
+        {
+            get { return this._region; }
+            set { this._region = value; }
+        }
+
+        // Check to see if Region property is set
+        internal bool IsSetRegion()
+        {
+            return this._region != null;
         }
 
         /// <summary>

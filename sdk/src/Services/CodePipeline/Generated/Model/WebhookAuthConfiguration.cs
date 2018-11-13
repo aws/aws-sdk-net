@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// 
+    /// The authentication applied to incoming webhook trigger requests.
     /// </summary>
     public partial class WebhookAuthConfiguration
     {
@@ -36,7 +36,12 @@ namespace Amazon.CodePipeline.Model
         private string _secretToken;
 
         /// <summary>
-        /// Gets and sets the property AllowedIPRange.
+        /// Gets and sets the property AllowedIPRange. 
+        /// <para>
+        /// The property used to configure acceptance of webhooks within a specific IP range.
+        /// For IP, only the AllowedIPRange property must be set, and this property must be set
+        /// to a valid CIDR range.
+        /// </para>
         /// </summary>
         public string AllowedIPRange
         {
@@ -51,7 +56,11 @@ namespace Amazon.CodePipeline.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SecretToken.
+        /// Gets and sets the property SecretToken. 
+        /// <para>
+        /// The property used to configure GitHub authentication. For GITHUB_HMAC, only the SecretToken
+        /// property must be set.
+        /// </para>
         /// </summary>
         public string SecretToken
         {

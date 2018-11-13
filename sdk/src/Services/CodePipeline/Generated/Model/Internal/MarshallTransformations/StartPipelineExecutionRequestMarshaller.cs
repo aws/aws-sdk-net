@@ -67,6 +67,17 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetClientRequestToken())
+                {
+                    context.Writer.WritePropertyName("clientRequestToken");
+                    context.Writer.Write(publicRequest.ClientRequestToken);
+                }
+
+                else if(!(publicRequest.IsSetClientRequestToken()))
+                {
+                    context.Writer.WritePropertyName("clientRequestToken");
+                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                }
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");
