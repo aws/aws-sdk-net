@@ -1,3 +1,16 @@
+### 3.3.407.0 (2018-11-13 21:59 UTC)
+* Budgets (3.3.10.1)
+	* Doc Update: 1. Available monthly-budgets maximal history data points from 12 to 13.  2. Added 'Amazon Elasticsearch' costfilters support.
+* Chime (3.3.1.0)
+	* This release adds support in ListUsers API to filter the list by an email address.
+* Redshift (3.3.10.0)
+	* Amazon Redshift provides the option to defer non-mandatory maintenance updates to a later date.
+* Core 3.3.29.9
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.406.0 (2018-11-13 00:33 UTC)
 * Batch (3.3.6.0)
 	* Adding EC2 Launch Template support in AWS Batch Compute Environments.
