@@ -396,6 +396,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListEndpointConfigsRequest.NameContains</property>
+    <max>63</max>
     <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -413,6 +414,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListEndpointsRequest.NameContains</property>
+    <max>63</max>
     <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -448,6 +450,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListModelsRequest.NameContains</property>
+    <max>63</max>
     <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -465,6 +468,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListNotebookInstanceLifecycleConfigsRequest.NameContains</property>
+    <max>63</max>
     <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -482,6 +486,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListNotebookInstancesRequest.NameContains</property>
+    <max>63</max>
     <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -766,6 +771,12 @@
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.HyperParameterTrainingJobSummary.TuningJobName</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.HyperParameterTuningJobObjective.MetricName</property>
     <min>1</min>
     <max>255</max>
@@ -792,6 +803,11 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.IntegerParameterRange.Name</property>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.MetricData.MetricName</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.MetricDefinition.Name</property>
@@ -866,6 +882,12 @@
     <property>Amazon.SageMaker.Model.OutputDataConfig.S3OutputPath</property>
     <max>1024</max>
     <pattern>^(https|s3)://([^/]+)/?(.*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ParentHyperParameterTuningJob.HyperParameterTuningJobName</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ProductionVariant.InitialInstanceCount</property>

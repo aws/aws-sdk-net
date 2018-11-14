@@ -111,6 +111,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetWarmStartConfig())
+                {
+                    context.Writer.WritePropertyName("WarmStartConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = HyperParameterTuningJobWarmStartConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.WarmStartConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

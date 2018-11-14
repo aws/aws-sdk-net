@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AlgorithmSpecification Marshaller
+    /// ParentHyperParameterTuningJob Marshaller
     /// </summary>       
-    public class AlgorithmSpecificationMarshaller : IRequestMarshaller<AlgorithmSpecification, JsonMarshallerContext> 
+    public class ParentHyperParameterTuningJobMarshaller : IRequestMarshaller<ParentHyperParameterTuningJob, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,34 +43,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AlgorithmSpecification requestObject, JsonMarshallerContext context)
+        public void Marshall(ParentHyperParameterTuningJob requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetMetricDefinitions())
+            if(requestObject.IsSetHyperParameterTuningJobName())
             {
-                context.Writer.WritePropertyName("MetricDefinitions");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectMetricDefinitionsListValue in requestObject.MetricDefinitions)
-                {
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MetricDefinitionMarshaller.Instance;
-                    marshaller.Marshall(requestObjectMetricDefinitionsListValue, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-                context.Writer.WriteArrayEnd();
-            }
-
-            if(requestObject.IsSetTrainingImage())
-            {
-                context.Writer.WritePropertyName("TrainingImage");
-                context.Writer.Write(requestObject.TrainingImage);
-            }
-
-            if(requestObject.IsSetTrainingInputMode())
-            {
-                context.Writer.WritePropertyName("TrainingInputMode");
-                context.Writer.Write(requestObject.TrainingInputMode);
+                context.Writer.WritePropertyName("HyperParameterTuningJobName");
+                context.Writer.Write(requestObject.HyperParameterTuningJobName);
             }
 
         }
@@ -78,7 +56,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static AlgorithmSpecificationMarshaller Instance = new AlgorithmSpecificationMarshaller();
+        public readonly static ParentHyperParameterTuningJobMarshaller Instance = new ParentHyperParameterTuningJobMarshaller();
 
     }
 }

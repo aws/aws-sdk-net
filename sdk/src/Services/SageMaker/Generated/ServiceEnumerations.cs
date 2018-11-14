@@ -615,11 +615,117 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type HyperParameterTuningJobWarmStartType.
+    /// </summary>
+    public class HyperParameterTuningJobWarmStartType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IdenticalDataAndAlgorithm for HyperParameterTuningJobWarmStartType
+        /// </summary>
+        public static readonly HyperParameterTuningJobWarmStartType IdenticalDataAndAlgorithm = new HyperParameterTuningJobWarmStartType("IdenticalDataAndAlgorithm");
+        /// <summary>
+        /// Constant TransferLearning for HyperParameterTuningJobWarmStartType
+        /// </summary>
+        public static readonly HyperParameterTuningJobWarmStartType TransferLearning = new HyperParameterTuningJobWarmStartType("TransferLearning");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HyperParameterTuningJobWarmStartType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HyperParameterTuningJobWarmStartType FindValue(string value)
+        {
+            return FindValue<HyperParameterTuningJobWarmStartType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HyperParameterTuningJobWarmStartType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InstanceType.
     /// </summary>
     public class InstanceType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant MlC42xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlC42xlarge = new InstanceType("ml.c4.2xlarge");
+        /// <summary>
+        /// Constant MlC44xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlC44xlarge = new InstanceType("ml.c4.4xlarge");
+        /// <summary>
+        /// Constant MlC48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlC48xlarge = new InstanceType("ml.c4.8xlarge");
+        /// <summary>
+        /// Constant MlC4Xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlC4Xlarge = new InstanceType("ml.c4.xlarge");
+        /// <summary>
+        /// Constant MlC518xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlC518xlarge = new InstanceType("ml.c5.18xlarge");
+        /// <summary>
+        /// Constant MlC52xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlC52xlarge = new InstanceType("ml.c5.2xlarge");
+        /// <summary>
+        /// Constant MlC54xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlC54xlarge = new InstanceType("ml.c5.4xlarge");
+        /// <summary>
+        /// Constant MlC59xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlC59xlarge = new InstanceType("ml.c5.9xlarge");
+        /// <summary>
+        /// Constant MlC5d18xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlC5d18xlarge = new InstanceType("ml.c5d.18xlarge");
+        /// <summary>
+        /// Constant MlC5d2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlC5d2xlarge = new InstanceType("ml.c5d.2xlarge");
+        /// <summary>
+        /// Constant MlC5d4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlC5d4xlarge = new InstanceType("ml.c5d.4xlarge");
+        /// <summary>
+        /// Constant MlC5d9xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlC5d9xlarge = new InstanceType("ml.c5d.9xlarge");
+        /// <summary>
+        /// Constant MlC5dXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlC5dXlarge = new InstanceType("ml.c5d.xlarge");
+        /// <summary>
+        /// Constant MlC5Xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlC5Xlarge = new InstanceType("ml.c5.xlarge");
         /// <summary>
         /// Constant MlM410xlarge for InstanceType
         /// </summary>
@@ -640,6 +746,26 @@ namespace Amazon.SageMaker
         /// Constant MlM4Xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType MlM4Xlarge = new InstanceType("ml.m4.xlarge");
+        /// <summary>
+        /// Constant MlM512xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlM512xlarge = new InstanceType("ml.m5.12xlarge");
+        /// <summary>
+        /// Constant MlM524xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlM524xlarge = new InstanceType("ml.m5.24xlarge");
+        /// <summary>
+        /// Constant MlM52xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlM52xlarge = new InstanceType("ml.m5.2xlarge");
+        /// <summary>
+        /// Constant MlM54xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlM54xlarge = new InstanceType("ml.m5.4xlarge");
+        /// <summary>
+        /// Constant MlM5Xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlM5Xlarge = new InstanceType("ml.m5.xlarge");
         /// <summary>
         /// Constant MlP216xlarge for InstanceType
         /// </summary>
@@ -680,6 +806,22 @@ namespace Amazon.SageMaker
         /// Constant MlT2Xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType MlT2Xlarge = new InstanceType("ml.t2.xlarge");
+        /// <summary>
+        /// Constant MlT32xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlT32xlarge = new InstanceType("ml.t3.2xlarge");
+        /// <summary>
+        /// Constant MlT3Large for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlT3Large = new InstanceType("ml.t3.large");
+        /// <summary>
+        /// Constant MlT3Medium for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlT3Medium = new InstanceType("ml.t3.medium");
+        /// <summary>
+        /// Constant MlT3Xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlT3Xlarge = new InstanceType("ml.t3.xlarge");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

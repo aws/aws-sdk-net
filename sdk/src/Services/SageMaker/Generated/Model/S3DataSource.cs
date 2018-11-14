@@ -156,7 +156,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>s3://customer_bucket/some/prefix/relative/path/custdata-1</code> 
+        ///  <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> 
         /// </para>
         ///  
         /// <para>

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AlgorithmSpecification Object
+    /// Response Unmarshaller for MetricData Object
     /// </summary>  
-    public class AlgorithmSpecificationUnmarshaller : IUnmarshaller<AlgorithmSpecification, XmlUnmarshallerContext>, IUnmarshaller<AlgorithmSpecification, JsonUnmarshallerContext>
+    public class MetricDataUnmarshaller : IUnmarshaller<MetricData, XmlUnmarshallerContext>, IUnmarshaller<MetricData, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AlgorithmSpecification IUnmarshaller<AlgorithmSpecification, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        MetricData IUnmarshaller<MetricData, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,33 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AlgorithmSpecification Unmarshall(JsonUnmarshallerContext context)
+        public MetricData Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AlgorithmSpecification unmarshalledObject = new AlgorithmSpecification();
+            MetricData unmarshalledObject = new MetricData();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("MetricDefinitions", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<MetricDefinition, MetricDefinitionUnmarshaller>(MetricDefinitionUnmarshaller.Instance);
-                    unmarshalledObject.MetricDefinitions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TrainingImage", targetDepth))
+                if (context.TestExpression("MetricName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TrainingImage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MetricName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("TrainingInputMode", targetDepth))
+                if (context.TestExpression("Timestamp", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TrainingInputMode = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Value", targetDepth))
+                {
+                    var unmarshaller = FloatUnmarshaller.Instance;
+                    unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +88,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static AlgorithmSpecificationUnmarshaller _instance = new AlgorithmSpecificationUnmarshaller();        
+        private static MetricDataUnmarshaller _instance = new MetricDataUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AlgorithmSpecificationUnmarshaller Instance
+        public static MetricDataUnmarshaller Instance
         {
             get
             {

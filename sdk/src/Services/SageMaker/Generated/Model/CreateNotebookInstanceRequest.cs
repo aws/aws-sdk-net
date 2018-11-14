@@ -149,7 +149,9 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         ///  If you provide a AWS KMS key ID, Amazon SageMaker uses it to encrypt data at rest
-        /// on the ML storage volume that is attached to your notebook instance. 
+        /// on the ML storage volume that is attached to your notebook instance. The KMS key you
+        /// provide must be enabled. For information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling
+        /// and Disabling Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -291,7 +293,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property VolumeSizeInGB. 
         /// <para>
-        /// The size, in GB, of the ML storage volume to attach to the notebook instance.
+        /// The size, in GB, of the ML storage volume to attach to the notebook instance. The
+        /// default value is 5 GB.
         /// </para>
         /// </summary>
         public int VolumeSizeInGB

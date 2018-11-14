@@ -42,6 +42,7 @@ namespace Amazon.SageMaker.Model
         private TrainingJobStatus _trainingJobStatus;
         private DateTime? _trainingStartTime;
         private Dictionary<string, string> _tunedHyperParameters = new Dictionary<string, string>();
+        private string _tuningJobName;
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
@@ -239,6 +240,21 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetTunedHyperParameters()
         {
             return this._tunedHyperParameters != null && this._tunedHyperParameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TuningJobName.
+        /// </summary>
+        public string TuningJobName
+        {
+            get { return this._tuningJobName; }
+            set { this._tuningJobName = value; }
+        }
+
+        // Check to see if TuningJobName property is set
+        internal bool IsSetTuningJobName()
+        {
+            return this._tuningJobName != null;
         }
 
     }

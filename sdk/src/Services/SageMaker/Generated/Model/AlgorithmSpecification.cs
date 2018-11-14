@@ -40,8 +40,29 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class AlgorithmSpecification
     {
+        private List<MetricDefinition> _metricDefinitions = new List<MetricDefinition>();
         private string _trainingImage;
         private TrainingInputMode _trainingInputMode;
+
+        /// <summary>
+        /// Gets and sets the property MetricDefinitions. 
+        /// <para>
+        /// A list of metric definition objects. Each object specifies the metric name and regular
+        /// expressions used to parse algorithm logs. Amazon SageMaker publishes each metric to
+        /// Amazon CloudWatch.
+        /// </para>
+        /// </summary>
+        public List<MetricDefinition> MetricDefinitions
+        {
+            get { return this._metricDefinitions; }
+            set { this._metricDefinitions = value; }
+        }
+
+        // Check to see if MetricDefinitions property is set
+        internal bool IsSetMetricDefinitions()
+        {
+            return this._metricDefinitions != null && this._metricDefinitions.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property TrainingImage. 

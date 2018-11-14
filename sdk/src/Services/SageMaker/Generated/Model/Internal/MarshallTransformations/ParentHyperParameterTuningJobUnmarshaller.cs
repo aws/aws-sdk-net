@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AlgorithmSpecification Object
+    /// Response Unmarshaller for ParentHyperParameterTuningJob Object
     /// </summary>  
-    public class AlgorithmSpecificationUnmarshaller : IUnmarshaller<AlgorithmSpecification, XmlUnmarshallerContext>, IUnmarshaller<AlgorithmSpecification, JsonUnmarshallerContext>
+    public class ParentHyperParameterTuningJobUnmarshaller : IUnmarshaller<ParentHyperParameterTuningJob, XmlUnmarshallerContext>, IUnmarshaller<ParentHyperParameterTuningJob, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AlgorithmSpecification IUnmarshaller<AlgorithmSpecification, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ParentHyperParameterTuningJob IUnmarshaller<ParentHyperParameterTuningJob, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,21 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AlgorithmSpecification Unmarshall(JsonUnmarshallerContext context)
+        public ParentHyperParameterTuningJob Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AlgorithmSpecification unmarshalledObject = new AlgorithmSpecification();
+            ParentHyperParameterTuningJob unmarshalledObject = new ParentHyperParameterTuningJob();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("MetricDefinitions", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<MetricDefinition, MetricDefinitionUnmarshaller>(MetricDefinitionUnmarshaller.Instance);
-                    unmarshalledObject.MetricDefinitions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TrainingImage", targetDepth))
+                if (context.TestExpression("HyperParameterTuningJobName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TrainingImage = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TrainingInputMode", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TrainingInputMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HyperParameterTuningJobName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +76,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static AlgorithmSpecificationUnmarshaller _instance = new AlgorithmSpecificationUnmarshaller();        
+        private static ParentHyperParameterTuningJobUnmarshaller _instance = new ParentHyperParameterTuningJobUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AlgorithmSpecificationUnmarshaller Instance
+        public static ParentHyperParameterTuningJobUnmarshaller Instance
         {
             get
             {

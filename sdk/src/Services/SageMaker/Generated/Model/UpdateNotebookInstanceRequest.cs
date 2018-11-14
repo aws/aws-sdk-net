@@ -146,7 +146,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property VolumeSizeInGB. 
         /// <para>
-        /// The size, in GB, of the ML storage volume to attach to the notebook instance.
+        /// The size, in GB, of the ML storage volume to attach to the notebook instance. The
+        /// default value is 5 GB.
         /// </para>
         /// </summary>
         public int VolumeSizeInGB

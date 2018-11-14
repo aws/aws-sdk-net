@@ -42,7 +42,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Completed. 
         /// <para>
-        /// The number of completed training jobs launched by a hyperparameter tuning job.
+        /// The number of completed training jobs launched by the hyperparameter tuning job.
         /// </para>
         /// </summary>
         public int Completed

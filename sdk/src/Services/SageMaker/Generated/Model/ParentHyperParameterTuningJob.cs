@@ -28,29 +28,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// This is the response object from the CreateHyperParameterTuningJob operation.
+    /// A previously completed or stopped hyperparameter tuning job to be used as a starting
+    /// point for a new hyperparameter tuning job.
     /// </summary>
-    public partial class CreateHyperParameterTuningJobResponse : AmazonWebServiceResponse
+    public partial class ParentHyperParameterTuningJob
     {
-        private string _hyperParameterTuningJobArn;
+        private string _hyperParameterTuningJobName;
 
         /// <summary>
-        /// Gets and sets the property HyperParameterTuningJobArn. 
+        /// Gets and sets the property HyperParameterTuningJobName. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the tuning job. Amazon SageMaker assigns an ARN
-        /// to a hyperparameter tuning job when you create it.
+        /// The name of the hyperparameter tuning job to be used as a starting point for a new
+        /// hyperparameter tuning job.
         /// </para>
         /// </summary>
-        public string HyperParameterTuningJobArn
+        public string HyperParameterTuningJobName
         {
-            get { return this._hyperParameterTuningJobArn; }
-            set { this._hyperParameterTuningJobArn = value; }
+            get { return this._hyperParameterTuningJobName; }
+            set { this._hyperParameterTuningJobName = value; }
         }
 
-        // Check to see if HyperParameterTuningJobArn property is set
-        internal bool IsSetHyperParameterTuningJobArn()
+        // Check to see if HyperParameterTuningJobName property is set
+        internal bool IsSetHyperParameterTuningJobName()
         {
-            return this._hyperParameterTuningJobArn != null;
+            return this._hyperParameterTuningJobName != null;
         }
 
     }

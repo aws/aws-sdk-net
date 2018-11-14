@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
         private AlgorithmSpecification _algorithmSpecification;
         private DateTime? _creationTime;
         private string _failureReason;
+        private List<MetricData> _finalMetricDataList = new List<MetricData>();
         private Dictionary<string, string> _hyperParameters = new Dictionary<string, string>();
         private List<Channel> _inputDataConfig = new List<Channel>();
         private DateTime? _lastModifiedTime;
@@ -105,6 +106,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetFailureReason()
         {
             return this._failureReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FinalMetricDataList. 
+        /// <para>
+        /// A collection of <code>MetricData</code> objects that specify the names, values, and
+        /// dates and times that the training algorithm emitted to Amazon CloudWatch.
+        /// </para>
+        /// </summary>
+        public List<MetricData> FinalMetricDataList
+        {
+            get { return this._finalMetricDataList; }
+            set { this._finalMetricDataList = value; }
+        }
+
+        // Check to see if FinalMetricDataList property is set
+        internal bool IsSetFinalMetricDataList()
+        {
+            return this._finalMetricDataList != null && this._finalMetricDataList.Count > 0; 
         }
 
         /// <summary>

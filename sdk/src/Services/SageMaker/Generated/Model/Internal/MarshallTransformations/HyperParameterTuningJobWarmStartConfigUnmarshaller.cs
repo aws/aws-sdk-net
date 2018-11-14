@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AlgorithmSpecification Object
+    /// Response Unmarshaller for HyperParameterTuningJobWarmStartConfig Object
     /// </summary>  
-    public class AlgorithmSpecificationUnmarshaller : IUnmarshaller<AlgorithmSpecification, XmlUnmarshallerContext>, IUnmarshaller<AlgorithmSpecification, JsonUnmarshallerContext>
+    public class HyperParameterTuningJobWarmStartConfigUnmarshaller : IUnmarshaller<HyperParameterTuningJobWarmStartConfig, XmlUnmarshallerContext>, IUnmarshaller<HyperParameterTuningJobWarmStartConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AlgorithmSpecification IUnmarshaller<AlgorithmSpecification, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        HyperParameterTuningJobWarmStartConfig IUnmarshaller<HyperParameterTuningJobWarmStartConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AlgorithmSpecification Unmarshall(JsonUnmarshallerContext context)
+        public HyperParameterTuningJobWarmStartConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AlgorithmSpecification unmarshalledObject = new AlgorithmSpecification();
+            HyperParameterTuningJobWarmStartConfig unmarshalledObject = new HyperParameterTuningJobWarmStartConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("MetricDefinitions", targetDepth))
+                if (context.TestExpression("ParentHyperParameterTuningJobs", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<MetricDefinition, MetricDefinitionUnmarshaller>(MetricDefinitionUnmarshaller.Instance);
-                    unmarshalledObject.MetricDefinitions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<ParentHyperParameterTuningJob, ParentHyperParameterTuningJobUnmarshaller>(ParentHyperParameterTuningJobUnmarshaller.Instance);
+                    unmarshalledObject.ParentHyperParameterTuningJobs = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("TrainingImage", targetDepth))
+                if (context.TestExpression("WarmStartType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TrainingImage = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TrainingInputMode", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TrainingInputMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WarmStartType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +82,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static AlgorithmSpecificationUnmarshaller _instance = new AlgorithmSpecificationUnmarshaller();        
+        private static HyperParameterTuningJobWarmStartConfigUnmarshaller _instance = new HyperParameterTuningJobWarmStartConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AlgorithmSpecificationUnmarshaller Instance
+        public static HyperParameterTuningJobWarmStartConfigUnmarshaller Instance
         {
             get
             {

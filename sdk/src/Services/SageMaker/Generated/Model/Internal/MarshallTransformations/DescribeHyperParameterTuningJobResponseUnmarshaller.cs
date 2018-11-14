@@ -111,6 +111,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.ObjectiveStatusCounters = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OverallBestTrainingJob", targetDepth))
+                {
+                    var unmarshaller = HyperParameterTrainingJobSummaryUnmarshaller.Instance;
+                    response.OverallBestTrainingJob = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TrainingJobDefinition", targetDepth))
                 {
                     var unmarshaller = HyperParameterTrainingJobDefinitionUnmarshaller.Instance;
@@ -121,6 +127,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = TrainingJobStatusCountersUnmarshaller.Instance;
                     response.TrainingJobStatusCounters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("WarmStartConfig", targetDepth))
+                {
+                    var unmarshaller = HyperParameterTuningJobWarmStartConfigUnmarshaller.Instance;
+                    response.WarmStartConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

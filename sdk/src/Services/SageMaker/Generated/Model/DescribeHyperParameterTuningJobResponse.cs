@@ -42,8 +42,10 @@ namespace Amazon.SageMaker.Model
         private HyperParameterTuningJobStatus _hyperParameterTuningJobStatus;
         private DateTime? _lastModifiedTime;
         private ObjectiveStatusCounters _objectiveStatusCounters;
+        private HyperParameterTrainingJobSummary _overallBestTrainingJob;
         private HyperParameterTrainingJobDefinition _trainingJobDefinition;
         private TrainingJobStatusCounters _trainingJobStatusCounters;
+        private HyperParameterTuningJobWarmStartConfig _warmStartConfig;
 
         /// <summary>
         /// Gets and sets the property BestTrainingJob. 
@@ -229,6 +231,27 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OverallBestTrainingJob. 
+        /// <para>
+        /// If the hyperparameter tuning job is an incremental tuning job with a <code>WarmStartType</code>
+        /// of <code>IDENTICAL_DATA_AND_ALGORITHM</code>, this is the <a>TrainingJobSummary</a>
+        /// for the training job with the best objective metric value of all training jobs launched
+        /// by this tuning job and all parent jobs specified for the incremental tuning job.
+        /// </para>
+        /// </summary>
+        public HyperParameterTrainingJobSummary OverallBestTrainingJob
+        {
+            get { return this._overallBestTrainingJob; }
+            set { this._overallBestTrainingJob = value; }
+        }
+
+        // Check to see if OverallBestTrainingJob property is set
+        internal bool IsSetOverallBestTrainingJob()
+        {
+            return this._overallBestTrainingJob != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property TrainingJobDefinition. 
         /// <para>
         /// The <a>HyperParameterTrainingJobDefinition</a> object that specifies the definition
@@ -264,6 +287,27 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetTrainingJobStatusCounters()
         {
             return this._trainingJobStatusCounters != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WarmStartConfig. 
+        /// <para>
+        /// The configuration for starting the hyperparameter parameter tuning job using one or
+        /// more previous tuning jobs as a starting point. The results of previous tuning jobs
+        /// are used to inform which combinations of hyperparameters to search over in the new
+        /// tuning job.
+        /// </para>
+        /// </summary>
+        public HyperParameterTuningJobWarmStartConfig WarmStartConfig
+        {
+            get { return this._warmStartConfig; }
+            set { this._warmStartConfig = value; }
+        }
+
+        // Check to see if WarmStartConfig property is set
+        internal bool IsSetWarmStartConfig()
+        {
+            return this._warmStartConfig != null;
         }
 
     }

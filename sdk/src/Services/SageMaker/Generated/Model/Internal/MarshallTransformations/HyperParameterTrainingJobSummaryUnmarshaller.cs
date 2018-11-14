@@ -124,6 +124,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.TunedHyperParameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TuningJobName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TuningJobName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AlgorithmSpecification Marshaller
+    /// HyperParameterTuningJobWarmStartConfig Marshaller
     /// </summary>       
-    public class AlgorithmSpecificationMarshaller : IRequestMarshaller<AlgorithmSpecification, JsonMarshallerContext> 
+    public class HyperParameterTuningJobWarmStartConfigMarshaller : IRequestMarshaller<HyperParameterTuningJobWarmStartConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,34 +43,28 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AlgorithmSpecification requestObject, JsonMarshallerContext context)
+        public void Marshall(HyperParameterTuningJobWarmStartConfig requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetMetricDefinitions())
+            if(requestObject.IsSetParentHyperParameterTuningJobs())
             {
-                context.Writer.WritePropertyName("MetricDefinitions");
+                context.Writer.WritePropertyName("ParentHyperParameterTuningJobs");
                 context.Writer.WriteArrayStart();
-                foreach(var requestObjectMetricDefinitionsListValue in requestObject.MetricDefinitions)
+                foreach(var requestObjectParentHyperParameterTuningJobsListValue in requestObject.ParentHyperParameterTuningJobs)
                 {
                     context.Writer.WriteObjectStart();
 
-                    var marshaller = MetricDefinitionMarshaller.Instance;
-                    marshaller.Marshall(requestObjectMetricDefinitionsListValue, context);
+                    var marshaller = ParentHyperParameterTuningJobMarshaller.Instance;
+                    marshaller.Marshall(requestObjectParentHyperParameterTuningJobsListValue, context);
 
                     context.Writer.WriteObjectEnd();
                 }
                 context.Writer.WriteArrayEnd();
             }
 
-            if(requestObject.IsSetTrainingImage())
+            if(requestObject.IsSetWarmStartType())
             {
-                context.Writer.WritePropertyName("TrainingImage");
-                context.Writer.Write(requestObject.TrainingImage);
-            }
-
-            if(requestObject.IsSetTrainingInputMode())
-            {
-                context.Writer.WritePropertyName("TrainingInputMode");
-                context.Writer.Write(requestObject.TrainingInputMode);
+                context.Writer.WritePropertyName("WarmStartType");
+                context.Writer.Write(requestObject.WarmStartType);
             }
 
         }
@@ -78,7 +72,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static AlgorithmSpecificationMarshaller Instance = new AlgorithmSpecificationMarshaller();
+        public readonly static HyperParameterTuningJobWarmStartConfigMarshaller Instance = new HyperParameterTuningJobWarmStartConfigMarshaller();
 
     }
 }
