@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
         private string _availabilityZone;
         private InstanceType _instanceType;
         private string _maxPrice;
+        private Placement _placement;
         private double? _priority;
         private string _subnetId;
         private double? _weightedCapacity;
@@ -91,6 +92,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetMaxPrice()
         {
             return this._maxPrice != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Placement. 
+        /// <para>
+        /// The location where the instance launched, if applicable.
+        /// </para>
+        /// </summary>
+        public Placement Placement
+        {
+            get { return this._placement; }
+            set { this._placement = value; }
+        }
+
+        // Check to see if Placement property is set
+        internal bool IsSetPlacement()
+        {
+            return this._placement != null;
         }
 
         /// <summary>

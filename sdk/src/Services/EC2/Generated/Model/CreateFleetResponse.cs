@@ -32,7 +32,28 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class CreateFleetResponse : AmazonWebServiceResponse
     {
+        private List<CreateFleetError> _errors = new List<CreateFleetError>();
         private string _fleetId;
+        private List<CreateFleetInstance> _instances = new List<CreateFleetInstance>();
+
+        /// <summary>
+        /// Gets and sets the property Errors. 
+        /// <para>
+        /// Information about the instances that could not be launched by the fleet. Valid only
+        /// when <b>Type</b> is set to <code>instant</code>.
+        /// </para>
+        /// </summary>
+        public List<CreateFleetError> Errors
+        {
+            get { return this._errors; }
+            set { this._errors = value; }
+        }
+
+        // Check to see if Errors property is set
+        internal bool IsSetErrors()
+        {
+            return this._errors != null && this._errors.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property FleetId. 
@@ -50,6 +71,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetFleetId()
         {
             return this._fleetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Instances. 
+        /// <para>
+        /// Information about the instances that were launched by the fleet. Valid only when <b>Type</b>
+        /// is set to <code>instant</code>.
+        /// </para>
+        /// </summary>
+        public List<CreateFleetInstance> Instances
+        {
+            get { return this._instances; }
+            set { this._instances = value; }
+        }
+
+        // Check to see if Instances property is set
+        internal bool IsSetInstances()
+        {
+            return this._instances != null && this._instances.Count > 0; 
         }
 
     }

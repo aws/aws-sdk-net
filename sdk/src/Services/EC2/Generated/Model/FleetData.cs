@@ -35,11 +35,13 @@ namespace Amazon.EC2.Model
         private FleetActivityStatus _activityStatus;
         private string _clientToken;
         private DateTime? _createTime;
+        private List<DescribeFleetError> _errors = new List<DescribeFleetError>();
         private FleetExcessCapacityTerminationPolicy _excessCapacityTerminationPolicy;
         private string _fleetId;
         private FleetStateCode _fleetState;
         private double? _fulfilledCapacity;
         private double? _fulfilledOnDemandCapacity;
+        private List<DescribeFleetsInstances> _instances = new List<DescribeFleetsInstances>();
         private List<FleetLaunchTemplateConfig> _launchTemplateConfigs = new List<FleetLaunchTemplateConfig>();
         private OnDemandOptions _onDemandOptions;
         private bool? _replaceUnhealthyInstances;
@@ -113,6 +115,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetCreateTime()
         {
             return this._createTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Errors. 
+        /// <para>
+        /// Information about the instances that could not be launched by the fleet. Valid only
+        /// when <b>Type</b> is set to <code>instant</code>.
+        /// </para>
+        /// </summary>
+        public List<DescribeFleetError> Errors
+        {
+            get { return this._errors; }
+            set { this._errors = value; }
+        }
+
+        // Check to see if Errors property is set
+        internal bool IsSetErrors()
+        {
+            return this._errors != null && this._errors.Count > 0; 
         }
 
         /// <summary>
@@ -205,6 +226,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetFulfilledOnDemandCapacity()
         {
             return this._fulfilledOnDemandCapacity.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Instances. 
+        /// <para>
+        /// Information about the instances that were launched by the fleet. Valid only when <b>Type</b>
+        /// is set to <code>instant</code>.
+        /// </para>
+        /// </summary>
+        public List<DescribeFleetsInstances> Instances
+        {
+            get { return this._instances; }
+            set { this._instances = value; }
+        }
+
+        // Check to see if Instances property is set
+        internal bool IsSetInstances()
+        {
+            return this._instances != null && this._instances.Count > 0; 
         }
 
         /// <summary>

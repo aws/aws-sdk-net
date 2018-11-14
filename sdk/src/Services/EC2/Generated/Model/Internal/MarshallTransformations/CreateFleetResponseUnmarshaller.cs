@@ -55,10 +55,24 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
+                    if (context.TestExpression("errorSet/item", targetDepth))
+                    {
+                        var unmarshaller = CreateFleetErrorUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.Errors.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("fleetId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         response.FleetId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("fleetInstanceSet/item", targetDepth))
+                    {
+                        var unmarshaller = CreateFleetInstanceUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.Instances.Add(item);
                         continue;
                     }
                 } 

@@ -72,6 +72,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("errorSet/item", targetDepth))
+                    {
+                        var unmarshaller = DescribeFleetErrorUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Errors.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("excessCapacityTerminationPolicy", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -100,6 +107,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = DoubleUnmarshaller.Instance;
                         unmarshalledObject.FulfilledOnDemandCapacity = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("fleetInstanceSet/item", targetDepth))
+                    {
+                        var unmarshaller = DescribeFleetsInstancesUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Instances.Add(item);
                         continue;
                     }
                     if (context.TestExpression("launchTemplateConfigs/item", targetDepth))

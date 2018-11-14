@@ -103,6 +103,33 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 {
                                     request.Parameters.Add("LaunchTemplateConfigs" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "MaxPrice", StringUtils.FromString(publicRequestlistValuelistValue.MaxPrice));
                                 }
+                                if(publicRequestlistValuelistValue.IsSetPlacement())
+                                {
+                                    if(publicRequestlistValuelistValue.Placement.IsSetAffinity())
+                                    {
+                                        request.Parameters.Add("LaunchTemplateConfigs" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "Placement" + "." + "Affinity", StringUtils.FromString(publicRequestlistValuelistValue.Placement.Affinity));
+                                    }
+                                    if(publicRequestlistValuelistValue.Placement.IsSetAvailabilityZone())
+                                    {
+                                        request.Parameters.Add("LaunchTemplateConfigs" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "Placement" + "." + "AvailabilityZone", StringUtils.FromString(publicRequestlistValuelistValue.Placement.AvailabilityZone));
+                                    }
+                                    if(publicRequestlistValuelistValue.Placement.IsSetGroupName())
+                                    {
+                                        request.Parameters.Add("LaunchTemplateConfigs" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "Placement" + "." + "GroupName", StringUtils.FromString(publicRequestlistValuelistValue.Placement.GroupName));
+                                    }
+                                    if(publicRequestlistValuelistValue.Placement.IsSetHostId())
+                                    {
+                                        request.Parameters.Add("LaunchTemplateConfigs" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "Placement" + "." + "HostId", StringUtils.FromString(publicRequestlistValuelistValue.Placement.HostId));
+                                    }
+                                    if(publicRequestlistValuelistValue.Placement.IsSetSpreadDomain())
+                                    {
+                                        request.Parameters.Add("LaunchTemplateConfigs" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "Placement" + "." + "SpreadDomain", StringUtils.FromString(publicRequestlistValuelistValue.Placement.SpreadDomain));
+                                    }
+                                    if(publicRequestlistValuelistValue.Placement.IsSetTenancy())
+                                    {
+                                        request.Parameters.Add("LaunchTemplateConfigs" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "Placement" + "." + "Tenancy", StringUtils.FromString(publicRequestlistValuelistValue.Placement.Tenancy));
+                                    }
+                                }
                                 if(publicRequestlistValuelistValue.IsSetPriority())
                                 {
                                     request.Parameters.Add("LaunchTemplateConfigs" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "Priority", StringUtils.FromDouble(publicRequestlistValuelistValue.Priority));
@@ -127,6 +154,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("OnDemandOptions" + "." + "AllocationStrategy", StringUtils.FromString(publicRequest.OnDemandOptions.AllocationStrategy));
                     }
+                    if(publicRequest.OnDemandOptions.IsSetMinTargetCapacity())
+                    {
+                        request.Parameters.Add("OnDemandOptions" + "." + "MinTargetCapacity", StringUtils.FromInt(publicRequest.OnDemandOptions.MinTargetCapacity));
+                    }
+                    if(publicRequest.OnDemandOptions.IsSetSingleInstanceType())
+                    {
+                        request.Parameters.Add("OnDemandOptions" + "." + "SingleInstanceType", StringUtils.FromBool(publicRequest.OnDemandOptions.SingleInstanceType));
+                    }
                 }
                 if(publicRequest.IsSetReplaceUnhealthyInstances())
                 {
@@ -145,6 +180,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if(publicRequest.SpotOptions.IsSetInstancePoolsToUseCount())
                     {
                         request.Parameters.Add("SpotOptions" + "." + "InstancePoolsToUseCount", StringUtils.FromInt(publicRequest.SpotOptions.InstancePoolsToUseCount));
+                    }
+                    if(publicRequest.SpotOptions.IsSetMinTargetCapacity())
+                    {
+                        request.Parameters.Add("SpotOptions" + "." + "MinTargetCapacity", StringUtils.FromInt(publicRequest.SpotOptions.MinTargetCapacity));
+                    }
+                    if(publicRequest.SpotOptions.IsSetSingleInstanceType())
+                    {
+                        request.Parameters.Add("SpotOptions" + "." + "SingleInstanceType", StringUtils.FromBool(publicRequest.SpotOptions.SingleInstanceType));
                     }
                 }
                 if(publicRequest.IsSetTagSpecifications())

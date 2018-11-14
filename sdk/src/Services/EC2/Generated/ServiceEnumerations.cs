@@ -2347,6 +2347,10 @@ namespace Amazon.EC2
     {
 
         /// <summary>
+        /// Constant Instant for FleetType
+        /// </summary>
+        public static readonly FleetType Instant = new FleetType("instant");
+        /// <summary>
         /// Constant Maintain for FleetType
         /// </summary>
         public static readonly FleetType Maintain = new FleetType("maintain");
@@ -3154,6 +3158,56 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator InstanceInterruptionBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InstanceLifecycle.
+    /// </summary>
+    public class InstanceLifecycle : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OnDemand for InstanceLifecycle
+        /// </summary>
+        public static readonly InstanceLifecycle OnDemand = new InstanceLifecycle("on-demand");
+        /// <summary>
+        /// Constant Spot for InstanceLifecycle
+        /// </summary>
+        public static readonly InstanceLifecycle Spot = new InstanceLifecycle("spot");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstanceLifecycle(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceLifecycle FindValue(string value)
+        {
+            return FindValue<InstanceLifecycle>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceLifecycle(string value)
         {
             return FindValue(value);
         }

@@ -35,6 +35,8 @@ namespace Amazon.EC2.Model
         private SpotAllocationStrategy _allocationStrategy;
         private SpotInstanceInterruptionBehavior _instanceInterruptionBehavior;
         private int? _instancePoolsToUseCount;
+        private int? _minTargetCapacity;
+        private bool? _singleInstanceType;
 
         /// <summary>
         /// Gets and sets the property AllocationStrategy. 
@@ -92,6 +94,44 @@ namespace Amazon.EC2.Model
         internal bool IsSetInstancePoolsToUseCount()
         {
             return this._instancePoolsToUseCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MinTargetCapacity. 
+        /// <para>
+        /// The minimum target capacity for Spot Instances in the fleet. If the minimum target
+        /// capacity is not reached, the fleet launches no instances.
+        /// </para>
+        /// </summary>
+        public int MinTargetCapacity
+        {
+            get { return this._minTargetCapacity.GetValueOrDefault(); }
+            set { this._minTargetCapacity = value; }
+        }
+
+        // Check to see if MinTargetCapacity property is set
+        internal bool IsSetMinTargetCapacity()
+        {
+            return this._minTargetCapacity.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SingleInstanceType. 
+        /// <para>
+        /// Indicates that the fleet uses a single instance type to launch all Spot Instances
+        /// in the fleet.
+        /// </para>
+        /// </summary>
+        public bool SingleInstanceType
+        {
+            get { return this._singleInstanceType.GetValueOrDefault(); }
+            set { this._singleInstanceType = value; }
+        }
+
+        // Check to see if SingleInstanceType property is set
+        internal bool IsSetSingleInstanceType()
+        {
+            return this._singleInstanceType.HasValue; 
         }
 
     }

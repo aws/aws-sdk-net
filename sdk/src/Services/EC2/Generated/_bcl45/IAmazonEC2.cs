@@ -5075,7 +5075,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of your EC2 Fleet.
+        /// Describes one or more of your EC2 Fleets.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFleets service method.</param>
         /// 
