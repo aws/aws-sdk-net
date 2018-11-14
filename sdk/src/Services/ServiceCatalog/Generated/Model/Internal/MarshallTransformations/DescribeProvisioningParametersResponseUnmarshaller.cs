@@ -63,6 +63,12 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                     response.ProvisioningArtifactParameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ProvisioningArtifactPreferences", targetDepth))
+                {
+                    var unmarshaller = ProvisioningArtifactPreferencesUnmarshaller.Instance;
+                    response.ProvisioningArtifactPreferences = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TagOptions", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<TagOptionSummary, TagOptionSummaryUnmarshaller>(TagOptionSummaryUnmarshaller.Instance);

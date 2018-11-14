@@ -1001,6 +1001,37 @@
               "documentation": "\n         <p>Summary information about a TagOption.</p>\n      ",
               "shape_name": "TagOptionSummary"
             }
+          },
+          "ProvisioningArtifactPreferences": {
+            "type": "structure",
+            "members": {
+              "StackSetAccounts": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <simpara>One or more AWS accounts where stack instances are deployed from the stack set. These accounts can be scoped in <code>ProvisioningPreferences$StackSetAccounts</code> and <code>UpdateProvisioningPreferences$StackSetAccounts</code>.</simpara>\n         <simpara>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</simpara>\n      ",
+                "documentation": "\n         <p>One or more AWS accounts where stack instances are deployed from the stack set. These accounts can be scoped in <code>ProvisioningPreferences$StackSetAccounts</code> and <code>UpdateProvisioningPreferences$StackSetAccounts</code>.</p>\n         <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>\n      ",
+                "shape_name": "StackSetAccounts",
+                "members": {
+                  "type": "string",
+                  "pattern": "^[0-9]{12}$",
+                  "shape_name": "AccountId",
+                  "documentation": null
+                }
+              },
+              "StackSetRegions": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <simpara>One or more AWS Regions where stack instances are deployed from the stack set. These regions can be scoped in <code>ProvisioningPreferences$StackSetRegions</code> and <code>UpdateProvisioningPreferences$StackSetRegions</code>.</simpara>\n         <simpara>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</simpara>\n      ",
+                "documentation": "\n         <p>One or more AWS Regions where stack instances are deployed from the stack set. These regions can be scoped in <code>ProvisioningPreferences$StackSetRegions</code> and <code>UpdateProvisioningPreferences$StackSetRegions</code>.</p>\n         <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>\n      ",
+                "shape_name": "StackSetRegions",
+                "members": {
+                  "type": "string",
+                  "shape_name": "Region",
+                  "documentation": null
+                }
+              }
+            },
+            "zonbookDocumentation": "\n         <simpara>An object that contains information about preferences, such as regions and accounts, for the provisioning artifact.</simpara>\n      ",
+            "documentation": "\n         <p>An object that contains information about preferences, such as regions and accounts, for the provisioning artifact.</p>\n      ",
+            "shape_name": "ProvisioningArtifactPreferences"
           }
         },
         "shape_name": "DescribeProvisioningParametersOutput",
@@ -1105,6 +1136,67 @@
               "documentation": "\n         <p>Information about a parameter used to provision a product.</p>\n      ",
               "shape_name": "ProvisioningParameter"
             }
+          },
+          "ProvisioningPreferences": {
+            "type": "structure",
+            "members": {
+              "StackSetAccounts": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <simpara>One or more AWS accounts that will have access to the provisioned product.</simpara>\n         <simpara>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</simpara>\n         <simpara>The AWS accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</simpara>\n         <simpara>If no values are specified, the default value is all accounts from the <code>STACKSET</code> constraint.</simpara>\n      ",
+                "documentation": "\n         <p>One or more AWS accounts that will have access to the provisioned product.</p>\n         <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>\n         <p>The AWS accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>\n         <p>If no values are specified, the default value is all accounts from the <code>STACKSET</code> constraint.</p>\n      ",
+                "shape_name": "StackSetAccounts",
+                "members": {
+                  "type": "string",
+                  "pattern": "^[0-9]{12}$",
+                  "shape_name": "AccountId",
+                  "documentation": null
+                }
+              },
+              "StackSetRegions": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <simpara>One or more AWS Regions where the provisioned product will be available.</simpara>\n         <simpara>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</simpara>\n         <simpara>The specified regions should be within the list of regions from the <code>STACKSET</code> constraint. To get the list of regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</simpara>\n         <simpara>If no values are specified, the default value is all regions from the <code>STACKSET</code> constraint.</simpara>\n      ",
+                "documentation": "\n         <p>One or more AWS Regions where the provisioned product will be available.</p>\n         <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>\n         <p>The specified regions should be within the list of regions from the <code>STACKSET</code> constraint. To get the list of regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>\n         <p>If no values are specified, the default value is all regions from the <code>STACKSET</code> constraint.</p>\n      ",
+                "shape_name": "StackSetRegions",
+                "members": {
+                  "type": "string",
+                  "shape_name": "Region",
+                  "documentation": null
+                }
+              },
+              "StackSetFailureToleranceCount": {
+                "type": "integer",
+                "zonbookDocumentation": "\n         <simpara>The number of accounts, per region, for which this operation can fail before AWS Service Catalog stops the operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the operation in any subsequent regions.</simpara>\n         <simpara>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</simpara>\n         <simpara>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</simpara>\n         <simpara>The default value is <code>0</code> if no value is specified.</simpara>\n      ",
+                "documentation": "\n         <p>The number of accounts, per region, for which this operation can fail before AWS Service Catalog stops the operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the operation in any subsequent regions.</p>\n         <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>\n         <p>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</p>\n         <p>The default value is <code>0</code> if no value is specified.</p>\n      ",
+                "shape_name": "StackSetFailureToleranceCount",
+                "min_length": 0
+              },
+              "StackSetFailureTolerancePercentage": {
+                "type": "integer",
+                "zonbookDocumentation": "\n         <simpara>The percentage of accounts, per region, for which this stack operation can fail before AWS Service Catalog stops the operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the operation in any subsequent regions.</simpara>\n         <simpara>When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down to the next whole number.</simpara>\n         <simpara>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</simpara>\n         <simpara>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</simpara>\n      ",
+                "documentation": "\n         <p>The percentage of accounts, per region, for which this stack operation can fail before AWS Service Catalog stops the operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the operation in any subsequent regions.</p>\n         <p>When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down to the next whole number.</p>\n         <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>\n         <p>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</p>\n      ",
+                "shape_name": "StackSetFailureTolerancePercentage",
+                "min_length": 0,
+                "max_length": 100
+              },
+              "StackSetMaxConcurrencyCount": {
+                "type": "integer",
+                "zonbookDocumentation": "\n         <simpara>The maximum number of accounts in which to perform this operation at one time. This is dependent on the value of <code>StackSetFailureToleranceCount</code>. <code>StackSetMaxConcurrentCount</code> is at most one more than the <code>StackSetFailureToleranceCount</code>.</simpara>\n         <simpara>Note that this setting lets you specify the maximum for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</simpara>\n         <simpara>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</simpara>\n         <simpara>Conditional: You must specify either <code>StackSetMaxConcurrentCount</code> or <code>StackSetMaxConcurrentPercentage</code>, but not both.</simpara>\n      ",
+                "documentation": "\n         <p>The maximum number of accounts in which to perform this operation at one time. This is dependent on the value of <code>StackSetFailureToleranceCount</code>. <code>StackSetMaxConcurrentCount</code> is at most one more than the <code>StackSetFailureToleranceCount</code>.</p>\n         <p>Note that this setting lets you specify the maximum for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>\n         <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>\n         <p>Conditional: You must specify either <code>StackSetMaxConcurrentCount</code> or <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>\n      ",
+                "shape_name": "StackSetMaxConcurrencyCount",
+                "min_length": 1
+              },
+              "StackSetMaxConcurrencyPercentage": {
+                "type": "integer",
+                "zonbookDocumentation": "\n         <simpara>The maximum percentage of accounts in which to perform this operation at one time.</simpara>\n         <simpara>When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down to the next whole number. This is true except in cases where rounding down would result is zero. In this case, AWS Service Catalog sets the number as <code>1</code> instead.</simpara>\n         <simpara>Note that this setting lets you specify the maximum for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</simpara>\n         <simpara>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</simpara>\n         <simpara>Conditional: You must specify either <code>StackSetMaxConcurrentCount</code> or <code>StackSetMaxConcurrentPercentage</code>, but not both.</simpara>\n      ",
+                "documentation": "\n         <p>The maximum percentage of accounts in which to perform this operation at one time.</p>\n         <p>When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down to the next whole number. This is true except in cases where rounding down would result is zero. In this case, AWS Service Catalog sets the number as <code>1</code> instead.</p>\n         <p>Note that this setting lets you specify the maximum for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>\n         <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>\n         <p>Conditional: You must specify either <code>StackSetMaxConcurrentCount</code> or <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>\n      ",
+                "shape_name": "StackSetMaxConcurrencyPercentage",
+                "min_length": 1,
+                "max_length": 100
+              }
+            },
+            "zonbookDocumentation": "\n         <simpara>An object that contains information about the provisioning preferences for a stack set.</simpara>\n      ",
+            "documentation": "\n         <p>An object that contains information about the provisioning preferences for a stack set.</p>\n      ",
+            "shape_name": "ProvisioningPreferences"
           },
           "Tags": {
             "type": "list",
@@ -1222,8 +1314,8 @@
               },
               "ProvisionedProductType": {
                 "type": "string",
-                "zonbookDocumentation": "\n         <simpara>The type of provisioned product. The supported value is <code>CFN_STACK</code>.</simpara>\n      ",
-                "documentation": "\n         <p>The type of provisioned product. The supported value is <code>CFN_STACK</code>.</p>\n      ",
+                "zonbookDocumentation": "\n         <simpara>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</simpara>\n      ",
+                "documentation": "\n         <p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>\n      ",
                 "shape_name": "ProvisionedProductType"
               },
               "RecordType": {
@@ -1466,8 +1558,8 @@
               },
               "ProvisionedProductType": {
                 "type": "string",
-                "zonbookDocumentation": "\n         <simpara>The type of provisioned product. The supported value is <code>CFN_STACK</code>.</simpara>\n      ",
-                "documentation": "\n         <p>The type of provisioned product. The supported value is <code>CFN_STACK</code>.</p>\n      ",
+                "zonbookDocumentation": "\n         <simpara>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</simpara>\n      ",
+                "documentation": "\n         <p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>\n      ",
                 "shape_name": "ProvisionedProductType"
               },
               "RecordType": {
@@ -1684,6 +1776,78 @@
               "shape_name": "UpdateProvisioningParameter"
             }
           },
+          "ProvisioningPreferences": {
+            "type": "structure",
+            "members": {
+              "StackSetAccounts": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <simpara>One or more AWS accounts that will have access to the provisioned product.</simpara>\n         <simpara>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</simpara>\n         <simpara>The AWS accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</simpara>\n         <simpara>If no values are specified, the default value is all accounts from the <code>STACKSET</code> constraint.</simpara>\n      ",
+                "documentation": "\n         <p>One or more AWS accounts that will have access to the provisioned product.</p>\n         <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>\n         <p>The AWS accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>\n         <p>If no values are specified, the default value is all accounts from the <code>STACKSET</code> constraint.</p>\n      ",
+                "shape_name": "StackSetAccounts",
+                "members": {
+                  "type": "string",
+                  "pattern": "^[0-9]{12}$",
+                  "shape_name": "AccountId",
+                  "documentation": null
+                }
+              },
+              "StackSetRegions": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <simpara>One or more AWS Regions where the provisioned product will be available.</simpara>\n         <simpara>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</simpara>\n         <simpara>The specified regions should be within the list of regions from the <code>STACKSET</code> constraint. To get the list of regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</simpara>\n         <simpara>If no values are specified, the default value is all regions from the <code>STACKSET</code> constraint.</simpara>\n      ",
+                "documentation": "\n         <p>One or more AWS Regions where the provisioned product will be available.</p>\n         <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>\n         <p>The specified regions should be within the list of regions from the <code>STACKSET</code> constraint. To get the list of regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>\n         <p>If no values are specified, the default value is all regions from the <code>STACKSET</code> constraint.</p>\n      ",
+                "shape_name": "StackSetRegions",
+                "members": {
+                  "type": "string",
+                  "shape_name": "Region",
+                  "documentation": null
+                }
+              },
+              "StackSetFailureToleranceCount": {
+                "type": "integer",
+                "zonbookDocumentation": "\n         <simpara>The number of accounts, per region, for which this operation can fail before AWS Service Catalog stops the operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the operation in any subsequent regions.</simpara>\n         <simpara>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</simpara>\n         <simpara>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</simpara>\n         <simpara>The default value is <code>0</code> if no value is specified.</simpara>\n      ",
+                "documentation": "\n         <p>The number of accounts, per region, for which this operation can fail before AWS Service Catalog stops the operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the operation in any subsequent regions.</p>\n         <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>\n         <p>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</p>\n         <p>The default value is <code>0</code> if no value is specified.</p>\n      ",
+                "shape_name": "StackSetFailureToleranceCount",
+                "min_length": 0
+              },
+              "StackSetFailureTolerancePercentage": {
+                "type": "integer",
+                "zonbookDocumentation": "\n         <simpara>The percentage of accounts, per region, for which this stack operation can fail before AWS Service Catalog stops the operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the operation in any subsequent regions.</simpara>\n         <simpara>When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down to the next whole number.</simpara>\n         <simpara>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</simpara>\n         <simpara>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</simpara>\n      ",
+                "documentation": "\n         <p>The percentage of accounts, per region, for which this stack operation can fail before AWS Service Catalog stops the operation in that region. If the operation is stopped in a region, AWS Service Catalog doesn't attempt the operation in any subsequent regions.</p>\n         <p>When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down to the next whole number.</p>\n         <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>\n         <p>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</p>\n      ",
+                "shape_name": "StackSetFailureTolerancePercentage",
+                "min_length": 0,
+                "max_length": 100
+              },
+              "StackSetMaxConcurrencyCount": {
+                "type": "integer",
+                "zonbookDocumentation": "\n         <simpara>The maximum number of accounts in which to perform this operation at one time. This is dependent on the value of <code>StackSetFailureToleranceCount</code>. <code>StackSetMaxConcurrentCount</code> is at most one more than the <code>StackSetFailureToleranceCount</code>.</simpara>\n         <simpara>Note that this setting lets you specify the maximum for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</simpara>\n         <simpara>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</simpara>\n         <simpara>Conditional: You must specify either <code>StackSetMaxConcurrentCount</code> or <code>StackSetMaxConcurrentPercentage</code>, but not both.</simpara>\n      ",
+                "documentation": "\n         <p>The maximum number of accounts in which to perform this operation at one time. This is dependent on the value of <code>StackSetFailureToleranceCount</code>. <code>StackSetMaxConcurrentCount</code> is at most one more than the <code>StackSetFailureToleranceCount</code>.</p>\n         <p>Note that this setting lets you specify the maximum for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>\n         <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>\n         <p>Conditional: You must specify either <code>StackSetMaxConcurrentCount</code> or <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>\n      ",
+                "shape_name": "StackSetMaxConcurrencyCount",
+                "min_length": 1
+              },
+              "StackSetMaxConcurrencyPercentage": {
+                "type": "integer",
+                "zonbookDocumentation": "\n         <simpara>The maximum percentage of accounts in which to perform this operation at one time.</simpara>\n         <simpara>When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down to the next whole number. This is true except in cases where rounding down would result is zero. In this case, AWS Service Catalog sets the number as <code>1</code> instead.</simpara>\n         <simpara>Note that this setting lets you specify the maximum for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</simpara>\n         <simpara>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</simpara>\n         <simpara>Conditional: You must specify either <code>StackSetMaxConcurrentCount</code> or <code>StackSetMaxConcurrentPercentage</code>, but not both.</simpara>\n      ",
+                "documentation": "\n         <p>The maximum percentage of accounts in which to perform this operation at one time.</p>\n         <p>When calculating the number of accounts based on the specified percentage, AWS Service Catalog rounds down to the next whole number. This is true except in cases where rounding down would result is zero. In this case, AWS Service Catalog sets the number as <code>1</code> instead.</p>\n         <p>Note that this setting lets you specify the maximum for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>\n         <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>\n         <p>Conditional: You must specify either <code>StackSetMaxConcurrentCount</code> or <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>\n      ",
+                "shape_name": "StackSetMaxConcurrencyPercentage",
+                "min_length": 1,
+                "max_length": 100
+              },
+              "StackSetOperationType": {
+                "type": "string",
+                "enum": [
+                  "CREATE",
+                  "UPDATE",
+                  "DELETE"
+                ],
+                "zonbookDocumentation": "\n         <simpara>Determines what action AWS Service Catalog performs to a stack set or a stack instance represented by the provisioned product. The default value is <code>UPDATE</code> if nothing is specified.</simpara>\n         <simpara>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</simpara>\n         <variablelist>\n            <varlistentry>\n               <term>CREATE</term>\n               <listitem>\n                  <simpara>Creates a new stack instance in the stack set represented by the provisioned product. In this case, only new stack instances are created based on accounts and regions; if new ProductId or ProvisioningArtifactID are passed, they will be ignored.</simpara>\n               </listitem>\n            </varlistentry>\n            <varlistentry>\n               <term>UPDATE</term>\n               <listitem>\n                  <simpara>Updates the stack set represented by the provisioned product and also its stack instances.</simpara>\n               </listitem>\n            </varlistentry>\n            <varlistentry>\n               <term>DELETE</term>\n               <listitem>\n                  <simpara>Deletes a stack instance in the stack set represented by the provisioned product.</simpara>\n               </listitem>\n            </varlistentry>\n         </variablelist>\n      ",
+                "documentation": "\n         <p>Determines what action AWS Service Catalog performs to a stack set or a stack instance represented by the provisioned product. The default value is <code>UPDATE</code> if nothing is specified.</p>\n         <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>\n         <dl>\n            <dt>CREATE</dt>\n            <dd>\n               <p>Creates a new stack instance in the stack set represented by the provisioned product. In this case, only new stack instances are created based on accounts and regions; if new ProductId or ProvisioningArtifactID are passed, they will be ignored.</p>\n            </dd>\n            <dt>UPDATE</dt>\n            <dd>\n               <p>Updates the stack set represented by the provisioned product and also its stack instances.</p>\n            </dd>\n            <dt>DELETE</dt>\n            <dd>\n               <p>Deletes a stack instance in the stack set represented by the provisioned product.</p>\n            </dd>\n         </dl>\n      ",
+                "shape_name": "StackSetOperationType"
+              }
+            },
+            "zonbookDocumentation": "\n         <simpara>An object that contains information about the provisioning preferences for a stack set.</simpara>\n      ",
+            "documentation": "\n         <p>An object that contains information about the provisioning preferences for a stack set.</p>\n      ",
+            "shape_name": "UpdateProvisioningPreferences"
+          },
           "UpdateToken": {
             "type": "string",
             "pattern": "[a-zA-Z0-9][a-zA-Z0-9_-]*",
@@ -1750,8 +1914,8 @@
               },
               "ProvisionedProductType": {
                 "type": "string",
-                "zonbookDocumentation": "\n         <simpara>The type of provisioned product. The supported value is <code>CFN_STACK</code>.</simpara>\n      ",
-                "documentation": "\n         <p>The type of provisioned product. The supported value is <code>CFN_STACK</code>.</p>\n      ",
+                "zonbookDocumentation": "\n         <simpara>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</simpara>\n      ",
+                "documentation": "\n         <p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>\n      ",
                 "shape_name": "ProvisionedProductType"
               },
               "RecordType": {
@@ -2017,8 +2181,8 @@
                 },
                 "ProvisionedProductType": {
                   "type": "string",
-                  "zonbookDocumentation": "\n         <simpara>The type of provisioned product. The supported value is <code>CFN_STACK</code>.</simpara>\n      ",
-                  "documentation": "\n         <p>The type of provisioned product. The supported value is <code>CFN_STACK</code>.</p>\n      ",
+                  "zonbookDocumentation": "\n         <simpara>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</simpara>\n      ",
+                  "documentation": "\n         <p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>\n      ",
                   "shape_name": "ProvisionedProductType"
                 },
                 "RecordType": {
@@ -2245,8 +2409,8 @@
               },
               "ProvisionedProductType": {
                 "type": "string",
-                "zonbookDocumentation": "\n         <simpara>The type of provisioned product. The supported value is <code>CFN_STACK</code>.</simpara>\n      ",
-                "documentation": "\n         <p>The type of provisioned product. The supported value is <code>CFN_STACK</code>.</p>\n      ",
+                "zonbookDocumentation": "\n         <simpara>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</simpara>\n      ",
+                "documentation": "\n         <p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>\n      ",
                 "shape_name": "ProvisionedProductType"
               },
               "RecordType": {
@@ -2499,8 +2663,8 @@
                 },
                 "Type": {
                   "type": "string",
-                  "zonbookDocumentation": "\n         <simpara>The type of provisioned product. The supported value is <code>CFN_STACK</code>.</simpara>\n      ",
-                  "documentation": "\n         <p>The type of provisioned product. The supported value is <code>CFN_STACK</code>.</p>\n      ",
+                  "zonbookDocumentation": "\n         <simpara>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</simpara>\n      ",
+                  "documentation": "\n         <p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>\n      ",
                   "shape_name": "ProvisionedProductType"
                 },
                 "Id": {
@@ -2727,8 +2891,8 @@
                 },
                 "Type": {
                   "type": "string",
-                  "zonbookDocumentation": "\n         <simpara>The type of provisioned product. The supported value is <code>CFN_STACK</code>.</simpara>\n      ",
-                  "documentation": "\n         <p>The type of provisioned product. The supported value is <code>CFN_STACK</code>.</p>\n      ",
+                  "zonbookDocumentation": "\n         <simpara>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</simpara>\n      ",
+                  "documentation": "\n         <p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>\n      ",
                   "shape_name": "ProvisionedProductType"
                 },
                 "Id": {
@@ -2943,8 +3107,8 @@
               },
               "Type": {
                 "type": "string",
-                "zonbookDocumentation": "\n         <simpara>The type of provisioned product. The supported value is <code>CFN_STACK</code>.</simpara>\n      ",
-                "documentation": "\n         <p>The type of provisioned product. The supported value is <code>CFN_STACK</code>.</p>\n      ",
+                "zonbookDocumentation": "\n         <simpara>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</simpara>\n      ",
+                "documentation": "\n         <p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>\n      ",
                 "shape_name": "ProvisionedProductType"
               },
               "Id": {
@@ -7842,15 +8006,15 @@
           },
           "Parameters": {
             "type": "string",
-            "zonbookDocumentation": "\n         <simpara>The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:</simpara>\n         <variablelist>\n            <varlistentry>\n               <term>LAUNCH</term>\n               <listitem>\n                  <simpara>Specify the <code>RoleArn</code> property as follows:</simpara>\n                  <simpara>\\\"RoleArn\\\" : \\\"arn:aws:iam::123456789012:role/LaunchRole\\\"</simpara>\n               </listitem>\n            </varlistentry>\n            <varlistentry>\n               <term>NOTIFICATION</term>\n               <listitem>\n                  <simpara>Specify the <code>NotificationArns</code> property as follows:</simpara>\n                  <simpara>\\\"NotificationArns\\\" : [\\\"arn:aws:sns:us-east-1:123456789012:Topic\\\"]</simpara>\n               </listitem>\n            </varlistentry>\n            <varlistentry>\n               <term>TEMPLATE</term>\n               <listitem>\n                  <simpara>Specify the <code>Rules</code> property. For more information, see\n                  <ulink url=\"http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html\">Template Constraint Rules</ulink>.</simpara>\n               </listitem>\n            </varlistentry>\n         </variablelist>\n      ",
-            "documentation": "\n         <p>The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:</p>\n         <dl>\n            <dt>LAUNCH</dt>\n            <dd>\n               <p>Specify the <code>RoleArn</code> property as follows:</p>\n               <p>\\\"RoleArn\\\" : \\\"arn:aws:iam::123456789012:role/LaunchRole\\\"</p>\n            </dd>\n            <dt>NOTIFICATION</dt>\n            <dd>\n               <p>Specify the <code>NotificationArns</code> property as follows:</p>\n               <p>\\\"NotificationArns\\\" : [\\\"arn:aws:sns:us-east-1:123456789012:Topic\\\"]</p>\n            </dd>\n            <dt>TEMPLATE</dt>\n            <dd>\n               <p>Specify the <code>Rules</code> property. For more information, see\n                  <a href=\"http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html\">Template Constraint Rules</a>.</p>\n            </dd>\n         </dl>\n      ",
+            "zonbookDocumentation": "\n         <simpara>The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:</simpara>\n         <variablelist>\n            <varlistentry>\n               <term>LAUNCH</term>\n               <listitem>\n                  <simpara>Specify the <code>RoleArn</code> property as follows:</simpara>\n                  <simpara>\n                     <code>{\"RoleArn\" : \"arn:aws:iam::123456789012:role/LaunchRole\"}</code>\n                  </simpara>\n                  <simpara>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</simpara>\n                  <simpara>You also cannot have more than one <code>LAUNCH</code> constraint on a product and portfolio.</simpara>\n               </listitem>\n            </varlistentry>\n            <varlistentry>\n               <term>NOTIFICATION</term>\n               <listitem>\n                  <simpara>Specify the <code>NotificationArns</code> property as follows:</simpara>\n                  <simpara>\n                     <code>{\"NotificationArns\" : [\"arn:aws:sns:us-east-1:123456789012:Topic\"]}</code>\n                  </simpara>\n               </listitem>\n            </varlistentry>\n            <varlistentry>\n               <term>STACKSET</term>\n               <listitem>\n                  <simpara>Specify the <code>Parameters</code> property as follows:</simpara>\n                  <simpara>\n                     <code>{\"Version\": \"String\", \"Properties\": {\"AccountList\": [ \"String\" ], \"RegionList\": [ \"String\" ], \"AdminRole\": \"String\", \"ExecutionRole\": \"String\"}}</code>\n                  </simpara>\n                  <simpara>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</simpara>\n                  <simpara>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</simpara>\n                  <simpara>Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.</simpara>\n               </listitem>\n            </varlistentry>\n            <varlistentry>\n               <term>TEMPLATE</term>\n               <listitem>\n                  <simpara>Specify the <code>Rules</code> property. For more information, see\n                  <ulink url=\"http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html\">Template Constraint Rules</ulink>.</simpara>\n               </listitem>\n            </varlistentry>\n         </variablelist>\n      ",
+            "documentation": "\n         <p>The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:</p>\n         <dl>\n            <dt>LAUNCH</dt>\n            <dd>\n               <p>Specify the <code>RoleArn</code> property as follows:</p>\n               <p>\n                  <code>{\"RoleArn\" : \"arn:aws:iam::123456789012:role/LaunchRole\"}</code>\n               </p>\n               <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>\n               <p>You also cannot have more than one <code>LAUNCH</code> constraint on a product and portfolio.</p>\n            </dd>\n            <dt>NOTIFICATION</dt>\n            <dd>\n               <p>Specify the <code>NotificationArns</code> property as follows:</p>\n               <p>\n                  <code>{\"NotificationArns\" : [\"arn:aws:sns:us-east-1:123456789012:Topic\"]}</code>\n               </p>\n            </dd>\n            <dt>STACKSET</dt>\n            <dd>\n               <p>Specify the <code>Parameters</code> property as follows:</p>\n               <p>\n                  <code>{\"Version\": \"String\", \"Properties\": {\"AccountList\": [ \"String\" ], \"RegionList\": [ \"String\" ], \"AdminRole\": \"String\", \"ExecutionRole\": \"String\"}}</code>\n               </p>\n               <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>\n               <p>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</p>\n               <p>Products with a <code>STACKSET</code> constraint will launch an AWS CloudFormation stack set.</p>\n            </dd>\n            <dt>TEMPLATE</dt>\n            <dd>\n               <p>Specify the <code>Rules</code> property. For more information, see\n                  <a href=\"http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html\">Template Constraint Rules</a>.</p>\n            </dd>\n         </dl>\n      ",
             "required": true,
             "shape_name": "ConstraintParameters"
           },
           "Type": {
             "type": "string",
-            "zonbookDocumentation": "\n         <simpara>The type of constraint.</simpara>\n         <itemizedlist>\n            <listitem>\n               <simpara>\n                  <code>LAUNCH</code>\n               </simpara>\n            </listitem>\n            <listitem>\n               <simpara>\n                  <code>NOTIFICATION</code>\n               </simpara>\n            </listitem>\n            <listitem>\n               <simpara>\n                  <code>TEMPLATE</code>\n               </simpara>\n            </listitem>\n         </itemizedlist>\n      ",
-            "documentation": "\n         <p>The type of constraint.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>LAUNCH</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>NOTIFICATION</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>TEMPLATE</code>\n               </p>\n            </li>\n         </ul>\n      ",
+            "zonbookDocumentation": "\n         <simpara>The type of constraint.</simpara>\n         <itemizedlist>\n            <listitem>\n               <simpara>\n                  <code>LAUNCH</code>\n               </simpara>\n            </listitem>\n            <listitem>\n               <simpara>\n                  <code>NOTIFICATION</code>\n               </simpara>\n            </listitem>\n\t           <listitem>\n               <simpara>\n                  <code>STACKSET</code>\n               </simpara>\n            </listitem>\n            <listitem>\n               <simpara>\n                  <code>TEMPLATE</code>\n               </simpara>\n            </listitem>\n         </itemizedlist>\n      ",
+            "documentation": "\n         <p>The type of constraint.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>LAUNCH</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>NOTIFICATION</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>STACKSET</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>TEMPLATE</code>\n               </p>\n            </li>\n         </ul>\n      ",
             "required": true,
             "shape_name": "ConstraintType",
             "min_length": 1,
@@ -9410,8 +9574,8 @@
               },
               "ProvisionedProductType": {
                 "type": "string",
-                "zonbookDocumentation": "\n         <simpara>The type of provisioned product. The supported value is <code>CFN_STACK</code>.</simpara>\n      ",
-                "documentation": "\n         <p>The type of provisioned product. The supported value is <code>CFN_STACK</code>.</p>\n      ",
+                "zonbookDocumentation": "\n         <simpara>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</simpara>\n      ",
+                "documentation": "\n         <p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>\n      ",
                 "shape_name": "ProvisionedProductType"
               },
               "RecordType": {
@@ -11724,8 +11888,8 @@
               },
               "ProvisionedProductType": {
                 "type": "string",
-                "zonbookDocumentation": "\n         <simpara>The type of provisioned product. The supported value is <code>CFN_STACK</code>.</simpara>\n      ",
-                "documentation": "\n         <p>The type of provisioned product. The supported value is <code>CFN_STACK</code>.</p>\n      ",
+                "zonbookDocumentation": "\n         <simpara>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</simpara>\n      ",
+                "documentation": "\n         <p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>\n      ",
                 "shape_name": "ProvisionedProductType"
               },
               "RecordType": {

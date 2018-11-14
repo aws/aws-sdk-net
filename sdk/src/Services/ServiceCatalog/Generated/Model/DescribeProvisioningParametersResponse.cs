@@ -34,6 +34,7 @@ namespace Amazon.ServiceCatalog.Model
     {
         private List<ConstraintSummary> _constraintSummaries = new List<ConstraintSummary>();
         private List<ProvisioningArtifactParameter> _provisioningArtifactParameters = new List<ProvisioningArtifactParameter>();
+        private ProvisioningArtifactPreferences _provisioningArtifactPreferences;
         private List<TagOptionSummary> _tagOptions = new List<TagOptionSummary>();
         private List<UsageInstruction> _usageInstructions = new List<UsageInstruction>();
 
@@ -71,6 +72,25 @@ namespace Amazon.ServiceCatalog.Model
         internal bool IsSetProvisioningArtifactParameters()
         {
             return this._provisioningArtifactParameters != null && this._provisioningArtifactParameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProvisioningArtifactPreferences. 
+        /// <para>
+        /// An object that contains information about preferences, such as regions and accounts,
+        /// for the provisioning artifact.
+        /// </para>
+        /// </summary>
+        public ProvisioningArtifactPreferences ProvisioningArtifactPreferences
+        {
+            get { return this._provisioningArtifactPreferences; }
+            set { this._provisioningArtifactPreferences = value; }
+        }
+
+        // Check to see if ProvisioningArtifactPreferences property is set
+        internal bool IsSetProvisioningArtifactPreferences()
+        {
+            return this._provisioningArtifactPreferences != null;
         }
 
         /// <summary>

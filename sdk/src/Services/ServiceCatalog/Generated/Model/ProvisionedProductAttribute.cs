@@ -293,7 +293,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of provisioned product. The supported value is <code>CFN_STACK</code>.
+        /// The type of provisioned product. The supported values are <code>CFN_STACK</code> and
+        /// <code>CFN_STACKSET</code>.
         /// </para>
         /// </summary>
         public string Type

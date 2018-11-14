@@ -124,6 +124,17 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetProvisioningPreferences())
+                {
+                    context.Writer.WritePropertyName("ProvisioningPreferences");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ProvisioningPreferencesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ProvisioningPreferences, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetProvisionToken())
                 {
                     context.Writer.WritePropertyName("ProvisionToken");

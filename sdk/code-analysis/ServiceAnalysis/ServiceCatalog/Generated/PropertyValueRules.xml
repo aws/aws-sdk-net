@@ -1682,6 +1682,24 @@
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.ProvisioningPreferences.StackSetFailureToleranceCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.ProvisioningPreferences.StackSetFailureTolerancePercentage</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.ProvisioningPreferences.StackSetMaxConcurrencyCount</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.ProvisioningPreferences.StackSetMaxConcurrencyPercentage</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.RecordDetail.PathId</property>
     <min>1</min>
     <max>100</max>
@@ -1811,5 +1829,23 @@
   <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.UpdateProvisioningParameter.Value</property>
     <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.UpdateProvisioningPreferences.StackSetFailureToleranceCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.UpdateProvisioningPreferences.StackSetFailureTolerancePercentage</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.UpdateProvisioningPreferences.StackSetMaxConcurrencyCount</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.UpdateProvisioningPreferences.StackSetMaxConcurrencyPercentage</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
 </property-value-rules>

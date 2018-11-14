@@ -53,6 +53,7 @@ namespace Amazon.ServiceCatalog.Model
         private string _provisionedProductName;
         private string _provisioningArtifactId;
         private List<ProvisioningParameter> _provisioningParameters = new List<ProvisioningParameter>();
+        private ProvisioningPreferences _provisioningPreferences;
         private string _provisionToken;
         private List<Tag> _tags = new List<Tag>();
 
@@ -196,6 +197,25 @@ namespace Amazon.ServiceCatalog.Model
         internal bool IsSetProvisioningParameters()
         {
             return this._provisioningParameters != null && this._provisioningParameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProvisioningPreferences. 
+        /// <para>
+        /// An object that contains information about the provisioning preferences for a stack
+        /// set.
+        /// </para>
+        /// </summary>
+        public ProvisioningPreferences ProvisioningPreferences
+        {
+            get { return this._provisioningPreferences; }
+            set { this._provisioningPreferences = value; }
+        }
+
+        // Check to see if ProvisioningPreferences property is set
+        internal bool IsSetProvisioningPreferences()
+        {
+            return this._provisioningPreferences != null;
         }
 
         /// <summary>
