@@ -45,7 +45,7 @@ namespace Amazon.ResourceGroups.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>group-type</code> - Filter groups by resource type. Specify up to five group
+        ///  <code>resource-type</code> - Filter groups by resource type. Specify up to five resource
         /// types in the format AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance,
         /// or AWS::S3::Bucket.
         /// </para>

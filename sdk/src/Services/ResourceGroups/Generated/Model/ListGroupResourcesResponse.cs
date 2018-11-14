@@ -33,6 +33,7 @@ namespace Amazon.ResourceGroups.Model
     public partial class ListGroupResourcesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
+        private List<QueryError> _queryErrors = new List<QueryError>();
         private List<ResourceIdentifier> _resourceIdentifiers = new List<ResourceIdentifier>();
 
         /// <summary>
@@ -52,6 +53,26 @@ namespace Amazon.ResourceGroups.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueryErrors. 
+        /// <para>
+        /// A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code>
+        /// and <code>Message</code> structures. Possible values for <code>ErrorCode</code> are
+        /// <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.
+        /// </para>
+        /// </summary>
+        public List<QueryError> QueryErrors
+        {
+            get { return this._queryErrors; }
+            set { this._queryErrors = value; }
+        }
+
+        // Check to see if QueryErrors property is set
+        internal bool IsSetQueryErrors()
+        {
+            return this._queryErrors != null && this._queryErrors.Count > 0; 
         }
 
         /// <summary>

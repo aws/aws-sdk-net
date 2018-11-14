@@ -57,6 +57,12 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
                     response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("QueryErrors", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<QueryError, QueryErrorUnmarshaller>(QueryErrorUnmarshaller.Instance);
+                    response.QueryErrors = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ResourceIdentifiers", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<ResourceIdentifier, ResourceIdentifierUnmarshaller>(ResourceIdentifierUnmarshaller.Instance);

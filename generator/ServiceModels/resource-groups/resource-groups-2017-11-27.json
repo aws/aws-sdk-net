@@ -23,9 +23,9 @@
           "Name": {
             "type": "string",
             "pattern": "[a-zA-Z0-9_\\.-]+",
+            "required": true,
             "zonbookDocumentation": "\n         <simpara>The name of the group, which is the identifier of the group in other operations. A resource group name cannot be updated after it is created. \n       A resource group name can have a maximum of 128 characters, including letters, numbers, hyphens, dots, and underscores. The name cannot start with \n       <code>AWS</code> or <code>aws</code>; these are reserved. A resource group name must be unique within your account.</simpara>\n      ",
             "documentation": "\n         <p>The name of the group, which is the identifier of the group in other operations. A resource group name cannot be updated after it is created. \n       A resource group name can have a maximum of 128 characters, including letters, numbers, hyphens, dots, and underscores. The name cannot start with \n       <code>AWS</code> or <code>aws</code>; these are reserved. A resource group name must be unique within your account.</p>\n      ",
-            "required": true,
             "shape_name": "GroupName",
             "min_length": 1,
             "max_length": 128
@@ -44,18 +44,19 @@
               "Type": {
                 "type": "string",
                 "enum": [
-                  "TAG_FILTERS_1_0"
+                  "TAG_FILTERS_1_0",
+                  "CLOUDFORMATION_STACK_1_0"
                 ],
-                "zonbookDocumentation": "\n         <simpara>The type of the query. The valid value in this release is <code>TAG_FILTERS_1_0</code>.</simpara>\n         <simpara>\n            <emphasis>\n               <code>TAG_FILTERS_1_0:</code>\n            </emphasis> A JSON syntax that lets you specify a collection of simple tag filters for resource types and tags, as supported by the AWS \n       Tagging API GetResources operation. When more than one element is present, only resources that match all filters \n       are part of the result. If a filter specifies more than one value for a key, a resource matches the filter if its tag value matches any of the specified values.</simpara>\n      ",
-                "documentation": "\n         <p>The type of the query. The valid value in this release is <code>TAG_FILTERS_1_0</code>.</p>\n         <p>\n            <i>\n               <code>TAG_FILTERS_1_0:</code>\n            </i> A JSON syntax that lets you specify a collection of simple tag filters for resource types and tags, as supported by the AWS \n       Tagging API GetResources operation. When more than one element is present, only resources that match all filters \n       are part of the result. If a filter specifies more than one value for a key, a resource matches the filter if its tag value matches any of the specified values.</p>\n      ",
                 "required": true,
+                "zonbookDocumentation": "\n         <simpara>The type of the query. The valid values in this release are <code>TAG_FILTERS_1_0</code> and <code>CLOUDFORMATION_STACK_1_0</code>.</simpara>\n         <simpara>\n            <emphasis>\n               <code>TAG_FILTERS_1_0:</code>\n            </emphasis> A JSON syntax that lets you specify a collection of simple tag filters for resource types and tags, \n       as supported by the AWS Tagging API <ulink url=\"https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html\">GetResources</ulink> operation. \n       If you specify more than one tag key, only resources that match all tag keys, and at least one value of each specified tag key, are returned in your query. If you \n       specify more than one value for a tag key, a resource matches the filter if it has a tag key value that matches <emphasis>any</emphasis> of the specified values.</simpara>\n         <simpara>For example, consider the following sample query for resources that have two tags, <code>Stage</code> and <code>Version</code>, with two values each. \n       (<code>[{\"Key\":\"Stage\",\"Values\":[\"Test\",\"Deploy\"]},{\"Key\":\"Version\",\"Values\":[\"1\",\"2\"]}]</code>) The results of this query might include the following.</simpara>\n         <itemizedlist>\n            <listitem>\n               <simpara>An EC2 instance that has the following two tags: <code>{\"Key\":\"Stage\",\"Values\":[\"Deploy\"]}</code>, and <code>{\"Key\":\"Version\",\"Values\":[\"2\"]}</code>\n               </simpara>\n            </listitem>\n            <listitem>\n               <simpara>An S3 bucket that has the following two tags: {\"Key\":\"Stage\",\"Values\":[\"Test\",\"Deploy\"]}, and {\"Key\":\"Version\",\"Values\":[\"1\"]}</simpara>\n            </listitem>\n         </itemizedlist>\n         <simpara>The query would not return the following results, however. The following EC2 instance does not have all tag keys specified in the filter, so it is rejected. \n       The RDS database has all of the tag keys, but no values that match at least one of the specified tag key values in the filter.</simpara>\n         <itemizedlist>\n            <listitem>\n               <simpara>An EC2 instance that has only the following tag: <code>{\"Key\":\"Stage\",\"Values\":[\"Deploy\"]}</code>.</simpara>\n            </listitem>\n            <listitem>\n               <simpara>An RDS database that has the following two tags: <code>{\"Key\":\"Stage\",\"Values\":[\"Archived\"]}</code>, and <code>{\"Key\":\"Version\",\"Values\":[\"4\"]}</code>\n               </simpara>\n            </listitem>\n         </itemizedlist>\n         <simpara>\n            <emphasis>\n               <code>CLOUDFORMATION_STACK_1_0:</code>\n            </emphasis> A JSON syntax that lets you specify a CloudFormation stack ARN.</simpara>\n      ",
+                "documentation": "\n         <p>The type of the query. The valid values in this release are <code>TAG_FILTERS_1_0</code> and <code>CLOUDFORMATION_STACK_1_0</code>.</p>\n         <p>\n            <i>\n               <code>TAG_FILTERS_1_0:</code>\n            </i> A JSON syntax that lets you specify a collection of simple tag filters for resource types and tags, \n       as supported by the AWS Tagging API <a href=\"https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html\">GetResources</a> operation. \n       If you specify more than one tag key, only resources that match all tag keys, and at least one value of each specified tag key, are returned in your query. If you \n       specify more than one value for a tag key, a resource matches the filter if it has a tag key value that matches <i>any</i> of the specified values.</p>\n         <p>For example, consider the following sample query for resources that have two tags, <code>Stage</code> and <code>Version</code>, with two values each. \n       (<code>[{\"Key\":\"Stage\",\"Values\":[\"Test\",\"Deploy\"]},{\"Key\":\"Version\",\"Values\":[\"1\",\"2\"]}]</code>) The results of this query might include the following.</p>\n         <ul>\n            <li>\n               <p>An EC2 instance that has the following two tags: <code>{\"Key\":\"Stage\",\"Values\":[\"Deploy\"]}</code>, and <code>{\"Key\":\"Version\",\"Values\":[\"2\"]}</code>\n               </p>\n            </li>\n            <li>\n               <p>An S3 bucket that has the following two tags: {\"Key\":\"Stage\",\"Values\":[\"Test\",\"Deploy\"]}, and {\"Key\":\"Version\",\"Values\":[\"1\"]}</p>\n            </li>\n         </ul>\n         <p>The query would not return the following results, however. The following EC2 instance does not have all tag keys specified in the filter, so it is rejected. \n       The RDS database has all of the tag keys, but no values that match at least one of the specified tag key values in the filter.</p>\n         <ul>\n            <li>\n               <p>An EC2 instance that has only the following tag: <code>{\"Key\":\"Stage\",\"Values\":[\"Deploy\"]}</code>.</p>\n            </li>\n            <li>\n               <p>An RDS database that has the following two tags: <code>{\"Key\":\"Stage\",\"Values\":[\"Archived\"]}</code>, and <code>{\"Key\":\"Version\",\"Values\":[\"4\"]}</code>\n               </p>\n            </li>\n         </ul>\n         <p>\n            <i>\n               <code>CLOUDFORMATION_STACK_1_0:</code>\n            </i> A JSON syntax that lets you specify a CloudFormation stack ARN.</p>\n      ",
                 "shape_name": "QueryType"
               },
               "Query": {
                 "type": "string",
+                "required": true,
                 "zonbookDocumentation": "\n         <simpara>The query that defines a group or a search.</simpara>\n      ",
                 "documentation": "\n         <p>The query that defines a group or a search.</p>\n      ",
-                "required": true,
                 "shape_name": "Query",
                 "max_length": 2048
               }
@@ -100,17 +101,17 @@
               "GroupArn": {
                 "type": "string",
                 "pattern": "arn:aws:resource-groups:[a-z]{2}-[a-z]+-\\d{1}:[0-9]{12}:group/[a-zA-Z0-9_\\.-]{1,128}",
+                "required": true,
                 "zonbookDocumentation": "\n         <simpara>The ARN of a resource group.</simpara>\n      ",
                 "documentation": "\n         <p>The ARN of a resource group.</p>\n      ",
-                "required": true,
                 "shape_name": "GroupArn"
               },
               "Name": {
                 "type": "string",
                 "pattern": "[a-zA-Z0-9_\\.-]+",
+                "required": true,
                 "zonbookDocumentation": "\n         <simpara>The name of a resource group.</simpara>\n      ",
                 "documentation": "\n         <p>The name of a resource group.</p>\n      ",
-                "required": true,
                 "shape_name": "GroupName",
                 "min_length": 1,
                 "max_length": 128
@@ -134,18 +135,19 @@
               "Type": {
                 "type": "string",
                 "enum": [
-                  "TAG_FILTERS_1_0"
+                  "TAG_FILTERS_1_0",
+                  "CLOUDFORMATION_STACK_1_0"
                 ],
-                "zonbookDocumentation": "\n         <simpara>The type of the query. The valid value in this release is <code>TAG_FILTERS_1_0</code>.</simpara>\n         <simpara>\n            <emphasis>\n               <code>TAG_FILTERS_1_0:</code>\n            </emphasis> A JSON syntax that lets you specify a collection of simple tag filters for resource types and tags, as supported by the AWS \n       Tagging API GetResources operation. When more than one element is present, only resources that match all filters \n       are part of the result. If a filter specifies more than one value for a key, a resource matches the filter if its tag value matches any of the specified values.</simpara>\n      ",
-                "documentation": "\n         <p>The type of the query. The valid value in this release is <code>TAG_FILTERS_1_0</code>.</p>\n         <p>\n            <i>\n               <code>TAG_FILTERS_1_0:</code>\n            </i> A JSON syntax that lets you specify a collection of simple tag filters for resource types and tags, as supported by the AWS \n       Tagging API GetResources operation. When more than one element is present, only resources that match all filters \n       are part of the result. If a filter specifies more than one value for a key, a resource matches the filter if its tag value matches any of the specified values.</p>\n      ",
                 "required": true,
+                "zonbookDocumentation": "\n         <simpara>The type of the query. The valid values in this release are <code>TAG_FILTERS_1_0</code> and <code>CLOUDFORMATION_STACK_1_0</code>.</simpara>\n         <simpara>\n            <emphasis>\n               <code>TAG_FILTERS_1_0:</code>\n            </emphasis> A JSON syntax that lets you specify a collection of simple tag filters for resource types and tags, \n       as supported by the AWS Tagging API <ulink url=\"https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html\">GetResources</ulink> operation. \n       If you specify more than one tag key, only resources that match all tag keys, and at least one value of each specified tag key, are returned in your query. If you \n       specify more than one value for a tag key, a resource matches the filter if it has a tag key value that matches <emphasis>any</emphasis> of the specified values.</simpara>\n         <simpara>For example, consider the following sample query for resources that have two tags, <code>Stage</code> and <code>Version</code>, with two values each. \n       (<code>[{\"Key\":\"Stage\",\"Values\":[\"Test\",\"Deploy\"]},{\"Key\":\"Version\",\"Values\":[\"1\",\"2\"]}]</code>) The results of this query might include the following.</simpara>\n         <itemizedlist>\n            <listitem>\n               <simpara>An EC2 instance that has the following two tags: <code>{\"Key\":\"Stage\",\"Values\":[\"Deploy\"]}</code>, and <code>{\"Key\":\"Version\",\"Values\":[\"2\"]}</code>\n               </simpara>\n            </listitem>\n            <listitem>\n               <simpara>An S3 bucket that has the following two tags: {\"Key\":\"Stage\",\"Values\":[\"Test\",\"Deploy\"]}, and {\"Key\":\"Version\",\"Values\":[\"1\"]}</simpara>\n            </listitem>\n         </itemizedlist>\n         <simpara>The query would not return the following results, however. The following EC2 instance does not have all tag keys specified in the filter, so it is rejected. \n       The RDS database has all of the tag keys, but no values that match at least one of the specified tag key values in the filter.</simpara>\n         <itemizedlist>\n            <listitem>\n               <simpara>An EC2 instance that has only the following tag: <code>{\"Key\":\"Stage\",\"Values\":[\"Deploy\"]}</code>.</simpara>\n            </listitem>\n            <listitem>\n               <simpara>An RDS database that has the following two tags: <code>{\"Key\":\"Stage\",\"Values\":[\"Archived\"]}</code>, and <code>{\"Key\":\"Version\",\"Values\":[\"4\"]}</code>\n               </simpara>\n            </listitem>\n         </itemizedlist>\n         <simpara>\n            <emphasis>\n               <code>CLOUDFORMATION_STACK_1_0:</code>\n            </emphasis> A JSON syntax that lets you specify a CloudFormation stack ARN.</simpara>\n      ",
+                "documentation": "\n         <p>The type of the query. The valid values in this release are <code>TAG_FILTERS_1_0</code> and <code>CLOUDFORMATION_STACK_1_0</code>.</p>\n         <p>\n            <i>\n               <code>TAG_FILTERS_1_0:</code>\n            </i> A JSON syntax that lets you specify a collection of simple tag filters for resource types and tags, \n       as supported by the AWS Tagging API <a href=\"https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html\">GetResources</a> operation. \n       If you specify more than one tag key, only resources that match all tag keys, and at least one value of each specified tag key, are returned in your query. If you \n       specify more than one value for a tag key, a resource matches the filter if it has a tag key value that matches <i>any</i> of the specified values.</p>\n         <p>For example, consider the following sample query for resources that have two tags, <code>Stage</code> and <code>Version</code>, with two values each. \n       (<code>[{\"Key\":\"Stage\",\"Values\":[\"Test\",\"Deploy\"]},{\"Key\":\"Version\",\"Values\":[\"1\",\"2\"]}]</code>) The results of this query might include the following.</p>\n         <ul>\n            <li>\n               <p>An EC2 instance that has the following two tags: <code>{\"Key\":\"Stage\",\"Values\":[\"Deploy\"]}</code>, and <code>{\"Key\":\"Version\",\"Values\":[\"2\"]}</code>\n               </p>\n            </li>\n            <li>\n               <p>An S3 bucket that has the following two tags: {\"Key\":\"Stage\",\"Values\":[\"Test\",\"Deploy\"]}, and {\"Key\":\"Version\",\"Values\":[\"1\"]}</p>\n            </li>\n         </ul>\n         <p>The query would not return the following results, however. The following EC2 instance does not have all tag keys specified in the filter, so it is rejected. \n       The RDS database has all of the tag keys, but no values that match at least one of the specified tag key values in the filter.</p>\n         <ul>\n            <li>\n               <p>An EC2 instance that has only the following tag: <code>{\"Key\":\"Stage\",\"Values\":[\"Deploy\"]}</code>.</p>\n            </li>\n            <li>\n               <p>An RDS database that has the following two tags: <code>{\"Key\":\"Stage\",\"Values\":[\"Archived\"]}</code>, and <code>{\"Key\":\"Version\",\"Values\":[\"4\"]}</code>\n               </p>\n            </li>\n         </ul>\n         <p>\n            <i>\n               <code>CLOUDFORMATION_STACK_1_0:</code>\n            </i> A JSON syntax that lets you specify a CloudFormation stack ARN.</p>\n      ",
                 "shape_name": "QueryType"
               },
               "Query": {
                 "type": "string",
+                "required": true,
                 "zonbookDocumentation": "\n         <simpara>The query that defines a group or a search.</simpara>\n      ",
                 "documentation": "\n         <p>The query that defines a group or a search.</p>\n      ",
-                "required": true,
                 "shape_name": "Query",
                 "max_length": 2048
               }
@@ -271,10 +273,10 @@
           "GroupName": {
             "type": "string",
             "pattern": "[a-zA-Z0-9_\\.-]+",
-            "zonbookDocumentation": "\n         <simpara>The name of the resource group for which you want to update its description.</simpara>\n      ",
-            "documentation": "\n         <p>The name of the resource group for which you want to update its description.</p>\n      ",
             "location": "uri",
             "required": true,
+            "zonbookDocumentation": "\n         <simpara>The name of the resource group for which you want to update its description.</simpara>\n      ",
+            "documentation": "\n         <p>The name of the resource group for which you want to update its description.</p>\n      ",
             "shape_name": "GroupName",
             "min_length": 1,
             "max_length": 128
@@ -300,17 +302,17 @@
               "GroupArn": {
                 "type": "string",
                 "pattern": "arn:aws:resource-groups:[a-z]{2}-[a-z]+-\\d{1}:[0-9]{12}:group/[a-zA-Z0-9_\\.-]{1,128}",
+                "required": true,
                 "zonbookDocumentation": "\n         <simpara>The ARN of a resource group.</simpara>\n      ",
                 "documentation": "\n         <p>The ARN of a resource group.</p>\n      ",
-                "required": true,
                 "shape_name": "GroupArn"
               },
               "Name": {
                 "type": "string",
                 "pattern": "[a-zA-Z0-9_\\.-]+",
+                "required": true,
                 "zonbookDocumentation": "\n         <simpara>The name of a resource group.</simpara>\n      ",
                 "documentation": "\n         <p>The name of a resource group.</p>\n      ",
-                "required": true,
                 "shape_name": "GroupName",
                 "min_length": 1,
                 "max_length": 128
@@ -437,8 +439,8 @@
         "members": {
           "Filters": {
             "type": "list",
-            "zonbookDocumentation": "\n         <simpara>Filters, formatted as GroupFilter objects, that you want to apply to a ListGroups operation.</simpara>\n         <itemizedlist>\n            <listitem>\n               <simpara>\n                  <code>group-type</code> - Filter groups by resource type. Specify up to five group types in the format AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.</simpara>\n            </listitem>\n         </itemizedlist>\n      ",
-            "documentation": "\n         <p>Filters, formatted as GroupFilter objects, that you want to apply to a ListGroups operation.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>group-type</code> - Filter groups by resource type. Specify up to five group types in the format AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.</p>\n            </li>\n         </ul>\n      ",
+            "zonbookDocumentation": "\n         <simpara>Filters, formatted as GroupFilter objects, that you want to apply to a ListGroups operation.</simpara>\n         <itemizedlist>\n            <listitem>\n               <simpara>\n                  <code>resource-type</code> - Filter groups by resource type. Specify up to five resource types in the format AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.</simpara>\n            </listitem>\n         </itemizedlist>\n      ",
+            "documentation": "\n         <p>Filters, formatted as GroupFilter objects, that you want to apply to a ListGroups operation.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>resource-type</code> - Filter groups by resource type. Specify up to five resource types in the format AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.</p>\n            </li>\n         </ul>\n      ",
             "shape_name": "GroupFilterList",
             "members": {
               "type": "structure",
@@ -448,16 +450,16 @@
                   "enum": [
                     "resource-type"
                   ],
+                  "required": true,
                   "zonbookDocumentation": "\n         <simpara>The name of the filter. Filter names are case-sensitive.</simpara>\n      ",
                   "documentation": "\n         <p>The name of the filter. Filter names are case-sensitive.</p>\n      ",
-                  "required": true,
                   "shape_name": "GroupFilterName"
                 },
                 "Values": {
                   "type": "list",
+                  "required": true,
                   "zonbookDocumentation": "\n         <simpara>One or more filter values. Allowed filter values vary by group filter name, and are case-sensitive.</simpara>\n      ",
                   "documentation": "\n         <p>One or more filter values. Allowed filter values vary by group filter name, and are case-sensitive.</p>\n      ",
-                  "required": true,
                   "shape_name": "GroupFilterValues",
                   "min_length": 1,
                   "max_length": 5,
@@ -477,18 +479,18 @@
           },
           "MaxResults": {
             "type": "integer",
+            "location": "uri",
             "zonbookDocumentation": "\n         <simpara>The maximum number of resource group results that are returned by ListGroups in paginated output. By default, this number is 50.</simpara>\n      ",
             "documentation": "\n         <p>The maximum number of resource group results that are returned by ListGroups in paginated output. By default, this number is 50.</p>\n      ",
-            "location": "uri",
             "shape_name": "MaxResults",
             "min_length": 1,
             "max_length": 50
           },
           "NextToken": {
             "type": "string",
+            "location": "uri",
             "zonbookDocumentation": "\n         <simpara>The NextToken value that is returned in a paginated <code>ListGroups</code> request. To get the next page of results, \n       run the call again, add the NextToken parameter, and specify the NextToken value.</simpara>\n      ",
             "documentation": "\n         <p>The NextToken value that is returned in a paginated <code>ListGroups</code> request. To get the next page of results, \n       run the call again, add the NextToken parameter, and specify the NextToken value.</p>\n      ",
-            "location": "uri",
             "shape_name": "NextToken"
           }
         },
@@ -530,10 +532,10 @@
           },
           "Groups": {
             "type": "list",
-            "zonbookDocumentation": "\n         <simpara>A list of resource groups.</simpara>\n      ",
-            "documentation": "\n         <p>A list of resource groups.</p>\n      ",
             "deprecatedMessage": "This field is deprecated, use GroupIdentifiers instead.",
             "deprecated": true,
+            "zonbookDocumentation": "\n         <simpara>A list of resource groups.</simpara>\n      ",
+            "documentation": "\n         <p>A list of resource groups.</p>\n      ",
             "shape_name": "GroupList",
             "members": {
               "type": "structure",
@@ -541,17 +543,17 @@
                 "GroupArn": {
                   "type": "string",
                   "pattern": "arn:aws:resource-groups:[a-z]{2}-[a-z]+-\\d{1}:[0-9]{12}:group/[a-zA-Z0-9_\\.-]{1,128}",
+                  "required": true,
                   "zonbookDocumentation": "\n         <simpara>The ARN of a resource group.</simpara>\n      ",
                   "documentation": "\n         <p>The ARN of a resource group.</p>\n      ",
-                  "required": true,
                   "shape_name": "GroupArn"
                 },
                 "Name": {
                   "type": "string",
                   "pattern": "[a-zA-Z0-9_\\.-]+",
+                  "required": true,
                   "zonbookDocumentation": "\n         <simpara>The name of a resource group.</simpara>\n      ",
                   "documentation": "\n         <p>The name of a resource group.</p>\n      ",
-                  "required": true,
                   "shape_name": "GroupName",
                   "min_length": 1,
                   "max_length": 128
@@ -699,17 +701,17 @@
                 "GroupArn": {
                   "type": "string",
                   "pattern": "arn:aws:resource-groups:[a-z]{2}-[a-z]+-\\d{1}:[0-9]{12}:group/[a-zA-Z0-9_\\.-]{1,128}",
+                  "required": true,
                   "zonbookDocumentation": "\n         <simpara>The ARN of a resource group.</simpara>\n      ",
                   "documentation": "\n         <p>The ARN of a resource group.</p>\n      ",
-                  "required": true,
                   "shape_name": "GroupArn"
                 },
                 "Name": {
                   "type": "string",
                   "pattern": "[a-zA-Z0-9_\\.-]+",
+                  "required": true,
                   "zonbookDocumentation": "\n         <simpara>The name of a resource group.</simpara>\n      ",
                   "documentation": "\n         <p>The name of a resource group.</p>\n      ",
-                  "required": true,
                   "shape_name": "GroupName",
                   "min_length": 1,
                   "max_length": 128
@@ -828,10 +830,10 @@
           "GroupName": {
             "type": "string",
             "pattern": "[a-zA-Z0-9_\\.-]+",
-            "zonbookDocumentation": "\n         <simpara>The name of the resource group.</simpara>\n      ",
-            "documentation": "\n         <p>The name of the resource group.</p>\n      ",
             "location": "uri",
             "required": true,
+            "zonbookDocumentation": "\n         <simpara>The name of the resource group.</simpara>\n      ",
+            "documentation": "\n         <p>The name of the resource group.</p>\n      ",
             "shape_name": "GroupName",
             "min_length": 1,
             "max_length": 128
@@ -849,17 +851,17 @@
               "GroupArn": {
                 "type": "string",
                 "pattern": "arn:aws:resource-groups:[a-z]{2}-[a-z]+-\\d{1}:[0-9]{12}:group/[a-zA-Z0-9_\\.-]{1,128}",
+                "required": true,
                 "zonbookDocumentation": "\n         <simpara>The ARN of a resource group.</simpara>\n      ",
                 "documentation": "\n         <p>The ARN of a resource group.</p>\n      ",
-                "required": true,
                 "shape_name": "GroupArn"
               },
               "Name": {
                 "type": "string",
                 "pattern": "[a-zA-Z0-9_\\.-]+",
+                "required": true,
                 "zonbookDocumentation": "\n         <simpara>The name of a resource group.</simpara>\n      ",
                 "documentation": "\n         <p>The name of a resource group.</p>\n      ",
-                "required": true,
                 "shape_name": "GroupName",
                 "min_length": 1,
                 "max_length": 128
@@ -987,10 +989,10 @@
           "GroupName": {
             "type": "string",
             "pattern": "[a-zA-Z0-9_\\.-]+",
-            "zonbookDocumentation": "\n         <simpara>The name of the resource group to delete.</simpara>\n      ",
-            "documentation": "\n         <p>The name of the resource group to delete.</p>\n      ",
             "location": "uri",
             "required": true,
+            "zonbookDocumentation": "\n         <simpara>The name of the resource group to delete.</simpara>\n      ",
+            "documentation": "\n         <p>The name of the resource group to delete.</p>\n      ",
             "shape_name": "GroupName",
             "min_length": 1,
             "max_length": 128
@@ -1008,17 +1010,17 @@
               "GroupArn": {
                 "type": "string",
                 "pattern": "arn:aws:resource-groups:[a-z]{2}-[a-z]+-\\d{1}:[0-9]{12}:group/[a-zA-Z0-9_\\.-]{1,128}",
+                "required": true,
                 "zonbookDocumentation": "\n         <simpara>The ARN of a resource group.</simpara>\n      ",
                 "documentation": "\n         <p>The ARN of a resource group.</p>\n      ",
-                "required": true,
                 "shape_name": "GroupArn"
               },
               "Name": {
                 "type": "string",
                 "pattern": "[a-zA-Z0-9_\\.-]+",
+                "required": true,
                 "zonbookDocumentation": "\n         <simpara>The name of a resource group.</simpara>\n      ",
                 "documentation": "\n         <p>The name of a resource group.</p>\n      ",
-                "required": true,
                 "shape_name": "GroupName",
                 "min_length": 1,
                 "max_length": 128
@@ -1146,10 +1148,10 @@
           "GroupName": {
             "type": "string",
             "pattern": "[a-zA-Z0-9_\\.-]+",
-            "zonbookDocumentation": "\n         <simpara>The name of the resource group for which you want to edit the query.</simpara>\n      ",
-            "documentation": "\n         <p>The name of the resource group for which you want to edit the query.</p>\n      ",
             "location": "uri",
             "required": true,
+            "zonbookDocumentation": "\n         <simpara>The name of the resource group for which you want to edit the query.</simpara>\n      ",
+            "documentation": "\n         <p>The name of the resource group for which you want to edit the query.</p>\n      ",
             "shape_name": "GroupName",
             "min_length": 1,
             "max_length": 128
@@ -1160,18 +1162,19 @@
               "Type": {
                 "type": "string",
                 "enum": [
-                  "TAG_FILTERS_1_0"
+                  "TAG_FILTERS_1_0",
+                  "CLOUDFORMATION_STACK_1_0"
                 ],
-                "zonbookDocumentation": "\n         <simpara>The type of the query. The valid value in this release is <code>TAG_FILTERS_1_0</code>.</simpara>\n         <simpara>\n            <emphasis>\n               <code>TAG_FILTERS_1_0:</code>\n            </emphasis> A JSON syntax that lets you specify a collection of simple tag filters for resource types and tags, as supported by the AWS \n       Tagging API GetResources operation. When more than one element is present, only resources that match all filters \n       are part of the result. If a filter specifies more than one value for a key, a resource matches the filter if its tag value matches any of the specified values.</simpara>\n      ",
-                "documentation": "\n         <p>The type of the query. The valid value in this release is <code>TAG_FILTERS_1_0</code>.</p>\n         <p>\n            <i>\n               <code>TAG_FILTERS_1_0:</code>\n            </i> A JSON syntax that lets you specify a collection of simple tag filters for resource types and tags, as supported by the AWS \n       Tagging API GetResources operation. When more than one element is present, only resources that match all filters \n       are part of the result. If a filter specifies more than one value for a key, a resource matches the filter if its tag value matches any of the specified values.</p>\n      ",
                 "required": true,
+                "zonbookDocumentation": "\n         <simpara>The type of the query. The valid values in this release are <code>TAG_FILTERS_1_0</code> and <code>CLOUDFORMATION_STACK_1_0</code>.</simpara>\n         <simpara>\n            <emphasis>\n               <code>TAG_FILTERS_1_0:</code>\n            </emphasis> A JSON syntax that lets you specify a collection of simple tag filters for resource types and tags, \n       as supported by the AWS Tagging API <ulink url=\"https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html\">GetResources</ulink> operation. \n       If you specify more than one tag key, only resources that match all tag keys, and at least one value of each specified tag key, are returned in your query. If you \n       specify more than one value for a tag key, a resource matches the filter if it has a tag key value that matches <emphasis>any</emphasis> of the specified values.</simpara>\n         <simpara>For example, consider the following sample query for resources that have two tags, <code>Stage</code> and <code>Version</code>, with two values each. \n       (<code>[{\"Key\":\"Stage\",\"Values\":[\"Test\",\"Deploy\"]},{\"Key\":\"Version\",\"Values\":[\"1\",\"2\"]}]</code>) The results of this query might include the following.</simpara>\n         <itemizedlist>\n            <listitem>\n               <simpara>An EC2 instance that has the following two tags: <code>{\"Key\":\"Stage\",\"Values\":[\"Deploy\"]}</code>, and <code>{\"Key\":\"Version\",\"Values\":[\"2\"]}</code>\n               </simpara>\n            </listitem>\n            <listitem>\n               <simpara>An S3 bucket that has the following two tags: {\"Key\":\"Stage\",\"Values\":[\"Test\",\"Deploy\"]}, and {\"Key\":\"Version\",\"Values\":[\"1\"]}</simpara>\n            </listitem>\n         </itemizedlist>\n         <simpara>The query would not return the following results, however. The following EC2 instance does not have all tag keys specified in the filter, so it is rejected. \n       The RDS database has all of the tag keys, but no values that match at least one of the specified tag key values in the filter.</simpara>\n         <itemizedlist>\n            <listitem>\n               <simpara>An EC2 instance that has only the following tag: <code>{\"Key\":\"Stage\",\"Values\":[\"Deploy\"]}</code>.</simpara>\n            </listitem>\n            <listitem>\n               <simpara>An RDS database that has the following two tags: <code>{\"Key\":\"Stage\",\"Values\":[\"Archived\"]}</code>, and <code>{\"Key\":\"Version\",\"Values\":[\"4\"]}</code>\n               </simpara>\n            </listitem>\n         </itemizedlist>\n         <simpara>\n            <emphasis>\n               <code>CLOUDFORMATION_STACK_1_0:</code>\n            </emphasis> A JSON syntax that lets you specify a CloudFormation stack ARN.</simpara>\n      ",
+                "documentation": "\n         <p>The type of the query. The valid values in this release are <code>TAG_FILTERS_1_0</code> and <code>CLOUDFORMATION_STACK_1_0</code>.</p>\n         <p>\n            <i>\n               <code>TAG_FILTERS_1_0:</code>\n            </i> A JSON syntax that lets you specify a collection of simple tag filters for resource types and tags, \n       as supported by the AWS Tagging API <a href=\"https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html\">GetResources</a> operation. \n       If you specify more than one tag key, only resources that match all tag keys, and at least one value of each specified tag key, are returned in your query. If you \n       specify more than one value for a tag key, a resource matches the filter if it has a tag key value that matches <i>any</i> of the specified values.</p>\n         <p>For example, consider the following sample query for resources that have two tags, <code>Stage</code> and <code>Version</code>, with two values each. \n       (<code>[{\"Key\":\"Stage\",\"Values\":[\"Test\",\"Deploy\"]},{\"Key\":\"Version\",\"Values\":[\"1\",\"2\"]}]</code>) The results of this query might include the following.</p>\n         <ul>\n            <li>\n               <p>An EC2 instance that has the following two tags: <code>{\"Key\":\"Stage\",\"Values\":[\"Deploy\"]}</code>, and <code>{\"Key\":\"Version\",\"Values\":[\"2\"]}</code>\n               </p>\n            </li>\n            <li>\n               <p>An S3 bucket that has the following two tags: {\"Key\":\"Stage\",\"Values\":[\"Test\",\"Deploy\"]}, and {\"Key\":\"Version\",\"Values\":[\"1\"]}</p>\n            </li>\n         </ul>\n         <p>The query would not return the following results, however. The following EC2 instance does not have all tag keys specified in the filter, so it is rejected. \n       The RDS database has all of the tag keys, but no values that match at least one of the specified tag key values in the filter.</p>\n         <ul>\n            <li>\n               <p>An EC2 instance that has only the following tag: <code>{\"Key\":\"Stage\",\"Values\":[\"Deploy\"]}</code>.</p>\n            </li>\n            <li>\n               <p>An RDS database that has the following two tags: <code>{\"Key\":\"Stage\",\"Values\":[\"Archived\"]}</code>, and <code>{\"Key\":\"Version\",\"Values\":[\"4\"]}</code>\n               </p>\n            </li>\n         </ul>\n         <p>\n            <i>\n               <code>CLOUDFORMATION_STACK_1_0:</code>\n            </i> A JSON syntax that lets you specify a CloudFormation stack ARN.</p>\n      ",
                 "shape_name": "QueryType"
               },
               "Query": {
                 "type": "string",
+                "required": true,
                 "zonbookDocumentation": "\n         <simpara>The query that defines a group or a search.</simpara>\n      ",
                 "documentation": "\n         <p>The query that defines a group or a search.</p>\n      ",
-                "required": true,
                 "shape_name": "Query",
                 "max_length": 2048
               }
@@ -1194,9 +1197,9 @@
               "GroupName": {
                 "type": "string",
                 "pattern": "[a-zA-Z0-9_\\.-]+",
+                "required": true,
                 "zonbookDocumentation": "\n         <simpara>The name of a resource group that is associated with a specific resource query.</simpara>\n      ",
                 "documentation": "\n         <p>The name of a resource group that is associated with a specific resource query.</p>\n      ",
-                "required": true,
                 "shape_name": "GroupName",
                 "min_length": 1,
                 "max_length": 128
@@ -1207,18 +1210,19 @@
                   "Type": {
                     "type": "string",
                     "enum": [
-                      "TAG_FILTERS_1_0"
+                      "TAG_FILTERS_1_0",
+                      "CLOUDFORMATION_STACK_1_0"
                     ],
-                    "zonbookDocumentation": "\n         <simpara>The type of the query. The valid value in this release is <code>TAG_FILTERS_1_0</code>.</simpara>\n         <simpara>\n            <emphasis>\n               <code>TAG_FILTERS_1_0:</code>\n            </emphasis> A JSON syntax that lets you specify a collection of simple tag filters for resource types and tags, as supported by the AWS \n       Tagging API GetResources operation. When more than one element is present, only resources that match all filters \n       are part of the result. If a filter specifies more than one value for a key, a resource matches the filter if its tag value matches any of the specified values.</simpara>\n      ",
-                    "documentation": "\n         <p>The type of the query. The valid value in this release is <code>TAG_FILTERS_1_0</code>.</p>\n         <p>\n            <i>\n               <code>TAG_FILTERS_1_0:</code>\n            </i> A JSON syntax that lets you specify a collection of simple tag filters for resource types and tags, as supported by the AWS \n       Tagging API GetResources operation. When more than one element is present, only resources that match all filters \n       are part of the result. If a filter specifies more than one value for a key, a resource matches the filter if its tag value matches any of the specified values.</p>\n      ",
                     "required": true,
+                    "zonbookDocumentation": "\n         <simpara>The type of the query. The valid values in this release are <code>TAG_FILTERS_1_0</code> and <code>CLOUDFORMATION_STACK_1_0</code>.</simpara>\n         <simpara>\n            <emphasis>\n               <code>TAG_FILTERS_1_0:</code>\n            </emphasis> A JSON syntax that lets you specify a collection of simple tag filters for resource types and tags, \n       as supported by the AWS Tagging API <ulink url=\"https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html\">GetResources</ulink> operation. \n       If you specify more than one tag key, only resources that match all tag keys, and at least one value of each specified tag key, are returned in your query. If you \n       specify more than one value for a tag key, a resource matches the filter if it has a tag key value that matches <emphasis>any</emphasis> of the specified values.</simpara>\n         <simpara>For example, consider the following sample query for resources that have two tags, <code>Stage</code> and <code>Version</code>, with two values each. \n       (<code>[{\"Key\":\"Stage\",\"Values\":[\"Test\",\"Deploy\"]},{\"Key\":\"Version\",\"Values\":[\"1\",\"2\"]}]</code>) The results of this query might include the following.</simpara>\n         <itemizedlist>\n            <listitem>\n               <simpara>An EC2 instance that has the following two tags: <code>{\"Key\":\"Stage\",\"Values\":[\"Deploy\"]}</code>, and <code>{\"Key\":\"Version\",\"Values\":[\"2\"]}</code>\n               </simpara>\n            </listitem>\n            <listitem>\n               <simpara>An S3 bucket that has the following two tags: {\"Key\":\"Stage\",\"Values\":[\"Test\",\"Deploy\"]}, and {\"Key\":\"Version\",\"Values\":[\"1\"]}</simpara>\n            </listitem>\n         </itemizedlist>\n         <simpara>The query would not return the following results, however. The following EC2 instance does not have all tag keys specified in the filter, so it is rejected. \n       The RDS database has all of the tag keys, but no values that match at least one of the specified tag key values in the filter.</simpara>\n         <itemizedlist>\n            <listitem>\n               <simpara>An EC2 instance that has only the following tag: <code>{\"Key\":\"Stage\",\"Values\":[\"Deploy\"]}</code>.</simpara>\n            </listitem>\n            <listitem>\n               <simpara>An RDS database that has the following two tags: <code>{\"Key\":\"Stage\",\"Values\":[\"Archived\"]}</code>, and <code>{\"Key\":\"Version\",\"Values\":[\"4\"]}</code>\n               </simpara>\n            </listitem>\n         </itemizedlist>\n         <simpara>\n            <emphasis>\n               <code>CLOUDFORMATION_STACK_1_0:</code>\n            </emphasis> A JSON syntax that lets you specify a CloudFormation stack ARN.</simpara>\n      ",
+                    "documentation": "\n         <p>The type of the query. The valid values in this release are <code>TAG_FILTERS_1_0</code> and <code>CLOUDFORMATION_STACK_1_0</code>.</p>\n         <p>\n            <i>\n               <code>TAG_FILTERS_1_0:</code>\n            </i> A JSON syntax that lets you specify a collection of simple tag filters for resource types and tags, \n       as supported by the AWS Tagging API <a href=\"https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html\">GetResources</a> operation. \n       If you specify more than one tag key, only resources that match all tag keys, and at least one value of each specified tag key, are returned in your query. If you \n       specify more than one value for a tag key, a resource matches the filter if it has a tag key value that matches <i>any</i> of the specified values.</p>\n         <p>For example, consider the following sample query for resources that have two tags, <code>Stage</code> and <code>Version</code>, with two values each. \n       (<code>[{\"Key\":\"Stage\",\"Values\":[\"Test\",\"Deploy\"]},{\"Key\":\"Version\",\"Values\":[\"1\",\"2\"]}]</code>) The results of this query might include the following.</p>\n         <ul>\n            <li>\n               <p>An EC2 instance that has the following two tags: <code>{\"Key\":\"Stage\",\"Values\":[\"Deploy\"]}</code>, and <code>{\"Key\":\"Version\",\"Values\":[\"2\"]}</code>\n               </p>\n            </li>\n            <li>\n               <p>An S3 bucket that has the following two tags: {\"Key\":\"Stage\",\"Values\":[\"Test\",\"Deploy\"]}, and {\"Key\":\"Version\",\"Values\":[\"1\"]}</p>\n            </li>\n         </ul>\n         <p>The query would not return the following results, however. The following EC2 instance does not have all tag keys specified in the filter, so it is rejected. \n       The RDS database has all of the tag keys, but no values that match at least one of the specified tag key values in the filter.</p>\n         <ul>\n            <li>\n               <p>An EC2 instance that has only the following tag: <code>{\"Key\":\"Stage\",\"Values\":[\"Deploy\"]}</code>.</p>\n            </li>\n            <li>\n               <p>An RDS database that has the following two tags: <code>{\"Key\":\"Stage\",\"Values\":[\"Archived\"]}</code>, and <code>{\"Key\":\"Version\",\"Values\":[\"4\"]}</code>\n               </p>\n            </li>\n         </ul>\n         <p>\n            <i>\n               <code>CLOUDFORMATION_STACK_1_0:</code>\n            </i> A JSON syntax that lets you specify a CloudFormation stack ARN.</p>\n      ",
                     "shape_name": "QueryType"
                   },
                   "Query": {
                     "type": "string",
+                    "required": true,
                     "zonbookDocumentation": "\n         <simpara>The query that defines a group or a search.</simpara>\n      ",
                     "documentation": "\n         <p>The query that defines a group or a search.</p>\n      ",
-                    "required": true,
                     "shape_name": "Query",
                     "max_length": 2048
                   }
@@ -1343,10 +1347,10 @@
           "GroupName": {
             "type": "string",
             "pattern": "[a-zA-Z0-9_\\.-]+",
-            "zonbookDocumentation": "\n         <simpara>The name of the resource group.</simpara>\n      ",
-            "documentation": "\n         <p>The name of the resource group.</p>\n      ",
             "location": "uri",
             "required": true,
+            "zonbookDocumentation": "\n         <simpara>The name of the resource group.</simpara>\n      ",
+            "documentation": "\n         <p>The name of the resource group.</p>\n      ",
             "shape_name": "GroupName",
             "min_length": 1,
             "max_length": 128
@@ -1364,9 +1368,9 @@
               "GroupName": {
                 "type": "string",
                 "pattern": "[a-zA-Z0-9_\\.-]+",
+                "required": true,
                 "zonbookDocumentation": "\n         <simpara>The name of a resource group that is associated with a specific resource query.</simpara>\n      ",
                 "documentation": "\n         <p>The name of a resource group that is associated with a specific resource query.</p>\n      ",
-                "required": true,
                 "shape_name": "GroupName",
                 "min_length": 1,
                 "max_length": 128
@@ -1377,18 +1381,19 @@
                   "Type": {
                     "type": "string",
                     "enum": [
-                      "TAG_FILTERS_1_0"
+                      "TAG_FILTERS_1_0",
+                      "CLOUDFORMATION_STACK_1_0"
                     ],
-                    "zonbookDocumentation": "\n         <simpara>The type of the query. The valid value in this release is <code>TAG_FILTERS_1_0</code>.</simpara>\n         <simpara>\n            <emphasis>\n               <code>TAG_FILTERS_1_0:</code>\n            </emphasis> A JSON syntax that lets you specify a collection of simple tag filters for resource types and tags, as supported by the AWS \n       Tagging API GetResources operation. When more than one element is present, only resources that match all filters \n       are part of the result. If a filter specifies more than one value for a key, a resource matches the filter if its tag value matches any of the specified values.</simpara>\n      ",
-                    "documentation": "\n         <p>The type of the query. The valid value in this release is <code>TAG_FILTERS_1_0</code>.</p>\n         <p>\n            <i>\n               <code>TAG_FILTERS_1_0:</code>\n            </i> A JSON syntax that lets you specify a collection of simple tag filters for resource types and tags, as supported by the AWS \n       Tagging API GetResources operation. When more than one element is present, only resources that match all filters \n       are part of the result. If a filter specifies more than one value for a key, a resource matches the filter if its tag value matches any of the specified values.</p>\n      ",
                     "required": true,
+                    "zonbookDocumentation": "\n         <simpara>The type of the query. The valid values in this release are <code>TAG_FILTERS_1_0</code> and <code>CLOUDFORMATION_STACK_1_0</code>.</simpara>\n         <simpara>\n            <emphasis>\n               <code>TAG_FILTERS_1_0:</code>\n            </emphasis> A JSON syntax that lets you specify a collection of simple tag filters for resource types and tags, \n       as supported by the AWS Tagging API <ulink url=\"https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html\">GetResources</ulink> operation. \n       If you specify more than one tag key, only resources that match all tag keys, and at least one value of each specified tag key, are returned in your query. If you \n       specify more than one value for a tag key, a resource matches the filter if it has a tag key value that matches <emphasis>any</emphasis> of the specified values.</simpara>\n         <simpara>For example, consider the following sample query for resources that have two tags, <code>Stage</code> and <code>Version</code>, with two values each. \n       (<code>[{\"Key\":\"Stage\",\"Values\":[\"Test\",\"Deploy\"]},{\"Key\":\"Version\",\"Values\":[\"1\",\"2\"]}]</code>) The results of this query might include the following.</simpara>\n         <itemizedlist>\n            <listitem>\n               <simpara>An EC2 instance that has the following two tags: <code>{\"Key\":\"Stage\",\"Values\":[\"Deploy\"]}</code>, and <code>{\"Key\":\"Version\",\"Values\":[\"2\"]}</code>\n               </simpara>\n            </listitem>\n            <listitem>\n               <simpara>An S3 bucket that has the following two tags: {\"Key\":\"Stage\",\"Values\":[\"Test\",\"Deploy\"]}, and {\"Key\":\"Version\",\"Values\":[\"1\"]}</simpara>\n            </listitem>\n         </itemizedlist>\n         <simpara>The query would not return the following results, however. The following EC2 instance does not have all tag keys specified in the filter, so it is rejected. \n       The RDS database has all of the tag keys, but no values that match at least one of the specified tag key values in the filter.</simpara>\n         <itemizedlist>\n            <listitem>\n               <simpara>An EC2 instance that has only the following tag: <code>{\"Key\":\"Stage\",\"Values\":[\"Deploy\"]}</code>.</simpara>\n            </listitem>\n            <listitem>\n               <simpara>An RDS database that has the following two tags: <code>{\"Key\":\"Stage\",\"Values\":[\"Archived\"]}</code>, and <code>{\"Key\":\"Version\",\"Values\":[\"4\"]}</code>\n               </simpara>\n            </listitem>\n         </itemizedlist>\n         <simpara>\n            <emphasis>\n               <code>CLOUDFORMATION_STACK_1_0:</code>\n            </emphasis> A JSON syntax that lets you specify a CloudFormation stack ARN.</simpara>\n      ",
+                    "documentation": "\n         <p>The type of the query. The valid values in this release are <code>TAG_FILTERS_1_0</code> and <code>CLOUDFORMATION_STACK_1_0</code>.</p>\n         <p>\n            <i>\n               <code>TAG_FILTERS_1_0:</code>\n            </i> A JSON syntax that lets you specify a collection of simple tag filters for resource types and tags, \n       as supported by the AWS Tagging API <a href=\"https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html\">GetResources</a> operation. \n       If you specify more than one tag key, only resources that match all tag keys, and at least one value of each specified tag key, are returned in your query. If you \n       specify more than one value for a tag key, a resource matches the filter if it has a tag key value that matches <i>any</i> of the specified values.</p>\n         <p>For example, consider the following sample query for resources that have two tags, <code>Stage</code> and <code>Version</code>, with two values each. \n       (<code>[{\"Key\":\"Stage\",\"Values\":[\"Test\",\"Deploy\"]},{\"Key\":\"Version\",\"Values\":[\"1\",\"2\"]}]</code>) The results of this query might include the following.</p>\n         <ul>\n            <li>\n               <p>An EC2 instance that has the following two tags: <code>{\"Key\":\"Stage\",\"Values\":[\"Deploy\"]}</code>, and <code>{\"Key\":\"Version\",\"Values\":[\"2\"]}</code>\n               </p>\n            </li>\n            <li>\n               <p>An S3 bucket that has the following two tags: {\"Key\":\"Stage\",\"Values\":[\"Test\",\"Deploy\"]}, and {\"Key\":\"Version\",\"Values\":[\"1\"]}</p>\n            </li>\n         </ul>\n         <p>The query would not return the following results, however. The following EC2 instance does not have all tag keys specified in the filter, so it is rejected. \n       The RDS database has all of the tag keys, but no values that match at least one of the specified tag key values in the filter.</p>\n         <ul>\n            <li>\n               <p>An EC2 instance that has only the following tag: <code>{\"Key\":\"Stage\",\"Values\":[\"Deploy\"]}</code>.</p>\n            </li>\n            <li>\n               <p>An RDS database that has the following two tags: <code>{\"Key\":\"Stage\",\"Values\":[\"Archived\"]}</code>, and <code>{\"Key\":\"Version\",\"Values\":[\"4\"]}</code>\n               </p>\n            </li>\n         </ul>\n         <p>\n            <i>\n               <code>CLOUDFORMATION_STACK_1_0:</code>\n            </i> A JSON syntax that lets you specify a CloudFormation stack ARN.</p>\n      ",
                     "shape_name": "QueryType"
                   },
                   "Query": {
                     "type": "string",
+                    "required": true,
                     "zonbookDocumentation": "\n         <simpara>The query that defines a group or a search.</simpara>\n      ",
                     "documentation": "\n         <p>The query that defines a group or a search.</p>\n      ",
-                    "required": true,
                     "shape_name": "Query",
                     "max_length": 2048
                   }
@@ -1513,17 +1518,17 @@
           "Arn": {
             "type": "string",
             "pattern": "arn:aws:resource-groups:[a-z]{2}-[a-z]+-\\d{1}:[0-9]{12}:group/[a-zA-Z0-9_\\.-]{1,128}",
-            "zonbookDocumentation": "\n         <simpara>The ARN of the resource to which to add tags.</simpara>\n      ",
-            "documentation": "\n         <p>The ARN of the resource to which to add tags.</p>\n      ",
             "location": "uri",
             "required": true,
+            "zonbookDocumentation": "\n         <simpara>The ARN of the resource to which to add tags.</simpara>\n      ",
+            "documentation": "\n         <p>The ARN of the resource to which to add tags.</p>\n      ",
             "shape_name": "GroupArn"
           },
           "Tags": {
             "type": "map",
+            "required": true,
             "zonbookDocumentation": "\n         <simpara>The tags to add to the specified resource. A tag is a string-to-string map of key-value pairs. Tag keys can have a maximum character length of 128 characters, \n       and tag values can have a maximum length of 256 characters.</simpara>\n      ",
             "documentation": "\n         <p>The tags to add to the specified resource. A tag is a string-to-string map of key-value pairs. Tag keys can have a maximum character length of 128 characters, \n       and tag values can have a maximum length of 256 characters.</p>\n      ",
-            "required": true,
             "shape_name": "Tags",
             "keys": {
               "type": "string",
@@ -1688,10 +1693,10 @@
           "Arn": {
             "type": "string",
             "pattern": "arn:aws:resource-groups:[a-z]{2}-[a-z]+-\\d{1}:[0-9]{12}:group/[a-zA-Z0-9_\\.-]{1,128}",
-            "zonbookDocumentation": "\n         <simpara>The ARN of the resource for which you want a list of tags. The resource must exist within the account you are using.</simpara>\n      ",
-            "documentation": "\n         <p>The ARN of the resource for which you want a list of tags. The resource must exist within the account you are using.</p>\n      ",
             "location": "uri",
             "required": true,
+            "zonbookDocumentation": "\n         <simpara>The ARN of the resource for which you want a list of tags. The resource must exist within the account you are using.</simpara>\n      ",
+            "documentation": "\n         <p>The ARN of the resource for which you want a list of tags. The resource must exist within the account you are using.</p>\n      ",
             "shape_name": "GroupArn"
           }
         },
@@ -1840,17 +1845,17 @@
           "Arn": {
             "type": "string",
             "pattern": "arn:aws:resource-groups:[a-z]{2}-[a-z]+-\\d{1}:[0-9]{12}:group/[a-zA-Z0-9_\\.-]{1,128}",
-            "zonbookDocumentation": "\n         <simpara>The ARN of the resource from which to remove tags.</simpara>\n      ",
-            "documentation": "\n         <p>The ARN of the resource from which to remove tags.</p>\n      ",
             "location": "uri",
             "required": true,
+            "zonbookDocumentation": "\n         <simpara>The ARN of the resource from which to remove tags.</simpara>\n      ",
+            "documentation": "\n         <p>The ARN of the resource from which to remove tags.</p>\n      ",
             "shape_name": "GroupArn"
           },
           "Keys": {
             "type": "list",
+            "required": true,
             "zonbookDocumentation": "\n         <simpara>The keys of the tags to be removed.</simpara>\n      ",
             "documentation": "\n         <p>The keys of the tags to be removed.</p>\n      ",
-            "required": true,
             "shape_name": "TagKeyList",
             "members": {
               "type": "string",
@@ -1999,10 +2004,10 @@
           "GroupName": {
             "type": "string",
             "pattern": "[a-zA-Z0-9_\\.-]+",
-            "zonbookDocumentation": "\n         <simpara>The name of the resource group.</simpara>\n      ",
-            "documentation": "\n         <p>The name of the resource group.</p>\n      ",
             "location": "uri",
             "required": true,
+            "zonbookDocumentation": "\n         <simpara>The name of the resource group.</simpara>\n      ",
+            "documentation": "\n         <p>The name of the resource group.</p>\n      ",
             "shape_name": "GroupName",
             "min_length": 1,
             "max_length": 128
@@ -2020,16 +2025,16 @@
                   "enum": [
                     "resource-type"
                   ],
+                  "required": true,
                   "zonbookDocumentation": "\n         <simpara>The name of the filter. Filter names are case-sensitive.</simpara>\n      ",
                   "documentation": "\n         <p>The name of the filter. Filter names are case-sensitive.</p>\n      ",
-                  "required": true,
                   "shape_name": "ResourceFilterName"
                 },
                 "Values": {
                   "type": "list",
+                  "required": true,
                   "zonbookDocumentation": "\n         <simpara>One or more filter values. Allowed filter values vary by resource filter name, and are case-sensitive.</simpara>\n      ",
                   "documentation": "\n         <p>One or more filter values. Allowed filter values vary by resource filter name, and are case-sensitive.</p>\n      ",
-                  "required": true,
                   "shape_name": "ResourceFilterValues",
                   "min_length": 1,
                   "max_length": 5,
@@ -2050,18 +2055,18 @@
           },
           "MaxResults": {
             "type": "integer",
+            "location": "uri",
             "zonbookDocumentation": "\n         <simpara>The maximum number of group member ARNs that are returned in a single call by ListGroupResources, in paginated output. By default, this number is 50.</simpara>\n      ",
             "documentation": "\n         <p>The maximum number of group member ARNs that are returned in a single call by ListGroupResources, in paginated output. By default, this number is 50.</p>\n      ",
-            "location": "uri",
             "shape_name": "MaxResults",
             "min_length": 1,
             "max_length": 50
           },
           "NextToken": {
             "type": "string",
+            "location": "uri",
             "zonbookDocumentation": "\n         <simpara>The NextToken value that is returned in a paginated ListGroupResources request. To get the next page of results, \n       run the call again, add the NextToken parameter, and specify the NextToken value.</simpara>\n      ",
             "documentation": "\n         <p>The NextToken value that is returned in a paginated ListGroupResources request. To get the next page of results, \n       run the call again, add the NextToken parameter, and specify the NextToken value.</p>\n      ",
-            "location": "uri",
             "shape_name": "NextToken"
           }
         },
@@ -2104,6 +2109,36 @@
             "zonbookDocumentation": "\n         <simpara>The NextToken value to include in a subsequent <code>ListGroupResources</code> request, to get more results.</simpara>\n      ",
             "documentation": "\n         <p>The NextToken value to include in a subsequent <code>ListGroupResources</code> request, to get more results.</p>\n      ",
             "shape_name": "NextToken"
+          },
+          "QueryErrors": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>A list of <code>QueryError</code> objects. Each error is an object that contains \n       <code>ErrorCode</code> and <code>Message</code> structures. Possible values \n       for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</simpara>\n      ",
+            "documentation": "\n         <p>A list of <code>QueryError</code> objects. Each error is an object that contains \n       <code>ErrorCode</code> and <code>Message</code> structures. Possible values \n       for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>\n      ",
+            "shape_name": "QueryErrorList",
+            "members": {
+              "type": "structure",
+              "members": {
+                "ErrorCode": {
+                  "type": "string",
+                  "enum": [
+                    "CLOUDFORMATION_STACK_INACTIVE",
+                    "CLOUDFORMATION_STACK_NOT_EXISTING"
+                  ],
+                  "zonbookDocumentation": "\n         <simpara>Possible values are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</simpara>\n      ",
+                  "documentation": "\n         <p>Possible values are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>\n      ",
+                  "shape_name": "QueryErrorCode"
+                },
+                "Message": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>A message that explains the <code>ErrorCode</code> value. Messages might state \n       that the specified CloudFormation stack does not exist (or no longer exists). \n       For <code>CLOUDFORMATION_STACK_INACTIVE</code>, the message typically states that the \n       CloudFormation stack has a status that is not (or no longer) active, such as \n       <code>CREATE_FAILED</code>.</simpara>\n      ",
+                  "documentation": "\n         <p>A message that explains the <code>ErrorCode</code> value. Messages might state \n       that the specified CloudFormation stack does not exist (or no longer exists). \n       For <code>CLOUDFORMATION_STACK_INACTIVE</code>, the message typically states that the \n       CloudFormation stack has a status that is not (or no longer) active, such as \n       <code>CREATE_FAILED</code>.</p>\n      ",
+                  "shape_name": "QueryErrorMessage"
+                }
+              },
+              "zonbookDocumentation": "\n         <simpara>A two-part error structure that can occur in <code>ListGroupResources</code> or \n       <code>SearchResources</code> operations on CloudFormation stack-based queries. The error \n       occurs if the CloudFormation stack on which the query is based either does not exist, or \n       has a status that renders the stack inactive. A <code>QueryError</code> occurrence does \n       not necessarily mean that AWS Resource Groups could not complete the operation, but the \n       resulting group might have no member resources.</simpara>\n      ",
+              "documentation": "\n         <p>A two-part error structure that can occur in <code>ListGroupResources</code> or \n       <code>SearchResources</code> operations on CloudFormation stack-based queries. The error \n       occurs if the CloudFormation stack on which the query is based either does not exist, or \n       has a status that renders the stack inactive. A <code>QueryError</code> occurrence does \n       not necessarily mean that AWS Resource Groups could not complete the operation, but the \n       resulting group might have no member resources.</p>\n      ",
+              "shape_name": "QueryError"
+            }
           }
         },
         "shape_name": "ListGroupResourcesOutput",
@@ -2418,18 +2453,19 @@
               "Type": {
                 "type": "string",
                 "enum": [
-                  "TAG_FILTERS_1_0"
+                  "TAG_FILTERS_1_0",
+                  "CLOUDFORMATION_STACK_1_0"
                 ],
-                "zonbookDocumentation": "\n         <simpara>The type of the query. The valid value in this release is <code>TAG_FILTERS_1_0</code>.</simpara>\n         <simpara>\n            <emphasis>\n               <code>TAG_FILTERS_1_0:</code>\n            </emphasis> A JSON syntax that lets you specify a collection of simple tag filters for resource types and tags, as supported by the AWS \n       Tagging API GetResources operation. When more than one element is present, only resources that match all filters \n       are part of the result. If a filter specifies more than one value for a key, a resource matches the filter if its tag value matches any of the specified values.</simpara>\n      ",
-                "documentation": "\n         <p>The type of the query. The valid value in this release is <code>TAG_FILTERS_1_0</code>.</p>\n         <p>\n            <i>\n               <code>TAG_FILTERS_1_0:</code>\n            </i> A JSON syntax that lets you specify a collection of simple tag filters for resource types and tags, as supported by the AWS \n       Tagging API GetResources operation. When more than one element is present, only resources that match all filters \n       are part of the result. If a filter specifies more than one value for a key, a resource matches the filter if its tag value matches any of the specified values.</p>\n      ",
                 "required": true,
+                "zonbookDocumentation": "\n         <simpara>The type of the query. The valid values in this release are <code>TAG_FILTERS_1_0</code> and <code>CLOUDFORMATION_STACK_1_0</code>.</simpara>\n         <simpara>\n            <emphasis>\n               <code>TAG_FILTERS_1_0:</code>\n            </emphasis> A JSON syntax that lets you specify a collection of simple tag filters for resource types and tags, \n       as supported by the AWS Tagging API <ulink url=\"https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html\">GetResources</ulink> operation. \n       If you specify more than one tag key, only resources that match all tag keys, and at least one value of each specified tag key, are returned in your query. If you \n       specify more than one value for a tag key, a resource matches the filter if it has a tag key value that matches <emphasis>any</emphasis> of the specified values.</simpara>\n         <simpara>For example, consider the following sample query for resources that have two tags, <code>Stage</code> and <code>Version</code>, with two values each. \n       (<code>[{\"Key\":\"Stage\",\"Values\":[\"Test\",\"Deploy\"]},{\"Key\":\"Version\",\"Values\":[\"1\",\"2\"]}]</code>) The results of this query might include the following.</simpara>\n         <itemizedlist>\n            <listitem>\n               <simpara>An EC2 instance that has the following two tags: <code>{\"Key\":\"Stage\",\"Values\":[\"Deploy\"]}</code>, and <code>{\"Key\":\"Version\",\"Values\":[\"2\"]}</code>\n               </simpara>\n            </listitem>\n            <listitem>\n               <simpara>An S3 bucket that has the following two tags: {\"Key\":\"Stage\",\"Values\":[\"Test\",\"Deploy\"]}, and {\"Key\":\"Version\",\"Values\":[\"1\"]}</simpara>\n            </listitem>\n         </itemizedlist>\n         <simpara>The query would not return the following results, however. The following EC2 instance does not have all tag keys specified in the filter, so it is rejected. \n       The RDS database has all of the tag keys, but no values that match at least one of the specified tag key values in the filter.</simpara>\n         <itemizedlist>\n            <listitem>\n               <simpara>An EC2 instance that has only the following tag: <code>{\"Key\":\"Stage\",\"Values\":[\"Deploy\"]}</code>.</simpara>\n            </listitem>\n            <listitem>\n               <simpara>An RDS database that has the following two tags: <code>{\"Key\":\"Stage\",\"Values\":[\"Archived\"]}</code>, and <code>{\"Key\":\"Version\",\"Values\":[\"4\"]}</code>\n               </simpara>\n            </listitem>\n         </itemizedlist>\n         <simpara>\n            <emphasis>\n               <code>CLOUDFORMATION_STACK_1_0:</code>\n            </emphasis> A JSON syntax that lets you specify a CloudFormation stack ARN.</simpara>\n      ",
+                "documentation": "\n         <p>The type of the query. The valid values in this release are <code>TAG_FILTERS_1_0</code> and <code>CLOUDFORMATION_STACK_1_0</code>.</p>\n         <p>\n            <i>\n               <code>TAG_FILTERS_1_0:</code>\n            </i> A JSON syntax that lets you specify a collection of simple tag filters for resource types and tags, \n       as supported by the AWS Tagging API <a href=\"https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html\">GetResources</a> operation. \n       If you specify more than one tag key, only resources that match all tag keys, and at least one value of each specified tag key, are returned in your query. If you \n       specify more than one value for a tag key, a resource matches the filter if it has a tag key value that matches <i>any</i> of the specified values.</p>\n         <p>For example, consider the following sample query for resources that have two tags, <code>Stage</code> and <code>Version</code>, with two values each. \n       (<code>[{\"Key\":\"Stage\",\"Values\":[\"Test\",\"Deploy\"]},{\"Key\":\"Version\",\"Values\":[\"1\",\"2\"]}]</code>) The results of this query might include the following.</p>\n         <ul>\n            <li>\n               <p>An EC2 instance that has the following two tags: <code>{\"Key\":\"Stage\",\"Values\":[\"Deploy\"]}</code>, and <code>{\"Key\":\"Version\",\"Values\":[\"2\"]}</code>\n               </p>\n            </li>\n            <li>\n               <p>An S3 bucket that has the following two tags: {\"Key\":\"Stage\",\"Values\":[\"Test\",\"Deploy\"]}, and {\"Key\":\"Version\",\"Values\":[\"1\"]}</p>\n            </li>\n         </ul>\n         <p>The query would not return the following results, however. The following EC2 instance does not have all tag keys specified in the filter, so it is rejected. \n       The RDS database has all of the tag keys, but no values that match at least one of the specified tag key values in the filter.</p>\n         <ul>\n            <li>\n               <p>An EC2 instance that has only the following tag: <code>{\"Key\":\"Stage\",\"Values\":[\"Deploy\"]}</code>.</p>\n            </li>\n            <li>\n               <p>An RDS database that has the following two tags: <code>{\"Key\":\"Stage\",\"Values\":[\"Archived\"]}</code>, and <code>{\"Key\":\"Version\",\"Values\":[\"4\"]}</code>\n               </p>\n            </li>\n         </ul>\n         <p>\n            <i>\n               <code>CLOUDFORMATION_STACK_1_0:</code>\n            </i> A JSON syntax that lets you specify a CloudFormation stack ARN.</p>\n      ",
                 "shape_name": "QueryType"
               },
               "Query": {
                 "type": "string",
+                "required": true,
                 "zonbookDocumentation": "\n         <simpara>The query that defines a group or a search.</simpara>\n      ",
                 "documentation": "\n         <p>The query that defines a group or a search.</p>\n      ",
-                "required": true,
                 "shape_name": "Query",
                 "max_length": 2048
               }
@@ -2493,6 +2529,36 @@
             "zonbookDocumentation": "\n         <simpara>The NextToken value to include in a subsequent <code>SearchResources</code> request, to get more results.</simpara>\n      ",
             "documentation": "\n         <p>The NextToken value to include in a subsequent <code>SearchResources</code> request, to get more results.</p>\n      ",
             "shape_name": "NextToken"
+          },
+          "QueryErrors": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <simpara>A list of <code>QueryError</code> objects. Each error is an object that \n       contains <code>ErrorCode</code> and <code>Message</code> structures. Possible values \n       for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and \n       <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</simpara>\n      ",
+            "documentation": "\n         <p>A list of <code>QueryError</code> objects. Each error is an object that \n       contains <code>ErrorCode</code> and <code>Message</code> structures. Possible values \n       for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and \n       <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>\n      ",
+            "shape_name": "QueryErrorList",
+            "members": {
+              "type": "structure",
+              "members": {
+                "ErrorCode": {
+                  "type": "string",
+                  "enum": [
+                    "CLOUDFORMATION_STACK_INACTIVE",
+                    "CLOUDFORMATION_STACK_NOT_EXISTING"
+                  ],
+                  "zonbookDocumentation": "\n         <simpara>Possible values are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</simpara>\n      ",
+                  "documentation": "\n         <p>Possible values are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>\n      ",
+                  "shape_name": "QueryErrorCode"
+                },
+                "Message": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <simpara>A message that explains the <code>ErrorCode</code> value. Messages might state \n       that the specified CloudFormation stack does not exist (or no longer exists). \n       For <code>CLOUDFORMATION_STACK_INACTIVE</code>, the message typically states that the \n       CloudFormation stack has a status that is not (or no longer) active, such as \n       <code>CREATE_FAILED</code>.</simpara>\n      ",
+                  "documentation": "\n         <p>A message that explains the <code>ErrorCode</code> value. Messages might state \n       that the specified CloudFormation stack does not exist (or no longer exists). \n       For <code>CLOUDFORMATION_STACK_INACTIVE</code>, the message typically states that the \n       CloudFormation stack has a status that is not (or no longer) active, such as \n       <code>CREATE_FAILED</code>.</p>\n      ",
+                  "shape_name": "QueryErrorMessage"
+                }
+              },
+              "zonbookDocumentation": "\n         <simpara>A two-part error structure that can occur in <code>ListGroupResources</code> or \n       <code>SearchResources</code> operations on CloudFormation stack-based queries. The error \n       occurs if the CloudFormation stack on which the query is based either does not exist, or \n       has a status that renders the stack inactive. A <code>QueryError</code> occurrence does \n       not necessarily mean that AWS Resource Groups could not complete the operation, but the \n       resulting group might have no member resources.</simpara>\n      ",
+              "documentation": "\n         <p>A two-part error structure that can occur in <code>ListGroupResources</code> or \n       <code>SearchResources</code> operations on CloudFormation stack-based queries. The error \n       occurs if the CloudFormation stack on which the query is based either does not exist, or \n       has a status that renders the stack inactive. A <code>QueryError</code> occurrence does \n       not necessarily mean that AWS Resource Groups could not complete the operation, but the \n       resulting group might have no member resources.</p>\n      ",
+              "shape_name": "QueryError"
+            }
           }
         },
         "shape_name": "SearchResourcesOutput",
@@ -2604,7 +2670,8 @@
           "QueryType": {
             "type": "string",
             "enum": [
-              "TAG_FILTERS_1_0"
+              "TAG_FILTERS_1_0",
+              "CLOUDFORMATION_STACK_1_0"
             ],
             "required": true,
             "shape_name": "QueryType",
