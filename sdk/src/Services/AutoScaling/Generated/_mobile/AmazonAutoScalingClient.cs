@@ -40,9 +40,13 @@ namespace Amazon.AutoScaling
     /// Amazon EC2 Auto Scaling 
     /// <para>
     /// Amazon EC2 Auto Scaling is designed to automatically launch or terminate EC2 instances
-    /// based on user-defined policies, schedules, and health checks. Use this service in
-    /// conjunction with the AWS Auto Scaling, Amazon CloudWatch, and Elastic Load Balancing
-    /// services.
+    /// based on user-defined policies, schedules, and health checks. Use this service with
+    /// AWS Auto Scaling, Amazon CloudWatch, and Elastic Load Balancing.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see the <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html">Amazon
+    /// EC2 Auto Scaling User Guide</a>.
     /// </para>
     /// </summary>
     public partial class AmazonAutoScalingClient : AmazonServiceClient, IAmazonAutoScaling
@@ -1253,8 +1257,8 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// Note that the <code>GroupStandbyInstances</code> metric is not returned by default.
-        /// You must explicitly request this metric when calling <a>EnableMetricsCollection</a>.
+        /// The <code>GroupStandbyInstances</code> metric is not returned by default. You must
+        /// explicitly request this metric when calling <a>EnableMetricsCollection</a>.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -1673,6 +1677,13 @@ namespace Amazon.AutoScaling
 
         /// <summary>
         /// Describes the termination policies supported by Amazon EC2 Auto Scaling.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
+        /// Which Auto Scaling Instances Terminate During Scale In</a> in the <i>Amazon EC2 Auto
+        /// Scaling User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.

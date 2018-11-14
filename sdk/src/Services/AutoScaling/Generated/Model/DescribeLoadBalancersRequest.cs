@@ -33,8 +33,8 @@ namespace Amazon.AutoScaling.Model
     /// 
     ///  
     /// <para>
-    /// Note that this operation describes only Classic Load Balancers. If you have Application
-    /// Load Balancers, use <a>DescribeLoadBalancerTargetGroups</a> instead.
+    /// This operation describes only Classic Load Balancers. If you have Application Load
+    /// Balancers, use <a>DescribeLoadBalancerTargetGroups</a> instead.
     /// </para>
     /// </summary>
     public partial class DescribeLoadBalancersRequest : AmazonAutoScalingRequest

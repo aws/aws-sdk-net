@@ -28,17 +28,34 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeMetricCollectionTypes operation.
-    /// Describes the available CloudWatch metrics for Amazon EC2 Auto Scaling.
-    /// 
-    ///  
-    /// <para>
-    /// The <code>GroupStandbyInstances</code> metric is not returned by default. You must
-    /// explicitly request this metric when calling <a>EnableMetricsCollection</a>.
-    /// </para>
+    /// Describes an override for a launch template.
     /// </summary>
-    public partial class DescribeMetricCollectionTypesRequest : AmazonAutoScalingRequest
+    public partial class LaunchTemplateOverrides
     {
+        private string _instanceType;
+
+        /// <summary>
+        /// Gets and sets the property InstanceType. 
+        /// <para>
+        /// The instance type. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about available instance types, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
+        /// Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> 
+        /// </para>
+        /// </summary>
+        public string InstanceType
+        {
+            get { return this._instanceType; }
+            set { this._instanceType = value; }
+        }
+
+        // Check to see if InstanceType property is set
+        internal bool IsSetInstanceType()
+        {
+            return this._instanceType != null;
+        }
 
     }
 }

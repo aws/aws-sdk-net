@@ -53,7 +53,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// A filter used to scope the tags to return.
+        /// One or more filters to scope the tags to return. The maximum number of filters per
+        /// filter type (for example, <code>auto-scaling-group</code>) is 1000.
         /// </para>
         /// </summary>
         public List<Filter> Filters

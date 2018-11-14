@@ -47,6 +47,7 @@ namespace Amazon.AutoScaling.Model
         private List<string> _loadBalancerNames = new List<string>();
         private int? _maxSize;
         private int? _minSize;
+        private MixedInstancesPolicy _mixedInstancesPolicy;
         private bool? _newInstancesProtectedFromScaleIn;
         private string _placementGroup;
         private string _serviceLinkedRoleARN;
@@ -331,6 +332,24 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MixedInstancesPolicy. 
+        /// <para>
+        /// The mixed instances policy for the group. 
+        /// </para>
+        /// </summary>
+        public MixedInstancesPolicy MixedInstancesPolicy
+        {
+            get { return this._mixedInstancesPolicy; }
+            set { this._mixedInstancesPolicy = value; }
+        }
+
+        // Check to see if MixedInstancesPolicy property is set
+        internal bool IsSetMixedInstancesPolicy()
+        {
+            return this._mixedInstancesPolicy != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property NewInstancesProtectedFromScaleIn. 
         /// <para>
         /// Indicates whether newly launched instances are protected from termination by Auto
@@ -352,8 +371,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property PlacementGroup. 
         /// <para>
-        /// The name of the placement group into which you'll launch your instances, if any. For
-        /// more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+        /// The name of the placement group into which to launch your instances, if any. For more
+        /// information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
         /// Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>

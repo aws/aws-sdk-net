@@ -34,8 +34,8 @@ namespace Amazon.AutoScaling.Model
     /// 
     ///  
     /// <para>
-    /// Note that if you suspend either the <code>Launch</code> or <code>Terminate</code>
-    /// process types, it can prevent other process types from functioning properly.
+    /// If you suspend either the <code>Launch</code> or <code>Terminate</code> process types,
+    /// it can prevent other process types from functioning properly.
     /// </para>
     ///  
     /// <para>

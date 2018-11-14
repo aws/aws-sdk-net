@@ -39,7 +39,7 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/ASGettingNotifications.html">Getting
+    /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/ASGettingNotifications.html">Getting
     /// SNS Notifications When Your Auto Scaling Group Scales</a> in the <i>Auto Scaling User
     /// Guide</i>.
     /// </para>
@@ -71,8 +71,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property NotificationTypes. 
         /// <para>
-        /// The type of event that will cause the notification to be sent. For details about notification
-        /// types supported by Amazon EC2 Auto Scaling, see <a>DescribeAutoScalingNotificationTypes</a>.
+        /// The type of event that causes the notification to be sent. For more information about
+        /// notification types supported by Amazon EC2 Auto Scaling, see <a>DescribeAutoScalingNotificationTypes</a>.
         /// </para>
         /// </summary>
         public List<string> NotificationTypes
@@ -90,7 +90,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property TopicARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic.
+        /// The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS)
+        /// topic.
         /// </para>
         /// </summary>
         public string TopicARN

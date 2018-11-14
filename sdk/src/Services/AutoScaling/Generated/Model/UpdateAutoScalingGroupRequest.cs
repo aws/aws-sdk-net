@@ -40,8 +40,8 @@ namespace Amazon.AutoScaling.Model
     /// <para>
     /// To update an Auto Scaling group with a launch configuration with <code>InstanceMonitoring</code>
     /// set to <code>false</code>, you must first disable the collection of group metrics.
-    /// Otherwise, you will get an error. If you have previously enabled the collection of
-    /// group metrics, you can disable it using <a>DisableMetricsCollection</a>.
+    /// Otherwise, you get an error. If you have previously enabled the collection of group
+    /// metrics, you can disable it using <a>DisableMetricsCollection</a>.
     /// </para>
     ///  
     /// <para>
@@ -79,6 +79,7 @@ namespace Amazon.AutoScaling.Model
         private LaunchTemplateSpecification _launchTemplate;
         private int? _maxSize;
         private int? _minSize;
+        private MixedInstancesPolicy _mixedInstancesPolicy;
         private bool? _newInstancesProtectedFromScaleIn;
         private string _placementGroup;
         private string _serviceLinkedRoleARN;
@@ -211,8 +212,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LaunchConfigurationName. 
         /// <para>
-        /// The name of the launch configuration. If you specify a launch configuration, you can't
-        /// specify a launch template.
+        /// The name of the launch configuration. If you specify this parameter, you can't specify
+        /// a launch template or a mixed instances policy.
         /// </para>
         /// </summary>
         public string LaunchConfigurationName
@@ -230,8 +231,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LaunchTemplate. 
         /// <para>
-        /// The launch template to use to specify the updates. If you specify a launch template,
-        /// you can't specify a launch configuration.
+        /// The launch template and version to use to specify the updates. If you specify this
+        /// parameter, you can't specify a launch configuration or a mixed instances policy.
         /// </para>
         /// </summary>
         public LaunchTemplateSpecification LaunchTemplate
@@ -283,6 +284,25 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MixedInstancesPolicy. 
+        /// <para>
+        /// The mixed instances policy to use to specify the updates. If you specify this parameter,
+        /// you can't specify a launch configuration or a launch template. 
+        /// </para>
+        /// </summary>
+        public MixedInstancesPolicy MixedInstancesPolicy
+        {
+            get { return this._mixedInstancesPolicy; }
+            set { this._mixedInstancesPolicy = value; }
+        }
+
+        // Check to see if MixedInstancesPolicy property is set
+        internal bool IsSetMixedInstancesPolicy()
+        {
+            return this._mixedInstancesPolicy != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property NewInstancesProtectedFromScaleIn. 
         /// <para>
         /// Indicates whether newly launched instances are protected from termination by Auto
@@ -304,8 +324,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property PlacementGroup. 
         /// <para>
-        /// The name of the placement group into which you'll launch your instances, if any. For
-        /// more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+        /// The name of the placement group into which to launch your instances, if any. For more
+        /// information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
         /// Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>

@@ -689,6 +689,17 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AutoScaling.Model.InstancesDistribution.OnDemandAllocationStrategy</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.InstancesDistribution.SpotAllocationStrategy</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.InstancesDistribution.SpotMaxPrice</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AutoScaling.Model.InvalidNextToken.Message</property>
     <min>1</min>
     <max>255</max>
@@ -751,6 +762,11 @@
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.LaunchConfiguration.UserData</property>
     <max>21847</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScaling.Model.LaunchTemplateOverrides.InstanceType</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.LaunchTemplateSpecification.LaunchTemplateId</property>

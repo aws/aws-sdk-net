@@ -34,9 +34,13 @@ namespace Amazon.AutoScaling
     /// Amazon EC2 Auto Scaling 
     /// <para>
     /// Amazon EC2 Auto Scaling is designed to automatically launch or terminate EC2 instances
-    /// based on user-defined policies, schedules, and health checks. Use this service in
-    /// conjunction with the AWS Auto Scaling, Amazon CloudWatch, and Elastic Load Balancing
-    /// services.
+    /// based on user-defined policies, schedules, and health checks. Use this service with
+    /// AWS Auto Scaling, Amazon CloudWatch, and Elastic Load Balancing.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see the <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html">Amazon
+    /// EC2 Auto Scaling User Guide</a>.
     /// </para>
     /// </summary>
     public partial interface IAmazonAutoScaling : IAmazonService, IDisposable
@@ -229,7 +233,7 @@ namespace Amazon.AutoScaling
 
         /// <summary>
         /// Creates or updates one or more scheduled scaling actions for an Auto Scaling group.
-        /// When updating a scheduled scaling action, if you leave a parameter unspecified, the
+        /// If you leave a parameter unspecified when updating a scheduled scaling action, the
         /// corresponding value remains unchanged.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchPutScheduledUpdateGroupAction service method.</param>
@@ -509,8 +513,8 @@ namespace Amazon.AutoScaling
         ///  
         /// <para>
         /// To remove instances from the Auto Scaling group before deleting it, call <a>DetachInstances</a>
-        /// with the list of instances and the option to decrement the desired capacity so that
-        /// Amazon EC2 Auto Scaling does not launch replacement instances.
+        /// with the list of instances and the option to decrement the desired capacity. This
+        /// ensures that Amazon EC2 Auto Scaling does not launch replacement instances.
         /// </para>
         ///  
         /// <para>
@@ -1251,8 +1255,8 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// Note that this operation describes only Classic Load Balancers. If you have Application
-        /// Load Balancers, use <a>DescribeLoadBalancerTargetGroups</a> instead.
+        /// This operation describes only Classic Load Balancers. If you have Application Load
+        /// Balancers, use <a>DescribeLoadBalancerTargetGroups</a> instead.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBalancers service method.</param>
@@ -1319,8 +1323,8 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// Note that the <code>GroupStandbyInstances</code> metric is not returned by default.
-        /// You must explicitly request this metric when calling <a>EnableMetricsCollection</a>.
+        /// The <code>GroupStandbyInstances</code> metric is not returned by default. You must
+        /// explicitly request this metric when calling <a>EnableMetricsCollection</a>.
         /// </para>
         /// </summary>
         /// 
@@ -1338,8 +1342,8 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// Note that the <code>GroupStandbyInstances</code> metric is not returned by default.
-        /// You must explicitly request this metric when calling <a>EnableMetricsCollection</a>.
+        /// The <code>GroupStandbyInstances</code> metric is not returned by default. You must
+        /// explicitly request this metric when calling <a>EnableMetricsCollection</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeMetricCollectionTypes service method.</param>
@@ -1358,8 +1362,8 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// Note that the <code>GroupStandbyInstances</code> metric is not returned by default.
-        /// You must explicitly request this metric when calling <a>EnableMetricsCollection</a>.
+        /// The <code>GroupStandbyInstances</code> metric is not returned by default. You must
+        /// explicitly request this metric when calling <a>EnableMetricsCollection</a>.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -1850,6 +1854,13 @@ namespace Amazon.AutoScaling
 
         /// <summary>
         /// Describes the termination policies supported by Amazon EC2 Auto Scaling.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
+        /// Which Auto Scaling Instances Terminate During Scale In</a> in the <i>Amazon EC2 Auto
+        /// Scaling User Guide</i>.
+        /// </para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeTerminationPolicyTypes service method, as returned by AutoScaling.</returns>
@@ -1863,6 +1874,13 @@ namespace Amazon.AutoScaling
 
         /// <summary>
         /// Describes the termination policies supported by Amazon EC2 Auto Scaling.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
+        /// Which Auto Scaling Instances Terminate During Scale In</a> in the <i>Amazon EC2 Auto
+        /// Scaling User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTerminationPolicyTypes service method.</param>
         /// 
@@ -1877,6 +1895,13 @@ namespace Amazon.AutoScaling
 
         /// <summary>
         /// Describes the termination policies supported by Amazon EC2 Auto Scaling.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
+        /// Which Auto Scaling Instances Terminate During Scale In</a> in the <i>Amazon EC2 Auto
+        /// Scaling User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1967,15 +1992,15 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// Note that this operation detaches only Classic Load Balancers. If you have Application
-        /// Load Balancers, use <a>DetachLoadBalancerTargetGroups</a> instead.
+        /// This operation detaches only Classic Load Balancers. If you have Application Load
+        /// Balancers, use <a>DetachLoadBalancerTargetGroups</a> instead.
         /// </para>
         ///  
         /// <para>
         /// When you detach a load balancer, it enters the <code>Removing</code> state while deregistering
         /// the instances in the group. When all instances are deregistered, then you can no longer
-        /// describe the load balancer using <a>DescribeLoadBalancers</a>. Note that the instances
-        /// remain running.
+        /// describe the load balancer using <a>DescribeLoadBalancers</a>. The instances remain
+        /// running.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachLoadBalancers service method.</param>
@@ -2213,13 +2238,13 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Creates or updates a lifecycle hook for the specified Auto Scaling Group.
+        /// Creates or updates a lifecycle hook for the specified Auto Scaling group.
         /// 
         ///  
         /// <para>
-        /// A lifecycle hook tells Amazon EC2 Auto Scaling that you want to perform an action
-        /// on an instance that is not actively in service; for example, either when the instance
-        /// launches or before the instance terminates.
+        /// A lifecycle hook tells Amazon EC2 Auto Scaling to perform an action on an instance
+        /// that is not actively in service; for example, either when the instance launches or
+        /// before the instance terminates.
         /// </para>
         ///  
         /// <para>
@@ -2306,7 +2331,7 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// For more information see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/ASGettingNotifications.html">Getting
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/ASGettingNotifications.html">Getting
         /// SNS Notifications When Your Auto Scaling Group Scales</a> in the <i>Auto Scaling User
         /// Guide</i>.
         /// </para>
@@ -2348,9 +2373,8 @@ namespace Amazon.AutoScaling
 
         /// <summary>
         /// Creates or updates a policy for an Auto Scaling group. To update an existing policy,
-        /// use the existing policy name and set the parameters you want to change. Any existing
-        /// parameter not changed in an update to an existing policy is not changed in this update
-        /// request.
+        /// use the existing policy name and set the parameters to change. Any existing parameter
+        /// not changed in an update to an existing policy is not changed in this update request.
         /// 
         ///  
         /// <para>
@@ -2395,8 +2419,8 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Creates or updates a scheduled scaling action for an Auto Scaling group. When updating
-        /// a scheduled scaling action, if you leave a parameter unspecified, the corresponding
+        /// Creates or updates a scheduled scaling action for an Auto Scaling group. If you leave
+        /// a parameter unspecified when updating a scheduled scaling action, the corresponding
         /// value remains unchanged.
         /// 
         ///  
@@ -2673,8 +2697,8 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// Note that if you suspend either the <code>Launch</code> or <code>Terminate</code>
-        /// process types, it can prevent other process types from functioning properly.
+        /// If you suspend either the <code>Launch</code> or <code>Terminate</code> process types,
+        /// it can prevent other process types from functioning properly.
         /// </para>
         ///  
         /// <para>
@@ -2768,8 +2792,8 @@ namespace Amazon.AutoScaling
         /// <para>
         /// To update an Auto Scaling group with a launch configuration with <code>InstanceMonitoring</code>
         /// set to <code>false</code>, you must first disable the collection of group metrics.
-        /// Otherwise, you will get an error. If you have previously enabled the collection of
-        /// group metrics, you can disable it using <a>DisableMetricsCollection</a>.
+        /// Otherwise, you get an error. If you have previously enabled the collection of group
+        /// metrics, you can disable it using <a>DisableMetricsCollection</a>.
         /// </para>
         ///  
         /// <para>

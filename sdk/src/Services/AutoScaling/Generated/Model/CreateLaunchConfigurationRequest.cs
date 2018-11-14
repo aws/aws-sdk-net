@@ -190,7 +190,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// EC2 instances launched with an IAM role will automatically have AWS security credentials
+        /// EC2 instances launched with an IAM role automatically have AWS security credentials
         /// available. You can use IAM roles with Amazon EC2 Auto Scaling to automatically enable
         /// applications running on your EC2 instances to securely access other AWS resources.
         /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">Launch
@@ -241,7 +241,7 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property InstanceId. 
         /// <para>
         /// The ID of the instance to use to create the launch configuration. The new launch configuration
-        /// derives attributes from the instance, with the exception of the block device mapping.
+        /// derives attributes from the instance, except for the block device mapping.
         /// </para>
         ///  
         /// <para>
@@ -382,9 +382,9 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// You must set the value of this parameter to <code>dedicated</code> if want to launch
-        /// Dedicated Instances into a shared tenancy VPC (VPC with instance placement tenancy
-        /// attribute set to <code>default</code>).
+        /// To launch Dedicated Instances into a shared tenancy VPC (a VPC with the instance placement
+        /// tenancy attribute set to <code>default</code>), you must set the value of this parameter
+        /// to <code>dedicated</code>.
         /// </para>
         ///  
         /// <para>
@@ -439,8 +439,7 @@ namespace Amazon.AutoScaling.Model
         ///  
         /// <para>
         /// If your instances are launched in EC2-Classic, you can either specify security group
-        /// names or the security group IDs. For more information about security groups for EC2-Classic,
-        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon
+        /// names or the security group IDs. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon
         /// EC2 Security Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  

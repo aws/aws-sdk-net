@@ -197,7 +197,7 @@ namespace Amazon.AutoScaling.Model
         ///  
         /// <para>
         /// When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>,
-        /// they form the boundaries of when the recurring action will start and stop.
+        /// they form the boundaries of when the recurring action starts and stops.
         /// </para>
         /// </summary>
         public DateTime StartTime

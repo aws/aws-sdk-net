@@ -30,7 +30,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// Container for the parameters to the BatchPutScheduledUpdateGroupAction operation.
     /// Creates or updates one or more scheduled scaling actions for an Auto Scaling group.
-    /// When updating a scheduled scaling action, if you leave a parameter unspecified, the
+    /// If you leave a parameter unspecified when updating a scheduled scaling action, the
     /// corresponding value remains unchanged.
     /// </summary>
     public partial class BatchPutScheduledUpdateGroupActionRequest : AmazonAutoScalingRequest

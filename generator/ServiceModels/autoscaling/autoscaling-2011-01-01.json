@@ -9,7 +9,7 @@
   "endpoint_prefix": "autoscaling",
   "api_version": "2011-01-01",
   "xmlnamespace": "http://autoscaling.amazonaws.com/doc/2011-01-01/",
-  "documentation": "\n        <fullname>Amazon EC2 Auto Scaling</fullname>\n\n        <p>Amazon EC2 Auto Scaling is designed to automatically launch or terminate EC2 instances\n            based on user-defined policies, schedules, and health checks. Use this service in\n            conjunction with the AWS Auto Scaling, Amazon CloudWatch, and Elastic Load Balancing\n            services.</p>\n\n      ",
+  "documentation": "\n        <fullname>Amazon EC2 Auto Scaling</fullname>\n\n        <p>Amazon EC2 Auto Scaling is designed to automatically launch or terminate EC2 instances\n            based on user-defined policies, schedules, and health checks. Use this service with AWS\n            Auto Scaling, Amazon CloudWatch, and Elastic Load Balancing.</p>\n        <p>For more information, see the <a href=\"http://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html\">Amazon EC2 Auto\n                Scaling User Guide</a>.</p>\n      ",
   "operations": {
     "CreateAutoScalingGroup": {
       "name": "CreateAutoScalingGroup",
@@ -29,8 +29,8 @@
           "LaunchConfigurationName": {
             "type": "string",
             "pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*",
-            "zonbookDocumentation": "\n        <para>The name of the launch configuration. You must specify one of the following: a launch\n            configuration, a launch template, or an EC2 instance.</para>\n      ",
-            "documentation": "\n        <p>The name of the launch configuration. You must specify one of the following: a launch\n            configuration, a launch template, or an EC2 instance.</p>\n      ",
+            "zonbookDocumentation": "\n        <para>The name of the launch configuration. This parameter, a launch template, a mixed\n            instances policy, or an EC2 instance must be specified.</para>\n      ",
+            "documentation": "\n        <p>The name of the launch configuration. This parameter, a launch template, a mixed\n            instances policy, or an EC2 instance must be specified.</p>\n      ",
             "shape_name": "ResourceName",
             "min_length": 1,
             "max_length": 1600
@@ -66,15 +66,137 @@
                 "max_length": 255
               }
             },
-            "zonbookDocumentation": "\n        <para>The launch template to use to launch instances. You must specify one of the following:\n            a launch template, a launch configuration, or an EC2 instance.</para>\n      ",
-            "documentation": "\n        <p>The launch template to use to launch instances. You must specify one of the following:\n            a launch template, a launch configuration, or an EC2 instance.</p>\n      ",
+            "zonbookDocumentation": "\n        <para>The launch template to use to launch instances. This parameter, a launch\n            configuration, a mixed instances policy, or an EC2 instance must be specified.</para>\n      ",
+            "documentation": "\n        <p>The launch template to use to launch instances. This parameter, a launch\n            configuration, a mixed instances policy, or an EC2 instance must be specified.</p>\n      ",
             "shape_name": "LaunchTemplateSpecification"
+          },
+          "MixedInstancesPolicy": {
+            "type": "structure",
+            "members": {
+              "LaunchTemplate": {
+                "type": "structure",
+                "members": {
+                  "LaunchTemplateSpecification": {
+                    "type": "structure",
+                    "members": {
+                      "LaunchTemplateId": {
+                        "type": "string",
+                        "pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*",
+                        "zonbookDocumentation": "\n        <para>The ID of the launch template. You must specify either a template ID or a template\n            name.</para>\n      ",
+                        "documentation": "\n        <p>The ID of the launch template. You must specify either a template ID or a template\n            name.</p>\n      ",
+                        "shape_name": "XmlStringMaxLen255",
+                        "min_length": 1,
+                        "max_length": 255
+                      },
+                      "LaunchTemplateName": {
+                        "type": "string",
+                        "pattern": "[a-zA-Z0-9\\(\\)\\.-/_]+",
+                        "zonbookDocumentation": "\n        <para>The name of the launch template. You must specify either a template name or a template\n            ID.</para>\n      ",
+                        "documentation": "\n        <p>The name of the launch template. You must specify either a template name or a template\n            ID.</p>\n      ",
+                        "shape_name": "LaunchTemplateName",
+                        "min_length": 3,
+                        "max_length": 128
+                      },
+                      "Version": {
+                        "type": "string",
+                        "pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*",
+                        "zonbookDocumentation": "\n        <para>The version number, <code>$Latest</code>, or <code>$Default</code>. If the value is\n                <code>$Latest</code>, Amazon EC2 Auto Scaling selects the latest version of the\n            launch template when launching instances. If the value is <code>$Default</code>, Amazon\n            EC2 Auto Scaling selects the default version of the launch template when launching\n            instances. The default value is <code>$Default</code>.</para>\n      ",
+                        "documentation": "\n        <p>The version number, <code>$Latest</code>, or <code>$Default</code>. If the value is\n                <code>$Latest</code>, Amazon EC2 Auto Scaling selects the latest version of the\n            launch template when launching instances. If the value is <code>$Default</code>, Amazon\n            EC2 Auto Scaling selects the default version of the launch template when launching\n            instances. The default value is <code>$Default</code>.</p>\n      ",
+                        "shape_name": "XmlStringMaxLen255",
+                        "min_length": 1,
+                        "max_length": 255
+                      }
+                    },
+                    "zonbookDocumentation": "\n        <para>The launch template to use. You must specify either the launch template ID or launch\n            template name in the request. </para>\n      ",
+                    "documentation": "\n        <p>The launch template to use. You must specify either the launch template ID or launch\n            template name in the request. </p>\n      ",
+                    "shape_name": "LaunchTemplateSpecification"
+                  },
+                  "Overrides": {
+                    "type": "list",
+                    "zonbookDocumentation": "\n        <para>Any parameters that you specify override the same parameters in the launch template.\n            Currently, the only supported override is instance type. </para>\n        <para>You must specify between 2 and 20 overrides.</para>\n      ",
+                    "documentation": "\n        <p>Any parameters that you specify override the same parameters in the launch template.\n            Currently, the only supported override is instance type. </p>\n        <p>You must specify between 2 and 20 overrides.</p>\n      ",
+                    "shape_name": "Overrides",
+                    "members": {
+                      "type": "structure",
+                      "members": {
+                        "InstanceType": {
+                          "type": "string",
+                          "pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*",
+                          "zonbookDocumentation": "\n        <para>The instance type. </para>\n        <para>For information about available instance types, see <ulink type=\"documentation\" url=\"AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes\">Available\n                Instance Types</ulink> in the <emphasis>Amazon Elastic Compute Cloud User\n                Guide.</emphasis>\n        </para>\n      ",
+                          "documentation": "\n        <p>The instance type. </p>\n        <p>For information about available instance types, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes\">Available\n                Instance Types</a> in the <i>Amazon Elastic Compute Cloud User\n                Guide.</i>\n        </p>\n      ",
+                          "shape_name": "XmlStringMaxLen255",
+                          "min_length": 1,
+                          "max_length": 255
+                        }
+                      },
+                      "zonbookDocumentation": "\n        <para>Describes an override for a launch template. </para>\n\n      ",
+                      "documentation": "\n        <p>Describes an override for a launch template. </p>\n\n      ",
+                      "shape_name": "LaunchTemplateOverrides"
+                    }
+                  }
+                },
+                "zonbookDocumentation": "\n        <para>The launch template and overrides.</para>\n        <para>This parameter is required when creating an Auto Scaling group with a mixed instances\n            policy, but is not required when updating the group.</para>\n      ",
+                "documentation": "\n        <p>The launch template and overrides.</p>\n        <p>This parameter is required when creating an Auto Scaling group with a mixed instances\n            policy, but is not required when updating the group.</p>\n      ",
+                "shape_name": "LaunchTemplate"
+              },
+              "InstancesDistribution": {
+                "type": "structure",
+                "members": {
+                  "OnDemandAllocationStrategy": {
+                    "type": "string",
+                    "pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*",
+                    "zonbookDocumentation": "\n        <para>Indicates how to allocate instance types to fulfill On-Demand capacity. </para>\n        <para>The only valid value is <code>prioritized</code>, which is also the default value.\n            This strategy uses the order of instance types in the <emphasis role=\"bold\">Overrides</emphasis> array of <xref linkend=\"LaunchTemplate\"/> to define the launch\n            priority of each instance type. The first instance type in the array is prioritized\n            higher than the last. If all your On-Demand capacity cannot be fulfilled using your\n            highest priority instance, then the Auto Scaling groups launches the remaining capacity\n            using the second priority instance type, and so on. </para>\n      ",
+                    "documentation": "\n        <p>Indicates how to allocate instance types to fulfill On-Demand capacity. </p>\n        <p>The only valid value is <code>prioritized</code>, which is also the default value.\n            This strategy uses the order of instance types in the <b>Overrides</b> array of <a>LaunchTemplate</a> to define the launch\n            priority of each instance type. The first instance type in the array is prioritized\n            higher than the last. If all your On-Demand capacity cannot be fulfilled using your\n            highest priority instance, then the Auto Scaling groups launches the remaining capacity\n            using the second priority instance type, and so on. </p>\n      ",
+                    "shape_name": "XmlString"
+                  },
+                  "OnDemandBaseCapacity": {
+                    "type": "integer",
+                    "zonbookDocumentation": "\n        <para>The minimum amount of the Auto Scaling group's capacity that must be fulfilled by\n            On-Demand Instances. This base portion is provisioned first as your group scales.</para>\n        <para>The default value is 0. If you leave this parameter set to 0, On-Demand Instances are\n            launched as a percentage of the Auto Scaling group's desired capacity, per the <emphasis role=\"bold\">OnDemandPercentageAboveBaseCapacity</emphasis> setting.</para>\n      ",
+                    "documentation": "\n        <p>The minimum amount of the Auto Scaling group's capacity that must be fulfilled by\n            On-Demand Instances. This base portion is provisioned first as your group scales.</p>\n        <p>The default value is 0. If you leave this parameter set to 0, On-Demand Instances are\n            launched as a percentage of the Auto Scaling group's desired capacity, per the <b>OnDemandPercentageAboveBaseCapacity</b> setting.</p>\n      ",
+                    "shape_name": "OnDemandBaseCapacity"
+                  },
+                  "OnDemandPercentageAboveBaseCapacity": {
+                    "type": "integer",
+                    "zonbookDocumentation": "\n        <para>Controls the percentages of On-Demand Instances and Spot Instances for your additional\n            capacity beyond <emphasis role=\"bold\">OnDemandBaseCapacity</emphasis>. </para>\n        <para>The range is 0–100. The default value is 100. If you leave this parameter set to 100,\n            the percentages are 100% for On-Demand Instances and 0% for Spot Instances. </para>\n      ",
+                    "documentation": "\n        <p>Controls the percentages of On-Demand Instances and Spot Instances for your additional\n            capacity beyond <b>OnDemandBaseCapacity</b>. </p>\n        <p>The range is 0–100. The default value is 100. If you leave this parameter set to 100,\n            the percentages are 100% for On-Demand Instances and 0% for Spot Instances. </p>\n      ",
+                    "shape_name": "OnDemandPercentageAboveBaseCapacity"
+                  },
+                  "SpotAllocationStrategy": {
+                    "type": "string",
+                    "pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*",
+                    "zonbookDocumentation": "\n        <para>Indicates how to allocate Spot capacity across Spot pools.</para>\n        <para>The only valid value is <code>lowest-price</code>, which is also the default value.\n            The Auto Scaling group selects the cheapest Spot pools and evenly allocates your Spot\n            capacity across the number of Spot pools that you specify. </para>\n      ",
+                    "documentation": "\n        <p>Indicates how to allocate Spot capacity across Spot pools.</p>\n        <p>The only valid value is <code>lowest-price</code>, which is also the default value.\n            The Auto Scaling group selects the cheapest Spot pools and evenly allocates your Spot\n            capacity across the number of Spot pools that you specify. </p>\n      ",
+                    "shape_name": "XmlString"
+                  },
+                  "SpotInstancePools": {
+                    "type": "integer",
+                    "zonbookDocumentation": "\n        <para>The number of Spot pools to use to allocate your Spot capacity. The Spot pools are\n            determined from the different instance types in the <emphasis role=\"bold\">Overrides</emphasis> array of <xref linkend=\"LaunchTemplate\"/>. </para>\n        <para>The range is 1–20 and the default is 2. </para>\n      ",
+                    "documentation": "\n        <p>The number of Spot pools to use to allocate your Spot capacity. The Spot pools are\n            determined from the different instance types in the <b>Overrides</b> array of <a>LaunchTemplate</a>. </p>\n        <p>The range is 1–20 and the default is 2. </p>\n      ",
+                    "shape_name": "SpotInstancePools"
+                  },
+                  "SpotMaxPrice": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n        <para>The maximum price per unit hour that you are willing to pay for a Spot Instance. If\n            you leave this value blank (which is the default), the maximum Spot price is set at the\n            On-Demand price. </para>\n      ",
+                    "documentation": "\n        <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. If\n            you leave this value blank (which is the default), the maximum Spot price is set at the\n            On-Demand price. </p>\n      ",
+                    "shape_name": "SpotPrice",
+                    "min_length": 1,
+                    "max_length": 255
+                  }
+                },
+                "zonbookDocumentation": "\n        <para>The instances distribution to use. </para>\n        <para>If you leave this parameter unspecified when creating the group, the default values\n            are used.</para>\n      ",
+                "documentation": "\n        <p>The instances distribution to use. </p>\n        <p>If you leave this parameter unspecified when creating the group, the default values\n            are used.</p>\n      ",
+                "shape_name": "InstancesDistribution"
+              }
+            },
+            "zonbookDocumentation": "\n        <para>The mixed instances policy to use to launch instances. This parameter, a launch\n            template, a launch configuration, or an EC2 instance must be specified.</para>\n      ",
+            "documentation": "\n        <p>The mixed instances policy to use to launch instances. This parameter, a launch\n            template, a launch configuration, or an EC2 instance must be specified.</p>\n      ",
+            "shape_name": "MixedInstancesPolicy"
           },
           "InstanceId": {
             "type": "string",
             "pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*",
-            "zonbookDocumentation": "\n        <para>The ID of the instance used to create a launch configuration for the group. You must\n            specify one of the following: an EC2 instance, a launch configuration, or a launch\n            template.</para>\n        <para>When you specify an ID of an instance, Amazon EC2 Auto Scaling creates a new launch\n            configuration and associates it with the group. This launch configuration derives its\n            attributes from the specified instance, with the exception of the block device\n            mapping.</para>\n        <para>For more information, see <ulink type=\"documentation\" url=\"autoscaling/ec2/userguide/create-asg-from-instance.html\">Create an Auto Scaling\n                Group Using an EC2 Instance</ulink> in the <emphasis>Amazon EC2 Auto Scaling User\n                Guide</emphasis>.</para>\n      ",
-            "documentation": "\n        <p>The ID of the instance used to create a launch configuration for the group. You must\n            specify one of the following: an EC2 instance, a launch configuration, or a launch\n            template.</p>\n        <p>When you specify an ID of an instance, Amazon EC2 Auto Scaling creates a new launch\n            configuration and associates it with the group. This launch configuration derives its\n            attributes from the specified instance, with the exception of the block device\n            mapping.</p>\n        <p>For more information, see <a href=\"http://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html\">Create an Auto Scaling\n                Group Using an EC2 Instance</a> in the <i>Amazon EC2 Auto Scaling User\n                Guide</i>.</p>\n      ",
+            "zonbookDocumentation": "\n        <para>The ID of the instance used to create a launch configuration for the group. This\n            parameter, a launch configuration, a launch template, or a mixed instances policy must\n            be specified.</para>\n        <para>When you specify an ID of an instance, Amazon EC2 Auto Scaling creates a new launch\n            configuration and associates it with the group. This launch configuration derives its\n            attributes from the specified instance, except for the block device mapping.</para>\n        <para>For more information, see <ulink type=\"documentation\" url=\"autoscaling/ec2/userguide/create-asg-from-instance.html\">Create an Auto Scaling\n                Group Using an EC2 Instance</ulink> in the <emphasis>Amazon EC2 Auto Scaling User\n                Guide</emphasis>.</para>\n      ",
+            "documentation": "\n        <p>The ID of the instance used to create a launch configuration for the group. This\n            parameter, a launch configuration, a launch template, or a mixed instances policy must\n            be specified.</p>\n        <p>When you specify an ID of an instance, Amazon EC2 Auto Scaling creates a new launch\n            configuration and associates it with the group. This launch configuration derives its\n            attributes from the specified instance, except for the block device mapping.</p>\n        <p>For more information, see <a href=\"http://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html\">Create an Auto Scaling\n                Group Using an EC2 Instance</a> in the <i>Amazon EC2 Auto Scaling User\n                Guide</i>.</p>\n      ",
             "shape_name": "XmlStringMaxLen19",
             "min_length": 1,
             "max_length": 19
@@ -166,8 +288,8 @@
           "PlacementGroup": {
             "type": "string",
             "pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*",
-            "zonbookDocumentation": "\n        <para>The name of the placement group into which you'll launch your instances, if any. For\n            more information, see <ulink type=\"documentation\" url=\"AWSEC2/latest/UserGuide/placement-groups.html\">Placement Groups</ulink> in the\n                <emphasis>Amazon Elastic Compute Cloud User Guide</emphasis>.</para>\n      ",
-            "documentation": "\n        <p>The name of the placement group into which you'll launch your instances, if any. For\n            more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html\">Placement Groups</a> in the\n                <i>Amazon Elastic Compute Cloud User Guide</i>.</p>\n      ",
+            "zonbookDocumentation": "\n        <para>The name of the placement group into which to launch your instances, if any. For more\n            information, see <ulink type=\"documentation\" url=\"AWSEC2/latest/UserGuide/placement-groups.html\">Placement Groups</ulink> in the\n                <emphasis>Amazon Elastic Compute Cloud User Guide</emphasis>.</para>\n      ",
+            "documentation": "\n        <p>The name of the placement group into which to launch your instances, if any. For more\n            information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html\">Placement Groups</a> in the\n                <i>Amazon Elastic Compute Cloud User Guide</i>.</p>\n      ",
             "shape_name": "XmlStringMaxLen255",
             "min_length": 1,
             "max_length": 255
@@ -1009,8 +1131,8 @@
           },
           "ForceDelete": {
             "type": "boolean",
-            "zonbookDocumentation": "\n        <para>Specifies that the group will be deleted along with all instances associated with the\n            group, without waiting for all instances to be terminated. This parameter also deletes\n            any lifecycle actions associated with the group.</para>\n      ",
-            "documentation": "\n        <p>Specifies that the group will be deleted along with all instances associated with the\n            group, without waiting for all instances to be terminated. This parameter also deletes\n            any lifecycle actions associated with the group.</p>\n      ",
+            "zonbookDocumentation": "\n        <para>Specifies that the group is to be deleted along with all instances associated with the\n            group, without waiting for all instances to be terminated. This parameter also deletes\n            any lifecycle actions associated with the group.</para>\n      ",
+            "documentation": "\n        <p>Specifies that the group is to be deleted along with all instances associated with the\n            group, without waiting for all instances to be terminated. This parameter also deletes\n            any lifecycle actions associated with the group.</p>\n      ",
             "shape_name": "ForceDelete"
           }
         },
@@ -1071,7 +1193,7 @@
           "shape_name": "ResourceContentionFault"
         }
       ],
-      "documentation": "\n        <p>Deletes the specified Auto Scaling group.</p>\n        <p>If the group has instances or scaling activities in progress, you must specify the\n            option to force the deletion in order for it to succeed.</p>\n        <p>If the group has policies, deleting the group deletes the policies, the underlying\n            alarm actions, and any alarm that no longer has an associated action.</p>\n        <p>To remove instances from the Auto Scaling group before deleting it, call <a>DetachInstances</a> with the list of instances and the option to decrement\n            the desired capacity so that Amazon EC2 Auto Scaling does not launch replacement\n            instances.</p>\n        <p>To terminate all instances before deleting the Auto Scaling group, call <a>UpdateAutoScalingGroup</a> and set the minimum size and desired capacity of\n            the Auto Scaling group to zero.</p>\n        \n      "
+      "documentation": "\n        <p>Deletes the specified Auto Scaling group.</p>\n        <p>If the group has instances or scaling activities in progress, you must specify the\n            option to force the deletion in order for it to succeed.</p>\n        <p>If the group has policies, deleting the group deletes the policies, the underlying\n            alarm actions, and any alarm that no longer has an associated action.</p>\n        <p>To remove instances from the Auto Scaling group before deleting it, call <a>DetachInstances</a> with the list of instances and the option to decrement\n            the desired capacity. This ensures that Amazon EC2 Auto Scaling does not launch\n            replacement instances.</p>\n        <p>To terminate all instances before deleting the Auto Scaling group, call <a>UpdateAutoScalingGroup</a> and set the minimum size and desired capacity of\n            the Auto Scaling group to zero.</p>\n        \n      "
     },
     "DescribeAutoScalingGroups": {
       "name": "DescribeAutoScalingGroups",
@@ -1183,6 +1305,128 @@
                   "zonbookDocumentation": "\n        <para>The launch template for the group.</para>\n      ",
                   "documentation": "\n        <p>The launch template for the group.</p>\n      ",
                   "shape_name": "LaunchTemplateSpecification"
+                },
+                "MixedInstancesPolicy": {
+                  "type": "structure",
+                  "members": {
+                    "LaunchTemplate": {
+                      "type": "structure",
+                      "members": {
+                        "LaunchTemplateSpecification": {
+                          "type": "structure",
+                          "members": {
+                            "LaunchTemplateId": {
+                              "type": "string",
+                              "pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*",
+                              "zonbookDocumentation": "\n        <para>The ID of the launch template. You must specify either a template ID or a template\n            name.</para>\n      ",
+                              "documentation": "\n        <p>The ID of the launch template. You must specify either a template ID or a template\n            name.</p>\n      ",
+                              "shape_name": "XmlStringMaxLen255",
+                              "min_length": 1,
+                              "max_length": 255
+                            },
+                            "LaunchTemplateName": {
+                              "type": "string",
+                              "pattern": "[a-zA-Z0-9\\(\\)\\.-/_]+",
+                              "zonbookDocumentation": "\n        <para>The name of the launch template. You must specify either a template name or a template\n            ID.</para>\n      ",
+                              "documentation": "\n        <p>The name of the launch template. You must specify either a template name or a template\n            ID.</p>\n      ",
+                              "shape_name": "LaunchTemplateName",
+                              "min_length": 3,
+                              "max_length": 128
+                            },
+                            "Version": {
+                              "type": "string",
+                              "pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*",
+                              "zonbookDocumentation": "\n        <para>The version number, <code>$Latest</code>, or <code>$Default</code>. If the value is\n                <code>$Latest</code>, Amazon EC2 Auto Scaling selects the latest version of the\n            launch template when launching instances. If the value is <code>$Default</code>, Amazon\n            EC2 Auto Scaling selects the default version of the launch template when launching\n            instances. The default value is <code>$Default</code>.</para>\n      ",
+                              "documentation": "\n        <p>The version number, <code>$Latest</code>, or <code>$Default</code>. If the value is\n                <code>$Latest</code>, Amazon EC2 Auto Scaling selects the latest version of the\n            launch template when launching instances. If the value is <code>$Default</code>, Amazon\n            EC2 Auto Scaling selects the default version of the launch template when launching\n            instances. The default value is <code>$Default</code>.</p>\n      ",
+                              "shape_name": "XmlStringMaxLen255",
+                              "min_length": 1,
+                              "max_length": 255
+                            }
+                          },
+                          "zonbookDocumentation": "\n        <para>The launch template to use. You must specify either the launch template ID or launch\n            template name in the request. </para>\n      ",
+                          "documentation": "\n        <p>The launch template to use. You must specify either the launch template ID or launch\n            template name in the request. </p>\n      ",
+                          "shape_name": "LaunchTemplateSpecification"
+                        },
+                        "Overrides": {
+                          "type": "list",
+                          "zonbookDocumentation": "\n        <para>Any parameters that you specify override the same parameters in the launch template.\n            Currently, the only supported override is instance type. </para>\n        <para>You must specify between 2 and 20 overrides.</para>\n      ",
+                          "documentation": "\n        <p>Any parameters that you specify override the same parameters in the launch template.\n            Currently, the only supported override is instance type. </p>\n        <p>You must specify between 2 and 20 overrides.</p>\n      ",
+                          "shape_name": "Overrides",
+                          "members": {
+                            "type": "structure",
+                            "members": {
+                              "InstanceType": {
+                                "type": "string",
+                                "pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*",
+                                "zonbookDocumentation": "\n        <para>The instance type. </para>\n        <para>For information about available instance types, see <ulink type=\"documentation\" url=\"AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes\">Available\n                Instance Types</ulink> in the <emphasis>Amazon Elastic Compute Cloud User\n                Guide.</emphasis>\n        </para>\n      ",
+                                "documentation": "\n        <p>The instance type. </p>\n        <p>For information about available instance types, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes\">Available\n                Instance Types</a> in the <i>Amazon Elastic Compute Cloud User\n                Guide.</i>\n        </p>\n      ",
+                                "shape_name": "XmlStringMaxLen255",
+                                "min_length": 1,
+                                "max_length": 255
+                              }
+                            },
+                            "zonbookDocumentation": "\n        <para>Describes an override for a launch template. </para>\n\n      ",
+                            "documentation": "\n        <p>Describes an override for a launch template. </p>\n\n      ",
+                            "shape_name": "LaunchTemplateOverrides"
+                          }
+                        }
+                      },
+                      "zonbookDocumentation": "\n        <para>The launch template and overrides.</para>\n        <para>This parameter is required when creating an Auto Scaling group with a mixed instances\n            policy, but is not required when updating the group.</para>\n      ",
+                      "documentation": "\n        <p>The launch template and overrides.</p>\n        <p>This parameter is required when creating an Auto Scaling group with a mixed instances\n            policy, but is not required when updating the group.</p>\n      ",
+                      "shape_name": "LaunchTemplate"
+                    },
+                    "InstancesDistribution": {
+                      "type": "structure",
+                      "members": {
+                        "OnDemandAllocationStrategy": {
+                          "type": "string",
+                          "pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*",
+                          "zonbookDocumentation": "\n        <para>Indicates how to allocate instance types to fulfill On-Demand capacity. </para>\n        <para>The only valid value is <code>prioritized</code>, which is also the default value.\n            This strategy uses the order of instance types in the <emphasis role=\"bold\">Overrides</emphasis> array of <xref linkend=\"LaunchTemplate\"/> to define the launch\n            priority of each instance type. The first instance type in the array is prioritized\n            higher than the last. If all your On-Demand capacity cannot be fulfilled using your\n            highest priority instance, then the Auto Scaling groups launches the remaining capacity\n            using the second priority instance type, and so on. </para>\n      ",
+                          "documentation": "\n        <p>Indicates how to allocate instance types to fulfill On-Demand capacity. </p>\n        <p>The only valid value is <code>prioritized</code>, which is also the default value.\n            This strategy uses the order of instance types in the <b>Overrides</b> array of <a>LaunchTemplate</a> to define the launch\n            priority of each instance type. The first instance type in the array is prioritized\n            higher than the last. If all your On-Demand capacity cannot be fulfilled using your\n            highest priority instance, then the Auto Scaling groups launches the remaining capacity\n            using the second priority instance type, and so on. </p>\n      ",
+                          "shape_name": "XmlString"
+                        },
+                        "OnDemandBaseCapacity": {
+                          "type": "integer",
+                          "zonbookDocumentation": "\n        <para>The minimum amount of the Auto Scaling group's capacity that must be fulfilled by\n            On-Demand Instances. This base portion is provisioned first as your group scales.</para>\n        <para>The default value is 0. If you leave this parameter set to 0, On-Demand Instances are\n            launched as a percentage of the Auto Scaling group's desired capacity, per the <emphasis role=\"bold\">OnDemandPercentageAboveBaseCapacity</emphasis> setting.</para>\n      ",
+                          "documentation": "\n        <p>The minimum amount of the Auto Scaling group's capacity that must be fulfilled by\n            On-Demand Instances. This base portion is provisioned first as your group scales.</p>\n        <p>The default value is 0. If you leave this parameter set to 0, On-Demand Instances are\n            launched as a percentage of the Auto Scaling group's desired capacity, per the <b>OnDemandPercentageAboveBaseCapacity</b> setting.</p>\n      ",
+                          "shape_name": "OnDemandBaseCapacity"
+                        },
+                        "OnDemandPercentageAboveBaseCapacity": {
+                          "type": "integer",
+                          "zonbookDocumentation": "\n        <para>Controls the percentages of On-Demand Instances and Spot Instances for your additional\n            capacity beyond <emphasis role=\"bold\">OnDemandBaseCapacity</emphasis>. </para>\n        <para>The range is 0–100. The default value is 100. If you leave this parameter set to 100,\n            the percentages are 100% for On-Demand Instances and 0% for Spot Instances. </para>\n      ",
+                          "documentation": "\n        <p>Controls the percentages of On-Demand Instances and Spot Instances for your additional\n            capacity beyond <b>OnDemandBaseCapacity</b>. </p>\n        <p>The range is 0–100. The default value is 100. If you leave this parameter set to 100,\n            the percentages are 100% for On-Demand Instances and 0% for Spot Instances. </p>\n      ",
+                          "shape_name": "OnDemandPercentageAboveBaseCapacity"
+                        },
+                        "SpotAllocationStrategy": {
+                          "type": "string",
+                          "pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*",
+                          "zonbookDocumentation": "\n        <para>Indicates how to allocate Spot capacity across Spot pools.</para>\n        <para>The only valid value is <code>lowest-price</code>, which is also the default value.\n            The Auto Scaling group selects the cheapest Spot pools and evenly allocates your Spot\n            capacity across the number of Spot pools that you specify. </para>\n      ",
+                          "documentation": "\n        <p>Indicates how to allocate Spot capacity across Spot pools.</p>\n        <p>The only valid value is <code>lowest-price</code>, which is also the default value.\n            The Auto Scaling group selects the cheapest Spot pools and evenly allocates your Spot\n            capacity across the number of Spot pools that you specify. </p>\n      ",
+                          "shape_name": "XmlString"
+                        },
+                        "SpotInstancePools": {
+                          "type": "integer",
+                          "zonbookDocumentation": "\n        <para>The number of Spot pools to use to allocate your Spot capacity. The Spot pools are\n            determined from the different instance types in the <emphasis role=\"bold\">Overrides</emphasis> array of <xref linkend=\"LaunchTemplate\"/>. </para>\n        <para>The range is 1–20 and the default is 2. </para>\n      ",
+                          "documentation": "\n        <p>The number of Spot pools to use to allocate your Spot capacity. The Spot pools are\n            determined from the different instance types in the <b>Overrides</b> array of <a>LaunchTemplate</a>. </p>\n        <p>The range is 1–20 and the default is 2. </p>\n      ",
+                          "shape_name": "SpotInstancePools"
+                        },
+                        "SpotMaxPrice": {
+                          "type": "string",
+                          "zonbookDocumentation": "\n        <para>The maximum price per unit hour that you are willing to pay for a Spot Instance. If\n            you leave this value blank (which is the default), the maximum Spot price is set at the\n            On-Demand price. </para>\n      ",
+                          "documentation": "\n        <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. If\n            you leave this value blank (which is the default), the maximum Spot price is set at the\n            On-Demand price. </p>\n      ",
+                          "shape_name": "SpotPrice",
+                          "min_length": 1,
+                          "max_length": 255
+                        }
+                      },
+                      "zonbookDocumentation": "\n        <para>The instances distribution to use. </para>\n        <para>If you leave this parameter unspecified when creating the group, the default values\n            are used.</para>\n      ",
+                      "documentation": "\n        <p>The instances distribution to use. </p>\n        <p>If you leave this parameter unspecified when creating the group, the default values\n            are used.</p>\n      ",
+                      "shape_name": "InstancesDistribution"
+                    }
+                  },
+                  "zonbookDocumentation": "\n        <para>The mixed instances policy for the group. </para>\n      ",
+                  "documentation": "\n        <p>The mixed instances policy for the group. </p>\n      ",
+                  "shape_name": "MixedInstancesPolicy"
                 },
                 "MinSize": {
                   "type": "integer",
@@ -1317,16 +1561,16 @@
                           "EnteringStandby",
                           "Standby"
                         ],
-                        "zonbookDocumentation": "\n        <para>A description of the current lifecycle state. Note that the <code>Quarantined</code>\n            state is not used.</para>\n      ",
-                        "documentation": "\n        <p>A description of the current lifecycle state. Note that the <code>Quarantined</code>\n            state is not used.</p>\n      ",
+                        "zonbookDocumentation": "\n        <para>A description of the current lifecycle state. The <code>Quarantined</code> state is\n            not used.</para>\n      ",
+                        "documentation": "\n        <p>A description of the current lifecycle state. The <code>Quarantined</code> state is\n            not used.</p>\n      ",
                         "required": true,
                         "shape_name": "LifecycleState"
                       },
                       "HealthStatus": {
                         "type": "string",
                         "pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*",
-                        "zonbookDocumentation": "\n        <para>The last reported health status of the instance. \"Healthy\" means that the instance is\n            healthy and should remain in service. \"Unhealthy\" means that the instance is unhealthy\n            and Amazon EC2 Auto Scaling should terminate and replace it.</para>\n      ",
-                        "documentation": "\n        <p>The last reported health status of the instance. \"Healthy\" means that the instance is\n            healthy and should remain in service. \"Unhealthy\" means that the instance is unhealthy\n            and Amazon EC2 Auto Scaling should terminate and replace it.</p>\n      ",
+                        "zonbookDocumentation": "\n        <para>The last reported health status of the instance. \"Healthy\" means that the instance is\n            healthy and should remain in service. \"Unhealthy\" means that the instance is unhealthy\n            and that Amazon EC2 Auto Scaling should terminate and replace it.</para>\n      ",
+                        "documentation": "\n        <p>The last reported health status of the instance. \"Healthy\" means that the instance is\n            healthy and should remain in service. \"Unhealthy\" means that the instance is unhealthy\n            and that Amazon EC2 Auto Scaling should terminate and replace it.</p>\n      ",
                         "required": true,
                         "shape_name": "XmlStringMaxLen32",
                         "min_length": 1,
@@ -1431,8 +1675,8 @@
                 "PlacementGroup": {
                   "type": "string",
                   "pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*",
-                  "zonbookDocumentation": "\n        <para>The name of the placement group into which you'll launch your instances, if any. For\n            more information, see <ulink type=\"documentation\" url=\"AWSEC2/latest/UserGuide/placement-groups.html\">Placement Groups</ulink> in the\n                <emphasis>Amazon Elastic Compute Cloud User Guide</emphasis>.</para>\n      ",
-                  "documentation": "\n        <p>The name of the placement group into which you'll launch your instances, if any. For\n            more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html\">Placement Groups</a> in the\n                <i>Amazon Elastic Compute Cloud User Guide</i>.</p>\n      ",
+                  "zonbookDocumentation": "\n        <para>The name of the placement group into which to launch your instances, if any. For more\n            information, see <ulink type=\"documentation\" url=\"AWSEC2/latest/UserGuide/placement-groups.html\">Placement Groups</ulink> in the\n                <emphasis>Amazon Elastic Compute Cloud User Guide</emphasis>.</para>\n      ",
+                  "documentation": "\n        <p>The name of the placement group into which to launch your instances, if any. For more\n            information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html\">Placement Groups</a> in the\n                <i>Amazon Elastic Compute Cloud User Guide</i>.</p>\n      ",
                   "shape_name": "XmlStringMaxLen255",
                   "min_length": 1,
                   "max_length": 255
@@ -1641,8 +1885,8 @@
           "LaunchConfigurationName": {
             "type": "string",
             "pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*",
-            "zonbookDocumentation": "\n        <para>The name of the launch configuration. If you specify a launch configuration, you can't\n            specify a launch template.</para>\n      ",
-            "documentation": "\n        <p>The name of the launch configuration. If you specify a launch configuration, you can't\n            specify a launch template.</p>\n      ",
+            "zonbookDocumentation": "\n        <para>The name of the launch configuration. If you specify this parameter, you can't specify\n            a launch template or a mixed instances policy.</para>\n      ",
+            "documentation": "\n        <p>The name of the launch configuration. If you specify this parameter, you can't specify\n            a launch template or a mixed instances policy.</p>\n      ",
             "shape_name": "ResourceName",
             "min_length": 1,
             "max_length": 1600
@@ -1678,9 +1922,131 @@
                 "max_length": 255
               }
             },
-            "zonbookDocumentation": "\n        <para>The launch template to use to specify the updates. If you specify a launch template,\n            you can't specify a launch configuration.</para>\n      ",
-            "documentation": "\n        <p>The launch template to use to specify the updates. If you specify a launch template,\n            you can't specify a launch configuration.</p>\n      ",
+            "zonbookDocumentation": "\n        <para>The launch template and version to use to specify the updates. If you specify this\n            parameter, you can't specify a launch configuration or a mixed instances policy.</para>\n      ",
+            "documentation": "\n        <p>The launch template and version to use to specify the updates. If you specify this\n            parameter, you can't specify a launch configuration or a mixed instances policy.</p>\n      ",
             "shape_name": "LaunchTemplateSpecification"
+          },
+          "MixedInstancesPolicy": {
+            "type": "structure",
+            "members": {
+              "LaunchTemplate": {
+                "type": "structure",
+                "members": {
+                  "LaunchTemplateSpecification": {
+                    "type": "structure",
+                    "members": {
+                      "LaunchTemplateId": {
+                        "type": "string",
+                        "pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*",
+                        "zonbookDocumentation": "\n        <para>The ID of the launch template. You must specify either a template ID or a template\n            name.</para>\n      ",
+                        "documentation": "\n        <p>The ID of the launch template. You must specify either a template ID or a template\n            name.</p>\n      ",
+                        "shape_name": "XmlStringMaxLen255",
+                        "min_length": 1,
+                        "max_length": 255
+                      },
+                      "LaunchTemplateName": {
+                        "type": "string",
+                        "pattern": "[a-zA-Z0-9\\(\\)\\.-/_]+",
+                        "zonbookDocumentation": "\n        <para>The name of the launch template. You must specify either a template name or a template\n            ID.</para>\n      ",
+                        "documentation": "\n        <p>The name of the launch template. You must specify either a template name or a template\n            ID.</p>\n      ",
+                        "shape_name": "LaunchTemplateName",
+                        "min_length": 3,
+                        "max_length": 128
+                      },
+                      "Version": {
+                        "type": "string",
+                        "pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*",
+                        "zonbookDocumentation": "\n        <para>The version number, <code>$Latest</code>, or <code>$Default</code>. If the value is\n                <code>$Latest</code>, Amazon EC2 Auto Scaling selects the latest version of the\n            launch template when launching instances. If the value is <code>$Default</code>, Amazon\n            EC2 Auto Scaling selects the default version of the launch template when launching\n            instances. The default value is <code>$Default</code>.</para>\n      ",
+                        "documentation": "\n        <p>The version number, <code>$Latest</code>, or <code>$Default</code>. If the value is\n                <code>$Latest</code>, Amazon EC2 Auto Scaling selects the latest version of the\n            launch template when launching instances. If the value is <code>$Default</code>, Amazon\n            EC2 Auto Scaling selects the default version of the launch template when launching\n            instances. The default value is <code>$Default</code>.</p>\n      ",
+                        "shape_name": "XmlStringMaxLen255",
+                        "min_length": 1,
+                        "max_length": 255
+                      }
+                    },
+                    "zonbookDocumentation": "\n        <para>The launch template to use. You must specify either the launch template ID or launch\n            template name in the request. </para>\n      ",
+                    "documentation": "\n        <p>The launch template to use. You must specify either the launch template ID or launch\n            template name in the request. </p>\n      ",
+                    "shape_name": "LaunchTemplateSpecification"
+                  },
+                  "Overrides": {
+                    "type": "list",
+                    "zonbookDocumentation": "\n        <para>Any parameters that you specify override the same parameters in the launch template.\n            Currently, the only supported override is instance type. </para>\n        <para>You must specify between 2 and 20 overrides.</para>\n      ",
+                    "documentation": "\n        <p>Any parameters that you specify override the same parameters in the launch template.\n            Currently, the only supported override is instance type. </p>\n        <p>You must specify between 2 and 20 overrides.</p>\n      ",
+                    "shape_name": "Overrides",
+                    "members": {
+                      "type": "structure",
+                      "members": {
+                        "InstanceType": {
+                          "type": "string",
+                          "pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*",
+                          "zonbookDocumentation": "\n        <para>The instance type. </para>\n        <para>For information about available instance types, see <ulink type=\"documentation\" url=\"AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes\">Available\n                Instance Types</ulink> in the <emphasis>Amazon Elastic Compute Cloud User\n                Guide.</emphasis>\n        </para>\n      ",
+                          "documentation": "\n        <p>The instance type. </p>\n        <p>For information about available instance types, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes\">Available\n                Instance Types</a> in the <i>Amazon Elastic Compute Cloud User\n                Guide.</i>\n        </p>\n      ",
+                          "shape_name": "XmlStringMaxLen255",
+                          "min_length": 1,
+                          "max_length": 255
+                        }
+                      },
+                      "zonbookDocumentation": "\n        <para>Describes an override for a launch template. </para>\n\n      ",
+                      "documentation": "\n        <p>Describes an override for a launch template. </p>\n\n      ",
+                      "shape_name": "LaunchTemplateOverrides"
+                    }
+                  }
+                },
+                "zonbookDocumentation": "\n        <para>The launch template and overrides.</para>\n        <para>This parameter is required when creating an Auto Scaling group with a mixed instances\n            policy, but is not required when updating the group.</para>\n      ",
+                "documentation": "\n        <p>The launch template and overrides.</p>\n        <p>This parameter is required when creating an Auto Scaling group with a mixed instances\n            policy, but is not required when updating the group.</p>\n      ",
+                "shape_name": "LaunchTemplate"
+              },
+              "InstancesDistribution": {
+                "type": "structure",
+                "members": {
+                  "OnDemandAllocationStrategy": {
+                    "type": "string",
+                    "pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*",
+                    "zonbookDocumentation": "\n        <para>Indicates how to allocate instance types to fulfill On-Demand capacity. </para>\n        <para>The only valid value is <code>prioritized</code>, which is also the default value.\n            This strategy uses the order of instance types in the <emphasis role=\"bold\">Overrides</emphasis> array of <xref linkend=\"LaunchTemplate\"/> to define the launch\n            priority of each instance type. The first instance type in the array is prioritized\n            higher than the last. If all your On-Demand capacity cannot be fulfilled using your\n            highest priority instance, then the Auto Scaling groups launches the remaining capacity\n            using the second priority instance type, and so on. </para>\n      ",
+                    "documentation": "\n        <p>Indicates how to allocate instance types to fulfill On-Demand capacity. </p>\n        <p>The only valid value is <code>prioritized</code>, which is also the default value.\n            This strategy uses the order of instance types in the <b>Overrides</b> array of <a>LaunchTemplate</a> to define the launch\n            priority of each instance type. The first instance type in the array is prioritized\n            higher than the last. If all your On-Demand capacity cannot be fulfilled using your\n            highest priority instance, then the Auto Scaling groups launches the remaining capacity\n            using the second priority instance type, and so on. </p>\n      ",
+                    "shape_name": "XmlString"
+                  },
+                  "OnDemandBaseCapacity": {
+                    "type": "integer",
+                    "zonbookDocumentation": "\n        <para>The minimum amount of the Auto Scaling group's capacity that must be fulfilled by\n            On-Demand Instances. This base portion is provisioned first as your group scales.</para>\n        <para>The default value is 0. If you leave this parameter set to 0, On-Demand Instances are\n            launched as a percentage of the Auto Scaling group's desired capacity, per the <emphasis role=\"bold\">OnDemandPercentageAboveBaseCapacity</emphasis> setting.</para>\n      ",
+                    "documentation": "\n        <p>The minimum amount of the Auto Scaling group's capacity that must be fulfilled by\n            On-Demand Instances. This base portion is provisioned first as your group scales.</p>\n        <p>The default value is 0. If you leave this parameter set to 0, On-Demand Instances are\n            launched as a percentage of the Auto Scaling group's desired capacity, per the <b>OnDemandPercentageAboveBaseCapacity</b> setting.</p>\n      ",
+                    "shape_name": "OnDemandBaseCapacity"
+                  },
+                  "OnDemandPercentageAboveBaseCapacity": {
+                    "type": "integer",
+                    "zonbookDocumentation": "\n        <para>Controls the percentages of On-Demand Instances and Spot Instances for your additional\n            capacity beyond <emphasis role=\"bold\">OnDemandBaseCapacity</emphasis>. </para>\n        <para>The range is 0–100. The default value is 100. If you leave this parameter set to 100,\n            the percentages are 100% for On-Demand Instances and 0% for Spot Instances. </para>\n      ",
+                    "documentation": "\n        <p>Controls the percentages of On-Demand Instances and Spot Instances for your additional\n            capacity beyond <b>OnDemandBaseCapacity</b>. </p>\n        <p>The range is 0–100. The default value is 100. If you leave this parameter set to 100,\n            the percentages are 100% for On-Demand Instances and 0% for Spot Instances. </p>\n      ",
+                    "shape_name": "OnDemandPercentageAboveBaseCapacity"
+                  },
+                  "SpotAllocationStrategy": {
+                    "type": "string",
+                    "pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*",
+                    "zonbookDocumentation": "\n        <para>Indicates how to allocate Spot capacity across Spot pools.</para>\n        <para>The only valid value is <code>lowest-price</code>, which is also the default value.\n            The Auto Scaling group selects the cheapest Spot pools and evenly allocates your Spot\n            capacity across the number of Spot pools that you specify. </para>\n      ",
+                    "documentation": "\n        <p>Indicates how to allocate Spot capacity across Spot pools.</p>\n        <p>The only valid value is <code>lowest-price</code>, which is also the default value.\n            The Auto Scaling group selects the cheapest Spot pools and evenly allocates your Spot\n            capacity across the number of Spot pools that you specify. </p>\n      ",
+                    "shape_name": "XmlString"
+                  },
+                  "SpotInstancePools": {
+                    "type": "integer",
+                    "zonbookDocumentation": "\n        <para>The number of Spot pools to use to allocate your Spot capacity. The Spot pools are\n            determined from the different instance types in the <emphasis role=\"bold\">Overrides</emphasis> array of <xref linkend=\"LaunchTemplate\"/>. </para>\n        <para>The range is 1–20 and the default is 2. </para>\n      ",
+                    "documentation": "\n        <p>The number of Spot pools to use to allocate your Spot capacity. The Spot pools are\n            determined from the different instance types in the <b>Overrides</b> array of <a>LaunchTemplate</a>. </p>\n        <p>The range is 1–20 and the default is 2. </p>\n      ",
+                    "shape_name": "SpotInstancePools"
+                  },
+                  "SpotMaxPrice": {
+                    "type": "string",
+                    "zonbookDocumentation": "\n        <para>The maximum price per unit hour that you are willing to pay for a Spot Instance. If\n            you leave this value blank (which is the default), the maximum Spot price is set at the\n            On-Demand price. </para>\n      ",
+                    "documentation": "\n        <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. If\n            you leave this value blank (which is the default), the maximum Spot price is set at the\n            On-Demand price. </p>\n      ",
+                    "shape_name": "SpotPrice",
+                    "min_length": 1,
+                    "max_length": 255
+                  }
+                },
+                "zonbookDocumentation": "\n        <para>The instances distribution to use. </para>\n        <para>If you leave this parameter unspecified when creating the group, the default values\n            are used.</para>\n      ",
+                "documentation": "\n        <p>The instances distribution to use. </p>\n        <p>If you leave this parameter unspecified when creating the group, the default values\n            are used.</p>\n      ",
+                "shape_name": "InstancesDistribution"
+              }
+            },
+            "zonbookDocumentation": "\n        <para>The mixed instances policy to use to specify the updates. If you specify this\n            parameter, you can't specify a launch configuration or a launch template. </para>\n      ",
+            "documentation": "\n        <p>The mixed instances policy to use to specify the updates. If you specify this\n            parameter, you can't specify a launch configuration or a launch template. </p>\n      ",
+            "shape_name": "MixedInstancesPolicy"
           },
           "MinSize": {
             "type": "integer",
@@ -1739,8 +2105,8 @@
           "PlacementGroup": {
             "type": "string",
             "pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*",
-            "zonbookDocumentation": "\n        <para>The name of the placement group into which you'll launch your instances, if any. For\n            more information, see <ulink type=\"documentation\" url=\"AWSEC2/latest/UserGuide/placement-groups.html\">Placement Groups</ulink> in the\n                <emphasis>Amazon Elastic Compute Cloud User Guide</emphasis>.</para>\n      ",
-            "documentation": "\n        <p>The name of the placement group into which you'll launch your instances, if any. For\n            more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html\">Placement Groups</a> in the\n                <i>Amazon Elastic Compute Cloud User Guide</i>.</p>\n      ",
+            "zonbookDocumentation": "\n        <para>The name of the placement group into which to launch your instances, if any. For more\n            information, see <ulink type=\"documentation\" url=\"AWSEC2/latest/UserGuide/placement-groups.html\">Placement Groups</ulink> in the\n                <emphasis>Amazon Elastic Compute Cloud User Guide</emphasis>.</para>\n      ",
+            "documentation": "\n        <p>The name of the placement group into which to launch your instances, if any. For more\n            information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html\">Placement Groups</a> in the\n                <i>Amazon Elastic Compute Cloud User Guide</i>.</p>\n      ",
             "shape_name": "XmlStringMaxLen255",
             "min_length": 1,
             "max_length": 255
@@ -1840,7 +2206,7 @@
           "shape_name": "ServiceLinkedRoleFailure"
         }
       ],
-      "documentation": "\n        <p>Updates the configuration for the specified Auto Scaling group.</p>\n        <p>The new settings take effect on any scaling activities after this call returns.\n            Scaling activities that are currently in progress aren't affected.</p>\n        <p>To update an Auto Scaling group with a launch configuration with\n                <code>InstanceMonitoring</code> set to <code>false</code>, you must first disable\n            the collection of group metrics. Otherwise, you will get an error. If you have\n            previously enabled the collection of group metrics, you can disable it using <a>DisableMetricsCollection</a>.</p>\n        <p>Note the following:</p>\n        <ul>\n            <li>\n                <p>If you specify a new value for <code>MinSize</code> without specifying a value\n                    for <code>DesiredCapacity</code>, and the new <code>MinSize</code> is larger\n                    than the current size of the group, we implicitly call <a>SetDesiredCapacity</a> to set the size of the group to the new value\n                    of <code>MinSize</code>.</p>\n            </li>\n            <li>\n                <p>If you specify a new value for <code>MaxSize</code> without specifying a value\n                    for <code>DesiredCapacity</code>, and the new <code>MaxSize</code> is smaller\n                    than the current size of the group, we implicitly call <a>SetDesiredCapacity</a> to set the size of the group to the new value\n                    of <code>MaxSize</code>.</p>\n            </li>\n            <li>\n                <p>All other optional parameters are left unchanged if not specified.</p>\n            </li>\n         </ul>\n        \n      "
+      "documentation": "\n        <p>Updates the configuration for the specified Auto Scaling group.</p>\n        <p>The new settings take effect on any scaling activities after this call returns.\n            Scaling activities that are currently in progress aren't affected.</p>\n        <p>To update an Auto Scaling group with a launch configuration with\n                <code>InstanceMonitoring</code> set to <code>false</code>, you must first disable\n            the collection of group metrics. Otherwise, you get an error. If you have previously\n            enabled the collection of group metrics, you can disable it using <a>DisableMetricsCollection</a>.</p>\n        <p>Note the following:</p>\n        <ul>\n            <li>\n                <p>If you specify a new value for <code>MinSize</code> without specifying a value\n                    for <code>DesiredCapacity</code>, and the new <code>MinSize</code> is larger\n                    than the current size of the group, we implicitly call <a>SetDesiredCapacity</a> to set the size of the group to the new value\n                    of <code>MinSize</code>.</p>\n            </li>\n            <li>\n                <p>If you specify a new value for <code>MaxSize</code> without specifying a value\n                    for <code>DesiredCapacity</code>, and the new <code>MaxSize</code> is smaller\n                    than the current size of the group, we implicitly call <a>SetDesiredCapacity</a> to set the size of the group to the new value\n                    of <code>MaxSize</code>.</p>\n            </li>\n            <li>\n                <p>All other optional parameters are left unchanged if not specified.</p>\n            </li>\n         </ul>\n        \n      "
     },
     "DescribeAutoScalingInstances": {
       "name": "DescribeAutoScalingInstances",
@@ -2170,7 +2536,7 @@
           "shape_name": "ResourceContentionFault"
         }
       ],
-      "documentation": "\n        <p>Suspends the specified automatic scaling processes, or all processes, for the\n            specified Auto Scaling group.</p>\n        <p>Note that if you suspend either the <code>Launch</code> or <code>Terminate</code>\n            process types, it can prevent other process types from functioning properly.</p>\n        <p>To resume processes that have been suspended, use <a>ResumeProcesses</a>.</p>\n        <p>For more information, see <a href=\"http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html\">Suspending and\n                Resuming Scaling Processes</a> in the <i>Amazon EC2 Auto Scaling User\n                Guide</i>.</p>\n        \n      "
+      "documentation": "\n        <p>Suspends the specified automatic scaling processes, or all processes, for the\n            specified Auto Scaling group.</p>\n        <p>If you suspend either the <code>Launch</code> or <code>Terminate</code> process types,\n            it can prevent other process types from functioning properly.</p>\n        <p>To resume processes that have been suspended, use <a>ResumeProcesses</a>.</p>\n        <p>For more information, see <a href=\"http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html\">Suspending and\n                Resuming Scaling Processes</a> in the <i>Amazon EC2 Auto Scaling User\n                Guide</i>.</p>\n        \n      "
     },
     "ResumeProcesses": {
       "name": "ResumeProcesses",
@@ -2333,8 +2699,8 @@
           "HealthStatus": {
             "type": "string",
             "pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*",
-            "zonbookDocumentation": "\n        <para>The health status of the instance. Set to <code>Healthy</code> if you want the\n            instance to remain in service. Set to <code>Unhealthy</code> if you want the instance to\n            be out of service. Amazon EC2 Auto Scaling will terminate and replace the unhealthy\n            instance.</para>\n      ",
-            "documentation": "\n        <p>The health status of the instance. Set to <code>Healthy</code> if you want the\n            instance to remain in service. Set to <code>Unhealthy</code> if you want the instance to\n            be out of service. Amazon EC2 Auto Scaling will terminate and replace the unhealthy\n            instance.</p>\n      ",
+            "zonbookDocumentation": "\n        <para>The health status of the instance. Set to <code>Healthy</code> to have the instance\n            remain in service. Set to <code>Unhealthy</code> to have the instance be out of service.\n            Amazon EC2 Auto Scaling terminates and replaces the unhealthy instance.</para>\n      ",
+            "documentation": "\n        <p>The health status of the instance. Set to <code>Healthy</code> to have the instance\n            remain in service. Set to <code>Unhealthy</code> to have the instance be out of service.\n            Amazon EC2 Auto Scaling terminates and replaces the unhealthy instance.</p>\n      ",
             "required": true,
             "shape_name": "XmlStringMaxLen32",
             "min_length": 1,
@@ -2342,8 +2708,8 @@
           },
           "ShouldRespectGracePeriod": {
             "type": "boolean",
-            "zonbookDocumentation": "\n        <para>If the Auto Scaling group of the specified instance has a\n                <code>HealthCheckGracePeriod</code> specified for the group, by default, this call\n            will respect the grace period. Set this to <code>False</code>, if you do not want the\n            call to respect the grace period associated with the group.</para>\n        <para>For more information, see the description of the health check grace period for <xref linkend=\"CreateAutoScalingGroup\"/>.</para>\n      ",
-            "documentation": "\n        <p>If the Auto Scaling group of the specified instance has a\n                <code>HealthCheckGracePeriod</code> specified for the group, by default, this call\n            will respect the grace period. Set this to <code>False</code>, if you do not want the\n            call to respect the grace period associated with the group.</p>\n        <p>For more information, see the description of the health check grace period for <a>CreateAutoScalingGroup</a>.</p>\n      ",
+            "zonbookDocumentation": "\n        <para>If the Auto Scaling group of the specified instance has a\n                <code>HealthCheckGracePeriod</code> specified for the group, by default, this call\n            respects the grace period. Set this to <code>False</code>, to have the call not respect\n            the grace period associated with the group.</para>\n        <para>For more information about the health check grace period, see <xref linkend=\"CreateAutoScalingGroup\"/>.</para>\n      ",
+            "documentation": "\n        <p>If the Auto Scaling group of the specified instance has a\n                <code>HealthCheckGracePeriod</code> specified for the group, by default, this call\n            respects the grace period. Set this to <code>False</code>, to have the call not respect\n            the grace period associated with the group.</p>\n        <p>For more information about the health check grace period, see <a>CreateAutoScalingGroup</a>.</p>\n      ",
             "shape_name": "ShouldRespectGracePeriod"
           }
         },
@@ -2510,7 +2876,7 @@
           "shape_name": "ResourceContentionFault"
         }
       ],
-      "documentation": "\n        <p>Detaches one or more Classic Load Balancers from the specified Auto Scaling\n            group.</p>\n        <p>Note that this operation detaches only Classic Load Balancers. If you have Application\n            Load Balancers, use <a>DetachLoadBalancerTargetGroups</a> instead.</p>\n        <p>When you detach a load balancer, it enters the <code>Removing</code> state while\n            deregistering the instances in the group. When all instances are deregistered, then you\n            can no longer describe the load balancer using <a>DescribeLoadBalancers</a>.\n            Note that the instances remain running.</p>\n        \n      "
+      "documentation": "\n        <p>Detaches one or more Classic Load Balancers from the specified Auto Scaling\n            group.</p>\n        <p>This operation detaches only Classic Load Balancers. If you have Application Load\n            Balancers, use <a>DetachLoadBalancerTargetGroups</a> instead.</p>\n        <p>When you detach a load balancer, it enters the <code>Removing</code> state while\n            deregistering the instances in the group. When all instances are deregistered, then you\n            can no longer describe the load balancer using <a>DescribeLoadBalancers</a>.\n            The instances remain running.</p>\n        \n      "
     },
     "AttachLoadBalancerTargetGroups": {
       "name": "AttachLoadBalancerTargetGroups",
@@ -2780,7 +3146,7 @@
           "shape_name": "ResourceContentionFault"
         }
       ],
-      "documentation": "\n        <p>Creates or updates a scheduled scaling action for an Auto Scaling group. When updating\n            a scheduled scaling action, if you leave a parameter unspecified, the corresponding\n            value remains unchanged.</p>\n        <p>For more information, see <a href=\"http://docs.aws.amazon.com/autoscaling/ec2/userguide/schedule_time.html\">Scheduled Scaling</a> in the\n                <i>Amazon EC2 Auto Scaling User Guide</i>.</p>\n        \n      "
+      "documentation": "\n        <p>Creates or updates a scheduled scaling action for an Auto Scaling group. If you leave\n            a parameter unspecified when updating a scheduled scaling action, the corresponding\n            value remains unchanged.</p>\n        <p>For more information, see <a href=\"http://docs.aws.amazon.com/autoscaling/ec2/userguide/schedule_time.html\">Scheduled Scaling</a> in the\n                <i>Amazon EC2 Auto Scaling User Guide</i>.</p>\n        \n      "
     },
     "DescribeScheduledActions": {
       "name": "DescribeScheduledActions",
@@ -2885,8 +3251,8 @@
                 },
                 "StartTime": {
                   "type": "timestamp",
-                  "zonbookDocumentation": "\n        <para>The date and time that the action is scheduled to begin. This date and time can be up\n            to one month in the future.</para>\n        <para>When <code>StartTime</code> and <code>EndTime</code> are specified with\n                <code>Recurrence</code>, they form the boundaries of when the recurring action will\n            start and stop.</para>\n      ",
-                  "documentation": "\n        <p>The date and time that the action is scheduled to begin. This date and time can be up\n            to one month in the future.</p>\n        <p>When <code>StartTime</code> and <code>EndTime</code> are specified with\n                <code>Recurrence</code>, they form the boundaries of when the recurring action will\n            start and stop.</p>\n      ",
+                  "zonbookDocumentation": "\n        <para>The date and time that the action is scheduled to begin. This date and time can be up\n            to one month in the future.</para>\n        <para>When <code>StartTime</code> and <code>EndTime</code> are specified with\n                <code>Recurrence</code>, they form the boundaries of when the recurring action\n            starts and stops.</para>\n      ",
+                  "documentation": "\n        <p>The date and time that the action is scheduled to begin. This date and time can be up\n            to one month in the future.</p>\n        <p>When <code>StartTime</code> and <code>EndTime</code> are specified with\n                <code>Recurrence</code>, they form the boundaries of when the recurring action\n            starts and stops.</p>\n      ",
                   "shape_name": "TimestampType"
                 },
                 "EndTime": {
@@ -3045,8 +3411,8 @@
           },
           "ScheduledUpdateGroupActions": {
             "type": "list",
-            "zonbookDocumentation": "\n        <para>One or more scheduled actions. The maximum number allowed is 50. \n        </para>\n      ",
-            "documentation": "\n        <p>One or more scheduled actions. The maximum number allowed is 50. \n        </p>\n      ",
+            "zonbookDocumentation": "\n        <para>One or more scheduled actions. The maximum number allowed is 50. </para>\n      ",
+            "documentation": "\n        <p>One or more scheduled actions. The maximum number allowed is 50. </p>\n      ",
             "required": true,
             "shape_name": "ScheduledUpdateGroupActionRequests",
             "members": {
@@ -3102,8 +3468,8 @@
                   "shape_name": "AutoScalingGroupDesiredCapacity"
                 }
               },
-              "zonbookDocumentation": "\n        <para>Describes one or more scheduled scaling action updates for a specified Auto Scaling\n            group. Used in combination with <xref linkend=\"BatchPutScheduledUpdateGroupAction\"/>.\n            </para>\n         <para>When updating a scheduled scaling action, all optional parameters are left unchanged if not specified. </para>\n      ",
-              "documentation": "\n        <p>Describes one or more scheduled scaling action updates for a specified Auto Scaling\n            group. Used in combination with <a>BatchPutScheduledUpdateGroupAction</a>.\n            </p>\n         <p>When updating a scheduled scaling action, all optional parameters are left unchanged if not specified. </p>\n      ",
+              "zonbookDocumentation": "\n        <para>Describes one or more scheduled scaling action updates for a specified Auto Scaling\n            group. Used in combination with <xref linkend=\"BatchPutScheduledUpdateGroupAction\"/>. </para>\n        <para>When updating a scheduled scaling action, all optional parameters are left unchanged\n            if not specified. </para>\n      ",
+              "documentation": "\n        <p>Describes one or more scheduled scaling action updates for a specified Auto Scaling\n            group. Used in combination with <a>BatchPutScheduledUpdateGroupAction</a>. </p>\n        <p>When updating a scheduled scaling action, all optional parameters are left unchanged\n            if not specified. </p>\n      ",
               "shape_name": "ScheduledUpdateGroupActionRequest"
             }
           }
@@ -3211,7 +3577,7 @@
           "shape_name": "ResourceContentionFault"
         }
       ],
-      "documentation": "        \n        <p>Creates or updates one or more scheduled scaling actions for an Auto Scaling group. When updating\n            a scheduled scaling action, if you leave a parameter unspecified, the corresponding\n            value remains unchanged.</p>\n      "
+      "documentation": "\n        <p>Creates or updates one or more scheduled scaling actions for an Auto Scaling group. If\n            you leave a parameter unspecified when updating a scheduled scaling action, the\n            corresponding value remains unchanged.</p>\n      "
     },
     "BatchDeleteScheduledAction": {
       "name": "BatchDeleteScheduledAction",
@@ -3230,8 +3596,8 @@
           },
           "ScheduledActionNames": {
             "type": "list",
-            "zonbookDocumentation": "\n        <para>The names of the scheduled actions to delete. The maximum number allowed is 50. </para>\n      ",
-            "documentation": "\n        <p>The names of the scheduled actions to delete. The maximum number allowed is 50. </p>\n      ",
+            "zonbookDocumentation": "\n        <para>The names of the scheduled actions to delete. The maximum number allowed is 50.\n        </para>\n      ",
+            "documentation": "\n        <p>The names of the scheduled actions to delete. The maximum number allowed is 50.\n        </p>\n      ",
             "required": true,
             "shape_name": "ScheduledActionNames",
             "members": {
@@ -3313,7 +3679,7 @@
           "shape_name": "ResourceContentionFault"
         }
       ],
-      "documentation": "\n        <p>Deletes one or more scheduled actions for the specified Auto Scaling\n            group.</p>\n\n      "
+      "documentation": "\n        <p>Deletes one or more scheduled actions for the specified Auto Scaling group.</p>\n\n      "
     },
     "DescribeAdjustmentTypes": {
       "name": "DescribeAdjustmentTypes",
@@ -3339,8 +3705,8 @@
                   "max_length": 255
                 }
               },
-              "zonbookDocumentation": "\n        <para>Describes a policy adjustment type.</para>\n        <para>For more information, see <ulink type=\"documentation\" url=\"autoscaling/ec2/DeveloperGuide/as-scale-based-on-demand.html\">Dynamic\n                Scaling</ulink> in the <emphasis>Amazon EC2 Auto Scaling User\n            Guide</emphasis>.</para>\n      ",
-              "documentation": "\n        <p>Describes a policy adjustment type.</p>\n        <p>For more information, see <a href=\"http://docs.aws.amazon.com/autoscaling/ec2/DeveloperGuide/as-scale-based-on-demand.html\">Dynamic\n                Scaling</a> in the <i>Amazon EC2 Auto Scaling User\n            Guide</i>.</p>\n      ",
+              "zonbookDocumentation": "\n        <para>Describes a policy adjustment type.</para>\n        <para>For more information, see <ulink type=\"documentation\" url=\"autoscaling/ec2/userguide/as-scale-based-on-demand.html\">Dynamic\n                Scaling</ulink> in the <emphasis>Amazon EC2 Auto Scaling User\n            Guide</emphasis>.</para>\n      ",
+              "documentation": "\n        <p>Describes a policy adjustment type.</p>\n        <p>For more information, see <a href=\"http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html\">Dynamic\n                Scaling</a> in the <i>Amazon EC2 Auto Scaling User\n            Guide</i>.</p>\n      ",
               "shape_name": "AdjustmentType"
             }
           }
@@ -3474,8 +3840,8 @@
                   "shape_name": "PolicyIncrement"
                 }
               },
-              "zonbookDocumentation": "\n        <para>Describes an adjustment based on the difference between the value of the aggregated\n            CloudWatch metric and the breach threshold that you've defined for the alarm.</para>\n        <para>For the following examples, suppose that you have an alarm with a breach threshold of\n            50:</para>\n        <itemizedlist>\n            <listitem>\n                <para>If you want the adjustment to be triggered when the metric is greater than or\n                    equal to 50 and less than 60, specify a lower bound of 0 and an upper bound of\n                    10.</para>\n            </listitem>\n            <listitem>\n                <para>If you want the adjustment to be triggered when the metric is greater than 40\n                    and less than or equal to 50, specify a lower bound of -10 and an upper bound of\n                    0.</para>\n            </listitem>\n        </itemizedlist>\n        <para>There are a few rules for the step adjustments for your step policy:</para>\n        <itemizedlist>\n            <listitem>\n                <para>The ranges of your step adjustments can't overlap or have a gap.</para>\n            </listitem>\n            <listitem>\n                <para>At most one step adjustment can have a null lower bound. If one step\n                    adjustment has a negative lower bound, then there must be a step adjustment with\n                    a null lower bound.</para>\n            </listitem>\n            <listitem>\n                <para>At most one step adjustment can have a null upper bound. If one step\n                    adjustment has a positive upper bound, then there must be a step adjustment with\n                    a null upper bound.</para>\n            </listitem>\n            <listitem>\n                <para>The upper and lower bound can't be null in the same step adjustment.</para>\n            </listitem>\n        </itemizedlist>\n      ",
-              "documentation": "\n        <p>Describes an adjustment based on the difference between the value of the aggregated\n            CloudWatch metric and the breach threshold that you've defined for the alarm.</p>\n        <p>For the following examples, suppose that you have an alarm with a breach threshold of\n            50:</p>\n        <ul>\n            <li>\n                <p>If you want the adjustment to be triggered when the metric is greater than or\n                    equal to 50 and less than 60, specify a lower bound of 0 and an upper bound of\n                    10.</p>\n            </li>\n            <li>\n                <p>If you want the adjustment to be triggered when the metric is greater than 40\n                    and less than or equal to 50, specify a lower bound of -10 and an upper bound of\n                    0.</p>\n            </li>\n         </ul>\n        <p>There are a few rules for the step adjustments for your step policy:</p>\n        <ul>\n            <li>\n                <p>The ranges of your step adjustments can't overlap or have a gap.</p>\n            </li>\n            <li>\n                <p>At most one step adjustment can have a null lower bound. If one step\n                    adjustment has a negative lower bound, then there must be a step adjustment with\n                    a null lower bound.</p>\n            </li>\n            <li>\n                <p>At most one step adjustment can have a null upper bound. If one step\n                    adjustment has a positive upper bound, then there must be a step adjustment with\n                    a null upper bound.</p>\n            </li>\n            <li>\n                <p>The upper and lower bound can't be null in the same step adjustment.</p>\n            </li>\n         </ul>\n      ",
+              "zonbookDocumentation": "\n        <para>Describes an adjustment based on the difference between the value of the aggregated\n            CloudWatch metric and the breach threshold that you've defined for the alarm.</para>\n        <para>For the following examples, suppose that you have an alarm with a breach threshold of\n            50:</para>\n        <itemizedlist>\n            <listitem>\n                <para>To trigger the adjustment when the metric is greater than or equal to 50 and\n                    less than 60, specify a lower bound of 0 and an upper bound of 10.</para>\n            </listitem>\n            <listitem>\n                <para>To trigger the adjustment when the metric is greater than 40 and less than or\n                    equal to 50, specify a lower bound of -10 and an upper bound of 0.</para>\n            </listitem>\n        </itemizedlist>\n        <para>There are a few rules for the step adjustments for your step policy:</para>\n        <itemizedlist>\n            <listitem>\n                <para>The ranges of your step adjustments can't overlap or have a gap.</para>\n            </listitem>\n            <listitem>\n                <para>At most, one step adjustment can have a null lower bound. If one step\n                    adjustment has a negative lower bound, then there must be a step adjustment with\n                    a null lower bound.</para>\n            </listitem>\n            <listitem>\n                <para>At most, one step adjustment can have a null upper bound. If one step\n                    adjustment has a positive upper bound, then there must be a step adjustment with\n                    a null upper bound.</para>\n            </listitem>\n            <listitem>\n                <para>The upper and lower bound can't be null in the same step adjustment.</para>\n            </listitem>\n        </itemizedlist>\n      ",
+              "documentation": "\n        <p>Describes an adjustment based on the difference between the value of the aggregated\n            CloudWatch metric and the breach threshold that you've defined for the alarm.</p>\n        <p>For the following examples, suppose that you have an alarm with a breach threshold of\n            50:</p>\n        <ul>\n            <li>\n                <p>To trigger the adjustment when the metric is greater than or equal to 50 and\n                    less than 60, specify a lower bound of 0 and an upper bound of 10.</p>\n            </li>\n            <li>\n                <p>To trigger the adjustment when the metric is greater than 40 and less than or\n                    equal to 50, specify a lower bound of -10 and an upper bound of 0.</p>\n            </li>\n         </ul>\n        <p>There are a few rules for the step adjustments for your step policy:</p>\n        <ul>\n            <li>\n                <p>The ranges of your step adjustments can't overlap or have a gap.</p>\n            </li>\n            <li>\n                <p>At most, one step adjustment can have a null lower bound. If one step\n                    adjustment has a negative lower bound, then there must be a step adjustment with\n                    a null lower bound.</p>\n            </li>\n            <li>\n                <p>At most, one step adjustment can have a null upper bound. If one step\n                    adjustment has a positive upper bound, then there must be a step adjustment with\n                    a null upper bound.</p>\n            </li>\n            <li>\n                <p>The upper and lower bound can't be null in the same step adjustment.</p>\n            </li>\n         </ul>\n      ",
               "shape_name": "StepAdjustment"
             }
           },
@@ -3507,8 +3873,8 @@
                   "ResourceLabel": {
                     "type": "string",
                     "pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*",
-                    "zonbookDocumentation": "\n        <para>Identifies the resource associated with the metric type. The following predefined\n            metrics are available:</para>\n        <itemizedlist>\n            <listitem>\n                <para>\n                  <code>ASGAverageCPUUtilization</code> - average CPU utilization of the Auto\n                    Scaling group</para>\n            </listitem>\n            <listitem>\n                <para>\n                  <code>ASGAverageNetworkIn</code> - average number of bytes received on all\n                    network interfaces by the Auto Scaling group</para>\n            </listitem>\n            <listitem>\n                <para>\n                  <code>ASGAverageNetworkOut</code> - average number of bytes sent out on all\n                    network interfaces by the Auto Scaling group</para>\n            </listitem>\n            <listitem>\n                <para>\n                  <code>ALBRequestCountPerTarget</code> - number of requests completed per\n                    target in an Application Load Balancer target group</para>\n            </listitem>\n        </itemizedlist>\n        <para>For predefined metric types <code>ASGAverageCPUUtilization</code>,\n                <code>ASGAverageNetworkIn</code>, and <code>ASGAverageNetworkOut</code>, the\n            parameter must not be specified as the resource associated with the metric type is the\n            Auto Scaling group. For predefined metric type <code>ALBRequestCountPerTarget</code>,\n            the parameter must be specified in the format:\n                    <code>app/<emphasis>load-balancer-name</emphasis>/<emphasis>load-balancer-id</emphasis>/targetgroup/<emphasis>target-group-name</emphasis>/<emphasis>target-group-id</emphasis>\n            </code>,\n            where\n                    <code>app/<emphasis>load-balancer-name</emphasis>/<emphasis>load-balancer-id</emphasis>\n            </code>\n            is the final portion of the load balancer ARN, and\n                    <code>targetgroup/<emphasis>target-group-name</emphasis>/<emphasis>target-group-id</emphasis>\n            </code>\n            is the final portion of the target group ARN. The target group must be attached to the\n            Auto Scaling group.</para>\n      ",
-                    "documentation": "\n        <p>Identifies the resource associated with the metric type. The following predefined\n            metrics are available:</p>\n        <ul>\n            <li>\n                <p>\n                  <code>ASGAverageCPUUtilization</code> - average CPU utilization of the Auto\n                    Scaling group</p>\n            </li>\n            <li>\n                <p>\n                  <code>ASGAverageNetworkIn</code> - average number of bytes received on all\n                    network interfaces by the Auto Scaling group</p>\n            </li>\n            <li>\n                <p>\n                  <code>ASGAverageNetworkOut</code> - average number of bytes sent out on all\n                    network interfaces by the Auto Scaling group</p>\n            </li>\n            <li>\n                <p>\n                  <code>ALBRequestCountPerTarget</code> - number of requests completed per\n                    target in an Application Load Balancer target group</p>\n            </li>\n         </ul>\n        <p>For predefined metric types <code>ASGAverageCPUUtilization</code>,\n                <code>ASGAverageNetworkIn</code>, and <code>ASGAverageNetworkOut</code>, the\n            parameter must not be specified as the resource associated with the metric type is the\n            Auto Scaling group. For predefined metric type <code>ALBRequestCountPerTarget</code>,\n            the parameter must be specified in the format:\n                    <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i>/targetgroup/<i>target-group-name</i>/<i>target-group-id</i>\n            </code>,\n            where\n                    <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i>\n            </code>\n            is the final portion of the load balancer ARN, and\n                    <code>targetgroup/<i>target-group-name</i>/<i>target-group-id</i>\n            </code>\n            is the final portion of the target group ARN. The target group must be attached to the\n            Auto Scaling group.</p>\n      ",
+                    "zonbookDocumentation": "\n        <para>Identifies the resource associated with the metric type. The following predefined\n            metrics are available:</para>\n        <itemizedlist>\n            <listitem>\n                <para>\n                  <code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto\n                    Scaling group.</para>\n            </listitem>\n            <listitem>\n                <para>\n                  <code>ASGAverageNetworkIn</code> - Average number of bytes received on all\n                    network interfaces by the Auto Scaling group.</para>\n            </listitem>\n            <listitem>\n                <para>\n                  <code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all\n                    network interfaces by the Auto Scaling group.</para>\n            </listitem>\n            <listitem>\n                <para>\n                  <code>ALBRequestCountPerTarget</code> - Number of requests completed per\n                    target in an Application Load Balancer target group.</para>\n            </listitem>\n        </itemizedlist>\n        <para>For predefined metric types <code>ASGAverageCPUUtilization</code>,\n                <code>ASGAverageNetworkIn</code>, and <code>ASGAverageNetworkOut</code>, the\n            parameter must not be specified as the resource associated with the metric type is the\n            Auto Scaling group. For predefined metric type <code>ALBRequestCountPerTarget</code>,\n            the parameter must be specified in the format:\n                    <code>app/<emphasis>load-balancer-name</emphasis>/<emphasis>load-balancer-id</emphasis>/targetgroup/<emphasis>target-group-name</emphasis>/<emphasis>target-group-id</emphasis>\n            </code>,\n            where\n                    <code>app/<emphasis>load-balancer-name</emphasis>/<emphasis>load-balancer-id</emphasis>\n            </code>\n            is the final portion of the load balancer ARN, and\n                    <code>targetgroup/<emphasis>target-group-name</emphasis>/<emphasis>target-group-id</emphasis>\n            </code>\n            is the final portion of the target group ARN. The target group must be attached to the\n            Auto Scaling group.</para>\n      ",
+                    "documentation": "\n        <p>Identifies the resource associated with the metric type. The following predefined\n            metrics are available:</p>\n        <ul>\n            <li>\n                <p>\n                  <code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto\n                    Scaling group.</p>\n            </li>\n            <li>\n                <p>\n                  <code>ASGAverageNetworkIn</code> - Average number of bytes received on all\n                    network interfaces by the Auto Scaling group.</p>\n            </li>\n            <li>\n                <p>\n                  <code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all\n                    network interfaces by the Auto Scaling group.</p>\n            </li>\n            <li>\n                <p>\n                  <code>ALBRequestCountPerTarget</code> - Number of requests completed per\n                    target in an Application Load Balancer target group.</p>\n            </li>\n         </ul>\n        <p>For predefined metric types <code>ASGAverageCPUUtilization</code>,\n                <code>ASGAverageNetworkIn</code>, and <code>ASGAverageNetworkOut</code>, the\n            parameter must not be specified as the resource associated with the metric type is the\n            Auto Scaling group. For predefined metric type <code>ALBRequestCountPerTarget</code>,\n            the parameter must be specified in the format:\n                    <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i>/targetgroup/<i>target-group-name</i>/<i>target-group-id</i>\n            </code>,\n            where\n                    <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i>\n            </code>\n            is the final portion of the load balancer ARN, and\n                    <code>targetgroup/<i>target-group-name</i>/<i>target-group-id</i>\n            </code>\n            is the final portion of the target group ARN. The target group must be attached to the\n            Auto Scaling group.</p>\n      ",
                     "shape_name": "XmlStringMaxLen1023",
                     "min_length": 1,
                     "max_length": 1023
@@ -3597,8 +3963,8 @@
               },
               "DisableScaleIn": {
                 "type": "boolean",
-                "zonbookDocumentation": "\n        <para>Indicates whether scale in by the target tracking policy is disabled. If scale in is\n            disabled, the target tracking policy won't remove instances from the Auto Scaling group.\n            Otherwise, the target tracking policy can remove instances from the Auto Scaling group.\n            The default is disabled.</para>\n      ",
-                "documentation": "\n        <p>Indicates whether scale in by the target tracking policy is disabled. If scale in is\n            disabled, the target tracking policy won't remove instances from the Auto Scaling group.\n            Otherwise, the target tracking policy can remove instances from the Auto Scaling group.\n            The default is disabled.</p>\n      ",
+                "zonbookDocumentation": "\n        <para>Indicates whether scaling in by the target tracking policy is disabled. If scaling in\n            is disabled, the target tracking policy doesn't remove instances from the Auto Scaling\n            group. Otherwise, the target tracking policy can remove instances from the Auto Scaling\n            group. The default is disabled.</para>\n      ",
+                "documentation": "\n        <p>Indicates whether scaling in by the target tracking policy is disabled. If scaling in\n            is disabled, the target tracking policy doesn't remove instances from the Auto Scaling\n            group. Otherwise, the target tracking policy can remove instances from the Auto Scaling\n            group. The default is disabled.</p>\n      ",
                 "shape_name": "DisableScaleIn"
               }
             },
@@ -3711,7 +4077,7 @@
           "shape_name": "ServiceLinkedRoleFailure"
         }
       ],
-      "documentation": "\n        <p>Creates or updates a policy for an Auto Scaling group. To update an existing policy,\n            use the existing policy name and set the parameters you want to change. Any existing\n            parameter not changed in an update to an existing policy is not changed in this update\n            request.</p>\n        <p>If you exceed your maximum limit of step adjustments, which by default is 20 per\n            region, the call fails. For information about updating this limit, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html\">AWS Service\n                Limits</a> in the <i>Amazon Web Services General\n            Reference</i>.</p>\n        \n      "
+      "documentation": "\n        <p>Creates or updates a policy for an Auto Scaling group. To update an existing policy,\n            use the existing policy name and set the parameters to change. Any existing parameter\n            not changed in an update to an existing policy is not changed in this update\n            request.</p>\n        <p>If you exceed your maximum limit of step adjustments, which by default is 20 per\n            region, the call fails. For information about updating this limit, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html\">AWS Service\n                Limits</a> in the <i>Amazon Web Services General\n            Reference</i>.</p>\n        \n      "
     },
     "DescribePolicies": {
       "name": "DescribePolicies",
@@ -3729,8 +4095,8 @@
           },
           "PolicyNames": {
             "type": "list",
-            "zonbookDocumentation": "\n        <para>The names of one or more policies. If you omit this parameter, all policies are\n            described. If an group name is provided, the results are limited to that group. This\n            list is limited to 50 items. If you specify an unknown policy name, it is ignored with\n            no error.</para>\n      ",
-            "documentation": "\n        <p>The names of one or more policies. If you omit this parameter, all policies are\n            described. If an group name is provided, the results are limited to that group. This\n            list is limited to 50 items. If you specify an unknown policy name, it is ignored with\n            no error.</p>\n      ",
+            "zonbookDocumentation": "\n        <para>The names of one or more policies. If you omit this parameter, all policies are\n            described. If a group name is provided, the results are limited to that group. This list\n            is limited to 50 items. If you specify an unknown policy name, it is ignored with no\n            error.</para>\n      ",
+            "documentation": "\n        <p>The names of one or more policies. If you omit this parameter, all policies are\n            described. If a group name is provided, the results are limited to that group. This list\n            is limited to 50 items. If you specify an unknown policy name, it is ignored with no\n            error.</p>\n      ",
             "shape_name": "PolicyNames",
             "members": {
               "type": "string",
@@ -3881,8 +4247,8 @@
                         "shape_name": "PolicyIncrement"
                       }
                     },
-                    "zonbookDocumentation": "\n        <para>Describes an adjustment based on the difference between the value of the aggregated\n            CloudWatch metric and the breach threshold that you've defined for the alarm.</para>\n        <para>For the following examples, suppose that you have an alarm with a breach threshold of\n            50:</para>\n        <itemizedlist>\n            <listitem>\n                <para>If you want the adjustment to be triggered when the metric is greater than or\n                    equal to 50 and less than 60, specify a lower bound of 0 and an upper bound of\n                    10.</para>\n            </listitem>\n            <listitem>\n                <para>If you want the adjustment to be triggered when the metric is greater than 40\n                    and less than or equal to 50, specify a lower bound of -10 and an upper bound of\n                    0.</para>\n            </listitem>\n        </itemizedlist>\n        <para>There are a few rules for the step adjustments for your step policy:</para>\n        <itemizedlist>\n            <listitem>\n                <para>The ranges of your step adjustments can't overlap or have a gap.</para>\n            </listitem>\n            <listitem>\n                <para>At most one step adjustment can have a null lower bound. If one step\n                    adjustment has a negative lower bound, then there must be a step adjustment with\n                    a null lower bound.</para>\n            </listitem>\n            <listitem>\n                <para>At most one step adjustment can have a null upper bound. If one step\n                    adjustment has a positive upper bound, then there must be a step adjustment with\n                    a null upper bound.</para>\n            </listitem>\n            <listitem>\n                <para>The upper and lower bound can't be null in the same step adjustment.</para>\n            </listitem>\n        </itemizedlist>\n      ",
-                    "documentation": "\n        <p>Describes an adjustment based on the difference between the value of the aggregated\n            CloudWatch metric and the breach threshold that you've defined for the alarm.</p>\n        <p>For the following examples, suppose that you have an alarm with a breach threshold of\n            50:</p>\n        <ul>\n            <li>\n                <p>If you want the adjustment to be triggered when the metric is greater than or\n                    equal to 50 and less than 60, specify a lower bound of 0 and an upper bound of\n                    10.</p>\n            </li>\n            <li>\n                <p>If you want the adjustment to be triggered when the metric is greater than 40\n                    and less than or equal to 50, specify a lower bound of -10 and an upper bound of\n                    0.</p>\n            </li>\n         </ul>\n        <p>There are a few rules for the step adjustments for your step policy:</p>\n        <ul>\n            <li>\n                <p>The ranges of your step adjustments can't overlap or have a gap.</p>\n            </li>\n            <li>\n                <p>At most one step adjustment can have a null lower bound. If one step\n                    adjustment has a negative lower bound, then there must be a step adjustment with\n                    a null lower bound.</p>\n            </li>\n            <li>\n                <p>At most one step adjustment can have a null upper bound. If one step\n                    adjustment has a positive upper bound, then there must be a step adjustment with\n                    a null upper bound.</p>\n            </li>\n            <li>\n                <p>The upper and lower bound can't be null in the same step adjustment.</p>\n            </li>\n         </ul>\n      ",
+                    "zonbookDocumentation": "\n        <para>Describes an adjustment based on the difference between the value of the aggregated\n            CloudWatch metric and the breach threshold that you've defined for the alarm.</para>\n        <para>For the following examples, suppose that you have an alarm with a breach threshold of\n            50:</para>\n        <itemizedlist>\n            <listitem>\n                <para>To trigger the adjustment when the metric is greater than or equal to 50 and\n                    less than 60, specify a lower bound of 0 and an upper bound of 10.</para>\n            </listitem>\n            <listitem>\n                <para>To trigger the adjustment when the metric is greater than 40 and less than or\n                    equal to 50, specify a lower bound of -10 and an upper bound of 0.</para>\n            </listitem>\n        </itemizedlist>\n        <para>There are a few rules for the step adjustments for your step policy:</para>\n        <itemizedlist>\n            <listitem>\n                <para>The ranges of your step adjustments can't overlap or have a gap.</para>\n            </listitem>\n            <listitem>\n                <para>At most, one step adjustment can have a null lower bound. If one step\n                    adjustment has a negative lower bound, then there must be a step adjustment with\n                    a null lower bound.</para>\n            </listitem>\n            <listitem>\n                <para>At most, one step adjustment can have a null upper bound. If one step\n                    adjustment has a positive upper bound, then there must be a step adjustment with\n                    a null upper bound.</para>\n            </listitem>\n            <listitem>\n                <para>The upper and lower bound can't be null in the same step adjustment.</para>\n            </listitem>\n        </itemizedlist>\n      ",
+                    "documentation": "\n        <p>Describes an adjustment based on the difference between the value of the aggregated\n            CloudWatch metric and the breach threshold that you've defined for the alarm.</p>\n        <p>For the following examples, suppose that you have an alarm with a breach threshold of\n            50:</p>\n        <ul>\n            <li>\n                <p>To trigger the adjustment when the metric is greater than or equal to 50 and\n                    less than 60, specify a lower bound of 0 and an upper bound of 10.</p>\n            </li>\n            <li>\n                <p>To trigger the adjustment when the metric is greater than 40 and less than or\n                    equal to 50, specify a lower bound of -10 and an upper bound of 0.</p>\n            </li>\n         </ul>\n        <p>There are a few rules for the step adjustments for your step policy:</p>\n        <ul>\n            <li>\n                <p>The ranges of your step adjustments can't overlap or have a gap.</p>\n            </li>\n            <li>\n                <p>At most, one step adjustment can have a null lower bound. If one step\n                    adjustment has a negative lower bound, then there must be a step adjustment with\n                    a null lower bound.</p>\n            </li>\n            <li>\n                <p>At most, one step adjustment can have a null upper bound. If one step\n                    adjustment has a positive upper bound, then there must be a step adjustment with\n                    a null upper bound.</p>\n            </li>\n            <li>\n                <p>The upper and lower bound can't be null in the same step adjustment.</p>\n            </li>\n         </ul>\n      ",
                     "shape_name": "StepAdjustment"
                   }
                 },
@@ -3955,8 +4321,8 @@
                         "ResourceLabel": {
                           "type": "string",
                           "pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*",
-                          "zonbookDocumentation": "\n        <para>Identifies the resource associated with the metric type. The following predefined\n            metrics are available:</para>\n        <itemizedlist>\n            <listitem>\n                <para>\n                  <code>ASGAverageCPUUtilization</code> - average CPU utilization of the Auto\n                    Scaling group</para>\n            </listitem>\n            <listitem>\n                <para>\n                  <code>ASGAverageNetworkIn</code> - average number of bytes received on all\n                    network interfaces by the Auto Scaling group</para>\n            </listitem>\n            <listitem>\n                <para>\n                  <code>ASGAverageNetworkOut</code> - average number of bytes sent out on all\n                    network interfaces by the Auto Scaling group</para>\n            </listitem>\n            <listitem>\n                <para>\n                  <code>ALBRequestCountPerTarget</code> - number of requests completed per\n                    target in an Application Load Balancer target group</para>\n            </listitem>\n        </itemizedlist>\n        <para>For predefined metric types <code>ASGAverageCPUUtilization</code>,\n                <code>ASGAverageNetworkIn</code>, and <code>ASGAverageNetworkOut</code>, the\n            parameter must not be specified as the resource associated with the metric type is the\n            Auto Scaling group. For predefined metric type <code>ALBRequestCountPerTarget</code>,\n            the parameter must be specified in the format:\n                    <code>app/<emphasis>load-balancer-name</emphasis>/<emphasis>load-balancer-id</emphasis>/targetgroup/<emphasis>target-group-name</emphasis>/<emphasis>target-group-id</emphasis>\n            </code>,\n            where\n                    <code>app/<emphasis>load-balancer-name</emphasis>/<emphasis>load-balancer-id</emphasis>\n            </code>\n            is the final portion of the load balancer ARN, and\n                    <code>targetgroup/<emphasis>target-group-name</emphasis>/<emphasis>target-group-id</emphasis>\n            </code>\n            is the final portion of the target group ARN. The target group must be attached to the\n            Auto Scaling group.</para>\n      ",
-                          "documentation": "\n        <p>Identifies the resource associated with the metric type. The following predefined\n            metrics are available:</p>\n        <ul>\n            <li>\n                <p>\n                  <code>ASGAverageCPUUtilization</code> - average CPU utilization of the Auto\n                    Scaling group</p>\n            </li>\n            <li>\n                <p>\n                  <code>ASGAverageNetworkIn</code> - average number of bytes received on all\n                    network interfaces by the Auto Scaling group</p>\n            </li>\n            <li>\n                <p>\n                  <code>ASGAverageNetworkOut</code> - average number of bytes sent out on all\n                    network interfaces by the Auto Scaling group</p>\n            </li>\n            <li>\n                <p>\n                  <code>ALBRequestCountPerTarget</code> - number of requests completed per\n                    target in an Application Load Balancer target group</p>\n            </li>\n         </ul>\n        <p>For predefined metric types <code>ASGAverageCPUUtilization</code>,\n                <code>ASGAverageNetworkIn</code>, and <code>ASGAverageNetworkOut</code>, the\n            parameter must not be specified as the resource associated with the metric type is the\n            Auto Scaling group. For predefined metric type <code>ALBRequestCountPerTarget</code>,\n            the parameter must be specified in the format:\n                    <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i>/targetgroup/<i>target-group-name</i>/<i>target-group-id</i>\n            </code>,\n            where\n                    <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i>\n            </code>\n            is the final portion of the load balancer ARN, and\n                    <code>targetgroup/<i>target-group-name</i>/<i>target-group-id</i>\n            </code>\n            is the final portion of the target group ARN. The target group must be attached to the\n            Auto Scaling group.</p>\n      ",
+                          "zonbookDocumentation": "\n        <para>Identifies the resource associated with the metric type. The following predefined\n            metrics are available:</para>\n        <itemizedlist>\n            <listitem>\n                <para>\n                  <code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto\n                    Scaling group.</para>\n            </listitem>\n            <listitem>\n                <para>\n                  <code>ASGAverageNetworkIn</code> - Average number of bytes received on all\n                    network interfaces by the Auto Scaling group.</para>\n            </listitem>\n            <listitem>\n                <para>\n                  <code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all\n                    network interfaces by the Auto Scaling group.</para>\n            </listitem>\n            <listitem>\n                <para>\n                  <code>ALBRequestCountPerTarget</code> - Number of requests completed per\n                    target in an Application Load Balancer target group.</para>\n            </listitem>\n        </itemizedlist>\n        <para>For predefined metric types <code>ASGAverageCPUUtilization</code>,\n                <code>ASGAverageNetworkIn</code>, and <code>ASGAverageNetworkOut</code>, the\n            parameter must not be specified as the resource associated with the metric type is the\n            Auto Scaling group. For predefined metric type <code>ALBRequestCountPerTarget</code>,\n            the parameter must be specified in the format:\n                    <code>app/<emphasis>load-balancer-name</emphasis>/<emphasis>load-balancer-id</emphasis>/targetgroup/<emphasis>target-group-name</emphasis>/<emphasis>target-group-id</emphasis>\n            </code>,\n            where\n                    <code>app/<emphasis>load-balancer-name</emphasis>/<emphasis>load-balancer-id</emphasis>\n            </code>\n            is the final portion of the load balancer ARN, and\n                    <code>targetgroup/<emphasis>target-group-name</emphasis>/<emphasis>target-group-id</emphasis>\n            </code>\n            is the final portion of the target group ARN. The target group must be attached to the\n            Auto Scaling group.</para>\n      ",
+                          "documentation": "\n        <p>Identifies the resource associated with the metric type. The following predefined\n            metrics are available:</p>\n        <ul>\n            <li>\n                <p>\n                  <code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto\n                    Scaling group.</p>\n            </li>\n            <li>\n                <p>\n                  <code>ASGAverageNetworkIn</code> - Average number of bytes received on all\n                    network interfaces by the Auto Scaling group.</p>\n            </li>\n            <li>\n                <p>\n                  <code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all\n                    network interfaces by the Auto Scaling group.</p>\n            </li>\n            <li>\n                <p>\n                  <code>ALBRequestCountPerTarget</code> - Number of requests completed per\n                    target in an Application Load Balancer target group.</p>\n            </li>\n         </ul>\n        <p>For predefined metric types <code>ASGAverageCPUUtilization</code>,\n                <code>ASGAverageNetworkIn</code>, and <code>ASGAverageNetworkOut</code>, the\n            parameter must not be specified as the resource associated with the metric type is the\n            Auto Scaling group. For predefined metric type <code>ALBRequestCountPerTarget</code>,\n            the parameter must be specified in the format:\n                    <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i>/targetgroup/<i>target-group-name</i>/<i>target-group-id</i>\n            </code>,\n            where\n                    <code>app/<i>load-balancer-name</i>/<i>load-balancer-id</i>\n            </code>\n            is the final portion of the load balancer ARN, and\n                    <code>targetgroup/<i>target-group-name</i>/<i>target-group-id</i>\n            </code>\n            is the final portion of the target group ARN. The target group must be attached to the\n            Auto Scaling group.</p>\n      ",
                           "shape_name": "XmlStringMaxLen1023",
                           "min_length": 1,
                           "max_length": 1023
@@ -4045,8 +4411,8 @@
                     },
                     "DisableScaleIn": {
                       "type": "boolean",
-                      "zonbookDocumentation": "\n        <para>Indicates whether scale in by the target tracking policy is disabled. If scale in is\n            disabled, the target tracking policy won't remove instances from the Auto Scaling group.\n            Otherwise, the target tracking policy can remove instances from the Auto Scaling group.\n            The default is disabled.</para>\n      ",
-                      "documentation": "\n        <p>Indicates whether scale in by the target tracking policy is disabled. If scale in is\n            disabled, the target tracking policy won't remove instances from the Auto Scaling group.\n            Otherwise, the target tracking policy can remove instances from the Auto Scaling group.\n            The default is disabled.</p>\n      ",
+                      "zonbookDocumentation": "\n        <para>Indicates whether scaling in by the target tracking policy is disabled. If scaling in\n            is disabled, the target tracking policy doesn't remove instances from the Auto Scaling\n            group. Otherwise, the target tracking policy can remove instances from the Auto Scaling\n            group. The default is disabled.</para>\n      ",
+                      "documentation": "\n        <p>Indicates whether scaling in by the target tracking policy is disabled. If scaling in\n            is disabled, the target tracking policy doesn't remove instances from the Auto Scaling\n            group. Otherwise, the target tracking policy can remove instances from the Auto Scaling\n            group. The default is disabled.</p>\n      ",
                       "shape_name": "DisableScaleIn"
                     }
                   },
@@ -4351,7 +4717,7 @@
           "shape_name": "ResourceContentionFault"
         }
       ],
-      "documentation": "\n        <p>Describes the available CloudWatch metrics for Amazon EC2 Auto Scaling.</p>\n        <p>Note that the <code>GroupStandbyInstances</code> metric is not returned by default.\n            You must explicitly request this metric when calling <a>EnableMetricsCollection</a>.</p>\n        \n      "
+      "documentation": "\n        <p>Describes the available CloudWatch metrics for Amazon EC2 Auto Scaling.</p>\n        <p>The <code>GroupStandbyInstances</code> metric is not returned by default. You must\n            explicitly request this metric when calling <a>EnableMetricsCollection</a>.</p>\n        \n      "
     },
     "EnableMetricsCollection": {
       "name": "EnableMetricsCollection",
@@ -4508,8 +4874,8 @@
           },
           "SecurityGroups": {
             "type": "list",
-            "zonbookDocumentation": "\n        <para>One or more security groups with which to associate the instances.</para>\n        <para>If your instances are launched in EC2-Classic, you can either specify security group\n            names or the security group IDs. For more information about security groups for\n            EC2-Classic, see <ulink type=\"documentation\" url=\"AWSEC2/latest/UserGuide/using-network-security.html\">Amazon EC2 Security\n                Groups</ulink> in the <emphasis>Amazon Elastic Compute Cloud User\n            Guide</emphasis>.</para>\n        <para>If your instances are launched into a VPC, specify security group IDs. For more\n            information, see <ulink type=\"documentation\" url=\"AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html\">Security Groups for Your\n                VPC</ulink> in the <emphasis>Amazon Virtual Private Cloud User\n            Guide</emphasis>.</para>\n      ",
-            "documentation": "\n        <p>One or more security groups with which to associate the instances.</p>\n        <p>If your instances are launched in EC2-Classic, you can either specify security group\n            names or the security group IDs. For more information about security groups for\n            EC2-Classic, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html\">Amazon EC2 Security\n                Groups</a> in the <i>Amazon Elastic Compute Cloud User\n            Guide</i>.</p>\n        <p>If your instances are launched into a VPC, specify security group IDs. For more\n            information, see <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html\">Security Groups for Your\n                VPC</a> in the <i>Amazon Virtual Private Cloud User\n            Guide</i>.</p>\n      ",
+            "zonbookDocumentation": "\n        <para>One or more security groups with which to associate the instances.</para>\n        <para>If your instances are launched in EC2-Classic, you can either specify security group\n            names or the security group IDs. For more information, see <ulink type=\"documentation\" url=\"AWSEC2/latest/UserGuide/using-network-security.html\">Amazon EC2 Security\n                Groups</ulink> in the <emphasis>Amazon Elastic Compute Cloud User\n            Guide</emphasis>.</para>\n        <para>If your instances are launched into a VPC, specify security group IDs. For more\n            information, see <ulink type=\"documentation\" url=\"AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html\">Security Groups for Your\n                VPC</ulink> in the <emphasis>Amazon Virtual Private Cloud User\n            Guide</emphasis>.</para>\n      ",
+            "documentation": "\n        <p>One or more security groups with which to associate the instances.</p>\n        <p>If your instances are launched in EC2-Classic, you can either specify security group\n            names or the security group IDs. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html\">Amazon EC2 Security\n                Groups</a> in the <i>Amazon Elastic Compute Cloud User\n            Guide</i>.</p>\n        <p>If your instances are launched into a VPC, specify security group IDs. For more\n            information, see <a href=\"http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html\">Security Groups for Your\n                VPC</a> in the <i>Amazon Virtual Private Cloud User\n            Guide</i>.</p>\n      ",
             "shape_name": "SecurityGroups",
             "members": {
               "type": "string",
@@ -4552,8 +4918,8 @@
           "InstanceId": {
             "type": "string",
             "pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*",
-            "zonbookDocumentation": "\n        <para>The ID of the instance to use to create the launch configuration. The new launch\n            configuration derives attributes from the instance, with the exception of the block\n            device mapping.</para>\n        <para>If you do not specify <code>InstanceId</code>, you must specify both\n                <code>ImageId</code> and <code>InstanceType</code>.</para>\n        <para>To create a launch configuration with a block device mapping or override any other\n            instance attributes, specify them as part of the same request.</para>\n        <para>For more information, see <ulink type=\"documentation\" url=\"autoscaling/ec2/userguide/create-lc-with-instanceID.html\">Create a Launch\n                Configuration Using an EC2 Instance</ulink> in the <emphasis>Amazon EC2 Auto Scaling\n                User Guide</emphasis>.</para>\n      ",
-            "documentation": "\n        <p>The ID of the instance to use to create the launch configuration. The new launch\n            configuration derives attributes from the instance, with the exception of the block\n            device mapping.</p>\n        <p>If you do not specify <code>InstanceId</code>, you must specify both\n                <code>ImageId</code> and <code>InstanceType</code>.</p>\n        <p>To create a launch configuration with a block device mapping or override any other\n            instance attributes, specify them as part of the same request.</p>\n        <p>For more information, see <a href=\"http://docs.aws.amazon.com/autoscaling/ec2/userguide/create-lc-with-instanceID.html\">Create a Launch\n                Configuration Using an EC2 Instance</a> in the <i>Amazon EC2 Auto Scaling\n                User Guide</i>.</p>\n      ",
+            "zonbookDocumentation": "\n        <para>The ID of the instance to use to create the launch configuration. The new launch\n            configuration derives attributes from the instance, except for the block device\n            mapping.</para>\n        <para>If you do not specify <code>InstanceId</code>, you must specify both\n                <code>ImageId</code> and <code>InstanceType</code>.</para>\n        <para>To create a launch configuration with a block device mapping or override any other\n            instance attributes, specify them as part of the same request.</para>\n        <para>For more information, see <ulink type=\"documentation\" url=\"autoscaling/ec2/userguide/create-lc-with-instanceID.html\">Create a Launch\n                Configuration Using an EC2 Instance</ulink> in the <emphasis>Amazon EC2 Auto Scaling\n                User Guide</emphasis>.</para>\n      ",
+            "documentation": "\n        <p>The ID of the instance to use to create the launch configuration. The new launch\n            configuration derives attributes from the instance, except for the block device\n            mapping.</p>\n        <p>If you do not specify <code>InstanceId</code>, you must specify both\n                <code>ImageId</code> and <code>InstanceType</code>.</p>\n        <p>To create a launch configuration with a block device mapping or override any other\n            instance attributes, specify them as part of the same request.</p>\n        <p>For more information, see <a href=\"http://docs.aws.amazon.com/autoscaling/ec2/userguide/create-lc-with-instanceID.html\">Create a Launch\n                Configuration Using an EC2 Instance</a> in the <i>Amazon EC2 Auto Scaling\n                User Guide</i>.</p>\n      ",
             "shape_name": "XmlStringMaxLen19",
             "min_length": 1,
             "max_length": 19
@@ -4667,8 +5033,8 @@
                 },
                 "NoDevice": {
                   "type": "boolean",
-                  "zonbookDocumentation": "\n        <para>Suppresses a device mapping.</para>\n        <para>If this parameter is true for the root device, the instance might fail the EC2 health\n            check. Amazon EC2 Auto Scaling launches a replacement instance if the instance fails the\n            health check.</para>\n      ",
-                  "documentation": "\n        <p>Suppresses a device mapping.</p>\n        <p>If this parameter is true for the root device, the instance might fail the EC2 health\n            check. Amazon EC2 Auto Scaling launches a replacement instance if the instance fails the\n            health check.</p>\n      ",
+                  "zonbookDocumentation": "\n        <para>Suppresses a device mapping.</para>\n        <para>If this parameter is true for the root device, the instance might fail the EC2 health\n            check. In that case, Amazon EC2 Auto Scaling launches a replacement instance.</para>\n      ",
+                  "documentation": "\n        <p>Suppresses a device mapping.</p>\n        <p>If this parameter is true for the root device, the instance might fail the EC2 health\n            check. In that case, Amazon EC2 Auto Scaling launches a replacement instance.</p>\n      ",
                   "shape_name": "NoDevice"
                 }
               },
@@ -4702,8 +5068,8 @@
           "IamInstanceProfile": {
             "type": "string",
             "pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*",
-            "zonbookDocumentation": "\n        <para>The name or the Amazon Resource Name (ARN) of the instance profile associated with the\n            IAM role for the instance.</para>\n        <para>EC2 instances launched with an IAM role will automatically have AWS security\n            credentials available. You can use IAM roles with Amazon EC2 Auto Scaling to\n            automatically enable applications running on your EC2 instances to securely access other\n            AWS resources. For more information, see <ulink type=\"documentation\" url=\"autoscaling/ec2/userguide/us-iam-role.html\">Launch Auto Scaling Instances with\n                an IAM Role</ulink> in the <emphasis>Amazon EC2 Auto Scaling User\n            Guide</emphasis>.</para>\n      ",
-            "documentation": "\n        <p>The name or the Amazon Resource Name (ARN) of the instance profile associated with the\n            IAM role for the instance.</p>\n        <p>EC2 instances launched with an IAM role will automatically have AWS security\n            credentials available. You can use IAM roles with Amazon EC2 Auto Scaling to\n            automatically enable applications running on your EC2 instances to securely access other\n            AWS resources. For more information, see <a href=\"http://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html\">Launch Auto Scaling Instances with\n                an IAM Role</a> in the <i>Amazon EC2 Auto Scaling User\n            Guide</i>.</p>\n      ",
+            "zonbookDocumentation": "\n        <para>The name or the Amazon Resource Name (ARN) of the instance profile associated with the\n            IAM role for the instance.</para>\n        <para>EC2 instances launched with an IAM role automatically have AWS security credentials\n            available. You can use IAM roles with Amazon EC2 Auto Scaling to automatically enable\n            applications running on your EC2 instances to securely access other AWS resources. For\n            more information, see <ulink type=\"documentation\" url=\"autoscaling/ec2/userguide/us-iam-role.html\">Launch Auto Scaling Instances with\n                an IAM Role</ulink> in the <emphasis>Amazon EC2 Auto Scaling User\n            Guide</emphasis>.</para>\n      ",
+            "documentation": "\n        <p>The name or the Amazon Resource Name (ARN) of the instance profile associated with the\n            IAM role for the instance.</p>\n        <p>EC2 instances launched with an IAM role automatically have AWS security credentials\n            available. You can use IAM roles with Amazon EC2 Auto Scaling to automatically enable\n            applications running on your EC2 instances to securely access other AWS resources. For\n            more information, see <a href=\"http://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html\">Launch Auto Scaling Instances with\n                an IAM Role</a> in the <i>Amazon EC2 Auto Scaling User\n            Guide</i>.</p>\n      ",
             "shape_name": "XmlStringMaxLen1600",
             "min_length": 1,
             "max_length": 1600
@@ -4723,8 +5089,8 @@
           "PlacementTenancy": {
             "type": "string",
             "pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*",
-            "zonbookDocumentation": "\n        <para>The tenancy of the instance. An instance with a tenancy of <code>dedicated</code> runs\n            on single-tenant hardware and can only be launched into a VPC.</para>\n        <para>You must set the value of this parameter to <code>dedicated</code> if want to launch\n            Dedicated Instances into a shared tenancy VPC (VPC with instance placement tenancy\n            attribute set to <code>default</code>).</para>\n        <para>If you specify this parameter, be sure to specify at least one subnet when you create\n            your group.</para>\n\n        <para>For more information, see <ulink type=\"documentation\" url=\"autoscaling/ec2/userguide/asg-in-vpc.html\">Launching Auto Scaling Instances in\n                a VPC</ulink> in the <emphasis>Amazon EC2 Auto Scaling User Guide</emphasis>.</para>\n\n        <para>Valid values: <code>default</code> | <code>dedicated</code>\n        </para>\n      ",
-            "documentation": "\n        <p>The tenancy of the instance. An instance with a tenancy of <code>dedicated</code> runs\n            on single-tenant hardware and can only be launched into a VPC.</p>\n        <p>You must set the value of this parameter to <code>dedicated</code> if want to launch\n            Dedicated Instances into a shared tenancy VPC (VPC with instance placement tenancy\n            attribute set to <code>default</code>).</p>\n        <p>If you specify this parameter, be sure to specify at least one subnet when you create\n            your group.</p>\n\n        <p>For more information, see <a href=\"http://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html\">Launching Auto Scaling Instances in\n                a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>\n\n        <p>Valid values: <code>default</code> | <code>dedicated</code>\n        </p>\n      ",
+            "zonbookDocumentation": "\n        <para>The tenancy of the instance. An instance with a tenancy of <code>dedicated</code> runs\n            on single-tenant hardware and can only be launched into a VPC.</para>\n        <para>To launch Dedicated Instances into a shared tenancy VPC (a VPC with the instance\n            placement tenancy attribute set to <code>default</code>), you must set the value of this\n            parameter to <code>dedicated</code>.</para>\n        <para>If you specify this parameter, be sure to specify at least one subnet when you create\n            your group.</para>\n\n        <para>For more information, see <ulink type=\"documentation\" url=\"autoscaling/ec2/userguide/asg-in-vpc.html\">Launching Auto Scaling Instances in\n                a VPC</ulink> in the <emphasis>Amazon EC2 Auto Scaling User Guide</emphasis>.</para>\n\n        <para>Valid values: <code>default</code> | <code>dedicated</code>\n        </para>\n      ",
+            "documentation": "\n        <p>The tenancy of the instance. An instance with a tenancy of <code>dedicated</code> runs\n            on single-tenant hardware and can only be launched into a VPC.</p>\n        <p>To launch Dedicated Instances into a shared tenancy VPC (a VPC with the instance\n            placement tenancy attribute set to <code>default</code>), you must set the value of this\n            parameter to <code>dedicated</code>.</p>\n        <p>If you specify this parameter, be sure to specify at least one subnet when you create\n            your group.</p>\n\n        <p>For more information, see <a href=\"http://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html\">Launching Auto Scaling Instances in\n                a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>\n\n        <p>Valid values: <code>default</code> | <code>dedicated</code>\n        </p>\n      ",
             "shape_name": "XmlStringMaxLen64",
             "min_length": 1,
             "max_length": 64
@@ -5028,8 +5394,8 @@
                       },
                       "NoDevice": {
                         "type": "boolean",
-                        "zonbookDocumentation": "\n        <para>Suppresses a device mapping.</para>\n        <para>If this parameter is true for the root device, the instance might fail the EC2 health\n            check. Amazon EC2 Auto Scaling launches a replacement instance if the instance fails the\n            health check.</para>\n      ",
-                        "documentation": "\n        <p>Suppresses a device mapping.</p>\n        <p>If this parameter is true for the root device, the instance might fail the EC2 health\n            check. Amazon EC2 Auto Scaling launches a replacement instance if the instance fails the\n            health check.</p>\n      ",
+                        "zonbookDocumentation": "\n        <para>Suppresses a device mapping.</para>\n        <para>If this parameter is true for the root device, the instance might fail the EC2 health\n            check. In that case, Amazon EC2 Auto Scaling launches a replacement instance.</para>\n      ",
+                        "documentation": "\n        <p>Suppresses a device mapping.</p>\n        <p>If this parameter is true for the root device, the instance might fail the EC2 health\n            check. In that case, Amazon EC2 Auto Scaling launches a replacement instance.</p>\n      ",
                         "shape_name": "NoDevice"
                       }
                     },
@@ -5685,8 +6051,8 @@
           "TopicARN": {
             "type": "string",
             "pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*",
-            "zonbookDocumentation": "\n        <para>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS)\n            topic.</para>\n      ",
-            "documentation": "\n        <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS)\n            topic.</p>\n      ",
+            "zonbookDocumentation": "\n        <para>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS)\n            topic.</para>\n      ",
+            "documentation": "\n        <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS)\n            topic.</p>\n      ",
             "required": true,
             "shape_name": "ResourceName",
             "min_length": 1,
@@ -5694,8 +6060,8 @@
           },
           "NotificationTypes": {
             "type": "list",
-            "zonbookDocumentation": "\n        <para>The type of event that will cause the notification to be sent. For details about\n            notification types supported by Amazon EC2 Auto Scaling, see <xref linkend=\"DescribeAutoScalingNotificationTypes\"/>.</para>\n      ",
-            "documentation": "\n        <p>The type of event that will cause the notification to be sent. For details about\n            notification types supported by Amazon EC2 Auto Scaling, see <a>DescribeAutoScalingNotificationTypes</a>.</p>\n      ",
+            "zonbookDocumentation": "\n        <para>The type of event that causes the notification to be sent. For more information about\n            notification types supported by Amazon EC2 Auto Scaling, see <xref linkend=\"DescribeAutoScalingNotificationTypes\"/>.</para>\n      ",
+            "documentation": "\n        <p>The type of event that causes the notification to be sent. For more information about\n            notification types supported by Amazon EC2 Auto Scaling, see <a>DescribeAutoScalingNotificationTypes</a>.</p>\n      ",
             "required": true,
             "shape_name": "AutoScalingNotificationTypes",
             "members": {
@@ -5764,7 +6130,7 @@
           "shape_name": "ServiceLinkedRoleFailure"
         }
       ],
-      "documentation": "\n        <p>Configures an Auto Scaling group to send notifications when specified events take\n            place. Subscribers to the specified topic can have messages delivered to an endpoint\n            such as a web server or an email address.</p>\n        <p>This configuration overwrites any existing configuration.</p>\n        <p>For more information see <a href=\"http://docs.aws.amazon.com/autoscaling/ec2/userguide/ASGettingNotifications.html\">Getting SNS\n                Notifications When Your Auto Scaling Group Scales</a> in the <i>Auto\n                Scaling User Guide</i>.</p>\n        \n      "
+      "documentation": "\n        <p>Configures an Auto Scaling group to send notifications when specified events take\n            place. Subscribers to the specified topic can have messages delivered to an endpoint\n            such as a web server or an email address.</p>\n        <p>This configuration overwrites any existing configuration.</p>\n        <p>For more information, see <a href=\"http://docs.aws.amazon.com/autoscaling/ec2/userguide/ASGettingNotifications.html\">Getting SNS\n                Notifications When Your Auto Scaling Group Scales</a> in the <i>Auto\n                Scaling User Guide</i>.</p>\n        \n      "
     },
     "DeleteNotificationConfiguration": {
       "name": "DeleteNotificationConfiguration",
@@ -5784,8 +6150,8 @@
           "TopicARN": {
             "type": "string",
             "pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*",
-            "zonbookDocumentation": "\n        <para>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS)\n            topic.</para>\n      ",
-            "documentation": "\n        <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS)\n            topic.</p>\n      ",
+            "zonbookDocumentation": "\n        <para>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS)\n            topic.</para>\n      ",
+            "documentation": "\n        <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS)\n            topic.</p>\n      ",
             "required": true,
             "shape_name": "ResourceName",
             "min_length": 1,
@@ -5877,8 +6243,8 @@
                 "TopicARN": {
                   "type": "string",
                   "pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*",
-                  "zonbookDocumentation": "\n        <para>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS)\n            topic.</para>\n      ",
-                  "documentation": "\n        <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS)\n            topic.</p>\n      ",
+                  "zonbookDocumentation": "\n        <para>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS)\n            topic.</para>\n      ",
+                  "documentation": "\n        <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS)\n            topic.</p>\n      ",
                   "shape_name": "ResourceName",
                   "min_length": 1,
                   "max_length": 1600
@@ -6237,8 +6603,8 @@
         "members": {
           "Filters": {
             "type": "list",
-            "zonbookDocumentation": "\n        <para>A filter used to scope the tags to return.</para>\n      ",
-            "documentation": "\n        <p>A filter used to scope the tags to return.</p>\n      ",
+            "zonbookDocumentation": "\n        <para>One or more filters to scope the tags to return. The maximum number of filters per\n            filter type (for example, <code>auto-scaling-group</code>) is 1000.</para>\n      ",
+            "documentation": "\n        <p>One or more filters to scope the tags to return. The maximum number of filters per\n            filter type (for example, <code>auto-scaling-group</code>) is 1000.</p>\n      ",
             "shape_name": "Filters",
             "members": {
               "type": "structure",
@@ -6397,8 +6763,8 @@
         "members": {
           "TerminationPolicyTypes": {
             "type": "list",
-            "zonbookDocumentation": "\n        <para>The termination policies supported by Amazon EC2 Auto Scaling\n                (<code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>,\n                <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, and\n                <code>Default</code>).</para>\n      ",
-            "documentation": "\n        <p>The termination policies supported by Amazon EC2 Auto Scaling\n                (<code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>,\n                <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, and\n                <code>Default</code>).</p>\n      ",
+            "zonbookDocumentation": "\n        <para>The termination policies supported by Amazon EC2 Auto Scaling:\n                <code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>,\n                <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>,\n                <code>Default</code>, <code>OldestLaunchTemplate</code>, and\n                <code>AllocationStrategy</code>. Currently, the <code>OldestLaunchTemplate</code>\n            and <code>AllocationStrategy</code> policies are only supported for Auto Scaling groups\n            with <xref linkend=\"MixedInstancesPolicy\"/>.</para>\n      ",
+            "documentation": "\n        <p>The termination policies supported by Amazon EC2 Auto Scaling:\n                <code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>,\n                <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>,\n                <code>Default</code>, <code>OldestLaunchTemplate</code>, and\n                <code>AllocationStrategy</code>. Currently, the <code>OldestLaunchTemplate</code>\n            and <code>AllocationStrategy</code> policies are only supported for Auto Scaling groups\n            with <a>MixedInstancesPolicy</a>.</p>\n      ",
             "shape_name": "TerminationPolicies",
             "members": {
               "type": "string",
@@ -6432,7 +6798,7 @@
           "shape_name": "ResourceContentionFault"
         }
       ],
-      "documentation": "\n        <p>Describes the termination policies supported by Amazon EC2 Auto Scaling.</p>\n        \n\n      "
+      "documentation": "\n        <p>Describes the termination policies supported by Amazon EC2 Auto Scaling.</p>\n        <p>For more information, see <a href=\"http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html\">Controlling Which Auto\n                Scaling Instances Terminate During Scale In</a> in the <i>Amazon EC2 Auto\n                Scaling User Guide</i>.</p>\n        \n\n      "
     },
     "DescribeAccountLimits": {
       "name": "DescribeAccountLimits",
@@ -6532,8 +6898,8 @@
           "NotificationTargetARN": {
             "type": "string",
             "pattern": "[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*",
-            "zonbookDocumentation": "\n        <para>The ARN of the notification target that Amazon EC2 Auto Scaling will use to notify you\n            when an instance is in the transition state for the lifecycle hook. This target can be\n            either an SQS queue or an SNS topic. If you specify an empty string, this overrides the\n            current ARN.</para>\n        <para>This operation uses the JSON format when sending notifications to an Amazon SQS queue,\n            and an email key/value pair format when sending notifications to an Amazon SNS\n            topic.</para>\n        <para>When you specify a notification target, Amazon EC2 Auto Scaling sends it a test\n            message. Test messages contains the following additional key/value pair: <code>\"Event\":\n                \"autoscaling:TEST_NOTIFICATION\"</code>.</para>\n      ",
-            "documentation": "\n        <p>The ARN of the notification target that Amazon EC2 Auto Scaling will use to notify you\n            when an instance is in the transition state for the lifecycle hook. This target can be\n            either an SQS queue or an SNS topic. If you specify an empty string, this overrides the\n            current ARN.</p>\n        <p>This operation uses the JSON format when sending notifications to an Amazon SQS queue,\n            and an email key/value pair format when sending notifications to an Amazon SNS\n            topic.</p>\n        <p>When you specify a notification target, Amazon EC2 Auto Scaling sends it a test\n            message. Test messages contains the following additional key/value pair: <code>\"Event\":\n                \"autoscaling:TEST_NOTIFICATION\"</code>.</p>\n      ",
+            "zonbookDocumentation": "\n        <para>The ARN of the notification target that Amazon EC2 Auto Scaling uses to notify you\n            when an instance is in the transition state for the lifecycle hook. This target can be\n            either an SQS queue or an SNS topic. If you specify an empty string, this overrides the\n            current ARN.</para>\n        <para>This operation uses the JSON format when sending notifications to an Amazon SQS queue,\n            and an email key-value pair format when sending notifications to an Amazon SNS\n            topic.</para>\n        <para>When you specify a notification target, Amazon EC2 Auto Scaling sends it a test\n            message. Test messages contain the following additional key-value pair: <code>\"Event\":\n                \"autoscaling:TEST_NOTIFICATION\"</code>.</para>\n      ",
+            "documentation": "\n        <p>The ARN of the notification target that Amazon EC2 Auto Scaling uses to notify you\n            when an instance is in the transition state for the lifecycle hook. This target can be\n            either an SQS queue or an SNS topic. If you specify an empty string, this overrides the\n            current ARN.</p>\n        <p>This operation uses the JSON format when sending notifications to an Amazon SQS queue,\n            and an email key-value pair format when sending notifications to an Amazon SNS\n            topic.</p>\n        <p>When you specify a notification target, Amazon EC2 Auto Scaling sends it a test\n            message. Test messages contain the following additional key-value pair: <code>\"Event\":\n                \"autoscaling:TEST_NOTIFICATION\"</code>.</p>\n      ",
             "shape_name": "NotificationTargetResourceName",
             "min_length": 0,
             "max_length": 1600
@@ -6606,7 +6972,7 @@
           "shape_name": "ResourceContentionFault"
         }
       ],
-      "documentation": "\n        <p>Creates or updates a lifecycle hook for the specified Auto Scaling Group.</p>\n        <p>A lifecycle hook tells Amazon EC2 Auto Scaling that you want to perform an action on\n            an instance that is not actively in service; for example, either when the instance\n            launches or before the instance terminates.</p>\n\n        <p>This step is a part of the procedure for adding a lifecycle hook to an Auto Scaling\n            group:</p>\n        <ol>\n            <li>\n                <p>(Optional) Create a Lambda function and a rule that allows CloudWatch Events\n                    to invoke your Lambda function when Amazon EC2 Auto Scaling launches or\n                    terminates instances.</p>\n            </li>\n            <li>\n                <p>(Optional) Create a notification target and an IAM role. The target can be\n                    either an Amazon SQS queue or an Amazon SNS topic. The role allows Amazon EC2\n                    Auto Scaling to publish lifecycle notifications to the target.</p>\n            </li>\n            <li>\n                <p>\n                  <b>Create the lifecycle hook. Specify whether the hook is\n                        used when the instances launch or terminate.</b>\n               </p>\n            </li>\n            <li>\n                <p>If you need more time, record the lifecycle action heartbeat to keep the\n                    instance in a pending state.</p>\n            </li>\n            <li>\n                <p>If you finish before the timeout period ends, complete the lifecycle\n                    action.</p>\n            </li>\n         </ol>\n        <p>For more information, see <a href=\"http://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html\">Auto Scaling Lifecycle\n                Hooks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>\n\n        <p>If you exceed your maximum limit of lifecycle hooks, which by default is 50 per Auto\n            Scaling group, the call fails. For information about updating this limit, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html\">AWS Service\n                Limits</a> in the <i>Amazon Web Services General\n            Reference</i>.</p>\n\n        \n      "
+      "documentation": "\n        <p>Creates or updates a lifecycle hook for the specified Auto Scaling group.</p>\n        <p>A lifecycle hook tells Amazon EC2 Auto Scaling to perform an action on an instance\n            that is not actively in service; for example, either when the instance launches or\n            before the instance terminates.</p>\n\n        <p>This step is a part of the procedure for adding a lifecycle hook to an Auto Scaling\n            group:</p>\n        <ol>\n            <li>\n                <p>(Optional) Create a Lambda function and a rule that allows CloudWatch Events\n                    to invoke your Lambda function when Amazon EC2 Auto Scaling launches or\n                    terminates instances.</p>\n            </li>\n            <li>\n                <p>(Optional) Create a notification target and an IAM role. The target can be\n                    either an Amazon SQS queue or an Amazon SNS topic. The role allows Amazon EC2\n                    Auto Scaling to publish lifecycle notifications to the target.</p>\n            </li>\n            <li>\n                <p>\n                  <b>Create the lifecycle hook. Specify whether the hook is\n                        used when the instances launch or terminate.</b>\n               </p>\n            </li>\n            <li>\n                <p>If you need more time, record the lifecycle action heartbeat to keep the\n                    instance in a pending state.</p>\n            </li>\n            <li>\n                <p>If you finish before the timeout period ends, complete the lifecycle\n                    action.</p>\n            </li>\n         </ol>\n        <p>For more information, see <a href=\"http://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html\">Auto Scaling Lifecycle\n                Hooks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>\n\n        <p>If you exceed your maximum limit of lifecycle hooks, which by default is 50 per Auto\n            Scaling group, the call fails. For information about updating this limit, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html\">AWS Service\n                Limits</a> in the <i>Amazon Web Services General\n            Reference</i>.</p>\n\n        \n      "
     },
     "DeleteLifecycleHook": {
       "name": "DeleteLifecycleHook",
@@ -6730,8 +7096,8 @@
                 },
                 "LifecycleTransition": {
                   "type": "string",
-                  "zonbookDocumentation": "\n        <para>The state of the EC2 instance to which you want to attach the lifecycle hook. The\n            following are possible values:</para>\n        <itemizedlist>\n            <listitem>\n                <para>autoscaling:EC2_INSTANCE_LAUNCHING</para>\n            </listitem>\n            <listitem>\n                <para>autoscaling:EC2_INSTANCE_TERMINATING</para>\n            </listitem>\n        </itemizedlist>\n      ",
-                  "documentation": "\n        <p>The state of the EC2 instance to which you want to attach the lifecycle hook. The\n            following are possible values:</p>\n        <ul>\n            <li>\n                <p>autoscaling:EC2_INSTANCE_LAUNCHING</p>\n            </li>\n            <li>\n                <p>autoscaling:EC2_INSTANCE_TERMINATING</p>\n            </li>\n         </ul>\n      ",
+                  "zonbookDocumentation": "\n        <para>The state of the EC2 instance to which to attach the lifecycle hook. The following are\n            possible values:</para>\n        <itemizedlist>\n            <listitem>\n                <para>autoscaling:EC2_INSTANCE_LAUNCHING</para>\n            </listitem>\n            <listitem>\n                <para>autoscaling:EC2_INSTANCE_TERMINATING</para>\n            </listitem>\n        </itemizedlist>\n      ",
+                  "documentation": "\n        <p>The state of the EC2 instance to which to attach the lifecycle hook. The following are\n            possible values:</p>\n        <ul>\n            <li>\n                <p>autoscaling:EC2_INSTANCE_LAUNCHING</p>\n            </li>\n            <li>\n                <p>autoscaling:EC2_INSTANCE_TERMINATING</p>\n            </li>\n         </ul>\n      ",
                   "shape_name": "LifecycleTransition"
                 },
                 "NotificationTargetARN": {
@@ -6963,8 +7329,8 @@
           },
           "LifecycleActionToken": {
             "type": "string",
-            "zonbookDocumentation": "\n        <para>A token that uniquely identifies a specific lifecycle action associated with an\n            instance. Amazon EC2 Auto Scaling sends this token to the notification target you\n            specified when you created the lifecycle hook.</para>\n      ",
-            "documentation": "\n        <p>A token that uniquely identifies a specific lifecycle action associated with an\n            instance. Amazon EC2 Auto Scaling sends this token to the notification target you\n            specified when you created the lifecycle hook.</p>\n      ",
+            "zonbookDocumentation": "\n        <para>A token that uniquely identifies a specific lifecycle action associated with an\n            instance. Amazon EC2 Auto Scaling sends this token to the notification target that you\n            specified when you created the lifecycle hook.</para>\n      ",
+            "documentation": "\n        <p>A token that uniquely identifies a specific lifecycle action associated with an\n            instance. Amazon EC2 Auto Scaling sends this token to the notification target that you\n            specified when you created the lifecycle hook.</p>\n      ",
             "shape_name": "LifecycleActionToken",
             "min_length": 36,
             "max_length": 36
@@ -7072,8 +7438,8 @@
                   "max_length": 255
                 }
               },
-              "zonbookDocumentation": "\n        <para>Describes the state of a Classic Load Balancer.</para>\n        <para>If you specify a load balancer when creating the Auto Scaling group, the state of the\n            load balancer is <code>InService</code>.</para>\n        <para>If you attach a load balancer to an existing Auto Scaling group, the initial state is\n                <code>Adding</code>. The state transitions to <code>Added</code> after all instances\n            in the group are registered with the load balancer. If ELB health checks are enabled for\n            the load balancer, the state transitions to <code>InService</code> after at least one\n            instance in the group passes the health check. If EC2 health checks are enabled instead,\n            the load balancer remains in the <code>Added</code> state.</para>\n      ",
-              "documentation": "\n        <p>Describes the state of a Classic Load Balancer.</p>\n        <p>If you specify a load balancer when creating the Auto Scaling group, the state of the\n            load balancer is <code>InService</code>.</p>\n        <p>If you attach a load balancer to an existing Auto Scaling group, the initial state is\n                <code>Adding</code>. The state transitions to <code>Added</code> after all instances\n            in the group are registered with the load balancer. If ELB health checks are enabled for\n            the load balancer, the state transitions to <code>InService</code> after at least one\n            instance in the group passes the health check. If EC2 health checks are enabled instead,\n            the load balancer remains in the <code>Added</code> state.</p>\n      ",
+              "zonbookDocumentation": "\n        <para>Describes the state of a Classic Load Balancer.</para>\n        <para>If you specify a load balancer when creating the Auto Scaling group, the state of the\n            load balancer is <code>InService</code>.</para>\n        <para>If you attach a load balancer to an existing Auto Scaling group, the initial state is\n                <code>Adding</code>. The state transitions to <code>Added</code> after all instances\n            in the group are registered with the load balancer. If Elastic Load Balancing health\n            checks are enabled for the load balancer, the state transitions to\n                <code>InService</code> after at least one instance in the group passes the health\n            check. If EC2 health checks are enabled instead, the load balancer remains in the\n                <code>Added</code> state.</para>\n      ",
+              "documentation": "\n        <p>Describes the state of a Classic Load Balancer.</p>\n        <p>If you specify a load balancer when creating the Auto Scaling group, the state of the\n            load balancer is <code>InService</code>.</p>\n        <p>If you attach a load balancer to an existing Auto Scaling group, the initial state is\n                <code>Adding</code>. The state transitions to <code>Added</code> after all instances\n            in the group are registered with the load balancer. If Elastic Load Balancing health\n            checks are enabled for the load balancer, the state transitions to\n                <code>InService</code> after at least one instance in the group passes the health\n            check. If EC2 health checks are enabled instead, the load balancer remains in the\n                <code>Added</code> state.</p>\n      ",
               "shape_name": "LoadBalancerState"
             }
           },
@@ -7107,7 +7473,7 @@
           "shape_name": "ResourceContentionFault"
         }
       ],
-      "documentation": "\n        <p>Describes the load balancers for the specified Auto Scaling group.</p>\n        <p>Note that this operation describes only Classic Load Balancers. If you have\n            Application Load Balancers, use <a>DescribeLoadBalancerTargetGroups</a>\n            instead.</p>\n        \n      "
+      "documentation": "\n        <p>Describes the load balancers for the specified Auto Scaling group.</p>\n        <p>This operation describes only Classic Load Balancers. If you have Application Load\n            Balancers, use <a>DescribeLoadBalancerTargetGroups</a> instead.</p>\n        \n      "
     },
     "DescribeLoadBalancerTargetGroups": {
       "name": "DescribeLoadBalancerTargetGroups",
@@ -7171,8 +7537,8 @@
                   "max_length": 255
                 }
               },
-              "zonbookDocumentation": "\n        <para>Describes the state of a target group.</para>\n        <para>If you attach a target group to an existing Auto Scaling group, the initial state is\n                <code>Adding</code>. The state transitions to <code>Added</code> after all Auto\n            Scaling instances are registered with the target group. If ELB health checks are\n            enabled, the state transitions to <code>InService</code> after at least one Auto Scaling\n            instance passes the health check. If EC2 health checks are enabled instead, the target\n            group remains in the <code>Added</code> state.</para>\n      ",
-              "documentation": "\n        <p>Describes the state of a target group.</p>\n        <p>If you attach a target group to an existing Auto Scaling group, the initial state is\n                <code>Adding</code>. The state transitions to <code>Added</code> after all Auto\n            Scaling instances are registered with the target group. If ELB health checks are\n            enabled, the state transitions to <code>InService</code> after at least one Auto Scaling\n            instance passes the health check. If EC2 health checks are enabled instead, the target\n            group remains in the <code>Added</code> state.</p>\n      ",
+              "zonbookDocumentation": "\n        <para>Describes the state of a target group.</para>\n        <para>If you attach a target group to an existing Auto Scaling group, the initial state is\n                <code>Adding</code>. The state transitions to <code>Added</code> after all Auto\n            Scaling instances are registered with the target group. If Elastic Load Balancing health\n            checks are enabled, the state transitions to <code>InService</code> after at least one\n            Auto Scaling instance passes the health check. If EC2 health checks are enabled instead,\n            the target group remains in the <code>Added</code> state.</para>\n      ",
+              "documentation": "\n        <p>Describes the state of a target group.</p>\n        <p>If you attach a target group to an existing Auto Scaling group, the initial state is\n                <code>Adding</code>. The state transitions to <code>Added</code> after all Auto\n            Scaling instances are registered with the target group. If Elastic Load Balancing health\n            checks are enabled, the state transitions to <code>InService</code> after at least one\n            Auto Scaling instance passes the health check. If EC2 health checks are enabled instead,\n            the target group remains in the <code>Added</code> state.</p>\n      ",
               "shape_name": "LoadBalancerTargetGroupState"
             }
           },

@@ -82,8 +82,7 @@ namespace Amazon.AutoScaling.Model
         ///  
         /// <para>
         /// If this parameter is true for the root device, the instance might fail the EC2 health
-        /// check. Amazon EC2 Auto Scaling launches a replacement instance if the instance fails
-        /// the health check.
+        /// check. In that case, Amazon EC2 Auto Scaling launches a replacement instance.
         /// </para>
         /// </summary>
         public bool NoDevice

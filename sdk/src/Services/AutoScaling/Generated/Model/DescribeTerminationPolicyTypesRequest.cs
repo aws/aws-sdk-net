@@ -30,6 +30,13 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// Container for the parameters to the DescribeTerminationPolicyTypes operation.
     /// Describes the termination policies supported by Amazon EC2 Auto Scaling.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
+    /// Which Auto Scaling Instances Terminate During Scale In</a> in the <i>Amazon EC2 Auto
+    /// Scaling User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class DescribeTerminationPolicyTypesRequest : AmazonAutoScalingRequest
     {

@@ -61,23 +61,23 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ASGAverageCPUUtilization</code> - average CPU utilization of the Auto Scaling
-        /// group
+        ///  <code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto Scaling
+        /// group.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ASGAverageNetworkIn</code> - average number of bytes received on all network
-        /// interfaces by the Auto Scaling group
+        ///  <code>ASGAverageNetworkIn</code> - Average number of bytes received on all network
+        /// interfaces by the Auto Scaling group.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ASGAverageNetworkOut</code> - average number of bytes sent out on all network
-        /// interfaces by the Auto Scaling group
+        ///  <code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all network
+        /// interfaces by the Auto Scaling group.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ALBRequestCountPerTarget</code> - number of requests completed per target in
-        /// an Application Load Balancer target group
+        ///  <code>ALBRequestCountPerTarget</code> - Number of requests completed per target in
+        /// an Application Load Balancer target group.
         /// </para>
         ///  </li> </ul> 
         /// <para>

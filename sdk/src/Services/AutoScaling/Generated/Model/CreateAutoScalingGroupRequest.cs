@@ -59,6 +59,7 @@ namespace Amazon.AutoScaling.Model
         private List<string> _loadBalancerNames = new List<string>();
         private int? _maxSize;
         private int? _minSize;
+        private MixedInstancesPolicy _mixedInstancesPolicy;
         private bool? _newInstancesProtectedFromScaleIn;
         private string _placementGroup;
         private string _serviceLinkedRoleARN;
@@ -207,16 +208,14 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The ID of the instance used to create a launch configuration for the group. You must
-        /// specify one of the following: an EC2 instance, a launch configuration, or a launch
-        /// template.
+        /// The ID of the instance used to create a launch configuration for the group. This parameter,
+        /// a launch configuration, a launch template, or a mixed instances policy must be specified.
         /// </para>
         ///  
         /// <para>
         /// When you specify an ID of an instance, Amazon EC2 Auto Scaling creates a new launch
         /// configuration and associates it with the group. This launch configuration derives
-        /// its attributes from the specified instance, with the exception of the block device
-        /// mapping.
+        /// its attributes from the specified instance, except for the block device mapping.
         /// </para>
         ///  
         /// <para>
@@ -240,8 +239,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LaunchConfigurationName. 
         /// <para>
-        /// The name of the launch configuration. You must specify one of the following: a launch
-        /// configuration, a launch template, or an EC2 instance.
+        /// The name of the launch configuration. This parameter, a launch template, a mixed instances
+        /// policy, or an EC2 instance must be specified.
         /// </para>
         /// </summary>
         public string LaunchConfigurationName
@@ -259,8 +258,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LaunchTemplate. 
         /// <para>
-        /// The launch template to use to launch instances. You must specify one of the following:
-        /// a launch template, a launch configuration, or an EC2 instance.
+        /// The launch template to use to launch instances. This parameter, a launch configuration,
+        /// a mixed instances policy, or an EC2 instance must be specified.
         /// </para>
         /// </summary>
         public LaunchTemplateSpecification LaunchTemplate
@@ -355,6 +354,25 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MixedInstancesPolicy. 
+        /// <para>
+        /// The mixed instances policy to use to launch instances. This parameter, a launch template,
+        /// a launch configuration, or an EC2 instance must be specified.
+        /// </para>
+        /// </summary>
+        public MixedInstancesPolicy MixedInstancesPolicy
+        {
+            get { return this._mixedInstancesPolicy; }
+            set { this._mixedInstancesPolicy = value; }
+        }
+
+        // Check to see if MixedInstancesPolicy property is set
+        internal bool IsSetMixedInstancesPolicy()
+        {
+            return this._mixedInstancesPolicy != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property NewInstancesProtectedFromScaleIn. 
         /// <para>
         /// Indicates whether newly launched instances are protected from termination by Auto
@@ -376,8 +394,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property PlacementGroup. 
         /// <para>
-        /// The name of the placement group into which you'll launch your instances, if any. For
-        /// more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+        /// The name of the placement group into which to launch your instances, if any. For more
+        /// information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
         /// Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>

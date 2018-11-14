@@ -63,7 +63,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The last reported health status of the instance. "Healthy" means that the instance
         /// is healthy and should remain in service. "Unhealthy" means that the instance is unhealthy
-        /// and Amazon EC2 Auto Scaling should terminate and replace it.
+        /// and that Amazon EC2 Auto Scaling should terminate and replace it.
         /// </para>
         /// </summary>
         public string HealthStatus
@@ -135,8 +135,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LifecycleState. 
         /// <para>
-        /// A description of the current lifecycle state. Note that the <code>Quarantined</code>
-        /// state is not used.
+        /// A description of the current lifecycle state. The <code>Quarantined</code> state is
+        /// not used.
         /// </para>
         /// </summary>
         public LifecycleState LifecycleState

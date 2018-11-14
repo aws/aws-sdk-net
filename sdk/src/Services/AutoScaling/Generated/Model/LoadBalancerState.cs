@@ -39,10 +39,10 @@ namespace Amazon.AutoScaling.Model
     /// <para>
     /// If you attach a load balancer to an existing Auto Scaling group, the initial state
     /// is <code>Adding</code>. The state transitions to <code>Added</code> after all instances
-    /// in the group are registered with the load balancer. If ELB health checks are enabled
-    /// for the load balancer, the state transitions to <code>InService</code> after at least
-    /// one instance in the group passes the health check. If EC2 health checks are enabled
-    /// instead, the load balancer remains in the <code>Added</code> state.
+    /// in the group are registered with the load balancer. If Elastic Load Balancing health
+    /// checks are enabled for the load balancer, the state transitions to <code>InService</code>
+    /// after at least one instance in the group passes the health check. If EC2 health checks
+    /// are enabled instead, the load balancer remains in the <code>Added</code> state.
     /// </para>
     /// </summary>
     public partial class LoadBalancerState

@@ -30,9 +30,8 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// Container for the parameters to the PutScalingPolicy operation.
     /// Creates or updates a policy for an Auto Scaling group. To update an existing policy,
-    /// use the existing policy name and set the parameters you want to change. Any existing
-    /// parameter not changed in an update to an existing policy is not changed in this update
-    /// request.
+    /// use the existing policy name and set the parameters to change. Any existing parameter
+    /// not changed in an update to an existing policy is not changed in this update request.
     /// 
     ///  
     /// <para>

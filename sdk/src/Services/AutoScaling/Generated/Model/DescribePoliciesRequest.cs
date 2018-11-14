@@ -99,9 +99,8 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property PolicyNames. 
         /// <para>
         /// The names of one or more policies. If you omit this parameter, all policies are described.
-        /// If an group name is provided, the results are limited to that group. This list is
-        /// limited to 50 items. If you specify an unknown policy name, it is ignored with no
-        /// error.
+        /// If a group name is provided, the results are limited to that group. This list is limited
+        /// to 50 items. If you specify an unknown policy name, it is ignored with no error.
         /// </para>
         /// </summary>
         public List<string> PolicyNames

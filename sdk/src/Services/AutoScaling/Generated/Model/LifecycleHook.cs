@@ -148,8 +148,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LifecycleTransition. 
         /// <para>
-        /// The state of the EC2 instance to which you want to attach the lifecycle hook. The
-        /// following are possible values:
+        /// The state of the EC2 instance to which to attach the lifecycle hook. The following
+        /// are possible values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
