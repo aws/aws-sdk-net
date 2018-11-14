@@ -46,7 +46,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// Instantiates SetSubscriptionAttributesRequest with the parameterized properties
         /// </summary>
         /// <param name="subscriptionArn">The ARN of the subscription to modify.</param>
-        /// <param name="attributeName">The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable. Valid values: <code>DeliveryPolicy</code> | <code>FilterPolicy</code> | <code>RawMessageDelivery</code> </param>
+        /// <param name="attributeName">A map of attributes with their corresponding values. The following lists the names, descriptions, and values of the special request parameters that the <code>SetTopicAttributes</code> action uses: <ul> <li>  <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints. </li> <li>  <code>FilterPolicy</code> – The simple JSON object that lets your subscriber receive only a subset of messages, rather than receiving every message published to the topic. </li> <li>  <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is otherwise created for Amazon SNS metadata. </li> </ul></param>
         /// <param name="attributeValue">The new value for the attribute in JSON format.</param>
         public SetSubscriptionAttributesRequest(string subscriptionArn, string attributeName, string attributeValue)
         {
@@ -58,14 +58,30 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the property AttributeName. 
         /// <para>
-        /// The name of the attribute you want to set. Only a subset of the subscriptions attributes
-        /// are mutable.
+        /// A map of attributes with their corresponding values.
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>DeliveryPolicy</code> | <code>FilterPolicy</code> | <code>RawMessageDelivery</code>
-        /// 
+        /// The following lists the names, descriptions, and values of the special request parameters
+        /// that the <code>SetTopicAttributes</code> action uses:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed
+        /// deliveries to HTTP/S endpoints.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>FilterPolicy</code> – The simple JSON object that lets your subscriber receive
+        /// only a subset of messages, rather than receiving every message published to the topic.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message
+        /// delivery to Amazon SQS or HTTP/S endpoints. This eliminates the need for the endpoints
+        /// to process JSON formatting, which is otherwise created for Amazon SNS metadata.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string AttributeName
         {

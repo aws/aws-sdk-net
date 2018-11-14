@@ -41,43 +41,42 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>TopicArn</code> -- the topic's ARN
+        ///  <code>TopicArn</code> – the topic's ARN
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Owner</code> -- the AWS account ID of the topic's owner
+        ///  <code>Owner</code> – the AWS account ID of the topic's owner
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Policy</code> -- the JSON serialization of the topic's access control policy
+        ///  <code>Policy</code> – the JSON serialization of the topic's access control policy
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DisplayName</code> -- the human-readable name used in the "From" field for
-        /// notifications to email and email-json endpoints
+        ///  <code>DisplayName</code> – the human-readable name used in the "From" field for notifications
+        /// to email and email-json endpoints
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SubscriptionsPending</code> -- the number of subscriptions pending confirmation
+        ///  <code>SubscriptionsPending</code> – the number of subscriptions pending confirmation
         /// on this topic
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SubscriptionsConfirmed</code> -- the number of confirmed subscriptions on this
+        ///  <code>SubscriptionsConfirmed</code> – the number of confirmed subscriptions on this
         /// topic
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SubscriptionsDeleted</code> -- the number of deleted subscriptions on this
-        /// topic
+        ///  <code>SubscriptionsDeleted</code> – the number of deleted subscriptions on this topic
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DeliveryPolicy</code> -- the JSON serialization of the topic's delivery policy
+        ///  <code>DeliveryPolicy</code> – the JSON serialization of the topic's delivery policy
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EffectiveDeliveryPolicy</code> -- the JSON serialization of the effective delivery
+        ///  <code>EffectiveDeliveryPolicy</code> – the JSON serialization of the effective delivery
         /// policy that takes into account system defaults
         /// </para>
         ///  </li> </ul>

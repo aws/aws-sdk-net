@@ -46,7 +46,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// Instantiates SetTopicAttributesRequest with the parameterized properties
         /// </summary>
         /// <param name="topicArn">The ARN of the topic to modify.</param>
-        /// <param name="attributeName">The name of the attribute you want to set. Only a subset of the topic's attributes are mutable. Valid values: <code>Policy</code> | <code>DisplayName</code> | <code>DeliveryPolicy</code> </param>
+        /// <param name="attributeName">A map of attributes with their corresponding values. The following lists the names, descriptions, and values of the special request parameters that the <code>SetTopicAttributes</code> action uses: <ul> <li>  <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints. </li> <li>  <code>DisplayName</code> – The display name to use for a topic with SMS subscriptions. </li> <li>  <code>Policy</code> – The policy that defines who can access your topic. By default, only the topic owner can publish or subscribe to the topic. </li> </ul></param>
         /// <param name="attributeValue">The new value for the attribute.</param>
         public SetTopicAttributesRequest(string topicArn, string attributeName, string attributeValue)
         {
@@ -58,14 +58,28 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the property AttributeName. 
         /// <para>
-        /// The name of the attribute you want to set. Only a subset of the topic's attributes
-        /// are mutable.
+        /// A map of attributes with their corresponding values.
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>Policy</code> | <code>DisplayName</code> | <code>DeliveryPolicy</code>
-        /// 
+        /// The following lists the names, descriptions, and values of the special request parameters
+        /// that the <code>SetTopicAttributes</code> action uses:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed
+        /// deliveries to HTTP/S endpoints.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DisplayName</code> – The display name to use for a topic with SMS subscriptions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Policy</code> – The policy that defines who can access your topic. By default,
+        /// only the topic owner can publish or subscribe to the topic.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string AttributeName
         {

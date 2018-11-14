@@ -58,6 +58,21 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetAttributes())
+                {
+                    int mapIndex = 1;
+                    foreach(var key in publicRequest.Attributes.Keys)
+                    {
+                        String value;
+                        bool hasValue = publicRequest.Attributes.TryGetValue(key, out value);
+                        request.Parameters.Add("Attributes" + "." + "entry" + "." + mapIndex + "." + "key", StringUtils.FromString(key));
+                        if (hasValue)
+                        {
+                            request.Parameters.Add("Attributes" + "." + "entry" + "." + mapIndex + "." + "value", StringUtils.FromString(value));
+                        }
+                        mapIndex++;
+                    }
+                }
                 if(publicRequest.IsSetName())
                 {
                     request.Parameters.Add("Name", StringUtils.FromString(publicRequest.Name));

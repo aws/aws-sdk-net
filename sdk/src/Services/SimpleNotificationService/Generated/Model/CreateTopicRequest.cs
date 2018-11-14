@@ -36,6 +36,7 @@ namespace Amazon.SimpleNotificationService.Model
     /// </summary>
     public partial class CreateTopicRequest : AmazonSimpleNotificationServiceRequest
     {
+        private Dictionary<string, string> _attributes = new Dictionary<string, string>();
         private string _name;
 
         /// <summary>
@@ -50,6 +51,44 @@ namespace Amazon.SimpleNotificationService.Model
         public CreateTopicRequest(string name)
         {
             _name = name;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Attributes. 
+        /// <para>
+        /// A map of attributes with their corresponding values.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following lists the names, descriptions, and values of the special request parameters
+        /// that the <code>CreateTopic</code> action uses:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed
+        /// deliveries to HTTP/S endpoints.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DisplayName</code> – The display name to use for a topic with SMS subscriptions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Policy</code> – The policy that defines who can access your topic. By default,
+        /// only the topic owner can publish or subscribe to the topic.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public Dictionary<string, string> Attributes
+        {
+            get { return this._attributes; }
+            set { this._attributes = value; }
+        }
+
+        // Check to see if Attributes property is set
+        internal bool IsSetAttributes()
+        {
+            return this._attributes != null && this._attributes.Count > 0; 
         }
 
         /// <summary>

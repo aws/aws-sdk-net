@@ -41,22 +41,22 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated event notifications
+        ///  <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated event notifications
         /// should be sent.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted event notifications
+        ///  <code>EventEndpointDeleted</code> – Topic ARN to which EndpointDeleted event notifications
         /// should be sent.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate event notifications
+        ///  <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate event notifications
         /// should be sent.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure event notifications
+        ///  <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event notifications
         /// should be sent upon Direct Publish delivery failure (permanent) to one of the application's
         /// endpoints.
         /// </para>
