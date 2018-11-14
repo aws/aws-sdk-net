@@ -34,11 +34,13 @@ namespace Amazon.MediaTailor.Model
     {
         private string _adDecisionServerUrl;
         private CdnConfiguration _cdnConfiguration;
+        private DashConfiguration _dashConfiguration;
         private HlsConfiguration _hlsConfiguration;
         private string _name;
         private string _playbackEndpointPrefix;
         private string _sessionInitializationEndpointPrefix;
         private string _slateAdUrl;
+        private string _transcodeProfileName;
         private string _videoContentSourceUrl;
 
         /// <summary>
@@ -79,6 +81,24 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetCdnConfiguration()
         {
             return this._cdnConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DashConfiguration. 
+        /// <para>
+        /// The configuration object for DASH content. 
+        /// </para>
+        /// </summary>
+        public DashConfiguration DashConfiguration
+        {
+            get { return this._dashConfiguration; }
+            set { this._dashConfiguration = value; }
+        }
+
+        // Check to see if DashConfiguration property is set
+        internal bool IsSetDashConfiguration()
+        {
+            return this._dashConfiguration != null;
         }
 
         /// <summary>
@@ -176,6 +196,26 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetSlateAdUrl()
         {
             return this._slateAdUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TranscodeProfileName. 
+        /// <para>
+        /// Associate this playbackConfiguration with a custom transcode profile, overriding MediaTailor's
+        /// dynamic transcoding defaults. Do not include this field if you have not setup custom
+        /// profiles with the MediaTailor service team. 
+        /// </para>
+        /// </summary>
+        public string TranscodeProfileName
+        {
+            get { return this._transcodeProfileName; }
+            set { this._transcodeProfileName = value; }
+        }
+
+        // Check to see if TranscodeProfileName property is set
+        internal bool IsSetTranscodeProfileName()
+        {
+            return this._transcodeProfileName != null;
         }
 
         /// <summary>

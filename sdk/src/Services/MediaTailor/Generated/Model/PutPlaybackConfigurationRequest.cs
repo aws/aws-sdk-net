@@ -37,6 +37,7 @@ namespace Amazon.MediaTailor.Model
         private CdnConfiguration _cdnConfiguration;
         private string _name;
         private string _slateAdUrl;
+        private string _transcodeProfileName;
         private string _videoContentSourceUrl;
 
         /// <summary>
@@ -118,6 +119,26 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetSlateAdUrl()
         {
             return this._slateAdUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TranscodeProfileName. 
+        /// <para>
+        /// Associate this playbackConfiguration with a custom transcode profile, overriding MediaTailor's
+        /// dynamic transcoding defaults. Do not include this field if you have not setup custom
+        /// profiles with the MediaTailor service team. 
+        /// </para>
+        /// </summary>
+        public string TranscodeProfileName
+        {
+            get { return this._transcodeProfileName; }
+            set { this._transcodeProfileName = value; }
+        }
+
+        // Check to see if TranscodeProfileName property is set
+        internal bool IsSetTranscodeProfileName()
+        {
+            return this._transcodeProfileName != null;
         }
 
         /// <summary>

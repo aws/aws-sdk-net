@@ -63,6 +63,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     response.CdnConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DashConfiguration", targetDepth))
+                {
+                    var unmarshaller = DashConfigurationUnmarshaller.Instance;
+                    response.DashConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("HlsConfiguration", targetDepth))
                 {
                     var unmarshaller = HlsConfigurationUnmarshaller.Instance;
@@ -91,6 +97,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SlateAdUrl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TranscodeProfileName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.TranscodeProfileName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("VideoContentSourceUrl", targetDepth))

@@ -94,6 +94,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SlateAdUrl);
                 }
 
+                if(publicRequest.IsSetTranscodeProfileName())
+                {
+                    context.Writer.WritePropertyName("TranscodeProfileName");
+                    context.Writer.Write(publicRequest.TranscodeProfileName);
+                }
+
                 if(publicRequest.IsSetVideoContentSourceUrl())
                 {
                     context.Writer.WritePropertyName("VideoContentSourceUrl");
