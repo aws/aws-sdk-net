@@ -60,10 +60,10 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
             string uriResourcePath = "/v1/configurations/{configuration-id}/revisions/{configuration-revision}";
             if (!publicRequest.IsSetConfigurationId())
                 throw new AmazonMQException("Request object does not have required field ConfigurationId set");
-            uriResourcePath = uriResourcePath.Replace("{configuration-id}", StringUtils.FromString(publicRequest.ConfigurationId));
+            uriResourcePath = uriResourcePath.Replace("{configuration-id}", StringUtils.FromStringWithSlashEncoding(publicRequest.ConfigurationId));
             if (!publicRequest.IsSetConfigurationRevision())
                 throw new AmazonMQException("Request object does not have required field ConfigurationRevision set");
-            uriResourcePath = uriResourcePath.Replace("{configuration-revision}", StringUtils.FromString(publicRequest.ConfigurationRevision));
+            uriResourcePath = uriResourcePath.Replace("{configuration-revision}", StringUtils.FromStringWithSlashEncoding(publicRequest.ConfigurationRevision));
             request.ResourcePath = uriResourcePath;
 
             return request;

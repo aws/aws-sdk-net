@@ -60,10 +60,10 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             string uriResourcePath = "/api/v1/organizations/{OrganizationId}/subscriptions/{SubscriptionId}";
             if (!publicRequest.IsSetOrganizationId())
                 throw new AmazonWorkDocsException("Request object does not have required field OrganizationId set");
-            uriResourcePath = uriResourcePath.Replace("{OrganizationId}", StringUtils.FromString(publicRequest.OrganizationId));
+            uriResourcePath = uriResourcePath.Replace("{OrganizationId}", StringUtils.FromStringWithSlashEncoding(publicRequest.OrganizationId));
             if (!publicRequest.IsSetSubscriptionId())
                 throw new AmazonWorkDocsException("Request object does not have required field SubscriptionId set");
-            uriResourcePath = uriResourcePath.Replace("{SubscriptionId}", StringUtils.FromString(publicRequest.SubscriptionId));
+            uriResourcePath = uriResourcePath.Replace("{SubscriptionId}", StringUtils.FromStringWithSlashEncoding(publicRequest.SubscriptionId));
             request.ResourcePath = uriResourcePath;
 
             return request;

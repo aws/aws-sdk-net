@@ -60,7 +60,7 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
             string uriResourcePath = "/2012-09-25/jobsByStatus/{Status}";
             if (!publicRequest.IsSetStatus())
                 throw new AmazonElasticTranscoderException("Request object does not have required field Status set");
-            uriResourcePath = uriResourcePath.Replace("{Status}", StringUtils.FromString(publicRequest.Status));
+            uriResourcePath = uriResourcePath.Replace("{Status}", StringUtils.FromStringWithSlashEncoding(publicRequest.Status));
             
             if (publicRequest.IsSetAscending())
                 request.Parameters.Add("Ascending", StringUtils.FromString(publicRequest.Ascending));

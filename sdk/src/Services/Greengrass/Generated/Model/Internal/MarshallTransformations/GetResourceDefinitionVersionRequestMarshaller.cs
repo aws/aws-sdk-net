@@ -60,10 +60,10 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             string uriResourcePath = "/greengrass/definition/resources/{ResourceDefinitionId}/versions/{ResourceDefinitionVersionId}";
             if (!publicRequest.IsSetResourceDefinitionId())
                 throw new AmazonGreengrassException("Request object does not have required field ResourceDefinitionId set");
-            uriResourcePath = uriResourcePath.Replace("{ResourceDefinitionId}", StringUtils.FromString(publicRequest.ResourceDefinitionId));
+            uriResourcePath = uriResourcePath.Replace("{ResourceDefinitionId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ResourceDefinitionId));
             if (!publicRequest.IsSetResourceDefinitionVersionId())
                 throw new AmazonGreengrassException("Request object does not have required field ResourceDefinitionVersionId set");
-            uriResourcePath = uriResourcePath.Replace("{ResourceDefinitionVersionId}", StringUtils.FromString(publicRequest.ResourceDefinitionVersionId));
+            uriResourcePath = uriResourcePath.Replace("{ResourceDefinitionVersionId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ResourceDefinitionVersionId));
             request.ResourcePath = uriResourcePath;
 
             return request;

@@ -60,7 +60,7 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
             string uriResourcePath = "/resources/{Arn}/tags";
             if (!publicRequest.IsSetArn())
                 throw new AmazonResourceGroupsException("Request object does not have required field Arn set");
-            uriResourcePath = uriResourcePath.Replace("{Arn}", StringUtils.FromString(publicRequest.Arn));
+            uriResourcePath = uriResourcePath.Replace("{Arn}", StringUtils.FromStringWithSlashEncoding(publicRequest.Arn));
             request.ResourcePath = uriResourcePath;
 
             return request;

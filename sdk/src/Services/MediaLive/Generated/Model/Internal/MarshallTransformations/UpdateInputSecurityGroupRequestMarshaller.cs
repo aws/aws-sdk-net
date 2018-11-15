@@ -61,7 +61,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             string uriResourcePath = "/prod/inputSecurityGroups/{inputSecurityGroupId}";
             if (!publicRequest.IsSetInputSecurityGroupId())
                 throw new AmazonMediaLiveException("Request object does not have required field InputSecurityGroupId set");
-            uriResourcePath = uriResourcePath.Replace("{inputSecurityGroupId}", StringUtils.FromString(publicRequest.InputSecurityGroupId));
+            uriResourcePath = uriResourcePath.Replace("{inputSecurityGroupId}", StringUtils.FromStringWithSlashEncoding(publicRequest.InputSecurityGroupId));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {

@@ -61,10 +61,10 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
             string uriResourcePath = "/channels/{id}/ingest_endpoints/{ingest_endpoint_id}/credentials";
             if (!publicRequest.IsSetId())
                 throw new AmazonMediaPackageException("Request object does not have required field Id set");
-            uriResourcePath = uriResourcePath.Replace("{id}", StringUtils.FromString(publicRequest.Id));
+            uriResourcePath = uriResourcePath.Replace("{id}", StringUtils.FromStringWithSlashEncoding(publicRequest.Id));
             if (!publicRequest.IsSetIngestEndpointId())
                 throw new AmazonMediaPackageException("Request object does not have required field IngestEndpointId set");
-            uriResourcePath = uriResourcePath.Replace("{ingest_endpoint_id}", StringUtils.FromString(publicRequest.IngestEndpointId));
+            uriResourcePath = uriResourcePath.Replace("{ingest_endpoint_id}", StringUtils.FromStringWithSlashEncoding(publicRequest.IngestEndpointId));
             request.ResourcePath = uriResourcePath;
 
             return request;

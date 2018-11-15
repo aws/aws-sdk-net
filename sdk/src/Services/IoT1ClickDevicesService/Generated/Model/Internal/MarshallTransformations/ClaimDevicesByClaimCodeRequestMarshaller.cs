@@ -61,7 +61,7 @@ namespace Amazon.IoT1ClickDevicesService.Model.Internal.MarshallTransformations
             string uriResourcePath = "/claims/{claimCode}";
             if (!publicRequest.IsSetClaimCode())
                 throw new AmazonIoT1ClickDevicesServiceException("Request object does not have required field ClaimCode set");
-            uriResourcePath = uriResourcePath.Replace("{claimCode}", StringUtils.FromString(publicRequest.ClaimCode));
+            uriResourcePath = uriResourcePath.Replace("{claimCode}", StringUtils.FromStringWithSlashEncoding(publicRequest.ClaimCode));
             request.ResourcePath = uriResourcePath;
 
             return request;

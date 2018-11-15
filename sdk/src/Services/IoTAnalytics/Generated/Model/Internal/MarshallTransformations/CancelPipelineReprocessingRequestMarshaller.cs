@@ -60,10 +60,10 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
             string uriResourcePath = "/pipelines/{pipelineName}/reprocessing/{reprocessingId}";
             if (!publicRequest.IsSetPipelineName())
                 throw new AmazonIoTAnalyticsException("Request object does not have required field PipelineName set");
-            uriResourcePath = uriResourcePath.Replace("{pipelineName}", StringUtils.FromString(publicRequest.PipelineName));
+            uriResourcePath = uriResourcePath.Replace("{pipelineName}", StringUtils.FromStringWithSlashEncoding(publicRequest.PipelineName));
             if (!publicRequest.IsSetReprocessingId())
                 throw new AmazonIoTAnalyticsException("Request object does not have required field ReprocessingId set");
-            uriResourcePath = uriResourcePath.Replace("{reprocessingId}", StringUtils.FromString(publicRequest.ReprocessingId));
+            uriResourcePath = uriResourcePath.Replace("{reprocessingId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ReprocessingId));
             request.ResourcePath = uriResourcePath;
 
             return request;

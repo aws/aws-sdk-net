@@ -61,7 +61,7 @@ namespace Amazon.SageMakerRuntime.Model.Internal.MarshallTransformations
             string uriResourcePath = "/endpoints/{EndpointName}/invocations";
             if (!publicRequest.IsSetEndpointName())
                 throw new AmazonSageMakerRuntimeException("Request object does not have required field EndpointName set");
-            uriResourcePath = uriResourcePath.Replace("{EndpointName}", StringUtils.FromString(publicRequest.EndpointName));
+            uriResourcePath = uriResourcePath.Replace("{EndpointName}", StringUtils.FromStringWithSlashEncoding(publicRequest.EndpointName));
             request.ResourcePath = uriResourcePath;
             request.ContentStream =  publicRequest.Body ?? new MemoryStream();
             request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  

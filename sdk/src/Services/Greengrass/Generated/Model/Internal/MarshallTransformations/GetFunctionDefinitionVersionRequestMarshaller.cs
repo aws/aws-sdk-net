@@ -60,10 +60,10 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             string uriResourcePath = "/greengrass/definition/functions/{FunctionDefinitionId}/versions/{FunctionDefinitionVersionId}";
             if (!publicRequest.IsSetFunctionDefinitionId())
                 throw new AmazonGreengrassException("Request object does not have required field FunctionDefinitionId set");
-            uriResourcePath = uriResourcePath.Replace("{FunctionDefinitionId}", StringUtils.FromString(publicRequest.FunctionDefinitionId));
+            uriResourcePath = uriResourcePath.Replace("{FunctionDefinitionId}", StringUtils.FromStringWithSlashEncoding(publicRequest.FunctionDefinitionId));
             if (!publicRequest.IsSetFunctionDefinitionVersionId())
                 throw new AmazonGreengrassException("Request object does not have required field FunctionDefinitionVersionId set");
-            uriResourcePath = uriResourcePath.Replace("{FunctionDefinitionVersionId}", StringUtils.FromString(publicRequest.FunctionDefinitionVersionId));
+            uriResourcePath = uriResourcePath.Replace("{FunctionDefinitionVersionId}", StringUtils.FromStringWithSlashEncoding(publicRequest.FunctionDefinitionVersionId));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));

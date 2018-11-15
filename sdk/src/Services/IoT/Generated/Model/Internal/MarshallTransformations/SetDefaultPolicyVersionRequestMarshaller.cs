@@ -61,10 +61,10 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             string uriResourcePath = "/policies/{policyName}/version/{policyVersionId}";
             if (!publicRequest.IsSetPolicyName())
                 throw new AmazonIoTException("Request object does not have required field PolicyName set");
-            uriResourcePath = uriResourcePath.Replace("{policyName}", StringUtils.FromString(publicRequest.PolicyName));
+            uriResourcePath = uriResourcePath.Replace("{policyName}", StringUtils.FromStringWithSlashEncoding(publicRequest.PolicyName));
             if (!publicRequest.IsSetPolicyVersionId())
                 throw new AmazonIoTException("Request object does not have required field PolicyVersionId set");
-            uriResourcePath = uriResourcePath.Replace("{policyVersionId}", StringUtils.FromString(publicRequest.PolicyVersionId));
+            uriResourcePath = uriResourcePath.Replace("{policyVersionId}", StringUtils.FromStringWithSlashEncoding(publicRequest.PolicyVersionId));
             request.ResourcePath = uriResourcePath;
 
             return request;

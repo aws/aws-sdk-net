@@ -61,13 +61,13 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
             string uriResourcePath = "/bot/{botName}/alias/{botAlias}/user/{userId}/content";
             if (!publicRequest.IsSetBotAlias())
                 throw new AmazonLexException("Request object does not have required field BotAlias set");
-            uriResourcePath = uriResourcePath.Replace("{botAlias}", StringUtils.FromString(publicRequest.BotAlias));
+            uriResourcePath = uriResourcePath.Replace("{botAlias}", StringUtils.FromStringWithSlashEncoding(publicRequest.BotAlias));
             if (!publicRequest.IsSetBotName())
                 throw new AmazonLexException("Request object does not have required field BotName set");
-            uriResourcePath = uriResourcePath.Replace("{botName}", StringUtils.FromString(publicRequest.BotName));
+            uriResourcePath = uriResourcePath.Replace("{botName}", StringUtils.FromStringWithSlashEncoding(publicRequest.BotName));
             if (!publicRequest.IsSetUserId())
                 throw new AmazonLexException("Request object does not have required field UserId set");
-            uriResourcePath = uriResourcePath.Replace("{userId}", StringUtils.FromString(publicRequest.UserId));
+            uriResourcePath = uriResourcePath.Replace("{userId}", StringUtils.FromStringWithSlashEncoding(publicRequest.UserId));
             request.ResourcePath = uriResourcePath;
             request.ContentStream =  publicRequest.InputStream ?? new MemoryStream();
             request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  

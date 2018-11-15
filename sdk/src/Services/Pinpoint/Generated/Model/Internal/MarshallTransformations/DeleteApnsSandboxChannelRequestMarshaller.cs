@@ -60,7 +60,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             string uriResourcePath = "/v1/apps/{application-id}/channels/apns_sandbox";
             if (!publicRequest.IsSetApplicationId())
                 throw new AmazonPinpointException("Request object does not have required field ApplicationId set");
-            uriResourcePath = uriResourcePath.Replace("{application-id}", StringUtils.FromString(publicRequest.ApplicationId));
+            uriResourcePath = uriResourcePath.Replace("{application-id}", StringUtils.FromStringWithSlashEncoding(publicRequest.ApplicationId));
             request.ResourcePath = uriResourcePath;
 
             return request;

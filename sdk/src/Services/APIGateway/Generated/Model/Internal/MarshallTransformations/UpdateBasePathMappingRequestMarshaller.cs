@@ -61,10 +61,10 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             string uriResourcePath = "/domainnames/{domain_name}/basepathmappings/{base_path}";
             if (!publicRequest.IsSetBasePath())
                 throw new AmazonAPIGatewayException("Request object does not have required field BasePath set");
-            uriResourcePath = uriResourcePath.Replace("{base_path}", StringUtils.FromString(publicRequest.BasePath));
+            uriResourcePath = uriResourcePath.Replace("{base_path}", StringUtils.FromStringWithSlashEncoding(publicRequest.BasePath));
             if (!publicRequest.IsSetDomainName())
                 throw new AmazonAPIGatewayException("Request object does not have required field DomainName set");
-            uriResourcePath = uriResourcePath.Replace("{domain_name}", StringUtils.FromString(publicRequest.DomainName));
+            uriResourcePath = uriResourcePath.Replace("{domain_name}", StringUtils.FromStringWithSlashEncoding(publicRequest.DomainName));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {

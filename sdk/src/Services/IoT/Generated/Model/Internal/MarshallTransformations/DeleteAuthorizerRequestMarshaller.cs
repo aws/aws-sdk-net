@@ -60,7 +60,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             string uriResourcePath = "/authorizer/{authorizerName}";
             if (!publicRequest.IsSetAuthorizerName())
                 throw new AmazonIoTException("Request object does not have required field AuthorizerName set");
-            uriResourcePath = uriResourcePath.Replace("{authorizerName}", StringUtils.FromString(publicRequest.AuthorizerName));
+            uriResourcePath = uriResourcePath.Replace("{authorizerName}", StringUtils.FromStringWithSlashEncoding(publicRequest.AuthorizerName));
             request.ResourcePath = uriResourcePath;
 
             return request;

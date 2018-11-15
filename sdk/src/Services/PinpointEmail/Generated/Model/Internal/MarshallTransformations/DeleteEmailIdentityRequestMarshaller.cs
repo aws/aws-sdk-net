@@ -62,7 +62,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             string uriResourcePath = "/v1/email/identities/{EmailIdentity}";
             if (!publicRequest.IsSetEmailIdentity())
                 throw new AmazonPinpointEmailException("Request object does not have required field EmailIdentity set");
-            uriResourcePath = uriResourcePath.Replace("{EmailIdentity}", StringUtils.FromString(publicRequest.EmailIdentity));
+            uriResourcePath = uriResourcePath.Replace("{EmailIdentity}", StringUtils.FromStringWithSlashEncoding(publicRequest.EmailIdentity));
             request.ResourcePath = uriResourcePath;
 
             return request;

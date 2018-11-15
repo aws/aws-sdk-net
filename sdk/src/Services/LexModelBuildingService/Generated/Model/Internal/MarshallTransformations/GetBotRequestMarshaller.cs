@@ -60,10 +60,10 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
             string uriResourcePath = "/bots/{name}/versions/{versionoralias}";
             if (!publicRequest.IsSetName())
                 throw new AmazonLexModelBuildingServiceException("Request object does not have required field Name set");
-            uriResourcePath = uriResourcePath.Replace("{name}", StringUtils.FromString(publicRequest.Name));
+            uriResourcePath = uriResourcePath.Replace("{name}", StringUtils.FromStringWithSlashEncoding(publicRequest.Name));
             if (!publicRequest.IsSetVersionOrAlias())
                 throw new AmazonLexModelBuildingServiceException("Request object does not have required field VersionOrAlias set");
-            uriResourcePath = uriResourcePath.Replace("{versionoralias}", StringUtils.FromString(publicRequest.VersionOrAlias));
+            uriResourcePath = uriResourcePath.Replace("{versionoralias}", StringUtils.FromStringWithSlashEncoding(publicRequest.VersionOrAlias));
             request.ResourcePath = uriResourcePath;
 
             return request;

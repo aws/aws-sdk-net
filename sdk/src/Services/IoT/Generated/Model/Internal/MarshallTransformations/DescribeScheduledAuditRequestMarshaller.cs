@@ -60,7 +60,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             string uriResourcePath = "/audit/scheduledaudits/{scheduledAuditName}";
             if (!publicRequest.IsSetScheduledAuditName())
                 throw new AmazonIoTException("Request object does not have required field ScheduledAuditName set");
-            uriResourcePath = uriResourcePath.Replace("{scheduledAuditName}", StringUtils.FromString(publicRequest.ScheduledAuditName));
+            uriResourcePath = uriResourcePath.Replace("{scheduledAuditName}", StringUtils.FromStringWithSlashEncoding(publicRequest.ScheduledAuditName));
             request.ResourcePath = uriResourcePath;
 
             return request;

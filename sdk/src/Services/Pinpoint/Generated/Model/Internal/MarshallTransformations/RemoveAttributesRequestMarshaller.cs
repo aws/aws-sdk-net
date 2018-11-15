@@ -61,10 +61,10 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             string uriResourcePath = "/v1/apps/{application-id}/attributes/{attribute-type}";
             if (!publicRequest.IsSetApplicationId())
                 throw new AmazonPinpointException("Request object does not have required field ApplicationId set");
-            uriResourcePath = uriResourcePath.Replace("{application-id}", StringUtils.FromString(publicRequest.ApplicationId));
+            uriResourcePath = uriResourcePath.Replace("{application-id}", StringUtils.FromStringWithSlashEncoding(publicRequest.ApplicationId));
             if (!publicRequest.IsSetAttributeType())
                 throw new AmazonPinpointException("Request object does not have required field AttributeType set");
-            uriResourcePath = uriResourcePath.Replace("{attribute-type}", StringUtils.FromString(publicRequest.AttributeType));
+            uriResourcePath = uriResourcePath.Replace("{attribute-type}", StringUtils.FromStringWithSlashEncoding(publicRequest.AttributeType));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {

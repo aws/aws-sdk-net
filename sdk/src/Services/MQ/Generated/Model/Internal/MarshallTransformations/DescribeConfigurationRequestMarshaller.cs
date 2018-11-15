@@ -60,7 +60,7 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
             string uriResourcePath = "/v1/configurations/{configuration-id}";
             if (!publicRequest.IsSetConfigurationId())
                 throw new AmazonMQException("Request object does not have required field ConfigurationId set");
-            uriResourcePath = uriResourcePath.Replace("{configuration-id}", StringUtils.FromString(publicRequest.ConfigurationId));
+            uriResourcePath = uriResourcePath.Replace("{configuration-id}", StringUtils.FromStringWithSlashEncoding(publicRequest.ConfigurationId));
             request.ResourcePath = uriResourcePath;
 
             return request;

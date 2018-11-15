@@ -60,7 +60,7 @@ namespace Amazon.Polly.Model.Internal.MarshallTransformations
             string uriResourcePath = "/v1/synthesisTasks/{TaskId}";
             if (!publicRequest.IsSetTaskId())
                 throw new AmazonPollyException("Request object does not have required field TaskId set");
-            uriResourcePath = uriResourcePath.Replace("{TaskId}", StringUtils.FromString(publicRequest.TaskId));
+            uriResourcePath = uriResourcePath.Replace("{TaskId}", StringUtils.FromStringWithSlashEncoding(publicRequest.TaskId));
             request.ResourcePath = uriResourcePath;
 
             return request;

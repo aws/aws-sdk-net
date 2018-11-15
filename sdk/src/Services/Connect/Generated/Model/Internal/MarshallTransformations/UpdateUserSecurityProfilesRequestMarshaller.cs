@@ -61,10 +61,10 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             string uriResourcePath = "/users/{InstanceId}/{UserId}/security-profiles";
             if (!publicRequest.IsSetInstanceId())
                 throw new AmazonConnectException("Request object does not have required field InstanceId set");
-            uriResourcePath = uriResourcePath.Replace("{InstanceId}", StringUtils.FromString(publicRequest.InstanceId));
+            uriResourcePath = uriResourcePath.Replace("{InstanceId}", StringUtils.FromStringWithSlashEncoding(publicRequest.InstanceId));
             if (!publicRequest.IsSetUserId())
                 throw new AmazonConnectException("Request object does not have required field UserId set");
-            uriResourcePath = uriResourcePath.Replace("{UserId}", StringUtils.FromString(publicRequest.UserId));
+            uriResourcePath = uriResourcePath.Replace("{UserId}", StringUtils.FromStringWithSlashEncoding(publicRequest.UserId));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {

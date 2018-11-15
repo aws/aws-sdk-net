@@ -63,7 +63,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             string uriResourcePath = "/v1/email/dedicated-ips/{IP}/pool";
             if (!publicRequest.IsSetIp())
                 throw new AmazonPinpointEmailException("Request object does not have required field Ip set");
-            uriResourcePath = uriResourcePath.Replace("{IP}", StringUtils.FromString(publicRequest.Ip));
+            uriResourcePath = uriResourcePath.Replace("{IP}", StringUtils.FromStringWithSlashEncoding(publicRequest.Ip));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {

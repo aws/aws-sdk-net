@@ -60,7 +60,7 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
             string uriResourcePath = "/2012-09-25/pipelines/{Id}";
             if (!publicRequest.IsSetId())
                 throw new AmazonElasticTranscoderException("Request object does not have required field Id set");
-            uriResourcePath = uriResourcePath.Replace("{Id}", StringUtils.FromString(publicRequest.Id));
+            uriResourcePath = uriResourcePath.Replace("{Id}", StringUtils.FromStringWithSlashEncoding(publicRequest.Id));
             request.ResourcePath = uriResourcePath;
 
             return request;

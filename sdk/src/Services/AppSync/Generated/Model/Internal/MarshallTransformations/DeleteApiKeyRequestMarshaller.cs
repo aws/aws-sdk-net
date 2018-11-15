@@ -60,10 +60,10 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             string uriResourcePath = "/v1/apis/{apiId}/apikeys/{id}";
             if (!publicRequest.IsSetApiId())
                 throw new AmazonAppSyncException("Request object does not have required field ApiId set");
-            uriResourcePath = uriResourcePath.Replace("{apiId}", StringUtils.FromString(publicRequest.ApiId));
+            uriResourcePath = uriResourcePath.Replace("{apiId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ApiId));
             if (!publicRequest.IsSetId())
                 throw new AmazonAppSyncException("Request object does not have required field Id set");
-            uriResourcePath = uriResourcePath.Replace("{id}", StringUtils.FromString(publicRequest.Id));
+            uriResourcePath = uriResourcePath.Replace("{id}", StringUtils.FromStringWithSlashEncoding(publicRequest.Id));
             request.ResourcePath = uriResourcePath;
 
             return request;

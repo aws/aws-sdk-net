@@ -59,10 +59,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             string uriResourcePath = "/2013-04-01/hostedzonelimit/{Id}/{Type}";
             if (!publicRequest.IsSetType())
                 throw new AmazonRoute53Exception("Request object does not have required field Type set");
-            uriResourcePath = uriResourcePath.Replace("{Type}", StringUtils.FromString(publicRequest.Type));
+            uriResourcePath = uriResourcePath.Replace("{Type}", StringUtils.FromStringWithSlashEncoding(publicRequest.Type));
             if (!publicRequest.IsSetHostedZoneId())
                 throw new AmazonRoute53Exception("Request object does not have required field HostedZoneId set");
-            uriResourcePath = uriResourcePath.Replace("{Id}", StringUtils.FromString(publicRequest.HostedZoneId));
+            uriResourcePath = uriResourcePath.Replace("{Id}", StringUtils.FromStringWithSlashEncoding(publicRequest.HostedZoneId));
             request.ResourcePath = uriResourcePath;
 
 

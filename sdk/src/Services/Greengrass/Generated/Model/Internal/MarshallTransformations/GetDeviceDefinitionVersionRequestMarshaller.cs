@@ -60,10 +60,10 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             string uriResourcePath = "/greengrass/definition/devices/{DeviceDefinitionId}/versions/{DeviceDefinitionVersionId}";
             if (!publicRequest.IsSetDeviceDefinitionId())
                 throw new AmazonGreengrassException("Request object does not have required field DeviceDefinitionId set");
-            uriResourcePath = uriResourcePath.Replace("{DeviceDefinitionId}", StringUtils.FromString(publicRequest.DeviceDefinitionId));
+            uriResourcePath = uriResourcePath.Replace("{DeviceDefinitionId}", StringUtils.FromStringWithSlashEncoding(publicRequest.DeviceDefinitionId));
             if (!publicRequest.IsSetDeviceDefinitionVersionId())
                 throw new AmazonGreengrassException("Request object does not have required field DeviceDefinitionVersionId set");
-            uriResourcePath = uriResourcePath.Replace("{DeviceDefinitionVersionId}", StringUtils.FromString(publicRequest.DeviceDefinitionVersionId));
+            uriResourcePath = uriResourcePath.Replace("{DeviceDefinitionVersionId}", StringUtils.FromStringWithSlashEncoding(publicRequest.DeviceDefinitionVersionId));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));

@@ -60,7 +60,7 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
             string uriResourcePath = "/builtins/intents/{signature}";
             if (!publicRequest.IsSetSignature())
                 throw new AmazonLexModelBuildingServiceException("Request object does not have required field Signature set");
-            uriResourcePath = uriResourcePath.Replace("{signature}", StringUtils.FromString(publicRequest.Signature));
+            uriResourcePath = uriResourcePath.Replace("{signature}", StringUtils.FromStringWithSlashEncoding(publicRequest.Signature));
             request.ResourcePath = uriResourcePath;
 
             return request;

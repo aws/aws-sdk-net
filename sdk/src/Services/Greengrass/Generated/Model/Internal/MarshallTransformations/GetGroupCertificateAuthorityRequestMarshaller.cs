@@ -60,10 +60,10 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             string uriResourcePath = "/greengrass/groups/{GroupId}/certificateauthorities/{CertificateAuthorityId}";
             if (!publicRequest.IsSetCertificateAuthorityId())
                 throw new AmazonGreengrassException("Request object does not have required field CertificateAuthorityId set");
-            uriResourcePath = uriResourcePath.Replace("{CertificateAuthorityId}", StringUtils.FromString(publicRequest.CertificateAuthorityId));
+            uriResourcePath = uriResourcePath.Replace("{CertificateAuthorityId}", StringUtils.FromStringWithSlashEncoding(publicRequest.CertificateAuthorityId));
             if (!publicRequest.IsSetGroupId())
                 throw new AmazonGreengrassException("Request object does not have required field GroupId set");
-            uriResourcePath = uriResourcePath.Replace("{GroupId}", StringUtils.FromString(publicRequest.GroupId));
+            uriResourcePath = uriResourcePath.Replace("{GroupId}", StringUtils.FromStringWithSlashEncoding(publicRequest.GroupId));
             request.ResourcePath = uriResourcePath;
 
             return request;

@@ -62,7 +62,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 request.Headers["If-Match"] = publicRequest.IfMatch;
             if (!publicRequest.IsSetId())
                 throw new AmazonCloudFrontException("Request object does not have required field Id set");
-            uriResourcePath = uriResourcePath.Replace("{Id}", StringUtils.FromString(publicRequest.Id));
+            uriResourcePath = uriResourcePath.Replace("{Id}", StringUtils.FromStringWithSlashEncoding(publicRequest.Id));
             request.ResourcePath = uriResourcePath;
 
 

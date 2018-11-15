@@ -60,7 +60,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             string uriResourcePath = "/thing-groups/{thingGroupName}/things";
             if (!publicRequest.IsSetThingGroupName())
                 throw new AmazonIoTException("Request object does not have required field ThingGroupName set");
-            uriResourcePath = uriResourcePath.Replace("{thingGroupName}", StringUtils.FromString(publicRequest.ThingGroupName));
+            uriResourcePath = uriResourcePath.Replace("{thingGroupName}", StringUtils.FromStringWithSlashEncoding(publicRequest.ThingGroupName));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));

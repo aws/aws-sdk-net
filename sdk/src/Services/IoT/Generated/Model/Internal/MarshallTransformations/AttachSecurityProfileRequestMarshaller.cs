@@ -61,7 +61,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             string uriResourcePath = "/security-profiles/{securityProfileName}/targets";
             if (!publicRequest.IsSetSecurityProfileName())
                 throw new AmazonIoTException("Request object does not have required field SecurityProfileName set");
-            uriResourcePath = uriResourcePath.Replace("{securityProfileName}", StringUtils.FromString(publicRequest.SecurityProfileName));
+            uriResourcePath = uriResourcePath.Replace("{securityProfileName}", StringUtils.FromStringWithSlashEncoding(publicRequest.SecurityProfileName));
             
             if (publicRequest.IsSetSecurityProfileTargetArn())
                 request.Parameters.Add("securityProfileTargetArn", StringUtils.FromString(publicRequest.SecurityProfileTargetArn));

@@ -60,7 +60,7 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             string uriResourcePath = "/api/v1/folders/{FolderId}/contents";
             if (!publicRequest.IsSetFolderId())
                 throw new AmazonWorkDocsException("Request object does not have required field FolderId set");
-            uriResourcePath = uriResourcePath.Replace("{FolderId}", StringUtils.FromString(publicRequest.FolderId));
+            uriResourcePath = uriResourcePath.Replace("{FolderId}", StringUtils.FromStringWithSlashEncoding(publicRequest.FolderId));
             
             if (publicRequest.IsSetInclude())
                 request.Parameters.Add("include", StringUtils.FromString(publicRequest.Include));

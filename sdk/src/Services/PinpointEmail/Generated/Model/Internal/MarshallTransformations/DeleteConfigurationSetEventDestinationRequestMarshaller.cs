@@ -62,10 +62,10 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             string uriResourcePath = "/v1/email/configuration-sets/{ConfigurationSetName}/event-destinations/{EventDestinationName}";
             if (!publicRequest.IsSetConfigurationSetName())
                 throw new AmazonPinpointEmailException("Request object does not have required field ConfigurationSetName set");
-            uriResourcePath = uriResourcePath.Replace("{ConfigurationSetName}", StringUtils.FromString(publicRequest.ConfigurationSetName));
+            uriResourcePath = uriResourcePath.Replace("{ConfigurationSetName}", StringUtils.FromStringWithSlashEncoding(publicRequest.ConfigurationSetName));
             if (!publicRequest.IsSetEventDestinationName())
                 throw new AmazonPinpointEmailException("Request object does not have required field EventDestinationName set");
-            uriResourcePath = uriResourcePath.Replace("{EventDestinationName}", StringUtils.FromString(publicRequest.EventDestinationName));
+            uriResourcePath = uriResourcePath.Replace("{EventDestinationName}", StringUtils.FromStringWithSlashEncoding(publicRequest.EventDestinationName));
             request.ResourcePath = uriResourcePath;
 
             return request;

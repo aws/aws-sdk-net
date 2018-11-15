@@ -59,7 +59,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             string uriResourcePath = "/2013-04-01/tags/{ResourceType}";
             if (!publicRequest.IsSetResourceType())
                 throw new AmazonRoute53Exception("Request object does not have required field ResourceType set");
-            uriResourcePath = uriResourcePath.Replace("{ResourceType}", StringUtils.FromString(publicRequest.ResourceType));
+            uriResourcePath = uriResourcePath.Replace("{ResourceType}", StringUtils.FromStringWithSlashEncoding(publicRequest.ResourceType));
             request.ResourcePath = uriResourcePath;
 
             var stringWriter = new StringWriter(CultureInfo.InvariantCulture);

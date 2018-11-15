@@ -60,7 +60,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             string uriResourcePath = "/indices/{indexName}";
             if (!publicRequest.IsSetIndexName())
                 throw new AmazonIoTException("Request object does not have required field IndexName set");
-            uriResourcePath = uriResourcePath.Replace("{indexName}", StringUtils.FromString(publicRequest.IndexName));
+            uriResourcePath = uriResourcePath.Replace("{indexName}", StringUtils.FromStringWithSlashEncoding(publicRequest.IndexName));
             request.ResourcePath = uriResourcePath;
 
             return request;

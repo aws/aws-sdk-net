@@ -60,7 +60,7 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             string uriResourcePath = "/api/v1/documents/{DocumentId}";
             if (!publicRequest.IsSetDocumentId())
                 throw new AmazonWorkDocsException("Request object does not have required field DocumentId set");
-            uriResourcePath = uriResourcePath.Replace("{DocumentId}", StringUtils.FromString(publicRequest.DocumentId));
+            uriResourcePath = uriResourcePath.Replace("{DocumentId}", StringUtils.FromStringWithSlashEncoding(publicRequest.DocumentId));
             
             if (publicRequest.IsSetIncludeCustomMetadata())
                 request.Parameters.Add("includeCustomMetadata", StringUtils.FromBool(publicRequest.IncludeCustomMetadata));

@@ -61,7 +61,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             string uriResourcePath = "/vpclinks/{vpclink_id}";
             if (!publicRequest.IsSetVpcLinkId())
                 throw new AmazonAPIGatewayException("Request object does not have required field VpcLinkId set");
-            uriResourcePath = uriResourcePath.Replace("{vpclink_id}", StringUtils.FromString(publicRequest.VpcLinkId));
+            uriResourcePath = uriResourcePath.Replace("{vpclink_id}", StringUtils.FromStringWithSlashEncoding(publicRequest.VpcLinkId));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {

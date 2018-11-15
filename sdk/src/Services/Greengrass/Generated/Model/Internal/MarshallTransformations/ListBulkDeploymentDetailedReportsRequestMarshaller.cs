@@ -60,7 +60,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             string uriResourcePath = "/greengrass/bulk/deployments/{BulkDeploymentId}/detailed-reports";
             if (!publicRequest.IsSetBulkDeploymentId())
                 throw new AmazonGreengrassException("Request object does not have required field BulkDeploymentId set");
-            uriResourcePath = uriResourcePath.Replace("{BulkDeploymentId}", StringUtils.FromString(publicRequest.BulkDeploymentId));
+            uriResourcePath = uriResourcePath.Replace("{BulkDeploymentId}", StringUtils.FromStringWithSlashEncoding(publicRequest.BulkDeploymentId));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("MaxResults", StringUtils.FromString(publicRequest.MaxResults));

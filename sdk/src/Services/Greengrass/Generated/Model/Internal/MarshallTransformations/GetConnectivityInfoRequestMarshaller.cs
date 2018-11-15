@@ -60,7 +60,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             string uriResourcePath = "/greengrass/things/{ThingName}/connectivityInfo";
             if (!publicRequest.IsSetThingName())
                 throw new AmazonGreengrassException("Request object does not have required field ThingName set");
-            uriResourcePath = uriResourcePath.Replace("{ThingName}", StringUtils.FromString(publicRequest.ThingName));
+            uriResourcePath = uriResourcePath.Replace("{ThingName}", StringUtils.FromStringWithSlashEncoding(publicRequest.ThingName));
             request.ResourcePath = uriResourcePath;
 
             return request;

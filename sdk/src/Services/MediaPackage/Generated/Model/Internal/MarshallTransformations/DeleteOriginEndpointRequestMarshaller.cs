@@ -60,7 +60,7 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
             string uriResourcePath = "/origin_endpoints/{id}";
             if (!publicRequest.IsSetId())
                 throw new AmazonMediaPackageException("Request object does not have required field Id set");
-            uriResourcePath = uriResourcePath.Replace("{id}", StringUtils.FromString(publicRequest.Id));
+            uriResourcePath = uriResourcePath.Replace("{id}", StringUtils.FromStringWithSlashEncoding(publicRequest.Id));
             request.ResourcePath = uriResourcePath;
 
             return request;

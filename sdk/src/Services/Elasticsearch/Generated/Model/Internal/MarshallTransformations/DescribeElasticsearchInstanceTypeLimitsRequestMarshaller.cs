@@ -60,10 +60,10 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             string uriResourcePath = "/2015-01-01/es/instanceTypeLimits/{ElasticsearchVersion}/{InstanceType}";
             if (!publicRequest.IsSetElasticsearchVersion())
                 throw new AmazonElasticsearchException("Request object does not have required field ElasticsearchVersion set");
-            uriResourcePath = uriResourcePath.Replace("{ElasticsearchVersion}", StringUtils.FromString(publicRequest.ElasticsearchVersion));
+            uriResourcePath = uriResourcePath.Replace("{ElasticsearchVersion}", StringUtils.FromStringWithSlashEncoding(publicRequest.ElasticsearchVersion));
             if (!publicRequest.IsSetInstanceType())
                 throw new AmazonElasticsearchException("Request object does not have required field InstanceType set");
-            uriResourcePath = uriResourcePath.Replace("{InstanceType}", StringUtils.FromString(publicRequest.InstanceType));
+            uriResourcePath = uriResourcePath.Replace("{InstanceType}", StringUtils.FromStringWithSlashEncoding(publicRequest.InstanceType));
             
             if (publicRequest.IsSetDomainName())
                 request.Parameters.Add("domainName", StringUtils.FromString(publicRequest.DomainName));

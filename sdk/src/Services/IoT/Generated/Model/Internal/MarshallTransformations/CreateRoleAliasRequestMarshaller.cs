@@ -61,7 +61,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             string uriResourcePath = "/role-aliases/{roleAlias}";
             if (!publicRequest.IsSetRoleAlias())
                 throw new AmazonIoTException("Request object does not have required field RoleAlias set");
-            uriResourcePath = uriResourcePath.Replace("{roleAlias}", StringUtils.FromString(publicRequest.RoleAlias));
+            uriResourcePath = uriResourcePath.Replace("{roleAlias}", StringUtils.FromStringWithSlashEncoding(publicRequest.RoleAlias));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {

@@ -60,13 +60,13 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             string uriResourcePath = "/api/v1/documents/{DocumentId}/versions/{VersionId}/comment/{CommentId}";
             if (!publicRequest.IsSetCommentId())
                 throw new AmazonWorkDocsException("Request object does not have required field CommentId set");
-            uriResourcePath = uriResourcePath.Replace("{CommentId}", StringUtils.FromString(publicRequest.CommentId));
+            uriResourcePath = uriResourcePath.Replace("{CommentId}", StringUtils.FromStringWithSlashEncoding(publicRequest.CommentId));
             if (!publicRequest.IsSetDocumentId())
                 throw new AmazonWorkDocsException("Request object does not have required field DocumentId set");
-            uriResourcePath = uriResourcePath.Replace("{DocumentId}", StringUtils.FromString(publicRequest.DocumentId));
+            uriResourcePath = uriResourcePath.Replace("{DocumentId}", StringUtils.FromStringWithSlashEncoding(publicRequest.DocumentId));
             if (!publicRequest.IsSetVersionId())
                 throw new AmazonWorkDocsException("Request object does not have required field VersionId set");
-            uriResourcePath = uriResourcePath.Replace("{VersionId}", StringUtils.FromString(publicRequest.VersionId));
+            uriResourcePath = uriResourcePath.Replace("{VersionId}", StringUtils.FromStringWithSlashEncoding(publicRequest.VersionId));
             request.ResourcePath = uriResourcePath;
         
             if(publicRequest.IsSetAuthenticationToken())

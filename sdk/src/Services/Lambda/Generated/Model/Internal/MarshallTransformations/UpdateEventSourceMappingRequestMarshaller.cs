@@ -61,7 +61,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             string uriResourcePath = "/2015-03-31/event-source-mappings/{UUID}";
             if (!publicRequest.IsSetUUID())
                 throw new AmazonLambdaException("Request object does not have required field UUID set");
-            uriResourcePath = uriResourcePath.Replace("{UUID}", StringUtils.FromString(publicRequest.UUID));
+            uriResourcePath = uriResourcePath.Replace("{UUID}", StringUtils.FromStringWithSlashEncoding(publicRequest.UUID));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {

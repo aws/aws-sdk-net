@@ -61,7 +61,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
             string uriResourcePath = "/pipelines/{pipelineName}";
             if (!publicRequest.IsSetPipelineName())
                 throw new AmazonIoTAnalyticsException("Request object does not have required field PipelineName set");
-            uriResourcePath = uriResourcePath.Replace("{pipelineName}", StringUtils.FromString(publicRequest.PipelineName));
+            uriResourcePath = uriResourcePath.Replace("{pipelineName}", StringUtils.FromStringWithSlashEncoding(publicRequest.PipelineName));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {

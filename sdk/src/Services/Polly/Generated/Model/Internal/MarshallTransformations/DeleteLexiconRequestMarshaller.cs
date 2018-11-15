@@ -60,7 +60,7 @@ namespace Amazon.Polly.Model.Internal.MarshallTransformations
             string uriResourcePath = "/v1/lexicons/{LexiconName}";
             if (!publicRequest.IsSetName())
                 throw new AmazonPollyException("Request object does not have required field Name set");
-            uriResourcePath = uriResourcePath.Replace("{LexiconName}", StringUtils.FromString(publicRequest.Name));
+            uriResourcePath = uriResourcePath.Replace("{LexiconName}", StringUtils.FromStringWithSlashEncoding(publicRequest.Name));
             request.ResourcePath = uriResourcePath;
 
             return request;

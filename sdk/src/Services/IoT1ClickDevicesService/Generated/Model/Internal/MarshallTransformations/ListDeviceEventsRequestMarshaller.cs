@@ -60,7 +60,7 @@ namespace Amazon.IoT1ClickDevicesService.Model.Internal.MarshallTransformations
             string uriResourcePath = "/devices/{deviceId}/events";
             if (!publicRequest.IsSetDeviceId())
                 throw new AmazonIoT1ClickDevicesServiceException("Request object does not have required field DeviceId set");
-            uriResourcePath = uriResourcePath.Replace("{deviceId}", StringUtils.FromString(publicRequest.DeviceId));
+            uriResourcePath = uriResourcePath.Replace("{deviceId}", StringUtils.FromStringWithSlashEncoding(publicRequest.DeviceId));
             
             if (publicRequest.IsSetFromTimeStampUtc())
                 request.Parameters.Add("fromTimeStamp", StringUtils.FromDateTimeToISO8601(publicRequest.FromTimeStampUtc));
