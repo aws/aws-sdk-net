@@ -34,6 +34,11 @@ namespace Amazon.Runtime.Internal.Util
             return value;
         }
 
+        public static string FromStringWithSlashEncoding(String value)
+        {
+            return AWSSDKUtils.UrlEncodeSlash(FromString(value));
+        }
+
         public static string FromString(ConstantClass value)
         {
             return value == null ? "" : value.Intern().Value;

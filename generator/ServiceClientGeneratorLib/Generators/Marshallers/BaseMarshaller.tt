@@ -92,7 +92,7 @@ using Amazon.Runtime.Internal.Util;
 				else
 				{
 #>
-			uriResourcePath = uriResourcePath.Replace("<#=marshallLocationName#>", <#=variableName#>.IsSet<#=member.PropertyName#>() ? <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>) : string.Empty);
+			uriResourcePath = uriResourcePath.Replace("<#=marshallLocationName#>", <#=variableName#>.IsSet<#=member.PropertyName#>() ? <#=member.PrimitiveMarshallerWithSlashEncoder#>(<#=variableName#>.<#=member.PropertyName#>) : string.Empty);
 <#+
 				}
 
@@ -112,7 +112,7 @@ using Amazon.Runtime.Internal.Util;
 				else
 				{
 #>
-			uriResourcePath = uriResourcePath.Replace("<#=marshallLocationName#>", <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>));
+			uriResourcePath = uriResourcePath.Replace("<#=marshallLocationName#>", <#=member.PrimitiveMarshallerWithSlashEncoder#>(<#=variableName#>.<#=member.PropertyName#>));
 <#+
 				}
             }

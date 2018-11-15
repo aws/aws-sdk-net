@@ -72,17 +72,17 @@ namespace Amazon.Route53.Internal
         {
             var request = executionContext.RequestContext.Request;
 
-            if (request.ResourcePath.Contains("/hostedzone//hostedzone/"))
+            if (request.ResourcePath.Contains("/hostedzone/%2Fhostedzone%2F"))
             {
-                request.ResourcePath = request.ResourcePath.Replace("/hostedzone//hostedzone/", "/hostedzone/");
+                request.ResourcePath = request.ResourcePath.Replace("/hostedzone/%2Fhostedzone%2F", "/hostedzone/");
             }
-            if (request.ResourcePath.Contains("/change//change/"))
+            if (request.ResourcePath.Contains("/change/%2Fchange%2F"))
             {
-                request.ResourcePath = request.ResourcePath.Replace("/change//change/", "/change/");
+                request.ResourcePath = request.ResourcePath.Replace("/change/%2Fchange%2F", "/change/");
             }
-            if (request.ResourcePath.Contains("/delegationset//delegationset/"))
+            if (request.ResourcePath.Contains("/delegationset/%2Fdelegationset%2F"))
             {
-                request.ResourcePath = request.ResourcePath.Replace("/delegationset//delegationset/", "/delegationset/");
+                request.ResourcePath = request.ResourcePath.Replace("/delegationset/%2Fdelegationset%2F", "/delegationset/");
             }
         }
     }

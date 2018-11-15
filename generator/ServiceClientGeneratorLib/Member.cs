@@ -997,6 +997,24 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
+        /// Returns the marshaller method to use in the generated marshaller code for a
+        /// member of primitive type with slash encoding.
+        /// </summary>
+        public string PrimitiveMarshallerWithSlashEncoder
+        {
+            get
+            {
+                string marshallerMethod = PrimitiveMarshaller;                
+                if (this.GetPrimitiveType().Equals("String", StringComparison.InvariantCulture))
+                {
+                    marshallerMethod = marshallerMethod.Replace("StringUtils.FromString", "StringUtils.FromStringWithSlashEncoding");
+                }
+
+                return marshallerMethod;
+            }
+        }
+                
+        /// <summary>
         /// Creates a representation of the member as a string using the member name
         /// </summary>
         /// <returns>The member name as a string</returns>
