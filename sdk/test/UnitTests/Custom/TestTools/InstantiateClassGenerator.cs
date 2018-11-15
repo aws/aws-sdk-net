@@ -64,7 +64,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
             {
                 if (type == typeof(string))
                 {
-                    return "Test_Value";
+                    return "Test-Value";
                 }
                 else if (type == typeof(bool) || type == typeof(bool?))
                 {

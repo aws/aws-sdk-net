@@ -20,6 +20,7 @@ namespace ServiceClientGenerator
         public const string JsonValueKey = "jsonvalue";
         public const string DeprecatedKey = "deprecated";
         public const string DeprecatedMessageKey = "deprecatedMessage";
+        public const string HostLabelKey = "hostLabel";
 
         private const string UnhandledTypeDecimalErrorMessage = "Unhandled type 'decimal' : using .net's decimal type for modeled decimal type may result in loss of data.  decimal type members should explicitly opt-in via shape customization.";
 
@@ -348,6 +349,23 @@ namespace ServiceClientGenerator
 
                 // Default to Body if location is not specified.
                 return MarshallLocation.Body;
+            }
+        }
+
+        /// <summary>
+        /// The hostLabel of the shape
+        /// </summary>
+        public bool IsHostLabel
+        {
+            get
+            {
+                if (data[HostLabelKey] != null)
+                {
+                    return (bool)data[HostLabelKey];
+                }
+
+                // Default to false (not a hostLabel) if hostLabel is not specified.
+                return false;
             }
         }
 

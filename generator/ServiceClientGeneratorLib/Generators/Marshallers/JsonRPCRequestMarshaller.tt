@@ -58,7 +58,7 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 
 	if (this.Config.ServiceModel.Type == ServiceType.Rest_Json)
 	{
-		ProcessUriMembers("publicRequest", this.Operation);
+		ProcessUriMembers("publicRequest", this.Operation);		
 		ProcessQueryStringMembers("publicRequest", this.Operation);
 	}
 #>
@@ -120,6 +120,11 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 #>
 			request.UseQueryString = true;
 <#	}
+
+	if(!string.IsNullOrEmpty(this.Operation.EndpointHostPrefix))
+	{
+		ProcessEndpointHostPrefixMembers("publicRequest", this.Operation);
+	}
 #>
 
 			return request;

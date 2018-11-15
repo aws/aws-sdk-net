@@ -65,6 +65,7 @@ namespace Amazon.Runtime
         private bool allowAutoRedirect = true;
         private bool useDualstackEndpoint = false;
         private TimeSpan? readWriteTimeout = null;
+        private bool disableHostPrefixInjection = false;
 #if BCL
         private readonly TcpKeepAlive tcpKeepAlive = new TcpKeepAlive();
 #endif
@@ -511,6 +512,20 @@ namespace Amazon.Runtime
                     return CorrectClockSkew.GetClockCorrectionForEndpoint(endpoint);
                 }
             }
+        }
+
+        /// <summary>
+        /// Gets and sets the DisableHostPrefixInjection flag. If true, host prefix injection will be disabled for this client, the default value of this flag is false. 
+        /// Host prefix injection prefixes the service endpoint with request members from APIs which use this feature. 
+        /// Example: for a hostPrefix of "foo-name." and a endpoint of "service.region.amazonaws.com" the default behavior is to
+        /// prefix the endpoint with the hostPrefix resulting in a final endpoint of "foo-name.service.region.amazonaws.com". Setting 
+        /// DisableHostPrefixInjection to true will disable hostPrefix injection resulting in a final endpoint of
+        /// "service.region.amazonaws.com" regardless of the value of hostPrefix. E.g. You may want to disable host prefix injection for testing against a local mock endpoint.
+        /// </summary>
+        public bool DisableHostPrefixInjection
+        {
+            get { return this.disableHostPrefixInjection; }
+            set { this.disableHostPrefixInjection = value; }
         }
 
         /// <summary>

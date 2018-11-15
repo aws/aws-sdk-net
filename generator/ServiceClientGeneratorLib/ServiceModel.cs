@@ -43,6 +43,8 @@ namespace ServiceClientGenerator
         public const string ErrorsKey = "errors";
         public const string ResultWrapperKey = "resultWrapper";
         public const string AuthTypeKey = "authtype";
+        public const string EndpointKey = "endpoint";
+        public const string HostPrefixKey = "hostPrefix";
 
         // shapes
         public const string ShapesKey = "shapes";
@@ -57,8 +59,8 @@ namespace ServiceClientGenerator
 
         // documentation
         public const string DocumentationKey = "documentation";
-        
 
+        
         /// <summary>
         /// This model contains information about customizations needed during the generation process
         /// </summary>

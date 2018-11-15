@@ -197,4 +197,38 @@ using Amazon.Runtime.Internal.Util;
 			}
 		}
 	}
+
+    // Only applicable for rest-json and rest-xml
+    // Generates code to add the operation's hostPrefixMembers to the request's HostPrefix
+	protected void ProcessEndpointHostPrefixMembers(string variableName, Operation operation)
+	{
+        if(operation.RequestHostPrefixMembers.Count() > 0)
+        {
+#>
+
+            var hostPrefixLabels = new
+            {
+<#+
+            foreach(var member in operation.RequestHostPrefixMembers)
+            {
+                
+#>                <#=member.PropertyName#> = <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>),
+<#+
+            }     
+#>
+            };
+
+<#+
+            foreach(var member in operation.RequestHostPrefixMembers)
+            {
+#>
+            if (!HostPrefixUtils.IsValidLabelValue(hostPrefixLabels.<#=member.PropertyName#>))
+                throw new <#=this.Config.BaseException#>("<#=member.PropertyName#> can only contain alphanumeric characters and dashes and must be between 1 and 63 characters long.");		
+<#+
+            }     
+        }
+#>            
+            request.HostPrefix = $"<#=operation.EndpointHostPrefix.Replace("{", "{hostPrefixLabels.")#>";
+<#+
+	}
 #>

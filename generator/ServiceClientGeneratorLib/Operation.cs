@@ -327,8 +327,8 @@ namespace ServiceClientGenerator
                         !string.Equals(m.MarshallName, payloadName, StringComparison.Ordinal)).ToList();
             }
         }
-
-
+        
+        
         /// <summary>
         /// Members who are part of the response's body
         /// </summary>
@@ -344,6 +344,19 @@ namespace ServiceClientGenerator
                     m =>
                         m.MarshallLocation == MarshallLocation.Body &&
                         !string.Equals(m.MarshallName, payloadName, StringComparison.Ordinal)).ToList();
+            }
+        }
+
+        /// <summary>
+        /// List of members that are decorated with a hostLabel value equal to true
+        /// </summary>
+        public IEnumerable<Member> RequestHostPrefixMembers
+        {
+            get
+            {
+                return this.RequestStructure == null ?
+                    new List<Member>() :
+                    this.RequestStructure.Members.Where(m => m.IsHostLabel);
             }
         }
 
@@ -387,7 +400,7 @@ namespace ServiceClientGenerator
                     this.RequestStructure.Members.Any(m => m.MarshallLocation == MarshallLocation.QueryString);
             }
         }
-
+        
         /// <summary>
         /// Use query string if there are body members or a streamed member
         /// </summary>
@@ -439,6 +452,21 @@ namespace ServiceClientGenerator
                     return string.Empty;
 
                 return methodNode.ToString();
+            }
+        }
+
+        /// <summary>
+        /// The endpoint hostPrefix of the operation
+        /// </summary>
+        public string EndpointHostPrefix
+        {
+            get
+            {
+                JsonData endpointNode = this.data[ServiceModel.EndpointKey];
+                if (endpointNode == null)
+                    return string.Empty;
+                                
+                return endpointNode[ServiceModel.HostPrefixKey]?.ToString() ?? string.Empty;
             }
         }
 

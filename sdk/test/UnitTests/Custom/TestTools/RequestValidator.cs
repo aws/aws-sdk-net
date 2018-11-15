@@ -59,6 +59,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
             ValidateHeaders(type.GetProperties());
             ValidateQueryParameters(type.GetProperties());
             ValidateUriParameters(type.GetProperties());
+            ValidateHostPrefixParameters(type.GetProperties());
             ValidateStreamingContent();
             ValidateBody();
         }
@@ -334,6 +335,31 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                         }
                     }
                 }
+            }
+        }
+
+        protected void ValidateHostPrefixParameters(IEnumerable<PropertyInfo> properties)
+        {
+            if (!string.IsNullOrEmpty(this.Operation.EndpointHostPrefix))
+            {
+                var hostPrefix = this.MarshalledRequest.HostPrefix;
+                var hostPrefixTemplate = this.Operation.EndpointHostPrefix;
+                
+                foreach (var property in properties)
+                {
+                    if (property.PropertyType.IsPrimitive || property.PropertyType == typeof(string))
+                    {
+                        var member = this.Operation.RequestHostPrefixMembers.SingleOrDefault(m =>
+                            m.PropertyName == property.Name);
+                        if (member != null)
+                        {
+                            hostPrefixTemplate = hostPrefixTemplate.Replace(string.Format("{{{0}}}", member.MarshallLocationName), (string)property.GetValue(this.Request));                         
+                        }
+                    }
+                }
+
+                Assert.AreEqual(hostPrefix, hostPrefixTemplate);
+                Assert.AreEqual(hostPrefixTemplate.IndexOfAny(new char[] { '{', '}' }), -1);
             }
         }
 
