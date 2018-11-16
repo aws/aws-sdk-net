@@ -48,10 +48,12 @@ namespace Amazon.SimpleSystemsManagement.Model
         private Dictionary<string, List<string>> _outputs = new Dictionary<string, List<string>>();
         private Dictionary<string, List<string>> _parameters = new Dictionary<string, List<string>>();
         private string _parentAutomationExecutionId;
+        private ProgressCounters _progressCounters;
         private ResolvedTargets _resolvedTargets;
         private List<StepExecution> _stepExecutions = new List<StepExecution>();
         private bool? _stepExecutionsTruncated;
         private string _target;
+        private List<TargetLocation> _targetLocations = new List<TargetLocation>();
         private List<Dictionary<string, List<string>>> _targetMaps = new List<Dictionary<string, List<string>>>();
         private string _targetParameterName;
         private List<Target> _targets = new List<Target>();
@@ -345,6 +347,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ProgressCounters. 
+        /// <para>
+        /// An aggregate of step execution statuses displayed in the AWS Console for a multi-Region
+        /// and multi-account Automation execution.
+        /// </para>
+        /// </summary>
+        public ProgressCounters ProgressCounters
+        {
+            get { return this._progressCounters; }
+            set { this._progressCounters = value; }
+        }
+
+        // Check to see if ProgressCounters property is set
+        internal bool IsSetProgressCounters()
+        {
+            return this._progressCounters != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ResolvedTargets. 
         /// <para>
         /// A list of resolved targets in the rate control execution.
@@ -417,6 +438,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetTarget()
         {
             return this._target != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetLocations. 
+        /// <para>
+        /// The combination of AWS Regions and/or AWS accounts where you want to execute the Automation.
+        /// </para>
+        /// </summary>
+        public List<TargetLocation> TargetLocations
+        {
+            get { return this._targetLocations; }
+            set { this._targetLocations = value; }
+        }
+
+        // Check to see if TargetLocations property is set
+        internal bool IsSetTargetLocations()
+        {
+            return this._targetLocations != null && this._targetLocations.Count > 0; 
         }
 
         /// <summary>

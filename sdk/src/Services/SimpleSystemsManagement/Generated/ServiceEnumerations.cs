@@ -379,6 +379,10 @@ namespace Amazon.SimpleSystemsManagement
     {
 
         /// <summary>
+        /// Constant AutomationType for AutomationExecutionFilterKey
+        /// </summary>
+        public static readonly AutomationExecutionFilterKey AutomationType = new AutomationExecutionFilterKey("AutomationType");
+        /// <summary>
         /// Constant CurrentAction for AutomationExecutionFilterKey
         /// </summary>
         public static readonly AutomationExecutionFilterKey CurrentAction = new AutomationExecutionFilterKey("CurrentAction");
@@ -510,6 +514,56 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AutomationExecutionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AutomationType.
+    /// </summary>
+    public class AutomationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CrossAccount for AutomationType
+        /// </summary>
+        public static readonly AutomationType CrossAccount = new AutomationType("CrossAccount");
+        /// <summary>
+        /// Constant Local for AutomationType
+        /// </summary>
+        public static readonly AutomationType Local = new AutomationType("Local");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutomationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutomationType FindValue(string value)
+        {
+            return FindValue<AutomationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutomationType(string value)
         {
             return FindValue(value);
         }

@@ -687,7 +687,7 @@ namespace Amazon.SimpleSystemsManagement
         ///  
         /// <para>
         /// If you associate a document with an instance that already has an associated document,
-        /// the system throws the AssociationAlreadyExists exception.
+        /// the system returns the AssociationAlreadyExists exception.
         /// </para>
         /// </summary>
         /// <param name="instanceId">The instance ID.</param>
@@ -774,7 +774,7 @@ namespace Amazon.SimpleSystemsManagement
         ///  
         /// <para>
         /// If you associate a document with an instance that already has an associated document,
-        /// the system throws the AssociationAlreadyExists exception.
+        /// the system returns the AssociationAlreadyExists exception.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAssociation service method.</param>
@@ -897,7 +897,7 @@ namespace Amazon.SimpleSystemsManagement
         ///  
         /// <para>
         /// If you associate a document with an instance that already has an associated document,
-        /// the system throws the AssociationAlreadyExists exception.
+        /// the system returns the AssociationAlreadyExists exception.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAssociationBatch service method.</param>

@@ -160,6 +160,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.ParentAutomationExecutionId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ProgressCounters", targetDepth))
+                {
+                    var unmarshaller = ProgressCountersUnmarshaller.Instance;
+                    unmarshalledObject.ProgressCounters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ResolvedTargets", targetDepth))
                 {
                     var unmarshaller = ResolvedTargetsUnmarshaller.Instance;
@@ -182,6 +188,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Target = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TargetLocations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<TargetLocation, TargetLocationUnmarshaller>(TargetLocationUnmarshaller.Instance);
+                    unmarshalledObject.TargetLocations = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TargetMaps", targetDepth))

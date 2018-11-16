@@ -40,6 +40,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _maxErrors;
         private ExecutionMode _mode;
         private Dictionary<string, List<string>> _parameters = new Dictionary<string, List<string>>();
+        private List<TargetLocation> _targetLocations = new List<TargetLocation>();
         private List<Dictionary<string, List<string>>> _targetMaps = new List<Dictionary<string, List<string>>>();
         private string _targetParameterName;
         private List<Target> _targets = new List<Target>();
@@ -186,6 +187,28 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetParameters()
         {
             return this._parameters != null && this._parameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetLocations. 
+        /// <para>
+        /// A location is a combination of AWS Regions and/or AWS accounts where you want to execute
+        /// the Automation. Use this action to start an Automation in multiple Regions and multiple
+        /// accounts. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Concurrently
+        /// Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems
+        /// Manager User Guide</i>. 
+        /// </para>
+        /// </summary>
+        public List<TargetLocation> TargetLocations
+        {
+            get { return this._targetLocations; }
+            set { this._targetLocations = value; }
+        }
+
+        // Check to see if TargetLocations property is set
+        internal bool IsSetTargetLocations()
+        {
+            return this._targetLocations != null && this._targetLocations.Count > 0; 
         }
 
         /// <summary>

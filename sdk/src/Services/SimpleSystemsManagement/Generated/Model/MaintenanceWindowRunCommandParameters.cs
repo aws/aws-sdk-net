@@ -219,8 +219,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TimeoutSeconds. 
         /// <para>
-        /// If this time is reached and the command has not already started executing, it doesn
-        /// not execute.
+        /// If this time is reached and the command has not already started executing, it doesn't
+        /// run.
         /// </para>
         /// </summary>
         public int TimeoutSeconds

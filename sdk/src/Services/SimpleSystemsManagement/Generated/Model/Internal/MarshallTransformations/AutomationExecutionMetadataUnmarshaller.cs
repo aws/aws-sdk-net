@@ -76,6 +76,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.AutomationExecutionStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AutomationType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AutomationType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CurrentAction", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

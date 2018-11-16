@@ -34,6 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
         private string _automationExecutionId;
         private AutomationExecutionStatus _automationExecutionStatus;
+        private AutomationType _automationType;
         private string _currentAction;
         private string _currentStepName;
         private string _documentName;
@@ -89,6 +90,28 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetAutomationExecutionStatus()
         {
             return this._automationExecutionStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutomationType. 
+        /// <para>
+        /// Use this filter with <a>DescribeAutomationExecution</a>. Specify either Local of CrossAccount.
+        /// CrossAccount is an Automation that executes in multiple AWS Regions and accounts.
+        /// For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Concurrently
+        /// Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems
+        /// Manager User Guide</i>. 
+        /// </para>
+        /// </summary>
+        public AutomationType AutomationType
+        {
+            get { return this._automationType; }
+            set { this._automationType = value; }
+        }
+
+        // Check to see if AutomationType property is set
+        internal bool IsSetAutomationType()
+        {
+            return this._automationType != null;
         }
 
         /// <summary>

@@ -50,6 +50,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _stepExecutionId;
         private string _stepName;
         private AutomationExecutionStatus _stepStatus;
+        private TargetLocation _targetLocation;
+        private List<Target> _targets = new List<Target>();
         private long? _timeoutSeconds;
         private List<string> _validNextSteps = new List<string>();
 
@@ -380,6 +382,42 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetStepStatus()
         {
             return this._stepStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetLocation. 
+        /// <para>
+        /// The combination of AWS Regions and accounts targeted by the current Automation execution.
+        /// </para>
+        /// </summary>
+        public TargetLocation TargetLocation
+        {
+            get { return this._targetLocation; }
+            set { this._targetLocation = value; }
+        }
+
+        // Check to see if TargetLocation property is set
+        internal bool IsSetTargetLocation()
+        {
+            return this._targetLocation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Targets. 
+        /// <para>
+        /// The targets for the step execution.
+        /// </para>
+        /// </summary>
+        public List<Target> Targets
+        {
+            get { return this._targets; }
+            set { this._targets = value; }
+        }
+
+        // Check to see if Targets property is set
+        internal bool IsSetTargets()
+        {
+            return this._targets != null && this._targets.Count > 0; 
         }
 
         /// <summary>
