@@ -7,7 +7,7 @@
         <DisableUnitySupport Condition="'$(DisableUnitySupport)'==''">false</DisableUnitySupport>
         <DisableValidateRepo Condition="'$(DisableValidateRepo)'==''">false</DisableValidateRepo>
         <RunCognitoAuthExtensionTests Condition="'$(RunCognitoAuthExtensionTests)'==''">false</RunCognitoAuthExtensionTests>
-        <TestBackwardCompatibility Condition="'$(TestBackwardCompatibility)'==''">true</TestBackwardCompatibility>
+        <TestBackwardCompatibility Condition="'$(TestBackwardCompatibility)'==''">false</TestBackwardCompatibility>
         <PartialBuildList Condition="'$(PartialBuildList)'==''"></PartialBuildList>
         <ServiceList>Core</ServiceList>
 
