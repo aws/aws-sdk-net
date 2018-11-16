@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "With Amazon Pinpoint Voice, you can use text-to-speech technology to deliver personalized voice messages to your customers. Amazon Pinpoint Voice is a way to deliver transactional messages -- such as one-time passwords and appointment confirmations to customers.",
+  "generate-client-constructors": true
+}

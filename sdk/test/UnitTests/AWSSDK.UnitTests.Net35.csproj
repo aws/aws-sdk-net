@@ -145,6 +145,7 @@
     <ProjectReference Include="..\..\src\Services\PI\AWSSDK.PI.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\Pinpoint\AWSSDK.Pinpoint.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\PinpointEmail\AWSSDK.PinpointEmail.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\PinpointSMSVoice\AWSSDK.PinpointSMSVoice.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\Polly\AWSSDK.Polly.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\Pricing\AWSSDK.Pricing.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\RDS\AWSSDK.RDS.Net35.csproj"/>
