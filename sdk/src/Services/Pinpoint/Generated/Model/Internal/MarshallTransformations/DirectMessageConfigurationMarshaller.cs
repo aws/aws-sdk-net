@@ -133,6 +133,17 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetVoiceMessage())
+            {
+                context.Writer.WritePropertyName("VoiceMessage");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = VoiceMessageMarshaller.Instance;
+                marshaller.Marshall(requestObject.VoiceMessage, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

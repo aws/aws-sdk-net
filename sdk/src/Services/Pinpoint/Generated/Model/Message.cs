@@ -144,8 +144,8 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MediaUrl. The URL that points to the media resource, for
-        /// example a .mp4 or .gif file.
+        /// Gets and sets the property MediaUrl. A URL that refers to the location of an image
+        /// or video that you want to display in the push notification.
         /// </summary>
         public string MediaUrl
         {

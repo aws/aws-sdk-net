@@ -33,6 +33,7 @@ namespace Amazon.Pinpoint.Model
     public partial class Schedule
     {
         private string _endTime;
+        private CampaignEventFilter _eventFilter;
         private Frequency _frequency;
         private bool? _isLocalTime;
         private QuietTime _quietTime;
@@ -56,8 +57,24 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EventFilter. Defines the type of events that can trigger
+        /// the campaign. Used when the Frequency is set to EVENT.
+        /// </summary>
+        public CampaignEventFilter EventFilter
+        {
+            get { return this._eventFilter; }
+            set { this._eventFilter = value; }
+        }
+
+        // Check to see if EventFilter property is set
+        internal bool IsSetEventFilter()
+        {
+            return this._eventFilter != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Frequency. How often the campaign delivers messages.Valid
-        /// values: ONCE, HOURLY, DAILY, WEEKLY, MONTHLY
+        /// values:ONCEHOURLYDAILYWEEKLYMONTHLYEVENT
         /// </summary>
         public Frequency Frequency
         {
@@ -88,8 +105,17 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property QuietTime. The time during which the campaign sends no
-        /// messages.
+        /// Gets and sets the property QuietTime. The default quiet time for the campaign. The
+        /// campaign doesn't send messages to endpoints during the quiet time.Note: Make sure
+        /// that your endpoints include the Demographics.Timezone attribute if you plan to enable
+        /// a quiet time for your campaign. If your endpoints don't include this attribute, they'll
+        /// receive the messages that you send them, even if quiet time is enabled.When you set
+        /// up a campaign to use quiet time, the campaign doesn't send messages during the time
+        /// range you specified, as long as all of the following are true:- The endpoint includes
+        /// a valid Demographic.Timezone attribute.- The current time in the endpoint's time zone
+        /// is later than or equal to the time specified in the QuietTime.Start attribute for
+        /// the campaign.- The current time in the endpoint's time zone is earlier than or equal
+        /// to the time specified in the QuietTime.End attribute for the campaign.
         /// </summary>
         public QuietTime QuietTime
         {

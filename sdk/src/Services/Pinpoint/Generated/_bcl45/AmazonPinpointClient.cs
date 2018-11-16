@@ -1337,6 +1337,61 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  DeleteVoiceChannel
+
+
+        /// <summary>
+        /// Delete an Voice channel
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVoiceChannel service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVoiceChannel service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public virtual DeleteVoiceChannelResponse DeleteVoiceChannel(DeleteVoiceChannelRequest request)
+        {
+            var marshaller = DeleteVoiceChannelRequestMarshaller.Instance;
+            var unmarshaller = DeleteVoiceChannelResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVoiceChannelRequest,DeleteVoiceChannelResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVoiceChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVoiceChannel operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<DeleteVoiceChannelResponse> DeleteVoiceChannelAsync(DeleteVoiceChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteVoiceChannelRequestMarshaller.Instance;
+            var unmarshaller = DeleteVoiceChannelResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteVoiceChannelRequest,DeleteVoiceChannelResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetAdmChannel
 
 
@@ -3042,6 +3097,61 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  GetVoiceChannel
+
+
+        /// <summary>
+        /// Get a Voice Channel
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVoiceChannel service method.</param>
+        /// 
+        /// <returns>The response from the GetVoiceChannel service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public virtual GetVoiceChannelResponse GetVoiceChannel(GetVoiceChannelRequest request)
+        {
+            var marshaller = GetVoiceChannelRequestMarshaller.Instance;
+            var unmarshaller = GetVoiceChannelResponseUnmarshaller.Instance;
+
+            return Invoke<GetVoiceChannelRequest,GetVoiceChannelResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetVoiceChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetVoiceChannel operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<GetVoiceChannelResponse> GetVoiceChannelAsync(GetVoiceChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetVoiceChannelRequestMarshaller.Instance;
+            var unmarshaller = GetVoiceChannelResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetVoiceChannelRequest,GetVoiceChannelResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PhoneNumberValidate
 
 
@@ -4138,6 +4248,61 @@ namespace Amazon.Pinpoint
             var unmarshaller = UpdateSmsChannelResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateSmsChannelRequest,UpdateSmsChannelResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateVoiceChannel
+
+
+        /// <summary>
+        /// Update an Voice channel
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVoiceChannel service method.</param>
+        /// 
+        /// <returns>The response from the UpdateVoiceChannel service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public virtual UpdateVoiceChannelResponse UpdateVoiceChannel(UpdateVoiceChannelRequest request)
+        {
+            var marshaller = UpdateVoiceChannelRequestMarshaller.Instance;
+            var unmarshaller = UpdateVoiceChannelResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateVoiceChannelRequest,UpdateVoiceChannelResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateVoiceChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVoiceChannel operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<UpdateVoiceChannelResponse> UpdateVoiceChannelAsync(UpdateVoiceChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateVoiceChannelRequestMarshaller.Instance;
+            var unmarshaller = UpdateVoiceChannelResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateVoiceChannelRequest,UpdateVoiceChannelResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

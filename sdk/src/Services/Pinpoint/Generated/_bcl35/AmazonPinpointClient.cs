@@ -1595,6 +1595,74 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  DeleteVoiceChannel
+
+        /// <summary>
+        /// Delete an Voice channel
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVoiceChannel service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVoiceChannel service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public virtual DeleteVoiceChannelResponse DeleteVoiceChannel(DeleteVoiceChannelRequest request)
+        {
+            var marshaller = DeleteVoiceChannelRequestMarshaller.Instance;
+            var unmarshaller = DeleteVoiceChannelResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVoiceChannelRequest,DeleteVoiceChannelResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVoiceChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVoiceChannel operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVoiceChannel
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginDeleteVoiceChannel(DeleteVoiceChannelRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DeleteVoiceChannelRequestMarshaller.Instance;
+            var unmarshaller = DeleteVoiceChannelResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteVoiceChannelRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteVoiceChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVoiceChannel.</param>
+        /// 
+        /// <returns>Returns a  DeleteVoiceChannelResult from Pinpoint.</returns>
+        public virtual DeleteVoiceChannelResponse EndDeleteVoiceChannel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteVoiceChannelResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetAdmChannel
 
         /// <summary>
@@ -3703,6 +3771,74 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  GetVoiceChannel
+
+        /// <summary>
+        /// Get a Voice Channel
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVoiceChannel service method.</param>
+        /// 
+        /// <returns>The response from the GetVoiceChannel service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public virtual GetVoiceChannelResponse GetVoiceChannel(GetVoiceChannelRequest request)
+        {
+            var marshaller = GetVoiceChannelRequestMarshaller.Instance;
+            var unmarshaller = GetVoiceChannelResponseUnmarshaller.Instance;
+
+            return Invoke<GetVoiceChannelRequest,GetVoiceChannelResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetVoiceChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetVoiceChannel operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetVoiceChannel
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginGetVoiceChannel(GetVoiceChannelRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = GetVoiceChannelRequestMarshaller.Instance;
+            var unmarshaller = GetVoiceChannelResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetVoiceChannelRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetVoiceChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetVoiceChannel.</param>
+        /// 
+        /// <returns>Returns a  GetVoiceChannelResult from Pinpoint.</returns>
+        public virtual GetVoiceChannelResponse EndGetVoiceChannel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetVoiceChannelResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  PhoneNumberValidate
 
         /// <summary>
@@ -5060,6 +5196,74 @@ namespace Amazon.Pinpoint
         public virtual UpdateSmsChannelResponse EndUpdateSmsChannel(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateSmsChannelResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateVoiceChannel
+
+        /// <summary>
+        /// Update an Voice channel
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVoiceChannel service method.</param>
+        /// 
+        /// <returns>The response from the UpdateVoiceChannel service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public virtual UpdateVoiceChannelResponse UpdateVoiceChannel(UpdateVoiceChannelRequest request)
+        {
+            var marshaller = UpdateVoiceChannelRequestMarshaller.Instance;
+            var unmarshaller = UpdateVoiceChannelResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateVoiceChannelRequest,UpdateVoiceChannelResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateVoiceChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVoiceChannel operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateVoiceChannel
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginUpdateVoiceChannel(UpdateVoiceChannelRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = UpdateVoiceChannelRequestMarshaller.Instance;
+            var unmarshaller = UpdateVoiceChannelResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateVoiceChannelRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateVoiceChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateVoiceChannel.</param>
+        /// 
+        /// <returns>Returns a  UpdateVoiceChannelResult from Pinpoint.</returns>
+        public virtual UpdateVoiceChannelResponse EndUpdateVoiceChannel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateVoiceChannelResponse>(asyncResult);
         }
 
         #endregion

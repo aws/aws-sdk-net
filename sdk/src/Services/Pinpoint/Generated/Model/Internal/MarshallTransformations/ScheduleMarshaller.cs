@@ -51,6 +51,17 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.EndTime);
             }
 
+            if(requestObject.IsSetEventFilter())
+            {
+                context.Writer.WritePropertyName("EventFilter");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CampaignEventFilterMarshaller.Instance;
+                marshaller.Marshall(requestObject.EventFilter, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetFrequency())
             {
                 context.Writer.WritePropertyName("Frequency");

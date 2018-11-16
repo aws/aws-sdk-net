@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Schedule Object
+    /// Response Unmarshaller for VoiceChannelResponse Object
     /// </summary>  
-    public class ScheduleUnmarshaller : IUnmarshaller<Schedule, XmlUnmarshallerContext>, IUnmarshaller<Schedule, JsonUnmarshallerContext>
+    public class VoiceChannelResponseUnmarshaller : IUnmarshaller<VoiceChannelResponse, XmlUnmarshallerContext>, IUnmarshaller<VoiceChannelResponse, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Schedule IUnmarshaller<Schedule, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        VoiceChannelResponse IUnmarshaller<VoiceChannelResponse, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,57 +53,75 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Schedule Unmarshall(JsonUnmarshallerContext context)
+        public VoiceChannelResponse Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Schedule unmarshalledObject = new Schedule();
+            VoiceChannelResponse unmarshalledObject = new VoiceChannelResponse();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("EndTime", targetDepth))
+                if (context.TestExpression("ApplicationId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EndTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ApplicationId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("EventFilter", targetDepth))
-                {
-                    var unmarshaller = CampaignEventFilterUnmarshaller.Instance;
-                    unmarshalledObject.EventFilter = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Frequency", targetDepth))
+                if (context.TestExpression("CreationDate", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Frequency = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("IsLocalTime", targetDepth))
+                if (context.TestExpression("Enabled", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.IsLocalTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("QuietTime", targetDepth))
+                if (context.TestExpression("HasCredential", targetDepth))
                 {
-                    var unmarshaller = QuietTimeUnmarshaller.Instance;
-                    unmarshalledObject.QuietTime = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.HasCredential = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("StartTime", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Timezone", targetDepth))
+                if (context.TestExpression("Id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Timezone = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IsArchived", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IsArchived = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LastModifiedBy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LastModifiedBy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LastModifiedDate", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LastModifiedDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Platform", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Platform = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Version", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Version = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -112,12 +130,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         }
 
 
-        private static ScheduleUnmarshaller _instance = new ScheduleUnmarshaller();        
+        private static VoiceChannelResponseUnmarshaller _instance = new VoiceChannelResponseUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ScheduleUnmarshaller Instance
+        public static VoiceChannelResponseUnmarshaller Instance
         {
             get
             {

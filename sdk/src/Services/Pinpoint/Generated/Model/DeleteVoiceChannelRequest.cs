@@ -28,26 +28,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// An email represented as a raw MIME message.
+    /// Container for the parameters to the DeleteVoiceChannel operation.
+    /// Delete an Voice channel
     /// </summary>
-    public partial class RawEmail
+    public partial class DeleteVoiceChannelRequest : AmazonPinpointRequest
     {
-        private MemoryStream _data;
+        private string _applicationId;
 
         /// <summary>
-        /// Gets and sets the property Data. The raw email message itself. Then entire message
-        /// must be base64-encoded.
+        /// Gets and sets the property ApplicationId. The unique ID of your Amazon Pinpoint application.
         /// </summary>
-        public MemoryStream Data
+        public string ApplicationId
         {
-            get { return this._data; }
-            set { this._data = value; }
+            get { return this._applicationId; }
+            set { this._applicationId = value; }
         }
 
-        // Check to see if Data property is set
-        internal bool IsSetData()
+        // Check to see if ApplicationId property is set
+        internal bool IsSetApplicationId()
         {
-            return this._data != null;
+            return this._applicationId != null;
         }
 
     }

@@ -28,26 +28,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// An email represented as a raw MIME message.
+    /// Voice Channel Request
     /// </summary>
-    public partial class RawEmail
+    public partial class VoiceChannelRequest
     {
-        private MemoryStream _data;
+        private bool? _enabled;
 
         /// <summary>
-        /// Gets and sets the property Data. The raw email message itself. Then entire message
-        /// must be base64-encoded.
+        /// Gets and sets the property Enabled. If the channel is enabled for sending messages.
         /// </summary>
-        public MemoryStream Data
+        public bool Enabled
         {
-            get { return this._data; }
-            set { this._data = value; }
+            get { return this._enabled.GetValueOrDefault(); }
+            set { this._enabled = value; }
         }
 
-        // Check to see if Data property is set
-        internal bool IsSetData()
+        // Check to see if Enabled property is set
+        internal bool IsSetEnabled()
         {
-            return this._data != null;
+            return this._enabled.HasValue; 
         }
 
     }

@@ -156,8 +156,8 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MediaUrl. The URL that points to a video used in the push
-        /// notification.
+        /// Gets and sets the property MediaUrl. A URL that refers to the location of an image
+        /// or video that you want to display in the push notification.
         /// </summary>
         public string MediaUrl
         {

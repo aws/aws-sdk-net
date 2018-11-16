@@ -41,6 +41,7 @@ namespace Amazon.Pinpoint.Model
         private EmailMessage _emailMessage;
         private GCMMessage _gcmMessage;
         private SMSMessage _smsMessage;
+        private VoiceMessage _voiceMessage;
 
         /// <summary>
         /// Gets and sets the property ADMMessage. The message to ADM channels. Overrides the
@@ -167,6 +168,22 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetSMSMessage()
         {
             return this._smsMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VoiceMessage. The message to Voice channels. Overrides
+        /// the default message.
+        /// </summary>
+        public VoiceMessage VoiceMessage
+        {
+            get { return this._voiceMessage; }
+            set { this._voiceMessage = value; }
+        }
+
+        // Check to see if VoiceMessage property is set
+        internal bool IsSetVoiceMessage()
+        {
+            return this._voiceMessage != null;
         }
 
     }

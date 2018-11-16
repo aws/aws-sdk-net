@@ -28,26 +28,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// An email represented as a raw MIME message.
+    /// This is the response object from the GetVoiceChannel operation.
     /// </summary>
-    public partial class RawEmail
+    public partial class GetVoiceChannelResponse : AmazonWebServiceResponse
     {
-        private MemoryStream _data;
+        private VoiceChannelResponse _voiceChannelResponse;
 
         /// <summary>
-        /// Gets and sets the property Data. The raw email message itself. Then entire message
-        /// must be base64-encoded.
+        /// Gets and sets the property VoiceChannelResponse.
         /// </summary>
-        public MemoryStream Data
+        public VoiceChannelResponse VoiceChannelResponse
         {
-            get { return this._data; }
-            set { this._data = value; }
+            get { return this._voiceChannelResponse; }
+            set { this._voiceChannelResponse = value; }
         }
 
-        // Check to see if Data property is set
-        internal bool IsSetData()
+        // Check to see if VoiceChannelResponse property is set
+        internal bool IsSetVoiceChannelResponse()
         {
-            return this._data != null;
+            return this._voiceChannelResponse != null;
         }
 
     }

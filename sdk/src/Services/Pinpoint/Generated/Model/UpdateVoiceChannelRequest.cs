@@ -28,43 +28,42 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Custom metric dimension
+    /// Container for the parameters to the UpdateVoiceChannel operation.
+    /// Update an Voice channel
     /// </summary>
-    public partial class MetricDimension
+    public partial class UpdateVoiceChannelRequest : AmazonPinpointRequest
     {
-        private string _comparisonOperator;
-        private double? _value;
+        private string _applicationId;
+        private VoiceChannelRequest _voiceChannelRequest;
 
         /// <summary>
-        /// Gets and sets the property ComparisonOperator. The operator that you're using to compare
-        /// metric values. Possible values: GREATER_THAN, LESS_THAN, GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL,
-        /// or EQUAL
+        /// Gets and sets the property ApplicationId. The unique ID of your Amazon Pinpoint application.
         /// </summary>
-        public string ComparisonOperator
+        public string ApplicationId
         {
-            get { return this._comparisonOperator; }
-            set { this._comparisonOperator = value; }
+            get { return this._applicationId; }
+            set { this._applicationId = value; }
         }
 
-        // Check to see if ComparisonOperator property is set
-        internal bool IsSetComparisonOperator()
+        // Check to see if ApplicationId property is set
+        internal bool IsSetApplicationId()
         {
-            return this._comparisonOperator != null;
+            return this._applicationId != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Value. The value to be compared.
+        /// Gets and sets the property VoiceChannelRequest.
         /// </summary>
-        public double Value
+        public VoiceChannelRequest VoiceChannelRequest
         {
-            get { return this._value.GetValueOrDefault(); }
-            set { this._value = value; }
+            get { return this._voiceChannelRequest; }
+            set { this._voiceChannelRequest = value; }
         }
 
-        // Check to see if Value property is set
-        internal bool IsSetValue()
+        // Check to see if VoiceChannelRequest property is set
+        internal bool IsSetVoiceChannelRequest()
         {
-            return this._value.HasValue; 
+            return this._voiceChannelRequest != null;
         }
 
     }
