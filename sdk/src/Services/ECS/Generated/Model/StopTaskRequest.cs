@@ -29,7 +29,7 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// Container for the parameters to the StopTask operation.
-    /// Stops a running task.
+    /// Stops a running task. Any tags associated with the task will be deleted.
     /// 
     ///  
     /// <para>

@@ -91,10 +91,10 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Cpu. 
         /// <para>
-        /// The number of <code>cpu</code> units used by the task. If using the EC2 launch type,
-        /// this field is optional and any value can be used. If using the Fargate launch type,
-        /// this field is required and you must use one of the following values, which determines
-        /// your range of valid values for the <code>memory</code> parameter:
+        /// The number of <code>cpu</code> units used by the task. If you are using the EC2 launch
+        /// type, this field is optional and any value can be used. If you are using the Fargate
+        /// launch type, this field is required and you must use one of the following values,
+        /// which determines your range of valid values for the <code>memory</code> parameter:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -175,10 +175,10 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Memory. 
         /// <para>
-        /// The amount (in MiB) of memory used by the task. If using the EC2 launch type, this
-        /// field is optional and any value can be used. If using the Fargate launch type, this
-        /// field is required and you must use one of the following values, which determines your
-        /// range of valid values for the <code>cpu</code> parameter:
+        /// The amount (in MiB) of memory used by the task. If you are using the EC2 launch type,
+        /// this field is optional and any value can be used. If you are using the Fargate launch
+        /// type, this field is required and you must use one of the following values, which determines
+        /// your range of valid values for the <code>cpu</code> parameter:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -224,10 +224,10 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The Docker networking mode to use for the containers in the task. The valid values
         /// are <code>none</code>, <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>.
-        /// The default Docker network mode is <code>bridge</code>. If using the Fargate launch
-        /// type, the <code>awsvpc</code> network mode is required. If using the EC2 launch type,
-        /// any network mode can be used. If the network mode is set to <code>none</code>, you
-        /// can't specify port mappings in your container definitions, and the task's containers
+        /// The default Docker network mode is <code>bridge</code>. If you are using the Fargate
+        /// launch type, the <code>awsvpc</code> network mode is required. If you are using the
+        /// EC2 launch type, any network mode can be used. If the network mode is set to <code>none</code>,
+        /// you can't specify port mappings in your container definitions, and the task's containers
         /// do not have external connectivity. The <code>host</code> and <code>awsvpc</code> network
         /// modes offer the highest networking performance for containers because they use the
         /// EC2 network stack instead of the virtualized network stack provided by the <code>bridge</code>
@@ -242,8 +242,8 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// If the network mode is <code>awsvpc</code>, the task is allocated an Elastic Network
-        /// Interface, and you must specify a <a>NetworkConfiguration</a> when you create a service
+        /// If the network mode is <code>awsvpc</code>, the task is allocated an elastic network
+        /// interface, and you must specify a <a>NetworkConfiguration</a> when you create a service
         /// or run a task with the task definition. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
         /// Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
@@ -344,7 +344,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The revision of the task in a particular family. The revision is a version number
         /// of a task definition in a family. When you register a task definition for the first
-        /// time, the revision is <code>1</code>; each time you register a new revision of a task
+        /// time, the revision is <code>1</code>. Each time you register a new revision of a task
         /// definition in the same family, the revision value always increases by one (even if
         /// you have deregistered previous revisions in this family).
         /// </para>

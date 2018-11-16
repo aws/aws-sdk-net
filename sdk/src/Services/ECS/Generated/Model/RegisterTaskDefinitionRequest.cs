@@ -65,6 +65,7 @@ namespace Amazon.ECS.Model
         private NetworkMode _networkMode;
         private List<TaskDefinitionPlacementConstraint> _placementConstraints = new List<TaskDefinitionPlacementConstraint>();
         private List<string> _requiresCompatibilities = new List<string>();
+        private List<Tag> _tags = new List<Tag>();
         private string _taskRoleArn;
         private List<Volume> _volumes = new List<Volume>();
 
@@ -102,15 +103,15 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// If using the EC2 launch type, this field is optional. Supported values are between
-        /// <code>128</code> CPU units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units
-        /// (<code>10</code> vCPUs).
+        /// If you are using the EC2 launch type, this field is optional. Supported values are
+        /// between <code>128</code> CPU units (<code>0.125</code> vCPUs) and <code>10240</code>
+        /// CPU units (<code>10</code> vCPUs).
         /// </para>
         ///  
         /// <para>
-        /// If using the Fargate launch type, this field is required and you must use one of the
-        /// following values, which determines your range of supported values for the <code>memory</code>
-        /// parameter:
+        /// If you are using the Fargate launch type, this field is required and you must use
+        /// one of the following values, which determines your range of supported values for the
+        /// <code>memory</code> parameter:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -206,13 +207,13 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// If using the EC2 launch type, this field is optional.
+        /// If you are using the EC2 launch type, this field is optional.
         /// </para>
         ///  
         /// <para>
-        /// If using the Fargate launch type, this field is required and you must use one of the
-        /// following values, which determines your range of supported values for the <code>cpu</code>
-        /// parameter:
+        /// If you are using the Fargate launch type, this field is required and you must use
+        /// one of the following values, which determines your range of supported values for the
+        /// <code>cpu</code> parameter:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -258,10 +259,10 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The Docker networking mode to use for the containers in the task. The valid values
         /// are <code>none</code>, <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>.
-        /// The default Docker network mode is <code>bridge</code>. If using the Fargate launch
-        /// type, the <code>awsvpc</code> network mode is required. If using the EC2 launch type,
-        /// any network mode can be used. If the network mode is set to <code>none</code>, you
-        /// can't specify port mappings in your container definitions, and the task's containers
+        /// The default Docker network mode is <code>bridge</code>. If you are using the Fargate
+        /// launch type, the <code>awsvpc</code> network mode is required. If you are using the
+        /// EC2 launch type, any network mode can be used. If the network mode is set to <code>none</code>,
+        /// you can't specify port mappings in your container definitions, and the task's containers
         /// do not have external connectivity. The <code>host</code> and <code>awsvpc</code> network
         /// modes offer the highest networking performance for containers because they use the
         /// EC2 network stack instead of the virtualized network stack provided by the <code>bridge</code>
@@ -276,8 +277,8 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// If the network mode is <code>awsvpc</code>, the task is allocated an Elastic Network
-        /// Interface, and you must specify a <a>NetworkConfiguration</a> when you create a service
+        /// If the network mode is <code>awsvpc</code>, the task is allocated an elastic network
+        /// interface, and you must specify a <a>NetworkConfiguration</a> when you create a service
         /// or run a task with the task definition. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
         /// Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
@@ -314,7 +315,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// An array of placement constraint objects to use for the task. You can specify a maximum
         /// of 10 constraints per task (this limit includes constraints in the task definition
-        /// and those specified at run time).
+        /// and those specified at runtime).
         /// </para>
         /// </summary>
         public List<TaskDefinitionPlacementConstraint> PlacementConstraints
@@ -345,6 +346,27 @@ namespace Amazon.ECS.Model
         internal bool IsSetRequiresCompatibilities()
         {
             return this._requiresCompatibilities != null && this._requiresCompatibilities.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The metadata that you apply to the task definition to help you categorize and organize
+        /// them. Each tag consists of a key and an optional value, both of which you define.
+        /// Tag keys can have a maximum character length of 128 characters, and tag values can
+        /// have a maximum length of 256 characters.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

@@ -53,9 +53,11 @@ namespace Amazon.ECS.Model
         private DateTime? _pullStoppedAt;
         private DateTime? _startedAt;
         private string _startedBy;
+        private TaskStopCode _stopCode;
         private DateTime? _stoppedAt;
         private string _stoppedReason;
         private DateTime? _stoppingAt;
+        private List<Tag> _tags = new List<Tag>();
         private string _taskArn;
         private string _taskDefinitionArn;
         private long? _version;
@@ -63,7 +65,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Attachments. 
         /// <para>
-        /// The elastic network adapter associated with the task if the task uses the <code>awsvpc</code>
+        /// The Elastic Network Adapter associated with the task if the task uses the <code>awsvpc</code>
         /// network mode.
         /// </para>
         /// </summary>
@@ -118,7 +120,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ConnectivityAt. 
         /// <para>
-        /// The Unix time stamp for when the task last went into <code>CONNECTED</code> status.
+        /// The Unix timestamp for when the task last went into <code>CONNECTED</code> status.
         /// </para>
         /// </summary>
         public DateTime ConnectivityAt
@@ -172,22 +174,23 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Cpu. 
         /// <para>
-        /// The number of CPU units used by the task. It can be expressed as an integer using
-        /// CPU units, for example <code>1024</code>, or as a string using vCPUs, for example
-        /// <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String values are
-        /// converted to an integer indicating the CPU units when the task definition is registered.
+        /// The number of CPU units used by the task as expressed in a task definition. It can
+        /// be expressed as an integer using CPU units, for example <code>1024</code>. It can
+        /// also be expressed as a string using vCPUs, for example <code>1 vCPU</code> or <code>1
+        /// vcpu</code>. String values are converted to an integer indicating the CPU units when
+        /// the task definition is registered.
         /// </para>
         ///  
         /// <para>
-        /// If using the EC2 launch type, this field is optional. Supported values are between
-        /// <code>128</code> CPU units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units
-        /// (<code>10</code> vCPUs).
+        /// If you are using the EC2 launch type, this field is optional. Supported values are
+        /// between <code>128</code> CPU units (<code>0.125</code> vCPUs) and <code>10240</code>
+        /// CPU units (<code>10</code> vCPUs).
         /// </para>
         ///  
         /// <para>
-        /// If using the Fargate launch type, this field is required and you must use one of the
-        /// following values, which determines your range of supported values for the <code>memory</code>
-        /// parameter:
+        /// If you are using the Fargate launch type, this field is required and you must use
+        /// one of the following values, which determines your range of supported values for the
+        /// <code>memory</code> parameter:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -231,7 +234,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix time stamp for when the task was created (the task entered the <code>PENDING</code>
+        /// The Unix timestamp for when the task was created (the task entered the <code>PENDING</code>
         /// state).
         /// </para>
         /// </summary>
@@ -269,7 +272,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ExecutionStoppedAt. 
         /// <para>
-        /// The Unix time stamp for when the task execution stopped.
+        /// The Unix timestamp for when the task execution stopped.
         /// </para>
         /// </summary>
         public DateTime ExecutionStoppedAt
@@ -373,20 +376,21 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Memory. 
         /// <para>
-        /// The amount of memory (in MiB) used by the task. It can be expressed as an integer
-        /// using MiB, for example <code>1024</code>, or as a string using GB, for example <code>1GB</code>
-        /// or <code>1 GB</code>, in a task definition. String values are converted to an integer
-        /// indicating the MiB when the task definition is registered.
+        /// The amount of memory (in MiB) used by the task as expressed in a task definition.
+        /// It can be expressed as an integer using MiB, for example <code>1024</code>. It can
+        /// also be expressed as a string using GB, for example <code>1GB</code> or <code>1 GB</code>.
+        /// String values are converted to an integer indicating the MiB when the task definition
+        /// is registered.
         /// </para>
         ///  
         /// <para>
-        /// If using the EC2 launch type, this field is optional.
+        /// If you are using the EC2 launch type, this field is optional.
         /// </para>
         ///  
         /// <para>
-        /// If using the Fargate launch type, this field is required and you must use one of the
-        /// following values, which determines your range of supported values for the <code>cpu</code>
-        /// parameter:
+        /// If you are using the Fargate launch type, this field is required and you must use
+        /// one of the following values, which determines your range of supported values for the
+        /// <code>cpu</code> parameter:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -468,7 +472,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property PullStartedAt. 
         /// <para>
-        /// The Unix time stamp for when the container image pull began.
+        /// The Unix timestamp for when the container image pull began.
         /// </para>
         /// </summary>
         public DateTime PullStartedAt
@@ -486,7 +490,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property PullStoppedAt. 
         /// <para>
-        /// The Unix time stamp for when the container image pull completed.
+        /// The Unix timestamp for when the container image pull completed.
         /// </para>
         /// </summary>
         public DateTime PullStoppedAt
@@ -504,7 +508,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property StartedAt. 
         /// <para>
-        /// The Unix time stamp for when the task started (the task transitioned from the <code>PENDING</code>
+        /// The Unix timestamp for when the task started (the task transitioned from the <code>PENDING</code>
         /// state to the <code>RUNNING</code> state).
         /// </para>
         /// </summary>
@@ -541,10 +545,29 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StopCode. 
+        /// <para>
+        /// The stop code indicating why a task was stopped. The <code>stoppedReason</code> may
+        /// contain additional details.
+        /// </para>
+        /// </summary>
+        public TaskStopCode StopCode
+        {
+            get { return this._stopCode; }
+            set { this._stopCode = value; }
+        }
+
+        // Check to see if StopCode property is set
+        internal bool IsSetStopCode()
+        {
+            return this._stopCode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property StoppedAt. 
         /// <para>
-        /// The Unix time stamp for when the task was stopped (the task transitioned from the
-        /// <code>RUNNING</code> state to the <code>STOPPED</code> state).
+        /// The Unix timestamp for when the task was stopped (the task transitioned from the <code>RUNNING</code>
+        /// state to the <code>STOPPED</code> state).
         /// </para>
         /// </summary>
         public DateTime StoppedAt
@@ -580,7 +603,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property StoppingAt. 
         /// <para>
-        /// The Unix time stamp for when the task stops (transitions from the <code>RUNNING</code>
+        /// The Unix timestamp for when the task stops (transitions from the <code>RUNNING</code>
         /// state to <code>STOPPED</code>).
         /// </para>
         /// </summary>
@@ -594,6 +617,27 @@ namespace Amazon.ECS.Model
         internal bool IsSetStoppingAt()
         {
             return this._stoppingAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The metadata that you apply to the task to help you categorize and organize them.
+        /// Each tag consists of a key and an optional value, both of which you define. Tag keys
+        /// can have a maximum character length of 128 characters, and tag values can have a maximum
+        /// length of 256 characters.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

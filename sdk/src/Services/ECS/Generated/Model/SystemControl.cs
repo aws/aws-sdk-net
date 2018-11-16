@@ -34,14 +34,26 @@ namespace Amazon.ECS.Model
     /// Remote API</a> and the <code>--sysctl</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
     /// run</a>.
     /// 
-    ///  <note> 
+    ///  
     /// <para>
     /// It is not recommended that you specify network-related <code>systemControls</code>
     /// parameters for multiple containers in a single task that also uses either the <code>awsvpc</code>
-    /// or <code>host</code> network modes. When you do, the container that is started last
-    /// will determine which <code>systemControls</code> parameters take effect.
+    /// or <code>host</code> network mode for the following reasons:
     /// </para>
-    ///  </note>
+    ///  <ul> <li> 
+    /// <para>
+    /// For tasks that use the <code>awsvpc</code> network mode, if you set <code>systemControls</code>
+    /// for any container, it applies to all containers in the task. If you set different
+    /// <code>systemControls</code> for multiple containers in a single task, the container
+    /// that is started last determines which <code>systemControls</code> take effect.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For tasks that use the <code>host</code> network mode, the <code>systemControls</code>
+    /// parameter applies to the container instance's kernel parameter as well as that of
+    /// all containers of any tasks running on that container instance.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class SystemControl
     {
@@ -69,7 +81,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value for the namespaced kernel parameter specifed in <code>namespace</code>.
+        /// The value for the namespaced kernel parameter specified in <code>namespace</code>.
         /// </para>
         /// </summary>
         public string Value

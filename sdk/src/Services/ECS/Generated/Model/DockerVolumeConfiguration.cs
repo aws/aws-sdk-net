@@ -28,9 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// This parameter is specified when using Docker volumes. Docker volumes are only supported
-    /// when using the EC2 launch type. Windows containers only support the use of the <code>local</code>
-    /// driver. To use bind mounts, specify a <code>host</code> instead.
+    /// This parameter is specified when you are using Docker volumes. Docker volumes are
+    /// only supported when you are using the EC2 launch type. Windows containers only support
+    /// the use of the <code>local</code> driver. To use bind mounts, specify a <code>host</code>
+    /// instead.
     /// </summary>
     public partial class DockerVolumeConfiguration
     {
@@ -94,7 +95,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property DriverOpts. 
         /// <para>
-        /// A map of Docker driver specific options passed through. This parameter maps to <code>DriverOpts</code>
+        /// A map of Docker driver-specific options passed through. This parameter maps to <code>DriverOpts</code>
         /// in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create
         /// a volume</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
         /// Remote API</a> and the <code>xxopt</code> option to <a href="https://docs.docker.com/engine/reference/commandline/volume_create/">
@@ -138,7 +139,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Scope. 
         /// <para>
-        /// The scope for the Docker volume which determines it's lifecycle. Docker volumes that
+        /// The scope for the Docker volume that determines its lifecycle. Docker volumes that
         /// are scoped to a <code>task</code> are automatically provisioned when the task starts
         /// and destroyed when the task stops. Docker volumes that are scoped as <code>shared</code>
         /// persist after the task stops.

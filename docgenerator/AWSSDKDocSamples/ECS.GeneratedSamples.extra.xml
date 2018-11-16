@@ -268,6 +268,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.ECS.IAmazonECS.ListTagsForResource(Amazon.ECS.Model.ListTagsForResourceRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.ListTagsForResource(Amazon.ECS.Model.ListTagsForResourceRequest)" />
+            <member name="T:Amazon.ECS.Model.ListTagsForResourceRequest" />
+            <member name="T:Amazon.ECS.Model.ListTagsForResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists the tags for the 'dev' cluster.
+                </para>
+                <code
+                    title="To list the tags for a cluster."
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="to-list-the-tags-for-a-cluster-1540582700259" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.ECS.IAmazonECS.ListTaskDefinitionFamilies(Amazon.ECS.Model.ListTaskDefinitionFamiliesRequest)" />
             <member name="M:Amazon.ECS.AmazonECSClient.ListTaskDefinitionFamilies(Amazon.ECS.Model.ListTaskDefinitionFamiliesRequest)" />
             <member name="T:Amazon.ECS.Model.ListTaskDefinitionFamiliesRequest" />
@@ -415,6 +434,44 @@
                     title="To run a task on your default cluster"
                     source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
                     region="6f238c83-a133-42cd-ab3d-abeca0560445" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.TagResource(Amazon.ECS.Model.TagResourceRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.TagResource(Amazon.ECS.Model.TagResourceRequest)" />
+            <member name="T:Amazon.ECS.Model.TagResourceRequest" />
+            <member name="T:Amazon.ECS.Model.TagResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example tags the 'dev' cluster with key 'team' and value 'dev'.
+                </para>
+                <code
+                    title="To tag a cluster."
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="to-tag-a-cluster-1540581863751" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.UntagResource(Amazon.ECS.Model.UntagResourceRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.UntagResource(Amazon.ECS.Model.UntagResourceRequest)" />
+            <member name="T:Amazon.ECS.Model.UntagResourceRequest" />
+            <member name="T:Amazon.ECS.Model.UntagResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes the 'team' tag from the 'dev' cluster.
+                </para>
+                <code
+                    title="To untag a cluster."
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="to-untag-a-cluster-1540582546056" />
             </example>
         </value>
     </doc>

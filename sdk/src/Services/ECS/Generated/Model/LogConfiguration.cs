@@ -40,7 +40,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The log driver to use for the container. The valid values listed for this parameter
         /// are log drivers that the Amazon ECS container agent can communicate with by default.
-        /// If using the Fargate launch type, the only supported value is <code>awslogs</code>.
+        /// If you are using the Fargate launch type, the only supported value is <code>awslogs</code>.
         /// For more information about using the <code>awslogs</code> driver, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
         /// the awslogs Log Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
@@ -58,7 +58,7 @@ namespace Amazon.ECS.Model
         /// This parameter requires version 1.18 of the Docker Remote API or greater on your container
         /// instance. To check the Docker Remote API version on your container instance, log in
         /// to your container instance and run the following command: <code>sudo docker version
-        /// | grep "Server API version"</code> 
+        /// --format '{{.Server.APIVersion}}'</code> 
         /// </para>
         /// </summary>
         public LogDriver LogDriver
@@ -79,7 +79,7 @@ namespace Amazon.ECS.Model
         /// The configuration options to send to the log driver. This parameter requires version
         /// 1.19 of the Docker Remote API or greater on your container instance. To check the
         /// Docker Remote API version on your container instance, log in to your container instance
-        /// and run the following command: <code>sudo docker version | grep "Server API version"</code>
+        /// and run the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
         /// 
         /// </para>
         /// </summary>

@@ -67,6 +67,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetInclude())
+                {
+                    context.Writer.WritePropertyName("include");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestIncludeListValue in publicRequest.Include)
+                    {
+                            context.Writer.Write(publicRequestIncludeListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetTaskDefinition())
                 {
                     context.Writer.WritePropertyName("taskDefinition");

@@ -327,6 +327,38 @@ namespace Amazon.ECS
 
         #endregion
         
+        #region  DeleteAccountSetting
+
+        internal virtual DeleteAccountSettingResponse DeleteAccountSetting(DeleteAccountSettingRequest request)
+        {
+            var marshaller = DeleteAccountSettingRequestMarshaller.Instance;
+            var unmarshaller = DeleteAccountSettingResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAccountSettingRequest,DeleteAccountSettingResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAccountSetting operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccountSetting operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteAccountSetting">REST API Reference for DeleteAccountSetting Operation</seealso>
+        public virtual Task<DeleteAccountSettingResponse> DeleteAccountSettingAsync(DeleteAccountSettingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteAccountSettingRequestMarshaller.Instance;
+            var unmarshaller = DeleteAccountSettingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteAccountSettingRequest,DeleteAccountSettingResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteAttributes
 
         internal virtual DeleteAttributesResponse DeleteAttributes(DeleteAttributesRequest request)
@@ -647,6 +679,38 @@ namespace Amazon.ECS
 
         #endregion
         
+        #region  ListAccountSettings
+
+        internal virtual ListAccountSettingsResponse ListAccountSettings(ListAccountSettingsRequest request)
+        {
+            var marshaller = ListAccountSettingsRequestMarshaller.Instance;
+            var unmarshaller = ListAccountSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAccountSettingsRequest,ListAccountSettingsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAccountSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAccountSettings operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAccountSettings">REST API Reference for ListAccountSettings Operation</seealso>
+        public virtual Task<ListAccountSettingsResponse> ListAccountSettingsAsync(ListAccountSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListAccountSettingsRequestMarshaller.Instance;
+            var unmarshaller = ListAccountSettingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListAccountSettingsRequest,ListAccountSettingsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListAttributes
 
         internal virtual ListAttributesResponse ListAttributes(ListAttributesRequest request)
@@ -775,6 +839,38 @@ namespace Amazon.ECS
 
         #endregion
         
+        #region  ListTagsForResource
+
+        internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
+            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
+            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTaskDefinitionFamilies
 
         internal virtual ListTaskDefinitionFamiliesResponse ListTaskDefinitionFamilies(ListTaskDefinitionFamiliesRequest request)
@@ -866,6 +962,38 @@ namespace Amazon.ECS
             var unmarshaller = ListTasksResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTasksRequest,ListTasksResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutAccountSetting
+
+        internal virtual PutAccountSettingResponse PutAccountSetting(PutAccountSettingRequest request)
+        {
+            var marshaller = PutAccountSettingRequestMarshaller.Instance;
+            var unmarshaller = PutAccountSettingResponseUnmarshaller.Instance;
+
+            return Invoke<PutAccountSettingRequest,PutAccountSettingResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutAccountSetting operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutAccountSetting operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSetting">REST API Reference for PutAccountSetting Operation</seealso>
+        public virtual Task<PutAccountSettingResponse> PutAccountSettingAsync(PutAccountSettingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = PutAccountSettingRequestMarshaller.Instance;
+            var unmarshaller = PutAccountSettingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutAccountSettingRequest,PutAccountSettingResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1026,6 +1154,70 @@ namespace Amazon.ECS
             var unmarshaller = StopTaskResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopTaskRequest,StopTaskResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TagResource
+
+        internal virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var marshaller = TagResourceRequestMarshaller.Instance;
+            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceRequest,TagResourceResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = TagResourceRequestMarshaller.Instance;
+            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TagResourceRequest,TagResourceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+        internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var marshaller = UntagResourceRequestMarshaller.Instance;
+            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceRequest,UntagResourceResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UntagResourceRequestMarshaller.Instance;
+            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UntagResourceRequest,UntagResourceResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

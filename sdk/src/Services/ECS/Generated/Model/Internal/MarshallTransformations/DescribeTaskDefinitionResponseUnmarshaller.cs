@@ -51,6 +51,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("tags", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
+                    response.Tags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("taskDefinition", targetDepth))
                 {
                     var unmarshaller = TaskDefinitionUnmarshaller.Instance;

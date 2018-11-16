@@ -76,7 +76,7 @@ namespace Amazon.ECS.Model
     ///  </li> </ul> 
     /// <para>
     /// Any <code>PENDING</code> or <code>RUNNING</code> tasks that do not belong to a service
-    /// are not affected; you must wait for them to finish or stop them manually.
+    /// are not affected. You must wait for them to finish or stop them manually.
     /// </para>
     ///  
     /// <para>

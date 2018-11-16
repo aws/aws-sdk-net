@@ -84,6 +84,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetEnableECSManagedTags())
+                {
+                    context.Writer.WritePropertyName("enableECSManagedTags");
+                    context.Writer.Write(publicRequest.EnableECSManagedTags);
+                }
+
                 if(publicRequest.IsSetGroup())
                 {
                     context.Writer.WritePropertyName("group");
@@ -112,10 +118,32 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetPropagateTags())
+                {
+                    context.Writer.WritePropertyName("propagateTags");
+                    context.Writer.Write(publicRequest.PropagateTags);
+                }
+
                 if(publicRequest.IsSetStartedBy())
                 {
                     context.Writer.WritePropertyName("startedBy");
                     context.Writer.Write(publicRequest.StartedBy);
+                }
+
+                if(publicRequest.IsSetTags())
+                {
+                    context.Writer.WritePropertyName("tags");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTagsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetTaskDefinition())

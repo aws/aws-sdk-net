@@ -34,10 +34,10 @@ namespace Amazon.ECS.Model
     /// <para>
     /// Services with tasks that use the <code>awsvpc</code> network mode (for example, those
     /// with the Fargate launch type) only support Application Load Balancers and Network
-    /// Load Balancers; Classic Load Balancers are not supported. Also, when you create any
+    /// Load Balancers. Classic Load Balancers are not supported. Also, when you create any
     /// target groups for these services, you must choose <code>ip</code> as the target type,
-    /// not <code>instance</code>, because tasks that use the <code>awsvpc</code> network
-    /// mode are associated with an elastic network interface, not an Amazon EC2 instance.
+    /// not <code>instance</code>. Tasks that use the <code>awsvpc</code> network mode are
+    /// associated with an elastic network interface, not an Amazon EC2 instance.
     /// </para>
     /// </summary>
     public partial class LoadBalancer

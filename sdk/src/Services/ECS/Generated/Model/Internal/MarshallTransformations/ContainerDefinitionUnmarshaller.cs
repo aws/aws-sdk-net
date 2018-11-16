@@ -226,6 +226,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.RepositoryCredentials = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("secrets", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Secret, SecretUnmarshaller>(SecretUnmarshaller.Instance);
+                    unmarshalledObject.Secrets = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("systemControls", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<SystemControl, SystemControlUnmarshaller>(SystemControlUnmarshaller.Instance);

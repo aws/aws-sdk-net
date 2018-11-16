@@ -34,9 +34,11 @@ namespace Amazon.ECS.Model
     {
         private string _clusterArn;
         private DateTime? _createdAt;
+        private string _createdBy;
         private DeploymentConfiguration _deploymentConfiguration;
         private List<Deployment> _deployments = new List<Deployment>();
         private int? _desiredCount;
+        private bool? _enableecsManagedTags;
         private List<ServiceEvent> _events = new List<ServiceEvent>();
         private int? _healthCheckGracePeriodSeconds;
         private LaunchType _launchType;
@@ -46,6 +48,7 @@ namespace Amazon.ECS.Model
         private List<PlacementConstraint> _placementConstraints = new List<PlacementConstraint>();
         private List<PlacementStrategy> _placementStrategy = new List<PlacementStrategy>();
         private string _platformVersion;
+        private PropagateTags _propagateTags;
         private string _roleArn;
         private int? _runningCount;
         private SchedulingStrategy _schedulingStrategy;
@@ -53,6 +56,7 @@ namespace Amazon.ECS.Model
         private string _serviceName;
         private List<ServiceRegistry> _serviceRegistries = new List<ServiceRegistry>();
         private string _status;
+        private List<Tag> _tags = new List<Tag>();
         private string _taskDefinition;
 
         /// <summary>
@@ -76,7 +80,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix time stamp for when the service was created.
+        /// The Unix timestamp for when the service was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -89,6 +93,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatedBy. 
+        /// <para>
+        /// The principal that created the service.
+        /// </para>
+        /// </summary>
+        public string CreatedBy
+        {
+            get { return this._createdBy; }
+            set { this._createdBy = value; }
+        }
+
+        // Check to see if CreatedBy property is set
+        internal bool IsSetCreatedBy()
+        {
+            return this._createdBy != null;
         }
 
         /// <summary>
@@ -146,6 +168,27 @@ namespace Amazon.ECS.Model
         internal bool IsSetDesiredCount()
         {
             return this._desiredCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableECSManagedTags. 
+        /// <para>
+        /// Specifies whether to enable Amazon ECS managed tags for the tasks in the service.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Using_Tags.html">Tagging
+        /// Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        public bool EnableECSManagedTags
+        {
+            get { return this._enableecsManagedTags.GetValueOrDefault(); }
+            set { this._enableecsManagedTags = value; }
+        }
+
+        // Check to see if EnableECSManagedTags property is set
+        internal bool IsSetEnableECSManagedTags()
+        {
+            return this._enableecsManagedTags.HasValue; 
         }
 
         /// <summary>
@@ -214,7 +257,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// Services with tasks that use the <code>awsvpc</code> network mode (for example, those
         /// with the Fargate launch type) only support Application Load Balancers and Network
-        /// Load Balancers; Classic Load Balancers are not supported. Also, when you create any
+        /// Load Balancers. Classic Load Balancers are not supported. Also, when you create any
         /// target groups for these services, you must choose <code>ip</code> as the target type,
         /// not <code>instance</code>, because tasks that use the <code>awsvpc</code> network
         /// mode are associated with an elastic network interface, not an Amazon EC2 instance.
@@ -326,6 +369,25 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PropagateTags. 
+        /// <para>
+        /// Specifies whether to propagate the tags from the task definition or the service to
+        /// the task. If no value is specified, the tags are not propagated.
+        /// </para>
+        /// </summary>
+        public PropagateTags PropagateTags
+        {
+            get { return this._propagateTags; }
+            set { this._propagateTags = value; }
+        }
+
+        // Check to see if PropagateTags property is set
+        internal bool IsSetPropagateTags()
+        {
+            return this._propagateTags != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The ARN of the IAM role associated with the service that allows the Amazon ECS container
@@ -381,8 +443,8 @@ namespace Amazon.ECS.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each
-        /// container instance in your cluster. When using this strategy, do not specify a desired
-        /// number of tasks or any task placement strategies.
+        /// container instance in your cluster. When you are using this strategy, do not specify
+        /// a desired number of tasks or any task placement strategies.
         /// </para>
         ///  <note> 
         /// <para>
@@ -476,6 +538,27 @@ namespace Amazon.ECS.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The metadata that you apply to the service to help you categorize and organize them.
+        /// Each tag consists of a key and an optional value, both of which you define. Tag keys
+        /// can have a maximum character length of 128 characters, and tag values can have a maximum
+        /// length of 256 characters.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

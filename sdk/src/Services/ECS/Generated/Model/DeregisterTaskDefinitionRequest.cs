@@ -45,7 +45,7 @@ namespace Amazon.ECS.Model
     ///  <note> 
     /// <para>
     /// At this time, <code>INACTIVE</code> task definitions remain discoverable in your account
-    /// indefinitely; however, this behavior is subject to change in the future, so you should
+    /// indefinitely. However, this behavior is subject to change in the future, so you should
     /// not rely on <code>INACTIVE</code> task definitions persisting beyond the lifecycle
     /// of any associated tasks and services.
     /// </para>

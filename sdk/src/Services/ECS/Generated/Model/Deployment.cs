@@ -47,7 +47,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix time stamp for when the service was created.
+        /// The Unix timestamp for when the service was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -193,10 +193,10 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the deployment. Valid values are <code>PRIMARY</code> (for the most
-        /// recent deployment), <code>ACTIVE</code> (for previous deployments that still have
-        /// tasks running, but are being replaced with the <code>PRIMARY</code> deployment), and
-        /// <code>INACTIVE</code> (for deployments that have been completely replaced).
+        /// The status of the deployment. Valid values are <code>PRIMARY</code> for the most recent
+        /// deployment, <code>ACTIVE</code> for previous deployments that still have tasks running,
+        /// but are being replaced with the <code>PRIMARY</code> deployment, and <code>INACTIVE</code>
+        /// for deployments that have been completely replaced.
         /// </para>
         /// </summary>
         public string Status
@@ -232,7 +232,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The Unix time stamp for when the service was last updated.
+        /// The Unix timestamp for when the service was last updated.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt

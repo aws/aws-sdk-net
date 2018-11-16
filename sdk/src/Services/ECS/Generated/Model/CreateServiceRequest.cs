@@ -117,6 +117,7 @@ namespace Amazon.ECS.Model
         private string _cluster;
         private DeploymentConfiguration _deploymentConfiguration;
         private int? _desiredCount;
+        private bool? _enableecsManagedTags;
         private int? _healthCheckGracePeriodSeconds;
         private LaunchType _launchType;
         private List<LoadBalancer> _loadBalancers = new List<LoadBalancer>();
@@ -124,10 +125,12 @@ namespace Amazon.ECS.Model
         private List<PlacementConstraint> _placementConstraints = new List<PlacementConstraint>();
         private List<PlacementStrategy> _placementStrategy = new List<PlacementStrategy>();
         private string _platformVersion;
+        private PropagateTags _propagateTags;
         private string _role;
         private SchedulingStrategy _schedulingStrategy;
         private string _serviceName;
         private List<ServiceRegistry> _serviceRegistries = new List<ServiceRegistry>();
+        private List<Tag> _tags = new List<Tag>();
         private string _taskDefinition;
 
         /// <summary>
@@ -207,6 +210,27 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnableECSManagedTags. 
+        /// <para>
+        /// Specifies whether to enable Amazon ECS managed tags for the tasks within the service.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Using_Tags.html">Tagging
+        /// Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        public bool EnableECSManagedTags
+        {
+            get { return this._enableecsManagedTags.GetValueOrDefault(); }
+            set { this._enableecsManagedTags = value; }
+        }
+
+        // Check to see if EnableECSManagedTags property is set
+        internal bool IsSetEnableECSManagedTags()
+        {
+            return this._enableecsManagedTags.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property HealthCheckGracePeriodSeconds. 
         /// <para>
         /// The period of time, in seconds, that the Amazon ECS service scheduler should ignore
@@ -276,7 +300,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// Services with tasks that use the <code>awsvpc</code> network mode (for example, those
         /// with the Fargate launch type) only support Application Load Balancers and Network
-        /// Load Balancers; Classic Load Balancers are not supported. Also, when you create any
+        /// Load Balancers. Classic Load Balancers are not supported. Also, when you create any
         /// target groups for these services, you must choose <code>ip</code> as the target type,
         /// not <code>instance</code>, because tasks that use the <code>awsvpc</code> network
         /// mode are associated with an elastic network interface, not an Amazon EC2 instance.
@@ -298,8 +322,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property NetworkConfiguration. 
         /// <para>
         /// The network configuration for the service. This parameter is required for task definitions
-        /// that use the <code>awsvpc</code> network mode to receive their own Elastic Network
-        /// Interface, and it is not supported for other network modes. For more information,
+        /// that use the <code>awsvpc</code> network mode to receive their own elastic network
+        /// interface, and it is not supported for other network modes. For more information,
         /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
         /// Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
@@ -321,7 +345,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// An array of placement constraint objects to use for tasks in your service. You can
         /// specify a maximum of 10 constraints per task (this limit includes constraints in the
-        /// task definition and those specified at run time). 
+        /// task definition and those specified at runtime). 
         /// </para>
         /// </summary>
         public List<PlacementConstraint> PlacementConstraints
@@ -372,6 +396,27 @@ namespace Amazon.ECS.Model
         internal bool IsSetPlatformVersion()
         {
             return this._platformVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PropagateTags. 
+        /// <para>
+        /// Specifies whether to propagate the tags from the task definition or the service to
+        /// the tasks. If no value is specified, the tags are not propagated. Tags can only be
+        /// propagated to the tasks within the service during service creation. To add tags to
+        /// a task after service creation, use the <a>TagResource</a> API action.
+        /// </para>
+        /// </summary>
+        public PropagateTags PropagateTags
+        {
+            get { return this._propagateTags; }
+            set { this._propagateTags = value; }
+        }
+
+        // Check to see if PropagateTags property is set
+        internal bool IsSetPropagateTags()
+        {
+            return this._propagateTags != null;
         }
 
         /// <summary>
@@ -434,8 +479,9 @@ namespace Amazon.ECS.Model
         /// <para>
         ///  <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each
         /// active container instance that meets all of the task placement constraints that you
-        /// specify in your cluster. When using this strategy, there is no need to specify a desired
-        /// number of tasks, a task placement strategy, or use Service Auto Scaling policies.
+        /// specify in your cluster. When you are using this strategy, there is no need to specify
+        /// a desired number of tasks, a task placement strategy, or use Service Auto Scaling
+        /// policies.
         /// </para>
         ///  <note> 
         /// <para>
@@ -485,8 +531,8 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Service discovery is supported for Fargate tasks if using platform version v1.1.0
-        /// or later. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+        /// Service discovery is supported for Fargate tasks if you are using platform version
+        /// v1.1.0 or later. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
         /// Fargate Platform Versions</a>.
         /// </para>
         ///  </note>
@@ -501,6 +547,27 @@ namespace Amazon.ECS.Model
         internal bool IsSetServiceRegistries()
         {
             return this._serviceRegistries != null && this._serviceRegistries.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The metadata that you apply to the service to help you categorize and organize them.
+        /// Each tag consists of a key and an optional value, both of which you define. When a
+        /// service is deleted, the tags are deleted as well. Tag keys can have a maximum character
+        /// length of 128 characters, and tag values can have a maximum length of 256 characters.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

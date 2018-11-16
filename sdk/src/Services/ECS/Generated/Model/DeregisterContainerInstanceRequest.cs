@@ -41,7 +41,7 @@ namespace Amazon.ECS.Model
     ///  
     /// <para>
     /// Deregistering a container instance removes the instance from a cluster, but it does
-    /// not terminate the EC2 instance; if you are finished using the instance, be sure to
+    /// not terminate the EC2 instance. If you are finished using the instance, be sure to
     /// terminate it in the Amazon EC2 console to stop billing.
     /// </para>
     ///  <note> 

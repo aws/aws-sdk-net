@@ -190,6 +190,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.StartedBy = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("stopCode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StopCode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("stoppedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -206,6 +212,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.StoppingAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("tags", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
+                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("taskArn", targetDepth))

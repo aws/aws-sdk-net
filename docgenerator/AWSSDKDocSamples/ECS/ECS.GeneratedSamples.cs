@@ -231,6 +231,20 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
             #endregion
         }
 
+        public void ECSListTagsForResource()
+        {
+            #region to-list-the-tags-for-a-cluster-1540582700259
+
+            var response = client.ListTagsForResource(new ListTagsForResourceRequest 
+            {
+                ResourceArn = "arn:aws:ecs:region:aws_account_id:cluster/dev"
+            });
+
+            List<Tag> tags = response.Tags;
+
+            #endregion
+        }
+
         public void ECSListTaskDefinitionFamilies()
         {
             #region b5c89769-1d94-4ca2-a79e-8069103c7f75
@@ -356,6 +370,41 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
             });
 
             List<Task> tasks = response.Tasks;
+
+            #endregion
+        }
+
+        public void ECSTagResource()
+        {
+            #region to-tag-a-cluster-1540581863751
+
+            var response = client.TagResource(new TagResourceRequest 
+            {
+                ResourceArn = "arn:aws:ecs:region:aws_account_id:cluster/dev",
+                Tags = new List<Tag> {
+                    new Tag {
+                        Key = "team",
+                        Value = "dev"
+                    }
+                }
+            });
+
+
+            #endregion
+        }
+
+        public void ECSUntagResource()
+        {
+            #region to-untag-a-cluster-1540582546056
+
+            var response = client.UntagResource(new UntagResourceRequest 
+            {
+                ResourceArn = "arn:aws:ecs:region:aws_account_id:cluster/dev",
+                TagKeys = new List<string> {
+                    "team"
+                }
+            });
+
 
             #endregion
         }

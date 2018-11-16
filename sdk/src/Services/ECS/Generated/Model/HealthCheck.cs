@@ -45,7 +45,7 @@ namespace Amazon.ECS.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Container health checks are supported for Fargate tasks if using platform version
+    /// Container health checks are supported for Fargate tasks if you are using platform
     /// version 1.1.0 or greater. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
     /// Fargate Platform Versions</a>.
     /// </para>
@@ -78,7 +78,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// An exit code of 0 indicates success, and non-zero exit code indicates failure. For
+        /// An exit code of 0 indicates success, and a non-zero exit code indicates failure. For
         /// more information, see <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
         /// Remote API</a>.

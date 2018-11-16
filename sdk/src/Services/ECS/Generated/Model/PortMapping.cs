@@ -33,9 +33,9 @@ namespace Amazon.ECS.Model
     /// 
     ///  
     /// <para>
-    /// If using containers in a task with the <code>awsvpc</code> or <code>host</code> network
-    /// mode, exposed ports should be specified using <code>containerPort</code>. The <code>hostPort</code>
-    /// can be left blank or it must be the same value as the <code>containerPort</code>.
+    /// If you are using containers in a task with the <code>awsvpc</code> or <code>host</code>
+    /// network mode, exposed ports should be specified using <code>containerPort</code>.
+    /// The <code>hostPort</code> can be left blank or it must be the same value as the <code>containerPort</code>.
     /// </para>
     ///  
     /// <para>
@@ -58,14 +58,14 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// If using containers in a task with the <code>awsvpc</code> or <code>host</code> network
-        /// mode, exposed ports should be specified using <code>containerPort</code>.
+        /// If you are using containers in a task with the <code>awsvpc</code> or <code>host</code>
+        /// network mode, exposed ports should be specified using <code>containerPort</code>.
         /// </para>
         ///  
         /// <para>
-        /// If using containers in a task with the <code>bridge</code> network mode and you specify
-        /// a container port and not a host port, your container automatically receives a host
-        /// port in the ephemeral port range (for more information, see <code>hostPort</code>).
+        /// If you are using containers in a task with the <code>bridge</code> network mode and
+        /// you specify a container port and not a host port, your container automatically receives
+        /// a host port in the ephemeral port range. For more information, see <code>hostPort</code>.
         /// Port mappings that are automatically assigned in this way do not count toward the
         /// 100 reserved ports limit of a container instance.
         /// </para>
@@ -89,26 +89,26 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// If using containers in a task with the <code>awsvpc</code> or <code>host</code> network
-        /// mode, the <code>hostPort</code> can either be left blank or set to the same value
-        /// as the <code>containerPort</code>.
+        /// If you are using containers in a task with the <code>awsvpc</code> or <code>host</code>
+        /// network mode, the <code>hostPort</code> can either be left blank or set to the same
+        /// value as the <code>containerPort</code>.
         /// </para>
         ///  
         /// <para>
-        /// If using containers in a task with the <code>bridge</code> network mode, you can specify
-        /// a non-reserved host port for your container port mapping, or you can omit the <code>hostPort</code>
-        /// (or set it to <code>0</code>) while specifying a <code>containerPort</code> and your
-        /// container automatically receives a port in the ephemeral port range for your container
-        /// instance operating system and Docker version.
+        /// If you are using containers in a task with the <code>bridge</code> network mode, you
+        /// can specify a non-reserved host port for your container port mapping, or you can omit
+        /// the <code>hostPort</code> (or set it to <code>0</code>) while specifying a <code>containerPort</code>
+        /// and your container automatically receives a port in the ephemeral port range for your
+        /// container instance operating system and Docker version.
         /// </para>
         ///  
         /// <para>
         /// The default ephemeral port range for Docker version 1.6.0 and later is listed on the
-        /// instance under <code>/proc/sys/net/ipv4/ip_local_port_range</code>; if this kernel
+        /// instance under <code>/proc/sys/net/ipv4/ip_local_port_range</code>. If this kernel
         /// parameter is unavailable, the default ephemeral port range from 49153 through 65535
-        /// is used. You should not attempt to specify a host port in the ephemeral port range
-        /// as these are reserved for automatic assignment. In general, ports below 32768 are
-        /// outside of the ephemeral port range.
+        /// is used. Do not attempt to specify a host port in the ephemeral port range as these
+        /// are reserved for automatic assignment. In general, ports below 32768 are outside of
+        /// the ephemeral port range.
         /// </para>
         ///  <note> 
         /// <para>

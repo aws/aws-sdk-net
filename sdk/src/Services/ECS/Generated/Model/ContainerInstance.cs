@@ -45,6 +45,7 @@ namespace Amazon.ECS.Model
         private List<Resource> _remainingResources = new List<Resource>();
         private int? _runningTasksCount;
         private string _status;
+        private List<Tag> _tags = new List<Tag>();
         private long? _version;
         private VersionInfo _versionInfo;
 
@@ -186,7 +187,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property RegisteredAt. 
         /// <para>
-        /// The Unix time stamp for when the container instance was registered.
+        /// The Unix timestamp for when the container instance was registered.
         /// </para>
         /// </summary>
         public DateTime RegisteredAt
@@ -206,7 +207,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// For CPU and memory resource types, this parameter describes the amount of each resource
         /// that was available on the container instance when the container agent registered it
-        /// with Amazon ECS; this value represents the total amount of CPU and memory that can
+        /// with Amazon ECS. This value represents the total amount of CPU and memory that can
         /// be allocated on this container instance to tasks. For port resource types, this parameter
         /// describes the ports that were reserved by the Amazon ECS container agent when it registered
         /// the container instance with Amazon ECS.
@@ -287,6 +288,27 @@ namespace Amazon.ECS.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The metadata that you apply to the container instance to help you categorize and organize
+        /// them. Each tag consists of a key and an optional value, both of which you define.
+        /// Tag keys can have a maximum character length of 128 characters, and tag values can
+        /// have a maximum length of 256 characters.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

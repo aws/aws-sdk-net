@@ -43,9 +43,10 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property DockerVolumeConfiguration. 
         /// <para>
-        /// This parameter is specified when using Docker volumes. Docker volumes are only supported
-        /// when using the EC2 launch type. Windows containers only support the use of the <code>local</code>
-        /// driver. To use bind mounts, specify a <code>host</code> instead.
+        /// This parameter is specified when you are using Docker volumes. Docker volumes are
+        /// only supported when you are using the EC2 launch type. Windows containers only support
+        /// the use of the <code>local</code> driver. To use bind mounts, specify a <code>host</code>
+        /// instead.
         /// </para>
         /// </summary>
         public DockerVolumeConfiguration DockerVolumeConfiguration
@@ -63,12 +64,13 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Host. 
         /// <para>
-        /// This parameter is specified when using bind mount host volumes. Bind mount host volumes
-        /// are supported when using either the EC2 or Fargate launch types. The contents of the
-        /// <code>host</code> parameter determine whether your bind mount host volume persists
-        /// on the host container instance and where it is stored. If the <code>host</code> parameter
-        /// is empty, then the Docker daemon assigns a host path for your data volume, but the
-        /// data is not guaranteed to persist after the containers associated with it stop running.
+        /// This parameter is specified when you are using bind mount host volumes. Bind mount
+        /// host volumes are supported when you are using either the EC2 or Fargate launch types.
+        /// The contents of the <code>host</code> parameter determine whether your bind mount
+        /// host volume persists on the host container instance and where it is stored. If the
+        /// <code>host</code> parameter is empty, then the Docker daemon assigns a host path for
+        /// your data volume, but the data is not guaranteed to persist after the containers associated
+        /// with it stop running.
         /// </para>
         ///  
         /// <para>

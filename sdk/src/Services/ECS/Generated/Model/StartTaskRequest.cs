@@ -43,10 +43,13 @@ namespace Amazon.ECS.Model
     {
         private string _cluster;
         private List<string> _containerInstances = new List<string>();
+        private bool? _enableecsManagedTags;
         private string _group;
         private NetworkConfiguration _networkConfiguration;
         private TaskOverride _overrides;
+        private PropagateTags _propagateTags;
         private string _startedBy;
+        private List<Tag> _tags = new List<Tag>();
         private string _taskDefinition;
 
         /// <summary>
@@ -85,6 +88,27 @@ namespace Amazon.ECS.Model
         internal bool IsSetContainerInstances()
         {
             return this._containerInstances != null && this._containerInstances.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableECSManagedTags. 
+        /// <para>
+        /// Specifies whether to enable Amazon ECS managed tags for the task. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Using_Tags.html">Tagging
+        /// Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        public bool EnableECSManagedTags
+        {
+            get { return this._enableecsManagedTags.GetValueOrDefault(); }
+            set { this._enableecsManagedTags = value; }
+        }
+
+        // Check to see if EnableECSManagedTags property is set
+        internal bool IsSetEnableECSManagedTags()
+        {
+            return this._enableecsManagedTags.HasValue; 
         }
 
         /// <summary>
@@ -155,9 +179,28 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PropagateTags. 
+        /// <para>
+        /// Specifies whether to propagate the tags from the task definition or the service to
+        /// the task. If no value is specified, the tags are not propagated.
+        /// </para>
+        /// </summary>
+        public PropagateTags PropagateTags
+        {
+            get { return this._propagateTags; }
+            set { this._propagateTags = value; }
+        }
+
+        // Check to see if PropagateTags property is set
+        internal bool IsSetPropagateTags()
+        {
+            return this._propagateTags != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property StartedBy. 
         /// <para>
-        /// An optional tag specified when a task is started. For example if you automatically
+        /// An optional tag specified when a task is started. For example, if you automatically
         /// trigger a task to run a batch process job, you could apply a unique identifier for
         /// that job to your task with the <code>startedBy</code> parameter. You can then identify
         /// which tasks belong to that job by filtering the results of a <a>ListTasks</a> call
@@ -180,6 +223,27 @@ namespace Amazon.ECS.Model
         internal bool IsSetStartedBy()
         {
             return this._startedBy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The metadata that you apply to the task to help you categorize and organize them.
+        /// Each tag consists of a key and an optional value, both of which you define. Tag keys
+        /// can have a maximum character length of 128 characters, and tag values can have a maximum
+        /// length of 256 characters.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

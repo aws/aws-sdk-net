@@ -84,6 +84,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetInclude())
+                {
+                    context.Writer.WritePropertyName("include");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestIncludeListValue in publicRequest.Include)
+                    {
+                            context.Writer.Write(publicRequestIncludeListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

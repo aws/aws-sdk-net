@@ -82,7 +82,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property HealthStatus. 
         /// <para>
         /// The health status of the container. If health checks are not configured for this container
-        /// in its task definition, then it reports health status as <code>UNKNOWN</code>.
+        /// in its task definition, then it reports the health status as <code>UNKNOWN</code>.
         /// </para>
         /// </summary>
         public HealthStatus HealthStatus

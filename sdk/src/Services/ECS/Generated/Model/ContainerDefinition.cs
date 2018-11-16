@@ -60,6 +60,7 @@ namespace Amazon.ECS.Model
         private bool? _pseudoTerminal;
         private bool? _readonlyRootFilesystem;
         private RepositoryCredentials _repositoryCredentials;
+        private List<Secret> _secrets = new List<Secret>();
         private List<SystemControl> _systemControls = new List<SystemControl>();
         private List<Ulimit> _ulimits = new List<Ulimit>();
         private string _user;
@@ -138,7 +139,7 @@ namespace Amazon.ECS.Model
         /// CPU value to calculate the relative CPU share ratios for running containers. For more
         /// information, see <a href="https://docs.docker.com/engine/reference/run/#cpu-share-constraint">CPU
         /// share constraint</a> in the Docker documentation. The minimum valid CPU share value
-        /// that the Linux kernel allows is 2; however, the CPU parameter is not required, and
+        /// that the Linux kernel allows is 2. However, the CPU parameter is not required, and
         /// you can use CPU values below 2 in your container definitions. For CPU values below
         /// 2 (including null), the behavior varies based on your Amazon ECS container agent version:
         /// </para>
@@ -262,7 +263,7 @@ namespace Amazon.ECS.Model
         /// run</a>. This parameter requires version 1.18 of the Docker Remote API or greater
         /// on your container instance. To check the Docker Remote API version on your container
         /// instance, log in to your container instance and run the following command: <code>sudo
-        /// docker version | grep "Server API version"</code> 
+        /// docker version --format '{{.Server.APIVersion}}'</code> 
         /// </para>
         /// </summary>
         public Dictionary<string, string> DockerLabels
@@ -408,16 +409,15 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property ExtraHosts. 
         /// <para>
         /// A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code>
-        /// file on the container. If using the Fargate launch type, this may be used to list
-        /// non-Fargate hosts to which the container can talk. This parameter maps to <code>ExtraHosts</code>
-        /// in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
+        /// file on the container. This parameter maps to <code>ExtraHosts</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
         /// Remote API</a> and the <code>--add-host</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter is not supported for Windows containers.
+        /// This parameter is not supported for Windows containers or tasks that use the <code>awsvpc</code>
+        /// network mode.
         /// </para>
         ///  </note>
         /// </summary>
@@ -466,8 +466,8 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>hostname</code> parameter is not supported if using the <code>awsvpc</code>
-        /// networkMode.
+        /// The <code>hostname</code> parameter is not supported if you are using the <code>awsvpc</code>
+        /// network mode.
         /// </para>
         ///  </note>
         /// </summary>
@@ -630,7 +630,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// If using the Fargate launch type, the only supported value is <code>awslogs</code>.
+        /// If you are using the Fargate launch type, the only supported value is <code>awslogs</code>.
         /// </para>
         ///  
         /// <para>
@@ -638,7 +638,7 @@ namespace Amazon.ECS.Model
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
         /// Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>. By default, containers use the same logging driver that the Docker daemon
-        /// uses; however the container may use a different logging driver than the Docker daemon
+        /// uses. However the container may use a different logging driver than the Docker daemon
         /// by specifying a log driver with this parameter in the container definition. To use
         /// a different logging driver for a container, the log system must be configured properly
         /// on the container instance (or on a different log server for remote logging options).
@@ -656,7 +656,7 @@ namespace Amazon.ECS.Model
         /// This parameter requires version 1.18 of the Docker Remote API or greater on your container
         /// instance. To check the Docker Remote API version on your container instance, log in
         /// to your container instance and run the following command: <code>sudo docker version
-        /// | grep "Server API version"</code> 
+        /// --format '{{.Server.APIVersion}}'</code> 
         /// </para>
         ///  <note> 
         /// <para>
@@ -704,7 +704,7 @@ namespace Amazon.ECS.Model
         /// in container definitions. If you specify both, <code>memory</code> must be greater
         /// than <code>memoryReservation</code>. If you specify <code>memoryReservation</code>,
         /// then that value is subtracted from the available memory resources for the container
-        /// instance on which the container is placed; otherwise, the value of <code>memory</code>
+        /// instance on which the container is placed. Otherwise, the value of <code>memory</code>
         /// is used.
         /// </para>
         ///  
@@ -730,7 +730,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The soft limit (in MiB) of memory to reserve for the container. When system memory
         /// is under heavy contention, Docker attempts to keep the container memory to this soft
-        /// limit; however, your container can consume more memory when it needs to, up to either
+        /// limit. However, your container can consume more memory when it needs to, up to either
         /// the hard limit specified with the <code>memory</code> parameter (if applicable), or
         /// all of the available memory on the container instance, whichever comes first. This
         /// parameter maps to <code>MemoryReservation</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
@@ -744,7 +744,7 @@ namespace Amazon.ECS.Model
         /// in container definitions. If you specify both, <code>memory</code> must be greater
         /// than <code>memoryReservation</code>. If you specify <code>memoryReservation</code>,
         /// then that value is subtracted from the available memory resources for the container
-        /// instance on which the container is placed; otherwise, the value of <code>memory</code>
+        /// instance on which the container is placed. Otherwise, the value of <code>memory</code>
         /// is used.
         /// </para>
         ///  
@@ -977,6 +977,24 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Secrets. 
+        /// <para>
+        /// The secrets to pass to the container.
+        /// </para>
+        /// </summary>
+        public List<Secret> Secrets
+        {
+            get { return this._secrets; }
+            set { this._secrets = value; }
+        }
+
+        // Check to see if Secrets property is set
+        internal bool IsSetSecrets()
+        {
+            return this._secrets != null && this._secrets.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property SystemControls. 
         /// <para>
         /// A list of namespaced kernel parameters to set in the container. This parameter maps
@@ -989,8 +1007,10 @@ namespace Amazon.ECS.Model
         /// <para>
         /// It is not recommended that you specify network-related <code>systemControls</code>
         /// parameters for multiple containers in a single task that also uses either the <code>awsvpc</code>
-        /// or <code>host</code> network modes. When you do, the container that is started last
-        /// will determine which <code>systemControls</code> parameters take effect.
+        /// or <code>host</code> network modes. For tasks that use the <code>awsvpc</code> network
+        /// mode, the container that is started last determines which <code>systemControls</code>
+        /// parameters take effect. For tasks that use the <code>host</code> network mode, it
+        /// changes the container instance's namespaced kernel parameters as well as the containers.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1016,8 +1036,8 @@ namespace Amazon.ECS.Model
         /// run</a>. Valid naming values are displayed in the <a>Ulimit</a> data type. This parameter
         /// requires version 1.18 of the Docker Remote API or greater on your container instance.
         /// To check the Docker Remote API version on your container instance, log in to your
-        /// container instance and run the following command: <code>sudo docker version | grep
-        /// "Server API version"</code> 
+        /// container instance and run the following command: <code>sudo docker version --format
+        /// '{{.Server.APIVersion}}'</code> 
         /// </para>
         ///  <note> 
         /// <para>
