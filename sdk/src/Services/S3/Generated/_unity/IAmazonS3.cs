@@ -410,7 +410,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Deletes the cors configuration information set for the bucket.
+        /// Deletes the CORS configuration information set for the bucket.
         /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value of this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// <param name="bucketName">A property of DeleteCORSConfigurationRequest used to execute the DeleteCORSConfiguration service method.</param>
@@ -549,6 +549,23 @@ namespace Amazon.S3
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         void DeleteObjectTaggingAsync(DeleteObjectTaggingRequest request, AmazonServiceCallback<DeleteObjectTaggingRequest, DeleteObjectTaggingResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  DeletePublicAccessBlock
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePublicAccessBlock operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePublicAccessBlock operation on AmazonS3Client.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        void DeletePublicAccessBlockAsync(DeletePublicAccessBlockRequest request, AmazonServiceCallback<DeletePublicAccessBlockRequest, DeletePublicAccessBlockResponse> callback, AsyncOptions options = null);
 
 
         #endregion
@@ -792,6 +809,22 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  GetBucketPolicyStatus
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBucketPolicyStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketPolicyStatus operation on AmazonS3Client.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        void GetBucketPolicyStatusAsync(GetBucketPolicyStatusRequest request, AmazonServiceCallback<GetBucketPolicyStatusRequest, GetBucketPolicyStatusResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
         #region  GetBucketReplication
 
 
@@ -916,7 +949,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Returns the cors configuration for the bucket.
+        /// Returns the CORS configuration for the bucket.
         /// </summary>
         /// <param name="bucketName">A property of GetCORSConfigurationRequest used to execute the GetCORSConfiguration service method.</param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
@@ -1109,6 +1142,22 @@ namespace Amazon.S3
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         void GetObjectTorrentAsync(GetObjectTorrentRequest request, AmazonServiceCallback<GetObjectTorrentRequest, GetObjectTorrentResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  GetPublicAccessBlock
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPublicAccessBlock operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPublicAccessBlock operation on AmazonS3Client.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        void GetPublicAccessBlockAsync(GetPublicAccessBlockRequest request, AmazonServiceCallback<GetPublicAccessBlockRequest, GetPublicAccessBlockResponse> callback, AsyncOptions options = null);
 
 
         #endregion
@@ -1754,7 +1803,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Sets the cors configuration for a bucket.
+        /// Sets the CORS configuration for a bucket.
         /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value of this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// <param name="bucketName">A property of PutCORSConfigurationRequest used to execute the PutCORSConfiguration service method.</param>
@@ -1845,6 +1894,23 @@ namespace Amazon.S3
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         void PutObjectTaggingAsync(PutObjectTaggingRequest request, AmazonServiceCallback<PutObjectTaggingRequest, PutObjectTaggingResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  PutPublicAccessBlock
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutPublicAccessBlock operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutPublicAccessBlock operation on AmazonS3Client.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        void PutPublicAccessBlockAsync(PutPublicAccessBlockRequest request, AmazonServiceCallback<PutPublicAccessBlockRequest, PutPublicAccessBlockResponse> callback, AsyncOptions options = null);
 
 
         #endregion

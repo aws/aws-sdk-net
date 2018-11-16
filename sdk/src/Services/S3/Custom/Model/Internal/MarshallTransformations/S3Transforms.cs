@@ -15,6 +15,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -62,6 +63,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return value.ToUniversalTime().ToString(AWSSDKUtils.RFC822DateFormat, CultureInfo.InvariantCulture);
         }
 
+        [SuppressMessage("Microsoft.Globalization", "CA1308", Justification = "Value is not surfaced to user. Booleans have been lowercased by SDK precedent.")]
+        internal static string ToStringValue(bool value)
+        {
+            return value.ToString().ToLowerInvariant();
+        }
+
         internal static string ToXmlStringValue(string value)
         {
             return ToStringValue(value);
@@ -71,6 +78,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return value.ToUniversalTime().ToString(AWSSDKUtils.ISO8601DateFormat, CultureInfo.InvariantCulture);
         }
         internal static string ToXmlStringValue(int value)
+        {
+            return ToStringValue(value);
+        }
+        internal static string ToXmlStringValue(bool value)
         {
             return ToStringValue(value);
         }

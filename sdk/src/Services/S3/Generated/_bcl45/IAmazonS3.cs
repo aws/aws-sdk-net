@@ -483,7 +483,9 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Deletes the replication configuration from the bucket.
+        /// Deletes the replication configuration from the bucket. For information about replication
+        /// configuration, see <a href=" https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
+        /// Replication (CRR)</a> in the <i>Amazon S3 Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketReplication service method.</param>
         /// 
@@ -596,7 +598,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Deletes the cors configuration information set for the bucket.
+        /// Deletes the CORS configuration information set for the bucket.
         /// </summary>
         /// <param name="bucketName">A property of DeleteCORSConfigurationRequest used to execute the DeleteCORSConfiguration service method.</param>
         /// 
@@ -604,7 +606,7 @@ namespace Amazon.S3
         DeleteCORSConfigurationResponse DeleteCORSConfiguration(string bucketName);
 
         /// <summary>
-        /// Deletes the cors configuration information set for the bucket.
+        /// Deletes the CORS configuration information set for the bucket.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCORSConfiguration service method.</param>
         /// 
@@ -613,7 +615,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Deletes the cors configuration information set for the bucket.
+        /// Deletes the CORS configuration information set for the bucket.
         /// </summary>
         /// <param name="bucketName">A property of DeleteCORSConfigurationRequest used to execute the DeleteCORSConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -807,6 +809,31 @@ namespace Amazon.S3
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DeleteObjectTaggingResponse> DeleteObjectTaggingAsync(DeleteObjectTaggingRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeletePublicAccessBlock
+
+
+        /// <summary>
+        /// Removes the Public Access Block configuration for an Amazon S3 bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePublicAccessBlock service method.</param>
+        /// 
+        /// <returns>The response from the DeletePublicAccessBlock service method, as returned by S3.</returns>
+        DeletePublicAccessBlockResponse DeletePublicAccessBlock(DeletePublicAccessBlockRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePublicAccessBlock operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePublicAccessBlock operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeletePublicAccessBlockResponse> DeletePublicAccessBlockAsync(DeletePublicAccessBlockRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1179,6 +1206,32 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  GetBucketPolicyStatus
+
+
+        /// <summary>
+        /// Retrieves the policy status for an Amazon S3 bucket, indicating whether the bucket
+        /// is public.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketPolicyStatus service method.</param>
+        /// 
+        /// <returns>The response from the GetBucketPolicyStatus service method, as returned by S3.</returns>
+        GetBucketPolicyStatusResponse GetBucketPolicyStatus(GetBucketPolicyStatusRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBucketPolicyStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketPolicyStatus operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetBucketPolicyStatusResponse> GetBucketPolicyStatusAsync(GetBucketPolicyStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetBucketReplication
 
 
@@ -1365,7 +1418,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Returns the cors configuration for the bucket.
+        /// Returns the CORS configuration for the bucket.
         /// </summary>
         /// <param name="bucketName">A property of GetCORSConfigurationRequest used to execute the GetCORSConfiguration service method.</param>
         /// 
@@ -1373,7 +1426,7 @@ namespace Amazon.S3
         GetCORSConfigurationResponse GetCORSConfiguration(string bucketName);
 
         /// <summary>
-        /// Returns the cors configuration for the bucket.
+        /// Returns the CORS configuration for the bucket.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCORSConfiguration service method.</param>
         /// 
@@ -1382,7 +1435,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Returns the cors configuration for the bucket.
+        /// Returns the CORS configuration for the bucket.
         /// </summary>
         /// <param name="bucketName">A property of GetCORSConfigurationRequest used to execute the GetCORSConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -1665,6 +1718,31 @@ namespace Amazon.S3
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<GetObjectTorrentResponse> GetObjectTorrentAsync(GetObjectTorrentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetPublicAccessBlock
+
+
+        /// <summary>
+        /// Retrieves the Public Access Block configuration for an Amazon S3 bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPublicAccessBlock service method.</param>
+        /// 
+        /// <returns>The response from the GetPublicAccessBlock service method, as returned by S3.</returns>
+        GetPublicAccessBlockResponse GetPublicAccessBlock(GetPublicAccessBlockRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPublicAccessBlock operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPublicAccessBlock operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetPublicAccessBlockResponse> GetPublicAccessBlockAsync(GetPublicAccessBlockRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2459,9 +2537,9 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Creates a new replication configuration (or replaces an existing one, if present).
-        /// For more information, see <a href=" https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
-        /// Replication (CRR)</a> in the Amazon S3 Developer Guide.
+        /// Creates a replication configuration or replaces an existing one. For more information,
+        /// see <a href=" https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
+        /// Replication (CRR)</a> in the <i>Amazon S3 Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketReplication service method.</param>
         /// 
@@ -2659,7 +2737,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Sets the cors configuration for a bucket.
+        /// Sets the CORS configuration for a bucket.
         /// </summary>
         /// <param name="bucketName">A property of PutCORSConfigurationRequest used to execute the PutCORSConfiguration service method.</param>
         /// <param name="configuration">A property of PutCORSConfigurationRequest used to execute the PutCORSConfiguration service method.</param>
@@ -2668,7 +2746,7 @@ namespace Amazon.S3
         PutCORSConfigurationResponse PutCORSConfiguration(string bucketName, CORSConfiguration configuration);
 
         /// <summary>
-        /// Sets the cors configuration for a bucket.
+        /// Sets the CORS configuration for a bucket.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutCORSConfiguration service method.</param>
         /// 
@@ -2677,7 +2755,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Sets the cors configuration for a bucket.
+        /// Sets the CORS configuration for a bucket.
         /// </summary>
         /// <param name="bucketName">A property of PutCORSConfigurationRequest used to execute the PutCORSConfiguration service method.</param>
         /// <param name="configuration">A property of PutCORSConfigurationRequest used to execute the PutCORSConfiguration service method.</param>
@@ -2797,6 +2875,31 @@ namespace Amazon.S3
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<PutObjectTaggingResponse> PutObjectTaggingAsync(PutObjectTaggingRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutPublicAccessBlock
+
+
+        /// <summary>
+        /// Creates or modifies the Public Access Block configuration for an Amazon S3 bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutPublicAccessBlock service method.</param>
+        /// 
+        /// <returns>The response from the PutPublicAccessBlock service method, as returned by S3.</returns>
+        PutPublicAccessBlockResponse PutPublicAccessBlock(PutPublicAccessBlockRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutPublicAccessBlock operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutPublicAccessBlock operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<PutPublicAccessBlockResponse> PutPublicAccessBlockAsync(PutPublicAccessBlockRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

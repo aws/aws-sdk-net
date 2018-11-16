@@ -81,7 +81,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                         }
                                         if (expiration.IsSetExpiredObjectDeleteMarker())
                                         {
-                                            xmlWriter.WriteElementString("ExpiredObjectDeleteMarker", "", expiration.ExpiredObjectDeleteMarker.ToString().ToLowerInvariant());
+                                            xmlWriter.WriteElementString("ExpiredObjectDeleteMarker", "", S3Transforms.ToXmlStringValue(expiration.ExpiredObjectDeleteMarker));
                                         }
                                         xmlWriter.WriteEndElement();
                                     }

@@ -13,7 +13,6 @@
  * permissions and limitations under the License.
  */
 
-using System.Diagnostics.CodeAnalysis;
 using System.Xml;
 using Amazon.S3.Model.Internal.MarshallTransformations;
 
@@ -105,8 +104,7 @@ namespace Amazon.S3.Model
         {
             return _allowQuotedRecordDelimiter != null;
         }
-
-        [SuppressMessage("Microsoft.Globalization", "CA1308", Justification = "AllowQuotedRecordDelimiter is not surfaced to user. Booleans have been lowercased by SDK precedent.")]
+        
         internal void Marshall(string memberName, XmlWriter xmlWriter)
         {
             xmlWriter.WriteStartElement(memberName);
@@ -124,7 +122,7 @@ namespace Amazon.S3.Model
                 if (IsSetQuoteCharacter())
                     xmlWriter.WriteElementString("QuoteCharacter", S3Transforms.ToXmlStringValue(QuoteCharacter));
                 if (IsSetAllowQuotedRecordDelimiter())
-                    xmlWriter.WriteElementString("AllowQuotedRecordDelimiter", AllowQuotedRecordDelimiter.ToString().ToLowerInvariant());
+                    xmlWriter.WriteElementString("AllowQuotedRecordDelimiter", S3Transforms.ToXmlStringValue(AllowQuotedRecordDelimiter));
             }
             xmlWriter.WriteEndElement();
         }

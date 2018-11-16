@@ -937,7 +937,9 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Deletes the replication configuration from the bucket.
+        /// Deletes the replication configuration from the bucket. For information about replication
+        /// configuration, see <a href=" https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
+        /// Replication (CRR)</a> in the <i>Amazon S3 Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketReplication service method.</param>
         /// 
@@ -1110,7 +1112,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Deletes the cors configuration information set for the bucket.
+        /// Deletes the CORS configuration information set for the bucket.
         /// </summary>
         /// <param name="bucketName">A property of DeleteCORSConfigurationRequest used to execute the DeleteCORSConfiguration service method.</param>
         /// 
@@ -1124,7 +1126,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Deletes the cors configuration information set for the bucket.
+        /// Deletes the CORS configuration information set for the bucket.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCORSConfiguration service method.</param>
         /// 
@@ -1139,7 +1141,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Deletes the cors configuration information set for the bucket.
+        /// Deletes the CORS configuration information set for the bucket.
         /// </summary>
         /// <param name="bucketName">A property of DeleteCORSConfigurationRequest used to execute the DeleteCORSConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -1433,6 +1435,43 @@ namespace Amazon.S3
             var unmarshaller = DeleteObjectTaggingResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteObjectTaggingRequest,DeleteObjectTaggingResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeletePublicAccessBlock
+
+
+        /// <summary>
+        /// Removes the Public Access Block configuration for an Amazon S3 bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePublicAccessBlock service method.</param>
+        /// 
+        /// <returns>The response from the DeletePublicAccessBlock service method, as returned by S3.</returns>
+        public virtual DeletePublicAccessBlockResponse DeletePublicAccessBlock(DeletePublicAccessBlockRequest request)
+        {
+            var marshaller = DeletePublicAccessBlockRequestMarshaller.Instance;
+            var unmarshaller = DeletePublicAccessBlockResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePublicAccessBlockRequest,DeletePublicAccessBlockResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePublicAccessBlock operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePublicAccessBlock operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<DeletePublicAccessBlockResponse> DeletePublicAccessBlockAsync(DeletePublicAccessBlockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeletePublicAccessBlockRequestMarshaller.Instance;
+            var unmarshaller = DeletePublicAccessBlockResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeletePublicAccessBlockRequest,DeletePublicAccessBlockResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1999,6 +2038,44 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  GetBucketPolicyStatus
+
+
+        /// <summary>
+        /// Retrieves the policy status for an Amazon S3 bucket, indicating whether the bucket
+        /// is public.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketPolicyStatus service method.</param>
+        /// 
+        /// <returns>The response from the GetBucketPolicyStatus service method, as returned by S3.</returns>
+        public virtual GetBucketPolicyStatusResponse GetBucketPolicyStatus(GetBucketPolicyStatusRequest request)
+        {
+            var marshaller = GetBucketPolicyStatusRequestMarshaller.Instance;
+            var unmarshaller = GetBucketPolicyStatusResponseUnmarshaller.Instance;
+
+            return Invoke<GetBucketPolicyStatusRequest,GetBucketPolicyStatusResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBucketPolicyStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketPolicyStatus operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<GetBucketPolicyStatusResponse> GetBucketPolicyStatusAsync(GetBucketPolicyStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetBucketPolicyStatusRequestMarshaller.Instance;
+            var unmarshaller = GetBucketPolicyStatusResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetBucketPolicyStatusRequest,GetBucketPolicyStatusResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetBucketReplication
 
 
@@ -2281,7 +2358,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Returns the cors configuration for the bucket.
+        /// Returns the CORS configuration for the bucket.
         /// </summary>
         /// <param name="bucketName">A property of GetCORSConfigurationRequest used to execute the GetCORSConfiguration service method.</param>
         /// 
@@ -2295,7 +2372,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Returns the cors configuration for the bucket.
+        /// Returns the CORS configuration for the bucket.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCORSConfiguration service method.</param>
         /// 
@@ -2310,7 +2387,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Returns the cors configuration for the bucket.
+        /// Returns the CORS configuration for the bucket.
         /// </summary>
         /// <param name="bucketName">A property of GetCORSConfigurationRequest used to execute the GetCORSConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -2749,6 +2826,43 @@ namespace Amazon.S3
             var unmarshaller = GetObjectTorrentResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetObjectTorrentRequest,GetObjectTorrentResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetPublicAccessBlock
+
+
+        /// <summary>
+        /// Retrieves the Public Access Block configuration for an Amazon S3 bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPublicAccessBlock service method.</param>
+        /// 
+        /// <returns>The response from the GetPublicAccessBlock service method, as returned by S3.</returns>
+        public virtual GetPublicAccessBlockResponse GetPublicAccessBlock(GetPublicAccessBlockRequest request)
+        {
+            var marshaller = GetPublicAccessBlockRequestMarshaller.Instance;
+            var unmarshaller = GetPublicAccessBlockResponseUnmarshaller.Instance;
+
+            return Invoke<GetPublicAccessBlockRequest,GetPublicAccessBlockResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPublicAccessBlock operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPublicAccessBlock operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<GetPublicAccessBlockResponse> GetPublicAccessBlockAsync(GetPublicAccessBlockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetPublicAccessBlockRequestMarshaller.Instance;
+            var unmarshaller = GetPublicAccessBlockResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetPublicAccessBlockRequest,GetPublicAccessBlockResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -3978,9 +4092,9 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Creates a new replication configuration (or replaces an existing one, if present).
-        /// For more information, see <a href=" https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
-        /// Replication (CRR)</a> in the Amazon S3 Developer Guide.
+        /// Creates a replication configuration or replaces an existing one. For more information,
+        /// see <a href=" https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
+        /// Replication (CRR)</a> in the <i>Amazon S3 Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketReplication service method.</param>
         /// 
@@ -4280,7 +4394,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Sets the cors configuration for a bucket.
+        /// Sets the CORS configuration for a bucket.
         /// </summary>
         /// <param name="bucketName">A property of PutCORSConfigurationRequest used to execute the PutCORSConfiguration service method.</param>
         /// <param name="configuration">A property of PutCORSConfigurationRequest used to execute the PutCORSConfiguration service method.</param>
@@ -4296,7 +4410,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Sets the cors configuration for a bucket.
+        /// Sets the CORS configuration for a bucket.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutCORSConfiguration service method.</param>
         /// 
@@ -4311,7 +4425,7 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Sets the cors configuration for a bucket.
+        /// Sets the CORS configuration for a bucket.
         /// </summary>
         /// <param name="bucketName">A property of PutCORSConfigurationRequest used to execute the PutCORSConfiguration service method.</param>
         /// <param name="configuration">A property of PutCORSConfigurationRequest used to execute the PutCORSConfiguration service method.</param>
@@ -4492,6 +4606,43 @@ namespace Amazon.S3
             var unmarshaller = PutObjectTaggingResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutObjectTaggingRequest,PutObjectTaggingResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutPublicAccessBlock
+
+
+        /// <summary>
+        /// Creates or modifies the Public Access Block configuration for an Amazon S3 bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutPublicAccessBlock service method.</param>
+        /// 
+        /// <returns>The response from the PutPublicAccessBlock service method, as returned by S3.</returns>
+        public virtual PutPublicAccessBlockResponse PutPublicAccessBlock(PutPublicAccessBlockRequest request)
+        {
+            var marshaller = PutPublicAccessBlockRequestMarshaller.Instance;
+            var unmarshaller = PutPublicAccessBlockResponseUnmarshaller.Instance;
+
+            return Invoke<PutPublicAccessBlockRequest,PutPublicAccessBlockResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutPublicAccessBlock operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutPublicAccessBlock operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<PutPublicAccessBlockResponse> PutPublicAccessBlockAsync(PutPublicAccessBlockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = PutPublicAccessBlockRequestMarshaller.Instance;
+            var unmarshaller = PutPublicAccessBlockResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutPublicAccessBlockRequest,PutPublicAccessBlockResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

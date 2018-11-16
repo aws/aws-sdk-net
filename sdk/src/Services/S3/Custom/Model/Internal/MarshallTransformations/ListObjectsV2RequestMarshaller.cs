@@ -56,7 +56,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (listObjectsRequest.IsSetContinuationToken())
                 request.Parameters.Add("continuation-token", S3Transforms.ToStringValue(listObjectsRequest.ContinuationToken));
             if (listObjectsRequest.IsSetFetchOwner())
-                request.Parameters.Add("fetch-owner", listObjectsRequest.FetchOwner.ToString().ToLowerInvariant());
+                request.Parameters.Add("fetch-owner", S3Transforms.ToStringValue(listObjectsRequest.FetchOwner));
             if (listObjectsRequest.IsSetStartAfter())
                 request.Parameters.Add("start-after", S3Transforms.ToStringValue(listObjectsRequest.StartAfter));
 

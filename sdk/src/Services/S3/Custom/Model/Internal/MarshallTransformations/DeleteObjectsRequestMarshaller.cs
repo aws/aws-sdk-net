@@ -80,7 +80,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 }
                 if (deleteObjectsRequest.IsSetQuiet())
                 {
-                    xmlWriter.WriteElementString("Quiet", "", deleteObjectsRequest.Quiet.ToString().ToLowerInvariant());
+                    xmlWriter.WriteElementString("Quiet", "", S3Transforms.ToXmlStringValue(deleteObjectsRequest.Quiet));
                 }
                 xmlWriter.WriteEndElement();
             }

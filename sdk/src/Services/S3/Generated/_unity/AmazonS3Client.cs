@@ -835,7 +835,7 @@ namespace Amazon.S3
         #region  DeleteCORSConfiguration
 
         /// <summary>
-        /// Deletes the cors configuration information set for the bucket.
+        /// Deletes the CORS configuration information set for the bucket.
         /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value of this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// <param name="bucketName">A property of DeleteCORSConfigurationRequest used to execute the DeleteCORSConfiguration service method.</param>
@@ -1073,6 +1073,38 @@ namespace Amazon.S3
                         callback(responseObject); 
                 };
             BeginInvoke<DeleteObjectTaggingRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  DeletePublicAccessBlock
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePublicAccessBlock operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePublicAccessBlock operation on AmazonS3Client.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public virtual void DeletePublicAccessBlockAsync(DeletePublicAccessBlockRequest request, AmazonServiceCallback<DeletePublicAccessBlockRequest, DeletePublicAccessBlockResponse> callback, AsyncOptions options = null)
+        {
+            if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)
+            {
+                throw new InvalidOperationException("DeletePublicAccessBlock is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
+            }
+            options = options == null?new AsyncOptions():options;
+            var marshaller = DeletePublicAccessBlockRequestMarshaller.Instance;
+            var unmarshaller = DeletePublicAccessBlockResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<DeletePublicAccessBlockRequest,DeletePublicAccessBlockResponse> responseObject 
+                            = new AmazonServiceResult<DeletePublicAccessBlockRequest,DeletePublicAccessBlockResponse>((DeletePublicAccessBlockRequest)req, (DeletePublicAccessBlockResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<DeletePublicAccessBlockRequest>(request, marshaller, unmarshaller, options, callbackHelper);
         }
 
         #endregion
@@ -1462,6 +1494,33 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  GetBucketPolicyStatus
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBucketPolicyStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketPolicyStatus operation on AmazonS3Client.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public virtual void GetBucketPolicyStatusAsync(GetBucketPolicyStatusRequest request, AmazonServiceCallback<GetBucketPolicyStatusRequest, GetBucketPolicyStatusResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = GetBucketPolicyStatusRequestMarshaller.Instance;
+            var unmarshaller = GetBucketPolicyStatusResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<GetBucketPolicyStatusRequest,GetBucketPolicyStatusResponse> responseObject 
+                            = new AmazonServiceResult<GetBucketPolicyStatusRequest,GetBucketPolicyStatusResponse>((GetBucketPolicyStatusRequest)req, (GetBucketPolicyStatusResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<GetBucketPolicyStatusRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
         #region  GetBucketReplication
 
         /// <summary>
@@ -1662,7 +1721,7 @@ namespace Amazon.S3
         #region  GetCORSConfiguration
 
         /// <summary>
-        /// Returns the cors configuration for the bucket.
+        /// Returns the CORS configuration for the bucket.
         /// </summary>
         /// <param name="bucketName">A property of GetCORSConfigurationRequest used to execute the GetCORSConfiguration service method.</param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
@@ -1975,6 +2034,33 @@ namespace Amazon.S3
                         callback(responseObject); 
                 };
             BeginInvoke<GetObjectTorrentRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  GetPublicAccessBlock
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPublicAccessBlock operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPublicAccessBlock operation on AmazonS3Client.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public virtual void GetPublicAccessBlockAsync(GetPublicAccessBlockRequest request, AmazonServiceCallback<GetPublicAccessBlockRequest, GetPublicAccessBlockResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = GetPublicAccessBlockRequestMarshaller.Instance;
+            var unmarshaller = GetPublicAccessBlockResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<GetPublicAccessBlockRequest,GetPublicAccessBlockResponse> responseObject 
+                            = new AmazonServiceResult<GetPublicAccessBlockRequest,GetPublicAccessBlockResponse>((GetPublicAccessBlockRequest)req, (GetPublicAccessBlockResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<GetPublicAccessBlockRequest>(request, marshaller, unmarshaller, options, callbackHelper);
         }
 
         #endregion
@@ -3111,7 +3197,7 @@ namespace Amazon.S3
         #region  PutCORSConfiguration
 
         /// <summary>
-        /// Sets the cors configuration for a bucket.
+        /// Sets the CORS configuration for a bucket.
         /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value of this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
         /// <param name="bucketName">A property of PutCORSConfigurationRequest used to execute the PutCORSConfiguration service method.</param>
@@ -3277,6 +3363,38 @@ namespace Amazon.S3
                         callback(responseObject); 
                 };
             BeginInvoke<PutObjectTaggingRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  PutPublicAccessBlock
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutPublicAccessBlock operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutPublicAccessBlock operation on AmazonS3Client.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public virtual void PutPublicAccessBlockAsync(PutPublicAccessBlockRequest request, AmazonServiceCallback<PutPublicAccessBlockRequest, PutPublicAccessBlockResponse> callback, AsyncOptions options = null)
+        {
+            if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)
+            {
+                throw new InvalidOperationException("PutPublicAccessBlock is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
+            }
+            options = options == null?new AsyncOptions():options;
+            var marshaller = PutPublicAccessBlockRequestMarshaller.Instance;
+            var unmarshaller = PutPublicAccessBlockResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<PutPublicAccessBlockRequest,PutPublicAccessBlockResponse> responseObject 
+                            = new AmazonServiceResult<PutPublicAccessBlockRequest,PutPublicAccessBlockResponse>((PutPublicAccessBlockRequest)req, (PutPublicAccessBlockResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<PutPublicAccessBlockRequest>(request, marshaller, unmarshaller, options, callbackHelper);
         }
 
         #endregion
