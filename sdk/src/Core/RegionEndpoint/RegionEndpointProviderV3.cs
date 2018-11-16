@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- *  Copyright 2008-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  Copyright 2008-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
  *
@@ -185,6 +185,19 @@ namespace Amazon.Internal
 
                             if (hostname.StartsWith("s3.", StringComparison.OrdinalIgnoreCase))
                                 hostname = hostname.Replace("s3.", "s3.dualstack.");
+                        }
+                    }
+                }
+                else if (serviceName.Equals("s3-control", StringComparison.OrdinalIgnoreCase))
+                {
+                    // transform s3-control.<region>.amazonaws.com or s3-control-fips.<region>.amazonaws.com into
+                    // s3-control.dualstack.<region>.amazonaws.com and s3-control-fips.dualstack.<region>.amazonaws.com
+                    if (hostname.StartsWith("s3-control", StringComparison.OrdinalIgnoreCase))
+                    {
+                        int firstDot = hostname.IndexOf('.');
+                        if (firstDot >= 0)
+                        {
+                            hostname = hostname.Substring(0, firstDot) + ".dualstack." + hostname.Substring(firstDot + 1);
                         }
                     }
                 }

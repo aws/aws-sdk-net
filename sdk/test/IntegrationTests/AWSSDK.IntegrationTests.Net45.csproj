@@ -94,6 +94,7 @@
     <ProjectReference Include="..\..\src\Services\Route53Domains\AWSSDK.Route53Domains.Net45.csproj" />
     <ProjectReference Include="..\..\src\Services\ElasticBeanstalk\AWSSDK.ElasticBeanstalk.Net45.csproj" />
     <ProjectReference Include="..\..\src\Services\S3\AWSSDK.S3.Net45.csproj" />
+    <ProjectReference Include="..\..\src\Services\S3Control\AWSSDK.S3Control.Net45.csproj" />
     <ProjectReference Include="..\..\src\Services\SecurityToken\AWSSDK.SecurityToken.Net45.csproj" />
     <ProjectReference Include="..\..\src\Services\ServerMigrationService\AWSSDK.ServerMigrationService.Net45.csproj" />
     <ProjectReference Include="..\..\src\Services\SimpleDB\AWSSDK.SimpleDB.Net45.csproj" />

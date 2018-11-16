@@ -131,7 +131,7 @@ namespace Amazon.S3
             }
             else
             {
-                S3Signer.SignRequest(irequest, metrics, immutableCredentials.AccessKey, immutableCredentials.SecretKey);
+                Amazon.S3.Internal.S3Signer.SignRequest(irequest, metrics, immutableCredentials.AccessKey, immutableCredentials.SecretKey);
                 authorization = irequest.Headers[HeaderKeys.AuthorizationHeader];
                 authorization = authorization.Substring(authorization.IndexOf(":", StringComparison.Ordinal) + 1);
                 authorization = "&Signature=" + AmazonS3Util.UrlEncode(authorization, false);

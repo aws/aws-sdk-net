@@ -1,0 +1,192 @@
+{
+  "version": "1.0",
+  "type": "rest-xml",
+  "signature_version": "s3v4",
+  "signing_name": "s3",
+  "endpoint_prefix": "s3-control",
+  "service_full_name": "AWS S3 Control",
+  "service_id": "S3 Control",
+  "uid": "s3control-2018-08-20",
+  "api_version": "2018-08-20",
+  "xmlnamespace": "http://awss3control.amazonaws.com/doc/2018-08-20/",
+  "documentation": "\n\t\t       <p>\n\t\t\tAWS S3 Control provides access to Amazon S3 control plane operations.\n\t\t</p>\n\t     ",
+  "operations": {
+    "PutPublicAccessBlock": {
+      "name": "PutPublicAccessBlock",
+      "http": {
+        "method": "PUT",
+        "uri": "/v20180820/configuration/publicAccessBlock"
+      },
+      "input": {
+        "type": "structure",
+        "members": {
+          "PublicAccessBlockConfiguration": {
+            "type": "structure",
+            "members": {
+              "BlockPublicAcls": {
+                "type": "boolean",
+                "zonbookDocumentation": "\n         <para>Specifies whether Amazon S3 should block public ACLs for buckets in this account. Setting\n    this element to <code>TRUE</code> causes\n    the following behavior:</para>\n         <itemizedlist>\n            <listitem>\n               <para>PUT Bucket acl and PUT Object acl calls will fail\n          if the specified ACL allows public access.</para>\n            </listitem>\n            <listitem>\n               <para>PUT Object calls will fail if the\n          request includes an object ACL.</para>\n            </listitem>\n         </itemizedlist>\n         <para>Note that enabling this setting doesn't affect existing policies or ACLs.</para>\n      ",
+                "documentation": "\n         <p>Specifies whether Amazon S3 should block public ACLs for buckets in this account. Setting\n    this element to <code>TRUE</code> causes\n    the following behavior:</p>\n         <ul>\n            <li>\n               <p>PUT Bucket acl and PUT Object acl calls will fail\n          if the specified ACL allows public access.</p>\n            </li>\n            <li>\n               <p>PUT Object calls will fail if the\n          request includes an object ACL.</p>\n            </li>\n         </ul>\n         <p>Note that enabling this setting doesn't affect existing policies or ACLs.</p>\n      ",
+                "shape_name": "Setting",
+                "xmlname": "BlockPublicAcls"
+              },
+              "IgnorePublicAcls": {
+                "type": "boolean",
+                "zonbookDocumentation": "\n         <para>Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. \n    Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on buckets in this account and any objects that they contain.\n  </para>\n         <para>Note that enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new public ACLs from being set.</para>\n      ",
+                "documentation": "\n         <p>Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. \n    Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on buckets in this account and any objects that they contain.\n  </p>\n         <p>Note that enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new public ACLs from being set.</p>\n      ",
+                "shape_name": "Setting",
+                "xmlname": "IgnorePublicAcls"
+              },
+              "BlockPublicPolicy": {
+                "type": "boolean",
+                "zonbookDocumentation": "\n         <para>Specifies whether Amazon S3 should block public bucket policies for buckets in this account.\n      Setting this element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket\n      policy if the specified bucket policy allows public access. </para>\n         <para>Note that enabling this setting doesn't affect existing bucket policies.</para>\n      ",
+                "documentation": "\n         <p>Specifies whether Amazon S3 should block public bucket policies for buckets in this account.\n      Setting this element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket\n      policy if the specified bucket policy allows public access. </p>\n         <p>Note that enabling this setting doesn't affect existing bucket policies.</p>\n      ",
+                "shape_name": "Setting",
+                "xmlname": "BlockPublicPolicy"
+              },
+              "RestrictPublicBuckets": {
+                "type": "boolean",
+                "zonbookDocumentation": "\n         <para>Specifies whether Amazon S3 should restrict public bucket policies for buckets in this\n      account. If this element is set to <code>TRUE</code>, then only the bucket owner and AWS\n      Services can access buckets with public policies.</para>\n         <para>Note that enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account access within any public bucket policy, including non-public delegation to specific accounts, is blocked.\n    </para>\n      ",
+                "documentation": "\n         <p>Specifies whether Amazon S3 should restrict public bucket policies for buckets in this\n      account. If this element is set to <code>TRUE</code>, then only the bucket owner and AWS\n      Services can access buckets with public policies.</p>\n         <p>Note that enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account access within any public bucket policy, including non-public delegation to specific accounts, is blocked.\n    </p>\n      ",
+                "shape_name": "Setting",
+                "xmlname": "RestrictPublicBuckets"
+              }
+            },
+            "zonbookDocumentation": "\n         <para>The Public Access Block configuration that you want to apply to this Amazon Web Services account.</para>\n      ",
+            "documentation": "\n         <p>The Public Access Block configuration that you want to apply to this Amazon Web Services account.</p>\n      ",
+            "required": true,
+            "payload": true,
+            "shape_name": "PublicAccessBlockConfiguration"
+          },
+          "AccountId": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>The Account ID for the Amazon Web Services account whose Public Access Block configuration you\n      want to set.</para>\n      ",
+            "documentation": "\n         <p>The Account ID for the Amazon Web Services account whose Public Access Block configuration you\n      want to set.</p>\n      ",
+            "required": true,
+            "location": "header",
+            "shape_name": "AccountId",
+            "location_name": "x-amz-account-id"
+          }
+        },
+        "shape_name": "PutPublicAccessBlockRequest",
+        "documentation": null
+      },
+      "output": null,
+      "errors": [
+
+      ],
+      "documentation": "\n         <p>Creates or modifies the Public Access Block configuration for an Amazon Web Services account.</p>\n      "
+    },
+    "GetPublicAccessBlock": {
+      "name": "GetPublicAccessBlock",
+      "http": {
+        "method": "GET",
+        "uri": "/v20180820/configuration/publicAccessBlock"
+      },
+      "input": {
+        "type": "structure",
+        "members": {
+          "AccountId": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>The Account ID for the Amazon Web Services account whose Public Access Block configuration you want to retrieve.</para>\n      ",
+            "documentation": "\n         <p>The Account ID for the Amazon Web Services account whose Public Access Block configuration you want to retrieve.</p>\n      ",
+            "required": true,
+            "location": "header",
+            "shape_name": "AccountId",
+            "location_name": "x-amz-account-id"
+          }
+        },
+        "shape_name": "GetPublicAccessBlockRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "PublicAccessBlockConfiguration": {
+            "type": "structure",
+            "members": {
+              "BlockPublicAcls": {
+                "type": "boolean",
+                "zonbookDocumentation": "\n         <para>Specifies whether Amazon S3 should block public ACLs for buckets in this account. Setting\n    this element to <code>TRUE</code> causes\n    the following behavior:</para>\n         <itemizedlist>\n            <listitem>\n               <para>PUT Bucket acl and PUT Object acl calls will fail\n          if the specified ACL allows public access.</para>\n            </listitem>\n            <listitem>\n               <para>PUT Object calls will fail if the\n          request includes an object ACL.</para>\n            </listitem>\n         </itemizedlist>\n         <para>Note that enabling this setting doesn't affect existing policies or ACLs.</para>\n      ",
+                "documentation": "\n         <p>Specifies whether Amazon S3 should block public ACLs for buckets in this account. Setting\n    this element to <code>TRUE</code> causes\n    the following behavior:</p>\n         <ul>\n            <li>\n               <p>PUT Bucket acl and PUT Object acl calls will fail\n          if the specified ACL allows public access.</p>\n            </li>\n            <li>\n               <p>PUT Object calls will fail if the\n          request includes an object ACL.</p>\n            </li>\n         </ul>\n         <p>Note that enabling this setting doesn't affect existing policies or ACLs.</p>\n      ",
+                "shape_name": "Setting",
+                "xmlname": "BlockPublicAcls"
+              },
+              "IgnorePublicAcls": {
+                "type": "boolean",
+                "zonbookDocumentation": "\n         <para>Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. \n    Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on buckets in this account and any objects that they contain.\n  </para>\n         <para>Note that enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new public ACLs from being set.</para>\n      ",
+                "documentation": "\n         <p>Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. \n    Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on buckets in this account and any objects that they contain.\n  </p>\n         <p>Note that enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new public ACLs from being set.</p>\n      ",
+                "shape_name": "Setting",
+                "xmlname": "IgnorePublicAcls"
+              },
+              "BlockPublicPolicy": {
+                "type": "boolean",
+                "zonbookDocumentation": "\n         <para>Specifies whether Amazon S3 should block public bucket policies for buckets in this account.\n      Setting this element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket\n      policy if the specified bucket policy allows public access. </para>\n         <para>Note that enabling this setting doesn't affect existing bucket policies.</para>\n      ",
+                "documentation": "\n         <p>Specifies whether Amazon S3 should block public bucket policies for buckets in this account.\n      Setting this element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket\n      policy if the specified bucket policy allows public access. </p>\n         <p>Note that enabling this setting doesn't affect existing bucket policies.</p>\n      ",
+                "shape_name": "Setting",
+                "xmlname": "BlockPublicPolicy"
+              },
+              "RestrictPublicBuckets": {
+                "type": "boolean",
+                "zonbookDocumentation": "\n         <para>Specifies whether Amazon S3 should restrict public bucket policies for buckets in this\n      account. If this element is set to <code>TRUE</code>, then only the bucket owner and AWS\n      Services can access buckets with public policies.</para>\n         <para>Note that enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account access within any public bucket policy, including non-public delegation to specific accounts, is blocked.\n    </para>\n      ",
+                "documentation": "\n         <p>Specifies whether Amazon S3 should restrict public bucket policies for buckets in this\n      account. If this element is set to <code>TRUE</code>, then only the bucket owner and AWS\n      Services can access buckets with public policies.</p>\n         <p>Note that enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account access within any public bucket policy, including non-public delegation to specific accounts, is blocked.\n    </p>\n      ",
+                "shape_name": "Setting",
+                "xmlname": "RestrictPublicBuckets"
+              }
+            },
+            "zonbookDocumentation": "\n         <para>The Public Access Block configuration currently in effect for this Amazon Web Services account.</para>\n      ",
+            "documentation": "\n         <p>The Public Access Block configuration currently in effect for this Amazon Web Services account.</p>\n      ",
+            "payload": true,
+            "shape_name": "PublicAccessBlockConfiguration"
+          }
+        },
+        "shape_name": "GetPublicAccessBlockOutput",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "NoSuchPublicAccessBlockConfigurationMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <para>This exception is thrown if a <code>GetPublicAccessBlock</code> request is made against an account that does not have a PublicAccessBlockConfiguration set.</para>\n      ",
+          "documentation": "\n         <p>This exception is thrown if a <code>GetPublicAccessBlock</code> request is made against an account that does not have a PublicAccessBlockConfiguration set.</p>\n      ",
+          "shape_name": "NoSuchPublicAccessBlockConfiguration"
+        }
+      ],
+      "documentation": "\n         <p>Retrieves the Public Access Block configuration for an Amazon Web Services account.</p>\n      "
+    },
+    "DeletePublicAccessBlock": {
+      "name": "DeletePublicAccessBlock",
+      "http": {
+        "method": "DELETE",
+        "uri": "/v20180820/configuration/publicAccessBlock"
+      },
+      "input": {
+        "type": "structure",
+        "members": {
+          "AccountId": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>The Account ID for the Amazon Web Services account whose Public Access Block configuration you want to remove.</para>\n      ",
+            "documentation": "\n         <p>The Account ID for the Amazon Web Services account whose Public Access Block configuration you want to remove.</p>\n      ",
+            "required": true,
+            "location": "header",
+            "shape_name": "AccountId",
+            "location_name": "x-amz-account-id"
+          }
+        },
+        "shape_name": "DeletePublicAccessBlockRequest",
+        "documentation": null
+      },
+      "output": null,
+      "errors": [
+
+      ],
+      "documentation": "\n         <p>Removes the Public Access Block configuration for an Amazon Web Services account.</p>\n      "
+    }
+  }
+}

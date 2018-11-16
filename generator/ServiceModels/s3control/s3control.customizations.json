@@ -1,0 +1,9 @@
+{
+    "runtimePipelineOverride": {
+        "overrides": [
+            { "operation": "addAfter", "newType": "Amazon.S3Control.Internal.AmazonS3ControlPostMarshallHandler", "targetType": "Amazon.Runtime.Internal.Marshaller" },
+            { "operation": "addBefore", "newType": "Amazon.S3Control.Internal.AmazonS3ControlPostUnmarshallHandler", "targetType": "Amazon.Runtime.Internal.Unmarshaller" },
+            { "operation": "addAfter", "newType": "Amazon.S3Control.Internal.AmazonS3ControlExceptionHandler", "targetType": "Amazon.Runtime.Internal.ErrorCallbackHandler" },
+        ]
+    }
+}

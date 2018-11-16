@@ -67,6 +67,7 @@ namespace Amazon.Util
         public const string XAmzServerSideEncryptionHeader = "x-amz-server-side-encryption";
         public const string XAmzServerSideEncryptionAwsKmsKeyIdHeader = "x-amz-server-side-encryption-aws-kms-key-id";
         public const string XAmzBucketRegion = "x-amz-bucket-region";
+        public const string XAmzAccountId = "x-amz-account-id";
 
         public const string XAmzSSECustomerAlgorithmHeader = "x-amz-server-side-encryption-customer-algorithm";
         public const string XAmzSSECustomerKeyHeader = "x-amz-server-side-encryption-customer-key";

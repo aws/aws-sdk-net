@@ -63,6 +63,7 @@ namespace Amazon.Util
         };
 
         internal const string S3Accelerate = "s3-accelerate";
+        internal const string S3Control = "s3-control";
 
         #endregion
 
@@ -397,7 +398,7 @@ namespace Amazon.Util
             if (queueIndex > 0)
                 return serviceAndRegion.Substring(0, queueIndex - 1);
 
-            if (serviceAndRegion.StartsWith("s3-", StringComparison.Ordinal))
+            if (serviceAndRegion.StartsWith("s3-", StringComparison.Ordinal) && !serviceAndRegion.StartsWith(S3Control, StringComparison.Ordinal))
             {
                 // Accelerate endpoint is global and does not contain region information
                 if (serviceAndRegion.Equals(AWSSDKUtils.S3Accelerate, StringComparison.Ordinal))
