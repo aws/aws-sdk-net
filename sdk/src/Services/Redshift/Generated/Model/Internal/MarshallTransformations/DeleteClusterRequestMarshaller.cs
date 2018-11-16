@@ -66,6 +66,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("FinalClusterSnapshotIdentifier", StringUtils.FromString(publicRequest.FinalClusterSnapshotIdentifier));
                 }
+                if(publicRequest.IsSetFinalClusterSnapshotRetentionPeriod())
+                {
+                    request.Parameters.Add("FinalClusterSnapshotRetentionPeriod", StringUtils.FromInt(publicRequest.FinalClusterSnapshotRetentionPeriod));
+                }
                 if(publicRequest.IsSetSkipFinalClusterSnapshot())
                 {
                     request.Parameters.Add("SkipFinalClusterSnapshot", StringUtils.FromBool(publicRequest.SkipFinalClusterSnapshot));

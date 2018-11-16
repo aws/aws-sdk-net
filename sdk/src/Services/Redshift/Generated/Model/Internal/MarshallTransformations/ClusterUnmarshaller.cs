@@ -215,6 +215,12 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         unmarshalledObject.MaintenanceTrackName = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ManualSnapshotRetentionPeriod", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.ManualSnapshotRetentionPeriod = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("MasterUsername", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -274,6 +280,18 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = RestoreStatusUnmarshaller.Instance;
                         unmarshalledObject.RestoreStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SnapshotScheduleIdentifier", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SnapshotScheduleIdentifier = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SnapshotScheduleState", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SnapshotScheduleState = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Tags/Tag", targetDepth))

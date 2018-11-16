@@ -188,6 +188,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             {
                 return new NumberOfNodesQuotaExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("SnapshotScheduleNotFound"))
+            {
+                return new SnapshotScheduleNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("UnauthorizedOperation"))
             {
                 return new UnauthorizedOperationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

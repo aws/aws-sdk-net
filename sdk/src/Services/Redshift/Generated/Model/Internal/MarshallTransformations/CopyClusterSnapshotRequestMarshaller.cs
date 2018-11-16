@@ -58,6 +58,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetManualSnapshotRetentionPeriod())
+                {
+                    request.Parameters.Add("ManualSnapshotRetentionPeriod", StringUtils.FromInt(publicRequest.ManualSnapshotRetentionPeriod));
+                }
                 if(publicRequest.IsSetSourceSnapshotClusterIdentifier())
                 {
                     request.Parameters.Add("SourceSnapshotClusterIdentifier", StringUtils.FromString(publicRequest.SourceSnapshotClusterIdentifier));

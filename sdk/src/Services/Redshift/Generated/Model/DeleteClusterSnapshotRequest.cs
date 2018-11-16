@@ -77,8 +77,8 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Must be the name of an existing snapshot that is in the <code>available</code>
-        /// state.
+        /// Constraints: Must be the name of an existing snapshot that is in the <code>available</code>,
+        /// <code>failed</code>, or <code>cancelled</code> state.
         /// </para>
         /// </summary>
         public string SnapshotIdentifier

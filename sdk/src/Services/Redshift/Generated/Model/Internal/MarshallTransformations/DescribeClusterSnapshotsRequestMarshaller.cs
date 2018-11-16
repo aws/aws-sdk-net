@@ -90,6 +90,22 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("SnapshotType", StringUtils.FromString(publicRequest.SnapshotType));
                 }
+                if(publicRequest.IsSetSortingEntities())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.SortingEntities)
+                    {
+                        if(publicRequestlistValue.IsSetAttribute())
+                        {
+                            request.Parameters.Add("SortingEntities" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Attribute", StringUtils.FromString(publicRequestlistValue.Attribute));
+                        }
+                        if(publicRequestlistValue.IsSetSortOrder())
+                        {
+                            request.Parameters.Add("SortingEntities" + "." + "member" + "." + publicRequestlistValueIndex + "." + "SortOrder", StringUtils.FromString(publicRequestlistValue.SortOrder));
+                        }
+                        publicRequestlistValueIndex++;
+                    }
+                }
                 if(publicRequest.IsSetStartTimeUtc())
                 {
                     request.Parameters.Add("StartTime", StringUtils.FromDateTimeToISO8601(publicRequest.StartTimeUtc));

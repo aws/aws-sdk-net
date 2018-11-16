@@ -125,6 +125,164 @@ namespace Amazon.Redshift
 
 
     /// <summary>
+    /// Constants used for properties of type ScheduleState.
+    /// </summary>
+    public class ScheduleState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ScheduleState
+        /// </summary>
+        public static readonly ScheduleState ACTIVE = new ScheduleState("ACTIVE");
+        /// <summary>
+        /// Constant FAILED for ScheduleState
+        /// </summary>
+        public static readonly ScheduleState FAILED = new ScheduleState("FAILED");
+        /// <summary>
+        /// Constant MODIFYING for ScheduleState
+        /// </summary>
+        public static readonly ScheduleState MODIFYING = new ScheduleState("MODIFYING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScheduleState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScheduleState FindValue(string value)
+        {
+            return FindValue<ScheduleState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScheduleState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SnapshotAttributeToSortBy.
+    /// </summary>
+    public class SnapshotAttributeToSortBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE_TIME for SnapshotAttributeToSortBy
+        /// </summary>
+        public static readonly SnapshotAttributeToSortBy CREATE_TIME = new SnapshotAttributeToSortBy("CREATE_TIME");
+        /// <summary>
+        /// Constant SOURCE_TYPE for SnapshotAttributeToSortBy
+        /// </summary>
+        public static readonly SnapshotAttributeToSortBy SOURCE_TYPE = new SnapshotAttributeToSortBy("SOURCE_TYPE");
+        /// <summary>
+        /// Constant TOTAL_SIZE for SnapshotAttributeToSortBy
+        /// </summary>
+        public static readonly SnapshotAttributeToSortBy TOTAL_SIZE = new SnapshotAttributeToSortBy("TOTAL_SIZE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SnapshotAttributeToSortBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SnapshotAttributeToSortBy FindValue(string value)
+        {
+            return FindValue<SnapshotAttributeToSortBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SnapshotAttributeToSortBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SortByOrder.
+    /// </summary>
+    public class SortByOrder : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASC for SortByOrder
+        /// </summary>
+        public static readonly SortByOrder ASC = new SortByOrder("ASC");
+        /// <summary>
+        /// Constant DESC for SortByOrder
+        /// </summary>
+        public static readonly SortByOrder DESC = new SortByOrder("DESC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SortByOrder(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SortByOrder FindValue(string value)
+        {
+            return FindValue<SortByOrder>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SortByOrder(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SourceType.
     /// </summary>
     public class SourceType : ConstantClass

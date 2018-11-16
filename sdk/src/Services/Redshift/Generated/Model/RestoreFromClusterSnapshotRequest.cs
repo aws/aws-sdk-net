@@ -65,6 +65,7 @@ namespace Amazon.Redshift.Model
         private List<string> _iamRoles = new List<string>();
         private string _kmsKeyId;
         private string _maintenanceTrackName;
+        private int? _manualSnapshotRetentionPeriod;
         private string _nodeType;
         private string _ownerAccount;
         private int? _port;
@@ -72,6 +73,7 @@ namespace Amazon.Redshift.Model
         private bool? _publiclyAccessible;
         private string _snapshotClusterIdentifier;
         private string _snapshotIdentifier;
+        private string _snapshotScheduleIdentifier;
         private List<string> _vpcSecurityGroupIds = new List<string>();
 
         /// <summary>
@@ -454,6 +456,21 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ManualSnapshotRetentionPeriod.
+        /// </summary>
+        public int ManualSnapshotRetentionPeriod
+        {
+            get { return this._manualSnapshotRetentionPeriod.GetValueOrDefault(); }
+            set { this._manualSnapshotRetentionPeriod = value; }
+        }
+
+        // Check to see if ManualSnapshotRetentionPeriod property is set
+        internal bool IsSetManualSnapshotRetentionPeriod()
+        {
+            return this._manualSnapshotRetentionPeriod.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property NodeType. 
         /// <para>
         /// The node type that the restored cluster will be provisioned with.
@@ -625,6 +642,24 @@ namespace Amazon.Redshift.Model
         internal bool IsSetSnapshotIdentifier()
         {
             return this._snapshotIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnapshotScheduleIdentifier. 
+        /// <para>
+        /// A unique identifier for the snapshot schedule.
+        /// </para>
+        /// </summary>
+        public string SnapshotScheduleIdentifier
+        {
+            get { return this._snapshotScheduleIdentifier; }
+            set { this._snapshotScheduleIdentifier = value; }
+        }
+
+        // Check to see if SnapshotScheduleIdentifier property is set
+        internal bool IsSetSnapshotScheduleIdentifier()
+        {
+            return this._snapshotScheduleIdentifier != null;
         }
 
         /// <summary>

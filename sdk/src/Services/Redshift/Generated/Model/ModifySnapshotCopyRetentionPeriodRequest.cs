@@ -29,19 +29,25 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifySnapshotCopyRetentionPeriod operation.
-    /// Modifies the number of days to retain automated snapshots in the destination region
-    /// after they are copied from the source region.
+    /// Modifies the number of days to retain snapshots in the destination region after they
+    /// are copied from the source region. By default, this only changes the retention period
+    /// of copied automated snapshots. The retention periods for both new and existing copied
+    /// automated snapshots will be updated with the new retention period. You can set the
+    /// manual option to change only the retention periods of copied manual snapshots. If
+    /// you set this option only newly copied manual snapshots will have the new retention
+    /// period
     /// </summary>
     public partial class ModifySnapshotCopyRetentionPeriodRequest : AmazonRedshiftRequest
     {
         private string _clusterIdentifier;
+        private bool? _manual;
         private int? _retentionPeriod;
 
         /// <summary>
         /// Gets and sets the property ClusterIdentifier. 
         /// <para>
         /// The unique identifier of the cluster for which you want to change the retention period
-        /// for automated snapshots that are copied to a destination region.
+        /// for either automated or manual snapshots that are copied to a destination region.
         /// </para>
         ///  
         /// <para>
@@ -62,10 +68,34 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Manual. 
+        /// <para>
+        /// Indicates whether to apply the snapshot retention period to newly copied manual snapshots
+        /// instead of automated snapshots.
+        /// </para>
+        /// </summary>
+        public bool Manual
+        {
+            get { return this._manual.GetValueOrDefault(); }
+            set { this._manual = value; }
+        }
+
+        // Check to see if Manual property is set
+        internal bool IsSetManual()
+        {
+            return this._manual.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property RetentionPeriod. 
         /// <para>
         /// The number of days to retain automated snapshots in the destination region after they
         /// are copied from the source region.
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, this only changes the retention period of copied automated snapshots.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -75,7 +105,21 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Must be at least 1 and no more than 35.
+        /// Constraints: Must be at least 1 and no more than 35 for automated snapshots. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify the <code>manual</code> option, only newly copied manual snapshots
+        /// will have the new retention period. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify the value of -1 newly copied manual snapshots are retained indefinitely.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: The number of days must be either -1 or an integer between 1 and 3,653
+        /// for manual snapshots.
         /// </para>
         /// </summary>
         public int RetentionPeriod

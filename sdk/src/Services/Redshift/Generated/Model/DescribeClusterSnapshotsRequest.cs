@@ -59,6 +59,7 @@ namespace Amazon.Redshift.Model
         private string _ownerAccount;
         private string _snapshotIdentifier;
         private string _snapshotType;
+        private List<SnapshotSortingEntity> _sortingEntities = new List<SnapshotSortingEntity>();
         private DateTime? _startTimeUtc;
         private List<string> _tagKeys = new List<string>();
         private List<string> _tagValues = new List<string>();
@@ -238,6 +239,21 @@ namespace Amazon.Redshift.Model
         internal bool IsSetSnapshotType()
         {
             return this._snapshotType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SortingEntities.
+        /// </summary>
+        public List<SnapshotSortingEntity> SortingEntities
+        {
+            get { return this._sortingEntities; }
+            set { this._sortingEntities = value; }
+        }
+
+        // Check to see if SortingEntities property is set
+        internal bool IsSetSortingEntities()
+        {
+            return this._sortingEntities != null && this._sortingEntities.Count > 0; 
         }
 
         /// <summary>

@@ -58,6 +58,7 @@ namespace Amazon.Redshift.Model
         private List<ClusterIamRole> _iamRoles = new List<ClusterIamRole>();
         private string _kmsKeyId;
         private string _maintenanceTrackName;
+        private int? _manualSnapshotRetentionPeriod;
         private string _masterUsername;
         private string _modifyStatus;
         private string _nodeType;
@@ -68,6 +69,8 @@ namespace Amazon.Redshift.Model
         private bool? _publiclyAccessible;
         private ResizeInfo _resizeInfo;
         private RestoreStatus _restoreStatus;
+        private string _snapshotScheduleIdentifier;
+        private ScheduleState _snapshotScheduleState;
         private List<Tag> _tags = new List<Tag>();
         private string _vpcId;
         private List<VpcSecurityGroupMembership> _vpcSecurityGroups = new List<VpcSecurityGroupMembership>();
@@ -479,8 +482,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ElasticResizeNumberOfNodeOptions. 
         /// <para>
-        /// Indicates the number of nodes the cluster can be resized to with the elastic resize
-        /// method. 
+        /// The number of nodes that you can resize the cluster to with the elastic resize method.
+        /// 
         /// </para>
         /// </summary>
         public string ElasticResizeNumberOfNodeOptions
@@ -638,6 +641,30 @@ namespace Amazon.Redshift.Model
         internal bool IsSetMaintenanceTrackName()
         {
             return this._maintenanceTrackName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManualSnapshotRetentionPeriod. 
+        /// <para>
+        /// The default number of days to retain a manual snapshot. If the value is -1, the snapshot
+        /// is retained indefinitely. This setting does not change the retention period of existing
+        /// snapshots.
+        /// </para>
+        ///  
+        /// <para>
+        /// The value must be either -1 or an integer between 1 and 3,653
+        /// </para>
+        /// </summary>
+        public int ManualSnapshotRetentionPeriod
+        {
+            get { return this._manualSnapshotRetentionPeriod.GetValueOrDefault(); }
+            set { this._manualSnapshotRetentionPeriod = value; }
+        }
+
+        // Check to see if ManualSnapshotRetentionPeriod property is set
+        internal bool IsSetManualSnapshotRetentionPeriod()
+        {
+            return this._manualSnapshotRetentionPeriod.HasValue; 
         }
 
         /// <summary>
@@ -832,6 +859,42 @@ namespace Amazon.Redshift.Model
         internal bool IsSetRestoreStatus()
         {
             return this._restoreStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnapshotScheduleIdentifier. 
+        /// <para>
+        /// A unique identifier for the cluster snapshot schedule.
+        /// </para>
+        /// </summary>
+        public string SnapshotScheduleIdentifier
+        {
+            get { return this._snapshotScheduleIdentifier; }
+            set { this._snapshotScheduleIdentifier = value; }
+        }
+
+        // Check to see if SnapshotScheduleIdentifier property is set
+        internal bool IsSetSnapshotScheduleIdentifier()
+        {
+            return this._snapshotScheduleIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnapshotScheduleState. 
+        /// <para>
+        /// The current state of the cluster snapshot schedule.
+        /// </para>
+        /// </summary>
+        public ScheduleState SnapshotScheduleState
+        {
+            get { return this._snapshotScheduleState; }
+            set { this._snapshotScheduleState = value; }
+        }
+
+        // Check to see if SnapshotScheduleState property is set
+        internal bool IsSetSnapshotScheduleState()
+        {
+            return this._snapshotScheduleState != null;
         }
 
         /// <summary>

@@ -36,6 +36,7 @@ namespace Amazon.Redshift.Model
     {
         private string _clusterIdentifier;
         private string _destinationRegion;
+        private int? _manualSnapshotRetentionPeriod;
         private int? _retentionPeriod;
         private string _snapshotCopyGrantName;
 
@@ -83,6 +84,30 @@ namespace Amazon.Redshift.Model
         internal bool IsSetDestinationRegion()
         {
             return this._destinationRegion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManualSnapshotRetentionPeriod. 
+        /// <para>
+        /// The number of days to retain newly copied snapshots in the destination region after
+        /// they are copied from the source region. If the value is -1, the manual snapshot is
+        /// retained indefinitely. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The value must be either -1 or an integer between 1 and 3,653.
+        /// </para>
+        /// </summary>
+        public int ManualSnapshotRetentionPeriod
+        {
+            get { return this._manualSnapshotRetentionPeriod.GetValueOrDefault(); }
+            set { this._manualSnapshotRetentionPeriod = value; }
+        }
+
+        // Check to see if ManualSnapshotRetentionPeriod property is set
+        internal bool IsSetManualSnapshotRetentionPeriod()
+        {
+            return this._manualSnapshotRetentionPeriod.HasValue; 
         }
 
         /// <summary>

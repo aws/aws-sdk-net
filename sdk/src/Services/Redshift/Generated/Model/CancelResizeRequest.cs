@@ -38,7 +38,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterIdentifier. 
         /// <para>
-        /// The unique identifier for the cluster whose resize operation you wish to cancel.
+        /// The unique identifier for the cluster that you want to cancel a resize operation for.
         /// </para>
         /// </summary>
         public string ClusterIdentifier

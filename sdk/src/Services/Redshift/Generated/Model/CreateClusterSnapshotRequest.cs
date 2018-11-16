@@ -41,6 +41,7 @@ namespace Amazon.Redshift.Model
     public partial class CreateClusterSnapshotRequest : AmazonRedshiftRequest
     {
         private string _clusterIdentifier;
+        private int? _manualSnapshotRetentionPeriod;
         private string _snapshotIdentifier;
         private List<Tag> _tags = new List<Tag>();
 
@@ -60,6 +61,33 @@ namespace Amazon.Redshift.Model
         internal bool IsSetClusterIdentifier()
         {
             return this._clusterIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManualSnapshotRetentionPeriod. 
+        /// <para>
+        /// The number of days that a manual snapshot is retained. If the value is -1, the manual
+        /// snapshot is retained indefinitely. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The value must be either -1 or an integer between 1 and 3,653.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value is -1.
+        /// </para>
+        /// </summary>
+        public int ManualSnapshotRetentionPeriod
+        {
+            get { return this._manualSnapshotRetentionPeriod.GetValueOrDefault(); }
+            set { this._manualSnapshotRetentionPeriod = value; }
+        }
+
+        // Check to see if ManualSnapshotRetentionPeriod property is set
+        internal bool IsSetManualSnapshotRetentionPeriod()
+        {
+            return this._manualSnapshotRetentionPeriod.HasValue; 
         }
 
         /// <summary>

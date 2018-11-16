@@ -61,6 +61,7 @@ namespace Amazon.Redshift.Model
         private List<string> _iamRoles = new List<string>();
         private string _kmsKeyId;
         private string _maintenanceTrackName;
+        private int? _manualSnapshotRetentionPeriod;
         private string _masterUsername;
         private string _masterUserPassword;
         private string _nodeType;
@@ -68,6 +69,7 @@ namespace Amazon.Redshift.Model
         private int? _port;
         private string _preferredMaintenanceWindow;
         private bool? _publiclyAccessible;
+        private string _snapshotScheduleIdentifier;
         private List<Tag> _tags = new List<Tag>();
         private List<string> _vpcSecurityGroupIds = new List<string>();
 
@@ -606,6 +608,30 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ManualSnapshotRetentionPeriod. 
+        /// <para>
+        /// The default number of days to retain a manual snapshot. If the value is -1, the snapshot
+        /// is retained indefinitely. This setting does not change the retention period of existing
+        /// snapshots.
+        /// </para>
+        ///  
+        /// <para>
+        /// The value must be either -1 or an integer between 1 and 3,653
+        /// </para>
+        /// </summary>
+        public int ManualSnapshotRetentionPeriod
+        {
+            get { return this._manualSnapshotRetentionPeriod.GetValueOrDefault(); }
+            set { this._manualSnapshotRetentionPeriod = value; }
+        }
+
+        // Check to see if ManualSnapshotRetentionPeriod property is set
+        internal bool IsSetManualSnapshotRetentionPeriod()
+        {
+            return this._manualSnapshotRetentionPeriod.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property MasterUsername. 
         /// <para>
         /// The user name associated with the master user account for the cluster that is being
@@ -837,6 +863,24 @@ namespace Amazon.Redshift.Model
         internal bool IsSetPubliclyAccessible()
         {
             return this._publiclyAccessible.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnapshotScheduleIdentifier. 
+        /// <para>
+        /// A unique identifier for the snapshot schedule.
+        /// </para>
+        /// </summary>
+        public string SnapshotScheduleIdentifier
+        {
+            get { return this._snapshotScheduleIdentifier; }
+            set { this._snapshotScheduleIdentifier = value; }
+        }
+
+        // Check to see if SnapshotScheduleIdentifier property is set
+        internal bool IsSetSnapshotScheduleIdentifier()
+        {
+            return this._snapshotScheduleIdentifier != null;
         }
 
         /// <summary>

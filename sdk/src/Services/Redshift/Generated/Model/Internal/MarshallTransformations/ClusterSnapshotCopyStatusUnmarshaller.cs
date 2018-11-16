@@ -60,6 +60,12 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         unmarshalledObject.DestinationRegion = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ManualSnapshotRetentionPeriod", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.ManualSnapshotRetentionPeriod = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("RetentionPeriod", targetDepth))
                     {
                         var unmarshaller = LongUnmarshaller.Instance;

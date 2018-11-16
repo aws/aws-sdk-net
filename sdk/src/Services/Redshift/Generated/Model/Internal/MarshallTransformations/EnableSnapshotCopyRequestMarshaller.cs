@@ -66,6 +66,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DestinationRegion", StringUtils.FromString(publicRequest.DestinationRegion));
                 }
+                if(publicRequest.IsSetManualSnapshotRetentionPeriod())
+                {
+                    request.Parameters.Add("ManualSnapshotRetentionPeriod", StringUtils.FromInt(publicRequest.ManualSnapshotRetentionPeriod));
+                }
                 if(publicRequest.IsSetRetentionPeriod())
                 {
                     request.Parameters.Add("RetentionPeriod", StringUtils.FromInt(publicRequest.RetentionPeriod));

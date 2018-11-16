@@ -60,6 +60,7 @@ namespace Amazon.Redshift.Model
         private string _hsmConfigurationIdentifier;
         private string _kmsKeyId;
         private string _maintenanceTrackName;
+        private int? _manualSnapshotRetentionPeriod;
         private string _masterUserPassword;
         private string _newClusterIdentifier;
         private string _nodeType;
@@ -431,6 +432,34 @@ namespace Amazon.Redshift.Model
         internal bool IsSetMaintenanceTrackName()
         {
             return this._maintenanceTrackName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManualSnapshotRetentionPeriod. 
+        /// <para>
+        /// The default for number of days that a newly created manual snapshot is retained. If
+        /// the value is -1, the manual snapshot is retained indefinitely. This value will not
+        /// retroactively change the retention periods of existing manual snapshots
+        /// </para>
+        ///  
+        /// <para>
+        /// The value must be either -1 or an integer between 1 and 3,653.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value is -1.
+        /// </para>
+        /// </summary>
+        public int ManualSnapshotRetentionPeriod
+        {
+            get { return this._manualSnapshotRetentionPeriod.GetValueOrDefault(); }
+            set { this._manualSnapshotRetentionPeriod = value; }
+        }
+
+        // Check to see if ManualSnapshotRetentionPeriod property is set
+        internal bool IsSetManualSnapshotRetentionPeriod()
+        {
+            return this._manualSnapshotRetentionPeriod.HasValue; 
         }
 
         /// <summary>

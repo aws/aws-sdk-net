@@ -31,7 +31,7 @@ namespace Amazon.Redshift.Model
     /// Container for the parameters to the ResizeCluster operation.
     /// Changes the size of the cluster. You can change the cluster's type, or change the
     /// number or type of nodes. The default behavior is to use the elastic resize method.
-    /// With an elastic resize your cluster is avaialble for read and write operations more
+    /// With an elastic resize, your cluster is available for read and write operations more
     /// quickly than with the classic resize method. 
     /// 
     ///  
@@ -60,7 +60,7 @@ namespace Amazon.Redshift.Model
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
-    /// The type of nodes you add must match the node type for the cluster.
+    /// The type of nodes that you add must match the node type for the cluster.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -76,7 +76,7 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property Classic. 
         /// <para>
         /// A boolean value indicating whether the resize operation is using the classic resize
-        /// process. If you don't provide this parameter or set the value to <code>false</code>
+        /// process. If you don't provide this parameter or set the value to <code>false</code>,
         /// the resize type is elastic. 
         /// </para>
         /// </summary>

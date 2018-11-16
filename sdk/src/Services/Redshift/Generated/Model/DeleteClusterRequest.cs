@@ -54,6 +54,7 @@ namespace Amazon.Redshift.Model
     {
         private string _clusterIdentifier;
         private string _finalClusterSnapshotIdentifier;
+        private int? _finalClusterSnapshotRetentionPeriod;
         private bool? _skipFinalClusterSnapshot;
 
         /// <summary>
@@ -130,6 +131,33 @@ namespace Amazon.Redshift.Model
         internal bool IsSetFinalClusterSnapshotIdentifier()
         {
             return this._finalClusterSnapshotIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FinalClusterSnapshotRetentionPeriod. 
+        /// <para>
+        /// The number of days that a manual snapshot is retained. If the value is -1, the manual
+        /// snapshot is retained indefinitely.
+        /// </para>
+        ///  
+        /// <para>
+        /// The value must be either -1 or an integer between 1 and 3,653.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value is -1.
+        /// </para>
+        /// </summary>
+        public int FinalClusterSnapshotRetentionPeriod
+        {
+            get { return this._finalClusterSnapshotRetentionPeriod.GetValueOrDefault(); }
+            set { this._finalClusterSnapshotRetentionPeriod = value; }
+        }
+
+        // Check to see if FinalClusterSnapshotRetentionPeriod property is set
+        internal bool IsSetFinalClusterSnapshotRetentionPeriod()
+        {
+            return this._finalClusterSnapshotRetentionPeriod.HasValue; 
         }
 
         /// <summary>
