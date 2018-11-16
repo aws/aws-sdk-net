@@ -51,7 +51,7 @@ namespace Amazon.TranscribeService
         /// <returns>The response from the CreateVocabulary service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
         /// Your request didn't pass one or more validation tests. For example, if the transcription
-        /// you're trying to delete doesn't exist of if it is in a non-terminal state (for example,
+        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
         /// it's "in progress"). See the exception <code>Message</code> field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
@@ -94,7 +94,7 @@ namespace Amazon.TranscribeService
 
 
         /// <summary>
-        /// Deletes a previously submitted transcription job as well as any other generated results
+        /// Deletes a previously submitted transcription job along with any other generated results
         /// such as the transcription, models, and so on.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTranscriptionJob service method.</param>
@@ -102,7 +102,7 @@ namespace Amazon.TranscribeService
         /// <returns>The response from the DeleteTranscriptionJob service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
         /// Your request didn't pass one or more validation tests. For example, if the transcription
-        /// you're trying to delete doesn't exist of if it is in a non-terminal state (for example,
+        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
         /// it's "in progress"). See the exception <code>Message</code> field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
@@ -141,7 +141,7 @@ namespace Amazon.TranscribeService
         /// <returns>The response from the DeleteVocabulary service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
         /// Your request didn't pass one or more validation tests. For example, if the transcription
-        /// you're trying to delete doesn't exist of if it is in a non-terminal state (for example,
+        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
         /// it's "in progress"). See the exception <code>Message</code> field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
@@ -186,7 +186,7 @@ namespace Amazon.TranscribeService
         /// <returns>The response from the GetTranscriptionJob service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
         /// Your request didn't pass one or more validation tests. For example, if the transcription
-        /// you're trying to delete doesn't exist of if it is in a non-terminal state (for example,
+        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
         /// it's "in progress"). See the exception <code>Message</code> field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
@@ -230,7 +230,7 @@ namespace Amazon.TranscribeService
         /// <returns>The response from the GetVocabulary service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
         /// Your request didn't pass one or more validation tests. For example, if the transcription
-        /// you're trying to delete doesn't exist of if it is in a non-terminal state (for example,
+        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
         /// it's "in progress"). See the exception <code>Message</code> field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
@@ -272,7 +272,7 @@ namespace Amazon.TranscribeService
         /// <returns>The response from the ListTranscriptionJobs service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
         /// Your request didn't pass one or more validation tests. For example, if the transcription
-        /// you're trying to delete doesn't exist of if it is in a non-terminal state (for example,
+        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
         /// it's "in progress"). See the exception <code>Message</code> field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
@@ -312,7 +312,7 @@ namespace Amazon.TranscribeService
         /// <returns>The response from the ListVocabularies service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
         /// Your request didn't pass one or more validation tests. For example, if the transcription
-        /// you're trying to delete doesn't exist of if it is in a non-terminal state (for example,
+        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
         /// it's "in progress"). See the exception <code>Message</code> field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
@@ -352,7 +352,7 @@ namespace Amazon.TranscribeService
         /// <returns>The response from the StartTranscriptionJob service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
         /// Your request didn't pass one or more validation tests. For example, if the transcription
-        /// you're trying to delete doesn't exist of if it is in a non-terminal state (for example,
+        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
         /// it's "in progress"). See the exception <code>Message</code> field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
@@ -406,7 +406,7 @@ namespace Amazon.TranscribeService
         /// <returns>The response from the UpdateVocabulary service method, as returned by TranscribeService.</returns>
         /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
         /// Your request didn't pass one or more validation tests. For example, if the transcription
-        /// you're trying to delete doesn't exist of if it is in a non-terminal state (for example,
+        /// you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
         /// it's "in progress"). See the exception <code>Message</code> field for more information.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.ConflictException">

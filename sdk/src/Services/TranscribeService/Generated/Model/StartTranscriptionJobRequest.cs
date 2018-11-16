@@ -170,8 +170,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property TranscriptionJobName. 
         /// <para>
-        /// The name of the job. You can't use the strings "." or ".." in the job name. The name
-        /// must be unique within an AWS account.
+        /// The name of the job. Note that you can't use the strings "." or ".." by themselves
+        /// as the job name. The name must also be unique within an AWS account.
         /// </para>
         /// </summary>
         public string TranscriptionJobName
