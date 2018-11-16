@@ -61,10 +61,10 @@ namespace Amazon.PinpointSMSVoice.Model.Internal.MarshallTransformations
             string uriResourcePath = "/v1/sms-voice/configuration-sets/{ConfigurationSetName}/event-destinations/{EventDestinationName}";
             if (!publicRequest.IsSetConfigurationSetName())
                 throw new AmazonPinpointSMSVoiceException("Request object does not have required field ConfigurationSetName set");
-            uriResourcePath = uriResourcePath.Replace("{ConfigurationSetName}", StringUtils.FromString(publicRequest.ConfigurationSetName));
+            uriResourcePath = uriResourcePath.Replace("{ConfigurationSetName}", StringUtils.FromStringWithSlashEncoding(publicRequest.ConfigurationSetName));
             if (!publicRequest.IsSetEventDestinationName())
                 throw new AmazonPinpointSMSVoiceException("Request object does not have required field EventDestinationName set");
-            uriResourcePath = uriResourcePath.Replace("{EventDestinationName}", StringUtils.FromString(publicRequest.EventDestinationName));
+            uriResourcePath = uriResourcePath.Replace("{EventDestinationName}", StringUtils.FromStringWithSlashEncoding(publicRequest.EventDestinationName));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
