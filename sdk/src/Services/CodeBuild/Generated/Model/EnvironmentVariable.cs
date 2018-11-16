@@ -89,10 +89,10 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// We strongly discourage using environment variables to store sensitive values, especially
-        /// AWS secret key IDs and secret access keys. Environment variables can be displayed
-        /// in plain text using tools such as the AWS CodeBuild console and the AWS Command Line
-        /// Interface (AWS CLI).
+        /// We strongly discourage the use of environment variables to store sensitive values,
+        /// especially AWS secret key IDs and secret access keys. Environment variables can be
+        /// displayed in plain text using the AWS CodeBuild console and the AWS Command Line Interface
+        /// (AWS CLI).
         /// </para>
         ///  </important>
         /// </summary>

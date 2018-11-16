@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
-    /// Information about logs for a build project. Logs can be Amazon CloudWatch Logs, built
-    /// in a specified S3 bucket, or both.
+    /// Information about logs for a build project. These can be logs in Amazon CloudWatch
+    /// Logs, built in a specified S3 bucket, or both.
     /// </summary>
     public partial class LogsConfig
     {

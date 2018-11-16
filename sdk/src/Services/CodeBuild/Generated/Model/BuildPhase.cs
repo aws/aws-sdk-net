@@ -113,6 +113,11 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>QUEUED</code>: The build has been submitted and is queued behind other submitted
+        /// builds.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>STOPPED</code>: The build phase stopped.
         /// </para>
         ///  </li> <li> 
@@ -173,6 +178,11 @@ namespace Amazon.CodeBuild.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>PROVISIONING</code>: The build environment is being set up.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>QUEUED</code>: The build has been submitted and is queued behind other submitted
+        /// builds.
         /// </para>
         ///  </li> <li> 
         /// <para>

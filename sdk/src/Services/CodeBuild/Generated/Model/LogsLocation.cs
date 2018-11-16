@@ -96,7 +96,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property S3DeepLink. 
         /// <para>
-        ///  The URL to an individual build log in an S3 bucket. 
+        ///  The URL to a build log in an S3 bucket. 
         /// </para>
         /// </summary>
         public string S3DeepLink

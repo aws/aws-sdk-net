@@ -100,8 +100,7 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  
         /// <para>
-        /// You can use this hash along with a checksum tool to confirm both file integrity and
-        /// authenticity.
+        /// You can use this hash along with a checksum tool to confirm file integrity and authenticity.
         /// </para>
         ///  <note> 
         /// <para>
@@ -125,8 +124,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property OverrideArtifactName. 
         /// <para>
-        ///  If this flag is set, a name specified in the buildspec file overrides the artifact
-        /// name. The name specified in a buildspec file is calculated at build time and uses
+        ///  If this flag is set, a name specified in the build spec file overrides the artifact
+        /// name. The name specified in a build spec file is calculated at build time and uses
         /// the Shell Command Language. For example, you can append a date and time to your artifact
         /// name so that it is always unique. 
         /// </para>
@@ -150,8 +149,7 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  
         /// <para>
-        /// You can use this hash along with a checksum tool to confirm both file integrity and
-        /// authenticity.
+        /// You can use this hash along with a checksum tool to confirm file integrity and authenticity.
         /// </para>
         ///  <note> 
         /// <para>

@@ -41,6 +41,7 @@ namespace Amazon.CodeBuild.Model
         private ProjectEnvironment _environment;
         private LogsConfig _logsConfig;
         private string _name;
+        private int? _queuedTimeoutInMinutes;
         private List<ProjectArtifacts> _secondaryArtifacts = new List<ProjectArtifacts>();
         private List<ProjectSource> _secondarySources = new List<ProjectSource>();
         private string _serviceRole;
@@ -70,7 +71,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property BadgeEnabled. 
         /// <para>
-        /// Set this to true to generate a publicly-accessible URL for your project's build badge.
+        /// Set this to true to generate a publicly accessible URL for your project's build badge.
         /// </para>
         /// </summary>
         public bool BadgeEnabled
@@ -129,8 +130,8 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  
         /// <para>
-        /// You can specify either the CMK's Amazon Resource Name (ARN) or, if available, the
-        /// CMK's alias (using the format <code>alias/<i>alias-name</i> </code>).
+        /// You can specify either the Amazon Resource Name (ARN) of the CMK or, if available,
+        /// the CMK's alias (using the format <code>alias/<i>alias-name</i> </code>).
         /// </para>
         /// </summary>
         public string EncryptionKey
@@ -166,8 +167,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property LogsConfig. 
         /// <para>
-        ///  Information about logs for the build project. Logs can be Amazon CloudWatch Logs,
-        /// uploaded to a specified S3 bucket, or both. 
+        ///  Information about logs for the build project. These can be logs in Amazon CloudWatch
+        /// Logs, logs uploaded to a specified S3 bucket, or both. 
         /// </para>
         /// </summary>
         public LogsConfig LogsConfig
@@ -198,6 +199,24 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueuedTimeoutInMinutes. 
+        /// <para>
+        ///  The number of minutes a build is allowed to be queued before it times out. 
+        /// </para>
+        /// </summary>
+        public int QueuedTimeoutInMinutes
+        {
+            get { return this._queuedTimeoutInMinutes.GetValueOrDefault(); }
+            set { this._queuedTimeoutInMinutes = value; }
+        }
+
+        // Check to see if QueuedTimeoutInMinutes property is set
+        internal bool IsSetQueuedTimeoutInMinutes()
+        {
+            return this._queuedTimeoutInMinutes.HasValue; 
         }
 
         /// <summary>
@@ -299,8 +318,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property TimeoutInMinutes. 
         /// <para>
-        /// How long, in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing
-        /// out any build that has not been marked as completed. The default is 60 minutes.
+        /// How long, in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait before it
+        /// times out any build that has not been marked as completed. The default is 60 minutes.
         /// </para>
         /// </summary>
         public int TimeoutInMinutes

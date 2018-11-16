@@ -42,10 +42,9 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property BranchFilter. 
         /// <para>
-        /// A regular expression used to determine which branches in a repository are built when
-        /// a webhook is triggered. If the name of a branch matches the regular expression, then
-        /// it is built. If it doesn't match, then it is not. If <code>branchFilter</code> is
-        /// empty, then all branches are built.
+        /// A regular expression used to determine which repository branches are built when a
+        /// webhook is triggered. If the name of a branch matches the regular expression, then
+        /// it is built. If <code>branchFilter</code> is empty, then all branches are built.
         /// </para>
         /// </summary>
         public string BranchFilter
@@ -63,7 +62,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property LastModifiedSecret. 
         /// <para>
-        ///  A timestamp indicating the last time a repository's secret token was modified. 
+        ///  A timestamp that indicates the last time a repository's secret token was modified.
+        /// 
         /// </para>
         /// </summary>
         public DateTime LastModifiedSecret
@@ -81,7 +81,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property PayloadUrl. 
         /// <para>
-        ///  The CodeBuild endpoint where webhook events are sent.
+        ///  The AWS CodeBuild endpoint where webhook events are sent.
         /// </para>
         /// </summary>
         public string PayloadUrl

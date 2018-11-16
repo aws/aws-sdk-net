@@ -176,6 +176,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ProjectName);
                 }
 
+                if(publicRequest.IsSetQueuedTimeoutInMinutesOverride())
+                {
+                    context.Writer.WritePropertyName("queuedTimeoutInMinutesOverride");
+                    context.Writer.Write(publicRequest.QueuedTimeoutInMinutesOverride);
+                }
+
                 if(publicRequest.IsSetReportBuildStatusOverride())
                 {
                     context.Writer.WritePropertyName("reportBuildStatusOverride");

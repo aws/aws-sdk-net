@@ -217,6 +217,10 @@ namespace Amazon.CodeBuild
         /// </summary>
         public static readonly BuildPhaseType PROVISIONING = new BuildPhaseType("PROVISIONING");
         /// <summary>
+        /// Constant QUEUED for BuildPhaseType
+        /// </summary>
+        public static readonly BuildPhaseType QUEUED = new BuildPhaseType("QUEUED");
+        /// <summary>
         /// Constant SUBMITTED for BuildPhaseType
         /// </summary>
         public static readonly BuildPhaseType SUBMITTED = new BuildPhaseType("SUBMITTED");
@@ -498,6 +502,10 @@ namespace Amazon.CodeBuild
         /// Constant NODE_JS for LanguageType
         /// </summary>
         public static readonly LanguageType NODE_JS = new LanguageType("NODE_JS");
+        /// <summary>
+        /// Constant PHP for LanguageType
+        /// </summary>
+        public static readonly LanguageType PHP = new LanguageType("PHP");
         /// <summary>
         /// Constant PYTHON for LanguageType
         /// </summary>

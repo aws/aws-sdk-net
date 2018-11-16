@@ -47,6 +47,7 @@ namespace Amazon.CodeBuild.Model
         private NetworkInterface _networkInterface;
         private List<BuildPhase> _phases = new List<BuildPhase>();
         private string _projectName;
+        private int? _queuedTimeoutInMinutes;
         private string _resolvedSourceVersion;
         private List<BuildArtifacts> _secondaryArtifacts = new List<BuildArtifacts>();
         private List<ProjectSource> _secondarySources = new List<ProjectSource>();
@@ -97,7 +98,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property BuildComplete. 
         /// <para>
-        /// Whether the build has finished. True if completed; otherwise, false.
+        /// Whether the build is complete. True if complete; otherwise, false.
         /// </para>
         /// </summary>
         public bool BuildComplete
@@ -199,7 +200,7 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  
         /// <para>
-        /// This is expressed either as the CMK's Amazon Resource Name (ARN) or, if specified,
+        /// This is expressed either as the Amazon Resource Name (ARN) of the CMK or, if specified,
         /// the CMK's alias (using the format <code>alias/<i>alias-name</i> </code>).
         /// </para>
         /// </summary>
@@ -281,7 +282,7 @@ namespace Amazon.CodeBuild.Model
         ///  </li> <li> 
         /// <para>
         /// If an AWS Identity and Access Management (IAM) user started the build, the user's
-        /// name (for example <code>MyUserName</code>).
+        /// name (for example, <code>MyUserName</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -340,7 +341,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Phases. 
         /// <para>
-        /// Information about all previous build phases that are completed and information about
+        /// Information about all previous build phases that are complete and information about
         /// any current build phase that is not yet complete.
         /// </para>
         /// </summary>
@@ -372,6 +373,24 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetProjectName()
         {
             return this._projectName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueuedTimeoutInMinutes. 
+        /// <para>
+        ///  The number of minutes a build is allowed to be queued before it times out. 
+        /// </para>
+        /// </summary>
+        public int QueuedTimeoutInMinutes
+        {
+            get { return this._queuedTimeoutInMinutes.GetValueOrDefault(); }
+            set { this._queuedTimeoutInMinutes = value; }
+        }
+
+        // Check to see if QueuedTimeoutInMinutes property is set
+        internal bool IsSetQueuedTimeoutInMinutes()
+        {
+            return this._queuedTimeoutInMinutes.HasValue; 
         }
 
         /// <summary>
@@ -455,20 +474,19 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         /// For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds
         /// to the version of the source code you want to build. If a pull request ID is specified,
-        /// it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>).
-        /// If a branch name is specified, the branch's HEAD commit ID will be used. If not specified,
-        /// the default branch's HEAD commit ID will be used.
+        /// it must use the format <code>pr/pull-request-ID</code> (for example, <code>pr/25</code>).
+        /// If a branch name is specified, the branch's HEAD commit ID is used. If not specified,
+        /// the default branch's HEAD commit ID is used.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version
         /// of the source code you want to build. If a branch name is specified, the branch's
-        /// HEAD commit ID will be used. If not specified, the default branch's HEAD commit ID
-        /// will be used.
+        /// HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For Amazon Simple Storage Service (Amazon S3): the version ID of the object representing
+        /// For Amazon Simple Storage Service (Amazon S3): the version ID of the object that represents
         /// the build input ZIP file to use.
         /// </para>
         ///  </li> </ul>

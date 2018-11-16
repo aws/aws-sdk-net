@@ -38,7 +38,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property BadgeEnabled. 
         /// <para>
-        /// Set this to true to generate a publicly-accessible URL for your project's build badge.
+        /// Set this to true to generate a publicly accessible URL for your project's build badge.
         /// </para>
         /// </summary>
         public bool BadgeEnabled
@@ -57,6 +57,11 @@ namespace Amazon.CodeBuild.Model
         /// Gets and sets the property BadgeRequestUrl. 
         /// <para>
         /// The publicly-accessible URL through which you can access the build badge for your
+        /// project. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The publicly accessible URL through which you can access the build badge for your
         /// project. 
         /// </para>
         /// </summary>

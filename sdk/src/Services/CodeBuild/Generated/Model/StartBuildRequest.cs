@@ -47,6 +47,7 @@ namespace Amazon.CodeBuild.Model
         private LogsConfig _logsConfigOverride;
         private bool? _privilegedModeOverride;
         private string _projectName;
+        private int? _queuedTimeoutInMinutesOverride;
         private bool? _reportBuildStatusOverride;
         private List<ProjectArtifacts> _secondaryArtifactsOverride = new List<ProjectArtifacts>();
         private List<ProjectSource> _secondarySourcesOverride = new List<ProjectSource>();
@@ -326,6 +327,24 @@ namespace Amazon.CodeBuild.Model
         }
 
         /// <summary>
+        /// Gets and sets the property QueuedTimeoutInMinutesOverride. 
+        /// <para>
+        ///  The number of minutes a build is allowed to be queued before it times out. 
+        /// </para>
+        /// </summary>
+        public int QueuedTimeoutInMinutesOverride
+        {
+            get { return this._queuedTimeoutInMinutesOverride.GetValueOrDefault(); }
+            set { this._queuedTimeoutInMinutesOverride = value; }
+        }
+
+        // Check to see if QueuedTimeoutInMinutesOverride property is set
+        internal bool IsSetQueuedTimeoutInMinutesOverride()
+        {
+            return this._queuedTimeoutInMinutesOverride.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ReportBuildStatusOverride. 
         /// <para>
         ///  Set to true to report to your source provider the status of a build's start and completion.
@@ -441,8 +460,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property SourceLocationOverride. 
         /// <para>
-        /// A location that overrides for this build the source location for the one defined in
-        /// the build project.
+        /// A location that overrides, for this build, the source location for the one defined
+        /// in the build project.
         /// </para>
         /// </summary>
         public string SourceLocationOverride
@@ -460,7 +479,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property SourceTypeOverride. 
         /// <para>
-        /// A source input type for this build that overrides the source input defined in the
+        /// A source input type, for this build, that overrides the source input defined in the
         /// build project.
         /// </para>
         /// </summary>
@@ -480,7 +499,7 @@ namespace Amazon.CodeBuild.Model
         /// Gets and sets the property SourceVersion. 
         /// <para>
         /// A version of the build input to be built, for this build only. If not specified, the
-        /// latest version will be used. If specified, must be one of:
+        /// latest version is used. If specified, must be one of:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -491,19 +510,18 @@ namespace Amazon.CodeBuild.Model
         /// For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds
         /// to the version of the source code you want to build. If a pull request ID is specified,
         /// it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>).
-        /// If a branch name is specified, the branch's HEAD commit ID will be used. If not specified,
-        /// the default branch's HEAD commit ID will be used.
+        /// If a branch name is specified, the branch's HEAD commit ID is used. If not specified,
+        /// the default branch's HEAD commit ID is used.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version
         /// of the source code you want to build. If a branch name is specified, the branch's
-        /// HEAD commit ID will be used. If not specified, the default branch's HEAD commit ID
-        /// will be used.
+        /// HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For Amazon Simple Storage Service (Amazon S3): the version ID of the object representing
+        /// For Amazon Simple Storage Service (Amazon S3): the version ID of the object that represents
         /// the build input ZIP file to use.
         /// </para>
         ///  </li> </ul>

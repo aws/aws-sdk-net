@@ -38,11 +38,11 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// Information about the cache location, as follows: 
+        /// Information about the cache location: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NO_CACHE</code>: This value will be ignored.
+        ///  <code>NO_CACHE</code>: This value is ignored.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -69,11 +69,11 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NO_CACHE</code>: The build project will not use any cache.
+        ///  <code>NO_CACHE</code>: The build project does not use any cache.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>S3</code>: The build project will read and write from/to S3.
+        ///  <code>S3</code>: The build project reads and writes from and to S3.
         /// </para>
         ///  </li> </ul>
         /// </summary>

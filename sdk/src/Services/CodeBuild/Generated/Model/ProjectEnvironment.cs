@@ -60,8 +60,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property ComputeType. 
         /// <para>
-        /// Information about the compute resources the build project will use. Available values
-        /// include:
+        /// Information about the compute resources the build project uses. Available values include:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -131,11 +130,11 @@ namespace Amazon.CodeBuild.Model
         /// Enables running the Docker daemon inside a Docker container. Set to true only if the
         /// build project is be used to build Docker images, and the specified build environment
         /// image is not provided by AWS CodeBuild with Docker support. Otherwise, all associated
-        /// builds that attempt to interact with the Docker daemon will fail. Note that you must
-        /// also start the Docker daemon so that builds can interact with it. One way to do this
-        /// is to initialize the Docker daemon during the install phase of your build spec by
-        /// running the following build commands. (Do not run the following build commands if
-        /// the specified build environment image is provided by AWS CodeBuild with Docker support.)
+        /// builds that attempt to interact with the Docker daemon fail. You must also start the
+        /// Docker daemon so that builds can interact with it. One way to do this is to initialize
+        /// the Docker daemon during the install phase of your build spec by running the following
+        /// build commands. (Do not run these commands if the specified build environment image
+        /// is provided by AWS CodeBuild with Docker support.)
         /// </para>
         ///  
         /// <para>

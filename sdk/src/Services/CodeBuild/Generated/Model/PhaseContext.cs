@@ -29,7 +29,7 @@ namespace Amazon.CodeBuild.Model
 {
     /// <summary>
     /// Additional information about a build phase that has an error. You can use this information
-    /// to help troubleshoot a failed build.
+    /// for troubleshooting.
     /// </summary>
     public partial class PhaseContext
     {
@@ -39,8 +39,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// An explanation of the build phase's context. This explanation might include a command
-        /// ID and an exit code.
+        /// An explanation of the build phase's context. This might include a command ID and an
+        /// exit code.
         /// </para>
         /// </summary>
         public string Message

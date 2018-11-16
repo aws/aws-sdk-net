@@ -154,6 +154,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     unmarshalledObject.ProjectName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("queuedTimeoutInMinutes", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.QueuedTimeoutInMinutes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("resolvedSourceVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

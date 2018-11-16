@@ -67,17 +67,16 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATED_TIME</code>: List the build project names based on when each build
-        /// project was created.
+        ///  <code>CREATED_TIME</code>: List based on when each build project was created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LAST_MODIFIED_TIME</code>: List the build project names based on when information
-        /// about each build project was last changed.
+        ///  <code>LAST_MODIFIED_TIME</code>: List based on when information about each build
+        /// project was last changed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NAME</code>: List the build project names based on each build project's name.
+        ///  <code>NAME</code>: List based on each build project's name.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -104,11 +103,11 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ASCENDING</code>: List the build project names in ascending order.
+        ///  <code>ASCENDING</code>: List in ascending order.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DESCENDING</code>: List the build project names in descending order.
+        ///  <code>DESCENDING</code>: List in descending order.
         /// </para>
         ///  </li> </ul> 
         /// <para>

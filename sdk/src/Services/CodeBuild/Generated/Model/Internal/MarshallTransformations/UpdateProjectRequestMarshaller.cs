@@ -135,6 +135,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetQueuedTimeoutInMinutes())
+                {
+                    context.Writer.WritePropertyName("queuedTimeoutInMinutes");
+                    context.Writer.Write(publicRequest.QueuedTimeoutInMinutes);
+                }
+
                 if(publicRequest.IsSetSecondaryArtifacts())
                 {
                     context.Writer.WritePropertyName("secondaryArtifacts");

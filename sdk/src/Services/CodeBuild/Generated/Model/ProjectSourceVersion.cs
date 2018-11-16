@@ -67,20 +67,19 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         /// For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds
         /// to the version of the source code you want to build. If a pull request ID is specified,
-        /// it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>).
-        /// If a branch name is specified, the branch's HEAD commit ID will be used. If not specified,
-        /// the default branch's HEAD commit ID will be used.
+        /// it must use the format <code>pr/pull-request-ID</code> (for example, <code>pr/25</code>).
+        /// If a branch name is specified, the branch's HEAD commit ID is used. If not specified,
+        /// the default branch's HEAD commit ID is used.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version
         /// of the source code you want to build. If a branch name is specified, the branch's
-        /// HEAD commit ID will be used. If not specified, the default branch's HEAD commit ID
-        /// will be used.
+        /// HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For Amazon Simple Storage Service (Amazon S3): the version ID of the object representing
+        /// For Amazon Simple Storage Service (Amazon S3): the version ID of the object that represents
         /// the build input ZIP file to use.
         /// </para>
         ///  </li> </ul>
